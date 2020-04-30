@@ -1,0 +1,250 @@
+\documentclass[a4paper,10pt,notitlepage,oneside]{book}
+\usepackage[vscale=.75, hscale=.68, footskip=1.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{ragged2e}
+\usepackage{footmisc}
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage{color}
+\usepackage{floatrow}
+\usepackage{caption}
+\usepackage{newfloat}
+\usepackage{fancyvrb}
+%\usepackage{placeins}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+%\usepackage{noindentafter}
+\usepackage[unicode,hyperfootnotes=false]{hyperref}
+\usepackage[shortcuts]{extdash}
+
+\hypersetup{ hidelinks, bookmarksopen, bookmarksnumbered,
+  pdfauthor={Teemu Likonen} }
+
+\setdefaultlanguage{finnish}
+\setotherlanguage{english}
+
+\setmainfont{Linux Libertine O}
+[Scale=1.4, Numbers=Lowercase]
+
+\setsansfont{Linux Biolinum O}
+[Scale=MatchLowercase, Numbers=Lowercase]
+
+\setmonofont{Linux Libertine Mono O}
+[Scale=MatchLowercase, LetterSpace=-2]
+
+\linespread{1.58}
+
+% \newcommand{\gemenanum}{\addfontfeatures{Numbers=Lowercase}}
+% \newcommand{\versaalinum}{\addfontfeatures{Numbers=Uppercase}}
+
+\clubpenalty=10000
+\widowpenalty=10000
+\setlength{\emergencystretch}{1em}
+
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0em}
+\setlength{\footnotemargin}{\parindent}
+\setlength{\floatsep}{3ex}
+\setlength{\textfloatsep}{4ex}
+
+\DeclareFloatingEnvironment[ name={Esimerkki} ]{esim}
+
+\DefineVerbatimEnvironment{koodilohko}{Verbatim}{
+  fontsize=\footnotesize, gobble=1, frame=lines, numbers=left,
+  numbersep=.3em, xleftmargin=0em, xrightmargin=0em, baselinestretch=1.3 }
+
+\floatsetup{ font={small}, justification=raggedright,
+  margins=raggedright, captionskip=1ex, capposition=bottom }
+
+\DeclareCaptionFont{rivivali}{\linespread{1.3}\selectfont}
+
+\captionsetup{ font={small, sf, rivivali}, labelfont={bf}, textfont={},
+  textformat=period, margin=.5em, justification=raggedright,
+  singlelinecheck=off }
+
+\captionsetup[esim]{ skip=-.5ex, margin=.5em }
+
+\newcommand{\leiju}[3]{
+  \begin{#1}
+    \floatbox{#1}{#2}{#3}
+  \end{#1}
+}
+
+\fancyhf{}
+% \fancyhf[hel]{\small\nouppercase{\leftmark}}
+% \fancyhf[hor]{\small\nouppercase{\rightmark}}
+\fancyhf[fc]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyhf[fc]{\thepage}
+  %\renewcommand{\headrulewidth}{0pt}
+}
+
+\definecolor{tavu}{rgb}{1,0,0}
+\definecolor{sitova}{rgb}{1,0,0}
+
+\newcommand{\keno}{\textbackslash}
+\newcommand{\koodi}[1]{\mbox{\texttt{#1}}}
+\newcommand{\tavuvihje}{\keno-}
+\newcommand{\tavukohta}{\textcolor{tavu}{\rule{1pt}{1.5ex}}}
+\newcommand{\sitovaym}{\textcolor{sitova}{-}}
+
+\newcommand{\ots}[1]{{\sffamily\bfseries #1}}
+
+\newcommand{\otsikkotyyli}{%
+  \raggedright
+  \linespread{1.1}
+  \sffamily
+  \bfseries
+}
+
+\titleformat{\section}{\otsikkotyyli\Large}
+{\thesection}{.8em}{}[]
+\titlespacing*{\section}{0pt}{*4}{*2}
+
+\titleformat{\subsection}{\otsikkotyyli\normalsize}
+{\thesubsection}{.8em}{}[]
+\titlespacing*{\section}{0pt}{*3}{*1}
+
+\begin{document}
+\pagestyle{fancy}
+
+\hyphenation{
+  Ext-dash
+  Lua-la-tex
+  ni-men-omaan
+  Open-type
+  Poly-glos-sia
+  True-type
+  Xe-la-tex
+}
+
+\chapter*{Esipuhe}
+\addcontentsline{toc}{1}{Esipuhe}
+\phantomsection
+
+Suurin innoittajani tämän kirjan kirjoittamiselle on ollut Latex itse.
+
+\chapter{Ensiaskeleet}
+\section{Käsitteitä ja nimityksiä}
+
+Se, mitä sanalla Latex yleensä tarkoitetaan, on monimutkainen
+kokonaisuus erilaisia pieniä palikoita kuten tietokone\-ohjelmia,
+makropaketteja ja asetustiedostoja. Yritän tässä luvussa selventää
+joitakin peruskäsitteitä.
+
+Tex on tietokoneohjelma (\koodi{tex}), joka osaa lukea tietynmuotoisia
+tekstitiedostoja ja latoa niiden perusteella tekstidokumentin, joka on
+tarkoitettu ihmisten luettavaksi. Tex on myös tekstin ladontaan
+tarkoitettu ohjelmointikieli. Se noudattaa sille annettuja ohjeita ja
+latoo kirjaimia ja muuta tavaraa peräkkäin sivulle. Ihmisten
+näkökulmasta Tex on hyvin tekninen ja matalatasoinen järjestelmä, eikä
+sellaisten kanssa yleensä haluta olla missään tekemisissä. Siirtykäämme
+siis eteenpäin.
+
+Latex toimii korkeammalla abstraktiotasolla kuin Tex. Se on kokoelma
+Tex\-/ohjelmointikielen makroja, jotka piilottavat monimutkaiset
+tekniset yksityiskohdat ja toteuttavat varsin helppokäyttöisen
+merkkauskielen, joilla tekstidokumenttien rakenne ja ulko\-asua
+kuvataan. Ihmiset siis kirjoittavat yleensä Latex\-/dokumentteja, ja
+Latex eli makrot puolestaan huolehtivat Texin käskyttämisestä. Latex on
+myös tietokone\-ohjelma (\koodi{latex}), jolla lähdetiedoston voi
+kääntää julkaistavaksi dokumentiksi.
+
+Ajan myötä mukaan on tullut sekalainen joukko muitakin ohjelmia, joista
+kannattaa tässä yhteydessä mainita kaksi: Xelatex ja Lualatex. Ne ovat
+erilaisia Latexin toteutuksia ja tietokone\-ohjelmia (\koodi{xelatex},
+\koodi{lualatex}), joilla lähdedokumentti käännetään. Nyky\-aikana
+käytetään näistä yleensä jompaakumpaa, ja esimerkiksi tämän kirjan
+Latex\-/lähdetiedosto on käännetty PDF\-/tiedostoksi
+\koodi{xelatex}\-/ohjelmalla.
+
+Jotta kaikki olisi mahdollisimman sekavaa, sana Latex toimii myös
+yleisenä nimityksenä tälle kaikelle. Se esiintyy ilmaisuissa kuten
+''Toteutin dokumentin Latexilla'' tai ''Tämä artikkeli on tehty
+Latexilla''. Ilmaukset sitten tarkoittavat jotakin seuraavanlaista:
+Henkilöllä on asennettuna tietokoneelle Latex\-/jakelu (kuten Tex Live).
+Hän on kirjoittanut teksti\-editorilla (kuten GNU Emacsilla)
+tekstitiedoston, jossa on dokumentin sisältö ja Latex\-/makroille
+tarkoitettuja komentoja. Sitten hän on kääntänyt eli ladotuttanut
+tekstitiedostonsa PDF\-/tiedostoksi Latex-la\-don\-ta\-oh\-jel\-man
+jollakin toteutuksella (kuten \koodi{xelatex}illa).
+
+Meille \marginpar{\Large\LaTeX} taitaa riittää vain Latexista puhuminen,
+mutta siitäkin on mainittava vielä yksi huomio. Latexin harrastajat
+tykkäävät käyttää dokumenttiensa leipätekstissä logoja kuten \TeX{} ja
+\LaTeX{}. Usein teksteissä näkyy myös logojen pohjalta mukailtuja
+kirjoitus\-asuja TeX ja LaTeX. Mielestäni logojen eikä muodikkaiden
+kIRjoiTus\-AsuJen paikka ei ole leipätekstissä, koska ne erottuvat
+tekstipalstasta liiaksi ja tekevät siitä rauhattoman näköisen. Tässä
+kirjassa viittaan kaikkiin nimiin kielenhuollon normien mukaisesti eli
+käytän tavallisia erisnimiä kuten Tex ja Latex. Koodi ja komennot ovat
+siinä muodossa kuin ne tietokoneelle annetaan, esimerkiksi
+\koodi{xelatex}.
+
+\section{Käyttöönotto}
+\subsection{Jakelukokoelma}
+\subsection{Apuohjelmia}
+
+% texdoc, latexmk
+%
+% ~/texmf/tex/latex/local
+
+\section{Ensimmäinen dokumentti}
+
+Ehkä olisi parasta päästä vain nopeasti kokeilemaan omia
+Latex\-/dokumentteja eikä lukea pitkiä jaaritteluja muinaisten
+kreikkalaisten Latex\-/filosofioista. Tallenna esimerkin
+\ref{esim:ensimmainen} sisältö teksti\-editorin avulla tiedostoon
+vaikkapa nimellä ''teksti.tex''. Käännä eli lado se PDF\-/tiedostoksi
+komennolla ''\koodi{xelatex} \koodi{teksti.tex}'' tai ''\koodi{latexmk}
+\koodi{-xelatex} \koodi{teksti.tex}''.
+
+Latin Modern Roman \=/fontin tilalle voi toki kokeilla muitakin
+(rivi~6). Fontin oletuskoko on 10 pistettä, mutta tässä esimerkissä se
+venytetään 1,3\-/kertaiseksi eli 13 pisteeseen. Riviväliin liittyvä
+kerroin asetetaan rivillä 7.
+
+\begin{esim}
+\begin{koodilohko}
+  \documentclass[a4paper]{article}
+  \usepackage{fontspec}
+  \usepackage{polyglossia}
+
+  \setdefaultlanguage{finnish}
+  \setmainfont{Latin Modern Roman}[Scale=1.3]
+  \linespread{1.4}
+
+  \begin{document}
+
+  Minun Latex-dokumenttini!
+
+  \end{document}
+\end{koodilohko}
+\caption{Ensimmäinen Latex-dokumentti}
+\label{esim:ensimmainen}
+\end{esim}
+
+\chapter{Kirjoittaminen}
+\section{Kappale}
+\section{Erikoismerkit}
+\section{Tavutus}
+
+\chapter{Asetukset ja virittely}
+\section{Dokumenttiluokat}
+\section{Kieli}
+\section{Sivu}
+\section{Kirjaintyypit}
+
+\chapter{Ympäristöjä}
+\section{Luetelmat}
+\section{Taulukot}
+\section{Leijuvat elementit}
+
+\chapter{Matematiikka}
+\chapter{Grafiikka}
+
+\end{document}

@@ -137,7 +137,7 @@ kokonaisuus erilaisia pieniä palikoita kuten tietokone\-ohjelmia,
 makropaketteja ja asetustiedostoja. Yritän tässä luvussa selventää
 joitakin peruskäsitteitä.
 
-Tex on tietokoneohjelma (\koodi{tex}), joka osaa lukea tietynmuotoisia
+Tex on tietokone\-ohjelma (\koodi{tex}), joka osaa lukea tietynmuotoisia
 tekstitiedostoja ja latoa niiden perusteella tekstidokumentin, joka on
 tarkoitettu ihmisten luettavaksi. Tex on myös tekstin ladontaan
 tarkoitettu ohjelmointikieli. Se noudattaa sille annettuja ohjeita ja
@@ -149,11 +149,11 @@ siis eteenpäin.
 Latex toimii korkeammalla abstraktiotasolla kuin Tex. Se on kokoelma
 Tex\-/ohjelmointikielen makroja, jotka piilottavat monimutkaiset
 tekniset yksityiskohdat ja toteuttavat varsin helppokäyttöisen
-merkkauskielen, joilla tekstidokumenttien rakenne ja ulko\-asua
-kuvataan. Ihmiset siis kirjoittavat yleensä Latex\-/dokumentteja, ja
-Latex eli makrot puolestaan huolehtivat Texin käskyttämisestä. Latex on
-myös tietokone\-ohjelma (\koodi{latex}), jolla lähdetiedoston voi
-kääntää julkaistavaksi dokumentiksi.
+merkintäkielen, joilla tekstidokumenttien rakenne ja ulko\-asua
+kuvataan. Ihmiset siis kirjoittavat yleensä Latex\-/muotoisia
+dokumentteja, ja Latex eli makrot puolestaan huolehtivat Texin
+käskyttämisestä. Latex on myös tietokone\-ohjelma (\koodi{latex}), jolla
+lähdetiedoston voi kääntää julkaistavaksi dokumentiksi.
 
 Ajan myötä mukaan on tullut sekalainen joukko muitakin ohjelmia, joista
 kannattaa tässä yhteydessä mainita kaksi: Xelatex ja Lualatex. Ne ovat
@@ -166,13 +166,13 @@ Latex\-/lähdetiedosto on käännetty PDF\-/tiedostoksi
 Jotta kaikki olisi mahdollisimman sekavaa, sana Latex toimii myös
 yleisenä nimityksenä tälle kaikelle. Se esiintyy ilmaisuissa kuten
 ''Toteutin dokumentin Latexilla'' tai ''Tämä artikkeli on tehty
-Latexilla''. Ilmaukset sitten tarkoittavat jotakin seuraavanlaista:
+Latexilla''. Ilmaukset sitten tarkoittavat suunnilleen seuraavanlaista:
 Henkilöllä on asennettuna tietokoneelle Latex\-/jakelu (kuten Tex Live).
 Hän on kirjoittanut teksti\-editorilla (kuten GNU Emacsilla)
 tekstitiedoston, jossa on dokumentin sisältö ja Latex\-/makroille
 tarkoitettuja komentoja. Sitten hän on kääntänyt eli ladotuttanut
 tekstitiedostonsa PDF\-/tiedostoksi Latex-la\-don\-ta\-oh\-jel\-man
-jollakin toteutuksella (kuten \koodi{xelatex}illa).
+jollakin toteutuksella (kuten Xelatexilla).
 
 Meille \marginpar{\Large\LaTeX} taitaa riittää vain Latexista puhuminen,
 mutta siitäkin on mainittava vielä yksi huomio. Latexin harrastajat
@@ -193,7 +193,7 @@ siinä muodossa kuin ne tietokoneelle annetaan, esimerkiksi
 
 Ehkä olisi parasta päästä vain nopeasti kokeilemaan omia
 Latex\-/dokumentteja eikä lukea pitkiä jaaritteluja muinaisten
-kreikkalaisten Latex\-/filosofioista. Tallenna esimerkin
+kreikkalaisten Latex\-/filosofiasta. Tallenna esimerkin
 \ref{esim:ensimmainen} sisältö teksti\-editorin avulla tiedostoon
 vaikkapa nimellä ''teksti.tex''. Käännä eli lado se PDF\-/tiedostoksi
 komennolla ''\koodi{xelatex teksti.tex}''.
@@ -255,8 +255,6 @@ erikseen ladattavista makropaketeista (Fontspec, Polyglossia jne.).
 
 \section{Apuohjelmia}
 
-% ~/texmf/tex/latex/local
-
 \subsection{Texdoc}
 
 Latex\-/kirjailijan täytyy silloin tällöin lukea ohjekirjoja. Vaikka
@@ -274,7 +272,7 @@ Todennäköisesti tulet käyttämään \koodi{texdoc}\-/komentoa usein.
 
 \subsection{Latexmk}
 
-Hyödyllinen komento on myös \koodi{latexmk}, joka helpottaa dokumenttien
+Hyödyllinen ohjelma on myös Latexmk, joka helpottaa dokumenttien
 kääntämistä. Nimittäin varsin usein Latex\-/dokumentit täytyy kääntää
 useita kertoja ennen kuin PDF\-/tiedosto on valmis. Se johtuu siitä,
 että dokumentit sisältävät usein ristiviitteitä eli viittauksia
@@ -284,8 +282,8 @@ väli\-aikais\-tiedostoon ja seuraavilla kääntökerroilla käyttää
 väli\-aikais\-tiedostoa apunaan.
 
 Kääntäjä huomauttaa tietokoneen käyttäjää, kun uusintakäännös on
-tarpeen, mutta \koodi{latexmk}\-/ohjelma käynnistää uusintakäännöksen
-ihan itse, aina kun se on tarpeellista.
+tarpeen, mutta Latexmk\-/ohjelma käynnistää uusintakäännöksen ihan itse,
+aina kun se on tarpeellista.
 
 \begin{esim}
 \begin{koodilohko}

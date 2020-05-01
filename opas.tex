@@ -136,8 +136,10 @@
 \pagestyle{empty}
 
 \hyphenation{
+  an-tiik-va
   Ext-dash
   Font-spec
+  gro-tes-ki
   Lua-la-tex
   ni-men-omaan
   Open-type
@@ -292,7 +294,7 @@ asettamiseen luvussa \ref{luku:fontti_suhteellinen} tai
 muiden mittojen määrittämiseen on ohjeita luvussa
 \ref{luku:sivuasetukset}.
 
-\subsection{Rivikorkeus ja riviväli}
+\subsection{Rivikorkeus}
 
 Fontti\-asetuksiin kuuluu fontin koon lisäksi toinenkin mitta:
 rivikorkeus (engl. \textenglish{base\-line\-skip}). Se on mitta rivin
@@ -342,8 +344,8 @@ tason fontti\-asetukset tulevat voimaan.
 \label{esim:rivikorkeus}
 \end{esimerkki}
 
-Toinen tekstirivien väliseen etäisyyteen vaikuttava asetus on
-\koodi{\keno base\-line\-stretch}. Se on desimaalilukukerroin, jolla
+Toinen tekstirivien peruslinjojen väliseen etäisyyteen vaikuttava asetus
+on \koodi{\keno base\-line\-stretch}. Se on desimaalilukukerroin, jolla
 nykyinen rivikorkeus kerrotaan. Kerroin asetetaan helpoimmin komennolla
 \koodi{\keno line\-spread}.
 
@@ -352,16 +354,66 @@ nykyinen rivikorkeus kerrotaan. Kerroin asetetaan helpoimmin komennolla
 \end{koodilohkosis}
 
 Edellä oleva esimerkki asettaa fontin kooksi 10 pistettä ja
-rivikorkeudeksi 12 pistettä. Asetetun kertoimen vuoksi rivien väliseksi
-etäisyydeksi tulee lopulta 1,3 kertaa 12 pistettä eli 15,6 pistettä.
+rivikorkeudeksi 12 pistettä. Asetetun kertoimen vuoksi rivien
+peruslinjojen väliseksi etäisyydeksi tulee lopulta 1,3 kertaa 12
+pistettä eli 15,6 pistettä.
 
 \subsection{Korkean tason komennot}
 
-% \rmfamily \sffamily \ttfamily
-% \mdseries \bfseries
-% \upshape \slshape \itshape \scshape
+Latexissa on joukko korkean tason fontti\-komentoja, jotka on
+tarkoitettu käytettäväksi sen jälkeen, kun matalan tason asetukset on
+kerran määritetty. Taulukossa \ref{tlk:fonttimallikomennot} on komennot
+kirjainperheen ja kirjainleikkauksen valintaan.
 
-Latexissa on joukko korkean tason komentoja, joilla vaikutetaan
+Komennot fontin koon valintaan ovat taulukossa
+\ref{tlk:fonttikokokomennot-pistekoot}. Taulukko kertoo myös, mitä
+fontin pistekokoa mikäkin komento tarkoittaa oletuksena. Oletus riippuu
+Latexin dokumenttiluokkien (luku \ref{luku:dokumenttiluokat})
+fonttikokovalitsimista \koodi{10pt, 11pt} ja \koodi{12pt}.
+
+Kaikille korkean tason fonttikomennoille on olemassa myös samanniminen
+ympäristönsä, esimerkiksi:
+
+\begin{koodilohkosis}
+  \begin{LARGE}
+    \begin{scshape}
+      Tämä teksti on isoa (LARGE) kapiteelia (scshape).
+    \end{scshape}
+  \end{LARGE}
+\end{koodilohkosis}
+
+\leijutlk{
+  \begin{tabular}{llll}
+    \toprule
+    \multicolumn{2}{l}{\ots{Komento}}
+    & \multicolumn{2}{l}{\ots{Merkitys}} \\
+    \midrule
+    \koodi{\keno rmfamily} & \koodi{\keno textrm\{...\}}
+    & {\rmfamily perhe} & pääteviivallinen, antiikva, serif, roman \\
+    \koodi{\keno sffamily} & \koodi{\keno textsf\{...\}}
+    & {\sffamily perhe} & pääteviivaton, groteski, sans serif \\
+    \koodi{\keno ttfamily} & \koodi{\keno texttt\{...\}}
+    & {\ttfamily perhe} & tasalevyinen, kirjoituskone, typewriter \\
+    \midrule
+    \koodi{\keno mdseries} & \koodi{\keno textmd\{...\}}
+    & {\mdseries leikkaus} & lihavoimaton, tavallinen \\
+    \koodi{\keno bfseries} & \koodi{\keno textbf\{...\}}
+    & {\bfseries leikkaus} & lihavoitu, bold \\
+    \midrule
+    \koodi{\keno upshape} & \koodi{\keno textup\{...\}}
+    & {\upshape leikkaus} & pystyasento, tavallinen \\
+    \koodi{\keno slshape} & \koodi{\keno textsl\{...\}}
+    & {\slshape leikkaus} & kallistettu, slanted, oblique \\
+    \koodi{\keno itshape} & \koodi{\keno textit\{...\}}
+    & {\itshape leikkaus} & kursiivi, italic \\
+    \koodi{\keno scshape} & \koodi{\keno textsc\{...\}}
+    & {\scshape leikkaus} & kapiteeli, small caps \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Komennot kirjainperheen ja kirjainleikkauksen valintaan}
+  \label{tlk:fonttimallikomennot}
+}
 
 \leijutlk{
   \begin{tabular}{lr@{}lr@{}lr@{}l}
@@ -384,15 +436,16 @@ Latexissa on joukko korkean tason komentoja, joilla vaikutetaan
     \bottomrule
   \end{tabular}
 }{
-  \caption{Pistekoot dokumenttiluokkien valitsimilla \koodi{10pt, 11pt}
-    ja \koodi{12pt}}
-  \label{tlk:pistekoot}
+  \caption{Fonttien oletuspistekoot dokumenttiluokkien valitsimilla
+    \koodi{10pt, 11pt} ja \koodi{12pt}}
+  \label{tlk:fonttikokokomennot-pistekoot}
 }
 
 \subsection{Koot suhteellisesti}
 \label{luku:fontti_suhteellinen}
 \subsection{Koot absoluuttisesti}
 \label{luku:fontti_absoluuttinen}
+\subsection{Muut perheet ja leikkaukset}
 \section{Kieli}
 \label{luku:kieliasetukset}
 \section{Sivu}

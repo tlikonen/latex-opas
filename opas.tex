@@ -36,8 +36,8 @@
 
 \linespread{1.58}
 
-% \newcommand{\gemenanum}{\addfontfeatures{Numbers=Lowercase}}
-% \newcommand{\versaalinum}{\addfontfeatures{Numbers=Uppercase}}
+\newcommand{\gemenanum}{\addfontfeatures{Numbers=Lowercase}}
+\newcommand{\versaalinum}{\addfontfeatures{Numbers=Uppercase}}
 
 \clubpenalty=10000
 \widowpenalty=10000
@@ -72,6 +72,8 @@
   \end{#1}
 }
 
+\newcommand{\leijutlk}[2]{\leiju{table}{#1}{\versaalinum #2}}
+
 %\fancyhf{}
 % \fancyhf[hl]{\small\nouppercase{\leftmark}}
 % \fancyhf[hr]{\small\nouppercase{\rightmark}}
@@ -93,7 +95,7 @@
 \newcommand{\tavukohta}{\textcolor{tavu}{\rule{1pt}{1.5ex}}}
 \newcommand{\sitovaym}{\textcolor{sitova}{-}}
 
-\newcommand{\ots}[1]{{\sffamily\bfseries #1}}
+\newcommand{\ots}[1]{{\sffamily\bfseries\versaalinum #1}}
 
 \addto{\captionsfinnish}{
   \renewcommand{\contentsname}{Sisällys}
@@ -140,7 +142,7 @@
 \addcontentsline{toc}{chapter}{Esipuhe}
 \phantomsection
 
-Suurin innoittajani tämän kirjan kirjoittamiselle on ollut Latex itse.
+% Suurin innoittajani tämän kirjan kirjoittamiselle on ollut Latex itse.
 
 % Miksi Latex?
 
@@ -353,6 +355,38 @@ mutta rivin 4 asetuksella mukaan voi lisätä muitakin.
 \label{luku:dokumenttiluokat}
 \section{Kirjaintyypit}
 \label{luku:kirjaintyypit}
+
+\subsection{Perheet, muodot, sarjat, koot}
+
+% \rmfamily \sffamily \ttfamily
+% \mdseries \bfseries
+% \upshape \slshape \itshape \scshape
+
+\leijutlk{
+  \caption{Pistekoot dokumenttiluokkien valitsimilla \koodi{10pt, 11pt}
+    ja \koodi{12pt}}
+  \label{tlk:pistekoot}
+}{
+  \begin{tabular}{lrrr}
+    \toprule
+    \ots{Komento} & \ots{10pt} & \ots{11pt} & \ots{12pt} \\
+    \midrule
+    \koodi{\keno tiny} & 5 & 6 & 6 \\
+    \koodi{\keno scriptsize} & 7 & 8 & 8 \\
+    \koodi{\keno footnotesize} & 8 & 9 & 10 \\
+    \koodi{\keno small} & 9 & 10 & 11 \\
+    \koodi{\keno normalsize} & 10 & 11 & 12 \\
+    \koodi{\keno large} & 12 & 12 & 14 \\
+    \koodi{\keno Large} & 14 & 14 & 17 \\
+    \koodi{\keno LARGE} & 17 & 17 & 20 \\
+    \koodi{\keno huge} & 20 & 20 & 25 \\
+    \koodi{\keno Huge} & 25 & 25 & 25 \\
+    \bottomrule
+  \end{tabular}
+}
+
+\subsection{Koot suhteellisesti}
+\subsection{Koot absoluuttisesti}
 \section{Kieli}
 \label{luku:kieliasetukset}
 \section{Sivu}

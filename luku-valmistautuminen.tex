@@ -29,7 +29,7 @@ Ajan myötä mukaan on tullut sekalainen joukko muitakin ohjelmia, joista
 kannattaa tässä yhteydessä mainita kaksi: Xelatex ja Lualatex. Ne ovat
 erilaisia Latexin toteutuksia ja tietokone\-ohjelmia (\koodi{xelatex,
   lualatex}), joilla lähdedokumentti käännetään. Nyky\-aikana käytetään
-näistä yleensä jompaakumpaa, ja esimerkiksi tämän kirjan
+näistä yleensä jompaakumpaa, ja esimerkiksi tämän oppaan
 Latex\-/lähdetiedosto on käännetty PDF\-/tiedostoksi
 \koodi{xelatex}\-/komennolla.
 
@@ -51,7 +51,7 @@ tykkäävät käyttää dokumenttiensa leipätekstissä logoja kuten \TeX{} ja
 kirjoitus\-asuja TeX ja LaTeX. Mielestäni logojen eikä muodikkaiden
 kIRjoiTus\-AsuJen paikka ei ole leipätekstissä, koska ne erottuvat
 tekstipalstasta liiaksi ja tekevät siitä rauhattoman näköisen. Tässä
-kirjassa viittaan kaikkiin nimiin kielenhuollon normien mukaisesti eli
+oppaassa viittaan kaikkiin nimiin kielenhuollon normien mukaisesti eli
 käytän tavallisia erisnimiä kuten Tex ja Latex. Koodi ja komennot ovat
 siinä muodossa kuin ne tietokoneelle annetaan, esimerkiksi
 \koodi{xelatex}.
@@ -76,12 +76,12 @@ lyhyehköille teksteille. Lisätietoa dokumenttiluokista on luvussa
 \ref{luku:dokumenttiluokat}.
 
 Toisella ja kolmannella rivillä käytetään komentoa \koodi{\keno
-  usepackage} ja sen avulla otetaan käyttöön fontti- eli
-kirjaintyyppi\-asetuksia hoitava Fontspec\-/paketti ja
-kieli\-asetuksista vastaava Polyglossia\-/paketti. Kumpaakin tarvitaan
-melkein joka kerta dokumenteissa, ja niihin palataan tarkemmin luvuissa
-\ref{luku:kirjaintyypit} ja \ref{luku:kieliasetukset}. Sivun asetuksia
-käsitellään luvussa \ref{luku:sivuasetukset}.
+  usepackage} ja sen avulla otetaan käyttöön fontti\-asetuksia hoitava
+Fontspec\-/paketti ja kieli\-asetuksista vastaava Polyglossia\-/paketti.
+Kumpaakin tarvitaan melkein joka kerta dokumenteissa, ja niihin palataan
+tarkemmin luvuissa \ref{luku:kirjaintyypit} ja
+\ref{luku:kieliasetukset}. Sivun asetuksia käsitellään luvussa
+\ref{luku:sivuasetukset}.
 
 Seuraavilla riveillä asetetaan kieleksi suomi ja määritetään
 oletusfontti. Latin Modern Roman \=/fontin tilalle voi toki kokeilla
@@ -89,7 +89,7 @@ muitakin. Fontin oletuskoko on 10 pistettä, mutta tässä esimerkissä se
 venytetään 1,3\-/kertaiseksi eli 13 pisteeseen. Riviväliin liittyvä
 kerroin asetetaan rivillä 7.
 
-\begin{esim}
+\begin{esimerkki}
 \begin{koodilohko}
   \documentclass[a4paper]{article}
   \usepackage{fontspec}
@@ -107,11 +107,11 @@ kerroin asetetaan rivillä 7.
 \end{koodilohko}
 \caption{Ensimmäinen Latex-dokumentti}
 \label{esim:ensimmainen}
-\end{esim}
+\end{esimerkki}
 
 Dokumentin alku\-osaa esimerkin riville 8 saakka kutsutaan johdannoksi
-tai esittelyksi (engl. \textenglish{\emph{preamble}}). Tässä osassa
-ladataan tarvittavat makropaketit ja määritetään dokumentin asetuksia ja
+tai esittelyksi (engl. \textenglish{preamble}). Tässä osassa ladataan
+tarvittavat makropaketit ja määritetään dokumentin asetuksia ja
 taustatietoja. Riviltä 9 alkaa varsinainen teksti\-osa eli sivulle
 ladottava sisältö. Se osa kirjoitetaan
 \textenglish{document}\-/ympäristön sisään eli riveillä 9 ja 13 olevien
@@ -156,7 +156,7 @@ Kääntäjä huomauttaa tietokoneen käyttäjää, kun uusintakäännös on
 tarpeen, mutta Latexmk\-/ohjelma käynnistää uusintakäännöksen ihan itse,
 aina kun se on tarpeellista.
 
-\begin{esim}
+\begin{esimerkki}
 \begin{koodilohko}
   latexmk -xelatex  teksti.tex
   latexmk -lualatex teksti.tex
@@ -165,7 +165,7 @@ aina kun se on tarpeellista.
 \end{koodilohko}
 \caption{Latexmk-komentoja}
 \label{esim:latexmk}
-\end{esim}
+\end{esimerkki}
 
 Esimerkissä \ref{esim:latexmk} on hyödyllisiä komentoja. Rivin 1 komento
 kääntää dokumentin Xelatexilla ja rivin 2 komento puolestaan

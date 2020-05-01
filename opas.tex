@@ -7,6 +7,7 @@
 %\usepackage{titling}
 \usepackage{titlesec}
 \usepackage{titletoc}
+\usepackage{graphicx}
 \usepackage{color}
 \usepackage{floatrow}
 \usepackage{caption}
@@ -15,7 +16,7 @@
 %\usepackage{placeins}
 \usepackage{booktabs}
 %\usepackage{fancyhdr}
-%\usepackage{noindentafter}
+\usepackage{noindentafter}
 \usepackage[unicode,hyperfootnotes=false]{hyperref}
 \usepackage[shortcuts]{extdash}
 
@@ -49,14 +50,19 @@
 \setlength{\floatsep}{3ex}
 \setlength{\textfloatsep}{4ex}
 
-\DeclareFloatingEnvironment[ name={Esimerkki} ]{esim}
+\DeclareFloatingEnvironment[ name={Esimerkki} ]{esimerkki}
 
 \DefineVerbatimEnvironment{koodilohko}{Verbatim}{
   fontsize=\footnotesize, gobble=1, frame=lines, numbers=left,
   numbersep=.3em, xleftmargin=0em, xrightmargin=0em, baselinestretch=1.3 }
 
+\DefineVerbatimEnvironment{koodilohkosis}{Verbatim}{
+  fontsize=\footnotesize, gobble=2, frame=none, numbers=none,
+  numbersep=0em, xleftmargin=\parindent, xrightmargin=0em,
+  baselinestretch=1.3 }
+
 \floatsetup{ font={small}, justification=raggedright,
-  margins=raggedright, captionskip=1ex, capposition=bottom }
+  margins=raggedright, captionskip=2ex, capposition=bottom }
 
 \DeclareCaptionFont{rivivali}{\linespread{1.3}\selectfont}
 
@@ -64,7 +70,7 @@
   textformat=period, margin=.5em, justification=raggedright,
   singlelinecheck=off }
 
-\captionsetup[esim]{ skip=-.5ex, margin=.5em }
+\captionsetup[esimerkki]{ skip=-0.5ex, margin=.5em }
 
 \newcommand{\leiju}[3]{
   \begin{#1}
@@ -72,7 +78,8 @@
   \end{#1}
 }
 
-\newcommand{\leijutlk}[2]{\leiju{table}{#1}{\versaalinum #2}}
+\newcommand{\leijutlk}[2]{\leiju{table}{\versaalinum #1}{#2}}
+\newcommand{\leijukuva}[2]{\leiju{figure}{#1}{#2}}
 
 %\fancyhf{}
 % \fancyhf[hl]{\small\nouppercase{\leftmark}}
@@ -97,9 +104,14 @@
 
 \newcommand{\ots}[1]{{\sffamily\bfseries\versaalinum #1}}
 
+\NoIndentAfterEnv{koodilohkosis}
+
 \addto{\captionsfinnish}{
   \renewcommand{\contentsname}{Sisällys}
 }
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 
 \newcommand{\otsikkotyyli}{ \raggedright \linespread{1.1} \sffamily
   \bfseries }
@@ -115,6 +127,10 @@
 \titleformat{\subsection}{\otsikkotyyli\normalsize}
 {\thesubsection}{.8em}{}[]
 \titlespacing*{\subsection}{0pt}{*3}{*1}
+
+\titleformat{\subsubsection}{\otsikkotyyli\normalsize\itshape}
+{\thesubsubsection}{.8em}{}[]
+\titlespacing*{\subsubsection}{0pt}{*3}{*1}
 
 \begin{document}
 \pagestyle{empty}
@@ -142,7 +158,7 @@
 \addcontentsline{toc}{chapter}{Esipuhe}
 \phantomsection
 
-% Suurin innoittajani tämän kirjan kirjoittamiselle on ollut Latex itse.
+% Suurin innoittajani tämän oppaan kirjoittamiselle on ollut Latex itse.
 
 % Miksi Latex?
 
@@ -156,40 +172,227 @@
 \chapter{Dokumentin asetukset}
 \section{Dokumenttiluokat}
 \label{luku:dokumenttiluokat}
-\section{Kirjaintyypit}
+\section{Fontit}
 \label{luku:kirjaintyypit}
 
-\subsection{Perheet, muodot, sarjat, koot}
+Fontit ovat Latexissa melko monimutkainen kokonaisuus, koska fonteilla
+on paljon ominaisuuksia ja niihin vaikutetaan monilla eri asetuksilla ja
+abstraktiotasoilla.
+
+Fontti jo itsessään on moniselitteinen käsite, joka vaatii
+typo\-gra\-fias\-sa usein täsmentäviä ilmauksia. Sana \emph{fontti} voi
+tarkoittaa kokonaista kirjainperhettä, eli muutaman yhteensopivan
+kirjainleikkauksen muodostamaa kokonaisuutta. Samaan kirjainperheeseen
+kuuluu yleensä neljä eri leikkausta: tavallinen, kursiivi, lihavoitu ja
+lihavoitu kursiivi. Joihinkin perheisiin kuuluu leikkauksia paljon
+enemmänkin, kuten useita eri vahvuuksia. Joissakin puheissa sana
+\emph{fontti} tarkoittaa vain yhtä kirjainleikkausta, ja silloin koko
+perheeseen viitataan sanalla fonttiperhe.
+
+Tässä oppaassa käytän \emph{fontti}\-/sanaa yleisnimityksenä Latexin
+kirjaimiin liittyville asetuksille. Se tarkoittaa kirjainperhettä tai
+siihen kuuluvaa yksittäistä leikkausta. Silloin kun merkitystä pitää
+täsmentää, käytän suomenkielisiä nimiä kirjainperhe ja kirjainleikkaus.
+Sen sijaan \emph{kirjasin}\-/sanan jätän kokonaan pois, koska se
+tarkoittaa vanhassa metalliladontatekniikassa pienen metallisen
+kirjakkeen päähän muotoiltua kirjaimen kohokuviota, joka painaa
+mustejäljen paperille.
+
+Kuten Latexissa yleensäkin myös fonttien kanssa kannattaa käyttää
+korkean abstraktiotason komentoja, jotka piilottavat yksityiskohdat ja
+teknisen toteutuksen. Latexin fonttitoiminnot on suunniteltu juuri
+siihen: matalan tason fontti\-asetukset määritellään mieluiten vain
+kerran dokumentin esittely\-osassa, ja dokumentin teksti\-osassa
+käytetään pelkästään korkean tason komentoja.
+
+\subsection{Kirjainperheiden valinta}
+
+Latexin fonttien perus\-toiminnot rakentuvat kolmen erityyppisen
+kirjainperheen varaan:\footnote{Kirjainperheitä ja \=/leikkauksia voi
+  käyttää niin monia kuin haluaa, mutta perustoiminnot rakentuvat kolmen
+  erityyppisen perheen ympärille.} antiikva eli pääteviivallinen
+(\textenglish{serif, roman}), groteski eli pääteviivaton
+(\textenglish{sans serif}) ja tasalevyinen kirjoituskoneen kaltainen
+perhe (\textenglish{typewriter, monospace}). Kuvassa
+\ref{kuva:kirjainperhetyypit} on tässä oppaassa käytetyt kolme eri
+kirjainperhetyyppiä. Leipätekstissä käytetään antiikvaa, otsikoissa
+groteskia ja koodi\-esimerkeissä tasalevyistä.
+
+\leijukuva{
+  {\rmfamily\addfontfeatures{Scale=7}Amf}
+  \hfill
+  {\sffamily\addfontfeatures{Scale=7}Amf}
+  \hfill
+  {\ttfamily\addfontfeatures{Scale=7}Amf}
+}{
+  \caption{Vasemmalla antiikva, keskellä groteski ja oikealla
+    tasalevyinen kirjainperhe}
+  \label{kuva:kirjainperhetyypit}
+}
+
+Kirjoituskoneen kaltainen tasalevyinen kirjainperhe on tässä tapauksessa
+tyypiltään antiikva (pääteviivallinen), mutta se voisi olla muutakin.
+Tasalevyisyys on sen kirjainperheen tärkein määrittävä tekijä Latexin
+asetusten näkökulmasta.
+
+Kirjainperheet otetaan käyttöön Fontspec\-/paketin komennoilla seuraavan
+esimerkin mukaisesti.
+
+\begin{koodilohkosis}
+  \usepackage{fontspec}
+  \setmainfont{Linux Libertine O}[Scale=1]
+  \setsansfont{Linux Biolinum O}[Scale=MatchLowercase]
+  \setmonofont{Linux Libertine Mono O}[Scale=MatchLowercase]
+\end{koodilohkosis}
+
+Samalla voi määritellä lukuisia kirjainperheeseen sisältyviä asetuksia
+kuten ligatuureja ja optisia kokoja. Tässä esimerkissä käytetään vain
+\koodi{Scale}\-/valitsinta, jolla fontin voi skaalata haluttuun kokoon.
+\koodi{Scale}\-/kerroin on desimaaliluku, ja oletus\-arvo on 1.
+
+Esimerkissä peruskirjainperheen (\koodi{set\-main\-font}) skaalaus on 1,
+eli sille ei tehdä mitään, ja koko valitsimen voisi jättää pois. Sen
+sijaan kahdella muulla kirjainperheellä (\koodi{set\-sans\-font,
+  set\-mono\-font}) käytetään ker\-roin\-ase\-tus\-ta
+\koodi{Match\-Lower\-case}, joka skaalaa fontin siten, että
+gemenakirjaimet eli pienet kirjaimet ovat yhtä korkeita kuin
+peruskirjainperheessä.
+
+\subsection{Fontin koko}
+
+Fonttien koot on totuttu valitsemaan typo\-grafisen pistemitan avulla.
+Esimerkiksi 10--12 pistettä on tyypillinen leipätekstin oletuskoko
+teks\-tin\-kä\-sit\-tely\-ohjel\-mis\-sa. Piste on mitta\-yksikkö, jonka
+pituus on 1/72 tuumaa eli 0,3528 millimetriä. Kirjainleikkauksen
+pistekoko mitataan kirjaimiston ylimmän ja alimman kohdan välillä, ja
+siihen luetaan mukaan ylä- ja alapuolella oleva pieni tyhjä tila, jonka
+fontin suunnittelija on määritellyt.
+
+Myös Latexissa koot voi määritellä pistemittojen (lyhenne pt) avulla,
+mutta halutessaan ne voi unohtaa lähes kokonaan ja käyttää niin sanottua
+suhteellista tapaa koko\-asetuksiin. Käsittelen suhteellisia ja
+absoluuttisia koko\-ase\-tuk\-sia luvuissa
+\ref{luku:fontti_suhteellinen} ja \ref{luku:fontti_absoluuttinen}.
+
+Matalalla tasolla fonttien kokoon vaikuttaa Latexissa eräs yllättäväkin
+asia. Nimittäin dokumenttiluokalle (luku \ref{luku:dokumenttiluokat})
+voi antaa valitsimen, jolla koko asetetaan. Vaihto\-ehtoja on Latexin
+normaaleissa dokumenttiluokissa vain kolme: \koodi{10pt} (oletus),
+\koodi{11pt}, ja \koodi{12pt}. Dokumenttiluokan koko\-asetus vaikuttaa
+myös sivun marginaaleihin, koska Latex pyrkii pitämään rivin
+merkkimäärän lukijalle sopivana: yhdelle riville ei kannata latoa ihan
+mahdottomasti merkkejä, koska luettavuus heikkenee.
+
+Fontin koon määrittäminen dokumenttiluokan valitsimella kuuluu jo vähän
+menneisyyteen, mutta voi sitä edelleen käyttää, jos se riittää ja sillä
+saa halutun lopputuloksen. Yleensä kyllä jättäisin dokumenttiluokan
+fontti\-asetuksen oletukseksi (\koodi{10pt}) ja käyttäisin koon
+asettamiseen luvussa \ref{luku:fontti_suhteellinen} tai
+\ref{luku:fontti_absoluuttinen} kerrottuja tapoja. Sivun marginaalien ja
+muiden mittojen määrittämiseen on ohjeita luvussa
+\ref{luku:sivuasetukset}.
+
+\subsection{Rivikorkeus ja riviväli}
+
+Fontti\-asetuksiin kuuluu fontin koon lisäksi toinenkin mitta:
+rivikorkeus (engl. \textenglish{base\-line\-skip}). Se on mitta rivin
+peruslinjalta seuraavan rivin peruslinjalle. Fontin koko ja rivikorkeus
+määritellään saman\-aikaisesti, koska ne ovat saman \koodi{\keno
+  font\-size}\-/komennon parametreja.
+
+\begin{koodilohkosis}
+  \fontsize{10pt}{12pt} \selectfont
+\end{koodilohkosis}
+
+Ensimmäinen parametri on fontin kokomitta ja toinen on rivikorkeus.
+Mitta\-yksiköt voivat olla mitä tahansa Latexin mittoja. Oletuksena
+käytetään pistemittaa (pt), jos yksikköä ei ole mainittu.
+
+Rivikorkeus on vähintään sama kuin fontin koko mutta yleensä se
+asetetaan hieman suuremmaksi, jotta rivit eivät olisi liian lähellä
+toisiaan. Esimerkissä \ref{esim:rivikorkeus} on kaksi erilaista
+\koodi{\keno font\-size}\-/komentoa ja ladottu lopputulos. Komento
+\koodi{\keno select\-font} on mukana, koska vasta sen myötä matalan
+tason fontti\-asetukset tulevat voimaan.
+
+\begin{esimerkki}
+\begin{koodilohko}
+  \fontsize{10pt}{12pt}\selectfont Tässä on pienehkö leipätekstin
+  fonttikoko ja sitä hieman suurempi rivikorkeus. Tässä on pienehkö
+  leipätekstin fonttikoko ja sitä hieman suurempi rivikorkeus.
+
+  \fontsize{16pt}{25pt}\selectfont Tässä on melko suuri fontti ja
+  reilu rivikorkeus. Tässä on melko suuri fontti ja reilu
+  rivikorkeus.
+\end{koodilohko}
+\centering
+\parbox{.9\textwidth}{%
+  \linespread{1}\addfontfeatures{Scale=1}
+  \fontsize{10pt}{12pt}\selectfont Tässä on pienehkö leipätekstin
+  fonttikoko ja sitä hieman suurempi rivikorkeus. Tässä on
+  pienehkö leipätekstin fonttikoko ja sitä hieman suurempi
+  rivikorkeus.
+
+  \fontsize{16pt}{25pt}\selectfont Tässä on melko suuri fontti ja
+  reilu rivikorkeus. Tässä on melko suuri fontti ja reilu
+  rivikorkeus.
+}
+\vspace{3ex}
+\caption{Fontin koon ja rivikorkeuden asettaminen ja vaikutus}
+\label{esim:rivikorkeus}
+\end{esimerkki}
+
+Toinen tekstirivien väliseen etäisyyteen vaikuttava asetus on
+\koodi{\keno base\-line\-stretch}. Se on desimaalilukukerroin, jolla
+nykyinen rivikorkeus kerrotaan. Kerroin asetetaan helpoimmin komennolla
+\koodi{\keno line\-spread}.
+
+\begin{koodilohkosis}
+  \fontsize{10pt}{12pt} \linespread{1.3} \selectfont
+\end{koodilohkosis}
+
+Edellä oleva esimerkki asettaa fontin kooksi 10 pistettä ja
+rivikorkeudeksi 12 pistettä. Asetetun kertoimen vuoksi rivien väliseksi
+etäisyydeksi tulee lopulta 1,3 kertaa 12 pistettä eli 15,6 pistettä.
+
+\subsection{Korkean tason komennot}
 
 % \rmfamily \sffamily \ttfamily
 % \mdseries \bfseries
 % \upshape \slshape \itshape \scshape
 
+Latexissa on joukko korkean tason komentoja, joilla vaikutetaan
+
 \leijutlk{
+  \begin{tabular}{lr@{}lr@{}lr@{}l}
+    \toprule
+    \ots{Komento}
+    & \multicolumn{2}{c}{\ots{10pt}}
+    & \multicolumn{2}{c}{\ots{11pt}}
+    & \multicolumn{2}{c}{\ots{12pt}} \\
+    \midrule
+    \koodi{\keno tiny} & 5 && 6 && 6 \\
+    \koodi{\keno scriptsize} & 7 && 8 && 8 \\
+    \koodi{\keno footnotesize} & 8 && 9 && 10 \\
+    \koodi{\keno small} & 9 && 10 && 10&,95 \\
+    \koodi{\keno normalsize} & 10 && 10&,95 & 12 \\
+    \koodi{\keno large} & 12 && 12 && 14&,4 \\
+    \koodi{\keno Large} & 14&,4 & 14&,4 & 17&,28 \\
+    \koodi{\keno LARGE} & 17&,28 & 17&,28 & 20&,74 \\
+    \koodi{\keno huge} & 20&,74 & 20&,74 & 24&,88 \\
+    \koodi{\keno Huge} & 24&,88 & 24&,88 & 24&,88 \\
+    \bottomrule
+  \end{tabular}
+}{
   \caption{Pistekoot dokumenttiluokkien valitsimilla \koodi{10pt, 11pt}
     ja \koodi{12pt}}
   \label{tlk:pistekoot}
-}{
-  \begin{tabular}{lrrr}
-    \toprule
-    \ots{Komento} & \ots{10pt} & \ots{11pt} & \ots{12pt} \\
-    \midrule
-    \koodi{\keno tiny} & 5 & 6 & 6 \\
-    \koodi{\keno scriptsize} & 7 & 8 & 8 \\
-    \koodi{\keno footnotesize} & 8 & 9 & 10 \\
-    \koodi{\keno small} & 9 & 10 & 11 \\
-    \koodi{\keno normalsize} & 10 & 11 & 12 \\
-    \koodi{\keno large} & 12 & 12 & 14 \\
-    \koodi{\keno Large} & 14 & 14 & 17 \\
-    \koodi{\keno LARGE} & 17 & 17 & 20 \\
-    \koodi{\keno huge} & 20 & 20 & 25 \\
-    \koodi{\keno Huge} & 25 & 25 & 25 \\
-    \bottomrule
-  \end{tabular}
 }
 
 \subsection{Koot suhteellisesti}
+\label{luku:fontti_suhteellinen}
 \subsection{Koot absoluuttisesti}
+\label{luku:fontti_absoluuttinen}
 \section{Kieli}
 \label{luku:kieliasetukset}
 \section{Sivu}

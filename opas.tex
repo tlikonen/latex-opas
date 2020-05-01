@@ -4,8 +4,9 @@
 \usepackage{polyglossia}
 \usepackage{ragged2e}
 \usepackage{footmisc}
-\usepackage{titling}
+%\usepackage{titling}
 \usepackage{titlesec}
+\usepackage{titletoc}
 \usepackage{color}
 \usepackage{floatrow}
 \usepackage{caption}
@@ -13,7 +14,7 @@
 \usepackage{fancyvrb}
 %\usepackage{placeins}
 \usepackage{booktabs}
-\usepackage{fancyhdr}
+%\usepackage{fancyhdr}
 %\usepackage{noindentafter}
 \usepackage[unicode,hyperfootnotes=false]{hyperref}
 \usepackage[shortcuts]{extdash}
@@ -71,17 +72,17 @@
   \end{#1}
 }
 
-\fancyhf{}
-% \fancyhf[hel]{\small\nouppercase{\leftmark}}
-% \fancyhf[hor]{\small\nouppercase{\rightmark}}
-\fancyhf[fc]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
+%\fancyhf{}
+% \fancyhf[hl]{\small\nouppercase{\leftmark}}
+% \fancyhf[hr]{\small\nouppercase{\rightmark}}
+% \fancyhf[fc]{\thepage}
+%\renewcommand{\headrulewidth}{1pt}
 
-\fancypagestyle{plain}{%
-  \fancyhf{}
-  \fancyhf[fc]{\thepage}
-  %\renewcommand{\headrulewidth}{0pt}
-}
+% \fancypagestyle{plain}{%
+%   \fancyhf{}
+%   \fancyhf[fc]{\thepage}
+%   \renewcommand{\headrulewidth}{0pt}
+% }
 
 \definecolor{tavu}{rgb}{1,0,0}
 \definecolor{sitova}{rgb}{1,0,0}
@@ -94,12 +95,16 @@
 
 \newcommand{\ots}[1]{{\sffamily\bfseries #1}}
 
-\newcommand{\otsikkotyyli}{%
-  \raggedright
-  \linespread{1.1}
-  \sffamily
-  \bfseries
+\addto{\captionsfinnish}{
+  \renewcommand{\contentsname}{Sisällys}
 }
+
+\newcommand{\otsikkotyyli}{ \raggedright \linespread{1.1} \sffamily
+  \bfseries }
+
+\titleformat{\chapter}[display]{\LARGE\bfseries}
+{\chaptertitlename\hspace{.3em}\thechapter}{1.5ex}{\otsikkotyyli\Huge}[]
+\titlespacing*{\chapter}{0em}{*13}{*8}
 
 \titleformat{\section}{\otsikkotyyli\Large}
 {\thesection}{.8em}{}[]
@@ -110,7 +115,7 @@
 \titlespacing*{\subsection}{0pt}{*3}{*1}
 
 \begin{document}
-\pagestyle{fancy}
+\pagestyle{empty}
 
 \hyphenation{
   Ext-dash
@@ -123,16 +128,25 @@
   Xe-la-tex
 }
 
+{
+  \renewcommand{\thispagestyle}[1]{}
+  %\tableofcontents
+}
+
+\clearpage
+\pagestyle{plain}
+
 \chapter*{Esipuhe}
-\addcontentsline{toc}{1}{Esipuhe}
+\addcontentsline{toc}{chapter}{Esipuhe}
 \phantomsection
 
 Suurin innoittajani tämän kirjan kirjoittamiselle on ollut Latex itse.
 
 % Miksi Latex?
 
-\chapter{Ensiaskeleet}
-\section{Käsitteet järjestykseen}
+\chapter{Valmistautuminen}
+
+\section{Käsitteet ja nimet}
 
 Se, mitä sanalla Latex yleensä tarkoitetaan, on monimutkainen
 kokonaisuus erilaisia pieniä palikoita kuten tietokone\-ohjelmia,
@@ -201,11 +215,10 @@ vaikkapa nimellä teksti.tex. Käännä eli lado se PDF\-/tiedostoksi
 komennolla \koodi{xelatex teksti.tex}.
 
 Tutkitaan esimerkkiä tarkemmin. Ensimmäisellä rivillä määritellään
-dokumenttiluokka \textenglish{article}, joka on tietynlainen sivupohja
-tai asetusten kokoelma, jonka perustalle aletaan rakentaa omaa sivua.
-Luokka \textenglish{article} on tyypillinen valinta lyhyehköille
-teksteille, mutta muitakin luokkia on olemassa, ja niitä voi luoda
-itsekin. Lisätietoa dokumenttiluokista on luvussa
+dokumenttiluokka \textenglish{\koodi{article}}, joka on tietynlainen
+sivupohja tai asetusten kokoelma, jonka perustalle aletaan rakentaa omaa
+sivua. Luokka \textenglish{\koodi{article}} on tyypillinen valinta
+lyhyehköille teksteille. Lisätietoa dokumenttiluokista on luvussa
 \ref{luku:dokumenttiluokat}.
 
 Toisella ja kolmannella rivillä käytetään komentoa \koodi{\keno
@@ -213,7 +226,8 @@ Toisella ja kolmannella rivillä käytetään komentoa \koodi{\keno
 kirjaintyyppi\-asetuksia hoitava Fontspec\-/paketti ja
 kieli\-asetuksista vastaava Polyglossia\-/paketti. Kumpaakin tarvitaan
 melkein joka kerta dokumenteissa, ja niihin palataan tarkemmin luvuissa
-\ref{luku:kirjaintyypit} ja \ref{luku:kieliasetukset}.
+\ref{luku:kirjaintyypit} ja \ref{luku:kieliasetukset}. Sivun asetuksia
+käsitellään luvussa \ref{luku:sivuasetukset}.
 
 Seuraavilla riveillä asetetaan kieleksi suomi ja määritetään
 oletusfontti. Latin Modern Roman \=/fontin tilalle voi toki kokeilla
@@ -255,6 +269,8 @@ erikseen ladattavista makropaketeista (Fontspec, Polyglossia jne.).
 Komentoja voi luoda itsekin.
 
 \section{Apuohjelmia}
+
+\subsection{Tekstieditori}
 
 \subsection{Texdoc}
 
@@ -327,17 +343,10 @@ väli\-aikais\-tiedostojen päätteitä. Yleiset väli\-aikais\-tiedostot
 (\koodi{log, aux, out} ym.) on \koodi{latexmk}\-/ohjelmalla jo tiedossa,
 mutta rivin 4 asetuksella mukaan voi lisätä muitakin.
 
-\chapter{Kirjoittaminen}
-\section{Kappale}
-\subsection{Sisennykset ja välit}
-\subsection{Tasaus}
-\subsection{Riippuva sisennys}
-\section{Merkistö}
-\section{Otsikot}
-\section{Alaviitteet}
-\section{Ristiviitteet}
+\chapter{Merkintäkieli}
+\section{Erikoismerkit}
+\section{Komennot, ympäristöt ja lohkot}
 \section{Laatikot}
-\section{Tavutus}
 
 \chapter{Dokumentin asetukset}
 \section{Dokumenttiluokat}
@@ -347,10 +356,20 @@ mutta rivin 4 asetuksella mukaan voi lisätä muitakin.
 \section{Kieli}
 \label{luku:kieliasetukset}
 \section{Sivu}
+\label{luku:sivuasetukset}
 \subsection{Marginaalit ja mitat}
 \subsection{Ylä- ja alatunnisteet}
 
-\chapter{Ympäristöt}
+\chapter{Kirjoittaminen}
+\section{Kappale}
+\subsection{Tasaus}
+\subsection{Sisennykset ja välit}
+\subsection{Riippuva sisennys}
+\section{Korostus}
+\section{Otsikot}
+\section{Alaviitteet}
+\section{Ristiviitteet}
+\section{Tavutus}
 \section{Luetelmat}
 \section{Taulukot}
 \section{Kelluvat osat}

@@ -4,9 +4,11 @@
 \section{Fontit}
 \label{luku:kirjaintyypit}
 
-Fontit ovat Latexissa melko monimutkainen kokonaisuus, koska fonteilla
-on paljon ominaisuuksia ja niihin vaikutetaan monilla eri asetuksilla ja
-abstraktiotasoilla.
+Fontit ja niiden asettaminen on Latexissa melko monimutkainen
+kokonaisuus, koska fonteilla on paljon ominaisuuksia ja niihin
+vaikutetaan monilla eri asetuksilla ja abstraktiotasoilla. Aika monta
+asiaa pitää ymmärtää, jotta voi tehokkaasti työskennellä fonttien
+kanssa.
 
 Fontti jo itsessään on moniselitteinen käsite, joka vaatii
 typo\-gra\-fias\-sa usein täsmentäviä ilmauksia. Sana \emph{fontti} voi
@@ -44,8 +46,8 @@ kirjainperheen varaan:\footnote{Kirjainperheitä ja \=/leikkauksia voi
 (\textenglish{sans serif}) ja tasalevyinen kirjoituskoneen kaltainen
 perhe (\textenglish{typewriter, monospace}). Kuvassa
 \ref{kuva:kirjainperhetyypit} on tässä oppaassa käytetyt kolme eri
-kirjainperhetyyppiä. Leipätekstissä käytetään antiikvaa, otsikoissa
-groteskia ja koodi\-esimerkeissä tasalevyistä.
+kirjainperhetyyppiä. Leipätekstissä käytetään pääteviivallista,
+otsikoissa pääteviivatonta ja koodi\-esimerkeissä tasalevyistä.
 
 \leijukuva{
   {\rmfamily\addfontfeatures{Scale=7}Amf}
@@ -54,15 +56,15 @@ groteskia ja koodi\-esimerkeissä tasalevyistä.
   \hfill
   {\ttfamily\addfontfeatures{Scale=7}Amf}
 }{
-  \caption{Vasemmalla antiikva, keskellä groteski ja oikealla
-    tasalevyinen kirjainperhe}
+  \caption{Vasemmalla pääteviivallinen, keskellä pääteviivaton ja
+    oikealla tasalevyinen pääteviivallinen kirjainperhe}
   \label{kuva:kirjainperhetyypit}
 }
 
 Kirjoituskoneen kaltainen tasalevyinen kirjainperhe on tässä tapauksessa
-tyypiltään antiikva (pääteviivallinen), mutta se voisi olla muutakin.
-Tasalevyisyys on sen kirjainperheen tärkein määrittävä tekijä Latexin
-asetusten näkökulmasta.
+tyypiltään pääteviivallinen, mutta se voisi olla muutakin. Tasalevyisyys
+on sen kirjainperheen tärkein määrittävä tekijä Latexin asetusten
+näkökulmasta.
 
 Kirjainperheet otetaan käyttöön Fontspec\-/paketin komennoilla seuraavan
 esimerkin mukaisesti.
@@ -79,14 +81,14 @@ kuten ligatuureja ja optisia kokoja. Tässä esimerkissä käytetään vain
 \koodi{Scale}\-/valitsinta, jolla fontin voi skaalata haluttuun kokoon.
 \koodi{Scale}\-/kerroin on desimaaliluku, ja oletus\-arvo on 1.
 
-Esimerkissä peruskirjainperheen (\koodi{setmainfont}) skaalaus on 1, eli
-sille ei tehdä mitään, ja koko valitsimen voisi jättää pois. Sen sijaan
-kahdella muulla kirjainperheellä (\koodi{setsansfont, setmonofont})
-käytetään ker\-roin\-ase\-tus\-ta \koodi{MatchLowercase}, joka skaalaa
-fontin siten, että gemenakirjaimet eli pienet kirjaimet ovat yhtä
-korkeita kuin peruskirjainperheessä.
+Esimerkissä peruskirjainperheen (\koodi{\keno setmainfont}) skaalaus on
+1, eli sille ei tehdä mitään, ja koko valitsimen voisi jättää pois. Sen
+sijaan kahdella muulla kirjainperheellä (\koodi{\keno setsansfont, \keno
+  setmonofont}) käytetään ker\-roin\-ase\-tus\-ta
+\koodi{MatchLowercase}, joka skaalaa fontin siten, että gemenakirjaimet
+eli pienet kirjaimet ovat yhtä korkeita kuin peruskirjainperheessä.
 
-\subsection{Fontin koko}
+\subsection{Fontin koko ja rivikorkeus}
 
 Fonttien koot on totuttu valitsemaan typo\-grafisen pistemitan avulla.
 Esimerkiksi 10--12 pistettä on tyypillinen leipätekstin oletuskoko
@@ -120,11 +122,8 @@ asettamiseen luvussa \ref{luku:fontti_suhteellinen} tai
 muiden mittojen määrittämiseen on ohjeita luvussa
 \ref{luku:sivuasetukset}.
 
-\subsection{Rivikorkeus}
-\label{luku:fontti_rivikorkeus}
-
 Fontti\-asetuksiin kuuluu fontin koon lisäksi toinenkin mitta:
-rivikorkeus (engl. \textenglish{baselineskip}). Se on mitta rivin
+rivikorkeus (\koodi{\keno baselineskip}). Se on mitta rivin
 peruslinjalta seuraavan rivin peruslinjalle. Fontin koko ja rivikorkeus
 määritellään saman\-aikaisesti, koska ne ovat saman \koodi{\keno
   fontsize}\-/komennon parametreja.
@@ -321,8 +320,8 @@ esimerkiksi fonttikoon valintakomentoja \koodi{\keno small, \keno
 Edellä kuvatussa suhteellisessa kirjainperheiden koon määrittelyssä on
 sellainen ongelma tai kummallisuus, että Latex koko ajan luulee, että
 peruskirjainperhe on normaalikokoisena 10 pistettä. Latexin matalan
-tason fonttikomennot eivät tiedä mukana kulkevasta kirjainperheen
-skaalauskertoimesta. Siksi esimerkiksi komentojen
+tason fonttikomennot eivät tiedä kirjainperheen skaalauskertoimesta, ja
+siksi esimerkiksi komentojen
 
 \begin{koodilohkosis}
   \fontsize{10pt}{12pt} \selectfont
@@ -330,11 +329,14 @@ skaalauskertoimesta. Siksi esimerkiksi komentojen
 
 tuloksena ei todellisuudessa ole 10 pisteen fontti, vaan mukaan
 lasketaan myös kirjainperheen skaalauskerroin. Tämän vuoksi \koodi{\keno
-  fontsize}\-/komennon käyttö menee aika oudoksi, ja sen voisi ehkä
-hylätä kokonaan. Jos korkean tason font\-ti\-koko\-komen\-to\-jen
-(taulukko \ref{tlk:fonttikokokomennot}) lisäksi tarvitaan jotakin muuta
-kokoa, voisi käyttää Fontspec\-/paketin tarjoamaa komentoa ja
-tilanteeseen sopivaa skaalauskerrointa esimerkiksi seuraavalla tavalla:
+  fontsize}\-/komennon käyttö menee aika oudoksi. Parametrina annetut
+mitat eivät pidä paikkaansa.
+
+Jos korkean tason font\-ti\-koko\-komen\-to\-jen (taulukko
+\ref{tlk:fonttikokokomennot}) lisäksi tarvitaan jotakin muuta kokoa,
+voisi ehkä \koodi{\keno fontsize}\-/komennon sijasta käyttää
+Fontspec\-/paketin tarjoamaa komentoa ja tilanteeseen sopivaa
+skaalauskerrointa esimerkiksi seuraavalla tavalla:
 
 \begin{koodilohkosis}
   \addfontfeatures{Scale=3.2} Poikkeuksellisen isoa tekstiä
@@ -343,7 +345,7 @@ tilanteeseen sopivaa skaalauskerrointa esimerkiksi seuraavalla tavalla:
 Jos edellä mainitut kummallisuudet eivät häiritse eikä ole tarvetta
 määritellä fontteja tarkasti tietyn pistekoon mukaiseksi, on
 suhteellinen määrittelytapa todella helppo. Kaikki dokumentin fontit
-voivat määräytyä perusfontin skaalauskertoimen kautta. Tämä tapa sopinee
+määräytyvät perusfontin skaalauskertoimen kautta. Tämä tapa sopinee
 hyvin varsinkin dokumentin asettelun alkuvaiheeseen, jossa halutaan
 kokeilla erilaisia kirjainperheitä ja kokoja.
 
@@ -353,7 +355,7 @@ kokeilla erilaisia kirjainperheitä ja kokoja.
 Absoluuttinen fonttien koonmääritystapa tarkoittaa sitä, että koot
 asetetaan tietyn kokoiseksi käyttämällä esimerkiksi pistemittoja ja että
 kirjaimet myös päätyvät lopulliseen dokumenttiin juuri sen kokoisena.
-Tämä tapa on myös teknisesti eheä, eli Latexin eri osat ovat samaan
+Tämä tapa on myös teknisesti eheä, eli Latexin eri osat ovat samaa
 mieltä siitä, minkäkokoisesta fontista on kyse. Näin ei ollut
 suhteellisen tavan kanssa (luku \ref{luku:fontti_suhteellinen}).
 
@@ -403,11 +405,9 @@ kirjainperheet, jotka ovat käytännössä samoja mutta ilman skaalausta.
 
 Uusien kirjainperheiden komentojen nimiksi on valittu \koodi{\keno
   abssans} ja \koodi{\keno absmono}, ja näillä komennoilla
-kirjainperheet kytketään päälle. Ne ovat ikään kun absoluuttisia
-vastineita valmiille komennoille \koodi{\keno sffamily} ja \koodi{\keno
-  ttfamily} (taulukko \ref{tlk:fonttimallikomennot}). Jos esimerkiksi
-jonkin julkaisun vaatimuksiin kuuluu, että otsikossa täytyy olla 16
-pisteen lihavoitu Linux Biolinum~O \=/fontti, voi esimerkin
+kirjainperheet kytketään päälle. Jos esimerkiksi jonkin julkaisun
+vaatimuksiin kuuluu, että otsikossa täytyy olla 16 pisteen lihavoitu
+Linux Biolinum~O \=/fontti, voi esimerkin
 \ref{esim:fontti_absoluuttinen} pohjalta kirjoittaa dokumentin otsikon
 asetuksiin seuraavat komennot:
 
@@ -415,24 +415,25 @@ asetuksiin seuraavat komennot:
   \abssans\fontsize{16pt}{20pt}\bfseries
 \end{koodilohkosis}
 
-Riveillä 16--20 määritellään uudelleen Latexin korkean tason komennot,
-joilla fonttikoot asetetaan. Vähintäänkin täytyy määritellä komento
-\koodi{\keno normalsize} mutta sen lisäksi kaikki ne, joita omassa
-dokumentissa tarvitaan. Tässä esimerkissä normaali koko asetetaan
-14\-/pisteiseksi ja muut koot pienentyvät tai suurentuvat siitä.
+Esimerkin \ref{esim:fontti_absoluuttinen} riveillä 16--20 määritellään
+uudelleen Latexin korkean tason komennot, joilla fonttikoot asetetaan.
+Vähintäänkin täytyy määritellä komento \koodi{\keno normalsize} mutta
+sen lisäksi kaikki ne, joita omassa dokumentissa tarvitaan. Tässä
+esimerkissä normaali koko asetetaan 14 pisteen kokoiseksi ja muut koot
+on ajateltu suhteessa siihen.
 
 Jokaiselle fonttikoolle määritetään riveillä 16--20 myös oma
 rivikorkeus, ja se on tarkoitus asettaa sopivaksi juuri kyseiselle
-kokoluokalle. Rivikorkeuteen vaikuttaa myös kerroin \koodi{\keno
-  baselinestretch}, joka asetetaan komennolla \koodi{\keno linespread}
-(luku \ref{luku:fontti_rivikorkeus}). Sitä ei välttämättä tarvitse
-käyttää, koska kirjainperheitä ei ole skaalattu ja koska rivikorkeus
-asetetaan aina \koodi{\keno fontsize}\-/komennolla.
+koolle. Rivikorkeuteen vaikuttaa myös kerroin \koodi{\keno
+  baselinestretch}, joka asetetaan komennolla \koodi{\keno linespread}.
+Sitä ei välttämättä tarvitse käyttää, koska kirjainperheitä ei ole
+skaalattu ja koska rivikorkeus asetetaan aina \koodi{\keno
+  fontsize}\-/komennolla.
 
 Edellä kuvatun absoluuttisen koonmääritystavan etuna on se, että
 kirjoittaja hallitsee fonttien kokoa ja rivikorkeuksia itse ja että
 julkaisuun saadaan juuri ne mitat, joita halutaan tai vaaditaan. Tapa on
-myös teknisesti eheä eli toiimi Latexin sisäisen logiikan näkökulmasta
+myös teknisesti eheä eli toimii Latexin sisäisen logiikan näkökulmasta
 oikein. Haittana voi pitää sitä, että kaikki koot täytyy määritellä
 erikseen (esimerkki \ref{esim:fontti_absoluuttinen}, rivit 16--20).
 

@@ -59,7 +59,7 @@
 \DefineVerbatimEnvironment{koodilohkosis}{Verbatim}{
   fontsize=\footnotesize, gobble=2, frame=none, numbers=none,
   numbersep=0em, xleftmargin=\parindent, xrightmargin=0em,
-  baselinestretch=1.3 }
+  baselinestretch=1.3, samepage=true }
 
 \floatsetup{ font={small}, justification=raggedright,
   margins=raggedright, captionskip=2ex, capposition=bottom }
@@ -97,7 +97,7 @@
 \definecolor{sitova}{rgb}{1,0,0}
 
 \newcommand{\keno}{\textbackslash}
-\newcommand{\koodi}[1]{\textsf{#1}}
+\newcommand{\koodi}[1]{\textsf{\versaalinum #1}}
 \newcommand{\tavuvihje}{\keno-}
 \newcommand{\tavukohta}{\textcolor{tavu}{\rule{1pt}{1.5ex}}}
 \newcommand{\sitovaym}{\textcolor{sitova}{-}}
@@ -128,23 +128,43 @@
 {\thesubsection}{.8em}{}[]
 \titlespacing*{\subsection}{0pt}{*3}{*1}
 
-\titleformat{\subsubsection}{\otsikkotyyli\normalsize\itshape}
-{\thesubsubsection}{.8em}{}[]
-\titlespacing*{\subsubsection}{0pt}{*3}{*1}
+% \titleformat{\subsubsection}{\otsikkotyyli\normalsize\itshape}
+% {\thesubsubsection}{.8em}{}[]
+% \titlespacing*{\subsubsection}{0pt}{*3}{*1}
 
 \begin{document}
 \pagestyle{empty}
 
 \hyphenation{
   an-tiik-va
+  base-line-skip
   Ext-dash
+  font-size
   Font-spec
+  foot-note-size
   gro-tes-ki
+  huge
+  large
+  line-spread
   Lua-la-tex
+  Match-Lower-case
+  mono-space
   ni-men-omaan
+  normal-size
   Open-type
   Poly-glos-sia
+  Scale
+  script-size
+  select-font
+  set-main-font
+  set-mono-font
+  set-sans-font
+  sf-family
+  small
+  tiny
   True-type
+  tt-family
+  type-writer
   Xe-la-tex
 }
 

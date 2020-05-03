@@ -88,6 +88,8 @@ sijaan kahdella muulla kirjainperheellä (\koodi{\keno setsansfont, \keno
 \koodi{MatchLowercase}, joka skaalaa fontin siten, että gemenakirjaimet
 eli pienet kirjaimet ovat yhtä korkeita kuin peruskirjainperheessä.
 
+% Tänne myös \newfontfamily ja \newfontface
+
 \subsection{Fontin koko ja rivikorkeus}
 
 Fonttien koot on totuttu valitsemaan typo\-grafisen pistemitan avulla.
@@ -104,7 +106,7 @@ suhteellista tapaa koko\-asetuksiin. Käsittelen suhteellisia ja
 absoluuttisia koko\-ase\-tuk\-sia luvuissa
 \ref{luku:fontti_suhteellinen} ja \ref{luku:fontti_absoluuttinen}.
 
-Matalalla tasolla fonttien kokoon vaikuttaa Latexissa eräs yllättäväkin
+Matalalla tasolla fonttien kokoon vaikuttaa Latexissa eräs yllättävä
 asia. Nimittäin dokumenttiluokalle (luku \ref{luku:dokumenttiluokat})
 voi antaa valitsimen, jolla koko asetetaan. Vaihto\-ehtoja on Latexin
 normaaleissa dokumenttiluokissa vain kolme: \koodi{10pt} (oletus),
@@ -126,46 +128,42 @@ Fontti\-asetuksiin kuuluu fontin koon lisäksi toinenkin mitta:
 rivikorkeus (\koodi{\keno baselineskip}). Se on mitta rivin
 peruslinjalta seuraavan rivin peruslinjalle. Fontin koko ja rivikorkeus
 määritellään saman\-aikaisesti, koska ne ovat saman \koodi{\keno
-  fontsize}\-/komennon parametreja.
+  fontsize}\-/komennon parametreja. Esimerkki:
 
 \begin{koodilohkosis}
   \fontsize{10pt}{12pt} \selectfont
 \end{koodilohkosis}
 
 Ensimmäinen parametri on fontin kokomitta ja toinen on rivikorkeus.
-Mitta\-yksiköt voivat olla mitä tahansa Latexin mittoja. Oletuksena
-käytetään pistemittaa (pt), jos yksikköä ei ole mainittu.
+Mitta\-yksiköt voivat olla mitä tahansa Latexin mittoja, ja oletuksena
+käytetään pistemittaa (pt), jos yksikköä ei ole mainittu. Komento
+\koodi{\keno selectfont} on mukana, koska vasta sen myötä matalan tason
+fonttikomennot tulevat voimaan. Korkean tason fonttikomennot (luku
+\ref{luku:fontit_korkea}) suorittavat sen automaattisesti.
 
-Rivikorkeus on vähintään sama kuin fontin koko mutta yleensä se
+Rivikorkeus on vähintään sama kuin fontin koko, mutta yleensä se
 asetetaan hieman suuremmaksi, jotta rivit eivät olisi liian lähellä
 toisiaan. Esimerkissä \ref{esim:rivikorkeus} on kaksi erilaista
-\koodi{\keno fontsize}\-/komentoa ja ladottu lopputulos. Komento
-\koodi{\keno selectfont} on mukana, koska vasta sen myötä matalan tason
-fontti\-asetukset tulevat voimaan.
+\koodi{\keno fontsize}\-/komentoa ja ladottu lopputulos.
 
 \begin{esimerkki}
 \begin{koodilohko}
   \fontsize{10pt}{12pt}\selectfont Tässä on pienehkö leipätekstin
-  fonttikoko ja sitä hieman suurempi rivikorkeus. Tässä on pienehkö
-  leipätekstin fonttikoko ja sitä hieman suurempi rivikorkeus.
+  fonttikoko ja sitä hieman suurempi rivikorkeus. Rivikorkeus on
+  liian pieni näin pitkille riveille.
 
   \fontsize{16pt}{25pt}\selectfont Tässä on melko suuri fontti ja
-  reilu rivikorkeus. Tässä on melko suuri fontti ja reilu
-  rivikorkeus.
+  reilu rivikorkeus. Rivit eivät tunnu kuuluvan enää yhteen.
 \end{koodilohko}
-\centering
+\centering%
 \parbox{.9\textwidth}{%
   \linespread{1}\addfontfeatures{Scale=1}
   \fontsize{10pt}{12pt}\selectfont Tässä on pienehkö leipätekstin
-  fonttikoko ja sitä hieman suurempi rivikorkeus. Tässä on
-  pienehkö leipätekstin fonttikoko ja sitä hieman suurempi
-  rivikorkeus.
+  fonttikoko ja sitä hieman suurempi rivikorkeus. Rivikorkeus on liian
+  pieni näin pitkille riveille.
 
-  \fontsize{16pt}{25pt}\selectfont Tässä on melko suuri fontti ja
-  reilu rivikorkeus. Tässä on melko suuri fontti ja reilu
-  rivikorkeus.
-}
-\vspace{3ex}
+  \fontsize{16pt}{25pt}\selectfont Tässä on melko suuri fontti ja reilu
+  rivikorkeus. Rivit eivät tunnu kuuluvan enää yhteen. } \vspace{3ex}
 \caption{Fontin koon ja rivikorkeuden asettaminen ja vaikutus}
 \label{esim:rivikorkeus}
 \end{esimerkki}
@@ -173,7 +171,8 @@ fontti\-asetukset tulevat voimaan.
 Toinen tekstirivien peruslinjojen väliseen etäisyyteen vaikuttava asetus
 on \koodi{\keno baselinestretch}. Se on desimaalilukukerroin, jolla
 nykyinen rivikorkeus kerrotaan. Kerroin asetetaan helpoimmin komennolla
-\koodi{\keno linespread}.
+\koodi{\keno linespread}.\footnote{Toinen tapa: \koodi{\keno
+    renewcommand\{\keno baselinestretch\}\{kerroin\}}}
 
 \begin{koodilohkosis}
   \fontsize{10pt}{12pt} \linespread{1.3} \selectfont
@@ -184,9 +183,17 @@ rivikorkeudeksi 12 pistettä. \koodi{\keno linespread}\-/komennolla
 asetetun kertoimen vuoksi rivien peruslinjojen väliseksi etäisyydeksi
 tulee lopulta 1,3 kertaa 12 pistettä eli 15,6 pistettä. Ei ole väliä,
 kummassa järjestyksessä \koodi{\keno fontsize}- ja \koodi{\keno
-  linespread}\-/komennot annetaan.
+  linespread}\-/komennot annetaan. Asetukset tulevat voimaan vasta
+\koodi{\keno selectfont}\-/komennon jälkeen.
+
+Käytännössä \koodi{\keno linespread} sopii rivikorkeuden yleistason
+hienosäätöön, esimerkiksi dokumentin esittely\-osassa. Sitä ei
+kannattane kovin paljon muutella, koska se vaikuttaa kaikkialla. Sen
+sijaan \koodi{\keno fontsize}\-/komennolla määritetään rivikorkeus
+tietylle fonttikoolle ja tiettyyn tilanteeseen.
 
 \subsection{Korkean tason komennot}
+\label{luku:fontit_korkea}
 
 Latexissa on joukko korkean tason fontti\-komentoja, jotka on
 tarkoitettu käytettäväksi sen jälkeen, kun matalan tason asetukset on
@@ -345,9 +352,9 @@ skaalauskerrointa esimerkiksi seuraavalla tavalla:
 Jos edellä mainitut kummallisuudet eivät häiritse eikä ole tarvetta
 määritellä fontteja tarkasti tietyn pistekoon mukaiseksi, on
 suhteellinen määrittelytapa todella helppo. Kaikki dokumentin fontit
-määräytyvät perusfontin skaalauskertoimen kautta. Tämä tapa sopinee
-hyvin varsinkin dokumentin asettelun alkuvaiheeseen, jossa halutaan
-kokeilla erilaisia kirjainperheitä ja kokoja.
+määräytyvät perusfontin skaalauskertoimen kautta. Tämä tapa sopii hyvin
+varsinkin dokumentin sisällön kirjoittamisvaiheeseen, jossa halutaan
+vain nopeasti asettaa dokumentti suurin piirtein järkevän näköiseksi.
 
 \subsection{Koot absoluuttisesti}
 \label{luku:fontti_absoluuttinen}
@@ -375,17 +382,18 @@ fonttien asettamiseen.
   \setmonofont{Linux Libertine Mono O}[Scale=MatchLowercase]
   
   % Muualle sans ja mono ilman skaalausta
-  \newfontfamily{\abssans}{Linux Biolinum O}
-  \newfontfamily{\absmono}{Linux Libertine Mono O}
+  \newfontfamily{\sffamilyabs}{Linux Biolinum O}
+  \newfontfamily{\ttfamilyabs}{Linux Libertine Mono O}
 
   \linespread{1} % ei välttämättä tarvita
 
   % Kaikki tarvittavat fonttikoot ja komennot
-  \renewcommand{\footnotesize}{\fontsize{10pt}{13pt}\selectfont}
+  \renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont}
   \renewcommand{\small}       {\fontsize{12pt}{14pt}\selectfont}
-  \renewcommand{\normalsize}  {\fontsize{14pt}{16pt}\selectfont}
+  \renewcommand{\normalsize}  {\fontsize{14pt}{17pt}\selectfont}
   \renewcommand{\large}       {\fontsize{17pt}{20pt}\selectfont}
-  \renewcommand{\Large}       {\fontsize{20pt}{25pt}\selectfont}
+  \renewcommand{\Large}       {\fontsize{20pt}{23pt}\selectfont}
+  \normalsize % jotta tulee heti voimaan eikä vasta tekstiosassa
 \end{koodilohko}    
 \caption{Fonttikokojen määrittäminen pistekoon avulla}
 \label{esim:fontti_absoluuttinen}
@@ -404,15 +412,15 @@ voidaan käyttää rivien 10--11 komentoja. Niillä luodaan uudet
 kirjainperheet, jotka ovat käytännössä samoja mutta ilman skaalausta.
 
 Uusien kirjainperheiden komentojen nimiksi on valittu \koodi{\keno
-  abssans} ja \koodi{\keno absmono}, ja näillä komennoilla
-kirjainperheet kytketään päälle. Jos esimerkiksi jonkin julkaisun
-vaatimuksiin kuuluu, että otsikossa täytyy olla 16 pisteen lihavoitu
-Linux Biolinum~O \=/fontti, voi esimerkin
-\ref{esim:fontti_absoluuttinen} pohjalta kirjoittaa dokumentin otsikon
-asetuksiin seuraavat komennot:
+  sffamilyabs} ja \koodi{\keno ttfamilyabs} (vrt. \koodi{\keno sffamily}
+ja \koodi{\keno ttfamily}), ja näillä komennoilla kirjainperheet
+kytketään päälle. Jos esimerkiksi jonkin julkaisun vaatimuksiin kuuluu,
+että otsikossa täytyy olla 16 pisteen lihavoitu Linux Biolinum~O
+\=/fontti, voi esimerkkissä \ref{esim:fontti_absoluuttinen} olevien
+asetusten pohjalta otsikolle seuraavat komennot:
 
 \begin{koodilohkosis}
-  \abssans\fontsize{16pt}{20pt}\bfseries
+  \sffamilyabs\fontsize{16pt}{20pt}\bfseries
 \end{koodilohkosis}
 
 Esimerkin \ref{esim:fontti_absoluuttinen} riveillä 16--20 määritellään
@@ -428,16 +436,24 @@ koolle. Rivikorkeuteen vaikuttaa myös kerroin \koodi{\keno
   baselinestretch}, joka asetetaan komennolla \koodi{\keno linespread}.
 Sitä ei välttämättä tarvitse käyttää, koska kirjainperheitä ei ole
 skaalattu ja koska rivikorkeus asetetaan aina \koodi{\keno
-  fontsize}\-/komennolla.
+  fontsize}\-/komennolla. \koodi{\keno linespread} on kuitenkin kätevä
+komento rivikorkeuden säätämiseen yleisesti kaikkialla.
+
+Fonttikokojen määrittelyn lopuksi rivillä 21 suoritetaan komento
+\koodi{\keno normalsize}, jotta se tulee heti voimaan. Dokumentin
+esittely\-osassa voidaan käyttää fonttikokoon viittaavia mittoja
+\koodi{em} ja \koodi{ex}, ja ne viittaavat nyt tähän kokoon.
+\koodi{\keno normalsize}\-/komento suoritetaan kyllä myöhemmin
+automaattisesti dokumentin teksti\-osan eli
+\koodi{document}\-/ympäristön alussa.
 
 Edellä kuvatun absoluuttisen koonmääritystavan etuna on se, että
-kirjoittaja hallitsee fonttien kokoa ja rivikorkeuksia itse ja että
-julkaisuun saadaan juuri ne mitat, joita halutaan tai vaaditaan. Tapa on
+kirjoittaja hallitsee fonttien kokoa ja rivikorkeuksia tarkasti ja että
+julkaisuun saadaan juuri ne mitat, jotka halutaan tai vaaditaan. Tapa on
 myös teknisesti eheä eli toimii Latexin sisäisen logiikan näkökulmasta
 oikein. Haittana voi pitää sitä, että kaikki koot täytyy määritellä
 erikseen (esimerkki \ref{esim:fontti_absoluuttinen}, rivit 16--20).
 
-\subsection{Muut perheet ja leikkaukset}
 \section{Kieli}
 \label{luku:kieliasetukset}
 \section{Sivu}

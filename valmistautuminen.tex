@@ -1,3 +1,5 @@
+% -*- TeX-master: "opas.tex"; -*-
+
 \chapter{Valmistautuminen}
 
 \section{Käsitteet ja nimet}
@@ -5,7 +7,9 @@
 Se, mitä sanalla Latex yleensä tarkoitetaan, on monimutkainen
 kokonaisuus erilaisia pieniä palikoita kuten tietokone\-ohjelmia,
 makropaketteja ja asetustiedostoja. Yritän tässä luvussa selventää
-joitakin peruskäsitteitä.
+joitakin perus\-asioita.
+
+\subsection{Tex ja Latex}
 
 Tex on tietokone\-ohjelma (\koodi{tex}), joka osaa lukea tietynmuotoisia
 tekstitiedostoja ja latoa niiden perusteella tekstidokumentin, joka on
@@ -19,21 +23,37 @@ siis eteenpäin.
 Latex toimii korkeammalla abstraktiotasolla kuin Tex. Se on kokoelma
 Tex\-/ohjelmointikielen makroja, jotka piilottavat monimutkaiset
 tekniset yksityiskohdat ja toteuttavat varsin helppokäyttöisen
-merkintäkielen, joilla tekstidokumenttien rakenne ja ulko\-asua
-kuvataan. Ihmiset siis kirjoittavat yleensä Latex\-/muotoisia
-dokumentteja, ja Latex eli makrot puolestaan huolehtivat Texin
-käskyttämisestä. Latex on myös tietokone\-ohjelma (\koodi{latex}), jolla
-lähdetiedoston voi kääntää julkaistavaksi dokumentiksi.
+merkintäkielen, jolla dokumenttien rakenne ja ulko\-asua kuvataan.
+Ihmiset siis kirjoittavat yleensä Latex\-/muotoisia dokumentteja, ja
+Latex puolestaan huolehtii matalamman tason Texin käskyttämisestä. Latex
+on myös tietokone\-ohjelma (\koodi{latex}), jolla lähdetiedoston voi
+kääntää julkaistavaksi dokumentiksi.
 
-Vain todelliset asialle vihkiytyneet mestarit osaavat sanoa, mikä
-komento tai asia on Texiä ja mikä Latexia -- puhumattakaan muista asiaan
-liittyvistä palikoista. Nimittäin ajan myötä mukaan on tullut sekalainen
-joukko muitakin ohjelmia, joista kannattaa tässä yhteydessä mainita
-kaksi: Xelatex ja Lualatex. Ne ovat erilaisia Latexin toteutuksia ja
-tietokone\-ohjelmia (\koodi{xelatex, lualatex}), joilla lähdedokumentti
-käännetään. Nyky\-aikana käytetään näistä yleensä jompaakumpaa, ja
-esimerkiksi tämän oppaan Latex\-/lähdetiedosto on käännetty
-PDF\-/tiedostoksi Xelatexilla.
+\subsection{Xelatex ja Lualatex}
+
+Ajan myötä mukaan on tullut sekalainen joukko muitakin ohjelmia, joista
+kannattaa tässä yhteydessä mainita kaksi: Xelatex ja Lualatex. Ne ovat
+erilaisia Latexin toteutuksia ja tietokone\-ohjelmia (\koodi{xelatex,
+  lualatex}), joilla lähdedokumentti käännetään. Nyky\-aikana käytetään
+näistä yleensä jompaakumpaa, ja esimerkiksi tämän oppaan lähdetiedosto
+on käännetty PDF\-/tiedostoksi Xelatexilla.
+
+Xelatexilla ja Lualatexilla ei ole käyttäjän kannalta suurtakaan eroa.
+Jälkimmäinen sisältää Lua\-/nimisen ohjelmointikielen, ja sillä on
+merkitystä joillekin makropakettien tekijöille. Jotkin makropaketit
+eivät toimi Lualatexissa ja jotkin eivät toimi Xelatexissa. Xelatex
+taitaa olla hieman paremmin tuettu, koska se on vanhempi eli ehtinyt
+vakiinnuttaa asemansa paremmin.
+
+Kääntäjäohjelmien toiminnassa on pieniä eroja. Vaikka Latex\-/dokumentit
+yleensä kääntyvätkin molemmilla, saattaa valmiissa PDF:ssä näkyä pieniä
+eroja, kun kääntäjää vaihtaa. Onkin ihan hyödyllistä kokeilla kääntää
+omat dokumentit kummallakin ohjelmalla, koska se voi paljastaa huonoja,
+epäyhteensopivia käytäntöjä omassa Latex\-/koodissa. Pienten erojen
+vuoksi en kuitenkaan suosittele vaihtamaan kääntäjää viime hetkellä
+ennen tärkeän tekstin julkaisua.
+
+\subsection{Latex yläkäsitteenä}
 
 Jotta kaikki olisi mahdollisimman sekavaa, sana Latex toimii myös
 yleisenä nimityksenä tälle kaikelle. Se esiintyy ilmaisuissa kuten
@@ -46,17 +66,16 @@ tarkoitettuja komentoja. Sitten hän on kääntänyt eli ladotuttanut
 tekstitiedostonsa PDF\-/tiedostoksi Latex-la\-don\-ta\-oh\-jel\-man
 jollakin toteutuksella (kuten Xelatexilla).
 
-Meille \marginpar{\Large\LaTeX} taitaa riittää vain Latexista puhuminen,
-mutta siitäkin on mainittava vielä yksi huomio. Latexin harrastajat
-tykkäävät käyttää dokumenttiensa leipätekstissä logoja kuten \TeX{} ja
-\LaTeX{}. Usein teksteissä näkyy myös logojen pohjalta mukailtuja
-kirjoitus\-asuja TeX ja LaTeX. Mielestäni logojen eikä muodikkaiden
-kIRjoiTus\-AsuJen paikka ei ole leipätekstissä, koska ne erottuvat
-tekstipalstasta liiaksi ja tekevät siitä rauhattoman näköisen. Tässä
-oppaassa viittaan kaikkiin nimiin kielenhuollon normien mukaisesti eli
-käytän tavallisia erisnimiä kuten Tex ja Latex. Koodi ja komennot ovat
-siinä muodossa kuin ne tietokoneelle annetaan, esimerkiksi
-\koodi{xelatex}.
+Meille taitaa riittää vain Latexista puhuminen, mutta siitäkin on
+mainittava vielä yksi asia. Latexin harrastajat tykkäävät käyttää
+dokumenttiensa leipätekstissä logoja kuten \TeX{} ja \LaTeX{}. Usein
+teksteissä näkyy myös logojen pohjalta mukailtuja kirjoitus\-asuja TeX
+ja LaTeX. Mielestäni logojen eikä muodikkaiden kIRjoiTus\-AsuJen paikka
+ei ole leipätekstissä, koska ne erottuvat tekstipalstasta liiaksi ja
+tekevät siitä rauhattoman näköisen. Tässä oppaassa viittaan kaikkiin
+nimiin kielenhuollon normien mukaisesti eli käytän tavallisia erisnimiä
+kuten Tex ja Latex. Koodi ja komennot ovat siinä muodossa kuin ne
+tietokoneelle annetaan, esimerkiksi \koodi{xelatex}.
 
 \section{Asentaminen}
 \label{luku:asentaminen}
@@ -152,11 +171,10 @@ Komentoja voi luoda itsekin.
 \subsection{Tekstieditori}
 
 Hanki kunnollinen teksti\-editori. Teknisesti ainoa vaatimus on se, että
-editori osaa tallentaa \textsc{utf}\=/8\-/muotoista tekstidataa, tai
-vähän kikkailemalla pelkkä \textsc{ascii}\=/merkistökin riittäisi.
-Käytännössä editorissa olisi hyvä olla muitakin ominaisuuksia, ja niin
-sanotut ohjelmoijien tai tehokäyttäjien teksti\-editorit ovat paras
-valinta.
+editori osaa tallentaa UTF\=/8\-/muotoista tekstidataa, tai vähän
+kikkailemalla pelkkä ASCII\=/merkistökin riittäisi. Käytännössä
+editorissa olisi hyvä olla muitakin ominaisuuksia, ja niin sanotut
+ohjelmoijien tai tehokäyttäjien teksti\-editorit ovat paras valinta.
 
 TÄNNE VIELÄ TEKSTIN SYNTAKTISESTA VÄRITTÄMISESTÄ JA EDITORIN HIENOISTA
 OMINAISUUKSISTA.

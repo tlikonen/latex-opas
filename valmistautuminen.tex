@@ -25,13 +25,15 @@ dokumentteja, ja Latex eli makrot puolestaan huolehtivat Texin
 käskyttämisestä. Latex on myös tietokone\-ohjelma (\koodi{latex}), jolla
 lähdetiedoston voi kääntää julkaistavaksi dokumentiksi.
 
-Ajan myötä mukaan on tullut sekalainen joukko muitakin ohjelmia, joista
-kannattaa tässä yhteydessä mainita kaksi: Xelatex ja Lualatex. Ne ovat
-erilaisia Latexin toteutuksia ja tietokone\-ohjelmia (\koodi{xelatex,
-  lualatex}), joilla lähdedokumentti käännetään. Nyky\-aikana käytetään
-näistä yleensä jompaakumpaa, ja esimerkiksi tämän oppaan
-Latex\-/lähdetiedosto on käännetty PDF\-/tiedostoksi
-\koodi{xelatex}\-/komennolla.
+Vain todelliset asialle vihkiytyneet mestarit osaavat sanoa, mikä
+komento tai asia on Texiä ja mikä Latexia -- puhumattakaan muista asiaan
+liittyvistä palikoista. Nimittäin ajan myötä mukaan on tullut sekalainen
+joukko muitakin ohjelmia, joista kannattaa tässä yhteydessä mainita
+kaksi: Xelatex ja Lualatex. Ne ovat erilaisia Latexin toteutuksia ja
+tietokone\-ohjelmia (\koodi{xelatex, lualatex}), joilla lähdedokumentti
+käännetään. Nyky\-aikana käytetään näistä yleensä jompaakumpaa, ja
+esimerkiksi tämän oppaan Latex\-/lähdetiedosto on käännetty
+PDF\-/tiedostoksi Xelatexilla.
 
 Jotta kaikki olisi mahdollisimman sekavaa, sana Latex toimii myös
 yleisenä nimityksenä tälle kaikelle. Se esiintyy ilmaisuissa kuten
@@ -59,35 +61,58 @@ siinä muodossa kuin ne tietokoneelle annetaan, esimerkiksi
 \section{Asentaminen}
 \label{luku:asentaminen}
 
+Latex pitää tietysti asentaa tietokoneelle, jotta sitä voisi käyttää.
+Miten edellisessä luvussa kuvattu sekava kokonaisuus saadaan ehjänä
+omalle tietokoneelle? Onneksi muut ovat jo ratkaisseet sen ongelman aika
+pitkälle.
+
+Tavallisin tapa Latexin käyttöön\-ottoon on jonkin Latexin jakelupaketin
+asentaminen. Jakelupaketti sisältää perus\-osien lisäksi paljon
+makropaketteja ja niiden ohjekirjoja. Kaikkea ei koskaan tarvitse, mutta
+kun yllättävä tarve tulee tai lukee vinkkejä verkkokeskusteluista, on
+mukavaa huomata, että makropaketti olikin itsellä jo valmiina. Siksi
+suosittelen kokonaisen jakelupaketin asentamista.
+
+GNU/Linuxissa ja muissa Unix\-/tyyppisissä käyttöjärjestelmissä
+käytetään yleensä Tex Live \=/nimistä jakelua. Se on todennäköisesti
+saatavilla käyttöjärjestelmäjakelun pakettivarastoista. Esimerkiksi
+Debianiin ja sen kaltaisiin järjestelmiin on asennuspaketti
+\koodi{texlive-full}, joka asentaa kaiken helposti ja kerralla.
+
+Windows\-/käyttöjärjestelmälle on saatavilla Tex Liven lisäksi Miktex ja
+Protext. Mac OS \=/käyttöjärjestelmän kanssa käytettäneen yleensä
+Mactex\-/nimistä jakelua.
+
 \section{Ensimmäinen dokumentti}
 
-Ehkä olisi parasta päästä vain nopeasti kokeilemaan omia
-Latex\-/dokumentteja eikä lukea pitkiä jaaritteluja muinaisten
-kreikkalaisten Latex\-/filosofiasta. Tallenna esimerkin
-\ref{esim:ensimmainen} sisältö teksti\-editorin avulla tiedostoon
-vaikkapa nimellä teksti.tex. Käännä eli lado se PDF\-/tiedostoksi
-komennolla \koodi{xelatex teksti.tex}.
+Olemme varmasti jo puhuneet tarpeeksi, ja olisi hyvä päästä tekemään
+jotain käytännöllistä. Tallenna esimerkin \ref{esim:ensimmainen} sisältö
+teksti\-editorin avulla tiedostoon vaikkapa nimellä \koodi{teksti.tex}.
+Käännä eli lado se PDF\-/tiedostoksi komennolla \koodi{xelatex
+  teksti.tex}. Tuloksena pitäisi olla tiedosto \koodi{teksti.pdf}, jota
+voi ihailla jollakin PDF\-/tiedostojen katseluun tarkoitetulla
+ohjelmalla.
 
-Tutkitaan esimerkkiä tarkemmin. Ensimmäisellä rivillä määritellään
-dokumenttiluokka \textenglish{\koodi{article}}, joka on tietynlainen
-sivupohja tai asetusten kokoelma, jonka perustalle aletaan rakentaa omaa
-sivua. Luokka \textenglish{\koodi{article}} on tyypillinen valinta
-lyhyehköille teksteille. Lisätietoa dokumenttiluokista on luvussa
-\ref{luku:dokumenttiluokat}.
+Tutkitaan esimerkkiä \ref{esim:ensimmainen} tarkemmin. Ensimmäisellä
+rivillä määritellään dokumenttiluokka \textenglish{\koodi{article}},
+joka on tietynlainen sivupohja tai asetusten kokoelma, jonka perustalle
+aletaan rakentaa omaa sivua. Luokka \textenglish{\koodi{article}} on
+tyypillinen valinta lyhyehköille teksteille. Lisätietoa
+dokumenttiluokista on luvussa \ref{luku:dokumenttiluokat}.
 
 Toisella ja kolmannella rivillä käytetään komentoa \koodi{\keno
-  usepackage} ja sen avulla otetaan käyttöön fontti\-asetuksia hoitava
-Fontspec\-/paketti ja kieli\-asetuksista vastaava Polyglossia\-/paketti.
-Kumpaakin tarvitaan melkein joka kerta dokumenteissa, ja niihin palataan
-tarkemmin luvuissa \ref{luku:kirjaintyypit} ja
-\ref{luku:kieliasetukset}. Sivun asetuksia käsitellään luvussa
-\ref{luku:sivuasetukset}.
+  usepackage} ja niiden avulla otetaan käyttöön fontti\-asetuksia
+hoitava Fontspec\-/paketti ja kieli\-asetuksista vastaava
+Polyglossia\-/paketti. Kumpaakin tarvitaan melkein joka kerta
+dokumenteissa, ja niihin palataan tarkemmin luvuissa
+\ref{luku:kirjaintyypit} ja \ref{luku:kieliasetukset}. Sivun asetuksia
+käsitellään luvussa \ref{luku:sivuasetukset}.
 
-Seuraavilla riveillä asetetaan kieleksi suomi ja määritetään
-oletusfontti. Latin Modern Roman \=/fontin tilalle voi toki kokeilla
-muitakin. Fontin oletuskoko on 10 pistettä, mutta tässä esimerkissä se
-venytetään 1,3\-/kertaiseksi eli 13 pisteeseen. Riviväliin liittyvä
-kerroin asetetaan rivillä 7.
+Seuraavilla riveillä asetetaan kieleksi suomi (\koodi{finnish}) ja
+määritetään oletuksena käytettävä fontti (kirjainperhe). Latin Modern
+Roman \=/fontin tilalle voi toki kokeilla muitakin. Fontin oletuskoko on
+10 pistettä, mutta tässä esimerkissä se venytetään 1,3\-/kertaiseksi eli
+13 pisteeseen. Riviväliin liittyvä kerroin asetetaan rivillä 7.
 
 \begin{esimerkki}
 \begin{koodilohko}
@@ -113,9 +138,9 @@ Dokumentin alku\-osaa esimerkin riville 8 saakka kutsutaan johdannoksi
 tai esittelyksi (engl. \textenglish{preamble}). Tässä osassa ladataan
 tarvittavat makropaketit ja määritetään dokumentin asetuksia ja
 taustatietoja. Riviltä 9 alkaa varsinainen teksti\-osa eli sivulle
-ladottava sisältö. Se osa kirjoitetaan
-\textenglish{document}\-/ympäristön sisään eli riveillä 9 ja 13 olevien
-ympäristön aloitus\-/{} ja lopetuskomentojen väliin.
+ladottava sisältö. Se osa kirjoitetaan \koodi{document}\-/ympäristön
+sisään eli riveillä 9 ja 13 olevien ympäristön aloitus\-/{} ja
+lopetuskomentojen väliin.
 
 Tällaisen merkintäkielen ja rakenteen avulla dokumentit kirjoitetaan.
 Osa merkintäkielen komennoista tulee Latexin perus\-osasta ja osa tulee
@@ -126,6 +151,16 @@ Komentoja voi luoda itsekin.
 
 \subsection{Tekstieditori}
 
+Hanki kunnollinen teksti\-editori. Teknisesti ainoa vaatimus on se, että
+editori osaa tallentaa \textsc{utf}\=/8\-/muotoista tekstidataa, tai
+vähän kikkailemalla pelkkä \textsc{ascii}\=/merkistökin riittäisi.
+Käytännössä editorissa olisi hyvä olla muitakin ominaisuuksia, ja niin
+sanotut ohjelmoijien tai tehokäyttäjien teksti\-editorit ovat paras
+valinta.
+
+TÄNNE VIELÄ TEKSTIN SYNTAKTISESTA VÄRITTÄMISESTÄ JA EDITORIN HIENOISTA
+OMINAISUUKSISTA.
+
 \subsection{Texdoc}
 
 Latexin kirjoittajan täytyy silloin tällöin lukea ohjekirjoja. Vaikka
@@ -134,10 +169,10 @@ kaikkien hyödyllisten makropakettien kaikkia ominaisuuksia. Myös uusia
 makropaketteja ja ihmisten suosituksia tulee vastaan esimerkiksi
 verkkokeskusteluissa.
 
-Tex Live \=/jakelun (ks. luku \ref{luku:asentaminen}) mukana tulee
-mainio komentotulkissa toimiva komento \koodi{texdoc}, jolla voi hakea
-ja avata omaan järjestelmään asennettuja Latex\-/aiheisia ohjeita. Jos
-vaikka haluaa tutustua esimerkissä \ref{esim:ensimmainen} mainittuun
+Tex Live \=/jakelun (luku \ref{luku:asentaminen}) mukana tulee mainio
+komentotulkissa toimiva komento \koodi{texdoc}, jolla voi hakea ja avata
+omaan järjestelmään asennettuja Latex\-/aiheisia ohjeita. Jos vaikka
+haluaa tutustua esimerkissä \ref{esim:ensimmainen} mainittuun
 Fontspec\-/pakettiin syvällisemmin, tarvitsee vain komentaa
 \koodi{texdoc fontspec}, ja paketin PDF\-/muotoinen ohjekirja avautuu.
 

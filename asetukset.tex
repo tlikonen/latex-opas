@@ -39,9 +39,7 @@ käytetään pelkästään korkean tason komentoja.
 \subsection{Kirjainperheiden valinta}
 
 Latexin fonttien perus\-toiminnot rakentuvat kolmen erityyppisen
-kirjainperheen varaan:\footnote{Kirjainperheitä ja \=/leikkauksia voi
-  käyttää niin monia kuin haluaa, mutta perustoiminnot rakentuvat kolmen
-  erityyppisen perheen ympärille.} antiikva eli pääteviivallinen
+kirjainperheen varaan: antiikva eli pääteviivallinen
 (\textenglish{serif, roman}), groteski eli pääteviivaton
 (\textenglish{sans serif}) ja tasalevyinen kirjoituskoneen kaltainen
 perhe (\textenglish{typewriter, monospace}). Kuvassa
@@ -88,7 +86,32 @@ sijaan kahdella muulla kirjainperheellä (\koodi{\keno setsansfont, \keno
 \koodi{MatchLowercase}, joka skaalaa fontin siten, että gemenakirjaimet
 eli pienet kirjaimet ovat yhtä korkeita kuin peruskirjainperheessä.
 
-% Tänne myös \newfontfamily ja \newfontface
+Jos edellä kuvatut kolme kirjainperhettä eivät riitä, on
+Fontspec\-/paketissa komennot lisäperheiden ja \=/leikkausten
+määrittämiseen. Uusi perhe määritellään seuraavasti:
+
+\begin{koodilohkosis}
+  \newfontfamily{\hienoperhe}{TeX Gyre Schola}[...]
+\end{koodilohkosis}
+
+Komento \koodi{\keno newfontfamily} toimii samalla tavalla kuin aiemmin
+esitellyt \koodi{\keno setmainfont} ym. komennot, mutta lisäksi
+ensimmäinen parametri määrittää komennon, jolla kirjainperhe otetaan
+käyttöön. Edellisessä esimerkissä luodaan komento \koodi{\keno
+  hieno\-perhe}, joka kytkee päälle TeX Gyre Scho\-la \=/nimisen
+kirjainperheen.
+          
+Jos ei tarvita kokonaista perhettä vaan yksi leikkaus riittää, käytetään
+komentoa \koodi{\keno newfontface}:
+
+\begin{koodilohkosis}
+  \newfontface{\hienoleikkaus}{TeX Gyre Schola Bold}[...]
+\end{koodilohkosis}
+
+Edellä määriteltävä komento \koodi{\keno hieno\-leikkaus} ottaa käyttöön
+lihavoidun (bold) kirjainleikkauksen perheestä TeX Gyre Scho\-la. Tässä
+vaih\-to\-eh\-dos\-sa on se etu, että tietokoneen muistiin ladataan vain
+yksi leikkaus, ei koko perhettä.
 
 \subsection{Fontin koko ja rivikorkeus}
 

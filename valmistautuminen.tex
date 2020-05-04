@@ -2,10 +2,21 @@
 
 \section{Käsitteet ja nimet}
 
-Se, mitä sanalla Latex yleensä tarkoitetaan, on monimutkainen
-kokonaisuus erilaisia pieniä palikoita kuten tietokone\-ohjelmia,
-makropaketteja ja asetustiedostoja. Yritän tässä luvussa selventää
-joitakin perus\-asioita.
+Latex ja sen ympärille rakentuneet ohjelmistot ovat käsitteellisesti
+aika monimutkainen kokonaisuus, johon kuuluu eri\-/ikäisiä ja
+abst\-rak\-tio\-ta\-sol\-taan erilaisia osia. Mukaan kuuluu tietenkin
+konkreettia tie\-to\-kone\-oh\-jel\-mia, jotka tekevät konkreettisia
+asoita. Mukaan kuuluu kuitenkin myös ihmisten luomia abst\-rak\-te\-ja
+käsitteitä kuten Latex\-/formaatti, Tex\-/ohjelmointikieli tai muu
+yleinen idea, jonka tieto\-kone\-ohjelmat pyrkivät konk\-reet\-ti\-sesti
+toteuttamaan.
+
+Internetissä näkyy silloin tällöin käsitekeskusteluja, jossa
+ihmetellään, mihin mikäkin palikka kuuluu käsitteellisesti. Missä
+suhteessa jotkin uudemmat osat ovat vanhempiin? Oikeiden termien
+osaamisesta voi olla hyötyä, kun pyytää verkossa suurelta yleisöltä
+apua. Viestintä vaatii, että puhutaan suunnilleen samaa kieltä. Yritän
+seuraavaksi selventää peruskäsitteitä.
 
 \subsection{Tex ja Latex}
 
@@ -32,24 +43,29 @@ kääntää julkaistavaksi dokumentiksi.
 Ajan myötä mukaan on tullut sekalainen joukko muitakin ohjelmia, joista
 kannattaa tässä yhteydessä mainita kaksi: Xelatex ja Lualatex. Ne ovat
 erilaisia Latexin toteutuksia ja tietokone\-ohjelmia (\koodi{xelatex,
-  lualatex}), joilla lähdedokumentti käännetään. Nyky\-aikana käytetään
-näistä yleensä jompaakumpaa, ja esimerkiksi tämän oppaan lähdetiedosto
-on käännetty PDF\-/tiedostoksi Xelatexilla.
+  lualatex}), joilla lähdedokumentti käännetään.\footnote{Englannin
+  kielellä näitä on tapana kutsua yleisnimellä
+  \emph{\textenglish{engine}} 'kone, moottori'.} Ne osaavat lukea
+Unicode\-/merkistöllä kirjoitettuja lähdedokumentteja ja käyttää
+nyky\-aikaisia True Type- ja Open Type \=/fontteja, mitä alkuperäinen
+Latex ja Tex eivät osaa. Nyky\-aikana käytetään yleensä jompaakumpaa,
+Xelatexia tai Lualatexia, ja esimerkiksi tämän oppaan lähdetiedosto on
+käännetty PDF\-/tiedostoksi Xelatexilla.
 
 Xelatexilla ja Lualatexilla ei ole käyttäjän kannalta suurtakaan eroa.
 Jälkimmäinen sisältää Lua\-/nimisen ohjelmointikielen, ja sillä on
-merkitystä joillekin makropakettien tekijöille. Jotkin makropaketit
+merkitystä joillekuille makropakettien tekijöille. Jotkin makropaketit
 eivät toimi Lualatexissa ja jotkin eivät toimi Xelatexissa. Xelatex
 taitaa olla hieman paremmin tuettu, koska se on vanhempi eli ehtinyt
 vakiinnuttaa asemansa paremmin.
 
 Kääntäjäohjelmien toiminnassa on pieniä eroja. Vaikka Latex\-/dokumentit
-yleensä kääntyvätkin molemmilla, saattaa valmiissa PDF:ssä näkyä pieniä
-eroja, kun kääntäjää vaihtaa. Onkin ihan hyödyllistä kokeilla kääntää
-omat dokumentit kummallakin ohjelmalla, koska se voi paljastaa huonoja,
-epäyhteensopivia käytäntöjä omassa Latex\-/koodissa. Pienten erojen
-vuoksi en kuitenkaan suosittele vaihtamaan kääntäjää viime hetkellä
-ennen tärkeän tekstin julkaisua.
+yleensä kääntyvätkin molemmilla, saattaa joskus valmiissa PDF:ssä näkyä
+pieniä eroja, kun kääntäjää vaihtaa. Toisaalta on ihan hyödyllistä
+kokeilla kääntää omat dokumentit kummallakin ohjelmalla, koska se voi
+paljastaa huonoja, epäyhteensopivia käytäntöjä omassa Latex\-/koodissa.
+En kuitenkaan suosittele vaihtamaan kääntäjää viime hetkellä ennen
+tärkeän tekstin julkaisua.
 
 \subsection{Latex yläkäsitteenä}
 
@@ -60,9 +76,10 @@ Latexilla''. Ilmaukset sitten tarkoittavat suunnilleen seuraavanlaista:
 Henkilöllä on asennettuna tietokoneelle Latex\-/jakelu (kuten Tex Live).
 Hän on kirjoittanut teksti\-editorilla (kuten GNU Emacsilla)
 tekstitiedoston, jossa on dokumentin sisältö ja Latex\-/makroille
-tarkoitettuja komentoja. Sitten hän on kääntänyt eli ladotuttanut
-tekstitiedostonsa PDF\-/tiedostoksi Latex-la\-don\-ta\-oh\-jel\-man
-jollakin toteutuksella (kuten Xelatexilla).
+tarkoitettuja komentoja mutta myös joitakin Tex\-/komentoja. Sitten hän
+on kääntänyt eli ladotuttanut tekstitiedostonsa PDF\-/tiedostoksi
+Latex-la\-don\-ta\-oh\-jel\-man jollakin toteutuksella (kuten
+Xelatexilla).
 
 Meille taitaa riittää vain Latexista puhuminen, mutta siitäkin on
 mainittava vielä yksi asia. Latexin harrastajat tykkäävät käyttää
@@ -106,9 +123,10 @@ Olemme varmasti jo puhuneet tarpeeksi, ja olisi hyvä päästä tekemään
 jotain käytännöllistä. Tallenna esimerkin \ref{esim:ensimmainen} sisältö
 teksti\-editorin avulla tiedostoon vaikkapa nimellä \koodi{teksti.tex}.
 Käännä eli lado se PDF\-/tiedostoksi komennolla \koodi{xelatex
-  teksti.tex}. Tuloksena pitäisi olla tiedosto \koodi{teksti.pdf}, jota
-voi ihailla jollakin PDF\-/tiedostojen katseluun tarkoitetulla
-ohjelmalla.
+  teksti.tex} tai komennolla \koodi{lualatex teksti.tex}. Tuloksena
+pitäisi olla tiedosto \koodi{teksti.pdf}, jota voi ihailla jollakin
+PDF\-/tiedostojen katseluun tarkoitetulla ohjelmalla. Näin tämä
+Latex\-/homma toimii.
 
 Tutkitaan esimerkkiä \ref{esim:ensimmainen} tarkemmin. Ensimmäisellä
 rivillä määritellään dokumenttiluokka \textenglish{\koodi{article}},

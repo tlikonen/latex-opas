@@ -3,7 +3,7 @@
 \usepackage{fontspec}
 \usepackage{polyglossia}
 \usepackage{ragged2e}
-\usepackage{footmisc}
+\usepackage[hang,bottom]{footmisc}
 %\usepackage{titling}
 \usepackage{titlesec}
 \usepackage{titletoc}
@@ -46,7 +46,7 @@
 
 \setlength{\parindent}{1.2em}
 \setlength{\parskip}{0em}
-\setlength{\footnotemargin}{\parindent}
+\setlength{\footnotemargin}{.8em}
 \setlength{\floatsep}{3ex}
 \setlength{\textfloatsep}{4ex}
 
@@ -154,7 +154,6 @@
   new-font-family
   ni-men-omaan
   normal-size
-  Open-type
   Poly-glos-sia
   Scale
   script-size
@@ -166,7 +165,6 @@
   sf-family-abs
   small
   tiny
-  True-type
   tt-family
   tt-family-abs
   type-writer
@@ -186,6 +184,24 @@
 \phantomsection
 
 % Miksi Latex?
+
+... Niinpä tekstidokumenttien toteuttaminen Latexilla ei ole läheskään
+samanlaista kuin työskentely tietotekniikassa yleensä. Yleensähän
+käynnistetään jokin sovellus\-ohjelma, joka sisältää suunnilleen kaikki
+tarvittavat toiminnot. Samalla sovelluksella työ viedään alusta loppuun.
+
+Sen sijaan Latexin kanssa työskentely on lähempänä ohjelmoijan
+työskentelyä. Lähdedokumentti (''koodi'') on muodoltaan täysin erilainen
+kuin lopullinen tuotos. Kirjoittaminen vaatii omanlaisensa kielen
+osaamista. Lopulliseen toteutukseen tarvitaan yleensä eri tekijöiden
+tuottamia makropaketteja (vrt. ohjelmakirjastot), ja niiden ohjekirjojen
+lukeminen on osa normaalia työskentelyä. Lähdedokumentit käännetään
+erillisellä kääntäjäohjelmalla lopulliseksi tuotokseksi, eikä käännettyä
+tuotosta voi enää palauttaa alkuperäiseksi lähdedokumentiksi.
+
+Latexin käyttö ei silti ole mitään ohjelmointia. Merkintäkieli on eri
+asia kuin ohjelmointikieli. Työskentelyn luonteessa on kuitenkin useita
+yhtäläisyyksiä, ja 
 
 \input{valmistautuminen}
 

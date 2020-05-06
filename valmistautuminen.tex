@@ -74,7 +74,7 @@ yleisenä nimityksenä tälle kaikelle. Se esiintyy ilmaisuissa kuten
 ''Toteutin dokumentin Latexilla'' tai ''Tämä artikkeli on tehty
 Latexilla''. Ilmaukset sitten tarkoittavat suunnilleen seuraavanlaista:
 Henkilöllä on asennettuna tietokoneelle Latex\-/jakelu (kuten Tex Live).
-Hän on kirjoittanut teksti\-editorilla (kuten GNU Emacsilla)
+Hän on kirjoittanut tekstieditorilla (kuten GNU Emacsilla)
 tekstitiedoston, jossa on dokumentin sisältö ja Latex\-/makroille
 tarkoitettuja komentoja mutta myös joitakin Tex\-/komentoja. Sitten hän
 on kääntänyt eli ladotuttanut tekstitiedostonsa PDF\-/tiedostoksi
@@ -119,7 +119,7 @@ Mactex\-/nimistä jakelua.
 
 \subsection{Tekstieditori}
 
-Käytä kunnollista teksti\-editoria. Sellaisia tehtiin ennen vanhaan
+Käytä kunnollista tekstieditoria. Sellaisia tehtiin ennen vanhaan
 Unixille ja sittemmin GNU/Linuxille. Sellaisia, joilla moni ohjelmoi,
 kirjoittaa sähköpostejaan ja muokkaa käyttöjärjestelmänsä
 asetustiedostoja. Kunnollisia editoreja ovat ainakin GNU Emacs ja Vim,
@@ -160,12 +160,11 @@ PDF\-/ohjelmat osaavat tämän. Jotkin ohjelmat eivät osaa mutta osaavat
 sentään yhdellä näppäinpainalluksella avata PDF:n uudelleen
 tiedostojärjestelmästä.
 
-Hyvän teksti\-editorin ja PDF\-/katselimen kanssa työskentely on
-sujuvaa. Tietty näppäinkomento editorissa tallentaa ja kääntää
-dokumentin, ja pian PDF\-/katselin lataa muuttuneen PDF:n
-automaattisesti näkyviin. Sekä editorin että PDF\-/katselimen voi pitää
-sa\-man\-aikai\-ses\-ti esillä, eikä muualle tarvitse yleensä siirtyä.
-Tähän kannattaa pyrkiä.
+Hyvän tekstieditorin ja PDF\-/katselimen kanssa työskentely on sujuvaa.
+Tietty näppäinkomento editorissa tallentaa ja kääntää dokumentin, ja
+pian PDF\-/katselin lataa muuttuneen PDF:n automaattisesti näkyviin.
+Sekä editorin että PDF\-/katselimen voi pitää sa\-man\-aikai\-ses\-ti
+esillä, eikä muualle tarvitse yleensä siirtyä. Tähän kannattaa pyrkiä.
 
 \subsection{Latexmk}
 
@@ -194,7 +193,7 @@ Työskentelyä erityisen paljon helpottava valitsin on \koodi{\=/pvc}. Kun
 tuo valitsin on mukana komennossa, Latexmk jää tarkkailemaan annettua
 Latex\-/tiedostoa, ja kun se huomaa tiedoston muuttuneen, se kääntää
 tiedoston automaattisesti uudelleen. Käyttäjän ei siis tarvitse muuta
-kuin tallentaa tiedosto teksti\-editorista, ja tarkkailutilassa oleva
+kuin tallentaa tiedosto tekstieditorista, ja tarkkailutilassa oleva
 Latexmk kääntää sen aina itsestään.
 
 Muitakin hyödyllisiä toimintoja on mukana. Seuraavista esimerkeistä
@@ -215,28 +214,27 @@ lainkaan, käännetään kaikki nykyisessä hakemistossa olevat
 
 Latexmk\-/ohjelmalle voi tehdä asetustiedoston, johon voi kirjoittaa
 omaan käyttöön sopivat asetukset. Asetustiedosto sijoitetaan käyttäjän
-kotihakemistoon nimellä \koodi{.latexmkrc}. Alla on esimerkki, mitä se
-voisi ehkä sisältää.
+kotihakemistoon nimellä \koodi{.latexmkrc}. Esimerkki
+\ref{esim:latexmkrc} näyttää, mitä se voisi ehkä sisältää.
 
-\begin{koodilohkosis}
-  $pdf_mode = 5; # 5=xelatex, 4=lualatex
-  $xelatex = 'xelatex -interaction=nonstopmode %O %S';
-  $lualatex = 'lualatex -interaction=nonstopmode %O %S';
-  $clean_ext = 'snm nav xdv';
-\end{koodilohkosis}
-
-Ensimmäisen rivin asetus määrittää, mitä kääntäjää käytetään oletuksena.
-Toisella ja kolmannella rivillä määritellään, millä tavoin Xelatex ja
-Lualatex suoritetaan. Tässä esimerkissä oletus\-asetuksiin on lisätty
+Esimerkin ensimmäisen rivin asetus määrittää, miten PDF\-/tiedostot
+tuotetaan tai mitä kääntäjää käytetään oletuksena. Toisella ja
+kolmannella rivillä määritellään, millä tavoin Xelatex ja Lualatex
+suoritetaan. Tässä esimerkissä oletus\-asetuksiin on lisätty
 \koodi{non\-stop\-mode}, joka estää kaiken vuorovaikutteisen toiminnan.
 Asetus on tarpeen ainakin silloin, kun kääntäjä käynnistetään toisesta
-ohjelmasta kuten teks\-ti\-edi\-to\-ris\-ta eikä vuorovaikutus kääntäjän
-kanssa ole mahdollista.
+ohjelmasta kuten tekstieditorista eikä vuorovaikutus kääntäjän kanssa
+ole mahdollista.
 
-Neljännellä rivillä luetellaan kääntämisen aikana syntyvien
-väliaikaistiedostojen päätteitä. Yleiset väliaikaistiedostot
-(\koodi{log, aux, out} ym.) on Latexmk\-/ohjelmalla jo tiedossa, mutta
-tällä asetuksella mukaan voi lisätä muitakin.
+\input{esim-latexmkrc}
+
+Esimerkin \ref{esim:latexmkrc} neljännellä rivillä luetellaan
+kääntämisen aikana syntyvien väliaikaistiedostojen päätteitä.
+Latexmk\-/ohjelma tuntee yleisimmät väliaikaistiedostot (\koodi{log,
+  aux, out} ym.), mutta tällä asetuksella mukaan voi lisätä
+harvinaisempia. Viides rivi määrittää PDF\-/katseluohjelman, joka
+käynnistetään, kun käytetään valitsimia \koodi{\=/pv} tai
+\koodi{\=/pvc}.
 
 \subsection{Texdoc}
 
@@ -257,7 +255,7 @@ Fontspec\-/pakettiin syvällisemmin, tarvitsee vain komentaa
 
 Olemme varmasti jo puhuneet tarpeeksi, ja olisi hyvä päästä tekemään
 jotain käytännöllistä. Tallenna esimerkin \ref{esim:ensimmainen} sisältö
-teksti\-editorin avulla tiedostoon vaikkapa nimellä \koodi{teksti.tex}.
+tekstieditorin avulla tiedostoon vaikkapa nimellä \koodi{teksti.tex}.
 Käännä eli lado se PDF\-/tiedostoksi komennolla \koodi{xelatex
   teksti.tex} tai komennolla \koodi{lualatex teksti.tex}. Tuloksena
 pitäisi olla tiedosto \koodi{teksti.pdf}, jota voi ihailla jollakin

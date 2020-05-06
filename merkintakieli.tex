@@ -1,5 +1,84 @@
 \chapter{Merkintäkieli}
 \section{Erikoismerkit}
+
+Muutamalla merkillä on Latex\-/dokumentissa erikoismerkitys, ja siksi
+merkkejä ei voi käyttää normaalilla tavalla. Merkit ovat seuraavat:
+
+\begin{koodilohkosis}
+  % ^ _ # & $ { } ~ \
+\end{koodilohkosis}
+
+Useimmat merkit voi suojata erityismerkitykseltä kirjoittamalla niiden
+eteen kenoviivan:
+
+\begin{koodilohkosis}
+  \% \^ \_ \# \& \$ \{ \}
+\end{koodilohkosis}
+
+Erikoismerkeistä tilden (\textasciitilde) eikä kenoviivan
+(\textbackslash) suojaaminen ei onnistu pelkällä kenoviivalla. Kenoviiva
+ja tilde muodostavat yhdessä komennon, joka tekee sen, että seuraavan
+kirjaimen päälle tulee tilde. Esimerkiksi
+\koodi{\textbackslash\textasciitilde{a}} tuottaa ladottuna merkin ã.
+Pelkkä tildemerkki saadaan kirjoitetaan komennolla
+\koodi{\textbackslash\textasciitilde\{\}} tai \koodi{\keno
+  textasciitilde}. Kaksi kenoviivaa (\koodi{\keno\keno}) puolestaan on
+komento, joka tekee rivinvaihdon. Pelkkä kenoviiva täytyy kirjoittaa
+komennolla \koodi{\keno textbackslash}.
+
+% Pitää kertoa, missä on lisätietoa näistä merkeistä.
+
+\subsection{Sanavälit}
+
+Välilyönti, sarkainmerkki ja yksi rivinvaihto ovat kaikki vain
+tavallisia sanavälejä Latex\-/dokumentissa, ja näillä kolmella on sama
+merkitys. Esimerkiksi rivin lopussa oleva rivinvaihto tarkoittaa samaa
+kuin sanojen välissä oleva välilyönti. Kirjoittaja voi itse vapaasti
+päättää, kuinka monta sanaa kirjoittaa yhdelle riville tekstieditorissa.
+Latex ei välitä.
+
+Toinen tarpeellinen tieto on, että välilyöntejä ja sarkainmerkkejä voi
+kirjoittaa useita peräkkäin, mutta peräkkäiset välit silti tarkoittavat
+vain yhtä väliä.
+
+\begin{koodilohkosis}
+  Nämä      kaikki
+       ovat        vain
+  sanoja  peräkkäin,  ja      kaikki                    kuuluvat
+      samaan kappaleeseen.     
+\end{koodilohkosis}
+
+Tyhjä rivi on kuitenkin eri asia. Tyhjä rivi on sellainen, joka ei
+sisällä mitään muuta kuin rivinvaihdon tai joka sisältää vain
+välilyöntejä tai sarkainmerkkejä ja lopuksi rivinvaihdon. Latexissa
+tyhjä rivi on kappaleen vaihtumisen merkki, eli sen jälkeen alkaa uusi
+tekstikappale.
+
+Ladotuissa teksteissä uuden tekstikappaleen alku ilmaistaan usein
+sisennetyllä rivillä, ja niin on tässäkin oppaassa. Sisennyksiä eikä
+muitakaan muotoiluja ei kuitenkaan tehdä tekstieditorissa välien avulla.
+Siihen on omat keinonsa.
+
+\subsection{Kommentit (\%)}
+
+Latex\-/dokumentissa \koodi{\%}\=/merkki on kommenttimerkki, jota
+kääntäjä ei huomioi ja jonka jälkeisen rivin\-osan kääntäjä jättää
+huomioimatta. Merkki on tarkoitettu kirjoittajan omien kommenttien ja
+muistiinpanojen kirjoittamiseen.
+
+Kommenttimerkki myös syö yhden rivinvaihdon sekä kaikki välilyönnit ja
+sarkainmerkit, jotka tulevat kyseisen kommentin jälkeen. Seuraava
+esimerkki tuottaa ladottuna ehjän sanan ''Latex'':
+
+\begin{koodilohkosis}
+  La% Tässä on kommentti
+   t%  ja myöskin tässä.
+    ex
+\end{koodilohkosis}
+
+Toista rivinvaihtoa kommentti ei kuitenkaan syö, eli tyhjä rivi
+kommentin jälkeen tarkoittaa normaalia kappaleen vaihtumista.
+
 \section{Komennot}
 \section{Ympäristöt}
 \section{Mitat}

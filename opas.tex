@@ -1,6 +1,7 @@
 \documentclass[notitlepage,oneside]{book}
 \usepackage[a4paper, vscale=.75, hscale=.68, footskip=1.5cm]{geometry}
 \usepackage{fontspec}
+%\usepackage{xltxtra}
 \usepackage{polyglossia}
 %\usepackage{datetime2}
 \usepackage{ragged2e}
@@ -187,10 +188,13 @@
   Xe-la-tex
 }
 
-{
-  \renewcommand{\thispagestyle}[1]{}
-  %\tableofcontents
-}
+%\clearpage
+%\pdfbookmark[1]{Sisällys}{luku:sisallys}
+
+% {
+%   \renewcommand{\thispagestyle}[1]{}
+%   \tableofcontents
+% }
 
 \clearpage
 \pagestyle{plain}
@@ -236,6 +240,7 @@ yhtäläisyyksiä, ja
 \section{Otsikot}
 \section{Luetelmat}
 \section{Taulukot}
+\label{luku:taulukot}
 \section{Kelluvat osat}
 \section{Ristiviitteet}
 \section{Alaviitteet}
@@ -245,6 +250,7 @@ yhtäläisyyksiä, ja
 \section{Laatikot}
 
 \chapter{Matematiikka}
+\label{luku:matematiikka}
 
 \chapter{Virittely}
 \section{Päiväykset ja kellonajat}

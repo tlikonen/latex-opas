@@ -1,69 +1,85 @@
 \chapter{Merkintäkieli}
 
-\section{Erikoismerkit}
-
-Muutamalla merkillä on Latex\-/dokumentissa erikoismerkitys, ja siksi
-merkkejä ei voi käyttää normaalilla tavalla. Merkit ovat seuraavat:
-
-\begin{koodilohkosis}
-  % ^ _ # & $ { } ~ \
-\end{koodilohkosis}
-
-Useimmat merkit voi suojata erikoismerkitykseltä kirjoittamalla niiden
-eteen kenoviivan (\textbackslash). Kenoviiva on oikeastaan
-Latex\-/komennon aloittava merkki (luku \ref{luku:komennot}), mutta
-seuraavien erikoismerkkien kanssa syntyy komento, joka käytännössä latoo
-merkin sellaisenaan.
-
-\begin{koodilohkosis}
-  \% \^ \_ \# \& \$ \{ \}
-\end{koodilohkosis}
-
-Erikoismerkeistä tilden (\textasciitilde) eikä kenoviivan
-(\textbackslash) suojaaminen ei onnistu pelkällä kenoviivalla. Kenoviiva
-ja tilde muodostavat yhdessä komennon, joka latoo seuraavan kirjaimen
-päälle tilden. Esimerkiksi \koodi{\textbackslash\textasciitilde{a}}
-tuottaa ladottuna merkin \~a (\textsc{u+00e3 \textenglish{latin small
-    letter a with tilde}}). Pelkkä tildemerkki saadaan kirjoitetaan
-komennolla \koodi{\textbackslash\textasciitilde\{\}} tai \koodi{\keno
-  textasciitilde}. Kaksi kenoviivaa (\koodi{\keno\keno}) puolestaan on
-komento, joka tekee rivinvaihdon. Pelkkä kenoviiva täytyy kirjoittaa
-komennolla \koodi{\keno textbackslash}. Lisätietoa komentojen
-toiminnasta on luvussa \ref{luku:komennot}.
-
-% Pitää kertoa, missä on lisätietoa näistä merkeistä.
-
-\subsection{Sanavälit}
+\section{Sanavälit}
 
 Välilyönti, sarkainmerkki ja yksi rivinvaihto ovat kaikki vain
 tavallisia sanavälejä Latex\-/dokumentissa, ja näillä kolmella on sama
 merkitys. Esimerkiksi rivin lopussa oleva rivinvaihto tarkoittaa samaa
 kuin sanojen välissä oleva välilyönti. Kirjoittaja voi itse vapaasti
 päättää, kuinka monta sanaa kirjoittaa yhdelle riville tekstieditorissa.
-Latex ei välitä.
-
-Toinen tarpeellinen tieto on, että välilyöntejä ja sarkainmerkkejä voi
-kirjoittaa useita peräkkäin, mutta peräkkäiset välit silti tarkoittavat
-vain yhtä väliä.
+Latex ei välitä. Välilyöntejä ja sarkainmerkkejä voi kirjoittaa useita
+peräkkäin, mutta ne ovat sama asia kuin yksi väli.
 
 \begin{koodilohkosis}
   Nämä      kaikki
-       ovat        vain
-  sanoja  peräkkäin,  ja      kaikki                    kuuluvat
+       ovat            vain
+  sanoja  peräkkäin,  ja      kaikki                kuuluvat
       samaan kappaleeseen.     
 \end{koodilohkosis}
 
-Tyhjä rivi on kuitenkin eri asia. Tyhjä rivi on sellainen, joka ei
-sisällä mitään muuta kuin rivinvaihdon tai joka sisältää vain
-välilyöntejä tai sarkainmerkkejä ja lopuksi rivinvaihdon. Latexissa
-tyhjä rivi on kappaleen vaihtumisen merkki, eli sen jälkeen alkaa uusi
-tekstikappale. Tyhjiä rivejä voi olla useita peräkkäin, mutta ne
+Tyhjä rivi on kuitenkin eri asia: se tarkoittaa kappaleen vaihtumista.
+Rivi on tyhjä silloin, kun se ei sisällä mitään muuta kuin rivinvaihdon
+tai kun se sisältää vain välilyöntejä tai sarkainmerkkejä ja lopuksi
+rivinvaihdon. Tyhjiä rivejä voi olla useita peräkkäin, mutta ne
 tarkoittavat samaa kuin yksi tyhjä rivi.
 
-Ladotuissa teksteissä uuden tekstikappaleen alku ilmaistaan usein
-sisennetyllä rivillä, ja niin on tässäkin oppaassa. Sisennyksiä eikä
-muitakaan muotoiluja ei tehdä tekstieditorissa välien avulla. Siihen on
-omat keinonsa (luku \ref{luku:kappale}).
+Ladotuissa teksteissä uuden tekstikappaleen alkaminen ilmaistaan usein
+sisennetyllä rivillä, ja niin on tässäkin kappaleessa ja koko oppaassa.
+Sisennyksiä eikä muitakaan muotoiluja ei tehdä tekstieditorissa välien
+avulla. Siihen on omat keinonsa (luku \ref{luku:kappale}).
+
+\section{Merkistö}
+
+Latex\-/dokumenttiin voi kirjoittaa tekstiä Unicode\-/merkistöllä ja sen
+UTF\=/8\/-koodauksella. Pääasiassa siis merkit kirjoitetaan sellaisenaan
+lähdedokumenttiin. On kuitenkin muutamia poikkeuksia eli tiettyyn
+erityistarkoitukseen varattuja merkkejä, ja niitä käsitellään tässä
+alaluvussa.
+
+\subsection{Varatut erikoismerkit}
+
+Muutamalla merkillä on Latex\-/dokumentissa erikoismerkitys, eikä niitä
+ei voi käyttää normaalilla tavalla. Merkit ovat seuraavat:
+
+\begin{koodilohkosis}
+  % $ ^ _ # & { } ~ \
+\end{koodilohkosis}
+
+Useimmat näistä merkeistä voi suojata erikoismerkitykseltä
+kirjoittamalla niiden eteen kenoviivan (\textbackslash). Tildeä
+(\textasciitilde), sirkumfleksia (\textasciicircum) eikä kenoviivaa
+(\textbackslash) ei voi suojata pelkän kenoviivan avulla, koska
+kenoviivan kanssa ne muodostavat eräitä muita komentoja. Taulukossa
+\ref{tlk:merkkien_suojaus} on koottuna, kuinka edellä mainitut
+erikoismerkit suojataan eli saadaan ladottua dokumenttiin sellaisenaan.
+
+\leijutlk{
+  \begin{tabular}{cll}
+    \toprule
+    \ots{Merkki} & \multicolumn{2}{l}{\ots{Kirjoittaminen}} \\
+    \midrule
+    \koodi{\%} & \koodi{\keno\%} \\
+    \koodi{\$} & \koodi{\keno\$} & \koodi{\keno textdollar} \\
+    \koodi{\^{}} & \koodi{\keno\^{}\{\}} & \koodi{\keno textasciicircum} \\
+    \koodi{\_} & \koodi{\keno\_} & \koodi{\keno textunderscore} \\
+    \koodi{\#} & \koodi{\keno\#} \\
+    \koodi{\&} & \koodi{\keno\&} \\
+    \koodi{\{} & \koodi{\keno\{} & \koodi{\keno textbraceleft} \\
+    \koodi{\}} & \koodi{\keno\}} & \koodi{\keno textbraceright} \\
+    \koodi{\~{}} & \koodi{\keno\~{}\{\}} & \koodi{\keno textasciitilde} \\
+    \koodi{\keno} && \koodi{\keno textbackslash} \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Erikoismerkkien kirjoittaminen}
+  \label{tlk:merkkien_suojaus}
+}
+
+Jotkin makropaketit määrittelevät muitakin erikoismerkkejä. Esimerkiksi
+kieli\-asetuksiin (luku \ref{luku:kieliasetukset}) liittyvät
+Polyglossia\-/{} ja Babel\-/paketit voivat määritellä pari
+lainausmerkillä (\textquotedbl) alkavaa, tavutuksen hallintaan liittyvää
+komentoa.
 
 \subsection{Kommentit (\%)}
 
@@ -77,7 +93,7 @@ kirjoittamiseen.
   % mitään kommentoitavaa.
 \end{koodilohkosis}
 
-Kommenttimerkki vaikuttaa kääntäjään kuitenkin siten, että se syö kaikki
+Kommenttimerkki vaikuttaa kääntäjään myös siten, että se syö kaikki
 välilyönnit ja sarkainmerkit, jotka tulevat kyseisen kommentin jälkeen.
 Toisin sanoen kommenttimerkin avulla voi yhdistää eri riveillä olevan
 tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan ''Latex'':
@@ -88,8 +104,15 @@ tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan ''Latex'':
       ex
 \end{koodilohkosis}
 
+\subsection{Lainausmerkit ja heittomerkki}
+\subsection{Ajatusviivat}
+\subsection{Rivin ja sivun vaihto}
+\subsection{Sitova välilyönti}
+\subsection{Tarkkeet}
+\label{luku:tarkkeet}
 \section{Komennot}
 \label{luku:komennot}
 \section{Ympäristöt}
+\label{luku:ymparistot}
 \section{Mitat}
 \section{Laskurit}

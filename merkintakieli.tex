@@ -1,4 +1,5 @@
 \chapter{Merkintäkieli}
+
 \section{Erikoismerkit}
 
 Muutamalla merkillä on Latex\-/dokumentissa erikoismerkitys, ja siksi
@@ -8,8 +9,11 @@ merkkejä ei voi käyttää normaalilla tavalla. Merkit ovat seuraavat:
   % ^ _ # & $ { } ~ \
 \end{koodilohkosis}
 
-Useimmat merkit voi suojata erityismerkitykseltä kirjoittamalla niiden
-eteen kenoviivan:
+Useimmat merkit voi suojata erikoismerkitykseltä kirjoittamalla niiden
+eteen kenoviivan (\textbackslash). Kenoviiva on oikeastaan
+Latex\-/komennon aloittava merkki (luku \ref{luku:komennot}), mutta
+seuraavien erikoismerkkien kanssa syntyy komento, joka käytännössä latoo
+merkin sellaisenaan.
 
 \begin{koodilohkosis}
   \% \^ \_ \# \& \$ \{ \}
@@ -17,14 +21,15 @@ eteen kenoviivan:
 
 Erikoismerkeistä tilden (\textasciitilde) eikä kenoviivan
 (\textbackslash) suojaaminen ei onnistu pelkällä kenoviivalla. Kenoviiva
-ja tilde muodostavat yhdessä komennon, joka tekee sen, että seuraavan
-kirjaimen päälle tulee tilde. Esimerkiksi
-\koodi{\textbackslash\textasciitilde{a}} tuottaa ladottuna merkin ã.
-Pelkkä tildemerkki saadaan kirjoitetaan komennolla
-\koodi{\textbackslash\textasciitilde\{\}} tai \koodi{\keno
+ja tilde muodostavat yhdessä komennon, joka latoo seuraavan kirjaimen
+päälle tilden. Esimerkiksi \koodi{\textbackslash\textasciitilde{a}}
+tuottaa ladottuna merkin \~a (\textsc{u+00e3 \textenglish{latin small
+    letter a with tilde}}). Pelkkä tildemerkki saadaan kirjoitetaan
+komennolla \koodi{\textbackslash\textasciitilde\{\}} tai \koodi{\keno
   textasciitilde}. Kaksi kenoviivaa (\koodi{\keno\keno}) puolestaan on
 komento, joka tekee rivinvaihdon. Pelkkä kenoviiva täytyy kirjoittaa
-komennolla \koodi{\keno textbackslash}.
+komennolla \koodi{\keno textbackslash}. Lisätietoa komentojen
+toiminnasta on luvussa \ref{luku:komennot}.
 
 % Pitää kertoa, missä on lisätietoa näistä merkeistä.
 
@@ -52,34 +57,39 @@ Tyhjä rivi on kuitenkin eri asia. Tyhjä rivi on sellainen, joka ei
 sisällä mitään muuta kuin rivinvaihdon tai joka sisältää vain
 välilyöntejä tai sarkainmerkkejä ja lopuksi rivinvaihdon. Latexissa
 tyhjä rivi on kappaleen vaihtumisen merkki, eli sen jälkeen alkaa uusi
-tekstikappale.
+tekstikappale. Tyhjiä rivejä voi olla useita peräkkäin, mutta ne
+tarkoittavat samaa kuin yksi tyhjä rivi.
 
 Ladotuissa teksteissä uuden tekstikappaleen alku ilmaistaan usein
 sisennetyllä rivillä, ja niin on tässäkin oppaassa. Sisennyksiä eikä
-muitakaan muotoiluja ei kuitenkaan tehdä tekstieditorissa välien avulla.
-Siihen on omat keinonsa.
+muitakaan muotoiluja ei tehdä tekstieditorissa välien avulla. Siihen on
+omat keinonsa (luku \ref{luku:kappale}).
 
 \subsection{Kommentit (\%)}
 
-Latex\-/dokumentissa \koodi{\%}\=/merkki on kommenttimerkki, jota
-kääntäjä ei huomioi ja jonka jälkeisen rivin\-osan kääntäjä jättää
-huomioimatta. Merkki on tarkoitettu kirjoittajan omien kommenttien ja
-muistiinpanojen kirjoittamiseen.
+Latex\-/dokumentissa prosentin merkki (\koodi{\%}) on kommenttimerkki,
+jonka jälkeisen rivin\-osan kääntäjä jättää huomioimatta. Merkki on
+tarkoitettu kirjoittajan omien kommenttien ja muistiinpanojen
+kirjoittamiseen.
 
-Kommenttimerkki myös syö yhden rivinvaihdon sekä kaikki välilyönnit ja
-sarkainmerkit, jotka tulevat kyseisen kommentin jälkeen. Seuraava
-esimerkki tuottaa ladottuna ehjän sanan ''Latex'':
+\begin{koodilohkosis}
+  % Nyt ei tosin ole
+  % mitään kommentoitavaa.
+\end{koodilohkosis}
+
+Kommenttimerkki vaikuttaa kääntäjään kuitenkin siten, että se syö kaikki
+välilyönnit ja sarkainmerkit, jotka tulevat kyseisen kommentin jälkeen.
+Toisin sanoen kommenttimerkin avulla voi yhdistää eri riveillä olevan
+tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan ''Latex'':
 
 \begin{koodilohkosis}
   La% Tässä on kommentti
-   t%  ja myöskin tässä.
-    ex
+    t% ja myöskin tässä.
+      ex
 \end{koodilohkosis}
 
-Toista rivinvaihtoa kommentti ei kuitenkaan syö, eli tyhjä rivi
-kommentin jälkeen tarkoittaa normaalia kappaleen vaihtumista.
-
 \section{Komennot}
+\label{luku:komennot}
 \section{Ympäristöt}
 \section{Mitat}
 \section{Laskurit}

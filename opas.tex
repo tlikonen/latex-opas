@@ -36,7 +36,7 @@
 [Scale=MatchLowercase, Numbers=Lowercase]
 
 \setmonofont{Linux Libertine Mono O}
-[Scale=MatchLowercase, LetterSpace=-2]
+[Scale=MatchLowercase, ScaleAgain=.95, LetterSpace=-3, HyphenChar={8203}]
 
 \linespread{1.58}
 
@@ -50,8 +50,8 @@
 \setlength{\parindent}{1em}
 \setlength{\parskip}{0em}
 \setlength{\footnotemargin}{.8em}
-\setlength{\floatsep}{3ex}
-\setlength{\textfloatsep}{4ex}
+\setlength{\floatsep}{4ex}
+\setlength{\textfloatsep}{6ex}
 
 \DeclareFloatingEnvironment[ name={Esimerkki} ]{esimerkki}
 
@@ -100,7 +100,7 @@
 \definecolor{sitova}{rgb}{1,0,0}
 
 \newcommand{\keno}{\textbackslash}
-\newcommand{\koodi}[1]{\texttt{\versaalinum #1}}
+\newcommand{\koodi}[1]{\texttt{#1}}
 \newcommand{\tavuvihje}{\keno-}
 \newcommand{\tavukohta}{\textcolor{tavu}{\rule{1pt}{1.5ex}}}
 \newcommand{\sitovaym}{\textcolor{sitova}{-}}
@@ -141,7 +141,7 @@
 \hyphenation{
   an-tiik-va
   base-line-skip
-  docu-ment
+  doc-u-ment
   Ext-dash
   font-size
   Font-spec
@@ -154,21 +154,22 @@
   large
   line-spread
   Lua-la-tex
-  Match-Lower-case
+  Match-Low-er-case
   mono-space
   new-font-face
-  new-font-family
+  new-font-fam-i-ly
   ni-men-omaan
-  normal-size
+  non-stop-mode
+  nor-mal-size
   Poly-glos-sia
   Scale
   script-size
-  select-font
+  se-lect-font
   set-main-font
   set-mono-font
   set-sans-font
-  sf-family
-  sf-family-abs
+  sf-fam-i-ly
+  sf-fam-i-ly-abs
   small
   teks-ti-edi-to-ria
   teks-ti-edi-to-ril-la
@@ -178,9 +179,10 @@
   text-ascii-tilde
   text-back-slash
   tiny
-  tt-family
-  tt-family-abs
-  type-writer
+  tt-fam-i-ly
+  tt-fam-i-ly-abs
+  type-writ-er
+  Uni-code
   väli-ai-kais-tie-dos-to-jen
   väli-ai-kais-tie-dos-toa
   väli-ai-kais-tie-dos-toon

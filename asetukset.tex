@@ -44,8 +44,8 @@ kirjainperheen varaan: antiikva eli pääteviivallinen
 (\textenglish{sans serif}) ja tasalevyinen kirjoituskoneen kaltainen
 perhe (\textenglish{typewriter, monospace}). Kuvassa
 \ref{kuva:kirjainperhetyypit} on tässä oppaassa käytetyt kolme eri
-kirjainperhetyyppiä. Leipätekstissä käytetään pääteviivallista,
-otsikoissa pääteviivatonta ja koodi\-esimerkeissä tasalevyistä.
+kirjainperhetyyppiä. Leipätekstissä käytetään antiikvaa, otsikoissa
+groteskia ja koodi\-esi\-mer\-keis\-sä tasalevyistä.
 
 \leijukuva{
   {\rmfamily\addfontfeatures{Scale=7}Amf}
@@ -54,15 +54,15 @@ otsikoissa pääteviivatonta ja koodi\-esimerkeissä tasalevyistä.
   \hfill
   {\ttfamily\addfontfeatures{Scale=7}Amf}
 }{
-  \caption{Vasemmalla pääteviivallinen, keskellä pääteviivaton ja
-    oikealla tasalevyinen pääteviivallinen kirjainperhe}
+  \caption{Vasemmalla antiikva, keskellä groteski ja oikealla
+    tasalevyinen antiikvakirjainperhe}
   \label{kuva:kirjainperhetyypit}
 }
 
 Kirjoituskoneen kaltainen tasalevyinen kirjainperhe on tässä tapauksessa
-tyypiltään pääteviivallinen, mutta se voisi olla muutakin. Tasalevyisyys
-on sen kirjainperheen tärkein määrittävä tekijä Latexin asetusten
-näkökulmasta.
+tyypiltään antiikva eli pääteviivallinen, mutta se voisi olla muutakin.
+Tasalevyisyys on sen kirjainperheen tärkein määrittävä tekijä Latexin
+asetusten näkökulmasta.
 
 Kirjainperheet otetaan käyttöön Fontspec\-/paketin komennoilla seuraavan
 esimerkin mukaisesti.
@@ -248,25 +248,25 @@ ympäristöä sisäkkäin.
     \multicolumn{2}{l}{\ots{Komento}}
     & \multicolumn{2}{l}{\ots{Merkitys}} \\
     \midrule
-    \koodi{\keno rmfamily} & \koodi{\keno textrm\{...\}}
-    & {\rmfamily perhe} & pääteviivallinen, antiikva, serif, roman \\
-    \koodi{\keno sffamily} & \koodi{\keno textsf\{...\}}
-    & {\sffamily perhe} & pääteviivaton, groteski, sans serif \\
-    \koodi{\keno ttfamily} & \koodi{\keno texttt\{...\}}
-    & {\ttfamily perhe} & tasalevyinen, kirjoituskone, typewriter \\
+    \koodi{\keno rmfamily} & \koodi{\keno textrm\{\}}
+    & {\rmfamily perhe} & antiikva, serif, roman \\
+    \koodi{\keno sffamily} & \koodi{\keno textsf\{\}}
+    & {\sffamily perhe} & groteski, sans serif \\
+    \koodi{\keno ttfamily} & \koodi{\keno texttt\{\}}
+    & {\ttfamily perhe} & tasalevyinen, typewriter \\
     \midrule
-    \koodi{\keno mdseries} & \koodi{\keno textmd\{...\}}
+    \koodi{\keno mdseries} & \koodi{\keno textmd\{\}}
     & {\mdseries leikkaus} & lihavoimaton, tavallinen \\
-    \koodi{\keno bfseries} & \koodi{\keno textbf\{...\}}
+    \koodi{\keno bfseries} & \koodi{\keno textbf\{\}}
     & {\bfseries leikkaus} & lihavoitu, bold \\
     \midrule
-    \koodi{\keno upshape} & \koodi{\keno textup\{...\}}
+    \koodi{\keno upshape} & \koodi{\keno textup\{\}}
     & {\upshape leikkaus} & pystyasento, tavallinen \\
-    \koodi{\keno slshape} & \koodi{\keno textsl\{...\}}
+    \koodi{\keno slshape} & \koodi{\keno textsl\{\}}
     & {\slshape leikkaus} & kallistettu, slanted, oblique \\
-    \koodi{\keno itshape} & \koodi{\keno textit\{...\}}
+    \koodi{\keno itshape} & \koodi{\keno textit\{\}}
     & {\itshape leikkaus} & kursiivi, italic \\
-    \koodi{\keno scshape} & \koodi{\keno textsc\{...\}}
+    \koodi{\keno scshape} & \koodi{\keno textsc\{\}}
     & {\scshape leikkaus} & kapiteeli, small caps \\
     \bottomrule
   \end{tabular}
@@ -377,8 +377,9 @@ Jos edellä mainitut kummallisuudet eivät häiritse eikä ole tarvetta
 määritellä fontteja tarkasti tietyn pistekoon mukaiseksi, on
 suhteellinen määrittelytapa todella helppo. Kaikki dokumentin fontit
 määräytyvät perusfontin skaalauskertoimen kautta. Tämä tapa sopii hyvin
-varsinkin dokumentin sisällön kirjoittamisvaiheeseen, jossa halutaan
-vain nopeasti asettaa dokumentti suurin piirtein järkevän näköiseksi.
+varsinkin dokumentin sisällön kirjoittamisvaiheeseen, jossa ehkä
+halutaan vain nopeasti asettaa dokumentti suurin piirtein järkevän
+näköiseksi.
 
 \subsection{Koot absoluuttisesti}
 \label{luku:fontti_absoluuttinen}

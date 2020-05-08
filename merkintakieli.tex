@@ -5,10 +5,10 @@
 Välilyönti, sarkainmerkki ja yksi rivinvaihto ovat kaikki vain
 tavallisia sanavälejä Latex\-/dokumentissa, ja näillä kolmella on sama
 merkitys. Esimerkiksi rivin lopussa oleva rivinvaihto tarkoittaa samaa
-kuin sanojen välissä oleva välilyönti. Kirjoittaja voi itse vapaasti
-päättää, kuinka monta sanaa kirjoittaa yhdelle riville tekstieditorissa.
-Latex ei välitä. Välilyöntejä ja sarkainmerkkejä voi kirjoittaa useita
-peräkkäin, mutta ne ovat sama asia kuin yksi väli.
+kuin sanojen välissä oleva välilyönti. Kirjoittaja voi vapaasti päättää,
+kuinka monta sanaa kirjoittaa yhdelle riville tekstieditorissa. Latex ei
+välitä. Välilyöntejä ja sarkainmerkkejä voi kirjoittaa useita peräkkäin,
+mutta ne ovat sama asia kuin yksi väli.
 
 \begin{koodilohkosis}
   Nämä      kaikki
@@ -31,25 +31,26 @@ avulla. Siihen on omat keinonsa (luku \ref{luku:kappale}).
 \section{Merkistö}
 
 Latex\-/dokumenttiin voi kirjoittaa tekstiä Unicode\-/merkistöllä ja sen
-UTF\=/8\/-koodauksella. Pääasiassa siis merkit kirjoitetaan sellaisenaan
-lähdedokumenttiin. On kuitenkin muutamia poikkeuksia eli tiettyyn
-erityistarkoitukseen varattuja merkkejä, ja niitä käsitellään tässä
-alaluvussa.
+UTF\=/8\/-koodauksella, jos kääntäjänä on Unicoden osaava
+la\-to\-ja\-oh\-jel\-ma kuten Xelatex tai Lualatex. Pääasiassa siis
+merkit kirjoitetaan sellaisenaan lähdedokumenttiin. On kuitenkin muutama
+poikkeus eli tiettyyn erityistarkoitukseen varattuja merkkejä, ja niitä
+käsitellään tässä alaluvussa.
 
 \subsection{Varatut erikoismerkit}
 
-Muutamalla merkillä on Latex\-/dokumentissa erikoismerkitys, eikä niitä
-ei voi käyttää normaalilla tavalla. Merkit ovat seuraavat:
+Muutamalla merkillä on perus Latexissa erikoismerkitys, eikä niitä ei
+voi käyttää normaalilla tavalla. Merkit ovat seuraavat:
 
 \begin{koodilohkosis}
   % $ ^ _ # & { } ~ \
 \end{koodilohkosis}
 
 Useimmat näistä merkeistä voi suojata erikoismerkitykseltä
-kirjoittamalla niiden eteen kenoviivan (\textbackslash). Tildeä
+kirjoittamalla niiden eteen kenoviivan (\keno). Tildeä
 (\textasciitilde), sirkumfleksia (\textasciicircum) eikä kenoviivaa
-(\textbackslash) ei voi suojata pelkän kenoviivan avulla, koska
-kenoviivan kanssa ne muodostavat eräitä muita komentoja. Taulukossa
+itseään ei voi suojata pelkän kenoviivan avulla, koska kenoviivan kanssa
+ne muodostavat eräitä muita komentoja. Taulukossa
 \ref{tlk:merkkien_suojaus} on koottuna, kuinka edellä mainitut
 erikoismerkit suojataan eli saadaan ladottua dokumenttiin sellaisenaan.
 
@@ -71,17 +72,17 @@ erikoismerkit suojataan eli saadaan ladottua dokumenttiin sellaisenaan.
     \bottomrule
   \end{tabular}
 }{
-  \caption{Erikoismerkkien kirjoittaminen}
+  \caption{Varattujen erikoismerkkien kirjoittaminen}
   \label{tlk:merkkien_suojaus}
 }
 
 Jotkin makropaketit määrittelevät muitakin erikoismerkkejä. Esimerkiksi
 kieli\-asetuksiin (luku \ref{luku:kieliasetukset}) liittyvät
 Polyglossia\-/{} ja Babel\-/paketit voivat määritellä pari
-lainausmerkillä (\textquotedbl) alkavaa, tavutuksen hallintaan liittyvää
-komentoa.
+lainausmerkillä (\koodi{\textquotedbl}) alkavaa, tavutuksen hallintaan
+liittyvää komentoa.
 
-\subsection{Kommentit (\%)}
+\subsection{Kommentit}
 
 Latex\-/dokumentissa prosentin merkki (\koodi{\%}) on kommenttimerkki,
 jonka jälkeisen rivin\-osan kääntäjä jättää huomioimatta. Merkki on

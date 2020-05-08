@@ -81,8 +81,8 @@ kuten ligatuureja ja optisia kokoja. Tässä esimerkissä käytetään vain
 
 Esimerkissä peruskirjainperheen (\koodi{\keno setmainfont}) skaalaus on
 1, eli sille ei tehdä mitään, ja koko valitsimen voisi jättää pois. Sen
-sijaan kahdella muulla kirjainperheellä (\koodi{\keno setsansfont, \keno
-  setmonofont}) käytetään ker\-roin\-ase\-tus\-ta
+sijaan kahdella muulla kirjainperheellä (\koodi{\keno setsansfont},
+\koodi{\keno setmonofont}) käytetään ker\-roin\-ase\-tus\-ta
 \koodi{MatchLowercase}, joka skaalaa fontin siten, että gemenakirjaimet
 eli pienet kirjaimet ovat yhtä korkeita kuin peruskirjainperheessä.
 
@@ -133,7 +133,7 @@ Matalalla tasolla fonttien kokoon vaikuttaa Latexissa eräs yllättävä
 asia. Nimittäin dokumenttiluokalle (luku \ref{luku:dokumenttiluokat})
 voi antaa valitsimen, jolla koko asetetaan. Vaihto\-ehtoja on Latexin
 normaaleissa dokumenttiluokissa vain kolme: \koodi{10pt} (oletus),
-\koodi{11pt}, ja \koodi{12pt}. Dokumenttiluokan koko\-asetus vaikuttaa
+\koodi{11pt} ja \koodi{12pt}. Dokumenttiluokan koko\-asetus vaikuttaa
 myös sivun marginaaleihin, koska Latex pyrkii pitämään rivin
 merkkimäärän lukijalle sopivana: yhdelle riville ei kannata latoa ihan
 mahdottomasti merkkejä, koska luettavuus heikkenee.
@@ -224,10 +224,10 @@ kerran määritetty. Taulukossa \ref{tlk:fonttimallikomennot} on komennot
 kirjainperheen ja kirjainleikkauksen valintaan.
 
 Komennot fontin koon valintaan ovat taulukossa
-\ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä
-fontin pistekokoa mikäkin komento tarkoittaa oletuksena. Oletus riippuu
-Latexin dokumenttiluokkien (luku \ref{luku:dokumenttiluokat})
-fonttikokovalitsimista \koodi{10pt, 11pt} ja \koodi{12pt}.
+\ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä fontin
+pistekokoa mikäkin komento tarkoittaa oletuksena. Oletus riippuu Latexin
+dokumenttiluokkien (luku \ref{luku:dokumenttiluokat})
+fonttikokovalitsimista \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}.
 
 Kaikille korkean tason fonttikomennoille on olemassa myös samanniminen
 ympäristönsä. Alla olevassa esimerkissä on kaksi fontteihin vaikuttavaa
@@ -297,7 +297,7 @@ ympäristöä sisäkkäin.
   \end{tabular}
 }{
   \caption{Fonttien oletuspistekoot dokumenttiluokkien valitsimilla
-    \koodi{10pt, 11pt} ja \koodi{12pt}}
+    \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}}
   \label{tlk:fonttikokokomennot}
 }
 
@@ -344,8 +344,9 @@ Se asettaa rivikorkeuden kertoimeksi 1,45. Kertoimen täytyy olla
 vähintään yhtä suuri kuin peruskirjainperheen skaalauskerroin (1,4),
 jotta rivivälit ovat riittävän suuret. Näiden asetusten jälkeen
 dokumentissa käytetään korkeamman tason komentoja fonttien valintaan,
-esimerkiksi fonttikoon valintakomentoja \koodi{\keno small, \keno
-  normalsize, \keno large} (taulukko \ref{tlk:fonttikokokomennot}).
+esimerkiksi fonttikoon valintakomentoja \koodi{\keno small},
+\koodi{\keno normalsize}, \koodi{\keno large} (taulukko
+\ref{tlk:fonttikokokomennot}).
 
 Edellä kuvatussa suhteellisessa kirjainperheiden koon määrittelyssä on
 sellainen ongelma tai kummallisuus, että Latex koko ajan luulee, että

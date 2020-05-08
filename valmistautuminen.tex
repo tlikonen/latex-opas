@@ -42,8 +42,8 @@ kääntää julkaistavaksi dokumentiksi.
 
 Ajan myötä mukaan on tullut sekalainen joukko muitakin ohjelmia, joista
 kannattaa tässä yhteydessä mainita kaksi: Xelatex ja Lualatex. Ne ovat
-erilaisia Latexin toteutuksia ja tietokone\-ohjelmia (\koodi{xelatex,
-  lualatex}), joilla lähdedokumentti käännetään.\footnote{Englannin
+erilaisia Latexin toteutuksia ja tietokone\-ohjelmia (\koodi{xelatex},
+\koodi{lualatex}), joilla lähdedokumentti käännetään.\footnote{Englannin
   kielellä näitä on tapana kutsua yleisnimellä
   \emph{\textenglish{engine}} 'kone, moottori'.} Ne osaavat lukea
 Unicode\-/merkistöllä kirjoitettuja lähdedokumentteja ja käyttää
@@ -109,7 +109,7 @@ GNU/Linuxissa ja muissa Unix\-/tyyppisissä käyttöjärjestelmissä
 käytetään yleensä Tex Live \=/nimistä jakelua. Se on todennäköisesti
 saatavilla käyttöjärjestelmäjakelun pakettivarastoista. Esimerkiksi
 Debianiin ja sen kaltaisiin järjestelmiin on asennuspaketti
-\koodi{texlive-full}, joka asentaa kaiken helposti ja kerralla.
+texlive-full, joka asentaa kaiken helposti ja kerralla.
 
 Windows\-/käyttöjärjestelmälle on saatavilla Tex Liven lisäksi Miktex ja
 Protext. Mac OS \=/käyttöjärjestelmän kanssa käytettäneen yleensä
@@ -198,9 +198,9 @@ Latexmk kääntää sen aina itsestään.
 
 Muitakin hyödyllisiä toimintoja on mukana. Seuraavista esimerkeistä
 ensimmäinen komento poistaa kääntämisen aikana luodut
-väliaikaistiedostot (\koodi{log, aux, out} ym.), ja jälkimmäinen rivin
-komento poistaa kaikki luodut tiedostot eli väliaikaistiedostojen
-lisäksi myös valmiin PDF\-/tiedoston.
+väliaikaistiedostot (\koodi{log}, \koodi{aux}, \koodi{out} ym.), ja
+jälkimmäinen rivin komento poistaa kaikki luodut tiedostot eli
+väliaikaistiedostojen lisäksi myös valmiin PDF\-/tiedoston.
 
 \begin{koodilohkosis}
   latexmk -c teksti.tex
@@ -230,8 +230,8 @@ ole mahdollista.
 
 Esimerkin \ref{esim:latexmkrc} neljännellä rivillä luetellaan
 kääntämisen aikana syntyvien väliaikaistiedostojen päätteitä.
-Latexmk\-/ohjelma tuntee yleisimmät väliaikaistiedostot (\koodi{log,
-  aux, out} ym.), mutta tällä asetuksella mukaan voi lisätä
+Latexmk\-/ohjelma tuntee yleisimmät väliaikaistiedostot (\koodi{log},
+\koodi{aux}, \koodi{out} ym.), mutta tällä asetuksella mukaan voi lisätä
 harvinaisempia. Viides rivi määrittää PDF\-/katseluohjelman, joka
 käynnistetään, kun käytetään valitsimia \koodi{\=/pv} tai
 \koodi{\=/pvc}.

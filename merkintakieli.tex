@@ -106,6 +106,53 @@ tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan ''Latex'':
 \end{koodilohkosis}
 
 \subsection{Lainausmerkit ja heittomerkki}
+
+Kuulunee typo\-grafian perus\-asioihin, että käytetään oikeita
+typo\-grafisia lainausmerkkejä. Näppäilemällä vaihtonäppäin ja 2
+(shift+2) saadaan yleensä lainausmerkin yleisversio (\textquotedbl),
+niin sanottu ASCII\-/lainausmerkki, joka ei ole tietääkseni minkään
+kielen varsinainen lainausmerkki.
+
+Eri kielissä lainausmerkkikäytännöt ovat erilaiset. Suomen kielessä
+käytetään ''tällaisia'' lainausmerkkejä tai joskus >>tällaisia>>
+kulmalainausmerkkejä. Jos lainauksen sisään tarvitaan lainaus, täytyy
+sisempi lainaus kirjoittaa 'tällaisten' puolilainausmerkkien avulla.
+Yksittäin käytettynä se on nimeltään heittomerkki ('). Englannin
+kielessä lainauksen alussa ja lopussa on erilainen merkki: ``tässä''
+siitä esimerkki. Samoin on puolilainausmerkin kohdalla: `näin'.
+
+Latexissa voi käyttää Unicode\-/merkistöä ja kirjoittaa dokumenttiin
+suoraan ne merkit, joita halutaan käyttää, mutta edellä mainituille
+merkeille on myös omat komentonsa. Näppäimistöltä kirjoitettava
+heittomerkki tuottaa automaattisesti oikean kaarevan heittomerkin (')
+eikä yleisheittomerkkiä (\koodi{'}). Kun kirjoittaa kaksi heittomerkkiä
+peräkkäin (\koodi{''}), on lopputuloksena yksi kaareva lainausmerkki
+(''). Kulmalainausmerkki (>>) tehdään kahdella suurempi kuin \=/merkillä
+(\koodi{>>}).
+
+\begin{koodilohkosis}
+  ''Lainaus, jonka 'sisällä' on lainaus.''
+  >>Lainaus, jonka 'sisällä' on lainaus.>>
+\end{koodilohkosis}
+
+Yllä mainitut riittävät suomen kieleen, mutta englantia ja muita kieliä
+varten tarvitaan myös toisinpäin oleva merkki (``), joka tehdään
+kahdella gra\-vis\-ak\-sen\-til\-la (\koodi{``}). Vastaava
+puolilainausmerkki (`) tehdään yhdellä aksentilla (\koodi{`}). Ainakin
+ranskan kielessä käytetään erilaista kulmalainausmerkkiä lainauksen
+alussa ja lopussa, ja lainauksen aloittava merkki (<<) tehdään kahdella
+pienempi kuin \=/merkillä (\koodi{<<}). Muunlaisiin lainausmerkkeihin
+tarvittaneen Unicode\-/merkkejä. Tosin kielikohtaiset asetukset (luku
+\ref{luku:kieliasetukset}) voivat tuoda mukanaan omia keinojaan myös
+kielikohtaisten lainausmerkkien tuottamiseen.
+
+Joskus ladottuun tekstiin todella halutaan yleislainausmerkki
+(\textquotedbl) tai yleisheittomerkki (\textquotesingle). Ne saadaan
+komennoilla \koodi{\keno textquotedbl} ja \koodi{\keno textquotesingle}.
+Oletuksena myös tasalevyinen fontti (luku \ref{luku:kirjaintyypit})
+kytkee pois erikoiset lainausmerkkikomennot ja tuottaa suoraan niitä
+merkkejä, joita lähdedokumenttiin on kirjoitettu.
+
 \subsection{Ajatusviivat}
 \subsection{Rivin ja sivun vaihto}
 \subsection{Sitova välilyönti}

@@ -85,6 +85,14 @@ sijaan kahdella muulla kirjainperheellä (\koodi{\keno setsansfont},
 \koodi{\keno setmonofont}) käytetään ker\-roin\-ase\-tus\-ta
 \koodi{MatchLowercase}, joka skaalaa fontin siten, että gemenakirjaimet
 eli pienet kirjaimet ovat yhtä korkeita kuin peruskirjainperheessä.
+Mikäli skaa\-laus\-ase\-tus \koodi{MatchLowercase} ei tuota ihan
+toivottua tulosta, voi kirjainperheen skaalausta hienosäätää vielä
+\koodi{ScaleAgain}\-/valitsimella seuraavaan tapaan:
+
+\begin{koodilohkosis}
+  \setmonofont{Linux Libertine Mono O}
+  [Scale=MatchLowercase, ScaleAgain=.97]
+\end{koodilohkosis}
 
 Jos edellä kuvatut kolme kirjainperhettä eivät riitä, on
 Fontspec\-/paketissa komennot lisäperheiden ja \=/leikkausten
@@ -318,12 +326,12 @@ pistekooksi tulee 1,4 kertaa 10 pistettä eli 14 pistettä.
 Normaalikokoinen peruskirjainperhe on ainoa, jonka pistekoko tiedetään.
 Kaikkien muiden koot täytyisi selvittää laskemalla.
 
-Pääteviivaton kirjainperhe (rivi~5) ja tasalevyinen perhe (rivi~6)
-skaalataan samankorkuiseksi kuin perusperhe. Vertailukohtana ovat pienet
-kirjaimet (\koodi{MatchLowercase}). Näiden kahden kirjainperheen
-pistekokoa ei tiedetä. Se ei välttämättä ole sama kuin perusfontissa,
-koska fonttien pistekoko mitataan ylimmän ja alimman kohdan välillä ja
-koska fonttien mittasuhteet ovat erilaisia.
+Groteski- eli pääteviivaton kirjainperhe (rivi~5) ja tasalevyinen perhe
+(rivi~6) skaalataan samankorkuiseksi kuin perusperhe. Vertailukohtana
+ovat pienet kirjaimet (\koodi{MatchLowercase}). Näiden kahden
+kirjainperheen pistekokoa ei tiedetä. Se ei välttämättä ole sama kuin
+perusfontissa, koska fonttien pistekoko mitataan ylimmän ja alimman
+kohdan välillä ja koska fonttien mittasuhteet ovat erilaisia.
 
 \begin{esimerkki}
 \begin{koodilohko}
@@ -365,7 +373,7 @@ mitat eivät pidä paikkaansa.
 
 Jos korkean tason font\-ti\-koko\-komen\-to\-jen (taulukko
 \ref{tlk:fonttikokokomennot}) lisäksi tarvitaan jotakin muuta kokoa,
-voisi ehkä \koodi{\keno fontsize}\-/komennon sijasta käyttää
+voisi mahdollisesti \koodi{\keno fontsize}\-/komennon sijasta käyttää
 Fontspec\-/paketin tarjoamaa komentoa ja tilanteeseen sopivaa
 skaalauskerrointa esimerkiksi seuraavalla tavalla:
 
@@ -379,7 +387,7 @@ suhteellinen määrittelytapa todella helppo. Kaikki dokumentin fontit
 määräytyvät perusfontin skaalauskertoimen kautta. Tämä tapa sopii hyvin
 varsinkin dokumentin sisällön kirjoittamisvaiheeseen, jossa ehkä
 halutaan vain nopeasti asettaa dokumentti suurin piirtein järkevän
-näköiseksi.
+näköiseksi. Myöhemmin voi määrittää koot absoluuttisesti.
 
 \subsection{Koot absoluuttisesti}
 \label{luku:fontti_absoluuttinen}
@@ -427,14 +435,14 @@ fonttien asettamiseen.
 Esimerkistä \ref{esim:fontti_absoluuttinen} selviää perus\-ajatus.
 Peruskirjainperhe (rivi~5) otetaan käyttöön ilman skaalausta (eli
 \koodi{Scale=1}), minkä vuoksi koon voi jatkossa asettaa täsmälleen
-kohdalleen \koodi{\keno fontsize}\-/komennolla. Samaa ei tehdä
-pääteviivattoman eikä tasalevyisen fontin kanssa (rivit 6--7), vaan
-käytetään skaalausta \koodi{MatchLowercase}, jotta tekstikappaleessa
-kaikki kirjainperheet näyttävät samankokoisilta. Tässä menetetään
-mahdollisuus määrittää näiden kirjainperheiden koko täsmällisesti
-pistemitan avulla. Jos siihen on tarvetta esimerkiksi otsikoissa,
-voidaan käyttää rivien 10--11 komentoja. Niillä luodaan uudet
-kirjainperheet, jotka ovat käytännössä samoja mutta ilman skaalausta.
+kohdalleen \koodi{\keno fontsize}\-/komennolla. Samaa ei tehdä groteskin
+eikä tasalevyisen fontin kanssa (rivit 6--7), vaan käytetään skaalausta
+\koodi{MatchLowercase}, jotta tekstikappaleessa kaikki kirjainperheet
+näyttävät samankokoisilta. Tässä menetetään mahdollisuus määrittää
+näiden kirjainperheiden koko täsmällisesti pistemitan avulla. Jos siihen
+on tarvetta esimerkiksi otsikoissa, voidaan käyttää rivien 10--11
+komentoja. Niillä luodaan uudet kirjainperheet, jotka ovat käytännössä
+samoja mutta ilman skaalausta.
 
 Uusien kirjainperheiden komentojen nimiksi on valittu \koodi{\keno
   sffamilyabs} ja \koodi{\keno ttfamilyabs} (vrt. \koodi{\keno sffamily}

@@ -31,7 +31,7 @@ avulla. Siihen on omat keinonsa (luku \ref{luku:kappale}).
 \section{Merkistö}
 
 Latex\-/dokumenttiin voi kirjoittaa tekstiä Unicode\-/merkistöllä ja sen
-UTF\=/8\/-koodauksella, jos kääntäjänä on Unicoden osaava
+\textsc{utf}\=/8\/-koodauksella, jos kääntäjänä on Unicoden osaava
 la\-to\-ja\-oh\-jel\-ma kuten Xelatex tai Lualatex. Pääasiassa siis
 merkit kirjoitetaan sellaisenaan lähdedokumenttiin. On kuitenkin muutama
 poikkeus eli tiettyyn erityistarkoitukseen varattuja merkkejä, ja niitä
@@ -110,25 +110,25 @@ tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan ''Latex'':
 Kuulunee typo\-grafian perus\-asioihin, että käytetään oikeita
 typo\-grafisia lainausmerkkejä. Näppäilemällä vaihtonäppäin ja 2
 (shift+2) saadaan yleensä lainausmerkin yleisversio (\textquotedbl),
-niin sanottu ASCII\-/lainausmerkki, joka ei ole tietääkseni minkään
-kielen varsinainen lainausmerkki.
+niin sanottu \textsc{ascii}\-/lainausmerkki, joka ei ole tietääkseni
+minkään kielen varsinainen lainausmerkki.
 
 Eri kielissä lainausmerkkikäytännöt ovat erilaiset. Suomen kielessä
 käytetään ''tällaisia'' lainausmerkkejä tai joskus >>tällaisia>>
 kulmalainausmerkkejä. Jos lainauksen sisään tarvitaan lainaus, täytyy
 sisempi lainaus kirjoittaa 'tällaisten' puolilainausmerkkien avulla.
 Yksittäin käytettynä se on nimeltään heittomerkki ('). Englannin
-kielessä lainauksen alussa ja lopussa on erilainen merkki: ``tässä''
+kielessä lainauksen alussa ja lopussa on erilainen merkki, ja ``tässä''
 siitä esimerkki. Samoin on puolilainausmerkin kohdalla: `näin'.
 
-Latexissa voi käyttää Unicode\-/merkistöä ja kirjoittaa dokumenttiin
-suoraan ne merkit, joita halutaan käyttää, mutta edellä mainituille
-merkeille on myös omat komentonsa. Näppäimistöltä kirjoitettava
-heittomerkki tuottaa automaattisesti oikean kaarevan heittomerkin (')
-eikä yleisheittomerkkiä (\koodi{'}). Kun kirjoittaa kaksi heittomerkkiä
+Latexissa voi käyttää Unicode\-/merkistöä ja yleensä lähdedokumenttiin
+voi kirjoittaa suoraan ne merkit, jotka halutaan ladottavaksi, mutta
+edellä mainituille merkeille on myös omat komentonsa. Näppäimistöltä
+kirjoitettava yleisheittomerkki (\koodi{'}) tuottaa automaattisesti
+oikean kaarevan heittomerkin ('). Kun kirjoittaa kaksi heittomerkkiä
 peräkkäin (\koodi{''}), on lopputuloksena yksi kaareva lainausmerkki
-(''). Kulmalainausmerkki (>>) tehdään kahdella suurempi kuin \=/merkillä
-(\koodi{>>}).
+(''). Kahdella suurempi kuin \=/merkillä (\koodi{>>}) saadaan
+kulmalainausmerkki (>>).
 
 \begin{koodilohkosis}
   ''Lainaus, jonka 'sisällä' on lainaus.''
@@ -139,8 +139,8 @@ Yllä mainitut riittävät suomen kieleen, mutta englantia ja muita kieliä
 varten tarvitaan myös toisinpäin oleva merkki (``), joka tehdään
 kahdella gra\-vis\-ak\-sen\-til\-la (\koodi{``}). Vastaava
 puolilainausmerkki (`) tehdään yhdellä aksentilla (\koodi{`}). Ainakin
-ranskan kielessä käytetään erilaista kulmalainausmerkkiä lainauksen
-alussa ja lopussa, ja lainauksen aloittava merkki (<<) tehdään kahdella
+ranskan kielessä käytetään erilaisia kulmalainausmerkkejä lainauksen
+alussa ja lopussa. Lainauksen aloittava merkki (<<) tehdään kahdella
 pienempi kuin \=/merkillä (\koodi{<<}). Muunlaisiin lainausmerkkeihin
 tarvittaneen Unicode\-/merkkejä. Tosin kielikohtaiset asetukset (luku
 \ref{luku:kieliasetukset}) voivat tuoda mukanaan omia keinojaan myös
@@ -153,11 +153,38 @@ Oletuksena myös tasalevyinen fontti (luku \ref{luku:kirjaintyypit})
 kytkee pois erikoiset lainausmerkkikomennot ja tuottaa suoraan niitä
 merkkejä, joita lähdedokumenttiin on kirjoitettu.
 
-\subsection{Ajatusviivat}
-\subsection{Rivin ja sivun vaihto}
+\subsection{Ajatusviiva}
 \subsection{Sitova välilyönti}
+
+Sitova välilyönti on samanlainen tyhjä merkki kuin tavallinenkin
+välilyönti, mutta rivinvaihtoa ei sallita sen kohdalta. Sitovaa
+välilyöntiä kannattaa käyttää esimerkiksi mittaluvun ja mittayksikön
+lyhenteen välissä (3~km). Latexissa sitova välilyönti saadaan joko
+tildemerkillä (\koodi{\textasciitilde}) tai nimenomaan siihen
+tarkoitetulla merkillä \unicode{u+00a0 no-break space}.
+
+Nämä kaksi eri merkkiä, tilde (\koodi{\textasciitilde}) ja
+\unicode{u+00a0}, toimivat hieman eri tavoin. Molemmat tietenkin estävät
+rivinvaihdon, mutta \koodi{\textasciitilde}\=/merkki sallii myös välin
+venymisen samalla tavalla kuin tavallinenkin sanaväli sallii. Rivillä
+sanavälit venyvät silloin, kun tekstipalsta tasataan molemmista
+reunoista. Merkki \unicode{u+00a0} on vakiolevyinen eikä siis veny
+muiden sanavälien tapaan.
+
+\subsection{Kolme pistettä eli ellipsi}
+
+Ajatuksen katkeamista ja muuta sellaista ilmaisevalle kolmelle pisteelle
+eli ellipsille (…) on oma merkkinsä, ja fontissa se saattaa näyttää
+hieman erilaiselta kuin kolme peräkkäistä pistemerkkiä. Tyypillisesti
+ellipsimerkissä pisteet ovat hieman harvemmassa ja erottuvat toisistaan
+paremmin kuin kolmena erillisenä merkkinä ladotut pisteet. Ellipsi
+tehdään Latexissa komennolla \koodi{\keno ldots} tai suoraan
+Unicode\-/merkillä \unicode{u+2026 horizontal ellipsis}.
+
+\subsection{Ligatuurit}
 \subsection{Tarkkeet}
 \label{luku:tarkkeet}
+\section{Rivin ja sivun vaihto}
 \section{Komennot}
 \label{luku:komennot}
 \section{Ympäristöt}

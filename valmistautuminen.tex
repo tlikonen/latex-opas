@@ -4,12 +4,11 @@
 
 Latex ja sen ympärille rakentuneet ohjelmistot ovat käsitteellisesti
 aika monimutkainen kokonaisuus, johon kuuluu eri\-/ikäisiä ja
-abst\-rak\-tio\-ta\-sol\-taan erilaisia osia. Mukaan kuuluu tietenkin
-konkreettia tie\-to\-kone\-oh\-jel\-mia, jotka tekevät konkreettisia
-asioita. Mukaan kuuluu kuitenkin myös ihmisten luomia abst\-rak\-te\-ja
-käsitteitä kuten Latex\-/formaatti, Tex\-/ohjelmointikieli tai muu
-yleinen idea, jonka tieto\-kone\-ohjelmat pyrkivät konk\-reet\-tisesti
-toteuttamaan.
+abstraktiotasoltaan erilaisia osia. Mukaan kuuluu tietenkin
+konkreettisia tietokoneohjelmia, jotka tekevät konkreettisia asioita.
+Mukaan kuuluu kuitenkin myös ihmisten luomia abstrakteja käsitteitä
+kuten Latex\-/formaatti, Tex\-/ohjelmointikieli tai muu yleinen idea,
+jonka tietokoneohjelmat pyrkivät konkreettisesti toteuttamaan.
 
 Internetissä näkyy silloin tällöin käsitekeskusteluja, jossa
 ihmetellään, mihin mikäkin palikka kuuluu käsitteellisesti. Missä
@@ -20,7 +19,7 @@ seuraavaksi selventää peruskäsitteitä.
 
 \subsection{Tex ja Latex}
 
-Tex on tietokone\-ohjelma (\koodi{tex}), joka osaa lukea tietynmuotoisia
+Tex on tietokoneohjelma (\koodi{tex}), joka osaa lukea tietynmuotoisia
 tekstitiedostoja ja latoa niiden perusteella tekstidokumentin, joka on
 tarkoitettu ihmisten luettavaksi. Tex on myös tekstin ladontaan
 tarkoitettu ohjelmointikieli. Se noudattaa sille annettuja ohjeita ja
@@ -35,14 +34,14 @@ tekniset yksityiskohdat ja toteuttavat varsin helppokäyttöisen
 merkintäkielen, jolla dokumenttien rakenne ja ulko\-asua kuvataan.
 Ihmiset siis kirjoittavat yleensä Latex\-/muotoisia dokumentteja, ja
 Latex puolestaan huolehtii matalamman tason Texin käskyttämisestä. Latex
-on myös tietokone\-ohjelma (\koodi{latex}), jolla lähdetiedoston voi
+on myös tietokoneohjelma (\koodi{latex}), jolla lähdetiedoston voi
 kääntää julkaistavaksi dokumentiksi.
 
 \subsection{Xelatex ja Lualatex}
 
 Ajan myötä mukaan on tullut sekalainen joukko muitakin ohjelmia, joista
 kannattaa tässä yhteydessä mainita kaksi: Xelatex ja Lualatex. Ne ovat
-erilaisia Latexin toteutuksia ja tietokone\-ohjelmia (\koodi{xelatex},
+erilaisia Latexin toteutuksia ja tietokoneohjelmia (\koodi{xelatex},
 \koodi{lualatex}), joilla lähdedokumentti käännetään.\footnote{Englannin
   kielellä näitä on tapana kutsua yleisnimellä
   \emph{\textenglish{engine}} 'kone, moottori'.} Ne osaavat lukea
@@ -50,7 +49,8 @@ Unicode\-/merkistöllä kirjoitettuja lähdedokumentteja ja käyttää
 nyky\-aikaisia True Type- ja Open Type \=/fontteja, mitä alkuperäinen
 Latex ja Tex eivät osaa. Nyky\-aikana käytetään yleensä jompaakumpaa,
 Xelatexia tai Lualatexia, ja esimerkiksi tämän oppaan lähdetiedosto on
-käännetty PDF\-/tiedostoksi Xelatexilla.
+käännetty pdf\-/tiedostoksi\footnote{PDF = Portable Document Format}
+Xelatexilla.
 
 Xelatexilla ja Lualatexilla ei ole käyttäjän kannalta suurtakaan eroa.
 Jälkimmäinen sisältää Lua\-/nimisen ohjelmointikielen, ja sillä on
@@ -60,7 +60,7 @@ taitaa olla hieman paremmin tuettu, koska se on vanhempi eli ehtinyt
 vakiinnuttaa asemansa paremmin.
 
 Kääntäjäohjelmien toiminnassa on pieniä eroja. Vaikka Latex\-/dokumentit
-yleensä kääntyvätkin molemmilla, saattaa joskus valmiissa PDF:ssä näkyä
+yleensä kääntyvätkin molemmilla, saattaa joskus valmiissa pdf:ssä näkyä
 pieniä eroja, kun kääntäjää vaihtaa. Toisaalta on ihan hyödyllistä
 kokeilla kääntää omat dokumentit kummallakin ohjelmalla, koska se voi
 paljastaa huonoja, epäyhteensopivia käytäntöjä omassa Latex\-/koodissa.
@@ -77,7 +77,7 @@ Henkilöllä on asennettuna tietokoneelle Latex\-/jakelu (kuten Tex Live).
 Hän on kirjoittanut tekstieditorilla (kuten GNU Emacsilla)
 tekstitiedoston, jossa on dokumentin sisältö ja Latex\-/makroille
 tarkoitettuja komentoja mutta myös joitakin Tex\-/komentoja. Sitten hän
-on kääntänyt eli ladotuttanut tekstitiedostonsa PDF\-/tiedostoksi
+on kääntänyt eli ladotuttanut tekstitiedostonsa pdf\-/tiedostoksi
 Latex\-/ladontaohjelman jollakin toteutuksella (kuten Xelatexilla).
 
 Meille taitaa riittää vain Latexista puhuminen, mutta siitäkin on
@@ -124,7 +124,7 @@ Unixille ja sittemmin GNU/Linuxille. Sellaisia, joilla moni ohjelmoi,
 kirjoittaa sähköpostejaan ja muokkaa käyttöjärjestelmänsä
 asetustiedostoja. Kunnollisia editoreja ovat ainakin GNU Emacs ja Vim,
 ja ne ovat saatavilla suunnilleen kaikille käyttöjärjestelmille.
-Latex\-/dokumentti kääntyy PDF:ksi parilla näppäinpainalluksella.
+Latex\-/dokumentti kääntyy pdf:ksi parilla näppäinpainalluksella.
 
 Jos et ihan vielä viitsi opetella käyttämään GNU Emacsia etkä Vimiä,
 pyri ainakin löytämään sellainen editori, joka osaa värjätä tekstiä
@@ -139,31 +139,31 @@ voivat soveltua myös \koodi{/bin/ed}, \koodi{/bin/cat}, magnetisoitu
 neula tai perhoset, joten mikä tahansa lopulta käy.%
 \footnote{''Real Programmers'': \url{https://xkcd.com/378/}}
 
-\subsection{PDF-katselin}
+\subsection{Pdf-katselin}
 
 Latex\-/kääntäjät eli \=/latojat eli \=/moottorit kuten Xelatex ja
-Lualatex tuottavat PDF-tiedoston, ja niiden katselemiseen tarvitaan
+Lualatex tuottavat pdf\-/tiedoston, ja niiden katselemiseen tarvitaan
 tietenkin oma ohjelmansa. Sellaisia on saatavilla paljon erilaisia, ja
 melkein mikä tahansa kelpaa, mutta yksi tietty ominaisuus olisi
-toivottavaa olla: muuttuneen PDF\-/tiedoston automaattinen lataaminen.
+toivottavaa olla: muuttuneen pdf\-/tiedoston automaattinen lataaminen.
 
 Nimittäin välillä työskentely on sitä, että tehdään Latex\-/dokumenttiin
-pieni muutos, käännetään se ja katsotaan PDF:ää. Lopputulos ei ehkä ihan
+pieni muutos, käännetään se ja katsotaan pdf:ää. Lopputulos ei ehkä ihan
 miellytä. Muokataan tekstiä tai asetuksia vähän, käännetään ja
-katsotaan, miltä ladottu PDF nyt näyttää.
+katsotaan, miltä ladottu pdf nyt näyttää.
 
-On todella mukavaa, jos PDF\-/katselimessa ei tarvitse joka kerta
+On todella mukavaa, jos pdf\-/katselimessa ei tarvitse joka kerta
 klikkailla valikoiden kautta auki samaa tiedostoa uudelleen, vaan
 ohjelma itse huomaa, että jo avattu tiedosto muuttui
 tiedostojärjestelmässä, ja lataa sen automaattisesti uudelleen. Jotkin
-PDF\-/ohjelmat osaavat tämän. Jotkin ohjelmat eivät osaa mutta osaavat
-sentään yhdellä näppäinpainalluksella avata PDF:n uudelleen
+pdf\-/ohjelmat osaavat tämän. Jotkin ohjelmat eivät osaa mutta osaavat
+sentään yhdellä näppäinpainalluksella avata pdf:n uudelleen
 tiedostojärjestelmästä.
 
-Hyvän tekstieditorin ja PDF\-/katselimen kanssa työskentely on sujuvaa.
+Hyvän tekstieditorin ja pdf\-/katselimen kanssa työskentely on sujuvaa.
 Tietty näppäinkomento editorissa tallentaa ja kääntää dokumentin, ja
-pian PDF\-/katselin lataa muuttuneen PDF:n automaattisesti näkyviin.
-Sekä editorin että PDF\-/katselimen voi pitää sa\-man\-aikai\-ses\-ti
+pian pdf\-/katselin lataa muuttuneen pdf:n automaattisesti näkyviin.
+Sekä editorin että pdf\-/katselimen voi pitää sa\-man\-aikai\-ses\-ti
 esillä, eikä muualle tarvitse yleensä siirtyä. Tähän kannattaa pyrkiä.
 
 \subsection{Latexmk}
@@ -171,7 +171,7 @@ esillä, eikä muualle tarvitse yleensä siirtyä. Tähän kannattaa pyrkiä.
 Erin\-omaisen hyödyllinen apu\-ohjelma on Latexmk, koska se helpottaa
 dokumenttien kääntämistä ja vähän muutakin työskentelyä. Varsin usein
 Latex\-/dokumentit täytyy kääntää useita kertoja ennen kuin
-PDF\-/tiedosto on valmis. Tämä johtuu siitä, että dokumentit sisältävät
+pdf\-/tiedosto on valmis. Tämä johtuu siitä, että dokumentit sisältävät
 usein ristiviitteitä eli viittauksia dokumentin toisiin osiin. Latex ei
 saa ristiviitteitä kohdalleen yhdellä kääntämisellä, vaan ensin se
 kirjoittaa viittausten kohteet muistiin väliaikaistiedostoon ja
@@ -198,9 +198,9 @@ Latexmk kääntää sen aina itsestään.
 
 Muitakin hyödyllisiä toimintoja on mukana. Seuraavista esimerkeistä
 ensimmäinen komento poistaa kääntämisen aikana luodut
-väliaikaistiedostot (\koodi{log}, \koodi{aux}, \koodi{out} ym.), ja
-jälkimmäinen rivin komento poistaa kaikki luodut tiedostot eli
-väliaikaistiedostojen lisäksi myös valmiin PDF\-/tiedoston.
+väliaikaistiedostot (log, aux, out ym.), ja jälkimmäinen rivin komento
+poistaa kaikki luodut tiedostot eli väliaikaistiedostojen lisäksi myös
+valmiin pdf\-/tiedoston.
 
 \begin{koodilohkosis}
   latexmk -c teksti.tex
@@ -217,10 +217,10 @@ omaan käyttöön sopivat asetukset. Asetustiedosto sijoitetaan käyttäjän
 kotihakemistoon nimellä \koodi{.latexmkrc}. Esimerkki
 \ref{esim:latexmkrc} näyttää, mitä se voisi ehkä sisältää.
 
-Esimerkin ensimmäisen rivin asetus määrittää, miten PDF\-/tiedostot
+Esimerkin ensimmäisen rivin asetus määrittää, miten pdf\-/tiedostot
 tuotetaan tai mitä kääntäjää käytetään oletuksena. Toisella ja
 kolmannella rivillä määritellään, millä tavoin Xelatex ja Lualatex
-suoritetaan. Tässä esimerkissä oletus\-asetuksiin on lisätty
+suoritetaan. Tässä esimerkissä ole\-tus\-ase\-tuk\-siin on lisätty
 \koodi{nonstopmode}, joka estää kaiken vuorovaikutteisen toiminnan.
 Asetus on tarpeen ainakin silloin, kun kääntäjä käynnistetään toisesta
 ohjelmasta kuten tekstieditorista eikä vuorovaikutus kääntäjän kanssa
@@ -230,11 +230,10 @@ ole mahdollista.
 
 Esimerkin \ref{esim:latexmkrc} neljännellä rivillä luetellaan
 kääntämisen aikana syntyvien väliaikaistiedostojen päätteitä.
-Latexmk\-/ohjelma tuntee yleisimmät väliaikaistiedostot (\koodi{log},
-\koodi{aux}, \koodi{out} ym.), mutta tällä asetuksella mukaan voi lisätä
-harvinaisempia. Viides rivi määrittää PDF\-/katseluohjelman, joka
-käynnistetään, kun käytetään valitsimia \koodi{\=/pv} tai
-\koodi{\=/pvc}.
+Latexmk\-/ohjelma tuntee yleisimmät väliaikaistiedostot (log, aux, out
+ym.), mutta tällä asetuksella mukaan voi lisätä harvinaisempia. Viides
+rivi määrittää pdf\-/katseluohjelman, joka käynnistetään, kun käytetään
+valitsimia \koodi{\=/pv} tai \koodi{\=/pvc}.
 
 \subsection{Texdoc (Tex Live)}
 
@@ -247,17 +246,17 @@ komentotulkissa toimiva komento \koodi{texdoc}, jolla voi hakea ja avata
 omaan järjestelmään asennettuja Latex\-/aiheisia ohjeita. Jos vaikka
 haluaa tutustua esimerkissä \ref{esim:ensimmainen} mainittuun
 Fontspec\-/pakettiin syvällisemmin, tarvitsee vain komentaa
-\koodi{texdoc fontspec}, ja paketin PDF\-/muotoinen ohjekirja avautuu.
+\koodi{texdoc fontspec}, ja paketin pdf\-/muotoinen ohjekirja avautuu.
 
 \section{Ensimmäinen dokumentti}
 
 Olemme varmasti jo puhuneet tarpeeksi, ja olisi hyvä päästä tekemään
 jotain käytännöllistä. Tallenna esimerkin \ref{esim:ensimmainen} sisältö
 tekstieditorin avulla tiedostoon vaikkapa nimellä \koodi{teksti.tex}.
-Käännä eli lado se PDF\-/tiedostoksi komennolla \koodi{xelatex
+Käännä eli lado se pdf\-/tiedostoksi komennolla \koodi{xelatex
   teksti.tex} tai komennolla \koodi{lualatex teksti.tex}. Tuloksena
 pitäisi olla tiedosto \koodi{teksti.pdf}, jota voi ihailla jollakin
-PDF\-/tiedostojen katseluun tarkoitetulla ohjelmalla. Näin tämä
+pdf\-/tiedostojen katseluun tarkoitetulla ohjelmalla. Näin tämä
 Latex\-/homma toimii.
 
 Tutkitaan esimerkkiä \ref{esim:ensimmainen} tarkemmin. Ensimmäisellä

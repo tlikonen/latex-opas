@@ -107,11 +107,11 @@ tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan ''Latex'':
 
 \subsection{Lainausmerkit ja heittomerkki}
 
-Kuulunee typo\-grafian perus\-asioihin, että käytetään oikeita
-typo\-grafisia lainausmerkkejä. Näppäilemällä vaihtonäppäin ja 2
-(shift+2) saadaan yleensä lainausmerkin yleisversio (\textquotedbl),
-niin sanottu \textsc{ascii}\-/lainausmerkki, joka ei ole tietääkseni
-minkään kielen varsinainen lainausmerkki.
+Kuulunee typografian perus\-asioihin, että käytetään oikeita
+typografisia lainausmerkkejä. Näppäilemällä vaihtonäppäin ja 2 (shift+2)
+saadaan yleensä lainausmerkin yleisversio (\textquotedbl), niin sanottu
+\textsc{ascii}\-/lainausmerkki, joka ei ole tietääkseni minkään kielen
+varsinainen lainausmerkki.
 
 Eri kielissä lainausmerkkikäytännöt ovat erilaiset. Suomen kielessä
 käytetään ''tällaisia'' lainausmerkkejä tai joskus >>tällaisia>>
@@ -153,7 +153,42 @@ Oletuksena myös tasalevyinen fontti (luku \ref{luku:kirjaintyypit})
 kytkee pois erikoiset lainausmerkkikomennot ja tuottaa suoraan niitä
 merkkejä, joita lähdedokumenttiin on kirjoitettu.
 
-\subsection{Ajatusviiva}
+\subsection{Yhdysmerkki, ajatusviiva ja miinusmerkki}
+
+Yhdyssanojen osien välissä käytettävä yhdysmerkki on Latexissa
+tavallinen näppäimistöltä saatava yleis\-yhdysmerkki (\=/). Se vaikuttaa
+sanojen tavutukseen, josta on tarkempaa tietoa luvussa
+\ref{luku:tavutus}.
+
+Ajatusviivaa tarvitaan esimerkiksi äärikohtien (7--12,
+Oulu--Rova\-niemi), luetelmien, vuorosanojen ja virkkeen irrallisen
+lisäysten merkitseminen. Suomen kielessä käytetään yleensä vain lyhyttä
+ajatusviivaa \mbox{(--)}, joka tehdään Latexissa kahdella peräkkäisellä
+yhdysmerkillä (\koodi{--}). Pitkä ajatusviiva \mbox{(---)} tehdään
+kolmella yhdysmerkillä (\koodi{---}). Myös Unicoden ajatusviivamerkkejä
+voi käyttää: \unicode{u+2013 en dash} ja \unicode{u+2014 em dash}.
+Ajatusviivatkin vaikuttavat sanan tavutukseen (luku \ref{luku:tavutus}).
+
+Miinusmerkille ei Latexissa ole erityistä merkintätapaa muuten kuin
+matematiikkatilassa (luku \ref{luku:matematiikka}). Ajatusviivaa saa
+käyttää myös miinusmerkkinä, mutta vielä parempi olisi käyttää
+varsinaista Unicoden miinusmerkkiä \unicode{u+2212 minus sign}, koska se
+on fonteissa suunniteltu typografisesti yhteensopivaksi muiden
+matemaattisten merkkien kanssa. Tämän oppaan fontissakin on pieni ero
+merkkien välillä: miinusmerkki on samalla korkeudella kuin plusmerkin
+vaakaviiva; ajatusviiva on ylempänä (kuva
+\ref{kuva:ajatusviiva_miinusmerkki}). Joissakin fonteissa eroa on myös
+pituudessa.
+
+\leijukuva{
+  \addfontfeatures{Scale=11, LetterSpace=-5}
+  +−= \hfill +–=
+}{
+  \caption{Vasemmalla plusmerkki, miinusmerkki ja yhtäsuuruusmerkki;
+    oikealla plusmerkki, ajatusviiva ja yhtäsuuruusmerkki}
+  \label{kuva:ajatusviiva_miinusmerkki}
+}
+
 \subsection{Sitova välilyönti}
 
 Sitova välilyönti on samanlainen tyhjä merkki kuin tavallinenkin

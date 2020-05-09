@@ -36,7 +36,7 @@
 [Scale=MatchLowercase, Numbers=Lowercase]
 
 \setmonofont{Linux Libertine Mono O}
-[Scale=MatchLowercase, ScaleAgain=.97, LetterSpace=-3, HyphenChar={8596}]
+[Scale=MatchLowercase, ScaleAgain=.97, LetterSpace=-3, HyphenChar={8594}]
 
 \linespread{1.58}
 
@@ -101,7 +101,6 @@
 
 \newcommand{\keno}{\textbackslash}
 \newcommand{\koodi}[1]{\texttt{#1}}
-\newcommand{\tavuvihje}{\keno-}
 \newcommand{\tavukohta}{\textcolor{tavu}{\rule{1pt}{1.5ex}}}
 \newcommand{\sitovaym}{\textcolor{sitova}{-}}
 \newcommand{\unicode}[1]{\textenglish{\textsc{#1}}}
@@ -146,6 +145,7 @@
   abst-rak-tio-ta-sol-taan
   abst-rak-tio-ta-son
   an-tiik-va
+  ba-bel-short-hands
   base-line-skip
   doc-u-ment
   Ext-dash
@@ -154,6 +154,7 @@
   foot-note-size
   gro-tes-ki
   huge
+  hy-phen-ation
   konk-reet-ti-ses-ti
   konk-reet-ti-sia
   la-don-ta-oh-jel-man
@@ -179,6 +180,7 @@
   set-sans-font
   sf-fam-i-ly
   sf-fam-i-ly-abs
+  short-cuts
   small
   teks-ti-edi-to-ria
   teks-ti-edi-to-ril-la
@@ -196,6 +198,11 @@
   tt-fam-i-ly
   tt-fam-i-ly-abs
   type-writ-er
+  ty-po-gra-fi-sen
+  ty-po-gra-fi-ses-ti
+  ty-po-gra-fi-sia
+  ty-po-gra-fian
+  ty-po-gra-fias-sa
   Uni-code
   väli-ai-kais-tie-dos-to-jen
   väli-ai-kais-tie-dos-toa
@@ -242,28 +249,7 @@ yhtäläisyyksiä, ja
 \input{valmistautuminen}
 \input{merkintakieli}
 \input{asetukset}
-
-\chapter{Dokumentin rakenne}
-\section{Kappale}
-\label{luku:kappale}
-
-\subsection{Tasaus}
-%\sloppy, \fussy
-\subsection{Sisennykset ja välit}
-\subsection{Riippuva sisennys}
-\subsection{Lesket ja orvot}
-\section{Korostus}
-\section{Otsikot}
-\section{Luetelmat}
-\section{Taulukot}
-\label{luku:taulukot}
-\section{Kelluvat osat}
-\section{Ristiviitteet}
-\section{Alaviitteet}
-\section{Tavutus}
-\section{Lähdeluettelo ja -viitteet}
-\section{Grafiikka}
-\section{Laatikot}
+\input{kirjoittaminen}
 
 \chapter{Matematiikka}
 \label{luku:matematiikka}

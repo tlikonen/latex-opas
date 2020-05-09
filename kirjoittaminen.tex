@@ -1,0 +1,321 @@
+\chapter{Dokumentin rakenne}
+\section{Kappale}
+\label{luku:kappale}
+
+\subsection{Tasaus}
+%\sloppy, \fussy
+\subsection{Sisennykset ja välit}
+\subsection{Riippuva sisennys}
+\subsection{Lesket ja orvot}
+\section{Korostus}
+\section{Otsikot}
+\section{Luetelmat}
+\section{Taulukot}
+\label{luku:taulukot}
+\section{Kelluvat osat}
+\section{Ristiviitteet}
+\section{Alaviitteet}
+\section{Tavutus}
+\label{luku:tavutus}
+
+\subsection{Perustoiminta}
+
+Latex\-/järjestelmä tavuttaa eli katkaisee sanat automaattisesti rivien
+lopussa, jotta rivit ja kappaleet saisi näyttämään tasapainoisilta.
+Tavutukseen vaikuttavat kielikohtaiset tavutussäännöt ja \=/asetukset
+sekä \koodi{\keno hyphenation}\-/komennolla määritellyt säännöt.
+Yksittäisen sanan tavutukseen voi vaikuttaa myös tiettyjen sanassa
+mukana olevien merkkien avulla. Niitä käsitellään seuraavissa luvuissa.
+
+Mitat \koodi{\keno lefthyphenmin=N} ja \koodi{\keno righthyphenmin=N}
+vaikuttavat tavutukseen sanan reunoissa. Parametri \koodi{N} on
+positiivinen kokonaisluku, ja se määrittää, kuinka monta merkkiä
+vähintään sanan vasemmasta tai oikeasta reunasta pidetään yhdessä.
+Oletus\-arvot ovat kielikohtaisia ja määritellään Polyglossia\-/{} ja
+Babel\-/paketeissa. Suomen kielessä kumpikin mitta on 2~merkkiä.
+
+Mitat alustetaan kielikohtaisiin oletus\-arvoihin aina, kun
+kie\-li\-ase\-tuk\-set tulevat voimaan. Näin on esimerkiksi dokumentin
+aloittavan \koodi{document}\-/ympäristön alussa tai kielen vaihtuessa.
+Tästä seuraa, että jos mittoja ha\-luaa muuttaa, täytyy ne asettaa
+\koodi{document}\-/ympäristön alussa tai aina kielen vaihtamisen
+jälkeen.
+
+Omat kieli\-asetukset saa mukaan automaattiseksi, kun lisää muutokset
+kielikohtaisiin alustuskomentoihin alla olevan esimerkin mukaisesti.
+Tällä tavoin omat asetukset tulevat voimaan samalla kuin muutkin
+kieli\-asetukset. Esimerkissä oleva komento \koodi{\keno add\-to} on
+Polyglossia- ja Babel\-/paketin ominaisuus.
+
+\begin{koodilohkosis}
+  \addto{\captionsfinnish}{
+    \lefthyphenmin=3
+    \righthyphenmin=3
+  }
+\end{koodilohkosis}
+
+Tavutukseen voi vaikuttaa myös \koodi{\keno hyphenation}\-/komennolla,
+jolla määritellään yksittäisten sanojen tavutuskohdat kaikkialla
+dokumentissa, riippumatta kielestä. Seuraava esimerkki selventää
+\koodi{\keno hyphenation}\-/komennon käyttöä.
+
+\begin{koodilohkosis}
+  \hyphenation{
+    nimen-omaan
+    poh-jois-euroop-pa-lai-nen
+    inter-net-ope-raat-to-ri
+  }
+\end{koodilohkosis}
+
+\subsection{Tavutukseen vaikuttavat merkit}
+
+Tietyt sanassa olevat merkit kytkevät muut tavutussäännöt pois päältä ja
+muuttavat sanan tavutuksen yksilölliseksi. Jos sanassa on mukana yksikin
+tavutusvihje (\koodi{\keno-}), yhdysmerkki (\koodi{-}), lyhyt
+ajatusviiva (\koodi{--}) tai pitkä ajatusviiva (\koodi{---}), sana
+katkaistaan vain näiden kohdalta (\koodi{\keno-}) tai jälkeen.
+
+\leijutlk{
+  \begin{tabular}{lll}
+    \toprule
+    \ots{Lähde}
+    & \ots{Tavutus}
+    & \ots{Selitys} \\
+    \midrule
+    \koodi{matkustaa}
+    & mat\tavukohta kus\tavukohta taa
+    & tavutus kaikista kohdista \\
+    \koodi{matkus\keno-taa}
+    & matkus\tavukohta taa
+    & vain tavutusvihjeen kohdalta \\
+    \koodi{matka-aika}
+    & matka-\tavukohta aika
+    & vain yhdysmerkin jälkeen \\
+    \koodi{matka-ai\keno-ka}
+    & matka-\tavukohta ai\tavukohta ka
+    & vain yhdysmerkki ja tavutusvihje \\
+    \koodi{Oulu--Rovaniemi}
+    & Oulu--\tavukohta Rovaniemi
+    & vain ajatusviivan jälkeen \\
+    \koodi{Oulu--Rova\keno-niemi}
+    & Oulu--\tavukohta Rova\tavukohta niemi
+    & vain ajatusviiva ja tavuvihje \\
+    \koodi{matka-}
+    & matka-
+    & ei tavutuskohtia \\
+    \koodi{-aika}
+    & -\tavukohta aika
+    & vain yhdysmerkin jälkeen \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Tavutusvihjeen, yhdysmerkin ja ajatusviivan vaikutus
+    tavutukseen}
+  \label{tlk:tex-tavutus}
+}
+
+Taulukossa \ref{tlk:tex-tavutus} on esimerkkejä tavutusvihjeiden,
+yhdysmerkin ja ajatusviivan vaikutuksesta. Ensimmäisessä sarakkeessa on
+esimerkkisana siinä muodossa kuin se kirjoitetaan lähdetiedostoon.
+Toisessa sarakkeessa on ladottu sana, johon on punaisella pystyviivalla
+merkittynä mahdolliset tavutuskohdat.
+
+Viimeinen rivi paljastaa suomen kielen kannalta ongelmallisen tilanteen.
+Esimerkiksi ilmauksessa \emph{matkasuunnitelma ja \mbox{-aika}} ei sanaa
+saa katkaista yhdysmerkin jälkeen, koska rivin loppuun jäisi yksinäinen
+yhdysmerkki. Latexin peruskeinoilla sana täytyy laittaa näkymättömään
+laatikkoon, joka pitää merkit yhdessä: \koodi{\keno mbox\{-aika\}}.
+Toinen vaihto\-ehto on sitovan yhdysmerkin käyttö, johon onkin
+monenlaisia toteutuksia. Niistä kerrotaan seuraavissa luvuissa.
+
+\subsection{Unicoden sitova yhdysmerkki}
+\label{luku:unicode_sitova}
+
+Unicode-merkistön sitova yhdysmerkki \unicode{u+2011 non\-/breaking
+  hyphen} näkyy tavallisena yhdysmerkkinä, mutta se estää sanan
+katkaisemisen yhdysmerkin vierestä. Sitovaa yhdysmerkkiä voi käyttää
+Xelatex\-/kääntäjän kanssa. Sen sijaan Lualatex\-/kääntäjä vain kadottaa
+koko merkin.
+
+Tavallinen yhdysmerkki \unicode{u+002d hyphen\-/minus} ja Unicoden
+sitova yhdysmerkki \unicode{u+2011} vaikuttavat sanan tavuttamiseen eri
+tavalla. Tavallinen yhdysmerkki estää sanan tavuttamisen muualta kuin
+yhdysmerkin jälkeen. Unicoden sitova yhdysmerkki puolestaan sallii sanan
+tavuttamisen kaikista normaaleista tavutuskohdista. Ainoastaan sitovan
+yhdysmerkin vierestä ei katkaista.
+
+\leijutlk{%
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Lähde}
+    & \ots{Tavutus} \\
+    \midrule
+    \koodi{Latex-järjestelmä}
+    & Latex-\tavukohta järjestelmä \\
+    \koodi{Latex\sitovaym järjestelmä}
+    & La\tavukohta tex-jär\tavukohta jes\tavukohta tel\tavukohta mä \\
+    \koodi{-järjestelmä}
+    & -\tavukohta järjestelmä \\
+    \koodi{\sitovaym järjestelmä}
+    & -jär\tavukohta jes\tavukohta tel\tavukohta mä \\
+    \bottomrule
+  \end{tabular}
+}{%
+  \caption{Tavallisen ja Unicoden sitovan yhdysmerkin (punaisella)
+    vaikutus tavutukseen}
+  \label{tlk:unicode-yhdysmerkki}
+}
+
+Taulukossa \ref{tlk:unicode-yhdysmerkki} vertaillaan yhdysmerkkejä.
+Viimeinen rivi osoittaa, että Unicoden sitovan yhdysmerkin avulla voi
+estää sen, että yhdysmerkillä alkava sana katkaistaisiin heti
+yhdysmerkin jälkeen eli merkki jäisi yksinään rivin loppuun.
+
+\subsection{Pakettiratkaisuja}
+
+Makropaketti Extdash tuo uusia komentoja ja mahdollisuuksia tavutuksen
+hallintaan. Komennot ovat sellaisia kuin \koodi{\keno Hyph\-dash} ja
+\koodi{\keno En\-dash}, mutta niille on saatavilla myös lyhemmät muodot,
+jos paketin lataa käyttämällä \koodi{shortcuts}\-/valitsinta.
+
+\begin{koodilohkosis}
+  \usepackage[shortcuts]{extdash}
+\end{koodilohkosis}
+
+Paketti sisältää kaksi lisä\-vaihto\-ehtoa kolmelle viivavälimerkille
+eli yhdysmerkille, lyhyelle ajatusviivalle ja pitkälle ajatusviivalle.
+Kun Latexin viivavälimerkit aina estävät tavutuksen muualta kuin
+välimerkin jälkeen, Extdash\-/paketin perus\-vaihto\-ehdot sallivat
+tavuttamisen. Lisäksi kaikille kolmelle viivavälimerkille on sitova
+versio, joka estää tavutuksen viivavälimerkin jälkeen. Taulukossa
+\ref{tlk:extdash} on Extdash\-/paketin tärkeimmät komennot ja niiden
+merkitykset. Taulukossa \ref{tlk:extdash-vertailu} vertaillaan
+Extdash\-/paketin komentoja Latexin vastaaviin.
+
+\leijutlk{
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Komento} & \ots{Merkitys} \\
+    \midrule
+    \koodi{\keno -/} & tavutuksen salliva yhdysmerkki \\
+    \koodi{\keno =/} & sitova, tavutuksen salliva yhdysmerkki \\
+    \koodi{\keno --} & tavutuksen salliva lyhyt ajatusviiva \\
+    \koodi{\keno ==} & sitova, tavutuksen salliva lyhyt ajatusviiva \\
+    \koodi{\keno ---} & tavutuksen salliva pitkä ajatusviiva \\
+    \koodi{\keno ===} & sitova, tavutuksen salliva pitkä ajatusviiva \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Extdash-paketin komentoja}
+  \label{tlk:extdash}
+}
+
+\leijutlk{
+  \begin{tabular}{llll}
+    \toprule
+    \ots{Lähde} & \ots{Tavutus}
+    & \ots{Lähde} & \ots{Tavutus} \\
+    \midrule
+    \koodi{matka-aika}
+                & matka-\tavukohta aika
+                & \koodi{Oulu--Rovaniemi}
+                & Oulu--\tavukohta Rovaniemi \\
+    \koodi{matka\keno -/aika}
+                & mat\tavukohta ka-\tavukohta ai\tavukohta ka
+                & \koodi{Oulu\keno --Rovaniemi}
+                & Ou\tavukohta lu--\tavukohta Ro\tavukohta va\tavukohta
+                  nie\tavukohta mi \\
+    \koodi{matka\keno =/aika}
+                & mat\tavukohta ka-ai\tavukohta ka
+                & \koodi{Oulu\keno ==Rovaniemi}
+                & Ou\tavukohta lu--Ro\tavukohta va\tavukohta
+                  nie\tavukohta mi \\
+    \koodi{matka-}
+                & matka-
+                & \koodi{-aika}
+                & -\tavukohta aika \\
+    \koodi{matka\keno -/}
+                & mat\tavukohta ka-
+                & \koodi{\keno =/aika}
+                & -ai\tavukohta ka \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Latexin ja Extdash-paketin komentojen vertailua}
+  \label{tlk:extdash-vertailu}
+}
+
+Kieli\-asetuksia hoitavan Polyglossia\-/paketin uudehkot versiot
+(2020\==) tukevat suomen kielelle \koodi{babelshorthands}\-/ valitsinta,
+joka lisää keinovalikoimaan Babel\-/paketista peräisin olevia tavutuksen
+hallintakomentoja. On esimerkiksi tavutuksen salliva yhdysmerkki
+(\koodi{\textquotedbl-}), joka toimii samoin kuin Extdash\-/paketin
+\koodi{\keno -/}.
+
+Mukana on myös sitova, kaiken tavutuksen estävä yhdysmerkki
+(\koodi{\textquotedbl\textasciitilde}), jolle ei ole vastinetta Texissä
+eikä Extdash\-/paketissa -- muuten kuin \koodi{\keno mbox}\-/laatikon
+avulla. Polyglossia\-/paketin ''Baabelin lyhenteet'' sisältävät eräitä
+muitakin hyödyllistä sanan katkaisemiseen liittyviä komentoja.
+
+Dokumentin otsikoissa (\koodi{\keno section} ym.) täytyy olla varovainen
+Extdash\-/paketin komentojen kanssa. Ne toimivat ladotussa dokumentissa,
+mutta Hyperref\-/paketin avulla syntyvässä pdf\-/tiedoston
+sisällysluettelossa ne eivät näy oikein. Ongelman voi kiertää
+käyttämällä Latexin otsikkokomentojen valinnaista parametria, jolla
+määritellään erikseen sisällysluettelossa näytettävä otsikko. Sen avulla
+varsinainen otsikko voi sisältää monimutkaisempia komentoja ja
+sisällysluetteloon tuleva versio vain tekstiä ja tavutusvihjeitä.
+
+\begin{koodilohkosis}
+  \section[Latex-jär\-jes\-tel\-mä]{\LaTeX\-/järjestelmä}
+\end{koodilohkosis}
+
+Otsikot voivat vaatia tavutusvihjeitä silloin, kun niihin viitataan
+tekstistä komennolla \koodi{\keno nameref} tai kun otsikko itsessään on
+pitkä ja täytyy jakaa useammalle riville.
+
+\subsection{Johtopäätökset}
+
+Suomenkielisen tekstin kirjoittamiseen tarvittaneen välillä
+Extdash\-/paketin tavutus\-apuja, koska kielessä on pitkiä yhdysmerkin
+tai ajatusviivan sisältäviä yhdyssanoja kuten
+\emph{Molotov\--Ribben\-trop\-/sopimus} tai
+\emph{kognitiivis\-/behavioristinen}. Rivejä ei välttämättä saa
+siisteiksi, ellei pitkissä yhdyssanoissa salli tavuttamista muualtakin
+kuin yhdysmerkin jälkeen. Tavutusvihjeitä voi toki lisäillä käsin, mutta
+se voi käydä joskus työlääksi.\footnote{Esimerkiksi:
+  \koodi{kog\keno-ni\keno-tii\keno-vis-%
+    be\keno-ha\keno-vio\keno-ris\keno-ti\keno-nen}} Tässä oppaassa ja
+edellä mainituissa esimerkkisanoissa on käytetty Extdash\-/paketin
+yhdysmerkkiä \koodi{\keno -/} ja ajatusviivaa \koodi{\keno --}, joten
+tavutus hoituu itsestään.
+
+Unicoden sitovaa yhdysmerkkiä (luku \ref{luku:unicode_sitova}) ei ehkä
+kannata käyttää, koska Lualatex\-/kääntäjä kadottaa koko merkin. Merkki
+kyllä toimii Xelatex\-/kääntäjällä, mutta Extdash\-/paketti tarjoaa
+kaikkialla toimivan vaihto\-ehdon sitovalle yhdysmerkille (\koodi{\keno
+  =/}).
+
+Pdf-tiedostojen sisäinen sisällysluettelo syntyy Hyperref\-/paketin
+avustuksella itsestään dokumentin otsikoista (\koodi{\keno section}
+ym.). Otsikoissa kannattanee käyttää tavutuksessa vain Latexin
+perustoimintoja eli tavallisia yhdysmerkkejä ja tavutusvihjeitä
+(\koodi{\keno-}), koska erikoisemmat komennot eivät näy pdf:n
+sisällysluettelossa oikein.
+
+Jos Extdash\-/paketin toimintojen lisäksi tarvitsee sitovaa, kaiken
+tavutuksen estävää yhdysmerkkiä (esimerkiksi
+\koodi{\textquotedbl\textasciitilde aika}), täytyy käyttää myös
+Polyglossia\-/paketin ''Baabelin lyhenteitä''. Seuraava esimerkki
+näyttää, kuinka kaikki mainitut toiminnot kytketään päälle.
+
+\begin{koodilohkosis}
+  \usepackage{polyglossia}
+  \usepackage[shortcuts]{extdash}
+  \setdefaultlanguage[babelshorthands]{finnish}
+\end{koodilohkosis}
+
+\section{Lähdeluettelo ja -viitteet}
+\section{Grafiikka}
+\section{Laatikot}

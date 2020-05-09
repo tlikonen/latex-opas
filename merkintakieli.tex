@@ -14,8 +14,8 @@ poikkeuksia, ja niitä käsitellään tässä alaluvussa.
 
 \subsection{Varatut erikoismerkit}
 
-Muutamalla merkillä on perus Latexissa erikoismerkitys, eikä niitä ei
-voi käyttää normaalilla tavalla. Merkit ovat seuraavat:
+Muutamalla merkillä on perus Latexissa erikoismerkitys, eikä niitä voi
+käyttää normaalilla tavalla. Merkit ovat seuraavat:
 
 \begin{koodilohkosis}
   % $ ^ _ # & { } ~ \
@@ -58,14 +58,13 @@ lainausmerkillä (\koodi{\textquotedbl}) alkavaa, tavutuksen hallintaan
 liittyvää komentoa.
 
 \subsection{Sanaväli}
+\label{luku:sanavali}
 
-Välilyönti, sarkainmerkki ja yksi rivinvaihto ovat kaikki vain
-tavallisia sanavälejä Latex\-/dokumentissa, ja näillä kolmella on sama
-merkitys. Esimerkiksi rivin lopussa oleva rivinvaihto tarkoittaa samaa
-kuin sanojen välissä oleva välilyönti. Välilyöntejä ja sarkainmerkkejä
-voi kirjoittaa useita peräkkäin, mutta ne ovat sama asia kuin yksi väli.
-Sanavälit ovat venyviä silloin, kun tekstipalsta tasataan molemmista
-reunoista.
+Välilyönti, sarkainmerkki ja yksi rivinvaihto ovat kaikki tavallisia
+sanavälejä Latex\-/dokumentissa, ja näillä kolmella on sama merkitys.
+Esimerkiksi rivin lopussa oleva rivinvaihto tarkoittaa samaa kuin
+sanojen välissä oleva välilyönti. Välilyöntejä ja sarkainmerkkejä voi
+kirjoittaa useita peräkkäin, mutta ne ovat sama asia kuin yksi väli.
 
 \begin{koodilohkosis}
   Nämä      kaikki
@@ -73,6 +72,12 @@ reunoista.
   sanoja  peräkkäin  ja               kuuluvat
       samaan kappaleeseen.     
 \end{koodilohkosis}
+
+Sanavälien leveys ei ole vakio. Silloin kun tekstipalsta tasataan
+molemmista reunoista -- kuten tämänkin oppaan leipätekstissä \==,
+rivillä olevia sanavälejä venytetään sopivasti, jotta tekstipalstan
+molemmat reunat saadaan tasaiseksi. Tietynlevyisiä välejä saa tehtyä
+komennolla \koodi{\keno hspace} (luku \ref{luku:mitat}).
 
 \subsection{Kappaleen vaihtuminen}
 
@@ -84,39 +89,17 @@ rivi.
 
 \begin{koodilohkosis}
   Nämä rivit kuuluvat
-  yhteen kappaleeseen.
+  samaan kappaleeseen.
 
   Tässä on toinen tekstikappale.
   Nyt ei oteta kantaa siihen, miten
-  rivit ja kappaleet ladotaan.
+  rivit ja kappaleet muotoillaan.
 \end{koodilohkosis}
 
 Ladotuissa teksteissä uuden tekstikappaleen alkaminen ilmaistaan usein
 sisennetyllä rivillä, mutta sisennyksiä eikä muitakaan muotoiluja ei
-tehdä tekstieditorissa välien avulla. Muotoiluun on omat keinonsa.
-
-\subsection{Kommentit}
-
-Latex\-/dokumentissa prosentin merkki (\koodi{\%}) on kommenttimerkki,
-jonka jälkeisen rivin\-osan kääntäjä jättää huomioimatta. Merkki on
-tarkoitettu kirjoittajan omien kommenttien ja muistiinpanojen
-kirjoittamiseen.
-
-\begin{koodilohkosis}
-  % Nyt ei tosin ole
-  % mitään kommentoitavaa.
-\end{koodilohkosis}
-
-Kommenttimerkki vaikuttaa kääntäjään myös siten, että se syö kaikki
-välilyönnit ja sarkainmerkit, jotka tulevat kyseisen kommentin jälkeen.
-Tämän vuoksi kommenttimerkin avulla voi yhdistää eri riveillä olevan
-tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan ''Latex'':
-
-\begin{koodilohkosis}
-  La% Tässä on kommentti
-    t% ja myöskin tässä.
-      ex
-\end{koodilohkosis}
+tehdä tekstieditorissa välien avulla. Kappaleiden muotoiluun on omat
+keinonsa, ja niistä kerrotaan luvussa \ref{luku:kappale}.
 
 \subsection{Sitova välilyönti}
 
@@ -128,35 +111,41 @@ tildemerkillä (\koodi{\textasciitilde}) tai nimenomaan siihen
 tarkoitetulla merkillä, jonka Unicode\-/tunnus on \unicode{u+00a0
   no-break space}.
 
-Nämä kaksi eri merkkiä, tilde (\koodi{\textasciitilde}) ja
-\unicode{u+00a0}, toimivat hieman eri tavoin. Molemmat tietenkin estävät
-rivinvaihdon, mutta \koodi{\textasciitilde}\=/merkki sallii myös välin
-venymisen samalla tavalla kuin tavallinenkin sanaväli sallii. Rivillä
-sanavälit venyvät silloin, kun tekstipalsta tasataan molemmista
-reunoista. Merkki \unicode{u+00a0} on vakiolevyinen eikä siis veny
-muiden sanavälien tapaan.
+Nämä kaksi eri merkkiä, tilde ja \unicode{u+00a0}, toimivat hieman eri
+tavoin. Molemmat estävät rivinvaihdon, mutta
+\koodi{\textasciitilde}\=/merkki sallii välin venymisen samalla tavalla
+kuin tavallinenkin sanaväli sallii (luku \ref{luku:sanavali}). Merkki
+\unicode{u+00a0} on vakiolevyinen eikä siis veny muiden sanavälien
+tapaan. Rivillä sanavälejä täytyy venyttää silloin, kun tekstipalsta
+tasataan molemmista reunoista.
 
 \subsection{Ohuke}
 
 Ohuke on tavallista sanaväliä kapeampi väli, ja se tehdään komennolla
 \koodi{\keno,} (kenoviiva ja pilkku). Ohuke on tasalevyinen ja sitova,
-eli se ei veny muiden sanavälien tapaan, ja se estää rivinvaihdon, ja
-siksi ohuke sopii esimerkiksi pitkien lukujen ja puhelinnumeroiden
-ryhmittelyyn paremmin kun sanaväli. Myös henkilön etunimen
-alkukirjainten välissä voi käyttää ohuketta, jos tavallinen sanaväli vie
-kirjaimet turhan kauas toisistaan. Sukunimi erotetaan kuitenkin aina
-sanavälillä. Joskus myös päiväyksissä käytetään ohuketta järjestysluvun
-pisteiden jälkeen. Taulukossa \ref{tlk:ohuke} vertaillaan sanaväliä,
-ohuketta ja yhteen kirjoittamista.
+eli se ei veny muiden sanavälien tapaan, ja se estää rivinvaihdon. Siksi
+ohuke sopii esimerkiksi pitkien lukujen ja puhelinnumeroiden
+ryhmittelyyn paremmin kun sanaväli.
+
+\begin{koodilohkosis}
+  12\,750\,000
+  J.\,R.\,R. Tolkien
+\end{koodilohkosis}
+
+Myös henkilön etunimen alkukirjainten välissä voi käyttää ohuketta, jos
+tavallinen sanaväli vie kirjaimet turhan kauas toisistaan. Sukunimi
+erotetaan kuitenkin aina sanavälillä. Joskus myös päiväyksissä käytetään
+ohuketta järjestysluvun pisteiden jälkeen. Taulukossa \ref{tlk:ohuke}
+vertaillaan sanaväliä, ohuketta ja yhteen kirjoittamista.
 
 \leijutlk{
   \begin{tabular}{lrll}
     \toprule
     & \ots{Luku} & \ots{Päiväys} & \ots{Nimikirjaimet} \\
     \midrule
-    \ots{Sanaväli} & 12 750 000 & \st{9. 5. 2020} & J. R. R. Tolkien \\
-    \ots{Ohuke} & 12\,750\,000 & 9.\,5.\,2020 & J.\,R.\,R. Tolkien \\
-    \ots{Yhteen} & 12750000 & 9.5.2020 & \st{J.R.R. Tolkien} \\
+    \otsrivi{sanaväli} & 12 750 000 & \st{9. 5. 2020} & J. R. R. Tolkien \\
+    \otsrivi{ohuke} & 12\,750\,000 & 9.\,5.\,2020 & J.\,R.\,R. Tolkien \\
+    \otsrivi{yhteen} & 12750000 & 9.5.2020 & \st{J.R.R. Tolkien} \\
     \bottomrule
   \end{tabular}
 }{
@@ -167,28 +156,28 @@ ohuketta ja yhteen kirjoittamista.
 
 \subsection{Lainausmerkit ja heittomerkki}
 
-Kuulunee typografian perus\-asioihin, että käytetään oikeita
-typografisia lainausmerkkejä. Näppäilemällä vaihtonäppäin ja 2 (shift+2)
-saadaan yleensä lainausmerkin yleisversio (\textquotedbl), niin sanottu
-\textsc{ascii}\-/lainausmerkki, joka ei ole tietääkseni minkään kielen
-varsinainen lainausmerkki.
+Näppäilemällä vaihtonäppäin ja 2 (shift+2) saadaan yleensä lainausmerkin
+yleisversio, niin sanottu \textsc{ascii}\-/lainausmerkki
+(\textquotedbl), mutta se ei ole taida olla minkään kielen varsinainen
+lainausmerkki. On siis syytä käyttää oikeita lainausmerkkejä, ja se käy
+Latexissa varsin helposti.
 
 Eri kielissä lainausmerkkikäytännöt ovat erilaiset. Suomen kielessä
 käytetään ''tällaisia'' lainausmerkkejä tai joskus >>tällaisia>>
 kulmalainausmerkkejä. Jos lainauksen sisään tarvitaan lainaus, täytyy
 sisempi lainaus kirjoittaa 'tällaisten' puolilainausmerkkien avulla.
-Yksittäin käytettynä se on nimeltään heittomerkki ('). Englannin
-kielessä lainauksen alussa ja lopussa on erilainen merkki, ja ``tässä''
-siitä esimerkki. Samoin on puolilainausmerkin kohdalla: `näin'.
+Yksittäin käytettynä se on nimeltään heittomerkki. Englannin kielessä
+lainauksen alussa ja lopussa on erilainen merkki, ja ``tässä'' siitä
+esimerkki. Samoin on puolilainausmerkin kohdalla: `näin'.
 
-Latexissa voi käyttää Unicode\-/merkistöä ja yleensä lähdedokumenttiin
-voi kirjoittaa suoraan ne merkit, jotka halutaan ladottavaksi, mutta
+Latexissa voi käyttää Unicode\-/merkistöä ja lähdedokumenttiin voi
+kirjoittaa suoraan ne lainausmerkit, jotka halutaan ladottavaksi, mutta
 edellä mainituille merkeille on myös omat komentonsa. Näppäimistöltä
-kirjoitettava yleisheittomerkki (\koodi{'}) tuottaa automaattisesti
-oikean kaarevan heittomerkin ('). Kun kirjoittaa kaksi heittomerkkiä
-peräkkäin (\koodi{''}), on lopputuloksena yksi kaareva lainausmerkki
-(''). Kahdella suurempi kuin \=/merkillä (\koodi{>>}) saadaan
-kulmalainausmerkki (>>).
+kirjoitettava yleisheittomerkki (\koodi{'}) tuottaa ladottuna
+automaattisesti oikean kaarevan heittomerkin ('). Kun kirjoittaa kaksi
+heittomerkkiä peräkkäin (\koodi{''}), on lopputuloksena yksi kaareva
+lainausmerkki (''). Kahdella suurempi kuin \=/merkillä (\koodi{>>})
+saadaan kulmalainausmerkki~(>>).
 
 \begin{koodilohkosis}
   ''Lainaus, jonka 'sisällä' on lainaus.''
@@ -198,26 +187,29 @@ kulmalainausmerkki (>>).
 Yllä mainitut riittävät suomen kieleen, mutta englantia ja muita kieliä
 varten tarvitaan myös toisinpäin oleva merkki (``), joka tehdään
 kahdella gra\-vis\-ak\-sen\-til\-la (\koodi{``}). Vastaava
-puolilainausmerkki (`) tehdään yhdellä aksentilla (\koodi{`}). Ainakin
-ranskan kielessä käytetään erilaisia kulmalainausmerkkejä lainauksen
-alussa ja lopussa. Lainauksen aloittava merkki (<<) tehdään kahdella
-pienempi kuin \=/merkillä (\koodi{<<}). Muunlaisiin lainausmerkkeihin
-tarvittaneen Unicode\-/merkkejä. Tosin kielikohtaiset asetukset (luku
+puolilainausmerkki (`) tehdään yhdellä aksentilla (\koodi{`}). Joissakin
+kielissä käytetään erilaisia kulmalainausmerkkejä lainauksen alussa ja
+lopussa. Vasemmalle osoittava merkki (<<) tehdään kahdella pienempi kuin
+\=/merkillä (\koodi{<<}). Muunlaisiin lainausmerkkeihin tarvittaneen
+Unicode\-/merkkejä. Tosin kielikohtaiset asetukset (luku
 \ref{luku:kieliasetukset}) voivat tuoda mukanaan omia keinojaan myös
 kielikohtaisten lainausmerkkien tuottamiseen.
 
-Joskus ladottuun tekstiin todella halutaan yleislainausmerkki
-(\textquotedbl) tai yleisheittomerkki (\textquotesingle). Ne saadaan
-komennoilla \koodi{\keno textquotedbl} ja \koodi{\keno textquotesingle}.
-Oletuksena myös tasalevyinen fontti (luku \ref{luku:kirjaintyypit})
-kytkee pois erikoiset lainausmerkkikomennot ja tuottaa suoraan niitä
-merkkejä, joita lähdedokumenttiin on kirjoitettu.
+Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
+yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
+\koodi{\keno textquotedbl} ja \koodi{\keno textquotesingle}. Kaksi
+peräkkäistä pienempi kuin- tai suurempi kuin \=/merkkiä saadaan ladottua
+siten, että merkkien väliin kirjoitetaan jotakin näkymätöntä, kuten
+tyhjä laatikko: \mbox{\koodi{>\keno mbox\{\}>}}. Oletuksena myös
+tasalevyinen fontti (luku \ref{luku:kirjaintyypit}) kytkee pois
+erikoiset lainausmerkkikomennot ja tuottaa suoraan niitä merkkejä, joita
+lähdedokumenttiin on kirjoitettu.
 
 \subsection{Yhdysmerkki, ajatusviiva ja miinusmerkki}
 
-Yhdyssanojen osien välissä käytettävä yhdysmerkki on Latexissa
-tavallinen näppäimistöltä saatava yleis\-yhdysmerkki (\=/). Se vaikuttaa
-sanojen tavutukseen, josta on tarkempaa tietoa luvussa
+Yhdyssanan osien välissä käytettävä yhdysmerkki on Latexissa tavallinen
+näppäimistöltä saatava yleis\-yh\-dys\-merk\-ki (\=/). Merkillä on
+sivuvaikutus tavutukseen, mistä kerrotaan tarkemmin luvussa
 \ref{luku:tavutus}.
 
 Ajatusviivaa tarvitaan esimerkiksi äärikohtien (7--12,
@@ -228,6 +220,18 @@ yhdysmerkillä (\koodi{--}). Pitkä ajatusviiva \mbox{(---)} tehdään
 kolmella yhdysmerkillä (\koodi{---}). Myös Unicoden ajatusviivamerkkejä
 voi käyttää: \unicode{u+2013 en dash} ja \unicode{u+2014 em dash}.
 Ajatusviivatkin vaikuttavat sanan tavutukseen (luku \ref{luku:tavutus}).
+
+\begin{koodilohkosis}
+  7--12-vuotiaat
+  Oulu--Rovaniemi-yhteys
+\end{koodilohkosis}
+
+Silloin kun todella täytyy latoa kaksi tai kolme peräkkäistä
+yhdysmerkkiä, voi käyttää tasalevyistä fonttia (luku
+\ref{luku:kirjaintyypit}), joka oletuksena kytkee pois Latexin
+ajatusviivatoiminnon. Toinen vaihtoehto on kirjoittaa yhdysmerkkien
+väliin jotakin näkymätöntä, esimerkiksi tyhjä laatikko:
+\mbox{\koodi{-\keno mbox\{\}-}}.
 
 Miinusmerkille ei Latexissa ole erityistä merkintätapaa muuten kuin
 matematiikkatilassa (luku \ref{luku:matematiikka}). Ajatusviivaa saa
@@ -262,10 +266,35 @@ tehdään Latexissa komennolla \koodi{\keno ldots} tai Unicode\-/merkillä
 \subsection{Ligatuurit}
 \subsection{Tarkkeet}
 \label{luku:tarkkeet}
+
+\subsection{Kommentit}
+
+Latex\-/dokumentissa prosentin merkki (\koodi{\%}) on kommenttimerkki,
+jonka jälkeisen rivin\-osan kääntäjä jättää huomioimatta. Merkki on
+tarkoitettu kirjoittajan omien kommenttien ja muistiinpanojen
+kirjoittamiseen.
+
+\begin{koodilohkosis}
+  % Nyt ei tosin ole
+  % mitään kommentoitavaa.
+\end{koodilohkosis}
+
+Kommenttimerkki vaikuttaa kääntäjään myös siten, että se syö kaikki
+välilyönnit ja sarkainmerkit, jotka tulevat kyseisen kommentin jälkeen.
+Tämän vuoksi kommenttimerkin avulla voi yhdistää eri riveillä olevan
+tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan \emph{Latex}.
+
+\begin{koodilohkosis}
+  La% Nämä rivit
+    t% yhdistyvät.
+      ex
+\end{koodilohkosis}
+
 \section{Rivin ja sivun vaihto}
 \section{Komennot}
 \label{luku:komennot}
 \section{Ympäristöt}
 \label{luku:ymparistot}
 \section{Mitat}
+\label{luku:mitat}
 \section{Laskurit}

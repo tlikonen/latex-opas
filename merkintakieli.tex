@@ -1,41 +1,16 @@
 \chapter{Merkintäkieli}
 
-\section{Sanavälit}
-
-Välilyönti, sarkainmerkki ja yksi rivinvaihto ovat kaikki vain
-tavallisia sanavälejä Latex\-/dokumentissa, ja näillä kolmella on sama
-merkitys. Esimerkiksi rivin lopussa oleva rivinvaihto tarkoittaa samaa
-kuin sanojen välissä oleva välilyönti. Kirjoittaja voi vapaasti päättää,
-kuinka monta sanaa kirjoittaa yhdelle riville tekstieditorissa. Latex ei
-välitä. Välilyöntejä ja sarkainmerkkejä voi kirjoittaa useita peräkkäin,
-mutta ne ovat sama asia kuin yksi väli.
-
-\begin{koodilohkosis}
-  Nämä      kaikki
-       ovat            vain
-  sanoja  peräkkäin,  ja      kaikki                kuuluvat
-      samaan kappaleeseen.     
-\end{koodilohkosis}
-
-Tyhjä rivi on kuitenkin eri asia: se tarkoittaa kappaleen vaihtumista.
-Rivi on tyhjä silloin, kun se ei sisällä mitään muuta kuin rivinvaihdon
-tai kun se sisältää vain välilyöntejä tai sarkainmerkkejä ja lopuksi
-rivinvaihdon. Tyhjiä rivejä voi olla useita peräkkäin, mutta ne
-tarkoittavat samaa kuin yksi tyhjä rivi.
-
-Ladotuissa teksteissä uuden tekstikappaleen alkaminen ilmaistaan usein
-sisennetyllä rivillä, ja niin on tässäkin kappaleessa ja koko oppaassa.
-Sisennyksiä eikä muitakaan muotoiluja ei tehdä tekstieditorissa välien
-avulla. Siihen on omat keinonsa (luku \ref{luku:kappale}).
+% Latex on merkintäkieli, eli se sisältää omat tapansa dokumentin
+% rakenteen ja sisällön kuvaamiseen. Tässä luvussa käsitellään
+% merkintäkielen perus\-asioita.
 
 \section{Merkistö}
 
 Latex\-/dokumenttiin voi kirjoittaa tekstiä Unicode\-/merkistöllä ja sen
 \textsc{utf}\=/8\/-koodauksella, jos kääntäjänä on Unicoden osaava
-la\-to\-ja\-oh\-jel\-ma kuten Xelatex tai Lualatex. Pääasiassa siis
-merkit kirjoitetaan sellaisenaan lähdedokumenttiin. On kuitenkin muutama
-poikkeus eli tiettyyn erityistarkoitukseen varattuja merkkejä, ja niitä
-käsitellään tässä alaluvussa.
+ohjelma kuten Xelatex tai Lualatex. Pääasiassa siis merkit kirjoitetaan
+sellaisenaan lähdedokumenttiin, mutta on kuitenkin kaikenlaisia
+poikkeuksia, ja niitä käsitellään tässä alaluvussa.
 
 \subsection{Varatut erikoismerkit}
 
@@ -82,6 +57,44 @@ Polyglossia\-/{} ja Babel\-/paketit voivat määritellä pari
 lainausmerkillä (\koodi{\textquotedbl}) alkavaa, tavutuksen hallintaan
 liittyvää komentoa.
 
+\subsection{Sanaväli}
+
+Välilyönti, sarkainmerkki ja yksi rivinvaihto ovat kaikki vain
+tavallisia sanavälejä Latex\-/dokumentissa, ja näillä kolmella on sama
+merkitys. Esimerkiksi rivin lopussa oleva rivinvaihto tarkoittaa samaa
+kuin sanojen välissä oleva välilyönti. Välilyöntejä ja sarkainmerkkejä
+voi kirjoittaa useita peräkkäin, mutta ne ovat sama asia kuin yksi väli.
+Sanavälit ovat venyviä silloin, kun tekstipalsta tasataan molemmista
+reunoista.
+
+\begin{koodilohkosis}
+  Nämä      kaikki
+       ovat            vain
+  sanoja  peräkkäin  ja               kuuluvat
+      samaan kappaleeseen.     
+\end{koodilohkosis}
+
+\subsection{Kappaleen vaihtuminen}
+
+Tyhjä rivi tarkoittaa kappaleen vaihtumista. Rivi on tyhjä silloin, kun
+se ei sisällä mitään muuta kuin rivinvaihdon tai kun se sisältää vain
+välilyöntejä tai sarkainmerkkejä ja lopuksi rivinvaihdon. Tyhjiä rivejä
+voi olla useita peräkkäin, mutta ne tarkoittavat samaa kuin yksi tyhjä
+rivi.
+
+\begin{koodilohkosis}
+  Nämä rivit kuuluvat
+  yhteen kappaleeseen.
+
+  Tässä on toinen tekstikappale.
+  Nyt ei oteta kantaa siihen, miten
+  rivit ja kappaleet ladotaan.
+\end{koodilohkosis}
+
+Ladotuissa teksteissä uuden tekstikappaleen alkaminen ilmaistaan usein
+sisennetyllä rivillä, mutta sisennyksiä eikä muitakaan muotoiluja ei
+tehdä tekstieditorissa välien avulla. Muotoiluun on omat keinonsa.
+
 \subsection{Kommentit}
 
 Latex\-/dokumentissa prosentin merkki (\koodi{\%}) on kommenttimerkki,
@@ -96,7 +109,7 @@ kirjoittamiseen.
 
 Kommenttimerkki vaikuttaa kääntäjään myös siten, että se syö kaikki
 välilyönnit ja sarkainmerkit, jotka tulevat kyseisen kommentin jälkeen.
-Toisin sanoen kommenttimerkin avulla voi yhdistää eri riveillä olevan
+Tämän vuoksi kommenttimerkin avulla voi yhdistää eri riveillä olevan
 tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan ''Latex'':
 
 \begin{koodilohkosis}
@@ -104,6 +117,53 @@ tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan ''Latex'':
     t% ja myöskin tässä.
       ex
 \end{koodilohkosis}
+
+\subsection{Sitova välilyönti}
+
+Sitova välilyönti on samanlainen tyhjä merkki kuin tavallinenkin
+välilyönti, mutta rivinvaihtoa ei sallita sen kohdalta. Sitovaa
+välilyöntiä kannattaa käyttää esimerkiksi mittaluvun ja mittayksikön
+lyhenteen välissä (3~km). Latexissa sitova välilyönti saadaan joko
+tildemerkillä (\koodi{\textasciitilde}) tai nimenomaan siihen
+tarkoitetulla merkillä, jonka Unicode\-/tunnus on \unicode{u+00a0
+  no-break space}.
+
+Nämä kaksi eri merkkiä, tilde (\koodi{\textasciitilde}) ja
+\unicode{u+00a0}, toimivat hieman eri tavoin. Molemmat tietenkin estävät
+rivinvaihdon, mutta \koodi{\textasciitilde}\=/merkki sallii myös välin
+venymisen samalla tavalla kuin tavallinenkin sanaväli sallii. Rivillä
+sanavälit venyvät silloin, kun tekstipalsta tasataan molemmista
+reunoista. Merkki \unicode{u+00a0} on vakiolevyinen eikä siis veny
+muiden sanavälien tapaan.
+
+\subsection{Ohuke}
+
+Ohuke on tavallista sanaväliä kapeampi väli, ja se tehdään komennolla
+\koodi{\keno,} (kenoviiva ja pilkku). Ohuke on tasalevyinen ja sitova,
+eli se ei veny muiden sanavälien tapaan, ja se estää rivinvaihdon, ja
+siksi ohuke sopii esimerkiksi pitkien lukujen ja puhelinnumeroiden
+ryhmittelyyn paremmin kun sanaväli. Myös henkilön etunimen
+alkukirjainten välissä voi käyttää ohuketta, jos tavallinen sanaväli vie
+kirjaimet turhan kauas toisistaan. Sukunimi erotetaan kuitenkin aina
+sanavälillä. Joskus myös päiväyksissä käytetään ohuketta järjestysluvun
+pisteiden jälkeen. Taulukossa \ref{tlk:ohuke} vertaillaan sanaväliä,
+ohuketta ja yhteen kirjoittamista.
+
+\leijutlk{
+  \begin{tabular}{lrll}
+    \toprule
+    & \ots{Luku} & \ots{Päiväys} & \ots{Nimikirjaimet} \\
+    \midrule
+    \ots{Sanaväli} & 12 750 000 & \st{9. 5. 2020} & J. R. R. Tolkien \\
+    \ots{Ohuke} & 12\,750\,000 & 9.\,5.\,2020 & J.\,R.\,R. Tolkien \\
+    \ots{Yhteen} & 12750000 & 9.5.2020 & \st{J.R.R. Tolkien} \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Sanavälin, ohukkeen ja yhteen kirjoittamisen vertailu. Suomen
+    kielen vastaiset kirjoitus\-asut on viivattu yli}
+  \label{tlk:ohuke}
+}
 
 \subsection{Lainausmerkit ja heittomerkki}
 
@@ -189,23 +249,6 @@ pituudessa.
   \label{kuva:ajatusviiva_miinusmerkki}
 }
 
-\subsection{Sitova välilyönti}
-
-Sitova välilyönti on samanlainen tyhjä merkki kuin tavallinenkin
-välilyönti, mutta rivinvaihtoa ei sallita sen kohdalta. Sitovaa
-välilyöntiä kannattaa käyttää esimerkiksi mittaluvun ja mittayksikön
-lyhenteen välissä (3~km). Latexissa sitova välilyönti saadaan joko
-tildemerkillä (\koodi{\textasciitilde}) tai nimenomaan siihen
-tarkoitetulla merkillä \unicode{u+00a0 no-break space}.
-
-Nämä kaksi eri merkkiä, tilde (\koodi{\textasciitilde}) ja
-\unicode{u+00a0}, toimivat hieman eri tavoin. Molemmat tietenkin estävät
-rivinvaihdon, mutta \koodi{\textasciitilde}\=/merkki sallii myös välin
-venymisen samalla tavalla kuin tavallinenkin sanaväli sallii. Rivillä
-sanavälit venyvät silloin, kun tekstipalsta tasataan molemmista
-reunoista. Merkki \unicode{u+00a0} on vakiolevyinen eikä siis veny
-muiden sanavälien tapaan.
-
 \subsection{Kolme pistettä eli ellipsi}
 
 Ajatuksen katkeamista ja muuta sellaista ilmaisevalle kolmelle pisteelle
@@ -213,8 +256,8 @@ eli ellipsille (…) on oma merkkinsä, ja fontissa se saattaa näyttää
 hieman erilaiselta kuin kolme peräkkäistä pistemerkkiä. Tyypillisesti
 ellipsimerkissä pisteet ovat hieman harvemmassa ja erottuvat toisistaan
 paremmin kuin kolmena erillisenä merkkinä ladotut pisteet. Ellipsi
-tehdään Latexissa komennolla \koodi{\keno ldots} tai suoraan
-Unicode\-/merkillä \unicode{u+2026 horizontal ellipsis}.
+tehdään Latexissa komennolla \koodi{\keno ldots} tai Unicode\-/merkillä
+\unicode{u+2026 horizontal ellipsis}.
 
 \subsection{Ligatuurit}
 \subsection{Tarkkeet}

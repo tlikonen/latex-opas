@@ -157,10 +157,10 @@ vertaillaan sanaväliä, ohuketta ja yhteen kirjoittamista.
 \subsection{Lainausmerkit ja heittomerkki}
 
 Näppäilemällä vaihtonäppäin ja 2 (shift+2) saadaan yleensä lainausmerkin
-yleisversio, niin sanottu \textsc{ascii}\-/lainausmerkki
-(\textquotedbl), mutta se ei ole taida olla minkään kielen varsinainen
-lainausmerkki. On siis syytä käyttää oikeita lainausmerkkejä, ja se käy
-Latexissa varsin helposti.
+yleisversio, niin sanottu \textsc{ascii}\-/lainausmerkki (\koodi{'}),
+mutta se ei taida olla minkään kielen varsinainen lainausmerkki. On siis
+syytä käyttää oikeita lainausmerkkejä, ja se käy Latexissa varsin
+helposti.
 
 Eri kielissä lainausmerkkikäytännöt ovat erilaiset. Suomen kielessä
 käytetään ''tällaisia'' lainausmerkkejä tai joskus >>tällaisia>>
@@ -190,7 +190,7 @@ kahdella gra\-vis\-ak\-sen\-til\-la (\koodi{``}). Vastaava
 puolilainausmerkki (`) tehdään yhdellä aksentilla (\koodi{`}). Joissakin
 kielissä käytetään erilaisia kulmalainausmerkkejä lainauksen alussa ja
 lopussa. Vasemmalle osoittava merkki (<<) tehdään kahdella pienempi kuin
-\=/merkillä (\koodi{<<}). Muunlaisiin lainausmerkkeihin tarvittaneen
+\=/merkillä (<\mbox{}<). Muunlaisiin lainausmerkkeihin tarvittaneen
 Unicode\-/merkkejä. Tosin kielikohtaiset asetukset (luku
 \ref{luku:kieliasetukset}) voivat tuoda mukanaan omia keinojaan myös
 kielikohtaisten lainausmerkkien tuottamiseen.
@@ -214,10 +214,11 @@ Ajatusviivaa tarvitaan esimerkiksi äärikohtien (7--12,
 Oulu--Rova\-niemi), luetelmien, vuorosanojen ja virkkeen irrallisen
 lisäysten merkitseminen. Suomen kielessä käytetään yleensä vain lyhyttä
 ajatusviivaa \mbox{(--)}, joka tehdään Latexissa kahdella peräkkäisellä
-yhdysmerkillä (\koodi{--}). Pitkä ajatusviiva \mbox{(---)} tehdään
-kolmella yhdysmerkillä (\koodi{---}). Myös Unicoden ajatusviivamerkkejä
-voi käyttää: \unicode{u+2013 en dash} ja \unicode{u+2014 em dash}.
-Ajatusviivatkin vaikuttavat sanan tavutukseen (luku \ref{luku:tavutus}).
+yhdysmerkillä \mbox{(\koodi{--})}. Pitkä ajatusviiva \mbox{(---)}
+tehdään kolmella yhdysmerkillä \mbox{(\koodi{---})}. Myös Unicoden
+ajatusviivamerkkejä voi käyttää: \unicode{u+2013 en dash} ja
+\unicode{u+2014 em dash}. Ajatusviivatkin vaikuttavat sanan tavutukseen
+(luku \ref{luku:tavutus}).
 
 \begin{koodilohkosis}
   7--12-vuotiaat

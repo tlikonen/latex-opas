@@ -69,9 +69,9 @@ esimerkin mukaisesti.
 
 \begin{koodilohkosis}
   \usepackage{fontspec}
-  \setmainfont{Linux Libertine O}[Scale=1]
-  \setsansfont{Linux Biolinum O}[Scale=MatchLowercase]
-  \setmonofont{Linux Libertine Mono O}[Scale=MatchLowercase]
+  \setmainfont{TeX Gyre Termes}[Scale=1]
+  \setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
+  \setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
 \end{koodilohkosis}
 
 Samalla voi määritellä lukuisia kirjainperheeseen sisältyviä asetuksia
@@ -90,7 +90,7 @@ toivottua tulosta, voi kirjainperheen skaalausta hienosäätää vielä
 \koodi{ScaleAgain}\-/valitsimella seuraavaan tapaan:
 
 \begin{koodilohkosis}
-  \setmonofont{Linux Libertine Mono O}
+  \setmonofont{TeX Gyre Cursor}
   [Scale=MatchLowercase, ScaleAgain=.97]
 \end{koodilohkosis}
 
@@ -338,9 +338,9 @@ kohdan välillä ja koska fonttien mittasuhteet ovat erilaisia.
   \documentclass[10pt]{article} % 10pt on oletus
   \usepackage{fontspec}
 
-  \setmainfont{Linux Libertine O}[Scale=1.4]
-  \setsansfont{Linux Biolinum O}[Scale=MatchLowercase]
-  \setmonofont{Linux Libertine Mono O}[Scale=MatchLowercase]
+  \setmainfont{TeX Gyre Termes}[Scale=1.4]
+  \setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
+  \setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
   \linespread{1.45}
 \end{koodilohko}    
 \caption{Fonttikokojen määrittäminen suhteessa peruskirjainperheeseen}
@@ -410,13 +410,13 @@ fonttien asettamiseen.
   \usepackage{fontspec}
 
   % Leipätekstiin samankokoiset fontit
-  \setmainfont{Linux Libertine O}
-  \setsansfont{Linux Biolinum O}[Scale=MatchLowercase]
-  \setmonofont{Linux Libertine Mono O}[Scale=MatchLowercase]
+  \setmainfont{TeX Gyre Termes}
+  \setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
+  \setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
   
   % Muualle sans ja mono ilman skaalausta
-  \newfontfamily{\sffamilyabs}{Linux Biolinum O}
-  \newfontfamily{\ttfamilyabs}{Linux Libertine Mono O}
+  \newfontfamily{\sffamilyabs}{TeX Gyre Heros}
+  \newfontfamily{\ttfamilyabs}{TeX Gyre Cursor}
 
   \linespread{1} % ei välttämättä tarvita
 
@@ -448,7 +448,7 @@ Uusien kirjainperheiden komentojen nimiksi on valittu \koodi{\keno
   sffamilyabs} ja \koodi{\keno ttfamilyabs} (vrt. \koodi{\keno sffamily}
 ja \koodi{\keno ttfamily}), ja näillä komennoilla kirjainperheet
 kytketään päälle. Jos esimerkiksi jonkin julkaisun vaatimuksiin kuuluu,
-että otsikossa täytyy olla 16 pisteen lihavoitu Linux Biolinum~O
+että otsikossa täytyy olla 16 pisteen lihavoitu TeX Gyre Heros
 \=/kirjainleikkaus, voi esimerkissä \ref{esim:fontti_absoluuttinen}
 olevien asetusten pohjalta antaa otsikolle seuraavat komennot:
 

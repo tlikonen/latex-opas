@@ -197,13 +197,11 @@ kielikohtaisten lainausmerkkien tuottamiseen.
 
 Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
-\koodi{\keno textquotedbl} ja \koodi{\keno textquotesingle}. Kaksi
-peräkkäistä pienempi kuin- tai suurempi kuin \=/merkkiä saadaan ladottua
-siten, että merkkien väliin kirjoitetaan jotakin näkymätöntä, kuten
-tyhjä laatikko: \mbox{\koodi{>\keno mbox\{\}>}}. Oletuksena myös
-tasalevyinen fontti (luku \ref{luku:kirjaintyypit}) kytkee pois
+\koodi{\keno textquotedbl} ja \koodi{\keno textquotesingle}. Oletuksena
+myös tasalevyinen fontti (luku \ref{luku:kirjaintyypit}) kytkee pois
 erikoiset lainausmerkkikomennot ja tuottaa suoraan niitä merkkejä, joita
-lähdedokumenttiin on kirjoitettu.
+lähdedokumenttiin on kirjoitettu. Muita tapoja lainausmerkkitoiminnon
+estämiseen on esimerkissä \ref{esim:pois-tex-liga}.
 
 \subsection{Yhdysmerkki, ajatusviiva ja miinusmerkki}
 
@@ -229,9 +227,20 @@ Ajatusviivatkin vaikuttavat sanan tavutukseen (luku \ref{luku:tavutus}).
 Silloin kun todella täytyy latoa kaksi tai kolme peräkkäistä
 yhdysmerkkiä, voi käyttää tasalevyistä fonttia (luku
 \ref{luku:kirjaintyypit}), joka oletuksena kytkee pois Latexin
-ajatusviivatoiminnon. Toinen vaihtoehto on kirjoittaa yhdysmerkkien
-väliin jotakin näkymätöntä, esimerkiksi tyhjä laatikko:
-\mbox{\koodi{-\keno mbox\{\}-}}.
+ajatusviivatoiminnon. Muita tapoja on esimerkissä
+\ref{esim:pois-tex-liga}.
+
+\begin{esimerkki}
+\begin{koodilohko}
+  \addfontfeatures{Ligatures=TeXReset} % Fontista Tex-ligatuurit pois.
+  -\mbox{}-  % Estetään ajatusviiva.
+  >\mbox{}>  % Estetään kulmalainausmerkit.
+  \texttt{…} % Tasalevyinen fontti estää Tex-ligatuurit.
+\end{koodilohko}
+\caption{Keinoja Tex-ligatuurien estämiseen. Komento \koodi{\keno
+    addfontfeatures} on Fontspec\-/makropaketin ominaisuus}
+\label{esim:pois-tex-liga}
+\end{esimerkki}
 
 Miinusmerkille ei Latexissa ole erityistä merkintätapaa muuten kuin
 matematiikkatilassa (luku \ref{luku:matematiikka}). Ajatusviivaa saa

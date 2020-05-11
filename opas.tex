@@ -24,6 +24,7 @@
 %\usepackage{fancyhdr}
 \usepackage{noindentafter}
 \usepackage{soul}
+%\usepackage{makeidx} \makeindex
 \usepackage[unicode,hyperfootnotes=false]{hyperref}
 \usepackage[shortcuts]{extdash}
 
@@ -121,11 +122,10 @@
   \renewcommand{\contentsname}{Sisällys}
 }
 
-\setcounter{tocdepth}{3}
-\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
 
-\newcommand{\otsikkotyyli}{ \raggedright \linespread{1.1} \sffamily
-  \bfseries }
+\newcommand{\otsikkotyyli}{ \raggedright \sffamily \bfseries }
 
 \titleformat{\chapter}[display]{\LARGE\bfseries}
 {\chaptertitlename\hspace{.3em}\thechapter}{1.5ex}{\otsikkotyyli\Huge}[]
@@ -139,7 +139,7 @@
 {\thesubsection}{.8em}{}[]
 \titlespacing*{\subsection}{0pt}{*3}{*1}
 
-% \titleformat{\subsubsection}{\otsikkotyyli\normalsize\itshape}
+% \titleformat{\subsubsection}{\normalsize\itshape\bfseries}
 % {\thesubsubsection}{.8em}{}[]
 % \titlespacing*{\subsubsection}{0pt}{*3}{*1}
 
@@ -228,13 +228,13 @@
   Xe-la-tex
 }
 
-%\clearpage
-%\pdfbookmark[1]{Sisällys}{luku:sisallys}
+\clearpage
+\pdfbookmark[1]{Sisällys}{luku:sisallys}
 
-% {
-%   \renewcommand{\thispagestyle}[1]{}
-%   \tableofcontents
-% }
+{
+  \renewcommand{\thispagestyle}[1]{}
+  \tableofcontents
+}
 
 \clearpage
 \pagestyle{plain}
@@ -267,15 +267,22 @@ yhtäläisyyksiä, ja
 \input{merkintakieli}
 \input{asetukset}
 \input{kirjoittaminen}
-
 \chapter{Matematiikka}
 \label{luku:matematiikka}
 \section{Käyttöönotto}
 \subsection{Unicode-math}
 \subsection{Mathspec}
 \subsection{Vanha tapa}
+\section{Jotain sisältöäkin tarvitaan}
+\section{Ympäristöjä}
+% align... (amsmath)
 
 \chapter{Muuta}
 \section{Päiväykset ja kellonajat}
+
+% \clearpage
+% \phantomsection
+% \addcontentsline{toc}{chapter}{\indexname}
+% \printindex
 
 \end{document}

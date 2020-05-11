@@ -70,7 +70,7 @@ kirjoittaa useita peräkkäin, mutta ne ovat sama asia kuin yksi väli.
   Nämä      kaikki
        ovat            vain
   sanoja  peräkkäin  ja               kuuluvat
-      samaan kappaleeseen.     
+      samaan kappaleeseen.
 \end{koodilohkosis}
 
 Sanavälien leveys ei ole vakio. Silloin kun tekstipalsta tasataan
@@ -266,7 +266,7 @@ pituudessa.
 \subsection{Kolme pistettä eli ellipsi}
 
 Ajatuksen katkeamista ja muuta sellaista ilmaisevalle kolmelle pisteelle
-eli ellipsille (…) on oma merkkinsä, ja fontissa se saattaa näyttää
+eli ellipsille (\ldots) on oma merkkinsä, ja fontissa se saattaa näyttää
 hieman erilaiselta kuin kolme peräkkäistä pistemerkkiä. Tyypillisesti
 ellipsimerkissä pisteet ovat hieman harvemmassa ja erottuvat toisistaan
 paremmin kuin kolmena erillisenä merkkinä ladotut pisteet. Ellipsi
@@ -274,7 +274,75 @@ tehdään Latexissa komennolla \koodi{\keno ldots} tai Unicode\-/merkillä
 \unicode{u+2026 horizontal ellipsis}.
 
 \subsection{Tarkkeet}
-\label{luku:tarkkeet}
+%\label{luku:tarkkeet}
+
+Latexissa on useita komentoja tarkkeellisten kirjainten
+(\'a\,\v{s}\,\c{c}\,\~o) kirjoittamiseen sekä muille merkeille, joita ei
+ehkä ihan helposti saa suoraan näppäimistöltä. Komentoja on koottu
+taulukkoon \ref{tlk:tarkkeet}.
+
+Taulukon tarkekomennoissa on käytetty yleensä a\=/kirjainta esimerkkinä,
+mutta muutkin kirjaimet toimivat. Kaikki merkit voi kirjoittaa
+Latex\-/lähdedokumenttiin myös sellaisenaan, eli näiden komentojen
+käyttö ei ole välttämätöntä.
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[3]{\koodi{\keno #1} & #2 & #3 \\}
+
+\leijutlk{
+  \begin{tabular}[t]{lll}
+    \toprule
+    \multicolumn{2}{l}{\ots{Esimerkki}} & \ots{Merkitys} \\
+    \midrule
+    \rivi{`a}{\`a}{gravis}
+    \rivi{'a}{\'a}{akuutti}
+    \rivi{\textasciicircum a}{\^a}{sirkumfleksi}
+    \rivi{\~{}a}{\~a}{tilde}
+    \rivi{\textquotedbl a}{\"a}{treema}
+    \rivi{H\{a\}}{\H{a}}{kaksoisakuutti}
+    \rivi{r\{a\}}{\r{a}}{yläpuolinen ympyrä}
+    \rivi{v\{s\}}{\v{s}}{hattu}
+    %\rivi{t\{a\}}{\t{a}}{''tie''}
+    \rivi{u\{a\}}{\u{a}}{lyhyysmerkki}
+    \rivi{=a}{\=a}{pituusmerkki}
+    %\rivi{b\{a\}}{\b{a}}{''underbar''}
+    \rivi{c\{c\}}{\c{c}}{sedilji}
+    \rivi{.a}{\.a}{yläpuolinen piste}
+    \rivi{d\{a\}}{\d{a}}{alapuolinen piste}
+    \rivi{AE}{\AE}{AE-ligatuuri}
+    \rivi{ae}{\ae}{ae-ligatuuri}
+    \rivi{OE}{\OE}{OE-ligatuuri}
+    \rivi{oe}{\oe}{oe-ligatuuri}
+    \bottomrule
+  \end{tabular}\hspace{7mm}%
+  \begin{tabular}[t]{lll}
+    \toprule
+    \multicolumn{2}{l}{\ots{Esimerkki}} & \ots{Merkitys} \\
+    \midrule
+    \rivi{k\{o\}}{\k{o}}{ogonek}
+    \rivi{DH}{\DH}{iso eth}
+    \rivi{dh}{\dh}{pieni eth}
+    \rivi{DJ}{\DJ}{D ja poikkiviiva}
+    \rivi{dj}{\dj}{d ja poikkiviiva}
+    \rivi{L}{\L}{L ja poikkiviiva}
+    \rivi{l}{\l}{l ja poikkiviiva}
+    \rivi{O}{\O}{O ja poikkiviiva}
+    \rivi{o}{\o}{o ja poikkiviiva}
+    \rivi{NG}{\NG}{iso äng}
+    \rivi{ng}{\ng}{pieni äng}
+    \rivi{SS}{\SS}{iso kaksois-s}
+    \rivi{ss}{\ss}{pieni kaksois-s}
+    \rivi{TH}{\TH}{iso thorn}
+    \rivi{th}{\th}{pieni thorn}
+    \rivi{i}{\i}{pisteetön i}
+    \rivi{j}{\j}{pisteetön j}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Komentoja tarkkeellisten ja muiden kirjainten
+    kirjoittamiseen}
+  \label{tlk:tarkkeet}
+}
 
 \subsection{Kommentit}
 

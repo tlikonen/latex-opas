@@ -127,7 +127,7 @@
 \newcommand{\otsikkotyyli}{ \raggedright \linespread{1.1} \sffamily
   \bfseries }
 
-\titleformat{\chapter}[display]{\Large\bfseries}
+\titleformat{\chapter}[display]{\LARGE\bfseries}
 {\chaptertitlename\hspace{.3em}\thechapter}{1.5ex}{\otsikkotyyli\Huge}[]
 \titlespacing*{\chapter}{0em}{*13}{*8}
 
@@ -245,19 +245,19 @@
 
 % Miksi Latex?
 
-... Niinpä tekstidokumenttien toteuttaminen Latexilla ei ole läheskään
-samanlaista kuin työskentely tietotekniikassa yleensä. Yleensähän
-käynnistetään jokin sovellus\-ohjelma, joka sisältää suunnilleen kaikki
-tarvittavat toiminnot. Samalla sovelluksella työ viedään alusta loppuun.
+Tekstidokumenttien toteuttaminen Latexilla ei ole läheskään samanlaista
+kuin työskentely tietotekniikassa yleensä. Yleensähän käynnistetään
+jokin sovellus\-ohjelma, joka sisältää suunnilleen kaikki tarvittavat
+toiminnot. Samalla sovelluksella työ viedään alusta loppuun.
 
 Sen sijaan Latexin kanssa työskentely on lähempänä ohjelmoijan
 työskentelyä. Lähdedokumentti (''koodi'') on muodoltaan täysin erilainen
 kuin lopullinen tuotos. Kirjoittaminen vaatii omanlaisensa kielen
 osaamista. Lopulliseen toteutukseen tarvitaan yleensä eri tekijöiden
-tuottamia makropaketteja (vrt. ohjelmakirjastot), ja niiden ohjekirjojen
-lukeminen on osa normaalia työskentelyä. Lähdedokumentit käännetään
-erillisellä kääntäjäohjelmalla lopulliseksi tuotokseksi, eikä käännettyä
-tuotosta voi enää palauttaa alkuperäiseksi lähdedokumentiksi.
+tuottamia makropaketteja (vrt. ohjelmakirjastot), ja niiden ohjekirjoja
+täytyy joskus vilkaista. Lähdedokumentit käännetään erillisellä
+kääntäjäohjelmalla lopulliseksi tuotokseksi, eikä käännettyä tuotosta
+voi enää palauttaa alkuperäiseksi lähdedokumentiksi.
 
 Latexin käyttö ei silti ole mitään ohjelmointia. Merkintäkieli on eri
 asia kuin ohjelmointikieli. Työskentelyn luonteessa on kuitenkin useita
@@ -270,8 +270,12 @@ yhtäläisyyksiä, ja
 
 \chapter{Matematiikka}
 \label{luku:matematiikka}
+\section{Käyttöönotto}
+\subsection{Unicode-math}
+\subsection{Mathspec}
+\subsection{Vanha tapa}
 
-\chapter{Virittely}
+\chapter{Muuta}
 \section{Päiväykset ja kellonajat}
 
 \end{document}

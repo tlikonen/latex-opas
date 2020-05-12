@@ -24,7 +24,7 @@
 %\usepackage{fancyhdr}
 \usepackage{noindentafter}
 \usepackage{soul}
-%\usepackage{makeidx} \makeindex
+\usepackage{imakeidx} \makeindex[intoc]
 \usepackage[unicode,hyperfootnotes=false]{hyperref}
 \usepackage[shortcuts]{extdash}
 
@@ -228,13 +228,13 @@
   Xe-la-tex
 }
 
-\clearpage
-\pdfbookmark[1]{Sisällys}{luku:sisallys}
+% \clearpage
+% \pdfbookmark[1]{Sisällys}{luku:sisallys}
 
-{
-  \renewcommand{\thispagestyle}[1]{}
-  \tableofcontents
-}
+% {
+%   \renewcommand{\thispagestyle}[1]{}
+%   \tableofcontents
+% }
 
 \clearpage
 \pagestyle{plain}
@@ -280,9 +280,6 @@ yhtäläisyyksiä, ja
 \chapter{Muuta}
 \section{Päiväykset ja kellonajat}
 
-% \clearpage
-% \phantomsection
-% \addcontentsline{toc}{chapter}{\indexname}
-% \printindex
+\printindex
 
 \end{document}

@@ -109,13 +109,13 @@ välilyönnillä kannattaa estää esimerkiksi pienistä osista koostuvan
 ilmauksen hajoaminen eri riveille (\emph{osa~5}). Latexissa sitova
 välilyönti saadaan joko tildemerkillä (\koodi{\textasciitilde}) tai
 nimenomaan siihen tarkoitetulla merkillä, jonka Unicode\-/tunnus on
-\unicode{u+00a0 no-break space}.
+\uctunnus{u+00a0 no-break space}.
 
-Nämä kaksi eri merkkiä, tilde ja \unicode{u+00a0}, toimivat hieman eri
+Nämä kaksi eri merkkiä, tilde ja \uctunnus{u+00a0}, toimivat hieman eri
 tavoin. Molemmat estävät rivinvaihdon, mutta
 \koodi{\textasciitilde}\=/merkki sallii välin venymisen samalla tavalla
 kuin tavallinenkin sanaväli sallii (luku \ref{luku:sanavali}). Merkki
-\unicode{u+00a0} on vakiolevyinen eikä siis veny muiden sanavälien
+\uctunnus{u+00a0} on vakiolevyinen eikä siis veny muiden sanavälien
 tapaan. Rivillä sanavälejä täytyy venyttää silloin, kun tekstipalsta
 tasataan molemmista reunoista.
 
@@ -216,8 +216,8 @@ lisäysten merkitseminen. Suomen kielessä käytetään yleensä vain lyhyttä
 ajatusviivaa \mbox{(--)}, joka tehdään Latexissa kahdella peräkkäisellä
 yhdysmerkillä \mbox{(\koodi{--})}. Pitkä ajatusviiva \mbox{(---)}
 tehdään kolmella yhdysmerkillä \mbox{(\koodi{---})}. Myös Unicoden
-ajatusviivamerkkejä voi käyttää: \unicode{u+2013 en dash} ja
-\unicode{u+2014 em dash}. Ajatusviivatkin vaikuttavat sanan tavutukseen
+ajatusviivamerkkejä voi käyttää: \uctunnus{u+2013 en dash} ja
+\uctunnus{u+2014 em dash}. Ajatusviivatkin vaikuttavat sanan tavutukseen
 (luku \ref{luku:tavutus}).
 
 \begin{koodilohkosis}
@@ -246,7 +246,7 @@ ajatusviivatoiminnon. Muita tapoja on esimerkissä
 Miinusmerkille ei Latexissa ole erityistä merkintätapaa muuten kuin
 matematiikkatilassa (luku \ref{luku:matematiikka}). Ajatusviivaa saa
 käyttää myös miinusmerkkinä, mutta vielä parempi olisi käyttää
-varsinaista Unicoden miinusmerkkiä \unicode{u+2212 minus sign}, koska se
+varsinaista Unicoden miinusmerkkiä \uctunnus{u+2212 minus sign}, koska se
 on fonteissa suunniteltu typografisesti yhteensopivaksi muiden
 matemaattisten merkkien kanssa. Tämän oppaan fontissakin on pieni ero
 merkkien välillä: miinusmerkki on samalla korkeudella kuin plusmerkin
@@ -271,7 +271,7 @@ hieman erilaiselta kuin kolme peräkkäistä pistemerkkiä. Tyypillisesti
 ellipsimerkissä pisteet ovat hieman harvemmassa ja erottuvat toisistaan
 paremmin kuin kolmena erillisenä merkkinä ladotut pisteet. Ellipsi
 tehdään Latexissa komennolla \koodi{\keno ldots} tai Unicode\-/merkillä
-\unicode{u+2026 horizontal ellipsis}.
+\uctunnus{u+2026 horizontal ellipsis}.
 
 \subsection{Tarkkeet}
 %\label{luku:tarkkeet}
@@ -369,8 +369,147 @@ tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan \emph{Latex}.
 
 \section{Komennot}
 \label{luku:komennot}
+
+\subsection{Perusteet}
+
+Latexin komennot alkavat kenoviivalla (\koodi{\textbackslash}), jonka
+jälkeen tulee komennon nimi. Nimi koostuu yleensä pienistä tai isoista
+kirjaimista, mutta komento voi olla myös merkkejä.
+
+Komennot voivat ottaa vastaan parametreja eli lisätietoa, jota komento
+käsittelee ja tarvitsee toimintaansa. Jotkin parametrit voivat olla
+pakollisia ja jotkin valinnaisia. Pakolliset parametrit kirjoitetaan
+aaltosulkeisiin \koodi{\{\ldots\}} ja valinaiset hakasulkeisiin
+\koodi{[\ldots]}.
+
+\begin{koodilohkosis}
+  \komento
+  \toinenkomento{para}{metreja}
+  \toinenkomento[valinnainen]{para}{metreja}
+\end{koodilohkosis}
+
+Komennon nimen perässä olevat sanavälit syödään pois. Seuraavassa
+esimerkissä sana \emph{Latex} ladotaan ehjänä, jos vain \koodi{\keno
+  komento} itsessään ei tulosta mitään eli ei vaikuta tekstin
+latomiseen.
+
+\begin{koodilohkosis}
+  La\komento   tex
+\end{koodilohkosis}
+
+Jos haluaa komennon jälkeen yhden sanavälin, täytyy kirjoittaa komennon
+nimen jälkeen aaltosulkeet: \koodi{\keno komento\{\}}. Aaltosulkeiden
+jälkeen ei syödä välejä.
+
+Komennon nimen ja parametrien välissä voi olla sanavälejä, ja ne kaikki
+syödään pois. Komennon ja sen parametrit voi siis kirjoittaa vaikka
+seuraavalla tavalla.
+
+\begin{koodilohkosis}
+  \toinenkomento  [valinnainen]
+     {para}   {metreja}
+\end{koodilohkosis}
+
+Omien komentojen tärkein tarkoitus on merkintätapojen abstrahointi eli
+teknisen toteutuksen ja yksityiskohtien piilottaminen. Abstrahointi voi
+helpottaa työskentelyä huomattavastikin ja tehdä lähdedokumentista
+helppolukuista. Otetaan esimerkki tämän oppaan toteutuksesta.
+
+Tämä opas käsittelee välillä Unicode\-/merkkejä ja niiden tunnuksia
+kuten \uctunnus{u+0061 latin small letter~a}. Merkkien tunnukset
+ladotaan erilaisella kirjainleikkauksella, kapiteelilla. Jos fontti vain
+tukee kapiteelia, sitä saadaan helposti komennolla \koodi{\keno
+  text\-sc}. Tätä komentoa ei ehkä siltikään kannata käyttää suoraan
+dokumentissa. Jos nimittäin kirjoittaa dokumentin täyteen \koodi{\keno
+  text\-sc}\-/komentoja, voi myöhemmin olla työlästä muuttaa
+Unicode\-/tunnusten ulko\-asu ja toteutus toisenlaiseksi.
+
+Jossain vaiheessa kirjoittaja oivaltaa, että Unicode\-/tunnukset ovat
+englannin kieltä ja että sanoja pitäisi tavuttaa englannin sääntöjen
+mukaan eikä suomen. Pitäisi siis liittää \koodi{\keno
+  text\-sc}\-/komentojen ympärille vielä \koodi{\keno
+  text\-en\-glish}\-/komento.%
+\footnote{Komento \koodi{\keno text\-en\-glish} on Polyglossia\-/paketin
+  ominaisuus.} Lähdedokumentin kirjoittaminen on ikävää ja ulko\-asu
+sekava, jos Unicode\-/tunnusten kohdalla on aina \koodi{\keno
+  text\-en\-glish\{\keno text\-sc\{\ldots\}\}}.
+
+Parasta olisi jo ennen kirjoittamista miettiä, mitä loogisia rakenteita
+teksti sisältää. Erilaisia rakenteita tai ilmauksia varten kannattaa
+luoda komento, jotta sen toteutusta voi myöhemmin muuttaa helposti.
+Esimerkiksi Unicoden merkkitunnuksille voisi luoda oman komennon
+\koodi{\keno uctunnus}, jota käytetään aina tunnusten ilmaisemiseen
+Latex\-/dokumentissa. Komento määritellään vain yhdessä paikassa, ja
+määritelmää on helppoa muuttaa. Itse tekstikin pysyy selkeänä, kun
+siellä on vain korkean tason komentoja, jotka ilmaisevat tarkoituksen
+eivätkä teknistä toteutusta.
+
+\subsection{Komentojen määrittäminen}
+
+Komentojen määrittelyyn on kolme erilaista komentoa, ja niille kaikille
+annetaan samanlaiset parametrit. Komennot ovat seuraavat:
+
+\begin{koodilohkosis}
+  \newcommand     {\nimi}[n][oletus]{määritelmä}
+  \renewcommand   {\nimi}[n][oletus]{määritelmä}
+  \providecommand {\nimi}[n][oletus]{määritelmä}
+\end{koodilohkosis}
+
+Ensimmäinen pakollinen parametri on komennon nimi (\koodi{\keno nimi}).
+Komento \koodi{\keno newcommand} määrittelee uuden komennon, ja se antaa
+virheilmoituksen, jos komento on jo olemassa. Toinen komento
+\koodi{\keno renewcommand} määrittelee olemassa olevan komennon
+uudelleen eli antaa sille uuden määritelmän. Se antaa virheilmoituksen,
+jos komentoa ei ollut olemassa. Kolmas komento \koodi{\keno
+  providecommand} puolestaan määrittelee uuden komennon vain siinä
+tapauksessa, että sellaista ei ollut ennen olemassa. Se ei anna
+virheilmoitusta.
+
+Komentojen toinen pakollinen parametri (\koodi{määritelmä}) sisältää
+komennon määritelmän eli mitä tahansa tekstiä tai komentoja.
+Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
+
+\begin{koodilohkosis}
+  \newcommand{\komento}{Minua komennettiin!}
+
+  \komento      % Minua komennettiin!
+\end{koodilohkosis}
+
+Komentojen ensimmäinen valinnainen parametri on luku (\koodi{n}), joka
+kertoo, kuinka monta parametria määriteltävä komento käsittelee.
+Määritelmässä voi käyttää muuttujia \koodi{\#1}, \koodi{\#2},
+\koodi{\#3} jne., ja ne korvautuvat komennon suoritusvaiheessa
+ensimmäisellä, toisella, kolmannella jne. parametrilla.
+
+\begin{koodilohkosis}
+  \newcommand{\komento}[2]{Sanoit #1 ja #2!}
+
+  \komento{hip}{hei}    % Sanoit hip ja hei!
+\end{koodilohkosis}
+
+Toinen valinnainen parametri -- jos se on mukana -- kertoo, että
+määriteltävän komennon ensimmäinen parametri on valinnainen ja että tämä
+on sen oletus\-arvo (\koodi{oletus}). Oletus\-arvoa käytetään silloin,
+kun valinnaista parametria ei ole annettu.
+
+\begin{koodilohkosis}
+  \newcommand{\komento}[3][tyyppi]{Hei #1, sanoit #2 ja #3!}
+
+  \komento{hip}{hei}         % Hei tyyppi, sanoit hip ja hei!
+  \komento[Leslie]{hip}{hei} % Hei Leslie, sanoit hip ja hei!
+\end{koodilohkosis}
+
+% ##1
+
+\begin{koodilohkosis}
+  \newcommand*    {\nimi}[n][…]{…}
+  \renewcommand*  {\nimi}[n][…]{…}
+  \providecommand*{\nimi}[n][…]{…}
+\end{koodilohkosis}
+
 \section{Ympäristöt}
 \label{luku:ymparistot}
+\section{Lohkot}
 \section{Mitat}
 \label{luku:mitat}
 \section{Laskurit}

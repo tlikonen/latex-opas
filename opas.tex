@@ -58,6 +58,7 @@
 \setlength{\emergencystretch}{1em}
 
 \setlength{\parindent}{1em}
+\newlength{\sisennys}\setlength{\sisennys}{1cm}
 \setlength{\parskip}{0em}
 \setlength{\footnotemargin}{.8em}
 \setlength{\floatsep}{.8cm}
@@ -67,18 +68,28 @@
 
 \DefineVerbatimEnvironment{koodilohko}{Verbatim}{
   fontsize=\small, gobble=1, frame=lines, numbers=left,
-  numbersep=.3em, xleftmargin=0em, xrightmargin=0em, baselinestretch=1 }
+  numbersep=.3em, xleftmargin=0em, xrightmargin=0mm, baselinestretch=1 }
 
 \DefineVerbatimEnvironment{koodilohkosis}{Verbatim}{
   fontsize=\small, gobble=2, frame=none, numbers=none,
-  numbersep=0em, xleftmargin=\parindent, xrightmargin=0em,
+  numbersep=0em, xleftmargin=\sisennys, xrightmargin=0mm,
   baselinestretch=1, samepage=true }
+
+\newenvironment{tulossis}
+{\begin{list}{}{
+      \setlength{\leftmargin}{\sisennys}
+      %\setlength{\parsep}{\parskip}
+      %\setlength{\listparindent}{\parindent}
+    }\item[⇒]\small
+  }{
+  \end{list}
+}
 
 \floatsetup{ font={small}, justification=raggedright,
   margins=raggedright, captionskip=2ex, capposition=bottom }
 
 \captionsetup{ font={small, sf}, labelfont={bf}, textfont={},
-  textformat=period, margin=.5em, justification=raggedright,
+  textformat=period, margin=.5em, justification=RaggedRight,
   singlelinecheck=off }
 
 \captionsetup[esimerkki]{ skip=-0.5ex, margin=.5em }
@@ -117,6 +128,7 @@
 \newcommand{\otsrivi}[1]{{\bfseries #1}}
 
 \NoIndentAfterEnv{koodilohkosis}
+\NoIndentAfterEnv{tulossis}
 
 \addto{\captionsfinnish}{
   \renewcommand{\contentsname}{Sisällys}

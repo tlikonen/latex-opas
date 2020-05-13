@@ -73,6 +73,13 @@ kirjoittaa useita peräkkäin, mutta ne ovat sama asia kuin yksi väli.
       samaan kappaleeseen.
 \end{koodilohkosis}
 
+\begin{tulossis}
+  Nämä      kaikki
+       ovat            vain
+  sanoja  peräkkäin  ja               kuuluvat
+      samaan kappaleeseen.
+\end{tulossis}
+
 Sanavälien leveys ei ole vakio. Silloin kun tekstipalsta tasataan
 molemmista reunoista -- kuten tämänkin oppaan leipätekstissä \==,
 rivillä olevia sanavälejä venytetään sopivasti, jotta tekstipalstan
@@ -184,6 +191,11 @@ saadaan kulmalainausmerkki~(>>).
   >>Lainaus, jonka 'sisällä' on lainaus.>>
 \end{koodilohkosis}
 
+\begin{tulossis}
+  ''Lainaus, jonka 'sisällä' on lainaus.'' \\
+  >>Lainaus, jonka 'sisällä' on lainaus.>>
+\end{tulossis}
+
 Yllä mainitut riittävät suomen kieleen, mutta englantia ja muita kieliä
 varten tarvitaan myös toisinpäin oleva merkki (``), joka tehdään
 kahdella gra\-vis\-ak\-sen\-til\-la (\koodi{``}). Vastaava
@@ -224,6 +236,11 @@ ajatusviivamerkkejä voi käyttää: \uctunnus{u+2013 en dash} ja
   7--12-vuotiaat
   Oulu--Rovaniemi-yhteys
 \end{koodilohkosis}
+
+\begin{tulossis}
+  7--12-vuotiaat \\
+  Oulu--Rovaniemi-yhteys
+\end{tulossis}
 
 Silloin kun todella täytyy latoa kaksi tai kolme peräkkäistä
 yhdysmerkkiä, voi käyttää tasalevyistä fonttia (luku
@@ -367,6 +384,12 @@ tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan \emph{Latex}.
       ex
 \end{koodilohkosis}
 
+\begin{tulossis}
+  La% Nämä rivit
+    t% yhdistyvät.
+      ex
+\end{tulossis}
+
 \section{Komennot}
 \label{luku:komennot}
 
@@ -390,12 +413,15 @@ aaltosulkeisiin \koodi{\{\ldots\}} ja valinaiset hakasulkeisiin
 
 Komennon nimen perässä olevat sanavälit syödään pois. Seuraavassa
 esimerkissä sana \emph{Latex} ladotaan ehjänä, jos vain \koodi{\keno
-  komento} itsessään ei tulosta mitään eli ei vaikuta tekstin
-latomiseen.
+  komento} itsessään ei tulosta mitään eikä vaikuta tekstin latomiseen.
 
 \begin{koodilohkosis}
   La\komento   tex
 \end{koodilohkosis}
+
+\begin{tulossis}
+  Latex
+\end{tulossis}
 
 Jos haluaa komennon jälkeen yhden sanavälin, täytyy kirjoittaa komennon
 nimen jälkeen aaltosulkeet: \koodi{\keno komento\{\}}. Aaltosulkeiden
@@ -471,9 +497,12 @@ Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
 
 \begin{koodilohkosis}
   \newcommand{\komento}{Minua komennettiin!}
-
-  \komento      % Minua komennettiin!
+  \komento
 \end{koodilohkosis}
+
+\begin{tulossis}
+  Minua komennettiin!
+\end{tulossis}
 
 Komentojen ensimmäinen valinnainen parametri on luku (\koodi{n}), joka
 kertoo, kuinka monta parametria määriteltävä komento käsittelee.
@@ -483,9 +512,12 @@ ensimmäisellä, toisella, kolmannella jne. parametrilla.
 
 \begin{koodilohkosis}
   \newcommand{\komento}[2]{Sanoit #1 ja #2!}
-
-  \komento{hip}{hei}    % Sanoit hip ja hei!
+  \komento{hip}{hei}
 \end{koodilohkosis}
+
+\begin{tulossis}
+  Sanoit hip ja hei!
+\end{tulossis}
 
 Toinen valinnainen parametri -- jos se on mukana -- kertoo, että
 määriteltävän komennon ensimmäinen parametri on valinnainen ja että tämä
@@ -494,10 +526,14 @@ kun valinnaista parametria ei ole annettu.
 
 \begin{koodilohkosis}
   \newcommand{\komento}[3][tyyppi]{Hei #1, sanoit #2 ja #3!}
-
-  \komento{hip}{hei}         % Hei tyyppi, sanoit hip ja hei!
-  \komento[Leslie]{hip}{hei} % Hei Leslie, sanoit hip ja hei!
+  \komento{hip}{hei} \\
+  \komento[Leslie]{hip}{hei}
 \end{koodilohkosis}
+
+\begin{tulossis}
+  Hei tyyppi, sanoit hip ja hei! \\
+  Hei Leslie, sanoit hip ja hei!
+\end{tulossis}
 
 % ##1
 

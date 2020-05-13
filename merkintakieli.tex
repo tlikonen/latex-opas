@@ -399,21 +399,21 @@ Latexin komennot alkavat kenoviivalla (\koodi{\textbackslash}), jonka
 jälkeen tulee komennon nimi. Nimi koostuu yleensä pienistä tai isoista
 kirjaimista, mutta komento voi olla myös merkkejä.
 
-Komennot voivat ottaa vastaan parametreja eli lisätietoa, jota komento
-käsittelee ja tarvitsee toimintaansa. Jotkin parametrit voivat olla
-pakollisia ja jotkin valinnaisia. Pakolliset parametrit kirjoitetaan
-aaltosulkeisiin \koodi{\{\ldots\}} ja valinaiset hakasulkeisiin
+Komennot voivat ottaa vastaan argumentteja eli lisätietoa, jota komento
+käsittelee ja tarvitsee toimintaansa. Jotkin argumentit voivat olla
+pakollisia ja jotkin valinnaisia. Pakolliset kirjoitetaan
+aaltosulkeisiin \koodi{\{\ldots\}} ja valinnaiset hakasulkeisiin
 \koodi{[\ldots]}.
 
 \begin{koodilohkosis}
   \komento
-  \toinenkomento{para}{metreja}
-  \toinenkomento[valinnainen]{para}{metreja}
+  \toinenkomento{argu}{mentteja}
+  \toinenkomento[valinnainen]{argu}{mentteja}
 \end{koodilohkosis}
 
 Komennon nimen perässä olevat sanavälit syödään pois. Seuraavassa
 esimerkissä sana \emph{Latex} ladotaan ehjänä, jos vain \koodi{\keno
-  komento} itsessään ei tulosta mitään eikä vaikuta tekstin latomiseen.
+  komento} itsessään ei kirjoita mitään eikä vaikuta tekstin latomiseen.
 
 \begin{koodilohkosis}
   La\komento   tex
@@ -427,13 +427,13 @@ Jos haluaa komennon jälkeen yhden sanavälin, täytyy kirjoittaa komennon
 nimen jälkeen aaltosulkeet: \koodi{\keno komento\{\}}. Aaltosulkeiden
 jälkeen ei syödä välejä.
 
-Komennon nimen ja parametrien välissä voi olla sanavälejä, ja ne kaikki
-syödään pois. Komennon ja sen parametrit voi siis kirjoittaa vaikka
+Komennon nimen ja argumenttien välissä voi olla sanavälejä, ja ne kaikki
+syödään pois. Komennon ja sen argumentit voi siis kirjoittaa vaikka
 seuraavalla tavalla.
 
 \begin{koodilohkosis}
   \toinenkomento  [valinnainen]
-     {para}   {metreja}
+     {argu}   {mentteja}
 \end{koodilohkosis}
 
 Omien komentojen tärkein tarkoitus on merkintätapojen abstrahointi eli
@@ -466,14 +466,14 @@ luoda komento, jotta sen toteutusta voi myöhemmin muuttaa helposti.
 Esimerkiksi Unicoden merkkitunnuksille voisi luoda oman komennon
 \koodi{\keno uctunnus}, jota käytetään aina tunnusten ilmaisemiseen
 Latex\-/dokumentissa. Komento määritellään vain yhdessä paikassa, ja
-määritelmää on helppoa muuttaa. Itse tekstikin pysyy selkeänä, kun
-siellä on vain korkean tason komentoja, jotka ilmaisevat tarkoituksen
-eivätkä teknistä toteutusta.
+määritelmää on helppoa muuttaa. Tekstikin pysyy selkeänä, kun siellä on
+vain korkean tason komentoja, jotka ilmaisevat tarkoituksen eivätkä
+teknistä toteutusta.
 
-\subsection{Komentojen määrittäminen}
+\subsection{Komentojen määrittely}
 
 Komentojen määrittelyyn on kolme erilaista komentoa, ja niille kaikille
-annetaan samanlaiset parametrit. Komennot ovat seuraavat:
+annetaan samanlaiset argumentit. Komennot ovat seuraavat:
 
 \begin{koodilohkosis}
   \newcommand     {\nimi}[n][oletus]{määritelmä}
@@ -481,17 +481,16 @@ annetaan samanlaiset parametrit. Komennot ovat seuraavat:
   \providecommand {\nimi}[n][oletus]{määritelmä}
 \end{koodilohkosis}
 
-Ensimmäinen pakollinen parametri on komennon nimi (\koodi{\keno nimi}).
-Komento \koodi{\keno newcommand} määrittelee uuden komennon, ja se antaa
-virheilmoituksen, jos komento on jo olemassa. Toinen komento
-\koodi{\keno renewcommand} määrittelee olemassa olevan komennon
-uudelleen eli antaa sille uuden määritelmän. Se antaa virheilmoituksen,
-jos komentoa ei ollut olemassa. Kolmas komento \koodi{\keno
-  providecommand} puolestaan määrittelee uuden komennon vain siinä
-tapauksessa, että sellaista ei ollut ennen olemassa. Se ei anna
+Ensimmäinen pakollinen argumentti on komennon nimi (\koodi{\keno nimi}).
+Komento \koodi{\keno newcommand} määrittelee uuden komennon. Jos komento
+on jo olemassa, annetaan virheilmoitus. Toinen komento \koodi{\keno
+  renewcommand} määrittelee olemassa olevan komennon uudelleen. Se antaa
+virheilmoituksen, jos komentoa ei ollut olemassa. Kolmas komento
+\koodi{\keno providecommand} puolestaan määrittelee uuden komennon vain
+siinä tapauksessa, että sellaista ei ollut ennen olemassa. Se ei anna
 virheilmoitusta.
 
-Komentojen toinen pakollinen parametri (\koodi{määritelmä}) sisältää
+Komentojen toinen pakollinen argumentti (\koodi{määritelmä}) sisältää
 komennon määritelmän eli mitä tahansa tekstiä tai komentoja.
 Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
 
@@ -504,11 +503,11 @@ Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
   Minua komennettiin!
 \end{tulossis}
 
-Komentojen ensimmäinen valinnainen parametri on luku (\koodi{n}), joka
-kertoo, kuinka monta parametria määriteltävä komento käsittelee.
-Määritelmässä voi käyttää muuttujia \koodi{\#1}, \koodi{\#2},
+Komentojen ensimmäinen valinnainen argumentti on luku (\koodi{n}), joka
+kertoo, kuinka monta argumenttia määriteltävä komento käsittelee.
+Määritelmässä voi käyttää parametreja \koodi{\#1}, \koodi{\#2},
 \koodi{\#3} jne., ja ne korvautuvat komennon suoritusvaiheessa
-ensimmäisellä, toisella, kolmannella jne. parametrilla.
+ensimmäisellä, toisella, kolmannella jne. argumentilla.
 
 \begin{koodilohkosis}
   \newcommand{\komento}[2]{Sanoit #1 ja #2!}
@@ -519,14 +518,14 @@ ensimmäisellä, toisella, kolmannella jne. parametrilla.
   Sanoit hip ja hei!
 \end{tulossis}
 
-Toinen valinnainen parametri -- jos se on mukana -- kertoo, että
-määriteltävän komennon ensimmäinen parametri on valinnainen ja että tämä
-on sen oletus\-arvo (\koodi{oletus}). Oletus\-arvoa käytetään silloin,
-kun valinnaista parametria ei ole annettu.
+Toinen valinnainen argumentti (\koodi{oletus}) -- jos se on mukana --
+kertoo, että määriteltävän komennon ensimmäinen argumentti on
+valinnainen ja että tämä on sen ole\-tus\-arvo. Ole\-tus\-arvoa
+käytetään silloin, kun valinnaista argumenttia ei ole annettu.
 
 \begin{koodilohkosis}
   \newcommand{\komento}[3][tyyppi]{Hei #1, sanoit #2 ja #3!}
-  \komento{hip}{hei} \\
+  \komento{hip}{hei}
   \komento[Leslie]{hip}{hei}
 \end{koodilohkosis}
 
@@ -535,13 +534,66 @@ kun valinnaista parametria ei ole annettu.
   Hei Leslie, sanoit hip ja hei!
 \end{tulossis}
 
-% ##1
+Joskus yhden komennon määritelmä sisältää komennon \koodi{\keno
+  renewcommand}, joka sitten määrittelee uudelleen jonkin toisen
+komennon. Silloin parametrit \koodi{\#1}, \koodi{\#2} jne. on
+tarkoitettu ensimmäisen eli uloimman kerroksen käsiteltäväksi. Sisempi
+kerros käyttää parametreja \koodi{\#\#1}, \koodi{\#\#2} jne.
+
+Kaikista kolmesta komentojen määrittelykomennosta on olemassa
+tähdellinen versio eli sellainen, jonka komennon nimen lopussa on tähti
+(\koodi{*}). Latexin komennoissa on tapana, että tähdellinen versio --
+jos sellainen on olemassa -- tarjoaa samaan asiaan jonkin toisenlaisen
+näkökulman.
 
 \begin{koodilohkosis}
-  \newcommand*    {\nimi}[n][…]{…}
-  \renewcommand*  {\nimi}[n][…]{…}
-  \providecommand*{\nimi}[n][…]{…}
+  \newcommand*     {\nimi}[n][oletus]{määritelmä}
+  \renewcommand*   {\nimi}[n][oletus]{määritelmä}
+  \providecommand* {\nimi}[n][oletus]{määritelmä}
 \end{koodilohkosis}
+
+Komentojen määrittelyssä tähdelliset versiot toimivat muuten samalla
+tavalla, mutta ne antavat virheilmoituksen, jos komennolle annetut
+argumentit sisältävät enemmän kuin yhden tekstikappaleen. Niinpä
+seuraava esimerkki tuottaa käännettäessä virheen.
+
+\begin{koodilohkosis}
+  \newcommand*{\komento}[1]{Teksti: #1}
+
+  \komento{
+    Ensimmäinen tekstikappale.
+
+    Toinen tekstikappale.
+  }
+\end{koodilohkosis}
+
+\koodi{\keno newcommand*}\-/komennolla määritelty \koodi{\keno komento}
+ei siis suostu ottamaan vastaan argumentteja, jotka sisältävät kappaleen
+vaihtumisen eli enemmän kuin yhden tekstikappaleen. Tähdelliset versiot
+tuovat tällaisen suo\-jaus\-omi\-nai\-suu\-den.
+
+\subsection{Hyödyllistä lisätietoa}
+
+Komennon määrittelyssä on välillä hyötyä komennosta nimeltä \koodi{\keno
+  ignorespaces}, joka jättää välit huomioimatta komennon jälkeen. Ilman
+tätä komentoa tulisi seuraavassa esimerkissä sanojen väliin yksi
+välilyönti.
+
+\begin{koodilohkosis}
+  \newcommand{\komento}[1]{#1\ignorespaces}
+  \komento{yhdys}       sana
+\end{koodilohkosis}
+
+\begin{tulossis}
+  yhdyssana
+\end{tulossis}
+
+Monimutkaisiin komentoihin tarvitaan ehtorakenteita, ja ne saa
+toteutettua If Then \=/paketin tarjoaman \koodi{\keno
+  if\-then\-else}\-/komennon avulla. Se on ohjelmointikielistä tuttu
+ehtorakenne: jos annettu ehtolauseke on tosi, käsitellään then\-/haara;
+muussa tapauksessa käsitellään else-haara. Lisätietoa saa kyseisen
+paketin ohjekirjasta (\koodi{tex\-doc if\-then}).
 
 \section{Ympäristöt}
 \label{luku:ymparistot}

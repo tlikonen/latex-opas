@@ -37,8 +37,9 @@ Mitat \koodi{\keno lefthyphenmin=N} ja \koodi{\keno righthyphenmin=N}
 vaikuttavat tavutukseen sanan reunoissa. Parametri \koodi{N} on
 positiivinen kokonaisluku, ja se määrittää, kuinka monta merkkiä
 vähintään sanan vasemmasta tai oikeasta reunasta pidetään yhdessä.
-Oletus\-arvot ovat kielikohtaisia ja määritellään Polyglossia\-/{} ja
-Babel\-/paketeissa. Suomen kielessä kumpikin mitta on 2~merkkiä.
+Oletus\-arvot ovat kielikohtaisia ja määritellään
+\paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketeissa. Suomen
+kielessä kumpikin mitta on 2~merkkiä.
 
 Mitat alustetaan kielikohtaisiin oletus\-arvoihin aina, kun
 kie\-li\-ase\-tuk\-set tulevat voimaan. Näin on esimerkiksi dokumentin
@@ -51,7 +52,7 @@ Omat kieli\-asetukset saa mukaan automaattiseksi, kun lisää muutokset
 kielikohtaisiin alustuskomentoihin alla olevan esimerkin mukaisesti.
 Tällä tavoin omat asetukset tulevat voimaan samalla kuin muutkin
 kie\-li\-ase\-tuk\-set. Esimerkissä oleva komento \koodi{\keno add\-to}
-on Polyglossia\-/{} ja Babel\-/paketin ominaisuus.
+on \paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketin ominaisuus.
 
 \begin{koodilohkosis}
   \addto{\captionsfinnish}{
@@ -179,10 +180,11 @@ yhdysmerkin jälkeen eli merkki jäisi yksinään rivin loppuun.
 
 \subsection{Pakettiratkaisuja}
 
-Makropaketti Extdash tuo uusia komentoja ja mahdollisuuksia tavutuksen
-hallintaan. Komennot ovat sellaisia kuin \koodi{\keno Hyph\-dash} ja
-\koodi{\keno En\-dash}, mutta niille on saatavilla myös lyhemmät muodot,
-jos paketin lataa käyttämällä \koodi{shortcuts}\-/valitsinta.
+Makropaketti \paketti{extdash} tuo uusia komentoja ja mahdollisuuksia
+tavutuksen hallintaan. Komennot ovat sellaisia kuin \koodi{\keno
+  Hyph\-dash} ja \koodi{\keno En\-dash}, mutta niille on saatavilla myös
+lyhemmät muodot, jos paketin lataa käyttämällä
+\koodi{shortcuts}\-/valitsinta.
 
 \begin{koodilohkosis}
   \usepackage[shortcuts]{extdash}
@@ -191,12 +193,12 @@ jos paketin lataa käyttämällä \koodi{shortcuts}\-/valitsinta.
 Paketti sisältää kaksi lisä\-vaihto\-ehtoa kolmelle viivavälimerkille
 eli yhdysmerkille, lyhyelle ajatusviivalle ja pitkälle ajatusviivalle.
 Kun Latexin viivavälimerkit aina estävät tavutuksen muualta kuin
-välimerkin jälkeen, Extdash\-/paketin perus\-vaihto\-ehdot sallivat
-tavuttamisen. Lisäksi kaikille kolmelle viivavälimerkille on sitova
-versio, joka estää tavutuksen viivavälimerkin jälkeen. Taulukossa
-\ref{tlk:extdash} on Extdash\-/paketin tärkeimmät komennot ja niiden
-merkitykset. Taulukossa \ref{tlk:extdash-vertailu} vertaillaan
-Extdash\-/paketin komentoja Latexin vastaaviin.
+välimerkin jälkeen, \paketti{extdash}\-/paketin perus\-vaihto\-ehdot
+sallivat tavuttamisen. Lisäksi kaikille kolmelle viivavälimerkille on
+sitova versio, joka estää tavutuksen viivavälimerkin jälkeen. Taulukossa
+\ref{tlk:extdash} on \paketti{extdash}\-/paketin tärkeimmät komennot ja
+niiden merkitykset. Taulukossa \ref{tlk:extdash-vertailu} vertaillaan
+\paketti{extdash}\-/paketin komentoja Latexin vastaaviin.
 
 \leijutlk{
   \begin{tabular}{ll}
@@ -212,7 +214,7 @@ Extdash\-/paketin komentoja Latexin vastaaviin.
     \bottomrule
   \end{tabular}
 }{
-  \caption{Extdash-paketin komentoja}
+  \caption{\paketti{extdash}-paketin komentoja}
   \label{tlk:extdash}
 }
 
@@ -247,30 +249,31 @@ Extdash\-/paketin komentoja Latexin vastaaviin.
     \bottomrule
   \end{tabular}
 }{
-  \caption{Latexin ja Extdash-paketin komentojen vertailua}
+  \caption{Latexin ja \paketti{extdash}-paketin komentojen vertailua}
   \label{tlk:extdash-vertailu}
 }
 
-Kieli\-asetuksia hoitavan Polyglossia\-/paketin uudehkot versiot
-(2020\==) tukevat suomen kielelle \koodi{babelshorthands}\-/ valitsinta,
-joka lisää keinovalikoimaan Babel\-/paketista peräisin olevia tavutuksen
-hallintakomentoja. On esimerkiksi tavutuksen salliva yhdysmerkki
-(\koodi{\textquotedbl-}), joka toimii samoin kuin Extdash\-/paketin
-\koodi{\keno -/}.
+Kieli\-asetuksia hoitavan \paketti{polyglossia}\-/paketin uudehkot
+versiot (2020\==) tukevat suomen kielelle \koodi{babelshorthands}\-/
+valitsinta, joka lisää keinovalikoimaan \paketti{babel}\-/paketista
+peräisin olevia tavutuksen hallintakomentoja. On esimerkiksi tavutuksen
+salliva yhdysmerkki (\koodi{\textquotedbl-}), joka toimii samoin kuin
+\paketti{extdash}\-/paketin \koodi{\keno-/}.
 
 Mukana on myös sitova, kaiken tavutuksen estävä yhdysmerkki
 (\koodi{\textquotedbl\textasciitilde}), jolle ei ole vastinetta Texissä
-eikä Extdash\-/paketissa -- muuten kuin \koodi{\keno mbox}\-/laatikon
-avulla. Polyglossia\-/paketin ''Baabelin lyhenteet'' sisältävät eräitä
-muitakin hyödyllistä sanan katkaisemiseen liittyviä komentoja.
+eikä \paketti{extdash}\-/paketissa -- muuten kuin \koodi{\keno
+  mbox}\-/laatikon avulla. \paketti{polyglossia}\-/paketin ''Baabelin
+lyhenteet'' sisältävät eräitä muitakin hyödyllistä sanan katkaisemiseen
+liittyviä komentoja.
 
 Dokumentin otsikoissa (\koodi{\keno section} ym.) täytyy olla varovainen
-Extdash\-/paketin komentojen kanssa. Ne toimivat ladotussa dokumentissa,
-mutta Hyperref\-/paketin avulla syntyvässä pdf\-/tiedoston
-sisällysluettelossa ne eivät näy oikein. Ongelman voi kiertää
-käyttämällä Latexin otsikkokomentojen valinnaista parametria, jolla
-määritellään erikseen sisällysluettelossa näytettävä otsikko. Sen avulla
-varsinainen otsikko voi sisältää monimutkaisempia komentoja ja
+\paketti{extdash}\-/paketin komentojen kanssa. Ne toimivat ladotussa
+dokumentissa, mutta \paketti{hyperref}\-/paketin avulla syntyvässä
+pdf\-/tiedoston sisällysluettelossa ne eivät näy oikein. Ongelman voi
+kiertää käyttämällä Latexin otsikkokomentojen valinnaista parametria,
+jolla määritellään erikseen sisällysluettelossa näytettävä otsikko. Sen
+avulla varsinainen otsikko voi sisältää monimutkaisempia komentoja ja
 sisällysluetteloon tuleva versio vain tekstiä ja tavutusvihjeitä.
 
 \begin{koodilohkosis}
@@ -284,8 +287,8 @@ pitkä ja täytyy jakaa useammalle riville.
 \subsection{Johtopäätökset}
 
 Suomenkielisen tekstin kirjoittamiseen tarvittaneen välillä
-Extdash\-/paketin tavutus\-apuja, koska kielessä on pitkiä yhdysmerkin
-tai ajatusviivan sisältäviä yhdyssanoja kuten
+\paketti{extdash}\-/paketin tavutus\-apuja, koska kielessä on pitkiä
+yhdysmerkin tai ajatusviivan sisältäviä yhdyssanoja kuten
 \emph{Molotov\--Ribben\-trop\-/sopimus} tai
 \emph{kognitiivis\-/behavioristinen}. Rivejä ei välttämättä saa
 siisteiksi, ellei pitkissä yhdyssanoissa salli tavuttamista muualtakin
@@ -293,28 +296,28 @@ kuin yhdysmerkin jälkeen. Tavutusvihjeitä voi toki lisäillä käsin, mutta
 se voi käydä joskus työlääksi.\footnote{Esimerkiksi:
   \koodi{kog\keno-ni\keno-tii\keno-vis-%
     be\keno-ha\keno-vio\keno-ris\keno-ti\keno-nen}} Tässä oppaassa ja
-edellä mainituissa esimerkkisanoissa on käytetty Extdash\-/paketin
-yhdysmerkkiä \koodi{\keno -/} ja ajatusviivaa \koodi{\keno --}, joten
-tavutus hoituu itsestään.
+edellä mainituissa esimerkkisanoissa on käytetty
+\paketti{extdash}\-/paketin yhdysmerkkiä \koodi{\keno -/} ja
+ajatusviivaa \koodi{\keno --}, joten tavutus hoituu itsestään.
 
 Unicoden sitovaa yhdysmerkkiä (luku \ref{luku:unicode_sitova}) ei ehkä
 kannata käyttää, koska Lualatex\-/kääntäjä kadottaa koko merkin. Merkki
-kyllä toimii Xelatex\-/kääntäjällä, mutta Extdash\-/paketti tarjoaa
-kaikkialla toimivan vaihtoehdon sitovalle yhdysmerkille (\koodi{\keno
-  =/}).
+kyllä toimii Xelatex\-/kääntäjällä, mutta \paketti{extdash}\-/paketti
+tarjoaa kaikkialla toimivan vaihtoehdon sitovalle yhdysmerkille
+(\koodi{\keno =/}).
 
-Pdf-tiedostojen sisäinen sisällysluettelo syntyy Hyperref\-/paketin
-avustuksella itsestään dokumentin otsikoista (\koodi{\keno section}
-ym.). Otsikoissa kannattanee käyttää tavutuksessa vain Latexin
-perustoimintoja eli tavallisia yhdysmerkkejä ja tavutusvihjeitä
-(\koodi{\keno-}), koska erikoisemmat komennot eivät näy pdf:n
-sisällysluettelossa oikein.
+Pdf-tiedostojen sisäinen sisällysluettelo syntyy
+\paketti{hyperref}\-/paketin avustuksella itsestään dokumentin
+otsikoista (\koodi{\keno section} ym.). Otsikoissa kannattanee käyttää
+tavutuksessa vain Latexin perustoimintoja eli tavallisia yhdysmerkkejä
+ja tavutusvihjeitä (\koodi{\keno-}), koska erikoisemmat komennot eivät
+näy pdf:n sisällysluettelossa oikein.
 
-Jos Extdash\-/paketin toimintojen lisäksi tarvitsee sitovaa, kaiken
-tavutuksen estävää yhdysmerkkiä (esimerkiksi
+Jos \paketti{extdash}\-/paketin toimintojen lisäksi tarvitsee sitovaa,
+kaiken tavutuksen estävää yhdysmerkkiä (esimerkiksi
 \koodi{\textquotedbl\textasciitilde aika}), täytyy käyttää myös
-Polyglossia\-/paketin ''Baabelin lyhenteitä''. Seuraava esimerkki
-näyttää, kuinka kaikki mainitut toiminnot kytketään päälle.
+\paketti{polyglossia}\-/paketin ''Baabelin lyhenteitä''. Seuraava
+esimerkki näyttää, kuinka kaikki mainitut toiminnot kytketään päälle.
 
 \begin{koodilohkosis}
   \usepackage{polyglossia}

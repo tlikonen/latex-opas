@@ -53,9 +53,9 @@ erikoismerkit suojataan eli saadaan ladottua dokumenttiin sellaisenaan.
 
 Jotkin makropaketit määrittelevät muitakin erikoismerkkejä. Esimerkiksi
 kieli\-asetuksiin (luku \ref{luku:kieliasetukset}) liittyvät
-Polyglossia\-/{} ja Babel\-/paketit voivat määritellä pari
-lainausmerkillä (\koodi{\textquotedbl}) alkavaa, tavutuksen hallintaan
-liittyvää komentoa.
+\paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketit voivat
+määritellä pari lainausmerkillä (\koodi{\textquotedbl}) alkavaa,
+tavutuksen hallintaan liittyvää komentoa.
 
 \subsection{Sanaväli}
 \label{luku:sanavali}
@@ -256,7 +256,7 @@ ajatusviivatoiminnon. Muita tapoja on esimerkissä
   \texttt{…} % Tasalevyinen fontti estää Tex-ligatuurit.
 \end{koodilohko}
 \caption{Keinoja Tex-ligatuurien estämiseen. Komento \koodi{\keno
-    addfontfeatures} on Fontspec\-/makropaketin ominaisuus}
+    addfontfeatures} on \paketti{fontspec}\-/makropaketin ominaisuus}
 \label{esim:pois-tex-liga}
 \end{esimerkki}
 
@@ -455,10 +455,10 @@ englannin kieltä ja että sanoja pitäisi tavuttaa englannin sääntöjen
 mukaan eikä suomen. Pitäisi siis liittää \koodi{\keno
   text\-sc}\-/komentojen ympärille vielä \koodi{\keno
   text\-en\-glish}\-/komento.%
-\footnote{Komento \koodi{\keno text\-en\-glish} on Polyglossia\-/paketin
-  ominaisuus.} Lähdedokumentin kirjoittaminen on ikävää ja ulko\-asu
-sekava, jos Unicode\-/tunnusten kohdalla on aina \koodi{\keno
-  text\-en\-glish\{\keno text\-sc\{\ldots\}\}}.
+\footnote{Komento \koodi{\keno textenglish} on
+  \paketti{polyglossia}\-/paketin ominaisuus.} Lähdedokumentin
+kirjoittaminen on ikävää ja ulko\-asu sekava, jos Unicode\-/tunnusten
+kohdalla on aina \koodi{\keno textenglish\{\keno text\-sc\{\ldots\}\}}.
 
 Parasta olisi jo ennen kirjoittamista miettiä, mitä loogisia rakenteita
 teksti sisältää. Erilaisia rakenteita tai ilmauksia varten kannattaa
@@ -589,7 +589,7 @@ välilyönti.
 \end{tulossis}
 
 Monimutkaisiin komentoihin tarvitaan ehtorakenteita, ja ne saa
-toteutettua If Then \=/paketin tarjoaman \koodi{\keno
+toteutettua \paketti{ifthen}\=/paketin tarjoaman \koodi{\keno
   if\-then\-else}\-/komennon avulla. Se on ohjelmointikielistä tuttu
 ehtorakenne: jos annettu ehtolauseke on tosi, käsitellään then\-/haara;
 muussa tapauksessa käsitellään else-haara. Lisätietoa saa kyseisen

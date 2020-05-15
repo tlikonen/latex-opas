@@ -68,6 +68,9 @@
 
 \DeclareFloatingEnvironment[ name={Esimerkki} ]{esimerkki}
 
+\renewcommand{\theFancyVerbLine}
+{\versaalinum\fontsize{7pt}{7pt}\selectfont\arabic{FancyVerbLine}}
+
 \DefineVerbatimEnvironment{koodilohko}{Verbatim}{
   fontsize=\small, gobble=1, frame=lines, numbers=left,
   numbersep=.3em, xleftmargin=0em, xrightmargin=0mm, baselinestretch=1 }

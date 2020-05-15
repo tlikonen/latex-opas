@@ -22,7 +22,7 @@ käyttää normaalilla tavalla. Merkit ovat seuraavat:
 \end{koodilohkosis}
 
 Useimmat näistä merkeistä voi suojata erikoismerkitykseltä
-kirjoittamalla niiden eteen kenoviivan (\keno). Tildeä
+kirjoittamalla niiden eteen kenoviivan (\koodi{\keno}). Tildeä
 (\textasciitilde), sirkumfleksia (\textasciicircum) eikä kenoviivaa
 itseään ei voi suojata pelkän kenoviivan avulla, koska kenoviivan kanssa
 ne muodostavat eräitä muita komentoja. Taulukossa
@@ -263,11 +263,11 @@ ajatusviivatoiminnon. Muita tapoja on esimerkissä
 Miinusmerkille ei Latexissa ole erityistä merkintätapaa muuten kuin
 matematiikkatilassa (luku \ref{luku:matematiikka}). Ajatusviivaa saa
 käyttää myös miinusmerkkinä, mutta vielä parempi olisi käyttää
-varsinaista Unicoden miinusmerkkiä \uctunnus{u+2212 minus sign}, koska se
-on fonteissa suunniteltu typografisesti yhteensopivaksi muiden
-matemaattisten merkkien kanssa. Tämän oppaan fontissakin on pieni ero
-merkkien välillä: miinusmerkki on samalla korkeudella kuin plusmerkin
-vaakaviiva; ajatusviiva on ylempänä (kuva
+varsinaista Unicoden miinusmerkkiä \uctunnus{u+2212 minus sign}, koska
+se on fonteissa suunniteltu typografisesti yhteensopivaksi muiden
+matemaattisten merkkien kanssa. Tämän oppaan leipätekstin fontissakin on
+pieni ero merkkien välillä: miinusmerkki on samalla korkeudella kuin
+plusmerkin vaakaviiva; ajatusviiva on ylempänä (kuva
 \ref{kuva:ajatusviiva_miinusmerkki}). Joissakin fonteissa eroa on myös
 pituudessa.
 
@@ -275,8 +275,8 @@ pituudessa.
   \addfontfeatures{Scale=9, LetterSpace=-5}
   +−= \hfill +–=
 }{
-  \caption{Vasemmalla plusmerkki, miinusmerkki ja yhtäsuuruusmerkki;
-    oikealla plusmerkki, ajatusviiva ja yhtäsuuruusmerkki}
+  \caption{Vasemmalla miinusmerkin ja oikealla ajatusviivan vertailua
+    muihin matemaattisiin merkkeihin}
   \label{kuva:ajatusviiva_miinusmerkki}
 }
 
@@ -299,7 +299,7 @@ ehkä ihan helposti saa suoraan näppäimistöltä. Komentoja on koottu
 taulukkoon \ref{tlk:tarkkeet}.
 
 Taulukon tarkekomennoissa on käytetty a\=/kirjainta esimerkkinä, mutta
-tarke voi liittyö muihinkin kirjaimiin. Kaikki merkit voi kirjoittaa
+tarke voi liittyä muihinkin kirjaimiin. Merkit voi kirjoittaa
 Latex\-/lähdedokumenttiin myös sellaisenaan, eli näiden komentojen
 käyttö ei ole välttämätöntä.
 
@@ -471,6 +471,7 @@ vain korkean tason komentoja, jotka ilmaisevat tarkoituksen eivätkä
 teknistä toteutusta.
 
 \subsection{Komentojen määrittely}
+\label{luku:komennot_määr}
 
 Komentojen määrittelyyn on kolme erilaista komentoa, ja niille kaikille
 annetaan samanlaiset argumentit. Komennot ovat seuraavat:
@@ -503,7 +504,7 @@ Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
   Minua komennettiin!
 \end{tulossis}
 
-Komentojen ensimmäinen valinnainen argumentti on luku (\koodi{n}), joka
+Komentojen ensimmäinen valinnainen argumentti (\koodi{n}) on luku, joka
 kertoo, kuinka monta argumenttia määriteltävä komento käsittelee.
 Määritelmässä voi käyttää parametreja \koodi{\#1}, \koodi{\#2},
 \koodi{\#3} jne., ja ne korvautuvat komennon suoritusvaiheessa
@@ -588,15 +589,110 @@ välilyönti.
   yhdyssana
 \end{tulossis}
 
-Monimutkaisiin komentoihin tarvitaan ehtorakenteita, ja ne saa
+Monimutkaisiin komentoihin voidaan tarvita ehtorakenteita, ja ne saa
 toteutettua \paketti{ifthen}\=/paketin tarjoaman \koodi{\keno
   if\-then\-else}\-/komennon avulla. Se on ohjelmointikielistä tuttu
 ehtorakenne: jos annettu ehtolauseke on tosi, käsitellään then\-/haara;
 muussa tapauksessa käsitellään else-haara. Lisätietoa saa kyseisen
-paketin ohjekirjasta (\koodi{tex\-doc if\-then}).
+paketin ohjekirjasta.\footnote{\url{https://www.ctan.org/pkg/ifthen}}
 
 \section{Ympäristöt}
-\label{luku:ymparistot}
+%\label{luku:ymparistot}
+
+Ympäristöt ovat rakenteita, joilla on aloittava \koodi{\keno
+  begin}\-/komento ja lopettava \koodi{\keno end}\-/komento sekä
+yksilöllinen nimi. Ympäristöjen ajatuksena on, että jokin ominaisuus tai
+jotkin toiminnot ovat voimassa vain ympäristön sisällä.
+
+\begin{koodilohkosis}
+  \begin{nimi}
+    % ympäristön
+    % vaikutusalue
+  \end{nimi}
+\end{koodilohkosis}
+
+Yleisin ympäristö on nimeltään \koodi{document}, jonka sisään koko
+dokumentin sisältö kirjoitetaan. Ympäristöjä käytetään tavallisesta
+leipätekstistä poikkeavien rakenteiden ilmaisemiseen, esimerkiksi
+luetelmiin ja taulukoihin (luvut \ref{luku:luetelmat} ja
+\ref{luku:taulukot}). Ympäristöjä voi tehdä itsekin mihin hyvänsä
+tarkoitukseen. Niitä määritellään seuraavilla komennoilla.
+
+\begin{koodilohkosis}
+  \newenvironment   {nimi}[n][oletus]{aloitus}{lopetus}
+  \renewenvironment {nimi}[n][oletus]{aloitus}{lopetus}
+\end{koodilohkosis}
+
+Komento \koodi{\keno newenvironment} määrittelee uuden ympäristön mutta
+antaa virheilmoituksen, jos samanniminen on jo olemassa. Komento
+\koodi{\keno renewenvironment} puolestaan määrittelee uudelleen
+ympäristön, joka on jo olemassa. Se antaa virheilmoituksen, jos
+ympäristöä ei ollutkaan olemassa.
+
+Argumentit ovat lähes samanlaiset kuin komentojen määrittelyssä (luku
+\ref{luku:komennot_määr}). Ympäristöjen määrittelykomennoilla on kolme
+pakollista argumenttia: ensimmäinen on ympäristön nimi, toinen on
+ympäristön aloitusmääritelmä (\koodi{aloitus}) ja kolmas on
+lopetusmääritelmä (\koodi{lopetus}).
+
+\begin{koodilohkosis}
+  \newenvironment{ymp}{Tästä se alkaa.}{Tähän se päättyy.}
+
+  \begin{ymp}
+    Ympäristön sisältöä.
+  \end{ymp}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Tästä se alkaa. Ympäristön sisältöä. Tähän se päättyy.
+\end{tulossis}
+
+Tavallisesti ympäristön aloitusmääritelmään kirjoitetaan jonkin toisen
+ympäristön aloituskomento sekä mahdollisesti suoritetaan joitakin
+asetuskomentoja. Vastaavasti lopetusmääritelmässä lopetetaan ympäristö
+eli palataan normaaliin tilaan. Tarkoituksena on abstrahoida jokin
+monimutkaisempi kokonaisuus eli tehdä uusi helppokäyttöinen ympäristö, joka
+piilottaa teknisen toteutuksen.
+
+\begin{koodilohkosis}
+  \newenvironment{ymp}
+  {\begin{mahtavuus}
+      \omia\hienoja\asetuksia}
+    {\end{mahtavuus}}
+\end{koodilohkosis}
+
+Omille ympäristölle voi määritellä argumentteja samalla tavalla kuin
+komennoillekin (luku \ref{luku:komennot_määr}). Ensimmäinen valinnainen
+argumentti (\koodi{n}) on luku joka kertoo, kuinka monta argumenttia
+määriteltävä ympäristö käsittelee. Ympäristön aloitusmääritelmässä voi
+argumentteihin viitata parametreilla \koodi{\#1}, \koodi{\#2},
+\koodi{\#3} jne.
+
+Jos toinen valinnainen argumentti (\koodi{oletus}) on mukana, se
+ilmaisee, että määriteltävän ympäristön ensimmäinen argumentti on
+valinnainen ja että tämä on sen ole\-tus\-arvo. Oletusta käytetään
+silloin, kun valinnaista argumenttia ei ole annettu. Argumentit annetaan
+ympäristön aloittavan komennon yhteydessä.
+
+\begin{koodilohkosis}
+  \begin{ymp}[valinnainen]{argu}{mentteja}
+    % ympäristön
+    % vaikutusalue
+  \end{ymp}
+\end{koodilohkosis}
+
+Ympäristön määrittelykomennoille on myös tähdelliset versiot
+\koodi{\keno newenvironment*} ja \koodi{\keno renewenvironment*}. Ne
+toimivat samoin kuin edellä kuvatut tavallisetkin komentoversiot, mutta
+ne eivät salli, että ympäristölle annetut argumentit sisältävät enemmän
+kuin yhden tekstikappaleen. Toiminta on siis sama kuin komentojen
+määrittelyssä (luku \ref{luku:komennot_määr}).
+
+\begin{koodilohkosis}
+  \newenvironment*   {nimi}[n][oletus]{aloitus}{lopetus}
+  \renewenvironment* {nimi}[n][oletus]{aloitus}{lopetus}
+\end{koodilohkosis}
+
 \section{Lohkot}
 \section{Mitat}
 \label{luku:mitat}

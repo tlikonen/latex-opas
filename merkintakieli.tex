@@ -681,15 +681,17 @@ ympäristön aloittavan komennon yhteydessä.
 
 Ympäristön määrittelykomennoille on myös tähdelliset versiot
 \koodi{\keno newenvironment*} ja \koodi{\keno renewenvironment*}. Ne
-toimivat samoin kuin edellä kuvatut tavallisetkin komentoversiot, mutta
-ne eivät salli, että ympäristölle annetut argumentit sisältävät enemmän
-kuin yhden tekstikappaleen. Toiminta on siis sama kuin komentojen
-määrittelyssä (luku \ref{luku:komennot_määr}).
+toimivat samoin kuin tavallisetkin komentoversiot, mutta ne eivät salli,
+että ympäristölle annetut argumentit sisältävät enemmän kuin yhden
+tekstikappaleen. Toiminta on siis sama kuin komentojen määrittelyssä
+(luku \ref{luku:komennot_määr}).
 
 \begin{koodilohkosis}
   \newenvironment*   {nimi}[n][oletus]{aloitus}{lopetus}
   \renewenvironment* {nimi}[n][oletus]{aloitus}{lopetus}
 \end{koodilohkosis}
+
+% \ignorespacesafterend
 
 \section{Lohkot}
 \section{Mitat}

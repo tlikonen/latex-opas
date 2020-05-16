@@ -239,8 +239,8 @@ Latexissa on joukko korkean tason fontti\-komentoja, jotka on
 tarkoitettu käytettäväksi sen jälkeen, kun matalan tason asetukset on
 kerran määritetty. Taulukossa \ref{tlk:fonttimallikomennot} on komennot
 kirjainperheen ja kirjainleikkauksen valintaan. Perhe- ja
-leik\-kaus\-ase\-tuk\-set ovat erillisiä, eli kirjainleikkauksen
-muuttaminen ei muuta kirjainperhettä.
+leik\-kaus\-ase\-tuk\-set ovat hierarkkisia, eli kirjainleikkauksen
+muuttaminen valitsee toisen leikkauksen samasta perheestä.
 
 \leijutlk{
   \begin{tabular}{llll}
@@ -256,14 +256,14 @@ muuttaminen ei muuta kirjainperhettä.
     & {\ttfamily perhe} & tasalevyinen, typewriter \\
     \midrule
     \koodi{\keno mdseries} & \koodi{\keno textmd\{\}}
-    & {\mdseries leikkaus} & lihavoimaton, tavallinen \\
+    & {\mdseries leikkaus} & tavallinen vahvuus, medium \\
     \koodi{\keno bfseries} & \koodi{\keno textbf\{\}}
     & {\bfseries leikkaus} & lihavoitu, bold \\
     \midrule
     \koodi{\keno upshape} & \koodi{\keno textup\{\}}
     & {\upshape leikkaus} & pystyasento, tavallinen \\
     \koodi{\keno slshape} & \koodi{\keno textsl\{\}}
-    & {\slshape leikkaus} & kallistettu, slanted, oblique \\
+    & {\slshape leikkaus} & kalteva, slanted, oblique \\
     \koodi{\keno itshape} & \koodi{\keno textit\{\}}
     & {\itshape leikkaus} & kursiivi, italic \\
     \koodi{\keno scshape} & \koodi{\keno textsc\{\}}
@@ -278,15 +278,18 @@ muuttaminen ei muuta kirjainperhettä.
 Kirjainleikkauksen asetukset jaetaan kahteen ryhmään,
 \textenglish{series} 'sarja' ja \textenglish{shape} 'muoto'. Kummastakin
 ryhmästä on valittuna aina yksi, eli samanaikaisesti voi olla voimassa
-esimerkiksi \koodi{\keno bfseries} (lihavonti) ja \koodi{\keno itshape}
+esimerkiksi \koodi{\keno bfseries} (lihavoitu) ja \koodi{\keno itshape}
 (kursiivi), ja tuloksena on \textbf{\itshape lihavoitua kursiivia}.
 
-Tämän oppaan fontissa kallistettu leikkaus (\koodi{\keno slshape}) ja
+Tämän oppaan fontissa kalteva leikkaus (\koodi{\keno slshape}) ja
 kursiivileikkaus (\koodi{\keno itshape}) tuottavat saman lopputuloksen.
 Niin on useimmissa muissakin fonteissa, mutta käsitteellisesti ne ovat
-eri asia ja voivat jossakin fontissa valita eri leikkauksen. Kallistus
-on vain tavallisen eli pys\-ty\-asen\-toi\-sen leikkauksen mekaaninen
-kallistus; kursiivissa puolestaan kirjaimet ovat muodoltaan erilaisia.
+eri asia. Edellä mainitut komennot voivat joissakin fonteissa valita eri
+leikkauksen. Kalteva leikkaus on tavallisen eli pys\-ty\-asen\-toi\-sen
+leikkauksen kallistettu versio. Kallistus on voitu tehdä koneellisesti,
+mutta se voi olla myös kirjainmuotoilijan piirtämä leikkaus. Kursiivissa
+puolestaan kirjaimet ovat muodoltaan erilaisia, ja se hieman jäljittelee
+yhtenäistä käsi\-ala\-kir\-joi\-tusta.
 
 Komennot fontin koon valintaan ovat taulukossa
 \ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä fontin

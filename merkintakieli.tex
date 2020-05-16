@@ -389,7 +389,7 @@ tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan \emph{Latex}.
 \end{tulossis}
 
 \section{Komennot}
-\label{luku:komennot}
+%\label{luku:komennot}
 
 \subsection{Perusteet}
 
@@ -469,7 +469,7 @@ vain korkean tason komentoja, jotka ilmaisevat tarkoituksen eivätkä
 teknistä toteutusta.
 
 \subsection{Komentojen määrittely}
-\label{luku:komennot_määr}
+\label{luku:komennot-määr}
 
 Komentojen määrittelyyn on kolme erilaista komentoa, ja niille kaikille
 annetaan samanlaiset argumentit. Komennot ovat seuraavat:
@@ -572,10 +572,11 @@ vaihtumisen eli enemmän kuin yhden tekstikappaleen. Tähdelliset versiot
 tuovat tällaisen suo\-jaus\-omi\-nai\-suu\-den.
 
 \subsection{Hyödyllistä lisätietoa}
+\label{luku:komennot-lisä}
 
 Komennon määrittelyssä on välillä hyötyä komennosta nimeltä \koodi{\keno
-  ignorespaces}, joka jättää välit huomioimatta komennon jälkeen. Ilman
-tätä komentoa tulisi seuraavassa esimerkissä sanojen väliin yksi
+  ignorespaces}, joka jättää sanavälit huomioimatta komennon jälkeen.
+Ilman tätä komentoa tulisi seuraavassa esimerkissä sanojen väliin yksi
 välilyönti.
 
 \begin{koodilohkosis}
@@ -600,7 +601,13 @@ paketin ohjekirjasta.\footnote{\url{https://www.ctan.org/pkg/ifthen}}
 Ympäristöt ovat rakenteita, joilla on aloittava \koodi{\keno
   begin}\-/komento ja lopettava \koodi{\keno end}\-/komento sekä
 yksilöllinen nimi. Ympäristöjen ajatuksena on, että jokin ominaisuus tai
-jotkin toiminnot ovat voimassa vain ympäristön sisällä.
+jotkin toiminnot ovat voimassa vain ympäristön sisällä ja asiat
+palautuvat ennalleen ympäristön jälkeen. Jos esimerkiksi jotakin
+fontti\-asetusta (luku \ref{luku:kirjaintyypit}) muuttaa ympäristön
+sisäpuolella, asetus palautuu ympäristön jälkeen samaksi kuin se oli
+ennen ympäristön alkua. Samoin ympäristön sisällä määritellyt komennot
+(luku \ref{luku:komennot-määr}) ovat voimassa vain kyseisessä
+ympäristössä.
 
 \begin{koodilohkosis}
   \begin{nimi}
@@ -621,14 +628,14 @@ tarkoitukseen. Niitä määritellään seuraavilla komennoilla.
   \renewenvironment {nimi}[n][oletus]{aloitus}{lopetus}
 \end{koodilohkosis}
 
-Komento \koodi{\keno newenvironment} määrittelee uuden ympäristön mutta
-antaa virheilmoituksen, jos samanniminen on jo olemassa. Komento
-\koodi{\keno renewenvironment} puolestaan määrittelee uudelleen
+Komento \koodi{\keno newenvironment} määrittelee uuden ympäristön. Se
+antaa virheilmoituksen, jos samanniminen ympäristö on jo olemassa.
+Komento \koodi{\keno renewenvironment} puolestaan määrittelee uudelleen
 ympäristön, joka on jo olemassa. Se antaa virheilmoituksen, jos
 ympäristöä ei ollutkaan olemassa.
 
 Argumentit ovat lähes samanlaiset kuin komentojen määrittelyssä (luku
-\ref{luku:komennot_määr}). Ympäristöjen määrittelykomennoilla on kolme
+\ref{luku:komennot-määr}). Ympäristöjen määrittelykomennoilla on kolme
 pakollista argumenttia: ensimmäinen on ympäristön nimi, toinen on
 ympäristön aloitusmääritelmä (\koodi{aloitus}) ja kolmas on
 lopetusmääritelmä (\koodi{lopetus}).
@@ -660,7 +667,7 @@ piilottaa teknisen toteutuksen.
 \end{koodilohkosis}
 
 Omille ympäristölle voi määritellä argumentteja samalla tavalla kuin
-komennoillekin (luku \ref{luku:komennot_määr}). Ensimmäinen valinnainen
+komennoillekin (luku \ref{luku:komennot-määr}). Ensimmäinen valinnainen
 argumentti (\koodi{n}) on luku joka kertoo, kuinka monta argumenttia
 määriteltävä ympäristö käsittelee. Ympäristön aloitusmääritelmässä voi
 argumentteihin viitata parametreilla \koodi{\#1}, \koodi{\#2},
@@ -681,17 +688,23 @@ ympäristön aloittavan komennon yhteydessä.
 
 Ympäristön määrittelykomennoille on myös tähdelliset versiot
 \koodi{\keno newenvironment*} ja \koodi{\keno renewenvironment*}. Ne
-toimivat samoin kuin tavallisetkin komentoversiot, mutta ne eivät salli,
-että ympäristölle annetut argumentit sisältävät enemmän kuin yhden
-tekstikappaleen. Toiminta on siis sama kuin komentojen määrittelyssä
-(luku \ref{luku:komennot_määr}).
+toimivat samoin kuin edellä kuvatut tavallisetkin komentoversiot, mutta
+ne eivät salli, että määritellylle ympäristölle annetut argumentit
+sisältävät enemmän kuin yhden tekstikappaleen. Toiminta on siis sama
+kuin komentojenkin määrittelyn tähdellisissä versioissa (luku
+\ref{luku:komennot-määr}).
 
 \begin{koodilohkosis}
   \newenvironment*   {nimi}[n][oletus]{aloitus}{lopetus}
   \renewenvironment* {nimi}[n][oletus]{aloitus}{lopetus}
 \end{koodilohkosis}
 
-% \ignorespacesafterend
+Joskus ympäristöjen määrittelyyn on hyödyllistä sisällyttää komento
+\koodi{\keno ignorespaces}, joka jättää huomioimatta komennon jälkeiset
+sanavälit. Luvussa \ref{luku:komennot-lisä} on tästä esimerkki. Lisäksi
+on olemassa komento \koodi{\keno ig\-nore\-spaces\-af\-ter\-end}, joka
+jättää huomioimatta ympäristön lopettavan \koodi{\keno end}\-/komennon
+jälkeiset sanavälit.
 
 \section{Lohkot}
 \section{Mitat}

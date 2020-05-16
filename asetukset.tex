@@ -238,26 +238,9 @@ tietylle fonttikoolle ja tiettyyn tilanteeseen.
 Latexissa on joukko korkean tason fontti\-komentoja, jotka on
 tarkoitettu käytettäväksi sen jälkeen, kun matalan tason asetukset on
 kerran määritetty. Taulukossa \ref{tlk:fonttimallikomennot} on komennot
-kirjainperheen ja kirjainleikkauksen valintaan.
-
-Komennot fontin koon valintaan ovat taulukossa
-\ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä fontin
-pistekokoa mikäkin komento tarkoittaa oletuksena. Oletus riippuu Latexin
-dokumenttiluokkien (luku \ref{luku:dokumenttiluokat})
-fonttikokovalitsimista \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}.
-
-Kaikille korkean tason fonttikomennoille on olemassa myös samanniminen
-ympäristönsä. Alla olevassa esimerkissä on kaksi fontteihin vaikuttavaa
-ympäristöä sisäkkäin.
-
-\begin{koodilohkosis}
-  \begin{LARGE}
-    \begin{scshape}
-      Tämä teksti on isoa (LARGE) pienversaalia (scshape).
-      Typografisesti varmaan aika typerää...
-    \end{scshape}
-  \end{LARGE}
-\end{koodilohkosis}
+kirjainperheen ja kirjainleikkauksen valintaan. Perhe- ja
+leik\-kaus\-ase\-tuk\-set ovat erillisiä, eli kirjainleikkauksen
+muuttaminen ei muuta kirjainperhettä.
 
 \leijutlk{
   \begin{tabular}{llll}
@@ -268,7 +251,7 @@ ympäristöä sisäkkäin.
     \koodi{\keno rmfamily} & \koodi{\keno textrm\{\}}
     & {\rmfamily perhe} & antiikva, serif, roman \\
     \koodi{\keno sffamily} & \koodi{\keno textsf\{\}}
-    & {\sffamily perhe} & groteski, sans serif \\
+    & {\sffamily perhe} & groteski, sans serif, gothic \\
     \koodi{\keno ttfamily} & \koodi{\keno texttt\{\}}
     & {\ttfamily perhe} & tasalevyinen, typewriter \\
     \midrule
@@ -291,6 +274,25 @@ ympäristöä sisäkkäin.
   \caption{Komennot kirjainperheen ja kirjainleikkauksen valintaan}
   \label{tlk:fonttimallikomennot}
 }
+
+Kirjainleikkauksen asetukset jaetaan kahteen ryhmään,
+\textenglish{series} 'sarja' ja \textenglish{shape} 'muoto'. Kummastakin
+ryhmästä on valittuna aina yksi, eli samanaikaisesti voi olla voimassa
+esimerkiksi \koodi{\keno bfseries} (lihavonti) ja \koodi{\keno itshape}
+(kursiivi), ja tuloksena on \textbf{\itshape lihavoitua kursiivia}.
+
+Tämän oppaan fontissa kallistettu leikkaus (\koodi{\keno slshape}) ja
+kursiivileikkaus (\koodi{\keno itshape}) tuottavat saman lopputuloksen.
+Niin on useimmissa muissakin fonteissa, mutta käsitteellisesti ne ovat
+eri asia ja voivat jossakin fontissa valita eri leikkauksen. Kallistus
+on vain tavallisen eli pys\-ty\-asen\-toi\-sen leikkauksen mekaaninen
+kallistus; kursiivissa puolestaan kirjaimet ovat muodoltaan erilaisia.
+
+Komennot fontin koon valintaan ovat taulukossa
+\ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä fontin
+pistekokoa mikäkin komento tarkoittaa oletuksena. Oletus riippuu Latexin
+dokumenttiluokkien (luku \ref{luku:dokumenttiluokat})
+fonttikokovalitsimista \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}.
 
 \leijutlk{
   \begin{tabular}{lr@{}lr@{}lr@{}l}
@@ -317,6 +319,19 @@ ympäristöä sisäkkäin.
     \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}}
   \label{tlk:fonttikokokomennot}
 }
+
+Kaikille korkean tason fonttikomennoille on olemassa myös samanniminen
+ympäristönsä. Seuraavassa esimerkissä on kaksi fontteihin vaikuttavaa
+ympäristöä sisäkkäin.
+
+\begin{koodilohkosis}
+  \begin{LARGE}
+    \begin{scshape}
+      Tämä teksti on isoa (LARGE) pienversaalia (scshape).
+      Typografisesti varmaan aika typerää...
+    \end{scshape}
+  \end{LARGE}
+\end{koodilohkosis}
 
 \subsection{Koot suhteellisesti}
 \label{luku:fontti_suhteellinen}

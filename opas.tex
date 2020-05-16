@@ -25,7 +25,8 @@
 \usepackage{noindentafter}
 \usepackage{soul}
 \usepackage{imakeidx} \makeindex[intoc]
-%\usepackage{ifthen}
+% \usepackage{ifthen}
+\usepackage{chngcntr}
 \usepackage[unicode,hyperfootnotes=false]{hyperref}
 \usepackage[shortcuts]{extdash}
 
@@ -144,6 +145,8 @@
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{2}
 
+\counterwithout{footnote}{chapter}
+
 \newcommand{\otsikkotyyli}{ \raggedright \sffamily \bfseries }
 
 \titleformat{\chapter}[display]{\LARGE\bfseries}
@@ -178,6 +181,7 @@
   ba-bel-short-hands
   base-line-skip
   be-gin
+  bf-se-ries
   doc-u-ment
   ext-dash
   font-size
@@ -188,6 +192,7 @@
   huge
   hy-phen-ation
   ig-nore-spaces
+  it-shape
   konk-reet-ti-ses-ti
   konk-reet-ti-sia
   la-don-ta-oh-jel-man
@@ -199,8 +204,8 @@
   Lua-la-tex
   Match-Low-er-case
   mono-space
-  new-en-vi-ron-ment
   new-com-mand
+  new-en-vi-ron-ment
   new-font-face
   new-font-fam-i-ly
   ni-men-omaan
@@ -208,9 +213,10 @@
   nor-mal-size
   poly-glos-sia
   pro-vide-com-mand
-  re-new-en-vi-ron-ment
   re-new-com-mand
+  re-new-en-vi-ron-ment
   ro-man
+  sa-man-ai-kai-ses-ti
   sans
   Scale
   Scale-Again
@@ -223,6 +229,7 @@
   sf-fam-i-ly
   sf-fam-i-ly-abs
   short-cuts
+  sl-shape
   small
   teks-ti-edi-to-ria
   teks-ti-edi-to-ril-la

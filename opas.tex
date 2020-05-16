@@ -70,11 +70,11 @@
 \DeclareFloatingEnvironment[ name={Esimerkki} ]{esimerkki}
 
 \renewcommand{\theFancyVerbLine}
-{\versaalinum\fontsize{7pt}{7pt}\selectfont\arabic{FancyVerbLine}}
+{\sffamily\versaalinum\fontsize{9pt}{9pt}\selectfont\arabic{FancyVerbLine}}
 
-\DefineVerbatimEnvironment{koodilohko}{Verbatim}{
-  fontsize=\small, gobble=1, frame=lines, numbers=left,
-  numbersep=.3em, xleftmargin=0em, xrightmargin=0mm, baselinestretch=1 }
+\DefineVerbatimEnvironment{koodilohko}{Verbatim}{ fontsize=\small,
+  gobble=2, frame=single, framesep=6pt, numbers=left, numbersep=.3em,
+  xleftmargin=0em, xrightmargin=0mm, baselinestretch=1 }
 
 \DefineVerbatimEnvironment{koodilohkosis}{Verbatim}{
   fontsize=\small, gobble=2, frame=none, numbers=none,

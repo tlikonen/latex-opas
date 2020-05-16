@@ -109,7 +109,7 @@ määrittämiseen. Uusi perhe määritellään seuraavasti:
 
 Komento \koodi{\keno newfontfamily} toimii samalla tavalla kuin aiemmin
 esitellyt \koodi{\keno setmainfont} ym. komennot, mutta lisäksi
-ensimmäinen parametri määrittää komennon, jolla kirjainperhe otetaan
+ensimmäinen argumentti määrittää komennon, jolla kirjainperhe otetaan
 käyttöön. Edellisessä esimerkissä luodaan komento \koodi{\keno
   hieno\-perhe}, joka kytkee päälle TeX Gyre Scho\-la \=/nimisen
 kirjainperheen.
@@ -164,13 +164,13 @@ Fontti\-asetuksiin kuuluu fontin koon lisäksi toinenkin mitta:
 rivikorkeus (\koodi{\keno baselineskip}). Se on mitta rivin
 peruslinjalta seuraavan rivin peruslinjalle. Fontin koko ja rivikorkeus
 määritellään saman\-aikaisesti, koska ne ovat saman \koodi{\keno
-  fontsize}\-/komennon parametreja. Esimerkki:
+  fontsize}\-/komennon argumentteja. Esimerkki:
 
 \begin{koodilohkosis}
   \fontsize{10pt}{12pt} \selectfont
 \end{koodilohkosis}
 
-Ensimmäinen parametri on fontin kokomitta ja toinen on rivikorkeus.
+Ensimmäinen argumentti on fontin kokomitta ja toinen on rivikorkeus.
 Mitta\-yksiköt voivat olla mitä tahansa Latexin mittoja, ja oletuksena
 käytetään pistemittaa (pt), jos yksikköä ei ole mainittu. Komento
 \koodi{\keno selectfont} on mukana, koska vasta sen myötä matalan tason
@@ -395,8 +395,8 @@ siksi esimerkiksi komentojen
 
 tuloksena ei todellisuudessa ole 10 pisteen fontti, vaan mukaan
 lasketaan myös kirjainperheen skaalauskerroin. Tämän vuoksi \koodi{\keno
-  fontsize}\-/komennon käyttö menee aika oudoksi. Parametrina annetut
-mitat eivät pidä paikkaansa.
+  fontsize}\-/komennon käyttö menee aika oudoksi. Argumenttina annettu
+kokomitta ei pidä paikkaansa.
 
 Jos korkean tason font\-ti\-koko\-komen\-to\-jen (taulukko
 \ref{tlk:fonttikokokomennot}) lisäksi tarvitaan jotakin muuta kokoa,
@@ -426,7 +426,7 @@ Tämä tapa on myös teknisesti eheä, eli Latexin eri osat ovat samaa
 mieltä siitä, minkäkokoisesta fontista on kyse. Näin ei ollut
 suhteellisen tavan kanssa (luku \ref{luku:fontti_suhteellinen}).
 
-Joskus yrityksen, oppilaitoksen tai muun tahon julkaisu\-ohjeissa
+Joskus yrityksen, oppilaitoksen tai muun julkaisijan ohjeissa
 määritellään tarkasti, mitä fontteja käytetään ja mikä on leipätekstin
 ja otsikoiden fonttikoko. Silloin tarvitaan tässä luvussa kuvattua tapaa
 fonttien asettamiseen.
@@ -485,8 +485,10 @@ olevien asetusten pohjalta antaa otsikolle seuraavat komennot:
 
 Esimerkin \ref{esim:fontti_absoluuttinen} riveillä 16--20 määritellään
 uudelleen Latexin korkean tason komennot, joilla fonttikoot asetetaan.
-Vähintäänkin täytyy määritellä komento \koodi{\keno normalsize} mutta
-sen lisäksi kaikki ne, joita omassa dokumentissa tarvitaan. Tässä
+Oletus\-arvot tulevat dokumenttiluokasta (luku
+\ref{luku:dokumenttiluokat}), mutta jos ne eivät ole sopivia, täytyy
+vähintäänkin määritellä komento \koodi{\keno normalsize} mutta sen
+lisäksi kaikki ne koot, joita omassa dokumentissa tarvitaan. Tässä
 esimerkissä normaali koko asetetaan 14 pisteen kokoiseksi ja muut koot
 on ajateltu suhteessa siihen.
 
@@ -512,7 +514,7 @@ kirjoittaja hallitsee fonttien kokoa ja rivikorkeuksia tarkasti ja että
 julkaisuun saadaan juuri ne mitat, jotka halutaan tai vaaditaan. Tapa on
 myös teknisesti eheä eli toimii Latexin sisäisen logiikan näkökulmasta
 oikein. Haittana voi pitää sitä, että kaikki koot täytyy määritellä
-erikseen (esimerkki \ref{esim:fontti_absoluuttinen}, rivit 16--20).
+erikseen.
 
 \subsection{Ligatuurit}
 \subsection{Fonttivinkkejä}

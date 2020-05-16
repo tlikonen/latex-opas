@@ -34,7 +34,7 @@ Kuten Latexissa yleensäkin myös fonttien kanssa kannattaa käyttää
 korkean abstraktiotason komentoja, jotka piilottavat yksityiskohdat ja
 teknisen toteutuksen. Latexin fonttitoiminnot on suunniteltu juuri
 siihen: matalan tason fontti\-asetukset määritellään mieluiten vain
-kerran dokumentin esittely\-osassa, ja sen jälkeen käytetään pelkästään
+kerran dokumentin esittelyosassa, ja sen jälkeen käytetään pelkästään
 korkean tason komentoja.
 
 \subsection{Fontin valinta}
@@ -42,11 +42,15 @@ korkean tason komentoja.
 Latexin fonttien perus\-toiminnot rakentuvat kolmen erityyppisen
 kirjainperheen varaan: antiikva eli pääteviivallinen
 (\textenglish{serif, roman}), groteski eli pääteviivaton
-(\textenglish{sans serif}) ja tasalevyinen kirjoituskoneen kaltainen
-perhe (\textenglish{typewriter, monospace}). Kuvassa
-\ref{kuva:kirjainperhetyypit} on tässä oppaassa käytetyt kolme eri
+(\textenglish{sans serif, gothic}) ja tasalevyinen kirjoituskoneen
+kaltainen perhe (\textenglish{typewriter, monospace}). Kuvassa
+\ref{kuva:kirjainperhetyypit} ovat tässä oppaassa käytetyt kolme eri
 kirjainperhetyyppiä. Leipätekstissä käytetään antiikvaa, otsikoissa
-groteskia ja koodi\-esi\-mer\-keis\-sä tasalevyistä.
+groteskia ja koodi\-esi\-mer\-keis\-sä tasalevyistä. Kirjoituskoneen
+kaltainen tasalevyinen kirjainperhe on tässä tapauksessa tyypiltään
+antiikva eli pääteviivallinen, mutta se voisi olla muutakin.
+Tasalevyisyys on sen kirjainperheen tärkein määrittävä tekijä Latexin
+asetusten näkökulmasta.
 
 \leijukuva{
   {\rmfamily\addfontfeatures{Scale=5}Amf}
@@ -61,19 +65,33 @@ groteskia ja koodi\-esi\-mer\-keis\-sä tasalevyistä.
   \label{kuva:kirjainperhetyypit}
 }
 
-Kirjoituskoneen kaltainen tasalevyinen kirjainperhe on tässä tapauksessa
-tyypiltään antiikva eli pääteviivallinen, mutta se voisi olla muutakin.
-Tasalevyisyys on sen kirjainperheen tärkein määrittävä tekijä Latexin
-asetusten näkökulmasta.
+Latexin fonttitekniikka rakentuu eri-ikäisistä kerroksista ja
+tekniikoista. Fontteja on tehty esimerkiksi Metafont\-/nimisellä
+kuvauskielellä, jolla tuotetaan bittikartta\-/{} eli pikseleistä
+koostuvia fontteja. Ne voidaan muuttaa Post Script Type~1 \=/muotoon.
+Myöhemmin mukaan ovat tulleet nykyaikaiset True Type- ja Open Type
+\=/muotoiset fontit, ja niihin tämä opas keskittyy.
 
-% Tähän lyhyesti paketoitujen fonttien käytöstä metafont ja postscript
-% type 1.
-
-Kirjainperheet otetaan käyttöön \paketti{fontspec}\-/paketin komennoilla
-seuraavan esimerkin mukaisesti.
+Joidenkin fonttien käyttöön\-ottoon on tehty oma makropakettinsa, joten
+sellaiset fontit voi ladata dokumentin esittelyosassa komennolla
+\koodi{\keno usepackage}. Fonttikohtaisia makropaketteja on olemassa
+varsinkin vanhalle fonttitekniikalle (Metafont, Post Script Type~1)
+mutta myös matematiikkatilan (luku \ref{luku:matematiikka})
+fontti\-asetuksille ja joillekin kirjainperhekokonaisuuksille.
+Esimerkiksi tämän oppaan Open Type \=/kirjainperheet (Libertinus) on
+ladattu alla olevalla komennolla. Valitsin \koodi{old\-style} tarkoittaa
+gemenanumeroita eli pien\-aak\-kos\-nu\-me\-roi\-ta (1\,6\,9).
 
 \begin{koodilohkosis}
-  \usepackage{fontspec}
+  \usepackage[oldstyle]{libertinus-otf}
+\end{koodilohkosis}
+
+Valmiita makropaketteja on vain joillekin fonteille, ja käytännössä
+yleensä True Type- ja Open Type \=/muodossa olevat kirjainperheet
+otetaan käyttöön \paketti{fontspec}\-/paketin komennoilla seuraavan
+esimerkin mukaisesti.
+
+\begin{koodilohkosis}
   \setmainfont{TeX Gyre Termes}[Scale=1]
   \setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
   \setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
@@ -84,14 +102,15 @@ kuten ligatuureja ja optisia kokoja. Tässä esimerkissä käytetään vain
 \koodi{Scale}\-/valitsinta, jolla fontin voi skaalata haluttuun kokoon.
 \koodi{Scale}\-/kerroin on desimaaliluku, ja oletus\-arvo on 1.
 
-Esimerkissä peruskirjainperheen (\koodi{\keno setmainfont}) skaalaus on
-1, eli sille ei tehdä mitään, ja koko valitsimen voisi jättää pois. Sen
-sijaan kahdella muulla kirjainperheellä (\koodi{\keno setsansfont},
-\koodi{\keno setmonofont}) käytetään ker\-roin\-ase\-tus\-ta
-\koodi{MatchLowercase}, joka skaalaa fontin siten, että gemenakirjaimet
-eli pienet kirjaimet ovat yhtä korkeita kuin peruskirjainperheessä.
-Mikäli skaa\-laus\-ase\-tus \koodi{MatchLowercase} ei tuota ihan
-toivottua tulosta, voi kirjainperheen skaalausta hienosäätää vielä
+Edellisessä esimerkissä peruskirjainperheen (\koodi{\keno setmainfont})
+skaalaus on 1, eli sille ei tehdä mitään, ja koko valitsimen voisi
+jättää pois. Sen sijaan kahdella muulla kirjainperheellä (\koodi{\keno
+  setsansfont}, \koodi{\keno setmonofont}) käytetään
+ker\-roin\-ase\-tus\-ta \koodi{MatchLowercase}, joka skaalaa fontin
+siten, että gemenakirjaimet eli pienet kirjaimet ovat yhtä korkeita kuin
+peruskirjainperheessä. Mikäli skaa\-laus\-ase\-tus
+\koodi{MatchLowercase} ei tuota ihan toivottua tulosta, voi
+kirjainperheen skaalausta hienosäätää vielä
 \koodi{ScaleAgain}\-/valitsimella seuraavaan tapaan:
 
 \begin{koodilohkosis}
@@ -104,7 +123,7 @@ Jos edellä kuvatut kolme kirjainperhettä eivät riitä, on
 määrittämiseen. Uusi perhe määritellään seuraavasti:
 
 \begin{koodilohkosis}
-  \newfontfamily{\hienoperhe}{TeX Gyre Schola}[...]
+  \newfontfamily{\hienoperhe}{TeX Gyre Schola}[…]
 \end{koodilohkosis}
 
 Komento \koodi{\keno newfontfamily} toimii samalla tavalla kuin aiemmin
@@ -113,12 +132,12 @@ ensimmäinen argumentti määrittää komennon, jolla kirjainperhe otetaan
 käyttöön. Edellisessä esimerkissä luodaan komento \koodi{\keno
   hieno\-perhe}, joka kytkee päälle TeX Gyre Scho\-la \=/nimisen
 kirjainperheen.
-          
+
 Jos ei tarvita kokonaista perhettä vaan yksi leikkaus riittää, käytetään
 komentoa \koodi{\keno newfontface}:
 
 \begin{koodilohkosis}
-  \newfontface{\hienoleikkaus}{TeX Gyre Schola Bold}[...]
+  \newfontface{\hienoleikkaus}{TeX Gyre Schola Bold}[…]
 \end{koodilohkosis}
 
 Edellä määriteltävä komento \koodi{\keno hieno\-leikkaus} ottaa käyttöön
@@ -227,10 +246,10 @@ kummassa järjestyksessä \koodi{\keno fontsize}- ja \koodi{\keno
 \koodi{\keno selectfont}\-/komennon jälkeen.
 
 Käytännössä \koodi{\keno linespread} sopii rivikorkeuden yleistason
-hienosäätöön, esimerkiksi dokumentin esittely\-osassa. Sitä ei
-kannattane kovin paljon muutella, koska se vaikuttaa kaikkialla. Sen
-sijaan \koodi{\keno fontsize}\-/komennolla määritetään rivikorkeus
-tietylle fonttikoolle ja tiettyyn tilanteeseen.
+hienosäätöön, esimerkiksi dokumentin esittelyosassa. Sitä ei kannattane
+kovin paljon muutella, koska se vaikuttaa kaikkialla. Sen sijaan
+\koodi{\keno fontsize}\-/komennolla määritetään rivikorkeus tietylle
+fonttikoolle ja tiettyyn tilanteeseen.
 
 \subsection{Korkean tason komennot}
 \label{luku:fontit_korkea}
@@ -369,7 +388,7 @@ kohdan välillä ja koska fonttien mittasuhteet ovat erilaisia.
   \setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
   \setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
   \linespread{1.45}
-\end{koodilohko}    
+\end{koodilohko}
 \caption{Fonttikokojen määrittäminen suhteessa peruskirjainperheeseen}
 \label{esim:fontti_suhteellinen}
 \end{esimerkki}
@@ -440,7 +459,7 @@ fonttien asettamiseen.
   \setmainfont{TeX Gyre Termes}
   \setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
   \setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
-  
+
   % Muualle sans ja mono ilman skaalausta
   \newfontfamily{\sffamilyabs}{TeX Gyre Heros}
   \newfontfamily{\ttfamilyabs}{TeX Gyre Cursor}
@@ -454,7 +473,7 @@ fonttien asettamiseen.
   \renewcommand{\large}       {\fontsize{17pt}{19pt}\selectfont}
   \renewcommand{\Large}       {\fontsize{20pt}{22pt}\selectfont}
   \normalsize % jotta tulee heti voimaan eikä vasta tekstiosassa
-\end{koodilohko}    
+\end{koodilohko}
 \caption{Fonttikokojen määrittäminen pistekoon avulla}
 \label{esim:fontti_absoluuttinen}
 \end{esimerkki}
@@ -503,7 +522,7 @@ komento rivikorkeuden säätämiseen yleisesti kaikkialla.
 
 Fonttikokojen määrittelyn lopuksi rivillä 21 suoritetaan komento
 \koodi{\keno normalsize}, jotta se tulee heti voimaan. Dokumentin
-esittely\-osassa voidaan käyttää fonttikokoon viittaavia mittoja
+esittelyosassa voidaan käyttää fonttikokoon viittaavia mittoja
 \koodi{em} ja \koodi{ex}, ja ne viittaavat nyt tähän kokoon.
 \koodi{\keno normalsize}\-/komento suoritetaan kyllä myöhemmin
 automaattisesti dokumentin teksti\-osan eli
@@ -529,4 +548,3 @@ erikseen.
 \label{luku:sivuasetukset}
 \subsection{Marginaalit ja mitat}
 \subsection{Ylä- ja alatunnisteet}
-

@@ -290,9 +290,62 @@ tehdään Latexissa komennolla \koodi{\keno ldots} tai Unicode\-/merkillä
 
 \subsection{Ylä- ja alaindeksi}
 
-H\textsubscript{2}O
-H\textsubscript*{2}O
+Yläindeksit (a\textsuperscript{2}) tehdään komennolla \koodi{\keno
+  textsuperscript} ja alaindeksit (a\textsubscript{2}) komennolla
+\koodi{\keno textsubscript}. Oletus\-asetuksilla Latex toteuttaa
+indeksit mekaanisesti pienentämällä fonttia ja sijoittamalla tekstin
+peruslinjan tai gemenalinjan tuntumaan. Lopputulos ei ole typografisesti
+välttämättä kovin hyvä, koska fontin pienentäminen ohentaa samalla
+merkkien viivoja ja ohuimmat hiusviivat voivat kadota.
 
+Open Type \=/fontit sisältävät usein tuen oikeille ylä- ja
+alaindekseille, jotka fontin suunnittelija on toteuttanut. Niitä
+kannattaa tietysti käyttää, koska suunnittelija tuntee oman fonttinsa ja
+saa todennäköisesti parempaa jälkea kuin Latex mekaanisesti. Open Type
+\=/fonttien indeksit on kätevintä ottaa käyttöön
+\paketti{real\-scripts}\-/paketin avulla.
+
+\begin{koodilohkosis}
+  \usepackage{realscripts}
+\end{koodilohkosis}
+
+Paketti \paketti{real\-scripts} määrittelee uudelleen Latexin ylä- ja
+alaindeksikomennot, niin että ne ensisijaisesti pyrkivät käyttämään Open
+Type \=/fontin ominaisuutta. Jos käytössä oleva fontti ei sisällä tukea
+ylä- eikä alaindekseille, käytetään Latexin mekaanista keinoa. Paketti
+määrittelee pari muutakin hyödyllistä komentoa, muun muassa tähdelliset
+versiot edellä mainituista: \koodi{\keno text\-su\-per\-script*} ja
+\koodi{\keno text\-sub\-script*}. Nämä komennot toteuttavat aina
+mekaanisen ylä- tai alaindeksin. Seuraavassa esimerkissä vertaillaan
+oikeita ja mekaanisia (tähdelliset) ylä- ja alaindeksejä.
+
+\begin{koodilohkosis}
+  X\textsuperscript {ab36}
+  X\textsuperscript*{ab36} \\
+  H\textsubscript {2}SO\textsubscript {4}
+  H\textsubscript*{2}SO\textsubscript*{4}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  X\textsuperscript {ab36}
+  X\textsuperscript*{ab36} \\*
+  H\textsubscript {2}SO\textsubscript {4}
+  H\textsubscript*{2}SO\textsubscript*{4}
+\end{tulossis}
+
+Kuten esimerkki paljastaa, lopputuloksessa on eroa. Ensin mainitut ovat
+fontin suunnittelijan versioita ja jälkimmäiset mekaanisia. Mekaaninen
+ylä- ja ala\-in\-dek\-si\-toi\-min\-to ohentaa merkkejä turhan paljon,
+eikä se ymmärrä poistaa gemenanumeroita (3624) käytöstä vaan latoo ne
+sellaisenaan suunnilleen oikeaan paikkaan. Ylä- ja alaindeksejä
+käytettäessä on siis aina syytä käyttää
+\paketti{real\-scripts}\-/pakettia ja indeksit hallitsevaa Open Type
+\=/fonttia. Fonttien ominaisuuksia voi tutkia käyttöjärjestelmän
+komentotulkissa komennolla \koodi{otf\-info}.
+
+% \begin{koodilohkosis}
+%   otfinfo -f MyriadPro-Regular.otf
+% \end{koodilohkosis}
 
 \subsection{Tarkkeet}
 %\label{luku:tarkkeet}

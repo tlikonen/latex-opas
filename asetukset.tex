@@ -14,11 +14,12 @@ Fontti jo itsessään on moniselitteinen käsite, joka vaatii typografiassa
 usein täsmentäviä ilmauksia. Sana \emph{fontti} voi tarkoittaa
 kokonaista kirjainperhettä eli yhteensopivien kirjainleikkausten
 muodostamaa kokonaisuutta. Samaan kirjainperheeseen kuuluu yleensä
-ainakin neljä eri leikkausta: tavallinen, kursiivi, lihavoitu ja
-lihavoitu kursiivi. Joihinkin perheisiin kuuluu leikkauksia paljon
-enemmänkin, kuten useita eri vahvuuksia. Joissakin puheissa sana
-\emph{fontti} tarkoittaa vain yhtä kirjainleikkausta, ja silloin koko
-perheeseen viitataan sanalla fonttiperhe.
+ainakin neljä eri leikkausta: tavallinen, \textit{kursiivi},
+\textbf{lihavoitu} ja \textbf{\textit{lihavoitu kursiivi}}. Joihinkin
+perheisiin kuuluu leikkauksia paljon enemmänkin, kuten useita eri
+vahvuuksia. Joissakin puheissa sana \emph{fontti} tarkoittaa vain yhtä
+kirjainleikkausta, ja silloin koko perheeseen viitataan ehkä sanalla
+fonttiperhe.
 
 Tässä oppaassa käytän \emph{fontti}\-/sanaa yleisnimityksenä Latexin
 kirjaintyyppeihin liittyville asetuksille. Se tarkoittaa kirjainperhettä
@@ -27,7 +28,7 @@ liittyvät niihin. Silloin kun merkitystä pitää täsmentää, käytän
 suomenkielisiä nimiä kirjainperhe ja kirjainleikkaus. Sen sijaan sanan
 \emph{kirjasin} jätän kokonaan pois. Se tarkoittaa vanhassa
 metalliladonnassa ja mekaanisissa kirjoituskoneissa metallisen
-kirjakkeen päähän muotoiltua kirjaimen tai muun merkin kohokuviota, joka
+kirjakkeen päähän valettua kirjaimen tai muun merkin kohokuviota, joka
 painaa mustejäljen paperille.
 
 Kuten Latexissa yleensäkin myös fonttien kanssa kannattaa käyttää
@@ -45,14 +46,14 @@ kirjainperheen varaan: antiikva eli pääteviivallinen
 (\textenglish{sans serif, gothic}) ja tasalevyinen kirjoituskoneen
 kaltainen perhe (\textenglish{typewriter, monospace}). Kuvassa
 \ref{kuva:kirjainperhetyypit} ovat tässä oppaassa käytetyt kolme eri
-kirjainperhetyyppiä. Leipätekstissä käytetään antiikvaa, otsikoissa
-groteskia%
-\footnote{Tämän oppaan groteskifontti Libertinus Sans on
-  mittasuhteiltaan lähellä antiikvaa -- ainoastaan pääteviivat
-  puuttuvat. Tämäntyyppisiä fontteja sanotaan joskus humanistisiksi
-  groteskeiksi tai pääteviivattomiksi antiikvoiksi.} ja
-koodi\-esi\-mer\-keis\-sä tasalevyistä. Kirjoituskoneen kaltainen
-tasalevyinen kirjainperhe on tässä tapauksessa tyypiltään antiikva eli
+kirjainperhettä. Leipätekstissä käytetään antiikvaa (Libertinus Serif),
+otsikoissa ja kuvateksteissä groteskia (Libertinus Sans%
+\footnote{Tämän oppaan groteskifontti Libertinus Sans on tyyliltään
+  lähellä antiikvaa -- ainoastaan pääteviivat puuttuvat. Tämäntyyppisiä
+  fontteja sanotaan joskus humanistisiksi groteskeiksi tai
+  pääteviivattomiksi antiikvoiksi.}) ja koodi\-esi\-mer\-keis\-sä
+tasalevyistä (Libertinus Mono). Kirjoituskoneen kaltainen tasalevyinen
+kirjainperhe on tässä tapauksessa tyypiltään antiikva eli
 pääteviivallinen, mutta se voisi olla muutakin. Tasalevyisyys on sen
 kirjainperheen tärkein määrittävä tekijä Latexin asetusten näkökulmasta.
 
@@ -72,9 +73,9 @@ kirjainperheen tärkein määrittävä tekijä Latexin asetusten näkökulmasta.
 Latexin fonttitekniikka rakentuu eri-ikäisistä kerroksista ja
 tekniikoista. Fontteja on tehty esimerkiksi Metafont\-/nimisellä
 kuvauskielellä, jolla tuotetaan bittikartta\-/{} eli pikseleistä
-koostuvia fontteja. Ne voidaan muuttaa Post Script Type~1 \=/muotoon.
-Myöhemmin mukaan ovat tulleet nykyaikaiset True Type- ja Open Type
-\=/muotoiset fontit, ja niihin tämä opas keskittyy.
+koostuvia fontteja. Ne voidaan muuttaa Post Script Type~1 \=/muotoon ja
+käyttää Latexissa. Myöhemmin mukaan ovat tulleet monipuoliset True Type-
+ja Open Type \=/muotoiset fontit, ja niihin tämä opas keskittyy.
 
 Joidenkin fonttien käyttöön\-ottoon on tehty oma makropakettinsa, joten
 sellaiset fontit voi ladata dokumentin esittelyosassa komennolla
@@ -102,13 +103,13 @@ esimerkin mukaisesti.
 \end{koodilohkosis}
 
 Samalla voi määritellä lukuisia kirjainperheeseen sisältyviä asetuksia
-kuten ligatuureja ja optisia kokoja. Tässä esimerkissä käytetään vain
-\koodi{Scale}\-/valitsinta, jolla fontin voi skaalata haluttuun kokoon.
-\koodi{Scale}\-/kerroin on desimaaliluku, ja oletus\-arvo on 1.
+kuten ligatuureja, optisia kokoja ja muita fontin ominaisuuksia.
+Edellisessä esimerkissä käytetään vain \koodi{Scale}\-/valitsinta, jolla
+fontin voi skaalata haluttuun kokoon.
 
-Edellisessä esimerkissä peruskirjainperheen (\koodi{\keno setmainfont})
-skaalaus on 1, eli sille ei tehdä mitään, ja koko valitsimen voisi
-jättää pois. Sen sijaan kahdella muulla kirjainperheellä (\koodi{\keno
+Peruskirjainperheen (\koodi{\keno setmainfont}) skaalaukseksi
+asetetaan~1, eli sille ei tehdä mitään, ja koko valitsimen voisi jättää
+pois. Sen sijaan kahdella muulla kirjainperheellä (\koodi{\keno
   setsansfont}, \koodi{\keno setmonofont}) käytetään
 ker\-roin\-ase\-tus\-ta \koodi{MatchLowercase}, joka skaalaa fontin
 siten, että gemenakirjaimet eli pienet kirjaimet ovat yhtä korkeita kuin
@@ -154,10 +155,10 @@ yksi leikkaus, ei koko perhettä.
 Fonttien koot on totuttu valitsemaan typografisen pistemitan avulla.
 Esimerkiksi 10--12 pistettä on tyypillinen leipätekstin oletuskoko
 teks\-tin\-kä\-sit\-tely\-ohjel\-mis\-sa. Piste on mitta\-yksikkö, jonka
-pituus on 1/72 tuumaa eli 0,3528 millimetriä. Kirjainleikkauksen
-pistekoko mitataan kirjaimiston ylimmän ja alimman kohdan välillä, ja
-siihen luetaan mukaan ylä- ja alapuolella oleva pieni tyhjä tila, jonka
-fontin suunnittelija on määritellyt.
+pituus on \murtoluku{1/72} tuumaa eli 0,3528 millimetriä.
+Kirjainleikkauksen pistekoko mitataan merkistön ylimmän ja alimman
+kohdan välillä, ja siihen luetaan mukaan ylä- ja alapuolella oleva pieni
+tyhjä tila, jonka fontin suunnittelija on määritellyt.
 
 Myös Latexissa koot voi määritellä pistemittojen (lyhenne pt) avulla,
 mutta halutessaan ne voi unohtaa lähes kokonaan ja käyttää niin sanottua
@@ -299,20 +300,21 @@ muuttaminen valitsee toisen leikkauksen samasta perheestä.
 }
 
 Kirjainleikkauksen asetukset jaetaan kahteen ryhmään,
-\textenglish{series} 'sarja' ja \textenglish{shape} 'muoto'. Kummastakin
-ryhmästä on valittuna aina yksi, eli samanaikaisesti voi olla voimassa
-esimerkiksi \koodi{\keno bfseries} (lihavoitu) ja \koodi{\keno itshape}
-(kursiivi), ja tuloksena on \textbf{\itshape lihavoitua kursiivia}.
+\textenglish{\emph{series}} 'sarja' ja \textenglish{\emph{shape}}
+'muoto'. Kummastakin ryhmästä on valittuna aina yksi, eli
+samanaikaisesti voi olla voimassa esimerkiksi \koodi{\keno bfseries}
+(lihavoitu) ja \koodi{\keno itshape} (kursiivi), ja tuloksena on
+\textbf{\itshape lihavoitua kursiivia}.
 
 Tämän oppaan fontissa kalteva leikkaus (\koodi{\keno slshape}) ja
 kursiivileikkaus (\koodi{\keno itshape}) tuottavat saman lopputuloksen.
 Niin on useimmissa muissakin fonteissa, mutta käsitteellisesti ne ovat
 eri asia. Edellä mainitut komennot voivat joissakin fonteissa valita eri
 leikkauksen. Kalteva leikkaus on tavallisen eli pys\-ty\-asen\-toi\-sen
-leikkauksen kallistettu versio. Kallistus on voitu tehdä koneellisesti,
-mutta se voi olla myös kirjainmuotoilijan piirtämä leikkaus. Kursiivissa
-puolestaan kirjaimet ovat muodoltaan erilaisia, ja se hieman jäljittelee
-yhtenäistä käsi\-ala\-kir\-joi\-tusta.
+leikkauksen kallistettu versio. Kallistus on voitu tehdä mekaanisesti,
+mutta se voi olla myös kirjainmuotoilijan piirtämä leikkaus. Kursiivi
+puolestaan on aina muodoltaan erilainen leikkaus, ja se hieman
+jäljittelee yhtenäistä käsi\-ala\-kir\-joi\-tusta.
 
 Komennot fontin koon valintaan ovat taulukossa
 \ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä fontin

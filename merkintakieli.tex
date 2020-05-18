@@ -320,15 +320,15 @@ mekaanisen ylä- tai alaindeksin. Seuraavassa esimerkissä vertaillaan
 oikeita ja mekaanisia (tähdelliset) ylä- ja alaindeksejä.
 
 \begin{koodilohkosis}
-  X\textsuperscript {ab36}
-  X\textsuperscript*{ab36} \\
+  x\textsuperscript {ab36}
+  x\textsuperscript*{ab36} \\
   H\textsubscript {2}SO\textsubscript {4}
   H\textsubscript*{2}SO\textsubscript*{4}
 \end{koodilohkosis}
 
 \begin{tulossis}
-  X\textsuperscript {ab36}
-  X\textsuperscript*{ab36} \\*
+  x\textsuperscript {ab36}
+  x\textsuperscript*{ab36} \\*
   H\textsubscript {2}SO\textsubscript {4}
   H\textsubscript*{2}SO\textsubscript*{4}
 \end{tulossis}
@@ -336,16 +336,31 @@ oikeita ja mekaanisia (tähdelliset) ylä- ja alaindeksejä.
 Kuten esimerkki paljastaa, lopputuloksessa on eroa. Ensin mainitut ovat
 fontin suunnittelijan versioita ja jälkimmäiset mekaanisia. Mekaaninen
 ylä- ja ala\-in\-dek\-si\-toi\-min\-to ohentaa merkkejä turhan paljon,
-eikä se ymmärrä poistaa gemenanumeroita (3624) käytöstä vaan latoo ne
-sellaisenaan suunnilleen oikeaan paikkaan. Ylä- ja alaindeksejä
-käytettäessä on siis aina syytä käyttää
-\paketti{real\-scripts}\-/pakettia ja indeksit hallitsevaa Open Type
-\=/fonttia. Fonttien ominaisuuksia voi tutkia käyttöjärjestelmän
-komentotulkissa komennolla \koodi{otf\-info}.
+eikä se ymmärrä poistaa gemenanumeroita (3\,6\,2\,4) käytöstä vaan latoo
+ne sellaisenaan suunnilleen oikeaan paikkaan.
 
-% \begin{koodilohkosis}
-%   otfinfo -f MyriadPro-Regular.otf
-% \end{koodilohkosis}
+Ylä- ja alaindeksejä käytettäessä on siis syytä ladata
+\paketti{real\-scripts}\-/paketti ja käyttää indeksit hallitsevaa Open
+Type \=/fonttia. Fonttien ominaisuuksia voi tutkia käyttöjärjestelmän
+komentotulkissa komennolla \koodi{otf\-info}. Toisaalta fonttiin
+sisältyviä ylä- ja alaindeksejä voi myös kirjoittaa Unicode\-/merkistön
+avulla sellaisenaan. Lopputulos on sama.
+
+\begin{koodilohkosis}
+  x²ᵃ x\textsuperscript{2a}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  x²ᵃ x\textsuperscript{2a}
+\end{tulossis}
+
+Edellisessä esimerkissä on kyse Unicode\-/merkeistä \uctunnus{u+00b2
+  superscript two} ja \uctunnus{u+1d43 modifier letter small~a}.
+Koo\-di\-esi\-mer\-kin tasalevyinen fontti ei sisällä merkkiä
+\uctunnus{u+1d43} vaan näyttää sen tilalla puuttuvaa merkkiä ilmaisevan
+kuvion. Näin saattaa käydä tekstieditorissakin, ja siksi komennot
+\koodi{\keno textsuperscript} ja \koodi{\keno textsubscript} voivat olla
+selvempi tapa merkitä ylä- ja alaindeksejä.
 
 \subsection{Tarkkeet}
 %\label{luku:tarkkeet}

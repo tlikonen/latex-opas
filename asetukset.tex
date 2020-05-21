@@ -250,9 +250,9 @@ fonttikoolle ja tiettyyn tilanteeseen.
 Latexissa on joukko korkean tason fontti\-komentoja, jotka on
 tarkoitettu käytettäväksi sen jälkeen, kun matalan tason asetukset on
 kerran määritetty. Taulukossa \ref{tlk:fonttimallikomennot} on komennot
-kirjainperheen ja kirjainleikkauksen valintaan. Perhe- ja
-leik\-kaus\-ase\-tuk\-set ovat hierarkkisia, eli kirjainleikkauksen
-muuttaminen valitsee toisen leikkauksen samasta perheestä.
+kirjainperheen ja kirjainleikkauksen valintaan. Kirjainperhekomento
+vaihtaa koko perheen kaikkine leikkauksineen, ja kirjainleikkauskomento
+valitsee toisen leikkauksen samasta perheestä.
 
 \leijutlk{
   \begin{tabular}{llll}
@@ -287,12 +287,12 @@ muuttaminen valitsee toisen leikkauksen samasta perheestä.
   \label{tlk:fonttimallikomennot}
 }
 
-Kirjainleikkauksen asetukset jaetaan kahteen ryhmään,
+Kirjainleikkauksen asetukset jaetaan kahteen ryhmään:
 \textenglish{\emph{series}} 'sarja' ja \textenglish{\emph{shape}}
-'muoto'. Kummastakin ryhmästä on valittuna aina yksi, eli
+'muoto'. Kummastakin ryhmästä on valittuna aina yksi ominaisuus, eli
 samanaikaisesti voi olla voimassa esimerkiksi \koodi{\keno bfseries}
-(lihavoitu) ja \koodi{\keno itshape} (kursiivi), ja tuloksena on
-\textbf{\itshape lihavoitua kursiivia}.
+(\textbf{lihavoitu}) ja \koodi{\keno itshape} (\textit{kursiivi}), ja
+tuloksena on \textbf{\itshape lihavoitua kursiivia}.
 
 Tämän oppaan fontissa kalteva leikkaus (\koodi{\keno slshape}) ja
 kursiivileikkaus (\koodi{\keno itshape}) tuottavat saman lopputuloksen.
@@ -341,13 +341,20 @@ ympäristönsä. Seuraavassa esimerkissä on kaksi fontteihin vaikuttavaa
 ympäristöä sisäkkäin.
 
 \begin{koodilohkosis}
-  \begin{LARGE}
+  \begin{footnotesize}
     \begin{scshape}
-      Tämä teksti on isoa (LARGE) pienversaalia (scshape).
-      Typografisesti varmaan aika typerää...
+      Tämä teksti on pienen pientä pienversaalia.
     \end{scshape}
-  \end{LARGE}
+  \end{footnotesize}
 \end{koodilohkosis}
+
+\begin{tulossis}
+  \begin{footnotesize}
+    \begin{scshape}
+      Tämä teksti on pienen pientä pienversaalia.
+    \end{scshape}
+  \end{footnotesize}
+\end{tulossis}
 
 \subsection{Koot suhteellisesti}
 \label{luku:fontti_suhteellinen}

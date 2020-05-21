@@ -776,12 +776,29 @@ kuin komentojenkin määrittelyn tähdellisissä versioissa (luku
 
 Joskus ympäristöjen määrittelyyn on hyödyllistä sisällyttää komento
 \koodi{\keno ignorespaces}, joka jättää huomioimatta komennon jälkeiset
-sanavälit. Luvussa \ref{luku:komennot-lisä} on tästä esimerkki. Lisäksi
-on olemassa komento \koodi{\keno ig\-nore\-spaces\-af\-ter\-end}, joka
-jättää huomioimatta ympäristön lopettavan \koodi{\keno end}\-/komennon
-jälkeiset sanavälit.
+sanavälit. Toinen hyödyllinen on \koodi{\keno
+  ig\-nore\-spaces\-af\-ter\-end}, joka jättää huomioimatta ympäristön
+lopettavan \koodi{\keno end}\-/komennon jälkeiset sanavälit.
+
+\begin{koodilohkosis}
+  \newenvironment{ymp}
+    {Yhdys\ignorespaces}
+    {kokeilu\ignorespacesafterend}
+
+  \begin{ymp}
+    sanojen
+  \end{ymp}   esimerkki.
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Yhdyssanojen kokeiluesimerkki.
+\end{tulossis}
+
 
 \section{Lohkot}
 \section{Mitat}
 \label{luku:mitat}
+
+% Käsittele hspace ja vspace. Näihin viitataan muualta.
+
 \section{Laskurit}

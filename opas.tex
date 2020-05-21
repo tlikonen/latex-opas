@@ -39,21 +39,15 @@
 \setotherlanguage{english}
 \newcommand{\englishfont}{}
 
-\defaultfontfeatures[\ttfamily]{Ligatures=TeXReset, Ligatures=NoCommon,
+\defaultfontfeatures[\ttfamily]{Ligatures={TeXReset, NoCommon},
   HyphenChar={-}}
-\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX, Numbers=Lowercase}
-
-% \usepackage{libertinus-otf}
+\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures={TeX, Common},
+  Numbers=Lowercase}
 
 \setmainfont {Linux Libertine O}
 \setsansfont {Linux Biolinum O} [Scale=MatchLowercase]
 \setmonofont {Linux Libertine Mono O}
 [Scale=MatchLowercase, FakeStretch=.8]
-
-% \setmainfont {TeX Gyre Pagella}
-% \setsansfont {TeX Gyre Heros} [Scale=MatchLowercase]
-% \setmonofont {TeX Gyre Cursor}
-% [Scale=MatchLowercase, FakeStretch=.7]
 
 \renewcommand{\footnotesize}{\fontsize{11.34}{14}\selectfont}
 \renewcommand{\small}{\fontsize{12.6}{15}\selectfont}

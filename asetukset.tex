@@ -91,13 +91,13 @@ esimerkin mukaisesti.
 \end{koodilohkosis}
 
 Samalla voi määritellä lukuisia kirjainperheeseen sisältyviä asetuksia
-kuten ligatuureja, optisia kokoja ja muita fontin ominaisuuksia.
-Edellisessä esimerkissä käytetään vain \koodi{Scale}\-/valitsinta, jolla
-fontin voi skaalata haluttuun kokoon.
+kuten ligatuureja, gemenanumeroita, optisia kokoja ja muita fontin
+ominaisuuksia. Edellisessä esimerkissä käytetään vain
+\koodi{Scale}\-/valitsinta, jolla fontin voi skaalata haluttuun kokoon.
 
-Peruskirjainperheen (\koodi{\keno setmainfont}) skaalaukseksi
-asetetaan~1, eli sille ei tehdä mitään, ja koko valitsimen voisi jättää
-pois. Sen sijaan kahdella muulla kirjainperheellä (\koodi{\keno
+Peruskirjainperheen (\koodi{\keno setmainfont}) skaalaukseksi asetetaan
+\koodi{Scale=1}, eli sille ei tehdä mitään, ja koko valitsimen voisi
+jättää pois. Sen sijaan kahdella muulla kirjainperheellä (\koodi{\keno
   setsansfont}, \koodi{\keno setmonofont}) käytetään
 ker\-roin\-ase\-tus\-ta \koodi{MatchLowercase}, joka skaalaa fontin
 siten, että gemenakirjaimet eli pienet kirjaimet ovat yhtä korkeita kuin
@@ -150,9 +150,9 @@ tyhjä tila, jonka fontin suunnittelija on määritellyt.
 
 Myös Latexissa koot voi määritellä pistemittojen (lyhenne pt) avulla,
 mutta halutessaan ne voi unohtaa lähes kokonaan ja käyttää niin sanottua
-suhteellista tapaa koko\-asetuksiin. Käsittelen suhteellisia ja
-absoluuttisia koko\-ase\-tuk\-sia luvuissa
-\ref{luku:fontti_suhteellinen} ja \ref{luku:fontti_absoluuttinen}.
+suhteellista tapaa koko\-asetuksiin. Suhteellisia ja absoluuttisia
+koko\-ase\-tuk\-sia käsitellään luvuissa \ref{luku:fontti_suhteellinen}
+ja \ref{luku:fontti_absoluuttinen}.
 
 Matalalla tasolla fonttien kokoon vaikuttaa Latexissa eräs yllättävä
 asia. Nimittäin dokumenttiluokalle (luku \ref{luku:dokumenttiluokat})
@@ -161,13 +161,14 @@ normaaleissa dokumenttiluokissa vain kolme: \koodi{10pt} (oletus),
 \koodi{11pt} ja \koodi{12pt}. Dokumenttiluokan koko\-asetus vaikuttaa
 myös sivun marginaaleihin, koska Latex pyrkii pitämään rivin
 merkkimäärän lukijalle sopivana: yhdelle riville ei kannata latoa ihan
-mahdottomasti merkkejä, koska luettavuus heikkenee.
+mahdottomasti merkkejä, koska rivin seuraaminen vaatii enemmän
+keskittymistä.
 
-Fontin koon määrittäminen dokumenttiluokan valitsimella kuuluu jo vähän
-menneisyyteen, mutta voi sitä edelleen käyttää, jos se riittää ja sillä
-saa halutun lopputuloksen. Yleensä kyllä jättäisin dokumenttiluokan
-fontti\-asetuksen oletukseksi (\koodi{10pt}) ja käyttäisin koon
-asettamiseen luvussa \ref{luku:fontti_suhteellinen} tai
+Fontin koon määrittäminen dokumenttiluokan valitsimella ehkä kuuluu jo
+vähän menneisyyteen, mutta voi sitä edelleen käyttää, jos se riittää ja
+sillä saa halutun lopputuloksen. Yleensä lienee järkevää jättää
+dokumenttiluokan fontti\-asetus oletukseksi (\koodi{10pt}) ja käyttää
+koon asettamiseen luvussa \ref{luku:fontti_suhteellinen} tai
 \ref{luku:fontti_absoluuttinen} kerrottuja tapoja. Sivun marginaalien ja
 muiden mittojen määrittämiseen on ohjeita luvussa
 \ref{luku:sivuasetukset}.
@@ -190,8 +191,8 @@ fonttikomennot tulevat voimaan. Korkean tason fonttikomennot (luku
 \ref{luku:fontit_korkea}) suorittavat sen automaattisesti.
 
 Rivikorkeus on vähintään sama kuin fontin koko, mutta yleensä se
-asetetaan hieman suuremmaksi, jotta rivit eivät olisi liian lähellä
-toisiaan. Esimerkissä \ref{esim:rivikorkeus} on kaksi erilaista
+asetetaan pari pistettä suuremmaksi, jotta rivit eivät olisi liian
+lähellä toisiaan. Esimerkissä \ref{esim:rivikorkeus} on kaksi erilaista
 \koodi{\keno fontsize}\-/komentoa ja ladottu lopputulos.
 
 \begin{esimerkki}
@@ -375,9 +376,9 @@ Kaikkien muiden koot täytyisi selvittää laskemalla.
 
 Groteski eli pääteviivaton kirjainperhe (rivi~5) ja tasalevyinen perhe
 (rivi~6) skaalataan samankorkuiseksi kuin perusperhe. Vertailukohtana
-ovat pienet kirjaimet (\koodi{MatchLowercase}). Näiden kahden
-kirjainperheen pistekokoa ei tiedetä. Se ei välttämättä ole sama kuin
-perusfontissa, koska fonttien pistekoko mitataan ylimmän ja alimman
+ovat gemenat eli pien\-aak\-ko\-set (\koodi{MatchLowercase}). Näiden
+kahden kirjainperheen pistekokoa ei tiedetä. Se ei välttämättä ole sama
+kuin perusfontissa, koska fonttien pistekoko mitataan ylimmän ja alimman
 kohdan välillä ja koska fonttien mittasuhteet ovat erilaisia.
 
 \begin{esimerkki}

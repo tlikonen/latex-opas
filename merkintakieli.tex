@@ -357,11 +357,6 @@ Edellisessä esimerkissä on kyse Unicode\-/merkeistä \uctunnus{u+00b2
   superscript two} ja \uctunnus{u+1d43 modifier letter small~a}. Niitä
 ei kaikissa fonteissa edes ole.
 
-% Näitä merkkejä ei ole kaikissa tasalevyisissä fonteissa, joita
-% tekstieditoreissa käytetään, ja silloin komennot \koodi{\keno
-%   textsuperscript} ja \koodi{\keno textsubscript} voivat olla selvempi
-% tapa merkitä ylä- ja alaindeksejä.
-
 \subsection{Tarkkeet}
 %\label{luku:tarkkeet}
 
@@ -515,12 +510,12 @@ helppolukuista. Otetaan esimerkki tämän oppaan toteutuksesta.
 
 Tämä opas käsittelee välillä Unicode\-/merkkejä ja niiden tunnuksia
 kuten \uctunnus{u+0061 latin small letter~a}. Merkkien tunnukset
-ladotaan erilaisella kirjainleikkauksella, pienversaalilla. Jos fontti
-vain tukee pienversaalia, sitä saadaan helposti komennolla \koodi{\keno
-  text\-sc}. Tätä komentoa ei ehkä siltikään kannata käyttää suoraan
-dokumentissa. Jos nimittäin kirjoittaa dokumentin täyteen \koodi{\keno
-  text\-sc}\-/komentoja, voi myöhemmin olla työlästä muuttaa
-Unicode\-/tunnusten ulko\-asu ja toteutus toisenlaiseksi.
+ladotaan erilaisella kirjainleikkauksella, pienversaalilla eli
+kapiteelilla. Jos fontti vain tukee pienversaalia, sitä saadaan helposti
+komennolla \koodi{\keno text\-sc}. Silti tätä komentoa ei ehkä kannata
+käyttää suoraan dokumentissa. Jos nimittäin kirjoittaa dokumentin
+täyteen \koodi{\keno text\-sc}\-/komentoja, voi myöhemmin olla työlästä
+muuttaa Unicode\-/tunnusten ulko\-asu ja toteutus toisenlaiseksi.
 
 Jossain vaiheessa kirjoittaja oivaltaa, että Unicode\-/tunnukset ovat
 englannin kieltä ja että sanoja pitäisi tavuttaa englannin sääntöjen
@@ -598,7 +593,7 @@ käytetään silloin, kun valinnaista argumenttia ei ole annettu.
 
 \begin{koodilohkosis}
   \newcommand{\komento}[3][tyyppi]{Hei #1, sanoit #2 ja #3!}
-  \komento{hip}{hei}
+  \komento{hip}{hei} \\
   \komento[Leslie]{hip}{hei}
 \end{koodilohkosis}
 
@@ -751,7 +746,7 @@ Jos toinen valinnainen argumentti (\koodi{oletus}) on mukana, se
 ilmaisee, että määriteltävän ympäristön ensimmäinen argumentti on
 valinnainen ja että tämä on sen ole\-tus\-arvo. Oletusta käytetään
 silloin, kun valinnaista argumenttia ei ole annettu. Argumentit annetaan
-ympäristön aloittavan komennon yhteydessä.
+ympäristön aloittavan \koodi{\keno begin}\-/komennon yhteydessä.
 
 \begin{koodilohkosis}
   \begin{ymp}[valinnainen]{argu}{mentteja}

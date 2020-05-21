@@ -39,8 +39,23 @@
 \setotherlanguage{english}
 \newcommand{\englishfont}{}
 
-\defaultfontfeatures[\ttfamily]{Ligatures=TeXReset, HyphenChar=8594}
-\usepackage[oldstyle]{libertinus-otf}
+\defaultfontfeatures[\ttfamily]{Ligatures=TeXReset, HyphenChar={-}}
+\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX, Numbers=Lowercase}
+%\usepackage[oldstyle]{libertinus-otf}
+
+\setmainfont {Linux Libertine O}
+\setsansfont {Linux Biolinum O} [Scale=MatchLowercase]
+\setmonofont {DejaVu Sans Mono} [Scale=MatchLowercase, LetterSpace=-1]
+%\setmonofont {Linux Libertine Mono O} [Scale=MatchLowercase]
+
+% \setmainfont {TeX Gyre Pagella}
+% \setsansfont {TeX Gyre Heros} [Scale=MatchLowercase]
+% \setmonofont {TeX Gyre Cursor} [Scale=MatchLowercase, LetterSpace=-4]
+% %\setmonofont {DejaVu Sans Mono} [Scale=MatchLowercase, LetterSpace=-1]
+
+% \setmainfont {Garamond Premier Pro}
+% \setsansfont {Myriad Pro} [Scale=MatchLowercase]
+% \setmonofont {DejaVu Sans Mono} [Scale=MatchLowercase]
 
 \renewcommand{\footnotesize}{\fontsize{11.34}{14}\selectfont}
 \renewcommand{\small}{\fontsize{12.6}{15}\selectfont}

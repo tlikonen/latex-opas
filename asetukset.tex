@@ -46,16 +46,12 @@ kirjainperheen varaan: antiikva eli pääteviivallinen
 (\textenglish{sans serif, gothic}) ja tasalevyinen kirjoituskoneen
 kaltainen perhe (\textenglish{typewriter, monospace}). Kuvassa
 \ref{kuva:kirjainperhetyypit} ovat tässä oppaassa käytetyt kolme eri
-kirjainperhettä. Leipätekstissä käytetään antiikvaa (Libertinus Serif),
-otsikoissa ja kuvateksteissä groteskia (Libertinus Sans%
-\footnote{Tämän oppaan groteskifontti Libertinus Sans on tyyliltään
-  lähellä antiikvaa -- ainoastaan pääteviivat puuttuvat. Tämäntyyppisiä
-  fontteja sanotaan joskus humanistisiksi groteskeiksi tai
-  pääteviivattomiksi antiikvoiksi.}) ja koodi\-esi\-mer\-keis\-sä
-tasalevyistä (Libertinus Mono). Kirjoituskoneen kaltainen tasalevyinen
-kirjainperhe on tässä tapauksessa tyypiltään antiikva eli
-pääteviivallinen, mutta se voisi olla muutakin. Tasalevyisyys on sen
-kirjainperheen tärkein määrittävä tekijä Latexin asetusten näkökulmasta.
+kirjainperhettä. Leipätekstissä käytetään antiikvaa, otsikoissa ja
+kuvateksteissä groteskia ja koodi\-esi\-mer\-keis\-sä tasalevyistä.
+Kirjoituskoneen kaltainen tasalevyinen kirjainperhe on tässä tapauksessa
+tyypiltään antiikva eli pääteviivallinen, mutta se voisi olla muutakin.
+Tasalevyisyys on sen kirjainperheen tärkein määrittävä tekijä Latexin
+asetusten näkökulmasta.
 
 \leijukuva{
   {\rmfamily\addfontfeatures{Scale=5}Amf}
@@ -64,9 +60,8 @@ kirjainperheen tärkein määrittävä tekijä Latexin asetusten näkökulmasta.
   \hfill
   {\ttfamily\addfontfeatures{Scale=5}Amf}
 }{
-  \caption{Vasemmalla pääteviivallinen (Libertinus Serif), keskellä
-    pääteviivaton (Libertinus Sans) ja oikealla tasalevyinen
-    pääteviivallinen kirjainperhe (Libertinus Mono)}
+  \caption{Vasemmalla pääteviivallinen, keskellä pääteviivaton ja
+    oikealla tasalevyinen pääteviivallinen kirjainperhe}
   \label{kuva:kirjainperhetyypit}
 }
 
@@ -83,13 +78,6 @@ sellaiset fontit voi ladata dokumentin esittelyosassa komennolla
 varsinkin vanhalle fonttitekniikalle (Metafont, Post Script Type~1)
 mutta myös matematiikkatilan (luku \ref{luku:matematiikka})
 fontti\-asetuksille ja joillekin kirjainperhekokonaisuuksille.
-Esimerkiksi tämän oppaan Open Type \=/kirjainperheet (Libertinus) on
-ladattu alla olevalla komennolla. Valitsin \koodi{old\-style} tarkoittaa
-gemenanumeroita eli pien\-aak\-kos\-nu\-me\-roi\-ta (1\,6\,9).
-
-\begin{koodilohkosis}
-  \usepackage[oldstyle]{libertinus-otf}
-\end{koodilohkosis}
 
 Valmiita makropaketteja on vain joillekin fonteille, ja käytännössä
 yleensä True Type- ja Open Type \=/muodossa olevat kirjainperheet

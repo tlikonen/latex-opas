@@ -39,23 +39,21 @@
 \setotherlanguage{english}
 \newcommand{\englishfont}{}
 
-\defaultfontfeatures[\ttfamily]{Ligatures=TeXReset, HyphenChar={-}}
+\defaultfontfeatures[\ttfamily]{Ligatures=TeXReset, Ligatures=NoCommon,
+  HyphenChar={-}}
 \defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX, Numbers=Lowercase}
-%\usepackage[oldstyle]{libertinus-otf}
+
+% \usepackage{libertinus-otf}
 
 \setmainfont {Linux Libertine O}
 \setsansfont {Linux Biolinum O} [Scale=MatchLowercase]
-\setmonofont {DejaVu Sans Mono} [Scale=MatchLowercase, LetterSpace=-1]
-%\setmonofont {Linux Libertine Mono O} [Scale=MatchLowercase]
+\setmonofont {Linux Libertine Mono O}
+[Scale=MatchLowercase, FakeStretch=.8]
 
 % \setmainfont {TeX Gyre Pagella}
 % \setsansfont {TeX Gyre Heros} [Scale=MatchLowercase]
-% \setmonofont {TeX Gyre Cursor} [Scale=MatchLowercase, LetterSpace=-4]
-% %\setmonofont {DejaVu Sans Mono} [Scale=MatchLowercase, LetterSpace=-1]
-
-% \setmainfont {Garamond Premier Pro}
-% \setsansfont {Myriad Pro} [Scale=MatchLowercase]
-% \setmonofont {DejaVu Sans Mono} [Scale=MatchLowercase]
+% \setmonofont {TeX Gyre Cursor}
+% [Scale=MatchLowercase, FakeStretch=.7]
 
 \renewcommand{\footnotesize}{\fontsize{11.34}{14}\selectfont}
 \renewcommand{\small}{\fontsize{12.6}{15}\selectfont}
@@ -184,6 +182,7 @@
 
 \begin{document}
 \pagestyle{empty}
+\addfontfeatures{Numbers=Lowercase}
 
 \hyphenation{
   abst-ra-hoin-ti
@@ -285,6 +284,7 @@
   Type
   type-writ-er
   Uni-code
+  use-pack-age
   vaih-to-eh-don
   vaih-to-eh-to
   vaih-to-eh-to-ja

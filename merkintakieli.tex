@@ -293,15 +293,15 @@ tehdään Latexissa komennolla \koodi{\keno ldots} tai Unicode\-/merkillä
 Yläindeksit (a\textsuperscript{2}) tehdään komennolla \koodi{\keno
   textsuperscript} ja alaindeksit (a\textsubscript{2}) komennolla
 \koodi{\keno textsubscript}. Oletus\-asetuksilla Latex toteuttaa
-indeksit mekaanisesti pienentämällä fonttia ja sijoittamalla tekstin
-peruslinjan tai gemenalinjan tuntumaan. Lopputulos ei ole typografisesti
-välttämättä kovin hyvä, koska fontin pienentäminen ohentaa samalla
-merkkien viivoja ja ohuimmat hiusviivat voivat kadota.
+indeksit mekaanisesti pienentämällä fonttia ja sijoittamalla pienennetyn
+tekstin peruslinjan tai gemenalinjan tuntumaan. Lopputulos ei ole
+typografisesti välttämättä kovin hyvä, koska fontin pienentäminen
+ohentaa samalla merkkien viivoja ja ohuimmat hiusviivat voivat kadota.
 
 Open Type \=/fontit sisältävät usein tuen oikeille ylä- ja
 alaindekseille, jotka fontin suunnittelija on toteuttanut. Niitä
-kannattaa tietysti käyttää, koska suunnittelija tuntee oman fonttinsa ja
-saa todennäköisesti parempaa jälkea kuin Latex mekaanisesti. Open Type
+kannattaa käyttää, koska suunnittelija tuntee oman fonttinsa ja saa
+todennäköisesti parempaa jälkea kuin Latex mekaanisesti. Open Type
 \=/fonttien indeksit on kätevintä ottaa käyttöön
 \paketti{real\-scripts}\-/paketin avulla.
 
@@ -334,10 +334,11 @@ oikeita ja mekaanisia (tähdelliset) ylä- ja alaindeksejä.
 \end{tulossis}
 
 Kuten esimerkki paljastaa, lopputuloksessa on eroa. Ensin mainitut ovat
-fontin suunnittelijan versioita ja jälkimmäiset mekaanisia. Mekaaninen
-ylä- ja ala\-in\-dek\-si\-toi\-min\-to ohentaa merkkejä turhan paljon,
-eikä se ymmärrä poistaa gemenanumeroita (3\,6\,2\,4) käytöstä vaan latoo
-ne sellaisenaan suunnilleen oikeaan paikkaan.
+fontin suunnittelijan versioita ja jälkimmäiset Latexin mekaanisesti
+tekemiä. Mekaaninen ylä- ja ala\-in\-dek\-si\-toi\-min\-to ohentaa
+merkkejä turhan paljon, eikä se ymmärrä poistaa gemenanumeroita
+(3\,6\,2\,4) käytöstä vaan latoo ne sellaisenaan suunnilleen oikeaan
+paikkaan.
 
 Ylä- ja alaindeksejä käytettäessä on siis syytä ladata
 \paketti{real\-scripts}\-/paketti ja käyttää indeksit hallitsevaa Open

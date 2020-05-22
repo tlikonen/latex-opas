@@ -7,7 +7,7 @@
 % per-mode=symbol]{siunitx}
 %\usepackage{xltxtra}
 \usepackage{polyglossia}
-%\usepackage{datetime2}
+\usepackage[finnish,showseconds=false]{datetime2}
 \usepackage{ragged2e}
 \usepackage[hang,bottom,norule]{footmisc}
 %\usepackage{titling}
@@ -295,13 +295,74 @@
   ylä-in-dek-sit
 }
 
-% \clearpage
-% \pdfbookmark[1]{Sisällys}{luku:sisallys}
+\pdfbookmark[1]{Kansi}{luku:kansi}
+\newgeometry{margin=2cm}
+\DTMsetstyle{finnish}
 
-% {
-%   \renewcommand{\thispagestyle}[1]{}
-%   \tableofcontents
-% }
+\vspace*{4cm}
+
+\noindent
+\fontsize{20}{20}\rmfamily Teemu Likonen
+
+\begin{center}
+  \fontsize{70}{75}\sffamily\bfseries
+  {\addfontfeatures{LetterSpace=-4} Käytännöllistä}
+
+  {\addfontfeatures{LetterSpace=3, FakeStretch=1.8}\LaTeX ia}
+
+  \vspace{1cm}
+
+  \sffamily\fontsize{16}{16}\mdseries\upshape
+
+  Nykyaikainen yleisopas 
+  Latex-ladontajärjestelmään
+\end{center}
+
+\justifying
+\rmfamily
+\normalsize
+
+\vfill
+
+\hfill\DTMtoday
+
+\clearpage
+\restoregeometry
+\pdfbookmark[1]{Tekijänoikeus}{luku:tekijänoikeus}
+\DTMsetstyle{finnish-numeric}
+
+\justifying \rmfamily \normalsize \mdseries \upshape
+
+\null\vfill
+
+\section*{Käytännöllistä Latexia}
+
+{\sffamily\bfseries Nykyaikainen opas Latex-ladontajärjestelmään}
+
+\bigskip
+
+\noindent
+Tekijä: Teemu Likonen
+\href{mailto:tlikonen@iki.fi}{\nolinkurl{〈tlikonen@iki.fi〉}}
+
+\medskip
+
+\noindent
+Päiväys: \DTMtoday{} kello \DTMcurrenttime{} (ensijulkaisu xx.xx.xxxx)
+
+\medskip
+
+\noindent
+Lisenssi:
+
+\clearpage
+\pdfbookmark[1]{Sisällys}{luku:sisallys}
+\DTMsetstyle{finnish}
+
+{
+  \renewcommand{\thispagestyle}[1]{}
+  \tableofcontents
+}
 
 \clearpage
 \pagestyle{plain}

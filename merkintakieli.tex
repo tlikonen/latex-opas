@@ -92,7 +92,8 @@ Tyhjä rivi tarkoittaa kappaleen vaihtumista. Rivi on tyhjä silloin, kun
 se ei sisällä mitään muuta kuin rivinvaihdon tai kun se sisältää vain
 välilyöntejä tai sarkainmerkkejä ja lopuksi rivinvaihdon. Tyhjiä rivejä
 voi olla useita peräkkäin, mutta ne tarkoittavat samaa kuin yksi tyhjä
-rivi.
+rivi. Uuden tekstikappaleen voi aloittaa myös komennolla \koodi{\keno
+  par}.
 
 \begin{koodilohkosis}
   Nämä rivit kuuluvat
@@ -106,16 +107,45 @@ rivi.
 Ladotuissa teksteissä uuden tekstikappaleen alkaminen ilmaistaan usein
 sisennetyllä rivillä, mutta sisennyksiä eikä muitakaan muotoiluja ei
 tehdä tekstieditorissa välien avulla. Kappaleiden muotoiluun on omat
-keinonsa, ja niistä kerrotaan luvussa \ref{luku:kappale}.
+keinonsa, ja niistä käsitellään luvussa \ref{luku:kappale}.
+
+\subsection{Kommentit}
+
+Latex\-/dokumentissa prosentin merkki (\koodi{\%}) on kommenttimerkki,
+jonka jälkeisen rivin\-osan kääntäjä jättää huomioimatta. Merkki on
+tarkoitettu kirjoittajan omien kommenttien ja muistiinpanojen
+kirjoittamiseen.
+
+\begin{koodilohkosis}
+  % Nyt ei tosin ole
+  % mitään kommentoitavaa.
+\end{koodilohkosis}
+
+Kommenttimerkki vaikuttaa kääntäjään myös siten, että se syö kaikki
+välilyönnit ja sarkainmerkit, jotka tulevat kyseisen kommentin jälkeen.
+Tämän vuoksi kommenttimerkin avulla voi yhdistää eri riveillä olevan
+tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan \emph{Latex}.
+
+\begin{koodilohkosis}
+  La% Nämä rivit
+    t% yhdistyvät.
+      ex
+\end{koodilohkosis}
+
+\begin{tulossis}
+  La% Nämä rivit
+    t% yhdistyvät.
+      ex
+\end{tulossis}
 
 \subsection{Sitova välilyönti}
 
 Sitova välilyönti on samanlainen tyhjä merkki kuin tavallinenkin
 välilyönti, mutta rivinvaihtoa ei sallita sen kohdalta. Sitovalla
 välilyönnillä kannattaa estää esimerkiksi pienistä osista koostuvan
-ilmauksen hajoaminen eri riveille (\emph{osa~5}). Latexissa sitova
-välilyönti saadaan joko tildemerkillä (\koodi{\textasciitilde}) tai
-nimenomaan siihen tarkoitetulla merkillä, jonka Unicode\-/tunnus on
+ilmauksen hajoaminen eri riveille (esimerkki: \emph{osa~5}). Latexissa
+sitova välilyönti saadaan joko tildemerkillä (\koodi{\textasciitilde})
+tai nimenomaan siihen tarkoitetulla merkillä, jonka Unicode\-/tunnus on
 \uctunnus{u+00a0 no-break space}.
 
 Nämä kaksi eri merkkiä, tilde ja \uctunnus{u+00a0}, toimivat hieman eri
@@ -221,8 +251,7 @@ estämiseen on esimerkissä \ref{esim:pois-tex-liga}.
 
 Yhdyssanan osien välissä käytettävä yhdysmerkki on Latexissa tavallinen
 näppäimistöltä saatava yleis\-yh\-dys\-merk\-ki (\=/). Merkillä on
-sivuvaikutus tavutukseen, mistä kerrotaan tarkemmin luvussa
-\ref{luku:tavutus}.
+vaikutusta myös sanan tavutukseen (luku \ref{luku:tavutus}).
 
 Ajatusviivaa tarvitaan esimerkiksi äärikohtien (27--29,
 Oulu--Rova\-niemi), luetelmien, vuorosanojen ja virkkeen irrallisen
@@ -442,35 +471,6 @@ käyttö ei ole välttämätöntä.
 \subsection{Muita erikoismerkkejä}
 
 %https://tug.org/texinfohtml/latex2e.html#Text-symbols
-
-\subsection{Kommentit}
-
-Latex\-/dokumentissa prosentin merkki (\koodi{\%}) on kommenttimerkki,
-jonka jälkeisen rivin\-osan kääntäjä jättää huomioimatta. Merkki on
-tarkoitettu kirjoittajan omien kommenttien ja muistiinpanojen
-kirjoittamiseen.
-
-\begin{koodilohkosis}
-  % Nyt ei tosin ole
-  % mitään kommentoitavaa.
-\end{koodilohkosis}
-
-Kommenttimerkki vaikuttaa kääntäjään myös siten, että se syö kaikki
-välilyönnit ja sarkainmerkit, jotka tulevat kyseisen kommentin jälkeen.
-Tämän vuoksi kommenttimerkin avulla voi yhdistää eri riveillä olevan
-tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan \emph{Latex}.
-
-\begin{koodilohkosis}
-  La% Nämä rivit
-    t% yhdistyvät.
-      ex
-\end{koodilohkosis}
-
-\begin{tulossis}
-  La% Nämä rivit
-    t% yhdistyvät.
-      ex
-\end{tulossis}
 
 \section{Komennot}
 %\label{luku:komennot}

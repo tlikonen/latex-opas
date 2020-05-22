@@ -300,64 +300,56 @@
 }
 
 \pdfbookmark[1]{Kansi}{luku:kansi}
-\newgeometry{margin=2cm}
-\DTMsetstyle{finnish}
+\newgeometry{top=2cm, bottom=3cm, hmargin=2cm}
 
 \vspace*{4cm}
 
-\noindent
-\fontsize{20}{20}\rmfamily Teemu Likonen
+{
 
-\begin{center}
+  \setlength{\parindent}{0pt}
+
+  \fontsize{20}{20}\rmfamily Teemu Likonen
+
   \fontsize{70}{75}\sffamily\bfseries
   {\addfontfeatures{LetterSpace=-4} Käytännöllistä}
 
-  {\addfontfeatures{LetterSpace=3, FakeStretch=1.8}\LaTeX ia}
+  {\addfontfeatures{LetterSpace=3, FakeStretch=1.5}
+    \hspace{-4pt}\LaTeX{}ia}
 
-  \vspace{1cm}
-
-  \sffamily\fontsize{16}{16}\mdseries\upshape
-
-  Nykyaikainen yleisopas 
-  Latex-ladontajärjestelmään
-\end{center}
-
-\justifying
-\rmfamily
-\normalsize
+}
 
 \vfill
 
-\hfill\DTMtoday
+{
+  
+  \DTMsetstyle{finnish}
+  \raggedleft
+  Latex-ladontajärjestelmän opas \\
+  \DTMtoday
+
+}
 
 \clearpage
 \restoregeometry
 \pdfbookmark[1]{Tekijänoikeus}{luku:tekijänoikeus}
-\DTMsetstyle{finnish-numeric}
-
-\justifying \rmfamily \normalsize \mdseries \upshape
 
 \null\vfill
 
-\section*{Käytännöllistä Latexia}
+{
+  \setlength{\parindent}{0em}
+  \setlength{\parskip}{1.2ex}
 
-{\sffamily\bfseries Nykyaikainen opas Latex-ladontajärjestelmään}
+  \section*{Käytännöllistä Latexia}
 
-\bigskip
+  Tekijä: Teemu Likonen
+  \href{mailto:tlikonen@iki.fi}{\nolinkurl{‹tlikonen@iki.fi›}}
 
-\noindent
-Tekijä: Teemu Likonen
-\href{mailto:tlikonen@iki.fi}{\nolinkurl{〈tlikonen@iki.fi〉}}
+  \DTMsetstyle{finnish-numeric}
+  Päiväys: \DTMtoday{} kello \DTMcurrenttime{} (ensijulkaisu xx.xx.xxxx)
 
-\medskip
+  Lisenssi:
 
-\noindent
-Päiväys: \DTMtoday{} kello \DTMcurrenttime{} (ensijulkaisu xx.xx.xxxx)
-
-\medskip
-
-\noindent
-Lisenssi:
+}
 
 \clearpage
 \pdfbookmark[1]{Sisällys}{luku:sisallys}
@@ -393,7 +385,7 @@ voi enää palauttaa alkuperäiseksi lähdedokumentiksi.
 
 Latexin käyttö ei silti ole mitään ohjelmointia. Merkintäkieli on eri
 asia kuin ohjelmointikieli. Työskentelyn luonteessa on kuitenkin useita
-yhtäläisyyksiä, ja 
+yhtäläisyyksiä, ja
 
 \input{valmistautuminen}
 \input{merkintakieli}

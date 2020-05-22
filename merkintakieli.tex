@@ -66,6 +66,8 @@ Esimerkiksi rivin lopussa oleva rivinvaihto tarkoittaa samaa kuin
 sanojen välissä oleva välilyönti. Välilyöntejä ja sarkainmerkkejä voi
 kirjoittaa useita peräkkäin, mutta ne ovat sama asia kuin yksi väli.
 
+\pagebreak[3]
+
 \begin{koodilohkosis}
   Nämä      kaikki
        ovat            vain
@@ -184,6 +186,8 @@ heittomerkkiä peräkkäin (\koodi{''}), on lopputuloksena yksi kaareva
 lainausmerkki (''). Kahdella suurempi kuin \=/merkillä (\koodi{>>})
 saadaan kulmalainausmerkki~(>>).
 
+\pagebreak[3]
+
 \begin{koodilohkosis}
   ''Lainaus, jonka 'sisällä' on lainaus.''
   >>Lainaus, jonka 'sisällä' on lainaus.>>
@@ -229,6 +233,8 @@ tehdään kolmella yhdysmerkillä \mbox{(\koodi{---})}. Myös Unicoden
 ajatusviivamerkkejä voi käyttää: \uctunnus{u+2013 en dash} ja
 \uctunnus{u+2014 em dash}. Ajatusviivat vaikuttavat sanan tavutukseen
 samoin kuin yhdysmerkki (luku \ref{luku:tavutus}).
+
+\pagebreak[3]
 
 \begin{koodilohkosis}
   Oulu--Rovaniemi-yhteys
@@ -283,8 +289,9 @@ eli ellipsille (\ldots) on oma merkkinsä, ja fontissa se saattaa näyttää
 hieman erilaiselta kuin kolme peräkkäistä pistemerkkiä. Tyypillisesti
 ellipsimerkissä pisteet ovat hieman harvemmassa ja erottuvat toisistaan
 paremmin kuin kolmena erillisenä merkkinä ladotut pisteet. Ellipsi
-tehdään Latexissa komennolla \koodi{\keno ldots} tai Unicode\-/merkillä
-\uctunnus{u+2026 horizontal ellipsis}.
+tehdään Latexissa komennoilla \koodi{\keno dots}, \koodi{\keno ldots},
+\koodi{\keno text\-el\-lip\-sis} tai Unicode\-/merkillä \uctunnus{u+2026
+  horizontal ellipsis}.
 
 \subsection{Ylä- ja alaindeksi}
 
@@ -317,6 +324,8 @@ versiot edellä mainituista: \koodi{\keno text\-su\-per\-script*} ja
 mekaanisen ylä- tai alaindeksin. Seuraavassa esimerkissä vertaillaan
 oikeita ja mekaanisia (tähdelliset) ylä- ja alaindeksejä.
 
+\pagebreak[3]
+
 \begin{koodilohkosis}
   x\textsuperscript {ab36}
   x\textsuperscript*{ab36} \\
@@ -344,6 +353,8 @@ Type \=/fonttia. Fonttien ominaisuuksia voi tutkia käyttöjärjestelmän
 komentotulkissa komennolla \koodi{otf\-info}. Toisaalta fonttiin
 sisältyviä ylä- ja alaindeksejä voi myös kirjoittaa Unicode\-/merkistön
 avulla sellaisenaan. Lopputulos on sama.
+
+\pagebreak[3]
 
 \begin{koodilohkosis}
   x²ᵃ x\textsuperscript{2a}
@@ -428,6 +439,10 @@ käyttö ei ole välttämätöntä.
   \label{tlk:tarkkeet}
 }
 
+\subsection{Muita erikoismerkkejä}
+
+%https://tug.org/texinfohtml/latex2e.html#Text-symbols
+
 \subsection{Kommentit}
 
 Latex\-/dokumentissa prosentin merkki (\koodi{\%}) on kommenttimerkki,
@@ -481,6 +496,8 @@ aaltosulkeisiin \koodi{\{\ldots\}} ja valinnaiset hakasulkeisiin
 Komennon nimen perässä olevat sanavälit syödään pois. Seuraavassa
 esimerkissä sana \emph{Latex} ladotaan ehjänä, jos vain \koodi{\keno
   komento} itsessään ei kirjoita mitään eikä vaikuta tekstin latomiseen.
+
+\pagebreak[3]
 
 \begin{koodilohkosis}
   La\komento   tex
@@ -562,6 +579,8 @@ Komentojen toinen pakollinen argumentti (\koodi{määritelmä}) sisältää
 komennon määritelmän eli mitä tahansa tekstiä tai komentoja.
 Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
 
+\pagebreak[3]
+
 \begin{koodilohkosis}
   \newcommand{\komento}{Minua komennettiin!}
   \komento
@@ -577,6 +596,8 @@ Määritelmässä voi käyttää parametreja \koodi{\#1}, \koodi{\#2},
 \koodi{\#3} jne., ja ne korvautuvat komennon suoritusvaiheessa
 ensimmäisellä, toisella, kolmannella jne. argumentilla.
 
+\pagebreak[3]
+
 \begin{koodilohkosis}
   \newcommand{\komento}[2]{Sanoit #1 ja #2!}
   \komento{hip}{hei}
@@ -590,6 +611,8 @@ Toinen valinnainen argumentti (\koodi{oletus}) -- jos se on mukana --
 kertoo, että määriteltävän komennon ensimmäinen argumentti on
 valinnainen ja että tämä on sen ole\-tus\-arvo. Ole\-tus\-arvoa
 käytetään silloin, kun valinnaista argumenttia ei ole annettu.
+
+\pagebreak[3]
 
 \begin{koodilohkosis}
   \newcommand{\komento}[3][tyyppi]{Hei #1, sanoit #2 ja #3!}
@@ -647,6 +670,8 @@ Komennon määrittelyssä on välillä hyötyä komennosta nimeltä \koodi{\keno
   ignorespaces}, joka jättää sanavälit huomioimatta komennon jälkeen.
 Ilman tätä komentoa tulisi seuraavassa esimerkissä sanojen väliin yksi
 välilyönti.
+
+\pagebreak[3]
 
 \begin{koodilohkosis}
   \newcommand{\komento}[1]{#1\ignorespaces}
@@ -774,25 +799,31 @@ sanavälit. Toinen hyödyllinen on \koodi{\keno
   ig\-nore\-spaces\-af\-ter\-end}, joka jättää huomioimatta ympäristön
 lopettavan \koodi{\keno end}\-/komennon jälkeiset sanavälit.
 
+\pagebreak[3]
+
 \begin{koodilohkosis}
   \newenvironment{ymp}
     {Yhdys\ignorespaces}
-    {kokeilu\ignorespacesafterend}
+    {esi\ignorespacesafterend}
 
   \begin{ymp}
-    sanojen
-  \end{ymp}   esimerkki.
+    sana% kommentti poistaa seuraavan sanavälin
+  \end{ymp}   merkki.
 \end{koodilohkosis}
 
 \begin{tulossis}
-  Yhdyssanojen kokeiluesimerkki.
+  Yhdyssanaesimerkki.
 \end{tulossis}
 
-
 \section{Lohkot}
+
+Lohko
+
 \section{Mitat}
 \label{luku:mitat}
 
 % Käsittele hspace ja vspace. Näihin viitataan muualta.
 
 \section{Laskurit}
+
+% myös totcount-paketti

@@ -113,7 +113,9 @@ kirjainperheen skaalausta hienosäätää vielä
 
 Jos edellä kuvatut kolme kirjainperhettä eivät riitä, on
 \paketti{fontspec}\-/paketissa komennot lisäperheiden ja \=/leikkausten
-määrittämiseen. Uusi perhe määritellään seuraavasti:
+määrittämiseen.
+\pagebreak[3]
+Uusi perhe määritellään seuraavasti:
 
 \begin{koodilohkosis}
   \newfontfamily{\hienoperhe}{TeX Gyre Schola}[…]
@@ -125,6 +127,8 @@ ensimmäinen argumentti määrittää komennon, jolla kirjainperhe otetaan
 käyttöön. Edellisessä esimerkissä luodaan komento \koodi{\keno
   hieno\-perhe}, joka kytkee päälle TeX Gyre Scho\-la \=/nimisen
 kirjainperheen.
+
+\pagebreak[3]
 
 Jos ei tarvita kokonaista perhettä vaan yksi leikkaus riittää, käytetään
 komentoa \koodi{\keno newfontface}:
@@ -337,9 +341,13 @@ fonttikokovalitsimista \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}.
   \label{tlk:fonttikokokomennot}
 }
 
+\pagebreak[3]
+
 Kaikille korkean tason fonttikomennoille on olemassa myös samanniminen
 ympäristönsä. Seuraavassa esimerkissä on kaksi fontteihin vaikuttavaa
 ympäristöä sisäkkäin.
+
+\pagebreak[3]
 
 \begin{koodilohkosis}
   \begin{footnotesize}
@@ -349,6 +357,7 @@ ympäristöä sisäkkäin.
   \end{footnotesize}
 \end{koodilohkosis}
 
+\nopagebreak
 \begin{tulossis}
   \begin{footnotesize}
     \begin{scshape}
@@ -356,6 +365,8 @@ ympäristöä sisäkkäin.
     \end{scshape}
   \end{footnotesize}
 \end{tulossis}
+
+\pagebreak[3]
 
 \subsection{Koot suhteellisesti}
 \label{luku:fontti_suhteellinen}

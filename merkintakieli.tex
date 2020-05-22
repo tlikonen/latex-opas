@@ -138,6 +138,27 @@ tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan \emph{Latex}.
       ex
 \end{tulossis}
 
+\subsection{Aaltosulkeet}
+\label{luku:aaltosulkeet}
+
+Aaltosulkeet \mbox{\koodi{\{\}}} muodostavat eräänlaisen näkymättömän
+ympäristön, jonka sisällä voi olla väliaikaisesti voimassa erilaiset
+asetukset kuin ulkopuolella. Aaltosulkeiden sisällä suoritetut komennot,
+uusien komentojen määrittelyt (luku \ref{luku:komennot}) tai asetetut
+mittojen arvot (luku \ref{luku:mitat}) ovat voimassa vain kyseisen
+ympäristön sisäpuolella. Seuraavassa esimerkissä aaltosulkeilla rajataan
+kursivointikomennon \koodi{\keno itshape} vai\-ku\-tus\-aluetta.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  tavallinen {\itshape kursiivi} tavallinen
+\end{koodilohkosis}
+
+\begin{tulossis}
+  tavallinen {\itshape kursiivi} tavallinen
+\end{tulossis}
+
 \subsection{Sitova välilyönti}
 
 Sitova välilyönti on samanlainen tyhjä merkki kuin tavallinenkin
@@ -234,7 +255,7 @@ kahdella gra\-vis\-ak\-sen\-til\-la (\koodi{``}). Vastaava
 puolilainausmerkki (`) tehdään yhdellä aksentilla (\koodi{`}). Joissakin
 kielissä käytetään erilaisia kulmalainausmerkkejä lainauksen alussa ja
 lopussa. Vasemmalle osoittava merkki (<<) tehdään kahdella pienempi kuin
-\=/merkillä (<\mbox{}<). Muunlaisiin lainausmerkkeihin tarvittaneen
+\=/merkillä (\koodi{<<}). Muunlaisiin lainausmerkkeihin tarvittaneen
 Unicode\-/merkkejä. Tosin kielikohtaiset asetukset (luku
 \ref{luku:kieliasetukset}) voivat tuoda mukanaan omia keinojaan myös
 kielikohtaisten lainausmerkkien tuottamiseen.
@@ -282,8 +303,8 @@ ajatusviivatoiminnon. Muita tapoja on esimerkissä
 \begin{esimerkki}
 \begin{koodilohko}
   \addfontfeatures{Ligatures=TeXReset} % Fontista Tex-ligatuurit pois.
-  -\mbox{}-  % Estetään ajatusviiva.
-  >\mbox{}>  % Estetään kulmalainausmerkit.
+  -{}-       % Estetään ajatusviiva.
+  >{}>       % Estetään kulmalainausmerkit.
   \texttt{…} % Tasalevyinen fontti estää Tex-ligatuurit.
 \end{koodilohko}
 \caption{Keinoja Tex-ligatuurien estämiseen. Komento \koodi{\keno
@@ -473,7 +494,7 @@ käyttö ei ole välttämätöntä.
 %https://tug.org/texinfohtml/latex2e.html#Text-symbols
 
 \section{Komennot}
-%\label{luku:komennot}
+\label{luku:komennot}
 
 \subsection{Perusteet}
 
@@ -666,10 +687,10 @@ tuovat tällaisen suo\-jaus\-omi\-nai\-suu\-den.
 \subsection{Hyödyllistä lisätietoa}
 \label{luku:komennot-lisä}
 
-Komennon määrittelyssä on välillä hyötyä komennosta nimeltä \koodi{\keno
-  ignorespaces}, joka jättää sanavälit huomioimatta komennon jälkeen.
-Ilman tätä komentoa tulisi seuraavassa esimerkissä sanojen väliin yksi
-välilyönti.
+Komennon määrittelyssä on välillä hyötyä \koodi{\keno
+  ignorespaces}\-/komennosta, joka jättää sanavälit huomioimatta
+komennon jälkeen. Ilman tätä komentoa tulisi seuraavassa esimerkissä
+sanojen väliin yksi välilyönti.
 
 \pagebreak[3]
 
@@ -680,6 +701,29 @@ välilyönti.
 
 \begin{tulossis}
   yhdyssana
+\end{tulossis}
+
+Aaltosulkeilla (luku \ref{luku:aaltosulkeet}) voi rajata
+komentomäärittelyn vai\-ku\-tus\-aluet\-ta. Seuraavan esimerkin alussa
+asetetaan \koodi{\keno komento} tiettyyn alkuperäismääritelmään.
+Aaltosulkeiden sisällä se määritellään väliaikaisesti uudestaan.
+Aaltosulkeilla rajatun ympäristön jälkeen komennon uusi määritelmä
+lakkaa ja komento palautuu alkuperäiseksi.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \newcommand{\komento}{alkuperäinen}
+  \komento
+  {%
+    \renewcommand{\komento}{muutettu}
+    \komento
+  }
+  \komento
+\end{koodilohkosis}
+
+\begin{tulossis}
+  alkuperäinen muutettu alkuperäinen
 \end{tulossis}
 
 Monimutkaisiin komentoihin voidaan tarvita ehtorakenteita, ja ne saa
@@ -696,11 +740,12 @@ Ympäristöt ovat rakenteita, joilla on aloittava \koodi{\keno
   begin}\-/komento ja lopettava \koodi{\keno end}\-/komento sekä
 yksilöllinen nimi. Ympäristöjen ajatuksena on, että jokin ominaisuus tai
 jotkin toiminnot ovat voimassa vain ympäristön sisällä ja asiat
-palautuvat ennalleen ympäristön jälkeen. Jos esimerkiksi jotakin
-fontti\-asetusta (luku \ref{luku:kirjaintyypit}) muuttaa ympäristön
-sisäpuolella, asetus palautuu ympäristön jälkeen samaksi kuin se oli
-ennen ympäristön alkua. Samoin ympäristön sisällä määritellyt komennot
-(luku \ref{luku:komennot-määr}) ovat voimassa vain kyseisessä
+palautuvat ennalleen ympäristön jälkeen. Tässä mielessä ne toimivat
+samalla tavalla kuin aaltosulkeet (luku \ref{luku:aaltosulkeet}). Jos
+esimerkiksi fonttiasetusta (luku \ref{luku:kirjaintyypit}) muuttaa
+ympäristön sisäpuolella, asetus palautuu ympäristön jälkeen samaksi kuin
+se oli ennen ympäristön alkua. Samoin ympäristön sisällä määritellyt
+komennot (luku \ref{luku:komennot-määr}) ovat voimassa vain kyseisessä
 ympäristössä.
 
 \begin{koodilohkosis}
@@ -814,10 +859,6 @@ lopettavan \koodi{\keno end}\-/komennon jälkeiset sanavälit.
 \begin{tulossis}
   Yhdyssanaesimerkki.
 \end{tulossis}
-
-\section{Lohkot}
-
-Lohko
 
 \section{Mitat}
 \label{luku:mitat}

@@ -300,10 +300,14 @@
   ylä-in-dek-sit
 }
 
+\newgeometry{top=2cm, bottom=3cm, hmargin=2cm}
 \input{kansi}
+
+\clearpage
 \input{tekijanoikeus}
 
 \clearpage
+\restoregeometry
 \pdfbookmark[1]{Sisällys}{luku:sisallys}
 \DTMsetstyle{finnish}
 

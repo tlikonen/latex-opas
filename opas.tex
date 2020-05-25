@@ -1,10 +1,11 @@
 \documentclass[notitlepage,oneside]{book}
 \usepackage[a4paper, vscale=.75, hscale=.68, footskip=1.5cm]{geometry}
 \usepackage{fontspec}
-% \usepackage[
-% input-decimal-markers={,},
-% output-decimal-marker={,},
-% per-mode=symbol]{siunitx}
+\usepackage[
+mode=text,
+input-decimal-markers={,},
+output-decimal-marker={,},
+per-mode=symbol]{siunitx}
 %\usepackage{xltxtra}
 \usepackage{polyglossia}
 \usepackage[finnish,showseconds=false]{datetime2}
@@ -49,20 +50,20 @@
 \setmonofont {Linux Libertine Mono O}
 [Scale=MatchLowercase, FakeStretch=.8]
 
-\renewcommand{\footnotesize}{\fontsize{11.34}{14}\selectfont}
-\renewcommand{\small}{\fontsize{12.6}{15}\selectfont}
-\renewcommand{\normalsize}{\fontsize{14}{18}\selectfont}
-\renewcommand{\large}{\fontsize{16.8}{21.6}\selectfont}
-\renewcommand{\Large}{\fontsize{20.16}{22}\selectfont}
-\renewcommand{\LARGE}{\fontsize{24.192}{26}\selectfont}
-\renewcommand{\huge}{\fontsize{29}{32}\selectfont}
-\renewcommand{\Huge}{\fontsize{34}{36}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{11.34bp}{14bp}\selectfont}
+\renewcommand{\small}{\fontsize{12.6bp}{15bp}\selectfont}
+\renewcommand{\normalsize}{\fontsize{14bp}{18bp}\selectfont}
+\renewcommand{\large}{\fontsize{16.8bp}{21.6bp}\selectfont}
+\renewcommand{\Large}{\fontsize{20.16bp}{22bp}\selectfont}
+\renewcommand{\LARGE}{\fontsize{24.192bp}{26bp}\selectfont}
+\renewcommand{\huge}{\fontsize{29bp}{32bp}\selectfont}
+\renewcommand{\Huge}{\fontsize{34bp}{36bp}\selectfont}
 \linespread{1}
 \normalsize
 
 \newcommand{\gemenanum}{\addfontfeatures{Numbers=Lowercase}}
 \newcommand{\versaalinum}{\addfontfeatures{Numbers=Uppercase}}
-\newcommand{\murtoluku}[1]{{\addfontfeatures{Fractions=On}#1}}
+%\newcommand{\murtoluku}[1]{{\addfontfeatures{Fractions=On}#1}}
 
 \clubpenalty=10000
 \widowpenalty=10000
@@ -72,17 +73,17 @@
 \newlength{\sisennys}\setlength{\sisennys}{1cm}
 \setlength{\parskip}{0em}
 \setlength{\footnotemargin}{.8em}
-\setlength{\skip\footins}{20pt}
+\setlength{\skip\footins}{20bp}
 \setlength{\floatsep}{.8cm}
 \setlength{\textfloatsep}{1cm}
 
 \DeclareFloatingEnvironment[ name={Esimerkki} ]{esimerkki}
 
 \renewcommand{\theFancyVerbLine}
-{\sffamily\versaalinum\fontsize{9pt}{9pt}\selectfont\arabic{FancyVerbLine}}
+{\sffamily\versaalinum\fontsize{9bp}{9bp}\selectfont\arabic{FancyVerbLine}}
 
 \DefineVerbatimEnvironment{koodilohko}{Verbatim}{ fontsize=\small,
-  gobble=2, frame=single, framesep=6pt, numbers=left, numbersep=.3em,
+  gobble=2, frame=single, framesep=6bp, numbers=left, numbersep=.3em,
   xleftmargin=0em, xrightmargin=0mm, baselinestretch=1 }
 
 \DefineVerbatimEnvironment{koodilohkosis}{Verbatim}{
@@ -123,12 +124,12 @@
 % \fancyhf[hl]{\small\nouppercase{\leftmark}}
 % \fancyhf[hr]{\small\nouppercase{\rightmark}}
 % \fancyhf[fc]{\thepage}
-%\renewcommand{\headrulewidth}{1pt}
+%\renewcommand{\headrulewidth}{1bp}
 
 % \fancypagestyle{plain}{%
 %   \fancyhf{}
 %   \fancyhf[fc]{\thepage}
-%   \renewcommand{\headrulewidth}{0pt}
+%   \renewcommand{\headrulewidth}{0bp}
 % }
 
 \definecolor{tavu}{rgb}{1,0,0}
@@ -136,13 +137,13 @@
 
 \newcommand{\keno}{\textbackslash}
 \newcommand{\koodi}[1]{\texttt{#1}}
-\newcommand{\tavukohta}{\textcolor{tavu}{\rule{1pt}{1.5ex}}}
+\newcommand{\tavukohta}{\textcolor{tavu}{\rule{1bp}{1.5ex}}}
 \newcommand{\sitovaym}{\textcolor{sitova}{-}}
 \newcommand{\uctunnus}[1]{\textenglish{\textsc{#1}}}
 \newcommand{\paketti}[1]{\textenglish{\texttt{#1}}}
 
-\newcommand{\ots}[1]{{\sffamily\bfseries #1}}
-\newcommand{\otsrivi}[1]{{\sffamily #1}}
+\newcommand{\ots}[1]{{\sffamily\bfseries\versaalinum #1}}
+\newcommand{\otsrivi}[1]{{\sffamily\versaalinum #1}}
 
 \NoIndentAfterEnv{koodilohkosis}
 \NoIndentAfterEnv{tulossis}
@@ -168,11 +169,11 @@
 
 \titleformat{\subsection}{\otsikkotyyli\normalsize}
 {\thesubsection}{.8em}{}[]
-\titlespacing*{\subsection}{0pt}{*3}{*1}
+\titlespacing*{\subsection}{0bp}{*3}{*1}
 
 % \titleformat{\subsubsection}{\normalsize\itshape\bfseries}
 % {\thesubsubsection}{.8em}{}[]
-% \titlespacing*{\subsubsection}{0pt}{*3}{*1}
+% \titlespacing*{\subsubsection}{0bp}{*3}{*1}
 
 \begin{document}
 \pagestyle{empty}
@@ -277,6 +278,7 @@
   ty-po-gra-fi-sen
   ty-po-gra-fi-ses-ti
   ty-po-gra-fi-sia
+  ty-po-gra-fia
   ty-po-gra-fian
   ty-po-gra-fias-sa
   Type

@@ -144,19 +144,30 @@ yksi leikkaus, ei koko perhettä.
 
 \subsection{Fontin koko ja rivikorkeus}
 
-Fonttien koot on totuttu valitsemaan typografisen pistemitan avulla.
+Fonttien koot on tapana valita typografisen pistemitan avulla.
 Esimerkiksi 10--12 pistettä on tyypillinen leipätekstin oletuskoko
-teks\-tin\-kä\-sit\-tely\-ohjel\-mis\-sa. Piste on mitta\-yksikkö, jonka
-pituus on \murtoluku{1/72} tuumaa eli 0,3528 millimetriä.
-Kirjainleikkauksen pistekoko mitataan merkistön ylimmän ja alimman
-kohdan välillä, ja siihen luetaan mukaan ylä- ja alapuolella oleva pieni
-tyhjä tila, jonka fontin suunnittelija on määritellyt.
+teks\-tin\-kä\-sit\-tely\-ohjel\-mis\-sa. Piste on typografiassa
+mitta\-yksikkö, jonka pituus on määritelty eri tavoin eri aikoina ja eri
+kulttuureissa.
 
-Myös Latexissa koot voi määritellä pistemittojen (lyhenne pt) avulla,
-mutta halutessaan ne voi unohtaa lähes kokonaan ja käyttää niin sanottua
-suhteellista tapaa koko\-asetuksiin. Suhteellisia ja absoluuttisia
-koko\-ase\-tuk\-sia käsitellään luvuissa \ref{luku:fontti_suhteellinen}
-ja \ref{luku:fontti_absoluuttinen}.
+Myös Latexissa fonttien koot voi määritellä pistemittojen avulla. Niitä
+ja muitakin Latexin mit\-ta\-yk\-si\-köi\-tä käsitellään tarkemmin
+luvussa \ref{luku:mitat}. Fonteissa ole\-tus\-mitta\-yk\-sik\-kö\-nä on
+vanha pica\-/järjestelmän piste, jonka pituus on \num{1/72,27} tuumaa
+eli noin \num{0,3515} millimetriä. Sen lyhenne Latexissa on~\emph{pt}.
+Yleensä tämän oppaan esimerkeissä käytetään kuitenkin
+julkaisu\-ohjelmiin vakiintunutta ja Post Script \=/standardin mukaista
+uudempaa pica\-/pistettä, joka on hieman edellistä pidempi: \num{1/72}
+tuumaa eli noin \num{0,3528} millimetriä. Latexissa sen lyhenne
+on~\emph{bp}. Ero näiden kahden pistemitan välillä on hyvin pieni, mutta
+bp\-/mittaa kannattanee suosia, koska se on yhdenmukainen muiden
+ohjelmistojen kanssa.
+
+Kirjainleikkauksen koko mitataan merkistön ylimmän ja alimman kohdan
+välillä, esimerkiksi k\=/kirjaimen ylimmän pisteen ja y\=/kirjaimen
+alimman pisteen välillä. Lisäksi mittaan luetaan mukaan merkistön ylä-
+ja alapuolella oleva pieni tyhjä tila, jonka fontin suunnittelija on
+määritellyt.
 
 Matalalla tasolla fonttien kokoon vaikuttaa Latexissa eräs yllättävä
 asia. Nimittäin dokumenttiluokalle (luku \ref{luku:dokumenttiluokat})
@@ -172,24 +183,24 @@ Fontin koon määrittäminen dokumenttiluokan valitsimella ehkä kuuluu jo
 vähän menneisyyteen, mutta voi sitä edelleen käyttää, jos se riittää ja
 sillä saa halutun lopputuloksen. Yleensä lienee järkevää jättää
 dokumenttiluokan fonttiasetus oletukseksi (\koodi{10pt}) ja käyttää koon
-asettamiseen luvussa \ref{luku:fontti_suhteellinen} tai
+asettamiseen luvuissa \ref{luku:fontti_suhteellinen} ja
 \ref{luku:fontti_absoluuttinen} kerrottuja tapoja. Sivun marginaalien ja
 muiden mittojen määrittämiseen on ohjeita luvussa
 \ref{luku:sivuasetukset}.
 
-Fonttiasetuksiin kuuluu fontin koon lisäksi toinenkin mitta:
-rivikorkeus (\koodi{\keno baselineskip}). Se on mitta rivin
-peruslinjalta seuraavan rivin peruslinjalle. Fontin koko ja rivikorkeus
-määritellään saman\-aikaisesti, koska ne ovat saman \koodi{\keno
-  fontsize}\-/komennon argumentteja. Esimerkki:
+Fonttiasetuksiin kuuluu fontin koon lisäksi toinenkin mitta: rivikorkeus
+(\koodi{\keno baselineskip}). Se on mitta rivin peruslinjalta edellisen
+rivin peruslinjalle. Fontin koko ja rivikorkeus määritellään
+saman\-aikaisesti, koska ne ovat saman \koodi{\keno fontsize}\-/komennon
+argumentteja. Esimerkki:
 
 \begin{koodilohkosis}
-  \fontsize{10pt}{12pt} \selectfont
+  \fontsize{10bp}{12bp} \selectfont
 \end{koodilohkosis}
 
 Ensimmäinen argumentti on fontin kokomitta ja toinen on rivikorkeus.
 Mitta\-yksiköt voivat olla mitä tahansa Latexin mittoja, ja oletuksena
-käytetään pistemittaa (pt), jos yksikköä ei ole mainittu. Komento
+käytetään pt\-/pistemittaa, jos yksikköä ei ole mainittu. Komento
 \koodi{\keno selectfont} on mukana, koska vasta sen myötä matalan tason
 fonttikomennot tulevat voimaan. Korkean tason fonttikomennot (luku
 \ref{luku:fontit_korkea}) suorittavat sen automaattisesti.
@@ -201,20 +212,20 @@ lähellä toisiaan. Esimerkissä \ref{esim:rivikorkeus} on kaksi erilaista
 
 \begin{esimerkki}
 \begin{koodilohko}
-  \fontsize{10pt}{12pt}\selectfont Tässä on pienehkö leipätekstin
+  \fontsize{10bp}{12bp}\selectfont Tässä on pienehkö leipätekstin
   fonttikoko ja sitä hieman suurempi rivikorkeus. Rivikorkeus on
   liian pieni näin pitkille riveille.
 
-  \fontsize{16pt}{25pt}\selectfont Tässä on melko suuri fontti ja
+  \fontsize{16bp}{25bp}\selectfont Tässä on melko suuri fontti ja
   reilu rivikorkeus. Rivit eivät tunnu kuuluvan enää yhteen.
 \end{koodilohko}
 \parbox{\linewidth}{%
   \linespread{1}\addfontfeatures{Scale=1}
-  \fontsize{10pt}{12pt}\selectfont Tässä on pienehkö leipätekstin
+  \fontsize{10bp}{12bp}\selectfont Tässä on pienehkö leipätekstin
   fonttikoko ja sitä hieman suurempi rivikorkeus. Rivikorkeus on liian
   pieni näin pitkille riveille.
 
-  \fontsize{16pt}{25pt}\selectfont Tässä on melko suuri fontti ja reilu
+  \fontsize{16bp}{25bp}\selectfont Tässä on melko suuri fontti ja reilu
   rivikorkeus. Rivit eivät tunnu kuuluvan enää yhteen. }
 
 \vspace{1ex}
@@ -232,7 +243,7 @@ nykyinen rivikorkeus kerrotaan. Kerroin asetetaan helpoimmin komennolla
     renewcommand\{\keno baselinestretch\}\{kerroin\}}}
 
 \begin{koodilohkosis}
-  \fontsize{10pt}{12pt} \linespread{1.3} \selectfont
+  \fontsize{10bp}{12bp} \linespread{1.3} \selectfont
 \end{koodilohkosis}
 
 Edellä oleva esimerkki asettaa fontin kooksi 10 pistettä ja
@@ -311,8 +322,8 @@ jäljittelee yhtenäistä käsi\-ala\-kir\-joi\-tusta.
 
 Komennot fontin koon valintaan ovat taulukossa
 \ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä fontin
-pistekokoa mikäkin komento tarkoittaa oletuksena. Oletus riippuu Latexin
-dokumenttiluokkien (luku \ref{luku:dokumenttiluokat})
+pistekokoa (pt) mikäkin komento tarkoittaa oletuksena. Oletus riippuu
+Latexin dokumenttiluokkien (luku \ref{luku:dokumenttiluokat})
 fonttikokovalitsimista \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}.
 
 \leijutlk{
@@ -381,7 +392,7 @@ jota ei tarvitsisi edes kirjoittaa näkyviin. Esimerkin toisella rivillä
 otetaan \paketti{fontspec}\-/paketti käyttöön.
 
 Peruskirjainperheen (rivi~4) koko skaalataan 1,4\-/kertaiseksi, eli
-pistekooksi tulee 1,4 kertaa 10 pistettä eli 14 pistettä.
+pistekooksi tulee 1,4 kertaa 10 pistettä eli 14 pistettä (pt).
 Normaalikokoinen peruskirjainperhe on ainoa, jonka pistekoko tiedetään.
 Kaikkien muiden koot täytyisi selvittää laskemalla.
 
@@ -417,15 +428,15 @@ esimerkiksi fonttikoon valintakomentoja \koodi{\keno small},
 
 Edellä kuvatussa suhteellisessa kirjainperheiden koon määrittelyssä on
 sellainen ongelma tai kummallisuus, että Latex koko ajan luulee, että
-peruskirjainperhe on normaalikokoisena 10 pistettä. Latexin matalan
+peruskirjainperhe on normaalikokoisena 10 pistettä (pt). Latexin matalan
 tason fonttikomennot eivät tiedä kirjainperheen skaalauskertoimesta, ja
 siksi esimerkiksi komentojen
 
 \begin{koodilohkosis}
-  \fontsize{10pt}{12pt} \selectfont
+  \fontsize{10bp}{12bp} \selectfont
 \end{koodilohkosis}
 
-tuloksena ei todellisuudessa ole 10 pisteen fontti, vaan mukaan
+tuloksena ei todellisuudessa ole 10 pisteen (bp) fontti, vaan mukaan
 lasketaan myös kirjainperheen skaalauskerroin. Tämän vuoksi \koodi{\keno
   fontsize}\-/komennon käyttö menee aika oudoksi. Argumenttina annettu
 kokomitta ei pidä paikkaansa.
@@ -437,7 +448,7 @@ voisi mahdollisesti \koodi{\keno fontsize}\-/komennon sijasta käyttää
 skaalauskerrointa esimerkiksi seuraavalla tavalla:
 
 \begin{koodilohkosis}
-  \addfontfeatures{Scale=3.2} Poikkeuksellisen isoa tekstiä
+  {\addfontfeatures{Scale=3.2}Poikkeuksellisen isoa tekstiä}
 \end{koodilohkosis}
 
 Jos edellä mainitut kummallisuudet eivät häiritse eikä ole tarvetta
@@ -446,7 +457,8 @@ suhteellinen määrittelytapa todella helppo. Kaikki dokumentin fontit
 määräytyvät perusfontin skaalauskertoimen kautta. Tämä tapa sopii hyvin
 varsinkin dokumentin sisällön kirjoittamisvaiheeseen, jossa ehkä
 halutaan vain nopeasti asettaa dokumentti suurin piirtein järkevän
-näköiseksi. Myöhemmin voi määrittää koot absoluuttisesti.
+näköiseksi. Myöhemmin voi määrittää koot tarkemmin niin sanotun
+absoluuttisen menetelmän avulla, jota käsitellään seuraavassa luvussa.
 
 \subsection{Koot absoluuttisesti}
 \label{luku:fontti_absoluuttinen}
@@ -480,11 +492,11 @@ fonttien asettamiseen.
   \linespread{1} % ei välttämättä tarvita
 
   % Kaikki tarvittavat fonttikoot ja komennot
-  \renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont}
-  \renewcommand{\small}       {\fontsize{12pt}{14pt}\selectfont}
-  \renewcommand{\normalsize}  {\fontsize{14pt}{17pt}\selectfont}
-  \renewcommand{\large}       {\fontsize{17pt}{19pt}\selectfont}
-  \renewcommand{\Large}       {\fontsize{20pt}{22pt}\selectfont}
+  \renewcommand{\footnotesize}{\fontsize{10bp}{12bp}\selectfont}
+  \renewcommand{\small}       {\fontsize{12bp}{14bp}\selectfont}
+  \renewcommand{\normalsize}  {\fontsize{14bp}{17bp}\selectfont}
+  \renewcommand{\large}       {\fontsize{17bp}{19bp}\selectfont}
+  \renewcommand{\Large}       {\fontsize{20bp}{22bp}\selectfont}
   \normalsize % jotta tulee heti voimaan eikä vasta tekstiosassa
 \end{koodilohko}
 \caption{Fonttikokojen määrittäminen pistekoon avulla}
@@ -505,14 +517,15 @@ samoja mutta ilman skaalausta.
 
 Uusien kirjainperheiden komentojen nimiksi on valittu \koodi{\keno
   sffamilyabs} ja \koodi{\keno ttfamilyabs} (vrt. \koodi{\keno sffamily}
-ja \koodi{\keno ttfamily}), ja näillä komennoilla kirjainperheet
-kytketään päälle. Jos esimerkiksi jonkin julkaisun vaatimuksiin kuuluu,
-että otsikossa täytyy olla 16 pisteen lihavoitu TeX Gyre Heros
-\=/kirjainleikkaus, voi esimerkissä \ref{esim:fontti_absoluuttinen}
-olevien asetusten pohjalta antaa otsikolle seuraavat komennot:
+ja \koodi{\keno ttfamily}, taulukko \ref{tlk:fonttimallikomennot}), ja
+näillä komennoilla kirjainperheet kytketään päälle. Jos esimerkiksi
+jonkin julkaisun vaatimuksiin kuuluu, että otsikossa täytyy olla 16
+pisteen lihavoitu TeX Gyre Heros \=/kirjainleikkaus, voi esimerkissä
+\ref{esim:fontti_absoluuttinen} olevien asetusten pohjalta antaa
+otsikolle seuraavat komennot:
 
 \begin{koodilohkosis}
-  \sffamilyabs\fontsize{16pt}{18pt}\bfseries
+  \sffamilyabs\fontsize{16bp}{18bp}\bfseries
 \end{koodilohkosis}
 
 Esimerkin \ref{esim:fontti_absoluuttinen} riveillä 16--20 määritellään
@@ -521,8 +534,7 @@ Oletus\-arvot tulevat dokumenttiluokasta (luku
 \ref{luku:dokumenttiluokat}), mutta jos ne eivät ole sopivia, täytyy
 vähintäänkin määritellä komento \koodi{\keno normalsize} mutta sen
 lisäksi kaikki ne koot, joita omassa dokumentissa tarvitaan. Tässä
-esimerkissä normaali koko asetetaan 14 pisteen kokoiseksi ja muut koot
-on ajateltu suhteessa siihen.
+esimerkissä normaali koko asetetaan 14 pisteen kokoiseksi.
 
 Jokaiselle fonttikoolle määritetään riveillä 16--20 myös oma
 rivikorkeus, ja se on tarkoitus asettaa sopivaksi juuri kyseiselle

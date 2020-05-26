@@ -866,8 +866,74 @@ lopettavan \koodi{\keno end}\-/komennon jälkeiset sanavälit.
 % Käsittele hspace ja vspace. Näihin viitataan muualta.
 
 Koska typografia on pitkälti teksti- ja muiden elementtien sijoittelua,
-tarvitaan sitä varten mittavälineitä. Latexissa on pituusmittoja (engl.
-\emph{length}) ja pituuden mitta\-yksiköitä.
+tarvitaan sitä varten mittavälineitä. Niinpä Latexissakin on
+pituusmittoja (engl. \emph{length}) ja useita pituuden mittayksiköitä.
+Taulukkoon \ref{tlk:mittayksikot} on koottu mittayksiköiden lyhenteet ja
+merkitykset. Teknisesti on samantekevää, mitä yksiköitä käyttää, sillä
+ne ovat vain välineitä pituuden ilmaisemiseen. Usein kuitenkin tietyt
+yksiköt ovat vakiintuneet tiettyihin tilanteisiin. Esimerkiksi fonttien
+kokoja ja rivikorkeuksia on tapana mitata pistemittojen avulla. Nykyään
+käytetään lähinnä bp\-/yksikön mukaista pistettä, joka tuli käyttöön
+Post Script \=/standardin myötä vuonna 1984 ja jota käytetään
+jul\-kai\-su\-oh\-jel\-mis\-sa. Sivun mittoja kuten leveyttä, korkeutta
+ja marginaaleja ilmaistaan tavallisesti metrijärjestelmän avulla eli
+senttimetreissä tai millimetreissä.
+
+\leijutlk{
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Lyh.} & \ots{Merkitys} \\
+    \midrule
+    bp & piste uudessa pica-järjestelmässä, 1/72 tuumaa, 0,3528 mm \\
+    pt & piste vanhassa pica-järjestelmässä, 1/72,27 tuumaa, 0,3515 mm \\
+    pc & pica eli 12 pt-pistettä \\
+    sp & 1/65536 pt-pistettä \\
+    dd & piste didot-järjestelmässä, 0,376 mm \\
+    cc & cicero eli 12 dd-pistettä \\
+    mm & millimetri \\
+    cm & senttimetri \\
+    in & tuuma, 25,4 mm \\
+    ex & nykyisen fontin x-korkeus (fontin suunnittelijan määrittämä) \\
+    em & typografisen neliön sivun pituus, sama kuin fontin koko \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Latexin mittayksiköiden lyhenteet ja merkitykset}
+  \label{tlk:mittayksikot}
+}
+
+Latexin mittojen mittaluvuissa desi\-maa\-li\-erot\-ti\-me\-na on piste,
+ja mittayksikön lyhenne kirjoitetaan kiinni mittalukuun. Seuraavassa
+esimerkissä tehdään vaakasuuntaisia ja pystysuuntaisia välejä
+komennoilla \koodi{\keno hspace} ja \koodi{\keno vspace}.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  Sanat\hspace{1.2cm}hassusti
+  \vspace{2mm}
+
+  \hspace{1.75em}erillään.
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Sanat\hspace{1.2cm}hassusti  \nopagebreak
+  \vspace{2mm}
+
+  \hspace{1.75em}erillään.
+\end{tulossis}
+
+% enspace, quad, ohuke
+
+Mittoja tallennetaan eräänlaisiin muuttujiin, jotka näyttävät päällepäin
+komennoilta eli niiden alussa on kenoviiva (\koodi{\keno}) ja sitten
+kirjaimista koostuva nimi. Esimerkiksi mitta \koodi{\keno text\-width}
+on tekstin leveys nykyisellä sivulla. Komentomaisesta ul\-ko\-asus\-taan
+huolimatta mittoja ei voi suorittaa komentoina.
+
+% mitan skaalaus: 0.5\mitta
+% kiinteät ja venyvät mitat
+% \the\pituus
 
 \section{Laskurit}
 

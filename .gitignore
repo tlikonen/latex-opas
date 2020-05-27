@@ -7,5 +7,6 @@
 *.log
 *.out
 *.pdf
+*.svg
 *.toc
 *.xdv

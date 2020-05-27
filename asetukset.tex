@@ -41,10 +41,16 @@ korkean tason komentoja.
 \subsection{Fontin valinta}
 
 Latexin fonttien perus\-toiminnot rakentuvat kolmen erityyppisen
-kirjainperheen varaan: antiikva eli pääteviivallinen
-(\textenglish{serif, roman}), groteski eli pääteviivaton
-(\textenglish{sans serif, gothic}) ja tasalevyinen kirjoituskoneen
-kaltainen perhe (\textenglish{typewriter, monospace}). Kuvassa
+kirjainperheen varaan: antiikva eli pääteviivallinen\footnote{Antiikva
+  (lat. \emph{antiquus} 'vanha') perustuu antiikin Roomassa käytettyihin
+  kirjainmuotoihin. Ne olivat pääteviivallisia, mutta vaakasuorat
+  pääteviivat sinänsä eivät ole ainoa antiikvan piirre. Toinen tärkeä
+  ominaisuus ovat erivahvuiset viivat. Tämän oppaan groteskifontissakin
+  on erivahvuiset viivat mutta pääteviivoja ei ole. Siten se on
+  eräänlainen antiikvan ja groteskin välimuoto.} (\textenglish{serif,
+  roman}), groteski eli pääteviivaton (\textenglish{sans serif, gothic})
+ja tasalevyinen kirjoituskoneen kaltainen perhe
+(\textenglish{typewriter, monospace}). Kuvassa
 \ref{kuva:kirjainperhetyypit} ovat tässä oppaassa käytetyt kolme eri
 kirjainperhettä. Leipätekstissä käytetään antiikvaa, otsikoissa ja
 kuvateksteissä groteskia ja koodi\-esi\-mer\-keis\-sä tasalevyistä.
@@ -77,7 +83,7 @@ sellaiset fontit voi ladata dokumentin esittelyosassa komennolla
 \koodi{\keno usepackage}. Fonttikohtaisia makropaketteja on olemassa
 varsinkin vanhalle fonttitekniikalle (Metafont, Post Script Type~1)
 mutta myös matematiikkatilan (luku \ref{luku:matematiikka})
-fonttiasetuksille ja joillekin kirjainperhekokonaisuuksille.
+fonttiasetuksille ja joillekin kir\-jain\-perhe\-koko\-nai\-suuk\-sille.
 
 Valmiita makropaketteja on vain joillekin fonteille, ja käytännössä
 yleensä True Type- ja Open Type \=/muodossa olevat kirjainperheet
@@ -111,11 +117,11 @@ kirjainperheen skaalausta hienosäätää vielä
   [Scale=MatchLowercase, ScaleAgain=.97]
 \end{koodilohkosis}
 
+\pagebreak[3]
+
 Jos edellä kuvatut kolme kirjainperhettä eivät riitä, on
 \paketti{fontspec}\-/paketissa komennot lisäperheiden ja \=/leikkausten
-määrittämiseen.
-\pagebreak[3]
-Uusi perhe määritellään seuraavasti:
+määrittämiseen. Uusi perhe määritellään seuraavasti:
 
 \begin{koodilohkosis}
   \newfontfamily{\hienoperhe}{TeX Gyre Schola}[…]
@@ -156,7 +162,7 @@ luvussa \ref{luku:mitat}. Fonteissa ole\-tus\-mitta\-yk\-sik\-kö\-nä on
 vanha pica\-/järjestelmän piste, jonka pituus on \num{1/72,27} tuumaa
 eli noin \num{0,3515} millimetriä. Sen lyhenne Latexissa on~\emph{pt}.
 Yleensä tämän oppaan esimerkeissä käytetään kuitenkin
-julkaisu\-ohjelmiin vakiintunutta ja Post Script \=/standardin mukaista
+julkaisu\-ohjelmiin vakiintunutta, Post Script \=/standardin mukaista
 uudempaa pica\-/pistettä, joka on hieman edellistä pidempi: \num{1/72}
 tuumaa eli noin \num{0,3528} millimetriä. Latexissa sen lyhenne
 on~\emph{bp}. Ero näiden kahden pistemitan välillä on hyvin pieni, mutta

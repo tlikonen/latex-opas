@@ -923,17 +923,39 @@ komennoilla \koodi{\keno hspace} ja \koodi{\keno vspace}.
   \hspace{1.75em}erillään.
 \end{tulossis}
 
-% enspace, quad, ohuke
-
 Mittoja tallennetaan eräänlaisiin muuttujiin, jotka näyttävät päällepäin
 komennoilta eli niiden alussa on kenoviiva (\koodi{\keno}) ja sitten
 kirjaimista koostuva nimi. Esimerkiksi mitta \koodi{\keno text\-width}
-on tekstin leveys nykyisellä sivulla. Komentomaisesta ul\-ko\-asus\-taan
-huolimatta mittoja ei voi suorittaa komentoina.
+on teks\-ti\-alueen leveys nykyisellä sivulla. Komentomaisesta
+ulko\-asus\-taan huolimatta mittoja ei voi suorittaa komentoina; ne
+sopivat vain komennon argumentiksi, silloin kun tarvitaan mitta.
+
+Uusia mittoja luodaan komennolla \koodi{\keno new\-length} ja olemassa
+olevia mittoja asetetaan esimerkiksi komennoilla \koodi{\keno
+  set\-length} ja \koodi{\keno add\-to\-length}. Omien mittoja on
+tarpeen luoda silloin, kun halutaan esimerkiksi määritellä
+tietynsuuruinen mitta, jota käytetään useita kertoja.
+
+\begin{koodilohkosis}
+  \newlength{\omamitta}         % luodaan mitta
+  \setlength{\omamitta}{2.3em}  % asetetaan mitta
+  \addtolength{\omamitta}{1em}  % kasvatetaan mittaa
+  \addtolength{\omamitta}{-1em} % vähennetään mittaa
+\end{koodilohkosis}
+
+Näin luotuja mittoja voi käyttää mittayksiköiden tavoin, eli niille voi
+asettaa eteen kertoimen. Esimerkiksi seuraava \koodi{\keno
+  hspace}\-/komento luo vaakasuuntaisen välin, jonka pituus on 0,7
+kertaa \koodi{\keno oma\-mitta}.
+
+\begin{koodilohkosis}
+  \hspace{0.7\omamitta}
+\end{koodilohkosis}
 
 % mitan skaalaus: 0.5\mitta
 % kiinteät ja venyvät mitat
 % \the\pituus
+% enspace, quad, ohuke
 
 \section{Laskurit}
 

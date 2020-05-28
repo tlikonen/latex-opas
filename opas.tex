@@ -29,6 +29,7 @@ per-mode=symbol]{siunitx}
 % \usepackage{ifthen}
 \usepackage{chngcntr}
 \usepackage{realscripts}
+\usepackage{natbib}
 \usepackage[unicode,hyperfootnotes=false]{hyperref}
 \usepackage[shortcuts]{extdash}
 
@@ -76,6 +77,17 @@ per-mode=symbol]{siunitx}
 \setlength{\skip\footins}{20bp}
 \setlength{\floatsep}{.8cm}
 \setlength{\textfloatsep}{1cm}
+
+\setlength{\bibhang}{\parindent}
+\setlength{\bibsep}{5bp}
+\bibliographystyle{plainnat}
+\setcitestyle{authoryear,comma,aysep={},yysep={,},notesep={: }}%
+\renewcommand{\bibsection}{}
+%\renewcommand{\bibfont}{\small}
+
+\newenvironment{teosluettelo}%
+{\begin{thebibliography}{99}}%
+  {\end{thebibliography}}
 
 \DeclareFloatingEnvironment[ name={Esimerkki} ]{esimerkki}
 
@@ -342,6 +354,18 @@ per-mode=symbol]{siunitx}
 
 \chapter{Muuta}
 \section{Päiväykset ja kellonajat}
+
+\chapter*{Kirjallisuutta}
+\phantomsection
+\addcontentsline{toc}{chapter}{Kirjallisuutta}
+
+\begin{teosluettelo}
+\bibitem[Itkonen(2015)]{kirjtyypit} Itkonen, Markus 2015. Kirjaintyypit
+  ja tyyli. RPS-yhtiöt.
+\bibitem[Itkonen(2019)]{typokk} Itkonen, Markus 2019: Typografian
+  käsikirja. Viides, tarkistettu painos. Typoteekki. Graafinen
+  suunnittelu Markus Itkonen Oy.
+\end{teosluettelo}
 
 \printindex
 

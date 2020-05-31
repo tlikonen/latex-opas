@@ -34,9 +34,9 @@ merkin kohokuviota, joka painaa mustejäljen paperille.
 Kuten Latexissa yleensäkin myös fonttien kanssa kannattaa käyttää
 korkean abstraktiotason komentoja, jotka piilottavat yksityiskohdat ja
 teknisen toteutuksen. Latexin fonttitoiminnot on suunniteltu juuri
-siihen: matalan tason fontti\-asetukset määritellään mieluiten vain
-kerran dokumentin esittelyosassa, ja sen jälkeen käytetään pelkästään
-korkean tason komentoja.
+siihen: matalan tason font\-ti\-ase\-tuk\-set määritellään mieluiten
+vain kerran dokumentin esittelyosassa, ja sen jälkeen käytetään
+pelkästään korkean tason komentoja.
 
 \subsection{Fontin valinta}
 
@@ -44,8 +44,8 @@ Latexin fonttien perus\-toiminnot rakentuvat kolmen erityyppisen
 kirjainperheen varaan: antiikva eli pääteviivallinen%
 \footnote{Antiikva (lat. \emph{antiquus} 'vanha') perustuu antiikin
   Roomassa käytettyihin kirjainmuotoihin. Ne olivat pääteviivallisia,
-  mutta vaakasuorat pääteviivat sinänsä eivät ole ainoa antiikvan
-  piirre. Toinen tärkeä ominaisuus ovat erivahvuiset kirjainten viivat.}
+  mutta pääteviivat sinänsä eivät ole ainoa antiikvan piirre. Toinen
+  tärkeä ominaisuus ovat erivahvuiset kirjainten viivat.}
 (\textenglish{serif, roman}), groteski eli pääteviivaton%
 \footnote{Groteskiin (ransk. \emph{grotesque} 'kummallinen') kuuluu
   pääteviivojen puuttumisen lisäksi lähes tasavahvuiset kirjainten
@@ -76,7 +76,7 @@ asetusten näkökulmasta.
 
 Latexin fonttitekniikka rakentuu eri-ikäisistä kerroksista ja
 tekniikoista. Fontteja on tehty esimerkiksi Metafont\-/nimisellä
-kuvauskielellä, jolla tuotetaan bittikartta\-/{} eli pikseleistä
+kuvauskielellä, jolla tuotetaan bittikarttafontteja eli pikseleistä
 koostuvia fontteja. Ne voidaan muuttaa Post Script Type~1 \=/muotoon ja
 käyttää Latexissa. Myöhemmin mukaan ovat tulleet monipuoliset True Type-
 ja Open Type \=/muotoiset fontit, ja niihin tämä opas keskittyy.
@@ -90,7 +90,7 @@ fonttiasetuksille ja joillekin kir\-jain\-perhe\-koko\-nai\-suuk\-sille.
 
 Valmiita makropaketteja on vain joillekin fonteille, ja käytännössä
 yleensä True Type- ja Open Type \=/muodossa olevat kirjainperheet
-otetaan käyttöön \paketti{fontspec}\-/paketin komennoilla seuraavan
+otetaan käyttöön \paketti{fontspec}\-/paketin komennoilla alla olevan
 esimerkin mukaisesti.
 
 \begin{koodilohkosis}
@@ -99,9 +99,15 @@ esimerkin mukaisesti.
   \setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
 \end{koodilohkosis}
 
-Samalla voi määritellä lukuisia kirjainperheeseen sisältyviä asetuksia
-kuten ligatuureja, gemenanumeroita, optisia kokoja ja muita fontin
-ominaisuuksia. Edellisessä esimerkissä käytetään vain
+Edellisessä esimerkissä TeX Gyre Termes, Heros ja Cursor%
+\footnote{TeX Gyre \=/fonttipaketti:
+  \url{https://www.ctan.org/pkg/tex-gyre}} ovat fonttien nimiä, ja
+fonttien tulee olla asennettuna käyttöjärjestelmän normaalien
+käytäntöjen mukaisesti tai Latex\-/jakelun käytäntöjen mukaisesti.
+
+Kirjainperheiden käyttöön\-oton yhteydessä voi määritellä lukuisia
+asetuksia kuten ligatuureja, gemenanumeroita, optisia kokoja ja muita
+fontin ominaisuuksia. Edellisessä esimerkissä käytetään vain
 \koodi{Scale}\-/valitsinta, jolla fontin voi skaalata haluttuun kokoon.
 
 Peruskirjainperheen (\koodi{\keno setmainfont}) skaalaukseksi asetetaan
@@ -168,9 +174,8 @@ Yleensä tämän oppaan esimerkeissä käytetään kuitenkin
 julkaisu\-ohjelmiin vakiintunutta, Post Script \=/standardin mukaista
 uudempaa pica\-/pistettä, joka on hieman edellistä pidempi: \num{1/72}
 tuumaa eli noin \num{0,3528} millimetriä. Latexissa sen lyhenne
-on~\emph{bp}. Ero näiden kahden pistemitan välillä on hyvin pieni, mutta
-bp\-/mittaa kannattanee suosia, koska se on yhdenmukainen muiden
-ohjelmistojen kanssa.
+on~\emph{bp}. Ero näiden kahden pistemitan välillä on hyvin pieni,
+tavallisilla fonttiko'oilla käytännössä merkityksetön.
 
 Kirjainleikkauksen koko mitataan merkistön ylimmän ja alimman kohdan
 välillä, esimerkiksi k\=/kirjaimen ylimmän pisteen ja y\=/kirjaimen

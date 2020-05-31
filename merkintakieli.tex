@@ -178,12 +178,15 @@ tapaan. Rivillä sanavälejä täytyy venyttää silloin, kun tekstipalsta
 tasataan molemmista reunoista.
 
 \subsection{Ohuke}
+\label{luku:ohuke}
 
 Ohuke on tavallista sanaväliä kapeampi väli, ja se tehdään
-komennolla~\koodi{\keno,} (kenoviiva ja pilkku). Ohuke on tasalevyinen
-ja sitova, eli se ei veny muiden sanavälien tapaan, ja se estää
-rivinvaihdon. Siksi ohuke sopii esimerkiksi pitkien lukujen ja
-puhelinnumeroiden ryhmittelyyn paremmin kun sanaväli.
+komennolla~\koodi{\keno,} (kenoviiva ja pilkku). Ohukkeen leveys
+Latexissa on \murtoluku{1/6} typografisen neliön leveydestä eli
+em-mitasta (luku \ref{luku:mitat}). Ohuke on tasalevyinen ja sitova, eli
+se ei veny muiden sanavälien tapaan, ja se estää rivinvaihdon. Siksi
+ohuke sopii esimerkiksi pitkien lukujen ja puhelinnumeroiden
+ryhmittelyyn paremmin kun sanaväli.
 
 \begin{koodilohkosis}
   12\,750\,000
@@ -863,21 +866,16 @@ lopettavan \koodi{\keno end}\-/komennon jälkeiset sanavälit.
 \section{Mitat}
 \label{luku:mitat}
 
-% Käsittele hspace ja vspace. Näihin viitataan muualta.
+\subsection{Mittayksiköt}
 
 Koska typografia on pitkälti teksti- ja muiden elementtien sijoittelua,
 tarvitaan sitä varten mittavälineitä. Niinpä Latexissakin on
 pituusmittoja (engl. \emph{length}) ja useita pituuden mittayksiköitä.
 Taulukkoon \ref{tlk:mittayksikot} on koottu mittayksiköiden lyhenteet ja
 merkitykset. Teknisesti on samantekevää, mitä yksiköitä käyttää, sillä
-ne ovat vain välineitä pituuden ilmaisemiseen. Usein kuitenkin tietyt
-yksiköt ovat vakiintuneet tiettyihin tilanteisiin. Esimerkiksi fonttien
-kokoja ja rivikorkeuksia on tapana mitata pistemittojen avulla. Nykyään
-käytetään lähinnä bp\-/yksikön mukaista pistettä, joka tuli käyttöön
-Post Script \=/standardin myötä vuonna 1984 ja jota käytetään
-jul\-kai\-su\-oh\-jel\-mis\-sa. Sivun mittoja kuten leveyttä, korkeutta
-ja marginaaleja ilmaistaan tavallisesti metrijärjestelmän avulla eli
-senttimetreissä tai millimetreissä.
+ne ovat vain välineitä pituuden ilmaisemiseen. Sisäisesti Tex käyttää
+sp-yksikköä, joka ilmaisee samalla mittojen tarkkuuden: pienin jakamaton
+yksikkö on 1\,sp.
 
 \leijutlk{
   \begin{tabular}{ll}
@@ -887,13 +885,13 @@ senttimetreissä tai millimetreissä.
     bp & piste uudessa pica-järjestelmässä, 1/72 tuumaa, 0,3528 mm \\
     pt & piste vanhassa pica-järjestelmässä, 1/72,27 tuumaa, 0,3515 mm \\
     pc & pica eli 12 pt-pistettä \\
-    sp & 1/65536 pt-pistettä \\
-    dd & piste didot-järjestelmässä, 0,376 mm \\
+    sp & 1/65536 pt-pistettä, Texin sisäisesti käyttämä yksikkö \\
+    dd & piste Didot-järjestelmässä, 0,376 mm \\
     cc & cicero eli 12 dd-pistettä \\
     mm & millimetri \\
     cm & senttimetri \\
     in & tuuma, 25,4 mm \\
-    ex & nykyisen fontin x-korkeus (fontin suunnittelijan määrittämä) \\
+    ex & nykyisen fontin x-korkeus, perus- ja gemenalinjan etäisyys \\
     em & typografisen neliön sivun pituus, sama kuin fontin koko \\
     \bottomrule
   \end{tabular}
@@ -901,6 +899,14 @@ senttimetreissä tai millimetreissä.
   \caption{Latexin mittayksiköiden lyhenteet ja merkitykset}
   \label{tlk:mittayksikot}
 }
+
+Usein tietyt yksiköt ovat vakiintuneet tiettyihin tilanteisiin.
+Esimerkiksi fonttien kokoja ja rivikorkeuksia on tapana mitata
+pistemittojen avulla. Nykyään käytetään lähinnä bp\-/yksikön mukaista
+pistettä, joka tuli käyttöön Post Script \=/standardin myötä vuonna 1984
+ja jota käytetään jul\-kai\-su\-oh\-jel\-mis\-sa. Sivun mittoja kuten
+leveyttä, korkeutta ja marginaaleja ilmaistaan tavallisesti
+metrijärjestelmän avulla eli senttimetreissä tai millimetreissä.
 
 Latexin mittojen mittaluvuissa desi\-maa\-li\-erot\-ti\-me\-na on piste,
 ja mittayksikön lyhenne kirjoitetaan kiinni mittalukuun. Seuraavassa
@@ -923,6 +929,8 @@ komennoilla \koodi{\keno hspace} ja \koodi{\keno vspace}.
   \hspace{1.75em}erillään.
 \end{tulossis}
 
+\subsection{Mittakomentoja}
+
 Mittoja tallennetaan eräänlaisiin muuttujiin, jotka näyttävät päällepäin
 komennoilta eli niiden alussa on kenoviiva (\koodi{\keno}) ja sitten
 kirjaimista koostuva nimi. Esimerkiksi mitta \koodi{\keno text\-width}
@@ -933,8 +941,8 @@ sopivat vain komennon argumentiksi, silloin kun tarvitaan mitta.
 Uusia mittoja luodaan komennolla \koodi{\keno new\-length} ja olemassa
 olevia mittoja asetetaan esimerkiksi komennoilla \koodi{\keno
   set\-length} ja \koodi{\keno add\-to\-length}. Omien mittoja on
-tarpeen luoda silloin, kun halutaan esimerkiksi määritellä
-tietynsuuruinen mitta, jota käytetään useita kertoja.
+tarpeen luoda silloin, kun halutaan määritellä tietynsuuruinen mitta,
+jota käytetään Latex\-/koodissa useita kertoja.
 
 \begin{koodilohkosis}
   \newlength{\omamitta}         % luodaan mitta
@@ -952,10 +960,103 @@ kertaa \koodi{\keno oma\-mitta}.
   \hspace{0.7\omamitta}
 \end{koodilohkosis}
 
-% mitan skaalaus: 0.5\mitta
-% kiinteät ja venyvät mitat
+Koska vaakasuuntaisten välien tekeminen on typografiassa varsin
+tavallista, on niitä varten olemassa omia komentoja. Typografisen neliön
+levyisen (1~em) välin voi tehdä komennolla \koodi{\keno quad}. Sen
+puolikkaan (\murtoluku{1/2}\,em) saa komennolla \koodi{\keno en\-space}.
+Ohuke eli \murtoluku{1/6}\,em-väli tehdään \koodi{\keno,}\-/komennolla,
+josta on tarkempaa tietoa luvussa \ref{luku:ohuke}.
+
+% settodepth, settoheight, settowidth
+
+\subsection{Venyvät mitat}
+
+Edellä on puhuttu vain kiinteistä mitoista, mutta Latex tuntee myös
+venyvät mitat. Niiden ajatuksena on, että Latexille voi antaa luvan
+kutistaa tai venyttää mittaa tietyissä rajoissa. Venyviä mittoja
+käytettään usein pystysuuntaisissa väleissä, esimerkiksi
+väli\-ot\-si\-kon edellä tai jälkeen tai tekstikappaleiden välissä.
+Latex pystyy latomaan sivut yleensä paremman näköiseksi, kun sille antaa
+venyvien mittojen avulla hieman säätövaraa. Alla on esimerkki venyvän
+kappalevälin (\koodi{\keno par\-skip}) määrittämisestä. Samalla
+asetetaan kappaleen ensimmäisen rivin sisennys (\koodi{\keno
+  par\-in\-dent}) nollaan (\koodi{0em}).
+
+\begin{koodilohkosis}
+  \setlength{\parskip}{2ex plus 0.2ex minus 0.1ex}
+  \setlength{\parindent}{0em}
+\end{koodilohkosis}
+
+Venyvissä mitoissa mainitaan ensin normaali pituus ja sitten sanoilla
+\koodi{plus} ja \koodi{minus} ilmaistaan, kuinka paljon mitta voi venyä
+tai kutistua. Molempia ei välttämättä tarvitse antaa.
+
+Venyvät mitat voivat sisältää ''äärettömän'' mittayksikön \koodi{fill},
+joka antaa luvan venyttää mittaa niin, että kaikki käytettävissä oleva
+tila täyttyy. Äärettömän mittayksikön kanssa mittaluku ilmaisee
+suhdeluvun muihin äärettömiin mittoihin. Seuraava esimerkki
+havainnollistaa asiaa.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  x\hspace{0mm plus 1fill}x\hspace{0mm plus 2fill}x
+\end{koodilohkosis}
+
+\begin{tulossis}
+  x\hspace{0mm plus 1fill}x\hspace{0mm plus 2fill}x
+\end{tulossis}
+
+Edellisen esimerkin mittojen luonnollinen pituus on nolla millimetriä
+(\koodi{0mm}), mutta \koodi{plus} ja \koodi{fill} \=/mitan vuoksi ne
+voivat venyä ja täyttää koko käytettävissä olevan tilan. Ensin
+mainitulla on suhdeluku 1 (\koodi{1fill}) ja jälkimmäisellä suhdeluku 2
+(\koodi{2fill}), joten jälkimmäinen väli on kaksinkertainen ensimmäiseen
+verrattuna. Saman äärettömästi venyvän mitan ja suhdeluvut voi ilmaista
+myös \koodi{\keno stretch}\-/mitan tai \koodi{\keno hfill}\-/komentojen
+avulla seuraavasti.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  x\hspace{\stretch{1}}x\hspace{\stretch{2}}x \\
+  x\hfill x\hfill\hfill x
+\end{koodilohkosis}
+
+\begin{tulossis}
+  x\hspace{\stretch{1}}x\hspace{\stretch{2}}x \\
+  x\hfill x\hfill\hfill x
+\end{tulossis}
+
+Vastaavasti pystysuuntaisen äärettömästi venyvän välin voi tehdä
+komennolla \koodi{\keno vfill}, joka tekee saman asian kuin \koodi{\keno
+  vspace\{0mm plus 1fill\}}.
+
+Äärettömästi venyvälle, koko tilan täyttävälle mittayksikölle on itse
+asiassa kolme eri versiota: \koodi{fil}, \koodi{fill} ja \koodi{filll}.
+Niiden erona on tärkeysjärjestys. Ensin mainittu \koodi{fil} on vähiten
+tärkeä, ja viimeinen eli \koodi{filll} on tärkein. Jos samassa
+yhteydessä käytetään eri tär\-keys\-as\-tei\-sia yksiköitä,
+korkeammantasoiset mitätöivät alemmantasoiset.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  x\hspace{0mm plus 1filll}x\hspace{0mm plus 1fill}x
+\end{koodilohkosis}
+
+\begin{tulossis}
+  x\hspace{0mm plus 1filll}x\hspace{0mm plus 1fill}x
+\end{tulossis}
+
+Edellisessä esimerkissä ensimmäinen venyvä mitta \koodi{1filll} mitätöi
+jälkimmäisen \koodi{1fill} kokonaan. Yleensä lienee parasta käyttää
+keskimmäistä (\koodi{fill}), mutta eri tärkeys\-asteille voi olla
+käyttöä esimerkiksi makropaketin koodissa: \koodi{fil} sallii, että
+käyttäjä tai muu koodi syrjäyttää asetuksen; \koodi{filll} on ehdoton
+sääntö, joka syrjäyttää muut.
+
 % \the\pituus
-% enspace, quad, ohuke
 
 \section{Laskurit}
 

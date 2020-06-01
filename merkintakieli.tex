@@ -969,6 +969,63 @@ josta on tarkempaa tietoa luvussa \ref{luku:ohuke}.
 
 % settodepth, settoheight, settowidth
 
+Latex sisältää myös komennot mittojen poimimiseen kirjaimista tai muusta
+tekstistä. Kirjaimiin liittyviä mittoja on kolme: leveys
+(\textenglish{width}), korkeus (\textenglish{height}) ja syvyys
+(\textenglish{depth}). Näiden mittojen ymmärtämisessä auttaa, kun
+palataan metalliladonnan ja metallisten kirjakkeiden aikaan. Yhtä
+merkkiä varten on yksi kirjake
+
+\begin{koodilohkosis}
+  \newlength{\leveys} \newlength{\korkeus} \newlength{\syvyys}
+  \settowidth{\leveys}{g}
+  \settoheight{\korkeus}{x}
+  \settodepth{\syvyys}{g}
+\end{koodilohkosis}
+
+\leijukuva{
+  \begin{tikzpicture}
+    [viiva/.style={line width=1.5bp}, xscale=1.52, yscale=2.7,
+    baseline=0pt]
+    \node at (.04,.25) {\fontsize{172bp}{172bp}\selectfont p};
+
+    \draw [viiva, color=red] (1,1) -- (2.25,1);
+    \draw [viiva, color=red] (-1,0) -- (2.25,0);
+    \draw [viiva, color=red] (1,-.5) -- (2.25,-.5);
+    \draw [viiva, color=red] (-1,1) rectangle (1,-.5);
+
+    \draw [viiva, <->, color=black] (1.2,0) -- ++(0,1);
+    \node at (1.9,.5) {korkeus};
+
+    \draw [viiva, <->, color=black] (1.2,0) -- ++(0,-.5);
+    \node at (1.9,-.25) {syvyys};
+
+    \draw [viiva, <->, color=black] (-1,1.1) -- ++(2,0);
+    \node at (0,1.25) {leveys};
+
+    \node at (3.1,1.58) {ylälinja};
+    \node at (3.1,1.41) {versaalilinja};
+    \node at (3.1,1) {gemenalinja};
+    \node at (3.1,0) {peruslinja};
+    \node at (3.1,-.5) {alalinja};
+
+    \draw [viiva, color=red] (5.05,0) -- ++(-1,0);
+    \draw [viiva, color=red] (5.05,1.45) -- ++(-1,0);
+    \draw [viiva, color=red] (7.95,1.55) -- ++(-3.9,0);
+
+    \node at (6.5,.72) {\fontsize{172bp}{172bp}\selectfont H};
+    \draw [viiva, color=red] (5.05,0) -- ++(2.9,0) -- ++(0,1.45) --
+    ++(-2.9,0) -- ++(0,-1.45);
+
+    \draw [viiva, <->, color=black] (4.86,0) -- ++(0,1.45);
+    \node at (4.1,.5) {korkeus};
+
+\end{tikzpicture}
+}{
+  \caption{Kirjainten mitat ja typografinen viivasto}
+  \label{kuva:kirjainmitat}
+}
+
 \subsection{Venyvät mitat}
 
 Edellä on puhuttu vain kiinteistä mitoista, mutta Latex tuntee myös

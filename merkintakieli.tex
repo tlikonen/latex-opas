@@ -904,9 +904,9 @@ Usein tietyt yksiköt ovat vakiintuneet tiettyihin tilanteisiin.
 Esimerkiksi fonttien kokoja ja rivikorkeuksia on tapana mitata
 pistemittojen avulla. Nykyään käytetään lähinnä bp\-/yksikön mukaista
 pistettä, joka tuli käyttöön Post Script \=/standardin myötä vuonna 1984
-ja jota käytetään jul\-kai\-su\-oh\-jel\-mis\-sa. Sivun mittoja kuten
-leveyttä, korkeutta ja marginaaleja ilmaistaan tavallisesti
-metrijärjestelmän avulla eli senttimetreissä tai millimetreissä.
+ja jota käytetään julkaisuohjelmissa. Sivun mittoja kuten leveyttä,
+korkeutta ja marginaaleja ilmaistaan tavallisesti metrijärjestelmän
+avulla eli senttimetreissä tai millimetreissä.
 
 Latexin mittojen mittaluvuissa desi\-maa\-li\-erot\-ti\-me\-na on piste,
 ja mittayksikön lyhenne kirjoitetaan kiinni mittalukuun. Seuraavassa
@@ -1088,13 +1088,13 @@ esimerkki.
 Edellä on puhuttu vain kiinteistä mitoista, mutta Latex tuntee myös
 venyvät mitat. Niiden ajatuksena on, että Latexille voi antaa luvan
 kutistaa tai venyttää mittaa tietyissä rajoissa. Venyviä mittoja
-käytettään usein pystysuuntaisissa väleissä, esimerkiksi
-väli\-ot\-si\-kon edellä ja jälkeen tai tekstikappaleiden välissä. Latex
-pystyy latomaan sivut yleensä paremman näköiseksi, kun sille antaa
-venyvien mittojen avulla hieman säätövaraa. Alla on esimerkki venyvän
-kappalevälin (\koodi{\keno par\-skip}) määrittämisestä. Samalla
-asetetaan kappaleen ensimmäisen rivin sisennys (\koodi{\keno
-  par\-in\-dent}) nollaan (\koodi{0em}).
+käytettään usein pystysuuntaisissa väleissä, esimerkiksi väliotsikon
+edellä ja jälkeen tai tekstikappaleiden välissä. Latex pystyy latomaan
+sivut yleensä paremman näköiseksi, kun sille antaa venyvien mittojen
+avulla hieman säätövaraa. Alla on esimerkki venyvän kappalevälin
+(\koodi{\keno par\-skip}) määrittämisestä. Samalla asetetaan kappaleen
+ensimmäisen rivin sisennys (\koodi{\keno par\-in\-dent}) nollaan
+(\koodi{0em}).
 
 \begin{koodilohkosis}
   \setlength{\parskip}{2ex plus 0.2ex minus 0.1ex}
@@ -1165,7 +1165,7 @@ korkeammantasoiset mitätöivät alemmantasoiset.
 
 Edellisessä esimerkissä ensimmäinen venyvä mitta \koodi{1filll} mitätöi
 jälkimmäisen \koodi{1fill} kokonaan. Yleensä lienee parasta käyttää
-keskimmäistä (\koodi{fill}), mutta eri tärkeys\-asteille voi olla
+keskimmäistä (\koodi{fill}), mutta eri tär\-keys\-as\-teil\-le voi olla
 käyttöä esimerkiksi makropaketin koodissa: \koodi{fil} sallii, että
 käyttäjä tai muu koodi syrjäyttää asetuksen; \koodi{filll} on ehdoton
 sääntö, joka syrjäyttää muut.

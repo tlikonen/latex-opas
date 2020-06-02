@@ -34,7 +34,6 @@ per-mode=symbol]{siunitx}
 \usepackage[unicode,hyperfootnotes=false]{hyperref}
 \usepackage[shortcuts]{extdash}
 
-\urlstyle{same}
 \hypersetup{ hidelinks, bookmarksopen, bookmarksnumbered,
   pdfauthor={Teemu Likonen} }
 
@@ -66,6 +65,9 @@ per-mode=symbol]{siunitx}
 \newcommand{\gemenanum}{\addfontfeatures{Numbers=Lowercase}}
 \newcommand{\versaalinum}{\addfontfeatures{Numbers=Uppercase}}
 \newcommand{\murtoluku}[1]{{\addfontfeatures{Fractions=On}#1}}
+
+\urlstyle{same}
+\newcommand{\angleurl}[1]{\href{#1}{\nolinkurl{‹#1›}}}
 
 \clubpenalty=10000
 \widowpenalty=10000
@@ -362,13 +364,24 @@ per-mode=symbol]{siunitx}
 \chapter{Kirjallisuutta}
 
 \begin{teosluettelo}
+\bibitem[Berry ym.(2018)]{unoffref} Berry, Karl \& Gilmore, Stephen \&
+  Martinsen, Torsten 2018: \textenglish{Latex 2e: An unofficial
+    reference manual. October 2018.} Saatavissa:
+  \angleurl{https://latexref.xyz/}.%
+  \footnote{Tex Live \=/jakelussa komennolla: \koodi{texdoc latex2e}}
+  Viittauspäivä 2.6.2020.
 \bibitem[Itkonen(2015)]{kirjtyypit} Itkonen, Markus 2015. Kirjaintyypit
   ja tyyli. RPS-yhtiöt.
 \bibitem[Itkonen(2019)]{typokk} Itkonen, Markus 2019: Typografian
   käsikirja. Viides, tarkistettu painos. Typoteekki. Graafinen
   suunnittelu Markus Itkonen Oy.
-  % pitkänpuoleinen johdanto
-  % unofficial reference manual
+\bibitem[Oetiker ym.(2005)]{pitkäjohdanto} Oetiker, Tobias \& Partl,
+  Hubert \& Hyna, Irene \& Schlegl, Elisabeth \& Hell\-gren, Timo 2005:
+  Pitkänpuoleinen johdanto Latex 2ε:n käyttöön. Eli opi Latex 2ε 133
+  minuutissa. Versio 4.17fi, lokakuu 2005. Saatavissa:
+  \angleurl{https://www.ctan.org/pkg/lshort-finnish}.%
+  \footnote{Tex Live \=/jakelussa komennolla: \koodi{texdoc lyhyt2e}}
+  Viittauspäivä 2.6.2020.
 \end{teosluettelo}
 
 \printindex

@@ -1022,18 +1022,18 @@ mittaa sekä typografista viivastoa.
 
 Gemenalinja sijaitsee gemenakirjainten eli pien\-aak\-kos\-ten
 korkeudella. Peruslinjan ja gemenalinjan etäisyys on fontin x\=/korkeus
-(\koodi{1ex}). Optisen vaikutelman vuoksi gemenalinja ei tarkoita
-ehdotonta gemenakirjainten ylintä kohtaa. Esimerkiksi p\=/kirjaimen
-silmukan yläkaari voi yltää hieman gemenalinjan yläpuolelle ja silmukan
-alakaari peruslinjan alapuolelle. Fontin suunnittelijat tekevät
-tällaisia optisia korjauksia, jotta kirjainten hahmot näyttävät yhtä
-korkeilta ja tasapainoisilta yhdessä.
+(1\,ex). Optisen vaikutelman vuoksi gemenalinja ei tarkoita ehdotonta
+gemenakirjainten ylintä kohtaa. Esimerkiksi p\=/kirjaimen yläpääte ja
+silmukan yläkaari voivat yltää hieman gemenalinjan yläpuolelle ja
+silmukan alakaari peruslinjan alapuolelle. Fonttien suunnittelijat
+tekevät tällaisia optisia korjauksia, jotta kirjainten hahmot näyttävät
+yhtä korkeilta ja tasapainoisilta yhdessä.
 
 Versaalilinja sijaitsee versaalikirjainten eli suur\-aak\-kos\-ten
 korkeudella. Jotkin kirjaimet voivat yltää hieman versaalilinjan
 yläpuolellekin. Esimerkiksi joidenkin fonttien Hk\=/kirjaimia
-vertailemalla näkee, että k\=/kirjaimen yläpääte yltää versaalilinjan
-yläpuolelle ylälinjan tuntumaan.
+vertailemalla näkee, että k\=/kirjaimen yläpääte yltää H\=/kirjaimen eli
+versaalilinjan yli ja ylälinjan tuntumaan.
 
 \pagebreak[3]
 
@@ -1062,6 +1062,26 @@ typografinen piste (pt).
 \begin{tulossis}
   Leveys: 19.50485pt, korkeus: 9.09196pt, syvyys: 3.28827pt.
 \end{tulossis}
+
+Aiemmin mainituista optisista korjauksista johtuu, että gemenakirjaimet
+eivät ole välttämättä täsmälleen samankorkuisia. Gemena\=/x asettuu
+yleensä perus- ja gemenalinjojen väliin, mutta gemena\=/o voi yltää
+aavistuksen verran linjojen ylä- ja alapuolelle. Alla on tästä
+esimerkki.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \newlength{\korkeusx} \newlength{\korkeuso}
+  \settoheight{\korkeusx}{x}
+  \settoheight{\korkeuso}{o}
+  x-korkeus: \the\korkeusx, o-korkeus: \the\korkeuso
+\end{koodilohkosis}
+
+\begin{tulossis}
+  x-korkeus: 5.45096pt, o-korkeus: 5.55214pt
+\end{tulossis}
+
 
 \subsection{Venyvät mitat}
 

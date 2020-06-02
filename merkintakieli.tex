@@ -929,7 +929,7 @@ komennoilla \koodi{\keno hspace} ja \koodi{\keno vspace}.
   \hspace{1.75em}erillään.
 \end{tulossis}
 
-\subsection{Mittakomentoja}
+\subsection{Mittakomennot ja typografinen viivasto}
 
 Mittoja tallennetaan eräänlaisiin muuttujiin, jotka näyttävät päällepäin
 komennoilta eli niiden alussa on kenoviiva (\koodi{\keno}) ja sitten
@@ -967,64 +967,101 @@ puolikkaan (\murtoluku{1/2}\,em) saa komennolla \koodi{\keno en\-space}.
 Ohuke eli \murtoluku{1/6}\,em-väli tehdään \koodi{\keno,}\-/komennolla,
 josta on tarkempaa tietoa luvussa \ref{luku:ohuke}.
 
-% settodepth, settoheight, settowidth
-
-Latex sisältää myös komennot mittojen poimimiseen kirjaimista tai muusta
-tekstistä. Kirjaimiin liittyviä mittoja on kolme: leveys
-(\textenglish{width}), korkeus (\textenglish{height}) ja syvyys
-(\textenglish{depth}). Näiden mittojen ymmärtämisessä auttaa, kun
-palataan metalliladonnan ja metallisten kirjakkeiden aikaan. Yhtä
-merkkiä varten on yksi kirjake
-
-\begin{koodilohkosis}
-  \newlength{\leveys} \newlength{\korkeus} \newlength{\syvyys}
-  \settowidth{\leveys}{g}
-  \settoheight{\korkeus}{x}
-  \settodepth{\syvyys}{g}
-\end{koodilohkosis}
-
 \leijukuva{
   \begin{tikzpicture}
     [viiva/.style={line width=1.5bp}, xscale=1.52, yscale=2.7,
     baseline=0pt]
     \node at (.04,.25) {\fontsize{172bp}{172bp}\selectfont p};
 
-    \draw [viiva, color=red] (1,1) -- (2.25,1);
-    \draw [viiva, color=red] (-1,0) -- (2.25,0);
+    \draw [viiva, color=red] (-1,.98) rectangle (1,-.5);
+    \draw [viiva, color=red] (1,.98) -- (2.25,.98);
+    \draw [viiva, color=red] (-1,.02) -- (2.25,.02);
     \draw [viiva, color=red] (1,-.5) -- (2.25,-.5);
-    \draw [viiva, color=red] (-1,1) rectangle (1,-.5);
 
-    \draw [viiva, <->, color=black] (1.2,0) -- ++(0,1);
+    \draw [viiva, <->, color=black] (1.2,.02) -- (1.2,.98);
     \node at (1.9,.5) {korkeus};
 
-    \draw [viiva, <->, color=black] (1.2,0) -- ++(0,-.5);
+    \draw [viiva, <->, color=black] (1.2,.02) -- (1.2,-.5);
     \node at (1.9,-.25) {syvyys};
 
-    \draw [viiva, <->, color=black] (-1,1.1) -- ++(2,0);
+    \draw [viiva, <->, color=black] (-1,1.1) -- (1,1.1);
     \node at (0,1.25) {leveys};
 
-    \node at (3.1,1.58) {ylälinja};
-    \node at (3.1,1.41) {versaalilinja};
-    \node at (3.1,1) {gemenalinja};
-    \node at (3.1,0) {peruslinja};
-    \node at (3.1,-.5) {alalinja};
+    \node at (3.13,1.61) {ylälinja};
+    \node at (3.13,1.44) {versaalilinja};
+    \node at (3.13,.98) {gemenalinja};
+    \node at (3.13,.02) {peruslinja};
+    \node at (3.13,-.5) {alalinja};
 
-    \draw [viiva, color=red] (5.05,0) -- ++(-1,0);
-    \draw [viiva, color=red] (5.05,1.45) -- ++(-1,0);
-    \draw [viiva, color=red] (7.95,1.55) -- ++(-3.9,0);
+    \node at (6.52,.74) {\fontsize{172bp}{172bp}\selectfont H};
 
-    \node at (6.5,.72) {\fontsize{172bp}{172bp}\selectfont H};
-    \draw [viiva, color=red] (5.05,0) -- ++(2.9,0) -- ++(0,1.45) --
-    ++(-2.9,0) -- ++(0,-1.45);
+    \draw [viiva, color=red] (5.05,1.47) rectangle (7.95,.02);
+    \draw [viiva, color=red] (5.05,.02) -- (4,.02);
+    \draw [viiva, color=red] (5.05,1.47) -- (4,1.47);
+    \draw [viiva, color=red] (7.95,1.58) -- (4,1.58);
+    \draw [viiva, color=red] (7.95,.98) -- (4,.98);
 
-    \draw [viiva, <->, color=black] (4.86,0) -- ++(0,1.45);
+    \draw [viiva, <->, color=black] (4.86,.02) -- (4.86,1.47);
     \node at (4.1,.5) {korkeus};
 
+    \draw [viiva, <->, color=black] (5.05,-.1) -- (7.95,-.1);
+    \node at (6.5,-.3) {leveys};
 \end{tikzpicture}
 }{
   \caption{Kirjainten mitat ja typografinen viivasto}
   \label{kuva:kirjainmitat}
 }
+
+Latex sisältää myös komennot mittojen poimimiseen kirjaimista tai muista
+merkeistä. Mittoja on kolme: leveys (\textenglish{width}), korkeus
+(\textenglish{height}) ja syvyys (\textenglish{depth}). Leveys on merkin
+viemä tila leveyssuunnassa. Korkeus tarkoittaa merkin korkeutta
+peruslinjan yläpuolella, ja syvyys on merkin korkeus peruslinjan
+alapuolella. Kuva \ref{kuva:kirjainmitat} havainnollistaa näitä kolmea
+mittaa sekä typografista viivastoa.
+
+Gemenalinja sijaitsee gemenakirjainten eli pien\-aak\-kos\-ten
+korkeudella. Peruslinjan ja gemenalinjan etäisyys on fontin x\=/korkeus
+(\koodi{1ex}). Optisen vaikutelman vuoksi gemenalinja ei tarkoita
+ehdotonta gemenakirjainten ylintä kohtaa. Esimerkiksi p\=/kirjaimen
+silmukan yläkaari voi yltää hieman gemenalinjan yläpuolelle ja silmukan
+alakaari peruslinjan alapuolelle. Fontin suunnittelijat tekevät
+tällaisia optisia korjauksia, jotta kirjainten hahmot näyttävät yhtä
+korkeilta ja tasapainoisilta yhdessä.
+
+Versaalilinja sijaitsee versaalikirjainten eli suur\-aak\-kos\-ten
+korkeudella. Jotkin kirjaimet voivat yltää hieman versaalilinjan
+yläpuolellekin. Esimerkiksi joidenkin fonttien Hk\=/kirjaimia
+vertailemalla näkee, että k\=/kirjaimen yläpääte yltää versaalilinjan
+yläpuolelle ylälinjan tuntumaan.
+
+\pagebreak[3]
+
+Merkkien leveyden, korkeuden ja syvyyden voi mitata alla olevan
+esimerkin komennoilla. Esimerkin ensimmäisellä rivillä luodaan uudet
+mitat \koodi{\keno leveys}, \koodi{\keno korkeus} ja \koodi{\keno
+  syvyys}, joihin sitten tallennetaan merkkien mitat.
+
+\begin{koodilohkosis}
+  \newlength{\leveys} \newlength{\korkeus} \newlength{\syvyys}
+  \settowidth{\leveys}{abc} % merkkien ”abc” leveys
+  \settoheight{\korkeus}{H} % merkin ”H” korkeus
+  \settodepth{\syvyys}{p}   % merkin ”p” syvyys
+\end{koodilohkosis}
+
+\pagebreak[3]
+
+Mitat saa näkyviin kirjoittamalla mitan eteen komennon \koodi{\keno
+  the}. Näin mitan pituus ladotaan dokumenttiin. Yksikkönä on
+typografinen piste (pt).
+
+\begin{koodilohkosis}
+  Leveys: \the\leveys, korkeus: \the\korkeus, syvyys: \the\syvyys.
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Leveys: 19.50485pt, korkeus: 9.09196pt, syvyys: 3.28827pt.
+\end{tulossis}
 
 \subsection{Venyvät mitat}
 
@@ -1032,8 +1069,8 @@ Edellä on puhuttu vain kiinteistä mitoista, mutta Latex tuntee myös
 venyvät mitat. Niiden ajatuksena on, että Latexille voi antaa luvan
 kutistaa tai venyttää mittaa tietyissä rajoissa. Venyviä mittoja
 käytettään usein pystysuuntaisissa väleissä, esimerkiksi
-väli\-ot\-si\-kon edellä tai jälkeen tai tekstikappaleiden välissä.
-Latex pystyy latomaan sivut yleensä paremman näköiseksi, kun sille antaa
+väli\-ot\-si\-kon edellä ja jälkeen tai tekstikappaleiden välissä. Latex
+pystyy latomaan sivut yleensä paremman näköiseksi, kun sille antaa
 venyvien mittojen avulla hieman säätövaraa. Alla on esimerkki venyvän
 kappalevälin (\koodi{\keno par\-skip}) määrittämisestä. Samalla
 asetetaan kappaleen ensimmäisen rivin sisennys (\koodi{\keno

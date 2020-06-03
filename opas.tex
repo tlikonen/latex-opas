@@ -38,7 +38,7 @@ per-mode=symbol]{siunitx}
 \usepackage[shortcuts]{extdash}
 
 \hypersetup{ hidelinks, bookmarksopen, bookmarksnumbered,
-  pdfauthor={Teemu Likonen} }
+  pdfauthor={Teemu Likonen}, pdftitle={Käytännöllistä Latexia} }
 
 \setdefaultlanguage{finnish}
 \setotherlanguage{english}
@@ -59,7 +59,7 @@ per-mode=symbol]{siunitx}
 \renewcommand{\normalsize}{\fontsize{10.5bp}{13bp}\selectfont}
 \renewcommand{\large}{\fontsize{13bp}{15bp}\selectfont}
 \renewcommand{\Large}{\fontsize{16bp}{18bp}\selectfont}
-\renewcommand{\LARGE}{\fontsize{18bp}{20bp}\selectfont}
+\renewcommand{\LARGE}{\fontsize{20bp}{22bp}\selectfont}
 \renewcommand{\huge}{\fontsize{24bp}{26bp}\selectfont}
 \linespread{1}
 \normalsize
@@ -100,7 +100,7 @@ per-mode=symbol]{siunitx}
 {\sffamily\versaalinum\fontsize{6bp}{7bp}\selectfont\arabic{FancyVerbLine}}
 
 \DefineVerbatimEnvironment{koodilohko}{Verbatim}{ fontsize=\small,
-  gobble=2, frame=single, framesep=6bp, numbers=left, numbersep=.3em,
+  gobble=2, frame=single, framesep=.4em, numbers=left, numbersep=.3em,
   xleftmargin=0em, xrightmargin=0mm, baselinestretch=1 }
 
 \DefineVerbatimEnvironment{koodilohkosis}{Verbatim}{
@@ -111,13 +111,9 @@ per-mode=symbol]{siunitx}
 \newenvironment{tulossis}
 {\begin{list}{}{
       \setlength{\leftmargin}{\sisennys}
-      %\setlength{\parsep}{\parskip}
-      %\setlength{\listparindent}{\parindent}
       \small
     }\item[⇒]
-  }{
-  \end{list}
-}
+  }{\end{list}}
 
 \floatsetup{ font={small}, justification=raggedright,
   margins=raggedright, captionskip=2ex, capposition=bottom }
@@ -131,8 +127,7 @@ per-mode=symbol]{siunitx}
 \newcommand{\leiju}[3]{
   \begin{#1}
     \floatbox{#1}{#2}{#3}
-  \end{#1}
-}
+  \end{#1}}
 
 \newcommand{\leijutlk}[2]{\leiju{table}{\versaalinum #1}{#2}}
 \newcommand{\leijukuva}[2]{\leiju{figure}{#1}{#2}}
@@ -180,7 +175,7 @@ per-mode=symbol]{siunitx}
 {\chaptertitlename\hspace{.3em}\thechapter}{1.5ex}{\otsikkotyyli\huge}[]
 \titlespacing*{\chapter}{0em}{*13}{*8}
 
-\titleformat{\section}{\otsikkotyyli\Large}
+\titleformat{\section}{\otsikkotyyli\large}
 {\thesection}{.8em}{}[]
 \titlespacing*{\section}{0pt}{*4}{*2}
 

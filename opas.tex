@@ -340,17 +340,14 @@ per-mode=symbol]{siunitx}
 \restoregeometry
 \input{tekijanoikeus}
 
-\clearpage
+\cleardoublepage
+\pagestyle{plain}
 \pdfbookmark[0]{Sisällys}{luku:sisallys}
 \DTMsetstyle{finnish}
 
-{
-  \renewcommand{\thispagestyle}[1]{}
-  \tableofcontents
-}
+\tableofcontents
 
 \cleardoublepage
-\pagestyle{plain}
 
 \input{esipuhe}
 \input{valmistautuminen}

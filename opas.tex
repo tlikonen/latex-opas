@@ -1,5 +1,8 @@
-\documentclass[notitlepage,oneside]{book}
-\usepackage[a4paper, vscale=.75, hscale=.68, footskip=1.5cm]{geometry}
+\documentclass{book}
+\usepackage[a5paper, twoside,
+top=18mm, bottom=30mm,
+outer=26mm, inner=18mm,
+footskip=15mm]{geometry}
 \usepackage{fontspec}
 \usepackage[
 mode=text,
@@ -51,14 +54,13 @@ per-mode=symbol]{siunitx}
 \setmonofont {Linux Libertine Mono O}
 [Scale=MatchLowercase, FakeStretch=.8]
 
-\renewcommand{\footnotesize}{\fontsize{11.34bp}{14bp}\selectfont}
-\renewcommand{\small}{\fontsize{12.6bp}{15bp}\selectfont}
-\renewcommand{\normalsize}{\fontsize{14bp}{18bp}\selectfont}
-\renewcommand{\large}{\fontsize{16.8bp}{21.6bp}\selectfont}
-\renewcommand{\Large}{\fontsize{20.16bp}{22bp}\selectfont}
-\renewcommand{\LARGE}{\fontsize{24.192bp}{26bp}\selectfont}
-\renewcommand{\huge}{\fontsize{29bp}{32bp}\selectfont}
-\renewcommand{\Huge}{\fontsize{34bp}{36bp}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{8bp}{9bp}\selectfont}
+\renewcommand{\small}{\fontsize{9bp}{10bp}\selectfont}
+\renewcommand{\normalsize}{\fontsize{10.5bp}{13bp}\selectfont}
+\renewcommand{\large}{\fontsize{13bp}{15bp}\selectfont}
+\renewcommand{\Large}{\fontsize{16bp}{18bp}\selectfont}
+\renewcommand{\LARGE}{\fontsize{18bp}{20bp}\selectfont}
+\renewcommand{\huge}{\fontsize{24bp}{26bp}\selectfont}
 \linespread{1}
 \normalsize
 
@@ -74,15 +76,15 @@ per-mode=symbol]{siunitx}
 \setlength{\emergencystretch}{1em}
 
 \setlength{\parindent}{1em}
-\newlength{\sisennys}\setlength{\sisennys}{1cm}
+\newlength{\sisennys}\setlength{\sisennys}{1.8em}
 \setlength{\parskip}{0em}
 \setlength{\footnotemargin}{.8em}
-\setlength{\skip\footins}{20bp}
-\setlength{\floatsep}{.8cm}
-\setlength{\textfloatsep}{1cm}
+\setlength{\skip\footins}{1.2em}
+\setlength{\floatsep}{.8em plus .3em minus .1em}
+\setlength{\textfloatsep}{1.3em plus .3em minus .1em}
 
 \setlength{\bibhang}{\parindent}
-\setlength{\bibsep}{5bp}
+\setlength{\bibsep}{.5ex plus .2ex minus .1ex}
 \bibliographystyle{plainnat}
 \setcitestyle{authoryear,comma,aysep={},yysep={,},notesep={: }}%
 \renewcommand{\bibsection}{}
@@ -95,7 +97,7 @@ per-mode=symbol]{siunitx}
 \DeclareFloatingEnvironment[ name={Esimerkki} ]{esimerkki}
 
 \renewcommand{\theFancyVerbLine}
-{\sffamily\versaalinum\fontsize{9bp}{9bp}\selectfont\arabic{FancyVerbLine}}
+{\sffamily\versaalinum\fontsize{6bp}{7bp}\selectfont\arabic{FancyVerbLine}}
 
 \DefineVerbatimEnvironment{koodilohko}{Verbatim}{ fontsize=\small,
   gobble=2, frame=single, framesep=6bp, numbers=left, numbersep=.3em,
@@ -152,7 +154,7 @@ per-mode=symbol]{siunitx}
 
 \newcommand{\keno}{\textbackslash}
 \newcommand{\koodi}[1]{\texttt{#1}}
-\newcommand{\tavukohta}{\textcolor{tavu}{\rule{1bp}{1.5ex}}}
+\newcommand{\tavukohta}{\textcolor{tavu}{\rule{.6bp}{1.5ex}}}
 \newcommand{\sitovaym}{\textcolor{sitova}{-}}
 \newcommand{\uctunnus}[1]{\textenglish{\textsc{#1}}}
 \newcommand{\paketti}[1]{\textenglish{\texttt{#1}}}
@@ -174,8 +176,8 @@ per-mode=symbol]{siunitx}
 
 \newcommand{\otsikkotyyli}{ \raggedright \sffamily \bfseries }
 
-\titleformat{\chapter}[display]{\LARGE\bfseries}
-{\chaptertitlename\hspace{.3em}\thechapter}{1.5ex}{\otsikkotyyli\Huge}[]
+\titleformat{\chapter}[display]{\Large\bfseries}
+{\chaptertitlename\hspace{.3em}\thechapter}{1.5ex}{\otsikkotyyli\huge}[]
 \titlespacing*{\chapter}{0em}{*13}{*8}
 
 \titleformat{\section}{\otsikkotyyli\Large}
@@ -336,14 +338,14 @@ per-mode=symbol]{siunitx}
   ylä-in-dek-sit
 }
 
-\newgeometry{top=2cm, bottom=3cm, hmargin=2cm}
+\newgeometry{top=1cm, bottom=1.8cm, hmargin=1.3cm}
 \input{kansi}
 
 \clearpage
+\restoregeometry
 \input{tekijanoikeus}
 
 \clearpage
-\restoregeometry
 \pdfbookmark[0]{Sisällys}{luku:sisallys}
 \DTMsetstyle{finnish}
 

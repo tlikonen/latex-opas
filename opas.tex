@@ -1,8 +1,7 @@
 \documentclass{book}
 \usepackage[a5paper, twoside,
-top=18mm, bottom=30mm,
-outer=26mm, inner=18mm,
-footskip=15mm]{geometry}
+vmarginratio=20:32, hmarginratio=17:28,
+vscale=.77, hscale=.72]{geometry}
 \usepackage{fontspec}
 \usepackage[
 mode=text,
@@ -63,6 +62,8 @@ per-mode=symbol]{siunitx}
 \renewcommand{\huge}{\fontsize{24bp}{26bp}\selectfont}
 \linespread{1}
 \normalsize
+
+\geometry{footskip=3em}
 
 \newcommand{\gemenanum}{\addfontfeatures{Numbers=Lowercase}}
 \newcommand{\versaalinum}{\addfontfeatures{Numbers=Uppercase}}

@@ -494,7 +494,7 @@ käyttö ei ole välttämätöntä.
 
 \subsection{Muita erikoismerkkejä KESKEN}
 
-%https://tug.org/texinfohtml/latex2e.html#Text-symbols
+% Latex 2e -manuaali, luku 23.
 
 \section{Komennot}
 \label{luku:komennot}
@@ -1171,4 +1171,16 @@ sääntö, joka syrjäyttää muut.
 
 \section{Laskurit KESKEN}
 
-% myös totcount-paketti
+% \usepackage{chngcntr}
+% \usepackage{totcount}
+
+Laskureiden avulla Latex pitää kirjaa esimerkiksi sivunumeroista,
+lukujen ja alalukujen sekä kuvien ja muiden elementtien numeroinnista.
+Esimerkiksi nyt olemme sivulla \arabic{page}, ja kyseessä on
+pääluvun~\arabic{chapter} alaluku~\arabic{section}. Edellisen virkkeen
+luvut tulevat Latexin laskureista automaattisesti.
+
+Tavallisista laskureista ei tarvitse itse huolehtia, sillä ne ovat vain
+tekniikkaa, joka vaikuttaa korkeamman tason toimintojen taustalla.
+Joskus on kuitenkin käyttöä myös omille laskureille, ja toisaalta
+joidenkin laskureiden avulla käyttäjä voi muuttaa tiettyjä asetuksia.

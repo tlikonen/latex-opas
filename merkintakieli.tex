@@ -1171,16 +1171,151 @@ sääntö, joka syrjäyttää muut.
 
 \section{Laskurit KESKEN}
 
-% \usepackage{chngcntr}
-% \usepackage{totcount}
+\subsection{Perusteet}
 
 Laskureiden avulla Latex pitää kirjaa esimerkiksi sivunumeroista,
 lukujen ja alalukujen sekä kuvien ja muiden elementtien numeroinnista.
-Esimerkiksi nyt olemme sivulla \arabic{page}, ja kyseessä on
-pääluvun~\arabic{chapter} alaluku~\arabic{section}. Edellisen virkkeen
-luvut tulevat Latexin laskureista automaattisesti.
+Esimerkiksi nyt olemme pääluvun~\arabic{chapter}
+alaluvussa~\arabic{section}. Edellisen virkkeen luvut tulevat Latexin
+laskureista automaattisesti.
 
-Tavallisista laskureista ei tarvitse itse huolehtia, sillä ne ovat vain
-tekniikkaa, joka vaikuttaa korkeamman tason toimintojen taustalla.
-Joskus on kuitenkin käyttöä myös omille laskureille, ja toisaalta
-joidenkin laskureiden avulla käyttäjä voi muuttaa tiettyjä asetuksia.
+\leijutlk{
+  \ttfamily
+  \begin{tabular}{llll}
+    \toprule
+    part & paragraph & figure & enumi \\
+    chapter & subparagraph & table & enumii \\
+    section & page & footnote & enumiii \\
+    subsection & equation & mpfootnote & enumiv \\
+    subsubsection \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Latexin laskurit}
+  \label{tlk:latexin_laskurit}
+}
+
+Taulukossa \ref{tlk:latexin_laskurit} ovat Latexin perus laskurit. Monet
+niistä ovat otsikoiden numerointia varten (\textenglish{\koodi{part},
+  \koodi{chapter}, \koodi{section}, \koodi{paragraph}}). Sivunumeroita
+varten on \koodien{page}\-/laskuri ja matemaattisten kaavojen
+numerointiin \koodien{equation}\-/laskuri. Leijuvista kuvista ja
+taulukoista (luku \ref{luku:leijuosat}) pidetään kirjaa laskureissa
+\koodien{figure} ja \koodien{table}, ja alaviitteiden (luku
+\ref{luku:alaviitteet} ) numerointi on laskureissa \koodien{footnote} ja
+\koodien{mpfootnote}. Numeroidut luetelmat (luku \ref{luku:luetelmat})
+käsitellään \koodi{enum}\-/alkuisten laskureiden avulla siten, että
+perustasolla käytetään laskuria \koodi{enumi}, ja jos sen luetelmakohta
+sisältää toisen numeroidun luetelman, käytetään siinä laskuria
+\koodi{enumii}, sen sisällä laskuria \koodi{enumiii} jne.
+
+Edellä mainituista laskureista ei yleensä tarvitse itse huolehtia, sillä
+ne ovat vain tekniikkaa, joka toimii korkeamman tason toimintojen
+taustalla. Joskus on kuitenkin käyttöä myös omille laskureille.
+Laskureita käsitellään seuraavilla komennoilla. Laskurin nimi koostuu
+kirjaimista, eikä sen alussa ole kenoviivaa niin kuin komentojen ja
+mittojen alussa.
+
+\begin{koodilohkosis}
+  \newcounter{laskuri}       % luodaan uusi laskuri
+  \setcounter{laskuri}{3}    % asetetaan laskurin arvoksi 3
+  \addtocounter{laskuri}{1}  % lisätään laskurin arvoon 1
+  \addtocounter{laskuri}{-1} % vähennetään laskurin arvosta 1
+\end{koodilohkosis}
+
+Laskuri on sisäisesti kokonaisluku, mutta sen arvon voi tulostaa eri
+muodoissa: arabialaisena tai roomalaisena lukuna, kirjaimena tai
+symbolien sarjana. Taulukossa \ref{tlk:laskurien_tulostus} ovat komennot
+laskurin arvon tulostamiseen. Komennon argumentiksi annetaan laskurin
+nimi. Laskurin voi tulostaa kirjainmuodossa, jos sen suuruus on 1--26.
+Symbolit toimivat vain lu\-ku\-alueel\-la 1--9.
+
+\leijutlk{
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Komento} & \ots{Merkitys} \\
+    \midrule
+    \koodi{\keno arabic\{…\}} & arabialainen luku: 1, 2, 3\ldots \\
+    \koodi{\keno roman\{…\}} & roomalainen luku: i, ii, iii\ldots \\
+    \koodi{\keno Roman\{…\}} & roomalainen luku: I, II, III\ldots \\
+    \koodi{\keno alph\{…\}} & kirjain: a, b, c\ldots \\
+    \koodi{\keno Alph\{…\}} & kirjain: A, B, C\ldots \\
+    \koodi{\keno fnsymbol\{…\}} & symboli: $\ast$, $\dagger$,
+                                  $\ddagger$\ldots \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Komennot laskurien arvon tulostamiseen}
+  \label{tlk:laskurien_tulostus}
+}
+
+Taulukon \ref{tlk:laskurien_tulostus} komentojen lisäksi laskuriin
+liittyvän arvon voi tulostaa komennolla, joka alkaa kirjaimilla
+\koodi{\keno the} ja jatkuu laskurin nimellä. Esimerkiksi komento
+\koodi{\keno the\-page} tulostaa sivunumeron eli tekee käytännössä saman
+asian kuin komento \koodien{\keno arabic\{page\}}. Aina nämä eivät
+kuitenkaan ole sama asia, ja \koodi{\keno the}\-/alkuinen komento voi
+olla määritelty toisellakin tavalla. Tämän oppaan leijuvat taulukot
+numeroidaan laskurilla \koodi{table}, mutta komento \koodi{\keno
+  the\-table} tulostaa ensin pääluvun ja sen perään pisteen ja taulukon
+numeron. Viimeisin taulukko oli numeroltaan \thetable{} eli pääluvun
+\arabic{chapter} taulukko \arabic{table}.
+
+Jos laskurin arvoa tarvitaan Latexin teknisessä tilanteessa eikä
+tarkoituksena ole latoa sitä näkyviin itse dokumenttiin, täytyy käyttää
+komentoa \koodien{\keno value}. Seuraava esimerkki luo laskurin nimeltä
+\koodi{mitta}, jonka arvoa (3) käytetään \koodi{\keno hspace}\-/komennon
+argumenttina mitan ilmaisemiseen (3\,em).
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \newcounter{mitta}
+  \setcounter{mitta}{3}
+  x\hspace{\value{mitta}em}x
+\end{koodilohkosis}
+
+\begin{tulossis}
+  x\hspace{3em}x
+\end{tulossis}
+
+\subsection{Laskurien hierarkkisuus}
+
+Laskurit voivat olla hierarkkisia ja riippuvaisia toisista laskureista:
+kun yhden laskurin arvo kasvaa, nollautuu jokin toinen laskuri
+automaattisesti. Tällaista toimintoa käytetään dokumentin lukujen eli
+otsikoiden numeroinnissa. Kirjan pääluvun~1 alaluvut ovat esimerkiksi
+1.1, 1.2, 1.3 jne. Kun alkaa seuraava pääluku~2, nollautuu alaluvun
+laskuri, jotta saadaan oikein numeroidut alaluvut 2.1, 2.2, 2.3 jne.
+Latex huolehtii lukujen numeroinnista automaattisesti, mutta omille
+laskureille täytyy määritellä riippuvuussuhteet itse. Seuraavassa
+esimerkissä luodaan oma laskuri, joka nollautuu automaattisesti aina,
+kun sivu vaihtuu eli laskurin \koodien{page} arvo kasvaa.
+
+\begin{koodilohkosis}
+  \newcounter{oma}[page]
+\end{koodilohkosis}
+
+Hierarkkisia ylemmän tason laskureita ei kannata kasvattaa komennolla
+\koodi{\keno add\-to\-counter}, koska se vain muuttaa laskurin arvoa
+mutta ei huolehdi alemman tason laskurien nollaamisesta. Hierarkkisten
+laskurien kasvattamiseen on seuraavat kaksi komentoa.
+
+\begin{koodilohkosis}
+  \stepcounter{laskuri}
+  \refstepcounter{laskuri}
+\end{koodilohkosis}
+
+Edellä mainitut komennot kasvattavat argumenttina annetun laskurin arvoa
+yhdellä ja nollaavat niistä riippuvaiset alemman tason laskurit.
+Jälkimmäinen komento \koodi{\keno ref\-step\-counter} asettaa lisäksi
+ristiviitteen numeron, joten tätä komentoa seuraava \koodi{\keno
+  label}\-/komento viittaa tähän laskuriin ja sen \koodi{\keno
+  the\-las\-ku\-ri}\-/komennon tulosteeseen. Ristiviitteitä käsitellään
+tarkemmin luvussa \ref{luku:ristiviitteet}.
+
+Makropaketti \paketti{chngcntr}
+
+% \usepackage{chngcntr}
+% \usepackage{totcount}
+% \day\month\year

@@ -336,6 +336,7 @@ per-mode=symbol]{siunitx}
 
 \newgeometry{top=1cm, bottom=1.8cm, hmargin=1.3cm}
 \pdfbookmark[0]{Kansi}{luku:kansi}
+\DTMsetstyle{finnish}
 
 \vspace*{4cm}
 
@@ -350,8 +351,7 @@ per-mode=symbol]{siunitx}
   {\addfontfeatures{LetterSpace=-4} Käytännöllistä}
 
   \hspace{-7bp}%
-  {\addfontfeatures{LetterSpace=3, FakeStretch=1.5}
-    \LaTeX{}ia}
+  {\addfontfeatures{LetterSpace=3, FakeStretch=1.5} \LaTeX{}ia}
 
 }
 
@@ -359,7 +359,6 @@ per-mode=symbol]{siunitx}
 
 {
 
-  \DTMsetstyle{finnish}
   \raggedleft
   Latex-ladontajärjestelmän opas \\
   \DTMtoday
@@ -369,6 +368,7 @@ per-mode=symbol]{siunitx}
 \clearpage
 \restoregeometry
 \pdfbookmark[0]{Tekijänoikeus}{luku:tekijänoikeus}
+\DTMsetstyle{finnish-numeric}
 
 \null\vfill
 
@@ -380,8 +380,8 @@ per-mode=symbol]{siunitx}
 
   Tekijä: Teemu Likonen \angleemailurl{tlikonen@iki.fi}
 
-  \DTMsetstyle{finnish-numeric} Päiväys: \DTMtoday{} kello
-  \DTMcurrenttime{} (Ensijulkaisu: ei ole julkaistu vielä)
+  Päiväys: \DTMtoday{} kello \DTMcurrenttime{} (Ensijulkaisu: ei ole
+  julkaistu vielä)
 
   Lisenssi: \textenglish{GNU General Public License}, versio~3.
 
@@ -399,7 +399,6 @@ per-mode=symbol]{siunitx}
 \cleardoublepage
 \pagestyle{plain}
 \pdfbookmark[0]{Sisällys}{luku:sisallys}
-\DTMsetstyle{finnish}
 
 \tableofcontents
 

@@ -124,13 +124,15 @@ per-mode=symbol]{siunitx}
 
 \captionsetup[esimerkki]{ skip=-0.5ex, margin=.5em }
 
-\newcommand{\leiju}[3]{
-  \begin{#1}
-    \floatbox{#1}{#2}{#3}
-  \end{#1}}
+\newcommand{\leijutlk}[2]{%
+  \begin{table*}
+    \floatbox{table}{\versaalinum #1}{#2}
+  \end{table*}}
 
-\newcommand{\leijutlk}[2]{\leiju{table}{\versaalinum #1}{#2}}
-\newcommand{\leijukuva}[2]{\leiju{figure}{#1}{#2}}
+\newcommand{\leijukuva}[2]{%
+  \begin{figure*}
+    \floatbox{figure}{#1}{#2}
+  \end{figure*}}
 
 %\fancyhf{}
 % \fancyhf[hl]{\small\nouppercase{\leftmark}}

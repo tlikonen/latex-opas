@@ -335,11 +335,67 @@ per-mode=symbol]{siunitx}
 }
 
 \newgeometry{top=1cm, bottom=1.8cm, hmargin=1.3cm}
-\input{kansi}
+\pdfbookmark[0]{Kansi}{luku:kansi}
+
+\vspace*{4cm}
+
+{
+
+  \setlength{\parindent}{0pt}
+
+  \fontsize{14bp}{14bp}\rmfamily Teemu Likonen
+
+  \fontsize{48bp}{48bp}\sffamily\bfseries
+  \hspace{-3bp}%
+  {\addfontfeatures{LetterSpace=-4} Käytännöllistä}
+
+  \hspace{-7bp}%
+  {\addfontfeatures{LetterSpace=3, FakeStretch=1.5}
+    \LaTeX{}ia}
+
+}
+
+\vfill
+
+{
+
+  \DTMsetstyle{finnish}
+  \raggedleft
+  Latex-ladontajärjestelmän opas \\
+  \DTMtoday
+
+}
 
 \clearpage
 \restoregeometry
-\input{tekijanoikeus}
+\pdfbookmark[0]{Tekijänoikeus}{luku:tekijänoikeus}
+
+\null\vfill
+
+{
+  \setlength{\parindent}{0em}
+  \setlength{\parskip}{1.2ex plus .1ex}
+
+  \section*{Käytännöllistä Latexia}
+
+  Tekijä: Teemu Likonen
+  \href{mailto:tlikonen@iki.fi}{\nolinkurl{‹tlikonen@iki.fi›}}
+
+  \DTMsetstyle{finnish-numeric} Päiväys: \DTMtoday{} kello
+  \DTMcurrenttime{} (Ensijulkaisu: ei ole julkaistu vielä)
+
+  Lisenssi: \textenglish{GNU General Public License}, versio~3.
+
+  Lisenssi antaa luvan käyttää ja levittää tätä opasta vapaasti.
+  Oppaaseen saa myös tehdä omia muutoksia, mutta jos levittää omaa
+  muunneltua versiota, täytyy muunnellut Latex\-/tiedostot (.tex) tai
+  muut lähdetiedostot antaa muiden käyttöön. Muunnellut versiot täytyy
+  levittää tällä samalla lisenssillä tai sen uudemmalla versiolla.
+
+  Lisenssin koko teksti englanninkielisenä: \\
+  \url{https://www.gnu.org/licenses/gpl-3.0.html}
+
+}
 
 \cleardoublepage
 \pagestyle{plain}

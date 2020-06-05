@@ -69,6 +69,7 @@ per-mode=symbol]{siunitx}
 
 \urlstyle{same}
 \newcommand{\angleurl}[1]{\href{#1}{\nolinkurl{‹#1›}}}
+\newcommand{\angleemailurl}[1]{\href{mailto:#1}{\nolinkurl{‹#1›}}}
 
 \clubpenalty=10000
 \widowpenalty=10000
@@ -377,8 +378,7 @@ per-mode=symbol]{siunitx}
 
   \section*{Käytännöllistä Latexia}
 
-  Tekijä: Teemu Likonen
-  \href{mailto:tlikonen@iki.fi}{\nolinkurl{‹tlikonen@iki.fi›}}
+  Tekijä: Teemu Likonen \angleemailurl{tlikonen@iki.fi}
 
   \DTMsetstyle{finnish-numeric} Päiväys: \DTMtoday{} kello
   \DTMcurrenttime{} (Ensijulkaisu: ei ole julkaistu vielä)

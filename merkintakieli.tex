@@ -361,11 +361,7 @@ alaindekseille, jotka fontin suunnittelija on toteuttanut. Niitä
 kannattaa käyttää, koska suunnittelija tuntee oman fonttinsa ja saa
 todennäköisesti parempaa jälkea kuin Latex mekaanisesti. Open Type
 \=/fonttien indeksit on kätevintä ottaa käyttöön
-\paketti{real\-scripts}\-/paketin avulla.
-
-\begin{koodilohkosis}
-  \usepackage{realscripts}
-\end{koodilohkosis}
+\paketti{real\-scripts}\-/paketin avulla.\avusepkg{realscripts}
 
 Paketti \paketti{real\-scripts} määrittelee uudelleen Latexin ylä- ja
 alaindeksikomennot, niin että ne ensisijaisesti pyrkivät käyttämään Open
@@ -730,11 +726,10 @@ lakkaa ja komento palautuu alkuperäiseksi.
 \end{tulossis}
 
 Monimutkaisiin komentoihin voidaan tarvita ehtorakenteita. Ne saa
-toteutettua \paketti{ifthen}\=/paketin tarjoaman \koodi{\keno
-  if\-then\-else}\-/komennon avulla. Se on ohjelmointikielistä tuttu
-ehtorakenne: jos annettu ehtolauseke on tosi, käsitellään then\-/haara;
-muussa tapauksessa käsitellään else-haara. Lisätietoa saa kyseisen
-paketin ohjekirjasta.\footnote{\url{https://www.ctan.org/pkg/ifthen}}
+toteutettua \paketti{ifthen}\=/paketin\avusepkg{ifthen} tarjoaman
+\koodi{\keno if\-then\-else}\-/komennon avulla. Se on
+ohjelmointikielistä tuttu ehtorakenne: jos annettu ehtolauseke on tosi,
+käsitellään then\-/haara; muussa tapauksessa käsitellään else-haara.
 
 \section{Ympäristöt}
 %\label{luku:ymparistot}
@@ -1281,7 +1276,7 @@ argumenttina mitan ilmaisemiseen (3\,em).
   x\hspace{3em}x
 \end{tulossis}
 
-\subsection{Laskurien hierarkkisuus}
+\subsection{Hierarkkiset laskurit}
 
 Laskurit voivat olla hierarkkisia ja riippuvaisia toisista laskureista:
 kun yhden laskurin arvo kasvaa, nollautuu jokin toinen laskuri
@@ -1316,7 +1311,33 @@ ristiviitteen numeron, joten tätä komentoa seuraava \koodi{\keno
   the\-las\-ku\-ri}\-/komennon tulosteeseen. Ristiviitteitä käsitellään
 tarkemmin luvussa \ref{luku:ristiviitteet}.
 
-Makropaketti \paketti{chngcntr}
+Makropaketti \paketti{chngcntr}\avusepkg{chngcntr} auttaa hierarkkisten
+eli toisista laskureista riippuvien laskurien muuttamista jälkikäteen.
+Paketin komentojen avulla voi jälkikäteen asettaa jonkin laskurin
+riippuvaiseksi toisesta laskurista tai poistaa riippuvuuden.
 
-% \usepackage{chngcntr}
+\begin{koodilohkosis}
+  \newcounter{oma}           % Luodaan laskuri "oma".
+  \counterwithin {oma}{page} % Asetetaan riippuvuus page-laskurista.
+  \counterwithout{oma}{page} % Poistetaan riippuvuus.
+\end{koodilohkosis}
+
+Edellä mainitut \paketti{chngcntr}\-/paketin komennot määrittelevät
+uudelleen myös \koodi{\keno the\-oma}\-/komennon, jolla
+\koodi{oma}\-/laskurin arvon voi tulostaa. Se tulostaa mukaan myös
+ylemmäntasoisen laskurin arvon. Jos tätä \koodi{\keno the}\-/alkuista
+komentoa ei halua määritellä uudelleen, täytyy käyttää tähdellisiä
+komennon versioita: \koodi{\keno counter\-within*} ja \koodi{\keno
+  counter\-with\-out*}. Laskuriin liittyvän \koodi{\keno the}\-/komennon
+voi aina itsekin määritellä haluamansa laiseksi komennolla \koodi{\keno
+  renewcommand} (luku \ref{luku:komennot-määr}), esimerkiksi seuraavalla
+tavalla.
+
+\begin{koodilohkosis}
+  \renewcommand{\theoma}{\arabic{page}/\alph{oma}}
+\end{koodilohkosis}
+
+\subsection{Kokonaislaskuri}
+
 % \usepackage{totcount}
+% lastpage

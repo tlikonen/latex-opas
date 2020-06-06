@@ -43,13 +43,11 @@ per-mode=symbol]{siunitx}
 \setotherlanguage{english}
 \newcommand{\englishfont}{}
 
-\defaultfontfeatures[\ttfamily]{Ligatures={TeXReset, NoCommon},
-  HyphenChar={-}}
-\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures={TeX, Common},
-  Numbers=Lowercase}
+% Tavutus päälle
+\defaultfontfeatures[\ttfamily]{Ligatures={TeXReset}}
 
-\setmainfont {Linux Libertine O}
-\setsansfont {Linux Biolinum O} [Scale=MatchLowercase]
+\setmainfont {Linux Libertine O} [Numbers=Lowercase]
+\setsansfont {Linux Biolinum O} [Scale=MatchLowercase, Numbers=Lowercase]
 \setmonofont {Linux Libertine Mono O}
 [Scale=MatchLowercase, FakeStretch=.8]
 

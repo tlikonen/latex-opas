@@ -1338,7 +1338,7 @@ tavalla.
   \renewcommand{\theoma}{\arabic{page}/\alph{oma}}
 \end{koodilohkosis}
 
-\subsection{Kokonaislaskurit KESKEN}
+\subsection{Kokonaislaskurit}
 
 Latex ei tiedä etukäteen, mihin arvoon laskurit lopulta yltävät. Se vain
 latoo sivuja peräkkäin eikä tiedä mitään tulevasta. Sen vuoksi
@@ -1373,6 +1373,28 @@ komennoilla \koodi{\keno ref} ja \koodi{\keno page\-ref}. Esimerkki
 \end{esimerkki*}
 
 Muunlaisten kokonaislaskurien toteuttamiseen voi käyttää
-\paketti{tot\-count}\-/pakettia.
+\paketti{tot\-count}\-/pakettia.\avusepkg{totcount} Paketti tarjoaa
+komennon, jolla rekisteröidään olemassa oleva laskuri
+kokonaislaskuriksi. Lisäksi on komento, jolla tulostetaan tai
+palautetaan laskurin lopullinen arvo.
 
-% \usepackage{totcount}
+\begin{koodilohkosis}
+  \newcounter{oma}      % Luodaan laskuri ”oma”.
+  \regtotcounter{oma}   % Rekisteröidään ”oma” kokonaislaskuriksi.
+  \addtocounter{oma}{1} % Kasvatetaan laskurin arvoa.
+  \total{oma}           % Tulostetaan laskurin lopullinen arvo.
+  \totvalue{oma}        % Palautetaan laskurin lopullinen arvo.
+\end{koodilohkosis}
+
+Edellä olevan esimerkin viimeistä komentoa \koodi{\keno tot\-value} ei
+käytetä laskurin arvon latomiseen itse dokumenttiin vaan sitä käytetään
+teknisissä yhteyksissä kuten toisen Latex\-/komennon argumenttina.
+
+Myös Latexin valmiita laskureita voi rekisteröidä kokonaislaskureiksi.
+Tässä oppaassa on yhteensä \total{chapter} numeroitua päälukua, ja
+mainittu lukumäärä saatiin laskettua seuraavasti.
+
+\begin{koodilohkosis}
+  \regtotcounter{chapter} % Sijoitetaan dokumentin esittelyosaan.
+  \total{chapter}         % Tulostaa päälukujen (chapter) lukumäärän. 
+\end{koodilohkosis}

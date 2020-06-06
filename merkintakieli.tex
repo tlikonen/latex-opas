@@ -495,8 +495,6 @@ käyttö ei ole välttämätöntä.
 \section{Komennot}
 \label{luku:komennot}
 
-\subsection{Perusteet}
-
 Latexin komennot alkavat kenoviivalla (\koodi{\textbackslash}), jonka
 jälkeen tulee komennon nimi. Nimi koostuu yleensä pienistä tai isoista
 kirjaimista, mutta komento voi olla myös merkkejä.
@@ -540,10 +538,12 @@ seuraavalla tavalla.
      {argu}   {mentteja}
 \end{koodilohkosis}
 
+\subsection{Omat komennot ja abstrahointi}
+
 Omien komentojen tärkein tarkoitus on merkintätapojen abstrahointi eli
 teknisen toteutuksen ja yksityiskohtien piilottaminen. Abstrahointi voi
 helpottaa työskentelyä huomattavastikin ja tehdä lähdedokumentista
-helppolukuista. Otetaan esimerkki tämän oppaan toteutuksesta.
+helppolukuisen. Otetaan esimerkki tämän oppaan toteutuksesta.
 
 Tämä opas käsittelee välillä Unicode\-/merkkejä ja niiden tunnuksia
 kuten \uctunnus{u+0061 latin small letter~a}. Merkkien tunnukset
@@ -683,7 +683,7 @@ ei siis suostu ottamaan vastaan argumentteja, jotka sisältävät kappaleen
 vaihtumisen eli enemmän kuin yhden tekstikappaleen. Tähdelliset versiot
 tuovat tällaisen suo\-jaus\-omi\-nai\-suu\-den.
 
-\subsection{Lisätietoa}
+\subsection{Muita vinkkejä}
 \label{luku:komennot-lisä}
 
 Komennon määrittelyssä on välillä hyötyä \koodi{\keno
@@ -735,15 +735,15 @@ käsitellään then\-/haara; muussa tapauksessa käsitellään else-haara.
 %\label{luku:ymparistot}
 
 Ympäristöt ovat rakenteita, joilla on aloittava \koodi{\keno
-  begin}\-/komento ja lopettava \koodi{\keno end}\-/komento sekä
-yksilöllinen nimi. Ympäristöjen ajatuksena on, että jokin ominaisuus tai
-jotkin toiminnot ovat voimassa vain ympäristön sisällä ja asiat
-palautuvat ennalleen ympäristön jälkeen. Tässä mielessä ne toimivat
-samalla tavalla kuin aaltosulkeet (luku \ref{luku:aaltosulkeet}). Jos
-esimerkiksi fonttiasetusta (luku \ref{luku:kirjaintyypit}) muuttaa
-ympäristön sisäpuolella, asetus palautuu ympäristön jälkeen samaksi kuin
-se oli ennen ympäristön alkua. Samoin ympäristön sisällä määritellyt
-komennot (luku \ref{luku:komennot-määr}) ovat voimassa vain kyseisessä
+  begin}\-/komento ja lopettava \koodi{\keno end}\-/komento sekä nimi.
+Ympäristöjen ajatuksena on, että jokin ominaisuus tai jotkin toiminnot
+ovat voimassa vain ympäristön sisällä ja asiat palautuvat ennalleen
+ympäristön jälkeen. Tässä mielessä ne toimivat samalla tavalla kuin
+aaltosulkeet (luku \ref{luku:aaltosulkeet}). Jos esimerkiksi
+fonttiasetusta (luku \ref{luku:kirjaintyypit}) muuttaa ympäristön
+sisäpuolella, asetus palautuu ympäristön jälkeen samaksi kuin se oli
+ennen ympäristön alkua. Samoin ympäristön sisällä määritellyt komennot
+(luku \ref{luku:komennot-määr}) ovat voimassa vain kyseisessä
 ympäristössä.
 
 \begin{koodilohkosis}
@@ -754,9 +754,9 @@ ympäristössä.
 \end{koodilohkosis}
 
 Yleisin ympäristö on nimeltään \koodi{document}, jonka sisään koko
-dokumentin sisältö kirjoitetaan. Ympäristöjä käytetään tavallisesta
-leipätekstistä poikkeavien rakenteiden ilmaisemiseen, esimerkiksi
-luetelmiin ja taulukoihin (luvut \ref{luku:luetelmat} ja
+dokumentin sisältö kirjoitetaan. Muita ympäristöjä käytetään
+tavallisesta leipätekstistä poikkeavien rakenteiden ilmaisemiseen,
+esimerkiksi luetelmiin ja taulukoihin (luvut \ref{luku:luetelmat} ja
 \ref{luku:taulukot}). Ympäristöjä voi tehdä itsekin mihin hyvänsä
 tarkoitukseen. Niitä määritellään seuraavilla komennoilla.
 
@@ -776,6 +776,8 @@ Argumentit ovat lähes samanlaiset kuin komentojen määrittelyssä (luku
 pakollista argumenttia: ensimmäinen on ympäristön nimi, toinen on
 ympäristön aloitusmääritelmä (\koodi{aloitus}) ja kolmas on
 lopetusmääritelmä (\koodi{lopetus}).
+
+\pagebreak[3]
 
 \begin{koodilohkosis}
   \newenvironment{ymp}{Tästä se alkaa.}{Tähän se päättyy.}
@@ -850,7 +852,7 @@ lopettavan \koodi{\keno end}\-/komennon jälkeiset sanavälit.
     {esi\ignorespacesafterend}
 
   \begin{ymp}
-    sana% kommentti poistaa seuraavan sanavälin
+    sana% Kommentti poistaa seuraavan sanavälin.
   \end{ymp}   merkki.
 \end{koodilohkosis}
 
@@ -940,10 +942,10 @@ tarpeen luoda silloin, kun halutaan määritellä tietynsuuruinen mitta,
 jota käytetään Latex\-/koodissa useita kertoja.
 
 \begin{koodilohkosis}
-  \newlength{\omamitta}         % luodaan mitta
-  \setlength{\omamitta}{2.3em}  % asetetaan mitta
-  \addtolength{\omamitta}{1em}  % kasvatetaan mittaa
-  \addtolength{\omamitta}{-1em} % vähennetään mittaa
+  \newlength{\omamitta}         % Luodaan mitta.
+  \setlength{\omamitta}{2.3em}  % Asetetaan mitta.
+  \addtolength{\omamitta}{1em}  % Lisätään mittaan.
+  \addtolength{\omamitta}{-1em} % Vähennetään mitasta.
 \end{koodilohkosis}
 
 Näin luotuja mittoja voi käyttää mittayksiköiden tavoin, eli niille voi
@@ -1164,9 +1166,7 @@ käyttöä esimerkiksi makropaketin koodissa: \koodi{fil} sallii, että
 käyttäjä tai muu koodi syrjäyttää asetuksen; \koodi{filll} on ehdoton
 sääntö, joka syrjäyttää muut.
 
-\section{Laskurit KESKEN}
-
-\subsection{Perusteet}
+\section{Laskurit}
 
 Laskureiden avulla Latex pitää kirjaa esimerkiksi sivunumeroista,
 lukujen ja alalukujen sekä kuvien ja muiden elementtien numeroinnista.
@@ -1193,37 +1193,38 @@ laskureista automaattisesti.
 Taulukossa \ref{tlk:latexin_laskurit} ovat Latexin perus laskurit. Monet
 niistä ovat otsikoiden numerointia varten (\textenglish{\koodi{part},
   \koodi{chapter}, \koodi{section}, \koodi{paragraph}}). Sivunumeroita
-varten on \koodien{page}\-/laskuri ja matemaattisten kaavojen
-numerointiin \koodien{equation}\-/laskuri. Leijuvista kuvista ja
+varten on \koodieng{page}\-/laskuri ja matemaattisten kaavojen
+numerointiin \koodieng{equation}\-/laskuri. Leijuvista kuvista ja
 taulukoista (luku \ref{luku:leijuosat}) pidetään kirjaa laskureissa
-\koodien{figure} ja \koodien{table}, ja alaviitteiden (luku
-\ref{luku:alaviitteet} ) numerointi on laskureissa \koodien{footnote} ja
-\koodien{mpfootnote}. Numeroidut luetelmat (luku \ref{luku:luetelmat})
+\koodieng{figure} ja \koodieng{table}, ja alaviitteiden (luku
+\ref{luku:alaviitteet} ) numerointi on laskureissa \koodieng{footnote} ja
+\koodieng{mpfootnote}. Numeroidut luetelmat (luku \ref{luku:luetelmat})
 käsitellään \koodi{enum}\-/alkuisten laskureiden avulla siten, että
 perustasolla käytetään laskuria \koodi{enumi}, ja jos sen luetelmakohta
 sisältää toisen numeroidun luetelman, käytetään siinä laskuria
 \koodi{enumii}, sen sisällä laskuria \koodi{enumiii} jne.
 
-Edellä mainituista laskureista ei yleensä tarvitse itse huolehtia, sillä
+Edellä mainituista laskureista ei tarvitse yleensä itse huolehtia, sillä
 ne ovat vain tekniikkaa, joka toimii korkeamman tason toimintojen
-taustalla. Joskus on kuitenkin käyttöä myös omille laskureille.
-Laskureita käsitellään seuraavilla komennoilla. Laskurin nimi koostuu
-kirjaimista, eikä sen alussa ole kenoviivaa niin kuin komentojen ja
-mittojen alussa.
+taustalla. Joskus on kuitenkin käyttöä myös omille laskureille. Alla
+ovat laskureiden käsittelyn peruskomennot. Niissä käytetään laskuria
+nimeltä \koodi{oma}. Laskurien nimet koostuvat pelkistä kirjaimista,
+eikä niiden alussa ole kenoviivaa niin kuin komentojen ja mittojen
+alussa.
 
 \begin{koodilohkosis}
-  \newcounter{laskuri}       % luodaan uusi laskuri
-  \setcounter{laskuri}{3}    % asetetaan laskurin arvoksi 3
-  \addtocounter{laskuri}{1}  % lisätään laskurin arvoon 1
-  \addtocounter{laskuri}{-1} % vähennetään laskurin arvosta 1
+  \newcounter{oma}       % Luodaan uusi laskuri ”oma”.
+  \setcounter{oma}{3}    % Asetetaan laskurin arvoksi 3.
+  \addtocounter{oma}{1}  % Lisätään laskurin arvoon 1.
+  \addtocounter{oma}{-1} % Vähennetään laskurin arvosta 1.
 \end{koodilohkosis}
 
 Laskuri on sisäisesti kokonaisluku, mutta sen arvon voi tulostaa eri
 muodoissa: arabialaisena tai roomalaisena lukuna, kirjaimena tai
 symbolien sarjana. Taulukossa \ref{tlk:laskurien_tulostus} ovat komennot
 laskurin arvon tulostamiseen. Komennon argumentiksi annetaan laskurin
-nimi. Laskurin voi tulostaa kirjainmuodossa, jos sen suuruus on 1--26.
-Symbolit toimivat vain lu\-ku\-alueel\-la 1--9.
+nimi. Laskurin voi tulostaa kirjainmuodossa, jos sen arvo on 1--26;
+symbolit toimivat vain lu\-ku\-alueel\-la 1--9.
 
 \leijutlk{
   \begin{tabular}{ll}
@@ -1250,17 +1251,17 @@ Taulukon \ref{tlk:laskurien_tulostus} komentojen lisäksi laskuriin
 liittyvän arvon voi tulostaa komennolla, joka alkaa kirjaimilla
 \koodi{\keno the} ja jatkuu laskurin nimellä. Esimerkiksi komento
 \koodi{\keno the\-page} tulostaa sivunumeron eli tekee käytännössä saman
-asian kuin komento \koodien{\keno arabic\{page\}}. Aina nämä eivät
+asian kuin komento \koodieng{\keno arabic\{page\}}. Aina nämä eivät
 kuitenkaan ole sama asia, ja \koodi{\keno the}\-/alkuinen komento voi
-olla määritelty toisellakin tavalla. Tämän oppaan leijuvat taulukot
-numeroidaan laskurilla \koodi{table}, mutta komento \koodi{\keno
-  the\-table} tulostaa ensin pääluvun ja sen perään pisteen ja taulukon
-numeron. Viimeisin taulukko oli numeroltaan \thetable{} eli pääluvun
-\arabic{chapter} taulukko \arabic{table}.
+olla määritelty toisellakin tavalla. Esimerkiksi tämän oppaan leijuvat
+taulukot numeroidaan laskurilla \koodi{table}, mutta komento
+\koodi{\keno the\-table} tulostaa ensin pääluvun ja sen perään pisteen
+ja taulukon numeron. Viimeisin taulukko oli numeroltaan \thetable{} eli
+pääluvun \arabic{chapter} taulukko \arabic{table}.
 
 Jos laskurin arvoa tarvitaan Latexin teknisessä tilanteessa eikä
 tarkoituksena ole latoa sitä näkyviin itse dokumenttiin, täytyy käyttää
-komentoa \koodien{\keno value}. Seuraava esimerkki luo laskurin nimeltä
+komentoa \koodieng{\keno value}. Seuraava esimerkki luo laskurin nimeltä
 \koodi{mitta}, jonka arvoa (3) käytetään \koodi{\keno hspace}\-/komennon
 argumenttina mitan ilmaisemiseen (3\,em).
 
@@ -1287,7 +1288,7 @@ laskuri, jotta saadaan oikein numeroidut alaluvut 2.1, 2.2, 2.3 jne.
 Latex huolehtii lukujen numeroinnista automaattisesti, mutta omille
 laskureille täytyy määritellä riippuvuussuhteet itse. Seuraavassa
 esimerkissä luodaan oma laskuri, joka nollautuu automaattisesti aina,
-kun sivu vaihtuu eli laskurin \koodien{page} arvo kasvaa.
+kun sivu vaihtuu eli laskurin \koodieng{page} arvo kasvaa.
 
 \begin{koodilohkosis}
   \newcounter{oma}[page]
@@ -1311,13 +1312,13 @@ ristiviitteen numeron, joten tätä komentoa seuraava \koodi{\keno
   the\-las\-ku\-ri}\-/komennon tulosteeseen. Ristiviitteitä käsitellään
 tarkemmin luvussa \ref{luku:ristiviitteet}.
 
-Makropaketti \paketti{chngcntr}\avusepkg{chngcntr} auttaa hierarkkisten
-eli toisista laskureista riippuvien laskurien muuttamista jälkikäteen.
-Paketin komentojen avulla voi jälkikäteen asettaa jonkin laskurin
-riippuvaiseksi toisesta laskurista tai poistaa riippuvuuden.
+Makropaketti \paketti{chngcntr}\avusepkg{chngcntr} helpottaa
+hierarkkisten laskurien muuttamista jälkikäteen. Paketin komentojen
+avulla voi jälkikäteen asettaa jonkin laskurin riippuvaiseksi toisesta
+laskurista tai poistaa riippuvuuden.
 
 \begin{koodilohkosis}
-  \newcounter{oma}           % Luodaan laskuri "oma".
+  \newcounter{oma}           % Luodaan laskuri ”oma”.
   \counterwithin {oma}{page} % Asetetaan riippuvuus page-laskurista.
   \counterwithout{oma}{page} % Poistetaan riippuvuus.
 \end{koodilohkosis}
@@ -1327,7 +1328,7 @@ uudelleen myös \koodi{\keno the\-oma}\-/komennon, jolla
 \koodi{oma}\-/laskurin arvon voi tulostaa. Se tulostaa mukaan myös
 ylemmäntasoisen laskurin arvon. Jos tätä \koodi{\keno the}\-/alkuista
 komentoa ei halua määritellä uudelleen, täytyy käyttää tähdellisiä
-komennon versioita: \koodi{\keno counter\-within*} ja \koodi{\keno
+komennon versioita: \koodi{\keno counter\-with\-in*} ja \koodi{\keno
   counter\-with\-out*}. Laskuriin liittyvän \koodi{\keno the}\-/komennon
 voi aina itsekin määritellä haluamansa laiseksi komennolla \koodi{\keno
   renewcommand} (luku \ref{luku:komennot-määr}), esimerkiksi seuraavalla
@@ -1337,7 +1338,41 @@ tavalla.
   \renewcommand{\theoma}{\arabic{page}/\alph{oma}}
 \end{koodilohkosis}
 
-\subsection{Kokonaislaskuri}
+\subsection{Kokonaislaskurit KESKEN}
+
+Latex ei tiedä etukäteen, mihin arvoon laskurit lopulta yltävät. Se vain
+latoo sivuja peräkkäin eikä tiedä mitään tulevasta. Sen vuoksi
+esimerkiksi dokumentin sivumäärää ei voi ihan yksinkertaisella
+komennolla latoa dokumentin alkusivuille.
+
+Vastaus tämäntyyppisiin ongelmiin löytyy ristiviitteistä (luku
+\ref{luku:ristiviitteet}). Ne toimivat sisäisesti niin, että dokumentin
+ensimmäisellä kääntökerralla kirjoitetaan väliaikaistiedostoon muistiin
+tarpeellisia asioita ja seuraavalla kääntökerralla hyödynnetään
+väliaikaistiedostoa. Dokumentin sivumäärän ja viimeisen sivunumeron
+tallentamiseen on olemassa makropaketti \paketti{tot\-pages}, joka lisää
+viimeiselle sivulle automaattisesti ristiviitteen nimeltä
+\koodi{Tot\-Pages}. Sivumäärän ja viimeisen sivun numeron voi tulostaa
+komennoilla \koodi{\keno ref} ja \koodi{\keno page\-ref}. Esimerkki
+\ref{esim:totpages} havainnollistaa niiden käyttöä.
+
+\begin{esimerkki*}
+\begin{koodilohko}
+  \documentclass{article}
+  \usepackage{totpages}
+
+  \begin{document}
+  Sivumäärä: \ref{TotPages}. Viimeinen sivu: \pageref{TotPages}.
+
+  \addtocounter{page}{10} % Sivunumerot 11, 12, 13...
+  \newpage Jotain... \newpage ...sisältöä.
+  \end{document}
+\end{koodilohko}
+\caption{Dokumentin sivumäärän ja viimeisen sivun tulostaminen}
+\label{esim:totpages}
+\end{esimerkki*}
+
+Muunlaisten kokonaislaskurien toteuttamiseen voi käyttää
+\paketti{tot\-count}\-/pakettia.
 
 % \usepackage{totcount}
-% lastpage

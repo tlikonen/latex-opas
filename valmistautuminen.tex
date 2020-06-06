@@ -49,8 +49,9 @@ osaavat lukea Unicode\-/merkistöllä kirjoitettuja lähdedokumentteja ja
 käyttää nyky\-aikaisia \index{True Type}True Type- ja \index{Open
   Type}Open Type \=/fontteja, mitä alkuperäinen Latex ja Tex eivät osaa.
 Nyky\-aikana käytetään yleensä jompaakumpaa, Xelatexia tai Lualatexia,
-ja esimerkiksi tämän oppaan lähdetiedosto on käännetty
-pdf\-/tiedostoksi\footnote{PDF = Portable Document Format} Xelatexilla.
+ja esimerkiksi tämän oppaan lähdetiedoston voi kääntää
+pdf\-/tiedostoksi\footnote{PDF = Portable Document Format} kummalla
+tahansa.
 
 Xelatexilla ja Lualatexilla ei ole käyttäjän kannalta suurtakaan eroa.
 Jälkimmäinen sisältää Lua\-/nimisen ohjelmointikielen, ja sillä on
@@ -78,7 +79,8 @@ Hän on kirjoittanut tekstieditorilla (kuten GNU Emacsilla)
 tekstitiedoston, jossa on dokumentin sisältö ja Latex\-/makroille
 tarkoitettuja komentoja mutta myös joitakin Tex\-/komentoja. Sitten hän
 on kääntänyt eli ladotuttanut tekstitiedostonsa pdf\-/tiedostoksi
-Latex\-/ladontaohjelman jollakin toteutuksella (kuten Xelatexilla).
+Latex\-/ladontaohjelman jollakin toteutuksella (kuten Xelatexilla tai
+Lualatexilla).
 
 Meille taitaa riittää vain Latexista puhuminen, mutta siitäkin on
 mainittava vielä yksi asia. Latexin harrastajat tykkäävät käyttää
@@ -177,12 +179,12 @@ saa ristiviitteitä kohdalleen yhdellä kääntämisellä, vaan ensin se
 kirjoittaa viittausten kohteet muistiin väliaikaistiedostoon ja
 seuraavilla kääntökerroilla käyttää väliaikaistiedostoa apunaan.
 
-Tavallinenkin kääntäjä kyllä huomauttaa tietokoneen käyttäjää, kun
-uusintakäännös on tarpeen, mutta Latexmk\-/ohjelma käynnistää
-uusintakäännöksen ihan itse, aina kun se on tarpeellista. Kätevää.
+Tavallinenkin Latexin kääntäjä kyllä huomauttaa tietokoneen käyttäjää,
+kun uusintakäännös on tarpeen, mutta Latexmk\-/ohjelma käynnistää
+uusintakäännöksen itse, aina kun se on tarpeellista.
 
-Alla on esimerkkikomennot Latex\-/dokumentin kääntämiseen Xelatexilla ja
-Lualatexilla.
+Alla ovat esimerkkikomennot Latex\-/dokumentin kääntämiseen Xelatexilla
+ja Lualatexilla.
 
 \begin{koodilohkosis}
   latexmk -xelatex  teksti.tex
@@ -256,8 +258,7 @@ tekstieditorin avulla tiedostoon vaikkapa nimellä \koodi{teksti.tex}.
 Käännä eli lado se pdf\-/tiedostoksi komennolla \koodi{xelatex
   teksti.tex} tai komennolla \koodi{lualatex teksti.tex}. Tuloksena
 pitäisi olla tiedosto \koodi{teksti.pdf}, jota voi ihailla jollakin
-pdf\-/tiedostojen katseluun tarkoitetulla ohjelmalla. Näin tämä
-Latex\-/homma toimii.
+pdf\-/tiedostojen katseluun tarkoitetulla ohjelmalla.
 
 Tutkitaan esimerkkiä \ref{esim:ensimmainen} tarkemmin. Ensimmäisellä
 rivillä määritellään dokumenttiluokka \textenglish{\koodi{article}},

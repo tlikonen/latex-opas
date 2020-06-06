@@ -121,57 +121,47 @@ Mactex\-/nimistä jakelua.
 
 \subsection{Tekstieditori}
 
-Käytä kunnollista tekstieditoria. Sellaisia tehtiin ennen vanhaan
-Unixille ja sittemmin GNU/Linuxille. Sellaisia, joilla moni ohjelmoi,
-kirjoittaa sähköpostejaan ja muokkaa käyttöjärjestelmänsä
-asetustiedostoja. Kunnollisia editoreja ovat ainakin GNU Emacs ja Vim,
-ja ne ovat saatavilla suunnilleen kaikille käyttöjärjestelmille.
-Latex\-/dokumentti kääntyy pdf:ksi parilla näppäinpainalluksella.
-
-Jos et ihan vielä viitsi opetella käyttämään GNU Emacsia etkä Vimiä,
-pyri ainakin löytämään sellainen editori, joka osaa värjätä tekstiä
-Latexin tai Texin tekstipiirteiden mukaan. Väreillä ei sinänsä ole
-merkitystä, mutta editorin tasosta se yleensä kertoo paljon, jos se
-tuntee erilaisten ohjelmointi\-/{} ja merkintäkielten luonnetta ja osaa
-merkitä kielen avainsanoja havainnollisilla väreillä. Ihan
-yksinkertaisiin editoreihin ei tuollaisia ominaisuuksia yleensä tehdä.
-
-Toisaalta todellisten ohjelmoijien (ja Latex\-/tyyppien) editoriksi
-voivat soveltua myös \koodi{/bin/ed}, \koodi{/bin/cat}, magnetisoitu
-neula tai perhoset, joten mikä tahansa lopulta käy.%
-\footnote{''Real Programmers'': \url{https://xkcd.com/378/}}
+Kannattaa käyttää kunnollista tekstieditoria, koska se on tärkein
+työkalu ja sen kanssa ollaan eniten tekemisissä. Pyri löytämään
+sellainen editori, joka osaa värjätä tekstiä Latexin tai Texin
+tekstipiirteiden mukaisesti. Väreillä ei sinänsä ole merkitystä, mutta
+editorin laadusta se yleensä kertoo paljon. Jos editori tuntee
+erilaisten ohjelmointi\-/{} ja merkintäkielten luonnetta ja osaa merkitä
+kielen avainsanoja havainnollisilla väreillä, se todennäköisesti on
+tehty tehokkaaseen ohjelmointiin ja muuhun vastaavaan työskentelyyn.
+Ihan yksinkertaisiin editoreihin ei tuollaisia ominaisuuksia yleensä
+tehdä.
 
 \subsection{Pdf-katselin}
 
-Latex\-/kääntäjät eli \=/latojat eli \=/moottorit kuten Xelatex ja
-Lualatex tuottavat pdf\-/tiedoston, ja niiden katselemiseen tarvitaan
-tietenkin oma ohjelmansa. Sellaisia on saatavilla paljon erilaisia, ja
-melkein mikä tahansa kelpaa, mutta yksi tietty ominaisuus olisi
-toivottavaa olla: muuttuneen pdf\-/tiedoston automaattinen lataaminen.
+Latex\-/kääntäjät eli \=/moottorit kuten Xelatex ja Lualatex tuottavat
+pdf\-/tiedoston, ja niiden katselemiseen tarvitaan tietenkin oma
+ohjelmansa. Sellaisia on saatavilla paljon erilaisia, ja melkein mikä
+tahansa kelpaa, mutta yksi tietty ominaisuus olisi toivottavaa olla:
+muuttuneen pdf\-/tiedoston automaattinen lataaminen.
 
-Nimittäin välillä työskentely on sitä, että tehdään Latex\-/dokumenttiin
-pieni muutos, käännetään se ja katsotaan pdf:ää. Lopputulos ei ehkä ihan
+Välillä työskentely on sitä, että tehdään Latex\-/dokumenttiin pieni
+muutos, käännetään se ja katsotaan pdf:ää. Lopputulos ei ehkä ihan
 miellytä. Muokataan tekstiä tai asetuksia vähän, käännetään ja
 katsotaan, miltä ladottu pdf nyt näyttää.
 
-On todella mukavaa, jos pdf\-/katselimessa ei tarvitse joka kerta
-klikkailla valikoiden kautta auki samaa tiedostoa uudelleen, vaan
-ohjelma itse huomaa, että jo avattu tiedosto muuttui
-tiedostojärjestelmässä, ja lataa sen automaattisesti uudelleen. Jotkin
-pdf\-/ohjelmat osaavat tämän. Jotkin ohjelmat eivät osaa mutta osaavat
-sentään yhdellä näppäinpainalluksella avata pdf:n uudelleen
-tiedostojärjestelmästä.
+On suuri apu, jos pdf\-/katselimessa ei tarvitse joka kerta valikoiden
+kautta avata samaa tiedostoa uudelleen, vaan ohjelma itse huomaa, että
+jo avattu tiedosto muuttui tiedostojärjestelmässä, ja lataa sen
+automaattisesti uudelleen. Jotkin pdf\-/ohjelmat osaavat tämän. Jotkin
+ohjelmat eivät ihan osaa mutta osaavat sentään yhdellä
+näppäinpainalluksella avata pdf:n uudelleen tiedostojärjestelmästä.
 
 Hyvän tekstieditorin ja pdf\-/katselimen kanssa työskentely on sujuvaa.
-Tietty näppäinkomento editorissa tallentaa ja kääntää dokumentin, ja
-pian pdf\-/katselin lataa muuttuneen pdf:n automaattisesti näkyviin.
-Sekä editorin että pdf\-/katselimen voi pitää sa\-man\-aikai\-ses\-ti
-esillä, eikä muualle tarvitse yleensä siirtyä. Tähän kannattaa pyrkiä.
+Parhaimmillaan tietty näppäinkomento editorissa tallentaa ja kääntää
+dokumentin, ja pian pdf\-/katselin lataa muuttuneen pdf:n
+automaattisesti näkyviin. Sekä editorin että pdf\-/katselimen voi pitää
+sa\-man\-aikai\-ses\-ti esillä, eikä muualle tarvitse yleensä siirtyä.
 
 \subsection{Latexmk}
 
 Erin\-omaisen hyödyllinen apu\-ohjelma on Latexmk, koska se helpottaa
-dokumenttien kääntämistä ja vähän muutakin työskentelyä. Varsin usein
+dokumenttien kääntämistä ja muutakin työskentelyä. Varsin usein
 Latex\-/dokumentit täytyy kääntää useita kertoja ennen kuin
 pdf\-/tiedosto on valmis. Tämä johtuu siitä, että dokumentit sisältävät
 usein ristiviitteitä eli viittauksia dokumentin toisiin osiin. Latex ei
@@ -223,7 +213,7 @@ Esimerkin ensimmäisen rivin asetus määrittää, miten pdf\-/tiedostot
 tuotetaan tai mitä kääntäjää käytetään oletuksena. Toisella ja
 kolmannella rivillä määritellään, millä tavoin Xelatex ja Lualatex
 suoritetaan. Tässä esimerkissä ole\-tus\-ase\-tuk\-siin on lisätty
-\koodi{nonstopmode}, joka estää kaiken vuorovaikutteisen toiminnan.
+\koodi{non\-stop\-mode}, joka estää kaiken vuorovaikutteisen toiminnan.
 Asetus on tarpeen ainakin silloin, kun kääntäjä käynnistetään toisesta
 ohjelmasta kuten tekstieditorista eikä vuorovaikutus kääntäjän kanssa
 ole mahdollista.
@@ -252,20 +242,20 @@ haluaa tutustua esimerkissä \ref{esim:ensimmainen} mainittuun
 
 \section{Ensimmäinen dokumentti}
 
-Olemme varmasti jo puhuneet tarpeeksi, ja olisi hyvä päästä tekemään
-jotain käytännöllistä. Tallenna esimerkin \ref{esim:ensimmainen} sisältö
-tekstieditorin avulla tiedostoon vaikkapa nimellä \koodi{teksti.tex}.
-Käännä eli lado se pdf\-/tiedostoksi komennolla \koodi{xelatex
-  teksti.tex} tai komennolla \koodi{lualatex teksti.tex}. Tuloksena
-pitäisi olla tiedosto \koodi{teksti.pdf}, jota voi ihailla jollakin
-pdf\-/tiedostojen katseluun tarkoitetulla ohjelmalla.
+Luodaan seuraavaksi yksinkertainen Latex\-/dokumentti, jota voi käyttää
+Latexin harjoitteluun ja pohjana kokeiluille. Tallenna esimerkin
+\ref{esim:ensimmainen} sisältö tekstieditorin avulla tiedostoon vaikkapa
+nimellä \koodi{teksti.tex}. Käännä eli lado se pdf\-/tiedostoksi
+komennolla \koodi{xelatex teksti.tex} tai komennolla \koodi{lualatex
+  teksti.tex}. Tuloksena pitäisi olla tiedosto \koodi{teksti.pdf}, jota
+voi ihailla jollakin pdf\-/tiedostojen katseluun tarkoitetulla
+ohjelmalla.
 
-Tutkitaan esimerkkiä \ref{esim:ensimmainen} tarkemmin. Ensimmäisellä
-rivillä määritellään dokumenttiluokka \textenglish{\koodi{article}},
-joka on tietynlainen sivupohja tai asetusten kokoelma, jonka perustalle
-aletaan rakentaa omaa sivua. Luokka \textenglish{\koodi{article}} on
-tyypillinen valinta lyhyehköille teksteille. Lisätietoa
-dokumenttiluokista on luvussa \ref{luku:dokumenttiluokat}.
+Esimerkin \ref{esim:ensimmainen} ensimmäisellä rivillä määritellään
+dokumenttiluokka \koodieng{article}, joka on tietynlainen sivupohja tai
+asetusten kokoelma, jonka perustalle aletaan rakentaa omaa sivua. Luokka
+\koodieng{article} on tyypillinen valinta lyhyehköille teksteille.
+Lisätietoa dokumenttiluokista on luvussa \ref{luku:dokumenttiluokat}.
 
 Toisella ja kolmannella rivillä käytetään komentoa \koodi{\keno
   usepackage} ja niiden avulla otetaan käyttöön fontti\-asetuksia
@@ -275,7 +265,7 @@ dokumenteissa, ja niihin palataan tarkemmin luvuissa
 \ref{luku:kirjaintyypit} ja \ref{luku:kieliasetukset}. Sivun asetuksia
 käsitellään luvussa \ref{luku:sivuasetukset}.
 
-Seuraavilla riveillä asetetaan kieleksi suomi (\koodi{finnish}) ja
+Seuraavilla riveillä asetetaan kieleksi suomi (\koodieng{finnish}) ja
 määritetään oletuksena käytettävä fontti (kirjainperhe). Latin Modern
 Roman \=/fontin tilalle voi toki kokeilla muitakin. Fontin oletuskoko on
 10 pistettä, mutta tässä esimerkissä se venytetään 1,3\-/kertaiseksi eli
@@ -301,8 +291,8 @@ Roman \=/fontin tilalle voi toki kokeilla muitakin. Fontin oletuskoko on
 \label{esim:ensimmainen}
 \end{esimerkki*}
 
-Dokumentin alkuosaa esimerkin riville 8 saakka kutsutaan johdannoksi tai
-esittelyksi (engl. \textenglish{preamble}). Tässä osassa ladataan
+Dokumentin alku\-osaa esimerkin riville 8 saakka kutsutaan johdannoksi
+tai esittelyksi (engl. \textenglish{preamble}). Tässä osassa ladataan
 tarvittavat makropaketit ja määritetään dokumentin asetuksia ja
 taustatietoja. Riviltä 9 alkaa varsinainen tekstiosa eli sivulle
 ladottava sisältö. Se osa kirjoitetaan \koodi{document}\-/ympäristön

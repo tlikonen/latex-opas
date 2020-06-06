@@ -2,7 +2,9 @@
 % Lisenssi: GNU General Public License, versio 3
 
 \documentclass{book}
-\usepackage[a5paper, twoside, ratio={17:28, 20:32}, scale={.72, .77}]{geometry}
+\usepackage[a5paper, twoside,
+ratio={17:28, 20:32}, scale={.72, .77},
+footskip=12mm, footnotesep=13bp]{geometry}
 \usepackage{fontspec}
 \usepackage[mode=text, input-decimal-markers={,}, output-decimal-marker={,},
 per-mode=symbol]{siunitx}
@@ -61,8 +63,6 @@ per-mode=symbol]{siunitx}
 \linespread{1}
 \normalsize
 
-\geometry{footskip=3em}
-
 \newcommand{\gemenanum}{\addfontfeatures{Numbers=Lowercase}}
 \newcommand{\versaalinum}{\addfontfeatures{Numbers=Uppercase}}
 \newcommand{\murtoluku}[1]{{\addfontfeatures{Fractions=On}#1}}
@@ -79,7 +79,6 @@ per-mode=symbol]{siunitx}
 \newlength{\sisennys}\setlength{\sisennys}{1.8em}
 \setlength{\parskip}{0em}
 \setlength{\footnotemargin}{.8em}
-\setlength{\skip\footins}{1.2em}
 \setlength{\floatsep}{.8em plus .3em minus .1em}
 \setlength{\textfloatsep}{1.3em plus .3em minus .1em}
 

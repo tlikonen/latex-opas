@@ -52,6 +52,8 @@ per-mode=symbol]{siunitx}
 \setmonofont {Linux Libertine Mono O}
 [Scale=MatchLowercase, FakeStretch=.8]
 
+\newfontface{\varafontti}{TeX Gyre Pagella}[Scale=MatchLowercase]
+
 \renewcommand{\footnotesize}{\fontsize{8bp}{9bp}\selectfont}
 \renewcommand{\small}{\fontsize{9bp}{10bp}\selectfont}
 \renewcommand{\normalsize}{\fontsize{10.5bp}{13bp}\selectfont}
@@ -67,8 +69,10 @@ per-mode=symbol]{siunitx}
 \newcommand{\murtoluku}[1]{{\addfontfeatures{Fractions=On}#1}}
 
 \urlstyle{same}
-\newcommand{\angleurl}[1]{\href{#1}{\nolinkurl{‹#1›}}}
-\newcommand{\angleemailurl}[1]{\href{mailto:#1}{\nolinkurl{‹#1›}}}
+\newcommand{\angleurl}[1]
+{\href{#1}{\guilsinglleft\nolinkurl{#1}\guilsinglright}}
+\newcommand{\angleemailurl}[1]
+{\href{mailto:#1}{\guilsinglleft\nolinkurl{#1}\guilsinglright}}
 
 \clubpenalty=10000
 \widowpenalty=10000
@@ -153,7 +157,13 @@ per-mode=symbol]{siunitx}
 \newcommand{\tavukohta}{\textcolor{tavu}{\rule{.6bp}{1.5ex}}}
 \newcommand{\sitovaym}{\textcolor{sitova}{-}}
 \newcommand{\uctunnus}[1]{\textenglish{\textsc{#1}}}
-\newcommand{\paketti}[1]{\textenglish{\texttt{#1}}}
+\newcommand{\puuttuvamerkki}{%
+  \begin{tikzpicture}[x=.5em, y=.8em]
+    \draw (0,0) rectangle (1,1);
+    \draw (0,0) -- (1,1);
+    \draw (0,1) -- (1,0);
+  \end{tikzpicture}}
+\newcommand{\paketti}[1]{\textenglish{\textsf{#1}}}
 \newcommand{\avusepkg}[1]{\footnote{Käyttöönotto:
     \koodi{\keno usepackage\{#1\}}}}
 

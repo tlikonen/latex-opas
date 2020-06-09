@@ -1,8 +1,10 @@
 \chapter{Merkintäkieli}
 
-% Latex on merkintäkieli, eli se sisältää omat tapansa dokumentin
-% rakenteen ja sisällön kuvaamiseen. Tässä luvussa käsitellään
-% merkintäkielen perus\-asioita.
+Latex on merkintäkieli, mikä tarkoittaa, että se sisältää omat tapansa
+dokumentin rakenteen ja sisällön kuvaamiseen. Kaikkea ei kirjoiteta
+lähdedokumenttiin sellaisenaan, vaan täytyy käyttää tiettyjä kielen
+sääntöjen mukaisia merkintätapoja tai komentoja. Tässä luvussa
+käsitellään merkintäkielen perus\-asioita.
 
 \section{Merkistö}
 
@@ -258,10 +260,14 @@ kahdella gra\-vis\-ak\-sen\-til\-la (\koodi{``}). Vastaava
 puolilainausmerkki (`) tehdään yhdellä aksentilla (\koodi{`}). Joissakin
 kielissä käytetään erilaisia kulmalainausmerkkejä lainauksen alussa ja
 lopussa. Vasemmalle osoittava merkki (<<) tehdään kahdella pienempi kuin
-\=/merkillä (\koodi{<<}). Muunlaisiin lainausmerkkeihin tarvittaneen
-Unicode\-/merkkejä. Tosin kielikohtaiset asetukset (luku
-\ref{luku:kieliasetukset}) voivat tuoda mukanaan omia keinojaan myös
-kielikohtaisten lainausmerkkien tuottamiseen.
+\=/merkillä (\koodi{<<}).
+
+Lainausmerkkien merkintätapoja ja komentoja on koottu taulukkoon
+\ref{tlk:erikoismerkit-lainaus}
+(s.~\pageref{tlk:erikoismerkit-lainaus}). Myös Unicode\-/merkkejä voi
+käyttää sellaisenaan. Toisaalta kielikohtaiset asetukset (luku
+\ref{luku:kieliasetukset}) voivat tuoda mukanaan myös kielikohtaisia
+keinoja lainausmerkkien kirjoittamiseen.
 
 Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
@@ -415,28 +421,33 @@ avulla sellaisenaan. Lopputulos on sama.
 
 Edellisessä esimerkissä on kyse Unicode\-/merkeistä \uctunnus{u+00b2
   superscript two} ja \uctunnus{u+1d43 modifier letter small~a}. Niitä
-ei kaikissa fonteissa edes ole.
+ei kaikissa fonteissa edes ole, ja puuttuvan merkin tilalla saattaa
+näkyä esimerkiksi suorakulmio \puuttuvamerkki. Se kuitenkin riippuu
+fontista.
 
-\subsection{Tarkkeet}
+\subsection{Tarkkeet ja erikoismerkit}
 \label{luku:tarkkeet}
 
 Latexissa on useita komentoja tarkkeellisten kirjainten
 (\'a\,\v{s}\,\c{c}\,\~o) kirjoittamiseen sekä muille merkeille, joita ei
 ehkä ihan helposti saa suoraan näppäimistöltä. Komentoja on koottu
-taulukkoon \ref{tlk:tarkkeet}.
-
-Taulukon tarkekomennoissa on käytetty a\=/kirjainta esimerkkinä, mutta
-tarke voi liittyä muihinkin kirjaimiin. Merkit voi kirjoittaa
-Latex\-/lähdedokumenttiin myös sellaisenaan, eli näiden komentojen
-käyttö ei ole välttämätöntä.
+taulukoihin \ref{tlk:tarkkeet}, \ref{tlk:erikoismerkit-lainaus} ja
+\ref{tlk:erikoismerkit-muut}. Taulukon tarkekomennoissa on käytetty
+a\=/kirjainta esimerkkinä, mutta tarke voi liittyä muihinkin kirjaimiin.
+\marginpar{\TeX \\
+  \LaTeX \\ \LaTeXe} Merkit voi kirjoittaa Latex\-/lähdedokumenttiin
+myös sellaisenaan, eli näiden komentojen käyttö ei ole välttämätöntä.
+Tarke- ja erikoismerkkikomentojen lisäksi on komentoja
+ladontajärjestelmän logojen kirjoittamiseen: \koodi{\keno TeX},
+\koodi{\keno LaTeX} ja \koodi{\keno LaTeXe}.
 
 \providecommand{\rivi}{}
-\renewcommand{\rivi}[3]{\koodi{\keno #1} & #2 & #3 \\}
+\renewcommand{\rivi}[3]{#2 & \koodi{\keno #1} & #3 \\}
 
 \leijutlk{
-  \begin{tabular}[t]{lll}
+  \begin{tabular}[t]{cll}
     \toprule
-    \multicolumn{2}{l}{\ots{Esimerkki}} & \ots{Merkitys} \\
+    \multicolumn{2}{l}{\ots{Merkki}} & \ots{Selitys} \\
     \midrule
     \rivi{`a}{\`a}{gravis}
     \rivi{'a}{\'a}{akuutti}
@@ -458,9 +469,9 @@ käyttö ei ole välttämätöntä.
     \rivi{ae}{\ae}{ae-ligatuuri}
     \bottomrule
   \end{tabular}\hspace{1.3em}%
-  \begin{tabular}[t]{lll}
+  \begin{tabular}[t]{cll}
     \toprule
-    \multicolumn{2}{l}{\ots{Esimerkki}} & \ots{Merkitys} \\
+    \multicolumn{2}{l}{\ots{Merkki}} & \ots{Selitys} \\
     \midrule
     \rivi{OE}{\OE}{OE-ligatuuri}
     \rivi{oe}{\oe}{oe-ligatuuri}
@@ -488,9 +499,85 @@ käyttö ei ole välttämätöntä.
   \label{tlk:tarkkeet}
 }
 
-\subsection{Muita erikoismerkkejä KESKEN}
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[3]{#1 & \koodi{\keno #2} & #3 \\}
 
-% Latex 2e -manuaali, luku 23.
+\leijutlk{
+  \begin{tabular}{cll}
+    \toprule
+    \multicolumn{2}{l}{\ots{Merkki ja komennot}} & \ots{Selitys} \\
+    \midrule
+    \rivi{\textquotedblleft}{textquotedblleft `{}`}{vasen lainausmerkki}
+    \rivi{\textquotedblright}{textquotedblright '{}'}{oikea lainausmerkki}
+    \rivi{\textquotedbl}{textquotedbl}{yleislainausmerkki (\textsc{ascii})}
+    \rivi{\textquoteleft}{textquoteleft \keno lq}{vasen puolilainausmerkki}
+    \rivi{\textquoteright}{textquoteright \keno rq '}{oikea
+    puolilainausmerkki, heittomerkki}
+    \rivi{\textquotesingle}{textquotesingle}{yleispuolilainausmerkki ja
+    heittomerkki (\textsc{ascii})}
+    \rivi{\guillemotleft}{guillemotleft <{}<}{vasen kulmalainausmerkki}
+    \rivi{\guillemotright}{guillemotright >{}>}{oikea kulmalainausmerkki}
+    \rivi{\guilsinglleft}{guilsinglleft}{vasen kulmapuolilainausmerkki}
+    \rivi{\guilsinglright}{guilsinglright}{oikea
+    kulmapuolilainausmerkki}
+    \rivi{\quotedblbase}{quotedblbase}{rivinalinen lainausmerkki}
+    \rivi{\quotesinglbase}{quotesinglbase}{rivinalinen puolilainausmerkki}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Komentoja lainausmerkkien kirjoittamiseen}
+  \label{tlk:erikoismerkit-lainaus}
+}
+
+\leijutlk{
+  \begin{tabular}{cll}
+    \toprule
+    \multicolumn{2}{l}{\ots{Merkki ja komennot}} & \ots{Selitys} \\
+    \midrule
+    \rivi{\textendash}{textendash --}{lyhyt ajatusviiva}
+    \rivi{\textemdash}{textemdash ---}{pitkä ajatusviiva}
+    \rivi{\textexclamdown}{textexclamdown !`}{yläsalainen huutomerkki}
+    \rivi{\textquestiondown}{textquestiondown ?`}{ylösalainen kysymysmerkki}
+    \rivi{\textgreater}{textgreater}{suurempi kuin -merkki}
+    \rivi{\textless}{textless}{pienempi kuin -merkki}
+    \rivi{\ldots}{textellipsis \keno ldots \keno dots}{kolme pistettä, ellipsi}
+    \rivi{\texteuro}{texteuro}{euron merkki}
+    \rivi{\pounds}{textsterling \keno pounds}{punnan merkki}
+    \rivi{\textdollar}{textdollar \keno \$}{dollarin merkki}
+    \rivi{\S}{textsection \keno S}{pykälän merkki}
+    \rivi{\P}{textparagraph \keno P}{kappaleen merkki}
+    \rivi{\copyright}{textcopyright \keno copyright}{tekijänoikeusmerkki}
+    \rivi{\textregistered}{textregistered}{rekisteröity tavaramerkki}
+    \rivi{\texttrademark}{texttrademark}{tavaramerkki}
+    \rivi{\dag}{textdagger \keno dag}{risti}
+    \rivi{\ddag}{textdaggerdbl \keno ddag}{kaksoisristi}
+    \rivi{\textasciicircum}{textasciicircum \keno \^{}\{\}}{sirkumfleksi}
+    \rivi{\textasciitilde}{textasciitilde \keno \~{}\{\}}{tilde}
+    \rivi{\textasteriskcentered}{textasteriskcentered}{rivinkeskinen
+    asteriski, ''tähti''}
+    \rivi{\textbackslash}{textbackslash}{kenoviiva}
+    \rivi{\textbar}{textbar}{pystyviiva}
+    \rivi{\textbardbl}{textbardbl}{kaksoispystyviiva}
+    \rivi{\textbraceleft}{textbraceleft}{vasen aaltosulje}
+    \rivi{\textbraceright}{textbraceright}{oikea aaltosulje}
+    \rivi{\textbullet}{textbullet}{luetelmaympyrä}
+    \rivi{{\varafontti\textbigcircle}}{textbigcircle}{suuri ympyrä}
+    \rivi{\textcircled{a}}{textcircled\{\ldots\}}{ympyröity merkki}
+    \rivi{\textleftarrow}{textleftarrow}{nuoli vasemmalle}
+    \rivi{\textrightarrow}{textrightarrow}{nuoli oikealle}
+    \rivi{\textordfeminine}{textordfeminine}{feminiininen järjestysluvun
+    merkki}
+    \rivi{\textordmasculine}{textordmasculine}{maskuliininen järjestysluvun
+    merkki}
+    \rivi{\textperiodcentered}{textperiodcentered}{rivinkeskinen piste}
+    \rivi{\textunderscore}{textunderscore \keno\_}{alaviiva}
+    \rivi{\textvisiblespace}{textvisiblespace}{näkyvä välilyönti}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Komentoja erikoismerkkien kirjoittamiseen}
+  \label{tlk:erikoismerkit-muut}
+}
 
 \section{Komennot}
 \label{luku:komennot}
@@ -1232,12 +1319,12 @@ symbolit toimivat vain lu\-ku\-alueel\-la 1--9.
     \toprule
     \ots{Komento} & \ots{Merkitys} \\
     \midrule
-    \koodi{\keno arabic\{…\}} & arabialainen luku: 1, 2, 3\ldots \\
-    \koodi{\keno roman\{…\}} & roomalainen luku: i, ii, iii\ldots \\
-    \koodi{\keno Roman\{…\}} & roomalainen luku: I, II, III\ldots \\
-    \koodi{\keno alph\{…\}} & kirjain: a, b, c\ldots \\
-    \koodi{\keno Alph\{…\}} & kirjain: A, B, C\ldots \\
-    \koodi{\keno fnsymbol\{…\}} & symboli:
+    \koodi{\keno arabic\{\ldots\}} & arabialainen luku: 1, 2, 3\ldots \\
+    \koodi{\keno roman\{\ldots\}} & roomalainen luku: i, ii, iii\ldots \\
+    \koodi{\keno Roman\{\ldots\}} & roomalainen luku: I, II, III\ldots \\
+    \koodi{\keno alph\{\ldots\}} & kirjain: a, b, c\ldots \\
+    \koodi{\keno Alph\{\ldots\}} & kirjain: A, B, C\ldots \\
+    \koodi{\keno fnsymbol\{\ldots\}} & symboli:
                                   \textasteriskcentered
                                   \textdagger
                                   \textdaggerdbl\S\P\ldots \\

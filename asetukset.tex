@@ -109,16 +109,16 @@ asetuksia kuten ligatuureja, gemenanumeroita, optisia kokoja ja muita
 fontin ominaisuuksia. Edellisessä esimerkissä käytetään vain
 \koodi{Scale}\-/valitsinta, jolla fontin voi skaalata haluttuun kokoon.
 
-Peruskirjainperheen (\koodi{\keno setmainfont}) skaalaukseksi asetetaan
-\koodi{Scale=1}, eli sille ei tehdä mitään, ja koko valitsimen voisi
-jättää pois. Sen sijaan kahdella muulla kirjainperheellä (\koodi{\keno
-  setsansfont}, \koodi{\keno setmonofont}) käytetään
+Peruskirjainperheen (\koodi{\keno set\-main\-font}) skaalaukseksi
+asetetaan \koodi{Scale=1}, eli sille ei tehdä mitään, ja koko valitsimen
+voisi jättää pois. Sen sijaan kahdella muulla kirjainperheellä
+(\koodi{\keno set\-sans\-font}, \koodi{\keno set\-mono\-font}) käytetään
 ker\-roin\-ase\-tus\-ta \koodi{MatchLowercase}, joka skaalaa fontin
 siten, että gemenakirjaimet eli pienet kirjaimet ovat yhtä korkeita kuin
 peruskirjainperheessä. Mikäli skaa\-laus\-ase\-tus
 \koodi{MatchLowercase} ei tuota ihan toivottua tulosta, voi
 kirjainperheen skaalausta hienosäätää vielä
-\koodi{ScaleAgain}\-/valitsimella seuraavaan tapaan:
+\koodi{Scale\-Again}\-/valitsimella seuraavaan tapaan:
 
 \begin{koodilohkosis}
   \setmonofont{TeX Gyre Cursor}
@@ -135,17 +135,17 @@ määrittämiseen. Uusi perhe määritellään seuraavasti:
   \newfontfamily{\hienoperhe}{TeX Gyre Schola}[…]
 \end{koodilohkosis}
 
-Komento \koodi{\keno newfontfamily} toimii samalla tavalla kuin aiemmin
-esitellyt \koodi{\keno setmainfont} ym. komennot, mutta lisäksi
-ensimmäinen argumentti määrittää komennon, jolla kirjainperhe otetaan
-käyttöön. Edellisessä esimerkissä luodaan komento \koodi{\keno
+Komento \koodi{\keno new\-font\-family} toimii samalla tavalla kuin
+aiemmin esitellyt \koodi{\keno set\-main\-font} ym. komennot, mutta
+lisäksi ensimmäinen argumentti määrittää komennon, jolla kirjainperhe
+otetaan käyttöön. Edellisessä esimerkissä luodaan komento \koodi{\keno
   hieno\-perhe}, joka kytkee päälle TeX Gyre Scho\-la \=/nimisen
 kirjainperheen.
 
 \pagebreak[3]
 
 Jos ei tarvita kokonaista perhettä vaan yksi leikkaus riittää, käytetään
-komentoa \koodi{\keno newfontface}:
+komentoa \koodi{\keno new\-font\-face}:
 
 \begin{koodilohkosis}
   \newfontface{\hienoleikkaus}{TeX Gyre Schola Bold}[…]
@@ -201,7 +201,7 @@ muiden mittojen määrittämiseen on ohjeita luvussa
 \ref{luku:sivuasetukset}.
 
 Fonttiasetuksiin kuuluu fontin koon lisäksi toinenkin mitta: rivikorkeus
-(\koodi{\keno baselineskip}). Se on mitta rivin peruslinjalta edellisen
+(\koodi{\keno base\-line\-skip}). Se on mitta rivin peruslinjalta edellisen
 rivin peruslinjalle. Fontin koko ja rivikorkeus määritellään
 saman\-aikaisesti, koska ne ovat saman \koodi{\keno fontsize}\-/komennon
 argumentteja. Esimerkki:
@@ -213,8 +213,8 @@ argumentteja. Esimerkki:
 Ensimmäinen argumentti on fontin kokomitta ja toinen on rivikorkeus.
 Mitta\-yksiköt voivat olla mitä tahansa Latexin mittoja, ja oletuksena
 käytetään pt\-/pistemittaa, jos yksikköä ei ole mainittu. Komento
-\koodi{\keno selectfont} on mukana, koska vasta sen myötä matalan tason
-fonttikomennot tulevat voimaan. Korkean tason fonttikomennot (luku
+\koodi{\keno select\-font} on mukana, koska vasta sen myötä matalan
+tason fonttikomennot tulevat voimaan. Korkean tason fonttikomennot (luku
 \ref{luku:fontit_korkea}) suorittavat sen automaattisesti.
 
 Rivikorkeus on vähintään sama kuin fontin koko, mutta yleensä se
@@ -266,7 +266,7 @@ asetetun kertoimen vuoksi rivien peruslinjojen väliseksi etäisyydeksi
 tulee lopulta 1,3 kertaa 12 pistettä eli 15,6 pistettä. Ei ole väliä,
 kummassa järjestyksessä \koodi{\keno fontsize}- ja \koodi{\keno
   linespread}\-/komennot annetaan. Asetukset tulevat voimaan vasta
-\koodi{\keno selectfont}\-/komennon jälkeen.
+\koodi{\keno select\-font}\-/komennon jälkeen.
 
 Käytännössä \koodi{\keno linespread} sopii rivikorkeuden yleistason
 hienosäätöön, esimerkiksi dokumentin esittelyosassa. Sitä ei kannattane
@@ -320,18 +320,19 @@ valitsee toisen leikkauksen samasta perheestä.
 Kirjainleikkauksen asetukset jaetaan kahteen ryhmään:
 \textenglish{\emph{series}} 'sarja' ja \textenglish{\emph{shape}}
 'muoto'. Kummastakin ryhmästä on valittuna aina yksi ominaisuus, eli
-samanaikaisesti voi olla voimassa esimerkiksi \koodi{\keno bfseries}
-(\textbf{lihavoitu}) ja \koodi{\keno itshape} (\textit{kursiivi}), ja
+samanaikaisesti voi olla voimassa esimerkiksi \koodi{\keno bf\-se\-ries}
+(\textbf{lihavoitu}) ja \koodi{\keno it\-shape} (\textit{kursiivi}), ja
 tuloksena on \textbf{\itshape lihavoitua kursiivia}.
 
-Tämän oppaan fontissa kalteva leikkaus (\koodi{\keno slshape}) ja
-kursiivileikkaus (\koodi{\keno itshape}) tuottavat saman lopputuloksen.
-Niin on useimmissa muissakin fonteissa, mutta käsitteellisesti ne ovat
-eri asia. Edellä mainitut komennot voivat joissakin fonteissa valita eri
-leikkauksen. Kalteva leikkaus on tavallisen eli pys\-ty\-asen\-toi\-sen
-leikkauksen kallistettu versio. Kallistus on voitu tehdä mekaanisesti,
-mutta se voi olla myös kirjainmuotoilijan piirtämä leikkaus. Kursiivi
-puolestaan on aina muodoltaan erilainen leikkaus. Se hieman mukailee
+Tämän oppaan fontissa kalteva leikkaus (\koodi{\keno sl\-shape}) ja
+kursiivileikkaus (\koodi{\keno it\-shape}) tuottavat saman
+lopputuloksen. Niin on useimmissa muissakin fonteissa, mutta
+käsitteellisesti ne ovat eri asia. Edellä mainitut komennot voivat
+joissakin fonteissa valita eri leikkauksen. Kalteva leikkaus on
+tavallisen eli pys\-ty\-asen\-toi\-sen leikkauksen kallistettu versio.
+Kallistus on voitu tehdä mekaanisesti, mutta se voi olla myös
+kirjainmuotoilijan piirtämä leikkaus. Kursiivi puolestaan on aina
+muodoltaan erilainen leikkaus. Se hieman mukailee
 käsi\-ala\-kir\-joi\-tusta, joskaan kirjaimia ei ole sidottu toisiinsa.
 
 Komennot fontin koon valintaan ovat taulukossa
@@ -529,13 +530,13 @@ komentoja. Niillä luodaan uudet kirjainperheet, jotka ovat käytännössä
 samoja mutta ilman skaalausta.
 
 Uusien kirjainperheiden komentojen nimiksi on valittu \koodi{\keno
-  sffamilyabs} ja \koodi{\keno ttfamilyabs} (vrt. \koodi{\keno sffamily}
-ja \koodi{\keno ttfamily}, taulukko \ref{tlk:fonttimallikomennot}), ja
-näillä komennoilla kirjainperheet kytketään päälle. Jos esimerkiksi
-jonkin julkaisun vaatimuksiin kuuluu, että otsikossa täytyy olla 16
-pisteen lihavoitu TeX Gyre Heros \=/kirjainleikkaus, voi esimerkissä
-\ref{esim:fontti_absoluuttinen} olevien asetusten pohjalta antaa
-otsikolle seuraavat komennot:
+  sf\-fam\-i\-ly\-abs} ja \koodi{\keno tt\-fam\-i\-ly\-abs} (vrt.
+\koodi{\keno sf\-fam\-i\-ly} ja \koodi{\keno tt\-fam\-i\-ly}, taulukko
+\ref{tlk:fonttimallikomennot}), ja näillä komennoilla kirjainperheet
+kytketään päälle. Jos esimerkiksi jonkin julkaisun vaatimuksiin kuuluu,
+että otsikossa täytyy olla 16 pisteen lihavoitu TeX Gyre Heros
+\=/kirjainleikkaus, voi esimerkissä \ref{esim:fontti_absoluuttinen}
+olevien asetusten pohjalta antaa otsikolle seuraavat komennot:
 
 \begin{koodilohkosis}
   \sffamilyabs\fontsize{16bp}{18bp}\bfseries
@@ -545,7 +546,7 @@ Esimerkin \ref{esim:fontti_absoluuttinen} riveillä 16--20 määritellään
 uudelleen Latexin korkean tason komennot, joilla fonttikoot asetetaan.
 Oletus\-arvot tulevat dokumenttiluokasta (luku
 \ref{luku:dokumenttiluokat}), mutta jos ne eivät ole sopivia, täytyy
-vähintäänkin määritellä komento \koodi{\keno normalsize} mutta sen
+vähintäänkin määritellä komento \koodi{\keno normal\-size} mutta sen
 lisäksi kaikki ne koot, joita omassa dokumentissa tarvitaan. Tässä
 esimerkissä normaali koko asetetaan 14 pisteen kokoiseksi.
 
@@ -559,10 +560,10 @@ skaalattu ja koska rivikorkeus asetetaan aina \koodi{\keno
 komento rivikorkeuden säätämiseen yleisesti kaikkialla.
 
 Fonttikokojen määrittelyn lopuksi rivillä 21 suoritetaan komento
-\koodi{\keno normalsize}, jotta se tulee heti voimaan. Dokumentin
+\koodi{\keno normal\-size}, jotta se tulee heti voimaan. Dokumentin
 esittelyosassa voidaan käyttää fonttikokoon viittaavia mittoja
 \koodi{em} ja \koodi{ex}, ja ne viittaavat nyt tähän kokoon.
-\koodi{\keno normalsize}\-/komento suoritetaan kyllä myöhemmin
+\koodi{\keno normal\-size}\-/komento suoritetaan kyllä myöhemmin
 automaattisesti dokumentin tekstiosan eli \koodi{document}\-/ympäristön
 alussa.
 

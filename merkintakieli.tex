@@ -1285,7 +1285,7 @@ varten on \koodieng{page}\-/laskuri ja matemaattisten kaavojen
 numerointiin \koodieng{equation}\-/laskuri. Leijuvista kuvista ja
 taulukoista (luku \ref{luku:leijuosat}) pidetään kirjaa laskureissa
 \koodieng{figure} ja \koodieng{table}, ja alaviitteiden (luku
-\ref{luku:alaviitteet} ) numerointi on laskureissa \koodieng{footnote} ja
+\ref{luku:alaviitteet}) numerointi on laskureissa \koodieng{footnote} ja
 \koodieng{mpfootnote}. Numeroidut luetelmat (luku \ref{luku:luetelmat})
 käsitellään \koodi{enum}\-/alkuisten laskureiden avulla siten, että
 perustasolla käytetään laskuria \koodi{enumi}, ja jos sen luetelmakohta
@@ -1382,10 +1382,10 @@ kun sivu vaihtuu eli laskurin \koodieng{page} arvo kasvaa.
   \newcounter{oma}[page]
 \end{koodilohkosis}
 
-Hierarkkisia ylemmän tason laskureita ei kannata kasvattaa komennolla
-\koodi{\keno add\-to\-counter}, koska se vain muuttaa laskurin arvoa
-mutta ei huolehdi alemman tason laskurien nollaamisesta. Hierarkkisten
-laskurien kasvattamiseen on seuraavat kaksi komentoa.
+Ylemmän tason laskureita ei kannata kasvattaa komennolla \koodi{\keno
+  add\-to\-counter}, koska se vain muuttaa laskurin arvoa mutta ei
+huolehdi alemman tason laskurien nollaamisesta. Hierarkkisten laskurien
+kasvattamiseen on seuraavat kaksi komentoa.
 
 \begin{koodilohkosis}
   \stepcounter{laskuri}

@@ -574,9 +574,84 @@ myös teknisesti eheä eli toimii Latexin sisäisen logiikan näkökulmasta
 oikein. Haittana voi pitää sitä, että kaikki koot täytyy määritellä
 erikseen.
 
-\subsection{Ligatuurit}
+\subsection{Typografiset ligatuurit}
 
-% \textcompwordmark estää ligatuurin
+Typografiset ligatuurit ovat fontissa olevia yhdistelmämerkkejä, joissa
+on typografisista syitä yhdistetty kaksi tai useampia kirjaimia yhteen
+merkkiin.%
+\footnote{Typografisten ligatuurien lisäksi on olemassa myös
+  luonnollisten kielten ligatuureja, jotka muodostavat kieleen kuuluvan
+  kirjaimen, kuten æ norjan kielessä. Niillä on jokin luonnolliseen
+  kieleen liittyvä merkitys, eikä eri merkkejä ei ole yhdistetty
+  typografisista syistä.} Tällaisia ligatuureja käytettiin jo
+metalliladonnassa, eli samassa metallikirjakkeessa saattoi olla enemmän
+kuin yksi kirjain.
+
+Typografisten ligatuurien tarkoituksena on tuottaa tyylikkäämpi
+lopputulos kuin saataisiin erillisten kirjainten avulla. Syynä on
+esimerkiksi se, että erilliset peräkkäiset kirjaimet eivät ole aina
+keskenään yhteensopivia. Kirjainten välistys voi olla ongelmallista:
+sopivalle etäisyydelle asetettaessa kirjainten osat voivat mennä
+rumannäköisesti päällekkäin. Riippuu fontista, mitkä ligatuurit ovat
+tarpeellisia ja mitkä ligatuurimerkit on ylipäätään toteutettu fontin
+merkistöön. Tavallisia antiikvafonttien ligatuureja ovat fi, ff, ffi, fl
+ja ffl, mutta jotkin fontit sisältävät muitakin. Kuvaan
+\ref{kuva:ligatuurit} on koottu erilaisia ligatuureja.
+
+\leijukuva{
+  \addfontfeatures{Scale=3.5, Ligatures={Common, Historic}}
+  fi ff ffi fl ffl Th fb st ct
+}{
+  \caption{Tavalliset eli standardit f\=/alkuiset ligatuurit, vähän
+    harvinaisemmat Th ja fb sekä erikseen päälle kytkettävät
+    historialliset ligatuurit st ja ct}
+  \label{kuva:ligatuurit}
+}
+
+Latex hoitaa tavallisten typografisten ligatuurien latomisen
+automaattisesti, eli lähdedokumenttiin ei kannata kirjoittaa
+Unicode\-/merkistön typografisia ligatuurimerkkejä (esimerkiksi
+\uctunnus{u+fb01 latin small ligature fi}) vaan ihan tavallisia
+erillisiä kirjaimia. Open Type \=/fontin suunnittelija on päättänyt
+meidän puolestamme, mitkä kir\-jain\-yh\-dis\-tel\-mät on parasta latoa
+ligatuurin avulla, ja ole\-tus\-ase\-tuk\-sil\-la Latex noudattaa niitä
+ohjeita.
+
+Jos kuitenkin yksittäisen ligatuurin muodostumisen haluaa estää, voi
+kirjainten väliin kirjoittaa komennon \koodi{\keno
+  text\-comp\-word\-mark}, joka tekee näkymättömän, juuri tähän
+tarkoitukseen olevan merkin \uctunnus{u+200c zero width non-joiner}.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  fi f\textcompwordmark i
+\end{koodilohkosis}
+
+\begin{tulossis}
+  fi f\textcompwordmark i
+\end{tulossis}
+
+Mikäli tavallisia ligatuureja ei halua käyttöön lainkaan, on parasta
+valita jo kirjainperheen tai \=/leikkauksen käyttöönotossa asetus
+\koodi{Liga\-tures=No\-Com\-mon}. Väliaikaisesti fontin asetuksiin voi
+vaikuttaa komennolla \koodi{\keno add\-font\-fea\-tures}, joka sekin on
+\paketti{fontspec}\-/pakettiin sisältyvä komento.
+
+\begin{koodilohkosis}
+  \setmainfont{…}[Ligatures=NoCommon] % Kirjainperheen yleisasetus.
+  {\addfontfeatures{Ligatures=NoCommon} fi fl} % Väliaikaisesti.
+\end{koodilohkosis}
+
+Tavallisten ligatuurien lisäksi Open Type \=/fontit voivat sisältää myös
+harvinaisempia ligatuureja, jotka täytyy erikseen kytkeä päälle. Niiden
+tarkoituksena on esimerkiksi erityinen koristeellisuus tai
+historiallisen kirjoitustavan jäljittely. Harvinaisia ligatuureja ei ole
+tarkoitus käyttää joka tilanteessa vaan ainoastaan erityisestä syystä.
+Kuvan \ref{kuva:ligatuurit} st- ja ct\-/ligatuurit on saatu fontin
+asetuksella \koodi{Liga\-tures=His\-toric}. Muita
+li\-ga\-tuu\-ri\-ase\-tuk\-sia kannattaa tutkia
+\paketti{fontspec}\-/paketin ohjekirjasta.
 
 \subsection{Fonttivinkkejä}
 

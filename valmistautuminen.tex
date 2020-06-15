@@ -34,23 +34,30 @@ tekniset yksityiskohdat ja toteuttavat varsin helppokäyttöisen
 merkintäkielen, jolla dokumenttien rakenne ja ulko\-asua kuvataan.
 Ihmiset siis kirjoittavat yleensä Latex\-/muotoisia dokumentteja, ja
 Latex puolestaan huolehtii matalamman tason Texin käskyttämisestä. Latex
-on myös tietokoneohjelma (\koodi{latex}), jolla lähdetiedoston voi
-kääntää julkaistavaksi dokumentiksi.
+on myös tietokoneohjelma (\koodi{latex}, \koodi{pdf\-latex}), jolla
+lähdetiedosto käännetään julkaistavaksi dvi- tai pdf\-/dokumentiksi.%
+\footnote{DVI = Device independent, PDF = Portable document format}
+
+Latex\-/järjestelmästä käytetään tällä hetkellä versiota
+\marginpar{\LaTeXe} Latex~2ε, joka julkaistiin jo vuonna 1994 ja johon
+ilmestyy pieniä parannuksia vuosittain. Perusosat ovat kuitenkin varsin
+muuttumattomia. Varsinainen kiinnostava kehitys tapahtuukin esimerkiksi
+Latexin kääntäjissä (Xelatex ja Lualatex) ja eri tekijöiden
+dokumenttiluokissa ja makropaketeissa.
 
 \subsection{Xelatex ja Lualatex}
 
 Ajan myötä mukaan on tullut sekalainen joukko muitakin ohjelmia, joista
 kannattaa tässä yhteydessä mainita kaksi: Xelatex ja Lualatex. Ne ovat
-erilaisia Latexin toteutuksia ja tietokoneohjelmia (\koodi{xelatex},
-\koodi{lualatex}), joilla lähdedokumentti käännetään.\footnote{Englannin
-  kielellä näitä on tapana kutsua yleisnimellä
-  \emph{\textenglish{engine}} 'kone, moottori'.} Ne osaavat lukea
-Unicode\-/merkistöllä kirjoitettuja lähdedokumentteja ja käyttää
+erilaisia Latexin kääntäjän toteutuksia eli tietokoneohjelmia
+(\koodi{xelatex}, \koodi{lualatex}), joilla lähdedokumentti
+käännetään.\footnote{Englannin kielellä näitä on tapana kutsua
+  yleisnimellä \emph{\textenglish{engine}} 'kone, moottori'.} Ne osaavat
+lukea Unicode\-/merkistöllä kirjoitettuja lähdedokumentteja ja käyttää
 nyky\-aikaisia True Type- ja Open Type \=/fontteja, mitä alkuperäinen
 Latex ja Tex eivät osaa. Nyky\-aikana käytetään yleensä jompaakumpaa,
 Xelatexia tai Lualatexia, ja esimerkiksi tämän oppaan lähdetiedoston voi
-kääntää pdf\-/tiedostoksi\footnote{PDF = Portable Document Format}
-kummalla tahansa.
+kääntää pdf\-/tiedostoksi kummalla tahansa.
 
 Xelatexilla ja Lualatexilla ei ole käyttäjän kannalta suurtakaan eroa.
 Jälkimmäinen sisältää Lua\-/nimisen ohjelmointikielen, ja sillä on
@@ -89,7 +96,7 @@ TeX ja LaTeX. Mielestäni logojen eikä muodikkaiden
 kIR\-joi\-Tus\-Asu\-Jen paikka ei ole leipätekstissä. Tässä oppaassa
 viittaan kaikkiin nimiin kielenhuollon normien mukaisesti eli käytän
 tavallisia erisnimiä kuten Tex ja Latex. Koodi ja komennot ovat siinä
-muodossa kuin ne tietokoneelle annetaan, esimerkiksi \koodi{xelatex}.
+muodossa kuin ne tietokoneelle annetaan, esimerkiksi \koodi{lualatex}.
 
 \section{Asentaminen}
 \label{luku:asentaminen}

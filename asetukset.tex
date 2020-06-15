@@ -1,11 +1,14 @@
 \chapter{Dokumentin asetukset}
+
+% Tämä luku käsittelee...
+
 \section{Dokumenttiluokat}
 \label{luku:dokumenttiluokat}
 
 Latexin lähdedokumenttien alussa on aina samankaltainen rivi, joka
 määrittelee käytettävän dokumenttiluokan ja mahdollisesti dokumentin
 pe\-rus\-ase\-tuk\-sia. Dokumenttiluokka määritellään komennolla
-\koodi{\keno doc\-u\-ment\-class} ja sen argumentiksi annetaan
+\koodi{\keno documentclass} ja sen argumentiksi annetaan
 dokumenttiluokan nimi. Valinnaisilla argumenteilla vaikutetaan
 asetuksiin.
 
@@ -16,7 +19,7 @@ asetuksiin.
 Dokumenttiluokka on eräänlaisen pohjadokumentti eli ominaisuuksien ja
 asetusten kokoelma, jonka varaan oma dokumentti kirjoitetaan. Eri
 dokumenttiluokat sisältävät erilaisia ominaisuuksia ja erilaiset
-ole\-tus\-ase\-tuk\-set. Edellä olevassa esimerkissä käytettiin
+oletusasetukset. Edellä olevassa esimerkissä käytettiin
 \koodieng{article}\-/luokkaa, joka on yleiskäyttöinen luokka
 monenlaisten dokumenttien kirjoittamiseen.
 
@@ -26,9 +29,41 @@ niiden asetuksia. Omien dokumenttiluokkien tekemistä käsitellään luvussa
 olla hyödyllistä silloin, kun täytyy tuottaa paljon samantyylisiä
 dokumentteja ja haluaa määrittää monet asetukset valmiiksi.
 
-\subsection{Tavallisimmat luokat}
+\subsection{Latexin perusdokumenttiluokat}
 
-\subsection{Dokumenttiluokkien asetukset}
+Muutama dokumenttiluokka kuuluu Latexin perusvalikoimaan, eli ne ovat
+aina saatavilla ja asennettuna, kun itse Latexkin on. Niitä kutsutaan
+välillä standardeiksi dokumenttiluokiksi, ja ne ovat ikään kuin
+muuttumattomia perusluokkia, joiden varaan on turvallista rakentaa omia
+dokumentteja tai muita dokumenttiluokkia. Muita dokumenttiluokkia
+kehitetään Latexin perusosien ulkopuolella, ja niiden ominaisuudet
+voivat muuttua ja kehittyä nopeammin ajan myötä.
+
+Normaalit paperisivuihin perustuvat dokumentit tehdään luokkien
+\koodieng{article}, \koodieng{report} tai \koodieng{book} avulla. Ne
+ovat keskenään hyvin samanlaisia, mutta niiden oletusasetukset
+poikkeavat toisistaan. Karkeasti jaoteltuna \koodieng{article}\-/luokka
+on tarkoitettu lyhyehköille artikkeleille ja yleiseksi perustaksi
+monenlaisille dokumenteille. Sen sijaan \koodieng{report} ja
+\koodieng{book} on tarkoitettu laajoihin dokumentteihin, ja niissä on
+kirja\-typo\-grafian piirteitä.
+
+Suurin edellä mainittujen perusluokkien ero on otsikoinnissa ja
+dokumentin jäsentämisessä: \koodieng{report} ja \koodieng{book}
+sisältävät suuret pääluvut eli otsikot (\koodieng{\keno chapter}), jotka
+alkavat tyhjältä sivulta; \koodieng{article} ei sisällä samanlaisia
+päälukuja vaan ainoastaan tavalliset leipätekstin mukana kulkevat
+väliotsikot (\koodieng{\keno section}, \koodieng{\keno subsection}
+jne.). Otsikointia ja tekstin jäsentämistä käsitellään tarkemmin luvussa
+\ref{luku:otsikot}.
+
+Toinen ero perusluokkien välillä on se, että vain
+\koodieng{book}\-/luokka sisältää komennot \koodieng{\keno frontmatter},
+\koodieng{\keno mainmatter} ja \koodieng{\keno backmatter}, joita voi
+käyttää ilmaisemaan tietokirjan erityyppiset osat. Näitä käsitellään
+luvussa \ref{luku:frontmainbackmatter}.
+
+\subsection{Muita dokumenttiluokkia}
 
 \section{Sivu}
 \label{luku:sivuasetukset}

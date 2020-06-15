@@ -60,8 +60,39 @@ jne.). Otsikointia ja tekstin jäsentämistä käsitellään tarkemmin luvussa
 Toinen ero perusluokkien välillä on se, että vain
 \koodieng{book}\-/luokka sisältää komennot \koodieng{\keno frontmatter},
 \koodieng{\keno mainmatter} ja \koodieng{\keno backmatter}, joita voi
-käyttää ilmaisemaan tietokirjan erityyppiset osat. Näitä käsitellään
-luvussa \ref{luku:frontmainbackmatter}.
+käyttää ilmaisemaan tietokirjan erityyppiset osat: alkusivut,
+varsinaiset sisältösivut ja liitesivut. Näitä käsitellään luvussa
+\ref{luku:frontmainbackmatter}.
+
+\leijutlk{
+  \begin{tabular}{llll}
+    \toprule
+    \koodi{a4paper} & \koodi{landscape}
+    & \koodi{onecolumn} & \koodi{10pt} \\
+    \koodi{a5paper} & \koodi{final}
+    & \koodi{twocolumn} & \koodi{11pt} \\
+    \koodi{b5paper} & \koodi{draft}
+    & \koodi{openany} & \koodi{12pt} \\
+    \koodi{executivepaper} & \koodi{oneside}
+    & \koodi{openright} & \koodi{titlepage} \\
+    \koodi{legalpaper} & \koodi{twoside}
+    & \koodi{fleqn} & \koodi{notitlepage} \\
+    \koodi{letterpaper} & \koodi{openbib}
+    & \koodi{leqno} & \koodi{clock} \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Perusdokumenttiluokkien asetusten valitsimet}
+  \label{tlk:luokkavalitsimet}
+}
+
+Muut erot koskevat lähinnä oletusasetuksia, mutta asetukset ovat
+tietenkin muutettavissa, eivätkä ne siten ole määräävä tekijä
+valittaessa luokkien \koodieng{article}, \koodieng{report} ja
+\koodieng{book} välillä. Taulukkoon \ref{tlk:luokkavalitsimet} on koottu
+perusdokumenttiluokkien valitsimet, ja niitä käsitellään seuraavaksi.
+
+Paperikoko valitaan
 
 \subsection{Muita dokumenttiluokkia}
 

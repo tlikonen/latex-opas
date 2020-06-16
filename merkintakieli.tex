@@ -1283,12 +1283,12 @@ laskureista automaattisesti.
 Taulukossa \ref{tlk:latexin_laskurit} ovat Latexin perus laskurit. Monet
 niistä ovat otsikoiden numerointia varten (\textenglish{\koodi{part},
   \koodi{chapter}, \koodi{section}, \koodi{paragraph}}). Sivunumeroita
-varten on \koodieng{page}\-/laskuri ja matemaattisten kaavojen
-numerointiin \koodieng{equation}\-/laskuri. Leijuvista kuvista ja
+varten on \koodi{page}\-/laskuri ja matemaattisten kaavojen
+numerointiin \koodi{equation}\-/laskuri. Leijuvista kuvista ja
 taulukoista (luku \ref{luku:leijuosat}) pidetään kirjaa laskureissa
-\koodieng{figure} ja \koodieng{table}, ja alaviitteiden (luku
-\ref{luku:alaviitteet}) numerointi on laskureissa \koodieng{footnote} ja
-\koodieng{mpfootnote}. Numeroidut luetelmat (luku \ref{luku:luetelmat})
+\koodi{figure} ja \koodi{table}, ja alaviitteiden (luku
+\ref{luku:alaviitteet}) numerointi on laskureissa \koodi{footnote} ja
+\koodi{mpfootnote}. Numeroidut luetelmat (luku \ref{luku:luetelmat})
 käsitellään \koodi{enum}\-/alkuisten laskureiden avulla siten, että
 perustasolla käytetään laskuria \koodi{enumi}, ja jos sen luetelmakohta
 sisältää toisen numeroidun luetelman, käytetään siinä laskuria
@@ -1341,7 +1341,7 @@ Taulukon \ref{tlk:laskurien_tulostus} komentojen lisäksi laskuriin
 liittyvän arvon voi tulostaa komennolla, joka alkaa kirjaimilla
 \koodi{\keno the} ja jatkuu laskurin nimellä. Esimerkiksi komento
 \koodi{\keno the\-page} tulostaa sivunumeron eli tekee käytännössä saman
-asian kuin komento \koodieng{\keno arabic\{page\}}. Aina nämä eivät
+asian kuin komento \koodi{\keno arabic\{page\}}. Aina nämä eivät
 kuitenkaan ole sama asia, ja \koodi{\keno the}\-/alkuinen komento voi
 olla määritelty toisellakin tavalla. Esimerkiksi tämän oppaan leijuvat
 taulukot numeroidaan laskurilla \koodi{table}, mutta komento
@@ -1351,7 +1351,7 @@ pääluvun \arabic{chapter} taulukko \arabic{table}.
 
 Jos laskurin arvoa tarvitaan Latexin teknisessä tilanteessa eikä
 tarkoituksena ole latoa sitä näkyviin itse dokumenttiin, täytyy käyttää
-komentoa \koodieng{\keno value}. Seuraava esimerkki luo laskurin nimeltä
+komentoa \koodi{\keno value}. Seuraava esimerkki luo laskurin nimeltä
 \koodi{mitta}, jonka arvoa (3) käytetään \koodi{\keno hspace}\-/komennon
 argumenttina mitan ilmaisemiseen (3\,em).
 
@@ -1378,7 +1378,7 @@ laskuri, jotta saadaan oikein numeroidut alaluvut 2.1, 2.2, 2.3 jne.
 Latex huolehtii lukujen numeroinnista automaattisesti, mutta omille
 laskureille täytyy määritellä riippuvuussuhteet itse. Seuraavassa
 esimerkissä luodaan oma laskuri, joka nollautuu automaattisesti aina,
-kun sivu vaihtuu eli laskurin \koodieng{page} arvo kasvaa.
+kun sivu vaihtuu eli laskurin \koodi{page} arvo kasvaa.
 
 \begin{koodilohkosis}
   \newcounter{oma}[page]

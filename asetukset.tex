@@ -20,7 +20,7 @@ Dokumenttiluokka on eräänlaisen pohjadokumentti eli ominaisuuksien ja
 asetusten kokoelma, jonka varaan oma dokumentti kirjoitetaan. Eri
 dokumenttiluokat sisältävät erilaisia ominaisuuksia ja erilaiset
 oletusasetukset. Edellä olevassa esimerkissä käytettiin
-\koodieng{article}\-/luokkaa, joka on yleiskäyttöinen luokka
+\koodi{article}\-/luokkaa, joka on yleiskäyttöinen luokka
 monenlaisten dokumenttien kirjoittamiseen.
 
 Seuraavissa alaluvuissa käsitellään tavallisimpia dokumenttiluokkia ja
@@ -39,54 +39,54 @@ voivat muuttua ja kehittyä nopeammin ajan myötä.
 
 Normaalit%
 \koodimargin{article \\ report \\ book} paperisivuihin perustuvat
-dokumentit tehdään luokkien \koodieng{article}, \koodieng{report} tai
-\koodieng{book} avulla. Ne ovat keskenään hyvin samanlaisia, mutta
+dokumentit tehdään luokkien \koodi{article}, \koodi{report} tai
+\koodi{book} avulla. Ne ovat keskenään hyvin samanlaisia, mutta
 niiden oletusasetukset poikkeavat toisistaan. Karkeasti jaoteltuna
-\koodieng{article}\-/luokka on tarkoitettu lyhyehköille artikkeleille ja
+\koodi{article}\-/luokka on tarkoitettu lyhyehköille artikkeleille ja
 yleiseksi perustaksi monenlaisille dokumenteille. Sen sijaan
-\koodieng{report} ja \koodieng{book} on tarkoitettu laajoihin
+\koodi{report} ja \koodi{book} on tarkoitettu laajoihin
 dokumentteihin, ja niissä on kirja\-typo\-grafian piirteitä.
 
 Suurin edellä mainittujen perusluokkien ero on otsikoinnissa ja
-dokumentin jäsentämisessä: \koodieng{report} ja \koodieng{book}
-sisältävät suuret pääluvut (\koodieng{\keno chapter}) eli otsikot, jotka
-alkavat tyhjältä sivulta; \koodieng{article} ei sisällä samanlaisia
+dokumentin jäsentämisessä: \koodi{report} ja \koodi{book}
+sisältävät suuret pääluvut (\koodi{\keno chapter}) eli otsikot, jotka
+alkavat tyhjältä sivulta; \koodi{article} ei sisällä samanlaisia
 päälukuja vaan ainoastaan tavalliset leipätekstin mukana kulkevat
-väliotsikot (\koodieng{\keno section}, \koodieng{\keno subsection}
+väliotsikot (\koodi{\keno section}, \koodi{\keno subsection}
 jne.). Otsikointia ja tekstin jäsentämistä käsitellään tarkemmin luvussa
 \ref{luku:otsikot}.
 
 Toinen ero perusluokkien välillä on se, että vain
-\koodieng{book}\-/luokka sisältää komennot \koodieng{\keno frontmatter},
-\koodieng{\keno mainmatter} ja \koodieng{\keno backmatter}, joita voi
+\koodi{book}\-/luokka sisältää komennot \koodi{\keno frontmatter},
+\koodi{\keno mainmatter} ja \koodi{\keno backmatter}, joita voi
 käyttää ilmaisemaan tietokirjan erityyppiset osat: alkusivut,
 varsinaiset sisältösivut ja liitesivut. Näitä käsitellään luvussa
 \ref{luku:frontmainbackmatter}.
 
 Muut erot koskevat lähinnä oletusasetuksia, mutta asetukset ovat
 tietenkin muutettavissa, eivätkä ne siten ole määräävä tekijä
-valittaessa luokkien \koodieng{article}, \koodieng{report} ja
-\koodieng{book} välillä. Dokumenttiluokkien asetuksia käsitellään
+valittaessa luokkien \koodi{article}, \koodi{report} ja
+\koodi{book} välillä. Dokumenttiluokkien asetuksia käsitellään
 seuraavassa alaluvussa.
 
 Muita%
-\koodimargin{letter} perusdokumenttiluokkia ovat \koodieng{letter} ja
-\koodieng{slides}. Nimensä mukaisesti \koodieng{letter} on kirjeiden
+\koodimargin{letter} perusdokumenttiluokkia ovat \koodi{letter} ja
+\koodi{slides}. Nimensä mukaisesti \koodi{letter} on kirjeiden
 kirjoittamista varten. Se sisältää kirjeen tyypilliseen rakenteeseen
 liittyviä komentoja ja soveltuu varsinkin tarpeisiin, joissa täytyy
 automaattisesti tuottaa samanmuotoisia kirjeitä usealle
 vas\-taan\-otta\-jalle. Sama Latex\-/dokumentti voi sisältää useita
 kirjeitä, ja sivunumerointi ja alaviitteiden numerointi alkaa joka
 kirjeessä alusta -- kuten on tietysti toivottavaa.
-\koodieng{letter}\-/luokkaa käsitellään tarkemmin luvussa
+\koodi{letter}\-/luokkaa käsitellään tarkemmin luvussa
 \ref{luku:kirjeet}.
 
 Esitys\-grafiikkaa%
 \koodimargin{slides} eli dia\-esityksiä voi tehdä
-\koodieng{slides}\-/luokan avulla. Tähän tarkoitukseen on kuitenkin
-olemassa paljon monipuolisempi luokka \koodieng{beamer}, joten
-\koodieng{slides}\-/luokan käyttö ei ole kovin mielekästä.
-Dia\-esi\-tys\-ten ja \koodieng{beamer}\-/luokan perus\-asioita
+\koodi{slides}\-/luokan avulla. Tähän tarkoitukseen on kuitenkin
+olemassa paljon monipuolisempi luokka \koodi{beamer}, joten
+\koodi{slides}\-/luokan käyttö ei ole kovin mielekästä.
+Dia\-esi\-tys\-ten ja \koodi{beamer}\-/luokan perus\-asioita
 käsitellään luvussa \ref{luku:diaesitykset}.
 
 \subsection{Perusdokumenttiluokkien asetukset}
@@ -94,9 +94,9 @@ käsitellään luvussa \ref{luku:diaesitykset}.
 Taulukkoon \ref{tlk:luokkavalitsimet} on koottu perusdokumenttiluokkien
 valitsimet. Paperikoko valitaan komennoilla \koodi{a4\-paper} (210 × 297
 mm), \koodi{a5\-paper} (148 × 210 mm), \koodi{b5\-paper} (176 × 250 mm),
-\koodieng{executivepaper} (7,25 × 10,5 tuumaa), \koodieng{legalpaper}
-(8,5 × 14 tuumaa) tai \koodieng{letterpaper} (8,5 × 11 tuumaa). Latexin
-oletuksena on \koodieng{letterpaper}, mutta oletusta voi olla muutettu
+\koodi{executivepaper} (7,25 × 10,5 tuumaa), \koodi{legalpaper}
+(8,5 × 14 tuumaa) tai \koodi{letterpaper} (8,5 × 11 tuumaa). Latexin
+oletuksena on \koodi{letterpaper}, mutta oletusta voi olla muutettu
 Latexin jakelupaketissa tai muualla. Varminta on aina kirjoittaa haluttu
 paperikoko dokumentin asetuksiin.
 

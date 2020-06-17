@@ -245,7 +245,7 @@ saadaan kulmalainausmerkki~(>>).
 \pagebreak[3]
 
 \begin{koodilohkosis}
-  ''Lainaus, jonka 'sisällä' on lainaus.''
+  ''Lainaus, jonka 'sisällä' on lainaus.'' \\
   >>Lainaus, jonka 'sisällä' on lainaus.>>
 \end{koodilohkosis}
 
@@ -272,10 +272,11 @@ keinoja lainausmerkkien kirjoittamiseen.
 Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
 \koodi{\keno text\-quote\-dbl} ja \koodi{\keno text\-quote\-single}.
-Oletuksena myös tasalevyinen fontti (luku \ref{luku:kirjaintyypit})
-kytkee pois erikoiset lainausmerkkikomennot ja tuottaa suoraan niitä
-merkkejä, joita lähdedokumenttiin on kirjoitettu. Muita tapoja
-lainausmerkkitoiminnon estämiseen on esimerkissä
+Yksittäinen gra\-vis\-ak\-sent\-ti (\`{}) tehdään komennolla
+\koodi{\keno `\{\}}. Oletuksena myös tasalevyinen fontti (luku
+\ref{luku:kirjaintyypit}) kytkee pois erikoiset lainausmerkkikomennot ja
+tuottaa suoraan niitä merkkejä, joita lähdedokumenttiin on kirjoitettu.
+Muita tapoja lainausmerkkitoiminnon estämiseen on esimerkissä
 \ref{esim:pois-tex-liga}.
 
 \subsection{Yhdysmerkki, ajatusviiva ja miinusmerkki}
@@ -312,12 +313,12 @@ ajatusviivatoiminnon. Muita tapoja on esimerkissä
 
 \begin{esimerkki*}
 \begin{koodilohko}
-  \addfontfeatures{Ligatures=TeXReset} % Fontista Tex-ligatuurit pois.
+  \addfontfeatures{Ligatures=TeXReset} % Fontista Tex-merkkaus pois.
   -{}-       % Estetään ajatusviiva.
   >{}>       % Estetään kulmalainausmerkit.
-  \texttt{…} % Tasalevyinen fontti estää Tex-ligatuurit.
+  \texttt{…} % Tasalevyinen fontti estää Tex-merkkauksen.
 \end{koodilohko}
-\caption{Keinoja Tex-ligatuurien estämiseen. Komento \koodi{\keno
+\caption{Keinoja Tex-merkkauskomentojen estämiseen. Komento \koodi{\keno
     add\-font\-fea\-tures} on \paketti{fontspec}\-/makropaketin
   ominaisuus}
 \label{esim:pois-tex-liga}

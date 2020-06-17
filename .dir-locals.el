@@ -1,2 +1,3 @@
 ((latex-mode
-  (TeX-master . "opas.tex")))
+  (TeX-master . "opas.tex")
+  (tl-latex-ohjelma . lualatex)))

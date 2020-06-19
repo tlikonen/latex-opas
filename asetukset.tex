@@ -835,7 +835,7 @@ mukana olevien merkkien avulla. Niitä käsitellään seuraavissa
 alaluvuissa.
 
 Asetukset \koodi{\keno lefthyphenmin=N} ja \koodi{\keno
-  righthyphenmin=N} vaikuttavat tavutukseen sanan reunoissa. Parametri
+  righthyphenmin=N} vaikuttavat tavutukseen sanan reunoissa. Argumentti
 \koodi{N} on positiivinen kokonaisluku, ja se määrittää, kuinka monta
 merkkiä vähintään sanan vasemmasta tai oikeasta reunasta pidetään
 yhdessä. Oletus\-arvot ovat kielikohtaisia ja määritellään
@@ -882,8 +882,14 @@ dokumentissa, riippumatta kielestä. Seuraava esimerkki selventää
 Tietyt sanassa olevat merkit kytkevät muut tavutussäännöt pois päältä ja
 muuttavat sanan tavutuksen yksilölliseksi. Jos sanassa on mukana yksikin
 tavutusvihje (\koodi{\keno-}), yhdysmerkki (\koodi{-}), lyhyt
-ajatusviiva (\koodi{--}) tai pitkä ajatusviiva (\koodi{---}), sana
-katkaistaan vain näiden kohdalta (\koodi{\keno-}) tai jälkeen.
+ajatusviiva (\mbox{\koodi{--}}) tai pitkä ajatusviiva
+(\mbox{\koodi{---}}), sana katkaistaan vain näiden kohdalta
+(\koodi{\keno-}) tai jälkeen.
+
+Unicoden ajatusviivamerkit \uctunnus{u+2013 en dash} ja \uctunnus{u+2014
+  em dash} toimivat tavutuksen kannalta eri tavalla Lualatex\-/{} ja
+Xelatex\-/kääntäjillä. Eroja käsitellään luvussa
+\ref{luku:tavutus-johtopäätökset}.
 
 \leijutlk{
   \begin{tabular}{lll}
@@ -936,7 +942,7 @@ saa katkaista yhdysmerkin jälkeen, koska rivin loppuun jäisi yksinäinen
 yhdysmerkki. Latexin peruskeinoilla sana täytyy laittaa näkymättömään
 laatikkoon, joka pitää merkit yhdessä: \koodi{\keno mbox\{-aika\}}.
 Toinen vaihtoehto on sitovan yhdysmerkin käyttö, johon onkin monenlaisia
-toteutuksia. Niistä kerrotaan seuraavissa luvuissa.
+toteutuksia. Niistä kerrotaan seuraavissa alaluvuissa.
 
 \subsection{Unicoden sitova yhdysmerkki}
 \label{luku:unicode_sitova}
@@ -1056,28 +1062,29 @@ niiden merkitykset. Taulukossa \ref{tlk:extdash-vertailu} vertaillaan
   \label{tlk:extdash-vertailu}
 }
 
-Kieli\-asetuksia hoitavan \paketti{polyglossia}\-/paketin uudehkot
-versiot (2020\==) tukevat suomen kielelle
-\koodi{babel\-short\-hands}\-/valitsinta, joka lisää keinovalikoimaan
-\paketti{babel}\-/paketista peräisin olevia tavutuksen
-hallintakomentoja. On esimerkiksi tavutuksen salliva yhdysmerkki
-(\koodi{\textquotedbl-}), joka toimii samoin kuin
-\paketti{extdash}\-/paketin \koodi{\keno-/}.
+% Kieli\-asetuksia hoitavan \paketti{polyglossia}\-/paketin uudehkot
+% versiot (2020\==) tukevat suomen kielelle
+% \koodi{babel\-short\-hands}\-/valitsinta, joka lisää keinovalikoimaan
+% \paketti{babel}\-/paketista peräisin olevia tavutuksen
+% hallintakomentoja. On esimerkiksi tavutuksen salliva yhdysmerkki
+% (\koodi{\textquotedbl-}), joka toimii samoin kuin
+% \paketti{extdash}\-/paketin \koodi{\keno-/}.
 
-Mukana on myös sitova, kaiken tavutuksen estävä yhdysmerkki
-(\koodi{\textquotedbl\textasciitilde}), jolle ei ole vastinetta Texissä
-eikä \paketti{extdash}\-/paketissa -- muuten kuin \koodi{\keno
-  mbox}\-/laatikon avulla. \paketti{polyglossia}\-/paketin ''Baabelin
-lyhenteet'' sisältävät eräitä muitakin hyödyllistä sanan katkaisemiseen
-liittyviä komentoja.
+% Mukana on myös sitova, kaiken tavutuksen estävä yhdysmerkki
+% (\koodi{\textquotedbl\textasciitilde}), jolle ei ole vastinetta Texissä
+% eikä \paketti{extdash}\-/paketissa -- muuten kuin \koodi{\keno
+%   mbox}\-/laatikon avulla. \paketti{polyglossia}\-/paketin ''Baabelin
+% lyhenteet'' sisältävät eräitä muitakin hyödyllistä sanan katkaisemiseen
+% liittyviä komentoja.
 
-Dokumentin otsikoissa (\koodi{\keno section} ym.) täytyy olla varovainen
-\paketti{extdash}\-/paketin komentojen kanssa. Ne toimivat ladotussa
-dokumentissa, mutta \paketti{hyperref}\-/paketin avulla syntyvässä
-pdf\-/tiedoston sisällysluettelossa ne eivät näy oikein. Ongelman voi
-kiertää käyttämällä Latexin otsikkokomentojen valinnaista parametria,
-jolla määritellään erikseen sisällysluettelossa näytettävä otsikko. Sen
-avulla varsinainen otsikko voi sisältää monimutkaisempia komentoja ja
+Dokumentin otsikoissa (\koodi{\keno chapter}, \koodi{\keno section} ym.)
+täytyy olla varovainen \paketti{extdash}\-/paketin komentojen kanssa. Ne
+toimivat ladotussa dokumentissa, mutta \paketti{hyperref}\-/paketin
+avulla syntyvässä pdf\-/tiedoston sisällysluettelossa (luku
+\ref{luku:ristiviitteet}) ne eivät näy oikein. Ongelman voi kiertää
+käyttämällä Latexin otsikkokomentojen valinnaista argumenttia, jolla
+määritellään erikseen sisällysluettelossa näytettävä otsikko. Sen avulla
+varsinainen otsikko voi sisältää monimutkaisempia komentoja ja
 sisällysluetteloon tuleva versio vain tekstiä ja tavutusvihjeitä.
 
 \begin{koodilohkosis}
@@ -1085,10 +1092,12 @@ sisällysluetteloon tuleva versio vain tekstiä ja tavutusvihjeitä.
 \end{koodilohkosis}
 
 Otsikot voivat vaatia tavutusvihjeitä silloin, kun niihin viitataan
-tekstistä komennolla \koodi{\keno nameref} tai kun otsikko itsessään on
-pitkä ja täytyy jakaa useammalle riville.
+tekstistä komennolla \koodi{\keno nameref} (luku
+\ref{luku:ristiviitteet}) tai kun otsikko itsessään on pitkä ja täytyy
+jakaa useammalle riville.
 
 \subsection{Johtopäätökset}
+\label{luku:tavutus-johtopäätökset}
 
 Suomenkielisen tekstin kirjoittamiseen tarvittaneen välillä
 \paketti{extdash}\-/paketin tavutus\-apuja, koska kielessä on pitkiä
@@ -1104,11 +1113,22 @@ edellä mainituissa esimerkkisanoissa on käytetty
 \paketti{extdash}\-/paketin yhdysmerkkiä \koodi{\keno -/} ja
 ajatusviivaa \koodi{\keno --}, joten tavutus hoituu itsestään.
 
-Unicoden sitovaa yhdysmerkkiä (luku \ref{luku:unicode_sitova}) ei ehkä
-kannata käyttää, koska Lualatex\-/kääntäjä kadottaa koko merkin. Merkki
-kyllä toimii Xelatex\-/kääntäjällä, mutta \paketti{extdash}\-/paketti
-tarjoaa kaikkialla toimivan vaihtoehdon sitovalle yhdysmerkille
-(\koodi{\keno =/}).
+Unicoden sitovaa yhdysmerkkiä \uctunnus{u+2011 non\-/breaking hyphen}
+(luku \ref{luku:unicode_sitova}) ei ehkä kannata käyttää, koska
+Lualatex\-/kääntäjä kadottaa koko merkin. Merkki kyllä toimii
+Xelatex\-/kääntäjällä, mutta \paketti{extdash}\-/paketti tarjoaa
+kaikkialla toimivan vaihtoehdon sitovalle yhdysmerkille (\koodi{\keno
+  =/}).
+
+Myös Unicoden ajatusviivamerkit \uctunnus{u+2013 en dash} ja
+\uctunnus{u+2014 em dash} toimivat eri tavon eri kääntäjissä.
+Lualatex\-/kääntäjällä ne ovat sitovia, tavutuksen sallivia merkkejä
+(taulukko \ref{tlk:extdash}). Sen sijaan Xelatex\-/kääntäjällä Unicoden
+ajatusviivamerkit toimivat samoin kuin Latexin tavalliset merkintätavat
+(\mbox{\koodi{--}}, \mbox{\koodi{---}}) eli estävät tavutuksen muualta
+kuin ajatusviivan tai muiden tavutusmerkkien jälkeen.
+Yhteensopivuussyistä lienee parasta olla käyttämättä Unicoden
+ajatusviivamerkkejä.
 
 Pdf-tiedostojen sisäinen sisällysluettelo syntyy
 \paketti{hyperref}\-/paketin avustuksella itsestään dokumentin
@@ -1117,16 +1137,8 @@ tavutuksessa vain Latexin perustoimintoja eli tavallisia yhdysmerkkejä
 ja tavutusvihjeitä (\koodi{\keno-}), koska erikoisemmat komennot eivät
 näy pdf:n sisällysluettelossa oikein.
 
-Jos \paketti{extdash}\-/paketin toimintojen lisäksi tarvitsee sitovaa,
-kaiken tavutuksen estävää yhdysmerkkiä (esimerkiksi
-\koodi{\textquotedbl\textasciitilde aika}), täytyy käyttää myös
-\paketti{polyglossia}\-/paketin ''Baabelin lyhenteitä''. Seuraava
-esimerkki näyttää, kuinka kaikki mainitut toiminnot kytketään päälle.
-
-\begin{koodilohkosis}
-  \usepackage{polyglossia}
-  \usepackage[shortcuts]{extdash}
-  \setdefaultlanguage[babelshorthands]{finnish}
-\end{koodilohkosis}
+Kaiken kaikkiaan tämä sekava kokonaisuus kiteytyy parhaiten taulukoihin
+\ref{tlk:tex-tavutus} ja \ref{tlk:extdash-vertailu}. Niiden mukaisesti
+kannattaa Latexin lähdedokumentit kirjoittaa ja tavutusta hallita.
 
 \subsection{Tavutus pois päältä KESKEN}

@@ -290,10 +290,15 @@ Oulu--Rova\-niemi), luetelmien, vuorosanojen ja virkkeen irrallisen
 lisäysten merkitseminen. Suomen kielessä käytetään yleensä vain lyhyttä
 ajatusviivaa \mbox{(--)}, joka tehdään Latexissa kahdella peräkkäisellä
 yhdysmerkillä \mbox{(\koodi{--})}. Pitkä ajatusviiva \mbox{(---)}
-tehdään kolmella yhdysmerkillä \mbox{(\koodi{---})}. Myös Unicoden
-ajatusviivamerkkejä voi käyttää: \uctunnus{u+2013 en dash} ja
-\uctunnus{u+2014 em dash}. Ajatusviivat vaikuttavat sanan tavutukseen
-samoin kuin yhdysmerkki (luku \ref{luku:tavutus}).
+tehdään kolmella yhdysmerkillä \mbox{(\koodi{---})}. Ajatusviivat
+vaikuttavat sanan tavutukseen samoin kuin yhdysmerkki (luku
+\ref{luku:tavutus}).
+
+Myös Unicoden ajatusviivamerkit toimivat (\uctunnus{u+2013 en dash} ja
+\uctunnus{u+2014 em dash}), mutta ne toimivat tavutuksen kannalta eri
+tavoin Lua\-latex- ja Xelatex\-/kääntäjillä. Yhteensopivuussyistä lienee
+parasta jättää Unicode\-/merkit pois ja tehdä ajatusviivat Latexin
+omilla merkintätavoilla.
 
 \pagebreak[3]
 

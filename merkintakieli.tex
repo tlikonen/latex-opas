@@ -294,12 +294,6 @@ tehdään kolmella yhdysmerkillä \mbox{(\koodi{---})}. Ajatusviivat
 vaikuttavat sanan tavutukseen samoin kuin yhdysmerkki (luku
 \ref{luku:tavutus}).
 
-Myös Unicoden ajatusviivamerkit toimivat (\uctunnus{u+2013 en dash} ja
-\uctunnus{u+2014 em dash}), mutta ne toimivat tavutuksen kannalta eri
-tavoin Lua\-latex- ja Xelatex\-/kääntäjillä. Yhteensopivuussyistä lienee
-parasta jättää Unicode\-/merkit pois ja tehdä ajatusviivat Latexin
-omilla merkintätavoilla.
-
 \pagebreak[3]
 
 \begin{koodilohkosis}
@@ -309,6 +303,13 @@ omilla merkintätavoilla.
 \begin{tulossis}
   Oulu--Rovaniemi-yhteys
 \end{tulossis}
+
+Myös Unicoden ajatusviivamerkit \uctunnus{u+2013 en dash} ja
+\uctunnus{u+2014 em dash} toimivat, mutta tavutuksen kannalta ne
+toimivat eri tavoin Lua\-latex- ja Xelatex\-/kääntäjillä.
+Yhteensopivuussyistä on parasta tehdä ajatusviivat Latexin omilla
+merkintätavoilla eikä Unicode\-/merkeillä. Tavutusta käsitellään
+tarkemmin luvussa \ref{luku:tavutus}.
 
 Silloin kun todella täytyy latoa kaksi tai kolme peräkkäistä
 yhdysmerkkiä, voi käyttää tasalevyistä fonttia (luku

@@ -91,9 +91,10 @@ käsitellään luvussa \ref{luku:diaesitykset}.
 
 \subsection{Perusdokumenttiluokkien asetukset}
 
-Taulukkoon \ref{tlk:luokkavalitsimet} on koottu perusdokumenttiluokkien
-valitsimet. Paperikoko valitaan komennoilla \koodi{a4\-paper} (210 × 297
-mm), \koodi{a5\-paper} (148 × 210 mm), \koodi{b5\-paper} (176 × 250 mm),
+Taulukkoon \ref{tlk:luokkavalitsimet}%
+\koodimargin{*paper} on koottu perusdokumenttiluokkien valitsimet.
+Paperikoko valitaan komennoilla \koodi{a4\-paper} (210 × 297 mm),
+\koodi{a5\-paper} (148 × 210 mm), \koodi{b5\-paper} (176 × 250 mm),
 \koodi{executivepaper} (7,25 × 10,5 tuumaa), \koodi{legalpaper} (8,5 ×
 14 tuumaa) tai \koodi{letterpaper} (8,5 × 11 tuumaa). Latexin oletuksena
 on \koodi{letterpaper}, mutta oletusta voi olla muutettu Latexin
@@ -117,10 +118,38 @@ dokumentin asetuksiin.
   \label{tlk:luokkavalitsimet}
 }
 
+Paperi%
+\koodimargin{landscape} on oletuksena pysty\-asen\-nossa, mutta valitsin
+\koodi{landscape} asettaa sen vaaka\-/asentoon. Tämä asetus koskee
+dokumentin kaikkia sivuja, mutta jos haluaa asettaa vain yksittäisiä
+sivuja vaaka\-/asentoon, täytyy käyttää \paketti{pdf\-lscape}\-/pakettia
+ja sen tarjoamaa ympäristöä.\avusepkg{pdflscape}
+
 Paperikokoja ja muitakin sivun mittoja voi määritellä monipuolisemmin
 \paketti{geometry}\-/paketin toimintojen avulla (luku
 \ref{luku:sivuasetukset}). Jos sitä pakettia käyttää, ei näitä
-dokumenttiluokan paperi\-koko\-ase\-tuk\-sia tarvita lainkaan.
+dokumenttiluokan paperi\-koko\-ase\-tuk\-sia tarvita välttämättä
+lainkaan.
+
+Dokumentista%
+\koodimargin{draft} voi latoa luonnosversion käyttämällä
+dokumenttiluokan valitsinta \koodi{draft}. Luonnokseen merkitään ainakin
+tekstipalstan yli pursuavat rivit (engl. \englanti{overfull box})
+mustalla suorakulmiolla, mikä voi auttaa tekstikappaleiden ulkoasun
+korjailussa (luku \ref{luku:kappale}). Eri makropaketit voivat hyödyntää
+\koodi{draft}\-/valitsinta omalla tavallaan eli muuttaa toimintaansa sen
+perusteella. Esimerkiksi grafiikkaan liittyvä paketti \paketti{graphicx}
+(luku \ref{luku:grafiikka}) jättää luonnosversiosta kuvat pois, ja
+niiden paikalla on vain suorakulmio. Pdf\-/tiedoston ristiviitteistä
+huolehtiva \paketti{hyperref}\-/paketti jättää pdf:n sisäiset
+ristiviitteet ja sisällysluettelon tekemättä (luku
+\ref{luku:ristiviitteet}).
+
+Lopullinen%
+\koodimargin{final} ladontatila on \koodi{final}, jolloin dokumenttiin
+ladotaan kaikki sisältö ja ominaisuudet niin kuin se on tarkoitettu
+julkaistavaksi. Tätä valitsinta ei tarvitse käyttää, koska se on
+oletustila.
 
 \subsection{Muita dokumenttiluokkia}
 
@@ -174,14 +203,14 @@ kirjainperheen varaan: antiikva eli pääteviivallinen%
   Roomassa käytettyihin kirjainmuotoihin. Ne olivat pääteviivallisia,
   mutta pääteviivat sinänsä eivät ole ainoa antiikvan piirre. Toinen
   tärkeä ominaisuus ovat erivahvuiset kirjainten viivat.}
-(\textenglish{serif, roman}), groteski eli pääteviivaton%
+(\englanti{serif, roman}), groteski eli pääteviivaton%
 \footnote{Groteskiin (ransk. \emph{grotesque} 'kummallinen') kuuluu
   pääteviivojen puuttumisen lisäksi lähes tasavahvuiset kirjainten
   viivat. Tämän oppaan groteskifontissa on kuitenkin selvästi
   antiikvamaiset kaksivahvuiset viivat, joten se on eräänlainen
-  antiikvan ja groteskin välimuoto.} (\textenglish{sans serif, gothic})
+  antiikvan ja groteskin välimuoto.} (\englanti{sans serif, gothic})
 ja tasalevyinen kirjoituskoneen kaltainen perhe
-(\textenglish{typewriter, monospace}). Kuvassa
+(\englanti{typewriter, monospace}). Kuvassa
 \ref{kuva:kirjainperhetyypit} ovat tässä oppaassa käytetyt kolme eri
 kirjainperhettä. Leipätekstissä käytetään antiikvaa, otsikoissa ja
 kuvateksteissä groteskia ja koodi\-esi\-mer\-keis\-sä tasalevyistä.
@@ -203,17 +232,18 @@ asetusten näkökulmasta.
 }
 
 Latexin fonttitekniikka rakentuu eri-ikäisistä kerroksista ja
-tekniikoista. Fontteja on tehty esimerkiksi Metafont\-/nimisellä
-kuvauskielellä, jolla tuotetaan bittikarttafontteja eli pikseleistä
-koostuvia fontteja. Ne voidaan muuttaa Post Script Type~1 \=/muotoon ja
-käyttää Latexissa. Myöhemmin mukaan ovat tulleet monipuoliset True Type-
-ja Open Type \=/muotoiset fontit, ja niihin tämä opas keskittyy.
+tekniikoista. Fontteja on tehty esimerkiksi
+\englanti{Metafont}\-/nimisellä kuvauskielellä, jolla tuotetaan
+bittikarttafontteja eli pikseleistä koostuvia fontteja. Ne voidaan
+muuttaa \englanti{Post Script Type~1} \=/muotoon ja käyttää
+Latexissa. Myöhemmin mukaan ovat tulleet monipuoliset True Type- ja Open
+Type \=/muotoiset fontit, ja niihin tämä opas keskittyy.
 
 Joidenkin fonttien käyttöönottoon on tehty oma makropakettinsa, joten
 sellaiset fontit voi ladata dokumentin esittelyosassa komennolla
 \koodi{\keno usepackage}. Fonttikohtaisia makropaketteja on olemassa
-varsinkin vanhalle fonttitekniikalle (Metafont, Post Script Type~1)
-mutta myös matematiikkatilan (luku \ref{luku:matematiikka})
+varsinkin vanhalle fonttitekniikalle (\englanti{Metafont, Post Script
+  Type~1}) mutta myös matematiikkatilan (luku \ref{luku:matematiikka})
 fonttiasetuksille ja joillekin kir\-jain\-perhe\-koko\-nai\-suuk\-sille.
 
 Valmiita makropaketteja on vain joillekin fonteille, ja käytännössä
@@ -227,10 +257,10 @@ esimerkin mukaisesti.
   \setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
 \end{koodilohkosis}
 
-Edellisessä esimerkissä TeX Gyre Termes, Heros ja Cursor ovat
-kirjainperheiden nimiä. Fonttitiedostojen tulee olla asennettuna
-käyttöjärjestelmän normaalien käytäntöjen mukaisesti tai Latex\-/jakelun
-käytäntöjen mukaisesti.
+Edellisessä esimerkissä \englanti{TeX Gyre Termes, Heros} ja
+\englanti{Cursor} ovat kirjainperheiden nimiä. Fonttitiedostojen
+tulee olla asennettuna käyttöjärjestelmän normaalien käytäntöjen
+mukaisesti tai Latex\-/jakelun käytäntöjen mukaisesti.
 
 Kirjainperheiden käyttöönoton yhteydessä voi määritellä lukuisia
 asetuksia kuten ligatuureja, gemenanumeroita, optisia kokoja ja muita
@@ -267,22 +297,20 @@ Komento \koodi{\keno new\-font\-family} toimii samalla tavalla kuin
 aiemmin esitellyt \koodi{\keno set\-main\-font} ym. komennot, mutta
 lisäksi ensimmäinen argumentti määrittää komennon, jolla kirjainperhe
 otetaan käyttöön. Edellisessä esimerkissä luodaan komento \koodi{\keno
-  hieno\-perhe}, joka kytkee päälle TeX Gyre Scho\-la \=/nimisen
-kirjainperheen.
+  hieno\-perhe}, joka kytkee päälle \englanti{TeX Gyre Schola}
+\=/nimisen kirjainperheen.
 
 \pagebreak[3]
 
 Jos ei tarvita kokonaista perhettä vaan yksi leikkaus riittää, käytetään
-komentoa \koodi{\keno new\-font\-face}:
+komentoa \koodi{\keno new\-font\-face}. Seuraavassa esimerkissä
+määriteltävä komento \koodi{\keno hieno\-leikkaus} ottaa käyttöön
+lihavoidun (bold) kirjainleikkauksen perheestä \englanti{TeX Gyre
+  Schola}.
 
 \begin{koodilohkosis}
   \newfontface{\hienoleikkaus}{TeX Gyre Schola Bold}[…]
 \end{koodilohkosis}
-
-Edellä määriteltävä komento \koodi{\keno hieno\-leikkaus} ottaa käyttöön
-lihavoidun (bold) kirjainleikkauksen perheestä TeX Gyre Scho\-la. Tässä
-vaih\-to\-eh\-dos\-sa on se etu, että tietokoneen muistiin ladataan vain
-yksi leikkaus, ei koko perhettä.
 
 \subsection{Fontin koko ja rivikorkeus}
 
@@ -446,8 +474,8 @@ valitsee toisen leikkauksen samasta perheestä.
 }
 
 Kirjainleikkauksen asetukset jaetaan kahteen ryhmään:
-\textenglish{\emph{series}} 'sarja' ja \textenglish{\emph{shape}}
-'muoto'. Kummastakin ryhmästä on valittuna aina yksi ominaisuus, eli
+\englanti{\emph{series}} 'sarja' ja \englanti{\emph{shape}} 'muoto'.
+Kummastakin ryhmästä on valittuna aina yksi ominaisuus, eli
 samanaikaisesti voi olla voimassa esimerkiksi \koodi{\keno bf\-se\-ries}
 (\textbf{lihavoitu}) ja \koodi{\keno it\-shape} (\textit{kursiivi}), ja
 tuloksena on \textbf{\itshape lihavoitua kursiivia}.
@@ -730,9 +758,9 @@ ja ffl, mutta jotkin fontit sisältävät muitakin. Kuvaan
   \addfontfeatures{Scale=3.5, Ligatures={Common, Historic}}
   fi ff ffi fl ffl Th fb st ct
 }{
-  \caption{Tavalliset eli standardit f\=/alkuiset ligatuurit, vähän
-    harvinaisemmat Th ja fb sekä erikseen päälle kytkettävät
-    historialliset ligatuurit st ja ct}
+  \caption{Tavalliset f\=/alkuiset ligatuurit, vähän harvinaisemmat Th
+    ja fb sekä erikseen päälle kytkettävät historialliset ligatuurit st
+    ja ct}
   \label{kuva:ligatuurit}
 }
 
@@ -753,10 +781,12 @@ tarkoitukseen olevan merkin \uctunnus{u+200c zero width non-joiner}.
 \pagebreak[3]
 
 \begin{koodilohkosis}
+  \Large
   fi f\textcompwordmark i
 \end{koodilohkosis}
 
 \begin{tulossis}
+  \Large
   fi f\textcompwordmark i
 \end{tulossis}
 
@@ -781,7 +811,9 @@ asetuksella \koodi{Liga\-tures=His\-toric}. Muita
 li\-ga\-tuu\-ri\-ase\-tuk\-sia kannattaa tutkia
 \paketti{fontspec}\-/paketin ohjekirjasta.
 
-\subsection{Fonttivinkkejä}
+\subsection{Fonttivinkkejä KESKEN}
+
+% setmainfont=groteski (\rmfamily), entä setsansfont?
 
 \section{Kieli}
 \label{luku:kieliasetukset}

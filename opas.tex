@@ -41,6 +41,7 @@ per-mode=symbol]{siunitx}
 \setdefaultlanguage{finnish}
 \setotherlanguage{english}
 \newcommand{\englishfont}{}
+\newcommand{\englanti}[1]{\textenglish{#1}}
 
 % Tavutus päälle
 \defaultfontfeatures[\ttfamily]{}
@@ -150,12 +151,12 @@ per-mode=symbol]{siunitx}
 \definecolor{sitova}{rgb}{1,0,0}
 
 \newcommand{\keno}{\textbackslash}
-\newcommand{\koodi}[1]{\texttt{\textenglish{#1}}}
+\newcommand{\koodi}[1]{\texttt{\englanti{#1}}}
 \newcommand{\koodimargin}[1]{\marginpar{\koodi{#1}}}
 \newcommand{\tavukohta}{\textcolor{tavu}{\rule{.6bp}{1.5ex}}}
 \newcommand{\sitovaym}{\textcolor{sitova}{-}}
-\newcommand{\uctunnus}[1]{\textenglish{\textsc{#1}}}
-\newcommand{\paketti}[1]{\textenglish{\textsf{#1}}}
+\newcommand{\uctunnus}[1]{\englanti{\textsc{#1}}}
+\newcommand{\paketti}[1]{\englanti{\textsf{#1}}}
 \newcommand{\avusepkg}[1]{\footnote{Käyttöönotto:
     \koodi{\keno usepackage\{#1\}}}}
 
@@ -288,6 +289,8 @@ per-mode=symbol]{siunitx}
   ty-po-gra-fias-sa
   ty-po-gra-fis-ten
   Type
+  ulko-asu
+  ulko-asun
   Uni-code
   use-pack-age
   vaih-to-eh-don
@@ -358,7 +361,7 @@ per-mode=symbol]{siunitx}
   Päiväys: \DTMtoday{} kello \DTMcurrenttime{} (Ensijulkaisu: ei ole
   julkaistu vielä)
 
-  Lisenssi: \textenglish{\textsc{gnu} General Public License}, versio~3
+  Lisenssi: \englanti{\textsc{gnu} General Public License}, versio~3
 
   Lisenssi antaa luvan käyttää ja levittää tätä opasta vapaasti.
   Oppaaseen saa myös tehdä omia muutoksia, mutta jos levittää omaa
@@ -415,7 +418,7 @@ typografiset käytännöt.
 
 \begin{teosluettelo}
 \bibitem[Berry ym.(2018)]{unoffref} Berry, Karl \& Gilmore, Stephen \&
-  Martinsen, Torsten 2018: \textenglish{Latex 2e: An unofficial
+  Martinsen, Torsten 2018: \englanti{Latex 2e: An unofficial
     reference manual. October 2018.} Saatavissa:
   \angleurl{https://latexref.xyz/}.%
   \footnote{Tex Live \=/jakelussa komennolla: \koodi{texdoc latex2e}}

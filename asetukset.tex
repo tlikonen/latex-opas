@@ -105,10 +105,10 @@ dokumentin asetuksiin.
   \ttfamily
   \begin{tabular}{llll}
     \toprule
-    a4paper & landscape & onecolumn & 10pt \\
-    a5paper & final & twocolumn & 11pt \\
-    b5paper & draft & openany & 12pt \\
-    executivepaper & oneside & openright & titlepage \\
+    a4paper & landscape & openright & 10pt \\
+    a5paper & final & openany & 11pt \\
+    b5paper & draft & onecolumn & 12pt \\
+    executivepaper & oneside & twocolumn & titlepage \\
     legalpaper & twoside & fleqn & notitlepage \\
     letterpaper & openbib & leqno & clock \\
     \bottomrule
@@ -146,10 +146,39 @@ ristiviitteet ja sisällysluettelon tekemättä (luku
 \ref{luku:ristiviitteet}).
 
 Lopullinen%
-\koodimargin{final} ladontatila on \koodi{final}, jolloin dokumenttiin
-ladotaan kaikki sisältö ja ominaisuudet niin kuin se on tarkoitettu
-julkaistavaksi. Tätä valitsinta ei tarvitse käyttää, koska se on
-oletustila.
+\koodimargin{final} ladontatila on \koodi{final}, joka tarkoittaa, että
+dokumenttiin ladotaan kaikki sisältö ja ominaisuudet niin kuin se on
+tarkoitettu julkaistavaksi. Tätä valitsinta ei tarvitse käyttää, koska
+se on oletustila.
+
+Sivujen%
+\koodimargin{oneside \\ twoside} yksipuolisuus (\koodi{oneside}) ja
+kaksipuolisuus (\koodi{twoside}) ovat asetuksia, jotka vaikuttavat sivun
+marginaalien asetuksiin ja joskus uuden pääluvun (\koodi{\keno chapter})
+aloitukseen. Oletus on yksipuolinen dokumentti kaikissa muissa
+perusdokumenttiluokissa paitsi \koodi{book}-/luokassa, jonka oletus on
+kaksipuolinen.
+
+Yksipuolisessa dokumentissa kaikkien sivujen marginaalit ovat
+lähtökohtaisesti samanlaisia ja asetuksissa puhutaan esimerkiksi
+vasemmasta (\englanti{left}) ja oikeasta (\englanti{right})
+marginaalista. Kaksipuolisessa dokumentissa sivut ajatellaan pareittain:
+kaksi sivua muodostaa kirjan aukeaman, jonka vasemmalla puolella on
+parillinen sivunumero ja oikealla pariton. Marginaalien asetuksissa
+puhutaan sisämarginaaleista (\englanti{inner}) ja ulkomarginaaleista
+(\englanti{outer}). Sisämarginaalit ovat oletuksena pienemmät, koska
+niitä on aukeamalla aina kaksi vierekkäin. Ulkomarginaaleissa on tilaa
+marginaalihuomautuksille (luku \ref{luku:marginaalihuomautukset}).
+Marginaaleja ja muita sivun asetuksia käsitellään tarkemmin luvussa
+\ref{luku:sivuasetukset}.
+
+Jos%
+\koodimargin{openright \\ openany} dokumentti on määritetty
+kaksipuoliseksi (\koodi{twoside}), voidaan
+\koodi{open\-right}\-/valitsimella määrittää pääluvut (\koodi{\keno
+  chapter}) alkamaan aina oikeanpuoleiselta sivulta. Se onkin oletus
+dokumenttiluokassa \koodi{book}. Valitsin \koodi{open\-any} asettaa
+pääluvut alkamaan miltä tahansa seuraavalta sivulta.
 
 \subsection{Muita dokumenttiluokkia}
 

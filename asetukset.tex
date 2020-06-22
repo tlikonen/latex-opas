@@ -851,10 +851,21 @@ harvinaisempia ligatuureja, jotka täytyy erikseen kytkeä päälle. Niiden
 tarkoituksena on esimerkiksi erityinen koristeellisuus tai
 historiallisen kirjoitustavan jäljittely. Harvinaisia ligatuureja ei ole
 tarkoitus käyttää joka tilanteessa vaan ainoastaan erityisestä syystä.
-Kuvan \ref{kuva:ligatuurit} st- ja ct\-/ligatuurit on saatu fontin
-asetuksella \koodi{Liga\-tures=His\-toric}. Muita
-li\-ga\-tuu\-ri\-ase\-tuk\-sia kannattaa tutkia
-\paketti{fontspec}\-/paketin ohjekirjasta.
+Kuvassa \ref{kuva:ligatuurit} olevat st- ja ct\-/ligatuurit on saatu
+fontin asetuksella \koodi{Liga\-tures=His\-toric}. Toisissa fonteissa
+sama tehdään asetuksella \koodi{Liga\-tures=Dis\-cre\-tionary}.
+Useitakin ligatuurityyppejä voi kytkeä päälle samanaikaisesti, ja
+seuraava esimerkki näyttää, miten se tehdään.
+
+\begin{koodilohkosis}
+  \setmainfont{…}[Ligatures={Common, Historic, Discretionary}]
+\end{koodilohkosis}
+
+Ligatuurityyppejä on muitakin. Niihin liittyviä asetuksia kannattaa
+tutkia \paketti{fontspec}\-/paketin ohjekirjasta. Fontin ominaisuudet
+puolestaan selviävät käyttöjärjestelmän komentotulkissa komennolla
+\koodi{otf\-info}. Komennon argumentiksi annetaan muun muassa
+fonttitiedoston nimi.
 
 \subsection{Fonttivinkkejä KESKEN}
 

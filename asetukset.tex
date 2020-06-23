@@ -81,13 +81,16 @@ kirjeessä alusta -- kuten on tietysti toivottavaa.
 \koodi{letter}\-/luokkaa käsitellään tarkemmin luvussa
 \ref{luku:kirjeet}.
 
-Esitys\-grafiikkaa%
-\koodimargin{slides} eli dia\-esityksiä voi tehdä
-\koodi{slides}\-/luokan avulla. Tähän tarkoitukseen on kuitenkin
-olemassa paljon monipuolisempi luokka \koodi{beamer}, joten
-\koodi{slides}\-/luokan käyttö ei ole kovin mielekästä.
-Dia\-esi\-tys\-ten ja \koodi{beamer}\-/luokan perus\-asioita
-käsitellään luvussa \ref{luku:diaesitykset}.
+Piirtoheittimien%
+\koodimargin{slides} läpinäkyvien kalvojen ja sen kaltaisten
+dokumenttien tekemiseen on dokumenttiluokka \koodi{slides}.
+Piirtoheittimet ovat jääneet menneisyyteen, ja nykyään jokseenkin
+vastaavanlainen rooli on esi\-tys\-gra\-fiikka\-ohjel\-milla, joilla
+tehdään dia\-esi\-tyk\-siä esimerkiksi esitelmien havaintomateriaaliksi.
+\koodi{slides}\-/luokkaa ei varmaan tarvita enää mihinkään, mutta
+esi\-tys\-gra\-fiik\-kaan on olemassa erittäin monipuolinen luokka
+\koodi{beamer}, jonka perus\-asioita käsitellään luvussa
+\ref{luku:diaesitykset}.
 
 \subsection{Perusdokumenttiluokkien asetukset}
 
@@ -153,16 +156,15 @@ käsitellään tarkemmin luvussa \ref{luku:kirjaintyypit}.
 Dokumentista%
 \koodimargin{draft} voi latoa luonnosversion käyttämällä
 dokumenttiluokan valitsinta \koodi{draft}. Luonnokseen merkitään ainakin
-tekstipalstan yli pursuavat rivit (engl. \englanti{overfull box})
-mustalla suorakulmiolla, mikä voi auttaa tekstikappaleiden ulkoasun
-korjailussa (luku \ref{luku:kappale}). Eri makropaketit voivat hyödyntää
-\koodi{draft}\-/valitsinta omalla tavallaan eli muuttaa toimintaansa sen
-perusteella. Esimerkiksi grafiikkaan liittyvä paketti \paketti{graphicx}
-(luku \ref{luku:grafiikka}) jättää luonnosversiosta kuvat pois, ja
-niiden paikalla on vain suorakulmio. Pdf\-/tiedoston ristiviitteistä
-huolehtiva \paketti{hyperref}\-/paketti jättää pdf:n sisäiset
-ristiviitteet ja sisällysluettelon tekemättä (luku
-\ref{luku:ristiviitteet}).
+tekstipalstan yli pursuavat rivit mustalla suorakulmiolla, mikä voi
+auttaa tekstikappaleiden ulkoasun korjailussa (luku \ref{luku:kappale}).
+Eri makropaketit voivat hyödyntää \koodi{draft}\-/valitsinta omalla
+tavallaan eli muuttaa toimintaansa sen perusteella. Esimerkiksi
+grafiikkaan liittyvä paketti \paketti{graphicx} (luku
+\ref{luku:grafiikka}) jättää luonnosversiosta kuvat pois, ja niiden
+paikalla on vain suorakulmio. Pdf\-/tiedoston ristiviitteistä huolehtiva
+\paketti{hyperref}\-/paketti jättää pdf:n sisäiset ristiviitteet ja
+sisällysluettelon tekemättä (luku \ref{luku:ristiviitteet}).
 
 Lopullinen%
 \koodimargin{final} ladontatila on \koodi{final}, joka tarkoittaa, että
@@ -222,8 +224,22 @@ esitystapaan vaikutetaan valitsimilla \koodi{title\-page} ja
 perustietojen eli pääotsikon, tekijöiden nimien ja päiväyksen latomiseen
 (luku \ref{luku:kansilehti}), ja näillä valitsimilla vaikutetaan siihen,
 ladotaanko perustiedot omalle sivulleen (\koodi{title\-page}) vaiko
-sisältösivun alkuun (\koodi{no\-title\-page}). Oletus\-asetus vaihtelee
-eri dokumenttiluokissa.
+varsinaisen sisältösivun alkuun (\koodi{no\-title\-page}).
+Oletus\-asetus vaihtelee eri dokumenttiluokissa.
+
+Oletuksena%
+\koodimargin{onecolumn \\ twocolumn} sivun tekstit ladotaan yhdelle
+palstalle (\koodi{one\-column}), mutta valitsimella \koodi{two\-column}
+teksti ladotaan kahdelle palstalle. Nämä valitsimet vaikuttavat myös
+sivun marginaaleihin. Latexin perusosat eivät hallitse useampaa kuin
+kaksi palstaa, mutta \paketti{multicol}\-/makropaketin avulla saa
+enemmänkin. Palstoja käsitellään luvussa \ref{luku:palstat}.
+
+Dokumenttiluokassa%
+\koodimargin{clock} \koodi{slides} toimii \koodi{clock}\-/valitsin, joka
+latoo kellon\-ajan piirtoheitinkalvon loppuun \koodi{\keno
+  note}\-/komennon yhteydessä. Tämä valitsin kuulunee samaan paikkaan
+kuin piirtoheittimet ja \koodi{slides}\-/luokkakin: kierrätykseen.
 
 \subsection{Muita dokumenttiluokkia}
 

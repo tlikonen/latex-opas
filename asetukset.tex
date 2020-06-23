@@ -131,6 +131,25 @@ Paperikokoja ja muitakin sivun mittoja voi määritellä monipuolisemmin
 dokumenttiluokan paperi\-koko\-ase\-tuk\-sia tarvita välttämättä
 lainkaan.
 
+Leipätekstin%
+\koodimargin{10pt \\ 11pt \\ 12pt} fontin koon voi määrittää
+valitsimilla \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}, joista ensin
+mainittu on oletus. Lyhenne pt tarkoittaa typografista pistemittaa,
+joita käsitellään luvussa \ref{luku:mitat}. Nämä asetukset vaikuttavat
+myös sivun marginaaleihin, koska fontin koko vaikuttaa tekstiriville
+mahtuvien merkkien määrään ja Latex pyrkii pitämään rivit sopivan
+mittaisina lukemisen kannalta.
+
+Vain kolme eri fonttikokoa leipätekstille on kovin vähän ja peräisin
+ajalta, jolloin Latexin fontit olivat pik\-seli\-gra\-fiik\-kaa eli
+muodostuivat erillisistä kuvapisteistä. Nyky\-aika\-na fontit ovat
+vek\-tori\-gra\-fiik\-kaa eli matemaattisten kaavojen avulla
+muodostettavia kuvia, ja ne voi venyttää mihin kokoon tahansa. Sen
+vuoksi nämä dokumenttiluokkien fonttikokovalitsimet eivät ole kovin
+tarpeellisia eivätkä kaikkiin tarpeisiin riittäviä nykyaikana. Voi niitä
+silti käyttää, jos niiden avulla saa halutun lopputuloksen. Fontteja
+käsitellään tarkemmin luvussa \ref{luku:kirjaintyypit}.
+
 Dokumentista%
 \koodimargin{draft} voi latoa luonnosversion käyttämällä
 dokumenttiluokan valitsinta \koodi{draft}. Luonnokseen merkitään ainakin
@@ -195,6 +214,16 @@ käyttämällä kaavat ladotaan kuitenkin sivun vasempaan reunaan. Kaavojen
 numerot sijoitetaan oletuksena sivun oikeaan reunaan, mutta valitsimella
 \koodi{leqno} ne saa ladottua sivun vasempaan reunaan. Matematiikkatilaa
 käsitellään luvussa \ref{luku:matematiikka}.
+
+Kansilehden%
+\koodimargin{titlepage \\ notitlepage} tai dokumentin perustietojen
+esitystapaan vaikutetaan valitsimilla \koodi{title\-page} ja
+\koodi{no\-title\-page}. Latexissa on yksinkertaiset komennot dokumentin
+perustietojen eli pääotsikon, tekijöiden nimien ja päiväyksen latomiseen
+(luku \ref{luku:kansilehti}), ja näillä valitsimilla vaikutetaan siihen,
+ladotaanko perustiedot omalle sivulleen (\koodi{title\-page}) vaiko
+sisältösivun alkuun (\koodi{no\-title\-page}). Oletus\-asetus vaihtelee
+eri dokumenttiluokissa.
 
 \subsection{Muita dokumenttiluokkia}
 

@@ -1,4 +1,7 @@
 *.aux
+*.bbl
+*.bcf
+*.blg
 *.fdb_latexmk
 *.fls
 *.idx
@@ -7,6 +10,7 @@
 *.log
 *.out
 *.pdf
+*.run.xml
 *.svg
 *.toc
 *.xdv

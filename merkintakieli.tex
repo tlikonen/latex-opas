@@ -10,7 +10,7 @@ käsitellään merkintäkielen perus\-asioita.
 
 Latex\-/dokumenttiin voi kirjoittaa tekstiä Unicode\-/merkistöllä ja sen
 \textsc{utf}\=/8\/-koodauksella, jos kääntäjänä on Unicoden osaava
-ohjelma kuten Xelatex tai Lualatex. Pääasiassa siis merkit kirjoitetaan
+ohjelma kuten Lualatex tai Xelatex. Pääasiassa siis merkit kirjoitetaan
 sellaisenaan lähdedokumenttiin, mutta on kuitenkin kaikenlaisia
 poikkeuksia, ja niitä käsitellään tässä alaluvussa.
 
@@ -23,7 +23,7 @@ käyttää normaalilla tavalla. Merkit ovat seuraavat:
   % $ ^ _ # & { } ~ \
 \end{koodilohkosis}
 
-Useimmat näistä merkeistä voi suojata erikoismerkitykseltä
+Useimmat näistä merkeistä voi suojata erikoismerkitykseltään
 kirjoittamalla niiden eteen kenoviivan (\koodi{\keno}). Tildeä
 (\textasciitilde), sirkumfleksia (\textasciicircum) eikä kenoviivaa
 itseään ei voi suojata pelkän kenoviivan avulla, koska kenoviivan kanssa
@@ -85,8 +85,9 @@ kirjoittaa useita peräkkäin, mutta ne ovat sama asia kuin yksi väli.
 Sanavälien leveys ei ole vakio. Silloin kun tekstipalsta tasataan
 molemmista reunoista -- kuten tämänkin oppaan leipätekstissä \==,
 rivillä olevia sanavälejä venytetään sopivasti, jotta tekstipalstan
-molemmat reunat saadaan tasaiseksi. Tietynlevyisiä välejä saa tehtyä
-komennolla \koodi{\keno hspace} (luku \ref{luku:mitat}).
+molemmat reunat saadaan tasaiseksi. Tietynlevyisiä vaakasuuntaisia
+välejä saa tehtyä komennolla \koodi{\keno hspace} (luku
+\ref{luku:mitat}).
 
 \subsection{Kappaleen vaihtuminen}
 
@@ -226,7 +227,7 @@ lainausmerkki. On siis syytä käyttää oikeita lainausmerkkejä, ja se käy
 Latexissa varsin helposti.
 
 Eri kielissä lainausmerkkikäytännöt ovat erilaiset. Suomen kielessä
-käytetään ''tällaisia'' lainausmerkkejä tai joskus >>tällaisia>>
+käytetään ''tällaisia'' lainausmerkkejä ja joskus >>tällaisia>>
 kulmalainausmerkkejä. Jos lainauksen sisään tarvitaan lainaus, täytyy
 sisempi lainaus kirjoittaa 'tällaisten' puolilainausmerkkien avulla.
 Yksittäin käytettynä se on nimeltään heittomerkki. Englannin kielessä
@@ -264,10 +265,11 @@ lopussa. Vasemmalle osoittava merkki (<<) tehdään kahdella pienempi kuin
 
 Lainausmerkkien merkintätapoja ja komentoja on koottu taulukkoon
 \ref{tlk:erikoismerkit-lainaus}
-(s.~\pageref{tlk:erikoismerkit-lainaus}). Myös Unicode\-/merkkejä voi
-käyttää sellaisenaan. Toisaalta kielikohtaiset asetukset (luku
-\ref{luku:kieliasetukset}) voivat tuoda mukanaan myös kielikohtaisia
-keinoja lainausmerkkien kirjoittamiseen.
+(s.~\pageref{tlk:erikoismerkit-lainaus}). Toisaalta kielikohtaiset
+asetukset (luku \ref{luku:kieliasetukset}) voivat tuoda mukanaan myös
+kielikohtaisia keinoja lainausmerkkien kirjoittamiseen. Lisäksi
+makropaketti \paketti{cs\-quotes}\avctan{csquotes} sisältää
+lainausmerkkeihin liittyviä komentoja ja kielikohtaista logiikkaa.
 
 Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
@@ -312,9 +314,8 @@ merkintätavoilla eikä Unicode\-/merkeillä. Tavutusta käsitellään
 tarkemmin luvussa \ref{luku:tavutus}.
 
 Silloin kun todella täytyy latoa kaksi tai kolme peräkkäistä
-yhdysmerkkiä, voi käyttää tasalevyistä fonttia (luku
-\ref{luku:kirjaintyypit}), joka oletuksena kytkee pois Latexin
-ajatusviivatoiminnon. Muita tapoja on esimerkissä
+yhdysmerkkiä, voi käyttää tasalevyistä fonttia, joka oletuksena kytkee
+pois Latexin ajatusviivatoiminnon. Muita tapoja on esimerkissä
 \ref{esim:pois-tex-liga}.
 
 \begin{esimerkki*}
@@ -335,20 +336,7 @@ matematiikkatilassa (luku \ref{luku:matematiikka}). Ajatusviivaa saa
 käyttää myös miinusmerkkinä, mutta vielä parempi olisi käyttää
 varsinaista Unicoden miinusmerkkiä \uctunnus{u+2212 minus sign}, koska
 se on fonteissa suunniteltu typografisesti yhteensopivaksi muiden
-matemaattisten merkkien kanssa. Tämän oppaan leipätekstin fontissakin on
-pieni ero merkkien välillä: miinusmerkki on samalla korkeudella kuin
-plusmerkin vaakaviiva; ajatusviiva on ylempänä (kuva
-\ref{kuva:ajatusviiva_miinusmerkki}). Joissakin fonteissa eroa on myös
-pituudessa.
-
-\leijukuva{
-  \addfontfeatures{Scale=9, LetterSpace=-5}
-  +−= \hfill +–=
-}{
-  \caption{Vasemmalla miinusmerkin ja oikealla ajatusviivan vertailua
-    muihin matemaattisiin merkkeihin}
-  \label{kuva:ajatusviiva_miinusmerkki}
-}
+matemaattisten merkkien kanssa.
 
 \subsection{Kolme pistettä eli ellipsi}
 
@@ -369,24 +357,27 @@ Yläindeksit (a\textsuperscript{2}) tehdään komennolla \koodi{\keno
 indeksit mekaanisesti pienentämällä fonttia ja sijoittamalla pienennetyn
 tekstin peruslinjan tai gemenalinjan tuntumaan. Lopputulos ei ole
 typografisesti välttämättä kovin hyvä, koska fontin pienentäminen
-ohentaa samalla merkkien viivoja ja ohuimmat hiusviivat voivat kadota.
+ohentaa samalla merkkien viivoja ja ohuimmat hiusviivat voivat lähes
+kadota.
 
 Open Type \=/fontit sisältävät usein tuen oikeille ylä- ja
 alaindekseille, jotka fontin suunnittelija on toteuttanut. Niitä
 kannattaa käyttää, koska suunnittelija tuntee oman fonttinsa ja saa
 todennäköisesti parempaa jälkeä kuin Latex mekaanisesti. Open Type
 \=/fonttien indeksit on kätevintä ottaa käyttöön
-\paketti{real\-scripts}\-/paketin avulla.\avusepkg{realscripts}
+\paketti{real\-scripts}\-/paketin avulla.\avctan{realscripts}
 
 Paketti \paketti{real\-scripts} määrittelee uudelleen Latexin ylä- ja
 alaindeksikomennot, niin että ne ensisijaisesti pyrkivät käyttämään Open
-Type \=/fontin ominaisuutta. Jos käytössä oleva fontti ei sisällä tukea
-ylä- eikä alaindekseille, käytetään Latexin mekaanista keinoa. Paketti
-määrittelee pari muutakin hyödyllistä komentoa, muun muassa tähdelliset
-versiot edellä mainituista: \koodi{\keno text\-su\-per\-script*} ja
-\koodi{\keno text\-sub\-script*}. Nämä komennot toteuttavat aina
-mekaanisen ylä- tai alaindeksin. Seuraavassa esimerkissä vertaillaan
-oikeita ja mekaanisia (tähdelliset) ylä- ja alaindeksejä.
+Type \=/fontin ominaisuutta. Jos käytössä oleva fontti ei sisällä
+haluttujen merkkien ylä- tai alaindeksiä,
+\paketti{real\-scripts}\-/paketin komennot käyttävät automaattisesti
+Latexin mekaanista keinoa. Paketti määrittelee pari muutakin hyödyllistä
+komentoa, muun muassa tähdelliset versiot edellä mainituista:
+\koodi{\keno text\-su\-per\-script*} ja \koodi{\keno
+  text\-sub\-script*}. Nämä komennot toteuttavat aina mekaanisen ylä-
+tai alaindeksin. Seuraavassa esimerkissä vertaillaan oikeita ja
+mekaanisia (tähdelliset) ylä- ja alaindeksejä.
 
 \pagebreak[3]
 
@@ -547,7 +538,7 @@ ladontajärjestelmän logojen kirjoittamiseen: \koodi{\keno TeX},
     \rivi{\textasciicircum}{textasciicircum \keno \^{}\{\}}{sirkumfleksi}
     \rivi{\textasciitilde}{textasciitilde \keno \~{}\{\}}{tilde}
     \rivi{\textasteriskcentered}{textasteriskcentered}{rivinkeskinen
-    asteriski, ''tähti''}
+    asteriski, tähti}
     \rivi{\textbackslash}{textbackslash}{kenoviiva}
     \rivi{\textbar}{textbar}{pystyviiva}
     \rivi{\textbardbl}{textbardbl}{kaksoispystyviiva}
@@ -807,7 +798,7 @@ lakkaa ja komento palautuu alkuperäiseksi.
 \end{tulossis}
 
 Monimutkaisiin komentoihin voidaan tarvita ehtorakenteita. Ne saa
-toteutettua \paketti{ifthen}\=/paketin\avusepkg{ifthen} tarjoaman
+toteutettua \paketti{ifthen}\=/paketin\avctan{ifthen} tarjoaman
 \koodi{\keno if\-then\-else}\-/komennon avulla. Se on
 ohjelmointikielistä tuttu ehtorakenne: jos annettu ehtolauseke on tosi,
 käsitellään then\-/haara; muussa tapauksessa käsitellään else-haara.
@@ -1394,7 +1385,7 @@ ristiviitteen numeron, joten tätä komentoa seuraava \koodi{\keno
   the\-las\-ku\-ri}\-/komennon tulosteeseen. Ristiviitteitä käsitellään
 tarkemmin luvussa \ref{luku:ristiviitteet}.
 
-Makropaketti \paketti{chngcntr}\avusepkg{chngcntr} helpottaa
+Makropaketti \paketti{chngcntr}\avctan{chngcntr} helpottaa
 hierarkkisten laskurien muuttamista jälkikäteen. Paketin komentojen
 avulla voi jälkikäteen asettaa jonkin laskurin riippuvaiseksi toisesta
 laskurista tai poistaa riippuvuuden.
@@ -1455,7 +1446,7 @@ komennoilla \koodi{\keno ref} ja \koodi{\keno page\-ref}. Esimerkki
 \end{esimerkki*}
 
 Muunlaisten kokonaislaskurien toteuttamiseen voi käyttää
-\paketti{tot\-count}\-/pakettia.\avusepkg{totcount} Paketti tarjoaa
+\paketti{tot\-count}\-/pakettia.\avctan{totcount} Paketti tarjoaa
 komennon, jolla rekisteröidään olemassa oleva laskuri
 kokonaislaskuriksi. Lisäksi on komento, jolla tulostetaan tai
 palautetaan laskurin lopullinen arvo.

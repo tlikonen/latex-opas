@@ -2,9 +2,17 @@
 \section{Kappaleet}
 \label{luku:kappale}
 
+..
+
 \subsection{Tasaus}
 %\sloppy, \fussy, \newline \\ \\*
+
+...
+
 \subsection{Sisennykset}
+
+...
+
 \subsection{Välit}
 
 % \bigskip
@@ -14,22 +22,38 @@
 % \medbreak
 % \smallbreak
 
+...
+
 \subsection{Lesket ja orvot}
+
+...
+
 \subsection{Marginaalihuomautukset}
 \label{luku:marginaalihuomautukset}
 
+...
+
 \section{Korostus}
+
+...
+
 \section{Sivun vaihto}
 % newpage, clearpage, minipage, nopagebreak
+
+...
+
 \section{Otsikot ja jäsennys}
 \label{luku:otsikot}
+
+% \sectionbreak ym. ovat titlesec-paketin ominaisuuksia. titlesec
+% kannattaa täällä käsitellä.
+
+...
 
 \subsection{Kansilehti ja dokumentin perustiedot}
 \label{luku:kansilehti}
 
-% \sectionbreak ym. ovat titlesec-paketin ominaisuuksia. titlesec
-% kannattaa täällä käsitellä.
-%
+...
 
 \subsection{Esittely, pääluvut ja liitteet}
 \label{luku:frontmainbackmatter}
@@ -41,25 +65,286 @@
 % tiivistelmä. Varsinainen sisältö aloitetaan komennolla \koodi{\keno
 %   mainmatter}
 
+...
 
 \section{Luetelmat}
 \label{luku:luetelmat}
+
+...
+
 \section{Taulukot}
 \label{luku:taulukot}
+
+...
+
 \section{Leijuvat osat}
 \label{luku:leijuosat}
+
+...
+
 \section{Ristiviitteet}
 \label{luku:ristiviitteet}
+
+...
+
 \section{Alaviitteet}
 \label{luku:alaviitteet}
+
+...
+
 \section{Palstat}
 \label{luku:palstat}
-\section{Lähdeluettelo ja -viitteet}
+
+...
+
+\section{Lähdeluettelo ja lähdeviitteet}
 \label{luku:lähteet}
+
+Samoin kuin ristiviitteissäkin (luku \ref{luku:ristiviitteet}) Latex
+sisältää komennot, joilla lähdeluettelossa mainittuihin teoksiin voidaan
+viitata muualta tekstistä. Ajatus on se, että lähdeluettelo laaditaan
+tiettyjen komentojen avulla niin, että jokainen lähdeteos saa jonkin
+yksilöllisen tunnisteen. Muualta tekstistä viitataan lähdeteoksiin
+käyttämällä samoja tunnisteita, ja Latex osaa automaattisesti poimia
+lähdeluettelosta esimerkiksi teoksen tekijöiden nimet ja vuosiluvun.
+
+Lähdeviittauksiin ja lähdemerkintöihin on useita käytäntöjä, jotka
+vaihtelevat eri ammatti- ja tieteen\-aloilla, oppilaitoksilla tai
+julkaisijoilla. Tässä yhteydessä käsitellään melko vakiintuneita
+suomalaisia käytäntöjä, jotka kuvataan \emph{Kielitoimiston
+  oikein\-kir\-joi\-tus\-oppaas\-sa} \parencite{kt_oik}. Samalla
+käsitellään joitakin asetuksia, joilla kukin voi muokata viittausten
+ulkoasua omiin tarpeisiin sopivaksi.
+
+Latex sisältää lähdeluetteloiden ja \=/viittausten perustoiminnot, mutta
+niiden avulla ei saa yleisen suomalaisen käytännön mukaisia
+lähdeviittauksia. Siksi käytämme apuna makropakettia, jolla viittausten
+ja lähdeluettelon ulkoasuun voi vaikuttaa. Ensin käsiteltävä paketti
+\paketti{natbib} (luku \ref{luku:natbib}) soveltuu perustarpeisiin ja
+lienee sopivin valinta useimmille kirjoittajille. Laajoja tieteellisiä
+teoksia kirjoittavan kannattanee opetella käyttämään monipuolista
+\paketti{bib\-latex}\-/pakettia (luku \ref{luku:biblatex}) ja ylläpitää
+yhteistä lähdeteosten tietokantaa, josta tarvittavat teokset poimitaan
+kunkin dokumentin lähdeluetteloon automaattisesti.
+
+\subsection{Peruskuviot (natbib)}
+\label{luku:natbib}
+
+Makropaketti \paketti{natbib} laajentaa Latexin lähdeviittausten
+perustoimintoja sen verran, että lähteisiin voidaan viitata teoksen
+tekijöiden nimen ja vuosiluvun avulla. Seuraava esimerkki
+havainnollistaa paketin käyttöönottoa ja asetuksia.
+
+\begin{koodilohkosis}
+  \usepackage{natbib}
+  \setcitestyle{authoryear,aysep={},notesep={: }}
+\end{koodilohkosis}
+
+Edellisessä esimerkissä viittaustyyli valitaan \koodi{\keno
+  set\-cite\-style}\-/komennon argumentissa valitsimella
+\koodi{author\-year} (tekijä\--vuosi). Valitsimella \koodi{aysep}
+määritetään, mikä välimerkki ladotaan tekijän nimen ja vuosiluvun
+väliin. Tässä se jätetään tyhjäksi \koodi{\{\}}.
+\koodi{note\-sep}\-/valitsimella asetetaan merkit, jotka ladotaan
+vuosiluvun ja sitä seuraavan huomautuksen kuten sivunumeroiden väliin;
+tässä tapauksessa määritettiin kaksoispiste ja väli \koodi{\{:~\}}.
+\koodi{\keno set\-cite\-style}\-/komennon valitsimet erotetaan
+toisistaan pilkulla, eikä erotinpilkkujen ympärillä saa olla
+välilyöntejä. Lopputuloksena lähdemerkinnät näyttävät esimerkiksi
+seuraavanlaisilta.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \citet*[27--29]{johdatus} % Viittaus lähteeseen ”johdatus”.
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Meikäläinen \& Teikäläinen (2020: 27--29)
+\end{tulossis}
+
+Lähdeluettelo kirjoitetaan \koodi{thebibliography}\-/ympäristön ja
+\koodi{\keno bib\-item}\-/komentojen avulla esimerkin
+\ref{esim:thebibliography} tavoin. Ympäristön aloittavan komennon
+(rivi~1) yhteydessä on argumentti \koodi{00}, jolla ei ole tässä
+yhteydessä merkitystä. Jos lähdeviittauksen tyylinä olisi
+\koodi{numbers} (eikä \koodi{author\-year}), lähdeluettelon teokset
+numeroitaisiin, ja silloin \koodi{thebibliography}\-/ympäristön
+argumentti ilmaisee, kuinka leveän sisennyksen numeroidut teokset
+tarvitsevat. Argumentiksi voi kirjoittaa mitä tahansa merkkejä, ja Latex
+mittaa niiden leveyden. Kannattaa kirjoittaa leveitä numeroita kuten
+nollia (\koodi{0}) niin monta kappaletta kuin on numeroita suurimmassa
+lähdemerkinnän luvussa. Yksi nolla riittää, jos lähteitä on 1--9
+kappaletta, kaksi jos lähteitä on kaksinumeroinen määrä eli 10--99
+kappaletta jne.
+
+\begin{esimerkki}
+\begin{koodilohko}
+  \begin{thebibliography}{00}
+
+  \bibitem[Meikäläinen ym.(2020)Meikäläinen \& Teikäläinen]{johdatus}
+    Meikäläinen, Matti \& Teikäläinen, Teija (2020): Johdatus alkeiden
+    perusteisiin. Toinen painos. Kustantaja Oy.
+
+  \bibitem[Itkonen(2019)]{typografia} Itkonen, Markus (2019):
+    Typografian käsikirja. Viides, tarkistettu painos. Typoteekki.
+    Graafinen suunnittelu Markus Itkonen Oy.
+
+  \end{thebibliography}
+\end{koodilohko}
+\caption{Lähdeluettelon kirjoittaminen
+  \koodi{thebibliography}\-/ympäristön ja \koodi{\keno
+    bib\-item}\-/komentojen avulla.}
+\label{esim:thebibliography}
+\end{esimerkki}
+
+Komennolla \koodi{\keno bib\-item} tehdään varsinaiset teosmerkinnät.
+Samalla määritetään teoksen yksilöllinen tunniste ja mitä tietoja
+lähdeviittauksissa näytetään. Yleinen muoto on seuraavanlainen.
+
+\begin{koodilohkosis}
+  \bibitem[lyhyt(vuosi)pitkä]{tunniste} Lähdeluettelon tekstit.
+\end{koodilohkosis}
+
+Valinnaisen argumentin aluksi kirjoitetaan lähdeviittauksen lyhyt
+merkintä, joka tulisi näkymään lähdeviittauksissa esimerkiksi muodossa
+''Meikäläinen ym.''. Heti sen perään kirjoitetaan sulkeissa teoksen
+vuosiluku ja sen perään vapaavalintainen lähdeviittauksen pitkä
+merkintä, joka näkyisi esimerkiksi tekstinä ''Meikäläinen \&
+Teikäläinen''. Vuosiluvun sulkeiden ympärillä ei saa olla välilyöntejä.
+
+Komennon pakollinen argumentti on kyseisen lähdeteoksen yksilöllinen
+tunniste, jonka avulla kyseiseen teokseen viitataan. Komennon
+argumenttien jälkeen kirjoitetaan samaan tekstikappaleeseen teksti, joka
+tulee näkymään lähdeluettelossa.
+
+Lähdeteoksiin viittaamiseen on useita eri komentoja, jotka eroavat
+toisistaan siinä, mitä tietoa lähdeviittauksessa näytetään ja onko
+lähdeviittaus tai sen osa sulkeissa vai ei. Taulukossa
+\ref{tlk:natbib-cite} on joitakin \paketti{natbib}\-/paketin
+viittauskomentoja sekä esimerkki viittauksen ulkoasusta. Kuviteltu
+esimerkkiteos on peräisin esimerkistä \ref{esim:thebibliography}.
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[2]{\koodi{\keno #1\{\ldots\}} & #2 \\}
+
+\leijutlk{
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Komento} & \ots{Esimerkki} \\
+    \midrule
+    \rivi{citet}{Meikäläinen ym. (2020)}
+    \rivi{citet*}{Meikäläinen \& Teikäläinen (2020)}
+    \rivi{citep}{(Meikäläinen ym. 2020)}
+    \rivi{citep*}{(Meikäläinen \& Teikäläinen 2020)}
+    \rivi{citealt}{Meikäläinen ym. 2020}
+    \rivi{citealt*}{Meikäläinen \& Teikäläinen 2020}
+    \rivi{citeauthor}{Meikäläinen ym.}
+    \rivi{citeauthor*}{Meikäläinen \& Teikäläinen}
+    \rivi{citeyear}{2020}
+    \rivi{citeyearpar}{(2020)}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{\paketti{natbib}\-/paketin lähdeviittauskomentoja}
+  \label{tlk:natbib-cite}
+}
+
+Lähdeluettelon ulkoasuun voi vaikuttaa mittojen \koodi{\keno bibhang} ja
+\koodi{\keno bibsep} avulla. Ensin mainittu on lähdemerkinnän
+vaakasuuntaisen riippuvan sisennyksen suuruus, ja jälkimmäinen on
+lähdemerkintöjen välinen pystysuuntainen tila. Mitat asetetaan
+tavalliseen tapaan \koodi{\keno set\-length}\-/komennolla (luku
+\ref{luku:mitat}).
+
+\begin{koodilohkosis}
+  \setlength{\bibhang}{1.3em}
+  \setlength{\bibsep}{.5ex plus .1ex minus .1ex}
+\end{koodilohkosis}
+
+Lähdemerkintöjen fonttiin voi vaikuttaa määrittelemällä uudelleen
+komennon \koodi{\keno bibfont} ja sijoittamalla halutut fontti- tai muut
+komennot kyseisen komennon määritelmään.
+
+\begin{koodilohkosis}
+  \renewcommand{\bibfont}{\sffamily\small}
+\end{koodilohkosis}
+
+Oletuksena \koodi{thebibliography}\-/ympäristö latoo lähdeluettelolle
+otsikon, ja otsikon teksti määräytyy kieli\-ase\-tus\-ten (luku
+\ref{luku:kieliasetukset}) ja dokumenttiluokan perusteella (luku
+\ref{luku:dokumenttiluokat}). Suomenkielisen lähdeluettelon otsikon voi
+määrittää dokumentin esittelyosassa seuraavan esimerkin tavoin.
+Esimerkissä hyödynnetään \koodi{\keno add\-to}\-/komentoa, joka sisältyy
+\paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketteihin.
+
+\begin{koodilohkosis}
+  \addto{\captionsfinnish}{%
+    \renewcommand{\refname}{Lähteet} % article-luokka
+    \renewcommand{\bibname}{Lähteet} % report- ja book-luokka
+  }
+\end{koodilohkosis}
+
+
+On myös mahdollista määritellä koko komentosarja, joka suoritetaan
+lähdeluettelon otsikoinnin yhteydessä. Se tehdään määrittelemällä
+uudelleen komento \koodi{\keno bibsection}.
+
+\begin{koodilohkosis}
+  \renewcommand{\bibsection}{%
+    \setcounter{secnumdepth}{-1}
+    \section{Lähteet}
+  }
+\end{koodilohkosis}
+
+Edellisessä esimerkissä komennolla \koodi{\keno set\-counter}
+määritetään, mille otsikkotasolle dokumentin otsikoiden eli lukujen
+numerointi yltää. Pieni arvo (\koodi{-1}) käytännössä tarkoittaa, että
+seuraaviin otsikoihin ei tule numerointia. Lähdeluettelon otsikkoon ei
+numerointia välttämättä haluta. Komento \koodi{\keno section} tekee itse
+otsikon.
+
+Jos ei halua, että \koodi{thebibliography}\-/ympäristö tekee otsikon
+automaattisesti, voi \koodi{\keno bibsection}\-/komennon määrittää
+tyhjäksi.
+
+\begin{koodilohkosis}
+  \renewcommand{\bibsection}{}
+\end{koodilohkosis}
+
+Tässä alaluvussa on käsitelty lähdeluettelon ja lähdeviitteiden
+tekemistä \paketti{natbib}\-/paketin toimintojen avulla. Paketti
+sisältää muitakin ominaisuuksia, joihin kannattaa tutustua paketin
+ohjekirjan avulla.\avctan{natbib} On muun muassa mahdollista tehdä
+lähdeteoksista tietokanta Bibtex\-/järjestelmän avulla. Jos kuitenkin
+siihen suuntaan haluaa edetä, ei kannata käyttää
+\paketti{natbib}\-/pakettia eikä Bibtexiä vaan monipuolisempaa pakettia
+\paketti{bib\-latex}, jota käsitellään seuraavassa alaluvussa.
+
+\subsection{Tutkijan keinovalikoima (biblatex)}
+\label{luku:biblatex}
+
+...
+
+% \bibitemsep
+% \bibhang
+% \bibfont
+
 \section{Grafiikka}
 \label{luku:grafiikka}
+
+...
+
 \section{Laatikot}
+
+...
+
 \section{Diaesitykset}
 \label{luku:diaesitykset}
+
+...
+
 \section{Kirjeet}
 \label{luku:kirjeet}
+
+...

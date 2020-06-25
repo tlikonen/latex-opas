@@ -593,7 +593,8 @@ aaltosulkeisiin \koodi{\{\ldots\}} ja valinnaiset hakasulkeisiin
 
 Komennon nimen perässä olevat sanavälit syödään pois. Seuraavassa
 esimerkissä sana \emph{Latex} ladotaan ehjänä, jos vain \koodi{\keno
-  komento} itsessään ei kirjoita mitään eikä vaikuta tekstin latomiseen.
+  ko\-men\-to} itsessään ei kirjoita mitään eikä vaikuta tekstin
+latomiseen.
 
 \pagebreak[3]
 
@@ -606,8 +607,8 @@ esimerkissä sana \emph{Latex} ladotaan ehjänä, jos vain \koodi{\keno
 \end{tulossis}
 
 Jos haluaa komennon jälkeen yhden sanavälin, täytyy kirjoittaa komennon
-nimen jälkeen aaltosulkeet: \koodi{\keno komento\{\}}. Aaltosulkeiden
-jälkeen ei syödä välejä.
+nimen jälkeen aaltosulkeet: \koodi{\keno ko\-men\-to\{\}}.
+Aaltosulkeiden jälkeinen sanaväli säilyy.
 
 Komennon nimen ja argumenttien välissä voi olla sanavälejä, ja ne kaikki
 syödään pois. Komennon ja sen argumentit voi siis kirjoittaa vaikka
@@ -666,17 +667,17 @@ annetaan samanlaiset argumentit. Komennot ovat seuraavat:
   \providecommand {\nimi}[n][oletus]{määritelmä}
 \end{koodilohkosis}
 
-Ensimmäinen pakollinen argumentti on komennon nimi (\koodi{\keno nimi}).
-Komento \koodi{\keno newcommand} määrittelee uuden komennon. Jos komento
-on jo olemassa, annetaan virheilmoitus. Toinen komento \koodi{\keno
-  renewcommand} määrittelee olemassa olevan komennon uudelleen. Se antaa
-virheilmoituksen, jos komentoa ei ollut olemassa. Kolmas komento
-\koodi{\keno pro\-vide\-command} puolestaan määrittelee uuden komennon
-vain siinä tapauksessa, että sellaista ei ollut ennen olemassa. Se ei
-anna virheilmoitusta.
+Ensimmäinen pakollinen argumentti on komennon nimi (\koodi{\keno
+  ni\-mi}). Komento \koodi{\keno newcommand} määrittelee uuden komennon.
+Jos komento on jo olemassa, annetaan virheilmoitus. Toinen komento
+\koodi{\keno renewcommand} määrittelee olemassa olevan komennon
+uudelleen. Se antaa virheilmoituksen, jos komentoa ei ollut olemassa.
+Kolmas komento \koodi{\keno pro\-vide\-command} puolestaan määrittelee
+uuden komennon vain siinä tapauksessa, että sellaista ei ollut ennen
+olemassa. Se ei anna virheilmoitusta.
 
-Komentojen toinen pakollinen argumentti (\koodi{määritelmä}) sisältää
-komennon määritelmän eli mitä tahansa tekstiä tai komentoja.
+Komentojen toinen pakollinen argumentti (\koodi{mää\-ri\-tel\-mä})
+sisältää komennon määritelmän eli mitä tahansa tekstiä tai komentoja.
 Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
 
 \pagebreak[3]
@@ -707,7 +708,7 @@ ensimmäisellä, toisella, kolmannella jne. argumentilla.
   Sanoit hip ja hei!
 \end{tulossis}
 
-Toinen valinnainen argumentti (\koodi{oletus}) -- jos se on mukana --
+Toinen valinnainen argumentti (\koodi{ole\-tus}) -- jos se on mukana --
 kertoo, että määriteltävän komennon ensimmäinen argumentti on
 valinnainen ja että tämä on sen ole\-tus\-arvo. Ole\-tus\-arvoa
 käytetään silloin, kun valinnaista argumenttia ei ole annettu.
@@ -758,10 +759,10 @@ seuraava esimerkki tuottaa käännettäessä virheen.
   }
 \end{koodilohkosis}
 
-\koodi{\keno newcommand*}\-/komennolla määritelty \koodi{\keno komento}
-ei siis suostu ottamaan vastaan argumentteja, jotka sisältävät kappaleen
-vaihtumisen eli enemmän kuin yhden tekstikappaleen. Tähdelliset versiot
-tuovat tällaisen suo\-jaus\-omi\-nai\-suu\-den.
+\koodi{\keno newcommand*}\-/komennolla määritelty \koodi{\keno
+  ko\-men\-to} ei siis suostu ottamaan vastaan argumentteja, jotka
+sisältävät kappaleen vaihtumisen eli enemmän kuin yhden tekstikappaleen.
+Tähdelliset versiot tuovat tällaisen suo\-jaus\-omi\-nai\-suu\-den.
 
 \subsection{Muita vinkkejä}
 \label{luku:komennot-lisä}
@@ -784,7 +785,7 @@ sanojen väliin yksi välilyönti.
 
 Aaltosulkeilla (luku \ref{luku:aaltosulkeet}) voi rajata
 komentomäärittelyn vai\-ku\-tus\-aluet\-ta. Seuraavan esimerkin alussa
-asetetaan \koodi{\keno komento} tiettyyn alkuperäismääritelmään.
+asetetaan \koodi{\keno ko\-men\-to} tiettyyn alkuperäismääritelmään.
 Aaltosulkeiden sisällä se määritellään väliaikaisesti uudestaan.
 Aaltosulkeilla rajatun ympäristön jälkeen komennon uusi määritelmä
 lakkaa ja komento palautuu alkuperäiseksi.
@@ -854,8 +855,8 @@ ympäristöä ei ollutkaan olemassa.
 Argumentit ovat lähes samanlaiset kuin komentojen määrittelyssä (luku
 \ref{luku:komennot-määr}). Ympäristöjen määrittelykomennoilla on kolme
 pakollista argumenttia: ensimmäinen on ympäristön nimi, toinen on
-ympäristön aloitusmääritelmä (\koodi{aloitus}) ja kolmas on
-lopetusmääritelmä (\koodi{lopetus}).
+ympäristön aloitusmääritelmä (\koodi{aloi\-tus}) ja kolmas on
+lopetusmääritelmä (\koodi{lope\-tus}).
 
 \pagebreak[3]
 

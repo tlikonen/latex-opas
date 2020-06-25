@@ -84,6 +84,8 @@ per-mode=symbol]{siunitx}
 \setlength{\emergencystretch}{1em}
 
 \setlength{\parindent}{1em}
+\setlength{\bibhang}{\parindent}
+\setlength{\bibitemsep}{.5ex plus .1ex minus .1ex}
 \newlength{\sisennys}\setlength{\sisennys}{1.8em}
 \setlength{\parskip}{0em}
 \setlength{\footnotemargin}{.8em}
@@ -164,6 +166,7 @@ per-mode=symbol]{siunitx}
 \newcommand{\paketti}[1]{\englanti{\textsf{#1}}}
 \newcommand{\avusepkg}[1]{\footnote{Käyttöönotto:
     \koodi{\keno usepackage\{#1\}}}}
+\newcommand{\avctan}[1]{\footnote{\url{https://www.ctan.org/pkg/#1}}}
 
 \newcommand{\ots}[1]{{\sffamily\bfseries\versaalinum #1}}
 \newcommand{\otsrivi}[1]{{\sffamily\versaalinum #1}}
@@ -243,6 +246,7 @@ per-mode=symbol]{siunitx}
   käyt-töön-oton
   käyt-töön-otos-sa
   käyt-töön-otto
+  käyt-töön-ottoa
   la-don-ta-oh-jel-man
   La-tex-mk
   La-tex-mk-rc
@@ -295,7 +299,10 @@ per-mode=symbol]{siunitx}
   ty-po-gra-fis-ten
   Type
   ulko-asu
+  ulko-asua
   ulko-asun
+  ulko-asus-ta
+  ulko-asuun
   Uni-code
   use-pack-age
   vaih-to-eh-don
@@ -395,20 +402,32 @@ per-mode=symbol]{siunitx}
 
 \chapter{Matematiikka}
 \label{luku:matematiikka}
-\section{Käyttöönotto}
-\subsection{Unicode-math}
-\subsection{Mathspec}
-\subsection{Vanha tapa}
-\section{Jotain sisältöäkin tarvitaan}
-\section{Ympäristöjä}
+
+% \section{Käyttöönotto}
+% \subsection{Unicode-math}
+% \subsection{Mathspec}
+% \subsection{Vanha tapa}
+% \section{Jotain sisältöäkin tarvitaan}
+% \section{Ympäristöjä}
 % align... (amsmath)
 
+...
+
 \chapter{Muuta}
+
+...
+
 \section{Päiväykset ja kellonajat}
 % \day\month\year
 % Em. laskureissa on kenoviiva
 % datetime2-paketti
+
+...
+
 \section{Omat paketit}
+
+...
+
 \section{Omat dokumenttiluokat}
 \label{luku:omat_dokumenttiluokat}
 

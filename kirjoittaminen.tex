@@ -258,7 +258,7 @@ tavalliseen tapaan \koodi{\keno set\-length}\-/komennolla (luku
 \ref{luku:mitat}).
 
 \begin{koodilohkosis}
-  \setlength{\parindent}{1.1em} % tekstikappaleiden sisennys
+  \setlength{\parindent}{1.1em} % tekstikappaleiden 1. rivin sisennys
   \setlength{\bibhang}{\parindent}
   \setlength{\bibsep}{.5ex plus .1ex minus .1ex}
 \end{koodilohkosis}
@@ -281,11 +281,10 @@ Esimerkissä hyödynnetään \koodi{\keno add\-to}\-/komentoa, joka sisältyy
 
 \begin{koodilohkosis}
   \addto{\captionsfinnish}{%
-    \renewcommand{\refname}{Lähteet} % article-luokka
-    \renewcommand{\bibname}{Lähteet} % report- ja book-luokka
+    \renewcommand{\refname}{Lähteet} % article-dokumenttiluokka
+    \renewcommand{\bibname}{Lähteet} % report- ja book-luokat
   }
 \end{koodilohkosis}
-
 
 On myös mahdollista määritellä koko komentosarja, joka suoritetaan
 lähdeluettelon otsikoinnin yhteydessä. Se tehdään määrittelemällä

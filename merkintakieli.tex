@@ -173,12 +173,12 @@ tai nimenomaan siihen tarkoitetulla merkillä, jonka Unicode\-/tunnus on
 \uctunnus{u+00a0 no-break space}.
 
 Nämä kaksi eri merkkiä, tilde ja \uctunnus{u+00a0}, toimivat hieman eri
-tavoin. Molemmat estävät rivinvaihdon, mutta
-\koodi{\textasciitilde}\=/merkki sallii välin venymisen samalla tavalla
-kuin tavallinenkin sanaväli sallii (luku \ref{luku:sanavali}). Merkki
-\uctunnus{u+00a0} on vakiolevyinen eikä siis veny muiden sanavälien
-tapaan. Rivillä sanavälejä täytyy venyttää silloin, kun tekstipalsta
-tasataan molemmista reunoista.
+tavoin. Molemmat estävät rivinvaihdon, mutta tildemerkki sallii välin
+venymisen samalla tavalla kuin tavallinenkin sanaväli sallii (luku
+\ref{luku:sanavali}). Sen sijaan merkki \uctunnus{u+00a0} on
+vakiolevyinen eikä siis veny muiden sanavälien tapaan. Unicoden sitovaa
+välilyöntiä \uctunnus{u+00a0} täytyy käyttää ainakin vuorosanaviivan
+(\==) ja sitä seuraavan sanan välissä, koska se väli ei saa venyä.
 
 \subsection{Ohuke}
 \label{luku:ohuke}

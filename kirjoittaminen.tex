@@ -418,11 +418,11 @@ Tietyt tekijät (\koodi{author}) vastaavat suunnilleen koko teoksen
 sisällöstä, ja teoksella on jokin julkaisijataho (\koodi{publisher}).
 
 Teostyyppi%
-\koodimargin{incollection} \koodi{incollection} tarkoittaa esimerkiksi
+\koodimargin{in\-collection} \koodi{incollection} tarkoittaa esimerkiksi
 artikkelikokoelmaa, jonka yksittäiseen artikkeliin (\koodi{title}) ja
 sen kirjoittajaan (\koodi{author}) on tarkoitus viitata. Voidaan mainita
-myös artikkelin alku- ja loppusivut (\koodi{pages}). Kokoelmalla on
-toimittaja (\koodi{editor}) ja yhteinen nimi (\koodi{book\-title}).
+myös artikkelin alku- ja lop\-pu\-si\-vut (\koodi{pages}). Kokoelmalla
+on toimittaja (\koodi{editor}) ja yhteinen nimi (\koodi{book\-title}).
 
 Tyyppi%
 \koodimargin{article} \koodi{article} sopii säännöllisesti julkaistavan
@@ -433,7 +433,7 @@ kuuluvan julkaisun järjestysnumero (\koodi{num\-ber}) sekä mahdollisesti
 artikkelin sivut (\koodi{pages}).
 
 Verkkolähteiden%
-\koodimargin{online} merkitsemiseen sopii \koodi{online}-teostyyppi,
+\koodimargin{online} merkitsemiseen sopii \koodi{online}\-/teostyyppi,
 joissa on ta\-van\-omais\-ten kenttien lisäksi ainakin verkko\-/osoite
 eli \koodi{url}\-/kenttä ja mahdollisesti viittauspäivä
 (\koodi{url\-date}).
@@ -466,10 +466,11 @@ kielten erilaisia lainausmerkkejä oikein.
 \label{esim:biblatex-käyttöönotto}
 \end{esimerkki}
 
-Paketin asetuksissa käytettiin valitsinta \koodi{style} ja sen asetusta
-\koodi{author\-year}, joka asettaa lähdeviittausten ja lähdeluettelon
-tyyliksi tekijän ja vuosiluvun. Se on yleinen käytäntö suomenkielisissä
-teksteissä, mutta monia muitakin tyylejä on olemassa ja saatavilla.
+Paketin asetuksissa käytettiin valitsinta \koodi{style} ja sen
+valitsinta \koodi{author\-year}, joka asettaa lähdeviittausten ja
+lähdeluettelon tyyliksi tekijän ja vuosiluvun. Se on yleinen käytäntö
+suomenkielisissä teksteissä, mutta monia muitakin tyylejä on olemassa ja
+saatavilla.
 
 Makropaketin omien lähdeluettelo\-/{} ja viittaustyylien lisäksi
 Latex\-/jakelupaketissa (luku \ref{luku:asentaminen}) on todennäköisesti
@@ -479,7 +480,7 @@ nimeltä \koodi{bib\-latex-ext}\avctan{biblatex-ext} laajentaa
 Laajennettujen tyylien käyttäminen ei vaadi erillisen makropaketin
 lataamista, vaan tyylin saa käyttöön yksinkertaisesti vain
 kirjoittamalla sen nimen \paketti{biblatex}\-/paketin lataamisen
-yhteydessä. Laajennetut tyylit alkavat kirjaimilla \koodi{ext-},
+yhteydessä. Laajennetut tyylit alkavat kirjaimilla \mbox{\koodi{ext-},}
 esimerkiksi \koodi{ext-author\-year}.
 
 Esimerkissä \ref{esim:biblatex-käyttöönotto} mainittu valitsin

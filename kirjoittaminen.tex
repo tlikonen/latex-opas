@@ -354,12 +354,100 @@ laajoja tieteellisiä artikkeleita kirjoittaville \paketti{biblatex} on
 suuri apu, koska artikkeleissa on yleensä paljon lähteitä ja koska
 useissakin artikkeleissa täytyy viitata samoihin lähteisiin.
 
-Makropaketti otetaan käyttöön esimerkin \ref{esim:biblatex-käyttöönotto}
-rivien avulla. Mukana on myös paketti \paketti{polyglossia} ja
-\paketti{cs\-quotes}. Jälkimmäinen sisältää lainausmerkkien käyttöön
-liittyvää logiikkaa (luku \ref{luku:lainausmerkit}). Ilman sitä
-\paketti{bib\-latex} ei saa eri kielten erilaisia lainausmerkkejä
-oikein.
+Lähdeteosten tietokanta on erillinen tekstitiedosto, joka tyypillisesti
+nimetään \koodi{bib}\-/päätteiseksi, esimerkiksi
+\koodi{teok\-set.\-bib}. Esimerkki \ref{esim:bib-tiedosto} selventää
+tiedoston rakennetta ja sisältöä. Esimerkkitiedostossa on neljä
+erityyppistä teosta: \koodi{book}, \koodi{incollection}, \koodi{article}
+ja \koodi{online}. Erityyppisillä teoksilla on erilainen valikoima
+pakollisia tietueita, ja tiedot voivat näkyä lähdeluettelossa hieman eri
+tavalla. Jokaisen teoksen tiedot alkavat teoksen yksilöllisellä
+tunnisteella, ja teoksen eri tietueet erotetaan toisistaan pilkulla.
+
+\begin{esimerkki}
+\begin{koodilohko}
+  @book{itkonen_typogr,
+    author = {Itkonen, Markus},
+    title = {Typografian käsikirja},
+    date = {2019},
+    edition = {5},
+    publisher = {Typoteekki. Graafinen suunnittelu Markus Itkonen Oy}
+  }
+
+  @incollection{likonen_teams,
+    author = {Likonen, Teemu and Riskilä, Kaisa},
+    title = {Verkkoyhteistyö Teams-ympäristössä},
+    editor = {Tammi, Tuomo and Horila, Mikko},
+    booktitle = {Oppimis- ja toimintaympäristöjen kehittäminen
+      harjoittelukouluissa II},
+    booksubtitle = {Tilat ja tekniikka pedagogisen kehittämisen tukena},
+    publisher = {E-norssi. Opettajankouluttajien yhteistyöverkosto},
+    date = {2020},
+    pages = {85-92},
+    url = {http://www.enorssi.fi/oppimisymparistojulkaisu2020/}
+  }
+
+  @article{likonen_tietokanta,
+    author = {Likonen, Teemu},
+    title = {Tietoa kantaan ja takaisin},
+    journaltitle = {Skrolli},
+    journalsubtitle = {Tietokonekulttuurin erikoislehti},
+    date = {2015},
+    volume = {2015},
+    number = {4},
+    pages = {52-55},
+    url = {https://skrolli.fi/numerot/2015-4/}
+  }
+
+  @online{ctan,
+    title = {Comprehensive TeX Archive Network},
+    shorttitle = {CTAN},
+    date = {1992/},
+    url = {https://www.ctan.org/}
+  }
+\end{koodilohko}
+\caption{Lähdeteosten tietokantatiedosto}
+\label{esim:bib-tiedosto}
+\end{esimerkki}
+
+Ensin mainittu%
+\koodimargin{book} teostyyppi \koodi{book} sopii tavallisille kirjoille.
+Tietyt tekijät (\koodi{author}) vastaavat suunnilleen koko teoksen
+sisällöstä, ja teoksella on jokin julkaisijataho (\koodi{publisher}).
+
+Teostyyppi%
+\koodimargin{incollection} \koodi{incollection} tarkoittaa esimerkiksi
+artikkelikokoelmaa, jonka yksittäiseen artikkeliin (\koodi{title}) ja
+sen kirjoittajaan (\koodi{author}) on tarkoitus viitata. Voidaan mainita
+myös artikkelin alku- ja loppusivut (\koodi{pages}). Kokoelmalla on
+toimittaja (\koodi{editor}) ja yhteinen nimi (\koodi{book\-title}).
+
+Tyyppi%
+\koodimargin{article} \koodi{article} sopii säännöllisesti julkaistavan
+aikakaus- tai muun lehden artikkeleihin. Viittauskohteena on yksittäinen
+artikkeli ja sen kirjoittaja. Julkaisutiedoissa mainitaan lehden nimi
+(\koodi{jour\-nal\-title}), julkaisukausi (\koodi{vol\-ume}), kauteen
+kuuluvan julkaisun järjestysnumero (\koodi{num\-ber}) sekä mahdollisesti
+artikkelin sivut (\koodi{pages}).
+
+Verkkolähteiden%
+\koodimargin{online} merkitsemiseen sopii \koodi{online}-teostyyppi,
+joissa on ta\-van\-omais\-ten teostietojen lisäksi ainakin
+verkko\-/osoite eli \koodi{url}\-/tietue ja mahdollisesti viittauspäivä
+(\koodi{urldate}).
+
+Teostyyppejä on olemassa paljon muitakin, samoin teoksiin liittyviä
+tietueita. Teosten tietokantatiedoston syntaksi eli tekninen kieli\-oppi
+on kuvattu esimerkiksi verkkosivulla
+\kulmaurl{http://www.bibtex.org/Format/}. Teostyyppien ja tietueiden
+käyttöä neuvotaan \paketti{bib\-latex}\-/paketin ohjekirjassa.
+
+\paketti{biblatex}\-/makropaketti otetaan käyttöön esimerkin
+\ref{esim:biblatex-käyttöönotto} rivien avulla. Mukana on myös paketti
+\paketti{polyglossia} ja \paketti{cs\-quotes}. Jälkimmäinen sisältää
+lainausmerkkien käyttöön liittyvää logiikkaa (luku
+\ref{luku:lainausmerkit}). Ilman sitä \paketti{bib\-latex} ei saa eri
+kielten erilaisia lainausmerkkejä oikein.
 
 \begin{esimerkki}
 \begin{koodilohko}
@@ -370,6 +458,9 @@ oikein.
   \usepackage{csquotes}
 
   \usepackage[style=authoryear, maxbibnames=99, dashed=true]{biblatex}
+
+  % Teostietokantatiedosto ”teokset.bib” käyttöön.
+  \addbibresource{teokset.bib}
 \end{koodilohko}
 \caption{\paketti{biblatex}\-/makropaketin käyttöönotto ja asetuksia}
 \label{esim:biblatex-käyttöönotto}
@@ -402,9 +493,20 @@ esimerkiksi \koodi{min\-bib\-names}, \koodi{max\-cite\-names} ja
 
 Asetus \koodi{dashed=true} on oletus, jota ei tarvitsisi edes kirjoittaa
 näkyviin. Se näyttää lähdeluettelossa tekijän nimen kohdalla
-ajatusviivan, jos tekijä on sama kuin luettelon edellisessäkin
-teoksessa. Mikäli tätä ei halua, täytyy valitsimen arvoksi kirjoittaa
+ajatusviivan, jos tekijä on sama kuin luettelon edelliselläkin
+teoksella. Mikäli tätä ei halua, täytyy valitsimen arvoksi kirjoittaa
 \koodi{false}.
+
+Esimerkin \ref{esim:biblatex-käyttöönotto} lopuksi komennolla
+\koodi{\keno add\-bib\-re\-source} otetaan tietty teostietokantatiedosto
+käyttöön. Tällaisia komentoja voi olla Latex\-/dokumentissa useampiakin,
+ja tietokanta voi olla myös verkko\-/osoitteen takana oleva tiedosto.
+
+\begin{koodilohkosis}
+  \addbibresource{~/texmf/omat_kirjoitukset.bib}
+  \addbibresource{teokset.bib}
+  \addbibresource[location=remote]{https://osoite.netissä/yhteiset.bib}
+\end{koodilohkosis}
 
 \section{Kuvat ja värit}
 \label{luku:grafiikka}

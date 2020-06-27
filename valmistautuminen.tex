@@ -31,47 +31,57 @@ siis eteenpäin.
 Latex toimii korkeammalla abstraktiotasolla kuin Tex. Se on kokoelma
 Tex\-/ohjelmointikielen makroja, jotka piilottavat monimutkaiset
 tekniset yksityiskohdat ja toteuttavat varsin helppokäyttöisen
-merkintäkielen, jolla dokumenttien rakenne ja ulko\-asua kuvataan.
-Ihmiset siis kirjoittavat yleensä Latex\-/muotoisia dokumentteja, ja
-Latex puolestaan huolehtii matalamman tason Texin käskyttämisestä. Latex
-on myös tietokoneohjelma (\koodi{latex}, \koodi{pdf\-latex}), jolla
+merkintäkielen, jolla dokumenttien rakenne ja ulkoasua kuvataan. Ihmiset
+siis kirjoittavat yleensä Latex\-/muotoisia dokumentteja, ja Latex
+puolestaan huolehtii matalamman tason Texin käskyttämisestä. Latex on
+myös tietokoneohjelma (\koodi{latex}, \koodi{pdf\-latex}), jolla
 lähdetiedosto käännetään julkaistavaksi dvi- tai pdf\-/dokumentiksi.%
 \footnote{\textsc{dvi} = device independent file format; \textsc{pdf} =
   portable document format}
 
-Latex\-/järjestelmästä käytetään tällä hetkellä versiota
-\marginpar{\LaTeXe} Latex~2ε, joka julkaistiin jo vuonna 1994 ja johon
-ilmestyy pieniä parannuksia vuosittain. Perusosat ovat kuitenkin varsin
-muuttumattomia. Varsinainen kiinnostava kehitys tapahtuukin esimerkiksi
-Latexin kääntäjissä (Xelatex ja Lualatex) ja eri tekijöiden
-dokumenttiluokissa (luku \ref{luku:dokumenttiluokat}) ja
-makropaketeissa.
+Latex\-/järjestelmästä käytetään tällä hetkellä versiota Latex~2ε, joka
+julkaistiin jo vuonna 1994 ja johon ilmestyy pieniä parannuksia
+vuosittain. Perusosat ovat kuitenkin varsin muuttumattomia. Varsinainen
+kiinnostava kehitys tapahtuukin esimerkiksi Latexin kääntäjissä
+(Lualatex ja Xelatex) sekä eri tekijöiden dokumenttiluokissa (luku
+\ref{luku:dokumenttiluokat}) ja makropaketeissa.
 
 \subsection{Lualatex ja Xelatex}
 
-Nykyaikana Latex\-/dokumentteja ei juuri käännetä alkuperäisillä
+Nyky\-aikana Latex\-/dokumentteja ei juuri käännetä alkuperäisillä
 \koodi{latex}- tai \koodi{pdf\-latex}\-/ohjelmilla vaan kehittyneemmillä
 kään\-täjä\-ohjel\-milla.%
-\footnote{Englannin kielellä näitä on tapana kutsua yleisnimellä
+\footnote{Englannin kielellä kääntäjiä on tapana kutsua yleisnimellä
   \emph{\englanti{engine}} 'kone, moottori'.} Niistä tärkeimmät ovat
-Lualatex (\koodi{lualatex}) ja Xelatex (\koodi{xelatex}). Ne muun muassa
-osaavat lukea Unicode\-/merkistöllä kirjoitettuja lähdedokumentteja ja
-käyttää nyky\-aikaisia True Type- ja Open Type \=/fontteja, mitä
-alkuperäinen Latex ja Tex eivät osaa.
+Lualatex ja Xelatex (tietokoneohjelmat \koodi{lualatex} ja
+\koodi{xelatex}). Ne muun muassa osaavat lukea Unicode\-/merkistöllä
+kirjoitettuja lähdedokumentteja ja käyttää nyky\-aikaisia True Type- ja
+Open Type \=/fontteja, mitä alkuperäinen Latex ja Tex eivät osaa.
 
 Lualatexilla ja Xelatexilla ei ole käyttäjän kannalta suurtakaan eroa --
 ei välttämättä mitään näkyvää eroa. Ensin mainittu sisältää
 Lua\-/nimisen ohjelmointikielen, ja sillä on merkitystä joillekuille
 makropakettien tekijöille. Jotkin harvat makropaketit eivät toimi
-Lualatexissa ja jotkin eivät toimi Xelatexissa.
+Lualatexissa, kun taas toiset eivät toimi Xelatexissa. Joskus saattaa
+tulla vastaan myös yksittäinen, kehityksestä ehkä jälkeen jäänyt
+paketti, joka ei toimi kummassakaan vaan ainoastaan perinteisillä
+kääntäjillä (\koodi{latex}, \koodi{pdflatex}).
 
-Näiden kääntäjä\-ohjelmien toiminnassa voi kuitenkin näkyä pieniä eroja.
-Vaikka Latex\-/dokumentit yleensä kääntyvätkin molemmilla, saattaa
-joskus valmiissa pdf:ssä näkyä pieniä eroja, kun kääntäjää vaihtaa.
-Toisaalta on ihan hyödyllistä kokeilla kääntää omat dokumentit
-kummallakin ohjelmalla, koska se voi paljastaa huonoja, epäyhteensopivia
-käytäntöjä omassa Latex\-/koodissa. Ei kuitenkaan ehkä kannata vaihtaa
-kääntäjää viime hetkellä ennen tärkeän tekstin julkaisua.
+Miksi on olemassa kaksi ulkoisesti lähes samanlaista kääntäjää? Tärkein
+syy taitaa olla se, että Xelatex tehtiin ensin ja myöhemmin jotkut
+ajattelivat, että Lua\-/ohjelmointikieli täytyy saada mukaan. Se
+oikeastaan pakotti kirjoittamaan koko homman uusiksi. Toteutuksissa on
+muitakin sisäisiä eroja. Xelatex oli pitkään suositumpi ja paremmin
+tuettu eri makropaketeissa, mutta erot ovat sittemmin tasoittuneet.
+
+Latex\-/dokumentit yleensä kääntyvät yhtä lailla molemmilla ohjelmilla,
+mutta joskus valmiissa pdf:ssä näkyy pieniä eroja, kun kääntäjää
+vaihtaa. Ainakin joissakin fonttien asetuksissa ja joidenkin
+Unicode\-/merkkien käsittelyssä on eroja. On ihan hyödyllistä kokeilla
+kääntää omat dokumentit kummallakin ohjelmalla, koska se voi paljastaa
+huonoja, epäyhteensopivia käytäntöjä omassa Latex\-/koodissa. Ei ehkä
+kuitenkaan kannata vaihtaa kääntäjää viime hetkellä ennen tärkeän
+tekstin julkaisua, koska huonolla tuurilla voi tulla ikäviä yllätyksiä.
 
 \subsection{Latex yläkäsitteenä}
 
@@ -245,8 +255,7 @@ kaikkien hyödyllisten makropakettien kaikkia ominaisuuksia.
 Tex Live \=/jakelun (luku \ref{luku:asentaminen}) mukana tulee mainio
 komentotulkissa toimiva komento \koodi{texdoc}, jolla voi hakea ja avata
 omaan järjestelmään asennettuja Latex\-/aiheisia ohjeita. Jos vaikka
-haluaa tutustua esimerkissä \ref{esim:ensimmainen}
-(s.~\pageref{esim:ensimmainen}) mainittavaan
+haluaa tutustua esimerkissä \ref{esim:ensimmainen} mainittavaan
 \paketti{fontspec}\-/pakettiin syvällisemmin, tarvitsee vain komentaa
 \koodi{texdoc fontspec}, ja paketin pdf\-/muotoinen ohjekirja avautuu.
 

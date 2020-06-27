@@ -116,12 +116,12 @@ marginparwidth=50bp, marginparsep=10bp]{geometry}
   numbersep=0em, xleftmargin=\sisennys, xrightmargin=0mm,
   baselinestretch=1, samepage=true }
 
-\newenvironment{tulossis}
-{\begin{list}{}{
-      \setlength{\leftmargin}{\sisennys}
-      \small
-    }\item[⇒]
-  }{\end{list}}
+\newenvironment{tulossis}{%
+    \begin{list}{}{
+        \setlength{\leftmargin}{\sisennys}
+        \small
+      }\item[⇒]}{%
+    \end{list}}
 
 \floatsetup{ font={small}, justification=raggedright,
   margins=raggedright, captionskip=2ex, capposition=bottom }

@@ -1,4 +1,7 @@
 \chapter{Dokumentin rakenne}
+
+...
+
 \section{Kappaleet}
 \label{luku:kappale}
 
@@ -299,10 +302,10 @@ uudelleen komento \koodi{\keno bibsection}.
 
 Edellisessä esimerkissä komennolla \koodi{\keno set\-counter}
 määritetään, mille otsikkotasolle dokumentin otsikoiden eli lukujen
-numerointi yltää. Pieni arvo (\koodi{-1}) käytännössä tarkoittaa, että
-seuraaviin otsikoihin ei tule numerointia. Lähdeluettelon otsikkoon ei
-numerointia välttämättä haluta. Komento \koodi{\keno section} tekee itse
-otsikon.
+numerointi yltää. Pieni arvo \mbox{(\koodi{-1})} käytännössä tarkoittaa,
+että seuraaviin otsikoihin ei tule numerointia; lähdeluettelon otsikkoon
+ei numerointia välttämättä haluta. Komento \koodi{\keno section} tekee
+itse otsikon.
 
 Jos ei halua, että \koodi{thebibliography}\-/ympäristö tekee otsikon
 automaattisesti, voi \koodi{\keno bibsection}\-/komennon määrittää
@@ -324,11 +327,84 @@ käsitellään seuraavassa alaluvussa.
 \subsection{Koko työkalupakki (biblatex)}
 \label{luku:biblatex}
 
-...
-
 % \bibitemsep
 % \bibhang
 % \bibfont
+
+Suurten lähde- ja kirjallisuusluetteloiden ylläpito voi olla aika
+työlästä: pitää jatkuvasti varmistaa, että kaikki viitatut teokset ovat
+luettelossa ja että luettelo on pilkulleen yhdenmukainen. Makropaketti
+\paketti{bib\-latex}\avctan{biblatex} on vastaus sellaisiin tarpeisiin.
+
+Ajatuksena on, että kaikki tiedonlähteet ja kirjallisuus kirjoitetaan
+yhteen tietokantaan, josta \paketti{biblatex}\-/paketin komennot hakevat
+tiedot automaattisesti. Kirjoittaja tai työryhmä voi ylläpitää yhtä
+kirjallisuustietokantaa, joka voi olla saatavilla verkkosivullakin.
+Dokumentin tekstissä viitataan teoksiin yksilöllisen tunnisteen avulla,
+ja pelkän viittauksen perusteella oikeat teokset ilmestyvät
+lähdeluetteloon automaattisesti esimerkiksi aakkosjärjestyksessä ja
+yhdenmukaisessa muodossa. Yhtään tiedonlähdettä ei tarvitse kirjoittaa
+lähdeluetteloon käsin.
+
+\paketti{biblatex}\-/paketin käyttö vaatii hieman opettelua -- varsinkin
+jos täytyy muokata lähdeluettelon ja lähdeviittausten ulkoasua. Muutaman
+tiedonlähteen ylläpito on todennäköisesti paljon helpompaa ja nopeampaa
+niillä keinoilla, jotka kuvattiin luvussa \ref{luku:natbib}. Sen sijaan
+laajoja tieteellisiä artikkeleita kirjoittaville \paketti{biblatex} on
+suuri apu, koska artikkeleissa on yleensä paljon lähteitä ja koska
+useissakin artikkeleissa täytyy viitata samoihin lähteisiin.
+
+Makropaketti otetaan käyttöön esimerkin \ref{esim:biblatex-käyttöönotto}
+rivien avulla. Mukana on myös paketti \paketti{polyglossia} ja
+\paketti{cs\-quotes}. Jälkimmäinen sisältää lainausmerkkien käyttöön
+liittyvää logiikkaa (luku \ref{luku:lainausmerkit}). Ilman sitä
+\paketti{bib\-latex} ei saa eri kielten erilaisia lainausmerkkejä
+oikein.
+
+\begin{esimerkki}
+\begin{koodilohko}
+  % Polyglossia tai babel on ladattava ennen biblatexia.
+  \usepackage{polyglossia}
+
+  % Kielikohtaiset lainausmerkit oikein csquoten avulla.
+  \usepackage{csquotes}
+
+  \usepackage[style=authoryear, maxbibnames=99, dashed=true]{biblatex}
+\end{koodilohko}
+\caption{\paketti{biblatex}\-/makropaketin käyttöönotto ja asetuksia}
+\label{esim:biblatex-käyttöönotto}
+\end{esimerkki}
+
+Paketin asetuksissa käytettiin valitsinta \koodi{style} ja sen asetusta
+\koodi{author\-year}, joka asettaa lähdeviittausten ja lähdeluettelon
+tyyliksi tekijän ja vuosiluvun. Se on yleinen käytäntö suomenkielisissä
+teksteissä, mutta monia muitakin tyylejä on olemassa ja saatavilla.
+
+Makropaketin omien lähdeluettelo\-/{} ja viittaustyylien lisäksi
+Latex\-/jakelupaketissa (luku \ref{luku:asentaminen}) on todennäköisesti
+mukana myös ulkopuolisten tahojen tekemiä tyylejä. Tyylikokonaisuus
+nimeltä \koodi{bib\-latex-ext}\avctan{biblatex-ext} laajentaa
+\koodi{biblatex}\-/paketin tavallisten tyylien ominaisuuksia.
+Laajennettujen tyylien käyttäminen ei vaadi erillisen makropaketin
+lataamista, vaan tyylin saa käyttöön yksinkertaisesti vain
+kirjoittamalla sen nimen \paketti{biblatex}\-/paketin lataamisen
+yhteydessä. Laajennetut tyylit alkavat kirjaimilla \koodi{ext-},
+esimerkiksi \koodi{ext-author\-year}.
+
+Esimerkissä \ref{esim:biblatex-käyttöönotto} mainittu valitsin
+\koodi{max\-bib\-names} asettaa lähdeluettelossa yhden teoksen kohdalla
+näytettävien tekijöiden enimmäismäärän. Oletusasetus 3\,kpl on kovin
+vähän, ja useampikin tekijä ansaitsee tulla mainituksi. Jos tekijöitä on
+enemmän, tiivistyy tekijäluettelo esimerkiksi muotoon ''Meikäläinen
+et~al.''. Muita tekijäluetteloihin vaikuttavia asetuksia ovat
+esimerkiksi \koodi{min\-bib\-names}, \koodi{max\-cite\-names} ja
+\koodi{min\-cite\-names}.
+
+Asetus \koodi{dashed=true} on oletus, jota ei tarvitsisi edes kirjoittaa
+näkyviin. Se näyttää lähdeluettelossa tekijän nimen kohdalla
+ajatusviivan, jos tekijä on sama kuin luettelon edellisessäkin
+teoksessa. Mikäli tätä ei halua, täytyy valitsimen arvoksi kirjoittaa
+\koodi{false}.
 
 \section{Kuvat ja värit}
 \label{luku:grafiikka}

@@ -358,11 +358,13 @@ Lähdeteosten tietokanta on erillinen tekstitiedosto, joka tyypillisesti
 nimetään \koodi{bib}\-/päätteiseksi, esimerkiksi
 \koodi{teok\-set.\-bib}. Esimerkki \ref{esim:bib-tiedosto} selventää
 tiedoston rakennetta ja sisältöä. Esimerkkitiedostossa on neljä
-erityyppistä teosta: \koodi{book}, \koodi{incollection}, \koodi{article}
-ja \koodi{online}. Erityyppisillä teoksilla on erilainen valikoima
-pakollisia tietueita, ja tiedot voivat näkyä lähdeluettelossa hieman eri
-tavalla. Jokaisen teoksen tiedot alkavat teoksen yksilöllisellä
-tunnisteella, ja teoksen eri tietueet erotetaan toisistaan pilkulla.
+erityyppistä teostietuetta: \koodi{book}, \koodi{incollection},
+\koodi{article} ja \koodi{online}. Erityyppisillä teostietueilla on
+erilainen valikoima pakollisia tietokenttiä, joiden sisällöt voivat
+näkyä ladotussa lähdeluettelossa hieman eri tavalla. Jokainen teostietue
+alkaa teoksen yksilöllisellä tunnisteella, ja tietueen eri kentät kuten
+\koodi{author}, \koodi{title} ja \koodi{date} erotetaan toisistaan
+pilkulla.
 
 \begin{esimerkki}
 \begin{koodilohko}
@@ -432,15 +434,16 @@ artikkelin sivut (\koodi{pages}).
 
 Verkkolähteiden%
 \koodimargin{online} merkitsemiseen sopii \koodi{online}-teostyyppi,
-joissa on ta\-van\-omais\-ten teostietojen lisäksi ainakin
-verkko\-/osoite eli \koodi{url}\-/tietue ja mahdollisesti viittauspäivä
-(\koodi{urldate}).
+joissa on ta\-van\-omais\-ten kenttien lisäksi ainakin verkko\-/osoite
+eli \koodi{url}\-/kenttä ja mahdollisesti viittauspäivä
+(\koodi{url\-date}).
 
 Teostyyppejä on olemassa paljon muitakin, samoin teoksiin liittyviä
-tietueita. Teosten tietokantatiedoston syntaksi eli tekninen kieli\-oppi
-on kuvattu esimerkiksi verkkosivulla
-\kulmaurl{http://www.bibtex.org/Format/}. Teostyyppien ja tietueiden
-käyttöä neuvotaan \paketti{bib\-latex}\-/paketin ohjekirjassa.
+tietokenttiä. Tietokantatiedoston syntaksi eli tekninen kieli\-oppi on
+kuvattu esimerkiksi verkkosivulla
+\kulmaurl{http://www.bibtex.org/Format/}. Teostyyppien ja kenttien
+merkitystä ja käyttöä neuvotaan \paketti{bib\-latex}\-/paketin
+ohjekirjassa.
 
 \paketti{biblatex}\-/makropaketti otetaan käyttöön esimerkin
 \ref{esim:biblatex-käyttöönotto} rivien avulla. Mukana on myös paketti
@@ -458,9 +461,6 @@ kielten erilaisia lainausmerkkejä oikein.
   \usepackage{csquotes}
 
   \usepackage[style=authoryear, maxbibnames=99, dashed=true]{biblatex}
-
-  % Teostietokantatiedosto ”teokset.bib” käyttöön.
-  \addbibresource{teokset.bib}
 \end{koodilohko}
 \caption{\paketti{biblatex}\-/makropaketin käyttöönotto ja asetuksia}
 \label{esim:biblatex-käyttöönotto}
@@ -497,14 +497,16 @@ ajatusviivan, jos tekijä on sama kuin luettelon edelliselläkin
 teoksella. Mikäli tätä ei halua, täytyy valitsimen arvoksi kirjoittaa
 \koodi{false}.
 
-Esimerkin \ref{esim:biblatex-käyttöönotto} lopuksi komennolla
-\koodi{\keno add\-bib\-re\-source} otetaan tietty teostietokantatiedosto
-käyttöön. Tällaisia komentoja voi olla Latex\-/dokumentissa useampiakin,
+Esimerkin \ref{esim:biblatex-käyttöönotto} komentojen lisäksi täytyy
+komennolla \koodi{\keno add\-bib\-re\-source} nimetä käyttöön otettavat
+teostietokantatiedostot. Komentoja ja tiedostoja voi olla useampiakin,
 ja tietokanta voi olla myös verkko\-/osoitteen takana oleva tiedosto.
+\koodi{\keno add\-bib\-re\-source}\-/komennot täytyy kirjoittaa
+Latex\-/dokumentin esittelyosaan.
 
 \begin{koodilohkosis}
-  \addbibresource{~/texmf/omat_kirjoitukset.bib}
   \addbibresource{teokset.bib}
+  \addbibresource{~/texmf/omat_kirjoitukset.bib}
   \addbibresource[location=remote]{https://osoite.netissä/yhteiset.bib}
 \end{koodilohkosis}
 

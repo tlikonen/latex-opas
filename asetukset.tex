@@ -285,6 +285,19 @@ siihen: matalan tason font\-ti\-ase\-tuk\-set määritellään mieluiten
 vain kerran dokumentin esittelyosassa, ja sen jälkeen käytetään
 pelkästään korkean tason komentoja.
 
+Latexin fonttitekniikka rakentuu eri\-/ikäisistä kerroksista ja
+tekniikoista. Fontteja on aikoinaan tehty
+\englanti{Metafont}\-/nimisellä\avctan{metafont} kielellä, jolla
+kuvataan merkkien muodot. \englanti{Metafont} on myös tietokoneohjelma,
+joka tuottaa kuvauskielen perusteella bittikarttafontteja eli
+pikseleistä koostuvia fontteja. On käytetty myös kehittyneempää
+\englanti{Metapost}\-/kuvauskieltä\avctan{metapost} ja \=/ohjelmaa,
+joilla on tuotettu vek\-tori\-gra\-fiik\-ka\-font\-te\-ja \textsc{eps}-
+eli \englanti{Encapsulated Post Script} \=/muodossa ja muutettu niitä
+edelleen \englanti{Post Script Type~1} \=/fonteiksi. Myöhemmin mukaan
+ovat tulleet nyky\-aikai\-set True Type- ja Open Type \=/fontit, ja
+niihin tämä opas keskittyy.
+
 \subsection{Fontin valinta}
 
 Latexin fonttien perus\-toiminnot rakentuvat kolmen erityyppisen
@@ -321,14 +334,6 @@ asetusten näkökulmasta.
   \label{kuva:kirjainperhetyypit}
 }
 
-Latexin fonttitekniikka rakentuu eri\-/ikäisistä kerroksista ja
-tekniikoista. Fontteja on tehty esimerkiksi
-\englanti{Metafont}\-/nimisellä kuvauskielellä, jolla tuotetaan
-bittikarttafontteja eli pikseleistä koostuvia fontteja. Ne voidaan
-muuttaa \englanti{Post Script Type~1} \=/muotoon ja käyttää Latexissa.
-Myöhemmin mukaan ovat tulleet monipuoliset True Type- ja Open Type
-\=/muotoiset fontit, ja niihin tämä opas keskittyy.
-
 Joidenkin fonttien käyttöönottoon on tehty oma makropakettinsa, joten
 sellaiset fontit voi ladata dokumentin esittelyosassa komennolla
 \koodi{\keno usepackage}. Fonttikohtaisia makropaketteja on olemassa
@@ -336,10 +341,10 @@ varsinkin vanhalle fonttitekniikalle (\englanti{Metafont, Post Script
   Type~1}) mutta myös matematiikkatilan (luku \ref{luku:matematiikka})
 fonttiasetuksille ja joillekin kir\-jain\-perhe\-koko\-nai\-suuk\-sille.
 
-Valmiita makropaketteja on vain harvoille fonteille, ja käytännössä
-yleensä True Type- ja Open Type \=/muodossa olevat kirjainperheet
-otetaan käyttöön \paketti{fontspec}\-/paketin komennoilla alla olevan
-esimerkin mukaisesti.
+Valmiita makropaketteja on kuitenkin vain harvoille fonteille, ja
+käytännössä lähes aina True Type- ja Open Type \=/muodossa olevat
+kirjainperheet otetaan käyttöön \paketti{fontspec}\-/paketin komennoilla
+alla olevan esimerkin mukaisesti.
 
 \begin{koodilohkosis}
   \setmainfont{TeX Gyre Termes}[Scale=1]

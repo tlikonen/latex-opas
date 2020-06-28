@@ -162,7 +162,7 @@ seuraavanlaisilta.
 \pagebreak[3]
 
 \begin{koodilohkosis}
-  \citet*[27--29]{johdatus} % Viittaus lähteeseen ”johdatus”.
+  \citet*[27--29]{johdatus} % Viittaus teokseen ”johdatus”.
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -548,8 +548,7 @@ amerikkalaisia (``~'').
 Paketin asetuksissa käytettiin valitsinta \koodi{style} ja sen
 valitsinta \koodi{author\-year}, joka asettaa lähdeviittausten ja
 lähdeluettelon tyyliksi tekijän ja vuosiluvun. Se on yleinen käytäntö
-suomenkielisissä teksteissä, mutta monia muitakin tyylejä on olemassa ja
-saatavilla.
+suomenkielisissä teksteissä, mutta monia muitakin tyylejä on olemassa.
 
 Makropaketin omien lähdeluettelo\-/{} ja viittaustyylien lisäksi
 Latex\-/jakelupaketissa (luku \ref{luku:asentaminen}) on todennäköisesti
@@ -589,6 +588,88 @@ Latex\-/dokumentin esittelyosaan.
   \addbibresource{~/texmf/omat_kirjoitukset.bib}
   \addbibresource[location=remote]{https://osoite.netissä/yhteiset.bib}
 \end{koodilohkosis}
+
+Lähdeluettelo ladotaan dokumenttiin komennolla \koodi{\keno
+  print\-bib\-li\-og\-ra\-phy}. Komennolle voi antaa valinnaisen
+argumentin, jonka valitsimilla vaikutetaan esimerkiksi lähdeluettelon
+otsikon tekstiin tai poistetaan automaattinen otsikointi kokonaan. On
+myös olemassa erilaisia lähdeteosten rajaamisvalitsimia, joiden avulla
+voi määrittää, mitä teoksia kyseiseen luetteloon halutaan. Näin voidaan
+esimerkiksi rajata painetut lähteet yhteen luetteloon, julkaisemattomat
+toiseen ja verkkolähteet kolmanteen.
+
+\begin{koodilohkosis}
+  \printbibliography
+  \printbibliography[title={Lähteet}]
+  \printbibliography[heading=none,  % Ei automaattista otsikkoa,
+    type=online]           % ja rajataan vain online-tyyppisiin.
+\end{koodilohkosis}
+
+Lähdeluetteloon tulevat mukaan vain ne teokset, joihin on viitattu.
+Mitään ei siis näy, jos ei ole lähdeviittauksia. Seuraavassa alaluvussa
+käsitellään lähdeviittauskomentoja ja myös ''näkymätöntä''
+viittauskomentoa, jolla teoksia saadaan mukaan luetteloon ilman näkyvää
+viittausta.
+
+\subsubsection{Lähdeviittaukset}
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[2]{\koodi{\keno #1\{\ldots\}} & #2 \\}
+
+\leijutlk{
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Komento} & \ots{Esimerkki} \\
+    \midrule
+    \rivi{cite}{Meikäläinen 2020}
+    \rivi{textcite}{Meikäläinen (2020)}
+    \rivi{parencite}{(Meikäläinen 2020)}
+    \rivi{citeauthor}{Meikäläinen}
+    \rivi{citeyear}{2020}
+    \rivi{citetitle}{[teoksen nimi]}
+    \rivi{footcite}{Meikäläinen 2020 [alaviitteessä]}
+    \rivi{nocite}{[näkymätön viittaus]}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{\paketti{biblatex}\-/paketin lähdeviittauskomentoja}
+  \label{tlk:biblatex-cite}
+}
+
+Taulukkoon \ref{tlk:biblatex-cite} on koottu tavallisimpia
+\paketti{biblatex}\-/paketin viittauskomentoja. Komennoille voi antaa
+valinnaisen argumentin, jolla kerrotaan täsmentävää tietoa
+lähdeviittauksesta, yleensä viitattavan teoksen sivunumero. Viittaus
+näkyy dokumentissa esimerkiksi seuraavalla tavalla.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \textcite[27--29]{johdatus} % Viittaus teokseen ”johdatus”.
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Meikäläinen \& Teikäläinen (2020, s. 27--29)
+\end{tulossis}
+
+Se, kuinka monta teoksen tekijää näytetään viittauksessa, riippuu
+\paketti{biblatex}\-/paketin lataamisen yhteydessä annettavista
+valitsimista \koodi{min\-cite\-names} ja \koodi{max\-cite\-names}.
+
+Jos halutaan sisällyttää lähdeluetteloon teoksia, joihin ei ole
+välttämättä viitattu, käytetään dokumentissa kerran ''näkymätöntä''
+viittauskomentoa \koodi{\keno no\-cite}. Sille annetaan argumentiksi
+tunnisteet niistä teoksista, jotka halutaan mukaan luetteloon.
+Argumentti~\koodi{*} (tähti) valitsee kaikki teokset.
+
+\begin{koodilohkosis}
+  \nocite{meikäläinen, teikäläinen} % Nämä teokset mukaan.
+  \nocite{*}                        % Kaikki mukaan.
+\end{koodilohkosis}
+
+\subsubsection{Asetuksia}
+
+...
 
 % \bibitemsep
 % \bibhang

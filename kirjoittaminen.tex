@@ -330,44 +330,52 @@ käsitellään seuraavassa alaluvussa.
 \subsection{Koko työkalupakki (biblatex)}
 \label{luku:biblatex}
 
-% \bibitemsep
-% \bibhang
-% \bibfont
-
 Suurten lähde- ja kirjallisuusluetteloiden ylläpito voi olla aika
 työlästä: pitää jatkuvasti varmistaa, että kaikki viitatut teokset ovat
 luettelossa ja että luettelo on pilkulleen yhdenmukainen. Makropaketti
 \paketti{biblatex}\avctan{biblatex} on vastaus sellaisiin tarpeisiin.
 
 Ajatuksena on, että kaikki tiedonlähteet ja kirjallisuus kirjoitetaan
-yhteen tietokantaan, josta \paketti{biblatex}\-/paketin komennot hakevat
-tiedot automaattisesti. Kirjoittaja tai työryhmä voi ylläpitää yhtä
+tietokantaan, josta \paketti{biblatex}\-/paketin komennot hakevat tiedot
+automaattisesti. Kirjoittaja tai työryhmä voi ylläpitää yhtä
 kirjallisuustietokantaa, joka voi olla saatavilla verkkosivullakin.
 Dokumentin tekstissä viitataan teoksiin yksilöllisen tunnisteen avulla,
 ja pelkän viittauksen perusteella oikeat teokset ilmestyvät
 lähdeluetteloon automaattisesti esimerkiksi aakkosjärjestyksessä ja
 yhdenmukaisessa muodossa. Yhtään tiedonlähdettä ei tarvitse kirjoittaa
-lähdeluetteloon käsin.
+lopulliseen lähdeluetteloon käsin.
 
 \paketti{biblatex}\-/paketin käyttö vaatii hieman opettelua -- varsinkin
-jos täytyy muokata lähdeluettelon ja lähdeviittausten ulkoasua. Muutaman
-tiedonlähteen ylläpito on todennäköisesti paljon helpompaa ja nopeampaa
-niillä keinoilla, jotka kuvattiin luvussa \ref{luku:natbib}. Sen sijaan
-laajoja tieteellisiä artikkeleita kirjoittaville \paketti{biblatex} on
-suuri apu, koska artikkeleissa on yleensä paljon lähteitä ja koska
-useissakin artikkeleissa täytyy viitata samoihin lähteisiin.
+jos on tarve muokata lähdeluettelon ja lähdeviittausten ulkoasua.
+Muutaman tiedonlähteen ylläpito on todennäköisesti paljon helpompaa ja
+nopeampaa niillä keinoilla, jotka kuvattiin luvussa \ref{luku:natbib}
+(\paketti{natbib}). Sen sijaan laajoja tieteellisiä artikkeleita
+kirjoittaville \paketti{biblatex} voi olla suuri apu, koska
+artikkeleissa on yleensä paljon lähteitä ja useissakin artikkeleissa
+viitataan yleensä samoihin lähteisiin.
 
-Lähdeteosten tietokanta on erillinen tekstitiedosto, joka tyypillisesti
-nimetään \koodi{bib}\-/päätteiseksi, esimerkiksi
-\koodi{teok\-set.\-bib}. Esimerkki \ref{esim:bib-tiedosto} selventää
-tiedoston rakennetta ja sisältöä. Esimerkkitiedostossa on neljä
-erityyppistä teostietuetta: \koodi{book}, \koodi{incollection},
-\koodi{article} ja \koodi{online}. Erityyppisillä teostietueilla on
-erilainen valikoima pakollisia tietokenttiä, joiden sisällöt voivat
-näkyä ladotussa lähdeluettelossa hieman eri tavalla. Jokainen teostietue
-alkaa teoksen yksilöllisellä tunnisteella, ja tietueen eri kentät kuten
-\koodi{author}, \koodi{title} ja \koodi{date} erotetaan toisistaan
-pilkulla.
+\subsubsection{Teostietokanta}
+
+Lähdeteosten tietokanta on erillinen tekstitiedosto, joka tavallisesti
+nimetään \koodi{bib}\-/päätteiseksi, esimerkiksi \koodi{teokset.bib}.
+Tiedosto koostuu \koodi{@}\=/merkillä ja teostyypin nimellä alkavista
+tietueista, joiden yleinen muoto on seuraavanlainen.
+
+\begin{koodilohkosis}
+  @teostyyppi{tunniste,
+    author = {...},
+    title = "..."
+  }
+\end{koodilohkosis}
+
+Teostyypin nimen jälkeen aaltosulkeiden sisään kirjoitetaan teoksen
+kaikki tiedot. Ne alkavat teoksen yksilöllisellä tunnisteella, jota
+käytetään lähdeviittauksissa. Tunnisteen jälkeen tulevat muut kentät.
+Eri kentät kuten \koodi{author} ja \koodi{title} erotetaan toisistaan
+pilkulla. Kentän nimi ja sen sisältö erotetaan toisistaan
+yhtäsuuruusmerkillä (\koodi{=}), ja kentän sisältö kirjoitetaan
+aaltosulkeiden tai lainausmerkkien sisään, kuten edellinen esimerkki
+näyttää.
 
 \begin{esimerkki}
 \begin{koodilohko}
@@ -415,13 +423,17 @@ pilkulla.
 \label{esim:bib-tiedosto}
 \end{esimerkki}
 
+Todellista käyttöä vastaava tietokanta tai sen osa on esimerkissä
+\ref{esim:bib-tiedosto}, jossa on neljä erityyppistä teostietuetta:
+\koodi{book}, \koodi{incollection}, \koodi{article} ja \koodi{online}.
 Ensin mainittu%
-\koodimargin{book} teostyyppi \koodi{book} sopii tavallisille kirjoille.
-Tietyt tekijät (\koodi{author}) vastaavat suunnilleen koko teoksen
-sisällöstä, ja teoksella on jokin julkaisijataho (\koodi{publisher}).
+\koodimargin{book} teostyyppi \koodi{book} sopii tavallisille kirjoille,
+joissa tietyt tekijät (\koodi{author}) vastaavat suunnilleen koko
+teoksen sisällöstä ja teoksella on jokin julkaisijataho
+(\koodi{publisher}).
 
 Teostyyppi%
-\koodimargin{in\-collection} \koodi{incollection} tarkoittaa esimerkiksi
+\koodimargin{incollection} \koodi{incollection} tarkoittaa esimerkiksi
 artikkelikokoelmaa, jonka yksittäiseen artikkeliin (\koodi{title}) ja
 sen kirjoittajaan (\koodi{author}) on tarkoitus viitata. Voidaan mainita
 myös artikkelin alku- ja lop\-pu\-si\-vut (\koodi{pages}). Kokoelmalla
@@ -436,24 +448,88 @@ kuuluvan julkaisun järjestysnumero (\koodi{num\-ber}) sekä mahdollisesti
 artikkelin sivut (\koodi{pages}).
 
 Verkkolähteiden%
-\koodimargin{online} merkitsemiseen sopii \koodi{online}\-/teostyyppi,
+\koodimargin{online} merkitsemiseen sopii \koodi{on\-line}\-/teostyyppi,
 joissa on ta\-van\-omais\-ten kenttien lisäksi ainakin verkko\-/osoite
 eli \koodi{url}\-/kenttä ja mahdollisesti viittauspäivä
-(\koodi{url\-date}).
+(\koodi{url\-date}) osoittamassa, milloin viitatut tiedot ainakin olivat
+saatavilla.
 
-Teostyyppejä on olemassa paljon muitakin, samoin teoksiin liittyviä
-tietokenttiä. Tietokantatiedoston syntaksi eli tekninen kieli\-oppi on
-kuvattu esimerkiksi verkkosivulla
-\kulmaurl{http://www.bibtex.org/Format/}. Teostyyppien ja kenttien
-merkitystä ja käyttöä neuvotaan \paketti{biblatex}\-/paketin
-ohjekirjassa.
+Teostyyppejä ja teoksiin liittyviä tietokenttiä on olemassa paljon
+muitakin. Niiden merkitystä ja käyttöä neuvotaan tarkemmin
+\paketti{biblatex}\-/paketin ohjeissa. Seuraavassa on kuitenkin pari
+huomiota tietokannan ja kenttien kieli\-opillisista asioista.
+
+Tietueissa joidenkin kenttien sisältö voi koostua useasta osasta kuten
+saman teoksen eri tekijöistä. Eri tekijöiden nimet erotetaan
+\koodi{author}- ja \koodi{editor}\-/kentissä toisistaan
+\koodi{and}\-/sanalla. Oletuksena \paketti{biblatex} katsoo, että
+tekijät ovat henkilöitä, ja käsittelee esimerkiksi etu- ja sukunimet
+tietyllä tavalla: jos mukana on pilkku, sitä ennen on sukunimi, ja
+etunimet tulevat pilkun jälkeen; jos ei ole pilkkua, etunimet ovat
+ensin, ja sukunimi on lopussa.
+
+Jos kuitenkin teoksen tekijänä on yritys tai yhteisö, täytyy sen nimi
+kirjoittaa kokonaan aaltosulkeisiin, jottei sitä tulkittaisi
+henkilönnimeksi. Tällaisten aaltosulkeiden sisällä voi käyttää
+\koodi{and}\-/sanaa normaalisti, eikä sitä tulkita eri tekijöiden
+erottimeksi. Seuraavassa on näistä esimerkit.
+
+\begin{koodilohkosis}
+  author = {Meikäläinen, Matti and Teikäläinen, Teija}
+  author = {{Latex and Typography oy} and Meikäläinen, Matti}
+\end{koodilohkosis}
+
+Muunkinlaisia useasta osasta koostuvia kenttiä on olemassa.
+Asiasanakentän (\koodi{keywords}) eri sanat erotetaan toisistaan
+pilkulla, ja sivunumeroissa (\koodi{pages}) voi olla myös luku\-alueita,
+jotka ilmaistaan yhdysmerkillä \mbox{(\koodi{-})}.
+
+\begin{koodilohkosis}
+  keywords = {eri, sanoja, peräkkäin}
+  pages = {15-19, 21}
+\end{koodilohkosis}
+
+Teostietokantaan voi määrittää vakiosisältöisiä muuttujia käyttämällä
+\koodi{@string}\-/rakennetta. Vakioihin voi sitten viitata
+teostietueiden kentistä esimerkin \ref{esim:bib-muuttujat} tavoin.
+Vakiot ovat hyödyllisiä silloin, kun sama kentän sisältö toistuu useissa
+teoksissa, kuten tässä esimerkissä sama tekijä (\koodi{author}) ja
+aikakauslehden nimi (\koodi{jour\-nal\-title}). Vakioita voi yhdistää
+saman kentän muuhun sisältöön käyttämällä \koodi{\#}\=/merkkiä, kuten
+esimerkin rivillä 13 on tehty.
+
+\begin{esimerkki}
+\begin{koodilohko}
+  @string{
+    oma = {Meikäläinen, Matti},
+    lehti = {Hienon hieno aikakauslehti}
+  }
+
+  @article{hieno_artikkeli,
+    author = oma,
+    journaltitle = lehti,
+    ...
+  }
+
+  @article{toinen_artikkeli,
+    author = oma # { and Teikäläinen, Teija},
+    journaltitle = lehti,
+    ...
+  }
+\end{koodilohko}
+\caption{Muuttujien käyttö ja \koodi{@string}\-/rakenne}
+\label{esim:bib-muuttujat}
+\end{esimerkki}
+
+\subsubsection{Käyttöönotto}
 
 \paketti{biblatex}\-/makropaketti otetaan käyttöön esimerkin
-\ref{esim:biblatex-käyttöönotto} rivien avulla. Mukana on myös paketti
+\ref{esim:biblatex-käyttöönotto} rivien avulla. Mukana on myös paketit
 \paketti{polyglossia} ja \paketti{cs\-quotes}. Jälkimmäinen sisältää
 lainausmerkkien käyttöön liittyvää logiikkaa (luku
-\ref{luku:lainausmerkit}). Ilman sitä \paketti{biblatex} ei saa eri
-kielten erilaisia lainausmerkkejä oikein.
+\ref{luku:lainausmerkit}), jota ilman \paketti{biblatex} ei saa eri
+kielten erilaisia lainausmerkkejä oikein vaan käyttää pelkästään
+amerikkalaisia (``~'').
 
 \begin{esimerkki}
 \begin{koodilohko}
@@ -513,6 +589,10 @@ Latex\-/dokumentin esittelyosaan.
   \addbibresource{~/texmf/omat_kirjoitukset.bib}
   \addbibresource[location=remote]{https://osoite.netissä/yhteiset.bib}
 \end{koodilohkosis}
+
+% \bibitemsep
+% \bibhang
+% \bibfont
 
 \section{Kuvat ja värit}
 \label{luku:grafiikka}

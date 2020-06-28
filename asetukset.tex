@@ -70,8 +70,8 @@ valittaessa luokkien \koodi{article}, \koodi{report} ja
 seuraavassa alaluvussa.
 
 Muita%
-\koodimargin{letter} perusdokumenttiluokkia ovat \koodi{letter} ja
-\koodi{slides}. Nimensä mukaisesti \koodi{letter} on kirjeiden
+\koodimargin{letter} perusdokumenttiluokkia ovat \koodi{let\-ter} ja
+\koodi{slides}. Nimensä mukaisesti \koodi{let\-ter} on kirjeiden
 kirjoittamista varten. Se sisältää kirjeen tyypilliseen rakenteeseen
 liittyviä komentoja ja soveltuu varsinkin tarpeisiin, joissa täytyy
 automaattisesti tuottaa samanmuotoisia kirjeitä usealle
@@ -98,11 +98,11 @@ Taulukkoon \ref{tlk:luokkavalitsimet}%
 \koodimargin{*paper} on koottu perusdokumenttiluokkien valitsimet.
 Paperikoko valitaan komennoilla \koodi{a4\-paper} (210 × 297 mm),
 \koodi{a5\-paper} (148 × 210 mm), \koodi{b5\-paper} (176 × 250 mm),
-\koodi{executivepaper} (7,25 × 10,5 tuumaa), \koodi{legalpaper} (8,5 ×
-14 tuumaa) tai \koodi{letterpaper} (8,5 × 11 tuumaa). Latexin oletuksena
-on \koodi{letterpaper}, mutta oletusta voi olla muutettu Latexin
-jakelupaketissa. Varminta on aina itse kirjoittaa haluttu paperikoko
-dokumentin asetuksiin.
+\koodi{execu\-tive\-paper} (7,25 × 10,5 tuumaa), \koodi{legal\-paper}
+(8,5 × 14 tuumaa) tai \koodi{letter\-paper} (8,5 × 11 tuumaa). Latexin
+oletuksena on \koodi{letterpaper}, mutta oletusta voi olla muutettu
+Latexin jakelupaketissa. Varminta on aina itse kirjoittaa haluttu
+paperikoko dokumentin asetuksiin.
 
 \leijutlk{
   \ttfamily
@@ -160,7 +160,7 @@ tekstipalstan yli pursuavat rivit mustalla suorakulmiolla, mikä voi
 auttaa tekstikappaleiden ulkoasun korjailussa (luku \ref{luku:kappale}).
 Eri makropaketit voivat hyödyntää \koodi{draft}\-/valitsinta omalla
 tavallaan eli muuttaa toimintaansa sen perusteella. Esimerkiksi
-grafiikkaan liittyvä paketti \paketti{graphicx} (luku
+grafiikkaan liittyvä paketti \paketti{graph\-icx} (luku
 \ref{luku:grafiikka}) jättää luonnosversiosta kuvat pois, ja niiden
 paikalla on vain suorakulmio. Pdf\-/tiedoston ristiviitteistä huolehtiva
 \paketti{hyperref}\-/paketti jättää pdf:n sisäiset ristiviitteet ja
@@ -173,12 +173,12 @@ tarkoitettu julkaistavaksi. Tätä valitsinta ei tarvitse käyttää, koska
 se on oletustila.
 
 Sivujen%
-\koodimargin{oneside \\ twoside} yksipuolisuus (\koodi{oneside}) ja
-kaksipuolisuus (\koodi{twoside}) ovat asetuksia, jotka vaikuttavat sivun
-marginaalien asetuksiin ja mahdollisesti uuden pääluvun (\koodi{\keno
-  chapter}) aloitukseen. Oletus on yksipuolinen dokumentti kaikissa
-muissa perusdokumenttiluokissa paitsi \koodi{book}\-/luokassa, jonka
-oletus on kaksipuolinen.
+\koodimargin{oneside \\ twoside} yksipuolisuus (\koodi{one\-side}) ja
+kaksipuolisuus (\koodi{two\-side}) ovat asetuksia, jotka vaikuttavat
+sivun marginaalien asetuksiin ja mahdollisesti uuden pääluvun
+(\koodi{\keno chapter}) aloitukseen. Oletus on yksipuolinen dokumentti
+kaikissa muissa perusdokumenttiluokissa paitsi \koodi{book}\-/luokassa,
+jonka oletus on kaksipuolinen.
 
 Yksipuolisessa dokumentissa kaikkien sivujen marginaalit ovat
 lähtökohtaisesti samanlaisia ja asetuksissa puhutaan esimerkiksi
@@ -195,7 +195,7 @@ Marginaaleja ja muita sivun asetuksia käsitellään tarkemmin luvussa
 
 Jos%
 \koodimargin{openright \\ openany} dokumentti on määritetty
-kaksipuoliseksi (\koodi{twoside}), voidaan
+kaksipuoliseksi (\koodi{two\-side}), voidaan
 \koodi{open\-right}\-/valitsimella määrittää pääluvut (\koodi{\keno
   chapter}) alkamaan aina oikeanpuoleiselta sivulta. Se onkin oletus
 dokumenttiluokassa \koodi{book}. Valitsin \koodi{open\-any} asettaa

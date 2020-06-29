@@ -184,7 +184,7 @@ lähdemerkinnän luvussa. Yksi nolla riittää, jos lähteitä on 1--9
 kappaletta, kaksi jos lähteitä on kaksinumeroinen määrä eli 10--99
 kappaletta jne.
 
-\begin{esimerkki}
+\begin{esimerkki*}
 \begin{koodilohko}
   \begin{thebibliography}{00}
 
@@ -202,7 +202,7 @@ kappaletta jne.
   \koodi{thebibliography}\-/ympäristön ja \koodi{\keno
     bib\-item}\-/komentojen avulla.}
 \label{esim:thebibliography}
-\end{esimerkki}
+\end{esimerkki*}
 
 Komennolla \koodi{\keno bib\-item} tehdään varsinaiset teosmerkinnät.
 Samalla määritetään teoksen yksilöllinen tunniste ja mitä tietoja
@@ -377,7 +377,7 @@ yhtäsuuruusmerkillä (\koodi{=}), ja kentän sisältö kirjoitetaan
 aaltosulkeiden tai lainausmerkkien sisään, kuten edellinen esimerkki
 näyttää.
 
-\begin{esimerkki}
+\begin{esimerkki*}
 \begin{koodilohko}
   @book{itkonen_typogr,
     author = {Itkonen, Markus},
@@ -421,7 +421,7 @@ näyttää.
 \end{koodilohko}
 \caption{Lähdeteosten tietokantatiedosto}
 \label{esim:bib-tiedosto}
-\end{esimerkki}
+\end{esimerkki*}
 
 Todellista käyttöä vastaava tietokanta tai sen osa on esimerkissä
 \ref{esim:bib-tiedosto}, jossa on neljä erityyppistä teostietuetta:
@@ -498,7 +498,7 @@ aikakauslehden nimi (\koodi{jour\-nal\-title}). Vakioita voi yhdistää
 saman kentän muuhun sisältöön käyttämällä \koodi{\#}\=/merkkiä, kuten
 esimerkin rivillä 13 on tehty.
 
-\begin{esimerkki}
+\begin{esimerkki*}
 \begin{koodilohko}
   @string{
     oma = {Meikäläinen, Matti},
@@ -519,7 +519,7 @@ esimerkin rivillä 13 on tehty.
 \end{koodilohko}
 \caption{Muuttujien käyttö ja \koodi{@string}\-/rakenne}
 \label{esim:bib-muuttujat}
-\end{esimerkki}
+\end{esimerkki*}
 
 \subsubsection{Käyttöönotto}
 
@@ -531,7 +531,7 @@ lainausmerkkien käyttöön liittyvää logiikkaa (luku
 kielten erilaisia lainausmerkkejä oikein vaan käyttää pelkästään
 amerikkalaisia (``~'').
 
-\begin{esimerkki}
+\begin{esimerkki*}
 \begin{koodilohko}
   % Polyglossia tai babel on ladattava ennen biblatexia.
   \usepackage{polyglossia}
@@ -543,7 +543,7 @@ amerikkalaisia (``~'').
 \end{koodilohko}
 \caption{\paketti{biblatex}\-/makropaketin käyttöönotto ja asetuksia}
 \label{esim:biblatex-käyttöönotto}
-\end{esimerkki}
+\end{esimerkki*}
 
 Paketin asetuksissa käytettiin valitsinta \koodi{style} ja sen
 valitsinta \koodi{author\-year}, joka asettaa lähdeviittausten ja

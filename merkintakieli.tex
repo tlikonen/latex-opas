@@ -422,7 +422,7 @@ a\=/kirjainta esimerkkinä, mutta tarke voi liittyä muihinkin kirjaimiin.
 \marginpar{\TeX \\ \LaTeX} Merkit voi kirjoittaa
 Latex\-/lähdedokumenttiin myös sellaisenaan, eli näiden komentojen
 käyttö ei ole välttämätöntä. Tarke- ja erikoismerkkikomentojen lisäksi
-on komentoja ladontajärjestelmän logojen kirjoittamiseen: \koodi{\keno
+on komennot ladontajärjestelmän logojen kirjoittamiseen: \koodi{\keno
   TeX} ja \koodi{\keno LaTeX}.
 
 \providecommand{\rivi}{}
@@ -661,7 +661,7 @@ annetaan samanlaiset argumentit. Komennot ovat seuraavat:
 
 Ensimmäinen pakollinen argumentti on komennon nimi (\koodi{\keno
   ni\-mi}). Komento \koodi{\keno newcommand} määrittelee uuden komennon.
-Jos komento on jo olemassa, annetaan virheilmoitus. Toinen komento
+Mikäli komento on jo olemassa, annetaan virheilmoitus. Toinen komento
 \koodi{\keno renewcommand} määrittelee olemassa olevan komennon
 uudelleen. Se antaa virheilmoituksen, jos komentoa ei ollut olemassa.
 Kolmas komento \koodi{\keno pro\-vide\-command} puolestaan määrittelee
@@ -1379,7 +1379,7 @@ kasvattamiseen on seuraavat kaksi komentoa.
 \end{koodilohkosis}
 
 Edellä mainitut komennot kasvattavat argumenttina annetun laskurin arvoa
-yhdellä ja nollaavat niistä riippuvaiset alemman tason laskurit.
+yhdellä ja nollaavat siitä riippuvaiset alemman tason laskurit.
 Jälkimmäinen komento \koodi{\keno ref\-step\-counter} asettaa lisäksi
 ristiviitteen numeron, joten tätä komentoa seuraava \koodi{\keno
   label}\-/komento viittaa tähän laskuriin ja sen \koodi{\keno
@@ -1424,11 +1424,12 @@ Vastaus tämäntyyppisiin ongelmiin löytyy ristiviitteistä (luku
 ensimmäisellä kääntökerralla kirjoitetaan väliaikaistiedostoon muistiin
 tarpeellisia asioita ja seuraavalla kääntökerralla hyödynnetään
 väliaikaistiedostoa. Dokumentin sivumäärän ja viimeisen sivunumeron
-tallentamiseen on olemassa makropaketti \paketti{tot\-pages}, joka lisää
-viimeiselle sivulle automaattisesti ristiviitteen nimeltä
-\koodi{Tot\-Pages}. Sivumäärän ja viimeisen sivun numeron voi tulostaa
-komennoilla \koodi{\keno ref} ja \koodi{\keno page\-ref}. Esimerkki
-\ref{esim:totpages} havainnollistaa niiden käyttöä.
+tallentamiseen on olemassa makropaketti
+\paketti{tot\-pages},\avctan{totpages} joka lisää viimeiselle sivulle
+automaattisesti ristiviitteen nimeltä \koodi{Tot\-Pages}. Sivumäärän ja
+viimeisen sivun numeron voi tulostaa komennoilla \koodi{\keno ref} ja
+\koodi{\keno page\-ref}. Esimerkki \ref{esim:totpages} havainnollistaa
+niiden käyttöä.
 
 \begin{esimerkki*}
 \begin{koodilohko}
@@ -1447,10 +1448,9 @@ komennoilla \koodi{\keno ref} ja \koodi{\keno page\-ref}. Esimerkki
 \end{esimerkki*}
 
 Muunlaisten kokonaislaskurien toteuttamiseen voi käyttää
-\paketti{tot\-count}\-/pakettia.\avctan{totcount} Paketti tarjoaa
-komennon, jolla rekisteröidään olemassa oleva laskuri
-kokonaislaskuriksi. Lisäksi on komento, jolla tulostetaan tai
-palautetaan laskurin lopullinen arvo.
+\paketti{tot\-count}\-/pakettia.\avctan{totcount} Se tarjoaa komennon,
+jolla rekisteröidään olemassa oleva laskuri kokonaislaskuriksi. Lisäksi
+on komento, jolla tulostetaan tai palautetaan laskurin lopullinen arvo.
 
 \begin{koodilohkosis}
   \newcounter{oma}      % Luodaan laskuri ”oma”.

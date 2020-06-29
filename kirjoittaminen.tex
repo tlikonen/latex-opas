@@ -553,7 +553,7 @@ suomenkielisissä teksteissä, mutta monia muitakin tyylejä on olemassa.
 Makropaketin omien lähdeluettelo\-/{} ja viittaustyylien lisäksi
 Latex\-/jakelupaketissa (luku \ref{luku:asentaminen}) on todennäköisesti
 mukana myös ulkopuolisten tahojen tekemiä tyylejä. Tyylikokonaisuus
-nimeltä \koodi{bib\-latex-ext}\avctan{biblatex-ext} laajentaa
+nimeltä \paketti{bib\-latex-ext}\avctan{biblatex-ext} laajentaa
 \koodi{biblatex}\-/paketin tavallisten tyylien ominaisuuksia.
 Laajennettujen tyylien käyttäminen ei vaadi erillisen makropaketin
 lataamista, vaan tyylin saa käyttöön yksinkertaisesti vain
@@ -669,11 +669,103 @@ Argumentti~\koodi{*} (tähti) valitsee kaikki teokset.
 
 \subsubsection{Asetuksia}
 
-...
+Lähdeluettelon ulkoasuun voi vaikuttaa muutaman eri mitan avulla, joista
+esitellään tässä yhteydessä vain osa. Lähdemerkinnän riippuvan
+sisennyksen suuruus määräytyy mitan \koodi{\keno bibhang} avulla.
+Yleensä lienee sopivaa asettaa se samaksi kuin tekstikappaleiden
+ensimmäisen rivin sisennys \koodi{\keno parindent}.
 
-% \bibitemsep
-% \bibhang
-% \bibfont
+\begin{koodilohkosis}
+  \setlength{\parindent}{1.1em} % tekstikappaleiden 1. rivin sisennys
+  \setlength{\bibhang}{\parindent}
+\end{koodilohkosis}
+
+Mitta \koodi{\keno bib\-item\-sep} on lähdemerkintöjen välinen
+pystysuuntainen tila. Sen avulla voi harventaa lähdeluetteloa, jolloin
+lähdemerkinnät erottuvat paremmin toisistaan. Mitan \koodi{\keno
+  bib\-name\-sep} avulla voi tehdä suuremman pystysuuntaisen välin
+lähdemerkintöjen väliin silloin, kun teoksen tekijä vaihtuu
+(\koodi{author} tai \koodi{editor}). Toisin sanoen tämän mitan avulla
+voi ryhmitellä saman tekijän teokset tiiviimmin yhteen ja jättää väliä
+seuraavan tekijän teoksiin. Vastaavanlainen mitta on \koodi{\keno
+  bib\-init\-sep}, jota käytetään silloin, kun lähdemerkinnän aloittava
+kirjain vaihtuu. Tämän avulla voi ryhmitellä lähdemerkinnät aakkosittain
+eli tehdä suuremman välin aina lähdemerkinnän alkukirjaimen vaihtuessa.
+
+\begin{koodilohkosis}
+  \setlength{\bibitemsep}{.5ex plus .1ex minus .1ex}
+  \setlength{\bibnamesep}{1em  plus .2ex minus .1ex}
+  \setlength{\bibinitsep}{2em  plus .2ex minus .1ex}
+\end{koodilohkosis}
+
+Lähdemerkintöjen fonttiin voi vaikuttaa määrittelemällä uudelleen
+komennon \koodi{\keno bibfont} ja sijoittamalla halutut fontti- tai muut
+komennot kyseisen komennon määritelmään.
+
+\begin{koodilohkosis}
+  \renewcommand{\bibfont}{\sffamily\small}
+\end{koodilohkosis}
+
+Lähdemerkinnät itsessään muodostetaan automaattisesti tiettyjen
+tyyli\-ase\-tus\-ten perusteella. Omiakin tyylejä voi tehdä, mutta
+yleensä riittää vain yksittäisen asetusten muuttaminen. Niistä
+käsitellään tässä yhteydessä muutama. Asetusten muuttamiseen tarvitaan
+yleensä \paketti{biblatex}\-/paketin omia asetuskomentoja kuten
+\koodi{\keno Declare\-Field\-Format} ja \koodi{\keno
+  Declare\-Delim\-Format}.
+
+Oletuksena \paketti{biblatex} kursivoi \koodi{book}\-/tyyppisten teosten
+nimen (\koodi{title}). Sen sijaan artikkelikokoelmissa
+(\koodi{incollection}) ja aikakauslehdissä (\koodi{article})
+kursivoidaan julkaistun kokoelman nimi (\koodi{book\-title}) tai
+aikakauslehden nimi (\koodi{jour\-nal\-title}). Näissä teostyypeissä
+viitatun artikkelin nimi (\koodi{title}) ladotaan lainausmerkkeihin.
+Käytäntö tuntuu järkevältä, sillä kursivoituna on aina julkaistu
+kokonainen teoskappale eikä sen osa. Käytännössähän tiedonlähde
+joudutaan hakemaan teoskappaleen nimen perusteella. Joku voi silti
+haluta muuttaa näiden ulkoasua ja esimerkiksi kursivoida aina
+viittauksen kohteena olevan artikkelin. Seuraavassa on esimerkkikomennot
+edellä mainittujen lähdeluettelon kenttien muuttamiseen.
+
+\begin{koodilohkosis}
+  \DeclareFieldFormat[article,incollection]{title}{\emph{#1}}
+  \DeclareFieldFormat[article]{journaltitle}{#1}
+  \DeclareFieldFormat[incollection]{booktitle}{#1}
+\end{koodilohkosis}
+
+Edellä olevissa esimerkkikomennoissa on valinnaisena argumenttina ne
+teostyypit, joihin halutaan vaikuttaa. Jos valinnaisen argumentin jättää
+pois, vaikutetaan kaikkiin teostyyppeihin. Ensimmäinen pakollinen
+argumentti on kentän nimi teostietokannassa, ja toinen pakollinen
+argumentti on sisältö, joka ladotaan lähdemerkintään kyseisen tiedon
+kohdalle. Teostietokannasta tulevan kentän tekstisisältö on parametrissa
+\koodi{\#1}.
+
+Mikäli haluaa jonkin teoksen tiedon lainausmerkkeihin tai sulkeisiin,
+kannattaa käyttää komentoa \koodi{\keno mk\-bib\-quote} tai \koodi{\keno
+  mk\-bib\-parens}. Ne ymmärtävät ottaa huomioon eri kielten
+lainausmerkkikäytännöt ja mahdolliset sisäkkäiset sulkeet.
+
+\begin{koodilohkosis}
+  \DeclareFieldFormat[incollection]{booktitle}{\mkbibquote{#1}}
+\end{koodilohkosis}
+
+Oletuksena teoksen vuosiluku tai muu päiväys ladotaan lähdeluetteloon
+sulkeissa. Joissakin lähdeluettelokäytännöissä sulkeita ei kuitenkin
+ole, joten seuraavaksi käsitellään keino sulkeiden poistamiseen.
+Tavallisessa \paketti{biblatex}\-/paketin lähdeluettelotyylissä
+\koodi{author\-year} ei ole omaa kenttää teoksen päiväyksen ulkoasun
+muuttamiseen, mutta jos käyttää tyyliä \koodi{ext-author\-year}, sekin
+puute korjaantuu, ja voi käyttää \koodi{bib\-label\-date}\-/kenttää
+sulkeiden poistamiseen.
+
+\begin{koodilohkosis}
+  \usepackage[style=ext-authoryear]{biblatex}
+  \DeclareFieldFormat{biblabeldate}{#1}
+\end{koodilohkosis}
+
+% Edellä mainituilla \koodi{\keno Declare\-Field\-Format}\-/komennoilla ei
+% lähdemerkinnän  määritellä välimerkkejä
 
 \section{Kuvat ja värit}
 \label{luku:grafiikka}

@@ -710,22 +710,104 @@ Lähdemerkinnät itsessään muodostetaan automaattisesti tiettyjen
 tyyli\-ase\-tus\-ten perusteella. Omiakin tyylejä voi tehdä, mutta
 yleensä riittää vain yksittäisen asetusten muuttaminen. Niistä
 käsitellään tässä yhteydessä muutama. Asetusten muuttamiseen tarvitaan
-yleensä \paketti{biblatex}\-/paketin omia asetuskomentoja kuten
-\koodi{\keno Declare\-Field\-Format} ja \koodi{\keno
-  Declare\-Delim\-Format}.
+yleensä \paketti{biblatex}\-/paketin omia asetuskomentoja.
+
+Lähdeluettelon nimet näkyvät oletusasetuksilla siten, että teoksen
+ensimmäisen tekijän sukunimi mainitaan ensin (luettelon
+aakkosjärjestyksen vuoksi) mutta saman teoksen muiden tekijöiden etunimi
+mainitaan ensin. Tekijöiden nimet näkyvät siis seuraavalla tavalla:
+''Meikäläinen, Matti ja Teija Teikäläinen''. Suomessa on kuitenkin
+tapana kirjoittaa kaikki nimet samalla tavalla ja mainita sukunimi aina
+ensin. Tämä saadaan toteutettua seuraavilla komennolla.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \DeclareNameAlias{default} {family-given}
+  \DeclareNameAlias{sortname}{family-given}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Meikäläinen, Matti ja Teikäläinen, Teija (2020). -- --
+\end{tulossis}
+
+Saman teoksen eri tekijöiden nimet erotetaan oletuksena toisistaan
+pilkuilla paitsi kahden viimeisen nimen välissä on ja-sana. Usein on
+kuitenkin tapana käyttää \&\=/merkkiä ainakin lähdeluettelossa.
+Seuraavat esimerkkikomennot asettavat lähdeluettelon kaikkien nimien
+erottimeksi \&\=/merkin.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \DeclareDelimFormat[bib]{multinamedelim}{\space\&\space}
+  \DeclareDelimFormat[bib]{finalnamedelim}{\space\&\space}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Meikäläinen, Matti \& Teikäläinen, Teija \& Tutkija, Tuija (2020).
+  --~--
+\end{tulossis}
+
+Edellisten esimerkkikomentojen valinnainen argumentti \koodi{bib}
+tarkoittaa, että vaikutetaan vain lähdeluetteloon. Argumentti voi olla
+myös \mbox{\koodi{cite}}, jolloin vaikutetaan lähdeviittauksiin.
+Ero\-tin\-merkki\-ase\-tuk\-sen nimi \koodi{multi\-name\-delim}
+tarkoittaa muiden kuin kahden viimeisen tekijän nimen välissä olevaa
+erotinta. Kahden viimeisen nimen erotin määritellään asetuksella
+\koodi{final\-name\-delim}.
+
+Joskus on tapana latoa lähdeluettelossa tekijöiden nimet esimerkiksi
+pienversaalilla, jotta ne erottuvat luettelosta paremmin. Tällainen
+muutos vaatii, että lähdeluettelon tulostamisen yhteydessä määritellään
+uudelleen henkilön nimiin liittyvät tulostuskomennot \koodi{\keno
+  mk\-bib\-name\-fam\-i\-ly}, \koodi{\keno mk\-bib\-name\-giv\-en},
+\koodi{\keno mk\-bib\-name\-pre\-fix} ja \koodi{\keno
+  mk\-bib\-name\-suf\-fix}. Se saadaan automaattiseksi seuraavilla
+komennoilla.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \AtBeginBibliography{%
+    \renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
+    \renewcommand{\mkbibnamegiven} [1]{\textsc{#1}}
+    \renewcommand{\mkbibnameprefix}[1]{\textsc{#1}}
+    \renewcommand{\mkbibnamesuffix}[1]{\textsc{#1}}
+  }
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \textsc{Meikäläinen}, \textsc{Matti} \& \textsc{Teikäläinen},
+  \textsc{Teija} (2020). -- --
+\end{tulossis}
+
+Lähdeluettelon eri osien erottimena on yleensä piste. Joskus kuitenkin
+tekijöiden nimien ja vuosiluvun jälkeen on kaksoispiste. Se saadaan
+toteutettua seuraavalla komennolla.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Meikäläinen, Matti (2020): -- --
+\end{tulossis}
 
 Oletuksena \paketti{biblatex} kursivoi \koodi{book}\-/tyyppisten teosten
 nimen (\koodi{title}). Sen sijaan artikkelikokoelmissa
 (\koodi{incollection}) ja aikakauslehdissä (\koodi{article})
-kursivoidaan julkaistun kokoelman nimi (\koodi{book\-title}) tai
+kursivoidaan julkaistun kokoelman nimi (\koodi{book\-title}) ja
 aikakauslehden nimi (\koodi{jour\-nal\-title}). Näissä teostyypeissä
-viitatun artikkelin nimi (\koodi{title}) ladotaan lainausmerkkeihin.
+viitatun artikkelin nimi (\koodi{title}) kirjoitetaan lainausmerkkeihin.
 Käytäntö tuntuu järkevältä, sillä kursivoituna on aina julkaistu
-kokonainen teoskappale eikä sen osa. Käytännössähän tiedonlähde
-joudutaan hakemaan teoskappaleen nimen perusteella. Joku voi silti
-haluta muuttaa näiden ulkoasua ja esimerkiksi kursivoida aina
-viittauksen kohteena olevan artikkelin. Seuraavassa on esimerkkikomennot
-edellä mainittujen lähdeluettelon kenttien muuttamiseen.
+kokonainen teos eikä sen osa. Käytännössähän tiedonlähde joudutaan
+hakemaan teoksen nimen perusteella. Joku voi silti haluta muuttaa näiden
+ulkoasua ja esimerkiksi kursivoida aina viittauksen kohteena olevan
+artikkelin. Seuraavassa on esimerkkikomennot edellä mainittujen
+lähdeluettelon kenttien muuttamiseen.
 
 \begin{koodilohkosis}
   \DeclareFieldFormat[article,incollection]{title}{\emph{#1}}
@@ -735,10 +817,11 @@ edellä mainittujen lähdeluettelon kenttien muuttamiseen.
 
 Edellä olevissa esimerkkikomennoissa on valinnaisena argumenttina ne
 teostyypit, joihin halutaan vaikuttaa. Jos valinnaisen argumentin jättää
-pois, vaikutetaan kaikkiin teostyyppeihin. Ensimmäinen pakollinen
+pois, vaikutetaan kaikkiin teostyyppeihin, ellei tarkempaa
+teostyyppikohtaista määritelmää ole olemassa. Ensimmäinen pakollinen
 argumentti on kentän nimi teostietokannassa, ja toinen pakollinen
 argumentti on sisältö, joka ladotaan lähdemerkintään kyseisen tiedon
-kohdalle. Teostietokannasta tulevan kentän tekstisisältö on parametrissa
+kohdalle. Teostietokannasta tulevan kentän sisältö on parametrissa
 \koodi{\#1}.
 
 Mikäli haluaa jonkin teoksen tiedon lainausmerkkeihin tai sulkeisiin,
@@ -758,13 +841,83 @@ Tavallisessa \paketti{biblatex}\-/paketin lähdeluettelotyylissä
 muuttamiseen, mutta jos käyttää tyyliä \koodi{ext-author\-year}, sekin
 puute korjaantuu, ja voi käyttää \koodi{bib\-label\-date}\-/kenttää.
 
+\pagebreak[3]
+
 \begin{koodilohkosis}
   \usepackage[style=ext-authoryear]{biblatex}
+
   \DeclareFieldFormat{biblabeldate}{#1}
 \end{koodilohkosis}
 
-% Edellä mainituilla \koodi{\keno Declare\-Field\-Format}\-/komennoilla ei
-% lähdemerkinnän  määritellä välimerkkejä
+\begin{tulossis}
+  Meikäläinen, Matti 2020. -- --
+\end{tulossis}
+
+Artikkelikokoelmissa (teostyyppi \koodi{incollection}) mainitaan
+kokoelman nimi ja toimittajat oletuksena seuraavassa muodossa
+''Teoksessa: \emph{Hieno artikkelikokoelma.} Toim. Toimittaja, Teppo''.
+Ensin siis mainitaan julkaisun nimi ja sen jälkeen toimittajien nimet.
+Suomessa on tapana kirjoittaa nämä tiedot toisinpäin ja laittaa
+toimittajarooli sulkeisiin. Tällaiset asetukset saa käyttämällä tyyliä
+\koodi{ext-author\-year}, asetusta
+\koodi{in\-name\-before\-title=\-true} ja seuraavia komentoja.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \usepackage[style=ext-authoryear, innamebeforetitle=true]{biblatex}
+
+  \DeclareFieldFormat{editortype}{\mkbibparens{#1}}
+  \DeclareDelimFormat{editortypedelim}{\addspace}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  -- -- Teoksessa: Toimittaja, Teppo (toim.). \emph{Hieno
+    artikkelikokoelma}. -- --
+\end{tulossis}
+
+Lähdeviittauksissa vuosiluvun ja sivunumeroiden välissä käytetään
+välillä pilkkua ja välillä kaksoispistettä. Sivunumeroiden yhteydessä
+voi olla lyhenne ''s.'' tai se voidaan jättää pois. Seuraavilla
+komennoilla vaikutetaan näihin asetuksiin.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \DeclareFieldFormat{postnote}{#1} % Lyhenne ”s.” pois.
+  \DeclareDelimFormat{postnotedelim}{\addcolon\space} % Kaksoispiste.
+
+  \textcite[15--19]{tunniste} toteaa artikkelissaan -- --
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Meikäläinen (2020: 15--19) toteaa artikkelissaan -- --
+\end{tulossis}
+
+Kun samassa teoksessa usean tekijän luettelo lyhennetään, käytetään
+oletuksena latinankielistä ilmausta pois jäävien nimien tilalla:
+''Meikäläinen et al.''. Ilmauksen voi muuttaa suomenkieliseksi
+seuraavalla komennolla.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \DefineBibliographyStrings{finnish}{
+    andothers = {ym.},
+  }
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Meikäläinen ym. (2020)
+\end{tulossis}
+
+\paketti{biblatex}\-/paketti sisältää valtavan paljon asetuksia ja
+mahdollisuuksia lähdeluettelon ja \=/viitteiden ulkoasun säätämiseen.
+Esimerkiksi komennolla \koodi{\keno
+  De\-clare\-Bib\-li\-og\-ra\-phy\-Driv\-er} voi ottaa täysin haltuun,
+miten tietty teostyyppi ladotaan lähdeluetteloon. Komennolla
+\koodi{\keno De\-clare\-Sort\-ing\-Tem\-plate} voi määritellä omia
+aakkostustapoja. Lisätietoa saa paketin ohjekirjasta.
 
 \section{Kuvat ja värit}
 \label{luku:grafiikka}

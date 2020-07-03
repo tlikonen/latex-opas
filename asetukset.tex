@@ -60,12 +60,14 @@ väliotsikot (\koodi{\keno section}, \koodi{\keno subsection}
 jne.). Otsikointia ja tekstin jäsentämistä käsitellään tarkemmin luvussa
 \ref{luku:otsikot}.
 
-Toinen ero perusluokkien välillä on se, että vain
-\koodi{book}\-/luokka sisältää komennot \koodi{\keno frontmatter},
-\koodi{\keno mainmatter} ja \koodi{\keno backmatter}, joita voi
-käyttää ilmaisemaan tietokirjan erityyppiset osat: alkusivut,
-varsinaiset sisältösivut ja liitesivut. Näitä käsitellään luvussa
-\ref{luku:frontmainbackmatter}.
+Toinen ero perusluokkien välillä on se, että vain \koodi{book}\-/luokka
+sisältää komennot \koodi{\keno frontmatter}, \koodi{\keno mainmatter} ja
+\koodi{\keno backmatter}, joita voi käyttää ilmaisemaan tietokirjan
+erityyppiset osat: alkusivut, varsinaiset sisältösivut ja liitesivut.
+Näitä käsitellään luvussa \ref{luku:frontmainbackmatter}. Lisäksi
+\koodi{report}\-/luokka sisältää ympäristön \koodi{ab\-stract}, joka on
+tarkoitettu tekstin tiivis\-telmä\-osan tekemiseen;
+\koodi{book}\-/luokassa sitä ei ole.
 
 Muut erot koskevat lähinnä oletusasetuksia, mutta asetukset ovat
 tietenkin muutettavissa, eivätkä ne siten ole määräävä tekijä
@@ -247,10 +249,56 @@ kuin piirtoheittimet ja \koodi{slides}\-/luokkakin: kierrätykseen.
 
 \subsection{Muita dokumenttiluokkia}
 
+Kuka tahansa voi tehdä ja julkaista omia dokumenttiluokkia, ja niinpä
+perusdokumenttiluokkien lisäksi onkin saatavilla monenlaisia luokkia.
+Tässä käsitellään vain joitakin.
+
+Luokka%
+\koodimargin{memoir} \koodi{memoir} on Latexin \koodi{book}\-/luokkaan
+perustuva, ominaisuuksiltaan laajennettu luokka, joka sopii
+yleiskäyttöön. Tähän luokkaan on sisällytetty monia dokumentin
+rakenteeseen ja ulkoasuun liittyviä toimintoja, joihin yleensä tarvitaan
+erillisiä makropaketteja tai muuten lisäkoodia. Sen sijaan, että
+ratkoisi dokumentin rakenteen ja asettelun kysymyksiä erillisten
+makropakettien avulla, saattaisi olla helpompaa lukea (lähes) pelkästään
+vain \koodi{memoir}\-/luokan ohjekirjaa ja toteuttaa asiat yhtenäisen
+järjestelmän avulla.
+
+\koodi{beamer}\-/luokka%
+\koodimargin{beamer} on monipuolinen ja huippuunsa viritetty luokka
+esi\-tys\-gra\-fii\-kan eli dia\-esi\-tys\-ten tekemiseen. Vastaava
+mutta hieman helppokäyttöisempi luokka on \koodimargin{pow\-er\-dot}
+\koodi{pow\-er\-dot}. Nämä luokat ovat eräänlaisia Latexin vastineita
+esimerkiksi \englanti{Libreoffice Impress}\-/{} ja \englanti{Microsoft
+  Powerpoint} \=/ohjelmille.
+
+Pienempiin, rajattuihin erityistarpeisiin on olemassa useita luokkia.
+Esimerkiksi yksisivuisten taitettavien lehtisten kuten tapahtuman
+käsi\-ohjel\-mien tekemiseen soveltuu \koodimargin{leaf\-let}
+\koodi{leaf\-let}\-/luokka. \textsc{cd}\-/levyjen kansia voi tehdä
+\koodimargin{cd} \koodi{cd}\-/luokan avulla. Kuvitettuja
+seinäkalentereita vartenkin on tehty oma luokkansa,
+\koodimargin{wall\-cal\-en\-dar} \koodi{wall\-cal\-en\-dar}. Kitaran
+tablatuureja eli otelautakuvaan perustuvia nuotteja voi tehdä
+\koodimargin{gui\-tar\-tabs} \koodi{gui\-tar\-tabs}\-/luokan avulla.
+
+Kaikenlaista on siis olemassa. Saatavilla oleviin dokumenttiluokkiin voi
+tutustua esimerkiksi \englanti{Comprehensive Tex Archive Network}
+(\textsc{ctan}) \=/verkkosivun avulla.%
+\footnote{\url{https://ctan.org/topic/class}}
+
 \section{Sivu}
 \label{luku:sivuasetukset}
+
+...
+
 \subsection{Marginaalit ja mitat}
+
+...
+
 \subsection{Ylä- ja alatunnisteet}
+
+...
 
 \section{Fontit}
 \label{luku:kirjaintyypit}

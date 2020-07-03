@@ -347,8 +347,8 @@ pikseleistä koostuvia fontteja. On käytetty myös kehittyneempää
 joilla on tuotettu vek\-tori\-gra\-fiik\-ka\-font\-te\-ja \textsc{eps}-
 eli \englanti{Encapsulated Post Script} \=/muodossa ja muutettu niitä
 edelleen \englanti{Post Script Type~1} \=/fonteiksi. Myöhemmin mukaan
-ovat tulleet nyky\-aikai\-set True Type- ja Open Type \=/fontit, ja
-niihin tämä opas keskittyy.
+ovat tulleet nyky\-aikai\-set \englanti{True Type}- ja \englanti{Open
+  Type} \=/fontit, ja niihin tämä opas keskittyy.
 
 \subsection{Fontin valinta}
 
@@ -394,9 +394,10 @@ varsinkin vanhalle fonttitekniikalle (\englanti{Metafont, Post Script
 fonttiasetuksille ja joillekin kir\-jain\-perhe\-koko\-nai\-suuk\-sille.
 
 Valmiita makropaketteja on kuitenkin vain harvoille fonteille, ja
-käytännössä lähes aina True Type- ja Open Type \=/muodossa olevat
-kirjainperheet otetaan käyttöön \paketti{fontspec}\-/paketin komennoilla
-alla olevan esimerkin mukaisesti.
+käytännössä lähes aina \englanti{True Type}- ja \englanti{Open Type}
+\=/muodossa olevat kirjainperheet otetaan käyttöön
+\paketti{fontspec}\-/paketin komennoilla alla olevan esimerkin
+mukaisesti.
 
 \begin{koodilohkosis}
   \setmainfont{TeX Gyre Termes}[Scale=1]
@@ -915,10 +916,10 @@ Latex hoitaa tavallisten typografisten ligatuurien latomisen
 automaattisesti, eli lähdedokumenttiin ei kannata kirjoittaa
 Unicode\-/merkistön typografisia ligatuurimerkkejä (esimerkiksi
 \uctunnus{u+fb01 latin small ligature fi}) vaan ihan tavallisia
-erillisiä kirjaimia. Open Type \=/fontin suunnittelija on päättänyt
-meidän puolestamme, mitkä kir\-jain\-yh\-dis\-tel\-mät on parasta latoa
-ligatuurin avulla, ja ole\-tus\-ase\-tuk\-sil\-la Latex noudattaa niitä
-ohjeita.
+erillisiä kirjaimia. \englanti{Open Type} \=/fontin suunnittelija on
+päättänyt meidän puolestamme, mitkä kir\-jain\-yh\-dis\-tel\-mät on
+parasta latoa ligatuurin avulla, ja ole\-tus\-ase\-tuk\-sil\-la Latex
+noudattaa niitä ohjeita.
 
 Jos kuitenkin yksittäisen ligatuurin muodostumisen haluaa estää, voi
 kirjainten väliin kirjoittaa komennon \koodi{\keno
@@ -948,16 +949,17 @@ vaikuttaa komennolla \koodi{\keno add\-font\-fea\-tures}, joka sekin on
   {\addfontfeatures{Ligatures=NoCommon} fi fl} % Väliaikaisesti.
 \end{koodilohkosis}
 
-Tavallisten ligatuurien lisäksi Open Type \=/fontit voivat sisältää myös
-harvinaisempia ligatuureja, jotka täytyy erikseen kytkeä päälle. Niiden
-tarkoituksena on esimerkiksi erityinen koristeellisuus tai
-historiallisen kirjoitustavan jäljittely. Harvinaisia ligatuureja ei ole
-tarkoitus käyttää joka tilanteessa vaan ainoastaan erityisestä syystä.
-Kuvassa \ref{kuva:ligatuurit} olevat st- ja ct\-/ligatuurit on saatu
-fontin asetuksella \koodi{Liga\-tures=His\-toric}. Toisissa fonteissa
-sama tehdään asetuksella \koodi{Liga\-tures=Dis\-cre\-tionary}.
-Useitakin ligatuurityyppejä voi kytkeä päälle samanaikaisesti, ja
-seuraava esimerkki näyttää, miten se tehdään.
+Tavallisten ligatuurien lisäksi \englanti{Open Type} \=/fontit voivat
+sisältää myös harvinaisempia ligatuureja, jotka täytyy erikseen kytkeä
+päälle. Niiden tarkoituksena on esimerkiksi erityinen koristeellisuus
+tai historiallisen kirjoitustavan jäljittely. Harvinaisia ligatuureja ei
+ole tarkoitus käyttää joka tilanteessa vaan ainoastaan erityisestä
+syystä. Kuvassa \ref{kuva:ligatuurit} olevat st- ja ct\-/ligatuurit on
+saatu fontin asetuksella \koodi{Liga\-tures=His\-toric}. Toisissa
+fonteissa sama tehdään asetuksella
+\koodi{Liga\-tures=Dis\-cre\-tionary}. Useitakin ligatuurityyppejä voi
+kytkeä päälle samanaikaisesti, ja seuraava esimerkki näyttää, miten se
+tehdään.
 
 \begin{koodilohkosis}
   \setmainfont{…}[Ligatures={Common, Historic, Discretionary}]

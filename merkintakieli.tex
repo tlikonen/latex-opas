@@ -280,11 +280,28 @@ Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
 \koodi{\keno text\-quote\-dbl} ja \koodi{\keno text\-quote\-single}.
 Yksittäinen gra\-vis\-ak\-sent\-ti (\`{}) tehdään komennolla
-\koodi{\keno `\{\}}. Oletuksena myös tasalevyinen fontti (luku
-\ref{luku:kirjaintyypit}) kytkee pois erikoiset lainausmerkkikomennot ja
-tuottaa suoraan niitä merkkejä, joita lähdedokumenttiin on kirjoitettu.
-Muita tapoja lainausmerkkitoiminnon estämiseen on esimerkissä
-\ref{esim:pois-tex-liga}.
+\koodi{\keno `\{\}}.
+
+Latexin omat lainausmerkkien ja ajatusviivojen merkintätavat saa
+poistettua kokonaan käytöstä fontin asetuksella
+\koodi{Liga\-tures=\-TeX\-Reset}. Asetus kytketään päälle esimerkiksi
+komennolla \koodi{\keno add\-font\-fea\-tures}, joka sisältyy
+\paketti{fontspec}\-/pakettiin. Mainittu asetus on oletuksena päällä
+tasalevyisessä fontissa, jonka saa yksittäisiin sanoihin komennolla
+\koodi{\keno text\-tt}. Fontteja käsitellään tarkemmin luvussa
+\ref{luku:kirjaintyypit}.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  {\addfontfeatures{Ligatures=TeXReset} `` '' >> '} \\
+  \texttt{`` '' >> '}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  {\addfontfeatures{Ligatures=TeXReset} `` '' >> '} \\
+  \texttt{`` '' >> '}
+\end{tulossis}
 
 \subsection{Yhdysmerkki, ajatusviiva ja miinusmerkki}
 
@@ -319,22 +336,20 @@ merkintätavoilla eikä Unicode\-/merkeillä. Tavutusta käsitellään
 tarkemmin luvussa \ref{luku:tavutus}.
 
 Silloin kun todella täytyy latoa kaksi tai kolme peräkkäistä
-yhdysmerkkiä, voi käyttää tasalevyistä fonttia, joka oletuksena kytkee
-pois Latexin ajatusviivatoiminnon. Muita tapoja on esimerkissä
-\ref{esim:pois-tex-liga}.
+yhdysmerkkiä, voi käyttää tasalevyistä fonttia (\koodi{\keno
+  text\-tt\{\ldots\}}), joka oletuksena kytkee pois Latexin
+ajatusviivatoiminnon. Saman asetuksen saa kyllä mihin tahansa fonttiin,
+ja väliaikaisesti asetus kytketään seuraavasti.
 
-\begin{esimerkki*}
-\begin{koodilohko}
-  \addfontfeatures{Ligatures=TeXReset} % Fontista Tex-merkkaus pois.
-  -{}-       % Estetään ajatusviiva.
-  >{}>       % Estetään kulmalainausmerkit.
-  \texttt{…} % Tasalevyinen fontti estää Tex-merkkauksen.
-\end{koodilohko}
-\caption{Keinoja Tex-merkkauskomentojen estämiseen. Komento \koodi{\keno
-    add\-font\-fea\-tures} on \paketti{fontspec}\-/makropaketin
-  ominaisuus}
-\label{esim:pois-tex-liga}
-\end{esimerkki*}
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  {\addfontfeatures{Ligatures=TeXReset} -- ---}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  {\addfontfeatures{Ligatures=TeXReset} -- ---}
+\end{tulossis}
 
 Miinusmerkille ei Latexissa ole erityistä merkintätapaa muuten kuin
 matematiikkatilassa (luku \ref{luku:matematiikka}). Ajatusviivaa saa

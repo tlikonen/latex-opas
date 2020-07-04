@@ -1497,19 +1497,35 @@ mainittu lukumäärä saatiin laskettua seuraavasti.
 
 % Voisi ehkä siirtää ennen Komennot-lukua
 
-Latex\-/järjestelmä tavuttaa eli katkaisee sanat automaattisesti rivien
-lopussa, jotta rivit ja kappaleet saisi näyttämään tasapainoisilta.
-Tavutukseen vaikuttavat kielikohtaiset tavutussäännöt ja \=/asetukset
-tai kirjoittajan omat tavutusvihjeet. Kielen valintaa ja yleisiä
-kieli\-ase\-tuk\-sia käsitellään tarkemmin luvussa
-\ref{luku:kieliasetukset}, mutta mainitaan tässäkin, että suomen kieli
-ja sen mukainen tavutus saadaan päälle, kun dokumentin esittelyosaan
-kirjoittaa seuraavat komennot.
+Sanat tavutetaan eli katkaistaan automaattisesti rivien lopussa, jotta
+rivit ja kappaleet saisi näyttämään tasapainoisilta. Lähtökohtaisesti
+tavutus määräytyy kielikohtaisten tavutussääntöjen ja \=/asetusten
+perusteella, mutta kirjoittaja voi tehdä poikkeuksia kirjoittamalla
+tavu\-tus\-vih\-jeitä.
+
+Kielen valintaa ja yleisiä kieli\-ase\-tuk\-sia käsitellään tarkemmin
+luvussa \ref{luku:kieliasetukset}, mutta mainitaan tässäkin, että suomen
+kieli ja sen mukainen tavutus saadaan päälle, kun dokumentin
+esittelyosaan kirjoittaa seuraavat komennot.
 
 \begin{koodilohkosis}
   \usepackage{polyglossia}
   \setmainlanguage{finnish}
 \end{koodilohkosis}
+
+Tavutuksen hallintaa voi lähestyä ainakin kahdesta eri suunnasta. Joku
+ehkä haluaa kirjoittaa dokumentin sisällön valmiiksi ilman, että
+huolehtii tavutus\-asioista lainkaan. Ihan lopuksi, kun kaikki
+muotoilu\-asetuksetkin ovat valmiina, hän tarkistaa koko tekstin ja
+lisää tavutusvihjeitä, jos automaattinen tavutus teki virheitä tai jos
+kappaleen latominen tasapainoiseksi niitä muuten vaatii.
+
+Joku toinen ehkä mieluummin kirjoittaa dokumentin jo alusta saakka
+siten, ettei virheellistä tavutusta tapahdu ja että tavutuskohtia on
+tarjolla riittävästi, jotta kappaleet saadaan ladottua aina
+hyvännäköiseksi. Tämä näkökulma vaatii, että jo kirjoitusvaiheessa
+ymmärtää, miten tavutus toimii ja missä mahdolliset ongelmakohdat ovat
+tavuttamisen kannalta.
 
 \subsection{Yleiset tavutussäännöt}
 
@@ -1520,22 +1536,22 @@ tunnistamiseen vaan yksinkertaisiin kirjainpohjaisiin sääntöihin.
 Säännöt pyrkivät kuvaamaan kielen tavujen rakenteen ja huomioimaan myös
 typografiaan liittyviä suosituksia.
 
-Kirjainyhdistelmiin perustuvat säännöt eivät riitä suomen kieleen, ja
-esimerkiksi yhdyssanojen rajakohdat tuottavat usein ongelmia. Sana
-\emph{alku\-osa} katkaistaan Latexin sääntöjen mukaan kohdista
-\mbox{\emph{al-kuo-sa}}, joka on kyllä oikein tavurakenteen kannalta.
-Käytännössä se on kuitenkin ongelmallinen, koska myös yhdyssanan rajalla
-olisi tavutuskohta (\emph{al-ku-o-sa}) ja koska sanaa ei pitäisi
-katkaista siten, että siitä jää yksittäinen kirjain eri riville
-(\emph{o-sa}).
+Kirjainyhdistelmiin perustuvat säännöt auttavat mutta eivät yksinään
+riitä suomen kieleen, ja esimerkiksi yhdyssanojen rajakohdat tuottavat
+usein ongelmia. Sana \emph{alku\-osa} katkaistaan Latexin sääntöjen
+mukaan kohdista \mbox{\emph{al-kuo-sa}}, joka on kyllä oikein
+tavurakenteen kannalta. Käytännössä se on kuitenkin ongelmallinen, koska
+myös yhdyssanan rajalla olisi tavutuskohta (\emph{al-ku-o-sa}) ja koska
+sanaa ei pitäisi katkaista siten, että siitä jää yksittäinen kirjain eri
+riville (\emph{o-sa}).
 
 Parasta olisi katkaista suomen kielen yhdyssanat vain yhdys\-osien
-välistä (\emph{alku-osa}). Muualtakin voi katkaista, kunhan sanasta eikä
-yhdys\-osasta ei jää yksittäinen kirjain eri riville. Mielellään ei
-katkaista myöskään kahden vokaalin välistä, jos ne kuuluvat samaan
-sanaan (\emph{kau-emmin}). Joskus halutaan välttää myös niin sanottuja
-orpotavuja eli sitä, että tekstikappaleen viimeiselle riville jää vain
-yksi tavu.
+välistä (\emph{alku-osa}). Muualtakin voi katkaista (\emph{al-ku-osa}),
+kunhan sanasta eikä sen yhdys\-osasta ei jää yksittäinen kirjain eri
+riville. Mielellään ei katkaista myöskään kahden vokaalin välistä, jos
+ne kuuluvat samaan sanaan (\emph{kau-emmin}). Joskus halutaan välttää
+myös niin sanottuja orpotavuja eli sitä, että tekstikappaleen
+viimeiselle riville jää vain yksi tavu.
 
 Käytännössä siis suomenkielinen teksti ja hyvä typografia vaativat
 välillä tavutusvihjeiden kirjoittamista. Yksi tapa siihen on
@@ -1545,7 +1561,8 @@ selventää komennon käyttöä.
 
 \begin{koodilohkosis}
   \hyphenation{
-    alku-osa nimen-omaan typo-gra-fi-nen
+    alku-osa nimen-omaan
+    typo-gra-fi-nen
   }
 \end{koodilohkosis}
 
@@ -1561,18 +1578,18 @@ esittelyosaan tai tekstiosaan, mutta sijainti vaikuttaa sen toimintaan.
 Jos komennon sijoittaa dokumentin esittelyosaan ennen kuin mitään kieltä
 on ladattu tai valittu, se vaikuttaa kaikkien sanojen tavutukseen
 kielestä riippumatta. Jos komennon sijoittaa dokumentin tekstiosaan eli
-kielivalintakomentojen jälkeen, se vaikuttaa vain pääasiallisen kielen
-tavutukseen.
+kielen valitsemisen jälkeen, se vaikuttaa vain kyseisen kielen eli
+yleensä dokumentin pääasiallisen kielen tavutukseen.
 
 \subsection{Tavutukseen vaikuttavat merkit}
 \label{luku:tavutuksen_merkit}
 
-Dokumentin ladottavassa tekstissä tietyt sanassa olevat merkit kytkevät
-muut tavutussäännöt pois päältä ja muuttavat sanan tavutuksen
-yksilölliseksi. Jos sanassa on mukana yksikin tavutusvihje
-(\koodi{\keno-}), yhdysmerkki (\koodi{-}), lyhyt ajatusviiva
-(\mbox{\koodi{--}}) tai pitkä ajatusviiva (\mbox{\koodi{---}}), sana
-katkaistaan vain näiden kohdalta (\koodi{\keno-}) tai jälkeen.
+Tietyt sanassa mukana olevat merkit kytkevät muut tavutussäännöt pois
+päältä ja muuttavat sanan tavutuksen yksilölliseksi. Jos sanassa on
+mukana yksikin tavutusvihje (\koodi{\keno-}), yhdysmerkki (\koodi{-}),
+lyhyt ajatusviiva (\mbox{\koodi{--}}) tai pitkä ajatusviiva
+(\mbox{\koodi{---}}), sana katkaistaan vain näiden kohdalta
+(\koodi{\keno-}) tai jälkeen.
 
 Myös Unicoden ajatusviivamerkit \uctunnus{u+2013 en dash} ja
 \uctunnus{u+2014 em dash} toimivat, mutta ne käyttäytyvät tavutuksen
@@ -1626,12 +1643,12 @@ mahdolliset tavutuskohdat.
 
 Taulukon viimeinen rivi paljastaa suomen kielen kannalta ongelmallisen
 tilanteen. Esimerkiksi ilmauksessa \emph{matkasuunnitelma ja
-  \mbox{-aika}} ei saa katkaista sanassa \emph{\mbox{-aika}} olevan
-yhdysmerkin jälkeen, koska rivin loppuun jäisi yksinäinen yhdysmerkki.
-Latexin peruskeinoilla sana täytyy laittaa näkymättömään laatikkoon,
-joka pitää merkit yhdessä: \koodi{\keno mbox\{-aika\}}. Toinen
-vaihtoehto on sitovan yhdysmerkin käyttö, johon onkin monenlaisia
-toteutuksia.
+  \mbox{-aika}} ei riviä saa katkaista sanassa \emph{\mbox{-aika}}
+olevan yhdysmerkin jälkeen, koska rivin loppuun jäisi yksinäinen
+yhdysmerkki. Latexin peruskeinoilla sana täytyy laittaa näkymättömään
+laatikkoon, joka pitää merkit yhdessä: \koodi{\keno mbox\{-aika\}}.
+Toinen vaihtoehto on sitovan yhdysmerkin käyttö, jota käsitellään
+seuraavassa alaluvussa, muun muassa.
 
 \subsection{Tavutuksen sallivia ja sitovia merkkejä}
 
@@ -1639,9 +1656,8 @@ Unicode\-/merkistön sitova yhdysmerkki \uctunnus{u+2011 non\-/breaking
   hyphen} näkyy tavallisena yhdysmerkkinä, mutta se estää sanan
 katkaisemisen yhdysmerkin vierestä. \uctunnus{u+2011}\-/merkkiä voi
 käyttää Xelatex\-/kääntäjän kanssa, mutta Lualatex\-/kääntäjä vain
-kadottaa koko merkin. Yhteensopivuussyistä olisi ehkä parasta olla
-käyttämättä Unicoden sitovaa yhdysmerkkiä, koska muitakin vaihtoehtoja
-on.
+kadottaa koko merkin. Yhteensopivuussyistä ei kannata käyttää Unicoden
+sitovaa yhdysmerkkiä, koska muitakin vaihtoehtoja on.
 
 Makropaketti \paketti{extdash}\avctan{extdash} tuo uusia komentoja ja
 mahdollisuuksia tavutuksen hallintaan. Komennot ovat sellaisia kuin
@@ -1659,10 +1675,11 @@ Kun Latexin viivavälimerkit (luku \ref{luku:tavutuksen_merkit}) aina
 estävät tavutuksen muualta kuin välimerkin jälkeen,
 \paketti{extdash}\-/paketin perus\-vaihto\-ehdot sallivat tavuttamisen.
 Lisäksi kaikille kolmelle viivavälimerkille on sitova versio, joka estää
-tavutuksen välimerkin jälkeen. Taulukossa \ref{tlk:extdash} ovat
-\paketti{extdash}\-/paketin tärkeimmät komennot ja niiden merkitykset.
-Taulukossa \ref{tlk:extdash-vertailu} vertaillaan
-\paketti{extdash}\-/paketin komentoja Latexin vastaaviin.
+tavutuksen välimerkin jälkeen (mutta sallii muualta).
+
+Taulukossa \ref{tlk:extdash} ovat \paketti{extdash}\-/paketin tärkeimmät
+komennot ja niiden merkitykset. Taulukossa \ref{tlk:extdash-vertailu}
+vertaillaan \paketti{extdash}\-/paketin komentoja Latexin vastaaviin.
 
 \leijutlk{
   \begin{tabular}{ll}
@@ -1706,7 +1723,7 @@ Taulukossa \ref{tlk:extdash-vertailu} vertaillaan
                 & matka-
                 & \koodi{-aika}
                 & -\tavukohta aika \\
-    \koodi{matka\keno -/\{\}}
+    \koodi{matka\keno -/}
                 & mat\tavukohta ka-
                 & \koodi{\keno =/aika}
                 & -ai\tavukohta ka \\
@@ -1727,11 +1744,11 @@ pidetään yhdessä. Oletus\-arvot ovat kielikohtaisia ja määritellään
 \paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketeissa. Suomen
 kielessä kumpikin asetus on kaksi (2) merkkiä.
 
-Edellä mainitut asetukset alustetaan kielikohtaisiin oletus\-arvoihin
-aina, kun kie\-li\-ase\-tuk\-set tulevat voimaan. Näin on esimerkiksi
-dokumentin aloittavan \koodi{document}\-/ympäristön alussa tai kielen
-vaihtuessa. Tästä seuraa, että jos asetuksia ha\-luaa muuttaa, täytyy ne
-asettaa \koodi{document}\-/ympäristön alussa tai aina kielen vaihtamisen
+Nämä asetukset alustetaan kielikohtaisiin oletus\-arvoihin aina, kun
+kie\-li\-ase\-tuk\-set tulevat voimaan. Näin on esimerkiksi dokumentin
+aloittavan \koodi{document}\-/ympäristön alussa tai kielen vaihtuessa.
+Tästä seuraa, että jos asetuksia ha\-luaa muuttaa, täytyy ne asettaa
+\koodi{document}\-/ympäristön alussa tai aina kielen vaihtamisen
 jälkeen.
 
 Omat kieli\-asetukset saa mukaan automaattisesti, kun lisää muutokset

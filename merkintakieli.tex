@@ -987,6 +987,20 @@ Tavutusta käsitellään tässä lähinnä \paketti{polyglossia}\-/kielipaketin
 näkökulmasta. Toinen kielipaketti \paketti{babel} toimii joissakin
 asioissa hieman eri tavalla, ja eroja mainitaan tekstin lomassa.
 
+Yleisesti tavutuksen hallintaa voi lähestyä ainakin kahdesta eri
+suunnasta. Joku ehkä haluaa kirjoittaa dokumentin sisällön valmiiksi
+ilman, että huolehtii tavu\-tus\-asiois\-ta lainkaan. Ihan lopuksi, kun
+kaikki tekstin rivittämiseen liittyvät asetukset ovat valmiina, hän
+tarkistaa koko tekstin ja lisää tavutusvihjeitä, jos automaattinen
+tavutus teki virheitä tai jos kappaleen latominen tasapainoiseksi niitä
+muuten vaatii.
+
+Joku toinen ehkä mieluummin kirjoittaa dokumentin jo alusta saakka
+siten, ettei virheellistä tavutusta tapahdu ja että tavutuskohtia on
+tarjolla riittävästi, jotta kappaleet saadaan ladottua aina
+hyvännäköiseksi. Tämä näkökulma vaatii, että jo kirjoitusvaiheessa
+ymmärtää, miten tavutus toimii ja missä mahdolliset ongelmakohdat ovat.
+
 \subsection{Yleiset tavutussäännöt}
 
 Latexin automaattinen tavutus ei perustu varsinaiseen sanojen eikä
@@ -1251,6 +1265,7 @@ tässä käsitellään suomen kielen asetuksia (\koodi{\keno
   cap\-tions\-finnish}).
 
 \subsection{Muita tavutusasetuksia ja -vinkkejä}
+\label{luku:tavutus_muut}
 
 Aiemmin mainittu \paketti{extdash}\-/makropaketti sisältää tavutuksen
 hallintaan liittyviä välimerkkejä, mutta sellaisia on myös
@@ -1345,10 +1360,11 @@ tavutuskohdat saa käyttöön \paketti{extdash}\-/paketin komennoilla
   Molotov\--Ribbentrop\-/sopimus
 \end{koodilohkosis}
 
-\koodi{\keno dis\-cre\-tionary}\-/komentoa voi hyödyntää suomen kielen
-sanoissa silloin, kun niissä on heittomerkki erottamassa kahta tavurajan
-molemmin puolin olevaa samaa vokaalia, esimerkiksi sanassa \emph{vaa'an}
-ja \emph{liu'uttaa}. Normaalisti Latex ei katkaise heittomerkin kohdalta
+\koodi{\keno dis\-cre\-tionary}\-/komentoa (luku
+\ref{luku:tavutus_muut}) voi hyödyntää suomen kielen sanoissa silloin,
+kun niissä on heittomerkki erottamassa kahta tavurajan molemmin puolin
+olevaa samaa vokaalia, esimerkiksi sanassa \emph{vaa'an} ja
+\emph{liu'uttaa}. Normaalisti Latex ei katkaise heittomerkin kohdalta
 lainkaan, eikä se ole suomen kielessä suositeltavaakaan. Jos tavutuksen
 kuitenkin haluaa myös heittomerkin kohdalle, täytyy huolehtia, että
 tavutustilanteessa heittomerkki poistuu ja sen paikalle tulee
@@ -1359,7 +1375,7 @@ seuraavalla tavalla.
   vaa\discretionary{-}{}{'}an
 \end{koodilohkosis}
 
-Nyt komennon kolmas argumentti on heittomerkki, koska se pitää latoa
+Komennon kolmas argumentti on heittomerkki, koska se pitää latoa
 tavurajalle silloin, kun sanaa ei katkaista tästä kohdasta. Mikäli
 tällaisia tarvitsee paljon, on järkevää määritellä sitä varten
 yksinkertaisempi komento. jota sitten käytettäisiin heittomerkin
@@ -1379,20 +1395,6 @@ paikkaan, mutta tavutettaessa heittomerkki säilyy: \emph{show'-hun}.
 Mikäli tällainen tavutuskohta halutaan mukaan, käytetään sanassa
 tavallista tavutusvihjettä: \koodi{show'\keno-hun}. Mieluummin ei
 kuitenkaan katkaista sanoja heittomerkin kohdalta.
-
-Yleisesti tavutuksen hallintaa voi lähestyä ainakin kahdesta eri
-suunnasta. Joku ehkä haluaa kirjoittaa dokumentin sisällön valmiiksi
-ilman, että huolehtii tavu\-tus\-asiois\-ta lainkaan. Ihan lopuksi, kun
-kaikki tekstin rivittämiseen liittyvät asetukset ovat valmiina, hän
-tarkistaa koko tekstin ja lisää tavutusvihjeitä, jos automaattinen
-tavutus teki virheitä tai jos kappaleen latominen tasapainoiseksi niitä
-muuten vaatii.
-
-Joku toinen ehkä mieluummin kirjoittaa dokumentin jo alusta saakka
-siten, ettei virheellistä tavutusta tapahdu ja että tavutuskohtia on
-tarjolla riittävästi, jotta kappaleet saadaan ladottua aina
-hyvännäköiseksi. Tämä näkökulma vaatii, että jo kirjoitusvaiheessa
-ymmärtää, miten tavutus toimii ja missä mahdolliset ongelmakohdat ovat.
 
 \section{Mitat}
 \label{luku:mitat}

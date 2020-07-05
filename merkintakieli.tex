@@ -61,7 +61,7 @@ Jotkin makropaketit määrittelevät muitakin erikoismerkkejä. Esimerkiksi
 kieli\-asetuksiin (luku \ref{luku:kieliasetukset}) liittyvät
 \paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketit voivat
 määritellä pari lainausmerkillä (\koodi{\textquotedbl}) alkavaa,
-tavutuksen hallintaan liittyvää komentoa.
+tavutuksen hallintaan liittyvää komentoa tai erikoismerkkiä.
 
 \subsection{Sanaväli}
 \label{luku:sanavali}
@@ -602,10 +602,9 @@ esittelyosaan kirjoittaa seuraavat komennot.
   \setmainlanguage{finnish}
 \end{koodilohkosis}
 
-Tavutusta käsitellään tässä vain \paketti{polyglossia}\-/kielipaketin
-näkökulmasta. Toinen kielipaketti \paketti{babel} toimii hieman eri
-tavalla, ja sitä varten pitäisi kirjoittaa melkein kokonaan toisenlainen
-luku tähän oppaaseen.
+Tavutusta käsitellään tässä lähinnä \paketti{polyglossia}\-/kielipaketin
+näkökulmasta. Toinen kielipaketti \paketti{babel} toimii joissakin
+asioissa hieman eri tavalla, ja eroja mainitaan tekstin lomassa.
 
 \subsection{Yleiset tavutussäännöt}
 
@@ -650,7 +649,13 @@ päältä ja muuttavat sanan tavutuksen yksilölliseksi. Jos sanassa on
 mukana yksikin tavutusvihje (\koodi{\keno-}), yhdysmerkki (\koodi{-}),
 lyhyt ajatusviiva (\mbox{\koodi{--}}) tai pitkä ajatusviiva
 (\mbox{\koodi{---}}), sana katkaistaan vain näiden kohdalta
-(\koodi{\keno-}) tai jälkeen.
+(\koodi{\keno-}) tai jälkeen.%
+\footnote{Näin toimii \paketti{polyglossia}\-/kielipaketti. Sen sijaan
+  \paketti{babel}\-/paketti määrittelee suomen kielelle tavutusvihjeen
+  (\koodi{\keno-}) siten, että se sallii sanan tavutuksen muistakin
+  kohdista kuin tavutusvihjeen kohdalta. Tavutusvihjeen molemmin puolin
+  sanan osat tavutetaan yleisten sääntöjen mukaisesti, ellei tavutuksen
+  estäviä merkkejä kuten yhdysmerkkejä tai ajatusviivoja ole.}
 
 Myös Unicoden ajatusviivamerkit \uctunnus{u+2013 en dash} ja
 \uctunnus{u+2014 em dash} toimivat, mutta ne käyttäytyvät tavutuksen
@@ -709,7 +714,7 @@ olevan yhdysmerkin jälkeen, koska rivin loppuun jäisi yksinäinen
 yhdysmerkki. Latexin peruskeinoilla sana täytyy laittaa näkymättömään
 laatikkoon, joka pitää merkit yhdessä: \koodi{\keno mbox\{-aika\}}.
 Toinen vaihtoehto on sitovan yhdysmerkin käyttö, jota käsitellään
-seuraavassa alaluvussa, muun muassa.
+seuraavassa alaluvussa.
 
 \subsection{Tavutuksen sallivia ja sitovia merkkejä}
 %\label{luku:tavutus_salsit}
@@ -798,9 +803,9 @@ vertaillaan \paketti{extdash}\-/paketin komentoja Latexin vastaaviin.
 
 On tärkeää huomioida, että \paketti{extdash}\-/paketin komennot ovat
 todellakin normaaleja komentoja. Se tarkoittaa, että komennon jälkeiset
-sanavälit syödään pois eli ne katoavat. Tämä asiaa saattaa unohtua
-seuraavanlaisessa tilanteessa, jossa käytetään tavutuksen sallivaa
-yhdysmerkkikomentoa \koodi{\keno-/}.
+sanavälit syödään pois. Tämä asia saattaa unohtua seuraavanlaisessa
+tilanteessa, jossa käytetään tavutuksen sallivaa yhdysmerkkikomentoa
+\koodi{\keno-/}.
 
 \pagebreak[3]
 
@@ -885,34 +890,36 @@ välillä tavutusvihjeiden kirjoittamista. Yhdyssanojen osien väliin
 tarvitaan tavutusvihje silloin, kun jälkimmäinen osa alkaa vokaalilla
 tai useammalla kuin yhdellä konsonantilla. Joitakin tällaisia tapauksia
 Latex osaa tavuttaa oikein ilman tavutusvihjeitäkin, mutta etukäteen
-sitä ei välttämättä tiedä.
+sitä ei tiedä, ellei ole kokemusta. Yhdenkin tavutusvihjeen avulla koko
+sanan tavutus otetaan omaan hallintaan (vain \paketti{polyglossia}).
 
 \begin{koodilohkosis}
   alku\-osa pusku\-traktori
 \end{koodilohkosis}
 
-Pitkät yhdysmerkin tai ajatusviivan sisältävät yhdyssanat voivat vaatia
+Yhdysmerkin tai ajatusviivan sisältävät pitkät yhdyssanat voivat vaatia
 tavutuskohtien lisäämistä, koska Latexin yhdysmerkki ja ajatusviivat
 estävät tavutuksen muualta kuin näiden merkkien jälkeen. Ilman
 tavutuskohtien lisäämistä Latexilla ei ehkä ole riittävästi vaihtoehtoja
-tekstikappaleen latomiseen, ja voi syntyä liian suuria sanavälejä tai
-riveistä tulee ylipitkiä eli yltävät marginaalin puolelle. Tavutuskohtia
-voi lisätä sopiviin kohtiin omilla tavutusvihjeillä (\koodi{\keno-}).
-Kaikki yleisten tavutussääntöjen mukaiset tavutuskohdat saa käyttöön
-\paketti{extdash}\-/paketin komennoilla (taulukko \ref{tlk:extdash}).
+tekstikappaleen rivittämiseen. Voi syntyä liian suuria sanavälejä, tai
+joistakin riveistä tulee ylipitkiä, eli ne yltävät marginaalin puolelle.
+Tavutuskohtia voi lisätä sopiviin kohtiin omilla tavutusvihjeillä
+(\koodi{\keno-}). Kaikki yleisten tavutussääntöjen mukaiset
+tavutuskohdat saa käyttöön \paketti{extdash}\-/paketin komennoilla
+(taulukko \ref{tlk:extdash}).
 
 \begin{koodilohkosis}
   Molo\-tov--Ribben\-trop-sopi\-mus
   Molotov\--Ribbentrop\-/sopimus
 \end{koodilohkosis}
 
-Tavutuksen hallintaa voi lähestyä ainakin kahdesta eri suunnasta. Joku
-ehkä haluaa kirjoittaa dokumentin sisällön valmiiksi ilman, että
-huolehtii tavu\-tus\-asiois\-ta lainkaan. Ihan lopuksi, kun kaikki
-tekstin rivittämiseen liittyvät asetukset ovat valmiina, hän tarkistaa
-koko tekstin ja lisää tavutusvihjeitä, jos automaattinen tavutus teki
-virheitä tai jos kappaleen latominen tasapainoiseksi niitä muuten
-vaatii.
+Yleisesti tavutuksen hallintaa voi lähestyä ainakin kahdesta eri
+suunnasta. Joku ehkä haluaa kirjoittaa dokumentin sisällön valmiiksi
+ilman, että huolehtii tavu\-tus\-asiois\-ta lainkaan. Ihan lopuksi, kun
+kaikki tekstin rivittämiseen liittyvät asetukset ovat valmiina, hän
+tarkistaa koko tekstin ja lisää tavutusvihjeitä, jos automaattinen
+tavutus teki virheitä tai jos kappaleen latominen tasapainoiseksi niitä
+muuten vaatii.
 
 Joku toinen ehkä mieluummin kirjoittaa dokumentin jo alusta saakka
 siten, ettei virheellistä tavutusta tapahdu ja että tavutuskohtia on
@@ -921,6 +928,11 @@ hyvännäköiseksi. Tämä näkökulma vaatii, että jo kirjoitusvaiheessa
 ymmärtää, miten tavutus toimii ja missä mahdolliset ongelmakohdat ovat.
 
 \subsection{Muita tavutusasetuksia ja -vinkkejä}
+
+Aiemmin mainittu \paketti{extdash}\-/makropaketti sisältää tavutuksen
+hallintaan liittyviä välimerkkejä, mutta sellaisia on myös
+kielipaketeissa \paketti{polyglossia} ja \paketti{babel}. Kielipakettien
+ohjekirjoissa niitä kutsutaan nimellä \emph{\englanti{short\-hands}}.
 
 % \newcommand{\hmtavu}{\discretionary{-}{}{'}}
 

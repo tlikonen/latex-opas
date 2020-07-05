@@ -394,8 +394,9 @@ Latexin mekaanista keinoa. Paketti määrittelee pari muutakin hyödyllistä
 komentoa, muun muassa tähdelliset versiot edellä mainituista:
 \koodi{\keno text\-su\-per\-script*} ja \koodi{\keno
   text\-sub\-script*}. Nämä komennot toteuttavat aina mekaanisen ylä-
-tai alaindeksin. Seuraavassa esimerkissä vertaillaan oikeita ja
-mekaanisia (tähdelliset) ylä- ja alaindeksejä.
+tai alaindeksin eli toimivat kuten Latexin alkuperäiset komennot.
+Seuraavassa esimerkissä vertaillaan oikeita ja mekaanisia (tähdelliset)
+ylä- ja alaindeksejä.
 
 \pagebreak[3]
 
@@ -900,10 +901,24 @@ aaltosulkeisiin \koodi{\{\ldots\}} ja valinnaiset hakasulkeisiin
   \toinenkomento[valinnainen]{argu}{mentteja}
 \end{koodilohkosis}
 
-Komennon nimen perässä olevat sanavälit syödään pois. Seuraavassa
-esimerkissä sana \emph{Latex} ladotaan ehjänä, jos vain \koodi{\keno
-  ko\-men\-to} itsessään ei kirjoita mitään eikä vaikuta tekstin
-latomiseen.
+Jos pakolliseen argumenttiin haluaa sisällyttää aaltosulkeen, täytyy sen
+eteen kirjoittaa kenoviiva: \koodi{\keno komento\{\keno\}\}}. Tämä pätee
+aaltosulkeisiin muutenkin, eli ne saa ladottua tekstiin vain kenoviivan
+kanssa. Hakasulkeet sen sijaan ladotaan tekstiin normaalisti, eikä
+niiden kanssa käytetä kenoviivaa. Poikkeustilanne on komennon
+valinnaisen argumentin sisällä, koska valinnainen argumentti jo sinänsä
+kirjoitetaan hakasulkeiden sisään. Hakasulkeita ei voi suojata
+kenoviivalla, koska \koodi{\keno[} ja \koodi{\keno]} ovat komentoja jo
+itsessään. Niillä luodaan matematiikkatilassa (luku
+\ref{luku:matematiikka}) oleva tekstilohko. Valinnaisen argumentin
+sisään saa hakasulkeen, kun sen suojaa aaltosuljeparilla: \koodi{\keno
+  komento[\{]\}]}.
+
+Komennon yhteydessä sanavälejä käsitellään hieman poikkeuksellisesti.
+Esimerkiksi komennon nimen perässä olevat sanavälit syödään pois.
+Seuraavassa esimerkissä sana \emph{Latex} ladotaan ehjänä, jos vain
+\koodi{\keno ko\-men\-to} itsessään ei kirjoita mitään eikä vaikuta
+tekstin latomiseen.
 
 \pagebreak[3]
 
@@ -917,11 +932,9 @@ latomiseen.
 
 Jos haluaa komennon jälkeen yhden sanavälin, täytyy kirjoittaa komennon
 nimen jälkeen aaltosulkeet: \koodi{\keno ko\-men\-to\{\}}.
-Aaltosulkeiden jälkeinen sanaväli säilyy.
-
-Komennon nimen ja argumenttien välissä voi olla sanavälejä, ja ne kaikki
-syödään pois. Komennon ja sen argumentit voi siis kirjoittaa vaikka
-seuraavalla tavalla.
+Aaltosulkeiden jälkeinen sanaväli säilyy. Komennon nimen ja argumenttien
+välissä voi olla sanavälejä, ja ne kaikki syödään pois. Komennon ja sen
+argumentit voi siis kirjoittaa vaikka seuraavalla tavalla.
 
 \begin{koodilohkosis}
   \toinenkomento  [valinnainen]
@@ -954,9 +967,9 @@ mukaan eikä suomen. Pitäisi siis liittää \koodi{\keno
 kirjoittaminen on ikävää ja ulko\-asu sekava, jos Unicode\-/tunnusten
 kohdalla on aina \koodi{\keno text\-english\{\keno text\-sc\{\ldots\}\}}.
 
-Parasta olisi jo ennen kirjoittamista miettiä, mitä loogisia rakenteita
-teksti sisältää. Erilaisia rakenteita tai ilmauksia varten kannattaa
-luoda komento, jotta sen toteutusta voi myöhemmin muuttaa helposti.
+Parasta olisi jo ennen kirjoittamista miettiä, mitä rakenteita teksti
+sisältää. Erilaisia rakenteita tai ilmauksia varten kannattaa luoda
+komento, jotta sen toteutusta voi myöhemmin muuttaa helposti.
 Esimerkiksi Unicoden merkkitunnuksille voisi luoda oman komennon
 \koodi{\keno uctunnus}, jota käytetään aina tunnusten ilmaisemiseen
 Latex\-/dokumentissa. Komento määritellään vain yhdessä paikassa, ja

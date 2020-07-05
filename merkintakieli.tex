@@ -650,12 +650,15 @@ mukana yksikin tavutusvihje (\koodi{\keno-}), yhdysmerkki (\koodi{-}),
 lyhyt ajatusviiva (\mbox{\koodi{--}}) tai pitkä ajatusviiva
 (\mbox{\koodi{---}}), sana katkaistaan vain näiden kohdalta
 (\koodi{\keno-}) tai jälkeen.%
-\footnote{Näin toimii \paketti{polyglossia}\-/kielipaketti. Sen sijaan
-  \paketti{babel}\-/paketti määrittelee suomen kielelle tavutusvihjeen
-  (\koodi{\keno-}) siten, että se sallii sanan tavutuksen muistakin
-  kohdista kuin tavutusvihjeen kohdalta. Tavutusvihjeen molemmin puolin
-  sanan osat tavutetaan yleisten sääntöjen mukaisesti, ellei tavutuksen
-  estäviä merkkejä kuten yhdysmerkkejä tai ajatusviivoja ole.}
+\footnote{\paketti{polyglossia}\-/kielipaketti ja Latexin perus\-osat
+  toimivat tekstissä kuvatulla tavalla. Sen sijaan
+  \paketti{babel}\-/paketti määrittelee (ainakin) suomen kielelle
+  tavutusvihjeen (\koodi{\keno-}) siten, että se sallii sanan tavutuksen
+  muistakin kohdista kuin tavutusvihjeen kohdalta. Tavutusvihjeen
+  molemmin puolin sanan osat tavutetaan yleisten sääntöjen mukaisesti,
+  ellei tavutuksen estäviä merkkejä kuten yhdysmerkkejä tai
+  ajatusviivoja ole. \paketti{babel}\-/paketissa on myös tavutusvihje
+  \koodi{\textquotedbl\textbar}, joka estää tavutuksen muualta.}
 
 Myös Unicoden ajatusviivamerkit \uctunnus{u+2013 en dash} ja
 \uctunnus{u+2014 em dash} toimivat, mutta ne käyttäytyvät tavutuksen
@@ -717,7 +720,6 @@ Toinen vaihtoehto on sitovan yhdysmerkin käyttö, jota käsitellään
 seuraavassa alaluvussa.
 
 \subsection{Tavutuksen sallivia ja sitovia merkkejä}
-%\label{luku:tavutus_salsit}
 
 Unicode\-/merkistön sitova yhdysmerkki \uctunnus{u+2011 non\-/breaking
   hyphen} näkyy tavallisena yhdysmerkkinä, mutta se estää sanan
@@ -867,7 +869,56 @@ Esimerkissä oleva komento \koodi{\keno add\-to} on
 tässä käsitellään suomen kielen asetuksia (\koodi{\keno
   cap\-tions\-finnish}).
 
-\subsection{Tavutusvinkkejä suomen kieleen}
+\subsection{Muita tavutusasetuksia ja -vinkkejä}
+
+Aiemmin mainittu \paketti{extdash}\-/makropaketti sisältää tavutuksen
+hallintaan liittyviä välimerkkejä, mutta sellaisia on myös
+kielipaketeissa \paketti{polyglossia} ja \paketti{babel}. Kielipakettien
+englanninkielisissä ohjekirjoissa niitä kutsutaan nimellä
+\emph{\englanti{short\-hands}}.
+
+\paketti{babel}\-/paketti tuo sitovan, tavutuksen sallivan yhdysmerkin
+\koodi{\textquotedbl-}, joka toimii samoin kuin
+\paketti{extdash}\-/paketin komento \koodi{\keno=/}. Lisäksi on
+tavutusvihje (\koodi{\textquotedbl\textquotedbl}), joka ei tee
+yhdysmerkkiä tavutuskohtaan. Sitä voi käyttää joidenkin teknisten
+ilmausten tavutusvihjeenä, jotta ilmaus säilyy täsmälleen samanlaisena
+myös rivien katkaisemisessa.
+
+\paketti{polyglossia}\-/pakettiin saa samat lisätoiminnot ja eräitä
+muitakin, kun paketin lataa käyttämällä valitsinta
+\koodi{babel\-short\-hands}. Edellä mainittujen ''Baabelin lyhenteiden''
+lisäksi tulee yhdysmerkki \koodi{\textquotedbl\textasciitilde}, joka on
+sitova ja samalla kaiken tavutuksen estävä yhdysmerkki. Tälle merkille
+ei ole vastinetta \paketti{extdash}\-/paketissa. Pari muutakin
+lainausmerkillä alkavaa, tavutukseen liittyvää merkkiä on mukana.
+
+Varsinainen tavutuksen peruskomento on \koodi{\keno dis\-cre\-tionary},
+joka mahdollistaa omanlaisten tavutuskohtien määrittelyn. Komento
+kirjoitetaan sanassa juuri siihen kohtaan, johon tavutuskohta halutaan.
+Komennolle annetaan kolme argumenttia järjestyksessä seuraavasti: 1)
+rivin loppuun ladottava teksti, 2) seuraavan rivin alkuun ladottava
+teksti ja 3) katkaisemattomaan sanaan ladottava teksti. Normaali
+tavutuskohta sanaan \emph{tavu} määriteltäisiin alla olevan esimerkin
+tavoin.
+
+\begin{koodilohkosis}
+  ta\discretionary{-}{}{}vu
+\end{koodilohkosis}
+
+Edellisessä esimerkissä ensimmäinen argumentti on vain yhdysmerkki,
+koska rivin loppuun tietenkin halutaan yhdysmerkki silloin, kun sana
+katkaistaan tästä kohdasta. Toinen argumentti on tyhjä, koska seuraavan
+rivin alkuun ei kirjoiteta tavallisesti mitään ylimääräistä. Myös kolmas
+argumentti on tyhjä, koska katkaisemattomaan sanaan ei haluta mitään
+merkkiä tavujen väliin.
+
+% Voi tehdä tavutuskohtia, joihin ei tule mitään merkkiä:
+% \discretionary{}{}{}
+
+% showhyphens-paketti
+
+\subsection{Suomen kielen tavutus}
 
 Latexin kirjainyhdistelmiin perustuvat säännöt eivät yksinään riitä
 suomen kieleen, ja esimerkiksi yhdyssanojen rajakohdat tuottavat usein
@@ -913,6 +964,41 @@ tavutuskohdat saa käyttöön \paketti{extdash}\-/paketin komennoilla
   Molotov\--Ribbentrop\-/sopimus
 \end{koodilohkosis}
 
+\koodi{\keno dis\-cre\-tionary}\-/komentoa voi hyödyntää suomen kielen
+sanoissa silloin, kun niissä on heittomerkki erottamassa kahta tavurajan
+molemmin puolin olevaa samaa vokaalia, esimerkiksi sanassa \emph{vaa'an}
+ja \emph{liu'uttaa}. Normaalisti Latex ei katkaise heittomerkin kohdalta
+lainkaan, eikä se ole suomen kielessä suositeltavaakaan. Jos tavutuksen
+kuitenkin haluaa myös heittomerkin kohdalle, täytyy huolehtia, että
+tavutustilanteessa heittomerkki poistuu ja sen paikalle tulee
+yhdysmerkki rivin loppuun. Sanan \emph{vaa'an} voisi siis kirjoittaa
+seuraavalla tavalla.
+
+\begin{koodilohkosis}
+  vaa\discretionary{-}{}{'}an
+\end{koodilohkosis}
+
+Nyt komennon kolmas argumentti on heittomerkki, koska se pitää latoa
+tavurajalle silloin, kun sanaa ei katkaista tästä kohdasta. Mikäli
+tällaisia tarvitsee paljon, on järkevää määritellä sitä varten
+yksinkertaisempi komento. jota sitten käytettäisiin heittomerkin
+kohdalla.
+
+\begin{koodilohkosis}
+  \newcommand{\hmtavu}{\discretionary{-}{}{'}}
+  vaa\hmtavu an
+\end{koodilohkosis}
+
+Suomen kielen sanoissa on heittomerkki myös taivutuspäätteen, liitteen
+tai johtimen edellä silloin, kun sanavartalon kir\-joi\-tus\-asu päättyy
+konsonanttiin mutta ääntö\-asu vokaaliin, esimerkiksi \emph{show'ssa}.
+Näissä tilanteissa ei ole kyse tavurajasta vaan morfeemirajasta eli
+merkityksellisten osien rajakohdasta. Tavurajakin voi sattua samaan
+paikkaan, mutta tavutettaessa heittomerkki säilyy: \emph{show'-hun}.
+Mikäli tällainen tavutuskohta halutaan mukaan, käytetään sanassa
+tavallista tavutusvihjettä: \koodi{show'\keno-hun}. Mieluummin ei
+kuitenkaan katkaista sanoja heittomerkin kohdalta.
+
 Yleisesti tavutuksen hallintaa voi lähestyä ainakin kahdesta eri
 suunnasta. Joku ehkä haluaa kirjoittaa dokumentin sisällön valmiiksi
 ilman, että huolehtii tavu\-tus\-asiois\-ta lainkaan. Ihan lopuksi, kun
@@ -926,44 +1012,6 @@ siten, ettei virheellistä tavutusta tapahdu ja että tavutuskohtia on
 tarjolla riittävästi, jotta kappaleet saadaan ladottua aina
 hyvännäköiseksi. Tämä näkökulma vaatii, että jo kirjoitusvaiheessa
 ymmärtää, miten tavutus toimii ja missä mahdolliset ongelmakohdat ovat.
-
-\subsection{Muita tavutusasetuksia ja -vinkkejä}
-
-Aiemmin mainittu \paketti{extdash}\-/makropaketti sisältää tavutuksen
-hallintaan liittyviä välimerkkejä, mutta sellaisia on myös
-kielipaketeissa \paketti{polyglossia} ja \paketti{babel}. Kielipakettien
-ohjekirjoissa niitä kutsutaan nimellä \emph{\englanti{short\-hands}}.
-
-% \newcommand{\hmtavu}{\discretionary{-}{}{'}}
-
-% vaa\hmtavu al\-la
-% rei\hmtavu it\-tää
-% liu\hmtavu ut\-taa
-%
-% Voi tehdä tavutuskohtia, joihin ei tule mitään merkkiä:
-% \discretionary{}{}{}
-
-% Kieli\-asetuksia hoitavan \paketti{polyglossia}\-/paketin uudehkot
-% versiot (2020\==) tukevat suomen kielelle
-% \koodi{babel\-short\-hands}\-/valitsinta, joka lisää keinovalikoimaan
-% \paketti{babel}\-/paketista peräisin olevia tavutuksen
-% hallintakomentoja. On esimerkiksi tavutuksen salliva yhdysmerkki
-% (\koodi{\textquotedbl-}), joka toimii samoin kuin
-% \paketti{extdash}\-/paketin \koodi{\keno-/}.
-
-% Mukana on myös sitova, kaiken tavutuksen estävä yhdysmerkki
-% (\koodi{\textquotedbl\textasciitilde}), jolle ei ole vastinetta Texissä
-% eikä \paketti{extdash}\-/paketissa -- muuten kuin \koodi{\keno
-%   mbox}\-/laatikon avulla. \paketti{polyglossia}\-/paketin ''Baabelin
-% lyhenteet'' sisältävät eräitä muitakin hyödyllistä sanan katkaisemiseen
-% liittyviä komentoja.
-
-% Babel: "= sitova-salliva yhdysmerkki; "" tavutuskohta ilman
-% yhdysmerkkiä; "| ligatuurin esto
-
-% showhyphens-paketti
-
-.
 
 \section{Komennot}
 \label{luku:komennot}

@@ -582,6 +582,387 @@ on komennot ladontajärjestelmän logojen kirjoittamiseen: \koodi{\keno
   \label{tlk:erikoismerkit-muut}
 }
 
+\section{Komennot}
+\label{luku:komennot}
+
+Latexin komennot alkavat kenoviivalla (\koodi{\textbackslash}), jonka
+jälkeen tulee komennon nimi. Nimi koostuu yleensä pienistä tai isoista
+kirjaimista, mutta komento voi olla myös merkkejä.
+
+Komennot voivat ottaa vastaan argumentteja eli lisätietoa, jota komento
+käsittelee ja tarvitsee toimintaansa. Jotkin argumentit voivat olla
+pakollisia ja jotkin valinnaisia. Pakolliset kirjoitetaan
+aaltosulkeisiin \koodi{\{\ldots\}} ja valinnaiset hakasulkeisiin
+\koodi{[\ldots]}.
+
+\begin{koodilohkosis}
+  \komento
+  \toinenkomento{argu}{mentteja}
+  \toinenkomento[valinnainen]{argu}{mentteja}
+\end{koodilohkosis}
+
+Jos pakolliseen argumenttiin haluaa sisällyttää aaltosulkeen, täytyy sen
+eteen kirjoittaa kenoviiva: \koodi{\keno komento\{\keno\}\}}. Tämä pätee
+aaltosulkeisiin muutenkin, eli ne saa ladottua tekstiin vain kenoviivan
+kanssa. Hakasulkeet sen sijaan ladotaan tekstiin normaalisti, eikä
+niiden kanssa käytetä kenoviivaa. Poikkeustilanne on komennon
+valinnaisen argumentin sisällä, koska valinnainen argumentti jo sinänsä
+kirjoitetaan hakasulkeiden sisään. Hakasulkeita ei voi suojata
+kenoviivalla, koska \koodi{\keno[} ja \koodi{\keno]} ovat komentoja jo
+itsessään. Niillä luodaan matematiikkatilassa (luku
+\ref{luku:matematiikka}) oleva tekstilohko. Valinnaisen argumentin
+sisään saa hakasulkeen, kun sen suojaa aaltosuljeparilla: \koodi{\keno
+  komento[\{]\}]}.
+
+Komennon yhteydessä sanavälejä käsitellään hieman poikkeuksellisesti.
+Esimerkiksi komennon nimen perässä olevat sanavälit syödään pois, jos
+komennolle ei anneta yhtään argumenttia. Seuraavassa esimerkissä sana
+\emph{Latex} ladotaan ehjänä, jos vain \koodi{\keno ko\-men\-to}
+itsessään ei kirjoita mitään eikä vaikuta tekstin latomiseen.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  La\komento   tex
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Latex
+\end{tulossis}
+
+Jos haluaa komennon jälkeen yhden sanavälin, täytyy kirjoittaa komennon
+nimen jälkeen aaltosulkeet (\koodi{\keno komento\{\}}) tai kenoviiva ja
+sanaväli (\koodi{\keno komento\keno~}). Komennon nimen ja argumenttien
+välissä voi olla sanavälejä, ja ne kaikki syödään pois. Komennon ja sen
+argumentit voi siis kirjoittaa vaikka seuraavalla tavalla.
+
+\begin{koodilohkosis}
+  \toinenkomento  [valinnainen]
+     {argu}   {mentteja}
+\end{koodilohkosis}
+
+\subsection{Omat komennot ja abstrahointi}
+
+Omien komentojen tärkein tarkoitus on merkintätapojen abstrahointi eli
+teknisen toteutuksen ja yksityiskohtien piilottaminen. Abstrahointi voi
+helpottaa työskentelyä huomattavastikin ja tehdä lähdedokumentista
+helppolukuisen. Otetaan esimerkki tämän oppaan toteutuksesta.
+
+Tämä opas käsittelee välillä Unicode\-/merkkejä ja niiden tunnuksia
+kuten \uctunnus{u+0061 latin small letter~a}. Merkkien tunnukset
+ladotaan erilaisella kirjainleikkauksella, pienversaalilla eli
+kapiteelilla. Jos fontti vain tukee pienversaalia, sitä saadaan helposti
+komennolla \koodi{\keno text\-sc}. Silti tätä komentoa ei ehkä kannata
+käyttää suoraan dokumentissa. Jos nimittäin kirjoittaa dokumentin
+täyteen \koodi{\keno text\-sc}\-/komentoja, voi myöhemmin olla työlästä
+muuttaa Unicode\-/tunnusten ulko\-asu ja toteutus toisenlaiseksi.
+
+Jossain vaiheessa kirjoittaja oivaltaa, että Unicode\-/tunnukset ovat
+englannin kieltä ja että sanoja pitäisi tavuttaa englannin sääntöjen
+mukaan eikä suomen. Pitäisi siis liittää \koodi{\keno
+  text\-sc}\-/komentojen ympärille vielä \koodi{\keno
+  text\-en\-glish}\-/komento.%
+\footnote{Komento \koodi{\keno text\-english} on
+  \paketti{polyglossia}\-/paketin ominaisuus.} Lähdedokumentin
+kirjoittaminen on ikävää ja ulko\-asu sekava, jos Unicode\-/tunnusten
+kohdalla on aina \koodi{\keno text\-english\{\keno text\-sc\{\ldots\}\}}.
+
+Parasta olisi jo ennen kirjoittamista miettiä, mitä rakenteita teksti
+sisältää. Erilaisia rakenteita tai ilmauksia varten kannattaa luoda
+komento, jotta sen toteutusta voi myöhemmin muuttaa helposti.
+Esimerkiksi Unicoden merkkitunnuksille voisi luoda oman komennon
+\koodi{\keno uctunnus}, jota käytetään aina tunnusten ilmaisemiseen
+Latex\-/dokumentissa. Komento määritellään vain yhdessä paikassa, ja
+määritelmää on helppoa muuttaa. Tekstikin pysyy selkeänä, kun siellä on
+vain korkean tason komentoja, jotka ilmaisevat tarkoituksen eivätkä
+teknistä toteutusta.
+
+\subsection{Komentojen määrittely}
+\label{luku:komennot-määr}
+
+Komentojen määrittelyyn on kolme erilaista komentoa, ja niille kaikille
+annetaan samanlaiset argumentit. Komennot ovat seuraavat:
+
+\begin{koodilohkosis}
+  \newcommand     {\nimi}[n][oletus]{määritelmä}
+  \renewcommand   {\nimi}[n][oletus]{määritelmä}
+  \providecommand {\nimi}[n][oletus]{määritelmä}
+\end{koodilohkosis}
+
+Ensimmäinen pakollinen argumentti on komennon nimi (\koodi{\keno
+  ni\-mi}). Komento \koodi{\keno newcommand} määrittelee uuden komennon.
+Mikäli komento on jo olemassa, annetaan virheilmoitus. Toinen komento
+\koodi{\keno renewcommand} määrittelee olemassa olevan komennon
+uudelleen. Se antaa virheilmoituksen, jos komentoa ei ollut olemassa.
+Kolmas komento \koodi{\keno pro\-vide\-command} puolestaan määrittelee
+uuden komennon vain siinä tapauksessa, että sellaista ei ollut ennen
+olemassa. Se ei anna virheilmoitusta.
+
+Komentojen toinen pakollinen argumentti (\koodi{mää\-ri\-tel\-mä})
+sisältää komennon määritelmän eli mitä tahansa tekstiä tai komentoja.
+Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \newcommand{\komento}{Minua komennettiin!}
+  \komento
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Minua komennettiin!
+\end{tulossis}
+
+Komentojen ensimmäinen valinnainen argumentti (\koodi{n}) on luku, joka
+kertoo, kuinka monta argumenttia määriteltävä komento käsittelee.
+Määritelmässä voi käyttää parametreja \koodi{\#1}, \koodi{\#2},
+\koodi{\#3} jne., ja ne korvautuvat komennon suoritusvaiheessa
+ensimmäisellä, toisella, kolmannella jne. argumentilla.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \newcommand{\komento}[2]{Sanoit #1 ja #2!}
+  \komento{hip}{hei}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Sanoit hip ja hei!
+\end{tulossis}
+
+Toinen valinnainen argumentti (\koodi{ole\-tus}) -- jos se on mukana --
+kertoo, että määriteltävän komennon ensimmäinen argumentti on
+valinnainen ja että tämä on sen ole\-tus\-arvo. Ole\-tus\-arvoa
+käytetään silloin, kun valinnaista argumenttia ei ole annettu.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \newcommand{\komento}[3][tyyppi]{Hei #1, sanoit #2 ja #3!}
+  \komento{hip}{hei} \\
+  \komento[Leslie]{hip}{hei}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Hei tyyppi, sanoit hip ja hei! \\
+  Hei Leslie, sanoit hip ja hei!
+\end{tulossis}
+
+Joskus yhden komennon määritelmä sisältää komennon \koodi{\keno
+  renewcommand}, joka sitten määrittelee uudelleen jonkin toisen
+komennon. Silloin parametrit \koodi{\#1}, \koodi{\#2} jne. on
+tarkoitettu ensimmäisen eli uloimman kerroksen käsiteltäväksi. Sisempi
+kerros käyttää parametreja \koodi{\#\#1}, \koodi{\#\#2} jne.
+
+Kaikista kolmesta komentojen määrittelykomennosta on olemassa
+tähdellinen versio eli sellainen, jonka komennon nimen lopussa on tähti
+(\koodi{*}). Latexin komennoissa on tapana, että tähdellinen versio --
+jos sellainen on olemassa -- tarjoaa samaan asiaan jonkin toisenlaisen
+näkökulman.
+
+\begin{koodilohkosis}
+  \newcommand*     {\nimi}[n][oletus]{määritelmä}
+  \renewcommand*   {\nimi}[n][oletus]{määritelmä}
+  \providecommand* {\nimi}[n][oletus]{määritelmä}
+\end{koodilohkosis}
+
+Komentojen määrittelyssä tähdelliset versiot toimivat muuten samalla
+tavalla, mutta ne antavat virheilmoituksen, jos komennolle annetut
+argumentit sisältävät enemmän kuin yhden tekstikappaleen. Niinpä
+seuraava esimerkki tuottaa käännettäessä virheen.
+
+\begin{koodilohkosis}
+  \newcommand*{\komento}[1]{Teksti: #1}
+
+  \komento{
+    Ensimmäinen tekstikappale.
+
+    Toinen tekstikappale.
+  }
+\end{koodilohkosis}
+
+\koodi{\keno newcommand*}\-/komennolla määritelty \koodi{\keno
+  ko\-men\-to} ei siis suostu ottamaan vastaan argumentteja, jotka
+sisältävät kappaleen vaihtumisen eli enemmän kuin yhden tekstikappaleen.
+Tähdelliset versiot tuovat tällaisen suo\-jaus\-omi\-nai\-suu\-den.
+
+\subsection{Muita vinkkejä}
+\label{luku:komennot-lisä}
+
+Komennon määrittelyssä on välillä hyötyä \koodi{\keno
+  ig\-nore\-spaces}\-/komennosta, joka jättää sanavälit huomioimatta
+komennon jälkeen. Ilman tätä komentoa tulisi seuraavassa esimerkissä
+sanojen väliin yksi välilyönti.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \newcommand{\komento}[1]{#1\ignorespaces}
+  \komento{yhdys}       sana
+\end{koodilohkosis}
+
+\begin{tulossis}
+  yhdyssana
+\end{tulossis}
+
+Aaltosulkeilla (luku \ref{luku:aaltosulkeet}) voi rajata
+komentomäärittelyn vai\-ku\-tus\-aluet\-ta. Seuraavan esimerkin alussa
+asetetaan \koodi{\keno ko\-men\-to} tiettyyn alkuperäismääritelmään.
+Aaltosulkeiden sisällä se määritellään väliaikaisesti uudestaan.
+Aaltosulkeilla rajatun ympäristön jälkeen komennon uusi määritelmä
+lakkaa ja komento palautuu alkuperäiseksi.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \newcommand{\komento}{alkuperäinen}
+  \komento
+  {%
+    \renewcommand{\komento}{muutettu}
+    \komento
+  }
+  \komento
+\end{koodilohkosis}
+
+\begin{tulossis}
+  alkuperäinen muutettu alkuperäinen
+\end{tulossis}
+
+Monimutkaisiin komentoihin voidaan tarvita ehtorakenteita. Ne saa
+toteutettua \paketti{ifthen}\=/paketin\avctan{ifthen} tarjoaman
+\koodi{\keno if\-then\-else}\-/komennon avulla. Se on
+ohjelmointikielistä tuttu ehtorakenne: jos annettu ehtolauseke on tosi,
+käsitellään then\-/haara; muussa tapauksessa käsitellään else-haara.
+
+\section{Ympäristöt}
+%\label{luku:ymparistot}
+
+Ympäristöt ovat rakenteita, joilla on aloittava \koodi{\keno
+  begin}\-/komento ja lopettava \koodi{\keno end}\-/komento sekä nimi.
+Ympäristöjen ajatuksena on, että jokin ominaisuus tai jotkin toiminnot
+ovat voimassa vain ympäristön sisällä ja asiat palautuvat ennalleen
+ympäristön jälkeen. Tässä mielessä ne toimivat samalla tavalla kuin
+aaltosulkeet (luku \ref{luku:aaltosulkeet}). Jos esimerkiksi
+fonttiasetusta (luku \ref{luku:kirjaintyypit}) muuttaa ympäristön
+sisäpuolella, asetus palautuu ympäristön jälkeen samaksi kuin se oli
+ennen ympäristön alkua. Samoin ympäristön sisällä määritellyt komennot
+(luku \ref{luku:komennot-määr}) ovat voimassa vain kyseisessä
+ympäristössä.
+
+\begin{koodilohkosis}
+  \begin{nimi}
+    % ympäristön
+    % vaikutusalue
+  \end{nimi}
+\end{koodilohkosis}
+
+Yleisin ympäristö on nimeltään \koodi{document}, jonka sisään koko
+dokumentin sisältö kirjoitetaan. Muita ympäristöjä käytetään
+tavallisesta leipätekstistä poikkeavien rakenteiden ilmaisemiseen,
+esimerkiksi luetelmiin ja taulukoihin (luvut \ref{luku:luetelmat} ja
+\ref{luku:taulukot}). Ympäristöjä voi tehdä itsekin mihin hyvänsä
+tarkoitukseen. Niitä määritellään seuraavilla komennoilla.
+
+\begin{koodilohkosis}
+  \newenvironment   {nimi}[n][oletus]{aloitus}{lopetus}
+  \renewenvironment {nimi}[n][oletus]{aloitus}{lopetus}
+\end{koodilohkosis}
+
+Komento \koodi{\keno newenvironment} määrittelee uuden ympäristön. Se
+antaa virheilmoituksen, jos samanniminen ympäristö on jo olemassa.
+Komento \koodi{\keno renewenvironment} puolestaan määrittelee uudelleen
+ympäristön, joka on jo olemassa. Se antaa virheilmoituksen, jos
+ympäristöä ei ollutkaan olemassa.
+
+Argumentit ovat lähes samanlaiset kuin komentojen määrittelyssä (luku
+\ref{luku:komennot-määr}). Ympäristöjen määrittelykomennoilla on kolme
+pakollista argumenttia: ensimmäinen on ympäristön nimi, toinen on
+ympäristön aloitusmääritelmä (\koodi{aloi\-tus}) ja kolmas on
+lopetusmääritelmä (\koodi{lope\-tus}).
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \newenvironment{ymp}{Tästä se alkaa.}{Tähän se päättyy.}
+
+  \begin{ymp}
+    Ympäristön sisältöä.
+  \end{ymp}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Tästä se alkaa. Ympäristön sisältöä. Tähän se päättyy.
+\end{tulossis}
+
+Tavallisesti ympäristön aloitusmääritelmään kirjoitetaan jonkin toisen
+ympäristön aloituskomento sekä mahdollisesti suoritetaan joitakin
+asetuskomentoja. Vastaavasti lopetusmääritelmässä lopetetaan ympäristö
+eli palataan normaaliin tilaan. Tarkoituksena on abstrahoida jokin
+monimutkaisempi kokonaisuus eli tehdä uusi helppokäyttöinen ympäristö, joka
+piilottaa teknisen toteutuksen.
+
+\begin{koodilohkosis}
+  \newenvironment{ymp}
+  {\begin{mahtavuus}
+      \omia\hienoja\asetuksia}
+    {\end{mahtavuus}}
+\end{koodilohkosis}
+
+Omille ympäristölle voi määritellä argumentteja samalla tavalla kuin
+komennoillekin (luku \ref{luku:komennot-määr}). Ensimmäinen valinnainen
+argumentti (\koodi{n}) on luku joka kertoo, kuinka monta argumenttia
+määriteltävä ympäristö käsittelee. Ympäristön aloitusmääritelmässä voi
+argumentteihin viitata parametreilla \koodi{\#1}, \koodi{\#2},
+\koodi{\#3} jne.
+
+Jos toinen valinnainen argumentti (\koodi{oletus}) on mukana, se
+ilmaisee, että määriteltävän ympäristön ensimmäinen argumentti on
+valinnainen ja että tämä on sen ole\-tus\-arvo. Oletusta käytetään
+silloin, kun valinnaista argumenttia ei ole annettu. Argumentit annetaan
+ympäristön aloittavan \koodi{\keno begin}-ko\-men\-non yhteydessä.
+
+\begin{koodilohkosis}
+  \begin{ymp}[valinnainen]{argu}{mentteja}
+    % ympäristön
+    % vaikutusalue
+  \end{ymp}
+\end{koodilohkosis}
+
+Ympäristön määrittelykomennoille on myös tähdelliset versiot
+\koodi{\keno newenvironment*} ja \koodi{\keno renewenvironment*}. Ne
+toimivat samoin kuin edellä kuvatut tavallisetkin komentoversiot, mutta
+ne eivät salli, että määritellylle ympäristölle annetut argumentit
+sisältävät enemmän kuin yhden tekstikappaleen. Toiminta on siis sama
+kuin komentojenkin määrittelyn tähdellisissä versioissa (luku
+\ref{luku:komennot-määr}).
+
+\begin{koodilohkosis}
+  \newenvironment*   {nimi}[n][oletus]{aloitus}{lopetus}
+  \renewenvironment* {nimi}[n][oletus]{aloitus}{lopetus}
+\end{koodilohkosis}
+
+Joskus ympäristöjen määrittelyyn on hyödyllistä sisällyttää komento
+\koodi{\keno ig\-nore\-spaces}, joka jättää huomioimatta komennon
+jälkeiset sanavälit. Toinen hyödyllinen on \koodi{\keno
+  ig\-nore\-spaces\-af\-ter\-end}, joka jättää huomioimatta ympäristön
+lopettavan \koodi{\keno end}\-/komennon jälkeiset sanavälit.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \newenvironment{ymp}
+    {Yhdys\ignorespaces}
+    {esi\ignorespacesafterend}
+
+  \begin{ymp}
+    sana% Kommentti poistaa seuraavan sanavälin.
+  \end{ymp}   merkki.
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Yhdyssanaesimerkki.
+\end{tulossis}
+
 \section{Tavutus KESKEN}
 \label{luku:tavutus}
 
@@ -1012,387 +1393,6 @@ siten, ettei virheellistä tavutusta tapahdu ja että tavutuskohtia on
 tarjolla riittävästi, jotta kappaleet saadaan ladottua aina
 hyvännäköiseksi. Tämä näkökulma vaatii, että jo kirjoitusvaiheessa
 ymmärtää, miten tavutus toimii ja missä mahdolliset ongelmakohdat ovat.
-
-\section{Komennot}
-\label{luku:komennot}
-
-Latexin komennot alkavat kenoviivalla (\koodi{\textbackslash}), jonka
-jälkeen tulee komennon nimi. Nimi koostuu yleensä pienistä tai isoista
-kirjaimista, mutta komento voi olla myös merkkejä.
-
-Komennot voivat ottaa vastaan argumentteja eli lisätietoa, jota komento
-käsittelee ja tarvitsee toimintaansa. Jotkin argumentit voivat olla
-pakollisia ja jotkin valinnaisia. Pakolliset kirjoitetaan
-aaltosulkeisiin \koodi{\{\ldots\}} ja valinnaiset hakasulkeisiin
-\koodi{[\ldots]}.
-
-\begin{koodilohkosis}
-  \komento
-  \toinenkomento{argu}{mentteja}
-  \toinenkomento[valinnainen]{argu}{mentteja}
-\end{koodilohkosis}
-
-Jos pakolliseen argumenttiin haluaa sisällyttää aaltosulkeen, täytyy sen
-eteen kirjoittaa kenoviiva: \koodi{\keno komento\{\keno\}\}}. Tämä pätee
-aaltosulkeisiin muutenkin, eli ne saa ladottua tekstiin vain kenoviivan
-kanssa. Hakasulkeet sen sijaan ladotaan tekstiin normaalisti, eikä
-niiden kanssa käytetä kenoviivaa. Poikkeustilanne on komennon
-valinnaisen argumentin sisällä, koska valinnainen argumentti jo sinänsä
-kirjoitetaan hakasulkeiden sisään. Hakasulkeita ei voi suojata
-kenoviivalla, koska \koodi{\keno[} ja \koodi{\keno]} ovat komentoja jo
-itsessään. Niillä luodaan matematiikkatilassa (luku
-\ref{luku:matematiikka}) oleva tekstilohko. Valinnaisen argumentin
-sisään saa hakasulkeen, kun sen suojaa aaltosuljeparilla: \koodi{\keno
-  komento[\{]\}]}.
-
-Komennon yhteydessä sanavälejä käsitellään hieman poikkeuksellisesti.
-Esimerkiksi komennon nimen perässä olevat sanavälit syödään pois, jos
-komennolle ei anneta yhtään argumenttia. Seuraavassa esimerkissä sana
-\emph{Latex} ladotaan ehjänä, jos vain \koodi{\keno ko\-men\-to}
-itsessään ei kirjoita mitään eikä vaikuta tekstin latomiseen.
-
-\pagebreak[3]
-
-\begin{koodilohkosis}
-  La\komento   tex
-\end{koodilohkosis}
-
-\begin{tulossis}
-  Latex
-\end{tulossis}
-
-Jos haluaa komennon jälkeen yhden sanavälin, täytyy kirjoittaa komennon
-nimen jälkeen aaltosulkeet (\koodi{\keno komento\{\}}) tai kenoviiva ja
-sanaväli (\koodi{\keno komento\keno~}). Komennon nimen ja argumenttien
-välissä voi olla sanavälejä, ja ne kaikki syödään pois. Komennon ja sen
-argumentit voi siis kirjoittaa vaikka seuraavalla tavalla.
-
-\begin{koodilohkosis}
-  \toinenkomento  [valinnainen]
-     {argu}   {mentteja}
-\end{koodilohkosis}
-
-\subsection{Omat komennot ja abstrahointi}
-
-Omien komentojen tärkein tarkoitus on merkintätapojen abstrahointi eli
-teknisen toteutuksen ja yksityiskohtien piilottaminen. Abstrahointi voi
-helpottaa työskentelyä huomattavastikin ja tehdä lähdedokumentista
-helppolukuisen. Otetaan esimerkki tämän oppaan toteutuksesta.
-
-Tämä opas käsittelee välillä Unicode\-/merkkejä ja niiden tunnuksia
-kuten \uctunnus{u+0061 latin small letter~a}. Merkkien tunnukset
-ladotaan erilaisella kirjainleikkauksella, pienversaalilla eli
-kapiteelilla. Jos fontti vain tukee pienversaalia, sitä saadaan helposti
-komennolla \koodi{\keno text\-sc}. Silti tätä komentoa ei ehkä kannata
-käyttää suoraan dokumentissa. Jos nimittäin kirjoittaa dokumentin
-täyteen \koodi{\keno text\-sc}\-/komentoja, voi myöhemmin olla työlästä
-muuttaa Unicode\-/tunnusten ulko\-asu ja toteutus toisenlaiseksi.
-
-Jossain vaiheessa kirjoittaja oivaltaa, että Unicode\-/tunnukset ovat
-englannin kieltä ja että sanoja pitäisi tavuttaa englannin sääntöjen
-mukaan eikä suomen. Pitäisi siis liittää \koodi{\keno
-  text\-sc}\-/komentojen ympärille vielä \koodi{\keno
-  text\-en\-glish}\-/komento.%
-\footnote{Komento \koodi{\keno text\-english} on
-  \paketti{polyglossia}\-/paketin ominaisuus.} Lähdedokumentin
-kirjoittaminen on ikävää ja ulko\-asu sekava, jos Unicode\-/tunnusten
-kohdalla on aina \koodi{\keno text\-english\{\keno text\-sc\{\ldots\}\}}.
-
-Parasta olisi jo ennen kirjoittamista miettiä, mitä rakenteita teksti
-sisältää. Erilaisia rakenteita tai ilmauksia varten kannattaa luoda
-komento, jotta sen toteutusta voi myöhemmin muuttaa helposti.
-Esimerkiksi Unicoden merkkitunnuksille voisi luoda oman komennon
-\koodi{\keno uctunnus}, jota käytetään aina tunnusten ilmaisemiseen
-Latex\-/dokumentissa. Komento määritellään vain yhdessä paikassa, ja
-määritelmää on helppoa muuttaa. Tekstikin pysyy selkeänä, kun siellä on
-vain korkean tason komentoja, jotka ilmaisevat tarkoituksen eivätkä
-teknistä toteutusta.
-
-\subsection{Komentojen määrittely}
-\label{luku:komennot-määr}
-
-Komentojen määrittelyyn on kolme erilaista komentoa, ja niille kaikille
-annetaan samanlaiset argumentit. Komennot ovat seuraavat:
-
-\begin{koodilohkosis}
-  \newcommand     {\nimi}[n][oletus]{määritelmä}
-  \renewcommand   {\nimi}[n][oletus]{määritelmä}
-  \providecommand {\nimi}[n][oletus]{määritelmä}
-\end{koodilohkosis}
-
-Ensimmäinen pakollinen argumentti on komennon nimi (\koodi{\keno
-  ni\-mi}). Komento \koodi{\keno newcommand} määrittelee uuden komennon.
-Mikäli komento on jo olemassa, annetaan virheilmoitus. Toinen komento
-\koodi{\keno renewcommand} määrittelee olemassa olevan komennon
-uudelleen. Se antaa virheilmoituksen, jos komentoa ei ollut olemassa.
-Kolmas komento \koodi{\keno pro\-vide\-command} puolestaan määrittelee
-uuden komennon vain siinä tapauksessa, että sellaista ei ollut ennen
-olemassa. Se ei anna virheilmoitusta.
-
-Komentojen toinen pakollinen argumentti (\koodi{mää\-ri\-tel\-mä})
-sisältää komennon määritelmän eli mitä tahansa tekstiä tai komentoja.
-Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
-
-\pagebreak[3]
-
-\begin{koodilohkosis}
-  \newcommand{\komento}{Minua komennettiin!}
-  \komento
-\end{koodilohkosis}
-
-\begin{tulossis}
-  Minua komennettiin!
-\end{tulossis}
-
-Komentojen ensimmäinen valinnainen argumentti (\koodi{n}) on luku, joka
-kertoo, kuinka monta argumenttia määriteltävä komento käsittelee.
-Määritelmässä voi käyttää parametreja \koodi{\#1}, \koodi{\#2},
-\koodi{\#3} jne., ja ne korvautuvat komennon suoritusvaiheessa
-ensimmäisellä, toisella, kolmannella jne. argumentilla.
-
-\pagebreak[3]
-
-\begin{koodilohkosis}
-  \newcommand{\komento}[2]{Sanoit #1 ja #2!}
-  \komento{hip}{hei}
-\end{koodilohkosis}
-
-\begin{tulossis}
-  Sanoit hip ja hei!
-\end{tulossis}
-
-Toinen valinnainen argumentti (\koodi{ole\-tus}) -- jos se on mukana --
-kertoo, että määriteltävän komennon ensimmäinen argumentti on
-valinnainen ja että tämä on sen ole\-tus\-arvo. Ole\-tus\-arvoa
-käytetään silloin, kun valinnaista argumenttia ei ole annettu.
-
-\pagebreak[3]
-
-\begin{koodilohkosis}
-  \newcommand{\komento}[3][tyyppi]{Hei #1, sanoit #2 ja #3!}
-  \komento{hip}{hei} \\
-  \komento[Leslie]{hip}{hei}
-\end{koodilohkosis}
-
-\begin{tulossis}
-  Hei tyyppi, sanoit hip ja hei! \\
-  Hei Leslie, sanoit hip ja hei!
-\end{tulossis}
-
-Joskus yhden komennon määritelmä sisältää komennon \koodi{\keno
-  renewcommand}, joka sitten määrittelee uudelleen jonkin toisen
-komennon. Silloin parametrit \koodi{\#1}, \koodi{\#2} jne. on
-tarkoitettu ensimmäisen eli uloimman kerroksen käsiteltäväksi. Sisempi
-kerros käyttää parametreja \koodi{\#\#1}, \koodi{\#\#2} jne.
-
-Kaikista kolmesta komentojen määrittelykomennosta on olemassa
-tähdellinen versio eli sellainen, jonka komennon nimen lopussa on tähti
-(\koodi{*}). Latexin komennoissa on tapana, että tähdellinen versio --
-jos sellainen on olemassa -- tarjoaa samaan asiaan jonkin toisenlaisen
-näkökulman.
-
-\begin{koodilohkosis}
-  \newcommand*     {\nimi}[n][oletus]{määritelmä}
-  \renewcommand*   {\nimi}[n][oletus]{määritelmä}
-  \providecommand* {\nimi}[n][oletus]{määritelmä}
-\end{koodilohkosis}
-
-Komentojen määrittelyssä tähdelliset versiot toimivat muuten samalla
-tavalla, mutta ne antavat virheilmoituksen, jos komennolle annetut
-argumentit sisältävät enemmän kuin yhden tekstikappaleen. Niinpä
-seuraava esimerkki tuottaa käännettäessä virheen.
-
-\begin{koodilohkosis}
-  \newcommand*{\komento}[1]{Teksti: #1}
-
-  \komento{
-    Ensimmäinen tekstikappale.
-
-    Toinen tekstikappale.
-  }
-\end{koodilohkosis}
-
-\koodi{\keno newcommand*}\-/komennolla määritelty \koodi{\keno
-  ko\-men\-to} ei siis suostu ottamaan vastaan argumentteja, jotka
-sisältävät kappaleen vaihtumisen eli enemmän kuin yhden tekstikappaleen.
-Tähdelliset versiot tuovat tällaisen suo\-jaus\-omi\-nai\-suu\-den.
-
-\subsection{Muita vinkkejä}
-\label{luku:komennot-lisä}
-
-Komennon määrittelyssä on välillä hyötyä \koodi{\keno
-  ig\-nore\-spaces}\-/komennosta, joka jättää sanavälit huomioimatta
-komennon jälkeen. Ilman tätä komentoa tulisi seuraavassa esimerkissä
-sanojen väliin yksi välilyönti.
-
-\pagebreak[3]
-
-\begin{koodilohkosis}
-  \newcommand{\komento}[1]{#1\ignorespaces}
-  \komento{yhdys}       sana
-\end{koodilohkosis}
-
-\begin{tulossis}
-  yhdyssana
-\end{tulossis}
-
-Aaltosulkeilla (luku \ref{luku:aaltosulkeet}) voi rajata
-komentomäärittelyn vai\-ku\-tus\-aluet\-ta. Seuraavan esimerkin alussa
-asetetaan \koodi{\keno ko\-men\-to} tiettyyn alkuperäismääritelmään.
-Aaltosulkeiden sisällä se määritellään väliaikaisesti uudestaan.
-Aaltosulkeilla rajatun ympäristön jälkeen komennon uusi määritelmä
-lakkaa ja komento palautuu alkuperäiseksi.
-
-\pagebreak[3]
-
-\begin{koodilohkosis}
-  \newcommand{\komento}{alkuperäinen}
-  \komento
-  {%
-    \renewcommand{\komento}{muutettu}
-    \komento
-  }
-  \komento
-\end{koodilohkosis}
-
-\begin{tulossis}
-  alkuperäinen muutettu alkuperäinen
-\end{tulossis}
-
-Monimutkaisiin komentoihin voidaan tarvita ehtorakenteita. Ne saa
-toteutettua \paketti{ifthen}\=/paketin\avctan{ifthen} tarjoaman
-\koodi{\keno if\-then\-else}\-/komennon avulla. Se on
-ohjelmointikielistä tuttu ehtorakenne: jos annettu ehtolauseke on tosi,
-käsitellään then\-/haara; muussa tapauksessa käsitellään else-haara.
-
-\section{Ympäristöt}
-%\label{luku:ymparistot}
-
-Ympäristöt ovat rakenteita, joilla on aloittava \koodi{\keno
-  begin}\-/komento ja lopettava \koodi{\keno end}\-/komento sekä nimi.
-Ympäristöjen ajatuksena on, että jokin ominaisuus tai jotkin toiminnot
-ovat voimassa vain ympäristön sisällä ja asiat palautuvat ennalleen
-ympäristön jälkeen. Tässä mielessä ne toimivat samalla tavalla kuin
-aaltosulkeet (luku \ref{luku:aaltosulkeet}). Jos esimerkiksi
-fonttiasetusta (luku \ref{luku:kirjaintyypit}) muuttaa ympäristön
-sisäpuolella, asetus palautuu ympäristön jälkeen samaksi kuin se oli
-ennen ympäristön alkua. Samoin ympäristön sisällä määritellyt komennot
-(luku \ref{luku:komennot-määr}) ovat voimassa vain kyseisessä
-ympäristössä.
-
-\begin{koodilohkosis}
-  \begin{nimi}
-    % ympäristön
-    % vaikutusalue
-  \end{nimi}
-\end{koodilohkosis}
-
-Yleisin ympäristö on nimeltään \koodi{document}, jonka sisään koko
-dokumentin sisältö kirjoitetaan. Muita ympäristöjä käytetään
-tavallisesta leipätekstistä poikkeavien rakenteiden ilmaisemiseen,
-esimerkiksi luetelmiin ja taulukoihin (luvut \ref{luku:luetelmat} ja
-\ref{luku:taulukot}). Ympäristöjä voi tehdä itsekin mihin hyvänsä
-tarkoitukseen. Niitä määritellään seuraavilla komennoilla.
-
-\begin{koodilohkosis}
-  \newenvironment   {nimi}[n][oletus]{aloitus}{lopetus}
-  \renewenvironment {nimi}[n][oletus]{aloitus}{lopetus}
-\end{koodilohkosis}
-
-Komento \koodi{\keno newenvironment} määrittelee uuden ympäristön. Se
-antaa virheilmoituksen, jos samanniminen ympäristö on jo olemassa.
-Komento \koodi{\keno renewenvironment} puolestaan määrittelee uudelleen
-ympäristön, joka on jo olemassa. Se antaa virheilmoituksen, jos
-ympäristöä ei ollutkaan olemassa.
-
-Argumentit ovat lähes samanlaiset kuin komentojen määrittelyssä (luku
-\ref{luku:komennot-määr}). Ympäristöjen määrittelykomennoilla on kolme
-pakollista argumenttia: ensimmäinen on ympäristön nimi, toinen on
-ympäristön aloitusmääritelmä (\koodi{aloi\-tus}) ja kolmas on
-lopetusmääritelmä (\koodi{lope\-tus}).
-
-\pagebreak[3]
-
-\begin{koodilohkosis}
-  \newenvironment{ymp}{Tästä se alkaa.}{Tähän se päättyy.}
-
-  \begin{ymp}
-    Ympäristön sisältöä.
-  \end{ymp}
-\end{koodilohkosis}
-
-\begin{tulossis}
-  Tästä se alkaa. Ympäristön sisältöä. Tähän se päättyy.
-\end{tulossis}
-
-Tavallisesti ympäristön aloitusmääritelmään kirjoitetaan jonkin toisen
-ympäristön aloituskomento sekä mahdollisesti suoritetaan joitakin
-asetuskomentoja. Vastaavasti lopetusmääritelmässä lopetetaan ympäristö
-eli palataan normaaliin tilaan. Tarkoituksena on abstrahoida jokin
-monimutkaisempi kokonaisuus eli tehdä uusi helppokäyttöinen ympäristö, joka
-piilottaa teknisen toteutuksen.
-
-\begin{koodilohkosis}
-  \newenvironment{ymp}
-  {\begin{mahtavuus}
-      \omia\hienoja\asetuksia}
-    {\end{mahtavuus}}
-\end{koodilohkosis}
-
-Omille ympäristölle voi määritellä argumentteja samalla tavalla kuin
-komennoillekin (luku \ref{luku:komennot-määr}). Ensimmäinen valinnainen
-argumentti (\koodi{n}) on luku joka kertoo, kuinka monta argumenttia
-määriteltävä ympäristö käsittelee. Ympäristön aloitusmääritelmässä voi
-argumentteihin viitata parametreilla \koodi{\#1}, \koodi{\#2},
-\koodi{\#3} jne.
-
-Jos toinen valinnainen argumentti (\koodi{oletus}) on mukana, se
-ilmaisee, että määriteltävän ympäristön ensimmäinen argumentti on
-valinnainen ja että tämä on sen ole\-tus\-arvo. Oletusta käytetään
-silloin, kun valinnaista argumenttia ei ole annettu. Argumentit annetaan
-ympäristön aloittavan \koodi{\keno begin}-ko\-men\-non yhteydessä.
-
-\begin{koodilohkosis}
-  \begin{ymp}[valinnainen]{argu}{mentteja}
-    % ympäristön
-    % vaikutusalue
-  \end{ymp}
-\end{koodilohkosis}
-
-Ympäristön määrittelykomennoille on myös tähdelliset versiot
-\koodi{\keno newenvironment*} ja \koodi{\keno renewenvironment*}. Ne
-toimivat samoin kuin edellä kuvatut tavallisetkin komentoversiot, mutta
-ne eivät salli, että määritellylle ympäristölle annetut argumentit
-sisältävät enemmän kuin yhden tekstikappaleen. Toiminta on siis sama
-kuin komentojenkin määrittelyn tähdellisissä versioissa (luku
-\ref{luku:komennot-määr}).
-
-\begin{koodilohkosis}
-  \newenvironment*   {nimi}[n][oletus]{aloitus}{lopetus}
-  \renewenvironment* {nimi}[n][oletus]{aloitus}{lopetus}
-\end{koodilohkosis}
-
-Joskus ympäristöjen määrittelyyn on hyödyllistä sisällyttää komento
-\koodi{\keno ig\-nore\-spaces}, joka jättää huomioimatta komennon
-jälkeiset sanavälit. Toinen hyödyllinen on \koodi{\keno
-  ig\-nore\-spaces\-af\-ter\-end}, joka jättää huomioimatta ympäristön
-lopettavan \koodi{\keno end}\-/komennon jälkeiset sanavälit.
-
-\pagebreak[3]
-
-\begin{koodilohkosis}
-  \newenvironment{ymp}
-    {Yhdys\ignorespaces}
-    {esi\ignorespacesafterend}
-
-  \begin{ymp}
-    sana% Kommentti poistaa seuraavan sanavälin.
-  \end{ymp}   merkki.
-\end{koodilohkosis}
-
-\begin{tulossis}
-  Yhdyssanaesimerkki.
-\end{tulossis}
 
 \section{Mitat}
 \label{luku:mitat}

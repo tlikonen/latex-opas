@@ -266,7 +266,7 @@ haluaa tutustua esimerkissä \ref{esim:ensimmainen} mainittavaan
 \section{Dokumentin runko}
 
 Luodaan seuraavaksi yksinkertainen Latex\-/dokumentti, jota voi käyttää
-Latexin harjoitteluun ja pohjana kokeiluille. Tallenna esimerkin
+harjoitteluun ja pohjana omille dokumenteille. Tallenna esimerkin
 \ref{esim:ensimmainen} sisältö tekstieditorin avulla tiedostoon vaikkapa
 nimellä \koodi{teksti.tex}. Käännä eli lado se pdf\-/tiedostoksi
 komennolla \koodi{lualatex teksti.tex} tai komennolla \koodi{xelatex
@@ -277,28 +277,30 @@ ohjelmalla.
 
 Esimerkin \ref{esim:ensimmainen} ensimmäisellä rivillä määritellään
 dokumenttiluokka \koodi{article}, joka on tietynlainen sivupohja tai
-asetusten kokoelma, jonka perustalle aletaan rakentaa omaa sivua. Luokka
-\koodi{article} on tyypillinen valinta lyhyehköille teksteille.
+asetusten kokoelma, jonka perustalle aletaan rakentaa omaa dokumenttia.
+Luokka \koodi{article} on tyypillinen valinta lyhyehköille teksteille.
 Lisätietoa dokumenttiluokista on luvussa \ref{luku:dokumenttiluokat}.
 
-Toisella ja kolmannella rivillä käytetään komentoa \koodi{\keno
-  usepackage} ja niiden avulla otetaan käyttöön fontti\-asetuksia
-hoitava \paketti{fontspec}\-/paketti ja kieli\-asetuksista vastaava
-\paketti{polyglossia}\-/paketti. Kumpaakin tarvitaan melkein joka kerta
-dokumenteissa, ja niihin palataan tarkemmin luvuissa
-\ref{luku:kirjaintyypit} ja \ref{luku:kieliasetukset}. Sivun asetuksia
-käsitellään luvussa \ref{luku:sivuasetukset}.
+Riveillä 2--4 käytetään komentoa \koodi{\keno usepackage}, joiden avulla
+otetaan käyttöön sivun asetuksista huolehtiva
+\paketti{geometry}\-/paketti, fontti\-asetuksia hoitava
+\paketti{fontspec}\-/paketti ja kieli\-asetuksista vastaava
+\paketti{polyglossia}\-/paketti. Näitä kolmea tarvitaan melkein joka
+kerta dokumenteissa, ja niihin palataan tarkemmin luvuissa
+\ref{luku:sivuasetukset}, \ref{luku:kirjaintyypit} ja
+\ref{luku:kieliasetukset}.
 
 Seuraavilla riveillä asetetaan kieleksi suomi (\koodi{finnish}) ja
 määritetään oletuksena käytettävä fontti tai oikeastaan kokonainen
 kirjainperhe. Latin Modern Roman \=/kirjainperheen tilalle voi toki
 kokeilla muitakin. Fontin oletuskoko on 10 pistettä, mutta tässä
 esimerkissä se venytetään 1,3\-/kertaiseksi eli 13 pisteeseen.
-Riviväliin liittyvä kerroin asetetaan rivillä 7.
+Riviväliin liittyvä kerroin asetetaan rivillä 8.
 
 \begin{esimerkki*}
 \begin{koodilohko}
   \documentclass{article}
+  \usepackage[a4paper,top=20mm,bottom=30mm,left=20mm,right=20mm]{geometry}
   \usepackage{fontspec}
   \usepackage{polyglossia}
 
@@ -312,18 +314,23 @@ Riviväliin liittyvä kerroin asetetaan rivillä 7.
 
   \end{document}
 \end{koodilohko}
-\caption{Ensimmäinen Latex-dokumentti}
+\caption{Latex-dokumentin perus\-asetukset}
 \label{esim:ensimmainen}
 \end{esimerkki*}
 
-Dokumentin alku\-osaa riville 8 saakka kutsutaan esittelyosaksi (engl.
+Dokumentin alku\-osaa riville 9 saakka kutsutaan esittelyosaksi (engl.
 \englanti{preamble}). Tässä osassa ladataan tarvittavat makropaketit ja
-määritetään dokumentin asetuksia ja taustatietoja. Riviltä 9 alkaa
+määritetään dokumentin asetuksia ja taustatietoja. Riviltä 10 alkaa
 varsinainen tekstiosa eli sivulle ladottava sisältö. Se osa kirjoitetaan
-\koodi{document}\-/ympäristön sisään eli riveillä 9 ja 13 olevien
+\koodi{document}\-/ympäristön sisään eli riveillä 10 ja 14 olevien
 ympäristön aloi\-tus- ja lopetuskomentojen väliin.
 
-Tällaisen merkintäkielen ja rakenteen avulla dokumentit kirjoitetaan.
-Osa merkintäkielen komennoista tulee Latexin perusosasta ja osa tulee
-erikseen ladattavista makropaketeista (\paketti{fontspec},
-\paketti{polyglossia} ym.). Komentoja voi luoda itsekin.
+Tällaisen merkintäkielen avulla dokumentit kirjoitetaan. Osa
+merkintäkielen komennoista tulee Latexin perusosasta ja osa tulee
+erikseen ladattavista makropaketeista (\paketti{geometry},
+\paketti{fontspec}, \paketti{polyglossia} ym.). Komentoja voi luoda
+itsekin.
+
+Voisi olla hyödyllistä tallentaa tämänkaltainen pohjadokumentti
+myöhempää käyttöä varten. Välttyy samojen perusjuttujen
+kirjoittamiselta, kun voi aloittaa työt valmiista dokumenttipohjasta.

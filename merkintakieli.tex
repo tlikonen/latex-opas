@@ -983,10 +983,10 @@ esittelyosaan kirjoittaa seuraavat komennot.
   \setdefaultlanguage{finnish}
 \end{koodilohkosis}
 
-Tavutusta käsitellään tässä lähinnä \paketti{polyglossia}\-/kielipaketin
-näkökulmasta. Toinen kielipaketti \paketti{babel} toimii joissakin
-tavutukseen liittyvissä asioissa eri tavalla, ja pakettien eroja
-mainitaan tekstin lomassa.
+Tavutusta käsitellään tässä yhteydessä lähinnä
+\paketti{polyglossia}\-/kielipaketin näkökulmasta. Toinen kielipaketti
+\paketti{babel} toimii joissakin tavutukseen liittyvissä asioissa eri
+tavalla, ja pakettien eroja mainitaan tekstin lomassa.
 
 \subsection{Yleiset tavutussäännöt}
 
@@ -995,12 +995,13 @@ taivutusmuotojen tunnistamiseen vaan yksinkertaisiin kirjainpohjaisiin
 sääntöihin. Säännöt pyrkivät kuvaamaan kielen tavujen rakenteen ja
 huomioimaan myös typografiaan liittyviä suosituksia.
 
-Automaattinen tavutus auttaa paljon mutta ei yksinään riitä, koska se
-tekee välillä virheitä tai tuottaa muuten suositusten vastaista jälkeä.
-Kirjoittajan apua eli tavutusvihjeitä siis tarvitaan välillä. Yksi tapa
-tavutusvihjeiden kirjoittamiseen on \koodi{\keno hyphenation}\-/komento,
-jolla määritellään yksittäisten sanojen tavutuskohdat kaikkialla
-dokumentissa. Seuraava esimerkki selventää komennon käyttöä.
+Automaattinen tavutus auttaa paljon, mutta se ei yksinään riitä, koska
+se tekee välillä virheitä tai tuottaa muuten suositusten vastaista
+jälkeä. Kirjoittajan täytyy kirjoittaa välillä eli tavutusvihjeitä. Yksi
+tapa tavutusvihjeiden kirjoittamiseen on \koodi{\keno
+  hyphenation}\-/komento, jolla määritellään yksittäisten sanojen
+tavutuskohdat kaikkialla dokumentissa. Seuraava esimerkki selventää
+komennon käyttöä.
 
 \begin{koodilohkosis}
   \hyphenation{
@@ -1253,7 +1254,7 @@ Esimerkissä oleva komento \koodi{\keno add\-to} on
 tässä käsitellään suomen kielen asetuksia (\koodi{\keno
   cap\-tions\-finnish}).
 
-\subsection{Muita tavutusasetuksia ja -vinkkejä KESKEN}
+\subsection{Muita tavutusasetuksia ja -vinkkejä}
 \label{luku:tavutus_muut}
 
 Aiemmin mainittu \paketti{extdash}\-/makropaketti sisältää tavutuksen
@@ -1312,12 +1313,11 @@ merkkejä edes sanan katkaisutilanteessa.
 \end{koodilohkosis}
 
 Kaikki tavutuskohdat saa näkyviin lataamalla
-\paketti{show\-hy\-phens}\-/paketin.\avctan{showhyphens} Tavutuskohtiin
-piirretään ohut punainen pystyviiva. Tämä paketti hyödyntää
+\paketti{show\-hy\-phens}\-/paketin.\avctan{showhyphens} Kaikkiin
+dokumentin sanojen tavutuskohtiin piirretään ohut punainen pystyviiva,
+mikä voi auttaa tavutusvihjeiden suunnittelussa. Tämä paketti hyödyntää
 Lualatex\-/kääntäjän ominaisuuksia eikä siis toimi muiden kääntäjien
 kanssa.
-
-% Tavutus pois päältä
 
 \subsection{Suomen kielen tavutus}
 
@@ -1326,9 +1326,9 @@ suomen kieleen, ja esimerkiksi yhdyssanojen rajakohdat tuottavat usein
 ongelmia. Sana \emph{alku\-osa} katkaistaan Latexin sääntöjen mukaan
 kohdista \mbox{\emph{al-kuo-sa}}. Se on kyllä oikein tavurakenteen
 kannalta mutta käytännössä ongelmallinen. Tässä ei ole kyse
-\emph{uo}\-/diftongista, vaan yhdyssanan rajalla on tavutuskohta
-(\emph{al-ku-o-sa}). Lisäksi sanaa ei pitäisi katkaista siten, että
-siitä jää yksittäinen kirjain eri riville (\emph{o-sa}).
+\emph{uo}\-/diftongista, vaan yhdyssanan rajalla on myös tavutuskohta
+(\emph{al-ku-o-sa}). Lisäksi sanaa ei saa katkaista siten, että siitä
+jää yksittäinen kirjain eri riville (\emph{o-sa}).
 
 Parasta olisi katkaista suomen kielen yhdyssanat vain yhdys\-osien
 välistä (\emph{alku-osa}). Muualtakin voi katkaista (\emph{al-ku-osa}),
@@ -1352,9 +1352,10 @@ sitä ei tiedä, ellei ole kokemusta.
 Yhdysmerkin tai ajatusviivan sisältävät pitkät yhdyssanat voivat vaatia
 tavutuskohtien lisäämistä, koska Latexin yhdysmerkki ja ajatusviivat
 estävät tavutuksen muualta kuin näiden merkkien jälkeen. Ilman
-tavutuskohtien lisäämistä Latexilla ei ehkä ole riittävästi vaihtoehtoja
+tavutuskohtien lisäämistä Texillä ei ehkä ole riittävästi vaihtoehtoja
 tekstikappaleen rivittämiseen. Voi syntyä liian suuria sanavälejä, tai
 joistakin riveistä tulee ylipitkiä, eli ne yltävät marginaalin puolelle.
+
 Tavutuskohtia voi lisätä sopiviin kohtiin omilla tavutusvihjeillä
 (\koodi{\keno-}). Vaihtoehtoisesti kaikki yleisten tavutussääntöjen
 mukaiset tavutuskohdat saa käyttöön \paketti{extdash}\-/paketin
@@ -1393,18 +1394,42 @@ sijasta.
   vaa\hmtavu an
 \end{koodilohkosis}
 
-Suomen kielen sanoissa on heittomerkki myös taivutuspäätteen, liitteen
+Suomen kielessä käytetään heittomerkkiä myös taivutuspäätteen, liitteen
 tai johtimen edellä silloin, kun sanavartalon kir\-joi\-tus\-asu päättyy
 konsonanttiin mutta ääntö\-asu vokaaliin, esimerkiksi \emph{show'ssa}.
 Näissä tilanteissa ei ole kyse tavurajasta vaan morfeemirajasta eli
 merkityksellisten osien rajakohdasta. Tavurajakin voi sattua samaan
 paikkaan, mutta tavutettaessa heittomerkki säilyy: \emph{show'-hun}.%
-\footnote{Asiaa ei yleensä kielenhuolto\-/oppaissa mainita. Tieto
+\footnote{Asiaa ei yleensä mainita kielenhuolto\-/oppaissa. Tieto
   perustuu Kielikello\-/lehden 2/2006 artikkeliin:
   \kulmaurl{https://www.kielikello.fi/-/lainausmerkit-}. Viittauspäivä
   6.7.2020.} Mikäli tällainen tavutuskohta halutaan mukaan, käytetään
 sanassa tavallista tavutusvihjettä: \koodi{show'\keno-hun}. Mieluummin
 ei kuitenkaan katkaista sanoja heittomerkin kohdalta.
+
+\subsection{Tavutus pois päältä}
+
+Tavutuksen voi kytkeä kokonaan pois päältä
+\paketti{polyglossia}\-/kielipaketin komennolla%
+\koodimargin{\keno disable\-hyphenation} \koodi{\keno
+  dis\-able\-hy\-phen\-ation}. Tavutuksen saa takaisin päälle komennolla
+\koodi{\keno en\-able\-hy\-phen\-ation}. Toinen vaihtoehto on käyttää
+fontin asetusta \koodi{Hyphen\-Char=\katk None} samalla, kun ottaa
+käyttöön tietyn kirjainperheen.
+
+\begin{koodilohkosis}
+  \setmainfont{Fontin nimi}[HyphenChar=None]
+\end{koodilohkosis}
+
+Edellä oleva komento on peräisin \paketti{fontspec}\-/fonttipaketista
+(luku \ref{luku:kirjaintyypit}). Oletuksena tavutus on pois päältä
+tasalevyisen fontin kanssa, eli esimerkiksi \koodi{\keno
+  text\-tt\{…\}}\-/komennon argumenttina olevaa tekstiä ei tavu\-teta.
+
+Käytännössä tavutus menee pois päältä myös silloin, kun tekstikappaleet
+tasaa vain vasempaan reunaan eli tekee oikealle liehureunan komennolla
+\koodi{\keno ragged\-right}. Tekstikappaleiden latomista käsitellään
+luvussa \ref{luku:kappale}.
 
 \section{Mitat}
 \label{luku:mitat}

@@ -966,12 +966,11 @@ lopettavan \koodi{\keno end}\-/komennon jälkeiset sanavälit.
 \section{Tavutus}
 \label{luku:tavutus}
 
-Latex tavuttaa eli katkaisee sanoja automaattisesti rivien lopussa,
-jotta se saa tekstikappaleet näyttämään tasapainoisilta.
-Lähtökohtaisesti tavutus määräytyy kielikohtaisten tavutussääntöjen ja
-\=/asetusten perusteella, mutta kirjoittaja voi tehdä poikkeuksia
-kirjoittamalla tavu\-tus\-vih\-jeitä. Käytännössä tavutusvihjeitä
-tarvitaan välillä.
+Tex tavuttaa eli katkaisee sanoja automaattisesti rivien lopussa, jotta
+se saa tekstikappaleet näyttämään tasapainoisilta. Lähtökohtaisesti
+tavutus määräytyy kielikohtaisten tavutussääntöjen ja \=/asetusten
+perusteella, mutta kirjoittaja voi tehdä poikkeuksia kirjoittamalla
+tavu\-tus\-vih\-jeitä. Käytännössä tavutusvihjeitä tarvitaan välillä.
 
 Kielen valintaa ja yleisiä kieli\-ase\-tuk\-sia käsitellään tarkemmin
 luvussa \ref{luku:kieliasetukset}, mutta mainitaan tässäkin, että suomen
@@ -990,7 +989,7 @@ tavalla, ja pakettien eroja mainitaan tekstin lomassa.
 
 \subsection{Yleiset tavutussäännöt}
 
-Latexin automaattinen tavutus ei perustu varsinaiseen sanojen eikä
+Texin automaattinen tavutus ei perustu varsinaiseen sanojen eikä
 taivutusmuotojen tunnistamiseen vaan yksinkertaisiin kirjainpohjaisiin
 sääntöihin. Säännöt pyrkivät kuvaamaan kielen tavujen rakenteen ja
 huomioimaan myös typografiaan liittyviä suosituksia.
@@ -1034,15 +1033,15 @@ mukana yksikin tavutusvihje (\koodi{\keno-}), yhdysmerkki (\koodi{-}),
 lyhyt ajatusviiva (\mbox{\koodi{--}}) tai pitkä ajatusviiva
 (\mbox{\koodi{---}}), sana katkaistaan vain näiden kohdalta
 (\koodi{\keno-}) tai jälkeen.%
-\footnote{\paketti{polyglossia}\-/kielipaketti ja Latexin perus\-osat
-  toimivat tekstissä kuvatulla tavalla. Sen sijaan
-  \paketti{babel}\-/paketti määrittelee ainakin suomen kielelle
-  tavutusvihjeen (\koodi{\keno-}) siten, että se sallii sanan tavutuksen
-  muistakin kohdista kuin tavutusvihjeen kohdalta. Tavutusvihjeen
-  molemmin puolin sanan osat tavutetaan yleisten sääntöjen mukaisesti,
-  ellei tavutuksen estäviä merkkejä kuten yhdysmerkkejä tai
-  ajatusviivoja ole. \paketti{babel}\-/paketissa on myös tavutusvihje
-  \koodi{\textquotedbl\textbar}, joka estää tavutuksen muualta.}
+\footnote{\paketti{polyglossia}\-/kielipaketti ja Tex toimivat tekstissä
+  kuvatulla tavalla. Sen sijaan \paketti{babel}\-/paketti määrittelee
+  ainakin suomen kielelle tavutusvihjeen (\koodi{\keno-}) siten, että se
+  sallii sanan tavutuksen muistakin kohdista kuin tavutusvihjeen
+  kohdalta. Tavutusvihjeen molemmin puolin sanan osat tavutetaan
+  yleisten sääntöjen mukaisesti, ellei tavutuksen estäviä merkkejä kuten
+  yhdysmerkkejä tai ajatusviivoja ole. \paketti{babel}\-/paketissa on
+  myös tavutusvihje \koodi{\textquotedbl\textbar}, joka estää tavutuksen
+  muualta.}
 
 Myös Unicoden ajatusviivamerkit \uctunnus{u+2013 en dash} ja
 \uctunnus{u+2014 em dash} toimivat, mutta ne käyttäytyvät tavutuksen
@@ -1125,7 +1124,7 @@ saatavilla myös lyhemmät muodot, jos paketin lataa käyttämällä
 
 Paketti sisältää kaksi lisä\-vaihto\-ehtoa kolmelle viivavälimerkille
 eli yhdysmerkille, lyhyelle ajatusviivalle ja pitkälle ajatusviivalle.
-Kun Latexin viivavälimerkit (luku \ref{luku:tavutuksen_merkit}) aina
+Kun Texin viivavälimerkit (luku \ref{luku:tavutuksen_merkit}) aina
 estävät tavutuksen muualta kuin välimerkin jälkeen,
 \paketti{extdash}\-/paketin perus\-vaihto\-ehdot sallivat tavutuksen
 muualtakin. Lisäksi kaikille kolmelle viivavälimerkille on sitova
@@ -1133,7 +1132,7 @@ versio, joka estää tavutuksen välimerkin jälkeen (mutta sallii muualta).
 
 Taulukossa \ref{tlk:extdash} ovat \paketti{extdash}\-/paketin tärkeimmät
 komennot ja niiden merkitykset. Taulukossa \ref{tlk:extdash-vertailu}
-vertaillaan \paketti{extdash}\-/paketin komentoja Latexin vastaaviin.
+vertaillaan \paketti{extdash}\-/paketin komentoja Texin vastaaviin.
 
 \leijutlk{
   \begin{tabular}{ll}
@@ -1184,7 +1183,7 @@ vertaillaan \paketti{extdash}\-/paketin komentoja Latexin vastaaviin.
     \bottomrule
   \end{tabular}
 }{
-  \caption{Latexin ja \paketti{extdash}-paketin komentojen vertailua}
+  \caption{Texin ja \paketti{extdash}-paketin komentojen vertailua}
   \label{tlk:extdash-vertailu}
 }
 
@@ -1321,14 +1320,14 @@ kanssa.
 
 \subsection{Suomen kielen tavutus}
 
-Latexin kirjainyhdistelmiin perustuvat säännöt eivät yksinään riitä
-suomen kieleen, ja esimerkiksi yhdyssanojen rajakohdat tuottavat usein
-ongelmia. Sana \emph{alku\-osa} katkaistaan Latexin sääntöjen mukaan
-kohdista \mbox{\emph{al-kuo-sa}}. Se on kyllä oikein tavurakenteen
-kannalta mutta käytännössä ongelmallinen. Tässä ei ole kyse
-\emph{uo}\-/diftongista, vaan yhdyssanan rajalla on myös tavutuskohta
-(\emph{al-ku-o-sa}). Lisäksi sanaa ei saa katkaista siten, että siitä
-jää yksittäinen kirjain eri riville (\emph{o-sa}).
+Texin kirjainyhdistelmiin perustuvat säännöt eivät yksinään riitä suomen
+kieleen, ja esimerkiksi yhdyssanojen rajakohdat tuottavat usein
+ongelmia. Sana \emph{alku\-osa} katkaistaan sääntöjen mukaan kohdista
+\mbox{\emph{al-kuo-sa}}. Se on kyllä oikein tavurakenteen kannalta mutta
+käytännössä ongelmallinen. Tässä ei ole kyse \emph{uo}\-/diftongista,
+vaan yhdyssanan rajalla on myös tavutuskohta (\emph{al-ku-o-sa}).
+Lisäksi sanaa ei saa katkaista siten, että siitä jää yksittäinen kirjain
+eri riville (\emph{o-sa}).
 
 Parasta olisi katkaista suomen kielen yhdyssanat vain yhdys\-osien
 välistä (\emph{alku-osa}). Muualtakin voi katkaista (\emph{al-ku-osa}),
@@ -1342,15 +1341,15 @@ Käytännössä siis suomenkielinen teksti ja hyvä typografia vaativat
 välillä tavutusvihjeiden kirjoittamista. Yhdyssanojen osien väliin
 tarvitaan tavutusvihje silloin, kun jälkimmäinen osa alkaa vokaalilla
 tai useammalla kuin yhdellä konsonantilla. Joitakin tällaisia tapauksia
-Latex osaa tavuttaa oikein ilman tavutusvihjeitäkin, mutta etukäteen
-sitä ei tiedä, ellei ole kokemusta.
+Tex osaa tavuttaa oikein ilman tavutusvihjeitäkin, mutta etukäteen sitä
+ei tiedä, ellei ole kokemusta.
 
 \begin{koodilohkosis}
   alku\-osa pusku\-traktori
 \end{koodilohkosis}
 
 Yhdysmerkin tai ajatusviivan sisältävät pitkät yhdyssanat voivat vaatia
-tavutuskohtien lisäämistä, koska Latexin yhdysmerkki ja ajatusviivat
+tavutuskohtien lisäämistä, koska Texin yhdysmerkki ja ajatusviivat
 estävät tavutuksen muualta kuin näiden merkkien jälkeen. Ilman
 tavutuskohtien lisäämistä Texillä ei ehkä ole riittävästi vaihtoehtoja
 tekstikappaleen rivittämiseen. Voi syntyä liian suuria sanavälejä, tai
@@ -1371,7 +1370,7 @@ tavutuksen hallintaa sanalle \emph{Molo\-tov--Ribben\-trop-sopi\-mus}.
 \ref{luku:tavutus_muut}) voi hyödyntää suomen kielen sanoissa silloin,
 kun niissä on heittomerkki erottamassa kahta tavurajan molemmin puolin
 olevaa samaa vokaalia, esimerkiksi sanoissa \emph{vaa'an} ja
-\emph{liu'uttaa}. Normaalisti Latex ei katkaise heittomerkin kohdalta
+\emph{liu'uttaa}. Normaalisti Tex ei katkaise heittomerkin kohdalta
 lainkaan, eikä se olisi suomen kielessä suositeltavaakaan, koska
 vokaalien välistä ei mielellään katkaista sanaa. Jos tavutuksen
 kuitenkin haluaa myös heittomerkin kohdalle, täytyy huolehtia, että

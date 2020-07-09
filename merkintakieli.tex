@@ -972,10 +972,10 @@ tavutus määräytyy kielikohtaisten tavutussääntöjen ja \=/asetusten
 perusteella, mutta kirjoittaja voi tehdä poikkeuksia kirjoittamalla
 tavu\-tus\-vih\-jeitä. Käytännössä tavutusvihjeitä tarvitaan välillä.
 
-Kielen valintaa ja yleisiä kieli\-ase\-tuk\-sia käsitellään tarkemmin
-luvussa \ref{luku:kieliasetukset}, mutta mainitaan tässäkin, että suomen
-kieli ja sen mukainen tavutus saadaan päälle, kun dokumentin
-esittelyosaan kirjoittaa seuraavat komennot.
+Kielen valintaa ja yleisiä kieliasetuksia käsitellään tarkemmin luvussa
+\ref{luku:kieliasetukset}, mutta mainitaan tässäkin, että suomen kieli
+ja sen mukainen tavutus saadaan päälle, kun dokumentin esittelyosaan
+kirjoittaa seuraavat komennot.
 
 \begin{koodilohkosis}
   \usepackage{polyglossia}
@@ -1230,7 +1230,7 @@ pidetään yhdessä. Oletus\-arvot ovat kielikohtaisia ja määritellään
 kielessä kumpikin asetus on kaksi (2) merkkiä.
 
 Nämä asetukset alustetaan kielikohtaisiin oletus\-arvoihin aina, kun
-kie\-li\-ase\-tuk\-set tulevat voimaan. Näin on esimerkiksi dokumentin
+kieliasetukset tulevat voimaan. Näin on esimerkiksi dokumentin
 aloittavan \koodi{document}\-/ympäristön alussa tai kielen vaihtuessa.
 Tästä seuraa, että jos asetuksia ha\-luaa muuttaa, täytyy ne asettaa
 \koodi{document}\-/ympäristön alussa tai aina kielen vaihtamisen
@@ -1239,7 +1239,7 @@ jälkeen.
 Omat kieli\-asetukset saa mukaan automaattisesti, kun lisää muutokset
 kielikohtaisiin alustuskomentoihin alla olevan esimerkin mukaisesti.
 Tällä tavoin omat asetukset tulevat voimaan samalla kuin muutkin
-kie\-li\-ase\-tuk\-set, esimerkiksi kielen vaihtuessa.
+kieliasetukset, esimerkiksi kielen vaihtuessa.
 
 \begin{koodilohkosis}
   \addto{\captionsfinnish}{
@@ -1262,13 +1262,14 @@ kielipaketeissa \paketti{polyglossia} ja \paketti{babel}. Kielipakettien
 englanninkielisissä ohjekirjoissa niitä kutsutaan nimellä
 \emph{\englanti{short\-hands}}.
 
-\paketti{babel}\-/paketti tuo sitovan, tavutuksen sallivan yhdysmerkin
-\koodi{\textquotedbl-}, joka toimii samoin kuin
+\paketti{babel}\-/paketti tuo suomen kieleen sitovan, tavutuksen
+sallivan yhdysmerkin \koodi{\textquotedbl-}, joka toimii samoin kuin
 \paketti{extdash}\-/paketin komento \koodi{\keno=/}. Lisäksi on
 tavutusvihje (\koodi{\textquotedbl\textquotedbl}), joka ei tee
 yhdysmerkkiä tavutuskohtaan. Sitä voi käyttää joidenkin teknisten
 ilmausten tavutusvihjeenä, jotta ilmaus säilyy täsmälleen samanlaisena
-myös rivien katkaisemisessa.
+myös rivien katkaisemisessa. \paketti{babel}\-/paketin toiminnot
+vaihtelevat eri kielten välillä.
 
 \paketti{polyglossia}\-/pakettiin saa samat lisätoiminnot ja eräitä
 muitakin, kun paketin lataa käyttämällä valitsinta
@@ -1278,14 +1279,14 @@ sitova ja samalla kaiken tavutuksen estävä yhdysmerkki. Tälle merkille
 ei ole vastinetta \paketti{extdash}\-/paketissa. Pari muutakin
 lainausmerkillä alkavaa, tavutukseen liittyvää merkkiä on mukana.
 
-Varsinainen %
-\koodimargin{\keno dis\-cre\-tionary} tavutuksen peruskomento on
-\koodi{\keno dis\-cre\-tionary}, joka mahdollistaa omanlaisten
+Varsinainen%
+\koodimargin{\keno discretionary} tavutuksen peruskomento on
+\koodi{\keno discretionary}, joka mahdollistaa omanlaisten
 tavutuskohtien määrittelyn. Komento kirjoitetaan sanassa juuri siihen
 kohtaan, johon tavutuskohta halutaan. Komennolle annetaan kolme
 argumenttia järjestyksessä seuraavasti: 1) katkaisutilanteessa rivin
-loppuun ladottava teksti, 2) katkaisutilanteessa seuraavan rivin alkuun
-ladottava teksti ja 3) katkaisemattomaan sanaan ladottava teksti.
+loppuun ladottavat merkit, 2) katkaisutilanteessa seuraavan rivin alkuun
+ladottavat merkit ja 3) katkaisemattomaan sanaan ladottavat merkit.
 Normaali tavutuskohta sanaan \emph{tavu} määriteltäisiin alla olevan
 esimerkin tavoin.
 
@@ -1296,27 +1297,38 @@ esimerkin tavoin.
 Edellisessä esimerkissä komennon ensimmäinen argumentti on yhdysmerkki,
 koska rivin loppuun tietenkin halutaan yhdysmerkki silloin, kun sana
 katkaistaan tästä kohdasta. Toinen argumentti on tyhjä, koska seuraavan
-rivin alkuun ei kirjoiteta tavallisesti mitään ylimääräistä. Myös kolmas
-argumentti on tyhjä, koska katkaisemattomaan sanaan ei haluta mitään
-merkkiä tavujen väliin.
+rivin alkuun ei kirjoiteta suomen kielessä mitään ylimääräistä. Myös
+kolmas argumentti on tyhjä, koska katkaisemattomaan sanaan ei haluta
+mitään merkkiä tavujen väliin.
 
-\koodi{\keno dis\-cre\-tionary}\-/komennolla voi luoda myös
-tavutuskohtia, joihin ei ilmesty yhdysmerkkiä eikä mitään muutakaan
-merkkiä katkaisutilanteessa. Se saadaan aikaan jättämällä kaikki
-argumentit tyhjäksi. Tällainen sopii tavutusvihjeeksi teknisiin
-ilmauksiin, joihin ei selvyyden vuoksi haluta mitään ylimääräisiä
-merkkejä edes sanan katkaisutilanteessa.
+\koodi{\keno discretionary}\-/komennolla voi luoda myös tavutuskohtia,
+joihin ei ilmesty yhdysmerkkiä eikä mitään muutakaan merkkiä
+katkaisutilanteessa. Se saadaan aikaan jättämällä kaikki argumentit
+tyhjäksi. Tällainen sopii tavutusvihjeeksi teknisiin ilmauksiin, joihin
+ei selvyyden vuoksi haluta mitään ylimääräisiä merkkejä edes sanan
+katkaisutilanteessa.
 
 \begin{koodilohkosis}
   \discretionary{}{}{}
 \end{koodilohkosis}
 
-Kaikki tavutuskohdat saa näkyviin lataamalla
-\paketti{show\-hy\-phens}\-/paketin.\avctan{showhyphens} Kaikkiin
-dokumentin sanojen tavutuskohtiin piirretään ohut punainen pystyviiva,
-mikä voi auttaa tavutusvihjeiden suunnittelussa. Tämä paketti hyödyntää
-Lualatex\-/kääntäjän ominaisuuksia eikä siis toimi muiden kääntäjien
-kanssa.
+Joissakin kielissä sanan katkaiseminen yhdysmerkin kohdalta vaatii, että
+rivin loppuun kirjoitetaan yksi yhdysmerkki ja seuraavan rivin alkuun
+toinen. Näin ilmaistaan, että sanassa on pysyvä yhdysmerkki eikä vain
+väliaikaisesti katkaisun merkkinä. Tällaisia kieliä varten saattaa
+kielipaketissa (tai muualla) olla omat yhdysmerkkitoiminnot, mutta
+edellä kuvatun tavutuskohdan saa myös seuraavalla tavalla.
+
+\begin{koodilohkosis}
+  \discretionary{-}{-}{-}
+\end{koodilohkosis}
+
+Tavutuksen suunnittelussa ja tutkimisessa voi auttaa
+\paketti{show\-hy\-phens}\-/paketti,\avctan{showhyphens} jonka
+lataamalla kaikki tavutuskohdat tulevat näkyviin. Dokumentin kaikkien
+sanojen tavutuskohtiin piirretään ohut punainen pystyviiva. Tämä paketti
+hyödyntää Lualatex\-/kääntäjän ominaisuuksia, eikä se siis toimi muiden
+kääntäjien kanssa.
 
 \subsection{Suomen kielen tavutus}
 
@@ -1366,17 +1378,16 @@ tavutuksen hallintaa sanalle \emph{Molo\-tov--Ribben\-trop-sopi\-mus}.
   Molotov\--Ribben\-trop\-/sopimus  % tavutuksen sallivat välimerkit
 \end{koodilohkosis}
 
-\koodi{\keno dis\-cre\-tionary}\-/komentoa (luku
-\ref{luku:tavutus_muut}) voi hyödyntää suomen kielen sanoissa silloin,
-kun niissä on heittomerkki erottamassa kahta tavurajan molemmin puolin
-olevaa samaa vokaalia, esimerkiksi sanoissa \emph{vaa'an} ja
-\emph{liu'uttaa}. Normaalisti Tex ei katkaise heittomerkin kohdalta
-lainkaan, eikä se olisi suomen kielessä suositeltavaakaan, koska
-vokaalien välistä ei mielellään katkaista sanaa. Jos tavutuksen
-kuitenkin haluaa myös heittomerkin kohdalle, täytyy huolehtia, että
-tavutustilanteessa heittomerkki poistuu ja sen paikalle tulee
-yhdysmerkki rivin loppuun. Sanan \emph{vaa'an} voisi siis kirjoittaa
-seuraavalla tavalla.
+\koodi{\keno discretionary}\-/komentoa (luku \ref{luku:tavutus_muut})
+voi hyödyntää suomen kielen sanoissa silloin, kun niissä on heittomerkki
+erottamassa kahta tavurajan molemmin puolin olevaa samaa vokaalia,
+esimerkiksi sanoissa \emph{vaa'an} ja \emph{liu'uttaa}. Normaalisti Tex
+ei katkaise heittomerkin kohdalta lainkaan, eikä se olisi suomen
+kielessä suositeltavaakaan, koska vokaalien välistä ei mielellään
+katkaista sanaa. Jos tavutuksen kuitenkin haluaa myös heittomerkin
+kohdalle, täytyy huolehtia, että tavutustilanteessa heittomerkki poistuu
+ja sen paikalle tulee yhdysmerkki rivin loppuun. Sanan \emph{vaa'an}
+voisi siis kirjoittaa seuraavalla tavalla.
 
 \begin{koodilohkosis}
   vaa\discretionary{-}{}{'}an
@@ -1389,8 +1400,8 @@ yksinkertaisempi komento, jota sitten käytetään sanoissa heittomerkin
 sijasta.
 
 \begin{koodilohkosis}
-  \newcommand{\hmtavu}{\discretionary{-}{}{'}}
-  vaa\hmtavu an
+  \newcommand{\hm}{\discretionary{-}{}{'}}
+  vaa\hm an
 \end{koodilohkosis}
 
 Suomen kielessä käytetään heittomerkkiä myös taivutuspäätteen, liitteen

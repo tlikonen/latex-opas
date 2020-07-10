@@ -353,26 +353,26 @@ ovat tulleet nyky\-aikai\-set \englanti{True Type}- ja \englanti{Open
 \subsection{Fontin valinta}
 
 Latexin fonttien perus\-toiminnot rakentuvat kolmen erityyppisen
-kirjainperheen varaan: antiikva eli pääteviivallinen%
+kirjainperheen varaan: 1) pääasiallinen perhe, joka on
+kirja\-typo\-gra\-fias\-sa usein antiikva eli pääteviivallinen%
 \footnote{Antiikva (lat. \emph{antiquus} 'vanha') perustuu antiikin
   Roomassa käytettyihin kirjainmuotoihin. Ne olivat pääteviivallisia,
   mutta pääteviivat sinänsä eivät ole ainoa antiikvan piirre. Toinen
   tärkeä ominaisuus ovat erivahvuiset kirjainten viivat.}
-(\englanti{serif, roman}), groteski eli pääteviivaton%
+(\englanti{serif, roman}), 2) groteski eli pääteviivaton%
 \footnote{Groteskiin (ransk. \emph{grotesque} 'kummallinen') kuuluu
   pääteviivojen puuttumisen lisäksi lähes tasavahvuiset kirjainten
   viivat. Tämän oppaan groteskifontissa on kuitenkin selvästi
   antiikvamaiset kaksivahvuiset viivat, joten se on eräänlainen
-  antiikvan ja groteskin välimuoto.} (\englanti{sans serif, gothic})
-ja tasalevyinen kirjoituskoneen kaltainen perhe
-(\englanti{typewriter, monospace}). Kuvassa
-\ref{kuva:kirjainperhetyypit} ovat tässä oppaassa käytetyt kolme eri
-kirjainperhettä. Leipätekstissä käytetään antiikvaa, otsikoissa ja
-kuvateksteissä groteskia ja koodi\-esi\-mer\-keis\-sä tasalevyistä.
-Kirjoituskoneen kaltainen tasalevyinen kirjainperhe on tässä tapauksessa
-tyypiltään antiikva eli pääteviivallinen, mutta se voisi olla muutakin.
-Tasalevyisyys on sen kirjainperheen tärkein määrittävä tekijä Latexin
-asetusten näkökulmasta.
+  antiikvan ja groteskin välimuoto.} (\englanti{sans serif, gothic}) ja
+3) tasalevyinen kirjoituskoneen kaltainen perhe (\englanti{typewriter,
+  monospace}). Kuvassa \ref{kuva:kirjainperhetyypit} ovat tässä oppaassa
+käytetyt kolme eri kirjainperhettä. Leipätekstissä käytetään antiikvaa,
+otsikoissa ja kuvateksteissä groteskia ja koodi\-esi\-mer\-keis\-sä
+tasalevyistä. Kirjoituskoneen kaltainen tasalevyinen kirjainperhe on
+tässä tapauksessa tyypiltään antiikva eli pääteviivallinen, mutta se
+voisi olla muutakin. Tasalevyisyys on sen kirjainperheen tärkein
+määrittävä tekijä Latexin asetusten näkökulmasta.
 
 \leijukuva{
   {\rmfamily\addfontfeatures{ScaleAgain=5}Amf}
@@ -595,7 +595,7 @@ valitsee toisen leikkauksen samasta perheestä.
     & \multicolumn{2}{l}{\ots{Merkitys}} \\
     \midrule
     \koodi{\keno rmfamily} & \koodi{\keno textrm\{\}}
-    & {\rmfamily perhe} & antiikva, serif, roman \\
+    & {\rmfamily perhe} & perus, yl. antiikva, serif, roman \\
     \koodi{\keno sffamily} & \koodi{\keno textsf\{\}}
     & {\sffamily perhe} & groteski, sans serif, gothic \\
     \koodi{\keno ttfamily} & \koodi{\keno texttt\{\}}
@@ -969,10 +969,6 @@ tutkia \paketti{fontspec}\-/paketin ohjekirjasta.\avctan{fontspec}
 Fontin ominaisuudet puolestaan selviävät käyttöjärjestelmän
 komentotulkissa komennolla \koodi{otf\-info}. Komennon argumentiksi
 annetaan muun muassa fonttitiedoston nimi.
-
-\subsection{Fonttivinkkejä KESKEN}
-
-% setmainfont=groteski (\rmfamily), entä setsansfont?
 
 \section{Kieli}
 \label{luku:kieliasetukset}

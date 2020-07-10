@@ -789,6 +789,50 @@ Tähdelliset versiot tuovat tällaisen suo\-jaus\-omi\-nai\-suu\-den.
 \subsection{Muita vinkkejä}
 \label{luku:komennot-lisä}
 
+Komennon viimeistä argumenttia ei välttämättä tarvitse kirjoittaa
+aaltosulkeisiin, jos argumentiksi halutaan vain yksi merkki. Tällaisessa
+tilanteessa komento poimii argumentiksi seuraavan merkin, joka ei ole
+sanaväli.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \newcommand{\x}[1]{Argumentti: <#1>}
+  \x abc \\
+  \x.abc
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Argumentti: <a>bc \\
+  Argumentti: <.>abc
+\end{tulossis}
+
+Mikäli argumenttina on kenoviivalla alkava komento, sitäkään ei tarvitse
+kirjoittaa aaltosulkeisiin. Latex\-/koodin lukemisen kannalta tällainen
+ei välttämättä ole hyvä käytäntö, koska joskus voi hämärtyä, onko kyse
+kahdesta peräkkäisestä komennosta vai onko toinen komento vain
+argumenttina toiselle.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  \newcommand{\x}[1]{Argumentti: <#1>}
+  \newcommand{\yyy}{abc}
+  \x\yyy
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Argumentti: <abc>
+\end{tulossis}
+
+Tätä merkintätapaa esiintyy jokin verran komentojen määrittelyssä, niin
+että jätetään \koodi{\keno newcommand}\-/komennon ensimmäisenä
+argumenttina oleva komennon nimi ilman aaltosulkeita.
+
+\begin{koodilohkosis}
+  \newcommand\yyy{abc}
+\end{koodilohkosis}
+
 Komennon määrittelyssä on välillä hyötyä \koodi{\keno
   ig\-nore\-spaces}\-/komennosta, joka jättää sanavälit huomioimatta
 komennon jälkeen. Ilman tätä komentoa tulisi seuraavassa esimerkissä
@@ -846,8 +890,7 @@ aaltosulkeet (luku \ref{luku:aaltosulkeet}). Jos esimerkiksi
 fonttiasetusta (luku \ref{luku:kirjaintyypit}) muuttaa ympäristön
 sisäpuolella, asetus palautuu ympäristön jälkeen samaksi kuin se oli
 ennen ympäristön alkua. Samoin ympäristön sisällä määritellyt komennot
-(luku \ref{luku:komennot-määr}) ovat voimassa vain kyseisessä
-ympäristössä.
+ovat voimassa vain kyseisessä ympäristössä.
 
 \begin{koodilohkosis}
   \begin{nimi}
@@ -909,11 +952,10 @@ piilottaa teknisen toteutuksen.
 \end{koodilohkosis}
 
 Omille ympäristölle voi määritellä argumentteja samalla tavalla kuin
-komennoillekin (luku \ref{luku:komennot-määr}). Ensimmäinen valinnainen
-argumentti (\koodi{n}) on luku joka kertoo, kuinka monta argumenttia
-määriteltävä ympäristö käsittelee. Ympäristön aloitusmääritelmässä voi
-argumentteihin viitata parametreilla \koodi{\#1}, \koodi{\#2},
-\koodi{\#3} jne.
+komennoillekin. Ensimmäinen valinnainen argumentti (\koodi{n}) on luku
+joka kertoo, kuinka monta argumenttia määriteltävä ympäristö käsittelee.
+Ympäristön aloitusmääritelmässä voi argumentteihin viitata parametreilla
+\koodi{\#1}, \koodi{\#2}, \koodi{\#3} jne.
 
 Jos toinen valinnainen argumentti (\koodi{oletus}) on mukana, se
 ilmaisee, että määriteltävän ympäristön ensimmäinen argumentti on
@@ -942,7 +984,7 @@ kuin komentojenkin määrittelyn tähdellisissä versioissa (luku
 \end{koodilohkosis}
 
 Joskus ympäristöjen määrittelyyn on hyödyllistä sisällyttää komento
-\koodi{\keno ig\-nore\-spaces}, joka jättää huomioimatta komennon
+\koodi{\keno ig\-nore\-spaces}, joka jättää huomioimatta tämän komennon
 jälkeiset sanavälit. Toinen hyödyllinen on \koodi{\keno
   ig\-nore\-spaces\-af\-ter\-end}, joka jättää huomioimatta ympäristön
 lopettavan \koodi{\keno end}\-/komennon jälkeiset sanavälit.
@@ -970,7 +1012,7 @@ Tex tavuttaa eli katkaisee sanoja automaattisesti rivien lopussa, jotta
 se saa tekstikappaleet näyttämään tasapainoisilta. Lähtökohtaisesti
 tavutus määräytyy kielikohtaisten tavutussääntöjen ja \=/asetusten
 perusteella, mutta kirjoittaja voi tehdä poikkeuksia kirjoittamalla
-tavu\-tus\-vih\-jeitä. Käytännössä tavutusvihjeitä tarvitaan välillä.
+tavutusvihjeitä. Käytännössä tavutusvihjeitä tarvitaan välillä.
 
 Kielen valintaa ja yleisiä kieliasetuksia käsitellään tarkemmin luvussa
 \ref{luku:kieliasetukset}, mutta mainitaan tässäkin, että suomen kieli

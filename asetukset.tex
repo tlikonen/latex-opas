@@ -955,17 +955,16 @@ päälle. Niiden tarkoituksena on esimerkiksi erityinen koristeellisuus
 tai historiallisen kirjoitustavan jäljittely. Harvinaisia ligatuureja ei
 ole tarkoitus käyttää joka tilanteessa vaan ainoastaan erityisestä
 syystä. Kuvassa \ref{kuva:ligatuurit} olevat st- ja ct\-/ligatuurit on
-saatu fontin asetuksella \koodi{Liga\-tures=His\-toric}. Toisissa
-fonteissa sama tehdään asetuksella
-\koodi{Liga\-tures=Dis\-cre\-tionary}. Useitakin ligatuurityyppejä voi
-kytkeä päälle samanaikaisesti, ja seuraava esimerkki näyttää, miten se
-tehdään.
+saatu fontin asetuksella \koodi{Liga\-tures=\katk His\-toric}. Joissakin
+fonteissa sama tehdään asetuksella \koodi{Liga\-tures=\katk
+  Dis\-cre\-tionary}. Useitakin ligatuurityyppejä voi kytkeä päälle
+samanaikaisesti, ja seuraava esimerkki näyttää, miten se tehdään.
 
 \begin{koodilohkosis}
   \setmainfont{…}[Ligatures={Common, Historic, Discretionary}]
 \end{koodilohkosis}
 
-Ligatuurityyppejä on muitakin. Niihin liittyviä asetuksia kannattaa
+Ligatuurityyppejä on muitakin, ja niihin liittyviä asetuksia kannattaa
 tutkia \paketti{fontspec}\-/paketin ohjekirjasta.\avctan{fontspec}
 Fontin ominaisuudet puolestaan selviävät käyttöjärjestelmän
 komentotulkissa komennolla \koodi{otf\-info}. Komennon argumentiksi

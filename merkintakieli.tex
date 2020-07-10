@@ -532,6 +532,11 @@ on komennot ladontajärjestelmän logojen kirjoittamiseen: \koodi{\keno
   \label{tlk:erikoismerkit-lainaus}
 }
 
+\newcommand{\textbigcirclekorvike}{%
+  \begin{tikzpicture}
+    \draw (0,0) circle [radius=.65ex];
+  \end{tikzpicture}}
+
 \leijutlk{
   \begin{tabular}{cll}
     \toprule
@@ -564,8 +569,7 @@ on komennot ladontajärjestelmän logojen kirjoittamiseen: \koodi{\keno
     \rivi{\textbraceleft}{textbraceleft \keno \{}{vasen aaltosulje}
     \rivi{\textbraceright}{textbraceright \keno \}}{oikea aaltosulje}
     \rivi{\textbullet}{textbullet}{luetelmaympyrä}
-    % \rivi{\textbigcircle}{textbigcircle}{suuri ympyrä}
-    \rivi{}{textbigcircle}{suuri ympyrä}
+    \rivi{\textbigcirclekorvike}{textbigcircle}{suuri ympyrä}
     % \rivi{\textcircled{a}}{textcircled\{\ldots\}}{ympyröity merkki}
     \rivi{\textleftarrow}{textleftarrow}{nuoli vasemmalle}
     \rivi{\textrightarrow}{textrightarrow}{nuoli oikealle}

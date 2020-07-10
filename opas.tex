@@ -54,10 +54,32 @@ marginparwidth=50bp, marginparsep=10bp]{geometry}
 % Tavutus päälle
 \defaultfontfeatures[\ttfamily]{}
 
-\setmainfont {Linux Libertine O} [Numbers=Lowercase]
-\setsansfont {Linux Biolinum O} [Scale=MatchLowercase, Numbers=Lowercase]
-\setmonofont {Linux Libertine Mono O}
-[Scale=MatchLowercase, Ligatures={TeXReset, NoCommon}, FakeStretch=.8]
+\setmainfont {libertinusserif}
+[Numbers=Lowercase,
+UprightFont=*-regular,
+ItalicFont=*-italic,
+BoldFont=*-semibold,
+BoldItalicFont=*-semibolditalic,
+Extension={.otf}
+]
+
+\setsansfont {libertinussans}
+[Scale=MatchLowercase, Numbers=Lowercase,
+UprightFont=*-regular,
+ItalicFont=*-italic,
+BoldFont=*-bold,
+BoldItalicFont=*-bolditalic,
+Extension={.otf}
+]
+
+\setmonofont {libertinusmono}
+[Scale=MatchLowercase, Ligatures={TeXReset, NoCommon}, FakeStretch=.8,
+UprightFont=*-regular,
+ItalicFont=*-italic,
+BoldFont=*-bold,
+BoldItalicFont=*-bolditalic,
+Extension={.otf}
+]
 
 \newfontface{\varafontti}{TeX Gyre Pagella}[Scale=MatchLowercase]
 \newfontface{\viivastofontti}{TeX Gyre Termes}

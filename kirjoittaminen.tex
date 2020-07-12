@@ -663,6 +663,33 @@ Argumentti~\koodi{*} (tähti) valitsee kaikki teokset.
   \nocite{*}                        % Kaikki mukaan.
 \end{koodilohkosis}
 
+\subsubsection{Lähdetiedostojen kääntäminen}
+
+Latexin kääntäjä\-ohjelmat Lualatex tai Xelatex eivät yksinään riitä,
+sillä teostietokanta ei ole tavallinen Latex\-/muotoinen tiedosto.
+Tarvitaan myös \paketti{biblatex}\-/paketin mukana tulevaa komentoa
+\koodi{bib\-er}, joka käsittelee teostietokantaan liittyviä tiedostoja.
+Lopulta Latex\-/kääntäjääkin täytyy kutsua kaksi kolme kertaa, jotta
+kaikki ristiviitteet saadaan kuntoon. Komentojen suoritusjärjestys on
+seuraavanlainen.
+
+\begin{koodilohkosis}
+  lualatex teksti.tex
+  biber teksti.bcf
+  lualatex teksti.tex
+  lualatex teksti.tex
+\end{koodilohkosis}
+
+\koodi{lua\-latex}\-/ohjelman paikalla voi olla myös \koodi{xe\-latex}.
+Tosin vielä helpompaa on käyttää \koodi{la\-tex\-mk}\-/ohjelmaa (luku
+\ref{luku:latexmk}), joka osaa automaattisesti suorittaa myös
+\koodi{bib\-er}\-/ohjelman ja tarvittavat uudelleen kääntämiset. Yksi
+komento riittää käyttäjälle.
+
+\begin{koodilohkosis}
+  latexmk -lualatex teksti.tex    % tai: -xelatex
+\end{koodilohkosis}
+
 \subsubsection{Lähdeluettelon mittoja}
 
 Lähdeluettelon ulkoasuun voi vaikuttaa muutaman eri mitan avulla, joista

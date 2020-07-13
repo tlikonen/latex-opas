@@ -165,7 +165,7 @@ tässä tapauksessa määritettiin kaksoispiste ja väli \koodi{\{:~\}},
 mutta pilkkukin on yleinnen käytäntö. \koodi{\keno
   set\-cite\-style}\-/komennon valitsimet erotetaan toisistaan pilkulla,
 eikä erotinpilkkujen ympärillä saa olla välilyöntejä. Lopputuloksena
-lähdemerkinnät näyttävät esimerkiksi seuraavanlaisilta.
+lähdemerkinnät näyttävät esimerkiksi seuraavanlaisilta:
 
 \pagebreak[3]
 
@@ -214,7 +214,7 @@ kappaletta jne.
 
 Komennolla \koodi{\keno bib\-item} tehdään varsinaiset teosmerkinnät.
 Samalla määritetään teoksen yksilöllinen tunniste ja mitä tietoja
-lähdeviittauksissa näytetään. Yleinen muoto on seuraavanlainen.
+lähdeviittauksissa näytetään. Yleinen muoto on seuraavanlainen:
 
 \begin{koodilohkosis}
   \bibitem[lyhyt(vuosi)pitkä]{tunniste} Lähdeluettelon tekstit.
@@ -269,7 +269,7 @@ Lähdeluettelon ulkoasuun voi vaikuttaa mittojen \koodi{\keno bibhang} ja
 vaakasuuntaisen riippuvan sisennyksen suuruus, ja jälkimmäinen on
 lähdemerkintöjen välinen pystysuuntainen tila. Mitat asetetaan
 tavalliseen tapaan \koodi{\keno set\-length}\-/komennolla (luku
-\ref{luku:mitat}).
+\ref{luku:mitat}):
 
 \begin{koodilohkosis}
   \setlength{\parindent}{1.1em} % tekstikappaleiden 1. rivin sisennys
@@ -367,7 +367,7 @@ viitataan yleensä samoihin lähteisiin.
 Lähdeteosten tietokanta on erillinen tekstitiedosto, joka tavallisesti
 nimetään \koodi{bib}\-/päätteiseksi, esimerkiksi \koodi{teokset.bib}.
 Tiedosto koostuu \koodi{@}\=/merkillä ja teostyypin nimellä alkavista
-tietueista, joiden yleinen muoto on seuraavanlainen.
+tietueista, joiden yleinen muoto on seuraavanlainen:
 
 \begin{koodilohkosis}
   @teostyyppi{tunniste,
@@ -480,7 +480,7 @@ Jos kuitenkin teoksen tekijänä on yritys tai yhteisö, täytyy sen nimi
 kirjoittaa kokonaan aaltosulkeisiin, jottei sitä tulkittaisi
 henkilönnimeksi. Tällaisten aaltosulkeiden sisällä voi käyttää
 \koodi{and}\-/sanaa normaalisti, eikä sitä tulkita eri tekijöiden
-erottimeksi. Seuraavassa on näistä esimerkit.
+erottimeksi. Seuraavassa on näistä esimerkit:
 
 \begin{koodilohkosis}
   author = {Meikäläinen, Matti and Teikäläinen, Teija}
@@ -640,7 +640,7 @@ Taulukkoon \ref{tlk:biblatex-cite} on koottu tavallisimpia
 \paketti{biblatex}\-/paketin viittauskomentoja. Komennoille voi antaa
 valinnaisen argumentin, jolla kerrotaan täsmentävää tietoa
 lähdeviittauksesta. Yleensä se on viitattavan teoksen sivunumero.
-Viittaus näkyy dokumentissa esimerkiksi seuraavalla tavalla.
+Viittaus näkyy dokumentissa esimerkiksi seuraavalla tavalla:
 
 \pagebreak[3]
 
@@ -671,7 +671,7 @@ Tarvitaan myös \paketti{biblatex}\-/paketin mukana tulevaa komentoa
 \koodi{bib\-er}, joka käsittelee teostietokantaan liittyviä tiedostoja.
 Lopulta Latex\-/kääntäjääkin täytyy kutsua kaksi kolme kertaa, jotta
 kaikki ristiviitteet saadaan kuntoon. Komentojen suoritusjärjestys on
-seuraavanlainen.
+seuraavanlainen:
 
 \begin{koodilohkosis}
   lualatex teksti.tex
@@ -743,7 +743,7 @@ aakkosjärjestyksen vuoksi) mutta saman teoksen muiden tekijöiden etunimi
 mainitaan ensin. Tekijöiden nimet näkyvät siis seuraavalla tavalla:
 ''Meikäläinen, Matti ja Teija Teikäläinen''. Suomessa on kuitenkin
 tapana kirjoittaa kaikki nimet samalla tavalla ja mainita sukunimi aina
-ensin. Tämä saadaan toteutettua seuraavilla komennolla.
+ensin. Tämä saadaan toteutettua seuraavilla komennolla:
 
 \pagebreak[3]
 
@@ -832,7 +832,7 @@ uudelleen henkilön nimiin liittyvät tulostuskomennot \koodi{\keno
   mk\-bib\-name\-fam\-i\-ly}, \koodi{\keno mk\-bib\-name\-giv\-en},
 \koodi{\keno mk\-bib\-name\-pre\-fix} ja \koodi{\keno
   mk\-bib\-name\-suf\-fix}. Se saadaan automaattiseksi seuraavilla
-komennoilla.
+komennoilla:
 
 \pagebreak[3]
 
@@ -852,7 +852,7 @@ komennoilla.
 
 Lähdeluettelon eri osien erottimena on yleensä piste. Joskus kuitenkin
 tekijöiden nimien ja vuosiluvun jälkeen on kaksoispiste. Se saadaan
-toteutettua seuraavalla komennolla.
+toteutettua seuraavalla komennolla:
 
 \pagebreak[3]
 
@@ -928,7 +928,7 @@ Ensin siis mainitaan julkaisun nimi ja sen jälkeen toimittajien nimet.
 Suomessa on tapana kirjoittaa nämä tiedot toisinpäin ja laittaa
 toimittajarooli sulkeisiin. Tällaiset asetukset saa käyttämällä tyyliä
 \koodi{ext-author\-year} (tms.), paketin asetusta
-\koodi{in\-name\-before\-title=\katk true} ja seuraavia komentoja.
+\koodi{in\-name\-before\-title=\katk true} ja seuraavia komentoja:
 
 \pagebreak[3]
 
@@ -947,7 +947,7 @@ toimittajarooli sulkeisiin. Tällaiset asetukset saa käyttämällä tyyliä
 Lähdeviittauksissa vuosiluvun ja sivunumeroiden välissä käytetään
 välillä pilkkua ja välillä kaksoispistettä. Sivunumeroiden yhteydessä
 voi olla lyhenne ''s.'' tai se voidaan jättää pois. Seuraavilla
-komennoilla vaikutetaan näihin asetuksiin.
+komennoilla vaikutetaan näihin asetuksiin:
 
 \pagebreak[3]
 
@@ -965,7 +965,7 @@ komennoilla vaikutetaan näihin asetuksiin.
 Kun samassa teoksessa usean tekijän luettelo lyhennetään, käytetään
 oletuksena latinankielistä ilmausta pois jäävien nimien tilalla:
 ''Meikäläinen et al.''. Ilmauksen voi muuttaa suomenkieliseksi
-seuraavalla komennolla.
+seuraavalla komennolla:
 
 \pagebreak[3]
 

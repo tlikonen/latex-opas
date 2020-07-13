@@ -131,7 +131,7 @@ kirjoittamiseen.
 Kommenttimerkki vaikuttaa kääntäjään myös siten, että se syö kaikki
 välilyönnit ja sarkainmerkit, jotka tulevat kyseisen kommentin jälkeen.
 Tämän vuoksi kommenttimerkin avulla voi yhdistää eri riveillä olevan
-tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan \emph{Latex}.
+tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan \emph{Latex}:
 
 \begin{koodilohkosis}
   La% Nämä rivit
@@ -337,7 +337,7 @@ Silloin kun todella täytyy latoa kaksi tai kolme peräkkäistä
 yhdysmerkkiä, voi käyttää tasalevyistä fonttia (\koodi{\keno
   text\-tt\{\ldots\}}), joka oletuksena kytkee pois Latexin
 ajatusviivatoiminnon. Saman asetuksen saa kyllä mihin tahansa fonttiin,
-ja väliaikaisesti asetus kytketään seuraavasti.
+ja väliaikaisesti asetus kytketään seuraavasti:
 
 \pagebreak[3]
 
@@ -640,7 +640,7 @@ Jos haluaa komennon jälkeen yhden sanavälin, täytyy kirjoittaa komennon
 nimen jälkeen aaltosulkeet (\koodi{\keno komento\{\}}) tai kenoviiva ja
 sanaväli (\koodi{\keno komento\keno~}). Komennon nimen ja argumenttien
 välissä voi olla sanavälejä, ja ne kaikki syödään pois. Komennon ja sen
-argumentit voi siis kirjoittaa vaikka seuraavalla tavalla.
+argumentit voi siis kirjoittaa vaikka seuraavalla tavalla:
 
 \begin{koodilohkosis}
   \toinenkomento  [valinnainen]
@@ -775,7 +775,7 @@ näkökulman.
 Komentojen määrittelyssä tähdelliset versiot toimivat muuten samalla
 tavalla, mutta ne antavat virheilmoituksen, jos komennolle annetut
 argumentit sisältävät enemmän kuin yhden tekstikappaleen. Niinpä
-seuraava esimerkki tuottaa käännettäessä virheen.
+seuraava esimerkki tuottaa käännettäessä virheen:
 
 \begin{koodilohkosis}
   \newcommand*{\komento}[1]{Teksti: #1}
@@ -910,7 +910,7 @@ dokumentin sisältö kirjoitetaan. Muita ympäristöjä käytetään
 tavallisesta leipätekstistä poikkeavien rakenteiden ilmaisemiseen,
 esimerkiksi luetelmiin ja taulukoihin (luvut \ref{luku:luetelmat} ja
 \ref{luku:taulukot}). Ympäristöjä voi tehdä itsekin mihin hyvänsä
-tarkoitukseen. Niitä määritellään seuraavilla komennoilla.
+tarkoitukseen. Niitä määritellään seuraavilla komennoilla:
 
 \begin{koodilohkosis}
   \newenvironment   {nimi}[n][oletus]{aloitus}{lopetus}
@@ -1023,7 +1023,7 @@ tavutusvihjeitä. Käytännössä tavutusvihjeitä tarvitaan välillä.
 Kielen valintaa ja yleisiä kieliasetuksia käsitellään tarkemmin luvussa
 \ref{luku:kieliasetukset}, mutta mainitaan tässäkin, että suomen kieli
 ja sen mukainen tavutus saadaan päälle, kun dokumentin esittelyosaan
-kirjoittaa seuraavat komennot.
+kirjoittaa seuraavat komennot:
 
 \begin{koodilohkosis}
   \usepackage{polyglossia}
@@ -1048,7 +1048,7 @@ jälkeä. Kirjoittajan täytyy kirjoittaa välillä eli tavutusvihjeitä. Yksi
 tapa tavutusvihjeiden kirjoittamiseen on \koodi{\keno
   hyphenation}\-/komento, jolla määritellään yksittäisten sanojen
 tavutuskohdat kaikkialla dokumentissa. Seuraava esimerkki selventää
-komennon käyttöä.
+komennon käyttöä:
 
 \begin{koodilohkosis}
   \hyphenation{
@@ -1239,7 +1239,7 @@ On tärkeää huomioida, että \paketti{extdash}\-/paketin komennot ovat
 todellakin normaaleja komentoja. Se tarkoittaa, että komennon jälkeiset
 sanavälit syödään pois. Tämä asia saattaa unohtua seuraavanlaisessa
 tilanteessa, jossa käytetään tavutuksen sallivaa yhdysmerkkikomentoa
-\koodi{\keno-/}.
+\koodi{\keno-/}:
 
 \pagebreak[3]
 
@@ -1336,7 +1336,7 @@ argumenttia järjestyksessä seuraavasti: 1) katkaisutilanteessa rivin
 loppuun ladottavat merkit, 2) katkaisutilanteessa seuraavan rivin alkuun
 ladottavat merkit ja 3) katkaisemattomaan sanaan ladottavat merkit.
 Normaali tavutuskohta sanaan \emph{tavu} määriteltäisiin alla olevan
-esimerkin tavoin.
+esimerkin tavoin:
 
 \begin{koodilohkosis}
   ta\discretionary{-}{}{}vu
@@ -1365,7 +1365,7 @@ rivin loppuun kirjoitetaan yksi yhdysmerkki ja seuraavan rivin alkuun
 toinen. Näin ilmaistaan, että sanassa on pysyvä yhdysmerkki eikä vain
 väliaikaisesti katkaisun merkkinä. Tällaisia kieliä varten saattaa
 kielipaketissa (tai muualla) olla omat yhdysmerkkitoiminnot, mutta
-edellä kuvatun tavutuskohdan saa myös seuraavalla tavalla.
+edellä kuvatun tavutuskohdan saa myös seuraavalla tavalla:
 
 \begin{koodilohkosis}
   \discretionary{-}{-}{-}
@@ -1419,7 +1419,7 @@ Tavutuskohtia voi lisätä sopiviin kohtiin omilla tavutusvihjeillä
 (\koodi{\keno-}). Vaihtoehtoisesti kaikki yleisten tavutussääntöjen
 mukaiset tavutuskohdat saa käyttöön \paketti{extdash}\-/paketin
 komennoilla (taulukko \ref{tlk:extdash}). Seuraavassa esimerkissä on
-tavutuksen hallintaa sanalle \emph{Molo\-tov--Ribben\-trop-sopi\-mus}.
+tavutuksen hallintaa sanalle \emph{Molo\-tov--Ribben\-trop-sopi\-mus}:
 
 \begin{koodilohkosis}
   Molo\-tov--Ribben\-trop-sopi\-mus % tavutusvihjeet
@@ -1435,7 +1435,7 @@ kielessä suositeltavaakaan, koska vokaalien välistä ei mielellään
 katkaista sanaa. Jos tavutuksen kuitenkin haluaa myös heittomerkin
 kohdalle, täytyy huolehtia, että tavutustilanteessa heittomerkki poistuu
 ja sen paikalle tulee yhdysmerkki rivin loppuun. Sanan \emph{vaa'an}
-voisi siis kirjoittaa seuraavalla tavalla.
+voisi siis kirjoittaa seuraavalla tavalla:
 
 \begin{koodilohkosis}
   vaa\discretionary{-}{}{'}an
@@ -1537,7 +1537,7 @@ avulla eli senttimetreissä tai millimetreissä.
 Latexin mittojen mittaluvuissa desi\-maa\-li\-erot\-ti\-me\-na on piste,
 ja mittayksikön lyhenne kirjoitetaan kiinni mittalukuun. Seuraavassa
 esimerkissä tehdään vaakasuuntaisia ja pystysuuntaisia välejä
-komennoilla \koodi{\keno hspace} ja \koodi{\keno vspace}.
+komennoilla \koodi{\keno hspace} ja \koodi{\keno vspace}:
 
 \pagebreak[3]
 
@@ -1580,7 +1580,7 @@ jota käytetään Latex\-/koodissa useita kertoja.
 Näin luotuja mittoja voi käyttää mittayksiköiden tavoin, eli niille voi
 asettaa eteen kertoimen. Esimerkiksi seuraava \koodi{\keno
   hspace}\-/komento luo vaakasuuntaisen välin, jonka pituus on 0,7
-kertaa \koodi{\keno oma\-mitta}.
+kertaa \koodi{\keno oma\-mitta}:
 
 \begin{koodilohkosis}
   \hspace{0.7\omamitta}
@@ -1723,7 +1723,7 @@ Venyvät mitat voivat sisältää ''äärettömän'' mittayksikön \koodi{fill},
 joka antaa luvan venyttää mittaa niin, että kaikki käytettävissä oleva
 tila täyttyy. Äärettömän mittayksikön kanssa mittaluku ilmaisee
 suhdeluvun muihin äärettömiin mittoihin. Seuraava esimerkki
-havainnollistaa asiaa.
+havainnollistaa asiaa:
 
 \pagebreak[3]
 
@@ -1742,7 +1742,7 @@ mainitulla on suhdeluku 1 (\koodi{1fill}) ja jälkimmäisellä suhdeluku 2
 (\koodi{2fill}), joten jälkimmäinen väli on kaksinkertainen ensimmäiseen
 verrattuna. Saman äärettömästi venyvän mitan ja suhdeluvut voi ilmaista
 myös \koodi{\keno stretch}\-/mitan tai \koodi{\keno hfill}\-/komentojen
-avulla seuraavasti.
+avulla seuraavasti:
 
 \pagebreak[3]
 
@@ -1915,7 +1915,7 @@ kun sivu vaihtuu eli laskurin \koodi{page} arvo kasvaa.
 Ylemmän tason laskureita ei kannata kasvattaa komennolla \koodi{\keno
   add\-to\-counter}, koska se vain muuttaa laskurin arvoa mutta ei
 huolehdi alemman tason laskurien nollaamisesta. Hierarkkisten laskurien
-kasvattamiseen on seuraavat kaksi komentoa.
+kasvattamiseen on seuraavat kaksi komentoa:
 
 \begin{koodilohkosis}
   \stepcounter{laskuri}
@@ -1950,7 +1950,7 @@ komennon versioita: \koodi{\keno counter\-with\-in*} ja \koodi{\keno
   counter\-with\-out*}. Laskuriin liittyvän \koodi{\keno the}\-/komennon
 voi aina itsekin määritellä haluamansa laiseksi komennolla \koodi{\keno
   renewcommand} (luku \ref{luku:komennot-määr}), esimerkiksi seuraavalla
-tavalla.
+tavalla:
 
 \begin{koodilohkosis}
   \renewcommand{\theoma}{\arabic{page}/\alph{oma}}
@@ -2010,7 +2010,7 @@ teknisissä yhteyksissä kuten toisen Latex\-/komennon argumenttina.
 
 Myös Latexin valmiita laskureita voi rekisteröidä kokonaislaskureiksi.
 Tässä oppaassa on yhteensä \total{chapter} numeroitua päälukua, ja
-mainittu lukumäärä saatiin laskettua seuraavasti.
+mainittu lukumäärä saatiin laskettua seuraavasti:
 
 \begin{koodilohkosis}
   \regtotcounter{chapter} % Sijoitetaan dokumentin esittelyosaan.

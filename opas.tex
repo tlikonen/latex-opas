@@ -51,7 +51,7 @@ marginparwidth=50bp, marginparsep=10bp]{geometry}
 \newcommand{\englishfont}{}
 \newcommand{\englanti}[1]{\textenglish{#1}}
 
-% Tavutus päälle
+\defaultfontfeatures{Ligatures={TeX, Common}}
 \defaultfontfeatures[\ttfamily]{}
 
 \setmainfont {libertinusserif}
@@ -82,7 +82,6 @@ Extension=.otf]
 \newcommand{\erikoisfontti}{\rmfamily}
 
 \newfontface{\viivastofontti}{libertinusserif-regular.otf}
-[Ligatures={TeX, Common}]
 
 \renewcommand{\footnotesize}{\fontsize{8bp}{9bp}\selectfont}
 \renewcommand{\small}{\fontsize{9bp}{10bp}\selectfont}

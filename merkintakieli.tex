@@ -738,10 +738,10 @@ ensimmäisellä, toisella, kolmannella jne. argumentilla.
   Sanoit hip ja hei!
 \end{tulossis}
 
-Toinen valinnainen argumentti (\koodi{ole\-tus}) -- jos se on mukana --
+Toinen valinnainen argumentti (\koodi{oletus}) -- jos se on mukana --
 kertoo, että määriteltävän komennon ensimmäinen argumentti on
-valinnainen ja että tämä on sen ole\-tus\-arvo. Ole\-tus\-arvoa
-käytetään silloin, kun valinnaista argumenttia ei ole annettu.
+valinnainen ja että tämä on sen oletusarvo. Oletusarvoa käytetään
+silloin, kun valinnaista argumenttia ei ole annettu.
 
 \pagebreak[3]
 
@@ -789,10 +789,10 @@ seuraava esimerkki tuottaa käännettäessä virheen:
   }
 \end{koodilohkosis}
 
-\koodi{\keno newcommand*}\-/komennolla määritelty \koodi{\keno
-  ko\-men\-to} ei siis suostu ottamaan vastaan argumentteja, jotka
-sisältävät kappaleen vaihtumisen eli enemmän kuin yhden tekstikappaleen.
-Tähdelliset versiot tuovat tällaisen suo\-jaus\-omi\-nai\-suu\-den.
+\koodi{\keno newcommand*}\-/komennolla määritelty \koodi{\keno komento}
+ei siis suostu ottamaan vastaan argumentteja, jotka sisältävät kappaleen
+vaihtumisen eli enemmän kuin yhden tekstikappaleen. Tähdelliset versiot
+tuovat tällaisen suo\-jaus\-omi\-nai\-suu\-den.
 
 \subsection{Muita vinkkejä}
 \label{luku:komennot-lisä}
@@ -859,7 +859,7 @@ sanojen väliin yksi välilyönti.
 
 Aaltosulkeilla (luku \ref{luku:aaltosulkeet}) voi rajata
 komentomäärittelyn vai\-ku\-tus\-aluet\-ta. Seuraavan esimerkin alussa
-asetetaan \koodi{\keno ko\-men\-to} tiettyyn alkuperäismääritelmään.
+asetetaan \koodi{\keno komento} tiettyyn alkuperäismääritelmään.
 Aaltosulkeiden sisällä se määritellään väliaikaisesti uudestaan.
 Aaltosulkeilla rajatun ympäristön jälkeen komennon uusi määritelmä
 lakkaa ja komento palautuu alkuperäiseksi.
@@ -928,8 +928,8 @@ ympäristöä ei ollutkaan olemassa.
 Argumentit ovat lähes samanlaiset kuin komentojen määrittelyssä (luku
 \ref{luku:komennot-määr}). Ympäristöjen määrittelykomennoilla on kolme
 pakollista argumenttia: ensimmäinen on ympäristön nimi, toinen on
-ympäristön aloitusmääritelmä (\koodi{aloi\-tus}) ja kolmas on
-lopetusmääritelmä (\koodi{lope\-tus}).
+ympäristön aloitusmääritelmä (\koodi{aloitus}) ja kolmas on
+lopetusmääritelmä (\koodi{lopetus}).
 
 \pagebreak[3]
 
@@ -969,7 +969,7 @@ Jos toinen valinnainen argumentti (\koodi{oletus}) on mukana, se
 ilmaisee, että määriteltävän ympäristön ensimmäinen argumentti on
 valinnainen ja että tämä on sen ole\-tus\-arvo. Oletusta käytetään
 silloin, kun valinnaista argumenttia ei ole annettu. Argumentit annetaan
-ympäristön aloittavan \koodi{\keno begin}-ko\-men\-non yhteydessä.
+ympäristön aloittavan \koodi{\keno begin}\-/komennon yhteydessä.
 
 \begin{koodilohkosis}
   \begin{ymp}[valinnainen]{argu}{mentteja}
@@ -1582,7 +1582,7 @@ jota käytetään Latex\-/koodissa useita kertoja.
 Näin luotuja mittoja voi käyttää mittayksiköiden tavoin, eli niille voi
 asettaa eteen kertoimen. Esimerkiksi seuraava \koodi{\keno
   hspace}\-/komento luo vaakasuuntaisen välin, jonka pituus on 0,7
-kertaa \koodi{\keno oma\-mitta}:
+kertaa \koodi{\keno omamitta}:
 
 \begin{koodilohkosis}
   \hspace{0.7\omamitta}
@@ -1813,16 +1813,16 @@ laskureista automaattisesti.
 Taulukossa \ref{tlk:latexin_laskurit} ovat Latexin perus laskurit. Monet
 niistä ovat otsikoiden numerointia varten (\englanti{\koodi{part},
   \koodi{chapter}, \koodi{section}, \koodi{paragraph}}). Sivunumeroita
-varten on \koodi{page}\-/laskuri ja matemaattisten kaavojen
-numerointiin \koodi{equation}\-/laskuri. Leijuvista kuvista ja
-taulukoista (luku \ref{luku:leijuosat}) pidetään kirjaa laskureissa
-\koodi{figure} ja \koodi{table}, ja alaviitteiden (luku
-\ref{luku:alaviitteet}) numerointi on laskureissa \koodi{footnote} ja
-\koodi{mpfootnote}. Numeroidut luetelmat (luku \ref{luku:luetelmat})
-käsitellään \koodi{enum}\-/alkuisten laskureiden avulla siten, että
-perustasolla käytetään laskuria \koodi{enumi}, ja jos sen luetelmakohta
-sisältää toisen numeroidun luetelman, käytetään siinä laskuria
-\koodi{enumii}, sen sisällä laskuria \koodi{enumiii} jne.
+varten on \koodi{page}\-/laskuri ja matemaattisten kaavojen numerointiin
+\koodi{equa\-tion}\-/laskuri. Leijuvista kuvista ja taulukoista (luku
+\ref{luku:leijuosat}) pidetään kirjaa laskureissa \koodi{figure} ja
+\koodi{table}, ja alaviitteiden (luku \ref{luku:alaviitteet}) numerointi
+on laskureissa \koodi{foot\-note} ja \koodi{mp\-foot\-note}. Numeroidut
+luetelmat (luku \ref{luku:luetelmat}) käsitellään
+\koodi{enum}\-/alkuisten laskureiden avulla siten, että perustasolla
+käytetään laskuria \koodi{enumi}, ja jos sen luetelmakohta sisältää
+toisen numeroidun luetelman, käytetään siinä laskuria \koodi{enumii},
+sen sisällä laskuria \koodi{enumiii} jne.
 
 Edellä mainituista laskureista ei tarvitse yleensä itse huolehtia, sillä
 ne ovat vain tekniikkaa, joka toimii korkeamman tason toimintojen

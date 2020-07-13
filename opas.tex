@@ -166,6 +166,18 @@ Extension=.otf]
     \floatbox{figure}{#1}{#2}
   \end{figure*}}
 
+\newenvironment{nluetelma}{%
+  \begin{list}{\theenumi.}{
+      \usecounter{enumi}
+      \setlength{\leftmargin}{1.3em}
+      \setlength{\labelsep}{.3em}
+      \setlength{\itemsep}{.1ex plus .1ex}
+      \setlength{\parsep}{0em}
+      \setlength{\topsep}{.1ex plus .1ex}
+      \RaggedRight
+    }}{%
+  \end{list}}
+
 \definecolor{tavu}{rgb}{1,0,0}
 
 \newcommand{\keno}{\textbackslash}
@@ -183,6 +195,7 @@ Extension=.otf]
 
 \NoIndentAfterEnv{koodilohkosis}
 \NoIndentAfterEnv{tulossis}
+\NoIndentAfterEnv{nluetelma}
 
 \addto{\captionsfinnish}{
   \renewcommand{\contentsname}{Sisällys}

@@ -1312,7 +1312,7 @@ englanninkielisissä ohjekirjoissa niitä kutsutaan nimellä
 \emph{\englanti{short\-hands}}.
 
 \paketti{babel}\-/paketti tuo suomen kieleen sitovan, tavutuksen
-sallivan yhdysmerkin \koodi{\textquotedbl-}, joka toimii samoin kuin
+sallivan yhdysmerkin \koodi{\textquotedbl\=/}, joka toimii samoin kuin
 \paketti{extdash}\-/paketin komento \koodi{\keno=/}. Lisäksi on
 tavutusvihje (\koodi{\textquotedbl\textquotedbl}), joka ei tee
 yhdysmerkkiä tavutuskohtaan. Sitä voi käyttää joidenkin teknisten
@@ -1488,7 +1488,9 @@ käyttöön tietyn kirjainperheen.
 Edellä oleva komento on peräisin \paketti{fontspec}\-/fonttipaketista
 (luku \ref{luku:kirjaintyypit}). Oletuksena tavutus on pois päältä
 tasalevyisen fontin kanssa, eli esimerkiksi \koodi{\keno
-  text\-tt\{…\}}\-/komennon argumenttina olevaa tekstiä ei tavu\-teta.
+  text\-tt\{…\}}\-/komennon argumenttina olevaa tekstiä ei tavu\-teta.%
+\footnote{Tasalevyiselle fontille saa tavutuksen päälle fontin
+  asetuksella \koodi{Hyphen\-Char=\{-\}}.}
 
 Käytännössä tavutus menee pois päältä myös silloin, kun tekstikappaleet
 tasaa vain vasempaan reunaan eli tekee oikealle liehureunan komennolla

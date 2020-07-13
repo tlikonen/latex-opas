@@ -79,8 +79,9 @@ BoldItalicFont=*-bolditalic,
 Extension=.otf]
 
 \newfontface{\viivastofontti}{libertinusserif-regular.otf}
+[Ligatures={TeX, Common}]
 \newfontface{\erikoisfontti}{libertinusserif-regular.otf}
-[Scale=MatchLowercase, Numbers=Lowercase]
+[Scale=MatchLowercase, Numbers=Lowercase, Ligatures={TeX, Common}]
 
 \renewcommand{\footnotesize}{\fontsize{8bp}{9bp}\selectfont}
 \renewcommand{\small}{\fontsize{9bp}{10bp}\selectfont}
@@ -142,7 +143,7 @@ Extension=.otf]
 \newenvironment{tulossis}{%
     \begin{list}{}{
         \setlength{\leftmargin}{\sisennys}
-        \small
+        \erikoisfontti\small
       }\item[⇒]}{%
     \end{list}}
 

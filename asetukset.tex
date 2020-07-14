@@ -981,7 +981,38 @@ annetaan muun muassa fonttitiedoston nimi.
 \section{Kieli}
 \label{luku:kieliasetukset}
 
-...
+Melkein aina Latex\-/dokumenttiin täytyy ladata kielipaketti ja sen
+mukana asetukset tiettyjä kieliä varten. Kieliasetukset sisältävät
+ainakin tavutussäännöt (luku \ref{luku:tavutus}) sekä kielelle
+mukautettuja nimiä dokumentin eri osille. Esimerkiksi sisällysluettelon
+ja kirjallisuusluettelon otsikot tulevat kieliasetuksista, samoin
+leijuvien taulukoiden ja kuvien nimet ''\tablename'' ja ''\figurename''
+(ks. esim. kuva \ref{kuva:ligatuurit}, s.~\pageref{kuva:ligatuurit}).
+Myös muita asetuksia tai komentoja saattaa tulla kieliasetusten mukana,
+mutta ne vaihtelevat eri kielissä.
+
+Kielipaketteja on kaksi -- \paketti{babel}\avctan{babel} ja
+\paketti{polyglossia}\avctan{polyglossia} \==, ja käyttäjän täytyy
+valita niistä jompikumpi. Pakettien historia ja kehitys on suunnilleen
+seuraavanlainen: \paketti{babel} on paljon vanhempi, ja monet vanhat
+oppaat ja esimerkit käsittelevät pelkästään sitä. Kun Latex siirtyi
+Unicode\-/aikaan Xelatex\-/kääntäjän ja \paketti{fontspec}\-/paketin
+myötä, \paketti{babel} ei ihan pysynyt kehityksessä mukana. Syntyi
+\paketti{polyglossia}, joka hallitsee Unicoden sekä muitakin kuin
+latinalaiseen kirjaimistoon perustuvia kieliä ja kirjoitusjärjestelmiä.
+\paketti{babel}\-/paketin kehitys ei kuitenkaan pysähtynyt, ja nykyään
+myös se toimii Unicode\-/merkistön kanssa ja osaa ainakin latinalaiseen
+kirjaimistoon perustuvia kieliä.
+
+Suomen kielen kannalta on aika lailla sama, kumpaa kielipakettia
+käyttää. Meidän näkökulmastamme ''erikoisemmat'' kielet ja
+kirjoitusjärjestelmät voivat vaatia \paketti{polyglossia}\-/paketin sekä
+Lualatex- tai Xelatex\-/kääntäjän käyttöä. \paketti{babel} sisältää
+enemmän ominaisuuksia, esimerkiksi omien komentojen ja muiden viritysten
+tekemiseen; \paketti{polyglossia} on yksinkertaisempi paketti, jonka
+kehitys tuntuisi keskittyvän vain ydintehtävään. Seuraavissa alaluvuissa
+käsitellään kummankin kielipaketin tärkeimmät toiminnot eli kielen
+valintaan liittyvät asiat.
 
 \subsection{Polyglossia}
 

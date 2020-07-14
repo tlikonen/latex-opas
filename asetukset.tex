@@ -960,11 +960,13 @@ sisältää myös harvinaisempia ligatuureja, jotka täytyy erikseen kytkeä
 päälle. Niiden tarkoituksena on esimerkiksi erityinen koristeellisuus
 tai historiallisen kirjoitustavan jäljittely. Harvinaisia ligatuureja ei
 ole tarkoitus käyttää joka tilanteessa vaan ainoastaan erityisestä
-syystä. Kuvassa \ref{kuva:ligatuurit} olevat st- ja ct\-/ligatuurit on
+syystä. Kuvassa \ref{kuva:ligatuurit} olevat
+{\erikoisfontti\addfontfeatures{Ligatures=Historic}st-} ja
+{\erikoisfontti\addfontfeatures{Ligatures=Historic}ct}\-/ligatuurit on
 saatu fontin asetuksella \koodi{Liga\-tures=\katk His\-toric}. Joissakin
 fonteissa sama tehdään asetuksella \koodi{Liga\-tures=\katk
   Dis\-cre\-tionary}. Useitakin ligatuurityyppejä voi kytkeä päälle
-samanaikaisesti, ja seuraava esimerkki näyttää, miten se tehdään.
+samanaikaisesti, ja seuraava esimerkki näyttää, miten se tehdään:
 
 \begin{koodilohkosis}
   \setmainfont{…}[Ligatures={Common, Historic, Discretionary}]

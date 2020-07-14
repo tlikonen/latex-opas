@@ -276,30 +276,48 @@ kielikohtaisia keinoja lainausmerkkien kirjoittamiseen. Lisäksi
 makropaketti \paketti{cs\-quotes}\avctan{csquotes} sisältää
 lainausmerkkeihin liittyviä komentoja ja kielikohtaista logiikkaa.
 
-Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
+Joskus%
+\koodimargin{\keno text\-quote\-dbl \\ \keno text\-quote\-single}
+todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
 \koodi{\keno text\-quote\-dbl} ja \koodi{\keno text\-quote\-single}.
 Yksittäinen gra\-vis\-ak\-sent\-ti (\`{}) tehdään komennolla
 \koodi{\keno `\{\}}.
 
-Latexin omat lainausmerkkien ja ajatusviivojen merkintätavat saa
-poistettua kokonaan käytöstä fontin asetuksella
-\koodi{Liga\-tures=\katk TeX\-Reset}. Asetus kytketään päälle esimerkiksi
-komennolla \koodi{\keno add\-font\-fea\-tures}, joka sisältyy
-\paketti{fontspec}\-/pakettiin. Mainittu asetus on oletuksena päällä
-tasalevyisessä fontissa, jonka saa yksittäisiin sanoihin komennolla
-\koodi{\keno text\-tt}. Fontteja käsitellään tarkemmin luvussa
+Edellä kuvattuihin Latexin omiin lainausmerkkien merkintätapoihin
+(\koodi{''}, \koodi{>>} ym.) voi vaikuttaa \paketti{fontspec}\-/paketin
+ja fontin asetusten avulla. Merkintätapoja kutsutaan
+Tex\-/ligatuureiksi. Fonteissa on yleensä oletuksena asetus
+\koodi{Liga\-tures=\katk TeX}, mutta sen saa poistettua asetuksella
+\koodi{Liga\-tures=\katk TeX\-Reset}. Asetusta muutetaan kirjainperheen
+määrittelyn yhteydessä tai väliaikaisesti komennolla \koodi{\keno
+  add\-font\-fea\-tures}.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  {\addfontfeatures{Ligatures=TeXReset} `` '' >> '}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  {\addfontfeatures{Ligatures=TeXReset} `` '' >> '}
+\end{tulossis}
+
+\pagebreak[3]
+
+Tasalevyisessä fontissa Tex\-/ligatuurit eivät ole päällä oletuksena,
+joten yksittäisissä sanoissa tai lyhyissä ilmauksissa voi estää
+Tex\-/ligatuurit esimerkiksi komennolla \koodi{\keno text\-tt}. Samalla
+tietysti fonttikin vaihtuu. Fontteja käsitellään tarkemmin luvussa
 \ref{luku:kirjaintyypit}.
 
 \pagebreak[3]
 
 \begin{koodilohkosis}
-  {\addfontfeatures{Ligatures=TeXReset} `` '' >> '} \\
   \texttt{`` '' >> '}
 \end{koodilohkosis}
 
 \begin{tulossis}
-  {\addfontfeatures{Ligatures=TeXReset} `` '' >> '} \\
   \texttt{`` '' >> '}
 \end{tulossis}
 
@@ -335,9 +353,11 @@ merkintätavoilla eikä Unicode\-/merkeillä.
 
 Silloin kun todella täytyy latoa kaksi tai kolme peräkkäistä
 yhdysmerkkiä, voi käyttää tasalevyistä fonttia (\koodi{\keno
-  text\-tt\{\ldots\}}), joka oletuksena kytkee pois Latexin
+  text\-tt\{--\}}), joka oletuksena kytkee pois Latexin
 ajatusviivatoiminnon. Saman asetuksen saa kyllä mihin tahansa fonttiin,
-ja väliaikaisesti asetus kytketään seuraavasti:
+kun poistaa fontista niin sanotut Tex\-/ligatuurit asetuksella
+\koodi{Liga\-tures=\katk TeX\-Reset}. Väliaikaisesti asetus tehdään
+seuraavasti:
 
 \pagebreak[3]
 
@@ -349,12 +369,13 @@ ja väliaikaisesti asetus kytketään seuraavasti:
   {\addfontfeatures{Ligatures=TeXReset} -- ---}
 \end{tulossis}
 
-Miinusmerkille ei Latexissa ole erityistä merkintätapaa muuten kuin
-matematiikkatilassa (luku \ref{luku:matematiikka}). Lyhyttä ajatusviivaa
-saa käyttää myös miinusmerkkinä, mutta vielä parempi olisi käyttää
-varsinaista Unicoden miinusmerkkiä \uctunnus{u+2212 minus sign}, koska
-se on fonteissa suunniteltu typografisesti yhteensopivaksi muiden
-matemaattisten merkkien kanssa.
+Miinusmerkille (−) ei Latexissa ole erityistä merkintätapaa muuten kuin
+matematiikkatilassa (luku \ref{luku:matematiikka}). Tavallisessa
+tekstitilassa lyhyttä ajatusviivaa voi ja saa käyttää myös
+miinusmerkkinä, mutta vielä parempi olisi käyttää varsinaista Unicoden
+miinusmerkkiä \uctunnus{u+2212 minus sign}, koska se on fonteissa
+suunniteltu typografisesti yhteensopivaksi muiden matemaattisten
+merkkien kanssa.
 
 \subsection{Kolme pistettä eli ellipsi}
 

@@ -268,26 +268,22 @@ kielissä käytetään erilaisia kulmalainausmerkkejä lainauksen alussa ja
 lopussa. Vasemmalle osoittava merkki (<<) tehdään kahdella pienempi kuin
 \=/merkillä (\koodi{<<}).
 
-Lainausmerkkien merkintätapoja ja komentoja on koottu taulukkoon
-\ref{tlk:erikoismerkit-lainaus}
-(s.~\pageref{tlk:erikoismerkit-lainaus}). Toisaalta kielikohtaiset
-asetukset (luku \ref{luku:kieliasetukset}) voivat tuoda mukanaan myös
-kielikohtaisia keinoja lainausmerkkien kirjoittamiseen. Lisäksi
-makropaketti \paketti{cs\-quotes}\avctan{csquotes} sisältää
-lainausmerkkeihin liittyviä komentoja ja kielikohtaista logiikkaa.
-
 Joskus%
 \koodimargin{\keno text\-quote\-dbl \\ \keno text\-quote\-single}
 todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
 \koodi{\keno text\-quote\-dbl} ja \koodi{\keno text\-quote\-single}.
 Yksittäinen gra\-vis\-ak\-sent\-ti (\`{}) tehdään komennolla
-\koodi{\keno `\{\}}.
+\koodi{\keno `\{\}}. Lainausmerkkien merkintätapoja ja komentoja on
+koottu taulukkoon \ref{tlk:erikoismerkit-lainaus}
+(s.~\pageref{tlk:erikoismerkit-lainaus}). Toisaalta kielikohtaiset
+asetukset (luku \ref{luku:kieliasetukset}) voivat tuoda mukanaan myös
+kielikohtaisia keinoja lainausmerkkien kirjoittamiseen.
 
-Edellä kuvattuihin Latexin omiin lainausmerkkien merkintätapoihin
-(\koodi{''}, \koodi{>>} ym.) voi vaikuttaa \paketti{fontspec}\-/paketin
-ja fontin asetusten avulla. Merkintätapoja kutsutaan
-Tex\-/ligatuureiksi. Fonteissa on yleensä oletuksena asetus
+Edellä kuvatut Latexin omat lainausmerkkien merkintätavat (\koodi{''},
+\koodi{>>} ym.) eli niin sanotut Tex\-/ligatuurit voi kytkeä päälle ja
+pois päältä \paketti{fontspec}\-/pakettiin kuuluvien asetusten avulla.
+Fonteissa on yleensä oletuksena päällä Tex\-/ligatuurit eli asetus
 \koodi{Liga\-tures=\katk TeX}, mutta sen saa poistettua asetuksella
 \koodi{Liga\-tures=\katk TeX\-Reset}. Asetusta muutetaan kirjainperheen
 määrittelyn yhteydessä tai väliaikaisesti komennolla \koodi{\keno
@@ -320,6 +316,21 @@ tietysti fonttikin vaihtuu. Fontteja käsitellään tarkemmin luvussa
 \begin{tulossis}
   \texttt{`` '' >> '}
 \end{tulossis}
+
+Makropaketti \paketti{cs\-quotes}\avctan{csquotes} sisältää
+lainausmerkkeihin liittyviä komentoja ja kielikohtaista logiikkaa.
+Paketissa olevan \koodi{\keno en\-quote}\-/komennon avulla voi jättää
+makropaketin huoleksi, miten aloittava ja lopettava lainausmerkki tai
+ulommat ja sisemmät lainausmerkit kirjoitetaan missäkin kielessä.
+Luonnollisesti kielipaketti \paketti{polyglossia} tai \paketti{babel}
+täytyy olla ladattuna.
+
+\begin{koodilohkosis}
+  \usepackage{polyglossia} \setdefaultlanguage{finnish}
+  \usepackage[autostyle=true]{csquotes}
+
+  \enquote{Lainauksen \enquote{sisällä} lainaus.}
+\end{koodilohkosis}
 
 \subsection{Yhdysmerkki, ajatusviiva ja miinusmerkki}
 

@@ -999,8 +999,7 @@ mukana asetukset tiettyjä kieliä varten. Kieliasetukset sisältävät
 ainakin tavutussäännöt (luku \ref{luku:tavutus}) sekä kielelle
 mukautettuja nimiä dokumentin eri osille. Esimerkiksi sisällysluettelon
 ja kirjallisuusluettelon otsikot tulevat kieliasetuksista, samoin
-leijuvien taulukoiden ja kuvien nimet ''\tablename'' ja ''\figurename''
-(ks. esim. kuva \ref{kuva:ligatuurit}, s.~\pageref{kuva:ligatuurit}).
+leijuvien taulukoiden ja kuvien nimet ''\tablename'' ja ''\figurename''.
 Myös muita asetuksia tai komentoja saattaa tulla kieliasetusten mukana,
 mutta ne vaihtelevat eri kielissä.
 
@@ -1014,8 +1013,8 @@ myötä, \paketti{babel} ei ihan pysynyt kehityksessä mukana. Syntyi
 \paketti{polyglossia}, joka hallitsee Unicoden sekä muitakin kuin
 latinalaiseen kirjaimistoon perustuvia kieliä ja kirjoitusjärjestelmiä.
 \paketti{babel}\-/paketin kehitys ei kuitenkaan pysähtynyt, ja nykyään
-myös se toimii Unicode\-/merkistön kanssa ja osaa ainakin latinalaiseen
-kirjaimistoon perustuvia kieliä.
+myös se toimii Unicode\-/merkistön kanssa ainakin latinalaiseen
+kirjaimistoon perustuvien kielten osalta.
 
 Suomen kielen kannalta on aika lailla sama, kumpaa kielipakettia
 käyttää. Meidän näkökulmastamme ''erikoisemmat'' kielet ja
@@ -1023,14 +1022,93 @@ kirjoitusjärjestelmät voivat vaatia \paketti{polyglossia}\-/paketin sekä
 Lualatex- tai Xelatex\-/kääntäjän käyttöä. \paketti{babel} sisältää
 enemmän ominaisuuksia, esimerkiksi omien komentojen ja muiden viritysten
 tekemiseen; \paketti{polyglossia} on yksinkertaisempi paketti, jonka
-kehitys tuntuisi keskittyvän vain ydintehtävään. Seuraavissa alaluvuissa
-käsitellään kummankin kielipaketin tärkeimmät toiminnot eli kielen
-valintaan liittyvät asiat.
+kehitys tuntuisi keskittyvän vain ydintehtävään.
 
-\subsection{Polyglossia}
+Seuraavissa alaluvuissa käsitellään kummankin kielipaketin tärkeimmät
+toiminnot eli kielen valintaan liittyvät asiat. Yleinen ajatus on se,
+että Latex\-/dokumentin esittelyosassa ladataan kielipaketti ja
+määritellään dokumentin pääasiallinen kieli ja mahdolliset muut kielet.
+Jos dokumentin tekstiosa sisältää muita kuin pääasiallista kieltä,
+täytyy käyttää erityisiä komentoja tai ympäristöjä, joilla kerrotaan
+Latexille, mistä kielestä on kyse.
 
-...
+\subsection{Polyglossia KESKEN}
+
+Kielipaketti \paketti{polyglossia} on tyypillinen valinta, jos halutaan
+varmistaa, että Unicode\-/merkistöä voi käyttää vapaasti. Samalla se
+tarkoittaa, että kääntäjän on oltava Lualatex tai Xelatex. Kielipaketin
+käyttöönotto dokumentin esittelyosassa näyttää seuraavanlaiselta:
+
+\begin{koodilohkosis}
+  \usepackage{polyglossia}
+  \setdefaultlanguage{finnish}
+  \setotherlanguage{english}
+  \setotherlanguage{german}
+\end{koodilohkosis}
+
+Eri kielillä on erilaisia valinnaisia asetuksia, jotka täytyy selvittää
+\paketti{polyglossia}\-/paketin ohjekirjasta. Asetukset liittyvät
+esimerkiksi kielen kirjoitusjärjestelmän alueelliseen tai
+historialliseen vaihteluun. Yleinen moniin kieliin sopiva valitsin on
+\koodi{babel\-short\-hands}, joka lisää erilaisia, lähinnä tavutukseen
+liittyviä komentoja (luku \ref{luku:tavutus}). Suomen kielen voisi siis
+ottaa käyttöön myös seuraavalla tavalla:
+
+\begin{koodilohkosis}
+  \setdefaultlanguage[babelshorthands]{finnish}
+\end{koodilohkosis}
+
+Dokumentin tekstiosa käyttää kieltä, joka määriteltiin komennolla
+\koodi{\keno set\-default\-lan\-guage}. Muita dokumentin esittelyosassa
+määriteltyjä kieliä voi käyttää väliaikaisesti komennolla, joka alkaa
+kirjaimilla \koodi{\keno text} ja jatkuu kielen nimellä, esimerkiksi
+\koodi{\keno text\-english} tai \koodi{\keno text\-german}. Toinen
+vaihtoehto on käyttää kielen nimen mukaista ympäristöä.
+
+\begin{koodilohkosis}
+  Englannin sana \textenglish{shorthand} tarkoittaa 'pikakirjoitusta'.
+
+  \begin{english}
+    ...
+  \end{english}
+\end{koodilohkosis}
+
+Tällä tavoin kielen mukaan merkitty teksti voi näyttää ladotussa
+dokumentissa ihan samalta kuin muukin teksti. Tavutuksessa kuitenkin
+käytetään kyseisen kielen asetuksia ja myös oletusfontti voi olla eri.
+Muiden kuin pääasiallisen kielen teksti ladotaan oletuksena
+pääasiallisella fontilla \koodi{\keno rm\-fam\-i\-ly} (luku
+\ref{luku:kirjaintyypit}), mutta fonttiin voi vaikuttaa määrittelemällä
+komennon, joka alkaa kielen nimellä ja päättyy sanaan \koodi{font},
+esimerkiksi \koodi{\keno english\-font}.
+
+\begin{koodilohkosis}
+  \newcommand{\englishfont}{\itshape} % kursiivi
+  \newcommand{\englishfont}{}         % sama fontti kuin ympärillä
+  \newfontfamily{\englishfont}{…}[…]  % eri kirjainperhe
+\end{koodilohkosis}
+
+Edellisessä on kolme erilaista esimerkkiä englanninkielisen tekstin
+fontti
+
+komento määriteltiin tyhjäksi, eli se ei tee
+mitään. Tällainen määrittely saattaa olla tarpeen silloin, kun haluaa,
+että kielen teksti ladotaan samalla fontilla kuin muukin ympärillä oleva
+teksti.
+
+
+% { \sffamily tekstiä \textenglish{english} tekstiä }
+
 
 \subsection{Babel}
 
-...
+Vanha kunnon \paketti{babel} toimii useiden eri Latex\-/kääntäjien
+kanssa. Dokumentit kirjoitettiin ennen 8\=/bittisillä merkistöillä
+(kuten \textsc{iso-8859\=/1}), jotka sisältävät vain reilut kaksisataa
+merkkiä%
+\footnote{Teknisesti 8\=/bittiset merkistöt sisältävät
+  2\textsuperscript{8} eli 256 merkkipaikkaa, mutta osa merkeistä on
+  teknisiä ohjauskoodeja, jotka eivät liity ihmiskieliin.} %
+ja sopivat tietyn rajallisen kielijoukon kirjoittamiseen. Nykyään
+\paketti{babel} toimii myös Unicode\-/merkistön kanssa ainakin
+latinalaiseen kirjaimistoon perustuvien kielten osalta.

@@ -167,7 +167,7 @@ mutta pilkkukin on yleinnen käytäntö. \koodi{\keno
 eikä erotinpilkkujen ympärillä saa olla välilyöntejä. Lopputuloksena
 lähdemerkinnät näyttävät esimerkiksi seuraavanlaisilta:
 
-\pagebreak[3]
+% \pagebreak[3]
 
 \begin{koodilohkosis}
   \citet*[27--29]{johdatus} % Viittaus teokseen ”johdatus”.
@@ -642,7 +642,7 @@ valinnaisen argumentin, jolla kerrotaan täsmentävää tietoa
 lähdeviittauksesta. Yleensä se on viitattavan teoksen sivunumero.
 Viittaus näkyy dokumentissa esimerkiksi seuraavalla tavalla:
 
-\pagebreak[3]
+% \pagebreak[3]
 
 \begin{koodilohkosis}
   \textcite[27--29]{johdatus} % Viittaus teokseen ”johdatus”.
@@ -745,7 +745,7 @@ mainitaan ensin. Tekijöiden nimet näkyvät siis seuraavalla tavalla:
 tapana kirjoittaa kaikki nimet samalla tavalla ja mainita sukunimi aina
 ensin. Tämä saadaan toteutettua seuraavilla komennolla:
 
-\pagebreak[3]
+% \pagebreak[3]
 
 \begin{koodilohkosis}
   \DeclareNameAlias{default} {family-given}
@@ -762,7 +762,7 @@ kuitenkin tapana käyttää \&\=/merkkiä ainakin lähdeluettelossa.
 Seuraavat esimerkkikomennot asettavat lähdeluettelon kaikkien nimien
 erottimeksi \&\=/merkin.
 
-\pagebreak[3]
+% \pagebreak[3]
 
 \begin{koodilohkosis}
   \DeclareDelimFormat[bib]{multinamedelim}{\space\&\space}
@@ -806,7 +806,7 @@ oletuksena päällä viittaustyylissä \koodi{author\-year}.
 Kun halutaan näyttää lähdeluettelossa vain tekijän etunimen alkukirjain
 eikä koko etunimeä, käytetään paketin valitsinta \koodi{given\-inits}.
 
-\pagebreak[3]
+% \pagebreak[3]
 
 \begin{koodilohkosis}
   \usepackage[…, giveninits]{biblatex}
@@ -834,7 +834,7 @@ uudelleen henkilön nimiin liittyvät tulostuskomennot \koodi{\keno
   mk\-bib\-name\-suf\-fix}. Se saadaan automaattiseksi seuraavilla
 komennoilla:
 
-\pagebreak[3]
+% \pagebreak[3]
 
 \begin{koodilohkosis}
   \AtBeginBibliography{%
@@ -854,7 +854,7 @@ Lähdeluettelon eri osien erottimena on yleensä piste. Joskus kuitenkin
 tekijöiden nimien ja vuosiluvun jälkeen on kaksoispiste. Se saadaan
 toteutettua seuraavalla komennolla:
 
-\pagebreak[3]
+% \pagebreak[3]
 
 \begin{koodilohkosis}
   \DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space}
@@ -909,7 +909,7 @@ Tavallisessa \paketti{biblatex}\-/paketin lähdeluettelotyylissä
 muuttamiseen, mutta jos käyttää tyyliä \koodi{ext-author\-year}, sekin
 puute korjaantuu, ja voi käyttää \koodi{bib\-label\-date}\-/asetusta.
 
-\pagebreak[3]
+% \pagebreak[3]
 
 \begin{koodilohkosis}
   \usepackage[style=ext-authoryear]{biblatex}
@@ -930,7 +930,7 @@ toimittajarooli sulkeisiin. Tällaiset asetukset saa käyttämällä tyyliä
 \koodi{ext-author\-year} (tms.), paketin asetusta
 \koodi{in\-name\-before\-title=\katk true} ja seuraavia komentoja:
 
-\pagebreak[3]
+% \pagebreak[3]
 
 \begin{koodilohkosis}
   \usepackage[style=ext-authoryear, innamebeforetitle=true]{biblatex}
@@ -949,7 +949,7 @@ välillä pilkkua ja välillä kaksoispistettä. Sivunumeroiden yhteydessä
 voi olla lyhenne ''s.'' tai se voidaan jättää pois. Seuraavilla
 komennoilla vaikutetaan näihin asetuksiin:
 
-\pagebreak[3]
+% \pagebreak[3]
 
 \begin{koodilohkosis}
   \DeclareFieldFormat{postnote}{#1} % Lyhenne ”s.” pois.
@@ -967,7 +967,7 @@ oletuksena latinankielistä ilmausta pois jäävien nimien tilalla:
 ''Meikäläinen et al.''. Ilmauksen voi muuttaa suomenkieliseksi
 seuraavalla komennolla:
 
-\pagebreak[3]
+% \pagebreak[3]
 
 \begin{koodilohkosis}
   \DefineBibliographyStrings{finnish}{

@@ -1526,9 +1526,12 @@ käyttöön tietyn kirjainperheen.
 Edellä oleva komento on peräisin \paketti{fontspec}\-/fonttipaketista
 (luku \ref{luku:kirjaintyypit}). Oletuksena tavutus on pois päältä
 tasalevyisen fontin kanssa, eli esimerkiksi \koodi{\keno
-  text\-tt\{…\}}\-/komennon argumenttina olevaa tekstiä ei tavu\-teta.%
-\footnote{Tasalevyiselle fontille saa tavutuksen päälle fontin
-  asetuksella \koodi{Hyphen\-Char=\{-\}}.}
+  text\-tt\{…\}}\-/komennon argumenttina olevaa tekstiä ei tavu\-teta.
+Tasalevyiselle fontille saa tavutuksen päälle fontin asetuksella
+\koodi{Hyphen\-Char=\{\=/\}}. Tällä asetuksella määritellään
+tavutuksessa käytettävä merkki, mutta se toimii vain
+Xelatex\-/kääntäjällä. Lualatex\-/kääntäjällä ei tavutusmerkkiä voi
+valita vaan tämä asetus ainoastaan kytkee tavutuksen päälle tai pois.
 
 Käytännössä tavutus menee pois päältä myös silloin, kun tekstikappaleet
 tasaa vain vasempaan reunaan eli tekee oikealle liehureunan komennolla

@@ -352,8 +352,9 @@ kirjainperheen varaan:
 
 \begin{nluetelma}
 
-\item pääasiallinen perhe, joka on kirja\-typo\-gra\-fias\-sa usein
-  antiikva eli pääteviivallinen (\englanti{serif, roman})%
+\item peruskirjainperhe eli dokumentin pääasiallinen kirjainperhe, joka
+  on kirja\-typo\-gra\-fias\-sa usein antiikva eli pääteviivallinen
+  (\englanti{serif, roman})%
   \footnote{Antiikva (lat. \emph{antiquus} 'vanha') perustuu antiikin
     Roomassa käytettyihin kirjainmuotoihin. Ne olivat pääteviivallisia,
     mutta pääteviivat sinänsä eivät ole ainoa antiikvan piirre. Toinen
@@ -1032,7 +1033,7 @@ Jos dokumentin tekstiosa sisältää muita kuin pääasiallista kieltä,
 täytyy käyttää erityisiä komentoja tai ympäristöjä, joilla kerrotaan
 Latexille, mistä kielestä on kyse.
 
-\subsection{Polyglossia KESKEN}
+\subsection{Polyglossia}
 
 Kielipaketti \paketti{polyglossia} on tyypillinen valinta, jos halutaan
 varmistaa, että Unicode\-/merkistöä voi käyttää vapaasti. Samalla se
@@ -1043,7 +1044,7 @@ käyttöönotto dokumentin esittelyosassa näyttää seuraavanlaiselta:
   \usepackage{polyglossia}
   \setdefaultlanguage{finnish}
   \setotherlanguage{english}
-  \setotherlanguage{german}
+  \setotherlanguage{greek}
 \end{koodilohkosis}
 
 Eri kielillä on erilaisia valinnaisia asetuksia, jotka täytyy selvittää
@@ -1062,43 +1063,65 @@ Dokumentin tekstiosa käyttää kieltä, joka määriteltiin komennolla
 \koodi{\keno set\-default\-lan\-guage}. Muita dokumentin esittelyosassa
 määriteltyjä kieliä voi käyttää väliaikaisesti komennolla, joka alkaa
 kirjaimilla \koodi{\keno text} ja jatkuu kielen nimellä, esimerkiksi
-\koodi{\keno text\-english} tai \koodi{\keno text\-german}. Toinen
+\koodi{\keno text\-english} tai \koodi{\keno text\-greek}. Toinen
 vaihtoehto on käyttää kielen nimen mukaista ympäristöä.
 
 \begin{koodilohkosis}
   Englannin sana \textenglish{shorthand} tarkoittaa 'pikakirjoitusta'.
 
-  \begin{english}
+  \begin{greek}
     ...
-  \end{english}
+  \end{greek}
 \end{koodilohkosis}
 
-Tällä tavoin kielen mukaan merkitty teksti voi näyttää ladotussa
-dokumentissa ihan samalta kuin muukin teksti. Tavutuksessa kuitenkin
-käytetään kyseisen kielen asetuksia ja myös oletusfontti voi olla eri.
-Muiden kuin pääasiallisen kielen teksti ladotaan oletuksena
-pääasiallisella fontilla \koodi{\keno rm\-fam\-i\-ly} (luku
-\ref{luku:kirjaintyypit}), mutta fonttiin voi vaikuttaa määrittelemällä
-komennon, joka alkaa kielen nimellä ja päättyy sanaan \koodi{font},
-esimerkiksi \koodi{\keno english\-font}.
+Tietynkieliseksi merkitty teksti voi näyttää ladotussa dokumentissa ihan
+samalta kuin muukin teksti. Tavutuksessa kuitenkin käytetään eri
+kielissä eri asetuksia, ja joissakin kielissä voi olla myös pieniä
+typografisia yksityiskohtia eri tavalla.
+
+Käyttäjä voi määritellä eri kielille oman fonttinsa. Oletuksena
+käytetään peruskirjainperhettä, mikä samalla tarkoittaa, että kielen
+vaihtuessa suoritetaan \koodi{\keno rm\-fam\-i\-ly}\-/komento (taulukko
+\ref{tlk:fonttimallikomennot}, s.~\pageref{tlk:fonttimallikomennot}).
+Tätä havainnollistaa seuraava esimerkki, jossa \koodi{\keno
+  text\-english}\-/komennon vaikutuksen ajaksi tulee käyttöön
+perusfontti \koodi{\keno rm\-fam\-i\-ly} eikä ympärillä oleva
+\koodi{\keno sf\-fam\-i\-ly}.
 
 \begin{koodilohkosis}
-  \newcommand{\englishfont}{\itshape} % kursiivi
-  \newcommand{\englishfont}{}         % sama fontti kuin ympärillä
-  \newfontfamily{\englishfont}{…}[…]  % eri kirjainperhe
+  \sffamily
+  pääteviivaton \textenglish{main font} pääteviivaton
 \end{koodilohkosis}
 
-Edellisessä on kolme erilaista esimerkkiä englanninkielisen tekstin
-fontti
+\begin{tulossis}
+  \sffamily pääteviivaton {\rmfamily main font} pääteviivaton
+\end{tulossis}
 
-komento määriteltiin tyhjäksi, eli se ei tee
-mitään. Tällainen määrittely saattaa olla tarpeen silloin, kun haluaa,
-että kielen teksti ladotaan samalla fontilla kuin muukin ympärillä oleva
-teksti.
+Erikielisten tekstikatkelmien fonttiin voi vaikuttaa määrittelemällä
+komennon, jonka nimessä on ensin kielen nimi ja lopuksi sana
+\koodi{font}, esimerkiksi \koodi{\keno english\-font} tai \koodi{\keno
+  greek\-font}. Komentojen määrittelemistä käsitellään luvussa
+\ref{luku:komennot-määr}.
 
+Seuraavassa esimerkissä \koodi{\keno english\-font}\-/komento
+määritellään tyhjäksi, mikä saa aikaan sen, että englanninkieliseksi
+merkitty teksti ei muuta fonttia millään tavalla vaan käytetään samaa
+kirjainperhettä ja \=/leikkausta kuin muutenkin siinä kohdassa
+dokumenttia.
 
-% { \sffamily tekstiä \textenglish{english} tekstiä }
+\begin{koodilohkosis}
+  \newcommand{\englishfont}{}
+\end{koodilohkosis}
 
+Mikäli haluaa jollekin kielelle kokonaan eri kirjainperheen, kannattaa
+käyttää \paketti{fontspec}\-/paketin komentoa \koodi{\keno
+  new\-font\-fam\-i\-ly} ja määritellä kielen fonttikomento sillä.
+Tällainen on tarpeen ainakin silloin, kun dokumentin peruskirjainperhe
+ei sisällä kyseisen kielen kirjaimia.
+
+\begin{koodilohkosis}
+  \newfontfamily{\greekfont}{GFS Neohellenic}[Scale=MatchLowercase]
+\end{koodilohkosis}
 
 \subsection{Babel}
 
@@ -1107,7 +1130,7 @@ kanssa. Dokumentit kirjoitettiin ennen 8\=/bittisillä merkistöillä
 (kuten \textsc{iso-8859\=/1}), jotka sisältävät vain reilut kaksisataa
 merkkiä%
 \footnote{Teknisesti 8\=/bittiset merkistöt sisältävät
-  2\textsuperscript{8} eli 256 merkkipaikkaa, mutta osa merkeistä on
+  2\textsuperscript8 eli 256 merkkipaikkaa, mutta osa merkeistä on
   teknisiä ohjauskoodeja, jotka eivät liity ihmiskieliin.} %
 ja sopivat tietyn rajallisen kielijoukon kirjoittamiseen. Nykyään
 \paketti{babel} toimii myös Unicode\-/merkistön kanssa ainakin

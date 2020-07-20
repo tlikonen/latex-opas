@@ -1036,9 +1036,10 @@ Latexille, mistä kielestä on kyse.
 \subsection{Polyglossia}
 
 Kielipaketti \paketti{polyglossia} on tyypillinen valinta, jos halutaan
-varmistaa, että Unicode\-/merkistöä voi käyttää vapaasti. Samalla se
-tarkoittaa, että kääntäjän on oltava Lualatex tai Xelatex. Kielipaketin
-käyttöönotto dokumentin esittelyosassa näyttää seuraavanlaiselta:
+varmistaa, että Unicode\-/merkistöä (\textsc{utf\=/8}\-/merkistökoodaus)
+voi käyttää vapaasti. Samalla se tarkoittaa, että kääntäjän on oltava
+Lualatex tai Xelatex. Kielipaketin käyttöönotto dokumentin
+esittelyosassa näyttää seuraavanlaiselta:
 
 \begin{koodilohkosis}
   \usepackage{polyglossia}
@@ -1079,14 +1080,14 @@ samalta kuin muukin teksti. Tavutuksessa kuitenkin käytetään eri
 kielissä eri asetuksia, ja joissakin kielissä voi olla myös pieniä
 typografisia yksityiskohtia eri tavalla.
 
-Käyttäjä voi määritellä eri kielille oman fonttinsa. Oletuksena
-käytetään peruskirjainperhettä, mikä samalla tarkoittaa, että kielen
-vaihtuessa suoritetaan \koodi{\keno rm\-fam\-i\-ly}\-/komento (taulukko
-\ref{tlk:fonttimallikomennot}, s.~\pageref{tlk:fonttimallikomennot}).
-Tätä havainnollistaa seuraava esimerkki, jossa \koodi{\keno
-  text\-english}\-/komennon vaikutuksen ajaksi tulee käyttöön
-perusfontti \koodi{\keno rm\-fam\-i\-ly} eikä ympärillä oleva
-\koodi{\keno sf\-fam\-i\-ly}.
+Käyttäjä voi määritellä eri kielille eri fontin. Oletuksena käytetään
+peruskirjainperhettä, mikä samalla tarkoittaa, että kielen vaihtuessa
+pois oletuskielestä suoritetaan \koodi{\keno rm\-fam\-i\-ly}\-/komento
+(taulukko \ref{tlk:fonttimallikomennot},
+s.~\pageref{tlk:fonttimallikomennot}). Tätä havainnollistaa seuraava
+esimerkki, jossa \koodi{\keno text\-english}\-/komennon vaikutuksen
+ajaksi tulee käyttöön perusfontti \koodi{\keno rm\-fam\-i\-ly} eikä
+ympärillä oleva pääteviivaton \koodi{\keno sf\-fam\-i\-ly}.
 
 \begin{koodilohkosis}
   \sffamily
@@ -1100,14 +1101,16 @@ perusfontti \koodi{\keno rm\-fam\-i\-ly} eikä ympärillä oleva
 Erikielisten tekstikatkelmien fonttiin voi vaikuttaa määrittelemällä
 komennon, jonka nimessä on ensin kielen nimi ja lopuksi sana
 \koodi{font}, esimerkiksi \koodi{\keno english\-font} tai \koodi{\keno
-  greek\-font}. Komentojen määrittelemistä käsitellään luvussa
-\ref{luku:komennot-määr}.
+  greek\-font}. Komennon määritelmään kirjoitetaan yleensä
+kirjainperheeseen tai \=/leikkaukseen vaikuttavia komentoja, joita on
+koottu taulukkoon \ref{tlk:fonttimallikomennot}
+(s.~\pageref{tlk:fonttimallikomennot}). Komentojen määrittelemistä
+käsitellään luvussa \ref{luku:komennot-määr}.
 
 Seuraavassa esimerkissä \koodi{\keno english\-font}\-/komento
 määritellään tyhjäksi, mikä saa aikaan sen, että englanninkieliseksi
 merkitty teksti ei muuta fonttia millään tavalla vaan käytetään samaa
-kirjainperhettä ja \=/leikkausta kuin muutenkin siinä kohdassa
-dokumenttia.
+kirjainperhettä kuin muutenkin siinä kohdassa dokumenttia.
 
 \begin{koodilohkosis}
   \newcommand{\englishfont}{}
@@ -1132,6 +1135,59 @@ merkkiä%
 \footnote{Teknisesti 8\=/bittiset merkistöt sisältävät
   2\textsuperscript8 eli 256 merkkipaikkaa, mutta osa merkeistä on
   teknisiä ohjauskoodeja, jotka eivät liity ihmiskieliin.} %
-ja sopivat tietyn rajallisen kielijoukon kirjoittamiseen. Nykyään
-\paketti{babel} toimii myös Unicode\-/merkistön kanssa ainakin
-latinalaiseen kirjaimistoon perustuvien kielten osalta.
+ja soveltuvat tietyn rajallisen kielijoukon kirjoittamiseen. Nykyään
+\paketti{babel} toimii myös Unicode\-/merkistön ja
+\textsc{utf\=/8}\-/merkistökoodauksen kanssa ainakin latinalaiseen
+kirjaimistoon perustuvien kielten osalta.
+
+Kieliasetukset otetaan käyttöön \paketti{babel}\-/paketissa seuraavan
+esimerkin tavoin. Paketin valinnaiseen argumenttiin kirjoitetaan
+ladattavien kielten nimet, ja viimeisenä mainitaan se kieli, joka
+halutaan oletuskieleksi.
+
+\begin{koodilohkosis}
+  \usepackage[english,greek,finnish]{babel}
+\end{koodilohkosis}
+
+Yksittäiset vieraskieliset sanat merkitään komennolla \koodi{\keno
+  foreign\-lan\-guage}. Komennon ensimmäinen argumentti on kielen nimi
+ja toinen on tällä kielellä ladottava teksti. Komennon sijasta voi
+äyttää ympäristöä \koodi{other\-lan\-guage}, joka vaihtaa kieltä
+ympäristön ajaksi.
+
+\begin{koodilohkosis}
+  Englannin sana \foreignlanguage{english}{shorthand} tarkoittaa
+  'pikakirjoitusta'.
+
+  \begin{otherlanguage}{greek}
+    ...
+  \end{otherlanguage}
+\end{koodilohkosis}
+
+Kielen vaihtamista voi helpottaa \koodi{\keno babel\-tags}\-/komennolla,
+joka määrittelee lyhempiä komentoja ja ympäristöjä kielen vaihtamiseen.
+Komentoa käytetään seuraavasti:
+
+\begin{koodilohkosis}
+  % Luo komennon \texteng{…} ja ympäristön ”eng”:
+  \babeltags{eng = english}
+  % Luo komennon \textenglish{…} ja ympäristön ”english”:
+  \babeltags{english = english}
+\end{koodilohkosis}
+
+Oletuskieli voidaan vaihtaa kesken dokumentin komennolla \koodi{\keno
+  select\-lan\-guage}. Komennon argumentiksi annetaan kielen nimi,
+esimerkiksi seuraavalla tavalla:
+
+\begin{koodilohkosis}
+  \selectlanguage{english}
+\end{koodilohkosis}
+
+% On myös mahdollista ottaa käyttöön vieraasta kielestä pelkästään
+% tavutussäännöt mutta ei mitään
+
+% \begin{koodilohkosis}
+%   \begin{hyphenrules}{english}
+%     ...
+%   \end{hyphenrules}
+% \end{koodilohkosis}

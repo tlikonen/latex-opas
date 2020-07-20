@@ -346,6 +346,7 @@ ovat tulleet nyky\-aikai\-set \englanti{True Type}- ja \englanti{Open
   Type} \=/fontit, ja niihin tämä opas keskittyy.
 
 \subsection{Fontin valinta}
+\label{luku:fontin_valinta}
 
 Latexin fonttien perus\-toiminnot rakentuvat kolmen erityyppisen
 kirjainperheen varaan:
@@ -1064,12 +1065,15 @@ Dokumentin tekstiosa käyttää kieltä, joka määriteltiin komennolla
 \koodi{\keno set\-default\-lan\-guage}. Muita dokumentin esittelyosassa
 määriteltyjä kieliä voi käyttää väliaikaisesti komennolla, joka alkaa
 kirjaimilla \koodi{\keno text} ja jatkuu kielen nimellä, esimerkiksi
-\koodi{\keno text\-english} tai \koodi{\keno text\-greek}. Toinen
-vaihtoehto on käyttää kielen nimen mukaista ympäristöä.
+\koodi{\keno text\-english} tai \koodi{\keno text\-greek}.
 
 \begin{koodilohkosis}
   Englannin sana \textenglish{shorthand} tarkoittaa 'pikakirjoitusta'.
+\end{koodilohkosis}
 
+Toinen vaihtoehto on käyttää kielen nimen mukaista ympäristöä:
+
+\begin{koodilohkosis}
   \begin{greek}
     ...
   \end{greek}
@@ -1142,23 +1146,33 @@ kirjaimistoon perustuvien kielten osalta.
 
 Kieliasetukset otetaan käyttöön \paketti{babel}\-/paketissa seuraavan
 esimerkin tavoin. Paketin valinnaiseen argumenttiin kirjoitetaan
-ladattavien kielten nimet, ja viimeisenä mainitaan se kieli, joka
-halutaan oletuskieleksi.
+ladattavien kielten nimet ja viimeisenä mainitaan se kieli, joka
+halutaan pääasialliseksi kieleksi.
 
 \begin{koodilohkosis}
   \usepackage[english,greek,finnish]{babel}
 \end{koodilohkosis}
 
-Yksittäiset vieraskieliset sanat merkitään komennolla \koodi{\keno
-  foreign\-lan\-guage}. Komennon ensimmäinen argumentti on kielen nimi
-ja toinen on tällä kielellä ladottava teksti. Komennon sijasta voi
-äyttää ympäristöä \koodi{other\-lan\-guage}, joka vaihtaa kieltä
-ympäristön ajaksi.
+Pääasiallisen kielen voi valita myös \koodi{main}\-/valitsimella:
+
+\begin{koodilohkosis}
+  \usepackage[main=finnish,english,greek]{babel}
+\end{koodilohkosis}
+
+Dokumentin tekstissä yksittäiset vieraskieliset sanat tai ilmaukset
+merkitään komennolla \koodi{\keno foreign\-lan\-guage}. Komennon
+ensimmäinen argumentti on kielen nimi ja toinen on sillä kielellä
+ladottava teksti.
 
 \begin{koodilohkosis}
   Englannin sana \foreignlanguage{english}{shorthand} tarkoittaa
   'pikakirjoitusta'.
+\end{koodilohkosis}
 
+Komennon sijasta voi käyttää ympäristöä \koodi{other\-lan\-guage}, joka
+vaihtaa kieltä ympäristön ajaksi.
+
+\begin{koodilohkosis}
   \begin{otherlanguage}{greek}
     ...
   \end{otherlanguage}
@@ -1166,13 +1180,12 @@ ympäristön ajaksi.
 
 Kielen vaihtamista voi helpottaa \koodi{\keno babel\-tags}\-/komennolla,
 joka määrittelee lyhempiä komentoja ja ympäristöjä kielen vaihtamiseen.
-Komentoa käytetään seuraavasti:
+Komentoa käytetään seuraavan esimerkin tavoin. Sen jälkeen voi käyttää
+englanninkielisen tekstin merkitsemiseen komentoa \koodi{\keno
+  text\-eng\{\ldots\}} tai ympäristöä \koodi{eng}.
 
 \begin{koodilohkosis}
-  % Luo komennon \texteng{…} ja ympäristön ”eng”:
   \babeltags{eng = english}
-  % Luo komennon \textenglish{…} ja ympäristön ”english”:
-  \babeltags{english = english}
 \end{koodilohkosis}
 
 Oletuskieli voidaan vaihtaa kesken dokumentin komennolla \koodi{\keno
@@ -1183,11 +1196,41 @@ esimerkiksi seuraavalla tavalla:
   \selectlanguage{english}
 \end{koodilohkosis}
 
-% On myös mahdollista ottaa käyttöön vieraasta kielestä pelkästään
-% tavutussäännöt mutta ei mitään
+Eri%
+\koodimargin{\keno babel\-font} kielille on mahdollista asettaa eri
+kirjainperheet \koodi{\keno babel\-font}\-/komennolla. Tämä komento
+korvaa \paketti{fontspec}\-/paketin fontinvalintakomennot (luku
+\ref{luku:fontin_valinta}) ja muodostaa uuden korkeamman tason komennon,
+joka sisältää myös kielen. Jos siis käyttää komentoa \koodi{\keno
+  babel\-font}, ei saa samanaikaisesti käyttää komentoja \koodi{\keno
+  set\-main\-font}, \koodi{\keno set\-sans\-font} eikä \koodi{\keno
+  set\-mono\-font}.
 
-% \begin{koodilohkosis}
-%   \begin{hyphenrules}{english}
-%     ...
-%   \end{hyphenrules}
-% \end{koodilohkosis}
+Oman dokumentin kirjainperheet voitaisiin määrittää \koodi{\keno
+  babel\-font}\-/komennolla esimerkin \ref{esim:babelfont} tavoin. Ensin
+esimerkissä määritellään peruskirjainperhe (\koodi{rm}), pääteviivaton
+perhe (\koodi{sf}) ja tasalevyinen perhe (\koodi{tt}). Sen jälkeen
+määritellään kreikan kielessä (\koodi{greek}) käytettävä
+peruskirjainperhe ja pääteviivaton perhe.
+
+\begin{esimerkki*}
+\begin{koodilohko}
+  \babelfont{rm}{TeX Gyre Termes}
+  \babelfont{sf}[Scale=MatchLowercase]{TeX Gyre Heros}
+  \babelfont{tt}[Scale=MatchLowercase]{TeX Gyre Cursor}
+
+  \babelfont[greek]{rm}[Scale=MatchLowercase]{GFS Artemisia}
+  \babelfont[greek]{sf}[Scale=MatchLowercase]{GFS Neohellenic}
+\end{koodilohko}
+\caption{\koodi{\keno babel\-font}\-/komennon käyttö dokumentin
+  kirjainperheiden valintaan ja kielikohtaisten kirjainperheiden
+  valintaan}
+\label{esim:babelfont}
+\end{esimerkki*}
+
+Esimerkissä ennen fontin nimeä (esim. TeX Gyre Heros) oleva valinnainen
+argumentti on sama kuin \paketti{fontspec}\-/paketin
+fontinvalintakomennoissa. Sen avulla määritellään kyseisen
+kirjainperheen asetuksia. Lisätietoa voi lukea fontteja käsittelevästä
+luvusta \ref{luku:kirjaintyypit} ja \paketti{fontspec}\-/paketin
+ohjekirjasta.\avctan{fontspec}

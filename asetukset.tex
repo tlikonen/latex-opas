@@ -1122,13 +1122,24 @@ kirjainperhettä kuin muutenkin siinä kohdassa dokumenttia.
 
 Mikäli haluaa jollekin kielelle kokonaan eri kirjainperheen, kannattaa
 käyttää \paketti{fontspec}\-/paketin komentoa \koodi{\keno
-  new\-font\-fam\-i\-ly} ja määritellä kielen fonttikomento sillä.
-Tällainen on tarpeen ainakin silloin, kun dokumentin peruskirjainperhe
-ei sisällä kyseisen kielen kirjaimia.
+  new\-font\-fam\-i\-ly} (luku \ref{luku:fontin_valinta}) ja määritellä
+kielen fonttikomennot sillä. Tällainen on tarpeen ainakin silloin, kun
+dokumentin peruskirjainperhe ei sisällä kyseisen kielen kirjaimia.
 
 \begin{koodilohkosis}
-  \newfontfamily{\greekfont}{GFS Neohellenic}[Scale=MatchLowercase]
+  \newfontfamily{\greekfont}{GFS Artemisia}[Scale=MatchLowercase]
 \end{koodilohkosis}
+
+% Seuraat eivät tunnu toimivan:
+
+% \newfontfamily{\greekfontsf}{GFS Neohellenic} [Scale=MatchLowercase]
+% \newfontfamily{\greekfonttt}{DejaVu Sans Mono}[Scale=MatchLowercase]
+%
+% Edellisen esimerkin \koodi{fontsf}\-/loppuinen komento tarkoittaa
+% pääteviivatonta kirjainperhettä ja \koodi{fonttt}\-/loppuinen
+% tasalevyistä perhettä.
+
+% \textenglish{englantia \textsf{englantia} englantia}
 
 \subsection{Babel}
 

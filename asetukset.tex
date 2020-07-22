@@ -370,7 +370,7 @@ kirjainperheen varaan:
     antiikvan ja groteskin välimuoto.}
 
 \item tasalevyinen kirjoituskoneen kaltainen perhe
-  (\englanti{type\-writer, mono\-spaced}).
+  (\englanti{type\-writer, mono\-spaced, tele\-type}).
 
 \end{nluetelma}
 
@@ -886,7 +886,82 @@ myös teknisesti eheä eli toimii Latexin sisäisen logiikan näkökulmasta
 oikein. Haittana voi pitää sitä, että kaikki koot täytyy määritellä
 erikseen.
 
+\subsection{Fonttien oletus\-asetukset}
+
+Oletuksena%
+\koodimargin{\keno setmainfont \\ \keno setsansfont} Latex\-/dokumentin
+peruskirjainperheessä (\koodi{\keno set\-main\-font}) ja
+pääteviivattomassa kirjainperheessä (\koodi{\keno set\-sans\-font}) ja
+on päällä seuraavat asetukset:
+
+\begin{koodilohkosis}
+  Ligatures={TeX, Common}
+  HyphenChar={-}
+\end{koodilohkosis}
+
+\koodi{TeX}\-/ligatuurit tarkoittavat lainausmerkkien ja ajatusviivojen
+tuottamiseen tarkoitettuja Texin erikoismerkkejä kuten \koodi{''} ja
+\koodi{\==}, joita käsitellään luvuissa \ref{luku:lainausmerkit} ja
+\ref{luku:yhdys_ajatus_miinus}. \koodi{Common}\-/ligatuurit ovat
+yleisimpiä typografisia ligatuureja kuten fi, ff ja fl, joita
+käsitellään luvussa \ref{luku:typo_liga}. Molemmat saa pois päältä
+seuraavalla asetuksella:
+
+\begin{koodilohkosis}
+  Ligatures={TeXReset, NoCommon}
+\end{koodilohkosis}
+
+Valitsin \koodi{Hyphen\-Char} asettaa tavutusmerkin kyseiselle
+kirjainperheelle. Oletuksena se on yhdysmerkki (\=/), mutta merkin
+vaihtaminen muuksi kuin yhdysmerkiksi toimii vain Xelatex\-/kääntäjän
+kanssa. Sen sijaan kaikilla kääntäjillä tavutuksen voi kytkeä
+kirjainperheeltä pois, kun antaa arvoksi \koodi{None}. Tavutusta
+käsitellään perusteellisemmin luvussa \ref{luku:tavutus}.
+
+Tasalevyinen%
+\koodimargin{\keno setmonofont} kirjainperhe (\koodi{\keno
+  set\-mono\-font}) toimii oletuksena hieman eri tavalla. Niissä muun
+muassa ei ole lainausmerkkien ja ajatusviivojen kirjoittamiseen
+tarkoitetut Tex\-/ligatuurit päällä. Oletusasetukset ovat seuraavat:
+
+\begin{koodilohkosis}
+  Ligatures=Common
+  HyphenChar=None
+\end{koodilohkosis}
+
+Yleensä tasalevyisestä kirjainperheestä kannattaa kytkeä typografiset
+ligatuurit pois päältä asetuksella \koodi{Liga\-tures=\katk No\-Common}.
+Tasalevyisen fontin ajatukseen nimenomaan kuuluu, että merkit ovat
+samanlevyisiä eikä yhden merkin tilaan sovi sulloa useampaa. Kaikkiin
+tasalevyisiin fontteihin ei ligatuurimerkkejä ole edes toteutettu.
+
+Oletuksena tavutus on kytketty pois päältä, koska tasalevyistä fonttia
+käytetään tavallisesti tietokoneisiin liittyvien koodien latomiseen,
+eikä niitä haluta yleensä tavuttaa. Tavutuksen saa kuitenkin päälle
+antamalla arvoksi yhdysmerkin (\koodi{Hyphen\-Char=\katk \{\=/\}}) tai
+Xelatex\-/kääntäjällä minkä tahansa merkin.
+
+Komennolla%
+\koodimargin{\keno default\-font\-features} \koodi{\keno
+  default\-font\-features} voi asettaa (joidenkin) kirjainperheiden
+oletusasetukset, kun komennon suorittaa ennen muiden kirjainperheiden
+määrittelyä.
+
+\begin{koodilohkosis}
+  \defaultfontfeatures[\rmfamily,\sffamily]{Ligatures={TeX, Common},
+    Numbers=Lowercase}
+\end{koodilohkosis}
+
+Komennon valinnaisella argumentilla voi rajata, mitä kirjainperhettä
+oletusasetukset koskevat. Valinnaiseen argumenttiin kirjoitetaan yksi
+tai useampia pilkulla erotettuja komentoja, joilla kirjainperheet
+kytketään päälle: \koodi{\keno rm\-family}, \koodi{\keno sf\-family},
+\koodi{\keno tt\-family} (taulukko \ref{tlk:fonttimallikomennot},
+s.~\pageref{tlk:fonttimallikomennot}) tai komennolla \koodi{\keno
+  new\-font\-family} määritelty fonttikomento.
+
 \subsection{Typografiset ligatuurit}
+\label{luku:typo_liga}
 
 Typografiset ligatuurit ovat fontissa olevia yhdistelmämerkkejä, joissa
 on typografisista syitä yhdistetty kaksi tai useampia kirjaimia yhteen
@@ -906,9 +981,9 @@ keskenään yhteensopivia. Kirjainten välistys voi olla ongelmallista:
 sopivalle etäisyydelle asetettaessa kirjainten osat voivat mennä
 rumannäköisesti päällekkäin. Riippuu fontista, mitkä ligatuurit ovat
 tarpeellisia ja mitkä ligatuurimerkit on ylipäätään toteutettu fontin
-merkistöön. Tavallisia antiikvafonttien ligatuureja ovat fi, ff, ffi, fl
-ja ffl, mutta jotkin fontit sisältävät muitakin. Kuvaan
-\ref{kuva:ligatuurit} on koottu erilaisia ligatuureja.
+merkistöön. Tavallisia an\-tiik\-va\-kir\-jain\-leik\-kaus\-ten
+ligatuureja ovat fi, ff, ffi, fl ja ffl, mutta jotkin fontit sisältävät
+muitakin. Kuvaan \ref{kuva:ligatuurit} on koottu esimerkkejä.
 
 \leijukuva{
   \erikoisfontti
@@ -954,8 +1029,7 @@ voi vaikuttaa komennolla \koodi{\keno add\-font\-fea\-tures}, joka sekin
 on \paketti{fontspec}\-/pakettiin sisältyvä komento.
 
 \begin{koodilohkosis}
-  \setmainfont{…}[Ligatures=NoCommon] % Kirjainperheen yleisasetus.
-  {\addfontfeatures{Ligatures=NoCommon} fi fl} % Väliaikaisesti.
+  {\addfontfeatures{Ligatures=NoCommon} fi fl}
 \end{koodilohkosis}
 
 Tavallisten ligatuurien lisäksi \englanti{Open Type} \=/fontit voivat
@@ -963,18 +1037,17 @@ sisältää myös harvinaisempia ligatuureja, jotka täytyy erikseen kytkeä
 päälle. Niiden tarkoituksena on esimerkiksi erityinen koristeellisuus
 tai historiallisen kirjoitustavan jäljittely. Harvinaisia ligatuureja ei
 ole tarkoitus käyttää joka tilanteessa vaan ainoastaan erityisestä
-syystä. Kuvassa \ref{kuva:ligatuurit} olevat {%
+syystä. Kuvassa \ref{kuva:ligatuurit} ja tässäkin tekstissä olevat {%
   \newcommand{\hlig}[1]{{\erikoisfontti
       \addfontfeatures{Ligatures=Historic}#1}}%
   \hlig{st}- ja \hlig{ct}\-/ligatuurit%
-} on saatu fontin asetuksella \koodi{Liga\-tures=\katk His\-toric},
-mutta joissakin fonteissa sama tehdään asetuksella
-\koodi{Liga\-tures=\katk Dis\-cre\-tionary}. Useitakin ligatuurityyppejä
-voi kytkeä päälle samanaikaisesti, ja seuraava esimerkki näyttää, miten
-se tehdään:
+} on saatu fontin asetuksella \koodi{Liga\-tures=\katk His\-toric}.
+Joissakin fonteissa sama tehdään asetuksella \koodi{Liga\-tures=\katk
+  Dis\-cre\-tionary}. Useitakin ligatuurityyppejä voi kytkeä päälle
+samanaikaisesti, ja seuraava esimerkki näyttää, miten se tehdään:
 
 \begin{koodilohkosis}
-  \setmainfont{…}[Ligatures={Common, Historic, Discretionary}]
+  \setmainfont{…}[Ligatures={TeX, Common, Historic, Discretionary}]
 \end{koodilohkosis}
 
 Ligatuurityyppejä on muitakin, ja niihin liittyviä asetuksia kannattaa
@@ -983,10 +1056,14 @@ Fontin ominaisuudet puolestaan selviävät käyttöjärjestelmän
 komentotulkissa komennolla \koodi{otf\-info}. Komennon argumentiksi
 annetaan muun muassa fonttitiedoston nimi.
 
-\subsection{Muita fonttien asetuksia KESKEN}
+\subsection{Muita asetuksia KESKEN}
 
-% Oletus: Ligatures={TeX, Common} paitsi tasalevyisessä
-% HyphenChar=- None (eri oletus tasalevyisessä, Xelatex, Lualatex)
+Harvemmin tarvittavia mutta välillä hyödyllisiä fonttien asetuksia ovat 
+
+sana \\
+{\addfontfeatures{LetterSpace=10} \scshape harvennus}
+
+% Numers=
 % FakeStretch=
 % OpticalSize=
 % WordSpace=

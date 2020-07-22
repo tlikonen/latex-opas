@@ -1516,23 +1516,14 @@ Tavutuksen voi kytkeä kokonaan pois päältä
 \paketti{polyglossia}\-/kielipaketin komennolla%
 \koodimargin{\keno disable\-hyphenation} \koodi{\keno
   dis\-able\-hy\-phen\-ation}. Tavutuksen saa takaisin päälle komennolla
-\koodi{\keno en\-able\-hy\-phen\-ation}. Toinen vaihtoehto on käyttää
-fontin asetusta \koodi{Hyphen\-Char=\katk None} samalla, kun ottaa
-käyttöön tietyn kirjainperheen.
+\koodi{\keno en\-able\-hy\-phen\-ation}.
 
-\begin{koodilohkosis}
-  \setmainfont{Fontin nimi}[HyphenChar=None]
-\end{koodilohkosis}
-
-Edellä oleva komento on peräisin \paketti{fontspec}\-/fonttipaketista
-(luku \ref{luku:kirjaintyypit}). Oletuksena tavutus on pois päältä
-tasalevyisen fontin kanssa, eli esimerkiksi \koodi{\keno
-  text\-tt\{…\}}\-/komennon argumenttina olevaa tekstiä ei tavu\-teta.
-Tasalevyiselle fontille saa tavutuksen päälle fontin asetuksella
-\koodi{Hyphen\-Char=\{\=/\}}. Tällä asetuksella määritellään
-tavutuksessa käytettävä merkki, mutta se toimii vain
-Xelatex\-/kääntäjällä. Lualatex\-/kääntäjällä ei tavutusmerkkiä voi
-valita vaan tämä asetus ainoastaan kytkee tavutuksen päälle tai pois.
+Toinen vaihtoehto on käyttää fontin asetusta \koodi{Hyphen\-Char=\katk
+  None} samalla, kun ottaa käyttöön tietyn kirjainperheen. Oletuksena
+tavutus on pois päältä tasalevyisestä fontista, eli esimerkiksi
+\koodi{\keno text\-tt\{…\}}\-/komennon argumenttina olevaa tekstiä ei
+tavuteta. Fontteja ja niiden asetuksia käsitellään luvussa
+\ref{luku:kirjaintyypit}.
 
 Käytännössä tavutus menee pois päältä myös silloin, kun tekstikappaleet
 tasaa vain vasempaan reunaan eli tekee oikealle liehureunan komennolla

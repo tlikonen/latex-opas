@@ -1056,6 +1056,51 @@ Fontin ominaisuudet puolestaan selviävät käyttöjärjestelmän
 komentotulkissa komennolla \koodi{otf\-info}. Komennon argumentiksi
 annetaan muun muassa fonttitiedoston nimi.
 
+\subsection{Numeroiden muoto}
+
+Ainakin kirjatypografiassa on tavallista käyttää pääasiassa
+gemenanumeroita ({\gemenanum 1967}) eikä versaalinumeroita
+({\versaalinum 1967}), koska gemenanumerot sopivat leipätekstin
+gemenakirjainten kanssa paremmin yhteen. Versaalinumerot puolestaan
+erottuvat paremmin ja sopivat esimerkiksi taulukoihin, joissa on paljon
+lukuja. Näihin asetuksiin vaikutetaan fontin asetuksella
+\koodi{Numbers}, jos käytössä olevan fontti sisältää gemenanumerot.
+
+\begin{koodilohkosis}
+  Numbers=Lowercase % gemenanumerot
+  Numbers=Uppercase % versaalinumerot (oletus)
+\end{koodilohkosis}
+
+Jotkin koodi-ilmaukset sisältävät versaalikirjaimia ja numeroita
+sekaisin. Gemenanumerot eivät kuitenkaan sovi yhteen versaalikirjainten
+kanssa, koska merkkien koko\-ero on turhan suuri (ei näin: ISO-8859\=/1,
+UTF\=/16, A4). Gemenanumeroiden kanssa täytyy käyttää versaalikirjainten
+sijasta pienversaalia, jota saadaan \koodi{\keno text\-sc}\-/komennolla:
+\textsc{iso-8859\=/1}, \textsc{utf\=/16}, \textsc{a4}. Toinen vaihtoehto
+on yhdistää versaalikirjaimet ja versaalinumerot: {\versaalinum
+  ISO-8859\=/1, UTF\=/16, A4}.
+
+Silloin kun käytetään numeroita teknisten koodien ilmaisemiseen, voi
+olla tarpeen merkitä numero nolla poikkiviivalla
+({\addfontfeatures{Numbers={Uppercase, SlashedZero}}0}), jotta se ei
+sekoitu O\=/kirjaimeen. Nollaan saadaan poikkiviiva seuraavalla
+asetuksella, jos vain fontissa on tämä ominaisuus:
+
+\begin{koodilohkosis}
+  Numbers=SlashedZero
+\end{koodilohkosis}
+
+Kun numeroita ladotaan taulukkoon, voidaan haluta käyttää tasalevyisiä
+numeroita, jotta ne sijoittuvat allekkain samalle linjalle. Joissakin
+fonteissa on tarjolla tavallisten vaihtelevan levyisten numeroiden
+lisäksi myös tasalevyiset. Numeroiden leveyteen vaikutetaan seuraavilla
+asetuksilla:
+
+\begin{koodilohkosis}
+  Numbers=Monospaced   % tasalevyiset numerot
+  Numbers=Proportional % vaihtelevan leveydet numerot (oletus)
+\end{koodilohkosis}
+
 \subsection{Muita asetuksia KESKEN}
 
 Harvemmin tarvittavia mutta välillä hyödyllisiä fonttien asetuksia ovat 
@@ -1064,13 +1109,10 @@ muun muassa
 sana \\
 {\addfontfeatures{LetterSpace=10} \scshape harvennus}
 
-% Numers=
 % FakeStretch=
 % OpticalSize=
 % WordSpace= \spaceskip
 % LetterSpace=
-
-...
 
 \section{Kieli}
 \label{luku:kieliasetukset}

@@ -889,8 +889,8 @@ erikseen.
 Oletuksena%
 \koodimargin{\keno setmainfont \\ \keno setsansfont} Latex\-/dokumentin
 peruskirjainperheessä (\koodi{\keno set\-main\-font}) ja
-pääteviivattomassa kirjainperheessä (\koodi{\keno set\-sans\-font}) ja
-on päällä seuraavat asetukset:%
+pääteviivattomassa kirjainperheessä (\koodi{\keno set\-sans\-font}) on
+päällä muun muassa seuraavat asetukset:%
 
 \begin{koodilohkosis}
   Ligatures={TeX, Common}
@@ -900,10 +900,12 @@ on päällä seuraavat asetukset:%
 \koodi{TeX}\-/ligatuurit tarkoittavat lainausmerkkien ja ajatusviivojen
 tuottamiseen tarkoitettuja Texin erikoismerkkejä kuten \koodi{''} ja
 \koodi{\==}, joita käsitellään luvuissa \ref{luku:lainausmerkit} ja
-\ref{luku:yhdys_ajatus_miinus}. \koodi{Common}\-/ligatuurit ovat
-yleisimpiä typografisia ligatuureja kuten fi, ff ja fl, joita
-käsitellään luvussa \ref{luku:typo_liga}. Molemmat ligatuurityypit saa
-pois päältä seuraavalla asetuksella:
+\ref{luku:yhdys_ajatus_miinus}. Ne eivät ole varsinaisia luonnollisen
+kielen eivätkä typografisia ligatuureja vaan kuuluvat ainoastaan
+Tex\-/kielen merkintätapoihin. \koodi{Common}\-/ligatuurit sen sijaan
+ovat oikeita typografisia ligatuureja kuten fi, ff ja fl, ja niitä
+käsitellään tarkemmin luvussa \ref{luku:typo_liga}. Molemmat edellä
+mainitut ligatuurityypit saa pois päältä seuraavalla asetuksella:
 
 \begin{koodilohkosis}
   Ligatures={TeXReset, NoCommon}
@@ -964,7 +966,7 @@ s.~\pageref{tlk:fonttimallikomennot}) tai komennolla \koodi{\keno
 \label{luku:typo_liga}
 
 Typografiset ligatuurit ovat fontissa olevia yhdistelmämerkkejä, joissa
-on typografisista syitä yhdistetty kaksi tai useampia kirjaimia yhteen
+on typografisista syistä yhdistetty kaksi tai useampia kirjaimia yhteen
 merkkiin.%
 \footnote{Typografisten ligatuurien lisäksi on olemassa myös
   luonnollisten kielten ligatuureja, jotka muodostavat kieleen kuuluvan
@@ -1047,18 +1049,20 @@ Joissakin fonteissa sama tehdään asetuksella \koodi{Liga\-tures=\katk
 samanaikaisesti:
 
 \begin{koodilohkosis}
-  Ligatures={TeX, Common, Historic, Discretionary}
+  Ligatures={TeX, Required, Common, Historic, Discretionary,
+    Contextual}
 \end{koodilohkosis}
 
-Ligatuurityyppejä on muitakin, ja niihin liittyviä asetuksia kannattaa
-tutkia \paketti{fontspec}\-/paketin ohjekirjasta.\avctan{fontspec}
-Fontin ominaisuudet puolestaan selviävät käyttöjärjestelmän
-komentotulkissa komennolla \koodi{otf\-info}. Komennon argumentiksi
-annetaan muun muassa fonttitiedoston nimi.
+Harva fontti sisältää kaikkia ligatuurityyppejä, eikä se ole
+tarkoituskaan. Jotkin ligatuurit kuuluvat vain tiettyyn typografian
+aikakauteen tai kirjaintyyppiin. Open Type \=/fontin ominaisuuksia voi
+selvittää käyttöjärjestelmän komentotulkissa komennolla
+\koodi{otf\-info}. Komennon argumentiksi annetaan muun muassa
+fonttitiedoston nimi.
 
 \subsection{Numeroiden muoto}
 
-Ainakin kirjatypografiassa on tavallista käyttää pääasiassa
+Varsinkin kirjatypografiassa on tavallista käyttää pääasiassa
 gemenanumeroita ({\gemenanum 1967}) eikä versaalinumeroita
 ({\versaalinum 1967}), koska gemenanumerot sopivat leipätekstin
 gemenakirjainten kanssa paremmin yhteen. Versaalinumerot puolestaan
@@ -1073,16 +1077,15 @@ lukuja. Näihin asetuksiin vaikutetaan fontin asetuksella
 
 Jotkin koodi-ilmaukset sisältävät versaalikirjaimia ja numeroita
 sekaisin. Gemenanumerot eivät kuitenkaan sovi yhteen versaalikirjainten
-kanssa, koska merkkien koko\-ero on turhan suuri (ei näin: ISO-8859\=/1,
-UTF\=/16, A4). Gemenanumeroiden kanssa täytyy käyttää versaalikirjainten
-sijasta pienversaalia, jota saadaan \koodi{\keno text\-sc}\-/komennolla:
-\textsc{iso-8859\=/1}, \textsc{utf\=/16}, \textsc{a4}. Toinen vaihtoehto
-on yhdistää versaalikirjaimet ja versaalinumerot: {\versaalinum
-  ISO-8859\=/1, UTF\=/16, A4}.
+kanssa, koska merkkien koko\-ero on häiritsevän suuri. Ei siis näin:
+RJ45, R2D2. Gemenanumeroiden kanssa täytyy käyttää pienversaalia, jota
+saadaan \koodi{\keno text\-sc}\-/komennolla: \textsc{rj45},
+\textsc{r2d2}. Toinen vaihtoehto on käyttää pelkästään versaaleja:
+{\versaalinum RJ45, R2D2}.
 
 Silloin kun käytetään numeroita teknisten koodien ilmaisemiseen, voi
 olla tarpeen merkitä numero nolla poikkiviivalla
-({\addfontfeatures{Numbers={Uppercase, SlashedZero}}0}), jotta se ei
+({\addfontfeatures{Numbers={Uppercase, SlashedZero}}0}), jottei se
 sekoitu O\=/kirjaimeen. Nollaan saadaan poikkiviiva seuraavalla
 asetuksella, jos vain fontissa on tämä ominaisuus:
 

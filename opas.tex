@@ -47,20 +47,19 @@ marginparwidth=50bp, marginparsep=10bp]{geometry}
 \newcommand{\englishfont}{}
 \newcommand{\englanti}[1]{\textenglish{#1}}
 
-\defaultfontfeatures{Ligatures={TeX, Common}}
+\defaultfontfeatures{Ligatures={TeX, Common}, Numbers=Lowercase}
 
 % Perusfontin vaatimuksia: Numbers={Lowercase, SlashedZero}, Fractions,
 % pienversaalit, aitoja ylä- ja alaindeksejä.
 \setmainfont {libertinusserif}
-[Numbers=Lowercase,
-UprightFont=*-regular,
+[UprightFont=*-regular,
 ItalicFont=*-italic,
 BoldFont=*-semibold,
 BoldItalicFont=*-semibolditalic,
 Extension=.otf]
 
 \setsansfont {libertinussans}
-[Scale=MatchLowercase, Numbers=Lowercase,
+[Scale=MatchLowercase,
 UprightFont=*-regular,
 ItalicFont=*-italic,
 BoldFont=*-bold,
@@ -69,6 +68,7 @@ Extension=.otf]
 
 \setmonofont {libertinusmono}
 [Scale=MatchLowercase, Ligatures={TeXReset, NoCommon}, FakeStretch=.8,
+Numbers=Uppercase,
 HyphenChar=-,
 UprightFont=*-regular,
 ItalicFont=*-italic,

@@ -513,8 +513,8 @@ muiden mittojen määrittämiseen on ohjeita luvussa
 \ref{luku:sivuasetukset}.
 
 Fonttiasetuksiin kuuluu fontin koon lisäksi toinenkin mitta: rivikorkeus
-(\koodi{\keno base\-line\-skip}). Se on mitta rivin peruslinjalta edellisen
-rivin peruslinjalle. Fontin koko ja rivikorkeus määritellään
+(\koodi{\keno base\-line\-skip}). Se on peräkkäisten rivien
+peruslinjojen välinen etäisyys. Fontin koko ja rivikorkeus määritellään
 saman\-aikaisesti, koska ne ovat saman \koodi{\keno fontsize}\-/komennon
 argumentteja. Esimerkki:
 
@@ -581,10 +581,8 @@ kummassa järjestyksessä \koodi{\keno fontsize}- ja \koodi{\keno
 \koodi{\keno select\-font}\-/komennon jälkeen.
 
 Käytännössä \koodi{\keno linespread} sopii rivikorkeuden yleistason
-hienosäätöön, esimerkiksi dokumentin esittelyosassa. Sitä ei kannattane
-kovin paljon muutella, koska se vaikuttaa kaikkialla. Sen sijaan
-\koodi{\keno fontsize}\-/komennolla määritetään rivikorkeus tietylle
-fonttikoolle ja tiettyyn tilanteeseen.
+hienosäätöön esimerkiksi dokumentin esittelyosassa. Tilannekohtainen
+rivikorkeus on parasta asettaa \koodi{\keno fontsize}\-/komennolla.
 
 \subsection{Korkean tason komennot}
 \label{luku:fontit_korkea}
@@ -774,7 +772,7 @@ voisi mahdollisesti \koodi{\keno fontsize}\-/komennon sijasta käyttää
 skaalauskerrointa esimerkiksi seuraavalla tavalla:
 
 \begin{koodilohkosis}
-  {\addfontfeatures{Scale=3.2}Poikkeuksellisen isoa tekstiä}
+  {\addfontfeatures{Scale=3.2} Poikkeuksellisen isoa tekstiä}
 \end{koodilohkosis}
 
 Jos edellä mainitut kummallisuudet eivät häiritse eikä ole tarvetta
@@ -841,9 +839,9 @@ on tarvetta esimerkiksi otsikoissa, voidaan käyttää rivien 10--11
 komentoja. Niillä luodaan uudet kirjainperheet, jotka ovat käytännössä
 samoja mutta ilman skaalausta.
 
-Uusien kirjainperheiden komentojen nimiksi on valittu \koodi{\keno
-  sf\-fam\-i\-ly\-abs} ja \koodi{\keno tt\-fam\-i\-ly\-abs} (vrt.
-\koodi{\keno sf\-fam\-i\-ly} ja \koodi{\keno tt\-fam\-i\-ly}, taulukko
+Uusien skaalaamattomien kirjainperheiden komentojen nimiksi on valittu
+\koodi{\keno sf\-fam\-i\-ly\-abs} ja \koodi{\keno tt\-fam\-i\-ly\-abs}
+(vrt. \koodi{\keno sffamily} ja \koodi{\keno ttfamily}, taulukko
 \ref{tlk:fonttimallikomennot}), ja näillä komennoilla kirjainperheet
 kytketään päälle. Jos esimerkiksi jonkin julkaisun vaatimuksiin kuuluu,
 että otsikossa täytyy olla 16 pisteen lihavoitu TeX Gyre Heros
@@ -886,13 +884,13 @@ myös teknisesti eheä eli toimii Latexin sisäisen logiikan näkökulmasta
 oikein. Haittana voi pitää sitä, että kaikki koot täytyy määritellä
 erikseen.
 
-\subsection{Fonttien oletus\-asetukset}
+\subsection{Fonttien oletus\-asetuksia}
 
 Oletuksena%
 \koodimargin{\keno setmainfont \\ \keno setsansfont} Latex\-/dokumentin
 peruskirjainperheessä (\koodi{\keno set\-main\-font}) ja
 pääteviivattomassa kirjainperheessä (\koodi{\keno set\-sans\-font}) ja
-on päällä seuraavat asetukset:
+on päällä seuraavat asetukset:%
 
 \begin{koodilohkosis}
   Ligatures={TeX, Common}
@@ -904,8 +902,8 @@ tuottamiseen tarkoitettuja Texin erikoismerkkejä kuten \koodi{''} ja
 \koodi{\==}, joita käsitellään luvuissa \ref{luku:lainausmerkit} ja
 \ref{luku:yhdys_ajatus_miinus}. \koodi{Common}\-/ligatuurit ovat
 yleisimpiä typografisia ligatuureja kuten fi, ff ja fl, joita
-käsitellään luvussa \ref{luku:typo_liga}. Molemmat saa pois päältä
-seuraavalla asetuksella:
+käsitellään luvussa \ref{luku:typo_liga}. Molemmat ligatuurityypit saa
+pois päältä seuraavalla asetuksella:
 
 \begin{koodilohkosis}
   Ligatures={TeXReset, NoCommon}
@@ -914,9 +912,10 @@ seuraavalla asetuksella:
 Valitsin \koodi{Hyphen\-Char} asettaa tavutusmerkin kyseiselle
 kirjainperheelle. Oletuksena se on yhdysmerkki (\=/), mutta merkin
 vaihtaminen muuksi kuin yhdysmerkiksi toimii vain Xelatex\-/kääntäjän
-kanssa. Sen sijaan kaikilla kääntäjillä tavutuksen voi kytkeä
-kirjainperheeltä pois, kun antaa arvoksi \koodi{None}. Tavutusta
-käsitellään perusteellisemmin luvussa \ref{luku:tavutus}.
+kanssa, ei esimerkiksi Lualatexilla. Sen sijaan kaikilla kääntäjillä
+tavutuksen voi kytkeä kirjainperheeltä pois, kun antaa arvoksi
+\koodi{None}. Tavutusta käsitellään perusteellisemmin luvussa
+\ref{luku:tavutus}.
 
 Tasalevyinen%
 \koodimargin{\keno setmonofont} kirjainperhe (\koodi{\keno
@@ -932,19 +931,19 @@ tarkoitetut Tex\-/ligatuurit päällä. Oletusasetukset ovat seuraavat:
 Yleensä tasalevyisestä kirjainperheestä kannattaa kytkeä typografiset
 ligatuurit pois päältä asetuksella \koodi{Liga\-tures=\katk No\-Common}.
 Tasalevyisen fontin ajatukseen nimenomaan kuuluu, että merkit ovat
-samanlevyisiä eikä yhden merkin tilaan sovi sulloa useampaa. Kaikkiin
-tasalevyisiin fontteihin ei ligatuurimerkkejä ole edes toteutettu.
+samanlevyisiä eikä yhden merkin tilaan sovi sulloa useampaa kirjainta.
 
 Oletuksena tavutus on kytketty pois päältä, koska tasalevyistä fonttia
-käytetään tavallisesti tietokoneisiin liittyvien koodien latomiseen,
-eikä niitä haluta yleensä tavuttaa. Tavutuksen saa kuitenkin päälle
-antamalla arvoksi yhdysmerkin (\koodi{Hyphen\-Char=\katk \{\=/\}}) tai
-Xelatex\-/kääntäjällä minkä tahansa merkin.
+käytetään tavallisesti tietokoneisiin liittyvien koodien tai vastaavien
+ilmausten latomiseen, eikä niitä haluta yleensä tavuttaa. Tavutuksen saa
+kuitenkin päälle antamalla arvoksi yhdysmerkin
+(\koodi{Hyphen\-Char=\katk \{\=/\}}) tai Xelatex\-/kääntäjällä minkä
+tahansa merkin.
 
 Komennolla%
 \koodimargin{\keno default\-font\-features} \koodi{\keno
   default\-font\-features} voi asettaa (joidenkin) kirjainperheiden
-oletusasetukset, kun komennon suorittaa ennen muiden kirjainperheiden
+oletusasetukset, kun komennon suorittaa ennen kirjainperheiden
 määrittelyä.
 
 \begin{koodilohkosis}
@@ -952,13 +951,14 @@ määrittelyä.
     Numbers=Lowercase}
 \end{koodilohkosis}
 
-Komennon valinnaisella argumentilla voi rajata, mitä kirjainperhettä
+Komennon valinnaisella argumentilla voi rajata, mitä kirjainperheitä
 oletusasetukset koskevat. Valinnaiseen argumenttiin kirjoitetaan yksi
 tai useampia pilkulla erotettuja komentoja, joilla kirjainperheet
-kytketään päälle: \koodi{\keno rm\-family}, \koodi{\keno sf\-family},
-\koodi{\keno tt\-family} (taulukko \ref{tlk:fonttimallikomennot},
+kytketään päälle: \koodi{\keno rmfamily}, \koodi{\keno sffamily},
+\koodi{\keno ttfamily} (taulukko \ref{tlk:fonttimallikomennot},
 s.~\pageref{tlk:fonttimallikomennot}) tai komennolla \koodi{\keno
-  new\-font\-family} määritelty fonttikomento.
+  new\-font\-family} määritelty fonttikomento (luku
+\ref{luku:fontin_valinta}).
 
 \subsection{Typografiset ligatuurit}
 \label{luku:typo_liga}
@@ -990,9 +990,9 @@ muitakin. Kuvaan \ref{kuva:ligatuurit} on koottu esimerkkejä.
   \addfontfeatures{Scale=3.5, Ligatures={Common, Historic}}
   fi ff ffi fl ffl Th fb st ct
 }{
-  \caption{Tavalliset f\=/alkuiset ligatuurit, vähän harvinaisemmat Th
-    ja fb sekä erikseen päälle kytkettävät historialliset ligatuurit st
-    ja ct}
+  \caption{Tavalliset f\=/alkuiset typografiset ligatuurit, vähän
+    harvinaisemmat Th ja fb sekä erikseen päälle kytkettävät
+    historialliset ligatuurit st ja ct}
   \label{kuva:ligatuurit}
 }
 
@@ -1059,6 +1059,7 @@ annetaan muun muassa fonttitiedoston nimi.
 \subsection{Muita asetuksia KESKEN}
 
 Harvemmin tarvittavia mutta välillä hyödyllisiä fonttien asetuksia ovat 
+muun muassa 
 
 sana \\
 {\addfontfeatures{LetterSpace=10} \scshape harvennus}
@@ -1066,7 +1067,7 @@ sana \\
 % Numers=
 % FakeStretch=
 % OpticalSize=
-% WordSpace=
+% WordSpace= \spaceskip
 % LetterSpace=
 
 ...
@@ -1164,12 +1165,12 @@ typografisia yksityiskohtia eri tavalla.
 
 Käyttäjä voi määritellä eri kielille eri fontin. Oletuksena käytetään
 peruskirjainperhettä, mikä samalla tarkoittaa, että kielen vaihtuessa
-pois oletuskielestä suoritetaan \koodi{\keno rm\-fam\-i\-ly}\-/komento
+pois oletuskielestä suoritetaan \koodi{\keno rmfamily}\-/komento
 (taulukko \ref{tlk:fonttimallikomennot},
 s.~\pageref{tlk:fonttimallikomennot}). Tätä havainnollistaa seuraava
 esimerkki, jossa \koodi{\keno text\-english}\-/komennon vaikutuksen
-ajaksi tulee käyttöön perusfontti \koodi{\keno rm\-fam\-i\-ly} eikä
-ympärillä oleva pääteviivaton \koodi{\keno sf\-fam\-i\-ly}.
+ajaksi tulee käyttöön perusfontti \koodi{\keno rmfamily} eikä ympärillä
+oleva pääteviivaton \koodi{\keno sffamily}.
 
 \begin{koodilohkosis}
   \sffamily
@@ -1184,10 +1185,7 @@ Erikielisten tekstikatkelmien fonttiin voi vaikuttaa määrittelemällä
 komennon, jonka nimessä on ensin kielen nimi ja lopuksi sana
 \koodi{font}, esimerkiksi \koodi{\keno english\-font} tai \koodi{\keno
   greek\-font}. Komennon määritelmään kirjoitetaan yleensä
-kirjainperheeseen tai \=/leikkaukseen vaikuttavia komentoja, joita on
-koottu taulukkoon \ref{tlk:fonttimallikomennot}
-(s.~\pageref{tlk:fonttimallikomennot}). Komentojen määrittelemistä
-käsitellään luvussa \ref{luku:komennot-määr}.
+kirjainperheeseen tai \=/leikkaukseen vaikuttavia komentoja.
 
 Seuraavassa esimerkissä \koodi{\keno english\-font}\-/komento
 määritellään tyhjäksi, mikä saa aikaan sen, että englanninkieliseksi

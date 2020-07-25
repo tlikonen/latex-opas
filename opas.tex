@@ -49,7 +49,8 @@ marginparwidth=50bp, marginparsep=10bp]{geometry}
 
 \defaultfontfeatures{Ligatures={TeX, Common}, Numbers=Lowercase}
 
-% Perusfontin vaatimuksia: Numbers={Lowercase, SlashedZero}, Fractions,
+% Perusfontin on oltava antiikva ja siitä käytetään seuraavia asetuksia:
+% Numbers={Lowercase}, Numbers={Uppercase, SlashedZero}, Fractions,
 % pienversaalit, aitoja ylä- ja alaindeksejä.
 \setmainfont {libertinusserif}
 [UprightFont=*-regular,
@@ -58,6 +59,8 @@ BoldFont=*-semibold,
 BoldItalicFont=*-semibolditalic,
 Extension=.otf]
 
+% Fonttiluvussa viitataan tähän perheeseen siten, että se on antiikvan
+% ja groteskin välimuoto (päätteetön kaksivahva).
 \setsansfont {libertinussans}
 [Scale=MatchLowercase,
 UprightFont=*-regular,

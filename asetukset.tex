@@ -1085,7 +1085,7 @@ saadaan \koodi{\keno text\-sc}\-/komennolla: \textsc{rj45},
 
 Silloin kun käytetään numeroita teknisten koodien ilmaisemiseen, voi
 olla tarpeen merkitä numero nolla poikkiviivalla
-({\addfontfeatures{Numbers={Uppercase, SlashedZero}}0}), jottei se
+({\addfontfeatures{Numbers={Uppercase, SlashedZero}} 0}), jottei se
 sekoitu O\=/kirjaimeen. Nollaan saadaan poikkiviiva seuraavalla
 asetuksella, jos vain fontissa on tämä ominaisuus:
 
@@ -1104,19 +1104,81 @@ asetuksilla:
   Numbers=Proportional % vaihtelevan levyiset numerot (oletus)
 \end{koodilohkosis}
 
-\subsection{Muita asetuksia KESKEN}
+\subsection{Muita asetuksia}
 \label{luku:fontit_muut}
 
-Harvemmin tarvittavia mutta välillä hyödyllisiä fonttien asetuksia ovat 
-muun muassa 
+Tässä luvussa käsitellään harvemmin tarvittavia mutta välillä
+hyödyllisiä asetuksia, jotka eivät ole sidoksissa fonttitiedoston
+ominaisuuksiin. Toisin sanoen nämä asetukset muokkaavat fontin toimintaa
+kokonaan Latexin puolella.
 
-sana \\
-{\addfontfeatures{LetterSpace=10} \scshape harvennus}
+Valitsimella%
+\koodimargin{Fake\-Stretch} \koodi{Fake\-Stretch} voi venyttää tai
+kutistaa fonttia leveyssuunnassa. Arvoksi annetaan desimaalilukukerroin,
+joka on suhdeluku alkuperäiseen leveyteen nähden. Seuraavassa
+havainnollistava esimerkki:
 
-% FakeStretch=
-% OpticalSize=
-% WordSpace= \spaceskip
-% LetterSpace=
+\begin{koodilohkosis}
+  esimerkki \\
+  {\addfontfeatures{FakeStretch=1.3} esimerkki}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  esimerkki \\
+  {\addfontfeatures{FakeStretch=1.3} esimerkki}
+\end{tulossis}
+
+Kirjainleikkauksen leventäminen tekee tekstistä samalla lihavampaa,
+koska kirjainten viivat tulevat vahvemmiksi leveyssuunnassa. Sen sijaan
+korkeussuunnassa vahvuus säilyy ennallaan, joten kirjainten
+viivakontrasti muuttuu. Kirjainleikkauksen kutistaminen vaikuttaa
+lihavuuteen päinvastaisesti. Tällainen mekaaninen fontin
+''korjaileminen'' ei välttämättä tuota typografisesti kovin hyvää jälkeä
+mutta voi sopia lievästi käytettynä esimerkiksi otsikoihin. Tämän oppaan
+tasalevyistä kirjainperhettä on hieman kutistettu, koska alkuperäinen
+leveys ({\ttfamily\addfontfeatures{FakeStretch=1} esimerkki}) on
+häiritsevän suuri verrattuna muihin käytettyihin kirjainperheisiin.
+
+Jos%
+\koodimargin{Fake\-Bold \\ Fake\-Slant} kirjainperheeseen ei sisälly
+sopivaa lihavoitua tai kallistettua leikkausta, voi sellaiset koettaa
+tehdä myös keinotekoisesti \koodi{Fake\-Bold}- ja
+\koodi{Fake\-Slant}\-/valitsimien avulla. Niille annetaan arvoksi
+desimaalilukukerroin. Tosin \koodi{Fake\-Bold} toimii vain
+Xelatex\-/kääntäjän kanssa.
+
+Fontin%
+\koodimargin{Word\-Space} kanssa käytettäviä sanavälejä voi säätää
+\koodi{Word\-Space}\-/valitsimella, jonka arvoksi annetaan
+desimaalilukukerroin eli suhdeluku normaaliin verrattuna. Arvona voi
+olla myös kolme eri kerrointa, jolloin mukana on lisäksi sanavälin
+venymisen rajat. Tämä asetus on tehtävä kirjainperheen tai
+\=/leikkauksen määrittelyn yhteydessä, eli se ei toimi esimerkiksi
+\koodi{\keno add\-font\-features}\-/komennon kanssa. Katso tietoa
+sanaväleistä myös luvusta \ref{luku:sanavali} tai tekstikappaleiden
+latomista käsittelevästä luvusta \ref{luku:kappale}.
+
+Fontti\-asetusten valitsimella%
+\koodimargin{Letter\-Space} \koodi{Letter\-Space} säädetään merkkien
+välistystä eli niiden välistä tyhjää tilaa. Arvoksi annetaan
+positiivinen tai negatiivinen prosenttiluku, joka ilmaisee alkuperäiseen
+lisättävän osuuden. Asetus \koodi{Letter\-Space=\katk 8} tuottaa siis 8
+prosenttia leveämmät merkkien välit.
+
+Välistyksen tiivistäminen voi sopia suuriin otsikoihin ja harventaminen
+puolestaan yksittäisiin versaali\-/{} tai pienversaalikirjaimilla
+ladottaviin sanoihin. Näitä korostuskeinoja käsitellään luvussa
+\ref{luku:korostus}, mutta seuraavassa on pieni esimerkki:
+
+\begin{koodilohkosis}
+  \scshape normaali \\
+  {\addfontfeatures{LetterSpace=8} harvennus}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \scshape normaali \\
+  {\addfontfeatures{LetterSpace=8} harvennus}
+\end{tulossis}
 
 \section{Kieli}
 \label{luku:kieliasetukset}

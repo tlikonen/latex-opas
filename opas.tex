@@ -47,7 +47,7 @@ marginparwidth=50bp, marginparsep=10bp]{geometry}
 \newcommand{\englishfont}{}
 \newcommand{\englanti}[1]{\textenglish{#1}}
 
-\defaultfontfeatures{Ligatures={TeX, Common}, Numbers=Lowercase}
+\defaultfontfeatures{Ligatures={TeX, Required, Common}, Numbers=Lowercase}
 
 % Perusfontin on oltava antiikva ja siitä käytetään seuraavia asetuksia:
 % Numbers={Lowercase}, Numbers={Uppercase, SlashedZero}, Fractions,
@@ -73,8 +73,7 @@ Extension=.otf]
 % välistyksen tiivistämiseen (FakeStretch).
 \setmonofont {libertinusmono}
 [Scale=MatchLowercase, Ligatures={TeXReset, NoCommon}, FakeStretch=.8,
-Numbers=Uppercase,
-HyphenChar=-,
+Numbers=Uppercase, HyphenChar=-,
 UprightFont=*-regular,
 ItalicFont=*-italic,
 BoldFont=*-bold,

@@ -439,11 +439,59 @@ kirjainperheen skaalausta hienosäätää vielä
   [Scale=MatchLowercase, ScaleAgain=.97]
 \end{koodilohkosis}
 
-% \pagebreak[3]
+Kirjainperheen määrittelyn yhteydessä ei yleensä tarvitse antaa kuin
+kirjainperheen nimi, sillä \paketti{fontspec}\-/paketti ja kääntäjät
+osaavat automaattisesti ladata perheeseen sisältyviä eri
+fonttitiedostoja kuten pysty\-asen\-toi\-sen leikkauksen, kursiivin ja
+lihavoinnin. On kuitenkin mahdollista määritellä kirjainperheeseen
+kuuluvia leikkausten nimiä tai fonttitiedostoja erikseen. Tällainen on
+tarpeen esimerkiksi silloin, kun kirjainperhe sisältää useita eri
+vahvuuksia ja halutaan itse määritellä, mikä niistä tulee
+perusvahvuudeksi ja mikä lihavoiduksi.
 
-Jos edellä kuvatut kolme kirjainperhettä eivät riitä, on
-\paketti{fontspec}\-/paketissa komennot lisäperheiden ja \=/leikkausten
-määrittämiseen. Uusi perhe määritellään seuraavasti:
+Esimerkki \ref{esim:fontit_leik_omin} selventää, kuinka kirjainperheen
+eri leikkausten nimet tai fonttitiedostot määritellään. Kullekin
+leikkaukselle voi määrittää myös omat asetuksensa
+\koodi{Fea\-tures}\-/loppuisella valitsimella. Samaa asiaa
+havainnollistetaan myös konkreettisemmin esimerkissä
+\ref{esim:fontit_leik_omin_kayt}. Leikkauksen nimessä voi käyttää tähteä
+(\koodi{*}), joka korvautuu kirjainperheen nimellä (\englanti{Macklin
+  Text}).
+
+\begin{esimerkki*}
+\begin{koodilohko}
+  \setmainfont{…}[
+    UprightFont={…},     UprightFeatures={…},
+    ItalicFont={…},      ItalicFeatures={…},
+    BoldFont={…},        BoldFeatures={…},
+    BoldItalicFont={…},  BoldItalicFeatures={…},
+    SlantedFont={…},     SlantedFeatures={…},
+    BoldSlantedFont={…}, BoldSlantedFeatures={…},
+    SmallCapsFont={…},   SmallCapsFeatures={…}]
+\end{koodilohko}
+\caption{Kirjainperheeseen sisältyvien leikkausten nimien ja
+  kirjainleikkauskohtaisten ominaisuuksien määrittely}
+\label{esim:fontit_leik_omin}
+\end{esimerkki*}
+
+\begin{esimerkki*}
+\begin{koodilohko}
+  \setmainfont{Macklin Text}[
+    UprightFont    = {* Light},
+    ItalicFont     = {* Light Italic},
+    BoldFont       = {* Medium},
+    BoldItalicFont = {* Medium Italic}]
+\end{koodilohko}
+\caption{Eri leikkausten nimien määrittely \englanti{Macklin Text}
+  \=/kirjainperheelle. Leikkauksen nimessä tähti (\koodi{*}) viittaa
+  koko perheen nimeen}
+\label{esim:fontit_leik_omin_kayt}
+\end{esimerkki*}
+
+Jos edellä kuvatut kolme kirjainperhettä (\koodi{\keno set\-main\-font},
+\koodi{\keno set\-sans\-font} ja \koodi{\keno set\-mono\-font}) eivät
+riitä, on \paketti{fontspec}\-/paketissa komennot lisäperheiden ja
+\=/leikkausten määrittämiseen. Uusi perhe määritellään seu\-raa\-vasti:
 
 \begin{koodilohkosis}
   \newfontfamily{\hienoperhe}{TeX Gyre Schola}[…]
@@ -451,12 +499,10 @@ määrittämiseen. Uusi perhe määritellään seuraavasti:
 
 Komento \koodi{\keno new\-font\-family} toimii samalla tavalla kuin
 aiemmin esitellyt \koodi{\keno set\-main\-font} ym. komennot, mutta
-lisäksi ensimmäinen argumentti määrittää komennon, jolla kirjainperhe
+lisäksi ensimmäisellä argumentilla nimetään komento, jolla kirjainperhe
 otetaan käyttöön. Edellisessä esimerkissä luodaan komento \koodi{\keno
   hieno\-perhe}, joka kytkee päälle \englanti{TeX Gyre Schola}
 \=/nimisen kirjainperheen.
-
-% \pagebreak[3]
 
 Jos ei tarvita kokonaista perhettä vaan yksi leikkaus riittää, käytetään
 komentoa \koodi{\keno new\-font\-face}. Seuraavassa esimerkissä
@@ -590,60 +636,76 @@ rivikorkeus on parasta asettaa \koodi{\keno fontsize}\-/komennolla.
 Latexissa on joukko korkean tason fonttikomentoja, jotka on tarkoitettu
 käytettäväksi sen jälkeen, kun matalan tason asetukset on kerran
 määritetty. Taulukossa \ref{tlk:fonttimallikomennot} on komennot
-kirjainperheen ja kirjainleikkauksen valintaan. Kirjainperhekomento
-vaihtaa koko perheen kaikkine leikkauksineen, ja kirjainleikkauskomento
-valitsee toisen leikkauksen samasta perheestä.
+kirjainperheen ja kirjainleikkauksen valintaan. Joka rivillä ensin
+mainittu komento (esim. \koodi{\keno rm\-fam\-i\-ly}) vaikuttaa
+tekstiin, joka tulee komennon jälkeen. Vaikutus\-alue rajoittuu nykyisen
+ympäristön (luku \ref{luku:ymparistot}) sisään tai aaltosulkeilla (luku
+\ref{luku:aaltosulkeet}) rajatun alueen sisään. Rivillä toisena olevalle
+komennolle (esim. \koodi{\keno text\-rm\{\ldots\}}) annetaan yksi
+argumentti, ja komennon vaikutus koskee vain argumenttina olevaa
+tekstiä.
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[4]{%
+  \koodi{\keno #1} & \koodi{\keno #2\{\ldots\}} & #3 & #4 \\}
 
 \leijutlk{
   \begin{tabular}{llll}
     \toprule
     \multicolumn{2}{l}{\ots{Komento}}
     & \multicolumn{2}{l}{\ots{Merkitys}} \\
+
     \midrule
-    \koodi{\keno rmfamily} & \koodi{\keno textrm\{\}}
-    & {\rmfamily perhe} & perus, yl. antiikva, serif, roman \\
-    \koodi{\keno sffamily} & \koodi{\keno textsf\{\}}
-    & {\sffamily perhe} & groteski, sans serif, gothic \\
-    \koodi{\keno ttfamily} & \koodi{\keno texttt\{\}}
-    & {\ttfamily perhe} & tasalevyinen, typewriter \\
+    \rivi {rmfamily} {textrm} {\rmfamily perhe}
+    {perus, yl. antiikva, serif, roman}
+    \rivi {sffamily} {textsf} {\sffamily perhe}
+    {groteski, sans serif, gothic}
+    \rivi {ttfamily} {texttt} {\ttfamily perhe}
+    {tasalevyinen, typewriter}
+
     \midrule
-    \koodi{\keno mdseries} & \koodi{\keno textmd\{\}}
-    & {\mdseries leikkaus} & tavallinen vahvuus, medium \\
-    \koodi{\keno bfseries} & \koodi{\keno textbf\{\}}
-    & {\bfseries leikkaus} & lihavoitu, bold \\
+    \rivi {mdseries} {textmd} {\mdseries leikkaus}
+    {tavallinen vahvuus, medium}
+    \rivi {bfseries} {textbf} {\bfseries leikkaus}
+    {lihavoitu, bold}
+
     \midrule
-    \koodi{\keno upshape} & \koodi{\keno textup\{\}}
-    & {\upshape leikkaus} & pystyasento, tavallinen \\
-    \koodi{\keno slshape} & \koodi{\keno textsl\{\}}
-    & {\slshape leikkaus} & kalteva, slanted, oblique \\
-    \koodi{\keno itshape} & \koodi{\keno textit\{\}}
-    & {\itshape leikkaus} & kursiivi, italic \\
-    \koodi{\keno scshape} & \koodi{\keno textsc\{\}}
-    & {\scshape leikkaus} & pienversaali, kapiteeli, small caps \\
+    \rivi {upshape} {textup} {\upshape leikkaus}
+    {pystyasento, tavallinen}
+    \rivi {itshape} {textit} {\itshape leikkaus}
+    {kursiivi, italic}
+    \rivi {slshape} {textsl} {\slshape leikkaus}
+    {kalteva, slanted, oblique}
+    \rivi {scshape} {textsc} {\scshape leikkaus}
+    {pienversaali, kapiteeli, small caps}
     \bottomrule
   \end{tabular}
 }{
-  \caption{Komennot kirjainperheen ja kirjainleikkauksen valintaan}
+  \caption{Komennot kirjainperheen ja kirjainleikkauksen valintaan.
+    Perustila on \koodi{\keno rm\-family}, \koodi{\keno md\-series} ja
+    \koodi{\keno up\-shape}}
   \label{tlk:fonttimallikomennot}
 }
 
-Kirjainleikkauksen asetukset jaetaan kahteen ryhmään:
+Taulukossa on ensimmäisillä riveillä kirjainperhekomennot (3\,kpl),
+jotka vaihtavat koko perheen kaikkine leikkauksineen. Niiden jälkeen
+tulevat kirjainleikkauskomennot, jotka valitsevat toisen leikkauksen
+samasta perheestä. Kirjainleikkauksen asetukset jaetaan kahteen ryhmään:
 \englanti{\emph{series}} 'sarja' ja \englanti{\emph{shape}} 'muoto'.
 Kummastakin ryhmästä on valittuna aina yksi ominaisuus, eli
 samanaikaisesti voi olla voimassa esimerkiksi \koodi{\keno bf\-se\-ries}
 (\textbf{lihavoitu}) ja \koodi{\keno it\-shape} (\textit{kursiivi}), ja
 tuloksena on \textbf{\itshape lihavoitua kursiivia}.
 
-Tämän oppaan fontissa kalteva leikkaus (\koodi{\keno sl\-shape}) ja
-kursiivileikkaus (\koodi{\keno it\-shape}) tuottavat saman
-lopputuloksen. Niin on useimmissa muissakin fonteissa, mutta
-käsitteellisesti ne ovat eri asia. Edellä mainitut komennot voivat
-joissakin fonteissa valita eri leikkauksen. Kalteva leikkaus on
-tavallisen eli pys\-ty\-asen\-toi\-sen leikkauksen kallistettu versio.
-Kallistus on voitu tehdä mekaanisesti, mutta se voi olla myös
-kirjainmuotoilijan piirtämä leikkaus. Kursiivi puolestaan on aina
-muodoltaan erilainen leikkaus. Se hieman mukailee
+Useimmissa fonteissa kursiivileikkaus (\koodi{\keno it\-shape}) ja
+kalteva leikkaus (\koodi{\keno sl\-shape}) tuottavat saman
+lopputuloksen, mutta käsitteellisesti ne ovat eri asia. Kursiivi on aina
+muodoltaan erilainen leikkaus, joka hieman mukailee
 käsi\-ala\-kir\-joi\-tusta, joskaan kirjaimia ei ole sidottu toisiinsa.
+Sen sijaan kalteva leikkaus on tavallisen eli pys\-ty\-asen\-toi\-sen
+leikkauksen kallistettu versio. Kallistus voi olla kirjainmuotoilijan
+piirtämä leikkaus, tai kallistus on voitu toteuttaa mekaanisesti.
+Kallistuksen voi tehdä myös Latexissa (luku \ref{luku:fontit_muut}).
 
 Komennot fontin koon valintaan ovat taulukossa
 \ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä fontin
@@ -1069,7 +1131,7 @@ gemenanumeroita ({\gemenanum 1967}) eikä versaalinumeroita
 gemenakirjainten kanssa paremmin yhteen. Versaalinumerot puolestaan
 erottuvat paremmin ja sopivat esimerkiksi taulukoihin, joissa on paljon
 lukuja. Näihin asetuksiin vaikutetaan fontin asetuksella
-\koodi{Numbers}, jos käytössä olevan fontti sisältää gemenanumerot.
+\koodi{Numbers}. Tosin kaikissa fonteissa ei gemenanumeroita edes ole.
 
 \begin{koodilohkosis}
   Numbers=Lowercase % gemenanumerot
@@ -1079,9 +1141,9 @@ lukuja. Näihin asetuksiin vaikutetaan fontin asetuksella
 Jotkin koodi-ilmaukset sisältävät versaalikirjaimia ja numeroita
 sekaisin. Gemenanumerot eivät kuitenkaan sovi yhteen versaalikirjainten
 kanssa, koska merkkien koko\-ero on häiritsevän suuri. Ei siis näin:
-RJ45, R2D2. Gemenanumeroiden kanssa täytyy käyttää pienversaalia:
-\textsc{rj45}, \textsc{r2d2}. Toinen vaihtoehto on käyttää pelkästään
-versaaleja: {\versaalinum RJ45, R2D2}.
+RJ45, R2D2. Gemenanumeroiden kanssa täytyy käyttää pienversaalia eli
+kapiteelia: \textsc{rj45}, \textsc{r2d2}. Toinen vaihtoehto on käyttää
+pelkästään versaaleja: {\versaalinum RJ45, R2D2}.
 
 Silloin kun käytetään numeroita teknisten koodien ilmaisemiseen, voi
 olla tarpeen merkitä numero nolla poikkiviivalla
@@ -1109,14 +1171,14 @@ asetuksilla:
 
 Tässä luvussa käsitellään harvemmin tarvittavia mutta välillä
 hyödyllisiä asetuksia, jotka eivät ole sidoksissa fonttitiedoston
-ominaisuuksiin. Toisin sanoen nämä asetukset muokkaavat fontin toimintaa
-kokonaan Latexin puolella.
+ominaisuuksiin. Nämä asetukset muokkaavat fontin toimintaa kokonaan
+Latexin puolella.
 
 Valitsimella%
 \koodimargin{Fake\-Stretch} \koodi{Fake\-Stretch} voi venyttää tai
-kutistaa fonttia leveyssuunnassa. Arvoksi annetaan desimaalilukukerroin,
-joka on suhdeluku alkuperäiseen leveyteen nähden. Seuraavassa
-havainnollistava esimerkki:
+kutistaa merkkejä leveyssuunnassa. Arvoksi annetaan
+desimaalilukukerroin, joka on suhdeluku alkuperäiseen leveyteen nähden.
+Seuraavassa havainnollistava esimerkki:
 
 \begin{koodilohkosis}
   esimerkki \\
@@ -1129,23 +1191,47 @@ havainnollistava esimerkki:
 \end{tulossis}
 
 Kirjainleikkauksen leventäminen tekee tekstistä samalla lihavampaa,
-koska kirjainten viivat tulevat vahvemmiksi leveyssuunnassa. Sen sijaan
-korkeussuunnassa vahvuus säilyy ennallaan, joten kirjainten
+koska kirjainten viivat tulevat vahvemmiksi leveyssuunnassa.
+Korkeussuunnassa vahvuus säilyy ennallaan, joten kirjainten
 viivakontrasti muuttuu. Kirjainleikkauksen kutistaminen vaikuttaa
 lihavuuteen päinvastaisesti. Tällainen mekaaninen fontin
 ''korjaileminen'' ei välttämättä tuota typografisesti kovin hyvää jälkeä
 mutta voi sopia lievästi käytettynä esimerkiksi otsikoihin. Tämän oppaan
 tasalevyistä kirjainperhettä on hieman kutistettu, koska alkuperäinen
 leveys ({\ttfamily\addfontfeatures{FakeStretch=1} esimerkki}) on
-häiritsevän suuri verrattuna muihin käytettyihin kirjainperheisiin.
+kohtuuttoman suuri verrattuna muihin käytettyihin kirjainperheisiin.
 
 Jos%
 \koodimargin{Fake\-Bold \\ Fake\-Slant} kirjainperheeseen ei sisälly
-sopivaa lihavoitua tai kallistettua leikkausta, voi sellaiset koettaa
-tehdä myös keinotekoisesti \koodi{Fake\-Bold}- ja
+sopivaa lihavoitua tai kaltevaa leikkausta, voi sellaiset koettaa tehdä
+myös keinotekoisesti \koodi{Fake\-Bold}- ja
 \koodi{Fake\-Slant}\-/valitsimien avulla. Niille annetaan arvoksi
 desimaalilukukerroin. Tosin \koodi{Fake\-Bold} toimii vain
 Xelatex\-/kääntäjän kanssa.
+
+\begin{koodilohkosis}
+  pysty {\addfontfeatures{FakeSlant=.2} kalteva}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  pysty {\addfontfeatures{FakeSlant=.2} kalteva}
+\end{tulossis}
+
+Mekaanisen lihavoinnin tai kallistuksen saa osaksi kirjainperhettä, kun
+asettaa kirjainperheen määrittelyn yhteydessä halutun kirjainleikkauksen
+valitsimella \koodi{Bold\-Font} tai \koodi{Slanted\-Font} ja määrittää
+niille erityisiä ominaisuuksia valitsimella \koodi{Bold\-Fea\-tures} tai
+\koodi{Slanted\-Fea\-tures}. Seuraava esimerkki asettaa dokumentin
+perusfontille kaltevan leikkauksen. Tämän jälkeen komento \koodi{\keno
+  sl\-shape} (taulukko \ref{tlk:fonttimallikomennot}) valitsee
+\textsl{kaltevan} leikkauksen, joka on siis eri asia kuin
+\textit{kursiivi} (\koodi{\keno it\-shape}).
+
+\begin{koodilohkosis}
+  \setmainfont{…}[
+    SlantedFont={…}, % tähän pystyasentoinen leikkaus
+    SlantedFeatures={FakeSlant=.2}]
+\end{koodilohkosis}
 
 Fontin%
 \koodimargin{Word\-Space} kanssa käytettäviä sanavälejä voi säätää
@@ -1165,10 +1251,11 @@ positiivinen tai negatiivinen prosenttiluku, joka ilmaisee alkuperäiseen
 lisättävän osuuden. Asetus \koodi{Letter\-Space=\katk 8} tuottaa siis 8
 prosenttia leveämmät merkkien välit.
 
-Välistyksen tiivistäminen voi sopia suuriin otsikoihin ja harventaminen
-puolestaan yksittäisiin versaali\-/{} tai pienversaalikirjaimilla
-ladottaviin sanoihin. Näitä korostuskeinoja käsitellään luvussa
-\ref{luku:korostus}, mutta seuraavassa on pieni esimerkki:
+Välistyksen tiivistäminen voi sopia suuriin otsikoihin, kun taas
+harventaminen voi sopia yksittäisiin versaali\-/{} tai
+pienversaalikirjaimilla ladottaviin sanoihin. Näitä korostuskeinoja
+käsitellään luvussa \ref{luku:korostus}, mutta seuraavassa on esimerkki,
+kuinka se teknisesti toteutetaan:
 
 \begin{koodilohkosis}
   \scshape normaali \\
@@ -1179,6 +1266,14 @@ ladottaviin sanoihin. Näitä korostuskeinoja käsitellään luvussa
   \scshape normaali \\
   {\addfontfeatures{LetterSpace=8} harvennus}
 \end{tulossis}
+
+Jos harvennuksen haluaa automaattisesti mukaan kirjainperheeseen
+kuuluvaan pienversaaliin, käytetään valitsinta
+\koodi{Small\-Caps\-Features}:
+
+\begin{koodilohkosis}
+  \setmainfont{…}[SmallCapsFeatures={LetterSpace=8}]
+\end{koodilohkosis}
 
 \section{Kieli}
 \label{luku:kieliasetukset}

@@ -676,10 +676,10 @@ Argumentti~\koodi{*} (tähti) valitsee kaikki teokset.
 
 Latexin kääntäjä\-ohjelmat Lualatex tai Xelatex eivät yksinään riitä,
 sillä teostietokanta ei ole tavallinen Latex\-/muotoinen tiedosto.
-Tarvitaan myös \paketti{biblatex}\-/paketin mukana tulevaa komentoa
-\koodi{bib\-er}, joka käsittelee teostietokantaan liittyviä tiedostoja.
-Lopulta Latex\-/kääntäjääkin täytyy kutsua kaksi kolme kertaa, jotta
-kaikki ristiviitteet saadaan kuntoon. Komentojen suoritusjärjestys on
+Tarvitaan myös Latex\-/jakelun mukana tulevaa komentoa \koodi{bib\-er},
+joka käsittelee teostietokantaan liittyviä tiedostoja. Lopulta
+Latex\-/kääntäjääkin täytyy kutsua kaksi kolme kertaa, jotta kaikki
+ristiviitteet saadaan kuntoon. Komentojen suoritusjärjestys on
 seuraavanlainen:
 
 \begin{koodilohkosis}
@@ -915,8 +915,9 @@ sulkeissa. Joissakin lähdeluettelokäytännöissä sulkeita ei kuitenkin
 ole, joten seuraavaksi käsitellään keino sulkeiden poistamiseen.
 Tavallisessa \paketti{biblatex}\-/paketin lähdeluettelotyylissä
 \koodi{author\-year} ei ole omaa asetusta teoksen päiväyksen ulkoasun
-muuttamiseen, mutta jos käyttää tyyliä \koodi{ext-author\-year}, sekin
-puute korjaantuu, ja voi käyttää \koodi{bib\-label\-date}\-/asetusta.
+muuttamiseen, mutta jos käyttää tyyliä \koodi{ext-author\-year} (tms.),
+sekin puute korjaantuu, ja voi käyttää
+\koodi{bib\-label\-date}\-/asetusta.
 
 % \pagebreak[3]
 
@@ -964,14 +965,14 @@ komennoilla vaikutetaan näihin asetuksiin:
   \DeclareFieldFormat{postnote}{#1} % Lyhenne ”s.” pois.
   \DeclareDelimFormat{postnotedelim}{\addcolon\space} % Kaksoispiste.
 
-  \textcite[15--19]{tunniste} toteaa artikkelissaan -- --
+  \textcite[15--16]{tunniste} toteaa artikkelissaan -- --
 \end{koodilohkosis}
 
 \begin{tulossis}
-  Meikäläinen (2020: 15--19) toteaa artikkelissaan -- --
+  Meikäläinen (2020: 15--16) toteaa artikkelissaan -- --
 \end{tulossis}
 
-Kun samassa teoksessa usean tekijän luettelo lyhennetään, käytetään
+Kun saman teoksen usean tekijän luettelo lyhennetään, käytetään
 oletuksena latinankielistä ilmausta pois jäävien nimien tilalla:
 ''Meikäläinen et al.''. Ilmauksen voi muuttaa suomenkieliseksi
 seuraavalla komennolla:
@@ -994,7 +995,8 @@ Esimerkiksi komennolla \koodi{\keno
   De\-clare\-Bib\-li\-og\-ra\-phy\-Driv\-er} voi ottaa täysin haltuun,
 miten tietty teostyyppi ladotaan lähdeluetteloon. Komennolla
 \koodi{\keno De\-clare\-Sort\-ing\-Tem\-plate} voi määritellä omia
-aakkostustapoja. Lisätietoa saa paketin ohjekirjasta.
+aakkostustapoja. Lisätietoa saa paketin ohjekirjasta.%
+\avctan{biblatex}
 
 \section{Kuvat ja värit}
 \label{luku:grafiikka}

@@ -887,7 +887,7 @@ artikkelin. Seuraavassa on esimerkkikomennot edellä mainittujen
 lähdeluettelon kenttien muuttamiseen.
 
 \begin{koodilohkosis}
-  \DeclareFieldFormat[article,incollection]{title}{\emph{#1}}
+  \DeclareFieldFormat[article,incollection]{title}{\textit{#1}}
   \DeclareFieldFormat[article]{journaltitle}{#1}
   \DeclareFieldFormat[incollection]{booktitle}{#1}
 \end{koodilohkosis}
@@ -932,9 +932,9 @@ puute korjaantuu, ja voi käyttää \koodi{bib\-label\-date}\-/asetusta.
 
 Artikkelikokoelmissa (teostyyppi \koodi{incollection}) mainitaan
 oletuksena kokoelman nimi ja toimittajat seuraavassa muodossa:
-''Teoksessa: \emph{Hieno artikkelikokoelma.} Toim. Toimittaja, Teppo''.
-Ensin siis mainitaan julkaisun nimi ja sen jälkeen toimittajien nimet.
-Suomessa on tapana kirjoittaa nämä tiedot toisinpäin ja laittaa
+''Teoksessa: \textit{Hieno artikkelikokoelma.} Toim. Toimittaja,
+Teppo''. Ensin siis mainitaan julkaisun nimi ja sen jälkeen toimittajien
+nimet. Suomessa on tapana kirjoittaa nämä tiedot toisinpäin ja laittaa
 toimittajarooli sulkeisiin. Tällaiset asetukset saa käyttämällä tyyliä
 \koodi{ext-author\-year} (tms.), paketin asetusta
 \koodi{in\-name\-before\-title=\katk true} ja seuraavia komentoja:
@@ -949,7 +949,7 @@ toimittajarooli sulkeisiin. Tällaiset asetukset saa käyttämällä tyyliä
 \end{koodilohkosis}
 
 \begin{tulossis}
-  -- -- Teoksessa: Toimittaja, Teppo (toim.). \emph{Hieno
+  -- -- Teoksessa: Toimittaja, Teppo (toim.). \textit{Hieno
     artikkelikokoelma}. -- --
 \end{tulossis}
 

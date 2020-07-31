@@ -75,7 +75,7 @@ Extension=.otf]
 % välistyksen tiivistämiseen (FakeStretch).
 \setmonofont {libertinusmono}
 [Scale=MatchLowercase, Ligatures={TeXReset, NoCommon}, FakeStretch=.8,
-Numbers=Uppercase, HyphenChar=-,
+Numbers={Uppercase, SlashedZero}, HyphenChar=-,
 UprightFont=*-regular,
 ItalicFont=*-italic,
 BoldFont=*-bold,
@@ -231,7 +231,6 @@ Extension=.otf]
 \regtotcounter{chapter}
 
 \begin{document}
-\pagestyle{empty}
 
 \hyphenation{
   abst-ra-hoin-ti
@@ -301,6 +300,7 @@ Extension=.otf]
   mit-ta-yk-si-köi-tä
   mit-ta-yk-si-köl-le
   mit-ta-yk-si-kön
+  mit-ta-yk-sik-kö
   new-com-mand
   new-en-vi-ron-ment
   ni-men-omaan
@@ -395,6 +395,7 @@ Extension=.otf]
   ylä-in-dek-sit
 }
 
+\pagestyle{empty}
 \newgeometry{top=1cm, bottom=1.8cm, hmargin=1.3cm}
 \pdfbookmark[0]{Kansi}{luku:kansi}
 \DTMsetstyle{finnish}

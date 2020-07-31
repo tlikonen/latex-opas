@@ -6,6 +6,8 @@
 
 % Tämä luku käsittelee...
 
+...
+
 \section{Dokumenttiluokat}
 \label{luku:dokumenttiluokat}
 
@@ -283,16 +285,100 @@ tutustua esimerkiksi \englanti{Comprehensive Tex Archive Network}
 (\textsc{ctan}) \=/verkkosivun avulla.%
 \footnote{\url{https://ctan.org/topic/class}}
 
-\section{Sivu}
+\section{Sivu KESKEN}
 \label{luku:sivuasetukset}
 
-...
+Latex\-/dokumentit muodostuvat aina peräkkäisistä sivuista, eli
+taustalla kummittelee paperi\-arkkeihin perustuva julkaisumuoto, vaikka
+dokumenttia ei varsinaisesti tulostettaisi tai painettaisi paperille.
+Tämän vuoksi melkein aina täytyy määrittää sivun asetukset kuten
+paperikoko ja marginaalit. Ne tehdään \paketti{geometry}\-/paketin
+avulla, jota käsitellään luvussa \ref{luku:sivun_mitat}. Joskus
+halutaan muokata sivun ylä- tai alatunnistetta eli verrattain pysyviä
+tunnistetietoja, jotka toistuvat joka sivulla ylä- tai alareunassa.
+Niiden muokkaamiseen käytetään \paketti{fancy\-hdr}\-/pakettia, jonka
+ohjeita on luvussa \ref{luku:yla_ala_tunnisteet}.
 
-\subsection{Marginaalit ja mitat}
+\subsection{Sivun koko ja marginaalit}
+\label{luku:sivun_mitat}
 
-...
+Paperin kokoon ja marginaaleihin pääsee vaikuttamaan
+\paketti{geometry}\-/paketin\avctan{geometry} avulla. Halutut asetukset
+voi kertoa paketin lataamisen yhteydessä. Seuraavassa esimerkissä
+asetetaan paperikoko (\koodi{a4\-paper} eli \textsc{a4}-koko), ala- ja
+ylämarginaalin pituus (\koodi{top}, \koodi{bottom}) sekä vasemman ja
+oikean marginaalin pituus (\koodi{left}, \koodi{right}).
+
+\begin{koodilohkosis}
+  \usepackage[a4paper, top=20mm, bottom=30mm,
+    left=20mm, right=20mm]{geometry}
+\end{koodilohkosis}
+
+Vaihtoehtoisesti asetukset voi ilmaista erikseen \koodi{\keno
+  geometry}\-/komennon avulla seuraavalla tavalla:
+
+\begin{koodilohkosis}
+  \usepackage{geometry}
+  \geometry{a4paper, top=20mm, bottom=30mm, left=20mm, right=20mm}
+\end{koodilohkosis}
+
+Valmiiksi%
+\koodimargin{*paper \\ papersize} määriteltyjä standardipaperikokoja on
+useita. \textsc{iso}\-/standardin mukaiset koot \textsc{a0}--\textsc{a6}
+valitaan valitsimilla kuten \koodi{a3paper}, \koodi{a4paper} tai
+\koodi{a5paper}. Samoin käytetään myös kokoja \textsc{b0}--\textsc{b6}
+ja \textsc{c0}--\textsc{c6}, esimerkiksi \koodi{b2paper} tai
+\koodi{c6paper}. Lisäksi on valittavissa useita japanilaisia ja
+yhdysvaltalaisia standardeja käyttämällä valitsimia kuten
+\koodi{b0j}--\koodi{b6j}, \koodi{ansi\-a\-paper} tai
+\koodi{letter\-paper}. Mikäli standardit koot eivät riitä, voi sivun
+mitat määrittää vapaasti \koodi{paper\-size}\-/valitsimella, jolle
+annetaan arvoksi leveys- ja korkeusmitta.
+
+\begin{koodilohkosis}
+  papersize={10cm, 16cm}
+\end{koodilohkosis}
+
+Sivun marginaaleihin vaikutetaan taulukkoon \ref{tlk:sivun_marginaalit}
+kootuilla valitsimilla. Mukana ovat tärkeimmät valitsimet mutta eivät
+ihan kaikki. Valitsimille annetaan arvoksi Texin mittayksikkö, jotka on
+koottu taulukkoon \ref{tlk:mittayksikot}
+(s.~\pageref{tlk:mittayksikot}). Sivun asetusten määrittämisessä voi
+olla avuksi valitsin \koodi{show\-frame}, joka piirtää viivat
+marginaalien kohdalle ja merkitsee myös ylä- ja alatunnisteiden sekä
+marginaalihuomautusten rajoja.
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+
+\leijutlk{
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Valitsin} & \ots{Merkitys} \\
+    \midrule
+    \rivi{top}{ylämarginaali}
+    \rivi{bottom}{alamarginaali}
+    \rivi{vmargin}{ylä- ja alamarginaali}
+    \midrule
+    \rivi{left}{vasen marginaali  (kaksipuolisessa sisämarginaali)}
+    \rivi{inner}{''}
+    \rivi{right}{oikea marginaali (kaksipuolisessa ulkomarginaali)}
+    \rivi{outer}{''}
+    \rivi{hmargin}{vasen ja oikea marginaali}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{\paketti{geometry}\-/paketin valitsimia sivun marginaalien
+    määrittelemiseen}
+  \label{tlk:sivun_marginaalit}
+}
 
 \subsection{Ylä- ja alatunnisteet}
+\label{luku:yla_ala_tunnisteet}
+
+% \pagestyle (latexin omat ensin)
+% \thispagestyle
+% fancyhdr
 
 ...
 

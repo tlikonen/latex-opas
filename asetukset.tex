@@ -339,12 +339,12 @@ annetaan arvoksi leveys- ja korkeusmitta.
   papersize={10cm, 16cm}
 \end{koodilohkosis}
 
-Sivun marginaaleihin vaikutetaan taulukkoon \ref{tlk:sivun_marginaalit}
-kootuilla valitsimilla. Mukana ovat tärkeimmät valitsimet mutta eivät
-ihan kaikki. Valitsimille annetaan arvoksi Texin mittayksikkö, jotka on
-koottu taulukkoon \ref{tlk:mittayksikot}
-(s.~\pageref{tlk:mittayksikot}). Sivun asetusten määrittämisessä voi
-olla avuksi valitsin \koodi{show\-frame}, joka piirtää viivat
+Taulukkoon \ref{tlk:sivun_marginaalit} on koottu tärkeimpiä valitsimia
+marginaalien mittojen asettamiseksi. Valitsimille annetaan arvoksi Texin
+mittayksikkö, jotka on koottu taulukkoon \ref{tlk:mittayksikot}
+(s.~\pageref{tlk:mittayksikot}). Sivun asetusten suunnittelussa voi olla
+avuksi valitsin%
+\koodimargin{show\-frame} \koodi{show\-frame}, joka piirtää viivat
 marginaalien kohdalle ja merkitsee myös ylä- ja alatunnisteiden sekä
 marginaalihuomautusten rajoja.
 
@@ -356,15 +356,12 @@ marginaalihuomautusten rajoja.
     \toprule
     \ots{Valitsin} & \ots{Merkitys} \\
     \midrule
+    \rivi{left}{vasen marginaali tai sisämarginaali}
+    \rivi{inner}{''}
+    \rivi{right}{oikea marginaali tai ulkomarginaali}
+    \rivi{outer}{''}
     \rivi{top}{ylämarginaali}
     \rivi{bottom}{alamarginaali}
-    \rivi{vmargin}{ylä- ja alamarginaali}
-    \midrule
-    \rivi{left}{vasen marginaali  (kaksipuolisessa sisämarginaali)}
-    \rivi{inner}{''}
-    \rivi{right}{oikea marginaali (kaksipuolisessa ulkomarginaali)}
-    \rivi{outer}{''}
-    \rivi{hmargin}{vasen ja oikea marginaali}
     \bottomrule
   \end{tabular}
 }{
@@ -372,6 +369,61 @@ marginaalihuomautusten rajoja.
     määrittelemiseen}
   \label{tlk:sivun_marginaalit}
 }
+
+Sivun tekstialueen ja marginaalit voi määrittää myös suhteellisesti.
+Voisi esimerkiksi määrittää, että leveyssuunnassa tekstialue täyttää
+0,7\=/kertaisesti (70\,\%) paperin leveyden ja loput jää marginaaleille.
+Marginaalien keskinäiset suhteetkin voi ilmaista suhdelukuna:
+esimerkiksi vasemman ja oikean marginaalin suhde voisi olla 2:3.
+Suhteellisessa tavassa ei tarvitse ottaa kantaa paperin kokoon eikä
+muihinkaan varsinaisiin mittoihin, vaan samat tekstialueen ja
+marginaalien suhteet säilyvät, vaikka paperikokoa muuttaisikin.
+Suhteellisia mittoja koskevia valitsimia on koottu taulukkoon
+\ref{tlk:sivun_marginaalit_suhd}.
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+
+\leijutlk{
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Valitsin} & \ots{Merkitys} \\
+    \midrule
+    \rivi{hscale}{tekstialueen osuus paperin leveydestä}
+    \rivi{vscale}{tekstialueen osuus paperin korkeudesta}
+    \rivi{hmarginratio}{vasemman (sisä) ja oikean (ulko) marginaalin suhde}
+    \rivi{vmarginratio}{ylä- ja alamarginaalin suhde}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{\paketti{geometry}\-/paketin valitsimia sivun tekstitilan ja
+    marginaalien suhteiden määrittämiseen. Osuudet (\koodi{*hscale})
+    ilmaistaan prosenttikertoimella, esimerkiksi \koodi{0.7}. Suhteet
+    (\koodi{*marginratio}) ilmaistaan suhdelukuna, esimerkiksi
+    \koodi{2:3}}
+  \label{tlk:sivun_marginaalit_suhd}
+}
+
+Klassisessa kirja\-typo\-grafiassa, jossa teksti ladotaan yhdelle
+palstalle, marginaalien suuruusjärjestys on suurimmasta pienimpään
+seuraavanlainen: ala-, ulko-, ylä- ja sisämarginaali. Suhdeluvut samassa
+järjestyksessä: 32, 28, 20, 17. \paketti{geometry}\-/paketin
+valitsimilla tämä ilmaistaan seuraavasti:
+
+\begin{koodilohkosis}
+  hmarginratio=17:28, vmarginratio=20:32
+\end{koodilohkosis}
+
+Klassisia suhteita ei nyky\-aikana yleensä noudateta kovin tarkasti,
+mutta niistä kannattaa ymmärtää yleinen ajatus. Alamarginaalin pitäisi
+olla hieman suurempi kuin ylämarginaali, koska muuten tekstialue tuntuu
+pudonneen sivulla alas. Alamarginaalissa (alatunnisteessa) on yleensä
+sivunumero. Kirjan sivuja katsotaan pareittain eli aukeamina, joten
+sisämarginaaleja on kaksi vierekkäin. Siksi sisämarginaalit yksittäin
+ajateltuna ovat pienemmät kuin ulkomarginaalit. Lisäksi ulkomarginaaleja
+voidaan käyttää huomautusten kirjoittamiseen (luku
+\ref{luku:marginaalihuomautukset}), mikä onkin melko yleinen käytäntö
+tietokirjoissa.
 
 \subsection{Ylä- ja alatunnisteet}
 \label{luku:yla_ala_tunnisteet}

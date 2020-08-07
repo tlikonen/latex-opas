@@ -103,14 +103,14 @@ esi\-tys\-gra\-fiik\-kaan on olemassa erittäin monipuolinen luokka
 \subsection{Perusdokumenttiluokkien asetukset}
 
 Taulukkoon \ref{tlk:luokkavalitsimet}%
-\koodimargin{*paper} on koottu perusdokumenttiluokkien valitsimet.
-Paperikoko asetetaan valitsimilla \koodi{a4\-paper} (210 × 297 mm),
+\koodimargin{*paper} on koottu perusdokumenttiluokkien valitsimet. Sivun
+koko asetetaan valitsimilla \koodi{a4\-paper} (210 × 297 mm),
 \koodi{a5\-paper} (148 × 210 mm), \koodi{b5\-paper} (176 × 250 mm),
 \koodi{execu\-tive\-paper} (7,25 × 10,5 tuumaa), \koodi{legal\-paper}
 (8,5 × 14 tuumaa) tai \koodi{letter\-paper} (8,5 × 11 tuumaa). Latexin
 oletuksena on \koodi{letterpaper}, mutta oletusta voi olla muutettu
 Latexin jakelupaketissa. Varminta on aina itse kirjoittaa haluttu
-paperikoko dokumentin asetuksiin.
+sivukoko dokumentin asetuksiin.
 
 \leijutlk{
   \ttfamily
@@ -129,7 +129,7 @@ paperikoko dokumentin asetuksiin.
   \label{tlk:luokkavalitsimet}
 }
 
-Paperi%
+Sivu%
 \koodimargin{landscape} on oletuksena pysty\-asen\-nossa, mutta valitsin
 \koodi{landscape} asettaa sen vaaka\-/asentoon. Tämä asetus koskee
 dokumentin kaikkia sivuja, mutta jos haluaa asettaa vain yksittäisiä
@@ -137,11 +137,10 @@ sivuja vaaka\-/asentoon, täytyy käyttää
 \paketti{pdf\-lscape}\-/pakettia\avctan{pdflscape} ja sen tarjoamaa
 ympäristöä.
 
-Paperikokoja ja muitakin sivun mittoja voi määritellä monipuolisemmin
+Sivun koon ja muitakin mittoja voi määritellä monipuolisemmin
 \paketti{geometry}\-/paketin toimintojen avulla (luku
 \ref{luku:sivuasetukset}). Jos sitä pakettia käyttää, ei näitä
-dokumenttiluokan paperi\-koko\-ase\-tuk\-sia tarvita välttämättä
-lainkaan.
+dokumenttiluokan sivu\-koko\-ase\-tuk\-sia tarvita välttämättä lainkaan.
 
 Leipätekstin%
 \koodimargin{10pt \\ 11pt \\ 12pt} fontin koon voi määrittää

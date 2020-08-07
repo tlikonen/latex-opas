@@ -331,36 +331,56 @@ ja \textsc{c0}--\textsc{c6}, esimerkiksi \koodi{b2paper} tai
 \koodi{c6paper}. Lisäksi on valittavissa useita japanilaisia ja
 yhdysvaltalaisia standardeja käyttämällä valitsimia kuten
 \koodi{b0j}--\koodi{b6j}, \koodi{ansi\-a\-paper} tai
-\koodi{letter\-paper}. Mikäli standardit koot eivät riitä, voi sivun
-mitat määrittää vapaasti \koodi{paper\-size}\-/valitsimella, jolle
-annetaan arvoksi leveys- ja korkeusmitta.
+\koodi{letter\-paper}.
+
+Mikäli standardit koot eivät riitä, voi sivun mitat määrittää vapaasti
+\koodi{paper\-size}\-/valitsimella, jolle annetaan arvoksi leveys- ja
+korkeusmitta.
 
 \begin{koodilohkosis}
   papersize={10cm, 16cm}
 \end{koodilohkosis}
 
+Sivu%
+\koodimargin{por\-trait \\ land\-scape} on oletuksena pysty\-asen\-nossa
+(\koodi{por\-trait}), mutta sen voi asettaa vaaka\-/asentoon
+valitsimella \koodi{land\-scape}. Tämä asetus on voimassa koko
+dokumentin ajan. Jos haluaa asettaa vain yksittäisiä sivuja
+vaaka\-/asentoon, täytyy käyttää
+\paketti{pdf\-lscape}\-/pakettia\avctan{pdflscape} ja sen tarjoamaa
+ympäristöä.
+
 Sivun asetusten suunnittelussa voi olla avuksi valitsin%
 \koodimargin{show\-frame} \koodi{show\-frame}, joka piirtää viivat
 marginaalien kohdalle ja merkitsee myös ylä- ja alatunnisteiden sekä
-marginaalihuomautusten rajoja. Taulukkoon \ref{tlk:sivun_marginaalit} on
-koottu tärkeimpiä valitsimia marginaalien mittojen asettamiseksi.
-Valitsimille annetaan arvoksi Texin mittayksikkö, jotka ovat taulukossa
-\ref{tlk:mittayksikot} (s.~\pageref{tlk:mittayksikot}).
+marginaalihuomautusten rajoja.
+
+Taulukkoon \ref{tlk:sivun_marginaalit} on koottu tärkeimpiä valitsimia
+marginaalien mittojen asettamiseksi. Valitsimille annetaan arvoksi Texin
+mittayksikkö, jotka ovat taulukossa \ref{tlk:mittayksikot}
+(s.~\pageref{tlk:mittayksikot}). Kaksipuolisessa%
+\koodimargin{twoside=\katk true \\ twoside=\katk false} asettelussa
+(\koodi{two\-side=\katk true}) sivut muodostavat aukeaman eli on
+erikseen vasemmanpuoleinen ja oikeanpuoleinen sivu. Tällöin vasen ja
+oikea marginaali vuorottelevat, ja niitä on havainnollisempaa kutsua
+sisä- ja ulkomarginaaliksi. Marginaalien määrittelyssä voi käyttää
+valitsimen \koodi{left} sijasta valitsinta \koodi{inner}, ja vastaavasti
+\koodi{right}\-/valitsin voidaan korvata \koodi{outer}\-/valitsimella.
+Teknisesti näillä ei ole mitään eroa, mutta nimet ovat ihmisille
+havainnollisempia.
 
 \providecommand{\rivi}{}
-\renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+\renewcommand{\rivi}[3]{\koodi{#1} & \koodi{#2} & #3 \\}
 
 \leijutlk{
-  \begin{tabular}{ll}
+  \begin{tabular}{lll}
     \toprule
-    \ots{Valitsin} & \ots{Merkitys} \\
+    \multicolumn{2}{l}{\ots{Valitsin}} & \ots{Merkitys} \\
     \midrule
-    \rivi{left}{vasen marginaali tai sisämarginaali}
-    \rivi{inner}{''}
-    \rivi{right}{oikea marginaali tai ulkomarginaali}
-    \rivi{outer}{''}
-    \rivi{top}{ylämarginaali}
-    \rivi{bottom}{alamarginaali}
+    \rivi{left}{inner}{vasen marginaali tai sisämarginaali}
+    \rivi{right}{outer}{oikea marginaali tai ulkomarginaali}
+    \rivi{top}{}{ylämarginaali}
+    \rivi{bottom}{}{alamarginaali}
     \bottomrule
   \end{tabular}
 }{
@@ -368,17 +388,6 @@ Valitsimille annetaan arvoksi Texin mittayksikkö, jotka ovat taulukossa
     määrittelemiseen}
   \label{tlk:sivun_marginaalit}
 }
-
-Kaksipuolisessa%
-\koodimargin{twoside=\katk true \\ twoside=\katk false} asettelussa
-sivut muodostavat aukeaman, eli on erikseen vasemmanpuoleinen ja
-oikeanpuoleinen sivu. Tällöin vasen ja oikea marginaali vuorottelevat,
-ja niitä on havainnollisempaa kutsua sisä- ja ulkomarginaaliksi.
-Marginaalien mittojen määrittelyssä voi käyttää valitsimen \koodi{left}
-sijasta valitsinta \koodi{inner}, ja vastaavasti
-\koodi{right}\-/valitsin voidaan korvata \koodi{outer}\-/valitsimella
-(taulukko \ref{tlk:sivun_marginaalit}). Teknisesti mitään eroa näillä ei
-ole, mutta nimet ovat ihmisille havainnollisempia.
 
 Sivun tekstialueen koon ja marginaalit voi määrittää myös
 suhteellisesti. Voisi esimerkiksi määrittää, että leveyssuunnassa
@@ -429,13 +438,13 @@ olla hieman suurempi kuin ylämarginaali, koska muuten tekstialue tuntuu
 pudonneen sivulla alas. Alamarginaalissa (alatunnisteessa) on yleensä
 sivunumero. Kirjan sivuja katsotaan pareittain eli aukeamina, joten
 sisämarginaaleja on kaksi vierekkäin. Siksi sisämarginaalit yksittäin
-ajateltuna ovat pienemmät kuin ulkomarginaalit.Lisäksi ulkomarginaaleja
+ajateltuna ovat pienemmät kuin ulkomarginaalit. Lisäksi ulkomarginaaleja
 voidaan käyttää huomautusten kirjoittamiseen, mikä on melko yleinen
 käytäntö tietokirjoissa.
 
 Marginaalihuomautukset%
-\koodimargin{margin\-parwidth \\ margin\-parsep \\ reverse\-marginpar}
-(luku \ref{luku:marginaalihuomautukset}) sijaitsevat oletuksena sivujen
+\koodimargin{margin\-parwidth \\ margin\-parsep} (luku
+\ref{luku:marginaalihuomautukset}) sijaitsevat oletuksena sivujen
 ulkomarginaalissa tai oikeanpuoleisessa marginaalissa. Palstan leveys
 asetetaan valitsimella \koodi{margin\-par\-width}, ja palstan etäisyys
 sivun varsinaisesta tekstialueesta määritellään valitsimella
@@ -444,16 +453,21 @@ vastakkaiseen marginaaliin, käytetään valitsinta
 \koodi{reverse\-margin\-par}.
 
 Perus%
-\koodimargin{onecolumn \\ twocolumn \\ columnsep} Latex osaa latoa
-tekstin yhdelle tai kahdelle palstalle, ja \paketti{geometry}\-/paketin
-valitsimella \koodi{one\-column} tai \koodi{two\-column} asetetaan,
-kumpi tila on oletuksena päällä. Mitan \koodi{column\-sep} avulla
-asetetaan palstojen välinen etäisyys. Kesken dokumentin voi vaihtaa
-yksipalstaiseen tilaan komennolla \koodi{\keno one\-column} tai
-kaksipalstaiseen tilaan komennolla \koodi{\keno two\-column}.
-Käyttämällä \paketti{multicol}\-/pakettia\avctan{multicol} voi olla
-useampiakin kuin kaksi palstaa. Palstoja käsitellään tarkemmin luvussa
+\koodimargin{onecolumn \\ twocolumn} Latex osaa latoa tekstin yhdelle
+tai kahdelle palstalle, ja \paketti{geometry}\-/paketin valitsimella
+\koodi{one\-column} tai \koodi{two\-column} asetetaan, kumpi tila on
+oletuksena päällä. Kesken dokumentin voi vaihtaa yksipalstaiseen tilaan
+komennolla \koodi{\keno one\-column} tai kaksipalstaiseen tilaan
+komennolla \koodi{\keno two\-column}. Käyttämällä
+\paketti{multicol}\-/pakettia\avctan{multicol} voi olla useampiakin kuin
+kaksi palstaa. Palstoja käsitellään tarkemmin luvussa
 \ref{luku:palstat}.
+
+Valitsimen%
+\koodimargin{column\-sep} \koodi{column\-sep} avulla asetetaan palstojen
+välinen etäisyys. Tämä valitsin on asettaa mitan \koodi{\keno
+  column\-sep}, jota voi muokata myös komennolla \koodi{\keno
+  set\-length}, kuten muitakin Latexin mittoja (luku \ref{luku:mitat}).
 
 \subsection{Leikkuuvarat}
 

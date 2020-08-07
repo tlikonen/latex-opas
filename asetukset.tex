@@ -339,14 +339,13 @@ annetaan arvoksi leveys- ja korkeusmitta.
   papersize={10cm, 16cm}
 \end{koodilohkosis}
 
-Taulukkoon \ref{tlk:sivun_marginaalit} on koottu tärkeimpiä valitsimia
-marginaalien mittojen asettamiseksi. Valitsimille annetaan arvoksi Texin
-mittayksikkö, jotka on koottu taulukkoon \ref{tlk:mittayksikot}
-(s.~\pageref{tlk:mittayksikot}). Sivun asetusten suunnittelussa voi olla
-avuksi valitsin%
+Sivun asetusten suunnittelussa voi olla avuksi valitsin%
 \koodimargin{show\-frame} \koodi{show\-frame}, joka piirtää viivat
 marginaalien kohdalle ja merkitsee myös ylä- ja alatunnisteiden sekä
-marginaalihuomautusten rajoja.
+marginaalihuomautusten rajoja. Taulukkoon \ref{tlk:sivun_marginaalit} on
+koottu tärkeimpiä valitsimia marginaalien mittojen asettamiseksi.
+Valitsimille annetaan arvoksi Texin mittayksikkö, jotka ovat taulukossa
+\ref{tlk:mittayksikot} (s.~\pageref{tlk:mittayksikot}).
 
 \providecommand{\rivi}{}
 \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
@@ -370,16 +369,27 @@ marginaalihuomautusten rajoja.
   \label{tlk:sivun_marginaalit}
 }
 
-Sivun tekstialueen ja marginaalit voi määrittää myös suhteellisesti.
-Voisi esimerkiksi määrittää, että leveyssuunnassa tekstialue täyttää
-0,7\=/kertaisesti (70\,\%) paperin leveyden ja loput jää marginaaleille.
-Marginaalien keskinäiset suhteetkin voi ilmaista suhdelukuna:
-esimerkiksi vasemman ja oikean marginaalin suhde voisi olla 2:3.
-Suhteellisessa tavassa ei tarvitse ottaa kantaa paperin kokoon eikä
-muihinkaan varsinaisiin mittoihin, vaan samat tekstialueen ja
-marginaalien suhteet säilyvät, vaikka paperikokoa muuttaisikin.
-Suhteellisia mittoja koskevia valitsimia on koottu taulukkoon
-\ref{tlk:sivun_marginaalit_suhd}.
+Kaksipuolisessa%
+\koodimargin{twoside=\katk true \\ twoside=\katk false} asettelussa
+sivut muodostavat aukeaman, eli on erikseen vasemmanpuoleinen ja
+oikeanpuoleinen sivu. Tällöin vasen ja oikea marginaali vuorottelevat,
+ja niitä on havainnollisempaa kutsua sisä- ja ulkomarginaaliksi.
+Marginaalien mittojen määrittelyssä voi käyttää valitsimen \koodi{left}
+sijasta valitsinta \koodi{inner}, ja vastaavasti
+\koodi{right}\-/valitsin voidaan korvata \koodi{outer}\-/valitsimella
+(taulukko \ref{tlk:sivun_marginaalit}). Teknisesti mitään eroa näillä ei
+ole, mutta nimet ovat ihmisille havainnollisempia.
+
+Sivun tekstialueen koon ja marginaalit voi määrittää myös
+suhteellisesti. Voisi esimerkiksi määrittää, että leveyssuunnassa
+tekstialue täyttää 0,7\=/kertaisesti (70\,\%) paperin leveyden ja loput
+jää marginaaleille. Marginaalien keskinäiset suhteetkin voi ilmaista
+suhdelukuna: esimerkiksi vasemman (sisä) ja oikean (ulko) marginaalin
+suhde voisi olla 2:3. Suhteellisessa tavassa ei tarvitse ottaa kantaa
+paperin kokoon eikä muihinkaan varsinaisiin mittoihin, vaan samat
+tekstialueen ja marginaalien suhteet säilyvät, vaikka paperikokoa
+muuttaisikin. Suhteellisia mittoja koskevia valitsimia on koottu
+taulukkoon \ref{tlk:sivun_marginaalit_suhd}.
 
 \providecommand{\rivi}{}
 \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
@@ -398,9 +408,8 @@ Suhteellisia mittoja koskevia valitsimia on koottu taulukkoon
 }{
   \caption{\paketti{geometry}\-/paketin valitsimia sivun tekstitilan ja
     marginaalien suhteiden määrittämiseen. Osuudet (\koodi{*hscale})
-    ilmaistaan prosenttikertoimella, esimerkiksi \koodi{0.7}. Suhteet
-    (\koodi{*marginratio}) ilmaistaan suhdelukuna, esimerkiksi
-    \koodi{2:3}}
+    ilmaistaan prosenttikertoimella (esim. \koodi{0.7}9. Suhteet
+    (\koodi{*marginratio}) ilmaistaan suhdelukuna (esim. \koodi{2:3})}
   \label{tlk:sivun_marginaalit_suhd}
 }
 
@@ -420,24 +429,81 @@ olla hieman suurempi kuin ylämarginaali, koska muuten tekstialue tuntuu
 pudonneen sivulla alas. Alamarginaalissa (alatunnisteessa) on yleensä
 sivunumero. Kirjan sivuja katsotaan pareittain eli aukeamina, joten
 sisämarginaaleja on kaksi vierekkäin. Siksi sisämarginaalit yksittäin
-ajateltuna ovat pienemmät kuin ulkomarginaalit. Lisäksi ulkomarginaaleja
-voidaan käyttää huomautusten kirjoittamiseen (luku
-\ref{luku:marginaalihuomautukset}), mikä onkin melko yleinen käytäntö
-tietokirjoissa.
+ajateltuna ovat pienemmät kuin ulkomarginaalit.Lisäksi ulkomarginaaleja
+voidaan käyttää huomautusten kirjoittamiseen, mikä on melko yleinen
+käytäntö tietokirjoissa.
 
-% onecolumn, twocolumn
-% columnsep
-% twoside
-% footskip
-% head, headsep
-% footskip
-% marginparwidth, marginparsep, reversemarginpar, nomarginpar
+Marginaalihuomautukset%
+\koodimargin{margin\-parwidth \\ margin\-parsep \\ reverse\-marginpar}
+(luku \ref{luku:marginaalihuomautukset}) sijaitsevat oletuksena sivujen
+ulkomarginaalissa tai oikeanpuoleisessa marginaalissa. Palstan leveys
+asetetaan valitsimella \koodi{margin\-par\-width}, ja palstan etäisyys
+sivun varsinaisesta tekstialueesta määritellään valitsimella
+\koodi{margin\-par\-sep}. Jos haluaa vaihtaa huomautukset sivun
+vastakkaiseen marginaaliin, käytetään valitsinta
+\koodi{reverse\-margin\-par}.
 
-% layout, showcrop
+Perus%
+\koodimargin{onecolumn \\ twocolumn \\ columnsep} Latex osaa latoa
+tekstin yhdelle tai kahdelle palstalle, ja \paketti{geometry}\-/paketin
+valitsimella \koodi{one\-column} tai \koodi{two\-column} asetetaan,
+kumpi tila on oletuksena päällä. Mitan \koodi{column\-sep} avulla
+asetetaan palstojen välinen etäisyys. Kesken dokumentin voi vaihtaa
+yksipalstaiseen tilaan komennolla \koodi{\keno one\-column} tai
+kaksipalstaiseen tilaan komennolla \koodi{\keno two\-column}.
+Käyttämällä \paketti{multicol}\-/pakettia\avctan{multicol} voi olla
+useampiakin kuin kaksi palstaa. Palstoja käsitellään tarkemmin luvussa
+\ref{luku:palstat}.
 
+\subsection{Leikkuuvarat}
+
+Sivu voi olla ulkoisesti erikokoinen kuin sisäisesti. On siis
+mahdollista asettaa sivu esimerkiksi \textsc{a4}\-/kokoiseksi ja
+käsitellä marginaalit ja muut sivun mitat \textsc{a4}-koon mukaan, mutta
+ulkoisesti tai fyysisesti sivu onkin osana suurempaa paperi\-arkkia.
+Tällaista tarvitaan ainakin silloin, kun halutaan merkitä leikkuuvarat
+dokumentin painamista varten.
+
+Painokoneen paperi\-arkkien leikkauskohta ei välttämättä osu täsmälleen
+samaan kohtaan pdf\-/tiedoston sivun reunan kanssa, ja siksi
+dokumentissa reunaan saakka yltävät kuvat asetetaan varmuuden vuoksi
+hieman ylikokoiseksi. Sivun reunaan saakka aiotut kuvat siis yltävät
+lähde-pdf:ssä joitakin millimetrejä varsinaisen sivu\-alueen
+ulkopuolelle eli leikkuuvaran puolelle. Tällä varmistetaan, että
+painamisen jälkeen leikatuissa paperi\-arkeissa kuva varmasti yltää
+reunaan saakka.
+
+Jos dokumenttiin tarvitaan sivun ulkopuoliset leikkuuvarat, määritellään
+dokumentin ulommaiset mitat edelleen samalla tavalla kuin
+tavallisestikin eli esimerkiksi valitsimella \koodi{paper\-size} (luku
+\ref{luku:sivun_mitat}). Sen sijaan sivun sisäiset mitat täytyy
+määritellä toisella tavalla, käyttämällä valitsinta \koodi{layout} tai
+\koodi{layout\-size}.
+
+Seuraavassa esimerkissä käytetään sisäisesti \textsc{a4}\-/kokoista (210
+× 297~mm) sivua, mutta sivulle on määritetty joka puolelle 5\,mm:n
+leikkuuvarat. Niinpä ulkoisesti sivu on 10\,mm leveämpi ja korkeampi,
+eli ulkoiset mitat ovat 220 × 307~mm. Valitsimella
+\koodi{layout\-offset} asetetaan sisäisen sivun etäisyys ulkoisen sivun
+vasemmasta ylänurkasta.
+
+\begin{koodilohkosis}
+  papersize={220mm, 307mm},
+  layout=a4paper,           % tai: layoutsize={210mm, 297mm}
+  layoutoffset={5mm, 5mm},
+  showcrop
+\end{koodilohkosis}
+
+Esimerkissä on mukana myös valitsin \koodi{show\-crop}, joka merkitsee
+sisäisen ja ulkoisen sivun eli leikkuuvaran rajakohdan. Merkinnät
+näkyvät vain sivun nurkissa leikkuuvaran puolella, joten ne eivät päädy
+lopulliseen painotuotteeseen.
 
 \subsection{Ylä- ja alatunnisteet}
 \label{luku:yla_ala_tunnisteet}
+
+% head, headsep
+% footskip
 
 % \pagestyle (latexin omat ensin)
 % \thispagestyle

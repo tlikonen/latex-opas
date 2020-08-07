@@ -39,6 +39,9 @@ marginparwidth=50bp, marginparsep=10bp]{geometry}
 \usepackage[unicode,hyperfootnotes=false]{hyperref}
 \usepackage[shortcuts]{extdash}
 
+% \geometry{ papersize={158mm, 220mm}, layout=a5paper, layoutoffset={5mm,
+%     5mm}, showcrop }
+
 \hypersetup{ hidelinks, bookmarksopen, bookmarksnumbered,
   pdfauthor={Teemu Likonen}, pdftitle={Käytännöllistä Latexia} }
 
@@ -341,6 +344,7 @@ Extension=.otf]
   table
   teks-ti-alue
   teks-ti-alueen
+  teks-ti-aluees-ta
   teks-ti-edi-to-ria
   teks-ti-edi-to-ril-la
   teks-ti-edi-to-rin
@@ -398,7 +402,12 @@ Extension=.otf]
 }
 
 \pagestyle{empty}
+
 \newgeometry{top=1cm, bottom=1.8cm, hmargin=1.3cm}
+
+% \newgeometry{ top=1cm, bottom=1.8cm, hmargin=1.3cm, papersize={158mm,
+%     220mm}, layout=a5paper, layoutoffset={5mm, 5mm}, showcrop }
+
 \pdfbookmark[0]{Kansi}{luku:kansi}
 \DTMsetstyle{finnish}
 

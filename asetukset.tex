@@ -304,8 +304,8 @@ ohjeita on luvussa \ref{luku:yla_ala_tunnisteet}.
 Paperin kokoon ja marginaaleihin pääsee vaikuttamaan
 \paketti{geometry}\-/paketin\avctan{geometry} avulla. Halutut asetukset
 voi kertoa paketin lataamisen yhteydessä. Seuraavassa esimerkissä
-asetetaan paperikoko (\koodi{a4\-paper} eli \textsc{a4}-koko), ala- ja
-ylämarginaalin pituus (\koodi{top}, \koodi{bottom}) sekä vasemman ja
+asetetaan paperikoko (\koodi{a4\-paper} eli \textsc{a4}-koko), ylä- ja
+alamarginaalin pituus (\koodi{top}, \koodi{bottom}) sekä vasemman ja
 oikean marginaalin pituus (\koodi{left}, \koodi{right}).
 
 \begin{koodilohkosis}
@@ -390,12 +390,12 @@ havainnollisempia.
 
 Sivun tekstialueen koon ja marginaalit voi määrittää myös
 suhteellisesti. Voisi esimerkiksi määrittää, että leveyssuunnassa
-tekstialue täyttää 0,7\=/kertaisesti (70\,\%) paperin leveyden ja loput
+tekstialue täyttää 0,7\=/kertaisesti (70\,\%) sivun leveyden ja loput
 jää marginaaleille. Marginaalien keskinäiset suhteetkin voi ilmaista
 suhdelukuna: esimerkiksi vasemman (sisä) ja oikean (ulko) marginaalin
 suhde voisi olla 2:3. Suhteellisessa tavassa ei tarvitse ottaa kantaa
-paperin kokoon eikä muihinkaan varsinaisiin mittoihin, vaan samat
-tekstialueen ja marginaalien suhteet säilyvät, vaikka paperikokoa
+sivun kokoon eikä muihinkaan varsinaisiin mittoihin, vaan samat
+tekstialueen ja marginaalien suhteet säilyvät, vaikka sivukokoa
 muuttaisikin. Suhteellisia mittoja koskevia valitsimia on koottu
 taulukkoon \ref{tlk:sivun_marginaalit_suhd}.
 
@@ -407,8 +407,8 @@ taulukkoon \ref{tlk:sivun_marginaalit_suhd}.
     \toprule
     \ots{Valitsin} & \ots{Merkitys} \\
     \midrule
-    \rivi{hscale}{tekstialueen osuus paperin leveydestä}
-    \rivi{vscale}{tekstialueen osuus paperin korkeudesta}
+    \rivi{hscale}{tekstialueen osuus sivun leveydestä}
+    \rivi{vscale}{tekstialueen osuus sivun korkeudesta}
     \rivi{hmarginratio}{vasemman (sisä) ja oikean (ulko) marginaalin suhde}
     \rivi{vmarginratio}{ylä- ja alamarginaalin suhde}
     \bottomrule
@@ -416,7 +416,7 @@ taulukkoon \ref{tlk:sivun_marginaalit_suhd}.
 }{
   \caption{\paketti{geometry}\-/paketin valitsimia sivun tekstitilan ja
     marginaalien suhteiden määrittämiseen. Osuudet (\koodi{*hscale})
-    ilmaistaan prosenttikertoimella (esim. \koodi{0.7}9. Suhteet
+    ilmaistaan prosenttikertoimella (esim. \koodi{0.7}). Suhteet
     (\koodi{*marginratio}) ilmaistaan suhdelukuna (esim. \koodi{2:3})}
   \label{tlk:sivun_marginaalit_suhd}
 }
@@ -473,24 +473,23 @@ välinen etäisyys. Tämä valitsin on asettaa mitan \koodi{\keno
 Sivu voi olla ulkoisesti erikokoinen kuin sisäisesti. On siis
 mahdollista asettaa sivu esimerkiksi \textsc{a4}\-/kokoiseksi ja
 käsitellä marginaalit ja muut sivun mitat \textsc{a4}-koon mukaan, mutta
-ulkoisesti tai fyysisesti sivu onkin osana suurempaa paperi\-arkkia.
-Tällaista tarvitaan ainakin silloin, kun halutaan merkitä leikkuuvarat
-dokumentin painamista varten.
+ulkoisesti tai fyysisesti sivu onkin osana suurempaa sivua tai
+paperi\-arkkia. Tällaista tarvitaan ainakin silloin, kun halutaan
+merkitä leikkuuvarat dokumentin painamista varten.
 
 Painokoneen paperi\-arkkien leikkauskohta ei välttämättä osu täsmälleen
 samaan kohtaan pdf\-/tiedoston sivun reunan kanssa, ja siksi
 dokumentissa reunaan saakka yltävät kuvat asetetaan varmuuden vuoksi
 hieman ylikokoiseksi. Sivun reunaan saakka aiotut kuvat siis yltävät
-lähde-pdf:ssä joitakin millimetrejä varsinaisen sivu\-alueen
-ulkopuolelle eli leikkuuvaran puolelle. Tällä varmistetaan, että
-painamisen jälkeen leikatuissa paperi\-arkeissa kuva varmasti yltää
-reunaan saakka.
+lähde-pdf:ssä pari millimetriä varsinaisen sivu\-alueen ulkopuolelle eli
+leikkuuvaran puolelle. Tällä varmistetaan, että painamisen jälkeen
+leikatuissa paperi\-arkeissa kuva varmasti yltää reunaan saakka.
 
 Jos dokumenttiin tarvitaan sivun ulkopuoliset leikkuuvarat, määritellään
 dokumentin ulommaiset mitat edelleen samalla tavalla kuin
 tavallisestikin eli esimerkiksi valitsimella \koodi{paper\-size} (luku
 \ref{luku:sivun_mitat}). Sen sijaan sivun sisäiset mitat täytyy
-määritellä toisella tavalla, käyttämällä valitsinta \koodi{layout} tai
+määritellä toisella tavalla, käyttämällä valitsinta \koodi{lay\-out} tai
 \koodi{layout\-size}.
 
 Seuraavassa esimerkissä käytetään sisäisesti \textsc{a4}\-/kokoista (210
@@ -1398,7 +1397,7 @@ asetuksilla:
 Tässä luvussa käsitellään harvemmin tarvittavia mutta välillä
 hyödyllisiä asetuksia, jotka eivät ole sidoksissa fonttitiedoston
 ominaisuuksiin. Nämä asetukset muokkaavat fontin toimintaa kokonaan
-Latexin puolella.
+Texin tai kääntäjien puolella.
 
 Valitsimella%
 \koodimargin{Fake\-Stretch} \koodi{Fake\-Stretch} voi venyttää tai

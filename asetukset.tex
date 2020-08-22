@@ -321,47 +321,45 @@ Vaihtoehtoisesti asetukset voi ilmaista erikseen \koodi{\keno
   \geometry{a4paper, top=20mm, bottom=30mm, left=20mm, right=20mm}
 \end{koodilohkosis}
 
-Valmiiksi%
-\koodimargin{*paper \\ papersize} määriteltyjä standardipaperikokoja on
-useita. \textsc{iso}\-/standardin mukaiset koot \textsc{a0}--\textsc{a6}
-valitaan valitsimilla kuten \koodi{a3paper}, \koodi{a4paper} tai
-\koodi{a5paper}. Samoin käytetään myös kokoja \textsc{b0}--\textsc{b6}
-ja \textsc{c0}--\textsc{c6}, esimerkiksi \koodi{b2paper} tai
-\koodi{c6paper}. Lisäksi on valittavissa useita japanilaisia ja
-yhdysvaltalaisia standardeja käyttämällä valitsimia kuten
-\koodi{b0j}--\koodi{b6j}, \koodi{ansi\-a\-paper} tai
+Valmiiksi määriteltyjä standardipaperikokoja on useita.
+\textsc{iso}\-/standardin mukaiset koot \textsc{a0}--\textsc{a6}
+valitaan valitsimilla kuten \koodimargin{*paper} \koodi{a3paper},
+\koodi{a4paper} tai \koodi{a5paper}. Samoin käytetään myös kokoja
+\textsc{b0}--\textsc{b6} ja \textsc{c0}--\textsc{c6}, esimerkiksi
+\koodi{b2paper} tai \koodi{c6paper}. Lisäksi on valittavissa useita
+japanilaisia ja yhdysvaltalaisia standardeja käyttämällä valitsimia
+kuten \koodi{b0j}--\koodi{b6j}, \koodi{ansi\-a\-paper} tai
 \koodi{letter\-paper}.
 
 Mikäli standardit koot eivät riitä, voi sivun mitat määrittää vapaasti
-\koodi{paper\-size}\-/valitsimella, jolle annetaan arvoksi leveys- ja
-korkeusmitta.
+\koodi{paper\-size}\-/valitsimella, \koodimargin{papersize} jolle
+annetaan arvoksi leveys- ja korkeusmitta.
 
 \begin{koodilohkosis}
-  papersize={10cm, 16cm}
+  \geometry{papersize={10cm, 16cm}}
 \end{koodilohkosis}
 
-Sivu%
-\koodimargin{por\-trait \\ land\-scape} on oletuksena pysty\-asen\-nossa
-(\koodi{por\-trait}), mutta sen voi asettaa vaaka\-/asentoon
-valitsimella \koodi{land\-scape}. Tämä asetus on voimassa koko
-dokumentin ajan. Jos haluaa asettaa vain yksittäisiä sivuja
-vaaka\-/asentoon, täytyy käyttää
+Sivu on oletuksena pysty\-asen\-nossa (\koodi{por\-trait}),
+\koodimargin{por\-trait} mutta sen voi asettaa vaaka\-/asentoon
+valitsimella \koodi{land\-scape}. \koodimargin{land\-scape} Tämä asetus
+on voimassa koko dokumentin ajan. Jos haluaa asettaa vain yksittäisiä
+sivuja vaaka\-/asentoon, täytyy käyttää
 \paketti{pdf\-lscape}\-/pakettia\avctan{pdflscape} ja sen tarjoamaa
 ympäristöä.
 
-Sivun asetusten suunnittelussa voi olla avuksi valitsin%
-\koodimargin{show\-frame} \koodi{show\-frame}, joka piirtää viivat
+Sivun asetusten suunnittelussa voi olla avuksi valitsin
+\koodi{show\-frame}, \koodimargin{show\-frame} joka piirtää viivat
 marginaalien kohdalle ja merkitsee myös ylä- ja alatunnisteiden sekä
 marginaalihuomautusten rajoja.
 
 Taulukkoon \ref{tlk:sivun_marginaalit} on koottu tärkeimpiä valitsimia
 marginaalien mittojen asettamiseksi. Valitsimille annetaan arvoksi Texin
 mittayksikkö, jotka ovat taulukossa \ref{tlk:mittayksikot}
-(s.~\pageref{tlk:mittayksikot}). Kaksipuolisessa%
-\koodimargin{twoside=\katk true \\ twoside=\katk false} asettelussa
-(\koodi{two\-side=\katk true}) sivut muodostavat aukeaman eli on
-erikseen vasemmanpuoleinen ja oikeanpuoleinen sivu. Tällöin vasen ja
-oikea marginaali vuorottelevat, ja niitä on havainnollisempaa kutsua
+(s.~\pageref{tlk:mittayksikot}). Kaksipuolisessa
+\koodimargin{twoside=\katk true} \koodimargin{twoside=\katk false}
+asettelussa (\koodi{two\-side=\katk true}) sivut muodostavat aukeaman
+eli on erikseen vasemmanpuoleinen ja oikeanpuoleinen sivu. Tällöin vasen
+ja oikea marginaali vuorottelevat, ja niitä on havainnollisempaa kutsua
 sisä- ja ulkomarginaaliksi. Marginaalien määrittelyssä voi käyttää
 valitsimen \koodi{left} sijasta valitsinta \koodi{inner}, ja vastaavasti
 \koodi{right}\-/valitsin voidaan korvata \koodi{outer}\-/valitsimella.
@@ -428,7 +426,7 @@ järjestyksessä: 32, 28, 20, 17. \paketti{geometry}\-/paketin
 valitsimilla tämä ilmaistaan seuraavasti:
 
 \begin{koodilohkosis}
-  hmarginratio=17:28, vmarginratio=20:32
+  \geometry{hmarginratio=17:28, vmarginratio=20:32}
 \end{koodilohkosis}
 
 Klassisia suhteita ei nyky\-aikana yleensä noudateta kovin tarkasti,
@@ -441,31 +439,30 @@ ajateltuna ovat pienemmät kuin ulkomarginaalit. Lisäksi ulkomarginaaleja
 voidaan käyttää huomautusten kirjoittamiseen, mikä on melko yleinen
 käytäntö tietokirjoissa.
 
-Marginaalihuomautukset%
-\koodimargin{margin\-parwidth \\ margin\-parsep} (luku
-\ref{luku:marginaalihuomautukset}) sijaitsevat oletuksena sivujen
-ulkomarginaalissa tai oikeanpuoleisessa marginaalissa. Palstan leveys
-asetetaan valitsimella \koodi{margin\-par\-width}, ja palstan etäisyys
-sivun varsinaisesta tekstialueesta määritellään valitsimella
-\koodi{margin\-par\-sep}. Jos haluaa vaihtaa huomautukset sivun
-vastakkaiseen marginaaliin, käytetään valitsinta
+Marginaalihuomautukset (luku \ref{luku:marginaalihuomautukset})
+sijaitsevat oletuksena sivujen ulkomarginaalissa tai oikeanpuoleisessa
+marginaalissa. Huomautuspalstan leveys asetetaan valitsimella
+\koodi{margin\-par\-width}, \koodimargin{margin\-parwidth} ja palstan
+etäisyys sivun varsinaisesta tekstialueesta määritellään valitsimella
+\koodi{margin\-par\-sep}. \koodimargin{margin\-parsep} Kumpikin valitsin
+tarvitsee argumentiksi mitan. Jos haluaa vaihtaa huomautukset sivun
+vastakkaiseen marginaaliin, lisätään mukaan valitsin
 \koodi{reverse\-margin\-par}.
 
-Perus%
-\koodimargin{onecolumn \\ twocolumn} Latex osaa latoa tekstin yhdelle
-tai kahdelle palstalle, ja \paketti{geometry}\-/paketin valitsimella
-\koodi{one\-column} tai \koodi{two\-column} asetetaan, kumpi tila on
-oletuksena päällä. Kesken dokumentin voi vaihtaa yksipalstaiseen tilaan
-komennolla \koodi{\keno one\-column} tai kaksipalstaiseen tilaan
-komennolla \koodi{\keno two\-column}. Käyttämällä
+Perus Latex osaa latoa tekstin yhdelle \koodimargin{onecolumn} tai
+kahdelle \koodimargin{twocolumn} palstalle, ja
+\paketti{geometry}\-/paketin valitsimella \koodi{one\-column} tai
+\koodi{two\-column} asetetaan, kumpi tila on oletuksena päällä. Kesken
+dokumentin voi vaihtaa yksipalstaiseen tilaan komennolla \koodi{\keno
+  one\-column} tai kaksipalstaiseen tilaan komennolla \koodi{\keno
+  two\-column}. Käyttämällä
 \paketti{multicol}\-/pakettia\avctan{multicol} voi olla useampiakin kuin
 kaksi palstaa. Palstoja käsitellään tarkemmin luvussa
 \ref{luku:palstat}.
 
-Valitsimen%
-\koodimargin{column\-sep} \koodi{column\-sep} avulla asetetaan palstojen
-välinen etäisyys. Tämä valitsin on asettaa mitan \koodi{\keno
-  column\-sep}, jota voi muokata myös komennolla \koodi{\keno
+Valitsimen \koodi{column\-sep} \koodimargin{column\-sep} avulla
+asetetaan palstojen välinen etäisyys. Tämä valitsin on asettaa mitan
+\koodi{\keno column\-sep}, jota voi muokata myös komennolla \koodi{\keno
   set\-length}, kuten muitakin Latexin mittoja (luku \ref{luku:mitat}).
 
 \subsection{Leikkuuvarat}
@@ -488,9 +485,9 @@ leikatuissa paperi\-arkeissa kuva varmasti yltää reunaan saakka.
 Jos dokumenttiin tarvitaan sivun ulkopuoliset leikkuuvarat, määritellään
 dokumentin ulommaiset mitat edelleen samalla tavalla kuin
 tavallisestikin eli esimerkiksi valitsimella \koodi{paper\-size} (luku
-\ref{luku:sivun_mitat}). Sen sijaan sivun sisäiset mitat täytyy
-määritellä toisella tavalla, käyttämällä valitsinta \koodi{lay\-out} tai
-\koodi{layout\-size}.
+\ref{luku:sivun_mitat}). \koodimargin{layout} \koodimargin{layout\-size}
+Sen sijaan sivun sisäiset mitat täytyy määritellä toisella tavalla,
+käyttämällä valitsinta \koodi{lay\-out} tai \koodi{layout\-size}.
 
 Seuraavassa esimerkissä käytetään sisäisesti \textsc{a4}\-/kokoista (210
 × 297~mm) sivua, mutta sivulle on määritetty joka puolelle 5\,mm:n
@@ -500,28 +497,121 @@ eli ulkoiset mitat ovat 220 × 307~mm. Valitsimella
 vasemmasta ylänurkasta.
 
 \begin{koodilohkosis}
-  papersize={220mm, 307mm},
-  layout=a4paper,           % tai: layoutsize={210mm, 297mm}
-  layoutoffset={5mm, 5mm},
-  showcrop
+  \geometry{
+    papersize={220mm, 307mm},
+    layout=a4paper,           % tai: layoutsize={210mm, 297mm}
+    layoutoffset={5mm, 5mm},
+    showcrop
+  }
 \end{koodilohkosis}
 
 Esimerkissä on mukana myös valitsin \koodi{show\-crop}, joka merkitsee
-sisäisen ja ulkoisen sivun eli leikkuuvaran rajakohdan. Merkinnät
+sisäisen ja ulkoisen sivun rajakohdan eli leikkuuvaran rajan. Merkinnät
 näkyvät vain sivun nurkissa leikkuuvaran puolella, joten ne eivät päädy
 lopulliseen painotuotteeseen.
 
 \subsection{Ylä- ja alatunnisteet}
 \label{luku:yla_ala_tunnisteet}
 
-% head, headsep
-% footskip
+\paketti{geometry}\-/paketin asetuksiin kuuluu pari valitsinta, joilla
+vaikutetaan ylä- ja alatunnisteiden mittoihin. Valitsimella \koodi{head}
+ilmaistaan ylätunnisteen korkeus ja valitsimella \koodi{head\-sep} sen
+etäisyys sivun tekstipalstasta. Alatunnisteen etäisyys säädetään
+valitsimella \koodi{foot\-skip}. Taulukkoon
+\ref{tlk:yla_ala_tunnistemitat} on koottu näiden valitsimien merkitys,
+ja seuraavassa on niiden käyttämisestä esimerkki. Mukana on myös
+valitsin \koodi{show\-frame}, joka piirtää sivulle apuviivoja. Se auttaa
+sivun mittojen suunnittelussa.
 
-% \pagestyle (latexin omat ensin)
-% \thispagestyle
-% fancyhdr
+\begin{koodilohkosis}
+  \geometry{head=24bp, headsep=8bp, footskip=12mm, showframe}
+\end{koodilohkosis}
 
-...
+\leijutlk{
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Valitsin} & \ots{Merkitys} \\
+    \midrule
+    \koodi{head} & ylätunnisteen korkeusmitta \\
+    \koodi{headsep} & ylätunnisteen etäisyys tekstipalstasta \\
+    \koodi{footskip} & alatunnisteen etäisyys tekstipalstasta \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{\paketti{geometry}\-/paketin valitsimet ylä- ja
+    alatunnisteiden mittojen asettamiseen}
+  \label{tlk:yla_ala_tunnistemitat}
+}
+
+\subsubsection{Sivutyylit}
+
+Latexin perusosat eivät sisällä kovin kummoista keinovalikoimaa ylä- ja
+alatunnisteiden muokkaamiseen, mutta pari hyödyllistä sivutyyliä on
+kuitenkin mukana. Ylä- ja alatunnisteet määräytyvät sivutyylin
+perusteella, ja halutty tyyli asetetaan voimaan komennolla \koodi{\keno
+  page\-style}:
+
+\begin{koodilohkosis}
+  \pagestyle{plain}
+\end{koodilohkosis}
+
+Edellä mainittu sivutyyli \koodi{plain} latoo alatunnisteeseen
+sivunumeron. Se on yleensä oletustyyli. \koodimargin{plain} Sivunumero
+on peräisin laskurista \koodi{page} ja sen arvon tulostavasta komennosta
+\koodi{\keno the\-page} (luku \ref{luku:laskurit}). Toinen hyödyllinen
+tyyli on \koodi{empty}, \koodimargin{empty} joka nimensä mukaisesti
+tarkoittaa tyhjää, eli ylä- eikä alatunnisteeseen ei ladota mitään.
+
+Yksittäiselle sivulle voi asettaa muusta dokumentista poikkeavan
+sivutyylin komennolla \koodi{\keno this\-page\-style}. Komento siis
+vaikuttaa vain sillä hetkellä ladottavan sivun tyyliin, ja sen jälkeen
+palataan taas voimassa olevaan tyyliin, joka on aiemmin määritelty
+komennolla \koodi{\keno page\-style}.
+
+\begin{koodilohkosis}
+  \thispagestyle{empty}
+\end{koodilohkosis}
+
+Sivutyyli \koodi{head\-ings} \koodimargin{headings} latoo
+ylätunnisteeseen aukeaman vasemmanpuoleisille sivuille esimerkiksi
+kirjan pääluvun nimen ja oikeanpuoleisille sivuille meneillään olevan
+alaluvun nimen. Mainitut lukujen nimet tulevat sivun sisäreunaan;
+ulkoreunaan ladotaan sivunumero.
+
+Teknisesti ja sisäisesti tämä on toteutettu siten, että pääluvun
+aloittava otsikkokomento (esim. \koodi{\keno chapter}) automaattisesti
+määrittelee joka kerta uudelleen komennon \koodi{\keno left\-mark}, niin
+että se sisältää pääluvun nimen. Sivuja ladottaessa Latex sitten latoo
+ylätunnisteeseen sen, mitä \koodi{\keno left\-mark} sattuu tulostamaan.
+Vastaavasti alaluvun otsikkokomento (esim. \koodi{\keno section})
+määrittelee uudelleen komennon \koodi{\keno right\-mark}, niin että se
+sisältää alaluvun nimen. Tämän komennon tulostama teksti ladotaan
+aukeaman oikeanpuoleisille sivuille.
+
+Jos haluaa itse vaikuttaa ylätunnisteen tekstiin, voi käyttää sivutyyliä
+\koodi{my\-head\-ings} \koodimargin{my\-head\-ings} sekä komentoa
+\koodi{\keno mark\-both}, jolla määritellään aukeaman vasemmanpuoleisen
+ja oikeanpuoleisen sivun ylätunnisteen teksti. Tämä komento on
+tarkoitettu suoritettavaksi päälukujen yhteydessä. Komennolla
+\koodi{\keno mark\-right} määritellään pelkästään oikeanpuoleisen sivun
+teksti, ja komento on tarkoitettu suoritettavaksi aina alalukujen
+yhteydessä.
+
+\begin{koodilohkosis}
+  \markboth{vasen}{oikea}  % määrittelee: \leftmark ja \rightmark
+  \markright{oikea}        % määrittelee: \rightmark
+\end{koodilohkosis}
+
+\subsubsection{Fancyhdr}
+
+Monipuolisemmin ylä- ja alatunnisteita voi muokata paketin
+\paketti{fancy\-hdr}\avctan{fancyhdr} toimintojen avulla. Silloin
+sivutyylinä voi olla myös \koodi{fancy}: \koodimargin{fancy}
+
+\begin{koodilohkosis}
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+\end{koodilohkosis}
 
 \section{Fontit}
 \label{luku:kirjaintyypit}

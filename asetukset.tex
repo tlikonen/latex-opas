@@ -754,14 +754,14 @@ kokonaisvaltainen koodi omien ylä- ja alatunnisteiden toteutukseen.
 
   \pagestyle{fancy}
 
-  % Päälukujen yhteydessä komento \markboth{…}{…} määrittää sekä
-  % \leftmark- että \rightmark-komennot. Tässä jälkimmäinen määritellään
-  % tyhjäksi.
+  % Päälukujen (\chapter) yhteydessä komento \markboth{…}{…} määrittää
+  % sekä \leftmark- että \rightmark-komennot. Tässä jälkimmäinen
+  % määritellään tyhjäksi.
   \renewcommand{\chaptermark}[1]{%
     \markboth{\chaptername\ \thechapter: #1}{}}
 
-  % Alalukujen yhteydessä komento \markright{…} määrittää vain
-  % \rightmark-komennon.
+  % Alalukujen (\section) yhteydessä komento \markright{…} määrittää
+  % vain \rightmark-komennon.
   \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
 \end{koodilohko}
 \caption{Omien ylä- ja alatunnisteiden toteuttaminen}

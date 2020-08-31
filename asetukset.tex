@@ -678,7 +678,7 @@ reunustetun sivunumeron kaikille sivuille alatunnisteeseen (\koodi{F})
 sivun keskelle (\koodi{C}):
 
 \begin{koodilohkosis}
-  \fancyhf[FC]{-- \thepage{} --}
+  \fancyhf[FC]{-- \thepage\ --}
 \end{koodilohkosis}
 
 Makropaketin \paketti{fancy\-hdr} avulla voi myös määritellä Latexin
@@ -737,7 +737,7 @@ kokonaisvaltainen koodi omien ylä- ja alatunnisteiden toteutukseen.
   % Tässä määritellään se uudestaan.
   \fancypagestyle{plain}{
     \fancyhf{}
-    \fancyhf[FC]{-- \thepage{} --}
+    \fancyhf[FC]{-- \thepage\ --}
     \renewcommand{\headrulewidth}{0bp}
     \renewcommand{\footrulewidth}{0bp}
   }
@@ -746,7 +746,7 @@ kokonaisvaltainen koodi omien ylä- ja alatunnisteiden toteutukseen.
   \fancyhf{}
   \fancyhf[HEL]{\leftmark}
   \fancyhf[HOR]{\rightmark}
-  \fancyhf[FC]{-- \thepage{} --}
+  \fancyhf[FC]{-- \thepage\ --}
   \renewcommand{\headrulewidth}{1bp}
   \renewcommand{\footrulewidth}{0bp}
 

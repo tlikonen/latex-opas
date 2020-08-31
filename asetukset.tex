@@ -321,7 +321,15 @@ Vaihtoehtoisesti asetukset voi ilmaista erikseen \koodi{\keno
   \geometry{a4paper, top=20mm, bottom=30mm, left=20mm, right=20mm}
 \end{koodilohkosis}
 
-% Tässä voisi käsitellä komennot \newgeometry ja \restoregeometry
+Mikäli myöhemmin dokumentissa täytyy vaihtaa sivun asettelua, käytetään
+komentoa \koodi{\keno new\-geom\-etry}. Alkuperäiset asetukset
+palautetaan komennolla \koodi{\keno re\-store\-geom\-etry}.
+
+\begin{koodilohkosis}
+  \newgeometry{top=…, bottom=…, …} % Väliaikaisesti uudet asetukset.
+  % ...
+  \restoregeometry                 % Palautetaan alkuperäiset asetukset.
+\end{koodilohkosis}
 
 Valmiiksi määriteltyjä standardipaperikokoja on useita.
 \textsc{iso}\-/standardin mukaiset koot \textsc{a0}--\textsc{a6}
@@ -518,8 +526,8 @@ lopulliseen painotuotteeseen.
 \paketti{geometry}\-/paketin asetuksiin kuuluu pari valitsinta, joilla
 vaikutetaan ylä- ja alatunnisteiden mittoihin. Valitsimella \koodi{head}
 ilmaistaan ylätunnisteen korkeus ja valitsimella \koodi{head\-sep} sen
-etäisyys sivun tekstipalstasta. Alatunnisteen etäisyys säädetään
-valitsimella \koodi{foot\-skip}. Taulukkoon
+etäisyys sivun tekstipalstasta. Alatunnisteen peruslinjan etäisyys
+tekstipalstasta säädetään valitsimella \koodi{foot\-skip}. Taulukkoon
 \ref{tlk:yla_ala_tunnistemitat} on koottu näiden valitsimien merkitys,
 ja seuraavassa on niiden käyttämisestä esimerkki. Mukana on myös
 valitsin \koodi{show\-frame}, joka piirtää sivulle apuviivoja. Se auttaa
@@ -536,7 +544,7 @@ sivun mittojen suunnittelussa.
     \midrule
     \koodi{head} & ylätunnisteen korkeusmitta \\
     \koodi{headsep} & ylätunnisteen etäisyys tekstipalstasta \\
-    \koodi{footskip} & alatunnisteen etäisyys tekstipalstasta \\
+    \koodi{footskip} & alatunnisteen peruslinjan etäisyys tekstipalstasta \\
     \bottomrule
   \end{tabular}
 }{
@@ -550,7 +558,7 @@ sivun mittojen suunnittelussa.
 Latexin perusosat eivät sisällä kovin kummoista keinovalikoimaa ylä- ja
 alatunnisteiden muokkaamiseen, mutta pari hyödyllistä sivutyyliä on
 kuitenkin mukana. Ylä- ja alatunnisteet määräytyvät sivutyylin
-perusteella, ja halutty tyyli asetetaan voimaan komennolla \koodi{\keno
+perusteella, ja haluttu tyyli asetetaan voimaan komennolla \koodi{\keno
   page\-style}:
 
 \begin{koodilohkosis}
@@ -584,11 +592,11 @@ Teknisesti ja sisäisesti tämä on toteutettu siten, että pääluvun
 aloittava otsikkokomento (esim. \koodi{\keno chapter}) automaattisesti
 määrittelee joka kerta uudelleen komennon \koodi{\keno left\-mark}, niin
 että se sisältää pääluvun nimen. Sivuja ladottaessa Latex sitten latoo
-ylätunnisteeseen sen, mitä \koodi{\keno left\-mark} sattuu tulostamaan.
-Vastaavasti alaluvun otsikkokomento (esim. \koodi{\keno section})
-määrittelee uudelleen komennon \koodi{\keno right\-mark}, niin että se
-sisältää alaluvun nimen. Tämän komennon tulostama teksti ladotaan
-aukeaman oikeanpuoleisille sivuille.
+ylätunnisteeseen sen, mitä \koodi{\keno left\-mark}\-/komento sattuu
+tulostamaan. Vastaavasti alaluvun otsikkokomento (esim. \koodi{\keno
+  section}) määrittelee uudelleen komennon \koodi{\keno right\-mark},
+niin että se sisältää alaluvun nimen. Tämän komennon tulostama teksti
+ladotaan aukeaman oikeanpuoleisille sivuille.
 
 Jos haluaa itse vaikuttaa ylätunnisteen tekstiin, voi käyttää sivutyyliä
 \koodi{my\-head\-ings} \koodimargin{my\-head\-ings} sekä komentoa
@@ -614,6 +622,149 @@ sivutyylinä voi olla myös \koodi{fancy}: \koodimargin{fancy}
   \usepackage{fancyhdr}
   \pagestyle{fancy}
 \end{koodilohkosis}
+
+Kun käytössä on sivutyyli \koodi{fancy}, voi ylä- ja alatunnisteiden
+sisällön asettaa vapaasti komennolla \koodi{\keno fancy\-hf}. Komennon
+argumenttien merkitys on seuraavanlainen:
+
+\begin{koodilohkosis}
+  \fancyhf[paikka]{sisältö}
+\end{koodilohkosis}
+
+Valinnainen argumentti \koodi{paikka} kertoo, mihin paikkaan tai
+paikkoihin \koodi{sisältö} sijoitetaan. Vaihtoehtoina on ylä- tai
+alatunniste, pariton tai parillinen sivu, sivun vasen reuna, keski\-osa
+tai oikea reuna. Nämä vaihtoehdot on koottu taulukkoon
+\ref{tlk:fancyhf_paikat}. Saman komennon avulla voi määrittää useitakin
+paikkoja, kun ne erottaa pilkulla, esimerkiksi seuraavaan tapaan:
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+
+\leijutlk{
+  \begin{tabular}{cl}
+    \toprule
+    \ots{Valitsin} & \ots{Merkitys} \\
+    \midrule
+    \rivi{H}{ylätunniste (header)}
+    \rivi{F}{alatunniste (footer)}
+    \rivi{E}{parillinen sivu, vasen (even)}
+    \rivi{O}{pariton sivu, oikea (odd)}
+    \rivi{L}{sivun vasen reuna (left)}
+    \rivi{C}{sivun keskelle (center)}
+    \rivi{R}{sivun oikea reuna (right)}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{\paketti{fancyhdr}\-/paketin \koodi{\keno
+      fancy\-hf}\-/komennon valitsimia ylä- tai alatunnisteen paikan
+    määrittämiseen}
+  \label{tlk:fancyhf_paikat}
+}
+
+\begin{koodilohkosis}
+  \fancyhf{}  % Tyhjennetään ylä- ja alatunnisteet.
+  \fancyhf[HEL,HOR]{\thepage}
+\end{koodilohkosis}
+
+Edellä mainittu komento sijoittaa sivunumeron (\koodi{\keno the\-page})
+ylätunnisteeseen (\koodi{H}) parillisten sivujen (\koodi{E}) vasempaan
+reunaan (\koodi{L}) ja parittomien sivujen (\koodi{O}) oikeaan reunaan
+(\koodi{R}). Käytännössä siis aukeaman ulkoreunoihin ladotaan
+sivunumerot. Seuraava esimerkki sijoittaa ajatusviivoilla (\==)
+reunustetun sivunumeron kaikille sivuille alatunnisteeseen (\koodi{F})
+sivun keskelle (\koodi{C}):
+
+\begin{koodilohkosis}
+  \fancyhf[FC]{-- \thepage{} --}
+\end{koodilohkosis}
+
+Makropaketin \paketti{fancy\-hdr} avulla voi myös määritellä Latexin
+sivutyylejä toisenlaiseksi tai luoda kokonaan omia sivutyylejä. Nämä
+tehdään komennolla \koodi{\keno fancy\-page\-style}, jonka ensimmäinen
+argumentti on sivutyylin nimi ja toinen argumentti on sivutyylin
+määritelmä. Määritelmä sisältää tarvittavat \koodi{\keno
+  fancy\-hf}\-/komennot, joilla ylä- ja alatunnisteet määritellään.
+
+\begin{koodilohkosis}
+  \fancypagestyle{plain}{} % Latexin plain-tyylistä sama kuin fancy.
+
+  \fancypagestyle{omatyyli}{ % Luodaan oma sivutyyli.
+    \fancyhf{}
+    \fancyhf[FEL,FOR]{\thepage}
+  }
+\end{koodilohkosis}
+
+Ylä- ja alatunniste voidaan erottaa tekstipalstasta vaakasuuntaisella
+viivalla, ja viivan paksuutta on mahdollista muuttaa määrittelemällä
+uudelleen komennot \koodi{\keno head\-rule\-width} ja \koodi{\keno
+  foot\-rule\-width}. Komennon määritelmäksi kirjoitetaan Latexin mitta.
+Seuraavassa esimerkissä asetetaan yhden typografisen pisteen (1\,bp)
+levyiset viivat. Mitan voisi asettaa myös nollaksi (0\,bp), jolloin
+erotinviiva katoaa kokonaan näkyvistä.
+
+\begin{koodilohkosis}
+  \renewcommand{\headrulewidth}{1bp} % ylätunnisteen erotinviiva
+  \renewcommand{\footrulewidth}{1bp} % alatunnisteen erotinviiva
+\end{koodilohkosis}
+
+Mikäli haluaa omiin ylätunnisteisiin esimerkiksi päälukujen ja
+alalukujen nimiä, täytyy tunnisteisiin sisällyttää aiemmin kuvatut
+\koodi{\keno left\-mark}- ja \koodi{\keno right\-mark}\-/komennot, jotka
+sisältävät pää- ja alalukujen nimet.
+
+\begin{koodilohkosis}
+  \fancyhf[HEL]{\leftmark}
+  \fancyhf[HOR]{\rightmark}
+\end{koodilohkosis}
+
+Latex latoo ne oletuksena versaalikirjaimilla eli isoilla kirjaimilla.
+Jos ne haluaa johonkin toiseen muotoon, täytyy itse määritellä uudelleen
+komennot \koodi{\keno chapter\-mark}, \koodi{\keno section\-mark} tai
+\koodi{\keno sub\-section\-mark} (vain kaksi näistä) ja käyttää
+määritelmässä komentoja \koodi{\keno mark\-both} ja \koodi{\keno
+  mark\-right}. Esimerkkiin \ref{esim:fancyhdr_koko} on koottu varsin
+kokonaisvaltainen koodi omien ylä- ja alatunnisteiden toteutukseen.
+
+\begin{esimerkki*}
+\begin{koodilohko}
+  \documentclass{book}
+  \usepackage{fancyhdr}
+
+  % Päälukujen (\chapter) aloitussivu käyttää plain-sivutyyliä.
+  % Tässä määritellään se uudestaan.
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhf[FC]{-- \thepage{} --}
+    \renewcommand{\headrulewidth}{0bp}
+    \renewcommand{\footrulewidth}{0bp}
+  }
+
+  % fancy-sivutyylin asetukset:
+  \fancyhf{}
+  \fancyhf[HEL]{\leftmark}
+  \fancyhf[HOR]{\rightmark}
+  \fancyhf[FC]{-- \thepage{} --}
+  \renewcommand{\headrulewidth}{1bp}
+  \renewcommand{\footrulewidth}{0bp}
+
+  \begin{document}
+
+  \pagestyle{fancy}
+
+  % Päälukujen yhteydessä komento \markboth{…}{…} määrittää sekä
+  % \leftmark- että \rightmark-komennot. Tässä jälkimmäinen määritellään
+  % tyhjäksi.
+  \renewcommand{\chaptermark}[1]{%
+    \markboth{\chaptername\ \thechapter: #1}{}}
+
+  % Alalukujen yhteydessä komento \markright{…} määrittää vain
+  % \rightmark-komennon.
+  \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\end{koodilohko}
+\caption{Omien ylä- ja alatunnisteiden toteuttaminen}
+\label{esim:fancyhdr_koko}
+\end{esimerkki*}
 
 \section{Fontit}
 \label{luku:kirjaintyypit}

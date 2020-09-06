@@ -284,7 +284,7 @@ tutustua esimerkiksi \englanti{Comprehensive Tex Archive Network}
 (\textsc{ctan}) \=/verkkosivun avulla.%
 \footnote{\url{https://ctan.org/topic/class}}
 
-\section{Sivu KESKEN}
+\section{Sivu}
 \label{luku:sivuasetukset}
 
 Latex\-/dokumentit muodostuvat aina peräkkäisistä sivuista, eli
@@ -326,9 +326,8 @@ komentoa \koodi{\keno new\-geom\-etry}. Alkuperäiset asetukset
 palautetaan komennolla \koodi{\keno re\-store\-geom\-etry}.
 
 \begin{koodilohkosis}
-  \newgeometry{top=…, bottom=…, …} % Väliaikaisesti uudet asetukset.
-  % ...
-  \restoregeometry                 % Palautetaan alkuperäiset asetukset.
+  \newgeometry{top=…, bottom=…, …} % Uudet asetukset.
+  \restoregeometry     % Palautetaan alkuperäiset asetukset.
 \end{koodilohkosis}
 
 Valmiiksi määriteltyjä standardipaperikokoja on useita.
@@ -612,7 +611,40 @@ yhteydessä.
   \markright{oikea}        % määrittelee: \rightmark
 \end{koodilohkosis}
 
-% \pagenumbering{Roman} yms.
+Sivunumeroinnin tyyliin voi vaikuttaa esimerkiksi komennolla
+\koodi{\keno page\-number\-ing}, jonka argumentiksi annetaan
+numerointityylin nimi. Ne on koottu taulukkoon
+\ref{tlk:sivu_numerointityylit}.
+
+\begin{koodilohkosis}
+  \pagenumbering{roman}
+\end{koodilohkosis}
+
+Edellä mainittu komento määrittelee käytännössä uudelleen komennon
+\koodi{\keno the\-page}, joka on tarkoitettu juuri sivunumerolaskurin
+latomiseen. Lisätietoa sivunumeroista ja muista laskureista on luvussa
+\ref{luku:laskurit}.
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+
+\leijutlk{
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Tyyli} & \ots{Merkitys} \\
+    \midrule
+    \rivi{arabic}{arabialaiset luvut: 1, 2, 3\dots}
+    \rivi{roman}{roomalaiset luvut: i, ii, iii\dots}
+    \rivi{Roman}{roomalaiset luvut: I, II, III\dots}
+    \rivi{alph}{kirjaimet: a, b, c\dots\ (vain 1--26)}
+    \rivi{Alph}{kirjaimet: A, B, C\dots\ (vain 1--26)}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Sivunumerointityylit \koodi{\keno
+      page\-number\-ing}\-/komennon argumentiksi}
+  \label{tlk:sivu_numerointityylit}
+}
 
 \subsubsection{Fancyhdr}
 
@@ -636,9 +668,10 @@ argumenttien merkitys on seuraavanlainen:
 Valinnainen argumentti \koodi{paikka} kertoo, mihin paikkaan tai
 paikkoihin \koodi{sisältö} sijoitetaan. Vaihtoehtoina on ylä- tai
 alatunniste, pariton tai parillinen sivu, sivun vasen reuna, keski\-osa
-tai oikea reuna. Nämä vaihtoehdot on koottu taulukkoon
-\ref{tlk:fancyhf_paikat}. Saman komennon avulla voi määrittää useitakin
-paikkoja, kun ne erottaa pilkulla, esimerkiksi seuraavaan tapaan:
+tai oikea reuna. Nämä vaihtoehdot ja niitä vastaavat valitsimet on
+koottu taulukkoon \ref{tlk:fancyhf_paikat}. Saman komennon avulla voi
+määrittää useitakin paikkoja, kun ne erottaa pilkulla, esimerkiksi
+seuraavaan tapaan:
 
 \providecommand{\rivi}{}
 \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
@@ -658,9 +691,8 @@ paikkoja, kun ne erottaa pilkulla, esimerkiksi seuraavaan tapaan:
     \bottomrule
   \end{tabular}
 }{
-  \caption{\paketti{fancyhdr}\-/paketin \koodi{\keno
-      fancy\-hf}\-/komennon valitsimia ylä- tai alatunnisteen paikan
-    määrittämiseen}
+  \caption{\koodi{\keno fancy\-hf}\-/komennon valitsimia ylä- tai
+    alatunnisteen paikan määrittämiseen}
   \label{tlk:fancyhf_paikat}
 }
 
@@ -688,17 +720,25 @@ argumentti on sivutyylin nimi ja toinen argumentti on sivutyylin
 määritelmä. Määritelmä sisältää tarvittavat \koodi{\keno
   fancy\-hf}\-/komennot, joilla ylä- ja alatunnisteet määritellään.
 
-\begin{koodilohkosis}
-  \fancypagestyle{plain}{} % Latexin plain-tyylistä sama kuin fancy.
+Seuraava esimerkki tekee Latexin \koodi{plain}\-/sivutyylistä saman kuin
+\koodi{fancy}\-/tyylin, eli sekin noudattaa \koodi{\keno
+  fancy\-hf}\-/komennolla määriteltyjä ylä- ja alatunnisteita:
 
-  \fancypagestyle{omatyyli}{ % Luodaan oma sivutyyli.
+\begin{koodilohkosis}
+  \fancypagestyle{plain}{}
+\end{koodilohkosis}
+
+Seuraava esimerkki määrittelee kokonaan oman sivutyylin:
+
+\begin{koodilohkosis}
+  \fancypagestyle{omatyyli}{
     \fancyhf{}
     \fancyhf[FEL,FOR]{\thepage}
   }
 \end{koodilohkosis}
 
 Ylä- ja alatunniste voidaan erottaa tekstipalstasta vaakasuuntaisella
-viivalla, ja viivan paksuutta on mahdollista muuttaa määrittelemällä
+viivalla, jonka paksuutta on mahdollista muuttaa määrittelemällä
 uudelleen komennot \koodi{\keno head\-rule\-width} ja \koodi{\keno
   foot\-rule\-width}. Komennon määritelmäksi kirjoitetaan Latexin mitta.
 Seuraavassa esimerkissä asetetaan yhden typografisen pisteen (1\,bp)
@@ -712,21 +752,22 @@ erotinviiva katoaa kokonaan näkyvistä.
 
 Mikäli haluaa omiin ylätunnisteisiin esimerkiksi päälukujen ja
 alalukujen nimiä, täytyy tunnisteisiin sisällyttää aiemmin kuvatut
-\koodi{\keno left\-mark}- ja \koodi{\keno right\-mark}\-/komennot, jotka
-sisältävät pää- ja alalukujen nimet.
+\koodi{\keno left\-mark}- ja \koodi{\keno right\-mark}\-/komennot. Ensin
+mainittu sisältää pääluvun nimen ja jälkimmäinen alaluvun nimen.
 
 \begin{koodilohkosis}
   \fancyhf[HEL]{\leftmark}
   \fancyhf[HOR]{\rightmark}
 \end{koodilohkosis}
 
-Latex latoo ne oletuksena versaalikirjaimilla eli isoilla kirjaimilla.
-Jos ne haluaa johonkin toiseen muotoon, täytyy itse määritellä uudelleen
-komennot \koodi{\keno chapter\-mark}, \koodi{\keno section\-mark} tai
-\koodi{\keno sub\-section\-mark} (vain kaksi näistä) ja käyttää
-määritelmässä komentoja \koodi{\keno mark\-both} ja \koodi{\keno
-  mark\-right}. Esimerkkiin \ref{esim:fancyhdr_koko} on koottu varsin
-kokonaisvaltainen koodi omien ylä- ja alatunnisteiden toteutukseen.
+Latex latoo pää- ja alalukujen nimet oletuksena versaalikirjaimilla eli
+isoilla kirjaimilla. Jos ne haluaa johonkin toiseen muotoon, täytyy itse
+määritellä uudelleen komennot \koodi{\keno chapter\-mark}, \koodi{\keno
+  section\-mark} tai \koodi{\keno sub\-section\-mark} (vain kaksi
+näistä) ja käyttää määritelmässä komentoja \koodi{\keno mark\-both} ja
+\koodi{\keno mark\-right}. Esimerkkiin \ref{esim:fancyhdr_koko} on
+koottu varsin kokonaisvaltainen koodi omien ylä- ja alatunnisteiden
+toteutukseen.
 
 \begin{esimerkki*}
 \begin{koodilohko}

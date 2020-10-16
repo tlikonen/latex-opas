@@ -6,10 +6,85 @@
 
 ...
 
-\section{Kappaleet}
+\section{Tekstikappaleet}
 \label{luku:kappale}
 
-..
+Tekstikappale on kokonaisuus, joka käsittelee yhtä asiaa kuten
+ajankohtaa, henkilöä tai näkökulmaa. Kappaleiden tarkoituksena on
+jäsentää teksti sopivan pieniin merkityksellisiin osiin. Kappaleen
+vaihtuminen on lukijalle merkki, että tekstin sisällössäkin asia
+vaihtuu.
+
+Latexin lähdetiedostoissa kappaleen vaihtuminen ilmaistaan
+kirjoittamalla kappaleiden väliin vähintään yksi tyhjä rivi. Tätä
+merkintäkielen piirrettä käsitellään myös luvussa
+\ref{luku:kappaleen_vaihtuminen}. Kappale vaihtuu myös komennolla
+\koodi{\keno par}, joka sopii käytettäväksi esimerkiksi komentojen
+määrittelyssä (luku \ref{luku:komennot}), kun halutaan varmistaa
+kappaleen vaihtuminen tietyssä kohdassa.
+
+Ladotuissa dokumenteissa kappaleen vaihtuminen ilmaistaan yleensä siten,
+että uuden kappaleen ensimmäinen rivi sisennetään hieman. Toisinaan
+tekstikappaleet erotetaan pystysuuntaisella välillä, ja silloin
+kappaleiden ensimmäistä riviä ei sisennetä. Kappaleiden välejä,
+sisennyksiä, rivien tasaamista ja muita asetuksia käsitellään
+seuraavissa alaluvuissa.
+
+Monissa kappaleisiin liittyvissä asetuksissa tarvitaan Texin mittoja ja
+mittayksiköitä. Mittoihin liittyvää tekniikkaa käsitellään tarkemmin
+luvussa \ref{luku:mitat}, joka on syytä tuntea ennen tämän alaluvun
+lukemista.
+
+\subsection{Välit}
+
+Tekstikappaleiden väliin ladottava pystysuuntainen tyhjä tila asetetaan
+mitan \koodi{\keno par\-skip} \koodimargin{\keno par\-skip} avulla. Se
+on oletuksena nolla, mutta pientä venymistä kuitenkin sallitaan, eli
+joissakin tilanteissa kappaleiden väliin voidaan latoa pienen pieni
+tyhjä tila. Jos tyhjää tilaa ei haluta missään tilanteessa, asetetaan
+mitta vain nollaksi:
+
+\begin{koodilohkosis}
+  \setlength{\parskip}{0ex}
+\end{koodilohkosis}
+
+Seuraava esimerkkikomento asettaa kappaleväliksi 1,3\,ex. Lisäksi se
+sallii kappalevälin venyä 0,2\,ex:n verran tai kutistua 0,1\,ex:n
+verran.
+
+\begin{koodilohkosis}
+  \setlength{\parskip}{1.3ex plus .2ex minus .1ex}
+\end{koodilohkosis}
+
+Silloin kun kappaleet ladotaan erilleen toisistaan, on yleensä hyvä
+sallia kappalevälin venyä tai kutistua hieman, koska venyvät
+pystysuuntaiset välit antavat Texille paremmat mahdollisuudet latoa
+hyvännäköisiä sivuja. Venyvien välien avulla esimerkiksi sivun
+tekstialueen ylä- ja alareunat saadaan aina samalle kohdalle. Toisaalta
+liian suuret ja toisistaan poikkeavat kappalevälit ovat toki nekin
+rumannäköisiä.
+
+Pienehköjen kappalevälien tekemiseen on olemassa kolme valmista
+komentoa: \koodimargin{\keno bigskip} \koodimargin{\keno medskip}
+\koodimargin{\keno smallskip} suuremmasta pienempään ne ovat
+\koodi{\keno bigskip}, \koodi{\keno medskip} ja \koodi{\keno smallskip}.
+Ne sopivat käytettäväksi yksittäisiin tilainteisiin, joissa normaali
+kappaleväli on liian vähän. Myös komentojen tai ympäristöjen
+määrittelyssä niistä voi olla apua (luvut \ref{luku:komennot} ja
+\ref{luku:ymparistot}). Jos sivunvaihto osuu näiden komentojen kohdalle,
+mitään väliä ei tietenkään ladota sivun loppuun eikä seuraavan alkuun.
+
+Edellisten komentojen sijasta voi käyttää myös komentoja \koodi{\keno
+  bigbreak}, \koodi{\keno medbreak} tai \koodi{\keno smallbreak}.
+\koodimargin{\keno bigbreak} \koodimargin{\keno medbreak}
+\koodimargin{\keno smallbreak} Nämä toimivat lähes samalla tavalla,
+mutta niihin sisältyy myös sivunvaihtovihje. Toisin sanoen ne
+vaikuttavat ladonta\-/algoritmiin siten, että komennon kohdalla
+todennäköisyys sivun vaihtumiselle kasvaa suhteessa muihin kohtiin. Sivu
+voi edelleen vaihtua muustakin kohdasta, jos algoritmi löytää omasta
+mielestään vielä paremman paikan.
+
+% \vspace, \vspace*, \addvspace
 
 \subsection{Tasaus}
 %\sloppy, \fussy, \emergencystretch, \newline \\ \\*
@@ -18,16 +93,10 @@
 
 \subsection{Sisennykset}
 
-...
+% kappaleen ensimmäinen rivi, riippuva sisennys, koko kappaleen vasen ja
+% oikea sisennys
 
-\subsection{Välit}
-
-% \bigskip
-% \medskip
-% \smallskip
-% \bigbreak
-% \medbreak
-% \smallbreak
+% \indent, \noindent, noindentafter-paketti ja komento
 
 ...
 

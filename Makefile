@@ -1,11 +1,11 @@
 nimi = opas
-kaantaja = lualatex
+latex = lualatex
 
 $(nimi).pdf: *.tex *.bib
-	$(kaantaja) $(nimi)
+	$(latex) $(nimi)
 	biber $(nimi)
-	$(kaantaja) $(nimi)
-	$(kaantaja) $(nimi)
+	$(latex) $(nimi)
+	$(latex) $(nimi)
 
 clean:
 	rm -f $(nimi).aux $(nimi).bbl $(nimi).bcf $(nimi).blg \

@@ -826,11 +826,12 @@ seuraavanlainen:
   lualatex teksti.tex
 \end{koodilohkosis}
 
-\koodi{lualatex}\-/ohjelman paikalla voi olla myös \koodi{xelatex}.
-Tosin vielä helpompaa on käyttää \koodi{latexmk}\-/ohjelmaa (luku
-\ref{luku:latexmk}), joka osaa automaattisesti suorittaa myös
-\koodi{bib\-er}\-/ohjelman ja tarvittavat uudelleen kääntämiset. Yksi
-komento riittää käyttäjälle.
+Edellisen esimerkin komennoissa voi tiedoston nimistä jättää päätteet
+pois (\koodi{.tex}, \koodi{.bcf}). \koodi{lualatex}\-/ohjelman paikalla
+voi olla myös \koodi{xelatex}. Kääntäminen on vielä helpompaa, kun
+käyttää \koodi{latexmk}\-/ohjelmaa (luku \ref{luku:latexmk}), joka osaa
+automaattisesti suorittaa myös \koodi{bib\-er}\-/ohjelman ja tarvittavat
+uudelleen kääntämiset. Yksi komento riittää käyttäjälle:
 
 \begin{koodilohkosis}
   latexmk -lualatex teksti.tex    % tai: -xelatex

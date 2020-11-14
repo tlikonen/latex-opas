@@ -9,11 +9,11 @@
 \section{Tekstikappaleet}
 \label{luku:kappale}
 
-Tekstikappale on kokonaisuus, joka käsittelee yhtä asiaa kuten
-ajankohtaa, henkilöä tai näkökulmaa. Kappaleiden tarkoituksena on
-jäsentää teksti sopivan pieniin merkityksellisiin osiin. Kappaleen
-vaihtuminen on lukijalle merkki, että tekstin sisällössäkin asia
-vaihtuu.
+Tekstikappale on tekstin osa, jonka pitäisi käsitellä suunnilleen yhtä
+asiakokonaisuutta. Se voi olla esimerkiksi yksi aihe, näkökulma,
+ajankohta tai henkilö. Seuraava kappale käsittelee jotakin toista
+aihetta, näkökulmaa tms. Kappaleen vaihtuminen on lukijalle merkki
+siitä, että tekstin sisällössäkin jokin muuttuu.
 
 Latexin lähdetiedostoissa kappaleen vaihtuminen ilmaistaan
 kirjoittamalla kappaleiden väliin vähintään yksi tyhjä rivi. Tätä
@@ -23,12 +23,12 @@ merkintäkielen piirrettä käsitellään myös luvussa
 määrittelyssä (luku \ref{luku:komennot}), kun halutaan varmistaa
 kappaleen vaihtuminen tietyssä kohdassa.
 
-Ladotuissa dokumenteissa kappaleen vaihtuminen ilmaistaan yleensä siten,
-että uuden kappaleen ensimmäinen rivi sisennetään hieman. Toisinaan
-tekstikappaleet erotetaan pystysuuntaisella välillä, ja silloin
-kappaleiden ensimmäistä riviä ei sisennetä. Kappaleiden välejä,
-sisennyksiä, rivien tasaamista ja muita asetuksia käsitellään
-seuraavissa alaluvuissa.
+Ladotuissa teksteissä kuten kirjoissa ja lehdissä kappaleen vaihtuminen
+ilmaistaan melkein aina siten, että uuden kappaleen ensimmäinen rivi
+sisennetään hieman. Niin on tässäkin oppaassa. Toisinaan tekstikappaleet
+erotetaan pystysuuntaisella välillä, ja silloin kappaleiden ensimmäistä
+riviä ei sisennetä. Kappaleiden välejä, sisennyksiä, rivien tasaamista
+ja muita asetuksia käsitellään seuraavissa alaluvuissa.
 
 Monissa kappaleisiin liittyvissä asetuksissa tarvitaan Texin mittoja ja
 mittayksiköitä. Mittoihin liittyvää tekniikkaa käsitellään tarkemmin
@@ -37,12 +37,12 @@ lukemista.
 
 \subsection{Välit}
 
-Tekstikappaleiden väliin ladottava pystysuuntainen tyhjä tila asetetaan
-mitan \koodi{\keno par\-skip} \koodimargin{\keno par\-skip} avulla. Se
-on oletuksena nolla, mutta pientä venymistä kuitenkin sallitaan, eli
-joissakin tilanteissa kappaleiden väliin voidaan latoa pienen pieni
-tyhjä tila. Jos tyhjää tilaa ei haluta missään tilanteessa, asetetaan
-mitta vain nollaksi:
+Kappaleiden väliin ladottava pystysuuntainen tyhjä tila asetetaan mitan
+\koodi{\keno par\-skip} \koodimargin{\keno par\-skip} avulla. Se on
+oletuksena nolla, mutta pientä venymistä kuitenkin sallitaan, eli
+joissakin tilanteissa kappaleiden väliin voidaan latoa pieni tyhjä tila.
+Jos tyhjää tilaa ei haluta missään tilanteessa, asetetaan mitta vain
+nollaksi:
 
 \begin{koodilohkosis}
   \setlength{\parskip}{0ex}
@@ -61,30 +61,94 @@ sallia kappalevälin venyä tai kutistua hieman, koska venyvät
 pystysuuntaiset välit antavat Texille paremmat mahdollisuudet latoa
 hyvännäköisiä sivuja. Venyvien välien avulla esimerkiksi sivun
 tekstialueen ylä- ja alareunat saadaan aina samalle kohdalle. Toisaalta
-liian suuret ja toisistaan poikkeavat kappalevälit ovat toki nekin
-rumannäköisiä.
+myös liian suuret ja toisistaan liiaksi poikkeavat kappalevälit voivat
+olla rumannäköisiä.
 
-Pienehköjen kappalevälien tekemiseen on olemassa kolme valmista
-komentoa: \koodimargin{\keno bigskip} \koodimargin{\keno medskip}
-\koodimargin{\keno smallskip} suuremmasta pienempään ne ovat
-\koodi{\keno bigskip}, \koodi{\keno medskip} ja \koodi{\keno smallskip}.
-Ne sopivat käytettäväksi yksittäisiin tilainteisiin, joissa normaali
-kappaleväli on liian vähän. Myös komentojen tai ympäristöjen
-määrittelyssä niistä voi olla apua (luvut \ref{luku:komennot} ja
-\ref{luku:ymparistot}). Jos sivunvaihto osuu näiden komentojen kohdalle,
-mitään väliä ei tietenkään ladota sivun loppuun eikä seuraavan alkuun.
+Tavallista kappaleväliä suurempien pystysuuntaisten välien tekemiseen on
+olemassa kolme valmista komentoa: \koodimargin{\keno bigskip}
+\koodimargin{\keno medskip} \koodimargin{\keno smallskip} suuremmasta
+pienempään ne ovat \koodi{\keno bigskip}, \koodi{\keno medskip} ja
+\koodi{\keno smallskip}. Ne sopivat käytettäväksi yksittäisiin
+tilainteisiin, joissa normaali kappaleväli on liian vähän. Myös
+komentojen tai ympäristöjen määrittelyssä niistä voi olla apua (luvut
+\ref{luku:komennot} ja \ref{luku:ymparistot}). Jos sivunvaihto osuu
+näiden komentojen kohdalle, mitään väliä ei ladota sivun loppuun eikä
+seuraavan alkuun.
 
-Edellisten komentojen sijasta voi käyttää myös komentoja \koodi{\keno
-  bigbreak}, \koodi{\keno medbreak} tai \koodi{\keno smallbreak}.
-\koodimargin{\keno bigbreak} \koodimargin{\keno medbreak}
-\koodimargin{\keno smallbreak} Nämä toimivat lähes samalla tavalla,
-mutta niihin sisältyy myös sivunvaihtovihje. Toisin sanoen ne
-vaikuttavat ladonta\-/algoritmiin siten, että komennon kohdalla
-todennäköisyys sivun vaihtumiselle kasvaa suhteessa muihin kohtiin. Sivu
-voi edelleen vaihtua muustakin kohdasta, jos algoritmi löytää omasta
-mielestään vielä paremman paikan.
+Edellä mainittujen komentojen latoman välin suuruuteen voi vaikuttaa
+mittojen \koodi{\keno big\-skip\-amount}, \koodi{\keno
+  med\-skip\-amount} ja \koodi{\keno small\-skip\-amount} avulla.
+Seuraavassa on esimerkkikomennot mittojen määrittelemiseen ja samalla
+niiden oletusarvot:
 
-% \vspace, \vspace*, \addvspace
+\begin{koodilohkosis}
+  \setlength{\bigskipamount} {12bp plus 4bp minus 4bp}
+  \setlength{\medskipamount}  {6bp plus 2bp minus 2bp}
+  \setlength{\smallskipamount}{3bp plus 1bp minus 1bp}
+\end{koodilohkosis}
+
+Komentojen \koodi{\keno bigskip}, \koodi{\keno medskip} ja \koodi{\keno
+  smallskip} sijasta voi käyttää myös komentoja \koodi{\keno bigbreak},
+\koodi{\keno medbreak} tai \koodi{\keno smallbreak}. \koodimargin{\keno
+  bigbreak} \koodimargin{\keno medbreak} \koodimargin{\keno smallbreak}
+Nämä toimivat lähes samalla tavalla, mutta niihin sisältyy myös
+sivunvaihtovihje. Toisin sanoen ne vaikuttavat ladonta\-/algoritmiin
+siten, että komennon kohdalla todennäköisyys sivun vaihtumiselle kasvaa
+suhteessa muihin kohtiin. Sivu voi edelleen vaihtua muustakin kohdasta,
+jos algoritmi löytää omasta mielestään vielä paremman paikan.
+
+Pystysuuntaisten välien yleiskomento on \koodi{\keno vspace},
+\koodimargin{\keno vspace} \koodimargin{\keno vspace*} jolle annetaan
+argumentiksi välin suuruus ja mahdolliset venymisen rajat. Tämäkin
+komento jättää välin latomatta, jos se sattuu sivunvaihdon kohdalle. Sen
+sijaan tähdellinen versio \koodi{\keno vspace*} latoo välin joka
+tapauksessa, vaikka se olisi sivun lopussa tai alussa.
+
+\begin{koodilohkosis}
+  Tekstikappale.
+  \vspace{5ex plus 1ex minus .5ex}
+
+  Toinen tekstikappale.
+\end{koodilohkosis}
+
+Komento \koodi{\keno addvspace} \koodimargin{\keno addvspace} toimii
+lähes samoin kuin \koodi{\keno vspace}, mutta se huomioi mahdolliset
+peräkkäiset \koodi{\keno addvspace}\-/komennot ja varmistaa, että vain
+suurin väli toteutuu. Jos siis useita \koodi{\keno
+  addvspace}\-/komentoja sattuu peräkkäin, niiden määrittämiä välejä ei
+ladota peräkkäin vaan ainoastaan suurin niistä ladotaan. Seuraava
+esimerkki latoo kappaleiden väliin 2\,ex:n suuruisen pystysuuntaisen
+välin:
+
+\begin{koodilohkosis}
+  Tekstikappale.
+
+  \addvspace{1ex}
+  \addvspace{2ex}
+  \addvspace{.5ex}
+  Toinen tekstikappale.
+\end{koodilohkosis}
+
+Jos edellisessä esimerkissä olisi käytetty \koodi{\keno
+  vspace}\-/komentoa, pystysuuntaisen välin suuruus olisi 3,5\,ex, joka
+on välien yhteenlaskettu suuruus.
+
+\koodi{\keno addvspace}\-/komento soveltuu hyvin komentojen ja
+ympäristöjen määrittelyyn (luvut \ref{luku:komennot} ja
+\ref{luku:ymparistot}). Esimerkiksi itse määritellyn ympäristön alussa
+ja lopussa voi \koodi{\keno addvspace}\-/komennolla varmistaa
+tietynsuuruisen välin, mutta jos sama tai muu vastaava ympäristö on
+dokumentissa kahdesti peräkkäin, huomioidaan pystysuuntainen väli vain
+kerran eli suurimman välin mukaan. Jotkin Latexin valmiit ympäristöt
+tekevät juuri näin eli käyttävät \koodi{\keno addvspace}\-/komentoa
+välien asettamiseen.
+
+Sivun alueella äärettömästi venyvän pystysuuntaisen välin saa komennolla
+\koodi{\keno vfill}. \koodimargin{\keno vfill} Mitan luonnollinen arvo
+on nolla, mutta se voi venyä niin, että se täyttää kaiken tyhjän tilan
+sivulla. \koodi{\keno vfill}\-/komento tarkoittaa käytännössä samaa kuin
+\koodi{\keno vspace\{0mm plus 1fill\}} \=/komento. Texin venyviä mittoja
+ja välejä käsitellään tarkemmin luvussa \ref{luku:venyvat_mitat}.
 
 \subsection{Tasaus}
 %\sloppy, \fussy, \emergencystretch, \newline \\ \\*

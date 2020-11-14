@@ -12,7 +12,7 @@ clean:
 		$(nimi).fdb_latexmk $(nimi).fls $(nimi).log $(nimi).out \
 		$(nimi).run.xml $(nimi).toc
 
-clean-all: clean
+distclean: clean
 	rm -f $(nimi).pdf
 
-.PHONY: clean clean-all
+.PHONY: clean distclean

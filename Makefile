@@ -1,5 +1,5 @@
 nimi = opas
-latex = lualatex
+latex = lualatex -interaction=nonstopmode
 
 $(nimi).pdf: *.tex *.bib
 	$(latex) $(nimi)

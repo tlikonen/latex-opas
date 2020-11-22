@@ -1,7 +1,7 @@
 ;;; Directory Local Variables
 ;;; For more information see (info "(emacs) Directory Variables")
 
-((nil . ((fill-column . 79)
+((nil . ((fill-column . 72)
          (indent-tabs-mode . nil)))
  (latex-mode . ((mode . auto-fill)
                 (mode . outline-minor)

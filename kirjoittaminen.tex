@@ -150,10 +150,82 @@ sivulla. \koodi{\keno vfill}\-/komento tarkoittaa käytännössä samaa kuin
 \koodi{\keno vspace\{0mm plus 1fill\}} \=/komento. Texin venyviä mittoja
 ja välejä käsitellään tarkemmin luvussa \ref{luku:venyvat_mitat}.
 
-\subsection{Tasaus}
-%\sloppy, \fussy, \emergencystretch, \newline \\ \\*
+\subsection{Tasaaminen ja palstan muoto}
+\label{luku:kappaleen_tasaus}
 
-...
+Tekstikappaleet tasataan oletuksena palstan molempiin reunoihin
+(tasapalsta). Se tarkoittaa samalla sitä, että rivillä olevia sanavälejä
+venytetään sopivasti, jotta jokainen rivi näyttäisi yhtä pitkältä ja
+palstan molemmat reunat tasaiselta.
+
+Käytännössä sanavälien venymiselle on määritelty yläraja, jonka yli
+niitä ei venytetä. Ylärajan tarkoituksena on estää liian suuret ja rumat
+sanavälit. Rajoitus on sinänsä järkevä, mutta se voi myös johtaa siihen,
+että Tex ei saa tasattua kaikkia tekstikappaleita palstan oikeasta
+reunasta: jotkin rivit yltävät palstan reunan yli; jotkin rivit jäävät
+vajaaksi. Näin käy usein varsinkin suomen kielessä, jonka sanat ovat
+usein pitkiä ja riveillä on vähänlaisesti sanavälejä. Suomen kielessä
+sanavälien venymisen yläraja on usein tarpeellista asettaa oletusarvoa
+suuremmaksi. Se tehdään mitan \koodi{\keno emergencystretch} avulla,
+esimerkiksi seuraavasti:
+
+\begin{koodilohkosis}
+  \setlength{\emergencystretch}{1em}
+\end{koodilohkosis}
+
+Kaikenlaiset kappaleiden latomiseen liittyvät tekniset rajoitukset voi
+poistaa komennolla \koodi{\keno sloppy}. \koodimargin{\keno sloppy}
+Komento asettaa muun muassa sanavälien venymisen ylärajan hyvin
+korkeaksi (3\,em). Tämän komennon käyttö ei ole kovin suositeltavaa,
+koska sillä on muitakin seurauksia ja se voi vaikuttaa myös sellaisiin
+kappaleisiin, jotka muuten saataisiin ladottua nätisti. Parempi on
+asettaa vain mitta \koodi{\keno emergencystretch} riittävän suureksi.
+Sanavälien venymiseen ja kappaleiden tasaiseen latomiseen liittyvät
+asetukset voi palauttaa oletusarvoihin komennolla \koodi{\keno fussy}.
+\koodimargin{\keno fussy}
+
+Hyvin tavallista on tasata teksti pelkästään vasempaan reunaan, jolloin
+rivien pituudet vaihtelevat ja oikealla on niin sanottu liehureuna.
+Oikea liehureuna sopii pitkiin teksteihin yhtä hyvin kuin tasapalstakin,
+mutta se on parempi valinta erityisesti silloin, kun palsta on kapea.
+Nimittäin kapealla palstalla venyviä sanavälejä on käytettävissä hyvin
+vähän ja oikean reunan tasaaminen vaatii sanavälien venyttämistä joskus
+kohtuuttoman paljon. Tekstiin jää rumia aukkoja.
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[3]{\koodi{\keno #1} & \koodi{#2} & #3 \\}
+
+\leijutlk{
+  \begin{tabular}{lll}
+    \toprule
+    \ots{Komento} & \ots{Ympäristö} & \ots{Selitys} \\
+    \midrule
+    \rivi{raggedright}{flushleft}{vasen tasaus, oikea liehu}
+    \rivi{raggedleft}{flushright}{oikea tasaus, vasen liehu}
+    \rivi{centering}{center}{keskitetty}
+    \midrule
+    \rivi{RaggedRight}{FlushLeft}
+    {vasen tasaus, oikea liehu, tavutus (\paketti{ragged2e})}
+    \rivi{RaggedLeft}{FlushRight}
+    {oikea tasaus, vasen liehu, tavutus (\paketti{ragged2e})}
+    \rivi{Centering}{Center}{keskitetty, tavutus (\paketti{ragged2e})}
+    \rivi{justifying}{justify}{tasapalsta, tavutus (\paketti{ragged2e})}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Tekstikappaleen tasaamiseen ja palstan muotoon vaikuttavat
+    komennot ja ympäristöt. Osa sisältyy \paketti{ragged2e}\-/pakettiin}
+  \label{tlk:kappaleen_tasauskomennot}
+}
+
+Kappaleiden tasaamiseen ja palstan muotoon vaikuttavia komentoja ja
+ympäristöjä on koottu taulukkoon \ref{tlk:kappaleen_tasauskomennot}.
+Taulukossa on mainittu ensin Latexin omat komennot ja sitten
+\paketti{ragged2e}\-/paketin\avctan{ragged2e} vastaavat. Latexin omat
+komennot estävät sanojen tavuttamisen, kun taas \paketti{ragged2e}\-/
+paketin komennot sallivat tavutuksen normaalisti.
+
+% \flushbottom \raggedbottom
 
 \subsection{Sisennykset}
 
@@ -163,6 +235,13 @@ ja välejä käsitellään tarkemmin luvussa \ref{luku:venyvat_mitat}.
 % \indent, \noindent, noindentafter-paketti ja komento
 
 ...
+
+\subsection{Rivinvaihto}
+
+...
+
+% \newline \\ \\*
+%
 
 \subsection{Lesket ja orvot}
 

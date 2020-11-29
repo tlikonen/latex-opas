@@ -233,7 +233,7 @@ alkuun -- paitsi otsikoiden jälkeen.
 
 Ensimmäisen rivin sisennyksen suuruus asetetaan mitan \koodi{\keno
   parindent} avulla, esimerkiksi alla olevan esimerkin mukaisesti.
-Sopiva mittayksikkö tähän tarkoitukseen on ''em'', koska se viittaa
+Sopiva mittayksikkö tähän tarkoitukseen on \emph{em}, koska se viittaa
 suoraan nykyisen fontin kokoon.
 
 \begin{koodilohkosis}
@@ -242,7 +242,7 @@ suoraan nykyisen fontin kokoon.
 
 Edellä mainittu mitta pitäisi asettaa nollaan silloin, kun kappaleiden
 välissä on tyhjää tilaa. Pystysuuntainen välihän jo sinänsä ilmaisee,
-että sen jälkeen alkaa uusi kappale.
+että kappale vaihtuu.
 
 \begin{koodilohkosis}
   \setlength{\parskip}{1.3ex plus .2ex minus .1ex}
@@ -266,9 +266,11 @@ Suomenkielisissä julkaisuissa on tavallista, että leipätekstin
 kappaleessa ei ole sisennystä, jos sitä ennen on pystysuuntainen väli.
 Tällainen tilanne on aina otsikoiden jälkeen mutta myös kokonaan
 sisennetyn tekstikappaleen jälkeen tai kuvan, taulukon, luetelman tai
-muun vastaavan elementin jälkeen. Käytäntöön on hieman poikkeuksia
-suomenkielisessäkin typografiassa, mutta varsinkin eri kielten välillä
-käytäntö voi vaihdella enemmänkin.
+muun vastaavan elementin jälkeen. Esimerkiksi tässä oppaassa Latex\-/
+koodi\-esi\-merk\-kien jälkeen ei tekstikappaleissa ole sisennystä.
+Tähän käytäntöön on hieman poikkeuksia suomenkielisessäkin
+typografiassa, mutta varsinkin eri kielten välillä käytäntö voi
+vaihdella enemmänkin.
 
 Latex estää sisennyksen automaattisesti otsikoiden jälkeen mutta latoo
 sen kuitenkin kaikkien muiden elementtien ja pystysuuntaisen välin

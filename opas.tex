@@ -12,7 +12,7 @@
 \usepackage{ragged2e}
 \usepackage[hang,bottom,norule]{footmisc}
 \usepackage[clearempty]{titlesec}
-%\usepackage{titletoc}
+\usepackage{titletoc}
 %\usepackage{graphicx}
 \usepackage{color}
 \usepackage{floatrow}
@@ -230,6 +230,27 @@ Extension=.otf]
 \titleformat{\subsubsection}{\normalsize\bfseries\itshape}
 {\thesubsubsection}{.8em}{}[]
 \titlespacing*{\subsubsection}{\parindent}{*2}{*1}
+
+\titlecontents{chapter}[0em]
+{\addvspace{1.5ex}\rmfamily\bfseries\large}
+{\makebox[8mm][l]{\thecontentslabel}}
+{}
+{\titlerule[0bp]\contentspage}
+[\addvspace{.5ex}]
+
+\titlecontents{section}[0em]
+{\addvspace{.5ex}\rmfamily\normalsize}
+{\makebox[8mm][l]{\thecontentslabel}}
+{}
+{~\titlerule*[3mm]{.}\contentspage}
+[\addvspace{.2ex}]
+
+\titlecontents{subsection}[8mm]
+{\rmfamily\small}
+{\makebox[10mm][l]{\thecontentslabel}}
+{}
+{~\titlerule*[3mm]{.}\contentspage}
+[]
 
 \regtotcounter{chapter}
 

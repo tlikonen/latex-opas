@@ -35,7 +35,82 @@ mittayksiköitä. Mittoihin liittyvää tekniikkaa käsitellään tarkemmin
 luvussa \ref{luku:mitat}, joka on syytä tuntea ennen tämän alaluvun
 lukemista.
 
-\subsection{Välit}
+\subsection{Tasaaminen ja palstan muoto}
+\label{luku:kappaleen_tasaus}
+
+Tekstikappaleet tasataan oletuksena palstan molempiin reunoihin
+(tasapalsta). Se tarkoittaa samalla sitä, että rivillä olevia sanavälejä
+venytetään sopivasti, jotta jokainen rivi näyttäisi yhtä pitkältä ja
+palstan molemmat reunat tasaiselta.
+
+Käytännössä sanavälien venymiselle on määritelty yläraja, jonka yli
+niitä ei venytetä. Ylärajan tarkoituksena on estää liian suuret ja rumat
+sanavälit. Rajoitus on sinänsä järkevä, mutta se voi myös johtaa siihen,
+että Tex ei saa tasattua kaikkia tekstikappaleita palstan oikeasta
+reunasta: jotkin rivit yltävät palstan reunan yli; jotkin rivit jäävät
+vajaaksi. Näin käy usein varsinkin suomen kielessä, jonka sanat ovat
+usein pitkiä ja riveillä on vähänlaisesti sanavälejä. Suomen kielessä
+sanavälien venymisen yläraja on usein tarpeellista asettaa oletusarvoa
+suuremmaksi. Se tehdään mitan \koodi{\keno emergencystretch} avulla,
+esimerkiksi seuraavasti:
+
+\begin{koodilohkosis}
+  \setlength{\emergencystretch}{1em}
+\end{koodilohkosis}
+
+Kaikenlaiset kappaleiden latomiseen liittyvät tekniset rajoitukset voi
+poistaa tai asettaa hyvin suuriksi komennolla \koodi{\keno sloppy}.
+\koodimargin{\keno sloppy} Komento asettaa muun muassa sanavälien
+venymisen ylärajaksi 3\,em. Tämän komennon käyttö ei ole kovin
+suositeltavaa, koska sillä on muitakin seurauksia ja se voi vaikuttaa
+myös sellaisiin kappaleisiin, jotka muuten saataisiin ladottua nätisti.
+Parempi on asettaa vain mitta \koodi{\keno emergencystretch} riittävän
+suureksi. \koodimargin{\keno fussy} Sanavälien venymiseen ja kappaleiden
+tasaiseen latomiseen liittyvät asetukset voi palauttaa oletusarvoihin
+komennolla \koodi{\keno fussy}.
+
+Hyvin tavallista on tasata teksti pelkästään vasempaan reunaan, jolloin
+rivien pituudet vaihtelevat ja oikealla on niin sanottu liehureuna.
+Oikea liehureuna sopii pitkiin teksteihin yhtä hyvin kuin tasapalstakin,
+mutta se on parempi valinta erityisesti silloin, kun palsta on kapea.
+Nimittäin kapealla palstalla venyviä sanavälejä on käytettävissä hyvin
+vähän ja oikean reunan tasaaminen vaatii sanavälien venyttämistä joskus
+kohtuuttoman paljon. Tekstiin jää rumia aukkoja.
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[3]{\koodi{\keno #1} & \koodi{#2} & #3 \\}
+
+\leijutlk{
+  \begin{tabular}{lll}
+    \toprule
+    \ots{Komento} & \ots{Ympäristö} & \ots{Merkitys} \\
+    \midrule
+    \rivi{raggedright}{flushleft}{vasen tasaus, oikea liehu}
+    \rivi{raggedleft}{flushright}{oikea tasaus, vasen liehu}
+    \rivi{centering}{center}{keskitetty}
+    \midrule
+    \rivi{RaggedRight}{FlushLeft}
+    {vasen tasaus, oikea liehu, tavutus (\paketti{ragged2e})}
+    \rivi{RaggedLeft}{FlushRight}
+    {oikea tasaus, vasen liehu, tavutus (\paketti{ragged2e})}
+    \rivi{Centering}{Center}{keskitetty, tavutus (\paketti{ragged2e})}
+    \rivi{justifying}{justify}{tasapalsta, tavutus (\paketti{ragged2e})}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Tekstikappaleen tasaamiseen ja palstan muotoon vaikuttavat
+    komennot ja ympäristöt. Osa sisältyy \paketti{ragged2e}\-/pakettiin}
+  \label{tlk:kappaleen_tasauskomennot}
+}
+
+Kappaleiden tasaamiseen ja palstan muotoon vaikuttavia komentoja ja
+ympäristöjä on koottu taulukkoon \ref{tlk:kappaleen_tasauskomennot}.
+Taulukossa on mainittu ensin Latexin omat komennot ja sitten
+\paketti{ragged2e}\-/paketin\avctan{ragged2e} vastaavat. Latexin omat
+komennot estävät sanojen tavuttamisen, kun taas \paketti{ragged2e}\-/
+paketin komennot sallivat tavutuksen normaalisti.
+
+\subsection{Pystysuuntaiset välit}
 
 Kappaleiden väliin ladottava pystysuuntainen tyhjä tila asetetaan mitan
 \koodi{\keno par\-skip} \koodimargin{\keno par\-skip} avulla. Se on
@@ -123,9 +198,7 @@ välin:
 \begin{koodilohkosis}
   Tekstikappale.
 
-  \addvspace{1ex}
-  \addvspace{2ex}
-  \addvspace{.5ex}
+  \addvspace{1ex} \addvspace{2ex} \addvspace{.5ex}
   Toinen tekstikappale.
 \end{koodilohkosis}
 
@@ -150,91 +223,97 @@ sivulla. \koodi{\keno vfill}\-/komento tarkoittaa käytännössä samaa kuin
 \koodi{\keno vspace\{0mm plus 1fill\}} \=/komento. Texin venyviä mittoja
 ja välejä käsitellään tarkemmin luvussa \ref{luku:venyvat_mitat}.
 
-\subsection{Tasaaminen ja palstan muoto}
-\label{luku:kappaleen_tasaus}
+\subsection{Ensimmäisen rivin sisennys}
 
-Tekstikappaleet tasataan oletuksena palstan molempiin reunoihin
-(tasapalsta). Se tarkoittaa samalla sitä, että rivillä olevia sanavälejä
-venytetään sopivasti, jotta jokainen rivi näyttäisi yhtä pitkältä ja
-palstan molemmat reunat tasaiselta.
+Kirjojen ja lehtien typografiassa kappaleen ensimmäinen rivi on tapana
+sisentää merkiksi siitä, että alkaa uusi kappale. Sisennys on lukijalle
+merkki siitä, että tekstin sisällössä siirrytään seuraavaan asiaan.
+Oletusasetuksilla Latex latoo sisennyksen automaattisesti kappaleen
+alkuun -- paitsi otsikoiden jälkeen.
 
-Käytännössä sanavälien venymiselle on määritelty yläraja, jonka yli
-niitä ei venytetä. Ylärajan tarkoituksena on estää liian suuret ja rumat
-sanavälit. Rajoitus on sinänsä järkevä, mutta se voi myös johtaa siihen,
-että Tex ei saa tasattua kaikkia tekstikappaleita palstan oikeasta
-reunasta: jotkin rivit yltävät palstan reunan yli; jotkin rivit jäävät
-vajaaksi. Näin käy usein varsinkin suomen kielessä, jonka sanat ovat
-usein pitkiä ja riveillä on vähänlaisesti sanavälejä. Suomen kielessä
-sanavälien venymisen yläraja on usein tarpeellista asettaa oletusarvoa
-suuremmaksi. Se tehdään mitan \koodi{\keno emergencystretch} avulla,
-esimerkiksi seuraavasti:
+Ensimmäisen rivin sisennyksen suuruus asetetaan mitan \koodi{\keno
+  parindent} avulla, esimerkiksi alla olevan esimerkin mukaisesti.
+Sopiva mittayksikkö tähän tarkoitukseen on ''em'', koska se viittaa
+suoraan nykyisen fontin kokoon (katso mitoista lisätietoa luvusta
+\ref{luku:mitat}).
 
 \begin{koodilohkosis}
-  \setlength{\emergencystretch}{1em}
+  \setlength{\parindent}{1em}
 \end{koodilohkosis}
 
-Kaikenlaiset kappaleiden latomiseen liittyvät tekniset rajoitukset voi
-poistaa komennolla \koodi{\keno sloppy}. \koodimargin{\keno sloppy}
-Komento asettaa muun muassa sanavälien venymisen ylärajan hyvin
-korkeaksi (3\,em). Tämän komennon käyttö ei ole kovin suositeltavaa,
-koska sillä on muitakin seurauksia ja se voi vaikuttaa myös sellaisiin
-kappaleisiin, jotka muuten saataisiin ladottua nätisti. Parempi on
-asettaa vain mitta \koodi{\keno emergencystretch} riittävän suureksi.
-Sanavälien venymiseen ja kappaleiden tasaiseen latomiseen liittyvät
-asetukset voi palauttaa oletusarvoihin komennolla \koodi{\keno fussy}.
-\koodimargin{\keno fussy}
+Edellä mainittu mitta pitäisi asettaa nollaan silloin, kun kappaleiden
+välissä on tyhjää tilaa. Pystysuuntainen välihän jo sinänsä ilmaisee,
+että sen jälkeen alkaa uusi kappale.
 
-Hyvin tavallista on tasata teksti pelkästään vasempaan reunaan, jolloin
-rivien pituudet vaihtelevat ja oikealla on niin sanottu liehureuna.
-Oikea liehureuna sopii pitkiin teksteihin yhtä hyvin kuin tasapalstakin,
-mutta se on parempi valinta erityisesti silloin, kun palsta on kapea.
-Nimittäin kapealla palstalla venyviä sanavälejä on käytettävissä hyvin
-vähän ja oikean reunan tasaaminen vaatii sanavälien venyttämistä joskus
-kohtuuttoman paljon. Tekstiin jää rumia aukkoja.
+\begin{koodilohkosis}
+  \setlength{\parskip}{1.3ex plus .2ex minus .1ex}
+  \setlength{\parindent}{0em}  % Ei sisennystä.
+\end{koodilohkosis}
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[3]{\koodi{\keno #1} & \koodi{#2} & #3 \\}
+\koodi{\keno parindent}\-/ mitan levyisen välin voi tehdä mihin tahansa
+komennolla \koodi{\keno indent}. \koodimargin{\keno indent} Tätä
+komentoa ei tavallisesti tarvita, koska kappaleet alkavat
+automaattisesti sen suuruisella sisennyksellä. Tarpeellisempi komento on
+\koodi{\keno no\-in\-dent}, \koodimargin{\keno noindent} joka voidaan
+kirjoittaa kappaleen alkuun estämään kyseisen kappaleen ensimmäisen
+rivin sisentäminen.
 
-\leijutlk{
-  \begin{tabular}{lll}
-    \toprule
-    \ots{Komento} & \ots{Ympäristö} & \ots{Merkitys} \\
-    \midrule
-    \rivi{raggedright}{flushleft}{vasen tasaus, oikea liehu}
-    \rivi{raggedleft}{flushright}{oikea tasaus, vasen liehu}
-    \rivi{centering}{center}{keskitetty}
-    \midrule
-    \rivi{RaggedRight}{FlushLeft}
-    {vasen tasaus, oikea liehu, tavutus (\paketti{ragged2e})}
-    \rivi{RaggedLeft}{FlushRight}
-    {oikea tasaus, vasen liehu, tavutus (\paketti{ragged2e})}
-    \rivi{Centering}{Center}{keskitetty, tavutus (\paketti{ragged2e})}
-    \rivi{justifying}{justify}{tasapalsta, tavutus (\paketti{ragged2e})}
-    \bottomrule
-  \end{tabular}
-}{
-  \caption{Tekstikappaleen tasaamiseen ja palstan muotoon vaikuttavat
-    komennot ja ympäristöt. Osa sisältyy \paketti{ragged2e}\-/pakettiin}
-  \label{tlk:kappaleen_tasauskomennot}
-}
+\begin{koodilohkosis}
+  \noindent
+  Tämän tekstikappaleen ensimmäistä riviä ei sisennetä.
+\end{koodilohkosis}
 
-Kappaleiden tasaamiseen ja palstan muotoon vaikuttavia komentoja ja
-ympäristöjä on koottu taulukkoon \ref{tlk:kappaleen_tasauskomennot}.
-Taulukossa on mainittu ensin Latexin omat komennot ja sitten
-\paketti{ragged2e}\-/paketin\avctan{ragged2e} vastaavat. Latexin omat
-komennot estävät sanojen tavuttamisen, kun taas \paketti{ragged2e}\-/
-paketin komennot sallivat tavutuksen normaalisti.
+Suomenkielisissä julkaisuissa on tavallista, että leipätekstin
+kappaleessa ei ole sisennystä, jos sitä ennen on pystysuuntainen väli.
+Tällainen tilanne on aina otsikoiden jälkeen mutta myös kokonaan
+sisennetyn tekstikappaleen jälkeen tai kuvan, taulukon, luetelman tai
+muun vastaavan elementin jälkeen. Käytäntöön on hieman poikkeuksia
+suomenkielisessäkin typografiassa, mutta varsinkin eri kielten välillä
+käytäntö voi vaihdella enemmänkin.
 
-% \flushbottom \raggedbottom -komennot liittyvät sivun latomiseen
+Latex estää sisennyksen automaattisesti otsikoiden jälkeen mutta latoo
+sen kuitenkin kaikkien muiden elementtien ja pystysuuntaisen välin
+jälkeen. Jos sisennys halutaan estää, pitäisi kyseiset kappaleet
+aloittaa aina \koodi{\keno noindent}\-/komennolla. Toinen vaihtoehto on
+käyttää \paketti{no\-indent\-after}\-/ pakettia\avctan{noindentafter} ja
+määritellä sen tarjoaman komennon avulla, minkä ympäristöjen jälkeen ei
+haluta sisennystä. Seuraava esimerkki poistaa sisennyksen aina
+\koodi{list}- ja \koodi{tabular}\-/ ympäristöjen jälkeen. Lisätietoja
+mainituista ympäristöistä on luvuissa \ref{luku:luetelmat} ja
+\ref{luku:taulukot}.
 
-\subsection{Sisennykset}
+\begin{koodilohkosis}
+  \usepackage{noindentafter}
+  \NoIndentAfterEnv{list}
+  \NoIndentAfterEnv{tabular}
+\end{koodilohkosis}
+
+\subsection{Riippuva sisennys}
+
+...
+
+% \begin{list}{}{
+%     \setlength{\leftmargin}{5em}
+%     \setlength{\itemindent}{-5em}
+%     % \setlength{\labelwidth}{4em}
+%     % \setlength{\labelsep}{1em}
+%     \setlength{\listparindent}{-5em}
+%   }
+% \item \makebox[5em][l]{Tässä}on tekstikappale. Tässä on tekstikappale.
+%   Tässä on tekstikappale. Tässä on tekstikappale. Tässä on
+%   tekstikappale. Tässä on tekstikappale. Tässä on tekstikappale. Tässä
+%   on tekstikappale.
+
+%   Tässä on tekstikappale. Tässä on tekstikappale. Tässä on
+%   tekstikappale. Tässä on tekstikappale. Tässä on tekstikappale. Tässä
+%   on tekstikappale. Tässä on tekstikappale. Tässä on tekstikappale.
+% \end{list}
+
 
 % kappaleen ensimmäinen rivi, riippuva sisennys, koko kappaleen vasen ja
 % oikea sisennys
 
 % \indent, \noindent, noindentafter-paketti ja komento
-
-...
 
 \subsection{Rivinvaihto}
 
@@ -268,10 +347,12 @@ paketin komennot sallivat tavutuksen normaalisti.
 
 ...
 
-\section{Sivun vaihto}
-% newpage, clearpage, minipage, nopagebreak
+\section{Sivun vaihto ja tasaaminen}
 
 ...
+
+% newpage, clearpage, minipage, nopagebreak
+% \flushbottom \raggedbottom -komennot liittyvät sivun latomiseen
 
 \section{Otsikot ja jäsennys}
 \label{luku:otsikot}

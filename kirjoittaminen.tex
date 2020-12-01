@@ -273,8 +273,8 @@ typografiassa, mutta varsinkin eri kielten välillä käytäntö voi
 vaihdella enemmänkin.
 
 Latex estää sisennyksen automaattisesti otsikoiden jälkeen mutta latoo
-sen kuitenkin kaikkien muiden elementtien ja pystysuuntaisen välin
-jälkeen. Jos sisennys halutaan estää, pitäisi kyseiset kappaleet
+sisennyksen kuitenkin kaikkien muiden elementtien ja pystysuuntaisen
+välin jälkeen. Jos sisennys halutaan estää, pitäisi kyseiset kappaleet
 aloittaa aina \koodi{\keno noindent}\-/komennolla. Toinen vaihtoehto on
 käyttää \paketti{no\-indent\-after}\-/ pakettia\avctan{noindentafter} ja
 määritellä sen tarjoaman komennon avulla, minkä ympäristöjen jälkeen ei
@@ -291,30 +291,105 @@ mainituista ympäristöistä on luvuissa \ref{luku:luetelmat} ja
 
 \subsection{Riippuva sisennys}
 
-...
+Riippuva sisennys tarkoittaa tekstikappaleen muotoa, jossa sisennetään
+kappaleen muita rivejä mutta ei ensimmäistä. Riippuvaa sisennystä
+käytetään esimerkiksi kirjallisuus\-/{} ja lähdeluetteloissa, joissa on
+tarpeellista saada henkilön nimi tai muu lähdemerkinnän hakusana
+erottumaan selvästi vasemmassa reunassa. Tämän oppaan sivulla
+\pageref{luku:kirjallisuutta} on siitä esimerkki lähdemerkinnöistä.
 
-% \begin{list}{}{
-%     \setlength{\leftmargin}{5em}
-%     \setlength{\itemindent}{-5em}
-%     % \setlength{\labelwidth}{4em}
-%     % \setlength{\labelsep}{1em}
-%     \setlength{\listparindent}{-5em}
-%   }
-% \item \makebox[5em][l]{Tässä}on tekstikappale. Tässä on tekstikappale.
-%   Tässä on tekstikappale. Tässä on tekstikappale. Tässä on
-%   tekstikappale. Tässä on tekstikappale. Tässä on tekstikappale. Tässä
-%   on tekstikappale.
+Myös virallisten asiakirjojen muotoilussa käytetään riippuvaa
+sisennystä. Niissä kappaleen ensimmäinen rivi voi sisältää otsikon, joka
+on tasattu vasempaan marginaaliin. Otsikon perässä on sarkainhyppy
+tekstikappaleen sisennyksen tasalle, ja kappaleen muut rivit on
+sisennettynä samalla tasolle.
 
-%   Tässä on tekstikappale. Tässä on tekstikappale. Tässä on
-%   tekstikappale. Tässä on tekstikappale. Tässä on tekstikappale. Tässä
-%   on tekstikappale. Tässä on tekstikappale. Tässä on tekstikappale.
-% \end{list}
+\begin{esimerkki*}
+\begin{koodilohko}
+  \hangpara{2cm}{1}Tässä tekstikappaleessa on riippuva sisennys. Kappale
+  alkaa yhdellä sisentämättömällä rivillä, ja kappaleen muut rivit on
+  sisennetty 2\,cm.
+\end{koodilohko}
+\begin{tulos}
+  \hangpara{2cm}{1}Tässä tekstikappaleessa on riippuva sisennys. Kappale
+  alkaa yhdellä sisentämättömällä rivillä, ja kappaleen muut rivit on
+  sisennetty 2\,cm.
+\end{tulos}
+\caption{Riippuva sisennys \paketti{hanging}\-/paketin ja sen
+  \koodi{\keno hang\-para}\-/komennon avulla}
+\label{esim:riippuva_sis_hangpara}
+\end{esimerkki*}
 
+Helpoin tapa riippuvien sisennysten toteuttamiseen lienee
+\paketti{hang\-ing}\-/ paketin\avctan{hanging} käyttö. Paketti tuo uuden
+komennon \koodi{\keno hang\-para}, jonka käyttöä esimerkki
+\ref{esim:riippuva_sis_hangpara} selventää. Komennon ensimmäinen
+argumentti on sisennyksen mitta ja toinen argumentti määrittää, kuinka
+monta riviä jätetään sisentämättä. Jos toinen argumentti on negatiivinen
+luku, luvun it\-seis\-arvo määrittää, kuinka monta riviä kappaleen
+alusta sisennetään.
 
-% kappaleen ensimmäinen rivi, riippuva sisennys, koko kappaleen vasen ja
-% oikea sisennys
+\begin{esimerkki*}
+\begin{koodilohko}
+  \hangpara{2cm}{1}\makebox[2cm][l]{Otsikko}Tässä tekstikappaleessa on
+  riippuva sisennys. Kappale alkaa yhdellä sisentämättömällä rivillä,
+  joka sisältää näkymättömässä laatikossa olevan otsikon. Kappaleen muut
+  rivit on sisennetty 2\,cm.
+\end{koodilohko}
+\begin{tulos}
+  \hangpara{2cm}{1}\makebox[2cm][l]{Otsikko}Tässä tekstikappaleessa on
+  riippuva sisennys. Kappale alkaa yhdellä sisentämättömällä rivillä,
+  joka sisältää näkymättömässä laatikossa olevan otsikon. Kappaleen muut
+  rivit on sisennetty 2\,cm.
+\end{tulos}
+\caption{Asiakirjan tyylisten tekstikappaleiden toteutus}
+\label{esim:riippuva_sis_asiakirja}
+\end{esimerkki*}
 
-% \indent, \noindent, noindentafter-paketti ja komento
+Asiakirjan tyylisen otsikon saa toteutettua \koodi{\keno make\-box}\-/
+komennon avulla esimerkin \ref{esim:riippuva_sis_asiakirja} tavoin.
+Näkymätön laatikko määritellään sisennyksen levyiseksi ja sen sisään
+kirjoitetaan otsikko. Jos asiakirjatyylisiä tekstikappaleita tarvitaan
+useita, kannattaa määritellä sarkainleveyttä ja sisennystä varten oma
+mitta ja tekstikappaleen kirjoittamista varten oma komento. Seuraavassa
+on siitä esimerkki:
+
+\begin{koodilohkosis}
+  \newlength{\sarkain}
+  \setlength{\sarkain}{2.3cm}
+  \newcommand{\kappale}[1][]{\par\hangpara{2\sarkain}{1}%
+    \makebox[2\sarkain][l]{\ignorespaces #1}\ignorespaces}
+\end{koodilohkosis}
+
+Tämän jälkeen voi komennolla \koodi{\keno kappale} aloittaa asiakirjan
+sisennetyn tekstikappaleen. Komennolle voi antaa hakasulkeissa
+valinnaisen argumentin, joka on kappaleen otsikko.
+
+Riippuvan sisennyksen voi toteuttaa myös \koodi{list}\-/ympäristön
+avulla. Se on tarkoitettu luetelmien tekemiseen, mutta sopivilla
+asetuksilla yksi ''luetelman'' kohta on riippuvasti sisennetty kappale.
+Tarkemmin \koodi{list}\-/ympäristöä käsitellään luetelmien yhteydessä
+luvussa \ref{luku:luetelmat}, mutta esimerkissä
+\ref{esim:riippuva_sis_list} on sopivat asetukset riippuvan sisennyksen
+toteuttamiseen.
+
+\begin{esimerkki*}
+\begin{koodilohko}
+  \begin{list}{}{
+      \setlength{\leftmargin}{2cm}
+      \setlength{\itemindent}{-2cm}
+    }
+  \item Tässä tekstikappaleessa on riippuva sisennys. Kappale alkaa
+    yhdellä sisentämättömällä rivillä, ja kappaleen muut rivit on
+    sisennetty 2\,cm.
+  \end{list}
+\end{koodilohko}
+\caption{Riippuvan sisennyksen toteuttaminen \koodi{list}\-/ympäristön
+  avulla}
+\label{esim:riippuva_sis_list}
+\end{esimerkki*}
+
+% koko kappaleen vasen ja oikea sisennys
 
 \subsection{Rivinvaihto}
 

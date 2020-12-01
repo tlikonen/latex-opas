@@ -147,6 +147,16 @@ Extension=.otf]
   numbersep=0em, xleftmargin=\sisennys, xrightmargin=0mm,
   baselinestretch=1, samepage=true }
 
+\newenvironment{tulos}{%
+  \begin{minipage}{\linewidth}
+    \linespread{1}\erikoisfontti
+  }{%
+  \end{minipage}
+  \par\vspace{1ex}
+  \hrulefill
+  \par\vspace{1ex}
+}
+
 \newenvironment{tulossis}{%
   \begin{list}{}{
       \setlength{\leftmargin}{\sisennys}

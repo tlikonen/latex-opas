@@ -268,9 +268,9 @@ Tällainen tilanne on aina otsikoiden jälkeen mutta myös kokonaan
 sisennetyn tekstikappaleen jälkeen tai kuvan, taulukon, luetelman tai
 muun vastaavan elementin jälkeen. Esimerkiksi tässä oppaassa Latex\-/
 koodi\-esi\-merk\-kien jälkeen ei tekstikappaleissa ole sisennystä.
-Tähän käytäntöön on hieman poikkeuksia suomenkielisessäkin
-typografiassa, mutta varsinkin eri kielten välillä käytäntö voi
-vaihdella enemmänkin.
+Tähän käytäntöön on joskus poikkeuksia suomenkielisessäkin
+typografiassa, mutta eri kielten välillä käytäntö voi vaihdella
+enemmänkin.
 
 Latex estää sisennyksen automaattisesti otsikoiden jälkeen mutta latoo
 sisennyksen kuitenkin kaikkien muiden elementtien ja pystysuuntaisen
@@ -284,7 +284,6 @@ mainituista ympäristöistä on luvuissa \ref{luku:luetelmat} ja
 \ref{luku:taulukot}.
 
 \begin{koodilohkosis}
-  \usepackage{noindentafter}
   \NoIndentAfterEnv{list}
   \NoIndentAfterEnv{tabular}
 \end{koodilohkosis}
@@ -296,7 +295,7 @@ kappaleen muita rivejä mutta ei ensimmäistä. Riippuvaa sisennystä
 käytetään esimerkiksi kirjallisuus\-/{} ja lähdeluetteloissa, joissa on
 tarpeellista saada henkilön nimi tai muu lähdemerkinnän hakusana
 erottumaan selvästi vasemmassa reunassa. Tämän oppaan sivulla
-\pageref{luku:kirjallisuutta} on siitä esimerkki lähdemerkinnöistä.
+\pageref{luku:kirjallisuutta} on esimerkki lähdemerkinnöistä.
 
 Myös virallisten asiakirjojen muotoilussa käytetään riippuvaa
 sisennystä. Niissä kappaleen ensimmäinen rivi voi sisältää otsikon, joka
@@ -307,13 +306,13 @@ sisennettynä samalla tasolle.
 \begin{esimerkki*}
 \begin{koodilohko}
   \hangpara{2cm}{1}Tässä tekstikappaleessa on riippuva sisennys. Kappale
-  alkaa yhdellä sisentämättömällä rivillä, ja kappaleen muut rivit on
-  sisennetty 2\,cm.
+  alkaa yhdellä sisentämättömällä rivillä, ja kappaleen seuraavat rivit
+  on sisennetty 2\,cm.
 \end{koodilohko}
 \begin{tulos}
   \hangpara{2cm}{1}Tässä tekstikappaleessa on riippuva sisennys. Kappale
-  alkaa yhdellä sisentämättömällä rivillä, ja kappaleen muut rivit on
-  sisennetty 2\,cm.
+  alkaa yhdellä sisentämättömällä rivillä, ja kappaleen seuraavat rivit
+  on sisennetty 2\,cm.
 \end{tulos}
 \caption{Riippuva sisennys \paketti{hanging}\-/paketin ja sen
   \koodi{\keno hang\-para}\-/komennon avulla}
@@ -322,12 +321,23 @@ sisennettynä samalla tasolle.
 
 Helpoin tapa riippuvien sisennysten toteuttamiseen lienee
 \paketti{hang\-ing}\-/ paketin\avctan{hanging} käyttö. Paketti tuo uuden
-komennon \koodi{\keno hang\-para}, jonka käyttöä esimerkki
-\ref{esim:riippuva_sis_hangpara} selventää. Komennon ensimmäinen
-argumentti on sisennyksen mitta ja toinen argumentti määrittää, kuinka
-monta riviä jätetään sisentämättä. Jos toinen argumentti on negatiivinen
-luku, luvun it\-seis\-arvo määrittää, kuinka monta riviä kappaleen
-alusta sisennetään.
+komennon \koodi{\keno hang\-para}, \koodimargin{\keno hangpara} jonka
+käyttöä esimerkki \ref{esim:riippuva_sis_hangpara} selventää. Komennon
+ensimmäinen argumentti on sisennyksen mitta ja toinen argumentti
+määrittää, kuinka monta riviä jätetään sisentämättä. Jos toinen
+argumentti on negatiivinen luku, luvun it\-seis\-arvo määrittää, kuinka
+monta riviä kappaleen alusta sisennetään.
+
+Komennon \koodi{\keno hang\-para} vaihtoehtona on ympäristö
+\koodi{hang\-paras}, jonka sisällä kaikki kappaleet sisennetään
+riippuvalla tyylillä samojen asetusten mukaisesti. Ympäristölle annetaan
+samat argumentit kuin komennollekin.
+
+\begin{koodilohkosis}
+  \begin{hangparas}{2cm}{1}
+    ...
+  \end{hangparas}
+\end{koodilohkosis}
 
 \begin{esimerkki*}
 \begin{koodilohko}
@@ -363,13 +373,15 @@ on siitä esimerkki:
 
 Tämän jälkeen voi komennolla \koodi{\keno kappale} aloittaa asiakirjan
 sisennetyn tekstikappaleen. Komennolle voi antaa hakasulkeissa
-valinnaisen argumentin, joka on kappaleen otsikko.
+valinnaisen argumentin, joka on kappaleen otsikko. \koodi{\keno
+  make\-box}\-/ komentoa ja muita laatikoita käsitellään tarkemmin
+luvussa \ref{luku:laatikot}.
 
 Riippuvan sisennyksen voi toteuttaa myös \koodi{list}\-/ympäristön
 avulla. Se on tarkoitettu luetelmien tekemiseen, mutta sopivilla
 asetuksilla yksi ''luetelman'' kohta on riippuvasti sisennetty kappale.
 Tarkemmin \koodi{list}\-/ympäristöä käsitellään luetelmien yhteydessä
-luvussa \ref{luku:luetelmat}, mutta esimerkissä
+luvussa \ref{luku:luetelmat}, mutta oheisessa esimerkissä
 \ref{esim:riippuva_sis_list} on sopivat asetukset riippuvan sisennyksen
 toteuttamiseen.
 
@@ -1380,6 +1392,7 @@ aakkostustapoja. Lisätietoa saa paketin ohjekirjasta.%
 ...
 
 \section{Laatikot}
+\label{luku:laatikot}
 
 ...
 

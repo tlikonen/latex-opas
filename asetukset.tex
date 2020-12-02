@@ -500,26 +500,30 @@ tavallisestikin eli esimerkiksi valitsimella \koodi{paper\-size} (luku
 Sen sijaan sivun sisäiset mitat täytyy määritellä toisella tavalla,
 käyttämällä valitsinta \koodi{lay\-out} tai \koodi{layout\-size}.
 
-Seuraavassa esimerkissä käytetään sisäisesti \textsc{a4}\-/kokoista (210
-× 297~mm) sivua, mutta sivulle on määritetty joka puolelle 5\,mm:n
-leikkuuvarat. Niinpä ulkoisesti sivu on 10\,mm leveämpi ja korkeampi,
-eli ulkoiset mitat ovat 220 × 307~mm. Valitsimella
-\koodi{layout\-offset} asetetaan sisäisen sivun etäisyys ulkoisen sivun
-vasemmasta ylänurkasta.
-
-\begin{koodilohkosis}
+\begin{esimerkki*}
+\begin{koodilohko}
   \geometry{
     papersize={220mm, 307mm},
     layout=a4paper,           % tai: layoutsize={210mm, 297mm}
     layoutoffset={5mm, 5mm},
     showcrop
   }
-\end{koodilohkosis}
+\end{koodilohko}
+\caption{Sivun ulkoisten ja sisäisten mittojen sekä leikkuvaarojen
+  määrittäminen}
+\label{esim:leikkuuvarat}
+\end{esimerkki*}
 
-Esimerkissä on mukana myös valitsin \koodi{show\-crop}, joka merkitsee
-sisäisen ja ulkoisen sivun rajakohdan eli leikkuuvaran rajan. Merkinnät
-näkyvät vain sivun nurkissa leikkuuvaran puolella, joten ne eivät päädy
-lopulliseen painotuotteeseen.
+Esimerkissä \ref{esim:leikkuuvarat} käytetään sisäisesti \textsc{a4}\-/
+kokoista (210 × 297~mm) sivua, mutta sivulle on määritetty joka puolelle
+5\,mm:n leikkuuvarat. Niinpä ulkoisesti sivu on 10\,mm leveämpi ja
+korkeampi, eli ulkoiset mitat ovat 220 × 307~mm. Valitsimella
+\koodi{layout\-offset} asetetaan sisäisen sivun etäisyys ulkoisen sivun
+vasemmasta ylänurkasta. Esimerkissä on mukana myös valitsin
+\koodi{show\-crop}, joka merkitsee sisäisen ja ulkoisen sivun rajakohdan
+eli leikkuuvaran rajan. Merkinnät näkyvät vain sivun nurkissa
+leikkuuvaran puolella, joten ne eivät päädy lopulliseen
+painotuotteeseen.
 
 \subsection{Ylä- ja alatunnisteet}
 \label{luku:yla_ala_tunnisteet}

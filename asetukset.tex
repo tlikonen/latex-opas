@@ -55,14 +55,14 @@ kehitetään Latexin perusosien ulkopuolella, ja niiden ominaisuudet
 voivat muuttua ja kehittyä nopeammin ajan myötä.
 
 Normaalit%
-\koodimargin{article \\ report \\ book} paperisivuihin perustuvat
-dokumentit tehdään luokkien \koodi{article}, \koodi{report} tai
-\koodi{book} avulla. Ne ovat keskenään hyvin samanlaisia, mutta
-niiden oletusasetukset poikkeavat toisistaan. Karkeasti jaoteltuna
-\koodi{article}\-/luokka on tarkoitettu lyhyehköille artikkeleille ja
-yleiseksi perustaksi monenlaisille dokumenteille. Sen sijaan
-\koodi{report} ja \koodi{book} on tarkoitettu laajoihin
-dokumentteihin, ja niissä on kirja\-typo\-grafian piirteitä.
+\koodimargin{article} \koodimargin{report} \koodimargin{book}
+paperisivuihin perustuvat dokumentit tehdään luokkien \koodi{article},
+\koodi{report} tai \koodi{book} avulla. Ne ovat keskenään hyvin
+samanlaisia, mutta niiden oletusasetukset poikkeavat toisistaan.
+Karkeasti jaoteltuna \koodi{article}\-/luokka on tarkoitettu
+lyhyehköille artikkeleille ja yleiseksi perustaksi monenlaisille
+dokumenteille. Sen sijaan \koodi{report} ja \koodi{book} on tarkoitettu
+laajoihin dokumentteihin, ja niissä on kirja\-typo\-grafian piirteitä.
 
 Suurin edellä mainittujen perusluokkien ero on otsikoinnissa ja
 dokumentin jäsentämisessä: \koodi{report} ja \koodi{book}
@@ -154,13 +154,13 @@ Sivun koon ja muitakin mittoja voi määritellä monipuolisemmin
 dokumenttiluokan sivu\-koko\-ase\-tuk\-sia tarvita välttämättä lainkaan.
 
 Leipätekstin%
-\koodimargin{10pt \\ 11pt \\ 12pt} fontin koon voi määrittää
-valitsimilla \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}, joista ensin
-mainittu on oletus. Lyhenne pt tarkoittaa typografista pistemittaa,
-joita käsitellään luvussa \ref{luku:mitat}. Nämä asetukset vaikuttavat
-myös sivun marginaaleihin, koska fontin koko vaikuttaa tekstiriville
-mahtuvien merkkien määrään ja Latex pyrkii pitämään rivit sopivan
-mittaisina lukemisen kannalta.
+\koodimargin{10pt} \koodimargin{11pt} \koodimargin{12pt} fontin koon voi
+määrittää valitsimilla \koodi{10pt}, \koodi{11pt} ja \koodi{12pt},
+joista ensin mainittu on oletus. Lyhenne pt tarkoittaa typografista
+pistemittaa, joita käsitellään luvussa \ref{luku:mitat}. Nämä asetukset
+vaikuttavat myös sivun marginaaleihin, koska fontin koko vaikuttaa
+tekstiriville mahtuvien merkkien määrään ja Latex pyrkii pitämään rivit
+sopivan mittaisina lukemisen kannalta.
 
 Vain kolme eri fonttikokoa leipätekstille on kovin vähän ja peräisin
 ajalta, jolloin Latexin fontit olivat pik\-seli\-gra\-fiik\-kaa eli
@@ -192,12 +192,12 @@ tarkoitettu julkaistavaksi. Tätä valitsinta ei tarvitse käyttää, koska
 se on oletustila.
 
 Sivujen%
-\koodimargin{oneside \\ twoside} yksipuolisuus (\koodi{one\-side}) ja
-kaksipuolisuus (\koodi{two\-side}) ovat asetuksia, jotka vaikuttavat
-sivun marginaalien asetuksiin ja mahdollisesti uuden pääluvun
-(\koodi{\keno chapter}) aloitukseen. Oletus on yksipuolinen dokumentti
-kaikissa muissa perusdokumenttiluokissa paitsi \koodi{book}\-/luokassa,
-jonka oletus on kaksipuolinen.
+\koodimargin{oneside} \koodimargin{twoside} yksipuolisuus
+(\koodi{one\-side}) ja kaksipuolisuus (\koodi{two\-side}) ovat
+asetuksia, jotka vaikuttavat sivun marginaalien asetuksiin ja
+mahdollisesti uuden pääluvun (\koodi{\keno chapter}) aloitukseen. Oletus
+on yksipuolinen dokumentti kaikissa muissa perusdokumenttiluokissa
+paitsi \koodi{book}\-/luokassa, jonka oletus on kaksipuolinen.
 
 Yksipuolisessa dokumentissa kaikkien sivujen marginaalit ovat
 lähtökohtaisesti samanlaisia ja asetuksissa puhutaan esimerkiksi
@@ -213,7 +213,7 @@ Marginaaleja ja muita sivun asetuksia käsitellään tarkemmin luvussa
 \ref{luku:sivuasetukset}.
 
 Jos%
-\koodimargin{openright \\ openany} dokumentti on määritetty
+\koodimargin{openright} \koodimargin{openany} dokumentti on määritetty
 kaksipuoliseksi (\koodi{two\-side}), voidaan
 \koodi{open\-right}\-/valitsimella määrittää pääluvut (\koodi{\keno
   chapter}) alkamaan aina oikeanpuoleiselta sivulta. Se onkin oletus
@@ -228,7 +228,7 @@ osien kuten teoksen tekijöiden ja teoksen nimen jälkeen. Lähdemerkintöjä
 ja lähdeluettelon laatimista käsitellään luvussa \ref{luku:lähteet}.
 
 Matemaattisten%
-\koodimargin{fleqn \\ leqno} kaavojen ladontaan liittyvässä
+\koodimargin{fleqn} \koodimargin{leqno} kaavojen ladontaan liittyvässä
 \koodi{equa\-tion}\-/ympäristössä kaavat ladotaan normaalisti
 vaakasuunnassa sivun keskelle. Dokumenttiluokan valitsinta \koodi{fleqn}
 käyttämällä kaavat ladotaan kuitenkin sivun vasempaan reunaan. Kaavojen
@@ -237,22 +237,23 @@ numerot sijoitetaan oletuksena sivun oikeaan reunaan, mutta valitsimella
 käsitellään luvussa \ref{luku:matematiikka}.
 
 Kansilehden%
-\koodimargin{titlepage \\ notitlepage} tai dokumentin perustietojen
-esitystapaan vaikutetaan valitsimilla \koodi{title\-page} ja
-\koodi{no\-title\-page}. Latexissa on yksinkertaiset komennot dokumentin
-perustietojen eli pääotsikon, tekijöiden nimien ja päiväyksen latomiseen
-(luku \ref{luku:kansilehti}), ja näillä valitsimilla vaikutetaan siihen,
-ladotaanko perustiedot omalle sivulleen (\koodi{title\-page}) vaiko
-varsinaisen sisältösivun alkuun (\koodi{no\-title\-page}).
-Oletus\-asetus vaihtelee eri dokumenttiluokissa.
+\koodimargin{titlepage} \koodimargin{notitlepage} tai dokumentin
+perustietojen esitystapaan vaikutetaan valitsimilla \koodi{title\-page}
+ja \koodi{no\-title\-page}. Latexissa on yksinkertaiset komennot
+dokumentin perustietojen eli pääotsikon, tekijöiden nimien ja päiväyksen
+latomiseen (luku \ref{luku:kansilehti}), ja näillä valitsimilla
+vaikutetaan siihen, ladotaanko perustiedot omalle sivulleen
+(\koodi{title\-page}) vaiko varsinaisen sisältösivun alkuun
+(\koodi{no\-title\-page}). Oletus\-asetus vaihtelee eri
+dokumenttiluokissa.
 
 Oletuksena%
-\koodimargin{onecolumn \\ twocolumn} sivun tekstit ladotaan yhdelle
-palstalle (\koodi{one\-column}), mutta valitsimella \koodi{two\-column}
-teksti ladotaan kahdelle palstalle. Nämä valitsimet vaikuttavat myös
-sivun marginaaleihin. Latexin perusosat eivät hallitse useampaa kuin
-kaksi palstaa, mutta \paketti{multicol}\-/makropaketin avulla saa
-enemmänkin. Palstoja käsitellään luvussa \ref{luku:palstat}.
+\koodimargin{onecolumn} \koodimargin{twocolumn} sivun tekstit ladotaan
+yhdelle palstalle (\koodi{one\-column}), mutta valitsimella
+\koodi{two\-column} teksti ladotaan kahdelle palstalle. Nämä valitsimet
+vaikuttavat myös sivun marginaaleihin. Latexin perusosat eivät hallitse
+useampaa kuin kaksi palstaa, mutta \paketti{multicol}\-/makropaketin
+avulla saa enemmänkin. Palstoja käsitellään luvussa \ref{luku:palstat}.
 
 Dokumenttiluokassa%
 \koodimargin{clock} \koodi{slides} toimii \koodi{clock}\-/valitsin, joka
@@ -1468,10 +1469,10 @@ erikseen.
 \subsection{Fonttien oletus\-asetuksia}
 
 Oletuksena%
-\koodimargin{\keno setmainfont \\ \keno setsansfont} Latex\-/dokumentin
-peruskirjainperheessä (\koodi{\keno set\-main\-font}) ja
-pääteviivattomassa kirjainperheessä (\koodi{\keno set\-sans\-font}) on
-päällä muun muassa seuraavat asetukset:%
+\koodimargin{\keno setmainfont} \koodimargin{\keno setsansfont}
+Latex\-/dokumentin peruskirjainperheessä (\koodi{\keno set\-main\-font})
+ja pääteviivattomassa kirjainperheessä (\koodi{\keno set\-sans\-font})
+on päällä muun muassa seuraavat asetukset:%
 
 \begin{koodilohkosis}
   Ligatures={TeX, Common}
@@ -1719,11 +1720,11 @@ kohtuuttoman leveä ({\ttfamily\addfontfeatures{FakeStretch=1}
   esimerkki}) verrattuna muiden kirjainperheiden leveyteen.
 
 Jos%
-\koodimargin{Fake\-Bold \\ Fake\-Slant} kirjainperheeseen ei sisälly
-sopivaa lihavoitua tai kaltevaa leikkausta, voi sellaiset koettaa tehdä
-myös keinotekoisesti \koodi{Fake\-Bold}- ja
+\koodimargin{Fake\-Bold} \koodimargin{Fake\-Slant} kirjainperheeseen ei
+sisälly sopivaa lihavoitua tai kaltevaa leikkausta, voi sellaiset
+koettaa tehdä myös keinotekoisesti \koodi{Fake\-Bold}- ja
 \koodi{Fake\-Slant}\-/valitsimien avulla. Niille annetaan arvoksi
-desimaalilukukerroin. Tosin \koodi{Fake\-Bold} toimii vain
+desimaalilukukerroin. Valitettavasti \koodi{Fake\-Bold} toimii vain
 Xelatex\-/kääntäjän kanssa.
 
 \begin{koodilohkosis}

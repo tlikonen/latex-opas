@@ -307,12 +307,12 @@ sisennettynä samalla tasolle.
 \begin{koodilohko}
   \hangpara{2cm}{1}Tässä tekstikappaleessa on riippuva sisennys. Kappale
   alkaa yhdellä sisentämättömällä rivillä, ja kappaleen seuraavat rivit
-  on sisennetty 2\,cm.
+  on sisennetty 2\,cm. Ei ole kovin vaikeaa.
 \end{koodilohko}
 \begin{tulos}
   \hangpara{2cm}{1}Tässä tekstikappaleessa on riippuva sisennys. Kappale
   alkaa yhdellä sisentämättömällä rivillä, ja kappaleen seuraavat rivit
-  on sisennetty 2\,cm.
+  on sisennetty 2\,cm. Ei ole kovin vaikeaa.
 \end{tulos}
 \caption{Riippuva sisennys \paketti{hanging}\-/paketin ja sen
   \koodi{\keno hang\-para}\-/komennon avulla}
@@ -377,14 +377,6 @@ valinnaisen argumentin, joka on kappaleen otsikko. \koodi{\keno
   make\-box}\-/ komentoa ja muita laatikoita käsitellään tarkemmin
 luvussa \ref{luku:laatikot}.
 
-Riippuvan sisennyksen voi toteuttaa myös \koodi{list}\-/ympäristön
-avulla. Se on tarkoitettu luetelmien tekemiseen, mutta sopivilla
-asetuksilla yksi ''luetelman'' kohta on riippuvasti sisennetty kappale.
-Tarkemmin \koodi{list}\-/ympäristöä käsitellään luetelmien yhteydessä
-luvussa \ref{luku:luetelmat}, mutta oheisessa esimerkissä
-\ref{esim:riippuva_sis_list} on sopivat asetukset riippuvan sisennyksen
-toteuttamiseen.
-
 \begin{esimerkki*}
 \begin{koodilohko}
   \begin{list}{}{
@@ -401,7 +393,53 @@ toteuttamiseen.
 \label{esim:riippuva_sis_list}
 \end{esimerkki*}
 
-% koko kappaleen vasen ja oikea sisennys
+Riippuvan sisennyksen voi toteuttaa myös \koodi{list}\-/ympäristön
+avulla. Se on tarkoitettu luetelmien tekemiseen, mutta sopivilla
+asetuksilla yksi ''luetelman'' kohta on riippuvasti sisennetty kappale.
+Tarkemmin \koodi{list}\-/ympäristöä käsitellään luetelmien yhteydessä
+luvussa \ref{luku:luetelmat}, mutta oheisessa esimerkissä
+\ref{esim:riippuva_sis_list} on sopivat asetukset riippuvan sisennyksen
+toteuttamiseen. Kappale alkaa \koodi{\keno item}\-/komennolla, koska
+kyseessä on ikään kuin luetelman kohta.
+
+\subsection{Vasen ja oikea sisennys}
+
+Koko tekstikappaleen tai pidemmän tekstin sisennys vasemmasta tai
+oikeasta reunasta voidaan toteuttaa luetelmien (luku
+\ref{luku:luetelmat}) tekemiseen tarkoitetun \koodi{list}\-/ympäristön
+avulla. Sopivilla asetuksilla ''luetelma'' sisältää ihan tavallisen
+näköisiä tekstikappaleita, jotka vain on sisennetty vasemmalta tai
+oikealta tai molemmista reunoista.
+
+\begin{esimerkki*}
+\begin{koodilohko}
+  \begin{list}{}{
+      \setlength{\leftmargin}{1cm}
+      \setlength{\rightmargin}{1cm}
+      \setlength{\itemindent}{0bp}
+      \setlength{\listparindent}{\parindent}
+      \setlength{\parsep}{\parskip}
+      \setlength{\topsep}{1em}
+      \setlength{\partopsep}{0bp}
+    }
+  \item Tämä tekstikappale on sisennetty 1\,cm vasemmalta ja oikealta.
+    Muuten tämä sisältää suunnilleen samat asetukset kuin dokumentin
+    leipätekstin kappaleet.
+  \end{list}
+\end{koodilohko}
+\caption{Kappaleen vasemman ja oikean sisennyksen toteutus
+  \koodi{list}\-/ ympäristön avulla}
+\label{esim:vasen_oikea_sisennys}
+\end{esimerkki*}
+
+Esimerkistä \ref{esim:vasen_oikea_sisennys} selviää, kuinka
+\koodi{list}\-/ ympäristöä voi käyttää sisennyksen toteuttamiseen.
+Sisennetyn jakson alussa pitää olla \koodi{\keno item}\-/komento, koska
+sillä aloitetaan \koodi{list}\-/ympäristössä luetelman kohta. Sen
+jälkeen kappaleet voi erottaa toisistaan kuten tavallisestikin eli
+tyhjällä rivillä. Tällaista kappaleen sisennystä voidaan tarvita
+esimerkiksi lohkolainauksissa, joita käsitellään luvussa
+\ref{luku:lohkolainaukset}.
 
 \subsection{Rivinvaihto}
 
@@ -480,6 +518,11 @@ toteuttamiseen.
 
 \section{Taulukot}
 \label{luku:taulukot}
+
+...
+
+\section{Lohkolainaukset}
+\label{luku:lohkolainaukset}
 
 ...
 

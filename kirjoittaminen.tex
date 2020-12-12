@@ -329,9 +329,9 @@ argumentti on negatiivinen luku, luvun it\-seis\-arvo määrittää, kuinka
 monta riviä kappaleen alusta sisennetään.
 
 Komennon \koodi{\keno hang\-para} vaihtoehtona on ympäristö
-\koodi{hang\-paras}, jonka sisällä kaikki kappaleet sisennetään
-riippuvalla tyylillä samojen asetusten mukaisesti. Ympäristölle annetaan
-samat argumentit kuin komennollekin.
+\koodi{hang\-paras}, \koodimargin{hang\-paras} jonka sisällä kaikki
+kappaleet sisennetään riippuvalla tyylillä samojen asetusten mukaisesti.
+Ympäristölle annetaan samat argumentit kuin komennollekin.
 
 \begin{koodilohkosis}
   \begin{hangparas}{2cm}{1}
@@ -343,14 +343,14 @@ samat argumentit kuin komennollekin.
 \begin{koodilohko}
   \hangpara{2cm}{1}\makebox[2cm][l]{Otsikko}Tässä tekstikappaleessa on
   riippuva sisennys. Kappale alkaa yhdellä sisentämättömällä rivillä,
-  joka sisältää näkymättömässä laatikossa olevan otsikon. Kappaleen muut
-  rivit on sisennetty 2\,cm.
+  joka sisältää näkymättömässä 2\,cm leveässä laatikossa olevan otsikon.
+  Kappaleen muut rivit on sisennetty 2\,cm.
 \end{koodilohko}
 \begin{tulos}
   \hangpara{2cm}{1}\makebox[2cm][l]{Otsikko}Tässä tekstikappaleessa on
   riippuva sisennys. Kappale alkaa yhdellä sisentämättömällä rivillä,
-  joka sisältää näkymättömässä laatikossa olevan otsikon. Kappaleen muut
-  rivit on sisennetty 2\,cm.
+  joka sisältää näkymättömässä 2\,cm leveässä laatikossa olevan otsikon.
+  Kappaleen muut rivit on sisennetty 2\,cm.
 \end{tulos}
 \caption{Asiakirjan tyylisten tekstikappaleiden toteutus}
 \label{esim:riippuva_sis_asiakirja}
@@ -402,47 +402,90 @@ luvussa \ref{luku:luetelmat}, mutta oheisessa esimerkissä
 toteuttamiseen. Kappale alkaa \koodi{\keno item}\-/komennolla, koska
 kyseessä on ikään kuin luetelman kohta.
 
-\section{Vasen ja oikea sisennys sekä lohkolainaus}
+\subsection{Vasen ja oikea sisennys sekä lohkolainaukset}
 
-% Jotain yleiskuvaa, jossa mainitaan myös lohkolainaus.
+Dokumentteihin tarvitaan välillä kokonaisia sisennettyjä
+tekstikappaleita, koska leipätekstin ohessa halutaan näyttää
+muuntyyppistä sisältöä. Kyse voi olla teksti- tai
+kuva\-esi\-mer\-keistä, esimerkiksi muualta lainatusta tekstistä. Tässä
+oppaassa käytetään paljon sisennettyjä tekstikappaleita Latex\-/koodien
+esimerkkeihin.
 
-Koko tekstikappaleen tai pidemmän tekstin sisennys vasemmasta tai
-oikeasta reunasta voidaan toteuttaa luetelmien (luku
-\ref{luku:luetelmat}) tekemiseen tarkoitetun \koodi{list}\-/ympäristön
-avulla. Sopivilla asetuksilla ''luetelma'' sisältää ihan tavallisen
-näköisiä tekstikappaleita, jotka vain on sisennetty vasemmalta tai
-oikealta tai molemmista reunoista.
+Kokonaan sisennettyjä tekstikappaleita kutsutaan lohkolainauksiksi,
+koska ne ovat lainauksia, jotka käsittävät kokonaisen tekstilohkon.
+Lainausmerkkejä ei tarvitse käyttää, koska lainaus ilmaistaan
+typografisin keinoin. Sisennyksen lisäksi varsin yleistä on käyttää
+hieman pienempää kirjainleikkausta ja riviväliä kuin leipätekstissä.
+Joskus vasemman reunan sisennyksen lisäksi sisennetään myös oikeasta
+reunasta.
+
+Latexissa on tavallisille lohkolainauksille kolme erilaista ympäristöä:
+\koodi{quotation}, \koodi{quote} ja \koodi{verse}. Kaksi ensin mainittua
+on tarkoitettu normaalilla tavalla juoksevalle tekstille, kun taas
+kolmas on tarkoitettu runon säkeiden ja säkeistöjen latomiseen.
+
+\koodi{quotation}\-/ ympäristö \koodimargin{quotation} sisentää
+tekstikappaleiden ensimmäisen rivin 1,5\,em:n verran, eikä kappaleiden
+välissä ole pystysuuntaista tilaa. \koodi{quote}\-/ ympäristö
+\koodimargin{quote} ei sisennä kappaleiden ensimmäistä riviä, ja se
+puolestaan erottaa kappaleet toisistaan pystysuuntaisen tilan avulla.
+\koodi{verse}\-/ympäristöä \koodimargin{verse} käytetään siten, että
+lähdedokumentissa runon säkeet lopetetaan rivinvaihtokomentoon
+(\koodi{\keno\keno}), lukuun ottamatta säkeistön viimeistä säettä.
+Säkeistöt erotetaan toisistaan tyhjällä rivillä, kuten Latexissa
+tekstikappaleet muutenkin. Lopputuloksena on useimpiin runoihin sopiva
+ladontatapa, jossa säkeistöjen vasen reuna on samalla tasolla, oikealla
+on liehureuna ja säkeistöjen välissä on pystysuuntaista tilaa.
+
+Jos Latexin valmiit lohko\-lai\-naus\-ympä\-ris\-töt eivät tuota
+haluttua lopputulosta, voi sisennetyt tekstikappaleet toteuttaa myös
+luetelmien (luku \ref{luku:luetelmat}) tekemiseen tarkoitetun
+\koodi{list}\-/ympäristön avulla. Sopivilla asetuksilla ''luetelma''
+sisältää ihan tavallisen näköisiä tekstikappaleita, jotka vain on
+sisennetty vasemmalta tai oikealta tai molemmista reunoista.
 
 \begin{esimerkki*}
 \begin{koodilohko}
-  \begin{list}{}{
-      \setlength{\leftmargin}{1cm}
-      \setlength{\rightmargin}{1cm}
-      \setlength{\itemindent}{0bp}
-      \setlength{\listparindent}{\parindent}
-      \setlength{\parsep}{\parskip}
-      \setlength{\topsep}{1em}
-      \setlength{\partopsep}{0bp}
-    }
-  \item Tämä tekstikappale on sisennetty 1\,cm vasemmalta ja oikealta.
-    Muuten tämä sisältää suunnilleen samat asetukset kuin dokumentin
-    leipätekstin kappaleet.
-  \end{list}
+  \newenvironment{lohkolainaus}{%
+    \begin{list}{}{
+        \setlength{\leftmargin}{1cm}
+        \setlength{\rightmargin}{1cm}
+        \setlength{\itemindent}{0bp}
+        \setlength{\listparindent}{\parindent}
+        \setlength{\parsep}{\parskip}
+        \setlength{\topsep}{1em}
+        \setlength{\partopsep}{0bp}
+      }
+    \item\linespread{1}\small
+    }{\end{list}}
 \end{koodilohko}
-\caption{Kappaleen vasemman ja oikean sisennyksen toteutus
-  \koodi{list}\-/ ympäristön avulla}
+\caption{Lohkolainausten eli tekstikappaleen vasemman ja oikean
+  sisennyksen toteutus \koodi{list}\-/ ympäristön avulla. Esimerkkikoodi
+  määrittelee uuden ympäristön nimeltä \koodi{lohkolainaus}}
 \label{esim:vasen_oikea_sisennys}
 \end{esimerkki*}
 
 Esimerkistä \ref{esim:vasen_oikea_sisennys} selviää, kuinka
 \koodi{list}\-/ ympäristöä voi käyttää sisennyksen toteuttamiseen.
-Sisennetyn jakson alussa pitää olla \koodi{\keno item}\-/komento, koska
-sillä aloitetaan \koodi{list}\-/ympäristössä luetelman kohta. Sen
-jälkeen kappaleet voi erottaa toisistaan kuten tavallisestikin eli
-tyhjällä rivillä.
+Esimerkki määrittelee uuden ympäristön nimeltä \koodi{lohkolainaus},
+jota voi hyödyntää myöhemmin dokumentissa.
 
-% Tällaista kappaleen sisennystä voidaan tarvita esimerkiksi
-% lohkolainauksissa.
+\begin{koodilohkosis}
+  \begin{lohkolainaus}
+    Tämä tekstikappale on sisennetty vasemmalta ja oikealta. Lisäksi
+    kirjainleikkaus ja riviväli ovat hieman pienempiä kuin
+    leipätekstissä.
+  \end{lohkolainaus}
+\end{koodilohkosis}
+
+Omien ympäristöjen määrittelyä käsitellään tarkemmin luvussa
+\ref{luku:ymparistot}. Esimerkin \ref{esim:vasen_oikea_sisennys} rivillä
+11 oleva \koodi{\keno item}\-/ komento pakollinen, koska se aloittaa
+\koodi{list}\-/ ympäristöön kuuluvan luetelman kohdan. Sen perässä
+olevat komennot \koodi{\keno linespread} ja \koodi{\keno small} sen
+sijaan ovat vapaaehtoisia. Ne ovat mukana siksi, että on varsin
+tavallista latoa lohkolainaukset pienemmällä rivivälillä
+(rivikorkeudella) ja kirjainleikkauksella kuin leipäteksti.
 
 \subsection{Rivinvaihto}
 

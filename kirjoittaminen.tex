@@ -11,9 +11,9 @@
 
 Tekstikappale on tekstin osa, jonka pitäisi käsitellä suunnilleen yhtä
 asiakokonaisuutta. Se voi olla esimerkiksi yksi aihe, näkökulma,
-ajankohta tai henkilö. Seuraava kappale käsittelee jotakin toista
-aihetta, näkökulmaa tms. Kappaleen vaihtuminen on lukijalle merkki
-siitä, että tekstin sisällössäkin jokin muuttuu.
+ajankohta tai henkilö. Tekstin seuraava kappale käsittelee jotakin
+toista aihetta, näkökulmaa tms. Kappaleen vaihtuminen on lukijalle
+merkki siitä, että tekstin sisällössäkin jokin muuttuu.
 
 Latexin lähdetiedostoissa kappaleen vaihtuminen ilmaistaan
 kirjoittamalla kappaleiden väliin vähintään yksi tyhjä rivi. Tätä
@@ -38,10 +38,10 @@ lukemista.
 \subsection{Tasaaminen ja palstan muoto}
 \label{luku:kappaleen_tasaus}
 
-Tekstikappaleet tasataan oletuksena palstan molempiin reunoihin
-(tasapalsta). Se tarkoittaa samalla sitä, että rivillä olevia sanavälejä
-venytetään sopivasti, jotta jokainen rivi näyttäisi yhtä pitkältä ja
-palstan molemmat reunat tasaiselta.
+Tekstikappaleet tasataan oletuksena palstan molempiin reunoihin, ja tätä
+palstan muotoa kutsutaan tasapalstaksi. Se tarkoittaa samalla sitä, että
+rivillä olevia sanavälejä venytetään sopivasti, jotta jokainen rivi
+näyttäisi yhtä pitkältä ja palstan molemmat reunat tasaiselta.
 
 Käytännössä sanavälien venymiselle on määritelty yläraja, jonka yli
 niitä ei venytetä. Ylärajan tarkoituksena on estää liian suuret ja rumat
@@ -157,9 +157,9 @@ Seuraavassa on esimerkkikomennot mittojen määrittelemiseen ja samalla
 niiden oletusarvot:
 
 \begin{koodilohkosis}
-  \setlength{\bigskipamount} {12bp plus 4bp minus 4bp}
-  \setlength{\medskipamount}  {6bp plus 2bp minus 2bp}
-  \setlength{\smallskipamount}{3bp plus 1bp minus 1bp}
+  \setlength{\bigskipamount} {12pt plus 4pt minus 4pt}
+  \setlength{\medskipamount}  {6pt plus 2pt minus 2pt}
+  \setlength{\smallskipamount}{3pt plus 1pt minus 1pt}
 \end{koodilohkosis}
 
 Komentojen \koodi{\keno bigskip}, \koodi{\keno medskip} ja \koodi{\keno
@@ -229,7 +229,7 @@ Kirjojen ja lehtien typografiassa kappaleen ensimmäinen rivi on tapana
 sisentää merkiksi siitä, että alkaa uusi kappale. Sisennys on lukijalle
 merkki siitä, että tekstin sisällössä siirrytään seuraavaan asiaan.
 Oletusasetuksilla Latex latoo sisennyksen automaattisesti kappaleen
-alkuun -- paitsi otsikoiden jälkeen.
+alkuun mutta ei kuitenkaan otsikoiden jälkeen.
 
 Ensimmäisen rivin sisennyksen suuruus asetetaan mitan \koodi{\keno
   parindent} avulla, esimerkiksi alla olevan esimerkin mukaisesti.
@@ -253,9 +253,9 @@ että kappale vaihtuu.
 komennolla \koodi{\keno indent}. \koodimargin{\keno indent} Tätä
 komentoa ei tavallisesti tarvita, koska kappaleet alkavat
 automaattisesti sen suuruisella sisennyksellä. Tarpeellisempi komento on
-\koodi{\keno no\-in\-dent}, \koodimargin{\keno noindent} joka voidaan
-kirjoittaa kappaleen alkuun estämään kyseisen kappaleen ensimmäisen
-rivin sisentäminen.
+sen vastakohta \koodi{\keno no\-in\-dent}, \koodimargin{\keno noindent}
+joka voidaan kirjoittaa kappaleen alkuun estämään kyseisen kappaleen
+ensimmäisen rivin sisentäminen.
 
 \begin{koodilohkosis}
   \noindent
@@ -266,9 +266,9 @@ Suomenkielisissä julkaisuissa on tavallista, että leipätekstin
 kappaleessa ei ole sisennystä, jos sitä ennen on pystysuuntainen väli.
 Tällainen tilanne on aina otsikoiden jälkeen mutta myös kokonaan
 sisennetyn tekstikappaleen jälkeen tai kuvan, taulukon, luetelman tai
-muun vastaavan elementin jälkeen. Esimerkiksi tässä oppaassa Latex\-/
-koodi\-esi\-merk\-kien jälkeen ei tekstikappaleissa ole sisennystä.
-Tähän käytäntöön on joskus poikkeuksia suomenkielisessäkin
+muun vastaavan tekstin\-osan jälkeen. Esimerkiksi tässä oppaassa
+Latex\-/ koodi\-esi\-merk\-kien jälkeen ei tekstikappaleissa ole
+sisennystä. Tähän käytäntöön on joskus poikkeuksia suomenkielisessäkin
 typografiassa, mutta eri kielten välillä käytäntö voi vaihdella
 enemmänkin.
 
@@ -294,7 +294,7 @@ Riippuva sisennys tarkoittaa tekstikappaleen muotoa, jossa sisennetään
 kappaleen muita rivejä mutta ei ensimmäistä. Riippuvaa sisennystä
 käytetään esimerkiksi kirjallisuus\-/{} ja lähdeluetteloissa, joissa on
 tarpeellista saada henkilön nimi tai muu lähdemerkinnän hakusana
-erottumaan selvästi vasemmassa reunassa. Tämän oppaan sivulla
+erottumaan selvästi vasemmassa reunassa. Tämän oppaan lopussa sivulla
 \pageref{luku:kirjallisuutta} on esimerkki lähdemerkinnöistä.
 
 Myös virallisten asiakirjojen muotoilussa käytetään riippuvaa
@@ -324,14 +324,16 @@ Helpoin tapa riippuvien sisennysten toteuttamiseen lienee
 komennon \koodi{\keno hang\-para}, \koodimargin{\keno hangpara} jonka
 käyttöä esimerkki \ref{esim:riippuva_sis_hangpara} selventää. Komennon
 ensimmäinen argumentti on sisennyksen mitta ja toinen argumentti
-määrittää, kuinka monta riviä jätetään sisentämättä. Jos toinen
-argumentti on negatiivinen luku, luvun it\-seis\-arvo määrittää, kuinka
-monta riviä kappaleen alusta sisennetään.
+(positiivinen kokonaisluku) määrittää, kuinka monta riviä kappaleen
+alusta jätetään sisentämättä. Jos taas toinen argumentti on negatiivinen
+luku, luvun it\-seis\-arvo määrittää, kuinka monta riviä kappaleen
+alusta sisennetään.
 
 Komennon \koodi{\keno hang\-para} vaihtoehtona on ympäristö
 \koodi{hang\-paras}, \koodimargin{hang\-paras} jonka sisällä kaikki
 kappaleet sisennetään riippuvalla tyylillä samojen asetusten mukaisesti.
-Ympäristölle annetaan samat argumentit kuin komennollekin.
+Ympäristön aloituskomennolle annetaan samat argumentit kuin \koodi{\keno
+  hang\-para}\-/ komennollekin.
 
 \begin{koodilohkosis}
   \begin{hangparas}{2cm}{1}
@@ -358,11 +360,12 @@ Ympäristölle annetaan samat argumentit kuin komennollekin.
 
 Asiakirjan tyylisen otsikon saa toteutettua \koodi{\keno make\-box}\-/
 komennon avulla esimerkin \ref{esim:riippuva_sis_asiakirja} tavoin.
-Näkymätön laatikko määritellään sisennyksen levyiseksi ja sen sisään
-kirjoitetaan otsikko. Jos asiakirjatyylisiä tekstikappaleita tarvitaan
-useita, kannattaa määritellä sarkainleveyttä ja sisennystä varten oma
-mitta ja tekstikappaleen kirjoittamista varten oma komento. Seuraavassa
-on siitä esimerkki:
+Komento latoo näkymättömän laatikon, jonka leveys määritellään
+sisennyksen levyiseksi ja jonka sisään kirjoitetaan otsikko. Jos
+asiakirjatyylisiä tekstikappaleita tarvitaan useita, kannattaa
+määritellä sarkainleveyttä ja sisennystä varten oma mitta ja
+tekstikappaleen kirjoittamista varten oma komento. Seuraavassa on siitä
+esimerkki:
 
 \begin{koodilohkosis}
   \newlength{\sarkain}

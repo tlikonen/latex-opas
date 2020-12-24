@@ -489,12 +489,49 @@ sijaan ovat vapaaehtoisia. Ne ovat mukana siksi, että on varsin
 tavallista latoa lohkolainaukset pienemmällä rivivälillä
 (rivikorkeudella) ja kirjainleikkauksella kuin leipäteksti.
 
-\subsection{Rivinvaihto}
+\subsection{Rivinvaihtokomennot}
+\label{luku:rivinvaihtokomennot}
 
-...
+Latex\-/lähdedokumentissa olevat rivinvaihdot tulkitaan sanaväleiksi
+siinä missä välilyönnitkin, eli ne rivinvaihdot eivät päädy ladottuun
+dokumenttiin (luvut \ref{luku:sanavali} ja
+\ref{luku:rivinvaihtomerkit})0. \koodimargin{\keno\keno} Sen sijaan
+ladottuun dokumenttiin saadaan rivinvaihto käyttämällä komentoa
+\koodi{\keno\keno} eli kaksi kenoviivaa. Komennon ei tarvitse sijaita
+lähdedokumentissa rivin lopussa.
 
-% \newline \\ \\*
-%
+\begin{koodilohkosis}
+  ensimmäinen \\ toinen \\
+  kolmas
+\end{koodilohkosis}
+
+\begin{tulossis}
+  ensimmäinen \\* toinen \\* kolmas
+\end{tulossis}
+
+Rivinvaihtokomennolle voi antaa hakasulkeissa valinnaisen argumentin,
+joka ilmaisee rivien väliin ladottavan ylimääräisen pystysuuntaisen
+tilan. Argumentin on siis oltava mitta (luku \ref{luku:mitat}).
+
+\begin{koodilohkosis}
+  ensimmäinen \\ toinen \\[1.3ex] kolmas
+\end{koodilohkosis}
+
+\begin{tulossis}
+  ensimmäinen \\* toinen \\*[1.3ex] kolmas
+\end{tulossis}
+
+Komennosta on olemassa tähtiversio \koodi{\keno\keno *},
+\koodimargin{\keno\keno *} joka edellisten ominaisuuksien lisäksi estää
+sivun vaihtumisen tämän rivinvaihdon kohdalla. Myös tähtiversiolle voi
+antaa valinnaiseksi argumentiksi mitan. Sen merkitys on sama kuin
+komennon normaalilla versiollakin.
+
+Rivin voi vaihtaa myös komennolla \koodi{\keno new\-line},
+\koodimargin{\keno new\-line} mutta tämä komento ei hyväksy valinnaista
+argumenttia eikä siitä ole tähdellistä versiota. Komennot \koodi{\keno
+  new\-line} ja \koodi{\keno\keno} käyttäytyvät eri tavoin taulukoissa,
+joita käsitellään luvussa \ref{luku:taulukot}.
 
 \subsection{Lesket ja orvot}
 
@@ -568,6 +605,8 @@ tavallista latoa lohkolainaukset pienemmällä rivivälillä
 \label{luku:taulukot}
 
 ...
+
+% \newline \\ \\*
 
 \section{Leijuvat osat}
 \label{luku:leijuosat}

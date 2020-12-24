@@ -113,6 +113,24 @@ Myös kirjainperheelle voi asettaa oman sanavälikertoimensa fontin
 asetusten \koodi{Word\-Space}\-/valitsimella. Tätä asetusta käsitellään
 luvussa \ref{luku:fontit_muut}.
 
+\subsection{Rivinvaihto lähdedokumentissa}
+\label{luku:rivinvaihtomerkit}
+
+Kuten edellä todettiin, lähdedokumentissa olevat rivinvaihdot tulkitaan
+vain sanaväleiksi eivätkä ne vaihda riviä lopullisessa dokumentissa. Jos
+ladottuun dokumenttiin tarvitaan rivinvaihto, kirjoitetaan
+lähdedokumenttiin kaksi kenoviivaa (\koodi{\keno\keno}). Tätä komentoa
+käsitellään tarkemmin tekstikappaleiden yhteydessä luvussa
+\ref{luku:rivinvaihtokomennot}.
+
+On kuitenkin mahdollista saada myös lähdedokumentin rivinvaihdot
+toteutumaan automaattisesti ladotussa tekstissä. Sellainen tila
+kytketään päälle komennolla \koodi{\keno obey\-cr}; \koodimargin{\keno
+  obeycr} normaaliin tilaan palataan taas komennolla \koodi{\keno
+  re\-store\-cr}. \koodimargin{\keno re\-store\-cr} Näistä komennoista
+voi olla hyötyä väliaikaisesti ja erityistilanteissa, mutta pysyväksi
+koko dokumentin tilaksi \koodi{\keno obey\-cr} ei yleensä sovi.
+
 \subsection{Kappaleen vaihtuminen}
 \label{luku:kappaleen_vaihtuminen}
 

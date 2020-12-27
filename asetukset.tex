@@ -2294,30 +2294,30 @@ kirjoittaa komennon perään aaltosuljeparin tai kenoviivan ja sanavälin.
 
 \subsection{Tavutus sanan reunasta}
 
-Asetukset \koodi{\keno left\-hy\-phen\-min=N} ja \koodi{\keno
-  right\-hy\-phen\-min=N} vaikuttavat tavutukseen sanan reunoissa.
+Asetukset \koodi{\keno left\-hy\-phen\-min~N} ja \koodi{\keno
+  right\-hy\-phen\-min~N} vaikuttavat tavutukseen sanan reunoissa.
 Argumentti \koodi{N} on positiivinen kokonaisluku, ja se määrittelee,
 kuinka monta merkkiä vähintään sanan vasemmasta tai oikeasta reunasta
 pidetään yhdessä. Oletus\-arvot ovat kielikohtaisia ja määritellään
 \paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketeissa. Suomen
 kielessä kumpikin asetus on kaksi (2) merkkiä.
 
-Nämä asetukset alustetaan kielikohtaisiin oletus\-arvoihin aina, kun
+Nämä asetukset alustetaan kielikohtaisiin oletusarvoihin aina, kun
 kieliasetukset tulevat voimaan. Näin on esimerkiksi dokumentin
 aloittavan \koodi{document}\-/ympäristön alussa tai kielen vaihtuessa.
-Tästä seuraa, että jos asetuksia ha\-luaa muuttaa, täytyy ne asettaa
-\koodi{document}\-/ympäristön alussa tai aina kielen vaihtamisen
+Tästä seuraa, että jos asetuksia ha\-luaa muuttaa, täytyy muutokset
+tehdä \koodi{document}\-/ympäristön alussa tai aina kielen vaihtamisen
 jälkeen.
 
-Omat kieli\-asetukset saa mukaan automaattisesti, kun lisää muutokset
-kielikohtaisiin alustuskomentoihin alla olevan esimerkin mukaisesti.
-Tällä tavoin omat asetukset tulevat voimaan samalla kuin muutkin
+Omat kieliasetukset saa mukaan automaattisesti, kun lisää muutokset
+kielikohtaisiin alustuskomentoihin seuraavan esimerkin mukaisesti. Tällä
+tavoin omat asetukset tulevat voimaan samalla kuin muutkin
 kieliasetukset, esimerkiksi kielen vaihtuessa.
 
 \begin{koodilohkosis}
   \addto{\captionsfinnish}{
-    \lefthyphenmin=3
-    \righthyphenmin=3
+    \lefthyphenmin  3
+    \righthyphenmin 3
   }
 \end{koodilohkosis}
 

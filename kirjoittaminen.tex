@@ -535,10 +535,75 @@ joita käsitellään luvussa \ref{luku:taulukot}.
 
 \subsection{Lesket ja orvot}
 
-% nowidow-paketti, \clubpenalty, \widowpenalty
-% https://tex.stackexchange.com/questions/4152/how-do-i-prevent-widow-orphan-lines
+Leski- ja orporivit tarkoittavat typografiassa rumannäköisiä yksinäisiä
+rivejä. Leskirivi (engl. \emph{\englanti{widow}}) on tekstikappaleen
+viimeinen rivi, joka on yksinään sivun tai palstan yläreunassa. Orporivi
+(engl. \emph{\englanti{orphan}}) puolestaan on tekstikappaleen
+ensimmäinen rivi, joka on yksin sivun tai palstan alareunassa. Molemmat
+voivat näyttää ikävältä, mutta yleensä orporivejä ei pidetä kovin
+vakavana virheenä; leskien välttämisessä ollaan enemmän tosissaan.
 
-...
+Ulkoasun lisäksi lesket ja orvot voivat olla ikäviä myös lukemisen
+kannalta. Kun tekstikappale vaihtuu, lukija pitää pienen tauon ja
+valmistautuu uuteen kappaleeseen. Sivun tai palstan olisi sopivaa
+vaihtua samassa kohdassa eli tekstikappaleiden välissä, mutta leski- ja
+orporivit aiheuttavat kaksi taukoa melkein peräkkäin: sekä kappaleiden
+välissä että sivun tai palstan vaihtumisen kohdalla.
+
+Latexissa leski- tai orporivit lienee käytännöllisintä estää
+\paketti{no\-widow}\-/paketin\avctan{nowidow} avulla. Paketin lataamisen
+jälkeen käytetään komentoa \koodi{\keno set\-no\-widow}
+\koodimargin{\keno set\-no\-widow}, joka estää leskirivit eli pitää
+tekstikappaleen lopusta vähintään kaksi riviä yhdessä sivun tai palstan
+yläreunassa. Komennolle voi antaa hakasulkeissa valinnaisen argumentin
+(kokonaisluvun), joka ilmaisee, kuinka monta riviä täytyy vähintään
+pysyä yhdessä. Vastaavasti orporivit estetään komennolla \koodi{\keno
+  set\-no\-club}, \koodimargin{\keno set\-no\-club} joka toimii samalla
+tavalla. Molemmat komennot vaikuttavat koko dokumenttiin eli kaikkiin
+tekstikappaleisiin.
+
+\begin{koodilohkosis}
+  \usepackage{nowidow}
+  \setnowidow   % leskirivien esto
+  \setnoclub    % orporivien esto
+\end{koodilohkosis}
+
+Paketti \paketti{nowidow} määrittelee myös komennot \koodi{\keno
+  no\-widow} ja \koodi{\keno no\-club}, \koodimargin{\keno no\-widow}
+\koodimargin{\keno no\-club} joilla voi vaikuttaa yksittäisen
+tekstikappaleen leski- ja orporiveihin. Nämä komennot täytyy sijoittaa
+tekstikappaleen loppuun, ja myös niille voi antaa hakasulkeissa
+valinnaiseksi argumentiksi luvun, joka kertoo yhdessä pidettävien rivien
+määrän.
+
+Jos ei halua tai voi käyttää \paketti{no\-widow}\-/pakettia, voi leski-
+ja orporivit estää myös Texin matalan tason toimintojen avulla.
+Ladonta\-/algoritmi käyttää leski- ja orporiveissä sisäisesti
+haitallisuusarvoa tai sakko\-arvoa (engl. \emph{\englanti{penalty}}), ja
+jos lesket ja orvot halutaan estää, määritellään niiden haitallisuusarvo
+mahdollisimman korkeaksi. Käytännössä arvo 10\,000 tarkoittaa samaa kuin
+ääretön, eli silloin lesken tai orvon haitallisuus on niin suuri, että
+sellaisia ei sallita.
+
+\begin{koodilohkosis}
+  \widowpenalty 10000   % leskirivien esto
+  \clubpenalty  10000   % orporivien esto
+\end{koodilohkosis}
+
+Leskien ja orpojen haitallisuusarvoiksi voi kokeilla hieman pienempiäkin
+lukuja. Silloin leski- tai orporivit voidaan sallia joissakin
+tilanteissa, jos ladonta\-/algoritmi ei löydä parempaakaan ratkaisua.
+
+Orvoksi kutsutaan myös tavua, joka jää yksin kappaleen viimeiselle
+riville. Se on häiritsevän näköinen ainakin silloin, kun tavu on
+kapeampi kuin seuraavan kappaleen ensimmäisen rivin sisennys.
+Orpotavujen estämiseen ei taida olla automaattisia keinoja, mutta
+kappaleen sanamäärää ja sanajärjestystä muuttamalla voi tietenkin
+vaikuttaa rivien latomiseen. Kappaleen viimeiseen sanaan voi kirjoittaa
+myös tavutusvihjeitä (\koodi{\keno-}) mutta jättää vihje pois ennen
+viimeistä tavua. Näin estetään lyhyen orpotavun muodostuminen.
+Tavutusvihjeitä ja muita tavutuksen asetuksia käsitellään
+luvussa~\ref{luku:tavutus}.
 
 \subsection{Marginaalihuomautukset}
 \label{luku:marginaalihuomautukset}

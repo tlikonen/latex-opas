@@ -635,15 +635,27 @@ Yleensä marginaalihuomautukset ladotaan erilaisella kirjainleikkauksella
 kuin leipäteksti, jotta ne erottuvat toisistaan. Jos leipätekstissä
 käytetään antiikvaa, voisi marginaalissa käyttää esimerkiksi pienempää
 groteskia. Tämän toteutusta varten kannattaa määritellä uusi komento,
-vaikkapa nimellä \koodi{\keno marginaali}, jota käyttämällä
+vaikkapa nimellä \koodi{\keno huomautus}, jota käyttämällä
 marginaalihuomautukset saa helposti yhdenmukaiseksi. Seuraavassa on
-esimerkki tällaisen komennon määrittelystä. Omia komentoja käsitellään
-tarkemmin luvussa \ref{luku:komennot} ja fonttiasetuksia
-luvussa~\ref{luku:kirjaintyypit}.
+esimerkki tällaisen komennon määrittelystä:
 
 \begin{koodilohkosis}
-  \newcommand{\marginaali}[1]{\marginpar{\sffamily\footnotesize #1}}
+  \newcommand{\huomautus}[1]{%
+    \marginpar{\sffamily\scriptsize\RaggedRight #1}}
 \end{koodilohkosis}
+
+Omien komentojen määrittelyä käsitellään tarkemmin luvussa
+\ref{luku:komennot} ja fonttiasetuksia luvussa~\ref{luku:kirjaintyypit}.
+Edellä olevassa komennon määrittelyssä on mukana myös palstan muotoon
+vaikuttava komento \koodi{\keno Ragged\-Right}, josta on lisätietoa
+luvussa \ref{luku:kappaleen_tasaus}.
+
+Tämän \marginpar{\sffamily \linespread{1} \scriptsize \RaggedRight Tässä
+  on pienellä groteskilla ladottu huomautus.} tekstikappaleen vieressä
+on esimerkki edellä mainitun tyylisestä marginaalihuomautuksesta.
+Kirjainleikkauksen on syytä olla selvästi pienempi ja riittävän
+erilainen kuin leipätekstissä, jotta huomautus ei häiritse liikaa
+leipätekstin lukemista. \noclub[3]
 
 Sivun marginaalissa olevan huomautuspalstan leveys voidaan määrittää
 sivun asetusten yhteydessä. Asetuksia hoitavan \paketti{geometry}\-/

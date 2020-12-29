@@ -608,7 +608,67 @@ luvussa~\ref{luku:tavutus}.
 \subsection{Marginaalihuomautukset}
 \label{luku:marginaalihuomautukset}
 
-...
+Klassisessa kirja\-typo\-gra\-fias\-sa -- jota tämäkin opas suunnilleen
+noudattaa -- on aukeaman ulkoreunoissa melko suuret marginaalit. Niitä
+voidaan käyttää eräänlaisina apupalstoina, joihin voi kirjoittaa
+lyhyehköjä huomautuksia ja lisätietoa. Esimerkiksi tämän oppaan
+marginaaleissa on Latexin komentoja, ympäristöjä ja asetusvalitsimia, ja
+niiden tarkoituksena on helpottaa tietojen löytämistä.
+
+Marginaalihuomautukset tehdään komennolla \koodi{\keno margin\-par},
+\koodimargin{\keno margin\-par} jonka argumentiksi annetaan marginaaliin
+tuleva teksti. Marginaalin teksti ladotaan vasempaan tai oikeaan
+marginaaliin riippuen siitä, kumpi on aukeaman ulkoreunassa.
+Yksipuolisilla sivuilla teksti ladotaan oletuksena oikeaan marginaaliin.
+Mikäli sivu on kaksipalstaisessa tilassa (luku \ref{luku:palstat}),
+marginaalihuomautus ladotaan lähempänä olevaan marginaaliin.
+
+\begin{koodilohkosis}
+  Tämä on leipätekstin tekstikappale,
+    \marginpar{Tämä ladotaan marginaaliin.}
+  joka ladotaan sivun normaalille tekstialueelle.
+\end{koodilohkosis}
+
+% Miten valinnainen argumentti toimii? \marginpar[left]{right}
+
+Yleensä marginaalihuomautukset ladotaan erilaisella kirjainleikkauksella
+kuin leipäteksti, jotta ne erottuvat toisistaan. Jos leipätekstissä
+käytetään antiikvaa, voisi marginaalissa käyttää esimerkiksi pienempää
+groteskia. Tämän toteutusta varten kannattaa määritellä uusi komento,
+vaikkapa nimellä \koodi{\keno marginaali}, jota käyttämällä
+marginaalihuomautukset saa helposti yhdenmukaiseksi. Seuraavassa on
+esimerkki tällaisen komennon määrittelystä. Omia komentoja käsitellään
+tarkemmin luvussa \ref{luku:komennot} ja fonttiasetuksia
+luvussa~\ref{luku:kirjaintyypit}.
+
+\begin{koodilohkosis}
+  \newcommand{\marginaali}[1]{\marginpar{\sffamily\footnotesize #1}}
+\end{koodilohkosis}
+
+Sivun marginaalissa olevan huomautuspalstan leveys voidaan määrittää
+sivun asetusten yhteydessä. Asetuksia hoitavan \paketti{geometry}\-/
+paketin valitsimella \koodi{margin\-par\-width} asetetaan palstan leveys
+ja valitsimella \koodi{margin\-par\-sep} palstan etäisyys
+leipätekstistä. Valitsimella \koodi{reverse\-margin\-par} siirretään
+marginaalihuomautukset päinvastaiseen marginaaliin. Näitä ja muitakin
+sivun asetuksia käsitellään luvussa~\ref{luku:sivuasetukset}.
+
+Asetuksia voi muuttaa myös kesken dokumentin. Mitta \koodi{\keno
+  margin\-par\-width} määrittää marginaalihuomautuspalstan leveyden ja
+mitta \koodi{\keno margin\-par\-sep} sen etäisyyden leipätekstistä.
+Lisäksi on mitta \koodi{\keno margin\-par\-push}, jolla asetetaan
+peräkkäisten marginaalihuomautusten vähim\-mäis\-etäi\-syys toisistaan.
+Seuraavassa on esimerkki näiden mittojen asettamisesta:
+
+\begin{koodilohkosis}
+  \setlength{\marginparwidth}{50bp}
+  \setlength{\marginparsep}{10bp}
+  \setlength{\marginparpush}{6bp}
+\end{koodilohkosis}
+
+Kesken dokumentin komennolla \koodi{\keno reverse\-marginpar} voidaan
+vaihtaa marginaalihuomautukset vastakkaiseen marginaaliin ja komennolla
+\koodi{\keno normal\-margin\-par} palautetaan oletusasetukset.
 
 \subsection{Anfangi}
 

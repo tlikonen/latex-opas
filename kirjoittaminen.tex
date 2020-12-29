@@ -684,9 +684,61 @@ vaihtaa marginaalihuomautukset vastakkaiseen marginaaliin ja komennolla
 
 \subsection{Anfangi}
 
-% lettrine- tms. paketti
+\lettrine[lines=3, loversize=.06, lhang=.02, findent=-5bp, nindent=4bp,
+slope=4bp]{A}{nfangit} ovat suurikokoisia tekstin alkukirjaimia.
+Tyypillisesti kirjaimen korkeus on kahdesta viiteen riviä ja se
+upotetaan kappaleen sisään, mutta joskus se sijoitetaan kokonaan
+marginaalin puolelle tai normaalin tekstirivin yläpuolelle.
+Anfangikirjain voidaan latoa erilaisella kirjainleikkauksella kuin
+leipäteksti. Esimerkiksi vanhassa ja vanhantyylisessä typografiassa
+anfangiin voi sopia erityisen koristeellinen kirjain.
 
-...
+\smallskip
+
+\lettrine[lines=2, lhang=1, nindent=0bp]{E\hspace{1.5bp}}{dellä
+  olevaan}, tähän ja seuraavaan tekstikappaleeseen anfangit sopivat
+huonosti, eikä niitä tavallisesti käytetä kirjan alalukujen alussa eikä
+väliotsikon jälkeen. Tässä ne ovatkin vain esimerkin vuoksi. Anfangien
+käytön varsinainen tarkoitus on osoittaa tekstin alkamiskohta
+esimerkiksi artikkelin alussa tai kirjan päälukujen alussa. Varsinkin
+aikakauslehden artikkelit sisältävät monenlaisia visuaalisia elementtejä
+kuten pää- ja ala\-otsi\-kon, erillisen johdantokappaleen eli ingressin,
+kuvia ja tietolaatikoita. Anfangin avulla katse löytää artikkelin alun
+helposti.
+
+\lettrine[lines=1, loversize=.1, lhang=.02, findent=1.5bp]{K}{appaleen}
+aloittava sana tai pidempikin ilmaus ladotaan joskus lihavoidulla
+kirjainleikkauksella tai pienversaalilla, kuten näissä esimerkeissä on
+tehty. Tällainen kappaleen aloitus voi toimia hieman otsikon tavoin tai
+sitten muuten vain korostaa uuden luvun alkamista.
+
+Latexissa anfangien tekemistä varten on makropaketti
+\paketti{lettrine},\avctan{lettrine} joka tarjoaa käyttöön samannimisen
+komennon. Jokainen anfangi on erilainen, ja siksi \koodi{\keno
+  lettrine}\-/ komentokin sisältää useita asetuksia anfangin ulkoasun
+hienosäätöön. Perusajatus on seuraavanlainen:
+
+\begin{koodilohkosis}
+  \lettrine[lines=3, loversize=.06, lhang=.02, findent=-5bp,
+  nindent=4bp, slope=4bp]{A}{nfangi} aloittaa tämän tekstikappaleen.
+\end{koodilohkosis}
+
+Edellä oleva esimerkki tekee kolmerivisen upotetun A\-/anfangin, jonka
+perässä oleva sanan osa ''nfangi'' ladotaan pienversaalilla.
+Valitsimella \koodi{lover\-size} kasvatetaan hieman anfangikirjaimen
+kokoa, ja \koodi{lhang}\-/ valitsimella siirretään kirjainta hieman
+vasemmalle marginaalin puolelle. Valitsin \koodi{findent} määrittää
+anfangikirjaimen rinnalla olevien rivien sisennyksen määrän suhteessa
+kirjaimeen. \koodi{nindent} määrittää toisen ja sitä seuraavien rivien
+sisennyksen suhteessa ensimmäiseen riviin, ja \koodi{slope} määrittää
+sisennysportaan, joka kertautuu joka rivillä kolmannesta rivistä alkaen.
+Näillä asetuksilla saadaan A\-/kirjaimen viistoa reunaa mukailevat
+rivien alut.
+
+Ennen \paketti{lettrine}\-/paketin käyttämistä kannattaa lukea paketin
+ohjekirjasta tietoa \koodi{\keno lettrine}\-/ komennon valitsimista ja
+myös teknisistä rajoituksista. Anfangit eivät toimi joka paikassa --
+eivät typografisesti eivätkä Latexissa teknisesti.
 
 \section{Tekstin korostaminen}
 \label{luku:korostus}

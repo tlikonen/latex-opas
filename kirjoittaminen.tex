@@ -682,13 +682,13 @@ Kesken dokumentin komennolla \koodi{\keno reverse\-marginpar} voidaan
 vaihtaa marginaalihuomautukset vastakkaiseen marginaaliin ja komennolla
 \koodi{\keno normal\-margin\-par} palautetaan oletusasetukset.
 
-\subsection{Anfangi}
+\subsection{Anfangit eli suurikokoiset alkukirjaimet}
 
 \lettrine[lines=3, loversize=.06, lhang=.02, findent=-5bp, nindent=4bp,
 slope=4bp]{A}{nfangit} ovat suurikokoisia tekstin alkukirjaimia.
 Tyypillisesti kirjaimen korkeus on kahdesta viiteen riviä ja se
 upotetaan kappaleen sisään, mutta joskus se sijoitetaan kokonaan
-marginaalin puolelle tai normaalin tekstirivin yläpuolelle.
+marginaalin puolelle tai yltää normaalin tekstirivin yläpuolelle.
 Anfangikirjain voidaan latoa erilaisella kirjainleikkauksella kuin
 leipäteksti. Esimerkiksi vanhassa ja vanhantyylisessä typografiassa
 anfangiin voi sopia erityisen koristeellinen kirjain.
@@ -706,17 +706,17 @@ kuten pää- ja ala\-otsi\-kon, erillisen johdantokappaleen eli ingressin,
 kuvia ja tietolaatikoita. Anfangin avulla katse löytää artikkelin alun
 helposti.
 
-\lettrine[lines=1, loversize=.1, lhang=.02, findent=1.5bp]{K}{appaleen}
-aloittava sana tai pidempikin ilmaus ladotaan joskus lihavoidulla
+\lettrine[lines=1, loversize=.1, lhang=.02, findent=1.5bp]{K}{appaleen
+  aloittava sana} tai pidempikin ilmaus ladotaan joskus lihavoidulla
 kirjainleikkauksella tai pienversaalilla, kuten näissä esimerkeissä on
 tehty. Tällainen kappaleen aloitus voi toimia hieman otsikon tavoin tai
-sitten muuten vain korostaa uuden luvun alkamista.
+sitten muuten vain ilmaisee uuden luvun alkamista.
 
 Latexissa anfangien tekemistä varten on makropaketti
 \paketti{lettrine},\avctan{lettrine} joka tarjoaa käyttöön samannimisen
 komennon. Jokainen anfangi on erilainen, ja siksi \koodi{\keno
   lettrine}\-/ komentokin sisältää useita asetuksia anfangin ulkoasun
-hienosäätöön. Perusajatus on seuraavanlainen:
+hienosäätöön. Komentoa käytetään seuraavalla tavalla:
 
 \begin{koodilohkosis}
   \lettrine[lines=3, loversize=.06, lhang=.02, findent=-5bp,
@@ -737,8 +737,8 @@ rivien alut.
 
 Ennen \paketti{lettrine}\-/paketin käyttämistä kannattaa lukea paketin
 ohjekirjasta tietoa \koodi{\keno lettrine}\-/ komennon valitsimista ja
-myös teknisistä rajoituksista. Anfangit eivät toimi joka paikassa --
-eivät typografisesti eivätkä Latexissa teknisesti.
+myös teknisistä rajoituksista. Anfangit eivät toimi Latexissa teknisesti
+joka paikassa -- ja typografisesti vielä harvemmassa.
 
 \section{Tekstin korostaminen}
 \label{luku:korostus}

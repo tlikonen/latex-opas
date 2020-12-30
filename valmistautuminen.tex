@@ -122,14 +122,13 @@ kirjoitusasuja TeX ja LaTeX.
 Kielenhuoltajien suositusten mukaan logojen eikä erikoisten
 kIRjoiTusAsuJen paikka ei ole asiatyylisten tekstilajien leipätekstissä.
 Nimet ovat osa kielen järjestelmää ja käyttäytyvät normaalissa tekstissä
-sen mukaisesti. Niinpä tässä oppaassa viitataan kaikkiin nimiin
-kielenhuollon normien mukaisesti eli käytetään erisnimien normaalia
-kirjoitusasua kuten Tex ja Latex. Koodi ja komennot ovat siinä muodossa
-kuin ne tietokoneelle annetaan, esimerkiksi \koodi{lualatex}.
-Tasalevyinen, kirjoituskonetyylinen fontti on merkkinä siitä, että kyse
-on tietokonekoodista.
+sen mukaisesti. Niinpä tässä oppaassa käytetään erisnimiä kielenhuollon
+normien mukaisesti, esimerkiksi Tex ja Latex. Koodi ja komennot ovat
+siinä muodossa kuin ne tietokoneelle annetaan, esimerkiksi
+\koodi{lualatex}. Tasalevyinen, kirjoituskonetyylinen fontti on merkkinä
+siitä, että kyse on tietokonekoodista.
 
-\section{Asentaminen}
+\section{Asentaminen tietokoneelle}
 \label{luku:asentaminen}
 
 Latex pitää tietysti asentaa tietokoneelle, jotta sitä voisi käyttää.
@@ -158,16 +157,16 @@ yleensä Mactex\-/nimistä jakelua.
 
 \subsection{Tekstieditori}
 
-Kannattaa käyttää kunnollista tekstieditoria, koska se on tärkein
-työkalu ja sen kanssa ollaan eniten tekemisissä. Pyri löytämään
-sellainen editori, joka osaa värjätä tekstiä Latexin tai Texin
-tekstipiirteiden mukaisesti. Väreillä ei sinänsä ole merkitystä, mutta
-editorin laadusta se yleensä kertoo paljon. Jos editori tuntee
-erilaisten ohjelmointi\-/{} ja merkintäkielten luonnetta ja osaa merkitä
-kielen avainsanoja havainnollisilla väreillä, se todennäköisesti on
-tehty tehokkaaseen ohjelmointiin ja muuhun vastaavaan työskentelyyn.
-Ihan yksinkertaisiin editoreihin ei tuollaisia ominaisuuksia yleensä
-tehdä.
+Omien dokumenttien ja Latex\-/merkintäkielen kirjoittamiseen kannattaa
+käyttää kunnollista tekstieditoria, koska se on tärkein työkalu ja sen
+kanssa ollaan eniten tekemisissä. Pyri löytämään sellainen editori, joka
+osaa värjätä tekstiä Latexin tai Texin tekstipiirteiden mukaisesti.
+Väreillä ei sinänsä ole merkitystä, mutta editorin laadusta se yleensä
+kertoo paljon. Jos editori tuntee erilaisten ohjelmointi\-/{} ja
+merkintäkielten luonnetta ja osaa merkitä kielen avainsanoja
+havainnollisilla väreillä, se todennäköisesti on tehty tehokkaaseen
+ohjelmointiin ja muuhun vastaavaan työskentelyyn. Ihan yksinkertaisiin
+editoreihin ei tuollaisia ominaisuuksia yleensä tehdä.
 
 \subsection{Pdf-katselin}
 
@@ -187,7 +186,8 @@ kautta avata samaa tiedostoa uudelleen, vaan ohjelma itse huomaa, että
 jo avattu tiedosto muuttui tiedostojärjestelmässä, ja lataa sen
 automaattisesti uudelleen. Jotkin pdf\-/ohjelmat osaavat tämän. Jotkin
 ohjelmat eivät ihan osaa mutta osaavat sentään yhdellä
-näppäinpainalluksella avata pdf:n uudelleen tiedostojärjestelmästä.
+näppäinpainalluksella avata saman pdf:n uudelleen
+tiedostojärjestelmästä.
 
 Hyvän tekstieditorin ja pdf\-/katselimen kanssa työskentely on sujuvaa.
 Parhaimmillaan editorissa tietty näppäinkomento tallentaa ja kääntää
@@ -226,11 +226,12 @@ kuin tallentaa tiedosto tekstieditorista, ja tarkkailutilassa oleva
 Latexmk kääntää sen aina itsestään.
 
 Muitakin hyödyllisiä toimintoja on mukana. Seuraavista esimerkeistä
-ensimmäinen komento (\koodi{latexmk \=/c}) poistaa kääntämisen aikana
-luodut väliaikaistiedostot (\koodi{log}, \koodi{aux}, \koodi{out} ym.),
-ja jälkimmäinen rivin komento (\koodi{latexmk \=/C}) poistaa kaikki
-luodut tiedostot eli väliaikaistiedostojen lisäksi myös valmiin
-pdf\-/tiedoston.
+ensimmäinen komento poistaa kääntämisen aikana luodut
+väliaikaistiedostot,%
+\footnote{Kääntäjän luomien väliaikaistiedostojen nimien päätteitä:
+  \koodi{log}, \koodi{aux}, \koodi{out} ym.} ja jälkimmäinen komento
+poistaa kaikki luodut tiedostot eli väliaikaistiedostojen lisäksi myös
+valmiin pdf\-/tiedoston.
 
 \begin{koodilohkosis}
   latexmk -c teksti.tex
@@ -276,7 +277,8 @@ kaikkien hyödyllisten makropakettien kaikkia ominaisuuksia.
 Tex Live \=/jakelun (luku \ref{luku:asentaminen}) mukana tulee mainio
 komentotulkissa toimiva komento \koodi{texdoc}, jolla voi hakea ja avata
 omaan järjestelmään asennettuja Latex\-/aiheisia ohjeita. Jos vaikka
-haluaa tutustua esimerkissä \ref{esim:ensimmainen} mainittavaan
+haluaa tutustua esimerkissä \ref{esim:ensimmainen}
+(s.~\pageref{esim:ensimmainen}) mainittavaan
 \paketti{fontspec}\-/pakettiin syvällisemmin, tarvitsee vain komentaa
 \koodi{texdoc fontspec}, ja paketin pdf\-/muotoinen ohjekirja avautuu.
 
@@ -310,7 +312,7 @@ kerta dokumenteissa, ja niihin palataan tarkemmin luvuissa
 Seuraavilla riveillä asetetaan kieleksi suomi (\koodi{finnish}) ja
 määritetään oletuksena käytettävä fontti tai oikeastaan kokonainen
 kirjainperhe. Latin Modern Roman \=/kirjainperheen tilalle voi toki
-kokeilla muitakin. Fontin oletuskoko on 10 pistettä, mutta tässä
+asettaa jonkin muunkin. Fontin oletuskoko on 10 pistettä, mutta tässä
 esimerkissä se venytetään 1,3\-/kertaiseksi eli 13 pisteeseen.
 Riviväliin liittyvä kerroin asetetaan rivillä 8.
 
@@ -338,9 +340,9 @@ Riviväliin liittyvä kerroin asetetaan rivillä 8.
 Dokumentin alkuosaa riville 9 saakka kutsutaan esittelyosaksi (engl.
 \englanti{preamble}). Tässä osassa ladataan tarvittavat makropaketit ja
 määritetään dokumentin asetuksia ja taustatietoja. Riviltä 10 alkaa
-varsinainen tekstiosa eli sivulle ladottava sisältö. Se osa kirjoitetaan
-\koodi{document}\-/ympäristön sisään eli riveillä 10 ja 14 olevien
-ympäristön aloi\-tus- ja lopetuskomentojen väliin.
+varsinainen tekstiosa eli dokumentin sivuille ladottava sisältö. Se osa
+kirjoitetaan \koodi{document}\-/ympäristön sisään eli riveillä 10 ja 14
+olevien ympäristön aloi\-tus- ja lopetuskomentojen väliin.
 
 Tällaisen merkintäkielen avulla dokumentit kirjoitetaan. Osa
 merkintäkielen komennoista tulee Latexin perusosasta ja osa tulee
@@ -348,6 +350,6 @@ erikseen ladattavista makropaketeista (\paketti{geometry},
 \paketti{fontspec}, \paketti{polyglossia} ym.). Komentoja voi luoda
 itsekin.
 
-Voisi olla hyödyllistä tallentaa tämänkaltainen pohjadokumentti
-myöhempää käyttöä varten. Välttyy samojen perusjuttujen
-kirjoittamiselta, kun voi aloittaa työt valmiista dokumenttipohjasta.
+Voi olla hyödyllistä tallentaa tämänkaltainen pohjadokumentti myöhempää
+käyttöä varten. Välttyy samojen perusjuttujen kirjoittamiselta, kun voi
+aloittaa työt valmiista dokumenttipohjasta.

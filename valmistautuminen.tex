@@ -6,40 +6,48 @@
 
 \section{Käsitteet ja nimet}
 
-Latex ja sen ympärille rakentuneet ohjelmistot ovat käsitteellisesti
-aika monimutkainen kokonaisuus, johon kuuluu eri\-/ikäisiä ja
-abstraktiotasoltaan erilaisia osia. Mukaan kuuluu tietenkin
-konkreettisia tietokoneohjelmia, jotka tekevät konkreettisia asioita.
-Mukaan kuuluu kuitenkin myös ihmisten luomia abstrakteja käsitteitä
-kuten Latex\-/formaatti, Tex\-/ohjelmointikieli tai muu yleinen idea,
-jonka tietokoneohjelmat pyrkivät konkreettisesti toteuttamaan.
+Latex ja sen ympärille rakentuneet ohjelmistot ovat aika monimutkainen
+kokonaisuus, johon kuuluu eri\-/ikäisiä ja abstraktiotasoltaan erilaisia
+osia. Mukaan kuuluu tietenkin konkreettisia tietokoneohjelmia, jotka
+tekevät konkreettisia, ennalta määriteltyjä asioita. Mukaan kuuluu
+kuitenkin myös ihmisten luomia abstrakteja käsitteitä, jotka ovat
+vaikeammin määriteltävissä.
 
-Internetissä näkyy silloin tällöin käsitekeskusteluja, jossa
-ihmetellään, mihin mikäkin palikka kuuluu käsitteellisesti. Missä
-suhteessa jotkin uudemmat osat ovat vanhempiin? Oikeiden termien
-osaamisesta voi olla hyötyä, kun pyytää verkossa suurelta yleisöltä
-apua. Viestintä vaatii, että puhutaan suunnilleen samaa kieltä. Yritän
-seuraavaksi selventää peruskäsitteitä.
+Internetissä näkyy silloin tällöin termi- ja käsitekeskusteluja, jossa
+ihmetellään, mihin mikäkin Latexiin liittyvä palikka kuuluu
+käsitteellisesti. Millainen suhde joillakin uudemmilla osilla on
+vanhempiin? Oikeiden termien ja käsitteiden osaamisesta on hyötyä
+ainakin silloin, kun pyytää verkossa apua suurelta yleisöltä.
+Viestintähän aina vaatii, että puhutaan suunnilleen samaa kieltä, joten
+seuraavaksi selvennetään hieman Latexiin liittyviä peruskäsitteitä.
 
 \subsection{Tex ja Latex}
 
-Tex on tietokoneohjelma (\koodi{tex}), joka osaa lukea tietynmuotoisia
-tekstitiedostoja ja latoa niiden perusteella tekstidokumentin, joka on
-tarkoitettu ihmisten luettavaksi. Tex on myös tekstin ladontaan
-tarkoitettu ohjelmointikieli. Se noudattaa sille annettuja ohjeita ja
-latoo kirjaimia ja muuta tavaraa peräkkäin sivulle. Ihmisten
-näkökulmasta Tex on hyvin tekninen ja matalatasoinen järjestelmä, eikä
-sellaisten kanssa yleensä haluta olla missään tekemisissä. Siirtykäämme
-siis eteenpäin.
+Tex on tekstin ladontaan erikoistunut ohjelmointikieli. Kielen avulla
+voidaan antaa ladontaohjeita ja ilmaista muuta siihen liittyvää
+logiikkaa. Ohjelmointikielellä kirjoitettujen ohjeiden perusteella
+tietokoneohjelma osaa latoa tekstidokumentin ihmisten luettavaksi.
+Niinpä Tex on myös tietokoneohjelma (\koodi{tex}), joka osaa lukea
+Tex\-/ohjelmointikieltä sisältävän tekstitiedoston ja tuottaa sen
+perusteella valmiin julkaistavan dokumentin. Yleensä Tex\-/
+ohjelmointikieltä ei kuitenkaan käytetä suoraan tekstidokumenttien
+toteuttamiseen. Ohjelmointikieltä kirjoittavat tavallisimmin vain ne,
+jotka haluavat kehittää itse ladontajärjestelmää paremmaksi muita
+ihmisiä varten.
 
-Latex toimii korkeammalla abstraktiotasolla kuin Tex. Se on kokoelma
-Tex\-/ohjelmointikielen makroja, jotka piilottavat monimutkaiset
-tekniset yksityiskohdat ja toteuttavat varsin helppokäyttöisen
-merkintäkielen, jolla dokumenttien rakenne ja ulkoasua kuvataan. Ihmiset
-siis kirjoittavat yleensä Latex\-/muotoisia dokumentteja, ja Latex
-puolestaan huolehtii matalamman tason Texin käskyttämisestä. Latex on
-myös tietokoneohjelma (\koodi{latex}, \koodi{pdf\-latex}), jolla
-lähdetiedosto käännetään julkaistavaksi dvi- tai pdf\-/dokumentiksi.%
+Latex toimii korkeammalla abstraktiotasolla kuin Tex. Se on laaja
+kokoelma Tex\-/ ohjelmointikielen makroja, jotka piilottavat
+monimutkaiset tekniset yksityiskohdat ja tarjoavat ihmisille varsin
+helppokäyttöisen merkintäkielen, jolla omat tekstidokumentit voi
+toteuttaa. Latex\-/ merkintäkielen kirjoittaminen ei ole ohjelmointia,
+vaan se on oman dokumentin sisällön, rakenteen ja ulkoasun kuvailua
+tietynlaisten merkintätapojen avulla.
+
+Latex\-/merkintäkielellä kuvatut dokumentit välitetään
+tietokoneohjelmalle jatkokäsiteltäväksi. Niinpä Latex on myös
+tietokoneohjelma (\koodi{latex}, \koodi{pdf\-latex}), jolla
+merkintäkielinen lähdetiedosto käännetään julkaistavaksi dvi- tai pdf\-/
+dokumentiksi.%
 \footnote{\textsc{dvi} = device independent file format; \textsc{pdf} =
   portable document format.}
 
@@ -48,20 +56,23 @@ julkaistiin jo vuonna 1994 ja johon ilmestyy pieniä parannuksia
 vuosittain. Perusosat ovat kuitenkin varsin muuttumattomia. Varsinainen
 kiinnostava kehitys tapahtuukin esimerkiksi Latexin kääntäjissä
 (Lualatex ja Xelatex) sekä eri tekijöiden dokumenttiluokissa (luku
-\ref{luku:dokumenttiluokat}) ja makropaketeissa.
+\ref{luku:dokumenttiluokat}) ja makropaketeissa. Viimeksi mainitut
+laajentavat perus\-/Latexia tuomalla niihin lisää helppokäyttöisiä
+toimintoja.
 
 \subsection{Lualatex ja Xelatex}
 
 Nyky\-aikana Latex\-/dokumentteja ei juuri käännetä alkuperäisillä
-\koodi{latex}- tai \koodi{pdf\-latex}\-/ohjelmilla vaan kehittyneemmillä
-kään\-täjä\-ohjel\-milla.%
+kääntäjillä (\koodi{latex}, \koodi{pdf\-latex}, \koodi{tex}) vaan
+kehittyneemmillä kään\-täjä\-ohjel\-milla.%
 \footnote{Englannin kielellä Latexin kääntäjiä on tapana kutsua
   yleisnimellä \emph{\englanti{engine}} 'kone, moottori'.} Niistä
-tärkeimmät ovat Lualatex ja Xelatex (tietokoneohjelmat \koodi{lualatex}
-ja \koodi{xelatex}). Ne muun muassa osaavat lukea Unicode\-/merkistöllä
-kirjoitettuja lähdedokumentteja ja käyttää nyky\-aikaisia \englanti{True
-  Type}- ja \englanti{Open Type} \=/fontteja, mitä alkuperäinen Latex ja
-Tex eivät osaa.
+tärkeimmät ovat Lualatex ja Xelatex.%
+\footnote{Tietokoneohjelmat \koodi{lualatex} ja \koodi{luatex} sekä
+  \koodi{xelatex} ja \koodi{xetex}.} Ne muun muassa osaavat lukea
+Unicode\-/merkistöllä kirjoitettuja lähdedokumentteja ja käyttää
+nyky\-aikaisia \englanti{True Type}- ja \englanti{Open Type}
+\=/fontteja, mitä alkuperäinen Latex ja Tex eivät osaa.
 
 Lualatexilla ja Xelatexilla ei ole käyttäjän kannalta suurtakaan eroa --
 ei välttämättä mitään näkyvää eroa. Ensin mainittu sisältää
@@ -69,7 +80,7 @@ Lua\-/nimisen ohjelmointikielen, ja sillä on merkitystä joillekuille
 makropakettien tekijöille. Jotkin harvat makropaketit eivät toimi
 Lualatexissa, kun taas toiset eivät toimi Xelatexissa. Joskus saattaa
 tulla vastaan myös yksittäinen, kehityksestä ehkä jälkeen jäänyt
-paketti, joka ei toimi kummassakaan vaan ainoastaan perinteisillä
+makropaketti, joka ei toimi kummassakaan vaan ainoastaan perinteisillä
 kääntäjillä (\koodi{latex}, \koodi{pdflatex}).
 
 Miksi on olemassa kaksi ulkoisesti lähes samanlaista kääntäjää? Tärkein
@@ -90,27 +101,33 @@ tekstin julkaisua, koska huonolla tuurilla voi tulla ikäviä yllätyksiä.
 
 \subsection{Latex yläkäsitteenä}
 
-Jotta kaikki olisi mahdollisimman sekavaa, sana Latex toimii myös
-yleisenä nimityksenä tälle kaikelle. Se esiintyy ilmaisuissa kuten
+Jotta kaikki olisi mahdollisimman sekavaa, ''Latex'' toimii myös
+yleisnimityksenä tälle kaikelle. Se esiintyy ilmauksissa kuten
 ''Toteutin dokumentin Latexilla'' tai ''Tämä artikkeli on tehty
 Latexilla''. Ilmaukset sitten tarkoittavat suunnilleen seuraavanlaista:
-Henkilöllä on asennettuna tietokoneelle Latex\-/jakelu (kuten Tex Live).
-Hän on kirjoittanut tekstieditorilla (kuten \textsc{gnu} Emacsilla)
-tekstitiedoston, jossa on dokumentin sisältö ja Latex\-/makroille
-tarkoitettuja komentoja mutta myös joitakin Tex\-/komentoja. Sitten hän
-on kääntänyt eli ladotuttanut tekstitiedostonsa pdf\-/tiedostoksi
-Latex\-/ladontaohjelman jollakin toteutuksella (kuten Lualatexilla tai
-Xelatexilla).
+Henkilöllä on asennettuna tietokoneelle Latex\-/jakelukokonaisuus (kuten
+Tex Live). Hän on kirjoittanut tekstieditorilla (kuten \textsc{gnu}
+Emacsilla) tekstitiedoston, jossa on dokumentin sisältö ja
+Latex\-/merkintäkielisiä komentoja mutta ehkä myös joitakin
+Tex\-/komentoja. Sitten hän on kääntänyt eli ladotuttanut
+tekstitiedostonsa pdf\-/tiedostoksi Latex\-/ladontaohjelman jollakin
+toteutuksella kuten Lualatexilla tai Xelatexilla.
 
 Meille taitaa riittää vain Latexista puhuminen, mutta siitäkin on
 mainittava vielä yksi asia. Latexin harrastajat tykkäävät käyttää
-dokumenttiensa leipätekstissä logoja kuten \TeX{} ja \LaTeX{}. Usein
-teksteissä näkyy myös logojen pohjalta mukailtuja kir\-joi\-tus\-asu\-ja
-TeX ja LaTeX. Mielestäni logojen eikä muodikkaiden
-kIR\-joi\-Tus\-Asu\-Jen paikka ei ole leipätekstissä. Tässä oppaassa
-viittaan kaikkiin nimiin kielenhuollon normien mukaisesti eli käytän
-tavallisia erisnimiä kuten Tex ja Latex. Koodi ja komennot ovat siinä
-muodossa kuin ne tietokoneelle annetaan, esimerkiksi \koodi{lualatex}.
+dokumenttiensa leipätekstissä ladontajärjestelmän logoja kuten \TeX{} ja
+\LaTeX{}. Usein teksteissä näkyy myös logojen pohjalta mukailtuja
+kirjoitusasuja TeX ja LaTeX.
+
+Kielenhuoltajien suositusten mukaan logojen eikä erikoisten
+kIRjoiTusAsuJen paikka ei ole asiatyylisten tekstilajien leipätekstissä.
+Nimet ovat osa kielen järjestelmää ja käyttäytyvät normaalissa tekstissä
+sen mukaisesti. Niinpä tässä oppaassa viitataan kaikkiin nimiin
+kielenhuollon normien mukaisesti eli käytetään erisnimien normaalia
+kirjoitusasua kuten Tex ja Latex. Koodi ja komennot ovat siinä muodossa
+kuin ne tietokoneelle annetaan, esimerkiksi \koodi{lualatex}.
+Tasalevyinen, kirjoituskonetyylinen fontti on merkkinä siitä, että kyse
+on tietokonekoodista.
 
 \section{Asentaminen}
 \label{luku:asentaminen}

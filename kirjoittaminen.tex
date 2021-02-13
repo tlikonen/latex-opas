@@ -743,10 +743,93 @@ joka paikassa -- ja typografisesti vielä harvemmassa.
 \section{Tekstin korostaminen}
 \label{luku:korostus}
 
-% Katso \ref{luku:fontit_muut}: tietoa harvennuksesta.
-% Selvitä paras alleviivauspaketti; soul ei ole ainoa.
+Tekstin yksittäisten sanojen korostukset toteutetaan tavallisimmin
+siten, että käytetään leipätekstin kirjainperheestä jotakin poikkeavaa
+kirjainleikkausta, esimerkiksi \textbf{lihavoitua}, \textit{kursiivia},
+\textsl{kallistettua} tai \textsc{pienversaalia}. Joskus vaihdetaan koko
+kirjainperhe toiseksi, esimerkiksi ladotaan \textrm{antiikvan} sekaan
+\textsf{groteskia} tai \texttt{tasalevyistä}.
+
+Korostukset siis liittyvät läheisesti fonttien valintaan ja asetuksiin,
+ja siksi korostusten teknistä toteuttamista ja Latex\-/komentoja
+käsitellään pääasiassa fonttien yhteydessä luvussa
+\ref{luku:fontit_korkea}. \marginaali{Korostuskomentoja taulukossa
+  \ref{tlk:fonttimallikomennot} sivulla
+  \pageref{tlk:fonttimallikomennot}.} Siellä muun muassa neuvotaan,
+kuinka kirjainperheet ja niiden eri kirjainleikkaukset valitaan. Sen
+sijaan nyt käsillä olevassa alaluvussa keskitytään tekstin korostamisen
+typografisiin käytäntöihin ja suosituksiin. Joitakin uusia komentojakin
+esitellään.
+
+Tekstissä sanoja korostetaan siksi, että halutaan niiden erottuvan
+ympäristöstään. Tärkeän avainsanan pitää ehkä erottua tekstipalstasta
+niin, että sen huomaa nopeasti tekstiä silmäilemällä. Se voi helpottaa
+tiedon löytämistä.
+
+Sanoja tai ilmauksia korostetaan toisinaan myös siksi, että ne eivät ole
+kielen sanoja tavallisessa merkityksessään vaan lainauksia kielestä tai
+toisesta tekstityypistä. Ihmiskieltä käsittelevissä teksteissä on
+tavallista kursivoida sanat silloin, kun viitataan itse sanoihin eikä
+varsinaisesti käytetä kyseisiä sanoja. Sanoihin ja muuhun kieliainekseen
+viitatessa voi käyttää myös lainausmerkkejä. Tietotekniikan koodikielen
+esimerkit ladotaan usein leipätekstistä poikkeavalla fontilla, jotta käy
+selväksi, että kyse on koodikielisestä lainauksesta. Hyvin tavallista on
+tasalevyisen fontin käyttö, koska se jäljittelee tekstieditorien ja
+komentotulkkia suorittavien pääte\-oh\-jel\-mien fonttia.
+
+Sopivan korostustavan valinnassa on olennaista saavuttaa riittävä
+kontrasti ympäröivään tekstiin. Liian lievä muutos ei erotu; toisaalta
+liian räikeä muutos voi olla häiritsevä. Yhteensopivat korostuskeinot
+saadaankin aina saman kirjainperheen sisältä, eri leikkauksia
+käyttämällä.
+
+\subsection{Kursiivi ja lihavointi}
+
+Antiikvatyyppisen kirjainperheen kanssa toimi yleensä parhaiten saman
+perheen kursiivi. Lihavointi toimii huonommin antiikvan kanssa, koska
+pelkkä merkkien viivojen vahvistaminen ei tuo riittävää kontrastia.
+
+\begin{tulossis}
+  \rmfamily Antiikvaperheen \textit{kursiivileikkaus} tuo yleensä
+  voimakkaan muotokontrastin ja on tyylillisesti yhteensopiva
+  korostuskeino. Sen sijaan \textbf{lihavointi} toimii huonommin.
+\end{tulossis}
+
+Lihavointi toimii huomattavasti paremmin groteskityyppisen
+kirjainperheen kanssa, koska lihavoitu leikkaus on usein selvästi
+vahvempi normaaliin verrattuna. Groteskin kursiivi sen sijaan ei monesti
+edes ole varsinainen kursiivileikkaus vaan pelkkä lievä kallistus.
+Sellainen ei välttämättä tuo riittävää
+muotokontrastia.\footnote{Joissakin niin sanotuissa humanistisissa
+  groteskiperheissä on mukana ihan käyttökelpoinen ja selvästi erottuva
+  kursiivileikkaus.}
+
+\begin{tulossis}
+  \sffamily Groteskia on tavallista korostaa \textbf{lihavoinnilla} eli
+  leikkauksella, joka on selvästi tavallista vahvempi. Sen sijaan
+  \textit{kursiivi} ei kaikissa groteskiperheissä erotu riittävästi.
+\end{tulossis}
+
+Joissakin kirjainperheissä on mukana useita erivahvuisia leikkauksia.
+Silloin täytyy valita käyttöön riittävästi toisistaan poikkeavat
+vahvuudet. Esimerkiksi kaksi vierekkäistä vahvuutta eivät välttämättä
+poikkea toisistaan riittävästi, jolloin selvää vahvuuskontrastia ei
+synny.
+
+Mikäli leipätekstissä käytetään sulkeita ja niiden sisällä kursivoitua
+ilmausta (\textit{kuten tässä}), ei itse suljemerkkejä pidä kursivoida,
+koska ne kuuluvat ulompaan tekstiin. Jos sulkeiden ulkopuolellakin on
+voimassa kursivointi, voi itse sulkeetkin kursivoida.
+
+% \emph{}
+
+
+\subsection{Pienversaali eli kapiteeli}
 
 ...
+
+% Katso \ref{luku:fontit_muut}: tietoa harvennuksesta.
+% Selvitä paras alleviivauspaketti; soul ei ole ainoa.
 
 \section{Sivun vaihto ja sivujen tasaaminen}
 

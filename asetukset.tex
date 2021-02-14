@@ -1219,7 +1219,7 @@ käsi\-ala\-kir\-joi\-tusta, joskaan kirjaimia ei ole sidottu toisiinsa.
 Sen sijaan kalteva leikkaus on tavallisen eli pys\-ty\-asen\-toi\-sen
 leikkauksen kallistettu versio. Kallistus voi olla kirjainmuotoilijan
 piirtämä leikkaus, tai kallistus on voitu toteuttaa mekaanisesti.
-Kallistuksen voi tehdä myös Latexissa (luku \ref{luku:fontit_muut}).
+Kallistuksen voi tehdä myös Latexissa (luku \ref{luku:fontit_venytys}).
 
 Komennot fontin koon valintaan ovat taulukossa
 \ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä fontin
@@ -1680,17 +1680,51 @@ asetuksilla:
   Numbers=Proportional % vaihtelevan levyiset numerot (oletus)
 \end{koodilohkosis}
 
-\subsection{Muita asetuksia}
-\label{luku:fontit_muut}
+\subsection{Välistykset: harvennus ja tiivistys}
+\label{luku:fontit_valistys}
 
-Tässä luvussa käsitellään harvemmin tarvittavia mutta välillä
-hyödyllisiä asetuksia, jotka eivät ole sidoksissa fonttitiedoston
-ominaisuuksiin. Nämä asetukset muokkaavat fontin toimintaa kokonaan
-Texin tai kääntäjien puolella.
+Fontin kanssa käytettäviä sanavälejä voi säätää
+\koodi{Word\-Space}\-/valitsimella, \koodimargin{Word\-Space} jonka
+arvoksi annetaan desimaalilukukerroin eli suhdeluku normaaliin
+verrattuna. Arvona voi olla myös kolme eri kerrointa, jolloin mukana on
+lisäksi sanavälin venymisen rajat. Tämä asetus on tehtävä kirjainperheen
+tai \=/leikkauksen määrittelyn yhteydessä, eli se ei toimi esimerkiksi
+\koodi{\keno add\-font\-features}\-/komennon kanssa. Katso tietoa
+sanaväleistä myös luvusta \ref{luku:sanavali} tai tekstikappaleiden
+latomista käsittelevästä luvusta \ref{luku:kappale}. \noclub[2]
 
-Valitsimella%
-\koodimargin{Fake\-Stretch} \koodi{Fake\-Stretch} voi venyttää tai
-kutistaa merkkejä leveyssuunnassa. Arvoksi annetaan
+Fontti\-asetusten valitsimella \koodi{Letter\-Space}
+\koodimargin{Letter\-Space} säädetään merkkien välistystä eli niiden
+välistä tyhjää tilaa. Arvoksi annetaan positiivinen tai negatiivinen
+prosenttiluku, joka ilmaisee alkuperäiseen lisättävän osuuden. Asetus
+\koodi{Letter\-Space=\katk 6} tuottaa siis kuusi prosenttia leveämmät
+merkkien välit. Välistyksen tiivistäminen ja harvennuksen typografiaa
+käsitellään luvussa \ref{luku:korostus_harvennus}, mutta seuraavassa on
+esimerkki, kuinka ne teknisesti toteutetaan:
+
+\begin{koodilohkosis}
+  \scshape {\addfontfeatures{LetterSpace=-2} tiivistys} \\
+  normaali \\ {\addfontfeatures{LetterSpace=6} harvennus}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \scshape {\addfontfeatures{LetterSpace=-2} tiivistys} \\
+  normaali \\ {\addfontfeatures{LetterSpace=6} harvennus}
+\end{tulossis}
+
+Jos esimerkiksi harvennuksen haluaa automaattisesti mukaan
+kirjainperheeseen kuuluvaan pienversaaliin, käytetään valitsinta
+\koodi{Small\-Caps\-Features}:
+
+\begin{koodilohkosis}
+  \setmainfont{…}[SmallCapsFeatures={LetterSpace=6}]
+\end{koodilohkosis}
+
+\subsection{Keinotekoinen venytys, lihavointi ja kallistus}
+\label{luku:fontit_venytys}
+
+Valitsimella \koodi{Fake\-Stretch} \koodimargin{Fake\-Stretch} voi
+venyttää tai kutistaa merkkejä leveyssuunnassa. Arvoksi annetaan
 desimaalilukukerroin, joka on suhdeluku alkuperäiseen leveyteen nähden.
 Seuraavassa havainnollistava esimerkki:
 
@@ -1715,9 +1749,8 @@ tasalevyistä kirjainperhettä on hieman kutistettu, koska alkuperäinen on
 kohtuuttoman leveä ({\ttfamily\addfontfeatures{FakeStretch=1}
   esimerkki}) verrattuna muiden kirjainperheiden leveyteen.
 
-Jos%
-\koodimargin{Fake\-Bold} \koodimargin{Fake\-Slant} kirjainperheeseen ei
-sisälly sopivaa lihavoitua tai kaltevaa leikkausta, voi sellaiset
+Jos \koodimargin{Fake\-Bold} \koodimargin{Fake\-Slant} kirjainperheeseen
+ei sisälly sopivaa lihavoitua tai kaltevaa leikkausta, voi sellaiset
 koettaa tehdä myös keinotekoisesti \koodi{Fake\-Bold}- ja
 \koodi{Fake\-Slant}\-/valitsimien avulla. Niille annetaan arvoksi
 desimaalilukukerroin. Valitettavasti \koodi{Fake\-Bold} toimii vain
@@ -1737,10 +1770,8 @@ valitsimella \koodi{Bold\-Font} tai \koodi{Slanted\-Font} ja määrittää
 niille erityisiä ominaisuuksia valitsimella \koodi{Bold\-Fea\-tures} tai
 \koodi{Slanted\-Fea\-tures}. Seuraava esimerkki asettaa dokumentin
 perusfontille kaltevan leikkauksen. Tämän jälkeen komento \koodi{\keno
-  sl\-shape} (taulukko \ref{tlk:fonttimallikomennot},
-s.~\pageref{tlk:fonttimallikomennot}) valitsee \textsl{kaltevan}
-leikkauksen, joka on siis eri asia kuin \textit{kursiivi} (\koodi{\keno
-  it\-shape}).
+  sl\-shape} valitsee \textsl{kaltevan} leikkauksen, joka on siis eri
+asia kuin \textit{kursiivi} (\koodi{\keno it\-shape}).
 
 \begin{koodilohkosis}
   \setmainfont{…}[
@@ -1748,55 +1779,16 @@ leikkauksen, joka on siis eri asia kuin \textit{kursiivi} (\koodi{\keno
     SlantedFeatures={FakeSlant=.2}]
 \end{koodilohkosis}
 
-Fontin%
-\koodimargin{Word\-Space} kanssa käytettäviä sanavälejä voi säätää
-\koodi{Word\-Space}\-/valitsimella, jonka arvoksi annetaan
-desimaalilukukerroin eli suhdeluku normaaliin verrattuna. Arvona voi
-olla myös kolme eri kerrointa, jolloin mukana on lisäksi sanavälin
-venymisen rajat. Tämä asetus on tehtävä kirjainperheen tai
-\=/leikkauksen määrittelyn yhteydessä, eli se ei toimi esimerkiksi
-\koodi{\keno add\-font\-features}\-/komennon kanssa. Katso tietoa
-sanaväleistä myös luvusta \ref{luku:sanavali} tai tekstikappaleiden
-latomista käsittelevästä luvusta \ref{luku:kappale}.
-
-Fontti\-asetusten valitsimella%
-\koodimargin{Letter\-Space} \koodi{Letter\-Space} säädetään merkkien
-välistystä eli niiden välistä tyhjää tilaa. Arvoksi annetaan
-positiivinen tai negatiivinen prosenttiluku, joka ilmaisee alkuperäiseen
-lisättävän osuuden. Asetus \koodi{Letter\-Space=\katk 8} tuottaa siis 8
-prosenttia leveämmät merkkien välit.
-
-Välistyksen tiivistäminen voi sopia suuriin otsikoihin, kun taas
-harventaminen voi sopia yksittäisiin versaali\-/{} tai
-pienversaalikirjaimilla ladottaviin sanoihin. Näitä korostuskeinoja
-käsitellään luvussa \ref{luku:korostus}, mutta seuraavassa on esimerkki,
-kuinka se teknisesti toteutetaan:
-
-\begin{koodilohkosis}
-  \scshape normaali \\
-  {\addfontfeatures{LetterSpace=8} harvennus}
-\end{koodilohkosis}
-
-\begin{tulossis}
-  \scshape normaali \\
-  {\addfontfeatures{LetterSpace=8} harvennus}
-\end{tulossis}
-
-Jos harvennuksen haluaa automaattisesti mukaan kirjainperheeseen
-kuuluvaan pienversaaliin, käytetään valitsinta
-\koodi{Small\-Caps\-Features}:
-
-\begin{koodilohkosis}
-  \setmainfont{…}[SmallCapsFeatures={LetterSpace=8}]
-\end{koodilohkosis}
+\subsection{Keinotekoinen pienversaali}
+\label{luku:fontit_keinopienversaali}
 
 Moniin fontteihin ei sisälly lainkaan pienversaalia. Jos sellaisen silti
 haluaa omaan korostusvalikoimaan, voi yrittää pienentää
 versaalikirjaimet sopivaan kokoon. Seuraavassa esimerkissä versaaleja
 ensin pienennetään ja sitten venytetään hieman leveyssuunnassa. Lisäksi
 merkkivälejä harvennetaan lievästi. Käytännössä versaaleja pienentämällä
-ei saada yleensä tyylikästä pienversaalia aikaan, koska merkkien
-viivoista tulee liian ohuita.
+ei saada tyylikästä pienversaalia aikaan, koska merkkien viivoista tulee
+liian ohuita.
 
 \begin{koodilohkosis}
   \textsc{pienversaali} oikea \\

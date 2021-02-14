@@ -757,7 +757,7 @@ käsitellään pääasiassa fonttien yhteydessä luvussa
   \ref{tlk:fonttimallikomennot} sivulla
   \pageref{tlk:fonttimallikomennot}.} Siellä muun muassa neuvotaan,
 kuinka kirjainperheet ja niiden eri kirjainleikkaukset valitaan. Sen
-sijaan nyt käsillä olevassa alaluvussa keskitytään tekstin korostamisen
+sijaan nyt käsillä olevassa luvussa keskitytään tekstin korostamisen
 typografisiin käytäntöihin ja suosituksiin. Joitakin uusia komentojakin
 esitellään.
 
@@ -771,11 +771,12 @@ kielen sanoja tavallisessa merkityksessään vaan lainauksia kielestä tai
 toisesta tekstityypistä. Ihmiskieltä käsittelevissä teksteissä on
 tavallista kursivoida sanat silloin, kun viitataan itse sanoihin eikä
 varsinaisesti käytetä kyseisiä sanoja. Sanoihin ja muuhun kieliainekseen
-viitatessa voi käyttää myös lainausmerkkejä. Tietotekniikan koodikielen
-esimerkit ladotaan usein leipätekstistä poikkeavalla fontilla, jotta käy
-selväksi, että kyse on koodikielisestä lainauksesta. Hyvin tavallista on
-tasalevyisen fontin käyttö, koska se jäljittelee tekstieditorien ja
-komentotulkkia suorittavien pääte\-oh\-jel\-mien fonttia.
+viitatessa voi tosin käyttää myös lainausmerkkejä. Tietotekniikan
+koodikielen esimerkit ladotaan usein leipätekstistä poikkeavalla
+fontilla, jotta käy selväksi, että kyse on koodikielisestä lainauksesta.
+Tällöin hyvin tavallista on tasalevyisen fontin käyttö, koska se
+jäljittelee tekstieditorien ja komentotulkkia suorittavien
+pääte\-oh\-jel\-mien fonttia.
 
 Sopivan korostustavan valinnassa on olennaista saavuttaa riittävä
 kontrasti ympäröivään tekstiin. Liian lievä muutos ei erotu; toisaalta
@@ -859,10 +860,10 @@ kirjainmuotoilijan piirtämä leikkaus, eli se ei ole tietokoneen
 mekaanisesti pienentämä versio versaalikirjaimista. Jos fonttiin ei
 sisälly pienversaalia ja sellaisen silti haluaa omaan
 keinovalikoimaansa, voi yrittää vähemmän tyylikästä mekaanista
-toteutusta luvussa \ref{luku:fontit_muut} kerrotuilla asetuksilla.
-Samassa luvussa käsitellään myös merkkivälien
-{\scshape\addfontfeatures{LetterSpace=6}harvennusta}, joka voi
-maltillisesti käytettynä sopia pienversaaleihin.
+toteutusta luvussa \ref{luku:fontit_keinopienversaali} kerrotuilla
+asetuksilla. Luvussa \ref{luku:fontit_valistys} puolestaan käsitellään
+merkkivälien {\scshape\addfontfeatures{LetterSpace=6}harvennusta}, joka
+voi maltillisesti käytettynä sopia pienversaaleihin.
 
 Korostustarkoituksessa pienversaalia käytetään esimerkiksi pienissä
 väliotsikoissa, koska sen avulla syntyy selvä muotokontrasti
@@ -872,26 +873,35 @@ tehtävässä. Myös kirjallisuus\-/{} ja lähdeluetteloissa käytetään
 välillä pienversaalia tekijöiden nimissä, koska se helpottaa nimen
 mukaan aakkostetun luettelon silmäilyä.
 
-Pienversaali toimii välillä versaalikirjainten typografisesti parempana
-vaihtoehtona. Silloin sen tarkoituksena ei ole tekstin korostamiseen
-vaan päinvastoin häiritsevän korostuksen välttäminen. Esimerkiksi
-versaalikirjaimiset lyhenteet (SPR, HTML) voivat paljon käytettynä
-erottua leipätekstistä ikävän paljon, eikä tekstipalsta näytä
-tasaiselta. Pienversaalina ne sulautuvat muuhun tekstiin paremmin
-(\textsc{spr}, \textsc{html}).
+Pienversaalia käytetään välillä versaalikirjainten sijasta, niiden
+typografisesti parempana vaihtoehtona. Silloin tarkoituksena ei ole
+tekstin korostamiseen vaan päinvastoin häiritsevän korostuksen
+välttäminen. Esimerkiksi versaalikirjaimiset lyhenteet (SPR, HTML)
+voivat paljon käytettynä erottua leipätekstistä ikävän selvästi, eikä
+tekstipalsta näytä tasaiselta. Pienversaalina ne sulautuvat muuhun
+tekstiin paremmin (\textsc{spr}, \textsc{html}).
 
 Typografisesta estetiikasta juontuu sekin, että pienversaali on sopiva
-pari gemenanumeroiden kanssa erilaisiin koodeihin ja muihin ilmauksiin,
-jotka koostuvat kirjaimista ja numeroista. Sen sijaan versaalikirjaimia
-ja gemenanumeroita ei sovi käyttää yhdessä, koska merkkien koko\-ero on
-häiritsevän suuri. Kuten seuraavista esimerkeistä näkyy, versaalit ovat
-joskus miltei kaksinkertaisia gemananumeroihin verrattuna, ja muutenkin
-gemenanumerot asettuvat keskimäärin eri korkeustasolle.
+pari gemenanumeroiden kanssa erilaisiin teknisiin koodeihin ja muihin
+ilmauksiin, jotka koostuvat kirjaimista ja numeroista. Sen sijaan
+versaalikirjaimia ja gemenanumeroita ei sovi käyttää yhdessä, koska
+merkkien koko\-ero on häiritsevän suuri. Kuten seuraavista esimerkeistä
+näkyy, versaalit ovat joskus miltei kaksinkertaisia gemananumeroihin
+verrattuna, ja muutenkin gemenanumerot asettuvat keskimäärin eri
+korkeustasolle.
 
-\begin{tulossis}\gemenanum
-  \makebox[4em][l]{Oikein:} \makebox[5em][l]{\textsc{iso-8859\=/1}}
-  \textsc{2012~a.d.} \\*[1ex]
-  \makebox[4em][l]{Väärin:} \makebox[5em][l]{ISO-8859\=/1} 2012~a.D.
+\begin{tulossis}
+  \begin{tabular}[t]{@{}lll}
+    Oikein:
+    & {\gemenanum\scshape iso-8859-1}
+    & {\gemenanum\scshape 2012 a.d.} \\[1ex]
+    Väärin:
+    & {\gemenanum ISO-8859-1}
+    & {\gemenanum 2012 a.D.} \\[1ex]
+    Oikein:
+    & {\versaalinum ISO-8859-1}
+    & {\versaalinum 2012 A.D.} \\
+  \end{tabular}
 \end{tulossis}
 
 Fontin näkökulmasta gemenanumerot ovat erillinen ominaisuus, jonka
@@ -909,8 +919,6 @@ numeroihin liittyviä fonttiasetuksia käsitellään luvussa
 \label{luku:korostus_harvennus}
 
 ...
-
-% Katso \ref{luku:fontit_muut}: tietoa harvennuksesta.
 
 \section{Sivun vaihto ja sivujen tasaaminen}
 

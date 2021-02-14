@@ -64,19 +64,19 @@ dokumenteille. Sen sijaan \koodi{report} ja \koodi{book} on tarkoitettu
 laajoihin dokumentteihin, ja niissä on kirja\-typo\-grafian piirteitä.
 
 Suurin edellä mainittujen perusluokkien ero on otsikoinnissa ja
-dokumentin jäsentämisessä: \koodi{report} ja \koodi{book}
-sisältävät suuret pääluvut (\koodi{\keno chapter}) eli otsikot, jotka
-alkavat tyhjältä sivulta; \koodi{article} ei sisällä samanlaisia
-päälukuja vaan ainoastaan tavalliset leipätekstin mukana kulkevat
-väliotsikot (\koodi{\keno section}, \koodi{\keno subsection}
-jne.). Otsikointia ja tekstin jäsentämistä käsitellään tarkemmin luvussa
-\ref{luku:otsikot}.
+dokumentin jäsentämisessä: \koodi{report} ja \koodi{book} sisältävät
+suuret pääluvut (\koodi{\keno chapter}) eli otsikot, jotka alkavat
+tyhjältä sivulta; \koodi{article} ei sisällä samanlaisia päälukuja vaan
+ainoastaan tavalliset leipätekstin mukana kulkevat väliotsikot
+(\koodi{\keno section}, \koodi{\keno subsection} jne.). Tekstin
+jäsentämistä ja otsikointia käsitellään tarkemmin luvussa
+\ref{luku:jäsennys}.
 
 Toinen ero perusluokkien välillä on se, että vain \koodi{book}\-/luokka
 sisältää komennot \koodi{\keno frontmatter}, \koodi{\keno mainmatter} ja
 \koodi{\keno backmatter}, joita voi käyttää ilmaisemaan tietokirjan
-erityyppiset osat: alkusivut, varsinaiset sisältösivut ja liitesivut.
-Näitä käsitellään luvussa \ref{luku:frontmainbackmatter}. Lisäksi
+erityyppiset osat: esittely\-/, sisältö\-/{} ja liitesivut. Näitä
+käsitellään luvussa \ref{luku:frontmainbackmatter}. Lisäksi
 \koodi{report}\-/luokka sisältää ympäristön \koodi{ab\-stract}, joka on
 tarkoitettu tekstin tiivis\-telmä\-osan tekemiseen;
 \koodi{book}\-/luokassa sitä ei ole.

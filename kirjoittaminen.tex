@@ -860,6 +860,9 @@ mekaanisesti pienentämä versio versaalikirjaimista. Jos fonttiin ei
 sisälly pienversaalia ja sellaisen silti haluaa omaan
 keinovalikoimaansa, voi yrittää vähemmän tyylikästä mekaanista
 toteutusta luvussa \ref{luku:fontit_muut} kerrotuilla asetuksilla.
+Samassa luvussa käsitellään myös merkkivälien
+{\scshape\addfontfeatures{LetterSpace=6}harvennusta}, joka voi
+maltillisesti käytettynä sopia pienversaaleihin.
 
 Korostustarkoituksessa pienversaalia käytetään esimerkiksi pienissä
 väliotsikoissa, koska sen avulla syntyy selvä muotokontrasti
@@ -867,24 +870,34 @@ leipätekstin kanssa. Toisinaan tekstikappaleen ensimmäisiä sanoja
 ladotaan pienversaalilla, jolloin se toimii otsikon kaltaisessa
 tehtävässä. Myös kirjallisuus\-/{} ja lähdeluetteloissa käytetään
 välillä pienversaalia tekijöiden nimissä, koska se helpottaa nimen
-mukaan aakkostetun luettelon seuraamista.
+mukaan aakkostetun luettelon silmäilyä.
 
-Pienversaali toimii välillä typografisesti parempana vaihtoehtona
-versaalikirjaimille. Silloin sen tarkoituksena ei ole tekstin
-korostamiseen vaan päinvastoin häiritsevän korostuksen välttäminen.
-Esimerkiksi versaalikirjaimiset lyhenteet (SPR, HTML) voivat paljon
-käytettynä erottua leipätekstistä häiritsevän paljon, eikä tekstipalsta
-näytä tasaiselta. Pienversaalina ne sulautuvat muuhun tekstiin paremmin
+Pienversaali toimii välillä versaalikirjainten typografisesti parempana
+vaihtoehtona. Silloin sen tarkoituksena ei ole tekstin korostamiseen
+vaan päinvastoin häiritsevän korostuksen välttäminen. Esimerkiksi
+versaalikirjaimiset lyhenteet (SPR, HTML) voivat paljon käytettynä
+erottua leipätekstistä ikävän paljon, eikä tekstipalsta näytä
+tasaiselta. Pienversaalina ne sulautuvat muuhun tekstiin paremmin
 (\textsc{spr}, \textsc{html}).
 
 Typografisesta estetiikasta juontuu sekin, että pienversaali on sopiva
-pari gemenanumeroiden kanssa erilaisiin koodeihin ja teknisiin
-ilmauksiin, jotka koostuvat kirjaimista ja numeroista (esim.
-{\scshape\gemenanum iso-8859\=/1}). Versaalikirjaimia ja gemenanumeroita
-ei sovi käyttää yhdessä, koska merkkien koko\-ero on häiritsevän suuri
-({\gemenanum ISO-8859\=/1}). Gemenanumerot ovat nekin fontin ominaisuus,
-ja niiden käyttöönottoa ja muita numeroihin liittyviä asetuksia
-käsitellään luvussa \ref{luku:fontit_numerot}.
+pari gemenanumeroiden kanssa erilaisiin koodeihin ja muihin ilmauksiin,
+jotka koostuvat kirjaimista ja numeroista. Sen sijaan versaalikirjaimia
+ja gemenanumeroita ei sovi käyttää yhdessä, koska merkkien koko\-ero on
+häiritsevän suuri. Kuten seuraavista esimerkeistä näkyy, versaalit ovat
+joskus miltei kaksinkertaisia gemananumeroihin verrattuna, ja muutenkin
+gemenanumerot asettuvat keskimäärin eri korkeustasolle.
+
+\begin{tulossis}\gemenanum
+  \makebox[4em][l]{Oikein:} \makebox[5em][l]{\textsc{iso-8859\=/1}}
+  \textsc{2012~a.d.} \\*[1ex]
+  \makebox[4em][l]{Väärin:} \makebox[5em][l]{ISO-8859\=/1} 2012~a.D.
+\end{tulossis}
+
+Fontin näkökulmasta gemenanumerot ovat erillinen ominaisuus, jonka
+fontin suunnittelija on toteuttanut. Ominaisuuden käyttöönottoa ja muita
+numeroihin liittyviä fonttiasetuksia käsitellään luvussa
+\ref{luku:fontit_numerot}.
 
 \subsection{Alleviivaus ja yliviivaus}
 
@@ -892,7 +905,8 @@ käsitellään luvussa \ref{luku:fontit_numerot}.
 
 % Selvitä paras alleviivauspaketti; soul ei ole ainoa.
 
-\subsection{Harvennus}
+\subsection{Harvennus ja tiivistys}
+\label{luku:korostus_harvennus}
 
 ...
 

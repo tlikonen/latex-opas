@@ -1789,6 +1789,26 @@ kuuluvaan pienversaaliin, käytetään valitsinta
   \setmainfont{…}[SmallCapsFeatures={LetterSpace=8}]
 \end{koodilohkosis}
 
+Moniin fontteihin ei sisälly lainkaan pienversaalia. Jos sellaisen silti
+haluaa omaan korostusvalikoimaan, voi yrittää pienentää
+versaalikirjaimet sopivaan kokoon. Seuraavassa esimerkissä versaaleja
+ensin pienennetään ja sitten venytetään hieman leveyssuunnassa. Lisäksi
+merkkivälejä harvennetaan lievästi. Käytännössä versaaleja pienentämällä
+ei saada yleensä tyylikästä pienversaalia aikaan, koska merkkien
+viivoista tulee liian ohuita.
+
+\begin{koodilohkosis}
+  \textsc{pienversaali} oikea \\
+  {\addfontfeatures{ScaleAgain=.68, FakeStretch=1.17, LetterSpace=4}
+    PIENVERSAALI} keinotekoinen
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \textsc{pienversaali} oikea \\
+  {\addfontfeatures{ScaleAgain=.68, FakeStretch=1.17, LetterSpace=4}
+    PIENVERSAALI} keinotekoinen
+\end{tulossis}
+
 \section{Kieli}
 \label{luku:kieliasetukset}
 

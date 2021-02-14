@@ -745,10 +745,10 @@ joka paikassa -- ja typografisesti vielä harvemmassa.
 
 Tekstin yksittäisten sanojen korostukset toteutetaan tavallisimmin
 siten, että käytetään leipätekstin kirjainperheestä jotakin poikkeavaa
-kirjainleikkausta, esimerkiksi \textbf{lihavoitua}, \textit{kursiivia},
-\textsl{kallistettua} tai \textsc{pienversaalia}. Joskus vaihdetaan koko
-kirjainperhe toiseksi, esimerkiksi ladotaan \textrm{antiikvan} sekaan
-\textsf{groteskia} tai \texttt{tasalevyistä}.
+kirjainleikkausta, esimerkiksi \textit{kursiivia},
+\textsl{kallistettua}, \textbf{lihavoitua} tai \textsc{pienversaalia}.
+Joskus vaihdetaan koko kirjainperhe toiseksi, esimerkiksi ladotaan
+\textrm{antiikvan} sekaan \textsf{groteskia} tai \texttt{tasalevyistä}.
 
 Korostukset siis liittyvät läheisesti fonttien valintaan ja asetuksiin,
 ja siksi korostusten teknistä toteuttamista ja Latex\-/komentoja
@@ -783,52 +783,54 @@ liian räikeä muutos voi olla häiritsevä. Yhteensopivat korostuskeinot
 saadaankin lähes aina saman kirjainperheen sisältä, eri leikkauksia
 käyttämällä.
 
-\subsection{Kursiivi ja lihavointi}
+\subsection{Kursiivi, kallistus ja lihavointi}
 
-Antiikvatyyppisen kirjainperheen korostamiseen sopii yleensä parhaiten
-saman perheen \textit{kursiivi}. \koodimargin{\keno textit} Lihavointi
-toimii huonommin antiikvan kanssa, koska pelkkä merkkien viivojen
-vahvistaminen ei tuo riittävää kontrastia.
+Antiikvatyyppisen kirjainleikkauksen korostamiseen sopii yleensä
+parhaiten saman perheen \textit{kursiivi}. \koodimargin{\keno textit}
+Lihavointi toimii huonommin antiikvan kanssa, koska pelkkä merkkien
+viivojen vahvistaminen ei tuo riittävää kontrastia.
 
 \begin{tulossis}
   \rmfamily Antiikvaperheen \textit{kursiivileikkaus} tuo yleensä
   voimakkaan muotokontrastin ja on tyylillisesti yhteensopiva
-  korostuskeino. Sen sijaan \textbf{lihavointi} toimii huonommin.
+  korostuskeino. Sen sijaan \textbf{lihavointi} erottuu antiikvassa
+  huonommin.
 \end{tulossis}
 
 \textbf{Lihavointi} \koodimargin{\keno textbf} toimii huomattavasti
 paremmin groteskityyppisen kirjainperheen kanssa, koska lihavoitu
 leikkaus on usein selvästi vahvempi normaaliin verrattuna. Groteskin
 kursiivi sen sijaan ei monesti edes ole varsinainen kursiivileikkaus
-vaan pelkkä lievä kallistus. Sellainen ei välttämättä tuo riittävää
-muotokontrastia.\footnote{Joissakin niin sanotuissa humanistisissa
-  groteskiperheissä on mukana ihan käyttökelpoinen ja selvästi erottuva
-  kursiivileikkaus.}
+vaan pelkkä lievä kallistus. \koodimargin{\keno textsl} Sellainen ei
+välttämättä tuo riittävää muotokontrastia.\footnote{Joissakin niin
+  sanotuissa humanistisissa groteskiperheissä on mukana ihan
+  käyttökelpoinen ja selvästi erottuva kursiivileikkaus.}
 
 \begin{tulossis}
   \sffamily Groteskia on tavallista korostaa \textbf{lihavoinnilla} eli
   leikkauksella, joka on selvästi tavallista vahvempi. Sen sijaan
-  \textit{kursiivi} ei kaikissa groteskiperheissä erotu riittävästi.
+  \textit{kursiivi} tai \textsl{kallistus} ei kaikissa groteskiperheissä
+  erotu riittävästi.
 \end{tulossis}
 
 Joissakin kirjainperheissä on mukana useita erivahvuisia leikkauksia.
 Silloin täytyy valita käyttöön riittävästi toisistaan poikkeavat
 vahvuudet. Esimerkiksi kaksi vierekkäistä vahvuutta eivät välttämättä
-poikkea toisistaan riittävästi, jolloin selvää vahvuuskontrastia ei
-synny.
+poikkea toisistaan riittävästi, eikä selvää vahvuuskontrastia synny.
 
 Mikäli leipätekstissä käytetään sulkeita ja niiden sisällä kursivoitua
 ilmausta (\textit{kuten tässä}), ei itse suljemerkkejä pidä kursivoida,
 koska ne kuuluvat ulompaan tekstiin. Jos sulkeiden ulkopuolellakin on
 voimassa kursivointi, voi itse sulkeetkin kursivoida.
 
-Kursiivin voi toteuttaa myös komennolla \koodi{\keno emph},
+Latexissa kursiivin voi toteuttaa myös komennolla \koodi{\keno emph},
 \koodimargin{\keno emph} joka huomioi ympärillä olevan korostustilan.
 Tavallisesti komento kursivoi argumentiksi annetun tekstin, mutta jos
 kursivointi on jo päällä komennon ympärillä, se latookin argumentiksi
 annetun tekstin tavallisella pystyasentoisella kirjainleikkauksella.
-Komennon avulla voi korostaa sekä pystyasentoisen että kursiivin
-keskellä, eikä tarvitse välittää, kumpi leikkaus on voimassa.
+Komennon ajatuksena on, että voidaan samalla komennolla korostaa sekä
+pystyasentoisen tekstin että kursiivin keskellä, eikä tarvitse välittää,
+kumpi leikkaus on voimassa.
 
 \begin{koodilohkosis}
   tavallinen \emph{korostettu} tavallinen \\
@@ -840,25 +842,47 @@ keskellä, eikä tarvitse välittää, kumpi leikkaus on voimassa.
   \emph{korostettu \emph{kaksoiskorostettu} korostettu}
 \end{tulossis}
 
-Voi olla hyödyllistä käyttää \koodi{\keno emph}\-/komentoa esimerkiksi
-lainatuissa tekstipätkissä. Teksti voidaan tilanteen mukaan latoa
-tavallisella tai kursiivileikkauksella, ja korostukset silti toimivat.
+Saattaa olla hyödyllistä käyttää \koodi{\keno emph}\-/ komentoa
+esimerkiksi lainatuissa tekstipätkissä. Lainattu teksti voidaan
+tilanteen mukaan latoa tavallisella tai kursiivileikkauksella, ja
+korostukset silti toimivat.
 
 \subsection{Pienversaali eli kapiteeli}
 
-Selvästi erottuva mutta melko rauhallinen korostuskeino on
-\textsc{pienversaali} eli kapiteeli, \koodimargin{\keno textsc} jonka
-kirjaimet näyttävät versaalikirjaimilta mutta ovat suunnilleen
-gemenakirjainten eli pienten kirjainten korkuisia. Pienversaali on
-joihinkin fontteihin sisältyvä erillinen kirjainmuotoilijan piirtämä
-leikkaus, eli se ei ole tietokoneen mekaanisesti pienentämä versio
-versaalikirjaimista. Jos oikeaa pienversaalia ei ole saatavilla ja
-sellaisen silti haluaa omaan korostusvalikoimaan, voi yrittää vähemmän
-tyylikästä mekaanista toteutusta luvussa \ref{luku:fontit_muut}
-kerrotuilla asetuksilla.
+Melko rauhallinen typografinen keino on \textsc{pienversaali} eli
+kapiteeli, \koodimargin{\keno textsc} jonka kirjaimet näyttävät
+versaalikirjaimilta mutta ovat suunnilleen gemenakirjainten eli pienten
+kirjainten korkuisia. Pienversaali on fonttiin sisältyvä erillinen
+kirjainmuotoilijan piirtämä leikkaus, eli se ei ole tietokoneen
+mekaanisesti pienentämä versio versaalikirjaimista. Jos fonttiin ei
+sisälly pienversaalia ja sellaisen silti haluaa omaan
+keinovalikoimaansa, voi yrittää vähemmän tyylikästä mekaanista
+toteutusta luvussa \ref{luku:fontit_muut} kerrotuilla asetuksilla.
 
-% Mihin sopii? Missä yleensä käytetään? lähdeluettelon nimet,
-% gemananumeroiden kanssa, isokirjainlyhenteet ja muut koodit
+Korostustarkoituksessa pienversaalia käytetään esimerkiksi pienissä
+väliotsikoissa, koska sen avulla syntyy selvä muotokontrasti
+leipätekstin kanssa. Toisinaan tekstikappaleen ensimmäisiä sanoja
+ladotaan pienversaalilla, jolloin se toimii otsikon kaltaisessa
+tehtävässä. Myös kirjallisuus\-/{} ja lähdeluetteloissa käytetään
+välillä pienversaalia tekijöiden nimissä, koska se helpottaa nimen
+mukaan aakkostetun luettelon seuraamista.
+
+Pienversaali toimii välillä typografisesti parempana vaihtoehtona
+versaalikirjaimille. Silloin sen tarkoituksena ei ole tekstin
+korostamiseen vaan päinvastoin häiritsevän korostuksen välttäminen.
+Esimerkiksi versaalikirjaimiset lyhenteet (SPR, HTML) voivat paljon
+käytettynä erottua leipätekstistä häiritsevän paljon, eikä tekstipalsta
+näytä tasaiselta. Pienversaalina ne sulautuvat muuhun tekstiin paremmin
+(\textsc{spr}, \textsc{html}).
+
+Typografisesta estetiikasta juontuu sekin, että pienversaali on sopiva
+pari gemenanumeroiden kanssa erilaisiin koodeihin ja teknisiin
+ilmauksiin, jotka koostuvat kirjaimista ja numeroista (esim.
+{\scshape\gemenanum iso-8859\=/1}). Versaalikirjaimia ja gemenanumeroita
+ei sovi käyttää yhdessä, koska merkkien koko\-ero on häiritsevän suuri
+({\gemenanum ISO-8859\=/1}). Gemenanumerot ovat nekin fontin ominaisuus,
+ja niiden käyttöönottoa ja muita numeroihin liittyviä asetuksia
+käsitellään luvussa \ref{luku:fontit_numerot}.
 
 \subsection{Alleviivaus ja yliviivaus}
 

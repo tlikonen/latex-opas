@@ -914,7 +914,7 @@ numeroihin liittyviä fonttiasetuksia käsitellään luvussa
 Alleviivaus on käsin kirjoitetun tekstin ja mekaanisten
 kirjoituskoneiden korostuskeino, mutta nykyajan typografiaan se ei
 oikeastaan sovi. Alleviivaus nimittäin vaikeuttaa kirjainhahmojen
-tunnistamista ja siten hidastaa lukemista. Parempia korostuskeinoja ovat
+tunnistamista ja hidastaa lukemista. Parempia korostuskeinoja ovat
 esimerkiksi kursiivi ja lihavointi. Alleviivaus voi kuitenkin joskus
 olla kätevä keino ohjata lukijan huomio tiettyyn kohtaan esimerkiksi
 pidemmässä esimerkkitekstissä.
@@ -957,7 +957,7 @@ paketin sisältämiä komentoja.
     \midrule
     \rivi{uline}{\uline{alleviivaus}}
     & \rivi{uuline}{\uuline{kaksoisalleviivaus}} \\
-    \rivi{uwave}{\uwave{aaltoviiva}} 
+    \rivi{uwave}{\uwave{aaltoviiva}}
     & \rivi{sout}{\sout{yliviivaus}} \\
     \rivi{dashuline}{\dashuline{katkoviiva}}
     & \rivi{xout}{\xout{poisto}} \\
@@ -973,12 +973,12 @@ paketin sisältämiä komentoja.
 Oletuksena \paketti{ulem}\-/ paketti määrittelee Latexin \koodi{\keno
   emph}\-/ korostuskomennon (luku \ref{luku:peruskorostukset}) uudelleen
 siten, että komento tuottaa kursiivin sijasta alleviivattua tekstiä.
-Ajatuksena on kai se, että paketin avulla voi helposti muuttaa
-dokumentin käyttämään mekaanisen kirjoituskoneen korostustapoja, joihin
-kursiivi ei kuulu. Käytännössä tällaista tuskin halutaan koskaan, ja
-onneksi paketin lataamisen yhteydessä voi käyttää valitsinta
+Ajatuksena lienee se, että paketin avulla voi helposti muuttaa
+typografisen peruskorostusten eli kursiivin tilalle kirjoituskoneen
+korostustavan eli alleviivauksen. Käytännössä tällaista tuskin halutaan
+koskaan, ja onneksi paketin lataamisen yhteydessä voi käyttää valitsinta
 \koodi{nor\-mal\-em}, joka estää Latexin komentojen uudelleen
-määrittelemisen.
+määrittelyn.
 
 \begin{koodilohkosis}
   \usepackage[normalem]{ulem}
@@ -992,21 +992,21 @@ komennon \koodi{\keno UL\-thick\-ness} määritelmään, ja komennon voi
 halutessaan määritellä uudestaan. Seuraavassa on näistä esimerkki:
 
 \begin{koodilohkosis}
-  \setlength{\ULdepth}{.2ex}         % viivan etäisyys
-  \renewcommand{\ULthickness}{.05ex} % viivan paksuus
+  \setlength{\ULdepth}{.2ex}        % viivan etäisyys
+  \renewcommand{\ULthickness}{.1ex} % viivan paksuus
   \uline{äiti} \uline{öljy}
 \end{koodilohkosis}
 
 \begin{tulossis}
-  \setlength{\ULdepth}{.2ex}         % viivan etäisyys
-  \renewcommand{\ULthickness}{.05ex} % viivan paksuus
+  \setlength{\ULdepth}{.2ex}
+  \renewcommand{\ULthickness}{.1ex}
   \uline{äiti} \uline{öljy}
 \end{tulossis}
 
 Toinen makropaketti alleviivausten ja yliviivausten tekemiseen on
-\paketti{soul}\avctan{soul}. Se ei sisällä erikoisempia
-alleviivaustapoja kuten aalto- tai katkoviivoja, mutta viivan etäisyyden
-ja paksuuden määrittäminen on hieman kätevämpää.
+\paketti{soul}.\avctan{soul} Se ei sisällä erikoisempia korostustapoja
+kuten aalto- ja katkoviivoja, mutta viivan etäisyyden ja paksuuden
+määrittämiseen on hieman kätevämmät komennot.
 
 \subsection{Harvennus ja tiivistys}
 \label{luku:korostus_harvennus}

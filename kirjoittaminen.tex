@@ -1008,56 +1008,6 @@ Toinen makropaketti alleviivausten ja yliviivausten tekemiseen on
 alleviivaustapoja kuten aalto- tai katkoviivoja, mutta viivan etäisyyden
 ja paksuuden määrittäminen on hieman kätevämpää.
 
-% Se määrittelee muun muassa alleviivauskomennon \koodi{\keno ul}
-% \koodimargin{\keno ul} ja asetuskomennon \koodi{\keno set\-ul}.
-% Jälkimmäisellä komennolla voi määrittää, mille korkeudelle alleviivaus
-% asetetaan ja kuinka paksu viiva halutaan. Komennon ensimmäinen
-% argumentti on ''syvyys'' eli viivan etäisyys tekstin peruslinjalta;
-% toinen argumentti on viivan paksuus.
-
-% \begin{koodilohkosis}
-%   \setul{0.1ex}{.05ex} \ul{äiti} \ul{öljy}
-% \end{koodilohkosis}
-
-% \begin{tulossis}
-%   \setul{0.1ex}{.05ex} \ul{äiti} \ul{öljy}
-% \end{tulossis}
-
-% \koodi{\keno setul}\-/komennon kanssa voi käyttää kaikkia Texin
-% mittayksiköitä, mutta ex\-/yksikkö on tässä tilanteessa paras valinta,
-% koska se on fontin x\=/korkeus. Sitä käyttämällä alleviivauksen etäisyys
-% määritellään suhteessa fontin kokoon, ja se on yleensä järkevintä.
-
-% Viivan etäisyyden voi määrittää myös \koodi{\keno set\-ul\-depth}\-/
-% komennolla. Sille annetaan argumentiksi mitä tahansa merkkejä, ja niiden
-% perusteella komento mittaa sopivan etäisyyden viivalle. Seuraavassa
-% esimerkissä alleviivaus asetetaan ensin a\=/kirjaimen ja sitten
-% y\=/kirjaimen pe\-rus\-teella:
-
-% \begin{koodilohkosis}
-%   \setuldepth{a} \ul{äiti} \ul{öljy}
-%   \setuldepth{y} \ul{äiti} \ul{öljy}
-% \end{koodilohkosis}
-
-% \begin{tulossis}
-%   \setuldepth{a} \ul{äiti} \ul{öljy}
-%   \setuldepth{y} \ul{äiti} \ul{öljy}
-% \end{tulossis}
-
-% Yliviivausta voi käyttää poistetun tekstin tai hylätyn
-% teksti\-vaihto\-ehdon merkitsemiseen. \paketti{soul}\-/ paketti
-% määrittelee sitä varten \koodi{\keno st}\-/ komennon \koodimargin{\keno
-%   st}, joka on teknisesti oikeastaan ''alleviivaus'' mutta vain tekstin
-% päälle sijoitettuna.
-
-% \begin{koodilohkosis}
-%   Tässä on \st{poistettua} tekstiä.
-% \end{koodilohkosis}
-
-% \begin{tulossis}
-%   Tässä on \st{poistettua} tekstiä.
-% \end{tulossis}
-
 \subsection{Harvennus ja tiivistys}
 \label{luku:korostus_harvennus}
 

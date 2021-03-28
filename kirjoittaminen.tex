@@ -852,6 +852,7 @@ tilanteen mukaan latoa tavallisella tai kursiivileikkauksella, ja
 korostukset silti toimivat.
 
 \subsection{Pienversaali eli kapiteeli}
+\label{luku:korostus_pienversaali}
 
 Melko rauhallinen typografinen keino on \textsc{pienversaali} eli
 kapiteeli, \koodimargin{\keno textsc} jonka kirjaimet näyttävät
@@ -862,9 +863,10 @@ mekaanisesti pienentämä versio versaalikirjaimista. Jos fonttiin ei
 sisälly pienversaalia ja sellaisen silti haluaa omaan
 keinovalikoimaansa, voi yrittää vähemmän tyylikästä mekaanista
 toteutusta luvussa \ref{luku:fontit_keinopienversaali} kerrotuilla
-asetuksilla. Luvussa \ref{luku:fontit_valistys} puolestaan käsitellään
-merkkivälien {\scshape\addfontfeatures{LetterSpace=6}harvennusta}, joka
-voi maltillisesti käytettynä sopia pienversaaleihin.
+asetuksilla. Luvuissa \ref{luku:fontit_valistys} ja
+\ref{luku:korostus_harvennus} puolestaan käsitellään merkkivälien
+{\scshape\addfontfeatures{LetterSpace=6} harvennusta}, joka voi
+maltillisesti käytettynä sopia pienversaaleihin.
 
 Korostustarkoituksessa pienversaalia käytetään esimerkiksi pienissä
 väliotsikoissa, koska sen avulla syntyy selvä muotokontrasti
@@ -886,7 +888,7 @@ pari gemenanumeroiden kanssa erilaisiin teknisiin koodeihin ja muihin
 ilmauksiin, jotka koostuvat kirjaimista ja numeroista. Sen sijaan
 versaalikirjaimia ja gemenanumeroita ei sovi käyttää yhdessä, koska
 merkkien koko\-ero on häiritsevän suuri. Kuten seuraavista esimerkeistä
-näkyy, versaalit ovat joskus miltei kaksinkertaisia gemananumeroihin
+näkyy, versaalit ovat joskus miltei kaksinkertaisia gemenanumeroihin
 verrattuna, ja muutenkin gemenanumerot asettuvat keskimäärin eri
 korkeustasolle.
 
@@ -1011,9 +1013,70 @@ määrittämiseen on hieman kätevämmät komennot.
 \subsection{Harvennus ja tiivistys}
 \label{luku:korostus_harvennus}
 
-...
+Merkkivälien harventaminen on tyyli- tai korostuskeino, joka juontuu
+antiikin roomalaisten kiveen hakatuista teksteistä. Historiansa vuoksi
+harvennus sopii luontevimmin antiikvan eli pääteviivallisen
+kirjainperheen versaali\-/\ tai pienversaalikirjainten (luku
+\ref{luku:korostus_pienversaali}) kanssa. Antiikin aikana
+gemenakirjaimet eivät olleet vielä käytössä. Merkkivälien harventamisen
+ja tiivistämisen teknisiä ohjeita on luvussa \ref{luku:fontit_valistys}.
 
-\subsection{Tietokonekoodi ja tasalevyinen fontti}
+\begin{koodilohkosis}
+  \large TAVALLINEN \\
+  {\addfontfeatures{LetterSpace=10} KLASSINEN HARVENNUS}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \large
+  TAVALLINEN \\
+  {\addfontfeatures{LetterSpace=10} KLASSINEN HARVENNUS}
+\end{tulossis}
+
+Klassisesti eli antiikin tyyliin harvennetut (n.~10\,\%)
+versaalikirjaimet voivat sopia joihinkin otsikoihin. Sen sijaan
+pienversaalit lievästi {\addfontfeatures{LetterSpace=6}
+  \textsc{harvennettuna}} (esim.~6\,\%) voivat olla tyylikäs
+tehostuskeino leipätekstiin.
+
+Edellisiä esimerkkejä suurempi harvennus on huomiota herättävä
+korostus\-/\ tai tehokeino, joka voi sopia yksittäisiin sanoihin
+leipätekstin ulkopuolella. Jos kirjaimet ovat hyvinkin kaukana
+toisistaan, täytyy sanan ympärillä olla runsaasti tyhjää tilaa, jotta
+sanahahmo pysyy visuaalisesti koossa.
+
+\pagebreak[3]
+
+\begin{koodilohkosis}
+  {\sffamily\bfseries\addfontfeatures{LetterSpace=40} SEIS!}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  {\sffamily\bfseries\addfontfeatures{LetterSpace=40} SEIS!}
+\end{tulossis}
+
+\pagebreak[3]
+
+Merkkivälien tiivistäminen on joskus tarpeen suurikokoisissa otsikoissa.
+Fontin merkkivälit on ehkä suunniteltu ensisijaisesti pienten kokojen
+ehdoilla, ja siksi reilusti suuremmilla fonttiko'oilla välit voivat olla
+häiritsevän suuria. Erityisesti tämä pätee groteskiin eli
+pääteviivattomaan kirjainperheeseen, kuten kuva
+\ref{kuva:otsikon_tiivistys} osoittaa. Antiikvat eivät yleensä siedä
+tiivistämistä, koska kirjainten pääteviivat asettuvat helposti
+päällekkäin.
+
+\leijukuva{
+  \sffamily\fontsize{50bp}{50bp}\selectfont
+  Tavallinen \\
+  \addfontfeatures{LetterSpace=-5} Tiivistetty
+}{
+  \caption{Otsikoiden merkkivälien tiivistäminen voi olla tarpeen
+    suurikokoisen groteskin kanssa -- varsinkin jos lihavointi ei ole
+    käytössä}
+  \label{kuva:otsikon_tiivistys}
+}
+
+\subsection{Tietokonekoodi ja tasalevyinen kirjainperhe}
 
 ...
 

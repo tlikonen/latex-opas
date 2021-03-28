@@ -2320,15 +2320,11 @@ kielessä kumpikin asetus on kaksi (2) merkkiä.
 
 Nämä asetukset alustetaan kielikohtaisiin oletusarvoihin aina, kun
 kieliasetukset tulevat voimaan. Näin on esimerkiksi dokumentin
-aloittavan \koodi{document}\-/ympäristön alussa tai kielen vaihtuessa.
-Tästä seuraa, että jos asetuksia ha\-luaa muuttaa, täytyy muutokset
-tehdä \koodi{document}\-/ympäristön alussa tai aina kielen vaihtamisen
-jälkeen.
-
-Omat kieliasetukset saa mukaan automaattisesti, kun lisää muutokset
-kielikohtaisiin alustuskomentoihin seuraavan esimerkin mukaisesti. Tällä
-tavoin omat asetukset tulevat voimaan samalla kuin muutkin
-kieliasetukset, esimerkiksi kielen vaihtuessa.
+aloittavan \koodi{document}\-/ympäristön alussa ja aina kielen
+vaihtuessa. Jos asetuksia ha\-luaa muuttaa, täytyy omat muutokset tehdä
+aina edellä mainittujen asioiden jälkeen. Toisaalta vielä kätevämpää on
+sisällyttää omat asetukset kielikohtaisiin alustuskomentoihin. Sillä
+tavoin omat asetukset tulevat voimaan automaattisesti kielen vaihtuessa.
 
 \begin{koodilohkosis}
   \addto{\captionsfinnish}{
@@ -2337,9 +2333,10 @@ kieliasetukset, esimerkiksi kielen vaihtuessa.
   }
 \end{koodilohkosis}
 
-Esimerkissä oleva komento \koodi{\keno add\-to} on
-\paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketin ominaisuus, ja
-tässä käsitellään suomen kielen asetuksia (\koodi{\keno
+Edellisessä esimerkissä oleva komento \koodi{\keno add\-to} on
+\paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketin ominaisuus,
+jolla lisätään omia komentoja kielikohtaisiin asetuksiin. Tässä
+esimerkissä käsitellään suomen kielen asetuksia (\koodi{\keno
   cap\-tions\-finnish}).
 
 \subsection{Muita tavutusasetuksia ja -vinkkejä}

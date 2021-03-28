@@ -948,6 +948,7 @@ sisältää myös kak\-sois\-alle\-vii\-vauk\-sen, aaltoviivat, pisteviivat
 ja erilaisia ylikirjoitusmerkintöjä. Taulukkoon \ref{tlk:ulem} on koottu
 paketin sisältämiä komentoja.
 
+\providecommand{\rivi}{}
 \renewcommand{\rivi}[2]{\koodi{\keno #1} & #2}
 
 \leijutlk{
@@ -955,8 +956,9 @@ paketin sisältämiä komentoja.
   \begin{tabular}{llll}
     \toprule
     \ots{Komento}
-    & \ots{Esimerkki} & \ots{Komento} & \ots{Esimerkki} \\
-    \midrule
+    & \ots{Merkitys} & \ots{Komento} & \ots{Merkitys} \\
+    \cmidrule(r){1-2}
+    \cmidrule(l){3-4}
     \rivi{uline}{\uline{alleviivaus}}
     & \rivi{uuline}{\uuline{kaksoisalleviivaus}} \\
     \rivi{uwave}{\uwave{aaltoviiva}}

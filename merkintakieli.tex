@@ -521,56 +521,51 @@ on komennot ladontajärjestelmän logojen kirjoittamiseen: \koodi{\keno
   TeX} ja \koodi{\keno LaTeX}.
 
 \providecommand{\rivi}{}
-\renewcommand{\rivi}[3]{{\erikoisfontti #2} & \koodi{\keno #1} & #3 \\}
+\renewcommand{\rivi}[3]{{\erikoisfontti #2} & \koodi{\keno #1} & #3}
 
 \leijutlk{
-  \begin{tabular}[t]{cll}
+  \begin{tabular}{cllcll}
     \toprule
-    \multicolumn{2}{l}{\ots{Merkki}} & \ots{Merkitys} \\
-    \midrule
+    \multicolumn{2}{l}{\ots{Merkki}} & \ots{Merkitys}
+    & \multicolumn{2}{l}{\ots{Merkki}} & \ots{Merkitys} \\
+    \cmidrule(r){1-3}
+    \cmidrule(l){4-6}
     \rivi{`a}{\`a}{gravis}
+    & \rivi{O}{\O}{poikkiviiva-O} \\
     \rivi{'a}{\'a}{akuutti}
+    & \rivi{o}{\o}{poikkiviiva-o} \\
     \rivi{\^{}a}{\^a}{sirkumfleksi}
+    & \rivi{DJ}{\DJ}{poikkiviiva-D} \\
     \rivi{\~{}a}{\~a}{tilde}
+    & \rivi{dj}{\dj}{poikkiviiva-d} \\
     \rivi{\textquotedbl a}{\"a}{treema}
+    & \rivi{DH}{\DH}{versaali-eth} \\
     \rivi{H a}{\H a}{kaksoisakuutti}
+    & \rivi{dh}{\dh}{gemena-eth} \\
     \rivi{r a}{\r a}{yläympyrä}
+    & \rivi{NG}{\NG}{versaali-äng} \\
     \rivi{v a}{\v a}{hattu}
-    %\rivi{t\{ae\}}{\t{ae}}{sidontakaari}
+    & \rivi{ng}{\ng}{gemena-äng} \\
     \rivi{u a}{\u a}{lyhyysmerkki}
+    & \rivi{SS}{\SS}{versaali kaksois-s} \\
     \rivi{=a}{\=a}{pituusmerkki}
+    & \rivi{ss}{\ss}{gemena kaksois-s} \\
     \rivi{b a}{\b a}{alaviiva}
+    & \rivi{TH}{\TH}{versaali thorn} \\
     \rivi{c a}{\c a}{sedilji}
+    & \rivi{th}{\th}{gemena thorn} \\
     \rivi{.a}{\.a}{yläpiste}
+    & \rivi{i}{\i}{pisteetön i} \\
     \rivi{d a}{\d a}{alapiste}
+    & \rivi{j}{\j}{pisteetön j} \\
     \rivi{k a}{\k a}{ogonek}
-    \\
+    & \rivi{AE}{\AE}{AE-ligatuuri} \\
+    %\rivi{t\{ae\}}{\t{ae}}{sidontakaari}
+    &&& \rivi{ae}{\ae}{ae-ligatuuri} \\
     \rivi{L}{\L}{poikkiviiva-L}
+    & \rivi{OE}{\OE}{OE-ligatuuri} \\
     \rivi{l}{\l}{poikkiviiva-l}
-    \bottomrule
-  \end{tabular}\hspace{1.3em}%
-  \begin{tabular}[t]{cll}
-    \toprule
-    \multicolumn{2}{l}{\ots{Merkki}} & \ots{Merkitys} \\
-    \midrule
-    \rivi{O}{\O}{poikkiviiva-O}
-    \rivi{o}{\o}{poikkiviiva-o}
-    \rivi{DJ}{\DJ}{poikkiviiva-D}
-    \rivi{dj}{\dj}{poikkiviiva-d}
-    \rivi{DH}{\DH}{versaali-eth}
-    \rivi{dh}{\dh}{gemena-eth}
-    \rivi{NG}{\NG}{versaali-äng}
-    \rivi{ng}{\ng}{gemena-äng}
-    \rivi{SS}{\SS}{versaali kaksois-s}
-    \rivi{ss}{\ss}{gemena kaksois-s}
-    \rivi{TH}{\TH}{versaali thorn}
-    \rivi{th}{\th}{gemena thorn}
-    \rivi{i}{\i}{pisteetön i}
-    \rivi{j}{\j}{pisteetön j}
-    \rivi{AE}{\AE}{AE-ligatuuri}
-    \rivi{ae}{\ae}{ae-ligatuuri}
-    \rivi{OE}{\OE}{OE-ligatuuri}
-    \rivi{oe}{\oe}{oe-ligatuuri}
+    & \rivi{oe}{\oe}{oe-ligatuuri} \\
     \bottomrule
   \end{tabular}
 }{

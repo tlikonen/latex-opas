@@ -1081,9 +1081,74 @@ päällekkäin.
 
 \subsection{Tietokonekoodi ja tasalevyinen kirjainperhe}
 
-...
+Tietokonekoodi tai muu vastaava tekninen, koneelle syötettävä tai koneen
+tulostama koodi on tapana esittää \texttt{tasalevyisellä} fontilla.
+Kyseessä on ikään kuin lainaus toisenlaisesta tekstityypistä, joka ei
+ole luonnollista kieltä lainkaan.
 
-% \verb, verbatim, fancyvrb
+Tasalevyinen kirjainperhe määritellään fonttiasetusten yhteydessä (luku
+\ref{luku:fontin_valinta}) ja valitaan käyttöön esimerkiksi komennolla
+\koodi{\keno text\-tt}. \koodimargin{\keno texttt} Tasalevyisellä
+fontilla ladottava teksti on tavallisesti tietokonekoodia, joten sille
+on asetettu hieman toisenlaiset oletusasetukset kuin muille
+kirjainperheille. Oletuksena tekstiä ei tavuteta, ja esimerkiksi
+\koodi{\keno text\-tt}\-/komennon argumentiksi annettu teksti
+katkaistaan vain sanavälien ja yhdysmerkkien kohdalta. Myös niin sanotut
+Tex\-/ligatuurit (esim. \koodi{''} ja~\koodi{--}) on kytketty pois
+päältä. Fonttien oletusasetuksia ja niiden muuttamista käsitellään
+luvussa \ref{luku:fontit_oletusasetukset}. Tex\-/ligatuureja eli Texin
+merkintätapoja lainausmerkeille ja ajatusviivoille käsitellään luvuissa
+\ref{luku:lainausmerkit} ja \ref{luku:yhdys_ajatus_miinus}.
+
+Toinen vaihtoehto tasalevyisen tekstin tuottamiseen on \koodi{\keno
+  verb}\-/ komento. \koodimargin{\keno verb} Komennon nimi on lyhennetty
+englannin kielen sanasta \textit{\englanti{verbatim}}, joka tarkoittaa
+'kirjaimellisesti' tai 'sananmukaisesti'. Niin se juuri toimiikin, eli
+\keno{verb}\-/ komennolle annettu argumentti tulkitaan kirjaimellisesti.
+Texin omat merkintätavat eivätkä kenoviivalla (\koodi{\keno}) alkavat
+komennot eivät toimi tämän komennon argumentissa.
+
+\koodi{\keno verb}\-/ komennon argumentti täytyy ilmaista tavallisesta
+poikkeavalla tavalla. Välittömästi komennon nimen jälkeen tuleva merkki
+on oleva argumentin aloitus- ja lopetusmerkki. Niiden välissä oleva
+teksti tulkitaan kirjaimellisesti ja ladotaan tasalevyisellä
+kirjainperheellä. Seuraavassa on tästä kaksi esimerkkiä:
+
+\begin{koodilohkosis}
+  \verb.tasalevyinen.   % aloitus- ja lopetusmerkkinä piste
+  \verb|tasalevyinen|   % aloitus- ja lopetusmerkkinä pystyviiva
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \verb.tasalevyinen.
+  \verb|tasalevyinen|
+\end{tulossis}
+
+Yksittäisiä sanoja pidempien tietokonekoodien latomiseen on olemassa
+\koodi{ver\-ba\-tim}\-/ ympäristö, \koodimargin{verbatim} jonka sisällä
+kaikki teksti tulkitaan kirjaimellisesti -- myös välilyönnit ja
+rivinvaihdot.
+
+\begin{koodilohkosis}
+  \begin{verbatim}
+  tieto-       kone-
+         koodia
+  \end{verbatim}
+\end{koodilohkosis}
+
+\begin{tulossis}
+\begin{verbatim}
+tieto-       kone-
+       koodia
+\end{verbatim}
+\end{tulossis}
+
+Paljon monipuolisemman ympäristön tarjoaa makropaketti
+\paketti{fancyvrb}.\avctan{fancyvrb} Sen \koodi{Ver\-ba\-tim}\-/
+ympäristölle \koodimargin{Verbatim} voi antaa monenlaisia asetuksia,
+joilla vaikutetaan tietokonekoodin latomiseen. Koodiin saa mukaan
+esimerkiksi rivinumerot, ja sen voi latoa kehyksen sisään. Myös koodin
+sisennykseen, fontin kokoon ja väreihin voi vaikuttaa.
 
 \subsection{Verkko-osoitteet eli hyperlinkit}
 

@@ -22,7 +22,7 @@
 \usepackage{booktabs}
 \usepackage{noindentafter}
 \usepackage[normalem]{ulem}
-% \usepackage{imakeidx} \makeindex[intoc]
+ \usepackage{imakeidx}
 % \usepackage{ifthen}
 \usepackage{chngcntr}
 \usepackage{realscripts}
@@ -139,6 +139,14 @@ Extension=.otf]
 
 \DeclareFloatingEnvironment[ name={Esimerkki} ]{esimerkki}
 
+\indexsetup{level=\section*, toclevel=section, noclearpage}
+\makeindex[name=paketit, title={Makropaketit}, columns=2, columnsep=1em,
+intoc]
+\makeindex[name=komennot, title={Komennot}, columns=2, columnsep=1em,
+intoc]
+\makeindex[name=ymparistot, title={Ympäristöt}, columns=2, columnsep=1em,
+intoc]
+
 \renewcommand{\theFancyVerbLine}
 {\sffamily\versaalinum\fontsize{6bp}{7bp}\selectfont\arabic{FancyVerbLine}}
 
@@ -202,12 +210,18 @@ Extension=.otf]
 \definecolor{tavu}{rgb}{1,0,0}
 
 \newcommand{\keno}{\textbackslash}
-\newcommand{\koodi}[1]{\texttt{#1}}
 \newcommand{\marginaali}[1]{\marginpar{\RaggedRight\footnotesize #1}}
+
+\newcommand{\koodi}[1]{\texttt{#1}}
 \newcommand{\koodimargin}[1]{\marginaali{\koodi{#1}}}
+\newcommand{\komento}[1]{\koodi{\keno #1}\index[komennot]{\koodi{\keno #1}}}
+\newcommand{\komentomargin}[1]{\marginaali{\koodi{\keno #1}}}
+\newcommand{\ymparisto}[1]{\koodi{#1}\index[ymparistot]{\koodi{#1}}}
+\newcommand{\ymparistomargin}[1]{\marginaali{\koodi{#1}}}
+
 \newcommand{\tavukohta}{\textcolor{tavu}{\raisebox{-.2ex}{\rule{.6bp}{2ex}}}}
 \newcommand{\uctunnus}[1]{\textsc{\englanti{#1}}}
-\newcommand{\paketti}[1]{\textsf{#1}}
+\newcommand{\paketti}[1]{\textsf{#1}\index[paketit]{#1}}
 \newcommand{\avctan}[1]{\footnote{\url{https://www.ctan.org/pkg/#1}}}
 
 \newcommand{\ots}[1]{{\sffamily\bfseries #1}}
@@ -639,6 +653,9 @@ yhtenäinen ulkoasu ja typografia.
 
 \printbibliography[heading=none]
 
-%\printindex
+\chapter{Asiahakemisto}
+\printindex[paketit]
+\printindex[komennot]
+\printindex[ymparistot]
 
 \end{document}

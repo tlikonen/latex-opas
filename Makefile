@@ -1,4 +1,5 @@
 nimi = kaytannollista_latexia
+hakemistot = paketit ymparistot komennot mitat
 latex = lualatex -interaction=nonstopmode
 
 $(nimi).pdf: *.tex *.bib
@@ -8,9 +9,11 @@ $(nimi).pdf: *.tex *.bib
 	$(latex) $(nimi)
 
 clean:
-	rm -f $(nimi).aux $(nimi).bbl $(nimi).bcf $(nimi).blg \
-		$(nimi).fdb_latexmk $(nimi).fls $(nimi).log $(nimi).out \
-		$(nimi).run.xml $(nimi).toc *.idx *.ind *.ilg
+	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls log out \
+		run.xml toc) texput.log
+	rm -f $(addsuffix .idx,$(hakemistot)) \
+		$(addsuffix .ind,$(hakemistot)) \
+		$(addsuffix .ilg,$(hakemistot))
 
 distclean: clean
 	rm -f $(nimi).pdf

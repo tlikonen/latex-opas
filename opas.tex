@@ -229,6 +229,7 @@ Extension=.otf]
 \newcommand{\ymparistoi}[1]{\index[ymparistot]{\ymparistox{#1}}}
 \newcommand{\ymparisto}[1]{\ymparistox{#1}\ymparistoi{#1}}
 \newcommand{\ymparistomargin}[1]{\koodimargin{#1}}
+\newcommand{\ymparistom}[1]{\ymparisto{#1}\ymparistomargin{#1}}
 
 \newcommand{\mittax}[1]{\koodi{\keno #1}}
 \newcommand{\mittai}[1]{\index[mitat]{\mittax{#1}}}
@@ -243,6 +244,8 @@ Extension=.otf]
 \newcommand{\pakettix}[1]{\textsf{#1}}
 \newcommand{\pakettii}[1]{\index[paketit]{\pakettix{#1}}}
 \newcommand{\paketti}[1]{\pakettix{#1}\pakettii{#1}}
+\newcommand{\pakettimargin}[1]{\marginaali{\pakettix{#1}}}
+\newcommand{\pakettim}[1]{\paketti{#1}\pakettimargin{#1}}
 
 \newcommand{\tavukohta}{\textcolor{tavu}{\raisebox{-.2ex}{\rule{.6bp}{2ex}}}}
 \newcommand{\uctunnus}[1]{\textsc{\englanti{#1}}}

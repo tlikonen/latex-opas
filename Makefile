@@ -10,10 +10,10 @@ $(nimi).pdf: *.tex *.bib
 
 clean:
 	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls log out \
-		run.xml toc) texput.log
-	rm -f $(addsuffix .idx,$(hakemistot)) \
-		$(addsuffix .ind,$(hakemistot)) \
-		$(addsuffix .ilg,$(hakemistot))
+		run.xml toc xdv) texput.log
+	rm -f $(addsuffix .idx,$(hakemistot))
+	rm -f $(addsuffix .ind,$(hakemistot))
+	rm -f $(addsuffix .ilg,$(hakemistot))
 
 distclean: clean
 	rm -f $(nimi).pdf

@@ -1150,11 +1150,109 @@ joilla vaikutetaan tietokonekoodin latomiseen. Koodiin saa mukaan
 esimerkiksi rivinumerot, ja sen voi latoa kehyksen sisään. Myös koodin
 sisennykseen, fontin kokoon ja väreihin voi vaikuttaa.
 
-\subsection{Verkko-osoitteet eli hyperlinkit}
+\subsection{Verkko-osoitteet}
 
-...
+Verkko\-/osoitteiden eli internetin linkkien latominen voi olla
+pienoinen typografinen ongelma: osoitteet ovat pitkiä, eivätkä ne
+sisällä välilyöntejä, joista ne voisi luontevasti katkaista rivin
+vaihtumisen kohdalla. Tavuviivojen lisääminen rivin loppuun voi olla
+ongelmallista, koska kyse on teknisestä merkkijonosta, joka pitäisi
+tulkita kirjaimellisesti.
 
-% hyperref-paketti
+Parasta olisi latoa verkko\-/osoitteet leipäteksti ulkopuolelle,
+esimerkiksi sivun alareunaan alaviitteeksi (luku
+\ref{luku:alaviitteet}). Tällä tavoin pitkät ja joskus rumat osoitteet
+eivät häiritse leipätekstin lukemista mutta ovat silti lukijan
+saatavilla.
+
+Latexissa verkko\-/osoitteet kannattaa toteuttaa siihen tarkoitetun
+makropaketin avulla. Paketti \paketti{hyper\-ref}\avctan{hyperref}
+sisältää toimintoja paitsi verkko\-/ osoitteiden latomiseen mutta myös
+dokumentin ristiviitteiden hallintaan. Paketin avulla valmiin pdf\-/
+tiedoston verkkolinkit toimivat, eli pdf\-/lukijassa linkkiä
+napsauttamalla pitäisi avautua verkkoselain ja linkin osoittama sivu.
+
+Makropaketin käyttämisen typografinen hyöty on se, että rivin vaihdon
+kohdalle sattuvat verkko\-/ osoitteet katkaistaan automaattisesti
+luontevista kohdista eli vain tiettyjen välimerkkien jälkeen.
+Tavuviivoja ei lisätä rivin loppuun. Myös typografiset ligatuurit (luku
+\ref{luku:typo_liga}) kytketään pois päältä.
+
+\paketti{hyper\-ref}\-/paketin ohjekirja neuvoo lataamaan paketin
+viimeisenä eli muiden makropakettien lataamisen jälkeen, koska se
+muokkaa joidenkin muualla määriteltyjen komentojen ominaisuuksia.
+
+\begin{koodilohkosis}
+  \usepackage{hyperref}  % paketin lataaminen
+  \hypersetup{hidelinks} % linkeistä pois kehykset
+  \urlstyle{same}        % linkkien fontti
+\end{koodilohkosis}
+
+Edellisen esimerkin komennolla \komento{hyper\-setup} vaikutetaan
+makropaketin asetuksiin. Oletuksena esimerkiksi linkkien ympärille
+ladotaan värilliset kehykset, mutta valitsin \koodi{hide\-links} poistaa
+ne. Valitsimella \koodi{url\-color} voisi vaihtaa verkko\-/osoitteiden
+kehyksen väriä.
+
+Esimerkin seuraava komento \komento{url\-style} määrittää, mitä
+kirjainperhettä käytetään verkko\-/ osoitteiden latomiseen. Komennon
+argumentti \koodi{same} tarkoittaa, että käytetään samaa kirjainperhettä
+kuin ympärillä olevassa tekstissä. Tietty kiinteä kirjainperhe valitaan
+\komento{url\-style}\-/ komennon argumentilla \koodi{rm} (antiikva,
+roman), \koodi{sf} (groteski, sans serif) tai \koodi{tt} (tasalevyinen).
+Oletusasetus on tasalevyinen kirjainperhe.
+
+Verkko\-/ osoitteiden ilmaisemisen peruskomento on \komento{href},
+\koodimargin{\keno href} jolle annetaan kaksi pakollista argumenttia:
+ensimmäinen on varsinainen osoite ja toinen on dokumenttiin ladottava
+teksti. Linkin teksti voi siis olla mitä hyvänsä tekstiä, ja pdf\-/
+lukijassa tekstiä napsauttamalla linkin osoittama sivusto avautuu.
+
+\begin{koodilohkosis}
+  \href{https://www.ctan.org/}{CTAN-sivusto}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \href{https://www.ctan.org/}{CTAN-sivusto}
+\end{tulossis}
+
+Kun halutaan latoa dokumenttiin itse verkko\-/osoite, käytetään komentoa
+\komento{url}, \komentomargin{url} joka osaa katkaista osoitteet
+järkevällä tavalla rivin lopussa. Komennolle annetaan vain yksi
+argumentti, verkko\-/osoite.
+
+\begin{koodilohkosis}
+  \url{https://www.ctan.org/}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \url{https://www.ctan.org/}
+\end{tulossis}
+
+Jos halutaan latoa dokumenttiin verkko\-/osoite, joka ei ole
+pdf\-/dokumentissa napsautettava linkki, käytetään komentoa
+\komento{no\-link\-url}. \komentomargin{no\-link\-url} Tämän komennon
+argumenttina oleva verkko\-/osoite ainoastaan ladotaan osoitteiden
+tavoin.
+
+Linkkinä toimivien sähköpostiosoitteiden latominen vaatii
+\komento{href}- ja \komento{no\-link\-url}\-/komentojen yhdistämistä.
+Linkin alkuun täytyy lisätä sana \koodi{mailto:}, mutta tuota sanaa
+tuskin halutaan näkyviin itse dokumenttiin. Niinpä sähköpostiosoite
+kannattaa kirjoittaa seuraavalla tavalla:
+
+\begin{koodilohkosis}
+  \href{mailto:tunnus@osoite.net}{\nolinkurl{tunnus@osoite.net}}
+\end{koodilohkosis}
+
+Osoite pitää siis kirjoittaa kaksi kertaa: itse linkkiä varten ja
+dokumenttiin ladottavaa tekstiä varten. Omaa työtä kannattaa helpottaa
+määrittelemällä sähköpostiosoitteita varten oma komento, esimerkiksi
+seuraavalla tavalla:
+
+\begin{koodilohkosis}
+  \newcommand{\sposti}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+\end{koodilohkosis}
 
 \section{Sivun vaihto ja sivujen tasaaminen}
 

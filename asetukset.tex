@@ -25,10 +25,10 @@ asetusten määrittelyä ja mahdollisuuksia melko perusteellisesti.
 Latexin lähdedokumenttien alussa on aina samankaltainen rivi, joka
 määrittelee käytettävän dokumenttiluokan ja mahdollisesti dokumentin
 pe\-rus\-ase\-tuk\-sia. Dokumenttiluokka määritellään komennolla
-\koodi{\keno documentclass} ja sen argumentiksi annetaan
-dokumenttiluokan nimi. Valinnaisilla argumenteilla vaikutetaan
-asetuksiin.
+\komento{documentclass} ja sen argumentiksi annetaan dokumenttiluokan
+nimi. Valinnaisilla argumenteilla vaikutetaan asetuksiin.
 
+\komentoi{documentclass}
 \begin{koodilohkosis}
   \documentclass[a4paper, 12pt]{article}
 \end{koodilohkosis}
@@ -37,8 +37,8 @@ Dokumenttiluokka on eräänlainen pohjadokumentti eli ominaisuuksien ja
 asetusten kokoelma, jonka varaan oma dokumentti kirjoitetaan. Eri
 dokumenttiluokat sisältävät erilaisia ominaisuuksia ja erilaiset
 oletusasetukset. Edellä olevassa esimerkissä käytettiin
-\koodi{article}\-/luokkaa, joka on yleiskäyttöinen luokka
-monenlaisten dokumenttien kirjoittamiseen.
+\luokka{article}\-/ luokkaa, joka on yleiskäyttöinen luokka monenlaisten
+dokumenttien kirjoittamiseen.
 
 Seuraavissa alaluvuissa käsitellään tavallisimpia dokumenttiluokkia ja
 niiden asetuksia. Dokumenttiluokkia voi tehdä itsekin, ja sitä aihetta
@@ -55,58 +55,55 @@ kehitetään Latexin perusosien ulkopuolella, ja niiden ominaisuudet
 voivat muuttua ja kehittyä nopeammin ajan myötä.
 
 Normaalit paperisivuihin perustuvat dokumentit tehdään luokkien
-\koodi{article}, \koodi{report} tai \koodi{book} avulla.
-\koodimargin{article} \koodimargin{report} \koodimargin{book} Ne ovat
+\luokkam{article}, \luokkam{report} tai \luokkam{book} avulla. Ne ovat
 keskenään hyvin samanlaisia, mutta niiden oletusasetukset poikkeavat
-toisistaan. Karkeasti jaoteltuna \koodi{article}\-/luokka on tarkoitettu
-lyhyehköille artikkeleille ja yleiseksi perustaksi monenlaisille
-dokumenteille. Sen sijaan \koodi{report} ja \koodi{book} on tarkoitettu
-laajoihin dokumentteihin, ja niissä on kirja\-typo\-grafian piirteitä.
+toisistaan. Karkeasti jaoteltuna \luokka{article}\-/ luokka on
+tarkoitettu lyhyehköille artikkeleille ja yleiseksi perustaksi
+monenlaisille dokumenteille. Sen sijaan \luokka{report} ja \luokka{book}
+on tarkoitettu laajoihin dokumentteihin, ja niissä on
+kirja\-typo\-grafian piirteitä.
 
 Suurin edellä mainittujen perusluokkien ero on otsikoinnissa ja
-dokumentin jäsentämisessä: \koodi{report} ja \koodi{book} sisältävät
-suuret pääluvut (\koodi{\keno chapter}) eli otsikot, jotka alkavat
-tyhjältä sivulta; \koodi{article} ei sisällä samanlaisia päälukuja vaan
+dokumentin jäsentämisessä: \luokka{report} ja \luokka{book} sisältävät
+suuret pääluvut (\komento{chapter}) eli otsikot, jotka alkavat tyhjältä
+sivulta; \luokka{article} ei sisällä samanlaisia päälukuja vaan
 ainoastaan tavalliset leipätekstin mukana kulkevat väliotsikot
-(\koodi{\keno section}, \koodi{\keno subsection} jne.). Tekstin
-jäsentämistä ja otsikointia käsitellään tarkemmin luvussa
-\ref{luku:jäsennys}.
+(\komento{section}, \komento{subsection} jne.). Tekstin jäsentämistä ja
+otsikointia käsitellään tarkemmin luvussa \ref{luku:jäsennys}.
 
-Toinen ero perusluokkien välillä on se, että vain \koodi{book}\-/luokka
-sisältää komennot \koodi{\keno frontmatter}, \koodi{\keno mainmatter} ja
-\koodi{\keno backmatter}, joita voi käyttää ilmaisemaan tietokirjan
+Toinen ero perusluokkien välillä on se, että vain \luokka{book}\-/
+luokka sisältää komennot \komento{frontmatter}, \komento{mainmatter} ja
+\komento{backmatter}, joita voi käyttää ilmaisemaan tietokirjan
 erityyppiset osat: esittely\-/, sisältö\-/{} ja liitesivut. Näitä
 käsitellään luvussa \ref{luku:frontmainbackmatter}. Lisäksi
-\koodi{report}\-/luokka sisältää ympäristön \koodi{ab\-stract}, joka on
-tarkoitettu tekstin tiivis\-telmä\-osan tekemiseen;
-\koodi{book}\-/luokassa sitä ei ole.
+\luokka{report}\-/ luokka sisältää ympäristön \ymparisto{abstract}, joka
+on tarkoitettu tekstin tiivis\-telmä\-osan tekemiseen; \luokka{book}\-/
+luokassa sitä ei ole.
 
 Muut erot koskevat lähinnä oletusasetuksia, mutta asetukset ovat
 tietenkin muutettavissa, eivätkä ne siten ole määräävä tekijä
-valittaessa luokkien \koodi{article}, \koodi{report} ja
-\koodi{book} välillä. Dokumenttiluokkien asetuksia käsitellään
-seuraavassa alaluvussa.
+valittaessa luokkien \luokka{article}, \luokka{report} ja \luokka{book}
+välillä. Dokumenttiluokkien asetuksia käsitellään seuraavassa
+alaluvussa.
 
-Muita perusdokumenttiluokkia ovat \koodi{let\-ter} \koodimargin{letter}
-ja \koodi{slides}. Nimensä mukaisesti \koodi{let\-ter} on kirjeiden
-kirjoittamista varten. Se sisältää kirjeen tyypilliseen rakenteeseen
-liittyviä komentoja ja soveltuu varsinkin tarpeisiin, joissa täytyy
-automaattisesti tuottaa samanmuotoisia kirjeitä usealle
-vas\-taan\-otta\-jalle. Sama Latex\-/dokumentti voi sisältää useita
-kirjeitä, ja sivunumerointi ja alaviitteiden numerointi alkaa joka
-kirjeessä alusta -- kuten on tietysti toivottavaa.
-\koodi{letter}\-/luokkaa käsitellään tarkemmin luvussa
-\ref{luku:kirjeet}.
+Muita perusdokumenttiluokkia ovat \luokkam{let\-ter} ja \luokka{slides}.
+Nimensä mukaisesti \luokka{let\-ter} on kirjeiden kirjoittamista varten.
+Se sisältää kirjeen tyypilliseen rakenteeseen liittyviä komentoja ja
+soveltuu varsinkin tarpeisiin, joissa täytyy automaattisesti tuottaa
+samanmuotoisia kirjeitä usealle vas\-taan\-otta\-jalle. Sama
+Latex\-/dokumentti voi sisältää useita kirjeitä, ja sivunumerointi ja
+alaviitteiden numerointi alkaa joka kirjeessä alusta -- kuten on
+tietysti toivottavaa. \luokka{letter}\-/luokkaa käsitellään tarkemmin
+luvussa \ref{luku:kirjeet}.
 
 Piirtoheittimien läpinäkyvien kalvojen ja sen kaltaisten dokumenttien
-tekemiseen on dokumenttiluokka \koodi{slides}. \koodimargin{slides}
-Piirtoheittimet ovat jääneet menneisyyteen, ja nykyään jokseenkin
-vastaavanlainen rooli on esi\-tys\-gra\-fiikka\-ohjel\-milla, joilla
-tehdään dia\-esi\-tyk\-siä esimerkiksi esitelmien havaintomateriaaliksi.
-\koodi{slides}\-/luokkaa ei varmaan tarvita enää mihinkään, mutta
-esi\-tys\-gra\-fiik\-kaan on olemassa erittäin monipuolinen luokka
-\koodi{beamer}, jonka perus\-asioita käsitellään luvussa
-\ref{luku:diaesitykset}.
+tekemiseen on dokumenttiluokka \luokkam{slides}. Piirtoheittimet ovat
+jääneet menneisyyteen, ja nykyään jokseenkin vastaavanlainen rooli on
+esi\-tys\-gra\-fiikka\-ohjel\-milla, joilla tehdään dia\-esi\-tyk\-siä
+esimerkiksi esitelmien havaintomateriaaliksi. \luokka{slides}\-/ luokkaa
+ei varmaan tarvita enää mihinkään, mutta esi\-tys\-gra\-fiik\-kaan on
+olemassa erittäin monipuolinen luokka \luokka{beamer}, jonka
+perus\-asioita käsitellään luvussa \ref{luku:diaesitykset}.
 
 \subsection{Perusdokumenttiluokkien asetukset}
 
@@ -137,10 +134,10 @@ dokumentin asetuksiin.
   \label{tlk:luokkavalitsimet}
 }
 
-Sivu on oletuksena pysty\-asen\-nossa, mutta valitsin \koodi{landscape}
-\koodimargin{landscape} asettaa sen vaaka\-/asentoon. Tämä asetus koskee
-dokumentin kaikkia sivuja, mutta jos haluaa asettaa vain yksittäisiä
-sivuja vaaka\-/asentoon, täytyy käyttää
+Sivu on oletuksena pysty\-asen\-nossa, mutta valitsin \koodim{landscape}
+asettaa sen vaaka\-/asentoon. Tämä asetus koskee dokumentin kaikkia
+sivuja, mutta jos haluaa asettaa vain yksittäisiä sivuja
+vaaka\-/asentoon, täytyy käyttää
 \paketti{pdf\-lscape}\-/pakettia\avctan{pdflscape} ja sen tarjoamaa
 ympäristöä.
 
@@ -149,13 +146,12 @@ Sivun koon ja muitakin mittoja voi määritellä monipuolisemmin
 \ref{luku:sivuasetukset}). Jos sitä pakettia käyttää, ei näitä
 dokumenttiluokan sivu\-koko\-ase\-tuk\-sia tarvita välttämättä lainkaan.
 
-Leipätekstin fontin koon voi määrittää valitsimilla \koodi{10pt},
-\koodimargin{10pt} \koodimargin{11pt} \koodimargin{12pt} \koodi{11pt} ja
-\koodi{12pt}, joista ensin mainittu on oletus. Lyhenne pt tarkoittaa
-typografista pistemittaa, joita käsitellään luvussa \ref{luku:mitat}.
-Nämä asetukset vaikuttavat myös sivun marginaaleihin, koska fontin koko
-vaikuttaa tekstiriville mahtuvien merkkien määrään ja Latex pyrkii
-pitämään rivit sopivan mittaisina lukemisen kannalta.
+Leipätekstin fontin koon voi määrittää valitsimilla \koodim{10pt},
+\koodim{11pt} ja \koodim{12pt}, joista ensin mainittu on oletus. Lyhenne
+pt tarkoittaa typografista pistemittaa, joita käsitellään luvussa
+\ref{luku:mitat}. Nämä asetukset vaikuttavat myös sivun marginaaleihin,
+koska fontin koko vaikuttaa tekstiriville mahtuvien merkkien määrään ja
+Latex pyrkii pitämään rivit sopivan mittaisina lukemisen kannalta.
 
 Vain kolme eri fonttikokoa leipätekstille on kovin vähän ja peräisin
 ajalta, jolloin Latexin fontit olivat pik\-seli\-gra\-fiik\-kaa eli
@@ -168,29 +164,29 @@ silti käyttää, jos niiden avulla saa halutun lopputuloksen. Fontteja
 käsitellään tarkemmin luvussa \ref{luku:kirjaintyypit}.
 
 Dokumentista voi latoa luonnosversion käyttämällä dokumenttiluokan
-valitsinta \koodi{draft}. \koodimargin{draft} Luonnoksena ladottuun
-dokumenttiin tulevat merkityksi (musta suorakulmio) ainakin
-tekstipalstan yli pursuavat rivit, mikä voi auttaa tekstikappaleiden
-ulkoasun korjailussa (luku \ref{luku:kappale}). Eri makropaketit voivat
-hyödyntää \koodi{draft}\-/valitsinta omalla tavallaan eli muuttaa
-toimintaansa sen perusteella. Esimerkiksi grafiikkaan liittyvä paketti
-\paketti{graph\-icx} (luku \ref{luku:grafiikka}) jättää luonnosversiosta
-kuvat pois, ja niiden paikalla on vain suorakulmio. Pdf\-/tiedoston
-ristiviitteistä huolehtiva \paketti{hyper\-ref}\-/paketti jättää pdf:n
-sisäiset ristiviitteet ja sisällysluettelon tekemättä (luku
-\ref{luku:ristiviitteet}). Latominen voi nopeutua huomattavasti.
+valitsinta \koodim{draft}. Luonnoksena ladottuun dokumenttiin tulevat
+merkityksi (musta suorakulmio) ainakin tekstipalstan yli pursuavat
+rivit, mikä voi auttaa tekstikappaleiden ulkoasun korjailussa (luku
+\ref{luku:kappale}). Eri makropaketit voivat hyödyntää \koodi{draft}\-/
+valitsinta omalla tavallaan eli muuttaa toimintaansa sen perusteella.
+Esimerkiksi grafiikkaan liittyvä paketti \paketti{graph\-icx} (luku
+\ref{luku:grafiikka}) jättää luonnosversiosta kuvat pois, ja niiden
+paikalla on vain suorakulmio. Pdf\-/tiedoston ristiviitteistä huolehtiva
+\paketti{hyper\-ref}\-/paketti jättää pdf:n sisäiset ristiviitteet ja
+sisällysluettelon tekemättä (luku \ref{luku:ristiviitteet}). Latominen
+voi nopeutua huomattavasti.
 
-Lopullinen ladontatila on \koodi{final}, \koodimargin{final} joka
-tarkoittaa, että dokumenttiin ladotaan kaikki sisältö ja ominaisuudet
-niin kuin se on tarkoitettu julkaistavaksi. Tätä valitsinta ei tarvitse
-käyttää, koska se on oletustila.
+Lopullinen ladontatila on \koodim{final}, joka tarkoittaa, että
+dokumenttiin ladotaan kaikki sisältö ja ominaisuudet niin kuin se on
+tarkoitettu julkaistavaksi. Tätä valitsinta ei tarvitse käyttää, koska
+se on oletustila.
 
-Sivujen yksipuolisuus \koodimargin{oneside} \koodimargin{twoside}
-(\koodi{one\-side}) ja kaksipuolisuus (\koodi{two\-side}) ovat
-asetuksia, jotka vaikuttavat sivun marginaalien asetuksiin ja
-mahdollisesti uuden pääluvun (\koodi{\keno chapter}) aloitukseen. Oletus
-on yksipuolinen dokumentti kaikissa muissa perusdokumenttiluokissa
-paitsi \koodi{book}\-/luokassa, jonka oletus on kaksipuolinen.
+Sivujen yksipuolisuus (\koodim{oneside}) ja kaksipuolisuus
+(\koodim{twoside}) ovat asetuksia, jotka vaikuttavat sivun marginaalien
+asetuksiin ja mahdollisesti uuden pääluvun (\komento{chapter})
+aloitukseen. Oletus on yksipuolinen dokumentti kaikissa muissa
+perusdokumenttiluokissa paitsi \luokka{book}\-/ luokassa, jonka oletus
+on kaksipuolinen.
 
 Yksipuolisessa dokumentissa kaikkien sivujen marginaalit ovat
 lähtökohtaisesti samanlaisia ja asetuksissa puhutaan esimerkiksi
@@ -205,51 +201,47 @@ marginaalihuomautuksille (luku \ref{luku:marginaalihuomautukset}).
 Marginaaleja ja muita sivun asetuksia käsitellään tarkemmin luvussa
 \ref{luku:sivuasetukset}.
 
-Jos dokumentti on määritetty kaksipuoliseksi (\koodi{two\-side}),
-voidaan \koodi{open\-right}\-/valitsimella \koodimargin{openright}
-määrittää pääluvut (\koodi{\keno chapter}) alkamaan aina
-oikeanpuoleiselta sivulta. Se onkin oletus dokumenttiluokassa
-\koodi{book}. Valitsin \koodi{open\-any} \koodimargin{openany} asettaa
-pääluvut alkamaan miltä tahansa seuraavalta sivulta.
+Jos dokumentti on määritetty kaksipuoliseksi (\koodi{twoside}), voidaan
+\koodim{open\-right}\-/ valitsimella määrittää pääluvut
+(\komento{chapter}) alkamaan aina oikeanpuoleiselta sivulta. Se onkin
+oletus dokumenttiluokassa \luokka{book}. Valitsin \koodim{open\-any}
+asettaa pääluvut alkamaan miltä tahansa seuraavalta sivulta.
 
-Valitsin \koodi{open\-bib} \koodimargin{openbib} liittyy automaattiseen
-lähdeluettelon muotoiluun. Jos tämä valitsin on mukana, automaattisessa
-lähdeluettelon muotoilussa lisätään rivinvaihtoja lähdemerkinnän eri
-osien kuten teoksen tekijöiden ja teoksen nimen jälkeen. Lähdemerkintöjä
-ja lähdeluettelon laatimista käsitellään luvussa \ref{luku:lähteet}.
+Valitsin \koodim{open\-bib} liittyy automaattiseen lähdeluettelon
+muotoiluun. Jos tämä valitsin on mukana, automaattisessa lähdeluettelon
+muotoilussa lisätään rivinvaihtoja lähdemerkinnän eri osien kuten
+teoksen tekijöiden ja teoksen nimen jälkeen. Lähdemerkintöjä ja
+lähdeluettelon laatimista käsitellään luvussa \ref{luku:lähteet}.
 
-Matemaattisten kaavojen ladontaan liittyvässä
-\koodi{equa\-tion}\-/ympäristössä kaavat ladotaan normaalisti
-vaakasuunnassa sivun keskelle. Dokumenttiluokan valitsinta \koodi{fleqn}
-\koodimargin{fleqn} käyttämällä kaavat ladotaan kuitenkin sivun
-vasempaan reunaan. Kaavojen numerot sijoitetaan oletuksena sivun oikeaan
-reunaan, mutta valitsimella \koodi{leqno} \koodimargin{leqno} ne saa
-ladottua sivun vasempaan reunaan. Matematiikkatilaa käsitellään luvussa
-\ref{luku:matematiikka}.
+Matemaattisten kaavojen ladontaan liittyvässä \ymparisto{equa\-tion}\-/
+ympäristössä kaavat ladotaan normaalisti vaakasuunnassa sivun keskelle.
+Dokumenttiluokan valitsinta \koodim{fleqn} käyttämällä kaavat ladotaan
+kuitenkin sivun vasempaan reunaan. Kaavojen numerot sijoitetaan
+oletuksena sivun oikeaan reunaan, mutta valitsimella \koodim{leqno} ne
+saa ladottua sivun vasempaan reunaan. Matematiikkatilaa käsitellään
+luvussa \ref{luku:matematiikka}.
 
 Kansilehden tai dokumentin perustietojen esitystapaan vaikutetaan
-valitsimilla \koodi{title\-page} \koodimargin{titlepage} ja
-\koodi{no\-title\-page}. \koodimargin{notitlepage} Latexissa on
-yksinkertaiset komennot dokumentin perustietojen eli pääotsikon,
+valitsimilla \koodim{title\-page} ja \koodim{no\-title\-page}. Latexissa
+on yksinkertaiset komennot dokumentin perustietojen eli pääotsikon,
 tekijöiden nimien ja päiväyksen latomiseen (luku \ref{luku:kansilehti}),
 ja näillä valitsimilla vaikutetaan siihen, ladotaanko perustiedot omalle
-sivulleen (\koodi{title\-page}) vaiko varsinaisen sisältösivun alkuun
+sivulleen (\koodi{title\-page}) vaiko ensimmäisen sisältösivun alkuun
 (\koodi{no\-title\-page}). Oletus\-asetus vaihtelee eri
 dokumenttiluokissa.
 
 Oletuksena sivun tekstit ladotaan yhdelle palstalle
-(\koodi{one\-column}), \koodimargin{onecolumn} mutta valitsimella
-\koodi{two\-column} \koodimargin{twocolumn} teksti ladotaan kahdelle
-palstalle. Nämä valitsimet vaikuttavat myös sivun marginaaleihin.
-Latexin perusosat eivät hallitse useampaa kuin kaksi palstaa, mutta
-\paketti{multicol}\-/makropaketin avulla saa enemmänkin. Palstoja
-käsitellään luvussa \ref{luku:palstat}.
+(\koodim{onecolumn}), mutta valitsimella \koodim{twocolumn} teksti
+ladotaan kahdelle palstalle. Nämä valitsimet vaikuttavat myös sivun
+marginaaleihin. Latexin perusosat eivät hallitse useampaa kuin kaksi
+palstaa, mutta \paketti{multicol}\-/makropaketin avulla saa enemmänkin.
+Palstoja käsitellään luvussa \ref{luku:palstat}.
 
-Dokumenttiluokassa \koodi{slides} toimii \koodi{clock}\-/valitsin,
-\koodimargin{clock} joka latoo kellon\-ajan piirtoheitinkalvon loppuun
-\koodi{\keno note}\-/komennon yhteydessä. Tämä valitsin kuulunee samaan
-paikkaan kuin piirtoheittimet ja \koodi{slides}\-/luokkakin:
-kierrätykseen.
+Dokumenttiluokassa \luokka{slides} toimii \koodim{clock}\-/ valitsin,
+joka latoo kellon\-ajan piirtoheitinkalvon loppuun \komento{note}\-/
+komennon yhteydessä. Tämä valitsin kuulunee samaan paikkaan kuin
+piirtoheittimet ja \luokka{slides}\-/luokkakin: kierrätykseen tai
+kaatopaikalle.
 
 \subsection{Muita dokumenttiluokkia}
 
@@ -257,29 +249,29 @@ Kuka tahansa voi tehdä ja julkaista omia dokumenttiluokkia, ja niinpä
 perusdokumenttiluokkien lisäksi onkin saatavilla monenlaisia luokkia.
 Tässä käsitellään vain joitakin.
 
-Luokka \koodi{memoir} on Latexin \koodi{book}\-/luokkaan perustuva,
+Luokka \luokka{memoir} on Latexin \luokka{book}\-/luokkaan perustuva,
 ominaisuuksiltaan laajennettu luokka, joka sopii yleiskäyttöön. Tähän
 luokkaan on sisällytetty monia dokumentin rakenteeseen ja ulkoasuun
 liittyviä toimintoja, joihin yleensä tarvitaan erillisiä makropaketteja
 tai muuten lisäkoodia. Sen sijaan, että ratkoisi dokumentin rakenteen ja
 asettelun kysymyksiä erillisten makropakettien avulla, saattaisi olla
-helpompaa lukea (lähes) pelkästään vain \koodi{memoir}\-/luokan
+helpompaa lukea (lähes) pelkästään vain \luokka{memoir}\-/ luokan
 ohjekirjaa ja toteuttaa asiat yhtenäisen järjestelmän avulla.
 
-\koodi{beamer}\-/luokka on monipuolinen ja huippuunsa viritetty luokka
+\luokka{beamer}\-/luokka on monipuolinen ja huippuunsa viritetty luokka
 esi\-tys\-gra\-fii\-kan eli dia\-esi\-tys\-ten tekemiseen. Vastaava
-mutta hieman helppokäyttöisempi luokka on \koodi{pow\-er\-dot}. Nämä
+mutta hieman helppokäyttöisempi luokka on \luokka{pow\-er\-dot}. Nämä
 luokat ovat eräänlaisia Latexin vastineita esimerkiksi
 \englanti{Libreoffice Impress}\-/{} ja \englanti{Microsoft Powerpoint}
 \=/ohjelmille.
 
 Pienempiin, rajattuihin erityistarpeisiin on olemassa useita luokkia.
 Esimerkiksi yksisivuisten taitettavien lehtisten kuten tapahtuman
-käsi\-ohjel\-mien tekemiseen soveltuu \koodi{leaf\-let}\-/luokka.
-\textsc{cd}\-/levyjen kansia voi tehdä \koodi{cd}\-/luokan avulla.
+käsi\-ohjel\-mien tekemiseen soveltuu \luokka{leaf\-let}\-/luokka.
+\textsc{cd}\-/levyjen kansia voi tehdä \luokka{cd}\-/luokan avulla.
 Kuvitettuja seinäkalentereita vartenkin on tehty oma luokkansa,
-\koodi{wall\-cal\-en\-dar}. Kitaran tablatuureja eli otelautakuvaan
-perustuvia nuotteja voi tehdä \koodi{gui\-tar\-tabs}\-/luokan avulla.
+\luokka{wall\-cal\-en\-dar}. Kitaran tablatuureja eli otelautakuvaan
+perustuvia nuotteja voi tehdä \luokka{gui\-tar\-tabs}\-/luokan avulla.
 
 Kaikenlaista on siis olemassa. Saatavilla oleviin dokumenttiluokkiin voi
 tutustua esimerkiksi \englanti{Comprehensive Tex Archive Network}
@@ -294,10 +286,10 @@ taustalla kummittelee paperi\-arkkeihin perustuva julkaisumuoto, vaikka
 dokumenttia ei varsinaisesti tulostettaisi tai painettaisi paperille.
 Tämän vuoksi melkein aina täytyy määrittää sivun asetukset kuten
 paperikoko ja marginaalit. Ne tehdään \paketti{geometry}\-/paketin
-avulla, jota käsitellään luvussa \ref{luku:sivun_mitat}. Joskus
-halutaan muokata sivun ylä- tai alatunnistetta eli verrattain pysyviä
+avulla, jota käsitellään luvussa \ref{luku:sivun_mitat}. Joskus halutaan
+muokata sivun ylä- tai alatunnistetta eli verrattain pysyviä
 tunnistetietoja, jotka toistuvat joka sivulla ylä- tai alareunassa.
-Niiden muokkaamiseen käytetään \paketti{fancy\-hdr}\-/pakettia, jonka
+Niiden muokkaamiseen käytetään \paketti{fancyhdr}\-/ pakettia, jonka
 ohjeita on luvussa \ref{luku:yla_ala_tunnisteet}.
 
 \subsection{Sivun koko ja marginaalit}
@@ -310,23 +302,28 @@ asetetaan paperikoko (\koodi{a4\-paper} eli \textsc{a4}-koko), ylä- ja
 alamarginaalin pituus (\koodi{top}, \koodi{bottom}) sekä vasemman ja
 oikean marginaalin pituus (\koodi{left}, \koodi{right}).
 
+\komentoi{usepackage}
 \begin{koodilohkosis}
   \usepackage[a4paper, top=20mm, bottom=30mm,
     left=20mm, right=20mm]{geometry}
 \end{koodilohkosis}
 
-Vaihtoehtoisesti asetukset voi ilmaista erikseen \koodi{\keno
-  geometry}\-/komennon avulla seuraavalla tavalla:
+Vaihtoehtoisesti asetukset voi ilmaista erikseen \komento{geometry}\-/
+komennon avulla seuraavalla tavalla:
 
+\komentoi{usepackage}
+\komentoi{geometry}
 \begin{koodilohkosis}
   \usepackage{geometry}
   \geometry{a4paper, top=20mm, bottom=30mm, left=20mm, right=20mm}
 \end{koodilohkosis}
 
 Mikäli myöhemmin dokumentissa täytyy vaihtaa sivun asettelua, käytetään
-komentoa \koodi{\keno new\-geom\-etry}. Alkuperäiset asetukset
-palautetaan komennolla \koodi{\keno re\-store\-geom\-etry}.
+komentoa \komento{newgeometry}. Alkuperäiset asetukset palautetaan
+komennolla \komento{restoregeometry}.
 
+\komentoi{newgeometry}
+\komentoi{restoregeometry}
 \begin{koodilohkosis}
   \newgeometry{top=…, bottom=…, …} % Uudet asetukset.
   \restoregeometry     % Palautetaan alkuperäiset asetukset.
@@ -343,37 +340,37 @@ kuten \koodi{b0j}--\koodi{b6j}, \koodi{ansi\-a\-paper} tai
 \koodi{letter\-paper}.
 
 Mikäli standardit koot eivät riitä, voi sivun mitat määrittää vapaasti
-\koodi{paper\-size}\-/valitsimella, \koodimargin{papersize} jolle
-annetaan arvoksi leveys- ja korkeusmitta.
+\koodim{paper\-size}\-/ valitsimella, jolle annetaan arvoksi leveys- ja
+korkeusmitta.
 
+\komentoi{geometry}
 \begin{koodilohkosis}
   \geometry{papersize={10cm, 16cm}}
 \end{koodilohkosis}
 
-Sivu on oletuksena pysty\-asen\-nossa (\koodi{por\-trait}),
-\koodimargin{por\-trait} mutta sen voi asettaa vaaka\-/asentoon
-valitsimella \koodi{land\-scape}. \koodimargin{land\-scape} Tämä asetus
-on voimassa koko dokumentin ajan. Jos haluaa asettaa vain yksittäisiä
-sivuja vaaka\-/asentoon, täytyy käyttää
-\paketti{pdf\-lscape}\-/pakettia\avctan{pdflscape} ja sen tarjoamaa
+Sivu on oletuksena pysty\-asen\-nossa (\koodim{por\-trait}), mutta sen
+voi asettaa vaaka\-/asentoon valitsimella \koodim{land\-scape}. Tämä
+asetus on voimassa koko dokumentin ajan. Jos haluaa asettaa vain
+yksittäisiä sivuja vaaka\-/asentoon, täytyy käyttää
+\paketti{pdf\-lscape}\-/ pakettia\avctan{pdflscape} ja sen tarjoamaa
 ympäristöä.
 
 Sivun asetusten suunnittelussa voi olla avuksi valitsin
-\koodi{show\-frame}, \koodimargin{show\-frame} joka piirtää viivat
-marginaalien kohdalle ja merkitsee myös ylä- ja alatunnisteiden sekä
-marginaalihuomautusten rajoja.
+\koodim{show\-frame}, joka piirtää viivat marginaalien kohdalle ja
+merkitsee myös ylä- ja alatunnisteiden sekä marginaalihuomautusten
+rajoja.
 
 Taulukkoon \ref{tlk:sivun_marginaalit} on koottu tärkeimpiä valitsimia
 marginaalien mittojen asettamiseksi. Valitsimille annetaan arvoksi Texin
 mittayksikkö, jotka ovat taulukossa \ref{tlk:mittayksikot}
 (s.~\pageref{tlk:mittayksikot}). Kaksipuolisessa
 \koodimargin{twoside=\katk true} \koodimargin{twoside=\katk false}
-asettelussa (\koodi{two\-side=\katk true}) sivut muodostavat aukeaman
-eli on erikseen vasemmanpuoleinen ja oikeanpuoleinen sivu. Tällöin vasen
-ja oikea marginaali vuorottelevat, ja niitä on havainnollisempaa kutsua
+asettelussa (\koodi{twoside=\katk true}) sivut muodostavat aukeaman eli
+on erikseen vasemmanpuoleinen ja oikeanpuoleinen sivu. Tällöin vasen ja
+oikea marginaali vuorottelevat, ja niitä on havainnollisempaa kutsua
 sisä- ja ulkomarginaaliksi. Marginaalien määrittelyssä voi käyttää
 valitsimen \koodi{left} sijasta valitsinta \koodi{inner}, ja vastaavasti
-\koodi{right}\-/valitsin voidaan korvata \koodi{outer}\-/valitsimella.
+\koodi{right}\-/ valitsin voidaan korvata \koodi{outer}\-/ valitsimella.
 Teknisesti näillä ei ole mitään eroa, mutta nimet ovat ihmisille
 havainnollisempia.
 
@@ -436,6 +433,7 @@ seuraavanlainen: ala-, ulko-, ylä- ja sisämarginaali. Suhdeluvut samassa
 järjestyksessä: 32, 28, 20, 17. \paketti{geometry}\-/paketin
 valitsimilla tämä ilmaistaan seuraavasti:
 
+\komentoi{geometry}
 \begin{koodilohkosis}
   \geometry{hmarginratio=17:28, vmarginratio=20:32}
 \end{koodilohkosis}
@@ -453,28 +451,25 @@ käytäntö tietokirjoissa.
 Marginaalihuomautukset (luku \ref{luku:marginaalihuomautukset})
 sijaitsevat oletuksena sivujen ulkomarginaalissa tai oikeanpuoleisessa
 marginaalissa. Huomautuspalstan leveys asetetaan valitsimella
-\koodi{margin\-par\-width}, \koodimargin{margin\-parwidth} ja palstan
-etäisyys sivun varsinaisesta tekstialueesta määritellään valitsimella
-\koodi{margin\-par\-sep}. \koodimargin{margin\-parsep} Kumpikin valitsin
-tarvitsee argumentiksi mitan. Jos haluaa vaihtaa huomautukset sivun
-vastakkaiseen marginaaliin, lisätään mukaan valitsin
+\koodim{margin\-par\-width}, ja palstan etäisyys sivun varsinaisesta
+tekstialueesta määritellään valitsimella \koodim{margin\-par\-sep}.
+Kumpikin valitsin tarvitsee argumentiksi mitan. Jos haluaa vaihtaa
+huomautukset sivun vastakkaiseen marginaaliin, lisätään mukaan valitsin
 \koodi{reverse\-margin\-par}.
 
-Perus Latex osaa latoa tekstin yhdelle \koodimargin{onecolumn} tai
-kahdelle \koodimargin{twocolumn} palstalle, ja
-\paketti{geometry}\-/paketin valitsimella \koodi{one\-column} tai
-\koodi{two\-column} asetetaan, kumpi tila on oletuksena päällä. Kesken
-dokumentin voi vaihtaa yksipalstaiseen tilaan komennolla \koodi{\keno
-  one\-column} tai kaksipalstaiseen tilaan komennolla \koodi{\keno
-  two\-column}. Käyttämällä
-\paketti{multicol}\-/pakettia\avctan{multicol} voi olla useampiakin kuin
-kaksi palstaa. Palstoja käsitellään tarkemmin luvussa
-\ref{luku:palstat}.
+Perus Latex osaa latoa tekstin yhdelle tai kahdelle palstalle, ja
+\paketti{geometry}\-/ paketin valitsimella \koodim{onecolumn} tai
+\koodim{twocolumn} asetetaan, kumpi tila on oletuksena päällä. Kesken
+dokumentin voi vaihtaa yksipalstaiseen tilaan komennolla
+\komento{onecolumn} tai kaksipalstaiseen tilaan komennolla
+\komento{twocolumn}. Käyttämällä \paketti{multicol}\-/
+pakettia\avctan{multicol} voi olla useampiakin kuin kaksi palstaa.
+Palstoja käsitellään tarkemmin luvussa \ref{luku:palstat}.
 
-Valitsimen \koodi{column\-sep} \koodimargin{column\-sep} avulla
-asetetaan palstojen välinen etäisyys. Tämä valitsin on asettaa mitan
-\koodi{\keno column\-sep}, jota voi muokata myös komennolla \koodi{\keno
-  set\-length}, kuten muitakin Latexin mittoja (luku \ref{luku:mitat}).
+Valitsimen \koodim{column\-sep} avulla asetetaan palstojen välinen
+etäisyys. Tämä valitsin on asettaa mitan \mitta{columnsep}, jota voi
+muokata myös komennolla \komento{setlength}, kuten muitakin Latexin
+mittoja (luku \ref{luku:mitat}).
 
 \subsection{Leikkuuvarat}
 
@@ -501,6 +496,7 @@ Sen sijaan sivun sisäiset mitat täytyy määritellä toisella tavalla,
 käyttämällä valitsinta \koodi{lay\-out} tai \koodi{layout\-size}.
 
 \begin{esimerkki*}
+\komentoi{geometry}
 \begin{koodilohko}
   \geometry{
     papersize={220mm, 307mm},
@@ -530,14 +526,15 @@ painotuotteeseen.
 
 \paketti{geometry}\-/paketin asetuksiin kuuluu pari valitsinta, joilla
 vaikutetaan ylä- ja alatunnisteiden mittoihin. Valitsimella \koodi{head}
-ilmaistaan ylätunnisteen korkeus ja valitsimella \koodi{head\-sep} sen
+ilmaistaan ylätunnisteen korkeus ja valitsimella \koodi{headsep} sen
 etäisyys sivun tekstipalstasta. Alatunnisteen peruslinjan etäisyys
-tekstipalstasta säädetään valitsimella \koodi{foot\-skip}. Taulukkoon
+tekstipalstasta säädetään valitsimella \koodi{footskip}. Taulukkoon
 \ref{tlk:yla_ala_tunnistemitat} on koottu näiden valitsimien merkitys,
 ja seuraavassa on niiden käyttämisestä esimerkki. Mukana on myös
 valitsin \koodi{show\-frame}, joka piirtää sivulle apuviivoja. Se auttaa
 sivun mittojen suunnittelussa.
 
+\komentoi{geometry}
 \begin{koodilohkosis}
   \geometry{head=24bp, headsep=8bp, footskip=12mm, showframe}
 \end{koodilohkosis}
@@ -563,71 +560,74 @@ sivun mittojen suunnittelussa.
 Latexin perusosat eivät sisällä kovin kummoista keinovalikoimaa ylä- ja
 alatunnisteiden muokkaamiseen, mutta pari hyödyllistä sivutyyliä on
 kuitenkin mukana. Ylä- ja alatunnisteet määräytyvät sivutyylin
-perusteella, ja haluttu tyyli asetetaan voimaan komennolla \koodi{\keno
-  page\-style}:
+perusteella, ja haluttu tyyli asetetaan voimaan komennolla
+\komento{pagestyle}:
 
+\komentoi{pagestyle}
 \begin{koodilohkosis}
   \pagestyle{plain}
 \end{koodilohkosis}
 
-Edellä mainittu sivutyyli \koodi{plain} latoo alatunnisteeseen
-sivunumeron. Se on yleensä oletustyyli. \koodimargin{plain} Sivunumero
-on peräisin laskurista \koodi{page} ja sen arvon tulostavasta komennosta
-\koodi{\keno the\-page} (luku \ref{luku:laskurit}). Toinen hyödyllinen
-tyyli on \koodi{empty}, \koodimargin{empty} joka nimensä mukaisesti
-tarkoittaa tyhjää, eli ylä- eikä alatunnisteeseen ei ladota mitään.
+Edellä mainittu sivutyyli \koodim{plain} latoo alatunnisteeseen
+sivunumeron. Se on yleensä oletustyyli. Sivunumero on peräisin
+laskurista \laskuri{page} ja sen arvon tulostavasta komennosta
+\komento{thepage} (luku \ref{luku:laskurit}). Toinen hyödyllinen tyyli
+on \koodim{empty}, joka nimensä mukaisesti tarkoittaa tyhjää, eli ylä-
+eikä alatunnisteeseen ei ladota mitään.
 
 Yksittäiselle sivulle voi asettaa muusta dokumentista poikkeavan
-sivutyylin komennolla \koodi{\keno this\-page\-style}. Komento siis
-vaikuttaa vain sillä hetkellä ladottavan sivun tyyliin, ja sen jälkeen
-palataan taas voimassa olevaan tyyliin, joka on aiemmin määritelty
-komennolla \koodi{\keno page\-style}.
+sivutyylin komennolla \komento{thispagestyle}. Komento siis vaikuttaa
+vain sillä hetkellä ladottavan sivun tyyliin, ja sen jälkeen palataan
+taas voimassa olevaan tyyliin, joka on aiemmin määritelty komennolla
+\komento{pagestyle}.
 
+\komentoi{thispagestyle}
 \begin{koodilohkosis}
   \thispagestyle{empty}
 \end{koodilohkosis}
 
-Sivutyyli \koodi{head\-ings} \koodimargin{headings} latoo
-ylätunnisteeseen aukeaman vasemmanpuoleisille sivuille esimerkiksi
-kirjan pääluvun nimen ja oikeanpuoleisille sivuille meneillään olevan
-alaluvun nimen. Mainitut lukujen nimet tulevat sivun sisäreunaan;
-ulkoreunaan ladotaan sivunumero.
+Sivutyyli \koodim{headings} latoo ylätunnisteeseen aukeaman
+vasemmanpuoleisille sivuille esimerkiksi kirjan pääluvun nimen ja
+oikeanpuoleisille sivuille meneillään olevan alaluvun nimen. Mainitut
+lukujen nimet tulevat sivun sisäreunaan; ulkoreunaan ladotaan
+sivunumero.
 
 Teknisesti ja sisäisesti tämä on toteutettu siten, että pääluvun
-aloittava otsikkokomento (esim. \koodi{\keno chapter}) automaattisesti
-määrittelee joka kerta uudelleen komennon \koodi{\keno left\-mark}, niin
-että se sisältää pääluvun nimen. Sivuja ladottaessa Latex sitten latoo
-ylätunnisteeseen sen, mitä \koodi{\keno left\-mark}\-/komento sattuu
-tulostamaan. Vastaavasti alaluvun otsikkokomento (esim. \koodi{\keno
-  section}) määrittelee uudelleen komennon \koodi{\keno right\-mark},
+aloittava otsikkokomento (esim. \komento{chapter}) automaattisesti
+määrittelee joka kerta uudelleen komennon \komento{leftmark}, niin että
+se sisältää pääluvun nimen. Sivuja ladottaessa Latex sitten latoo
+ylätunnisteeseen sen, mitä \komento{leftmark}\-/komento sattuu
+tulostamaan. Vastaavasti alaluvun otsikkokomento (esim.
+\komento{section}) määrittelee uudelleen komennon \komento{rightmark},
 niin että se sisältää alaluvun nimen. Tämän komennon tulostama teksti
 ladotaan aukeaman oikeanpuoleisille sivuille.
 
 Jos haluaa itse vaikuttaa ylätunnisteen tekstiin, voi käyttää sivutyyliä
-\koodi{my\-head\-ings} \koodimargin{my\-head\-ings} sekä komentoa
-\koodi{\keno mark\-both}, jolla määritellään aukeaman vasemmanpuoleisen
-ja oikeanpuoleisen sivun ylätunnisteen teksti. Tämä komento on
-tarkoitettu suoritettavaksi päälukujen yhteydessä. Komennolla
-\koodi{\keno mark\-right} määritellään pelkästään oikeanpuoleisen sivun
-teksti, ja komento on tarkoitettu suoritettavaksi aina alalukujen
-yhteydessä.
+\koodim{myheadings} sekä komentoa \komento{markboth}, jolla määritellään
+aukeaman vasemmanpuoleisen ja oikeanpuoleisen sivun ylätunnisteen
+teksti. Tämä komento on tarkoitettu suoritettavaksi päälukujen
+yhteydessä. Komennolla \komento{markright} määritellään pelkästään
+oikeanpuoleisen sivun teksti, ja komento on tarkoitettu suoritettavaksi
+aina alalukujen yhteydessä.
 
+\komentoi{markboth}
+\komentoi{markright}
 \begin{koodilohkosis}
   \markboth{vasen}{oikea}  % määrittelee: \leftmark ja \rightmark
   \markright{oikea}        % määrittelee: \rightmark
 \end{koodilohkosis}
 
 Sivunumeroinnin tyyliin voi vaikuttaa esimerkiksi komennolla
-\koodi{\keno page\-number\-ing}, jonka argumentiksi annetaan
-numerointityylin nimi. Ne on koottu taulukkoon
-\ref{tlk:sivu_numerointityylit}.
+\komento{pagenumbering}, jonka argumentiksi annetaan numerointityylin
+nimi. Ne on koottu taulukkoon \ref{tlk:sivu_numerointityylit}.
 
+\komentoi{pagenumbering}
 \begin{koodilohkosis}
   \pagenumbering{roman}
 \end{koodilohkosis}
 
 Edellä mainittu komento määrittelee käytännössä uudelleen komennon
-\koodi{\keno the\-page}, joka on tarkoitettu juuri sivunumerolaskurin
+\komento{thepage}, joka on tarkoitettu juuri sivunumerolaskurin
 latomiseen. Lisätietoa sivunumeroista ja muista laskureista on luvussa
 \ref{luku:laskurit}.
 
@@ -647,26 +647,29 @@ latomiseen. Lisätietoa sivunumeroista ja muista laskureista on luvussa
     \bottomrule
   \end{tabular}
 }{
-  \caption{Sivunumerointityylit \koodi{\keno
-      page\-number\-ing}\-/komennon argumentiksi}
+  \caption{Sivunumerointityylit \komento{pagenumbering}\-/ komennon
+    argumentiksi}
   \label{tlk:sivu_numerointityylit}
 }
 
 \subsubsection{Fancyhdr}
 
 Monipuolisemmin ylä- ja alatunnisteita voi muokata paketin
-\paketti{fancy\-hdr}\avctan{fancyhdr} toimintojen avulla. Silloin
-sivutyylinä voi olla myös \koodi{fancy}: \koodimargin{fancy}
+\paketti{fancyhdr}\avctan{fancyhdr} toimintojen avulla. Silloin
+sivutyylinä voi olla myös \koodim{fancy}:
 
+\komentoi{usepackage}
+\komentoi{pagestyle}
 \begin{koodilohkosis}
   \usepackage{fancyhdr}
   \pagestyle{fancy}
 \end{koodilohkosis}
 
 Kun käytössä on sivutyyli \koodi{fancy}, voi ylä- ja alatunnisteiden
-sisällön asettaa vapaasti komennolla \koodi{\keno fancy\-hf}. Komennon
+sisällön asettaa vapaasti komennolla \komento{fancyhf}. Komennon
 argumenttien merkitys on seuraavanlainen:
 
+\komentoi{fancyhf}
 \begin{koodilohkosis}
   \fancyhf[paikka]{sisältö}
 \end{koodilohkosis}
@@ -697,17 +700,18 @@ seuraavalla tavalla:
     \bottomrule
   \end{tabular}
 }{
-  \caption{\koodi{\keno fancy\-hf}\-/komennon valitsimia ylä- tai
+  \caption{\komento{fancyhf}\-/ komennon valitsimia ylä- tai
     alatunnisteen paikan määrittämiseen}
   \label{tlk:fancyhf_paikat}
 }
 
+\komentoi{fancyhf}
 \begin{koodilohkosis}
   \fancyhf{}  % Tyhjennetään ylä- ja alatunnisteet.
   \fancyhf[HEL,HOR]{\thepage}
 \end{koodilohkosis}
 
-Edellä mainittu komento sijoittaa sivunumeron (\koodi{\keno the\-page})
+Edellä mainittu komento sijoittaa sivunumeron (\komento{thepage})
 ylätunnisteeseen (\koodi{H}) parillisten sivujen (\koodi{E}) vasempaan
 reunaan (\koodi{L}) ja parittomien sivujen (\koodi{O}) oikeaan reunaan
 (\koodi{R}). Käytännössä siis aukeaman ulkoreunoihin ladotaan
@@ -715,27 +719,32 @@ sivunumerot. Seuraava esimerkki sijoittaa ajatusviivoilla (\==)
 reunustetun sivunumeron kaikille sivuille alatunnisteeseen (\koodi{F})
 sivun keskelle (\koodi{C}):
 
+\komentoi{fancyhf}
+\komentoi{thepage}
 \begin{koodilohkosis}
   \fancyhf[FC]{-- \thepage\ --}
 \end{koodilohkosis}
 
-Makropaketin \paketti{fancy\-hdr} avulla voi myös määritellä Latexin
+Makropaketin \paketti{fancyhdr} avulla voi myös määritellä Latexin
 sivutyylejä toisenlaiseksi tai luoda kokonaan omia sivutyylejä. Nämä
-tehdään komennolla \koodi{\keno fancy\-page\-style}, jonka ensimmäinen
+tehdään komennolla \komento{fancypagestyle}, jonka ensimmäinen
 argumentti on sivutyylin nimi ja toinen argumentti on sivutyylin
-määritelmä. Määritelmä sisältää tarvittavat \koodi{\keno
-  fancy\-hf}\-/komennot, joilla ylä- ja alatunnisteet määritellään.
+määritelmä. Määritelmä sisältää tarvittavat \komento{fancyhf}\-/
+komennot, joilla ylä- ja alatunnisteet määritellään.
 
-Seuraava esimerkki tekee Latexin \koodi{plain}\-/sivutyylistä saman kuin
-\koodi{fancy}\-/tyylin, eli sekin noudattaa \koodi{\keno
-  fancy\-hf}\-/komennolla määriteltyjä ylä- ja alatunnisteita:
+Seuraava esimerkki tekee Latexin \koodi{plain}\-/ sivutyylistä saman
+kuin \koodi{fancy}\-/tyylin, eli sekin noudattaa \komento{fancyhf}\-/
+komennolla määriteltyjä ylä- ja alatunnisteita:
 
+\komentoi{fancypagestyle}
 \begin{koodilohkosis}
   \fancypagestyle{plain}{}
 \end{koodilohkosis}
 
 Seuraava esimerkki määrittelee kokonaan oman sivutyylin:
 
+\komentoi{fancypagestyle}
+\komentoi{fancyhf}
 \begin{koodilohkosis}
   \fancypagestyle{omatyyli}{
     \fancyhf{}
@@ -745,12 +754,15 @@ Seuraava esimerkki määrittelee kokonaan oman sivutyylin:
 
 Ylä- ja alatunniste voidaan erottaa tekstipalstasta vaakasuuntaisella
 viivalla, jonka leveyttä on mahdollista muuttaa määrittelemällä
-uudelleen komennot \koodi{\keno head\-rule\-width} ja \koodi{\keno
-  foot\-rule\-width}. Komennon määritelmäksi kirjoitetaan Latexin mitta.
-Seuraavassa esimerkissä asetetaan yhden typografisen pisteen (1\,bp)
-levyiset viivat. Mitan voisi asettaa myös nollaksi (0\,bp), jolloin
-erotinviiva katoaa kokonaan näkyvistä.
+uudelleen komennot \komento{headrulewidth} ja
+\komento{footrulewidth}. Komennon määritelmäksi kirjoitetaan Latexin
+mitta. Seuraavassa esimerkissä asetetaan yhden typografisen pisteen
+(1\,bp) levyiset viivat. Mitan voisi asettaa myös nollaksi (0\,bp),
+jolloin erotinviiva katoaa kokonaan näkyvistä.
 
+\komentoi{renewcommand}
+\komentoi{headrulewidth}
+\komentoi{footrulewidth}
 \begin{koodilohkosis}
   \renewcommand{\headrulewidth}{1bp} % ylätunnisteen erotinviiva
   \renewcommand{\footrulewidth}{1bp} % alatunnisteen erotinviiva
@@ -758,9 +770,12 @@ erotinviiva katoaa kokonaan näkyvistä.
 
 Mikäli haluaa omiin ylätunnisteisiin esimerkiksi päälukujen ja
 alalukujen nimiä, täytyy tunnisteisiin sisällyttää aiemmin kuvatut
-\koodi{\keno left\-mark}- ja \koodi{\keno right\-mark}\-/komennot. Ensin
-mainittu sisältää pääluvun nimen ja jälkimmäinen alaluvun nimen.
+\komento{leftmark}- ja \komento{rightmark}\-/komennot. Ensin mainittu
+sisältää pääluvun nimen ja jälkimmäinen alaluvun nimen.
 
+\komentoi{fancyhf}
+\komentoi{leftmark}
+\komentoi{rightmark}
 \begin{koodilohkosis}
   \fancyhf[HEL]{\leftmark}
   \fancyhf[HOR]{\rightmark}
@@ -768,11 +783,11 @@ mainittu sisältää pääluvun nimen ja jälkimmäinen alaluvun nimen.
 
 Latex latoo pää- ja alalukujen nimet oletuksena versaalikirjaimilla eli
 isoilla kirjaimilla. Jos ne haluaa johonkin toiseen muotoon, täytyy itse
-määritellä uudelleen komennot \koodi{\keno chapter\-mark}, \koodi{\keno
-  section\-mark} tai \koodi{\keno sub\-section\-mark} (vain kaksi
-näistä) ja käyttää määritelmässä komentoja \koodi{\keno mark\-both} ja
-\koodi{\keno mark\-right}. Esimerkkiin \ref{esim:fancyhdr_koko} on
-koottu varsin kokonaisvaltainen koodi omien ylä- ja alatunnisteiden
+määritellä uudelleen komennot \komento{chaptermark},
+\komento{sectionmark} tai \komento{subsectionmark} (vain kaksi näistä)
+ja käyttää määritelmässä komentoja \komento{markboth} ja
+\komento{markright}. Esimerkkiin \ref{esim:fancyhdr_koko} on koottu
+varsin kokonaisvaltainen koodi omien ylä- ja alatunnisteiden
 toteutukseen.
 
 \begin{esimerkki*}
@@ -915,7 +930,7 @@ asetusten näkökulmasta.
 
 Joidenkin fonttien käyttöönottoon on tehty oma makropakettinsa, joten
 sellaiset fontit voi ladata dokumentin esittelyosassa komennolla
-\koodi{\keno usepackage}. Fonttikohtaisia makropaketteja on olemassa
+\komento{usepackage}. Fonttikohtaisia makropaketteja on olemassa
 varsinkin vanhalle fonttitekniikalle (\englanti{Metafont, Post Script
   Type~1}) mutta myös matematiikkatilan (luku \ref{luku:matematiikka})
 fonttiasetuksille ja joillekin kir\-jain\-perhe\-koko\-nai\-suuk\-sille.
@@ -926,6 +941,9 @@ käytännössä lähes aina \englanti{True Type}- ja \englanti{Open Type}
 \paketti{fontspec}\-/paketin komennoilla alla olevan esimerkin
 mukaisesti.
 
+\komentoi{setmainfont}
+\komentoi{setsansfont}
+\komentoi{setmonofont}
 \begin{koodilohkosis}
   \setmainfont{TeX Gyre Termes}[Scale=1]
   \setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
@@ -940,19 +958,20 @@ mukaisesti tai Latex\-/jakelun käytäntöjen mukaisesti.
 Kirjainperheiden käyttöönoton yhteydessä voi määritellä lukuisia
 asetuksia kuten ligatuureja, gemenanumeroita, optisia kokoja ja muita
 fontin ominaisuuksia. Edellisessä esimerkissä käytetään vain
-\koodi{Scale}\-/valitsinta, jolla fontin voi skaalata haluttuun kokoon.
+\koodi{Scale}\-/ valitsinta, jolla fontin voi skaalata haluttuun kokoon.
 
-Peruskirjainperheen (\koodi{\keno set\-main\-font}) skaalaukseksi
-asetetaan \koodi{Scale=1}, eli sille ei tehdä mitään, ja koko valitsimen
-voisi jättää pois. Sen sijaan kahdella muulla kirjainperheellä
-(\koodi{\keno set\-sans\-font}, \koodi{\keno set\-mono\-font}) käytetään
+Peruskirjainperheen (\komento{setmainfont}) skaalaukseksi asetetaan
+\koodi{Scale=1}, eli sille ei tehdä mitään, ja koko valitsimen voisi
+jättää pois. Sen sijaan kahdella muulla kirjainperheellä
+(\komento{setsansfont}, \komento{setmonofont}) käytetään
 ker\-roin\-ase\-tus\-ta \koodi{MatchLowercase}, joka skaalaa fontin
 siten, että gemenakirjaimet eli pienet kirjaimet ovat yhtä korkeita kuin
 peruskirjainperheessä. Mikäli skaa\-laus\-ase\-tus
 \koodi{MatchLowercase} ei tuota ihan toivottua tulosta, voi
-kirjainperheen skaalausta hienosäätää vielä
-\koodi{Scale\-Again}\-/valitsimella seuraavaan tapaan:
+kirjainperheen skaalausta hienosäätää vielä \koodi{Scale\-Again}\-/
+valitsimella seuraavaan tapaan:
 
+\komentoi{setmonofont}
 \begin{koodilohkosis}
   \setmonofont{TeX Gyre Cursor}
   [Scale=MatchLowercase, ScaleAgain=.97]
@@ -970,12 +989,11 @@ perusvahvuudeksi ja mikä lihavoiduksi.
 
 Esimerkki \ref{esim:fontit_leik_omin} selventää, kuinka kirjainperheen
 eri leikkausten nimet tai fonttitiedostot määritellään. Kullekin
-leikkaukselle voi määrittää myös omat asetuksensa
-\koodi{Fea\-tures}\-/loppuisella valitsimella. Samaa asiaa
-havainnollistetaan myös konkreettisemmin esimerkissä
-\ref{esim:fontit_leik_omin_kayt}. Leikkauksen nimessä voi käyttää tähteä
-(\koodi{*}), joka korvautuu kirjainperheen nimellä (\englanti{Macklin
-  Text}).
+leikkaukselle voi määrittää myös omat asetuksensa \koodi{Fea\-tures}\-/
+loppuisella valitsimella. Samaa asiaa havainnollistetaan myös
+konkreettisemmin esimerkissä \ref{esim:fontit_leik_omin_kayt}.
+Leikkauksen nimessä voi käyttää tähteä (\koodi{*}), joka korvautuu
+kirjainperheen nimellä (\englanti{Macklin Text}).
 
 \begin{esimerkki*}
 \begin{koodilohko}
@@ -1007,28 +1025,29 @@ havainnollistetaan myös konkreettisemmin esimerkissä
 \label{esim:fontit_leik_omin_kayt}
 \end{esimerkki*}
 
-Jos edellä kuvatut kolme kirjainperhettä (\koodi{\keno set\-main\-font},
-\koodi{\keno set\-sans\-font} ja \koodi{\keno set\-mono\-font}) eivät
-riitä, on \paketti{fontspec}\-/paketissa komennot lisäperheiden ja
-\=/leikkausten määrittämiseen. Uusi perhe määritellään seu\-raa\-vasti:
+Jos edellä kuvatut kolme kirjainperhettä (\komento{setmainfont},
+\komento{setsansfont} ja \komento{setmonofont}) eivät riitä, on
+\paketti{fontspec}\-/paketissa komennot lisäperheiden ja \=/leikkausten
+määrittämiseen. Uusi perhe määritellään seu\-raa\-vasti:
 
+\komentoi{newfontfamily}
 \begin{koodilohkosis}
   \newfontfamily{\hienoperhe}{TeX Gyre Schola}[…]
 \end{koodilohkosis}
 
-Komento \koodi{\keno new\-font\-family} toimii samalla tavalla kuin
-aiemmin esitellyt \koodi{\keno set\-main\-font} ym. komennot, mutta
-lisäksi ensimmäisellä argumentilla nimetään komento, jolla kirjainperhe
-otetaan käyttöön. Edellisessä esimerkissä luodaan komento \koodi{\keno
-  hieno\-perhe}, joka kytkee päälle \englanti{TeX Gyre Schola}
+Komento \komento{newfontfamily} toimii samalla tavalla kuin aiemmin
+esitellyt \komento{setmainfont} ym. komennot, mutta lisäksi
+ensimmäisellä argumentilla nimetään komento, jolla kirjainperhe otetaan
+käyttöön. Edellisessä esimerkissä luodaan komento
+\komentox{hieno\-perhe}, joka kytkee päälle \englanti{TeX Gyre Schola}
 \=/nimisen kirjainperheen.
 
 Jos ei tarvita kokonaista perhettä vaan yksi leikkaus riittää, käytetään
-komentoa \koodi{\keno new\-font\-face}. Seuraavassa esimerkissä
-määriteltävä komento \koodi{\keno hieno\-leikkaus} ottaa käyttöön
-lihavoidun (bold) kirjainleikkauksen perheestä \englanti{TeX Gyre
-  Schola}.
+komentoa \komento{newfontface}. Seuraavassa esimerkissä määriteltävä
+komento \komentox{hieno\-leikkaus} ottaa käyttöön lihavoidun (bold)
+kirjainleikkauksen perheestä \englanti{TeX Gyre Schola}.
 
+\komentoi{newfontface}
 \begin{koodilohkosis}
   \newfontface{\hienoleikkaus}{TeX Gyre Schola Bold}[…]
 \end{koodilohkosis}
@@ -1078,11 +1097,13 @@ muiden mittojen määrittämiseen on ohjeita luvussa
 \ref{luku:sivuasetukset}.
 
 Fonttiasetuksiin kuuluu fontin koon lisäksi toinenkin mitta: rivikorkeus
-(\koodi{\keno base\-line\-skip}). Se on peräkkäisten rivien
-peruslinjojen välinen etäisyys. Fontin koko ja rivikorkeus määritellään
-saman\-aikaisesti, koska ne ovat saman \koodi{\keno fontsize}\-/komennon
-argumentteja. Esimerkki:
+(\mitta{baselineskip}). Se on peräkkäisten rivien peruslinjojen välinen
+etäisyys. Fontin koko ja rivikorkeus määritellään saman\-aikaisesti,
+koska ne ovat saman \komento{fontsize}\-/ komennon argumentteja.
+Esimerkki:
 
+\komentoi{fontsize}
+\komentoi{selectfont}
 \begin{koodilohkosis}
   \fontsize{10bp}{12bp} \selectfont
 \end{koodilohkosis}
@@ -1090,14 +1111,14 @@ argumentteja. Esimerkki:
 Ensimmäinen argumentti on fontin kokomitta ja toinen on rivikorkeus.
 Mitta\-yksiköt voivat olla mitä tahansa Latexin mittoja, ja oletuksena
 käytetään pt\-/pistemittaa, jos yksikköä ei ole mainittu. Komento
-\koodi{\keno select\-font} on mukana, koska vasta sen myötä matalan
-tason fonttikomennot tulevat voimaan. Korkean tason fonttikomennot (luku
+\komento{selectfont} on mukana, koska vasta sen myötä matalan tason
+fonttikomennot tulevat voimaan. Korkean tason fonttikomennot (luku
 \ref{luku:fontit_korkea}) suorittavat sen automaattisesti.
 
 Rivikorkeus on vähintään sama kuin fontin koko, mutta yleensä se
 asetetaan pari pistettä suuremmaksi, jotta rivit eivät olisi liian
 lähellä toisiaan. Esimerkissä \ref{esim:rivikorkeus} on kaksi erilaista
-\koodi{\keno fontsize}\-/komentoa ja ladottu lopputulos.
+\komento{fontsize}\-/komentoa ja ladottu lopputulos.
 
 \begin{esimerkki*}
 \begin{koodilohko}
@@ -1123,26 +1144,29 @@ lähellä toisiaan. Esimerkissä \ref{esim:rivikorkeus} on kaksi erilaista
 \end{esimerkki*}
 
 Toinen tekstirivien peruslinjojen väliseen etäisyyteen vaikuttava asetus
-on \koodi{\keno baselinestretch}. Se on desimaalilukukerroin, jolla
-nykyinen rivikorkeus kerrotaan. Kerroin asetetaan helpoimmin komennolla
-\koodi{\keno linespread}.\footnote{Toinen tapa: \koodi{\keno
+on \komento{baselinestretch}. Se on desimaalilukukerroin, jolla nykyinen
+rivikorkeus kerrotaan. Kerroin asetetaan helpoimmin komennolla
+\komento{linespread}.\footnote{Toinen tapa: \koodi{\keno
     renewcommand\{\keno baselinestretch\}\{kerroin\}}}
 
+\komentoi{fontsize}
+\komentoi{linespread}
+\komentoi{selectfont}
 \begin{koodilohkosis}
   \fontsize{10bp}{12bp} \linespread{1.3} \selectfont
 \end{koodilohkosis}
 
 Edellä oleva esimerkki asettaa fontin kooksi 10 pistettä ja
-rivikorkeudeksi 12 pistettä. \koodi{\keno linespread}\-/komennolla
-asetetun kertoimen vuoksi rivien peruslinjojen väliseksi etäisyydeksi
-tulee lopulta 1,3 kertaa 12 pistettä eli 15,6 pistettä. Ei ole väliä,
-kummassa järjestyksessä \koodi{\keno fontsize}- ja \koodi{\keno
-  linespread}\-/komennot annetaan. Asetukset tulevat voimaan vasta
-\koodi{\keno select\-font}\-/komennon jälkeen.
+rivikorkeudeksi 12 pistettä. \komento{linespread}\-/ komennolla asetetun
+kertoimen vuoksi rivien peruslinjojen väliseksi etäisyydeksi tulee
+lopulta 1,3 kertaa 12 pistettä eli 15,6 pistettä. Ei ole väliä, kummassa
+järjestyksessä \komento{fontsize}- ja \komento{linespread}\-/ komennot
+annetaan. Asetukset tulevat voimaan vasta \komento{selectfont}\-/
+komennon jälkeen.
 
-Käytännössä \koodi{\keno linespread} sopii rivikorkeuden yleistason
+Käytännössä \komento{linespread} sopii rivikorkeuden yleistason
 hienosäätöön esimerkiksi dokumentin esittelyosassa. Tilannekohtainen
-rivikorkeus on parasta asettaa \koodi{\keno fontsize}\-/komennolla.
+rivikorkeus on parasta asettaa \komento{fontsize}\-/komennolla.
 
 \subsection{Kirjainperheen ja -leikkauksen valitseminen}
 \label{luku:fontit_korkea}
@@ -1151,17 +1175,16 @@ Latexissa on joukko korkean tason fonttikomentoja, jotka on tarkoitettu
 käytettäväksi sen jälkeen, kun matalan tason asetukset on kerran
 määritetty. Taulukossa \ref{tlk:fonttimallikomennot} on komennot
 kirjainperheen ja kirjainleikkauksen valintaan. Joka rivillä ensin
-mainittu komento (esim. \koodi{\keno rm\-fam\-i\-ly}) vaikuttaa
-tekstiin, joka tulee komennon jälkeen. Vaikutus\-alue rajoittuu nykyisen
-ympäristön (luku \ref{luku:ymparistot}) sisään tai aaltosulkeilla (luku
+mainittu komento (esim. \komento{rmfamily}) vaikuttaa tekstiin, joka
+tulee komennon jälkeen. Vaikutus\-alue rajoittuu nykyisen ympäristön
+(luku \ref{luku:ymparistot}) sisään tai aaltosulkeilla (luku
 \ref{luku:aaltosulkeet}) rajatun alueen sisään. Rivillä toisena olevalle
-komennolle (esim. \koodi{\keno text\-rm\{\ldots\}}) annetaan yksi
-argumentti, ja komennon vaikutus koskee vain argumenttina olevaa
-tekstiä.
+komennolle (esim. \komentox{textrm}) annetaan yksi argumentti, ja
+komennon vaikutus koskee vain argumenttina olevaa tekstiä.
 
 \providecommand{\rivi}{}
 \renewcommand{\rivi}[4]{%
-  \koodi{\keno #1} & \koodi{\keno #2\{\ldots\}} & #3 & #4 \\}
+  \komento{#1} & \komento{#2}\koodi{\{\ldots\}} & #3 & #4 \\}
 
 \leijutlk{
   \begin{tabular}{llll}
@@ -1196,8 +1219,8 @@ tekstiä.
   \end{tabular}
 }{
   \caption{Komennot kirjainperheen ja kirjainleikkauksen valintaan.
-    Perustila on \koodi{\keno rm\-family}, \koodi{\keno md\-series} ja
-    \koodi{\keno up\-shape}}
+    Perustila on \komento{rmfamily}, \komento{mdseries} ja
+    \komento{upshape}}
   \label{tlk:fonttimallikomennot}
 }
 
@@ -1207,19 +1230,19 @@ tulevat kirjainleikkauskomennot, jotka valitsevat toisen leikkauksen
 samasta perheestä. Kirjainleikkauksen asetukset jaetaan kahteen ryhmään:
 \englanti{\emph{series}} 'sarja' ja \englanti{\emph{shape}} 'muoto'.
 Kummastakin ryhmästä on valittuna aina yksi ominaisuus, eli
-samanaikaisesti voi olla voimassa esimerkiksi \koodi{\keno bf\-se\-ries}
-(\textbf{lihavoitu}) ja \koodi{\keno it\-shape} (\textit{kursiivi}), ja
+samanaikaisesti voi olla voimassa esimerkiksi \komento{bfseries}
+(\textbf{lihavoitu}) ja \komento{itshape} (\textit{kursiivi}), ja
 tuloksena on \textbf{\itshape lihavoitua kursiivia}.
 
-Useimmissa fonteissa kursiivileikkaus (\koodi{\keno it\-shape}) ja
-kalteva leikkaus (\koodi{\keno sl\-shape}) tuottavat saman
-lopputuloksen, mutta käsitteellisesti ne ovat eri asia. Kursiivi on aina
-muodoltaan erilainen leikkaus, joka hieman mukailee
-käsi\-ala\-kir\-joi\-tusta, joskaan kirjaimia ei ole sidottu toisiinsa.
-Sen sijaan kalteva leikkaus on tavallisen eli pys\-ty\-asen\-toi\-sen
-leikkauksen kallistettu versio. Kallistus voi olla kirjainmuotoilijan
-piirtämä leikkaus, tai kallistus on voitu toteuttaa mekaanisesti.
-Kallistuksen voi tehdä myös Latexissa (luku \ref{luku:fontit_venytys}).
+Useimmissa fonteissa kursiivileikkaus (\komento{itshape}) ja kalteva
+leikkaus (\komento{slshape}) tuottavat saman lopputuloksen, mutta
+käsitteellisesti ne ovat eri asia. Kursiivi on aina muodoltaan erilainen
+leikkaus, joka hieman mukailee käsi\-ala\-kir\-joi\-tusta, joskaan
+kirjaimia ei ole sidottu toisiinsa. Sen sijaan kalteva leikkaus on
+tavallisen eli pys\-ty\-asen\-toi\-sen leikkauksen kallistettu versio.
+Kallistus voi olla kirjainmuotoilijan piirtämä leikkaus, tai kallistus
+on voitu toteuttaa mekaanisesti. Kallistuksen voi tehdä myös Latexissa
+(luku \ref{luku:fontit_venytys}).
 
 Komennot fontin koon valintaan ovat taulukossa
 \ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä fontin
@@ -1235,16 +1258,16 @@ fonttikokovalitsimista \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}.
     & \multicolumn{2}{c}{\ots{11pt}}
     & \multicolumn{2}{c}{\ots{12pt}} \\
     \midrule
-    \koodi{\keno tiny} & 5 && 6 && 6 \\
-    \koodi{\keno scriptsize} & 7 && 8 && 8 \\
-    \koodi{\keno footnotesize} & 8 && 9 && 10 \\
-    \koodi{\keno small} & 9 && 10 && 10&,95 \\
-    \koodi{\keno normalsize} & 10 && 10&,95 & 12 \\
-    \koodi{\keno large} & 12 && 12 && 14&,4 \\
-    \koodi{\keno Large} & 14&,4 & 14&,4 & 17&,28 \\
-    \koodi{\keno LARGE} & 17&,28 & 17&,28 & 20&,74 \\
-    \koodi{\keno huge} & 20&,74 & 20&,74 & 24&,88 \\
-    \koodi{\keno Huge} & 24&,88 & 24&,88 & 24&,88 \\
+    \komento{tiny} & 5 && 6 && 6 \\
+    \komento{scriptsize} & 7 && 8 && 8 \\
+    \komento{footnotesize} & 8 && 9 && 10 \\
+    \komento{small} & 9 && 10 && 10&,95 \\
+    \komento{normalsize} & 10 && 10&,95 & 12 \\
+    \komento{large} & 12 && 12 && 14&,4 \\
+    \komento{Large} & 14&,4 & 14&,4 & 17&,28 \\
+    \komento{LARGE} & 17&,28 & 17&,28 & 20&,74 \\
+    \komento{huge} & 20&,74 & 20&,74 & 24&,88 \\
+    \komento{Huge} & 24&,88 & 24&,88 & 24&,88 \\
     \bottomrule
   \end{tabular}
 }{
@@ -1261,6 +1284,8 @@ ympäristöä sisäkkäin.
 
 % \pagebreak[3]
 
+\ymparistoi{footnotesize}
+\ymparistoi{scshape}
 \begin{koodilohkosis}
   \begin{footnotesize}
     \begin{scshape}
@@ -1286,7 +1311,7 @@ Dokumentin fonttien koot on helpointa määrittää siten, että asettaa
 ensin peruskirjainperheen koon ja antaa muiden fonttien määräytyä
 suhteessa siihen. Esimerkki \ref{esim:fontti_suhteellinen} selventää,
 kuinka se tapahtuu. Alussa otetaan käyttöön dokumenttiluokka
-\koodi{article} ja annetaan sille valitsin \koodi{10pt}, joka määrittää
+\luokka{article} ja annetaan sille valitsin \koodi{10pt}, joka määrittää
 fonttikooksi 10 pistettä. Se on dokumenttiluokan ole\-tus\-ase\-tus,
 jota ei tarvitsisi edes kirjoittaa näkyviin. Esimerkin toisella rivillä
 otetaan \paketti{fontspec}\-/paketti käyttöön.
@@ -1317,14 +1342,13 @@ kohdan välillä ja koska fonttien mittasuhteet ovat erilaisia.
 \label{esim:fontti_suhteellinen}
 \end{esimerkki*}
 
-Viimeisellä rivillä oleva \koodi{\keno linespread}\-/komento on tärkeä.
-Se asettaa rivikorkeuden kertoimeksi 1,45. Kertoimen täytyy olla
-vähintään yhtä suuri kuin peruskirjainperheen skaalauskerroin (1,4),
-jotta rivivälit ovat riittävän suuret. Näiden asetusten jälkeen
-dokumentissa käytetään korkeamman tason komentoja fonttien valintaan,
-esimerkiksi fonttikoon valintakomentoja \koodi{\keno small},
-\koodi{\keno normalsize}, \koodi{\keno large} (taulukko
-\ref{tlk:fonttikokokomennot}).
+Viimeisellä rivillä oleva \komento{linespread}\-/ komento on tärkeä. Se
+asettaa rivikorkeuden kertoimeksi 1,45. Kertoimen täytyy olla vähintään
+yhtä suuri kuin peruskirjainperheen skaalauskerroin (1,4), jotta
+rivivälit ovat riittävän suuret. Näiden asetusten jälkeen dokumentissa
+käytetään korkeamman tason komentoja fonttien valintaan, esimerkiksi
+fonttikoon valintakomentoja \komento{small}, \komento{normalsize},
+\komento{large} (taulukko \ref{tlk:fonttikokokomennot}).
 
 Edellä kuvatussa suhteellisessa kirjainperheiden koon määrittelyssä on
 sellainen ongelma tai kummallisuus, että Latex koko ajan luulee, että
@@ -1332,21 +1356,24 @@ peruskirjainperhe on normaalikokoisena 10 pistettä (pt). Latexin matalan
 tason fonttikomennot eivät tiedä kirjainperheen skaalauskertoimesta, ja
 siksi esimerkiksi komentojen
 
+\komentoi{fontsize}
+\komentoi{selectfont}
 \begin{koodilohkosis}
   \fontsize{10bp}{12bp} \selectfont
 \end{koodilohkosis}
 
 tuloksena ei todellisuudessa ole 10 pisteen (bp) fontti, vaan mukaan
-lasketaan myös kirjainperheen skaalauskerroin. Tämän vuoksi \koodi{\keno
-  fontsize}\-/komennon käyttö menee aika oudoksi. Argumenttina annettu
-kokomitta ei pidä paikkaansa.
+lasketaan myös kirjainperheen skaalauskerroin. Tämän vuoksi
+\komento{fontsize}\-/ komennon käyttö menee aika oudoksi. Argumenttina
+annettu kokomitta ei pidä paikkaansa.
 
 Jos korkean tason font\-ti\-koko\-komen\-to\-jen (taulukko
 \ref{tlk:fonttikokokomennot}) lisäksi tarvitaan jotakin muuta kokoa,
-voisi mahdollisesti \koodi{\keno fontsize}\-/komennon sijasta käyttää
+voisi mahdollisesti \komento{fontsize}\-/ komennon sijasta käyttää
 \paketti{fontspec}\-/paketin tarjoamaa komentoa ja tilanteeseen sopivaa
 skaalauskerrointa esimerkiksi seuraavalla tavalla:
 
+\komentoi{addfontfeatures}
 \begin{koodilohkosis}
   {\addfontfeatures{Scale=3.2} Poikkeuksellisen isoa tekstiä}
 \end{koodilohkosis}
@@ -1407,7 +1434,7 @@ fonttien asettamiseen.
 Esimerkistä \ref{esim:fontti_absoluuttinen} selviää perus\-ajatus.
 Peruskirjainperhe (rivi~5) otetaan käyttöön ilman skaalausta (eli
 \koodi{Scale=1}), minkä vuoksi koon voi jatkossa asettaa täsmälleen
-kohdalleen \koodi{\keno fontsize}\-/komennolla. Samaa ei tehdä groteskin
+kohdalleen \komento{fontsize}\-/komennolla. Samaa ei tehdä groteskin
 eikä tasalevyisen fontin kanssa (rivit 6--7), vaan käytetään skaalausta
 \koodi{MatchLowercase}, jotta tekstikappaleessa kaikki kirjainperheet
 näyttävät samankokoisilta. Tässä menetetään mahdollisuus määrittää
@@ -1417,14 +1444,16 @@ komentoja. Niillä luodaan uudet kirjainperheet, jotka ovat käytännössä
 samoja mutta ilman skaalausta.
 
 Uusien skaalaamattomien kirjainperheiden komentojen nimiksi on valittu
-\koodi{\keno sf\-fam\-i\-ly\-abs} ja \koodi{\keno tt\-fam\-i\-ly\-abs}
-(vrt. \koodi{\keno sffamily} ja \koodi{\keno ttfamily}, taulukko
+\komentox{sf\-fam\-i\-ly\-abs} ja \komentox{tt\-fam\-i\-ly\-abs} (vrt.
+\komento{sffamily} ja \komento{ttfamily}, taulukko
 \ref{tlk:fonttimallikomennot}), ja näillä komennoilla kirjainperheet
 kytketään päälle. Jos esimerkiksi jonkin julkaisun vaatimuksiin kuuluu,
 että otsikossa täytyy olla 16 pisteen lihavoitu TeX Gyre Heros
 \=/kirjainleikkaus, voi esimerkissä \ref{esim:fontti_absoluuttinen}
 olevien asetusten pohjalta antaa otsikolle seuraavat komennot:
 
+\komentoi{fontsize}
+\komentoi{bfseries}
 \begin{koodilohkosis}
   \sffamilyabs\fontsize{16bp}{18bp}\bfseries
 \end{koodilohkosis}
@@ -1433,26 +1462,26 @@ Esimerkin \ref{esim:fontti_absoluuttinen} riveillä 16--20 määritellään
 uudelleen Latexin korkean tason komennot, joilla fonttikoot asetetaan.
 Oletus\-arvot tulevat dokumenttiluokasta (luku
 \ref{luku:dokumenttiluokat}), mutta jos ne eivät ole sopivia, täytyy
-vähintäänkin määritellä komento \koodi{\keno normal\-size} mutta sen
-lisäksi kaikki ne koot, joita omassa dokumentissa tarvitaan. Tässä
-esimerkissä normaali koko asetetaan 14 pisteen kokoiseksi.
+vähintäänkin määritellä komento \komento{normalsize} mutta sen lisäksi
+kaikki ne koot, joita omassa dokumentissa tarvitaan. Tässä esimerkissä
+normaali koko asetetaan 14 pisteen kokoiseksi.
 
 Jokaiselle fonttikoolle määritetään riveillä 16--20 myös oma
 rivikorkeus, ja se on tarkoitus asettaa sopivaksi juuri kyseiselle
-koolle. Rivikorkeuteen vaikuttaa myös kerroin \koodi{\keno
-  baselinestretch}, joka asetetaan komennolla \koodi{\keno linespread}.
-Sitä ei välttämättä tarvitse käyttää, koska kirjainperheitä ei ole
-skaalattu ja koska rivikorkeus asetetaan aina \koodi{\keno
-  fontsize}\-/komennolla. \koodi{\keno linespread} on kuitenkin kätevä
-komento rivikorkeuden säätämiseen yleisesti kaikkialla.
+koolle. Rivikorkeuteen vaikuttaa myös kerroin \komento{baselinestretch},
+joka asetetaan komennolla \komento{linespread}. Sitä ei välttämättä
+tarvitse käyttää, koska kirjainperheitä ei ole skaalattu ja koska
+rivikorkeus asetetaan aina \komento{fontsize}\-/komennolla.
+\komento{linespread} on kuitenkin kätevä komento rivikorkeuden
+säätämiseen yleisesti kaikkialla.
 
 Fonttikokojen määrittelyn lopuksi rivillä 22 suoritetaan komento
-\koodi{\keno normal\-size}, jotta se tulee heti voimaan. Dokumentin
+\komento{normalsize}, jotta se tulee heti voimaan. Dokumentin
 esittelyosassa voidaan käyttää fonttikokoon viittaavia mittoja
 \koodi{em} ja \koodi{ex}, ja ne viittaavat nyt tähän kokoon.
-\koodi{\keno normal\-size}\-/komento suoritetaan kyllä myöhemmin
-automaattisesti dokumentin tekstiosan eli \koodi{document}\-/ympäristön
-alussa.
+\komento{normalsize}\-/ komento suoritetaan kyllä myöhemmin
+automaattisesti dokumentin tekstiosan eli \ymparistox{document}\-/
+ympäristön alussa.
 
 Edellä kuvatun absoluuttisen koonmääritystavan etuna on se, että
 kirjoittaja hallitsee fonttien kokoa ja rivikorkeuksia tarkasti ja että
@@ -1464,11 +1493,9 @@ erikseen.
 \subsection{Fonttien oletus\-asetuksia}
 \label{luku:fontit_oletusasetukset}
 
-Oletuksena%
-\koodimargin{\keno setmainfont} \koodimargin{\keno setsansfont}
-Latex\-/dokumentin peruskirjainperheessä (\koodi{\keno set\-main\-font})
-ja pääteviivattomassa kirjainperheessä (\koodi{\keno set\-sans\-font})
-on päällä muun muassa seuraavat asetukset:%
+Oletuksena Latex\-/dokumentin peruskirjainperheessä
+(\komentom{setmainfont}) ja pääteviivattomassa kirjainperheessä
+(\komentom{setsansfont}) ovat päällä muun muassa seuraavat asetukset:%
 
 \begin{koodilohkosis}
   Ligatures={TeX, Common}
@@ -1480,7 +1507,7 @@ tuottamiseen tarkoitettuja Texin erikoismerkkejä kuten \koodi{''} ja
 \koodi{\==}, joita käsitellään luvuissa \ref{luku:lainausmerkit} ja
 \ref{luku:yhdys_ajatus_miinus}. Ne eivät ole varsinaisia luonnollisen
 kielen eivätkä typografisia ligatuureja vaan kuuluvat ainoastaan
-Tex\-/kielen merkintätapoihin. \koodi{Common}\-/ligatuurit sen sijaan
+Tex\-/kielen merkintätapoihin. \koodi{Common}\-/ ligatuurit sen sijaan
 ovat oikeita typografisia ligatuureja kuten fi, ff ja fl, ja niitä
 käsitellään tarkemmin luvussa \ref{luku:typo_liga}. Molemmat edellä
 mainitut ligatuurityypit saa pois päältä seuraavalla asetuksella:
@@ -1497,12 +1524,10 @@ tavutuksen voi kytkeä kirjainperheeltä pois, kun antaa arvoksi
 \koodi{None}. Tavutusta käsitellään perusteellisemmin luvussa
 \ref{luku:tavutus}.
 
-Tasalevyinen%
-\koodimargin{\keno setmonofont} kirjainperhe (\koodi{\keno
-  set\-mono\-font}) toimii oletuksena hieman eri tavalla. Niissä muun
-muassa ei ole lainausmerkkien ja ajatusviivojen kirjoittamiseen
-tarkoitetut Tex\-/ligatuurit päällä. Oletusasetuksia ovat muun muassa
-seuraavat:
+Tasalevyinen kirjainperhe (\komentom{setmonofont}) toimii oletuksena
+hieman eri tavalla. Niissä muun muassa ei ole lainausmerkkien ja
+ajatusviivojen kirjoittamiseen tarkoitetut Tex\-/ligatuurit päällä.
+Oletusasetuksia ovat muun muassa seuraavat:
 
 \begin{koodilohkosis}
   Ligatures=Common
@@ -1521,12 +1546,13 @@ kuitenkin päälle antamalla arvoksi yhdysmerkin
 (\koodi{Hyphen\-Char=\katk \{\=/\}}) tai Xelatex\-/kääntäjällä minkä
 tahansa merkin.
 
-Komennolla%
-\koodimargin{\keno default\-font\-features} \koodi{\keno
-  default\-font\-features} voi asettaa (joidenkin) kirjainperheiden
-oletusasetukset, kun komennon suorittaa ennen kirjainperheiden
-määrittelyä.
+Komennolla \komentom{defaultfontfeatures} voi asettaa (joidenkin)
+kirjainperheiden oletusasetukset, kun komennon suorittaa ennen
+kirjainperheiden määrittelyä.
 
+\komentoi{defaultfontfeatures}
+\komentoi{rmfamily}
+\komentoi{sffamily}
 \begin{koodilohkosis}
   \defaultfontfeatures[\rmfamily,\sffamily]{Ligatures={TeX, Common},
     Numbers=Lowercase}
@@ -1535,10 +1561,10 @@ määrittelyä.
 Komennon valinnaisella argumentilla voi rajata, mitä kirjainperheitä
 oletusasetukset koskevat. Valinnaiseen argumenttiin kirjoitetaan yksi
 tai useampia pilkulla erotettuja komentoja, joilla kirjainperheet
-kytketään päälle: \koodi{\keno rmfamily}, \koodi{\keno sffamily},
-\koodi{\keno ttfamily} (taulukko \ref{tlk:fonttimallikomennot},
-s.~\pageref{tlk:fonttimallikomennot}) tai komennolla \koodi{\keno
-  new\-font\-family} määritelty fonttikomento (luku
+kytketään päälle: \komento{rmfamily}, \komento{sffamily},
+\komento{ttfamily} (taulukko \ref{tlk:fonttimallikomennot},
+s.~\pageref{tlk:fonttimallikomennot}) tai komennolla
+\komento{newfontfamily} määritelty fonttikomento (luku
 \ref{luku:fontin_valinta}).
 
 \subsection{Typografiset ligatuurit}
@@ -1587,12 +1613,13 @@ parasta latoa ligatuurin avulla, ja ole\-tus\-ase\-tuk\-sil\-la Latex
 noudattaa niitä ohjeita.
 
 Jos kuitenkin yksittäisen ligatuurin muodostumisen haluaa estää, voi
-kirjainten väliin kirjoittaa komennon \koodi{\keno
-  text\-comp\-word\-mark}, joka tekee näkymättömän, juuri tähän
-tarkoitukseen olevan merkin \uctunnus{u+200c zero width non-joiner}.
+kirjainten väliin kirjoittaa komennon \komento{textcompwordmark}, joka
+tekee näkymättömän, juuri tähän tarkoitukseen olevan merkin
+\uctunnus{u+200c zero width non-joiner}.
 
 % \pagebreak[3]
 
+\komentoi{textcompwordmark}
 \begin{koodilohkosis}
   fi f\textcompwordmark i
 \end{koodilohkosis}
@@ -1604,9 +1631,10 @@ tarkoitukseen olevan merkin \uctunnus{u+200c zero width non-joiner}.
 Mikäli tavallisia ligatuureja ei halua käyttöön lainkaan, on parasta
 valita jo kirjainperheen tai \=/leikkauksen käyttöönotossa asetus
 \koodi{Liga\-tures=\katk No\-Com\-mon}. Väliaikaisesti fontin asetuksiin
-voi vaikuttaa komennolla \koodi{\keno add\-font\-fea\-tures}, joka sekin
-on \paketti{fontspec}\-/pakettiin sisältyvä komento.
+voi vaikuttaa komennolla \komento{addfontfeatures}, joka sekin on
+\paketti{fontspec}\-/pakettiin sisältyvä komento.
 
+\komentoi{addfontfeatures}
 \begin{koodilohkosis}
   {\addfontfeatures{Ligatures=NoCommon} fi fl}
 \end{koodilohkosis}
@@ -1685,25 +1713,27 @@ asetuksilla:
 \subsection{Välistykset: harvennus ja tiivistys}
 \label{luku:fontit_valistys}
 
-Fontin kanssa käytettäviä sanavälejä voi säätää
-\koodi{Word\-Space}\-/valitsimella, \koodimargin{Word\-Space} jonka
-arvoksi annetaan desimaalilukukerroin eli suhdeluku normaaliin
-verrattuna. Arvona voi olla myös kolme eri kerrointa, jolloin mukana on
-lisäksi sanavälin venymisen rajat. Tämä asetus on tehtävä kirjainperheen
-tai \=/leikkauksen määrittelyn yhteydessä, eli se ei toimi esimerkiksi
-\koodi{\keno add\-font\-features}\-/komennon kanssa. Katso tietoa
-sanaväleistä myös luvusta \ref{luku:sanavali} tai tekstikappaleiden
-latomista käsittelevästä luvusta \ref{luku:kappale}. \noclub[2]
+Fontin kanssa käytettäviä sanavälejä voi säätää \koodim{Word\-Space}\-/
+valitsimella, jonka arvoksi annetaan desimaalilukukerroin eli suhdeluku
+normaaliin verrattuna. Arvona voi olla myös kolme eri kerrointa, jolloin
+mukana on lisäksi sanavälin venymisen rajat. Tämä asetus on tehtävä
+kirjainperheen tai \=/leikkauksen määrittelyn yhteydessä, eli se ei
+toimi esimerkiksi \komento{addfontfeatures}\-/ komennon kanssa. Katso
+tietoa sanaväleistä myös luvusta \ref{luku:sanavali} tai
+tekstikappaleiden latomista käsittelevästä luvusta \ref{luku:kappale}.
+\noclub[2]
 
-Fontti\-asetusten valitsimella \koodi{Letter\-Space}
-\koodimargin{Letter\-Space} säädetään merkkien välistystä eli niiden
-välistä tyhjää tilaa. Arvoksi annetaan positiivinen tai negatiivinen
-prosenttiluku, joka ilmaisee alkuperäiseen lisättävän osuuden. Asetus
-\koodi{Letter\-Space=\katk 6} tuottaa siis kuusi prosenttia leveämmät
-merkkien välit. Välistyksen tiivistäminen ja harvennuksen typografiaa
-käsitellään luvussa \ref{luku:korostus_harvennus}, mutta seuraavassa on
-esimerkki, kuinka ne teknisesti toteutetaan:
+Fontti\-asetusten valitsimella \koodim{Letter\-Space} säädetään merkkien
+välistystä eli niiden välistä tyhjää tilaa. Arvoksi annetaan
+positiivinen tai negatiivinen prosenttiluku, joka ilmaisee alkuperäiseen
+lisättävän osuuden. Asetus \koodi{Letter\-Space=\katk 6} tuottaa siis
+kuusi prosenttia leveämmät merkkien välit. Välistyksen tiivistäminen ja
+harvennuksen typografiaa käsitellään luvussa
+\ref{luku:korostus_harvennus}, mutta seuraavassa on esimerkki, kuinka ne
+teknisesti toteutetaan:
 
+\komentoi{scshape}
+\komentoi{addfontfeatures}
 \begin{koodilohkosis}
   \scshape {\addfontfeatures{LetterSpace=-2} tiivistys} \\
   normaali \\ {\addfontfeatures{LetterSpace=6} harvennus}
@@ -1718,6 +1748,7 @@ Jos esimerkiksi harvennuksen haluaa automaattisesti mukaan
 kirjainperheeseen kuuluvaan pienversaaliin, käytetään valitsinta
 \koodi{Small\-Caps\-Features}:
 
+\komentoi{setmainfont}
 \begin{koodilohkosis}
   \setmainfont{…}[SmallCapsFeatures={LetterSpace=6}]
 \end{koodilohkosis}
@@ -1725,11 +1756,12 @@ kirjainperheeseen kuuluvaan pienversaaliin, käytetään valitsinta
 \subsection{Keinotekoinen venytys, lihavointi ja kallistus}
 \label{luku:fontit_venytys}
 
-Valitsimella \koodi{Fake\-Stretch} \koodimargin{Fake\-Stretch} voi
-venyttää tai kutistaa merkkejä leveyssuunnassa. Arvoksi annetaan
-desimaalilukukerroin, joka on suhdeluku alkuperäiseen leveyteen nähden.
-Seuraavassa havainnollistava esimerkki:
+Valitsimella \koodim{Fake\-Stretch} voi venyttää tai kutistaa merkkejä
+leveyssuunnassa. Arvoksi annetaan desimaalilukukerroin, joka on
+suhdeluku alkuperäiseen leveyteen nähden. Seuraavassa havainnollistava
+esimerkki:
 
+\komentoi{addfontfeatures}
 \begin{koodilohkosis}
   esimerkki \\
   {\addfontfeatures{FakeStretch=1.3} esimerkki}
@@ -1751,13 +1783,13 @@ tasalevyistä kirjainperhettä on hieman kutistettu, koska alkuperäinen on
 kohtuuttoman leveä ({\ttfamily\addfontfeatures{FakeStretch=1}
   esimerkki}) verrattuna muiden kirjainperheiden leveyteen.
 
-Jos \koodimargin{Fake\-Bold} \koodimargin{Fake\-Slant} kirjainperheeseen
-ei sisälly sopivaa lihavoitua tai kaltevaa leikkausta, voi sellaiset
-koettaa tehdä myös keinotekoisesti \koodi{Fake\-Bold}- ja
-\koodi{Fake\-Slant}\-/valitsimien avulla. Niille annetaan arvoksi
-desimaalilukukerroin. Valitettavasti \koodi{Fake\-Bold} toimii vain
-Xelatex\-/kääntäjän kanssa.
+Jos kirjainperheeseen ei sisälly sopivaa lihavoitua tai kaltevaa
+leikkausta, voi sellaiset koettaa tehdä myös keinotekoisesti
+\koodim{Fake\-Bold}- ja \koodim{Fake\-Slant}\-/ valitsimien avulla.
+Niille annetaan arvoksi desimaalilukukerroin. Valitettavasti
+\koodi{Fake\-Bold} toimii vain Xelatex\-/kääntäjän kanssa.
 
+\komentoi{addfontfeatures}
 \begin{koodilohkosis}
   pysty {\addfontfeatures{FakeSlant=.2} kalteva}
 \end{koodilohkosis}
@@ -1771,10 +1803,11 @@ asettaa kirjainperheen määrittelyn yhteydessä halutun kirjainleikkauksen
 valitsimella \koodi{Bold\-Font} tai \koodi{Slanted\-Font} ja määrittää
 niille erityisiä ominaisuuksia valitsimella \koodi{Bold\-Fea\-tures} tai
 \koodi{Slanted\-Fea\-tures}. Seuraava esimerkki asettaa dokumentin
-perusfontille kaltevan leikkauksen. Tämän jälkeen komento \koodi{\keno
-  sl\-shape} valitsee \textsl{kaltevan} leikkauksen, joka on siis eri
-asia kuin \textit{kursiivi} (\koodi{\keno it\-shape}).
+perusfontille kaltevan leikkauksen. Tämän jälkeen komento
+\komento{slshape} valitsee \textsl{kaltevan} leikkauksen, joka on siis
+eri asia kuin \textit{kursiivi} (\komento{itshape}).
 
+\komentoi{setmainfont}
 \begin{koodilohkosis}
   \setmainfont{…}[
     SlantedFont={…}, % tähän pystyasentoinen leikkaus
@@ -1792,6 +1825,8 @@ merkkivälejä harvennetaan lievästi. Käytännössä versaaleja pienentämäll
 ei saada tyylikästä pienversaalia aikaan, koska merkkien viivoista tulee
 liian ohuita.
 
+\komentoi{textsc}
+\komentoi{addfontfeatures}
 \begin{koodilohkosis}
   \textsc{pienversaali} oikea \\
   {\addfontfeatures{ScaleAgain=.68, FakeStretch=1.17, LetterSpace=4}
@@ -1853,6 +1888,10 @@ voi käyttää vapaasti. Samalla se tarkoittaa, että kääntäjän on oltava
 Lualatex tai Xelatex. Kielipaketin käyttöönotto dokumentin
 esittelyosassa näyttää seuraavanlaiselta:
 
+\komentoi{usepackage}
+\komentoi{setdefaultlanguage}
+\komentoi{setotherlanguage}
+\pakettii{polyglossia}
 \begin{koodilohkosis}
   \usepackage{polyglossia}
   \setdefaultlanguage{finnish}
@@ -1868,16 +1907,18 @@ historialliseen vaihteluun. Yleinen moniin kieliin sopiva valitsin on
 liittyviä komentoja (luku \ref{luku:tavutus}). Suomen kielen voisi siis
 ottaa käyttöön myös seuraavalla tavalla:
 
+\komentoi{setdefaultlanguage}
 \begin{koodilohkosis}
   \setdefaultlanguage[babelshorthands]{finnish}
 \end{koodilohkosis}
 
 Dokumentin tekstiosa käyttää kieltä, joka määriteltiin komennolla
-\koodi{\keno set\-default\-lan\-guage}. Muita dokumentin esittelyosassa
+\komento{setdefaultlanguage}. Muita dokumentin esittelyosassa
 määriteltyjä kieliä voi käyttää väliaikaisesti komennolla, joka alkaa
-kirjaimilla \koodi{\keno text} ja jatkuu kielen nimellä, esimerkiksi
-\koodi{\keno text\-english} tai \koodi{\keno text\-greek}.
+kirjaimilla \komentox{text} ja jatkuu kielen nimellä, esimerkiksi
+\komento{textenglish} tai \komento{textgreek}.
 
+\komentoi{textenglish}
 \begin{koodilohkosis}
   Englannin sana \textenglish{shorthand} tarkoittaa 'pikakirjoitusta'.
 \end{koodilohkosis}
@@ -1897,13 +1938,15 @@ typografisia yksityiskohtia eri tavalla.
 
 Käyttäjä voi määritellä eri kielille eri fontin. Oletuksena käytetään
 peruskirjainperhettä, mikä samalla tarkoittaa, että kielen vaihtuessa
-pois oletuskielestä suoritetaan \koodi{\keno rmfamily}\-/komento
-(taulukko \ref{tlk:fonttimallikomennot},
-s.~\pageref{tlk:fonttimallikomennot}). Tätä havainnollistaa seuraava
-esimerkki, jossa \koodi{\keno text\-english}\-/komennon vaikutuksen
-ajaksi tulee käyttöön perusfontti \koodi{\keno rmfamily} eikä ympärillä
-oleva pääteviivaton \koodi{\keno sffamily}.
+pois oletuskielestä suoritetaan \komento{rmfamily}\-/komento (taulukko
+\ref{tlk:fonttimallikomennot}, s.~\pageref{tlk:fonttimallikomennot}).
+Tätä havainnollistaa seuraava esimerkki, jossa \komento{textenglish}\-/
+komennon vaikutuksen ajaksi tulee käyttöön perusfontti
+\komento{rmfamily} eikä ympärillä oleva pääteviivaton
+\komento{sffamily}.
 
+\komentoi{sffamily}
+\komentoi{textenglish}
 \begin{koodilohkosis}
   \sffamily
   pääteviivaton \textenglish{main font} pääteviivaton
@@ -1915,25 +1958,26 @@ oleva pääteviivaton \koodi{\keno sffamily}.
 
 Erikielisten tekstikatkelmien fonttiin voi vaikuttaa määrittelemällä
 komennon, jonka nimessä on ensin kielen nimi ja lopuksi sana
-\koodi{font}, esimerkiksi \koodi{\keno english\-font} tai \koodi{\keno
-  greek\-font}. Komennon määritelmään kirjoitetaan yleensä
-kirjainperheeseen tai \=/leikkaukseen vaikuttavia komentoja.
+\koodi{font}, esimerkiksi \komento{englishfont} tai \komento{greekfont}.
+Komennon määritelmään kirjoitetaan yleensä kirjainperheeseen tai
+\=/leikkaukseen vaikuttavia komentoja.
 
-Seuraavassa esimerkissä \koodi{\keno english\-font}\-/komento
-määritellään tyhjäksi, mikä saa aikaan sen, että englanninkieliseksi
-merkitty teksti ei muuta fonttia millään tavalla vaan käytetään samaa
-kirjainperhettä kuin muutenkin siinä kohdassa dokumenttia.
+Seuraavassa esimerkissä \komento{englishfont}\-/ komento määritellään
+tyhjäksi, mikä saa aikaan sen, että englanninkieliseksi merkitty teksti
+ei muuta fonttia millään tavalla vaan käytetään samaa kirjainperhettä
+kuin muutenkin siinä kohdassa dokumenttia.
 
 \begin{koodilohkosis}
   \newcommand{\englishfont}{}
 \end{koodilohkosis}
 
 Mikäli haluaa jollekin kielelle kokonaan eri kirjainperheen, kannattaa
-käyttää \paketti{fontspec}\-/paketin komentoa \koodi{\keno
-  new\-font\-fam\-i\-ly} (luku \ref{luku:fontin_valinta}) ja määritellä
-kielen fonttikomennot sillä. Tällainen on tarpeen ainakin silloin, kun
-dokumentin peruskirjainperhe ei sisällä kyseisen kielen kirjaimia.
+käyttää \paketti{fontspec}\-/paketin komentoa \komento{newfontfamily}
+(luku \ref{luku:fontin_valinta}) ja määritellä kielen fonttikomennot
+sillä. Tällainen on tarpeen ainakin silloin, kun dokumentin
+peruskirjainperhe ei sisällä kyseisen kielen kirjaimia.
 
+\komentoi{newfontfamily}
 \begin{koodilohkosis}
   \newfontfamily{\greekfont}{GFS Artemisia}[Scale=MatchLowercase]
 \end{koodilohkosis}
@@ -1968,67 +2012,73 @@ esimerkin tavoin. Paketin valinnaiseen argumenttiin kirjoitetaan
 ladattavien kielten nimet ja viimeisenä mainitaan se kieli, joka
 halutaan pääasialliseksi kieleksi.
 
+\komentoi{usepackage}
+\pakettii{babel}
 \begin{koodilohkosis}
   \usepackage[english,greek,finnish]{babel}
 \end{koodilohkosis}
 
 Pääasiallisen kielen voi valita myös \koodi{main}\-/valitsimella:
 
+\komentoi{usepackage}
+\pakettii{babel}
 \begin{koodilohkosis}
   \usepackage[main=finnish,english,greek]{babel}
 \end{koodilohkosis}
 
 Dokumentin tekstissä yksittäiset vieraskieliset sanat tai ilmaukset
-merkitään komennolla \koodi{\keno foreign\-lan\-guage}. Komennon
-ensimmäinen argumentti on kielen nimi ja toinen on sillä kielellä
-ladottava teksti.
+merkitään komennolla \komento{foreignlanguage}. Komennon ensimmäinen
+argumentti on kielen nimi ja toinen on sillä kielellä ladottava teksti.
 
+\komentoi{foreignlanguage}
 \begin{koodilohkosis}
   Englannin sana \foreignlanguage{english}{shorthand} tarkoittaa
   'pikakirjoitusta'.
 \end{koodilohkosis}
 
-Komennon sijasta voi käyttää ympäristöä \koodi{other\-lan\-guage}, joka
+Komennon sijasta voi käyttää ympäristöä \ymparisto{otherlanguage}, joka
 vaihtaa kieltä ympäristön ajaksi.
 
+\ymparistoi{otherlanguage}
 \begin{koodilohkosis}
   \begin{otherlanguage}{greek}
     ...
   \end{otherlanguage}
 \end{koodilohkosis}
 
-Kielen vaihtamista voi helpottaa \koodi{\keno babel\-tags}\-/komennolla,
-joka määrittelee lyhempiä komentoja ja ympäristöjä kielen vaihtamiseen.
+Kielen vaihtamista voi helpottaa \komento{babeltags}\-/ komennolla, joka
+määrittelee lyhempiä komentoja ja ympäristöjä kielen vaihtamiseen.
 Komentoa käytetään seuraavan esimerkin tavoin. Sen jälkeen voi käyttää
-englanninkielisen tekstin merkitsemiseen komentoa \koodi{\keno
-  text\-eng\{\ldots\}} tai ympäristöä \koodi{eng}.
+englanninkielisen tekstin merkitsemiseen komentoa \komentox{text\-eng}
+tai ympäristöä \ymparistox{eng}.
 
+\komentoi{babeltags}
 \begin{koodilohkosis}
   \babeltags{eng = english}
 \end{koodilohkosis}
 
-Oletuskieli voidaan vaihtaa kesken dokumentin komennolla \koodi{\keno
-  select\-lan\-guage}. Komennon argumentiksi annetaan kielen nimi,
+Oletuskieli voidaan vaihtaa kesken dokumentin komennolla
+\komento{selectlanguage}. Komennon argumentiksi annetaan kielen nimi,
 esimerkiksi seuraavalla tavalla:
 
+\komentoi{selectlanguage}
 \begin{koodilohkosis}
   \selectlanguage{english}
 \end{koodilohkosis}
 
-Eri kielille on mahdollista asettaa eri kirjainperheet \koodi{\keno
-  babel\-font}\-/komennolla. Tämä komento korvaa
-\paketti{fontspec}\-/paketin fontinvalintakomennot (luku
+Eri kielille on mahdollista asettaa eri kirjainperheet
+\komento{babelfont}\-/ komennolla. Tämä komento korvaa
+\paketti{fontspec}\-/ paketin fontinvalintakomennot (luku
 \ref{luku:fontin_valinta}) ja muodostaa uuden korkeamman tason komennon,
-joka sisältää myös kielen. Jos siis käyttää komentoa \koodi{\keno
-  babel\-font}, ei saa samanaikaisesti käyttää komentoja \koodi{\keno
-  set\-main\-font}, \koodi{\keno set\-sans\-font} eikä \koodi{\keno
-  set\-mono\-font}.
+joka sisältää myös kielen. Jos siis käyttää komentoa
+\komento{babelfont}, ei saa samanaikaisesti käyttää komentoja
+\komento{setmainfont}, \komento{setsansfont} eikä \komento{setmonofont}.
 
-Oman dokumentin kirjainperheet voitaisiin määrittää \koodi{\keno
-  babel\-font}\-/komennolla esimerkin \ref{esim:babelfont} tavoin. Ensin
-esimerkissä määritellään peruskirjainperhe (\koodi{rm}), pääteviivaton
-perhe (\koodi{sf}) ja tasalevyinen perhe (\koodi{tt}). Sen jälkeen
-määritellään kreikan kielessä (\koodi{greek}) käytettävä
+Oman dokumentin kirjainperheet voitaisiin määrittää
+\komento{babelfont}\-/ komennolla esimerkin \ref{esim:babelfont} tavoin.
+Ensin esimerkissä määritellään peruskirjainperhe (\koodi{rm}),
+pääteviivaton perhe (\koodi{sf}) ja tasalevyinen perhe (\koodi{tt}). Sen
+jälkeen määritellään kreikan kielessä (\koodi{greek}) käytettävä
 peruskirjainperhe ja pääteviivaton perhe.
 
 \begin{esimerkki*}
@@ -2040,7 +2090,7 @@ peruskirjainperhe ja pääteviivaton perhe.
   \babelfont[greek]{rm}[Scale=MatchLowercase]{GFS Artemisia}
   \babelfont[greek]{sf}[Scale=MatchLowercase]{GFS Neohellenic}
 \end{koodilohko}
-\caption{\koodi{\keno babel\-font}\-/komennon käyttö dokumentin
+\caption{\komento{babelfont}\-/komennon käyttö dokumentin
   kirjainperheiden valintaan ja kielikohtaisten kirjainperheiden
   valintaan}
 \label{esim:babelfont}
@@ -2067,6 +2117,9 @@ Kielen valintaa ja yleisiä kieliasetuksia käsitellään tarkemmin luvussa
 ja sen mukainen tavutus saadaan päälle, kun dokumentin esittelyosaan
 kirjoittaa seuraavat komennot:
 
+\komentoi{usepackage}
+\komentoi{setdefaultlanguage}
+\pakettii{polyglossia}
 \begin{koodilohkosis}
   \usepackage{polyglossia}
   \setdefaultlanguage{finnish}
@@ -2087,11 +2140,11 @@ huomioimaan myös typografiaan liittyviä suosituksia.
 Automaattinen tavutus auttaa paljon, mutta se ei yksinään riitä, koska
 se tekee välillä virheitä tai tuottaa muuten suositusten vastaista
 jälkeä. Kirjoittajan täytyy kirjoittaa välillä eli tavutusvihjeitä. Yksi
-tapa tavutusvihjeiden kirjoittamiseen on \koodi{\keno
-  hyphenation}\-/komento, jolla määritellään yksittäisten sanojen
-tavutuskohdat kaikkialla dokumentissa. Seuraava esimerkki selventää
-komennon käyttöä:
+tapa tavutusvihjeiden kirjoittamiseen on \komento{hyphenation}\-/
+komento, jolla määritellään yksittäisten sanojen tavutuskohdat
+kaikkialla dokumentissa. Seuraava esimerkki selventää komennon käyttöä:
 
+\komentoi{hyphenation}
 \begin{koodilohkosis}
   \hyphenation{
     ala-indek-si alku-osa
@@ -2106,13 +2159,13 @@ niihin kohtiin, joista sanan katkaiseminen on sallittua. Jos sanassa
 itsessään on yhdysmerkki, sen tavutusta ei voi käsitellä tällä
 komennolla. Luvussa \ref{luku:tavutuksen_merkit} kerrotaan muita tapoja.
 
-\koodi{\keno hyphenation}\-/komennon voi sijoittaa dokumentin
-esittelyosaan tai tekstiosaan, mutta sijainti vaikuttaa sen toimintaan.
-Jos komennon sijoittaa dokumentin esittelyosaan ennen kuin mitään kieltä
-on ladattu tai valittu, se vaikuttaa kaikkien sanojen tavutukseen
-kielestä riippumatta. Jos komennon sijoittaa dokumentin tekstiosaan eli
-kielen valitsemisen jälkeen, se vaikuttaa vain kyseisen kielen eli
-yleensä dokumentin pääasiallisen kielen tavutukseen.
+\komento{hyphenation}\-/komennon voi sijoittaa dokumentin esittelyosaan
+tai tekstiosaan, mutta sijainti vaikuttaa sen toimintaan. Jos komennon
+sijoittaa dokumentin esittelyosaan ennen kuin mitään kieltä on ladattu
+tai valittu, se vaikuttaa kaikkien sanojen tavutukseen kielestä
+riippumatta. Jos komennon sijoittaa dokumentin tekstiosaan eli kielen
+valitsemisen jälkeen, se vaikuttaa vain kyseisen kielen eli yleensä
+dokumentin pääasiallisen kielen tavutukseen.
 
 \subsection{Yksittäisten sanojen tavutus}
 \label{luku:tavutuksen_merkit}
@@ -2189,7 +2242,7 @@ tilanteen. Esimerkiksi ilmauksessa \emph{matkasuunnitelma ja
   \mbox{-aika}} ei riviä saa katkaista sanassa \emph{\mbox{-aika}}
 olevan yhdysmerkin jälkeen, koska rivin loppuun jäisi yksinäinen
 yhdysmerkki. Latexin peruskeinoilla sana täytyy laittaa näkymättömään
-laatikkoon, joka pitää merkit yhdessä: \koodi{\keno mbox\{-aika\}}.
+laatikkoon, joka pitää merkit yhdessä: \komento{mbox}\koodi{\{-aika\}}.
 Toinen vaihtoehto on sitovan yhdysmerkin käyttö, jota käsitellään
 seuraavassa alaluvussa.
 
@@ -2204,10 +2257,12 @@ yhdysmerkkiä, sillä muitakin vaihtoehtoja on.
 
 Makropaketti \paketti{extdash}\avctan{extdash} tuo uusia komentoja ja
 mahdollisuuksia tavutuksen hallintaan. Komennot ovat sellaisia kuin
-\koodi{\keno Hyph\-dash} ja \koodi{\keno En\-dash}, mutta niille on
-saatavilla myös lyhemmät muodot, jos paketin lataa käyttämällä
-\koodi{short\-cuts}\-/valitsinta.
+\komento{Hyphdash} ja \komento{Endash}, mutta niille on saatavilla myös
+lyhemmät muodot, jos paketin lataa käyttämällä \koodi{short\-cuts}\-/
+valitsinta.
 
+\komentoi{usepackage}
+\pakettii{extdash}
 \begin{koodilohkosis}
   \usepackage[shortcuts]{extdash}
 \end{koodilohkosis}
@@ -2229,12 +2284,12 @@ vertaillaan \paketti{extdash}\-/paketin komentoja Texin vastaaviin.
     \toprule
     \ots{Komento} & \ots{Merkitys} \\
     \midrule
-    \koodi{\keno -/} & tavutuksen salliva yhdysmerkki \\
-    \koodi{\keno =/} & sitova, tavutuksen salliva yhdysmerkki \\
-    \koodi{\keno --} & tavutuksen salliva lyhyt ajatusviiva \\
-    \koodi{\keno ==} & sitova, tavutuksen salliva lyhyt ajatusviiva \\
-    \koodi{\keno ---} & tavutuksen salliva pitkä ajatusviiva \\
-    \koodi{\keno ===} & sitova, tavutuksen salliva pitkä ajatusviiva \\
+    \komento{-/} & tavutuksen salliva yhdysmerkki \\
+    \komento{=/} & sitova, tavutuksen salliva yhdysmerkki \\
+    \komento{--} & tavutuksen salliva lyhyt ajatusviiva \\
+    \komento{==} & sitova, tavutuksen salliva lyhyt ajatusviiva \\
+    \komento{---} & tavutuksen salliva pitkä ajatusviiva \\
+    \komento{===} & sitova, tavutuksen salliva pitkä ajatusviiva \\
     \bottomrule
   \end{tabular}
 }{
@@ -2321,12 +2376,14 @@ kielessä kumpikin asetus on kaksi (2) merkkiä.
 
 Nämä asetukset alustetaan kielikohtaisiin oletusarvoihin aina, kun
 kieliasetukset tulevat voimaan. Näin on esimerkiksi dokumentin
-aloittavan \koodi{document}\-/ympäristön alussa ja aina kielen
+aloittavan \ymparistox{document}\-/ ympäristön alussa ja aina kielen
 vaihtuessa. Jos asetuksia ha\-luaa muuttaa, täytyy omat muutokset tehdä
 aina edellä mainittujen asioiden jälkeen. Toisaalta vielä kätevämpää on
 sisällyttää omat asetukset kielikohtaisiin alustuskomentoihin. Sillä
 tavoin omat asetukset tulevat voimaan automaattisesti kielen vaihtuessa.
 
+\komentoi{addto}
+\komentoi{captionsfinnish}
 \begin{koodilohkosis}
   \addto{\captionsfinnish}{
     \lefthyphenmin  3
@@ -2334,11 +2391,11 @@ tavoin omat asetukset tulevat voimaan automaattisesti kielen vaihtuessa.
   }
 \end{koodilohkosis}
 
-Edellisessä esimerkissä oleva komento \koodi{\keno add\-to} on
-\paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketin ominaisuus,
+Edellisessä esimerkissä oleva komento \komento{addto} on
+\paketti{polyglossia}\-/{} ja \paketti{babel}\-/ paketin ominaisuus,
 jolla lisätään omia komentoja kielikohtaisiin asetuksiin. Tässä
-esimerkissä käsitellään suomen kielen asetuksia (\koodi{\keno
-  cap\-tions\-finnish}).
+esimerkissä käsitellään suomen kielen asetuksia
+(\komento{captionsfinnish}).
 
 \subsection{Muita tavutusasetuksia ja -vinkkejä}
 \label{luku:tavutus_muut}
@@ -2351,7 +2408,7 @@ englanninkielisissä ohjekirjoissa niitä kutsutaan nimellä
 
 \paketti{babel}\-/paketti tuo suomen kieleen sitovan, tavutuksen
 sallivan yhdysmerkin \koodi{\textquotedbl\=/}, joka toimii samoin kuin
-\paketti{extdash}\-/paketin komento \koodi{\keno=/}. Lisäksi on
+\paketti{extdash}\-/paketin komento \komento{=/}. Lisäksi on
 tavutusvihje (\koodi{\textquotedbl\textquotedbl}), joka ei tee
 yhdysmerkkiä tavutuskohtaan. Sitä voi käyttää joidenkin teknisten
 ilmausten tavutusvihjeenä, jotta ilmaus säilyy täsmälleen samanlaisena
@@ -2366,12 +2423,10 @@ sitova ja samalla kaiken tavutuksen estävä yhdysmerkki. Tälle merkille
 ei ole vastinetta \paketti{extdash}\-/paketissa. Pari muutakin
 lainausmerkillä alkavaa, tavutukseen liittyvää merkkiä on mukana.
 
-Varsinainen%
-\koodimargin{\keno discretionary} tavutuksen peruskomento on
-\koodi{\keno discretionary}, joka mahdollistaa omanlaisten
-tavutuskohtien määrittelyn. Komento kirjoitetaan sanassa juuri siihen
-kohtaan, johon tavutuskohta halutaan. Komennolle annetaan kolme
-argumenttia järjestyksessä seuraavasti:
+Varsinainen tavutuksen peruskomento on \komentom{discretionary}, joka
+mahdollistaa omanlaisten tavutuskohtien määrittelyn. Komento
+kirjoitetaan sanassa juuri siihen kohtaan, johon tavutuskohta halutaan.
+Komennolle annetaan kolme argumenttia järjestyksessä seuraavasti:
 
 \begin{nluetelma}
 \item katkaisutilanteessa rivin loppuun ladottavat merkit
@@ -2382,6 +2437,7 @@ argumenttia järjestyksessä seuraavasti:
 Normaali tavutuskohta sanaan \emph{tavu} määriteltäisiin alla olevan
 esimerkin tavoin:
 
+\komentoi{discretionary}
 \begin{koodilohkosis}
   ta\discretionary{-}{}{}vu
 \end{koodilohkosis}
@@ -2393,13 +2449,14 @@ rivin alkuun ei kirjoiteta suomen kielessä mitään ylimääräistä. Myös
 kolmas argumentti on tyhjä, koska katkaisemattomaan sanaan ei haluta
 mitään merkkiä tavujen väliin.
 
-\koodi{\keno discretionary}\-/komennolla voi luoda myös tavutuskohtia,
+\komento{discretionary}\-/komennolla voi luoda myös tavutuskohtia,
 joihin ei ilmesty yhdysmerkkiä eikä mitään muutakaan merkkiä
 katkaisutilanteessa. Se saadaan aikaan jättämällä kaikki argumentit
 tyhjäksi. Tällainen sopii tavutusvihjeeksi teknisiin ilmauksiin, joihin
 ei selvyyden vuoksi haluta mitään ylimääräisiä merkkejä edes sanan
 katkaisutilanteessa.
 
+\komentoi{discretionary}
 \begin{koodilohkosis}
   \discretionary{}{}{}
 \end{koodilohkosis}
@@ -2411,6 +2468,7 @@ väliaikaisesti katkaisun merkkinä. Tällaisia kieliä varten saattaa
 kielipaketissa (tai muualla) olla omat yhdysmerkkitoiminnot, mutta
 edellä kuvatun tavutuskohdan saa myös seuraavalla tavalla:
 
+\komentoi{discretionary}
 \begin{koodilohkosis}
   \discretionary{-}{-}{-}
 \end{koodilohkosis}
@@ -2470,8 +2528,8 @@ tavutuksen hallintaa sanalle \emph{Molo\-tov--Ribben\-trop-sopi\-mus}:
   Molotov\--Ribben\-trop\-/sopimus  % tavutuksen sallivat välimerkit
 \end{koodilohkosis}
 
-\koodi{\keno discretionary}\-/komentoa (luku \ref{luku:tavutus_muut})
-voi hyödyntää suomen kielen sanoissa silloin, kun niissä on heittomerkki
+\komento{discretionary}\-/komentoa (luku \ref{luku:tavutus_muut}) voi
+hyödyntää suomen kielen sanoissa silloin, kun niissä on heittomerkki
 erottamassa kahta tavurajan molemmin puolin olevaa samaa vokaalia,
 esimerkiksi sanoissa \emph{vaa'an} ja \emph{liu'uttaa}. Normaalisti Tex
 ei katkaise heittomerkin kohdalta lainkaan, eikä se olisi suomen
@@ -2481,6 +2539,7 @@ kohdalle, täytyy huolehtia, että tavutustilanteessa heittomerkki poistuu
 ja sen paikalle tulee yhdysmerkki rivin loppuun. Sanan \emph{vaa'an}
 voisi siis kirjoittaa seuraavalla tavalla:
 
+\komentoi{discretionary}
 \begin{koodilohkosis}
   vaa\discretionary{-}{}{'}an
 \end{koodilohkosis}
@@ -2491,6 +2550,7 @@ tällaisia tarvitsee paljon, on järkevää määritellä sitä varten
 yksinkertaisempi komento, jota sitten käytetään sanoissa heittomerkin
 sijasta.
 
+\komentoi{discretionary}
 \begin{koodilohkosis}
   \newcommand{\hm}{\discretionary{-}{}{'}}
   vaa\hm an
@@ -2511,20 +2571,19 @@ ei kuitenkaan katkaista sanoja heittomerkin kohdalta.
 
 \subsection{Tavutus pois päältä}
 
-Tavutuksen voi kytkeä kokonaan pois päältä
-\paketti{polyglossia}\-/kielipaketin komennolla%
-\koodimargin{\keno disable\-hyphenation} \koodi{\keno
-  dis\-able\-hy\-phen\-ation}. Tavutuksen saa takaisin päälle komennolla
-\koodi{\keno en\-able\-hy\-phen\-ation}.
+Tavutuksen voi kytkeä kokonaan pois päältä \paketti{polyglossia}\-/
+kielipaketin komennolla \komento{disablehyphenation}.
+\komentomargin{disable\-hyphenation} Tavutuksen saa takaisin päälle
+komennolla \komento{enablehyphenation}.
 
 Toinen vaihtoehto on käyttää fontin asetusta \koodi{Hyphen\-Char=\katk
   None} samalla, kun ottaa käyttöön tietyn kirjainperheen. Oletuksena
 tavutus on pois päältä tasalevyisestä fontista, eli esimerkiksi
-\koodi{\keno text\-tt\{…\}}\-/komennon argumenttina olevaa tekstiä ei
-tavuteta. Fontteja ja niiden asetuksia käsitellään luvussa
+\komento{texttt}\-/ komennon argumenttina olevaa tekstiä ei tavuteta.
+Fontteja ja niiden asetuksia käsitellään luvussa
 \ref{luku:kirjaintyypit}.
 
 Käytännössä tavutus menee pois päältä myös silloin, kun tekstikappaleet
 tasaa vain vasempaan reunaan eli tekee oikealle liehureunan komennolla
-\koodi{\keno ragged\-right}. Tekstikappaleiden tasaamista ja palstan
-muotoa käsitellään luvussa \ref{luku:kappaleen_tasaus}.
+\komento{raggedright}. Tekstikappaleiden tasaamista ja palstan muotoa
+käsitellään luvussa \ref{luku:kappaleen_tasaus}.

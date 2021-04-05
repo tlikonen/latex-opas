@@ -140,12 +140,11 @@ Extension=.otf]
 \DeclareFloatingEnvironment[ name={Esimerkki} ]{esimerkki}
 
 \indexsetup{level=\section*, toclevel=section, noclearpage}
-\makeindex[name=paketit, title={Makropaketit}, columns=2, columnsep=1em,
-intoc]
-\makeindex[name=komennot, title={Komennot}, columns=2, columnsep=1em,
-intoc]
-\makeindex[name=ymparistot, title={Ympäristöt}, columns=2, columnsep=1em,
-intoc]
+
+\makeindex[name=paketit, title={Paketit}, columns=2, columnsep=1em, intoc]
+\makeindex[name=komennot, title={Komennot}, columns=2, columnsep=1em, intoc]
+\makeindex[name=ymparistot, title={Ympäristöt}, columns=2, columnsep=1em, intoc]
+\makeindex[name=mitat, title={Mitat}, columns=2, columnsep=1em, intoc]
 
 \renewcommand{\theFancyVerbLine}
 {\sffamily\versaalinum\fontsize{6bp}{7bp}\selectfont\arabic{FancyVerbLine}}
@@ -214,14 +213,39 @@ intoc]
 
 \newcommand{\koodi}[1]{\texttt{#1}}
 \newcommand{\koodimargin}[1]{\marginaali{\koodi{#1}}}
-\newcommand{\komento}[1]{\koodi{\keno #1}\index[komennot]{\koodi{\keno #1}}}
-\newcommand{\komentomargin}[1]{\marginaali{\koodi{\keno #1}}}
-\newcommand{\ymparisto}[1]{\koodi{#1}\index[ymparistot]{\koodi{#1}}}
-\newcommand{\ymparistomargin}[1]{\marginaali{\koodi{#1}}}
+\newcommand{\koodim}[1]{\koodi{#1}\koodimargin{#1}}
+
+\newcommand{\luokka}[1]{\koodi{#1}}
+\newcommand{\luokkamargin}[1]{\koodimargin{#1}}
+\newcommand{\luokkam}[1]{\luokka{#1}\luokkamargin{#1}}
+
+\newcommand{\komentox}[1]{\koodi{\keno #1}}
+\newcommand{\komentoi}[1]{\index[komennot]{\komentox{#1}}}
+\newcommand{\komento}[1]{\komentox{#1}\komentoi{#1}}
+\newcommand{\komentomargin}[1]{\koodimargin{\keno #1}}
+\newcommand{\komentom}[1]{\komento{#1}\komentomargin{#1}}
+
+\newcommand{\ymparistox}[1]{\koodi{#1}}
+\newcommand{\ymparistoi}[1]{\index[ymparistot]{\ymparistox{#1}}}
+\newcommand{\ymparisto}[1]{\ymparistox{#1}\ymparistoi{#1}}
+\newcommand{\ymparistomargin}[1]{\koodimargin{#1}}
+
+\newcommand{\mittax}[1]{\koodi{\keno #1}}
+\newcommand{\mittai}[1]{\index[mitat]{\mittax{#1}}}
+\newcommand{\mitta}[1]{\mittax{#1}\mittai{#1}}
+\newcommand{\mittamargin}[1]{\koodimargin{\keno #1}}
+\newcommand{\mittam}[1]{\mitta{#1}\mittamargin{#1}}
+
+\newcommand{\laskuri}[1]{\koodi{#1}}
+\newcommand{\laskurimargin}[1]{\koodimargin{#1}}
+\newcommand{\laskurim}[1]{\laskuri{#1}\laskurimargin{#1}}
+
+\newcommand{\pakettix}[1]{\textsf{#1}}
+\newcommand{\pakettii}[1]{\index[paketit]{\pakettix{#1}}}
+\newcommand{\paketti}[1]{\pakettix{#1}\pakettii{#1}}
 
 \newcommand{\tavukohta}{\textcolor{tavu}{\raisebox{-.2ex}{\rule{.6bp}{2ex}}}}
 \newcommand{\uctunnus}[1]{\textsc{\englanti{#1}}}
-\newcommand{\paketti}[1]{\textsf{#1}\index[paketit]{#1}}
 \newcommand{\avctan}[1]{\footnote{\url{https://www.ctan.org/pkg/#1}}}
 
 \newcommand{\ots}[1]{{\sffamily\bfseries #1}}
@@ -287,12 +311,15 @@ intoc]
 \begin{document}
 
 \hyphenation{
+  ab-stract
   abst-ra-hoin-ti
   abst-rak-te-ja
   abst-rak-tio-ta-soil-la
   abst-rak-tio-ta-sol-la
   abst-rak-tio-ta-sol-taan
   abst-rak-tio-ta-son
+  add-font-fea-tures
+  add-to
   add-vspace
   ala-in-dek-se-jä
   ala-in-dek-seil-le
@@ -312,19 +339,34 @@ intoc]
   ar-ti-cle
   au-thor
   ba-bel
+  babel-font
+  babel-tags
+  base-line-skip
   beam-er
+  bf-se-ries
   bib-latex
   big-break
   big-skip
+  cap-tions-finnish
+  chapter-mark
+  column-sep
+  default-font-fea-tures
+  dis-able-hy-phen-ation
   dis-cre-tionary
   doc-u-ment
   doc-u-ment-class
   ed-i-tor
   emer-gen-cy-stretch
+  en-able-hy-phen-ation
+  Endash
+  english-font
   esit-te-ly-osaan
   esit-te-ly-osak-si
   esit-te-ly-osas-sa
   ext-dash
+  fancy-hdr
+  fancy-page-style
+  fancyhf
   font-size
   font-spec
   font-ti-ase-tuk-sia
@@ -334,7 +376,11 @@ intoc]
   font-ti-ase-tus
   font-ti-ase-tus-ta
   font-ti-ase-tus-ten
+  foot-rule-width
+  foot-skip
+  for-eign-lan-guage
   ge-om-e-try
+  greek-font
   gro-tes-ki
   gro-tes-kia
   gro-tes-kiin
@@ -342,8 +388,13 @@ intoc]
   hai-tal-li-suus-ar-voik-si
   hai-tal-li-suus-arvo
   hai-tal-li-suus-arvoa
+  head-ings
+  head-rule-width
+  head-sep
   hspace
   hy-phen-ation
+  Hyph-dash
+  it-shape
   jul-kai-su-oh-jel-miin
   jul-kai-su-oh-jel-mis-sa
   kie-li-ai-nek-seen
@@ -366,9 +417,13 @@ intoc]
   La-tex-mk
   La-tex-mk-rc
   large
+  left-mark
   line-spread
   Lua-latex
+  mark-both
+  mark-right
   Match-Low-er-case
+  md-se-ries
   med-break
   med-skip
   mem-oir
@@ -377,9 +432,14 @@ intoc]
   mit-ta-yk-si-köl-le
   mit-ta-yk-si-kön
   mit-ta-yk-sik-kö
+  my-head-ings
   new-com-mand
   new-en-vi-ron-ment
+  new-font-face
+  new-font-fam-i-ly
+  new-ge-om-e-try
   ni-men-omaan
+  normal-size
   note
   ole-tus-ar-vo
   ole-tus-ar-voa
@@ -388,7 +448,12 @@ intoc]
   ole-tus-ase-tuk-set
   ole-tus-ase-tuk-sia
   ole-tus-ase-tuk-sil-la
+  one-column
+  one-side
+  other-lan-guage
   page
+  page-number-ing
+  page-style
   pages
   par-in-dent
   para-graph
@@ -408,19 +473,34 @@ intoc]
   pää-asias-sa
   quo-ta-tion
   quote
+  ragged-left
+  ragged-right
   re-new-com-mand
   re-new-en-vi-ron-ment
+  re-store-ge-om-e-try
+  right-mark
   rm-fam-i-ly
   sa-man-ai-kai-ses-ti
+  sc-shape
   Scale
   sec-tion
+  section-mark
+  select-font
+  select-lan-guage
+  set-default-lan-guage
+  set-length
+  set-main-font
+  set-mono-font
+  set-sans-font
   sf-fam-i-ly
+  sl-shape
   slides
   small
   small-break
   small-skip
   style
   sub-sec-tion
+  sub-section-mark
   suur-aak-kos-ten
   säh-kö-pos-ti-osoi-te
   säh-kö-pos-ti-osoit-tei-den
@@ -441,13 +521,20 @@ intoc]
   teks-ti-osaan
   teks-ti-osan
   teks-ti-osas-sa
+  text-comp-word-mark
+  text-english
+  text-greek
   the-bib-li-og-ra-phy
+  the-page
+  this-page-style
   tie-to-kone-oh-jel-ma
   tie-to-kone-oh-jel-mal-le
   tie-to-kone-oh-jel-mat
   tie-to-kone-oh-jel-mia
   title
   tt-fam-i-ly
+  two-column
+  two-side
   ty-po-gra-fi-sen
   ty-po-gra-fi-ses-ta
   ty-po-gra-fi-ses-ti
@@ -657,8 +744,10 @@ yhtenäinen ulkoasu ja typografia.
 \printbibliography[heading=none]
 
 \chapter{Asiahakemisto}
-\printindex[paketit]
+
+\printindex[paketit]\pagebreak
 \printindex[komennot]
 \printindex[ymparistot]
+\printindex[mitat]
 
 \end{document}

@@ -19,7 +19,7 @@ Latexin lähdetiedostoissa kappaleen vaihtuminen ilmaistaan
 kirjoittamalla kappaleiden väliin vähintään yksi tyhjä rivi. Tätä
 merkintäkielen piirrettä käsitellään myös luvussa
 \ref{luku:kappaleen_vaihtuminen}. Kappale vaihtuu myös komennolla
-\koodi{\keno par}, joka sopii käytettäväksi esimerkiksi komentojen
+\komento{par}, joka sopii käytettäväksi esimerkiksi komentojen
 määrittelyssä (luku \ref{luku:komennot}), kun halutaan varmistaa
 kappaleen vaihtuminen tietyssä kohdassa.
 
@@ -51,7 +51,7 @@ reunasta: jotkin rivit yltävät palstan reunan yli; jotkin rivit jäävät
 vajaaksi. Näin käy usein varsinkin suomen kielessä, jonka sanat ovat
 usein pitkiä ja riveillä on vähänlaisesti sanavälejä. Suomen kielessä
 sanavälien venymisen yläraja on usein tarpeellista asettaa oletusarvoa
-suuremmaksi. Se tehdään mitan \koodi{\keno emergencystretch} avulla,
+suuremmaksi. Se tehdään mitan \mitta{emergencystretch} avulla,
 esimerkiksi seuraavasti:
 
 \begin{koodilohkosis}
@@ -59,15 +59,14 @@ esimerkiksi seuraavasti:
 \end{koodilohkosis}
 
 Kaikenlaiset kappaleiden latomiseen liittyvät tekniset rajoitukset voi
-poistaa tai asettaa hyvin suuriksi komennolla \koodi{\keno sloppy}.
-\koodimargin{\keno sloppy} Komento asettaa muun muassa sanavälien
-venymisen ylärajaksi 3\,em. Tämän komennon käyttö ei ole kovin
-suositeltavaa, koska sillä on muitakin seurauksia ja se voi vaikuttaa
-myös sellaisiin kappaleisiin, jotka muuten saataisiin ladottua nätisti.
-Parempi on asettaa vain mitta \koodi{\keno emergencystretch} riittävän
-suureksi. \koodimargin{\keno fussy} Sanavälien venymiseen ja kappaleiden
-tasaiseen latomiseen liittyvät asetukset voi palauttaa oletusarvoihin
-komennolla \koodi{\keno fussy}.
+poistaa tai asettaa hyvin suuriksi komennolla \komentom{sloppy}. Komento
+asettaa muun muassa sanavälien venymisen ylärajaksi 3\,em. Tämän
+komennon käyttö ei ole kovin suositeltavaa, koska sillä on muitakin
+seurauksia ja se voi vaikuttaa myös sellaisiin kappaleisiin, jotka
+muuten saataisiin ladottua nätisti. Parempi on asettaa vain mitta
+\mitta{emergencystretch} riittävän suureksi. \komentomargin{fussy}
+Sanavälien venymiseen ja kappaleiden tasaiseen latomiseen liittyvät
+asetukset voi palauttaa oletusarvoihin komennolla \komento{fussy}.
 
 Hyvin tavallista on tasata teksti pelkästään vasempaan reunaan, jolloin
 rivien pituudet vaihtelevat ja oikealla on niin sanottu liehureuna.
@@ -78,7 +77,7 @@ vähän ja oikean reunan tasaaminen vaatii sanavälien venyttämistä joskus
 kohtuuttoman paljon. Tekstiin jää rumia aukkoja.
 
 \providecommand{\rivi}{}
-\renewcommand{\rivi}[3]{\koodi{\keno #1} & \koodi{#2} & #3 \\}
+\renewcommand{\rivi}[3]{\komento{#1} & \ymparisto{#2} & #3 \\}
 
 \leijutlk{
   \begin{tabular}{lll}
@@ -113,11 +112,10 @@ paketin komennot sallivat tavutuksen normaalisti.
 \subsection{Pystysuuntaiset välit}
 
 Kappaleiden väliin ladottava pystysuuntainen tyhjä tila asetetaan mitan
-\koodi{\keno par\-skip} \koodimargin{\keno par\-skip} avulla. Se on
-oletuksena nolla, mutta pientä venymistä kuitenkin sallitaan, eli
-joissakin tilanteissa kappaleiden väliin voidaan latoa pieni tyhjä tila.
-Jos tyhjää tilaa ei haluta missään tilanteessa, asetetaan mitta vain
-nollaksi:
+\mittam{par\-skip} avulla. Se on oletuksena nolla, mutta pientä
+venymistä kuitenkin sallitaan, eli joissakin tilanteissa kappaleiden
+väliin voidaan latoa pieni tyhjä tila. Jos tyhjää tilaa ei haluta
+missään tilanteessa, asetetaan mitta vain nollaksi:
 
 \begin{koodilohkosis}
   \setlength{\parskip}{0ex}

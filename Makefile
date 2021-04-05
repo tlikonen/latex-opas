@@ -1,4 +1,4 @@
-nimi = opas
+nimi = kaytannollista_latexia
 latex = lualatex -interaction=nonstopmode
 
 $(nimi).pdf: *.tex *.bib

@@ -11,4 +11,5 @@
  (bibtex-mode . ((bibtex-dialect . biblatex)
                  (bibtex-text-indentation . 17)
                  (bibtex-contline-indentation . 18)
-                 (fill-prefix . "                  "))))
+                 (fill-prefix . "                  ")))
+ (makefile-mode . ((indent-tabs-mode . t))))

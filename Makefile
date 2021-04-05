@@ -10,7 +10,7 @@ $(nimi).pdf: *.tex *.bib
 clean:
 	rm -f $(nimi).aux $(nimi).bbl $(nimi).bcf $(nimi).blg \
 		$(nimi).fdb_latexmk $(nimi).fls $(nimi).log $(nimi).out \
-		$(nimi).run.xml $(nimi).toc
+		$(nimi).run.xml $(nimi).toc *.idx *.ind *.ilg
 
 distclean: clean
 	rm -f $(nimi).pdf

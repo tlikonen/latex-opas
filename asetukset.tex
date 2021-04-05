@@ -496,7 +496,7 @@ Sen sijaan sivun sisäiset mitat täytyy määritellä toisella tavalla,
 käyttämällä valitsinta \koodi{lay\-out} tai \koodi{layout\-size}.
 
 \begin{esimerkki*}
-\komentoi{geometry}
+  \komentoi{geometry}
 \begin{koodilohko}
   \geometry{
     papersize={220mm, 307mm},
@@ -791,6 +791,25 @@ varsin kokonaisvaltainen koodi omien ylä- ja alatunnisteiden
 toteutukseen.
 
 \begin{esimerkki*}
+  \komentoi{documentclass}
+  \komentoi{usepackage}
+  \pakettii{fancyhdr}
+  \komentoi{fancypagestyle}
+  \komentoi{fancyhf}
+  \komentoi{renewcommand}
+  \komentoi{headrulewidth}
+  \komentoi{footrulewidth}
+  \komentoi{leftmark}
+  \komentoi{rightmark}
+  \komentoi{thepage}
+  \komentoi{pagestyle}
+  \komentoi{chaptermark}
+  \komentoi{markboth}
+  \komentoi{chaptername}
+  \komentoi{thechapter}
+  \komentoi{sectionmark}
+  \komentoi{thesection}
+
 \begin{koodilohko}
   \documentclass{book}
   \usepackage{fancyhdr}
@@ -996,6 +1015,7 @@ Leikkauksen nimessä voi käyttää tähteä (\koodi{*}), joka korvautuu
 kirjainperheen nimellä (\englanti{Macklin Text}).
 
 \begin{esimerkki*}
+  \komentoi{setmainfont}
 \begin{koodilohko}
   \setmainfont{…}[
     UprightFont={…},     UprightFeatures={…},
@@ -1012,6 +1032,7 @@ kirjainperheen nimellä (\englanti{Macklin Text}).
 \end{esimerkki*}
 
 \begin{esimerkki*}
+  \komentoi{setmainfont}
 \begin{koodilohko}
   \setmainfont{Macklin Text}[
     UprightFont    = {* Light},
@@ -1121,6 +1142,9 @@ lähellä toisiaan. Esimerkissä \ref{esim:rivikorkeus} on kaksi erilaista
 \komento{fontsize}\-/komentoa ja ladottu lopputulos.
 
 \begin{esimerkki*}
+  \komentoi{fontsize}
+  \komentoi{selectfont}
+
 \begin{koodilohko}
   \fontsize{8bp}{11bp}\selectfont Tässä on pienehkö leipätekstin
   fonttikoko ja suhteellisen suuri rivikorkeus. Pitkät rivit vaativat
@@ -1329,6 +1353,14 @@ perusfontissa, koska fonttien pistekoko mitataan ylimmän ja alimman
 kohdan välillä ja koska fonttien mittasuhteet ovat erilaisia.
 
 \begin{esimerkki*}
+  \komentoi{documentclass}
+  \komentoi{usepackage}
+  \pakettii{fontspec}
+  \komentoi{setmainfont}
+  \komentoi{setsansfont}
+  \komentoi{setmonofont}
+  \komentoi{linespread}
+
 \begin{koodilohko}
   \documentclass[10pt]{article} % 10pt on oletus
   \usepackage{fontspec}
@@ -1403,6 +1435,21 @@ ja otsikoiden fonttikoko. Silloin tarvitaan tässä luvussa kuvattua tapaa
 fonttien asettamiseen.
 
 \begin{esimerkki*}
+  \komentoi{documentclass}
+  \komentoi{usepackage}
+  \pakettii{fontspec}
+  \komentoi{setmainfont}
+  \komentoi{setsansfont}
+  \komentoi{setmonofont}
+  \komentoi{newfontfamily}
+  \komentoi{linespread}
+  \komentoi{renewcommand}
+  \komentoi{footnotesize}
+  \komentoi{small}
+  \komentoi{normalsize}
+  \komentoi{large}
+  \komentoi{Large}
+
 \begin{koodilohko}
   \documentclass{article}
   \usepackage{fontspec}
@@ -2082,6 +2129,8 @@ jälkeen määritellään kreikan kielessä (\koodi{greek}) käytettävä
 peruskirjainperhe ja pääteviivaton perhe.
 
 \begin{esimerkki*}
+  \komentoi{babelfont}
+
 \begin{koodilohko}
   \babelfont{rm}{TeX Gyre Termes}
   \babelfont{sf}[Scale=MatchLowercase]{TeX Gyre Heros}

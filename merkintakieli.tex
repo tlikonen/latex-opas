@@ -417,7 +417,7 @@ merkintätavoilla eikä Unicode\-/merkeillä.
 
 Silloin kun todella täytyy latoa kaksi tai kolme peräkkäistä
 yhdysmerkkiä, voi käyttää tasalevyistä fonttia
-(\komento{texttt}\koodi{\{--\}}), joka oletuksena kytkee pois Latexin
+(\komento[\{--\}]{texttt}), joka oletuksena kytkee pois Latexin
 ajatusviivatoiminnon. Saman asetuksen saa kyllä mihin tahansa fonttiin,
 kun poistaa fontista niin sanotut Tex\-/ligatuurit asetuksella
 \koodi{Liga\-tures=\katk TeX\-Reset}. Väliaikaisesti asetus tehdään
@@ -705,8 +705,8 @@ aaltosulkeisiin \koodi{\{\ldots\}} ja valinnaiset hakasulkeisiin
 \end{koodilohkosis}
 
 Jos pakolliseen argumenttiin haluaa sisällyttää aaltosulkeen, täytyy sen
-eteen kirjoittaa kenoviiva (\koodi{\keno\{}~\koodi{\keno\}}), tai voi
-myös käyttää taulukossa \ref{tlk:merkkien_suojaus}
+eteen kirjoittaa kenoviiva \komento{\{}~\komento{\}}, tai voi myös
+käyttää taulukossa \ref{tlk:merkkien_suojaus}
 (s.~\pageref{tlk:merkkien_suojaus}) mainittuja komentoja aaltosulkeiden
 tuottamiseen. Sama pätee aaltosulkeiden latomiseen muutenkin.
 
@@ -714,10 +714,12 @@ Hakasulkeet sen sijaan ladotaan tekstiin normaalisti, eikä niiden kanssa
 käytetä kenoviivaa. Poikkeustilanne on komennon valinnaisen argumentin
 sisällä, koska valinnainen argumentti jo sinänsä kirjoitetaan
 hakasulkeiden sisään. Hakasulkeita ei voi suojata kenoviivalla, koska
-\koodi{\keno[} ja \koodi{\keno]} ovat jo muuhun tarkoitettuja komentoja:
+\komento{[} ja \komento{]} ovat jo muuhun tarkoitettuja komentoja:
 niillä luodaan matematiikkatilassa (luku \ref{luku:matematiikka}) oleva
 tekstilohko. Valinnaisen argumentin sisään saa hakasulkeen, kun sen
-kirjoittaa aaltosulkeiden sisään: \koodi{\keno komento[\{]\}]}.
+kirjoittaa aaltosulkeiden sisään. Esimerkiksi komennon
+\komentox[{[}\{{]}\}{]}]{komento} valinnaiseksi argumentiksi tulee yksi
+\koodi{]}-merkki.
 
 Komennon yhteydessä sanavälejä käsitellään hieman poikkeuksellisesti.
 Esimerkiksi komennon nimen perässä olevat sanavälit syödään pois, jos
@@ -734,14 +736,14 @@ kirjoita mitään eikä vaikuta tekstin latomiseen.
 \end{tulossis}
 
 Jos haluaa komennon jälkeen yhden sanavälin, täytyy kirjoittaa komennon
-nimen jälkeen aaltosulkeet (\koodi{\keno komento\{\}}) tai kenoviiva ja
-sanaväli (\koodi{\keno komento\keno~}). Komennon nimen ja argumenttien
+nimen jälkeen aaltosulkeet (\komentox[\{\}]{komento}) tai kenoviiva ja
+sanaväli (\komentox[\keno~]{komento}). Komennon nimen ja argumenttien
 välissä voi olla sanavälejä, ja ne kaikki syödään pois. Komennon ja sen
 argumentit voi siis kirjoittaa vaikka seuraavalla tavalla:
 
 \begin{koodilohkosis}
   \komento  [valinnainen]
-     {argu}   {mentteja}
+     {argu-}   {mentteja}
 \end{koodilohkosis}
 
 \subsection{Omat komennot ja abstrahointi}
@@ -1462,7 +1464,7 @@ sääntö, joka syrjäyttää muut.
 Laskureiden avulla Latex pitää kirjaa esimerkiksi sivunumeroista,
 lukujen ja alalukujen sekä kuvien ja muiden elementtien numeroinnista.
 Esimerkiksi nyt olemme pääluvun~\arabic{chapter}
-alaluvussa~\arabic{section}. Edellisen virkkeen luvut tulevat Latexin
+alaluvussa~\arabic{section}, ja mainitut luvut tulevat Latexin
 laskureista automaattisesti.
 
 \leijutlk{
@@ -1508,7 +1510,7 @@ ja taulukoista (luku \ref{luku:leijuosat}) pidetään kirjaa laskureissa
 \laskuri{figure} ja \laskuri{table}, ja alaviitteiden (luku
 \ref{luku:alaviitteet}) numerointi on laskureissa \laskuri{footnote} ja
 \koodi{mp\-foot\-note}. Numeroidut luetelmat (luku \ref{luku:luetelmat})
-käsitellään \koodi{enum}\-/alkuisten laskureiden avulla siten, että
+käsitellään \laskurix{enum}\-/alkuisten laskureiden avulla siten, että
 perustasolla käytetään laskuria \laskuri{enumi}, ja jos sen
 luetelmakohta sisältää toisen numeroidun luetelman, käytetään siinä
 laskuria \laskuri{enumii}, sen sisällä laskuria \laskuri{enumiii} jne.
@@ -1543,15 +1545,15 @@ symbolit toimivat vain lu\-ku\-alueel\-la 1--9.
     \toprule
     \ots{Komento} & \ots{Merkitys} \\
     \midrule
-    \komento{arabic}\koodi{\{\ldots\}} & arabialainen luku: 1, 2, 3\ldots \\
-    \komento{roman}\koodi{\{\ldots\}} & roomalainen luku: i, ii, iii\ldots \\
-    \komento{Roman}\koodi{\{\ldots\}} & roomalainen luku: I, II, III\ldots \\
-    \komento{alph}\koodi{\{\ldots\}} & kirjain: a, b, c\ldots\ (vain 1--26) \\
-    \komento{Alph}\koodi{\{\ldots\}} & kirjain: A, B, C\ldots\ (vain 1--26) \\
-    \komento{fnsymbol}\koodi{\{\ldots\}} & symboli:
-                                           \textasteriskcentered
-                                           \textdagger
-                                           \textdaggerdbl\S\P\ldots\ (vain 1--9) \\
+    \komento{arabic} & arabialainen luku: 1, 2, 3\ldots \\
+    \komento{roman} & roomalainen luku: i, ii, iii\ldots \\
+    \komento{Roman} & roomalainen luku: I, II, III\ldots \\
+    \komento{alph} & kirjain: a, b, c\ldots\ (vain 1--26) \\
+    \komento{Alph} & kirjain: A, B, C\ldots\ (vain 1--26) \\
+    \komento{fnsymbol} & symboli:
+                         \textasteriskcentered
+                         \textdagger
+                         \textdaggerdbl\S\P\ldots\ (vain 1--9) \\
     \bottomrule
   \end{tabular}
 }{
@@ -1563,12 +1565,12 @@ Taulukon \ref{tlk:laskurien_tulostus} komentojen lisäksi laskuriin
 liittyvän arvon voi tulostaa komennolla, joka alkaa kirjaimilla
 \komentox{the} ja jatkuu laskurin nimellä. Esimerkiksi komento
 \komento{thepage} tulostaa sivunumeron eli tekee käytännössä saman asian
-kuin komento \komento{arabic}\koodi{\{page\}}. Aina nämä eivät
+kuin komento \komento[\{page\}]{arabic}. Aina nämä eivät
 kuitenkaan ole sama asia, ja \komentox{the}\-/alkuinen komento voi olla
 määritelty toisellakin tavalla. Esimerkiksi tämän oppaan leijuvat
 taulukot numeroidaan laskurilla \laskuri{table}, mutta komento
 \komento{thetable} tulostaa ensin pääluvun ja sen perään pisteen ja
-taulukon numeron. Viimeisin taulukko oli numeroltaan \thetable{} eli
+taulukon numeron. Viimeisin taulukko on numeroltaan \thetable{} eli
 pääluvun \arabic{chapter} taulukko \arabic{table}.
 
 Jos laskurin arvoa tarvitaan Latexin teknisessä tilanteessa eikä

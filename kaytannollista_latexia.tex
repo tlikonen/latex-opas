@@ -220,11 +220,11 @@ Extension=.otf]
 \newcommand{\luokkamargin}[1]{\koodimargin{#1}}
 \newcommand{\luokkam}[1]{\luokka{#1}\luokkamargin{#1}}
 
-\newcommand{\komentox}[1]{\koodi{\keno #1}}
+\newcommand{\komentox}[2][]{\koodi{\keno #2}\koodi{#1}}
 \newcommand{\komentoi}[1]{\index[komennot]{\komentox{#1}}}
-\newcommand{\komento}[1]{\komentox{#1}\komentoi{#1}}
+\newcommand{\komento}[2][]{\komentox[#1]{#2}\komentoi{#2}}
 \newcommand{\komentomargin}[1]{\koodimargin{\keno #1}}
-\newcommand{\komentom}[1]{\komento{#1}\komentomargin{#1}}
+\newcommand{\komentom}[2][]{\komento[#1]{#2}\komentomargin{#2}}
 
 \newcommand{\ymparistox}[1]{\koodi{#1}}
 \newcommand{\ymparistoi}[1]{\index[ymparistot]{\ymparistox{#1}}}

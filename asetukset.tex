@@ -2436,11 +2436,11 @@ kirjoittaa komennon perään aaltosuljeparin tai kenoviivan ja sanavälin.
 
 \subsection{Tavutus sanan reunasta}
 
-Asetukset \koodi{\keno left\-hy\-phen\-min~N} ja \koodi{\keno
-  right\-hy\-phen\-min~N} vaikuttavat tavutukseen sanan reunoissa.
-Argumentti \koodi{N} on positiivinen kokonaisluku, ja se määrittelee,
-kuinka monta merkkiä vähintään sanan vasemmasta tai oikeasta reunasta
-pidetään yhdessä. Oletus\-arvot ovat kielikohtaisia ja määritellään
+Asetukset \komento[~N]{lefthyphenmin} ja \komento[~N]{righthyphenmin}
+vaikuttavat tavutukseen sanan reunoissa. Argumentti \koodi{N} on
+positiivinen kokonaisluku, ja se määrittelee, kuinka monta merkkiä
+vähintään sanan vasemmasta tai oikeasta reunasta pidetään yhdessä.
+Oletus\-arvot ovat kielikohtaisia ja määritellään
 \paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketeissa. Suomen
 kielessä kumpikin asetus on kaksi (2) merkkiä.
 
@@ -2454,6 +2454,8 @@ tavoin omat asetukset tulevat voimaan automaattisesti kielen vaihtuessa.
 
 \komentoi{addto}
 \komentoi{captionsfinnish}
+\komentoi{lefthyphenmin}
+\komentoi{righthyphenmin}
 \begin{koodilohkosis}
   \addto{\captionsfinnish}{
     \lefthyphenmin  3

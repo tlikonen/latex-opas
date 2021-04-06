@@ -1,12 +1,11 @@
 nimi = kaytannollista_latexia
 hakemistot = paketit ymparistot komennot mitat laskurit
-latex = lualatex -interaction=nonstopmode
 
 $(nimi).pdf: *.tex *.bib
-	$(latex) $(nimi)
-	biber $(nimi)
-	$(latex) $(nimi)
-	$(latex) $(nimi)
+	latexmk -lualatex \
+		-pdflualatex="lualatex -interaction=nonstopmode %O %S" \
+		$(nimi)
+	@touch $@
 
 clean:
 	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls log out \

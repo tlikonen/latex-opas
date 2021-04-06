@@ -1,5 +1,5 @@
 nimi = kaytannollista_latexia
-hakemistot = paketit ymparistot komennot mitat
+hakemistot = paketit ymparistot komennot mitat laskurit
 latex = lualatex -interaction=nonstopmode
 
 $(nimi).pdf: *.tex *.bib

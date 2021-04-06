@@ -1164,7 +1164,7 @@ eivät häiritse leipätekstin lukemista mutta ovat silti lukijan
 saatavilla.
 
 Latexissa verkko\-/osoitteet kannattaa toteuttaa siihen tarkoitetun
-makropaketin avulla. Paketti \paketti{hyper\-ref}\avctan{hyperref}
+makropaketin avulla. Paketti \paketti{hyperref}\avctan{hyperref}
 sisältää toimintoja paitsi verkko\-/ osoitteiden latomiseen mutta myös
 dokumentin ristiviitteiden hallintaan. Paketin avulla valmiin pdf\-/
 tiedoston verkkolinkit toimivat, eli pdf\-/lukijassa linkkiä
@@ -1176,7 +1176,7 @@ luontevista kohdista eli vain tiettyjen välimerkkien jälkeen.
 Tavuviivoja ei lisätä rivin loppuun. Myös typografiset ligatuurit (luku
 \ref{luku:typo_liga}) kytketään pois päältä.
 
-\paketti{hyper\-ref}\-/paketin ohjekirja neuvoo lataamaan paketin
+\paketti{hyperref}\-/paketin ohjekirja neuvoo lataamaan paketin
 viimeisenä eli muiden makropakettien lataamisen jälkeen, koska se
 muokkaa joidenkin muualla määriteltyjen komentojen ominaisuuksia.
 
@@ -1186,17 +1186,17 @@ muokkaa joidenkin muualla määriteltyjen komentojen ominaisuuksia.
   \urlstyle{same}        % linkkien fontti
 \end{koodilohkosis}
 
-Edellisen esimerkin komennolla \komento{hyper\-setup} vaikutetaan
+Edellisen esimerkin komennolla \komento{hypersetup} vaikutetaan
 makropaketin asetuksiin. Oletuksena esimerkiksi linkkien ympärille
 ladotaan värilliset kehykset, mutta valitsin \koodi{hide\-links} poistaa
 ne. Valitsimella \koodi{url\-color} voisi vaihtaa verkko\-/osoitteiden
 kehyksen väriä.
 
-Esimerkin seuraava komento \komento{url\-style} määrittää, mitä
+Esimerkin seuraava komento \komento{urlstyle} määrittää, mitä
 kirjainperhettä käytetään verkko\-/ osoitteiden latomiseen. Komennon
 argumentti \koodi{same} tarkoittaa, että käytetään samaa kirjainperhettä
 kuin ympärillä olevassa tekstissä. Tietty kiinteä kirjainperhe valitaan
-\komento{url\-style}\-/ komennon argumentilla \koodi{rm} (antiikva,
+\komento{urlstyle}\-/ komennon argumentilla \koodi{rm} (antiikva,
 roman), \koodi{sf} (groteski, sans serif) tai \koodi{tt} (tasalevyinen).
 Oletusasetus on tasalevyinen kirjainperhe.
 
@@ -1229,12 +1229,11 @@ argumentti, verkko\-/osoite.
 
 Jos halutaan latoa dokumenttiin verkko\-/osoite, joka ei ole
 pdf\-/dokumentissa napsautettava linkki, käytetään komentoa
-\komento{no\-link\-url}. \komentomargin{no\-link\-url} Tämän komennon
-argumenttina oleva verkko\-/osoite ainoastaan ladotaan osoitteiden
-tavoin.
+\komentom{nolinkurl}. Tämän komennon argumenttina oleva verkko\-/osoite
+ainoastaan ladotaan osoitteiden tavoin.
 
 Linkkinä toimivien sähköpostiosoitteiden latominen vaatii
-\komento{href}- ja \komento{no\-link\-url}\-/komentojen yhdistämistä.
+\komento{href}- ja \komento{nolinkurl}\-/ komentojen yhdistämistä.
 Linkin alkuun täytyy lisätä sana \koodi{mailto:}, mutta tuota sanaa
 tuskin halutaan näkyviin itse dokumenttiin. Niinpä sähköpostiosoite
 kannattaa kirjoittaa seuraavalla tavalla:
@@ -1752,7 +1751,7 @@ esimerkin rivillä 13 on tehty.
 
 \paketti{biblatex}\-/makropaketti otetaan käyttöön esimerkin
 \ref{esim:biblatex-käyttöönotto} rivien avulla. Mukana ovat myös paketit
-\paketti{polyglossia} ja \paketti{cs\-quotes}. Jälkimmäinen sisältää
+\paketti{polyglossia} ja \paketti{csquotes}. Jälkimmäinen sisältää
 lainausmerkkien käyttöön liittyvää logiikkaa (luku
 \ref{luku:lainausmerkit}), jota ilman \paketti{biblatex} ei saa eri
 kielten erilaisia lainausmerkkejä oikein vaan käyttää pelkästään

@@ -145,6 +145,7 @@ Extension=.otf]
 \makeindex[name=komennot, title={Komennot}, columns=2, columnsep=1em]
 \makeindex[name=ymparistot, title={Ympäristöt}, columns=2, columnsep=1em]
 \makeindex[name=mitat, title={Mitat}, columns=2, columnsep=1em]
+\makeindex[name=laskurit, title={Laskurit}, columns=2, columnsep=1em]
 
 \renewcommand{\theFancyVerbLine}
 {\sffamily\versaalinum\fontsize{6bp}{7bp}\selectfont\arabic{FancyVerbLine}}
@@ -237,7 +238,9 @@ Extension=.otf]
 \newcommand{\mittamargin}[1]{\koodimargin{\keno #1}}
 \newcommand{\mittam}[1]{\mitta{#1}\mittamargin{#1}}
 
-\newcommand{\laskuri}[1]{\koodi{#1}}
+\newcommand{\laskurix}[1]{\koodi{#1}}
+\newcommand{\laskurii}[1]{\index[laskurit]{\laskurix{#1}}}
+\newcommand{\laskuri}[1]{\laskurix{#1}\laskurii{#1}}
 \newcommand{\laskurimargin}[1]{\koodimargin{#1}}
 \newcommand{\laskurim}[1]{\laskuri{#1}\laskurimargin{#1}}
 
@@ -323,6 +326,8 @@ Extension=.otf]
   abst-rak-tio-ta-son
   add-font-fea-tures
   add-to
+  add-to-counter
+  add-to-length
   add-vspace
   ala-in-dek-se-jä
   ala-in-dek-seil-le
@@ -353,6 +358,8 @@ Extension=.otf]
   cap-tions-finnish
   chapter-mark
   column-sep
+  counter-with-in
+  counter-with-out
   cs-quotes
   default-font-fea-tures
   dis-able-hy-phen-ation
@@ -362,8 +369,9 @@ Extension=.otf]
   ed-i-tor
   emer-gen-cy-stretch
   en-able-hy-phen-ation
+  en-glish-font
+  en-space
   Endash
-  english-font
   equa-tion
   esit-te-ly-osaan
   esit-te-ly-osak-si
@@ -381,6 +389,7 @@ Extension=.otf]
   font-ti-ase-tus
   font-ti-ase-tus-ta
   font-ti-ase-tus-ten
+  foot-note
   foot-rule-width
   foot-skip
   for-eign-lan-guage
@@ -401,7 +410,11 @@ Extension=.otf]
   hspace
   hy-phen-ation
   hyper-ref
+  hyper-setup
   Hyph-dash
+  if-then-else
+  ig-nore-spaces
+  ig-nore-spaces-af-ter-end
   it-shape
   jul-kai-su-oh-jel-miin
   jul-kai-su-oh-jel-mis-sa
@@ -442,11 +455,15 @@ Extension=.otf]
   mit-ta-yk-sik-kö
   my-head-ings
   new-com-mand
+  new-counter
   new-en-vi-ron-ment
   new-font-face
   new-font-fam-i-ly
   new-ge-om-e-try
+  new-length
+  new-page
   ni-men-omaan
+  no-link-url
   normal-size
   note
   obey-cr
@@ -462,9 +479,11 @@ Extension=.otf]
   other-lan-guage
   page
   page-number-ing
+  page-ref
   page-style
   pages
   par-in-dent
+  par-skip
   para-graph
   pdf-lscape
   pe-rus-osas-ta
@@ -474,6 +493,7 @@ Extension=.otf]
   pien-aak-ko-set
   pien-aak-kos-ten
   poly-glos-sia
+  pro-vide-command
   pub-lish-er
   pys-ty-asen-toi-sel-la
   pys-ty-asen-toi-sen
@@ -489,6 +509,9 @@ Extension=.otf]
   re-new-en-vi-ron-ment
   re-store-cr
   re-store-ge-om-e-try
+  real-scripts
+  ref-step-counter
+  reg-tot-counter
   right-mark
   rm-fam-i-ly
   sa-man-ai-kai-ses-ti
@@ -498,11 +521,15 @@ Extension=.otf]
   section-mark
   select-font
   select-lan-guage
+  set-counter
   set-default-lan-guage
   set-length
   set-main-font
   set-mono-font
   set-sans-font
+  set-to-depth
+  set-to-height
+  set-to-width
   sf-fam-i-ly
   show-hy-phens
   sl-shape
@@ -511,6 +538,7 @@ Extension=.otf]
   small-break
   small-skip
   space-skip
+  step-counter
   style
   sub-sec-tion
   sub-section-mark
@@ -535,20 +563,29 @@ Extension=.otf]
   teks-ti-osan
   teks-ti-osas-sa
   text-comp-word-mark
-  text-english
+  text-el-lip-sis
+  text-en-glish
   text-greek
   text-quote-dbl
   text-quote-single
+  text-sub-script
+  text-super-script
+  text-width
   the-bib-li-og-ra-phy
   the-chapter
   the-page
   the-section
+  the-table
   this-page-style
   tie-to-kone-oh-jel-ma
   tie-to-kone-oh-jel-mal-le
   tie-to-kone-oh-jel-mat
   tie-to-kone-oh-jel-mia
   title
+  tot-count
+  tot-pages
+  tot-value
+  total
   tt-fam-i-ly
   two-column
   two-side
@@ -571,6 +608,7 @@ Extension=.otf]
   ulko-asuun
   Uni-code
   Uni-coden
+  url-style
   use-pack-age
   va-paa-eh-toi-sia
   vaih-to-eh-don
@@ -579,6 +617,7 @@ Extension=.otf]
   vaih-to-eh-to-ja
   vaih-to-eh-to-na
   vaih-to-eh-toi-ses-ti
+  value
   vir-he-il-moi-tuk-sen
   vir-he-il-moi-tus
   vir-he-il-moi-tus-ta
@@ -766,5 +805,6 @@ yhtenäinen ulkoasu ja typografia.
 \printindex[komennot]
 \printindex[ymparistot]
 \printindex[mitat]
+\printindex[laskurit]
 
 \end{document}

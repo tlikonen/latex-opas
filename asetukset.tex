@@ -2240,14 +2240,14 @@ dokumentin pääasiallisen kielen tavutukseen.
 
 Tietyt sanassa mukana olevat merkit kytkevät muut tavutussäännöt pois
 päältä ja muuttavat sanan tavutuksen yksilölliseksi. Jos sanassa on
-mukana yksikin tavutusvihje (\koodi{\keno\=/}), yhdysmerkki
-(\koodi{\=/}), lyhyt ajatusviiva (\mbox{\koodi{--}}) tai pitkä
-ajatusviiva (\mbox{\koodi{---}}), sana katkaistaan vain näiden kohdalta
+mukana yksikin tavutusvihje (\komento{-}), yhdysmerkki (\koodi{\=/}),
+lyhyt ajatusviiva (\mbox{\koodi{--}}) tai pitkä ajatusviiva
+(\mbox{\koodi{---}}), sana katkaistaan vain näiden kohdalta
 (\koodi{\keno\=/}) tai jälkeen.%
 \footnote{\paketti{polyglossia}\-/kielipaketti ja Tex toimivat tekstissä
   kuvatulla tavalla. Sen sijaan \paketti{babel}\-/paketti määrittelee
-  ainakin suomen kielelle tavutusvihjeen (\koodi{\keno\=/}) siten, että
-  se sallii sanan tavutuksen muistakin kohdista kuin tavutusvihjeen
+  ainakin suomen kielelle tavutusvihjeen (\komento{-}) siten, että se
+  sallii sanan tavutuksen muistakin kohdista kuin tavutusvihjeen
   kohdalta. Tavutusvihjeen molemmin puolin sanan osat tavutetaan
   yleisten sääntöjen mukaisesti, ellei tavutuksen estäviä merkkejä kuten
   yhdysmerkkejä tai ajatusviivoja ole. \paketti{babel}\-/paketissa on
@@ -2270,19 +2270,19 @@ Latex\-/lähdetiedostossa.
     \koodi{matkustaa}
     & mat\tavukohta kus\tavukohta taa
     & tavutus kaikista kohdista \\
-    \koodi{matkus\keno-taa}
+    \koodi{matkus\komento{-}taa}
     & matkus\tavukohta taa
     & vain tavutusvihjeen kohdalta \\
     \koodi{matka-aika}
     & matka-\tavukohta aika
     & vain yhdysmerkin jälkeen \\
-    \koodi{matka-ai\keno-ka}
+    \koodi{matka-ai\komento{-}ka}
     & matka-\tavukohta ai\tavukohta ka
     & vain yhdysmerkki ja tavutusvihje \\
     \koodi{Oulu--Rovaniemi}
     & Oulu--\tavukohta Rovaniemi
     & vain ajatusviivan jälkeen \\
-    \koodi{Oulu--Rova\keno-niemi}
+    \koodi{Oulu--Rova\komento{-}niemi}
     & Oulu--\tavukohta Rova\tavukohta niemi
     & vain ajatusviiva ja tavutusvihje \\
     \koodi{matka-}
@@ -2376,23 +2376,23 @@ vertaillaan \paketti{extdash}\-/paketin komentoja Texin vastaaviin.
                 & matka-\tavukohta aika
                 & \koodi{Oulu--Rovaniemi}
                 & Oulu--\tavukohta Rovaniemi \\
-    \koodi{matka\keno -/aika}
+    \koodi{matka\komento{-/}aika}
                 & mat\tavukohta ka-\tavukohta ai\tavukohta ka
-                & \koodi{Oulu\keno --Rovaniemi}
+                & \koodi{Oulu\komento{--}Rovaniemi}
                 & Ou\tavukohta lu--\tavukohta Ro\tavukohta va\tavukohta
                   nie\tavukohta mi \\
-    \koodi{matka\keno =/aika}
+    \koodi{matka\komento{=/}aika}
                 & mat\tavukohta ka-ai\tavukohta ka
-                & \koodi{Oulu\keno ==Rovaniemi}
+                & \koodi{Oulu\komento{==}Rovaniemi}
                 & Ou\tavukohta lu--Ro\tavukohta va\tavukohta
                   nie\tavukohta mi \\
     \koodi{matka-}
                 & matka-
                 & \koodi{-aika}
                 & -\tavukohta aika \\
-    \koodi{matka\keno -/}
+    \koodi{matka\komento{-/}}
                 & mat\tavukohta ka-
-                & \koodi{\keno =/aika}
+                & \koodi{\komento{=/}aika}
                 & -ai\tavukohta ka \\
     \bottomrule
   \end{tabular}
@@ -2408,6 +2408,7 @@ tilanteessa, jossa käytetään tavutuksen sallivaa yhdysmerkkikomentoa:
 
 % \pagebreak[3]
 
+\komentoi{-/}
 \begin{koodilohkosis}
   matka\-/ ja aika\-/arvio
 \end{koodilohkosis}
@@ -2422,6 +2423,7 @@ kirjoittaa komennon perään aaltosuljeparin tai kenoviivan ja sanavälin.
 
 % \pagebreak[3]
 
+\komentoi{-/}
 \begin{koodilohkosis}
   matka\-/{} ja aika\-/arvio \\
   matka\-/\ ja aika\-/arvio
@@ -2574,6 +2576,7 @@ tai useammalla kuin yhdellä konsonantilla. Joitakin tällaisia tapauksia
 Tex osaa tavuttaa oikein ilman tavutusvihjeitäkin, mutta etukäteen sitä
 ei tiedä, ellei ole kokemusta.
 
+\komentoi{-}
 \begin{koodilohkosis}
   alku\-osa pusku\-traktori
 \end{koodilohkosis}
@@ -2586,11 +2589,14 @@ tekstikappaleen rivittämiseen. Voi syntyä liian suuria sanavälejä, tai
 joistakin riveistä tulee ylipitkiä, eli ne yltävät marginaalin puolelle.
 
 Tavutuskohtia voi lisätä sopiviin kohtiin omilla tavutusvihjeillä
-(\koodi{\keno\=/}). Vaihtoehtoisesti kaikki yleisten tavutussääntöjen
+(\komento{-}). Vaihtoehtoisesti kaikki yleisten tavutussääntöjen
 mukaiset tavutuskohdat saa käyttöön \paketti{extdash}\-/paketin
 komennoilla (taulukko \ref{tlk:extdash}). Seuraavassa esimerkissä on
 tavutuksen hallintaa sanalle \emph{Molo\-tov--Ribben\-trop-sopi\-mus}:
 
+\komentoi{-}
+\komentoi{--}
+\komentoi{-/}
 \begin{koodilohkosis}
   Molo\-tov--Ribben\-trop-sopi\-mus % tavutusvihjeet
   Molotov\--Ribben\-trop\-/sopimus  % tavutuksen sallivat välimerkit
@@ -2634,15 +2640,15 @@ paikkaan, mutta tavutettaessa heittomerkki säilyy: \emph{show'-hun}.%
   perustuu Kielikello\-/lehden 2/2006 artikkeliin:
   \kulmaurl{https://www.kielikello.fi/-/lainausmerkit-}. Viittauspäivä
   6.7.2020.} Mikäli tällainen tavutuskohta halutaan mukaan, käytetään
-sanassa tavallista tavutusvihjettä: \koodi{show'\keno\=/hun}. Mieluummin
-ei kuitenkaan katkaista sanoja heittomerkin kohdalta.
+sanassa tavallista tavutusvihjettä:
+\komentoi{-}\koodi{show'\keno\=/hun}. Mieluummin ei kuitenkaan katkaista
+sanoja heittomerkin kohdalta.
 
 \subsection{Tavutus pois päältä}
 
 Tavutuksen voi kytkeä kokonaan pois päältä \paketti{polyglossia}\-/
-kielipaketin komennolla \komento{disablehyphenation}.
-\komentomargin{disable\-hyphenation} Tavutuksen saa takaisin päälle
-komennolla \komento{enablehyphenation}.
+kielipaketin komennolla \komentom{disablehyphenation}. Tavutuksen saa
+takaisin päälle komennolla \komento{enablehyphenation}.
 
 Toinen vaihtoehto on käyttää fontin asetusta \koodi{Hyphen\-Char=\katk
   None} samalla, kun ottaa käyttöön tietyn kirjainperheen. Oletuksena

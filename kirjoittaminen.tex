@@ -274,7 +274,7 @@ Latex estää sisennyksen automaattisesti otsikoiden jälkeen mutta latoo
 sisennyksen kuitenkin kaikkien muiden elementtien ja pystysuuntaisen
 välin jälkeen. Jos sisennys halutaan estää, pitäisi kyseiset kappaleet
 aloittaa aina \koodi{\keno noindent}\-/komennolla. Toinen vaihtoehto on
-käyttää \paketti{no\-indent\-after}\-/ pakettia\avctan{noindentafter} ja
+käyttää \paketti{noindentafter}\-/ pakettia\avctan{noindentafter} ja
 määritellä sen tarjoaman komennon avulla, minkä ympäristöjen jälkeen ei
 haluta sisennystä. Seuraava esimerkki poistaa sisennyksen aina
 \koodi{list}- ja \koodi{tabular}\-/ ympäristöjen jälkeen. Lisätietoja
@@ -549,7 +549,7 @@ orporivit aiheuttavat kaksi taukoa melkein peräkkäin: sekä kappaleiden
 välissä että sivun tai palstan vaihtumisen kohdalla.
 
 Latexissa leski- tai orporivit lienee käytännöllisintä estää
-\paketti{no\-widow}\-/paketin\avctan{nowidow} avulla. Paketin lataamisen
+\paketti{nowidow}\-/ paketin\avctan{nowidow} avulla. Paketin lataamisen
 jälkeen käytetään komentoa \koodi{\keno set\-no\-widow}
 \koodimargin{\keno set\-no\-widow}, joka estää leskirivit eli pitää
 tekstikappaleen lopusta vähintään kaksi riviä yhdessä sivun tai palstan
@@ -566,7 +566,7 @@ tekstikappaleisiin.
   \setnoclub    % orporivien esto
 \end{koodilohkosis}
 
-Paketti \paketti{no\-widow} määrittelee myös komennot \koodi{\keno
+Paketti \paketti{nowidow} määrittelee myös komennot \koodi{\keno
   no\-widow} ja \koodi{\keno no\-club}, \koodimargin{\keno no\-widow}
 \koodimargin{\keno no\-club} joilla voi vaikuttaa yksittäisen
 tekstikappaleen leski- ja orporiveihin. Nämä komennot täytyy sijoittaa
@@ -574,8 +574,8 @@ tekstikappaleen loppuun, ja myös niille voi antaa hakasulkeissa
 valinnaiseksi argumentiksi luvun, joka kertoo yhdessä pidettävien rivien
 määrän.
 
-Jos ei halua tai voi käyttää \paketti{no\-widow}\-/pakettia, voi leski-
-ja orporivit estää myös Texin matalan tason toimintojen avulla.
+Jos ei halua tai voi käyttää \paketti{nowidow}\-/pakettia, voi leski- ja
+orporivit estää myös Texin matalan tason toimintojen avulla.
 Ladonta\-/algoritmi käyttää leski- ja orporiveissä sisäisesti
 haitallisuusarvoa tai sakko\-arvoa (engl. \englanti{penalty}), ja jos
 lesket ja orvot halutaan estää, määritellään niiden haitallisuusarvo
@@ -1142,7 +1142,7 @@ tieto-       kone-
 \end{tulossis}
 
 Paljon monipuolisemman ympäristön tarjoaa makropaketti
-\paketti{fancy\-vrb}.\avctan{fancyvrb} Sen \koodi{Ver\-ba\-tim}\-/
+\paketti{fancyvrb}.\avctan{fancyvrb} Sen \koodi{Ver\-ba\-tim}\-/
 ympäristölle \koodimargin{Verbatim} voi antaa monenlaisia asetuksia,
 joilla vaikutetaan tietokonekoodin latomiseen. Koodiin saa mukaan
 esimerkiksi rivinumerot, ja sen voi latoa kehyksen sisään. Myös koodin
@@ -1786,7 +1786,7 @@ oppaan esimerkeissä käsitellään tekijä--vuosi-tyyliä.
 Makropaketin omien lähdeluettelo\-/{} ja viittaustyylien lisäksi
 Latex\-/jakelupaketissa on todennäköisesti mukana myös ulkopuolisten
 tahojen tekemiä tyylejä. Tyylikokonaisuus nimeltä
-\paketti{bib\-latex-ext}\avctan{biblatex-ext} laajentaa
+\paketti{biblatex-ext}\avctan{biblatex-ext} laajentaa
 \paketti{biblatex}\-/paketin tavallisten tyylien ominaisuuksia.
 Laajennettujen tyylien käyttäminen ei vaadi erillisen makropaketin
 lataamista, vaan tyylin saa käyttöön yksinkertaisesti vain

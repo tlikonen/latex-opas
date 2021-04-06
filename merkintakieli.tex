@@ -40,16 +40,16 @@ erikoismerkit suojataan eli saadaan ladottua dokumenttiin sellaisenaan.
     \toprule
     \ots{Merkki} & \multicolumn{2}{l}{\ots{Kirjoittaminen}} \\
     \midrule
-    \koodi{\%} & \koodi{\keno\%} \\
-    \koodi{\$} & \koodi{\keno\$} & \koodi{\keno textdollar} \\
-    \koodi{\^{}} & \koodi{\keno\^{}\{\}} & \koodi{\keno textasciicircum} \\
-    \koodi{\_} & \koodi{\keno\_} & \koodi{\keno textunderscore} \\
-    \koodi{\#} & \koodi{\keno\#} \\
-    \koodi{\&} & \koodi{\keno\&} \\
-    \koodi{\{} & \koodi{\keno\{} & \koodi{\keno textbraceleft} \\
-    \koodi{\}} & \koodi{\keno\}} & \koodi{\keno textbraceright} \\
-    \koodi{\~{}} & \koodi{\keno\~{}\{\}} & \koodi{\keno textasciitilde} \\
-    \koodi{\keno} && \koodi{\keno textbackslash} \\
+    \koodi{\%} & \komento{\%} \\
+    \koodi{\$} & \komento{\$} & \komento{textdollar} \\
+    \koodi{\^{}} & \komento{\^{}}\koodi{\{\}} & \komento{textasciicircum} \\
+    \koodi{\_} & \komento{\_} & \komento{textunderscore} \\
+    \koodi{\#} & \komento{\#} \\
+    \koodi{\&} & \komento{\&} \\
+    \koodi{\{} & \komento{\{} & \komento{textbraceleft} \\
+    \koodi{\}} & \komento{\}} & \komento{textbraceright} \\
+    \koodi{\~{}} & \komento{\~{}}\koodi{\{\}} & \komento{textasciitilde} \\
+    \koodi{\keno} && \komento{textbackslash} \\
     \bottomrule
   \end{tabular}
 }{
@@ -95,15 +95,15 @@ Sanavälit eivät kuitenkaan veny loputtomasti, ainakaan
 oletusasetuksilla, koska kovin suuret sanavälit olisivat
 tekstikappaleessa rumia. Jos sanaväleille haluaa antaa
 ''hätätilanteissa'' lisää venymisvaraa, täytyy käyttää mittaa
-\koodi{\keno emer\-gen\-cy\-stretch}, jota käsitellään tarkemmin
-tekstikappaleiden yhteydessä luvussa \ref{luku:kappale}. Mittoihin
-liittyvää tekniikkaa käsitellään puolestaan luvussa \ref{luku:mitat}.
+\mitta{emergencystretch}, jota käsitellään tarkemmin tekstikappaleiden
+yhteydessä luvussa \ref{luku:kappale}. Mittoihin liittyvää tekniikkaa
+käsitellään puolestaan luvussa \ref{luku:mitat}.
 
 Matalatasoinen sanavälejä ja niiden venymistä säätelevä mitta on
-\koodi{\keno space\-skip}, johon voi asettaa haluamansa leveyden ja
-mahdolliset venymisen rajat. Tätä mittaa ei ole suositeltavaa käyttää
-tavallisen tekstin kanssa, mutta se sopii tilanteisiin, joihin tarvitaan
-hyvin poikkeukselliset sanavälit.
+\mitta{spaceskip}, johon voi asettaa haluamansa leveyden ja mahdolliset
+venymisen rajat. Tätä mittaa ei ole suositeltavaa käyttää tavallisen
+tekstin kanssa, mutta se sopii tilanteisiin, joihin tarvitaan hyvin
+poikkeukselliset sanavälit.
 
 \begin{koodilohkosis}
   \setlength{\spaceskip}{0.8em plus 0.3em minus 0.2em}
@@ -119,17 +119,16 @@ fonttien yhteydessä luvussa \ref{luku:fontit_valistys}.
 Kuten edellä todettiin, lähdedokumentissa olevat rivinvaihdot tulkitaan
 vain sanaväleiksi eivätkä ne vaihda riviä lopullisessa dokumentissa. Jos
 ladottuun dokumenttiin tarvitaan rivinvaihto, kirjoitetaan
-lähdedokumenttiin kaksi kenoviivaa (\koodi{\keno\keno}). Tätä komentoa
+lähdedokumenttiin kaksi kenoviivaa (\komentom{\keno}). Tätä komentoa
 käsitellään tarkemmin tekstikappaleiden yhteydessä luvussa
 \ref{luku:rivinvaihtokomennot}.
 
 On kuitenkin mahdollista saada myös lähdedokumentin rivinvaihdot
 toteutumaan automaattisesti ladotussa tekstissä. Sellainen tila
-kytketään päälle komennolla \koodi{\keno obey\-cr}; \koodimargin{\keno
-  obeycr} normaaliin tilaan palataan taas komennolla \koodi{\keno
-  re\-store\-cr}. \koodimargin{\keno re\-store\-cr} Näistä komennoista
-voi olla hyötyä väliaikaisesti ja erityistilanteissa, mutta pysyväksi
-koko dokumentin tilaksi \koodi{\keno obey\-cr} ei yleensä sovi.
+kytketään päälle komennolla \komentom{obeycr}; normaaliin tilaan
+palataan taas komennolla \komentom{restorecr}. Näistä komennoista voi
+olla hyötyä väliaikaisesti ja erityistilanteissa, mutta pysyväksi koko
+dokumentin tilaksi \komento{obeycr} ei yleensä sovi.
 
 \subsection{Kappaleen vaihtuminen}
 \label{luku:kappaleen_vaihtuminen}
@@ -138,8 +137,7 @@ Tyhjä rivi tarkoittaa kappaleen vaihtumista. Rivi on tyhjä silloin, kun
 se ei sisällä mitään muuta kuin rivinvaihdon tai kun se sisältää vain
 välilyöntejä tai sarkainmerkkejä ja lopuksi rivinvaihdon. Tyhjiä rivejä
 voi olla useita peräkkäin, mutta ne tarkoittavat samaa kuin yksi tyhjä
-rivi. Uuden tekstikappaleen voi aloittaa myös komennolla \koodi{\keno
-  par}.
+rivi. Uuden tekstikappaleen voi aloittaa myös komennolla \komento{par}.
 
 \begin{koodilohkosis}
   Nämä rivit kuuluvat
@@ -193,7 +191,7 @@ asetukset kuin ulkopuolella. Aaltosulkeiden sisällä suoritetut komennot,
 uusien komentojen määrittelyt (luku \ref{luku:komennot}) tai asetetut
 mittojen arvot (luku \ref{luku:mitat}) ovat voimassa vain kyseisen
 ympäristön sisäpuolella. Seuraavassa esimerkissä aaltosulkeilla rajataan
-kursivointikomennon \koodi{\keno it\-shape} vai\-ku\-tus\-aluetta.
+kursivointikomennon \komento{itshape} vai\-ku\-tus\-aluetta.
 
 % \pagebreak[3]
 
@@ -227,13 +225,14 @@ välilyöntiä \uctunnus{u+00a0} täytyy käyttää ainakin vuorosanaviivan
 \label{luku:ohuke}
 
 Ohuke on tavallista sanaväliä kapeampi väli, ja se tehdään
-komennolla~\koodi{\keno,} (kenoviiva ja pilkku). Ohukkeen leveys
-Latexissa on \murtoluku{1}{6} typografisen neliön leveydestä eli
-em-mitasta (luku \ref{luku:mitat}). Ohuke on tasalevyinen ja sitova, eli
-se ei veny muiden sanavälien tapaan, ja se estää rivinvaihdon. Siksi
-ohuke sopii esimerkiksi pitkien lukujen ja puhelinnumeroiden
-ryhmittelyyn paremmin kun sanaväli.
+komennolla~\komentom{,} (kenoviiva ja pilkku). Ohukkeen leveys Latexissa
+on \murtoluku{1}{6} typografisen neliön leveydestä eli em-mitasta (luku
+\ref{luku:mitat}). Ohuke on tasalevyinen ja sitova, eli se ei veny
+muiden sanavälien tapaan, ja se estää rivinvaihdon. Siksi ohuke sopii
+esimerkiksi pitkien lukujen ja puhelinnumeroiden ryhmittelyyn paremmin
+kun sanaväli.
 
+\komentoi{,}
 \begin{koodilohkosis}
   12\,750\,000
   J.\,R.\,R. Tolkien
@@ -246,6 +245,7 @@ ohuketta järjestysluvun pisteiden jälkeen. Taulukossa \ref{tlk:ohuke}
 vertaillaan sanaväliä, ohuketta ja yhteen kirjoittamista.
 
 \leijutlk{
+  \komentoi{,}
   \begin{tabular}{lrll}
     \toprule
     & \ots{Luku} & \ots{Päiväys} & \ots{Nimi} \\
@@ -309,11 +309,10 @@ lopussa. Vasemmalle osoittava merkki (<<) tehdään kahdella pienempi kuin
 
 Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
-\koodi{\keno text\-quote\-dbl} ja \koodi{\keno text\-quote\-single}.
-\koodimargin{\keno text\-quote\-dbl} \koodimargin{\keno
-  text\-quote\-single} Yksittäinen gra\-vis\-ak\-sent\-ti (\`{}) tehdään
-komennolla \koodi{\keno `\{\}}. Lainausmerkkien merkintätapoja ja
-komentoja on koottu taulukkoon \ref{tlk:erikoismerkit-lainaus}
+\komentom{textquotedbl} ja \komentom{textquotesingle}. Yksittäinen
+gra\-vis\-ak\-sent\-ti (\`{}) tehdään komennolla
+\komento{`}\koodi{\{\}}. Lainausmerkkien merkintätapoja ja komentoja on
+koottu taulukkoon \ref{tlk:erikoismerkit-lainaus}
 (s.~\pageref{tlk:erikoismerkit-lainaus}). Toisaalta kielikohtaiset
 asetukset (luku \ref{luku:kieliasetukset}) voivat tuoda mukanaan myös
 kielikohtaisia keinoja lainausmerkkien kirjoittamiseen.
@@ -324,11 +323,12 @@ pois päältä \paketti{fontspec}\-/pakettiin kuuluvien asetusten avulla.
 Fonteissa on yleensä oletuksena päällä Tex\-/ligatuurit eli asetus
 \koodi{Liga\-tures=\katk TeX}, mutta sen saa poistettua asetuksella
 \koodi{Liga\-tures=\katk TeX\-Reset}. Asetusta muutetaan kirjainperheen
-määrittelyn yhteydessä tai väliaikaisesti komennolla \koodi{\keno
-  add\-font\-fea\-tures}.
+määrittelyn yhteydessä tai väliaikaisesti komennolla
+\komento{addfontfeatures}.
 
 % \pagebreak[3]
 
+\komentoi{addfontfeatures}
 \begin{koodilohkosis}
   {\addfontfeatures{Ligatures=TeXReset} `` '' >> '}
 \end{koodilohkosis}
@@ -341,7 +341,7 @@ määrittelyn yhteydessä tai väliaikaisesti komennolla \koodi{\keno
 
 Tasalevyisessä fontissa Tex\-/ligatuurit eivät ole päällä oletuksena,
 joten yksittäisissä sanoissa tai lyhyissä ilmauksissa voi estää
-Tex\-/ligatuurit esimerkiksi komennolla \koodi{\keno text\-tt}. Samalla
+Tex\-/ligatuurit esimerkiksi komennolla \komento{texttt}. Samalla
 tietysti fonttikin vaihtuu. Fontteja käsitellään tarkemmin luvussa
 \ref{luku:kirjaintyypit}.
 
@@ -355,9 +355,9 @@ tietysti fonttikin vaihtuu. Fontteja käsitellään tarkemmin luvussa
   \texttt{`` '' >> '}
 \end{tulossis}
 
-Makropaketti \paketti{cs\-quotes}\avctan{csquotes} sisältää
+Makropaketti \paketti{csquotes}\avctan{csquotes} sisältää
 lainausmerkkeihin liittyviä komentoja ja kielikohtaista logiikkaa.
-Paketissa olevan \koodi{\keno en\-quote}\-/komennon avulla voi jättää
+Paketissa olevan \komento{enquote}\-/komennon avulla voi jättää
 makropaketin huoleksi, miten aloittava ja lopettava lainausmerkki tai
 ulommat ja sisemmät lainausmerkit kirjoitetaan missäkin kielessä.
 Luonnollisesti kielipaketti \paketti{polyglossia} tai \paketti{babel}
@@ -408,8 +408,8 @@ Yhteensopivuussyistä on parasta tehdä ajatusviivat Latexin omilla
 merkintätavoilla eikä Unicode\-/merkeillä.
 
 Silloin kun todella täytyy latoa kaksi tai kolme peräkkäistä
-yhdysmerkkiä, voi käyttää tasalevyistä fonttia (\koodi{\keno
-  text\-tt\{--\}}), joka oletuksena kytkee pois Latexin
+yhdysmerkkiä, voi käyttää tasalevyistä fonttia
+(\komento{texttt}\koodi{\{--\}}), joka oletuksena kytkee pois Latexin
 ajatusviivatoiminnon. Saman asetuksen saa kyllä mihin tahansa fonttiin,
 kun poistaa fontista niin sanotut Tex\-/ligatuurit asetuksella
 \koodi{Liga\-tures=\katk TeX\-Reset}. Väliaikaisesti asetus tehdään

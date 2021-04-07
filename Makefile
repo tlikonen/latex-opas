@@ -1,6 +1,6 @@
 nimi = kaytannollista_latexia
 hakemistot = paketit ymparistot komennot mitat laskurit
-tavutus = tavutusvihjeet.tex
+tavutus = tavutusvihjeet
 
 $(nimi).pdf: *.tex *.bib
 	latexmk -lualatex \
@@ -9,9 +9,9 @@ $(nimi).pdf: *.tex *.bib
 	@touch $@
 
 aakkostus:
-	@{ echo "\hyphenation{"; grep -e '^  ' $(tavutus) | sort -u; \
+	@{ echo "\hyphenation{"; grep -e '^  ' $(tavutus).tex | sort -u; \
 		echo "}"; } > $(tavutus).tmp && \
-		mv -f $(tavutus).tmp $(tavutus)
+		mv -f $(tavutus).tmp $(tavutus).tex
 
 clean:
 	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls log out \

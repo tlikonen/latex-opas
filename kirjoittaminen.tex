@@ -54,6 +54,8 @@ sanavälien venymisen yläraja on usein tarpeellista asettaa oletusarvoa
 suuremmaksi. Se tehdään mitan \mitta{emergencystretch} avulla,
 esimerkiksi seuraavasti:
 
+\komentoi{setlength}
+\mittai{emergencystretch}
 \begin{koodilohkosis}
   \setlength{\emergencystretch}{1em}
 \end{koodilohkosis}
@@ -117,6 +119,8 @@ kuitenkin sallitaan, eli joissakin tilanteissa kappaleiden väliin
 voidaan latoa pieni tyhjä tila. Jos tyhjää tilaa ei haluta missään
 tilanteessa, asetetaan mitta vain nollaksi:
 
+\komentoi{setlength}
+\mittai{parskip}
 \begin{koodilohkosis}
   \setlength{\parskip}{0ex}
 \end{koodilohkosis}
@@ -125,6 +129,8 @@ Seuraava esimerkkikomento asettaa kappaleväliksi 1,3\,ex. Lisäksi se
 sallii kappalevälin venyä 0,2\,ex:n verran tai kutistua 0,1\,ex:n
 verran.
 
+\komentoi{setlength}
+\mittai{parskip}
 \begin{koodilohkosis}
   \setlength{\parskip}{1.3ex plus .2ex minus .1ex}
 \end{koodilohkosis}
@@ -138,37 +144,37 @@ myös liian suuret ja toisistaan liiaksi poikkeavat kappalevälit voivat
 olla rumannäköisiä.
 
 Tavallista kappaleväliä suurempien pystysuuntaisten välien tekemiseen on
-olemassa kolme valmista komentoa: \koodimargin{\keno bigskip}
-\koodimargin{\keno medskip} \koodimargin{\keno smallskip} suuremmasta
-pienempään ne ovat \koodi{\keno bigskip}, \koodi{\keno medskip} ja
-\koodi{\keno smallskip}. Ne sopivat käytettäväksi yksittäisiin
-tilainteisiin, joissa normaali kappaleväli on liian vähän. Myös
-komentojen tai ympäristöjen määrittelyssä niistä voi olla apua (luvut
-\ref{luku:komennot} ja \ref{luku:ymparistot}). Jos sivunvaihto osuu
-näiden komentojen kohdalle, mitään väliä ei ladota sivun loppuun eikä
-seuraavan alkuun.
+olemassa kolme valmista komentoa: suuremmasta pienempään ne ovat
+\komentom{bigskip}, \komentom{medskip} ja \komentom{smallskip}. Ne
+sopivat käytettäväksi yksittäisiin tilainteisiin, joissa normaali
+kappaleväli on liian vähän. Myös komentojen tai ympäristöjen
+määrittelyssä niistä voi olla apua (luvut \ref{luku:komennot} ja
+\ref{luku:ymparistot}). Jos sivunvaihto osuu näiden komentojen kohdalle,
+mitään väliä ei ladota sivun loppuun eikä seuraavan alkuun.
 
 Edellä mainittujen komentojen latoman välin suuruuteen voi vaikuttaa
-mittojen \koodi{\keno big\-skip\-amount}, \koodi{\keno
-  med\-skip\-amount} ja \koodi{\keno small\-skip\-amount} avulla.
-Seuraavassa on esimerkkikomennot mittojen määrittelemiseen ja samalla
-niiden oletusarvot:
+mittojen \mitta{bigskipamount}, \mitta{medskipamount} ja
+\mitta{smallskipamount} avulla. Seuraavassa on esimerkkikomennot
+mittojen määrittelemiseen ja samalla niiden oletusarvot:
 
+\komentoi{setlength}
+\mittai{bigskipamount}
+\mittai{medskipamount}
+\mittai{smallskipamount}
 \begin{koodilohkosis}
   \setlength{\bigskipamount} {12pt plus 4pt minus 4pt}
   \setlength{\medskipamount}  {6pt plus 2pt minus 2pt}
   \setlength{\smallskipamount}{3pt plus 1pt minus 1pt}
 \end{koodilohkosis}
 
-Komentojen \koodi{\keno bigskip}, \koodi{\keno medskip} ja \koodi{\keno
-  smallskip} sijasta voi käyttää myös komentoja \koodi{\keno bigbreak},
-\koodi{\keno medbreak} tai \koodi{\keno smallbreak}. \koodimargin{\keno
-  bigbreak} \koodimargin{\keno medbreak} \koodimargin{\keno smallbreak}
-Nämä toimivat lähes samalla tavalla, mutta niihin sisältyy myös
-sivunvaihtovihje. Toisin sanoen ne vaikuttavat ladonta\-/algoritmiin
-siten, että komennon kohdalla todennäköisyys sivun vaihtumiselle kasvaa
-suhteessa muihin kohtiin. Sivu voi edelleen vaihtua muustakin kohdasta,
-jos algoritmi löytää omasta mielestään vielä paremman paikan.
+Komentojen \komento{bigskip}, \komento{medskip} ja \komento{smallskip}
+sijasta voi käyttää myös komentoja \komentom{bigbreak},
+\komentom{medbreak} tai \komentom{smallbreak}. Nämä toimivat lähes
+samalla tavalla, mutta niihin sisältyy myös sivunvaihtovihje. Toisin
+sanoen ne vaikuttavat ladonta\-/algoritmiin siten, että komennon
+kohdalla todennäköisyys sivun vaihtumiselle kasvaa suhteessa muihin
+kohtiin. Sivu voi edelleen vaihtua muustakin kohdasta, jos algoritmi
+löytää omasta mielestään vielä paremman paikan.
 
 Pystysuuntaisten välien yleiskomento on \koodi{\keno vspace},
 \koodimargin{\keno vspace} \koodimargin{\keno vspace*} jolle annetaan

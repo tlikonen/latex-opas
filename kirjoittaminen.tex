@@ -1454,26 +1454,30 @@ lähdeviittausten perustoimintoja sen verran, että lähteisiin voidaan
 viitata teoksen tekijöiden nimen ja vuosiluvun avulla. Seuraava
 esimerkki havainnollistaa paketin käyttöönottoa ja asetuksia.
 
+\komentoi{usepackage}
+\pakettii{natbib}
+\komentoi{setcitestyle}
 \begin{koodilohkosis}
   \usepackage{natbib}
   \setcitestyle{authoryear,aysep={},notesep={: }}
 \end{koodilohkosis}
 
-Edellisessä esimerkissä viittaustyyli valitaan \koodi{\keno
-  set\-cite\-style}\-/komennon argumentissa valitsimella
-\koodi{author\-year} (tekijä\--vuosi). Valitsimella \koodi{aysep}
-määritetään, mikä välimerkki ladotaan tekijän nimen ja vuosiluvun
-väliin. Tässä se jätetään tyhjäksi \koodi{\{\}}.
-\koodi{note\-sep}\-/valitsimella asetetaan merkit, jotka ladotaan
-vuosiluvun ja sitä seuraavan huomautuksen kuten sivunumeroiden väliin;
-tässä tapauksessa määritettiin kaksoispiste ja väli \koodi{\{:~\}},
-mutta pilkkukin on yleinnen käytäntö. \koodi{\keno
-  set\-cite\-style}\-/komennon valitsimet erotetaan toisistaan pilkulla,
-eikä erotinpilkkujen ympärillä saa olla välilyöntejä. Lopputuloksena
-lähdemerkinnät näyttävät esimerkiksi seuraavanlaisilta:
+Edellisessä esimerkissä viittaustyyli valitaan \komento{setcitestyle}\-/
+komennon argumentissa valitsimella \koodi{author\-year}
+(tekijä\--vuosi). Valitsimella \koodi{aysep} määritetään, mikä
+välimerkki ladotaan tekijän nimen ja vuosiluvun väliin. Tässä se
+jätetään tyhjäksi \koodi{\{\}}. \koodi{note\-sep}\-/ valitsimella
+asetetaan merkit, jotka ladotaan vuosiluvun ja sitä seuraavan
+huomautuksen kuten sivunumeroiden väliin; tässä tapauksessa määritettiin
+kaksoispiste ja väli \koodi{\{:~\}}, mutta pilkkukin on yleinen
+käytäntö. \komento{setcitestyle}\-/ komennon valitsimet erotetaan
+toisistaan pilkulla, eikä erotinpilkkujen ympärillä saa olla
+välilyöntejä. Lopputuloksena lähdemerkinnät näyttävät esimerkiksi
+seuraavanlaisilta:
 
 % \pagebreak[3]
 
+\komentoi{citet*}
 \begin{koodilohkosis}
   \citet*[27--29]{johdatus} % Viittaus teokseen ”johdatus”.
 \end{koodilohkosis}
@@ -1482,13 +1486,13 @@ lähdemerkinnät näyttävät esimerkiksi seuraavanlaisilta:
   Meikäläinen \& Teikäläinen (2020: 27--29)
 \end{tulossis}
 
-Lähdeluettelo kirjoitetaan \koodi{thebibliography}\-/ympäristön ja
-\koodi{\keno bib\-item}\-/komentojen avulla esimerkin
+Lähdeluettelo kirjoitetaan \ymparisto{thebibliography}\-/ ympäristön ja
+\komento{bibitem}\-/ komentojen avulla esimerkin
 \ref{esim:thebibliography} tavoin. Ympäristön aloittavan komennon
 (rivi~1) yhteydessä on argumentti \koodi{00}, jolla ei ole tässä
 yhteydessä merkitystä. Jos lähdeviittauksen tyylinä olisi
 \koodi{numbers} (eikä \koodi{author\-year}), lähdeluettelon teokset
-numeroitaisiin, ja silloin \koodi{thebibliography}\-/ympäristön
+numeroitaisiin, ja silloin \ymparisto{thebibliography}\-/ ympäristön
 argumentti ilmaisee, kuinka leveän sisennyksen numeroidut teokset
 tarvitsevat. Argumentiksi voi kirjoittaa mitä tahansa merkkejä, ja Latex
 mittaa niiden leveyden. Kannattaa kirjoittaa leveitä numeroita kuten
@@ -1498,6 +1502,9 @@ kappaletta, kaksi jos lähteitä on kaksinumeroinen määrä eli 10--99
 kappaletta jne.
 
 \begin{esimerkki*}
+  \ymparistoi{thebibliography}
+  \komentoi{bibitem}
+
 \begin{koodilohko}
   \begin{thebibliography}{00}
 
@@ -1511,16 +1518,16 @@ kappaletta jne.
 
   \end{thebibliography}
 \end{koodilohko}
-\caption{Lähdeluettelon kirjoittaminen
-  \koodi{thebibliography}\-/ympäristön ja \koodi{\keno
-    bib\-item}\-/komentojen avulla.}
+\caption{Lähdeluettelon kirjoittaminen \ymparisto{thebibliography}\-/
+  ympäristön ja \komento{bibitem}\-/ komentojen avulla.}
 \label{esim:thebibliography}
 \end{esimerkki*}
 
-Komennolla \koodi{\keno bib\-item} tehdään varsinaiset teosmerkinnät.
-Samalla määritetään teoksen yksilöllinen tunniste ja mitä tietoja
+Komennolla \komento{bibitem} tehdään varsinaiset teosmerkinnät. Samalla
+määritetään teoksen yksilöllinen tunniste ja mitä tietoja
 lähdeviittauksissa näytetään. Yleinen muoto on seuraavanlainen:
 
+\komentoi{bibitem}
 \begin{koodilohkosis}
   \bibitem[lyhyt(vuosi)pitkä]{tunniste} Lähdeluettelon tekstit.
 \end{koodilohkosis}
@@ -1545,7 +1552,7 @@ viittauskomentoja sekä esimerkki viittauksen ulkoasusta. Kuviteltu
 esimerkkiteos on peräisin esimerkistä \ref{esim:thebibliography}.
 
 \providecommand{\rivi}{}
-\renewcommand{\rivi}[2]{\koodi{\keno #1\{\ldots\}} & #2 \\}
+\renewcommand{\rivi}[2]{\komento[\{\ldots\}]{#1} & #2 \\}
 
 \leijutlk{
   \begin{tabular}{ll}
@@ -1569,13 +1576,16 @@ esimerkkiteos on peräisin esimerkistä \ref{esim:thebibliography}.
   \label{tlk:natbib-cite}
 }
 
-Lähdeluettelon ulkoasuun voi vaikuttaa mittojen \koodi{\keno bibhang} ja
-\koodi{\keno bibsep} avulla. Ensin mainittu on lähdemerkinnän
-vaakasuuntaisen riippuvan sisennyksen suuruus, ja jälkimmäinen on
-lähdemerkintöjen välinen pystysuuntainen tila. Mitat asetetaan
-tavalliseen tapaan \koodi{\keno set\-length}\-/komennolla (luku
-\ref{luku:mitat}):
+Lähdeluettelon ulkoasuun voi vaikuttaa mittojen \mitta{bibhang} ja
+\mitta{bibsep} avulla. Ensin mainittu on lähdemerkinnän vaakasuuntaisen
+riippuvan sisennyksen suuruus, ja jälkimmäinen on lähdemerkintöjen
+välinen pystysuuntainen tila. Mitat asetetaan tavalliseen tapaan
+\komento{setlength}\-/ komennolla (luku \ref{luku:mitat}):
 
+\komentoi{setlength}
+\mittai{parindent}
+\mittai{bibhang}
+\mittai{bibsep}
 \begin{koodilohkosis}
   \setlength{\parindent}{1.1em} % tekstikappaleiden 1. rivin sisennys
   \setlength{\bibhang}{\parindent}
@@ -1583,21 +1593,29 @@ tavalliseen tapaan \koodi{\keno set\-length}\-/komennolla (luku
 \end{koodilohkosis}
 
 Lähdemerkintöjen fonttiin voi vaikuttaa määrittelemällä uudelleen
-komennon \koodi{\keno bibfont} ja sijoittamalla halutut fontti- tai muut
+komennon \komento{bibfont} ja sijoittamalla halutut fontti- tai muut
 komennot kyseisen komennon määritelmään.
 
+\komentoi{renewcommand}
+\komentoi{bibfont}
 \begin{koodilohkosis}
   \renewcommand{\bibfont}{\sffamily\small}
 \end{koodilohkosis}
 
-Oletuksena \koodi{thebibliography}\-/ympäristö latoo lähdeluettelolle
-otsikon, ja otsikon teksti määräytyy kieli\-ase\-tus\-ten (luku
-\ref{luku:kieliasetukset}) ja dokumenttiluokan perusteella (luku
-\ref{luku:dokumenttiluokat}). Suomenkielisen lähdeluettelon otsikon voi
-määrittää dokumentin esittelyosassa seuraavan esimerkin tavoin.
-Esimerkissä hyödynnetään \koodi{\keno add\-to}\-/komentoa, joka sisältyy
-\paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketteihin.
+Oletuksena \ymparisto{thebibliography}\-/ ympäristö latoo
+lähdeluettelolle otsikon, ja otsikon teksti määräytyy
+kieli\-ase\-tus\-ten (luku \ref{luku:kieliasetukset}) ja
+dokumenttiluokan perusteella (luku \ref{luku:dokumenttiluokat}).
+Suomenkielisen lähdeluettelon otsikon voi määrittää dokumentin
+esittelyosassa seuraavan esimerkin tavoin. Esimerkissä hyödynnetään
+\komento{addto}\-/ komentoa, joka sisältyy \paketti{polyglossia}\-/{} ja
+\paketti{babel}\-/ paketteihin.
 
+\komentoi{addto}
+\komentoi{captionsfinnish}
+\komentoi{renewcommand}
+\komentoi{refname}
+\komentoi{bibname}
 \begin{koodilohkosis}
   \addto{\captionsfinnish}{%
     \renewcommand{\refname}{Lähteet} % article-dokumenttiluokka
@@ -1607,8 +1625,13 @@ Esimerkissä hyödynnetään \koodi{\keno add\-to}\-/komentoa, joka sisältyy
 
 On myös mahdollista määritellä koko komentosarja, joka suoritetaan
 lähdeluettelon otsikoinnin yhteydessä. Se tehdään määrittelemällä
-uudelleen komento \koodi{\keno bibsection}.
+uudelleen komento \komento{bibsection}.
 
+\komentoi{renewcommand}
+\komentoi{bibsection}
+\komentoi{setcounter}
+\laskurii{secnumdepth}
+\komentoi{section}
 \begin{koodilohkosis}
   \renewcommand{\bibsection}{%
     \setcounter{secnumdepth}{-1}
@@ -1616,17 +1639,18 @@ uudelleen komento \koodi{\keno bibsection}.
   }
 \end{koodilohkosis}
 
-Edellisessä esimerkissä komennolla \koodi{\keno set\-counter}
-määritetään, mille otsikkotasolle dokumentin otsikoiden eli lukujen
-numerointi yltää. Pieni arvo \mbox{(\koodi{-1})} käytännössä tarkoittaa,
-että seuraaviin otsikoihin ei tule numerointia; lähdeluettelon otsikkoon
-ei numerointia välttämättä haluta. Komento \koodi{\keno section} tekee
-itse otsikon.
+Edellisessä esimerkissä komennolla \komento{setcounter} määritetään,
+mille otsikkotasolle dokumentin otsikoiden eli lukujen numerointi yltää.
+Pieni arvo \mbox{(\koodi{-1})} käytännössä tarkoittaa, että seuraaviin
+otsikoihin ei tule numerointia; lähdeluettelon otsikkoon ei numerointia
+välttämättä haluta. Komento \komento{section} tekee itse otsikon.
 
-Jos ei halua, että \koodi{thebibliography}\-/ympäristö tekee otsikon
-automaattisesti, voi \koodi{\keno bibsection}\-/komennon määrittää
+Jos ei halua, että \ymparisto{thebibliography}\-/ ympäristö tekee
+otsikon automaattisesti, voi \komento{bibsection}\-/ komennon määrittää
 tyhjäksi.
 
+\komentoi{renewcommand}
+\komentoi{bibsection}
 \begin{koodilohkosis}
   \renewcommand{\bibsection}{}
 \end{koodilohkosis}

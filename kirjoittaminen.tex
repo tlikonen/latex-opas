@@ -176,13 +176,13 @@ kohdalla todennäköisyys sivun vaihtumiselle kasvaa suhteessa muihin
 kohtiin. Sivu voi edelleen vaihtua muustakin kohdasta, jos algoritmi
 löytää omasta mielestään vielä paremman paikan.
 
-Pystysuuntaisten välien yleiskomento on \koodi{\keno vspace},
-\koodimargin{\keno vspace} \koodimargin{\keno vspace*} jolle annetaan
-argumentiksi välin suuruus ja mahdolliset venymisen rajat. Tämäkin
-komento jättää välin latomatta, jos se sattuu sivunvaihdon kohdalle. Sen
-sijaan tähdellinen versio \koodi{\keno vspace*} latoo välin joka
-tapauksessa, vaikka se olisi sivun lopussa tai alussa.
+Pystysuuntaisten välien yleiskomento on \komentom{vspace}, jolle
+annetaan argumentiksi välin suuruus ja mahdolliset venymisen rajat.
+Tämäkin komento jättää välin latomatta, jos se sattuu sivunvaihdon
+kohdalle. Sen sijaan tähdellinen versio \komentom{vspace*} latoo välin
+joka tapauksessa, vaikka se olisi sivun lopussa tai alussa.
 
+\komentoi{vspace}
 \begin{koodilohkosis}
   Tekstikappale.
   \vspace{5ex plus 1ex minus .5ex}
@@ -190,15 +190,15 @@ tapauksessa, vaikka se olisi sivun lopussa tai alussa.
   Toinen tekstikappale.
 \end{koodilohkosis}
 
-Komento \koodi{\keno addvspace} \koodimargin{\keno addvspace} toimii
-lähes samoin kuin \koodi{\keno vspace}, mutta se huomioi mahdolliset
-peräkkäiset \koodi{\keno addvspace}\-/komennot ja varmistaa, että vain
-suurin väli toteutuu. Jos siis useita \koodi{\keno
-  addvspace}\-/komentoja sattuu peräkkäin, niiden määrittämiä välejä ei
-ladota peräkkäin vaan ainoastaan suurin niistä ladotaan. Seuraava
-esimerkki latoo kappaleiden väliin 2\,ex:n suuruisen pystysuuntaisen
-välin:
+Komento \komentom{addvspace} toimii lähes samoin kuin \komento{vspace},
+mutta se huomioi mahdolliset peräkkäiset \komento{addvspace}\-/ komennot
+ja varmistaa, että vain suurin väli toteutuu. Jos siis useita
+\komento{addvspace}\-/ komentoja sattuu peräkkäin, niiden määrittämiä
+välejä ei ladota peräkkäin vaan ainoastaan suurin niistä ladotaan.
+Seuraava esimerkki latoo kappaleiden väliin 2\,ex:n suuruisen
+pystysuuntaisen välin:
 
+\komentoi{addvspace}
 \begin{koodilohkosis}
   Tekstikappale.
 
@@ -206,26 +206,25 @@ välin:
   Toinen tekstikappale.
 \end{koodilohkosis}
 
-Jos edellisessä esimerkissä olisi käytetty \koodi{\keno
-  vspace}\-/komentoa, pystysuuntaisen välin suuruus olisi 3,5\,ex, joka
-on välien yhteenlaskettu suuruus.
+Jos edellisessä esimerkissä olisi käytetty \komento{vspace}\-/ komentoa,
+pystysuuntaisen välin suuruus olisi 3,5\,ex, joka on välien
+yhteenlaskettu suuruus.
 
-\koodi{\keno addvspace}\-/komento soveltuu hyvin komentojen ja
-ympäristöjen määrittelyyn (luvut \ref{luku:komennot} ja
-\ref{luku:ymparistot}). Esimerkiksi itse määritellyn ympäristön alussa
-ja lopussa voi \koodi{\keno addvspace}\-/komennolla varmistaa
-tietynsuuruisen välin, mutta jos sama tai muu vastaava ympäristö on
-dokumentissa kahdesti peräkkäin, huomioidaan pystysuuntainen väli vain
-kerran eli suurimman välin mukaan. Jotkin Latexin valmiit ympäristöt
-tekevät juuri näin eli käyttävät \koodi{\keno addvspace}\-/komentoa
-välien asettamiseen.
+\komento{addvspace}\-/komento soveltuu hyvin komentojen ja ympäristöjen
+määrittelyyn (luvut \ref{luku:komennot} ja \ref{luku:ymparistot}).
+Esimerkiksi itse määritellyn ympäristön alussa ja lopussa voi
+\komento{addvspace}\-/ komennolla varmistaa tietynsuuruisen välin, mutta
+jos sama tai muu vastaava ympäristö on dokumentissa kahdesti peräkkäin,
+huomioidaan pystysuuntainen väli vain kerran eli suurimman välin mukaan.
+Jotkin Latexin valmiit ympäristöt tekevät juuri näin eli käyttävät
+\komento{addvspace}\-/komentoa välien asettamiseen.
 
 Sivun alueella äärettömästi venyvän pystysuuntaisen välin saa komennolla
-\koodi{\keno vfill}. \koodimargin{\keno vfill} Mitan luonnollinen arvo
-on nolla, mutta se voi venyä niin, että se täyttää kaiken tyhjän tilan
-sivulla. \koodi{\keno vfill}\-/komento tarkoittaa käytännössä samaa kuin
-\koodi{\keno vspace\{0mm plus 1fill\}} \=/komento. Texin venyviä mittoja
-ja välejä käsitellään tarkemmin luvussa \ref{luku:venyvat_mitat}.
+\komentom{vfill}. Mitan luonnollinen arvo on nolla, mutta se voi venyä
+niin, että se täyttää kaiken tyhjän tilan sivulla. \komento{vfill}\-/
+komento tarkoittaa käytännössä samaa kuin \komento[\{0mm plus
+1fill\}]{vspace} \=/komento. Texin venyviä mittoja ja välejä käsitellään
+tarkemmin luvussa \ref{luku:venyvat_mitat}.
 
 \subsection{Ensimmäisen rivin sisennys}
 
@@ -235,11 +234,13 @@ merkki siitä, että tekstin sisällössä siirrytään seuraavaan asiaan.
 Oletusasetuksilla Latex latoo sisennyksen automaattisesti kappaleen
 alkuun mutta ei kuitenkaan otsikoiden jälkeen.
 
-Ensimmäisen rivin sisennyksen suuruus asetetaan mitan \koodi{\keno
-  parindent} avulla, esimerkiksi alla olevan esimerkin mukaisesti.
-Sopiva mittayksikkö tähän tarkoitukseen on \emph{em}, koska se viittaa
-suoraan nykyisen fontin kokoon.
+Ensimmäisen rivin sisennyksen suuruus asetetaan mitan \mitta{parindent}
+avulla, esimerkiksi alla olevan esimerkin mukaisesti. Sopiva
+mittayksikkö tähän tarkoitukseen on \emph{em}, koska se viittaa suoraan
+nykyisen fontin kokoon.
 
+\komentoi{setlength}
+\mittai{parindent}
 \begin{koodilohkosis}
   \setlength{\parindent}{1em}
 \end{koodilohkosis}
@@ -248,19 +249,22 @@ Edellä mainittu mitta pitäisi asettaa nollaan silloin, kun kappaleiden
 välissä on tyhjää tilaa. Pystysuuntainen välihän jo sinänsä ilmaisee,
 että kappale vaihtuu.
 
+\komentoi{setlength}
+\mittai{parskip}
+\mittai{parindent}
 \begin{koodilohkosis}
   \setlength{\parskip}{1.3ex plus .2ex minus .1ex}
   \setlength{\parindent}{0em}  % Ei sisennystä.
 \end{koodilohkosis}
 
-\koodi{\keno parindent}\-/ mitan levyisen välin voi tehdä mihin tahansa
-komennolla \koodi{\keno indent}. \koodimargin{\keno indent} Tätä
-komentoa ei tavallisesti tarvita, koska kappaleet alkavat
-automaattisesti sen suuruisella sisennyksellä. Tarpeellisempi komento on
-sen vastakohta \koodi{\keno no\-in\-dent}, \koodimargin{\keno noindent}
-joka voidaan kirjoittaa kappaleen alkuun estämään kyseisen kappaleen
+\mitta{parindent}\-/ mitan levyisen välin voi tehdä mihin tahansa
+komennolla \komentom{indent}. Tätä komentoa ei tavallisesti tarvita,
+koska kappaleet alkavat automaattisesti sen suuruisella sisennyksellä.
+Tarpeellisempi komento on sen vastakohta \komentom{noindent}, joka
+voidaan kirjoittaa kappaleen alkuun estämään kyseisen kappaleen
 ensimmäisen rivin sisentäminen.
 
+\komentoi{noindent}
 \begin{koodilohkosis}
   \noindent
   Tämän tekstikappaleen ensimmäistä riviä ei sisennetä.
@@ -279,14 +283,17 @@ enemmänkin.
 Latex estää sisennyksen automaattisesti otsikoiden jälkeen mutta latoo
 sisennyksen kuitenkin kaikkien muiden elementtien ja pystysuuntaisen
 välin jälkeen. Jos sisennys halutaan estää, pitäisi kyseiset kappaleet
-aloittaa aina \koodi{\keno noindent}\-/komennolla. Toinen vaihtoehto on
+aloittaa aina \komento{noindent}\-/komennolla. Toinen vaihtoehto on
 käyttää \paketti{noindentafter}\-/ pakettia\avctan{noindentafter} ja
 määritellä sen tarjoaman komennon avulla, minkä ympäristöjen jälkeen ei
 haluta sisennystä. Seuraava esimerkki poistaa sisennyksen aina
-\koodi{list}- ja \koodi{tabular}\-/ ympäristöjen jälkeen. Lisätietoja
-mainituista ympäristöistä on luvuissa \ref{luku:luetelmat} ja
-\ref{luku:taulukot}.
+\ymparisto{list}- ja \ymparisto{tabular}\-/ ympäristöjen jälkeen.
+Lisätietoja mainituista ympäristöistä on luvuissa \ref{luku:luetelmat}
+ja \ref{luku:taulukot}.
 
+\komentoi{NoIndentAfterEnv}
+\ymparistoi{list}
+\ymparistoi{tabular}
 \begin{koodilohkosis}
   \NoIndentAfterEnv{list}
   \NoIndentAfterEnv{tabular}
@@ -308,6 +315,10 @@ tekstikappaleen sisennyksen tasalle, ja kappaleen muut rivit on
 sisennettynä samalla tasolle.
 
 \begin{esimerkki*}
+  \komentoi{hangpara}
+  \pakettii{hanging}
+  \komentoi{,}
+
 \begin{koodilohko}
   \hangpara{2cm}{1}Tässä tekstikappaleessa on riippuva sisennys. Kappale
   alkaa yhdellä sisentämättömällä rivillä, ja kappaleen seuraavat rivit
@@ -318,27 +329,28 @@ sisennettynä samalla tasolle.
   alkaa yhdellä sisentämättömällä rivillä, ja kappaleen seuraavat rivit
   on sisennetty 2\,cm. Ei ole kovin vaikeaa.
 \end{tulos}
-\caption{Riippuva sisennys \paketti{hanging}\-/paketin ja sen
-  \koodi{\keno hang\-para}\-/komennon avulla}
+\caption{Riippuva sisennys \paketti{hanging}\-/ paketin ja sen
+  \komento{hangpara}\-/ komennon avulla}
 \label{esim:riippuva_sis_hangpara}
 \end{esimerkki*}
 
 Helpoin tapa riippuvien sisennysten toteuttamiseen lienee
 \paketti{hanging}\-/ paketin\avctan{hanging} käyttö. Paketti tuo uuden
-komennon \koodi{\keno hang\-para}, \koodimargin{\keno hangpara} jonka
-käyttöä esimerkki \ref{esim:riippuva_sis_hangpara} selventää. Komennon
-ensimmäinen argumentti on sisennyksen mitta ja toinen argumentti
-(positiivinen kokonaisluku) määrittää, kuinka monta riviä kappaleen
-alusta jätetään sisentämättä. Jos taas toinen argumentti on negatiivinen
-luku, luvun it\-seis\-arvo määrittää, kuinka monta riviä kappaleen
-alusta sisennetään.
+komennon \komentom{hangpara}, jonka käyttöä esimerkki
+\ref{esim:riippuva_sis_hangpara} selventää. Komennon ensimmäinen
+argumentti on sisennyksen mitta ja toinen argumentti (positiivinen
+kokonaisluku) määrittää, kuinka monta riviä kappaleen alusta jätetään
+sisentämättä. Jos taas toinen argumentti on negatiivinen luku, luvun
+it\-seis\-arvo määrittää, kuinka monta riviä kappaleen alusta
+sisennetään.
 
-Komennon \koodi{\keno hang\-para} vaihtoehtona on ympäristö
-\koodi{hang\-paras}, \koodimargin{hang\-paras} jonka sisällä kaikki
-kappaleet sisennetään riippuvalla tyylillä samojen asetusten mukaisesti.
-Ympäristön aloituskomennolle annetaan samat argumentit kuin \koodi{\keno
-  hang\-para}\-/ komennollekin.
+Komennon \komento{hangpara} vaihtoehtona on ympäristö
+\ymparistom{hangparas}, jonka sisällä kaikki kappaleet sisennetään
+riippuvalla tyylillä samojen asetusten mukaisesti. Ympäristön
+aloituskomennolle annetaan samat argumentit kuin \komento{hangpara}\-/
+komennollekin.
 
+\ymparistoi{hangparas}
 \begin{koodilohkosis}
   \begin{hangparas}{2cm}{1}
     ...
@@ -346,6 +358,10 @@ Ympäristön aloituskomennolle annetaan samat argumentit kuin \koodi{\keno
 \end{koodilohkosis}
 
 \begin{esimerkki*}
+  \komentoi{hangpara}
+  \komentoi{makebox}
+  \komentoi{,}
+
 \begin{koodilohko}
   \hangpara{2cm}{1}\makebox[2cm][l]{Otsikko}Tässä tekstikappaleessa on
   riippuva sisennys. Kappale alkaa yhdellä sisentämättömällä rivillä,
@@ -362,7 +378,7 @@ Ympäristön aloituskomennolle annetaan samat argumentit kuin \koodi{\keno
 \label{esim:riippuva_sis_asiakirja}
 \end{esimerkki*}
 
-Asiakirjan tyylisen otsikon saa toteutettua \koodi{\keno make\-box}\-/
+Asiakirjan tyylisen otsikon saa toteutettua \komento{makebox}\-/
 komennon avulla esimerkin \ref{esim:riippuva_sis_asiakirja} tavoin.
 Komento latoo näkymättömän laatikon, jonka leveys määritellään
 sisennyksen levyiseksi ja jonka sisään kirjoitetaan otsikko. Jos
@@ -371,6 +387,13 @@ määritellä sarkainleveyttä ja sisennystä varten oma mitta ja
 tekstikappaleen kirjoittamista varten oma komento. Seuraavassa on siitä
 esimerkki:
 
+\komentoi{newlength}
+\komentoi{setlength}
+\komentoi{newcommand}
+\komentoi{makebox}
+\komentoi{par}
+\komentoi{hangpara}
+\komentoi{ignorespaces}
 \begin{koodilohkosis}
   \newlength{\sarkain}
   \setlength{\sarkain}{2.3cm}
@@ -378,13 +401,20 @@ esimerkki:
     \makebox[2\sarkain][l]{\ignorespaces #1}\ignorespaces}
 \end{koodilohkosis}
 
-Tämän jälkeen voi komennolla \koodi{\keno kappale} aloittaa asiakirjan
+Tämän jälkeen voi komennolla \komentox{kappale} aloittaa asiakirjan
 sisennetyn tekstikappaleen. Komennolle voi antaa hakasulkeissa
-valinnaisen argumentin, joka on kappaleen otsikko. \koodi{\keno
-  make\-box}\-/ komentoa ja muita laatikoita käsitellään tarkemmin
-luvussa \ref{luku:laatikot}.
+valinnaisen argumentin, joka on kappaleen otsikko. \komento{makebox}\-/
+komentoa ja muita laatikoita käsitellään tarkemmin luvussa
+\ref{luku:laatikot}.
 
 \begin{esimerkki*}
+  \ymparistoi{list}
+  \komentoi{setlength}
+  \mittai{leftmargin}
+  \mittai{itemindent}
+  \komentoi{item}
+  \komentoi{,}
+
 \begin{koodilohko}
   \begin{list}{}{
       \setlength{\leftmargin}{2cm}
@@ -395,18 +425,18 @@ luvussa \ref{luku:laatikot}.
     sisennetty 2\,cm.
   \end{list}
 \end{koodilohko}
-\caption{Riippuvan sisennyksen toteuttaminen \koodi{list}\-/ympäristön
-  avulla}
+\caption{Riippuvan sisennyksen toteuttaminen \ymparisto{list}\-/
+  ympäristön avulla}
 \label{esim:riippuva_sis_list}
 \end{esimerkki*}
 
-Riippuvan sisennyksen voi toteuttaa myös \koodi{list}\-/ympäristön
+Riippuvan sisennyksen voi toteuttaa myös \ymparisto{list}\-/ ympäristön
 avulla. Se on tarkoitettu luetelmien tekemiseen, mutta sopivilla
 asetuksilla yksi ''luetelman'' kohta on riippuvasti sisennetty kappale.
-Tarkemmin \koodi{list}\-/ympäristöä käsitellään luetelmien yhteydessä
-luvussa \ref{luku:luetelmat}, mutta oheisessa esimerkissä
+Tarkemmin \ymparisto{list}\-/ ympäristöä käsitellään luetelmien
+yhteydessä luvussa \ref{luku:luetelmat}, mutta oheisessa esimerkissä
 \ref{esim:riippuva_sis_list} on sopivat asetukset riippuvan sisennyksen
-toteuttamiseen. Kappale alkaa \koodi{\keno item}\-/komennolla, koska
+toteuttamiseen. Kappale alkaa \komento{item}\-/ komennolla, koska
 kyseessä on ikään kuin luetelman kohta.
 
 \subsection{Vasen ja oikea sisennys sekä lohkolainaukset}
@@ -427,31 +457,46 @@ Joskus vasemman reunan sisennyksen lisäksi sisennetään myös oikeasta
 reunasta.
 
 Latexissa on tavallisille lohkolainauksille kolme erilaista ympäristöä:
-\koodi{quotation}, \koodi{quote} ja \koodi{verse}. Kaksi ensin mainittua
-on tarkoitettu normaalilla tavalla juoksevalle tekstille, kun taas
-kolmas on tarkoitettu runon säkeiden ja säkeistöjen latomiseen.
+\ymparisto{quotation}, \ymparisto{quote} ja \ymparisto{verse}. Kaksi
+ensin mainittua on tarkoitettu normaalilla tavalla juoksevalle
+tekstille, kun taas kolmas on tarkoitettu runon säkeiden ja säkeistöjen
+latomiseen.
 
-\koodi{quotation}\-/ ympäristö \koodimargin{quotation} sisentää
-tekstikappaleiden ensimmäisen rivin 1,5\,em:n verran, eikä kappaleiden
-välissä ole pystysuuntaista tilaa. \koodi{quote}\-/ ympäristö
-\koodimargin{quote} ei sisennä kappaleiden ensimmäistä riviä, ja se
-puolestaan erottaa kappaleet toisistaan pystysuuntaisen tilan avulla.
-\koodi{verse}\-/ympäristöä \koodimargin{verse} käytetään siten, että
-lähdedokumentissa runon säkeet lopetetaan rivinvaihtokomentoon
-(\koodi{\keno\keno}), lukuun ottamatta säkeistön viimeistä säettä.
-Säkeistöt erotetaan toisistaan tyhjällä rivillä, kuten Latexissa
-tekstikappaleet muutenkin. Lopputuloksena on useimpiin runoihin sopiva
-ladontatapa, jossa säkeistöjen vasen reuna on samalla tasolla, oikealla
-on liehureuna ja säkeistöjen välissä on pystysuuntaista tilaa.
+\ymparistom{quotation}\-/ ympäristö sisentää tekstikappaleiden
+ensimmäisen rivin 1,5\,em:n verran, eikä kappaleiden välissä ole
+pystysuuntaista tilaa. \ymparistom{quote}\-/ ympäristö ei sisennä
+kappaleiden ensimmäistä riviä, ja se puolestaan erottaa kappaleet
+toisistaan pystysuuntaisen tilan avulla. \ymparisto{verse}\-/ ympäristöä
+käytetään siten, että lähdedokumentissa runon säkeet lopetetaan
+rivinvaihtokomentoon (\komento{\keno}), lukuun ottamatta säkeistön
+viimeistä säettä. Säkeistöt erotetaan toisistaan tyhjällä rivillä, kuten
+Latexissa tekstikappaleet muutenkin. Lopputuloksena on useimpiin
+runoihin sopiva ladontatapa, jossa säkeistöjen vasen reuna on samalla
+tasolla, oikealla on liehureuna ja säkeistöjen välissä on
+pystysuuntaista tilaa.
 
 Jos Latexin valmiit lohko\-lai\-naus\-ympä\-ris\-töt eivät tuota
 haluttua lopputulosta, voi sisennetyt tekstikappaleet toteuttaa myös
 luetelmien (luku \ref{luku:luetelmat}) tekemiseen tarkoitetun
-\koodi{list}\-/ympäristön avulla. Sopivilla asetuksilla ''luetelma''
-sisältää ihan tavallisen näköisiä tekstikappaleita, jotka vain on
-sisennetty vasemmalta tai oikealta tai molemmista reunoista.
+\ymparisto{list}\-/ ympäristön avulla. Sopivilla asetuksilla
+''luetelma'' sisältää ihan tavallisen näköisiä tekstikappaleita, jotka
+vain on sisennetty vasemmalta tai oikealta tai molemmista reunoista.
 
 \begin{esimerkki*}
+  \ymparistoi{list}
+  \komentoi{setlength}
+  \mittai{leftmargin}
+  \mittai{rightmargin}
+  \mittai{itemindent}
+  \mittai{listparindent}
+  \mittai{parindent}
+  \mittai{parsep}
+  \mittai{topsep}
+  \mittai{partopsep}
+  \komentoi{item}
+  \komentoi{linespread}
+  \komentoi{small}
+
 \begin{koodilohko}
   \newenvironment{lohkolainaus}{%
     \begin{list}{}{
@@ -467,15 +512,16 @@ sisennetty vasemmalta tai oikealta tai molemmista reunoista.
     }{\end{list}}
 \end{koodilohko}
 \caption{Lohkolainausten eli tekstikappaleen vasemman ja oikean
-  sisennyksen toteutus \koodi{list}\-/ ympäristön avulla. Esimerkkikoodi
-  määrittelee uuden ympäristön nimeltä \koodi{lohkolainaus}}
+  sisennyksen toteutus \ymparisto{list}\-/ ympäristön avulla.
+  Esimerkkikoodi määrittelee uuden ympäristön nimeltä
+  \ymparistox{lohkolainaus}}
 \label{esim:vasen_oikea_sisennys}
 \end{esimerkki*}
 
 Esimerkistä \ref{esim:vasen_oikea_sisennys} selviää, kuinka
-\koodi{list}\-/ ympäristöä voi käyttää sisennyksen toteuttamiseen.
-Esimerkki määrittelee uuden ympäristön nimeltä \koodi{lohkolainaus},
-jota voi hyödyntää myöhemmin dokumentissa.
+\ymparisto{list}\-/ ympäristöä voi käyttää sisennyksen toteuttamiseen.
+Esimerkki määrittelee uuden ympäristön nimeltä
+\ymparistox{lohkolainaus}, jota voi hyödyntää myöhemmin dokumentissa.
 
 \begin{koodilohkosis}
   \begin{lohkolainaus}
@@ -486,12 +532,12 @@ jota voi hyödyntää myöhemmin dokumentissa.
 
 Omien ympäristöjen määrittelyä käsitellään tarkemmin luvussa
 \ref{luku:ymparistot}. Esimerkin \ref{esim:vasen_oikea_sisennys} rivillä
-11 oleva \koodi{\keno item}\-/ komento on pakollinen, koska se aloittaa
-\koodi{list}\-/ ympäristöön kuuluvan luetelman kohdan. Sen perässä
-olevat komennot \koodi{\keno linespread} ja \koodi{\keno small} sen
-sijaan ovat vapaaehtoisia. Ne ovat mukana siksi, että on varsin
-tavallista latoa lohkolainaukset pienemmällä rivivälillä
-(rivikorkeudella) ja kirjainleikkauksella kuin leipäteksti.
+11 oleva \komento{item}\-/ komento on pakollinen, koska se aloittaa
+\ymparisto{list}\-/ ympäristöön kuuluvan luetelman kohdan. Sen perässä
+olevat komennot \komento{linespread} ja \komento{small} sen sijaan ovat
+vapaaehtoisia. Ne ovat mukana siksi, että on varsin tavallista latoa
+lohkolainaukset pienemmällä rivivälillä (rivikorkeudella) ja pienemmällä
+kirjainleikkauksella kuin leipäteksti.
 
 \subsection{Rivinvaihtokomennot}
 \label{luku:rivinvaihtokomennot}
@@ -499,11 +545,11 @@ tavallista latoa lohkolainaukset pienemmällä rivivälillä
 Latex\-/lähdedokumentissa olevat rivinvaihdot tulkitaan sanaväleiksi
 siinä missä välilyönnitkin, eli ne rivinvaihdot eivät päädy ladottuun
 dokumenttiin (luvut \ref{luku:sanavali} ja
-\ref{luku:rivinvaihtomerkit}). \koodimargin{\keno\keno} Sen sijaan
-ladottuun dokumenttiin saadaan rivinvaihto käyttämällä komentoa
-\koodi{\keno\keno} eli kaksi kenoviivaa. Komennon ei tarvitse sijaita
-lähdedokumentissa rivin lopussa.
+\ref{luku:rivinvaihtomerkit}). Sen sijaan ladottuun dokumenttiin saadaan
+rivinvaihto käyttämällä komentoa \komentom{\keno} eli kaksi kenoviivaa.
+Komennon ei tarvitse sijaita lähdedokumentissa rivin lopussa.
 
+\komentoi{\keno}
 \begin{koodilohkosis}
   ensimmäinen \\ toinen \\
   kolmas
@@ -517,6 +563,7 @@ Rivinvaihtokomennolle voi antaa hakasulkeissa valinnaisen argumentin,
 joka ilmaisee rivien väliin ladottavan ylimääräisen pystysuuntaisen
 tilan. Argumentin on siis oltava mitta (luku \ref{luku:mitat}).
 
+\komentoi{\keno}
 \begin{koodilohkosis}
   ensimmäinen \\ toinen \\[1.3ex] kolmas
 \end{koodilohkosis}
@@ -525,17 +572,15 @@ tilan. Argumentin on siis oltava mitta (luku \ref{luku:mitat}).
   ensimmäinen \\* toinen \\*[1.3ex] kolmas
 \end{tulossis}
 
-Komennosta on olemassa tähtiversio \koodi{\keno\keno *},
-\koodimargin{\keno\keno *} joka edellisten ominaisuuksien lisäksi estää
-sivun vaihtumisen tämän rivinvaihdon kohdalla. Myös tähtiversiolle voi
-antaa valinnaiseksi argumentiksi mitan. Sen merkitys on sama kuin
-komennon normaalilla versiollakin.
+Komennosta on olemassa tähtiversio \komentom{\keno *}, joka edellisten
+ominaisuuksien lisäksi estää sivun vaihtumisen tämän rivinvaihdon
+kohdalla. Myös tähtiversiolle voi antaa valinnaiseksi argumentiksi
+mitan. Sen merkitys on sama kuin komennon normaalilla versiollakin.
 
-Rivin voi vaihtaa myös komennolla \koodi{\keno new\-line},
-\koodimargin{\keno new\-line} mutta tämä komento ei hyväksy valinnaista
-argumenttia eikä siitä ole tähdellistä versiota. Komennot \koodi{\keno
-  new\-line} ja \koodi{\keno\keno} käyttäytyvät eri tavoin taulukoissa,
-joita käsitellään luvussa \ref{luku:taulukot}.
+Rivin voi vaihtaa myös komennolla \koodim{\keno newline}, mutta tämä
+komento ei hyväksy valinnaista argumenttia eikä siitä ole tähdellistä
+versiota. Komennot \komento{newline} ja \komento{\keno} käyttäytyvät eri
+tavoin taulukoissa, joita käsitellään luvussa \ref{luku:taulukot}.
 
 \subsection{Lesket ja orvot}
 
@@ -556,29 +601,29 @@ välissä että sivun tai palstan vaihtumisen kohdalla.
 
 Latexissa leski- tai orporivit lienee käytännöllisintä estää
 \paketti{nowidow}\-/ paketin\avctan{nowidow} avulla. Paketin lataamisen
-jälkeen käytetään komentoa \koodi{\keno set\-no\-widow}
-\koodimargin{\keno set\-no\-widow}, joka estää leskirivit eli pitää
-tekstikappaleen lopusta vähintään kaksi riviä yhdessä sivun tai palstan
-yläreunassa. Komennolle voi antaa hakasulkeissa valinnaisen argumentin
-(kokonaisluvun), joka ilmaisee, kuinka monta riviä täytyy vähintään
-pysyä yhdessä. Vastaavasti orporivit estetään komennolla \koodi{\keno
-  set\-no\-club}, \koodimargin{\keno set\-no\-club} joka toimii samalla
-tavalla. Molemmat komennot vaikuttavat koko dokumenttiin eli kaikkiin
-tekstikappaleisiin.
+jälkeen käytetään komentoa \komentom{setnowidow}, joka estää leskirivit
+eli pitää tekstikappaleen lopusta vähintään kaksi riviä yhdessä sivun
+tai palstan yläreunassa. Komennolle voi antaa hakasulkeissa valinnaisen
+argumentin (kokonaisluvun), joka ilmaisee, kuinka monta riviä täytyy
+vähintään pysyä yhdessä. Vastaavasti orporivit estetään komennolla
+\komentom{setnoclub}, joka toimii samalla tavalla. Molemmat komennot
+vaikuttavat koko dokumenttiin eli kaikkiin tekstikappaleisiin.
 
+\komentoi{usepackage}
+\pakettii{nowidow}
+\komentoi{setnowidow}
+\komentoi{setnoclub}
 \begin{koodilohkosis}
   \usepackage{nowidow}
   \setnowidow   % leskirivien esto
   \setnoclub    % orporivien esto
 \end{koodilohkosis}
 
-Paketti \paketti{nowidow} määrittelee myös komennot \koodi{\keno
-  no\-widow} ja \koodi{\keno no\-club}, \koodimargin{\keno no\-widow}
-\koodimargin{\keno no\-club} joilla voi vaikuttaa yksittäisen
-tekstikappaleen leski- ja orporiveihin. Nämä komennot täytyy sijoittaa
-tekstikappaleen loppuun, ja myös niille voi antaa hakasulkeissa
-valinnaiseksi argumentiksi luvun, joka kertoo yhdessä pidettävien rivien
-määrän.
+Paketti \paketti{nowidow} määrittelee myös komennot \komentom{nowidow}
+ja \komentom{noclub}, joilla voi vaikuttaa yksittäisen tekstikappaleen
+leski- ja orporiveihin. Nämä komennot täytyy sijoittaa tekstikappaleen
+loppuun, ja myös niille voi antaa hakasulkeissa valinnaiseksi
+argumentiksi luvun, joka kertoo yhdessä pidettävien rivien määrän.
 
 Jos ei halua tai voi käyttää \paketti{nowidow}\-/pakettia, voi leski- ja
 orporivit estää myös Texin matalan tason toimintojen avulla.
@@ -589,6 +634,8 @@ mahdollisimman korkeaksi. Käytännössä arvo 10\,000 tarkoittaa samaa kuin
 ääretön, eli silloin lesken tai orvon haitallisuus on niin suuri, että
 sellaisia ei sallita.
 
+\komentoi{widowpenalty}
+\komentoi{clubpenalty}
 \begin{koodilohkosis}
   \widowpenalty 10000   % leskirivien esto
   \clubpenalty  10000   % orporivien esto
@@ -604,7 +651,7 @@ kapeampi kuin seuraavan kappaleen ensimmäisen rivin sisennys.
 Orpotavujen estämiseen ei taida olla automaattisia keinoja, mutta
 kappaleen sanamäärää ja sanajärjestystä muuttamalla voi tietenkin
 vaikuttaa rivien latomiseen. Kappaleen viimeiseen sanaan voi kirjoittaa
-myös tavutusvihjeitä (\koodi{\keno-}) mutta jättää vihje pois ennen
+myös tavutusvihjeitä (\komento{-}) mutta jättää vihje pois ennen
 viimeistä tavua. Näin estetään lyhyen orpotavun muodostuminen.
 Tavutusvihjeitä ja muita tavutuksen asetuksia käsitellään
 luvussa~\ref{luku:tavutus}.
@@ -619,14 +666,15 @@ lyhyehköjä huomautuksia ja lisätietoa. Esimerkiksi tämän oppaan
 marginaaleissa on Latexin komentoja, ympäristöjä ja asetusvalitsimia, ja
 niiden tarkoituksena on helpottaa tietojen löytämistä.
 
-Marginaalihuomautukset tehdään komennolla \koodi{\keno margin\-par},
-\koodimargin{\keno margin\-par} jonka argumentiksi annetaan marginaaliin
-tuleva teksti. Marginaalin teksti ladotaan vasempaan tai oikeaan
-marginaaliin riippuen siitä, kumpi on aukeaman ulkoreunassa.
-Yksipuolisilla sivuilla teksti ladotaan oletuksena oikeaan marginaaliin.
-Mikäli sivu on kaksipalstaisessa tilassa (luku \ref{luku:palstat}),
-marginaalihuomautus ladotaan lähempänä olevaan marginaaliin.
+Marginaalihuomautukset tehdään komennolla \komentom{marginpar}, jonka
+argumentiksi annetaan marginaaliin tuleva teksti. Marginaalin teksti
+ladotaan vasempaan tai oikeaan marginaaliin riippuen siitä, kumpi on
+aukeaman ulkoreunassa. Yksipuolisilla sivuilla teksti ladotaan
+oletuksena oikeaan marginaaliin. Mikäli sivu on kaksipalstaisessa
+tilassa (luku \ref{luku:palstat}), marginaalihuomautus ladotaan
+lähempänä olevaan marginaaliin.
 
+\komentoi{marginpar}
 \begin{koodilohkosis}
   Tämä on leipätekstin tekstikappale,
     \marginpar{Tämä ladotaan marginaaliin.}
@@ -639,10 +687,15 @@ Yleensä marginaalihuomautukset ladotaan erilaisella kirjainleikkauksella
 kuin leipäteksti, jotta ne erottuvat toisistaan. Jos leipätekstissä
 käytetään antiikvaa, voisi marginaalissa käyttää esimerkiksi pienempää
 groteskia. Tämän toteutusta varten kannattaa määritellä uusi komento,
-vaikkapa nimellä \koodi{\keno huomautus}, jota käyttämällä
+vaikkapa nimellä \komentox{huomautus}, jota käyttämällä
 marginaalihuomautukset saa helposti yhdenmukaiseksi. Seuraavassa on
 esimerkki tällaisen komennon määrittelystä:
 
+\komentoi{newcommand}
+\komentoi{marginpar}
+\komentoi{sffamily}
+\komentoi{scriptsize}
+\komentoi{RaggedRight}
 \begin{koodilohkosis}
   \newcommand{\huomautus}[1]{%
     \marginpar{\sffamily\scriptsize\RaggedRight #1}}
@@ -651,8 +704,8 @@ esimerkki tällaisen komennon määrittelystä:
 Omien komentojen määrittelyä käsitellään tarkemmin luvussa
 \ref{luku:komennot} ja fonttiasetuksia luvussa~\ref{luku:kirjaintyypit}.
 Edellä olevassa komennon määrittelyssä on mukana myös palstan muotoon
-vaikuttava komento \koodi{\keno Ragged\-Right}, josta on lisätietoa
-luvussa \ref{luku:kappaleen_tasaus}.
+vaikuttava komento \komento{RaggedRight}, josta on lisätietoa luvussa
+\ref{luku:kappaleen_tasaus}.
 
 Tämän \marginpar{\sffamily \linespread{1} \scriptsize \RaggedRight Tässä
   on pienellä groteskilla ladottu huomautus.} tekstikappaleen vieressä
@@ -663,28 +716,32 @@ leipätekstin lukemista. \noclub[3]
 
 Sivun marginaalissa olevan huomautuspalstan leveys voidaan määrittää
 sivun asetusten yhteydessä. Asetuksia hoitavan \paketti{geometry}\-/
-paketin valitsimella \koodi{margin\-par\-width} asetetaan palstan leveys
-ja valitsimella \koodi{margin\-par\-sep} palstan etäisyys
-leipätekstistä. Valitsimella \koodi{reverse\-margin\-par} siirretään
-marginaalihuomautukset päinvastaiseen marginaaliin. Näitä ja muitakin
-sivun asetuksia käsitellään luvussa~\ref{luku:sivuasetukset}.
+paketin valitsimella \koodi{marginparwidth} asetetaan palstan leveys ja
+valitsimella \koodi{marginparsep} palstan etäisyys leipätekstistä.
+Valitsimella \koodi{reversemarginpar} siirretään marginaalihuomautukset
+päinvastaiseen marginaaliin. Näitä ja muitakin sivun asetuksia
+käsitellään luvussa~\ref{luku:sivuasetukset}.
 
-Asetuksia voi muuttaa myös kesken dokumentin. Mitta \koodi{\keno
-  margin\-par\-width} määrittää marginaalihuomautuspalstan leveyden ja
-mitta \koodi{\keno margin\-par\-sep} sen etäisyyden leipätekstistä.
-Lisäksi on mitta \koodi{\keno margin\-par\-push}, jolla asetetaan
-peräkkäisten marginaalihuomautusten vähim\-mäis\-etäi\-syys toisistaan.
-Seuraavassa on esimerkki näiden mittojen asettamisesta:
+Asetuksia voi muuttaa myös kesken dokumentin. Mitta
+\mitta{marginparwidth} määrittää marginaalihuomautuspalstan leveyden ja
+mitta \mitta{marginparsep} sen etäisyyden leipätekstistä. Lisäksi on
+mitta \mitta{marginparpush}, jolla asetetaan peräkkäisten
+marginaalihuomautusten vähim\-mäis\-etäi\-syys toisistaan. Seuraavassa
+on esimerkki näiden mittojen asettamisesta:
 
+\komentoi{setlength}
+\mittai{marginparwidth}
+\mittai{marginparsep}
+\mittai{marginparpush}
 \begin{koodilohkosis}
   \setlength{\marginparwidth}{50bp}
   \setlength{\marginparsep}{10bp}
   \setlength{\marginparpush}{6bp}
 \end{koodilohkosis}
 
-Kesken dokumentin komennolla \koodi{\keno reverse\-marginpar} voidaan
-vaihtaa marginaalihuomautukset vastakkaiseen marginaaliin ja komennolla
-\koodi{\keno normal\-margin\-par} palautetaan oletusasetukset.
+Kesken dokumentin komennolla \komento{reversemarginpar} voidaan vaihtaa
+marginaalihuomautukset vastakkaiseen marginaaliin ja komennolla
+\komento{normalmarginpar} palautetaan oletusasetukset.
 
 \subsection{Anfangit eli suurikokoiset alkukirjaimet}
 
@@ -718,10 +775,11 @@ sitten muuten vain ilmaisee uuden luvun alkamista.
 
 Latexissa anfangien tekemistä varten on makropaketti
 \paketti{lettrine},\avctan{lettrine} joka tarjoaa käyttöön samannimisen
-komennon. Jokainen anfangi on erilainen, ja siksi \koodi{\keno
-  lettrine}\-/ komentokin sisältää useita asetuksia anfangin ulkoasun
-hienosäätöön. Komentoa käytetään seuraavalla tavalla:
+komennon. Jokainen anfangi on erilainen, ja siksi \komento{lettrine}\-/
+komentokin sisältää useita asetuksia anfangin ulkoasun hienosäätöön.
+Komentoa käytetään seuraavalla tavalla:
 
+\komentoi{lettrine}
 \begin{koodilohkosis}
   \lettrine[lines=3, loversize=.06, lhang=.02, findent=-5bp,
   nindent=4bp, slope=4bp]{A}{nfangi} aloittaa tämän tekstikappaleen.
@@ -740,9 +798,9 @@ Näillä asetuksilla saadaan A\-/kirjaimen viistoa reunaa mukailevat
 rivien alut.
 
 Ennen \paketti{lettrine}\-/paketin käyttämistä kannattaa lukea paketin
-ohjekirjasta tietoa \koodi{\keno lettrine}\-/ komennon valitsimista ja
-myös teknisistä rajoituksista. Anfangit eivät toimi Latexissa teknisesti
-joka paikassa -- ja typografisesti vielä harvemmassa.
+ohjekirjasta tietoa \komento{lettrine}\-/ komennon valitsimista ja myös
+teknisistä rajoituksista. Anfangit eivät toimi Latexissa teknisesti joka
+paikassa -- ja typografisesti vielä harvemmassa.
 
 \section{Tekstin korostaminen}
 \label{luku:korostus}
@@ -792,10 +850,9 @@ käyttämällä.
 \label{luku:peruskorostukset}
 
 Antiikvatyyppisen kirjainleikkauksen korostamiseen sopii yleensä
-parhaiten saman perheen \textit{kursiivi} (\koodi{\keno text\-it}).
-\koodimargin{\keno textit} Lihavointi toimii huonommin antiikvan kanssa,
-koska pelkkä merkkien viivojen vahvistaminen ei tuo riittävää
-kontrastia.
+parhaiten saman perheen \textit{kursiivi} (\komentom{textit}).
+Lihavointi toimii huonommin antiikvan kanssa, koska pelkkä merkkien
+viivojen vahvistaminen ei tuo riittävää kontrastia.
 
 \begin{tulossis}
   \rmfamily Antiikvaperheen \textit{kursiivileikkaus} tuo yleensä
@@ -804,15 +861,14 @@ kontrastia.
   huonommin.
 \end{tulossis}
 
-\textbf{Lihavointi} (\koodi{\keno text\-bf}) \koodimargin{\keno textbf}
-toimii huomattavasti paremmin groteskityyppisen kirjainperheen kanssa,
-koska lihavoitu leikkaus on usein selvästi vahvempi normaaliin
-verrattuna. Groteskin kursiivi sen sijaan ei monesti edes ole
-varsinainen kursiivileikkaus vaan pelkkä lievä kallistus
-\koodimargin{\keno textsl} (\koodi{\keno text\-sl}). Sellainen ei
-välttämättä tuo riittävää muotokontrastia.\footnote{Joissakin niin
-  sanotuissa humanistisissa groteskiperheissä on mukana ihan
-  käyttökelpoinen ja selvästi erottuva kursiivileikkaus.}
+\textbf{Lihavointi} (\komentom{textbf}) toimii huomattavasti paremmin
+groteskityyppisen kirjainperheen kanssa, koska lihavoitu leikkaus on
+usein selvästi vahvempi normaaliin verrattuna. Groteskin kursiivi sen
+sijaan ei monesti edes ole varsinainen kursiivileikkaus vaan pelkkä
+lievä kallistus (\komentom{textsl}). Sellainen ei välttämättä tuo
+riittävää muotokontrastia.\footnote{Joissakin niin sanotuissa
+  humanistisissa groteskiperheissä on mukana ihan käyttökelpoinen ja
+  selvästi erottuva kursiivileikkaus.}
 
 \begin{tulossis}
   \sffamily Groteskia on tavallista korostaa \textbf{lihavoinnilla} eli
@@ -831,15 +887,16 @@ ilmausta (\textit{kuten tässä}), ei itse suljemerkkejä pidä kursivoida,
 koska ne kuuluvat ulompaan tekstiin. Jos sulkeiden ulkopuolellakin on
 voimassa kursivointi, voi itse sulkeetkin kursivoida.
 
-Latexissa kursiivin voi toteuttaa myös komennolla \koodi{\keno emph},
-\koodimargin{\keno emph} joka huomioi ympärillä olevan korostustilan.
-Tavallisesti komento kursivoi argumentiksi annetun tekstin, mutta jos
-kursivointi on jo päällä komennon ympärillä, se latookin argumentiksi
-annetun tekstin tavallisella pystyasentoisella kirjainleikkauksella.
-Komennon ajatuksena on, että voidaan samalla komennolla korostaa sekä
-pystyasentoisen tekstin että kursiivin keskellä, eikä tarvitse välittää,
-kumpi leikkaus on voimassa.
+Latexissa kursiivin voi toteuttaa myös komennolla \komentom{emph}, joka
+huomioi ympärillä olevan korostustilan. Tavallisesti komento kursivoi
+argumentiksi annetun tekstin, mutta jos kursivointi on jo päällä
+komennon ympärillä, se latookin argumentiksi annetun tekstin
+tavallisella pystyasentoisella kirjainleikkauksella. Komennon ajatuksena
+on, että voidaan samalla komennolla korostaa sekä pystyasentoisen
+tekstin että kursiivin keskellä, eikä tarvitse välittää, kumpi leikkaus
+on voimassa.
 
+\komentoi{emph}
 \begin{koodilohkosis}
   tavallinen \emph{korostettu} tavallinen \\
   \emph{korostettu \emph{kaksoiskorostettu} korostettu}
@@ -850,16 +907,16 @@ kumpi leikkaus on voimassa.
   \emph{korostettu \emph{kaksoiskorostettu} korostettu}
 \end{tulossis}
 
-Saattaa olla hyödyllistä käyttää \koodi{\keno emph}\-/ komentoa
-esimerkiksi lainatuissa tekstipätkissä. Lainattu teksti voidaan
-tilanteen mukaan latoa tavallisella tai kursiivileikkauksella, ja
-korostukset silti toimivat.
+Saattaa olla hyödyllistä käyttää \komento{emph}\-/ komentoa esimerkiksi
+lainatuissa tekstipätkissä. Lainattu teksti voidaan tilanteen mukaan
+latoa tavallisella tai kursiivileikkauksella, ja korostukset silti
+toimivat.
 
 \subsection{Pienversaali eli kapiteeli}
 \label{luku:korostus_pienversaali}
 
 Melko rauhallinen typografinen keino on \textsc{pienversaali} eli
-kapiteeli, \koodimargin{\keno textsc} jonka kirjaimet näyttävät
+kapiteeli (\komentom{textsc}), jonka kirjaimet näyttävät
 versaalikirjaimilta mutta ovat suunnilleen gemenakirjainten eli pienten
 kirjainten korkuisia. Pienversaali on fonttiin sisältyvä erillinen
 kirjainmuotoilijan piirtämä leikkaus, eli se ei ole tietokoneen
@@ -925,13 +982,13 @@ esimerkiksi kursiivi ja lihavointi. Alleviivaus voi kuitenkin joskus
 olla kätevä keino ohjata lukijan huomio tiettyyn kohtaan esimerkiksi
 pidemmässä esimerkkitekstissä.
 
-Latexin oma alleviivauskomento \koodi{\keno under\-line}
-\koodimargin{\keno under\-line} piirtää viivan tekstin tai muun
-argumentiksi annetun sisällön alapuolelle. Komennon huono puoli on, että
-erilliset alleviivaukset eivät välttämättä osu samalle korkeudelle.
-Seuraavassa esimerkissä toisen sanan alleviivaus on alempana j- ja
-y\=/kirjainten alapidennyksen vuoksi.
+Latexin oma alleviivauskomento \komentom{underline} piirtää viivan
+tekstin tai muun argumentiksi annetun sisällön alapuolelle. Komennon
+huono puoli on, että erilliset alleviivaukset eivät välttämättä osu
+samalle korkeudelle. Seuraavassa esimerkissä toisen sanan alleviivaus on
+alempana j- ja y\=/kirjainten alapidennyksen vuoksi.
 
+\komentoi{underline}
 \begin{koodilohkosis}
   \underline{äiti} \underline{öljy}
 \end{koodilohkosis}
@@ -940,11 +997,11 @@ y\=/kirjainten alapidennyksen vuoksi.
   \underline{äiti} \underline{öljy}
 \end{tulossis}
 
-Toinen \koodi{\keno under\-line}\-/komennon ongelma on, että se estää
-sanojen tavuttamisen ja muutenkin tekstin katkaisemisen rivin lopussa.
-Komennon argumentiksi annettua tekstiä ei katkaista edes sanavälien
-kohdalta. Komennon hyvä puoli on, että se toimii myös
-matematiikkatilassa (luku~\ref{luku:matematiikka}).
+Toinen \komento{underline}\-/ komennon ongelma on, että se estää sanojen
+tavuttamisen ja muutenkin tekstin katkaisemisen rivin lopussa. Komennon
+argumentiksi annettua tekstiä ei katkaista edes sanavälien kohdalta.
+Komennon hyvä puoli on, että se toimii myös matematiikkatilassa
+(luku~\ref{luku:matematiikka}).
 
 Käytännössä alleviivaukset on parempi toteuttaa esimerkiksi makropaketin
 \paketti{ulem}\avctan{ulem} avulla. Tavallisen alleviivauksen lisäksi se
@@ -953,7 +1010,7 @@ erilaisia ylikirjoitusmerkintöjä. Taulukkoon \ref{tlk:ulem} on koottu
 paketin sisältämiä komentoja.
 
 \providecommand{\rivi}{}
-\renewcommand{\rivi}[2]{\koodi{\keno #1} & #2}
+\renewcommand{\rivi}[2]{\komento{#1} & #2}
 
 \leijutlk{
   %\setlength{\ULdepth}{.2ex}
@@ -973,32 +1030,39 @@ paketin sisältämiä komentoja.
     \bottomrule
   \end{tabular}
 }{
-  \caption{Alleviivaus- ja ylikirjoitusmerkintöjä
-    \paketti{ulem}\-/paketin komentojen avulla}
+  \caption{Alleviivaus- ja ylikirjoitusmerkintöjä \paketti{ulem}\-/
+    paketin komentojen avulla}
   \label{tlk:ulem}
 }
 
-Oletuksena \paketti{ulem}\-/ paketti määrittelee Latexin \koodi{\keno
-  emph}\-/ korostuskomennon (luku \ref{luku:peruskorostukset}) uudelleen
-siten, että komento tuottaa kursiivin sijasta alleviivattua tekstiä.
-Ajatuksena lienee se, että paketin avulla voi helposti muuttaa
+Oletuksena \paketti{ulem}\-/ paketti määrittelee Latexin
+\komento{emph}\-/ korostuskomennon (luku \ref{luku:peruskorostukset})
+uudelleen siten, että komento tuottaa kursiivin sijasta alleviivattua
+tekstiä. Ajatuksena lienee se, että paketin avulla voi helposti muuttaa
 typografisen peruskorostusten eli kursiivin tilalle kirjoituskoneen
 korostustavan eli alleviivauksen. Käytännössä tällaista tuskin halutaan
 koskaan, ja onneksi paketin lataamisen yhteydessä voi käyttää valitsinta
 \koodi{nor\-mal\-em}, joka estää Latexin komentojen uudelleen
 määrittelyn.
 
+\pakettii{ulem}
+\komentoi{usepackage}
 \begin{koodilohkosis}
   \usepackage[normalem]{ulem}
 \end{koodilohkosis}
 
-Paketin \paketti{ulem} myötä on käytettävissä mitta \koodi{\keno
-  UL\-depth}, joka on alleviivauksen etäisyys tekstin peruslinjasta.
-Mitta asetetaan tavalliseen tapaan \koodi{\keno set\-length}\-/
-komennolla (luku \ref{luku:mitat}). Viivan paksuus puolestaan sisältyy
-komennon \koodi{\keno UL\-thick\-ness} määritelmään, ja komennon voi
-halutessaan määritellä uudestaan. Seuraavassa on näistä esimerkki:
+Paketin \paketti{ulem} myötä on käytettävissä mitta \mitta{ULdepth},
+joka on alleviivauksen etäisyys tekstin peruslinjasta. Mitta asetetaan
+tavalliseen tapaan \komento{setlength}\-/ komennolla (luku
+\ref{luku:mitat}). Viivan paksuus puolestaan sisältyy komennon
+\komento{ULthickness} määritelmään, ja komennon voi halutessaan
+määritellä uudestaan. Seuraavassa on näistä esimerkki:
 
+\komentoi{setlength}
+\mittai{ULdepth}
+\komentoi{renewcommand}
+\komentoi{ULthickness}
+\komentoi{uline}
 \begin{koodilohkosis}
   \setlength{\ULdepth}{.2ex}        % viivan etäisyys
   \renewcommand{\ULthickness}{.1ex} % viivan paksuus
@@ -1028,6 +1092,8 @@ gemenakirjaimet eivät olleet vielä käytössä. Tässä alaluvussa
 keskitytään harventamisen ja tiivistämisen typografiaan; teknisiä
 ohjeita on luvussa \ref{luku:fontit_valistys}.
 
+\komentoi{large}
+\komentoi{addfontfeatures}
 \begin{koodilohkosis}
   \large TAVALLINEN \\
   {\addfontfeatures{LetterSpace=10} KLASSINEN HARVENNUS}
@@ -1053,6 +1119,9 @@ sanahahmo pysyy visuaalisesti koossa.
 
 \pagebreak[3]
 
+\komentoi{sffamily}
+\komentoi{bfseries}
+\komentoi{addfontfeatures}
 \begin{koodilohkosis}
   {\sffamily\bfseries\addfontfeatures{LetterSpace=40} SEIS!}
 \end{koodilohkosis}
@@ -1092,32 +1161,33 @@ ole luonnollista kieltä lainkaan.
 
 Tasalevyinen kirjainperhe määritellään fonttiasetusten yhteydessä (luku
 \ref{luku:fontin_valinta}) ja valitaan käyttöön esimerkiksi komennolla
-\koodi{\keno text\-tt}. \koodimargin{\keno texttt} Tasalevyisellä
-fontilla ladottava teksti on tavallisesti tietokonekoodia, joten sille
-on asetettu hieman toisenlaiset oletusasetukset kuin muille
-kirjainperheille. Oletuksena tekstiä ei tavuteta, ja esimerkiksi
-\koodi{\keno text\-tt}\-/komennon argumentiksi annettu teksti
-katkaistaan vain sanavälien ja yhdysmerkkien kohdalta. Myös niin sanotut
-Tex\-/ligatuurit (esim. \koodi{''} ja~\koodi{--}) on kytketty pois
-päältä. Fonttien oletusasetuksia ja niiden muuttamista käsitellään
-luvussa \ref{luku:fontit_oletusasetukset}. Tex\-/ligatuureja eli Texin
+\komentom{texttt}. Tasalevyisellä fontilla ladottava teksti on
+tavallisesti tietokonekoodia, joten sille on asetettu hieman
+toisenlaiset oletusasetukset kuin muille kirjainperheille. Oletuksena
+tekstiä ei tavuteta, ja esimerkiksi \komento{texttt}\-/ komennon
+argumentiksi annettu teksti katkaistaan vain sanavälien ja yhdysmerkkien
+kohdalta. Myös niin sanotut Tex\-/ligatuurit (esim. \koodi{''}
+ja~\koodi{--}) on kytketty pois päältä. Fonttien oletusasetuksia ja
+niiden muuttamista käsitellään luvussa
+\ref{luku:fontit_oletusasetukset}. Tex\-/ligatuureja eli Texin
 merkintätapoja lainausmerkeille ja ajatusviivoille käsitellään luvuissa
 \ref{luku:lainausmerkit} ja \ref{luku:yhdys_ajatus_miinus}.
 
-Toinen vaihtoehto tasalevyisen tekstin tuottamiseen on \koodi{\keno
-  verb}\-/ komento. \koodimargin{\keno verb} Komennon nimi on lyhennetty
-englannin kielen sanasta \textit{\englanti{verbatim}}, joka tarkoittaa
-'kirjaimellisesti' tai 'sananmukaisesti'. Niin se juuri toimiikin, eli
-\keno{verb}\-/ komennolle annettu argumentti tulkitaan kirjaimellisesti.
-Texin omat merkintätavat eivätkä kenoviivalla (\koodi{\keno}) alkavat
-komennot eivät toimi tämän komennon argumentissa.
+Toinen vaihtoehto tasalevyisen tekstin tuottamiseen on
+\komentom{verb}\-/ komento. Komennon nimi on lyhennetty englannin kielen
+sanasta \textit{\englanti{verbatim}}, joka tarkoittaa 'kirjaimellisesti'
+tai 'sananmukaisesti'. Niin se juuri toimiikin, eli \keno{verb}\-/
+komennolle annettu argumentti tulkitaan kirjaimellisesti. Texin omat
+merkintätavat eivätkä kenoviivalla (\koodi{\keno}) alkavat komennot
+eivät toimi tämän komennon argumentissa.
 
-\koodi{\keno verb}\-/ komennon argumentti täytyy ilmaista tavallisesta
+\komento{verb}\-/ komennon argumentti täytyy ilmaista tavallisesta
 poikkeavalla tavalla. Välittömästi komennon nimen jälkeen tuleva merkki
 on oleva argumentin aloitus- ja lopetusmerkki. Niiden välissä oleva
 teksti tulkitaan kirjaimellisesti ja ladotaan tasalevyisellä
 kirjainperheellä. Seuraavassa on tästä kaksi esimerkkiä:
 
+\komentoi{verb}
 \begin{koodilohkosis}
   \verb.tasalevyinen.   % aloitus- ja lopetusmerkkinä piste
   \verb|tasalevyinen|   % aloitus- ja lopetusmerkkinä pystyviiva
@@ -1129,10 +1199,10 @@ kirjainperheellä. Seuraavassa on tästä kaksi esimerkkiä:
 \end{tulossis}
 
 Yksittäisiä sanoja pidempien tietokonekoodien latomiseen on olemassa
-\koodi{ver\-ba\-tim}\-/ ympäristö, \koodimargin{verbatim} jonka sisällä
-kaikki teksti tulkitaan kirjaimellisesti -- myös välilyönnit ja
-rivinvaihdot.
+\ymparistom{verbatim}\-/ ympäristö, jonka sisällä kaikki teksti
+tulkitaan kirjaimellisesti -- myös välilyönnit ja rivinvaihdot.
 
+\ymparistoi{verbatim}
 \begin{koodilohkosis}
   \begin{verbatim}
   tieto-       kone-
@@ -1148,11 +1218,11 @@ tieto-       kone-
 \end{tulossis}
 
 Paljon monipuolisemman ympäristön tarjoaa makropaketti
-\paketti{fancyvrb}.\avctan{fancyvrb} Sen \koodi{Ver\-ba\-tim}\-/
-ympäristölle \koodimargin{Verbatim} voi antaa monenlaisia asetuksia,
-joilla vaikutetaan tietokonekoodin latomiseen. Koodiin saa mukaan
-esimerkiksi rivinumerot, ja sen voi latoa kehyksen sisään. Myös koodin
-sisennykseen, fontin kokoon ja väreihin voi vaikuttaa.
+\paketti{fancyvrb}.\avctan{fancyvrb} Sen \ymparistom{Verbatim}\-/
+ympäristölle voi antaa monenlaisia asetuksia, joilla vaikutetaan
+tietokonekoodin latomiseen. Koodiin saa mukaan esimerkiksi rivinumerot,
+ja sen voi latoa kehyksen sisään. Myös koodin sisennykseen, fontin
+kokoon ja väreihin voi vaikuttaa.
 
 \subsection{Verkko-osoitteet}
 
@@ -1186,6 +1256,10 @@ Tavuviivoja ei lisätä rivin loppuun. Myös typografiset ligatuurit (luku
 viimeisenä eli muiden makropakettien lataamisen jälkeen, koska se
 muokkaa joidenkin muualla määriteltyjen komentojen ominaisuuksia.
 
+\komentoi{usepackage}
+\pakettii{hyperref}
+\komentoi{hypersetup}
+\komentoi{urlstyle}
 \begin{koodilohkosis}
   \usepackage{hyperref}  % paketin lataaminen
   \hypersetup{hidelinks} % linkeistä pois kehykset
@@ -1206,12 +1280,13 @@ kuin ympärillä olevassa tekstissä. Tietty kiinteä kirjainperhe valitaan
 roman), \koodi{sf} (groteski, sans serif) tai \koodi{tt} (tasalevyinen).
 Oletusasetus on tasalevyinen kirjainperhe.
 
-Verkko\-/ osoitteiden ilmaisemisen peruskomento on \komento{href},
-\koodimargin{\keno href} jolle annetaan kaksi pakollista argumenttia:
-ensimmäinen on varsinainen osoite ja toinen on dokumenttiin ladottava
-teksti. Linkin teksti voi siis olla mitä hyvänsä tekstiä, ja pdf\-/
-lukijassa tekstiä napsauttamalla linkin osoittama sivusto avautuu.
+Verkko\-/ osoitteiden ilmaisemisen peruskomento on \komentom{href},
+jolle annetaan kaksi pakollista argumenttia: ensimmäinen on varsinainen
+osoite ja toinen on dokumenttiin ladottava teksti. Linkin teksti voi
+siis olla mitä hyvänsä tekstiä, ja pdf\-/ lukijassa tekstiä
+napsauttamalla linkin osoittama sivusto avautuu.
 
+\komentoi{href}
 \begin{koodilohkosis}
   \href{https://www.ctan.org/}{CTAN-sivusto}
 \end{koodilohkosis}
@@ -1225,6 +1300,7 @@ Kun halutaan latoa dokumenttiin itse verkko\-/osoite, käytetään komentoa
 järkevällä tavalla rivin lopussa. Komennolle annetaan vain yksi
 argumentti, verkko\-/osoite.
 
+\komentoi{url}
 \begin{koodilohkosis}
   \url{https://www.ctan.org/}
 \end{koodilohkosis}
@@ -1244,6 +1320,8 @@ Linkin alkuun täytyy lisätä sana \koodi{mailto:}, mutta tuota sanaa
 tuskin halutaan näkyviin itse dokumenttiin. Niinpä sähköpostiosoite
 kannattaa kirjoittaa seuraavalla tavalla:
 
+\komentoi{href}
+\komentoi{nolinkurl}
 \begin{koodilohkosis}
   \href{mailto:tunnus@osoite.net}{\nolinkurl{tunnus@osoite.net}}
 \end{koodilohkosis}
@@ -1253,6 +1331,9 @@ dokumenttiin ladottavaa tekstiä varten. Omaa työtä kannattaa helpottaa
 määrittelemällä sähköpostiosoitteita varten oma komento, esimerkiksi
 seuraavalla tavalla:
 
+\komentoi{newcommand}
+\komentoi{href}
+\komentoi{nolinkurl}
 \begin{koodilohkosis}
   \newcommand{\sposti}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
 \end{koodilohkosis}

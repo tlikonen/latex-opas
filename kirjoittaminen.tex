@@ -1762,30 +1762,26 @@ näyttää.
 
 Todellista käyttöä vastaava tietokanta tai sen osa on esimerkissä
 \ref{esim:bib-tiedosto}, jossa on neljä erityyppistä teostietuetta:
-\koodi{book}, \koodi{incollection}, \koodi{article} ja \koodi{online}.
-Ensin mainittu%
-\koodimargin{book} teostyyppi \koodi{book} sopii tavallisille kirjoille,
+\koodim{book}, \koodi{incollection}, \koodi{article} ja \koodi{online}.
+Ensin mainittu teostyyppi \koodi{book} sopii tavallisille kirjoille,
 joissa tietyt tekijät (\koodi{author}) vastaavat suunnilleen koko
 teoksen sisällöstä ja teoksella on jokin julkaisijataho
 (\koodi{publisher}).
 
-Teostyyppi%
-\koodimargin{incollection} \koodi{incollection} tarkoittaa esimerkiksi
+Teostyyppi \koodim{incollection} tarkoittaa esimerkiksi
 artikkelikokoelmaa, jonka yksittäiseen artikkeliin (\koodi{title}) ja
 sen kirjoittajaan (\koodi{author}) on tarkoitus viitata. Voidaan mainita
 myös artikkelin alku- ja lop\-pu\-si\-vut (\koodi{pages}). Kokoelmalla
 on toimittaja (\koodi{editor}) ja yhteinen nimi (\koodi{book\-title}).
 
-Tyyppi%
-\koodimargin{article} \koodi{article} sopii säännöllisesti julkaistavan
-aikakaus- tai muun lehden artikkeleihin. Viittauskohteena on yksittäinen
-artikkeli ja sen kirjoittaja. Julkaisutiedoissa mainitaan lehden nimi
+Tyyppi \koodim{article} sopii säännöllisesti julkaistavan aikakaus- tai
+muun lehden artikkeleihin. Viittauskohteena on yksittäinen artikkeli ja
+sen kirjoittaja. Julkaisutiedoissa mainitaan lehden nimi
 (\koodi{jour\-nal\-title}), julkaisukausi (\koodi{vol\-ume}), kauteen
 kuuluvan julkaisun järjestysnumero (\koodi{num\-ber}) sekä mahdollisesti
 artikkelin sivut (\koodi{pages}).
 
-Verkkolähteiden%
-\koodimargin{online} merkitsemiseen sopii \koodi{on\-line}\-/teostyyppi,
+Verkkolähteiden merkitsemiseen sopii \koodi{online}\-/ teostyyppi,
 joissa on ta\-van\-omais\-ten kenttien lisäksi ainakin verkko\-/osoite
 eli \koodi{url}\-/kenttä ja mahdollisesti viittauspäivä
 (\koodi{url\-date}) osoittamassa, milloin viitatut tiedot olivat
@@ -1808,7 +1804,7 @@ ensin, ja sukunimi on lopussa.
 Jos kuitenkin teoksen tekijänä on yritys tai yhteisö, täytyy sen nimi
 kirjoittaa kokonaan aaltosulkeisiin, jottei sitä tulkittaisi
 henkilönnimeksi. Tällaisten aaltosulkeiden sisällä voi käyttää
-\koodi{and}\-/sanaa normaalisti, eikä sitä tulkita eri tekijöiden
+\koodi{and}\-/ sanaa normaalisti, eikä sitä tulkita eri tekijöiden
 erottimeksi. Seuraavassa on näistä esimerkit:
 
 \begin{koodilohkosis}
@@ -1827,7 +1823,7 @@ jotka ilmaistaan yhdysmerkillä \mbox{(\koodi{-})}.
 \end{koodilohkosis}
 
 Teostietokantaan voi määrittää vakiosisältöisiä muuttujia käyttämällä
-\koodi{@string}\-/rakennetta. Vakioihin voi sitten viitata
+\koodi{@string}\-/ rakennetta. Vakioihin voi sitten viitata
 teostietueiden kentistä esimerkin \ref{esim:bib-muuttujat} tavoin.
 Vakiot ovat hyödyllisiä silloin, kun sama kentän sisältö toistuu useissa
 teoksissa, kuten tässä esimerkissä sama tekijä (\koodi{author}) ja
@@ -1869,6 +1865,11 @@ kielten erilaisia lainausmerkkejä oikein vaan käyttää pelkästään
 amerikkalaisia (``~'').
 
 \begin{esimerkki*}
+  \komentoi{usepackage}
+  \pakettii{polyglossia}
+  \pakettii{csquotes}
+  \pakettii{biblatex}
+
 \begin{koodilohko}
   % Polyglossia tai babel on ladattava ennen biblatexia.
   \usepackage{polyglossia}
@@ -1878,7 +1879,7 @@ amerikkalaisia (``~'').
 
   \usepackage[style=authoryear]{biblatex}
 \end{koodilohko}
-\caption{\paketti{biblatex}\-/makropaketin käyttöönotto ja asetuksia}
+\caption{\paketti{biblatex}\-/ makropaketin käyttöönotto ja asetuksia}
 \label{esim:biblatex-käyttöönotto}
 \end{esimerkki*}
 
@@ -1906,20 +1907,21 @@ yhteydessä. Laajennetut tyylit alkavat kirjaimilla \mbox{\koodi{ext-},}
 esimerkiksi \koodi{ext-author\-year} tai \koodi{ext-author\-year-comp}.
 
 Esimerkin \ref{esim:biblatex-käyttöönotto} komentojen lisäksi täytyy
-komennolla \koodi{\keno add\-bib\-re\-source} nimetä kaikki käyttöön
-otettavat teostietokantatiedostot. Komentoja ja tiedostoja voi olla
-useampiakin, ja tietokanta voi olla myös verkko\-/osoitteen takana oleva
-tiedosto. \koodi{\keno add\-bib\-re\-source}\-/komennot täytyy
-kirjoittaa Latex\-/dokumentin esittelyosaan.
+komennolla \komento{addbibresource} nimetä kaikki käyttöön otettavat
+teostietokantatiedostot. Komentoja ja tiedostoja voi olla useampiakin,
+ja tietokanta voi olla myös verkko\-/osoitteen takana oleva tiedosto.
+\komento{addbibresource}\-/ komennot täytyy kirjoittaa Latex\-/
+dokumentin esittelyosaan.
 
+\komentoi{addbibresource}
 \begin{koodilohkosis}
   \addbibresource{teokset.bib}
   \addbibresource{~/texmf/omat_kirjoitukset.bib}
   \addbibresource[location=remote]{http://osoite.netissä/yhteiset.bib}
 \end{koodilohkosis}
 
-Lähdeluettelo ladotaan dokumenttiin komennolla \koodi{\keno
-  print\-bib\-li\-og\-ra\-phy}. Komennolle voi antaa valinnaisen
+Lähdeluettelo ladotaan dokumenttiin komennolla
+\komento{printbibliography}. Komennolle voi antaa valinnaisen
 argumentin, jonka valitsimilla vaikutetaan esimerkiksi lähdeluettelon
 otsikon tekstiin tai poistetaan automaattinen otsikointi kokonaan. On
 myös olemassa erilaisia lähdeteosten rajaamisvalitsimia, joiden avulla
@@ -1927,6 +1929,7 @@ voi määrittää, mitä teoksia kyseiseen luetteloon halutaan. Näin voidaan
 esimerkiksi rajata painetut lähteet yhteen luetteloon, julkaisemattomat
 toiseen ja verkkolähteet kolmanteen.
 
+\komentoi{printbibliography}
 \begin{koodilohkosis}
   \printbibliography
   \printbibliography[title={Lähteet}]
@@ -1943,7 +1946,7 @@ viittausta.
 \subsubsection{Lähdeviittaukset}
 
 \providecommand{\rivi}{}
-\renewcommand{\rivi}[2]{\koodi{\keno #1\{\ldots\}} & #2 \\}
+\renewcommand{\rivi}[2]{\komento[\{\ldots\}]{#1} & #2 \\}
 
 \leijutlk{
   \begin{tabular}{ll}
@@ -1973,6 +1976,7 @@ Viittaus näkyy dokumentissa esimerkiksi seuraavalla tavalla:
 
 % \pagebreak[3]
 
+\komentoi{textcite}
 \begin{koodilohkosis}
   \textcite[27--29]{johdatus} % Viittaus teokseen ”johdatus”.
 \end{koodilohkosis}
@@ -1983,10 +1987,11 @@ Viittaus näkyy dokumentissa esimerkiksi seuraavalla tavalla:
 
 Jos halutaan sisällyttää lähdeluetteloon teoksia, joihin ei ole
 välttämättä viitattu, käytetään dokumentissa kerran ''näkymätöntä''
-viittauskomentoa \koodi{\keno no\-cite}. Sille annetaan argumentiksi
+viittauskomentoa \komento{nocite}. Sille annetaan argumentiksi
 tunnisteet niistä teoksista, jotka halutaan mukaan luetteloon.
 Argumentti~\koodi{*} (tähti) valitsee kaikki teokset.
 
+\komentoi{nocite}
 \begin{koodilohkosis}
   \nocite{meikäläinen, teikäläinen} % Nämä teokset mukaan.
   \nocite{*}                        % Kaikki mukaan.
@@ -1996,7 +2001,7 @@ Argumentti~\koodi{*} (tähti) valitsee kaikki teokset.
 
 Latexin kääntäjä\-ohjelmat Lualatex tai Xelatex eivät yksinään riitä,
 sillä teostietokanta ei ole tavallinen Latex\-/muotoinen tiedosto.
-Tarvitaan myös Latex\-/jakelun mukana tulevaa komentoa \koodi{bib\-er},
+Tarvitaan myös Latex\-/jakelun mukana tulevaa komentoa \koodi{biber},
 joka käsittelee teostietokantaan liittyviä tiedostoja. Lopulta
 Latex\-/kääntäjääkin täytyy kutsua kaksi kolme kertaa, jotta kaikki
 ristiviitteet saadaan kuntoon. Komentojen suoritusjärjestys on
@@ -2010,10 +2015,10 @@ seuraavanlainen:
 \end{koodilohkosis}
 
 Edellisen esimerkin komennoissa voi tiedoston nimistä jättää päätteet
-pois (\koodi{.tex}, \koodi{.bcf}). \koodi{lualatex}\-/ohjelman paikalla
+pois (\koodi{.tex}, \koodi{.bcf}). \koodi{lualatex}\-/ ohjelman paikalla
 voi olla myös \koodi{xelatex}. Kääntäminen on vielä helpompaa, kun
-käyttää \koodi{latexmk}\-/ohjelmaa (luku \ref{luku:latexmk}), joka osaa
-automaattisesti suorittaa myös \koodi{bib\-er}\-/ohjelman ja tarvittavat
+käyttää \koodi{latexmk}\-/ ohjelmaa (luku \ref{luku:latexmk}), joka osaa
+automaattisesti suorittaa myös \koodi{biber}\-/ ohjelman ja tarvittavat
 uudelleen kääntämiset. Yksi komento riittää käyttäjälle:
 
 \begin{koodilohkosis}
@@ -2024,27 +2029,34 @@ uudelleen kääntämiset. Yksi komento riittää käyttäjälle:
 
 Lähdeluettelon ulkoasuun voi vaikuttaa muutaman eri mitan avulla, joista
 esitellään tässä yhteydessä vain osa. Lähdemerkinnän riippuvan
-sisennyksen suuruus määräytyy mitan \koodi{\keno bibhang} avulla.
-Yleensä lienee sopivaa asettaa se samaksi kuin tekstikappaleiden
-ensimmäisen rivin sisennys \koodi{\keno parindent}.
+sisennyksen suuruus määräytyy mitan \mitta{bibhang} avulla. Yleensä
+lienee sopivaa asettaa se samaksi kuin tekstikappaleiden ensimmäisen
+rivin sisennys \mitta{parindent}.
 
+\komentoi{setlength}
+\mittai{parindent}
+\mittai{bibhang}
 \begin{koodilohkosis}
   \setlength{\parindent}{1.1em} % tekstikappaleiden 1. rivin sisennys
   \setlength{\bibhang}{\parindent}
 \end{koodilohkosis}
 
-Mitta \koodi{\keno bib\-item\-sep} on lähdemerkintöjen välinen
-pystysuuntainen tila. Sen avulla voi harventaa lähdeluetteloa, jolloin
-lähdemerkinnät erottuvat paremmin toisistaan. Mitan \koodi{\keno
-  bib\-name\-sep} avulla voi tehdä suuremman pystysuuntaisen välin
-lähdemerkintöjen väliin silloin, kun teoksen tekijä vaihtuu
-(\koodi{author} tai \koodi{editor}). Toisin sanoen tämän mitan avulla
-voi ryhmitellä saman tekijän teokset tiiviimmin yhteen ja jättää väliä
-seuraavan tekijän teoksiin. Vastaavanlainen mitta on \koodi{\keno
-  bib\-init\-sep}, jota käytetään silloin, kun lähdemerkinnän aloittava
-kirjain vaihtuu. Tämän avulla voi ryhmitellä lähdemerkinnät aakkosittain
-eli tehdä suuremman välin aina lähdemerkinnän alkukirjaimen vaihtuessa.
+Mitta \mitta{bibitemsep} on lähdemerkintöjen välinen pystysuuntainen
+tila. Sen avulla voi harventaa lähdeluetteloa, jolloin lähdemerkinnät
+erottuvat paremmin toisistaan. Mitan \mitta{bibnamesep} avulla voi tehdä
+suuremman pystysuuntaisen välin lähdemerkintöjen väliin silloin, kun
+teoksen tekijä vaihtuu (\koodi{author} tai \koodi{editor}). Toisin
+sanoen tämän mitan avulla voi ryhmitellä saman tekijän teokset
+tiiviimmin yhteen ja jättää väliä seuraavan tekijän teoksiin.
+Vastaavanlainen mitta on \mitta{bibinitsep}, jota käytetään silloin, kun
+lähdemerkinnän aloittava kirjain vaihtuu. Tämän avulla voi ryhmitellä
+lähdemerkinnät aakkosittain eli tehdä suuremman välin aina
+lähdemerkinnän alkukirjaimen vaihtuessa.
 
+\komentoi{setlength}
+\mittai{bibitemsep}
+\mittai{bibnamesep}
+\mittai{bibinitsep}
 \begin{koodilohkosis}
   \setlength{\bibitemsep}{.5ex plus .1ex minus .1ex}
   \setlength{\bibnamesep}{1em  plus .2ex minus .1ex}
@@ -2054,9 +2066,11 @@ eli tehdä suuremman välin aina lähdemerkinnän alkukirjaimen vaihtuessa.
 \subsubsection{Muita asetuksia}
 
 Lähdemerkintöjen fonttiin voi vaikuttaa määrittelemällä uudelleen
-komennon \koodi{\keno bibfont} ja sijoittamalla halutut fontti- tai muut
+komennon \komento{bibfont} ja sijoittamalla halutut fontti- tai muut
 komennot kyseisen komennon määritelmään.
 
+\komentoi{renewcommand}
+\komentoi{bibfont}
 \begin{koodilohkosis}
   \renewcommand{\bibfont}{\sffamily\small}
 \end{koodilohkosis}
@@ -2077,6 +2091,7 @@ ensin. Tämä saadaan toteutettua seuraavilla komennolla:
 
 % \pagebreak[3]
 
+\komentoi{DeclareNameAlias}
 \begin{koodilohkosis}
   \DeclareNameAlias{default} {family-given}
   \DeclareNameAlias{sortname}{family-given}
@@ -2094,6 +2109,7 @@ erottimeksi \&\=/merkin.
 
 % \pagebreak[3]
 
+\komentoi{DeclareDelimFormat}
 \begin{koodilohkosis}
   \DeclareDelimFormat[bib]{multinamedelim}{\space\&\space}
   \DeclareDelimFormat[bib]{finalnamedelim}{\space\&\space}
@@ -2128,6 +2144,8 @@ tulisi täsmälleen samanlainen kuin jollakin toisella teoksella. Tähän
 asiaan puolestaan vaikutetaan valitsimella \koodi{unique\-list}, joka on
 oletuksena päällä viittaustyylissä \koodi{author\-year}.
 
+\komentoi{usepackage}
+\pakettii{biblatex}
 \begin{koodilohkosis}
   \usepackage[style=authoryear, maxbibnames=99, minbibnames=3,
     maxcitenames=3, mincitenames=1, uniquelist=true]{biblatex}
@@ -2138,6 +2156,8 @@ eikä koko etunimeä, käytetään paketin valitsinta \koodi{given\-inits}.
 
 % \pagebreak[3]
 
+\komentoi{usepackage}
+\pakettii{biblatex}
 \begin{koodilohkosis}
   \usepackage[…, giveninits]{biblatex}
 \end{koodilohkosis}
@@ -2151,6 +2171,8 @@ jos tekijä on sama kuin luettelon edelliselläkin teoksella. Mikäli tätä
 (sinänsä yleistä) käytäntöä ei haluta, täytyy käyttää paketin asetusta
 \koodi{dash\-ed=\katk false}.
 
+\komentoi{usepackage}
+\pakettii{biblatex}
 \begin{koodilohkosis}
   \usepackage[…, dashed=false]{biblatex}
 \end{koodilohkosis}
@@ -2158,14 +2180,18 @@ jos tekijä on sama kuin luettelon edelliselläkin teoksella. Mikäli tätä
 Joskus on tapana latoa lähdeluettelossa tekijöiden nimet esimerkiksi
 pienversaalilla, jotta ne erottuvat luettelosta paremmin. Tällainen
 muutos vaatii, että lähdeluettelon tulostamisen yhteydessä määritellään
-uudelleen henkilön nimiin liittyvät tulostuskomennot \koodi{\keno
-  mk\-bib\-name\-fam\-i\-ly}, \koodi{\keno mk\-bib\-name\-giv\-en},
-\koodi{\keno mk\-bib\-name\-pre\-fix} ja \koodi{\keno
-  mk\-bib\-name\-suf\-fix}. Se saadaan automaattiseksi seuraavilla
-komennoilla:
+uudelleen henkilön nimiin liittyvät tulostuskomennot
+\komento{mkbibnamefamily}, \komento{mkbibnamegiven},
+\komento{mkbibnameprefix} ja \komento{mkbibnamesuffix}. Se saadaan
+automaattiseksi seuraavilla komennoilla:
 
 % \pagebreak[3]
 
+\komentoi{AtBeginBibliography}
+\komentoi{mkbibnamefamily}
+\komentoi{mkbibnamegiven}
+\komentoi{mkbibnameprefix}
+\komentoi{mkbibnamesuffix}
 \begin{koodilohkosis}
   \AtBeginBibliography{%
     \renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
@@ -2186,6 +2212,7 @@ toteutettua seuraavalla komennolla:
 
 % \pagebreak[3]
 
+\komentoi{DeclareDelimFormat}
 \begin{koodilohkosis}
   \DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space}
 \end{koodilohkosis}
@@ -2194,8 +2221,8 @@ toteutettua seuraavalla komennolla:
   Meikäläinen, Matti (2020): -- --
 \end{tulossis}
 
-Oletuksena \paketti{biblatex} kursivoi \koodi{book}\-/tyyppisten teosten
-nimen (\koodi{title}). Sen sijaan artikkelikokoelmissa
+Oletuksena \paketti{biblatex} kursivoi \koodi{book}\-/ tyyppisten
+teosten nimen (\koodi{title}). Sen sijaan artikkelikokoelmissa
 (\koodi{incollection}) ja aikakauslehdissä (\koodi{article})
 kursivoidaan julkaistun kokoelman nimi (\koodi{book\-title}) ja
 aikakauslehden nimi (\koodi{jour\-nal\-title}). Näissä teostyypeissä
@@ -2207,6 +2234,7 @@ ulkoasua ja esimerkiksi kursivoida aina viittauksen kohteena olevan
 artikkelin. Seuraavassa on esimerkkikomennot edellä mainittujen
 lähdeluettelon kenttien muuttamiseen.
 
+\komentoi{DeclareFieldFormat}
 \begin{koodilohkosis}
   \DeclareFieldFormat[article,incollection]{title}{\textit{#1}}
   \DeclareFieldFormat[article]{journaltitle}{#1}
@@ -2223,10 +2251,12 @@ kohdalle. Teostietokannasta tulevan kentän sisältö on parametrissa
 \koodi{\#1}.
 
 Mikäli haluaa jonkin teoksen tiedon lainausmerkkeihin tai sulkeisiin,
-kannattaa käyttää komentoa \koodi{\keno mk\-bib\-quote} tai \koodi{\keno
-  mk\-bib\-parens}. Ne ymmärtävät ottaa huomioon eri kielten
+kannattaa käyttää komentoa \komento{mkbibquote} tai
+\komento{mkbibparens}. Ne ymmärtävät ottaa huomioon eri kielten
 lainausmerkkikäytännöt ja mahdolliset sisäkkäiset sulkeet.
 
+\komentoi{DeclareFieldFormat}
+\komentoi{mkbibquote}
 \begin{koodilohkosis}
   \DeclareFieldFormat[incollection]{booktitle}{\mkbibquote{#1}}
 \end{koodilohkosis}
@@ -2237,11 +2267,14 @@ ole, joten seuraavaksi käsitellään keino sulkeiden poistamiseen.
 Tavallisessa \paketti{biblatex}\-/paketin lähdeluettelotyylissä
 \koodi{author\-year} ei ole omaa asetusta teoksen päiväyksen ulkoasun
 muuttamiseen, mutta jos käyttää tyyliä \koodi{ext-author\-year} (tms.),
-sekin puute korjaantuu, ja voi käyttää
-\koodi{bib\-label\-date}\-/asetusta.
+sekin puute korjaantuu, ja voi käyttää \koodi{bib\-label\-date}\-/
+asetusta.
 
 % \pagebreak[3]
 
+\komentoi{usepackage}
+\pakettii{biblatex}
+\komentoi{DeclareFieldFormat}
 \begin{koodilohkosis}
   \usepackage[style=ext-authoryear]{biblatex}
 
@@ -2263,6 +2296,11 @@ toimittajarooli sulkeisiin. Tällaiset asetukset saa käyttämällä tyyliä
 
 % \pagebreak[3]
 
+\komentoi{usepackage}
+\pakettii{biblatex}
+\komentoi{DeclareFieldFormat}
+\komentoi{DeclareDelimFormat}
+\komentoi{mkbibparens}
 \begin{koodilohkosis}
   \usepackage[style=ext-authoryear, innamebeforetitle=true]{biblatex}
 
@@ -2282,6 +2320,9 @@ komennoilla vaikutetaan näihin asetuksiin:
 
 % \pagebreak[3]
 
+\komentoi{DeclareFieldFormat}
+\komentoi{DeclareDelimFormat}
+\komentoi{textcite}
 \begin{koodilohkosis}
   \DeclareFieldFormat{postnote}{#1} % Lyhenne ”s.” pois.
   \DeclareDelimFormat{postnotedelim}{\addcolon\space} % Kaksoispiste.
@@ -2300,6 +2341,7 @@ seuraavalla komennolla:
 
 % \pagebreak[3]
 
+\komentoi{DefineBibliographyStrings}
 \begin{koodilohkosis}
   \DefineBibliographyStrings{finnish}{
     andothers = {ym.},
@@ -2312,10 +2354,9 @@ seuraavalla komennolla:
 
 \paketti{biblatex}\-/paketti sisältää valtavan paljon asetuksia ja
 mahdollisuuksia lähdeluettelon ja \=/viitteiden ulkoasun säätämiseen.
-Esimerkiksi komennolla \koodi{\keno
-  De\-clare\-Bib\-li\-og\-ra\-phy\-Driv\-er} voi ottaa täysin haltuun,
-miten tietty teostyyppi ladotaan lähdeluetteloon. Komennolla
-\koodi{\keno De\-clare\-Sort\-ing\-Tem\-plate} voi määritellä omia
+Esimerkiksi komennolla \komento{DeclareBibliographyDriver} voi ottaa
+täysin haltuun, miten tietty teostyyppi ladotaan lähdeluetteloon.
+Komennolla \komento{DeclareSortingTemplate} voi määritellä omia
 aakkostustapoja. Lisätietoa saa paketin ohjekirjasta.%
 \avctan{biblatex}
 

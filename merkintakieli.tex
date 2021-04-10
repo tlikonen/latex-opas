@@ -42,13 +42,13 @@ erikoismerkit suojataan eli saadaan ladottua dokumenttiin sellaisenaan.
     \midrule
     \koodi{\%} & \komento{\%} \\
     \koodi{\$} & \komento{\$} & \komento{textdollar} \\
-    \koodi{\^{}} & \komento{\^{}}\koodi{\{\}} & \komento{textasciicircum} \\
+    \koodi{\^{}} & \komento[\{\}]{\^{}} & \komento{textasciicircum} \\
     \koodi{\_} & \komento{\_} & \komento{textunderscore} \\
     \koodi{\#} & \komento{\#} \\
     \koodi{\&} & \komento{\&} \\
     \koodi{\{} & \komento{\{} & \komento{textbraceleft} \\
     \koodi{\}} & \komento{\}} & \komento{textbraceright} \\
-    \koodi{\~{}} & \komento{\~{}}\koodi{\{\}} & \komento{textasciitilde} \\
+    \koodi{\~{}} & \komento[\{\}]{\~{}} & \komento{textasciitilde} \\
     \koodi{\keno} && \komento{textbackslash} \\
     \bottomrule
   \end{tabular}
@@ -312,9 +312,9 @@ lopussa. Vasemmalle osoittava merkki (<<) tehdään kahdella pienempi kuin
 Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
 \komentom{textquotedbl} ja \komentom{textquotesingle}. Yksittäinen
-gra\-vis\-ak\-sent\-ti (\`{}) tehdään komennolla
-\komento{`}\koodi{\{\}}. Lainausmerkkien merkintätapoja ja komentoja on
-koottu taulukkoon \ref{tlk:erikoismerkit-lainaus}
+gra\-vis\-ak\-sent\-ti (\`{}) tehdään komennolla \komento[\{\}]{`}.
+Lainausmerkkien merkintätapoja ja komentoja on koottu taulukkoon
+\ref{tlk:erikoismerkit-lainaus}
 (s.~\pageref{tlk:erikoismerkit-lainaus}). Toisaalta kielikohtaiset
 asetukset (luku \ref{luku:kieliasetukset}) voivat tuoda mukanaan myös
 kielikohtaisia keinoja lainausmerkkien kirjoittamiseen.
@@ -533,7 +533,7 @@ on komennot ladontajärjestelmän logojen kirjoittamiseen: \komento{TeX}
 ja \komento{LaTeX}.
 
 \providecommand{\rivi}{}
-\renewcommand{\rivi}[4][]{{\erikoisfontti #3} & \komento{#2}\koodi{#1} & #4}
+\renewcommand{\rivi}[4][]{{\erikoisfontti #3} & \komento[#1]{#2} & #4}
 
 \leijutlk{
   \begin{tabular}{cllcll}
@@ -1430,8 +1430,8 @@ avulla seuraavasti:
 \end{tulossis}
 
 Vastaavasti pystysuuntaisen äärettömästi venyvän välin voi tehdä
-komennolla \komento{vfill}, joka tekee saman asian kuin
-\komento{vspace}\koodi{\{0mm plus 1fill\}}.
+komennolla \komento{vfill}, joka tekee saman asian kuin \komento[\{0mm
+plus 1fill\}]{vspace}.
 
 Äärettömästi venyvälle, koko tilan täyttävälle mittayksikölle on itse
 asiassa kolme eri versiota: \koodi{fil}, \koodi{fill} ja \koodi{filll}.

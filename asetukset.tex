@@ -24,7 +24,7 @@ asetusten määrittelyä ja mahdollisuuksia melko perusteellisesti.
 
 Latexin lähdedokumenttien alussa on aina samankaltainen rivi, joka
 määrittelee käytettävän dokumenttiluokan ja mahdollisesti dokumentin
-pe\-rus\-ase\-tuk\-sia. Dokumenttiluokka määritellään komennolla
+perusasetuksia. Dokumenttiluokka määritellään komennolla
 \komento{documentclass} ja sen argumentiksi annetaan dokumenttiluokan
 nimi. Valinnaisilla argumenteilla vaikutetaan asetuksiin.
 
@@ -61,8 +61,8 @@ keskenään hyvin samanlaisia, mutta niiden oletusasetukset poikkeavat
 toisistaan. Karkeasti jaoteltuna \luokka{article}\-/ luokka on
 tarkoitettu lyhyehköille artikkeleille ja yleiseksi perustaksi
 monenlaisille dokumenteille. Sen sijaan \luokka{report} ja \luokka{book}
-on tarkoitettu laajoihin dokumentteihin, ja niissä on
-kirja\-typo\-grafian piirteitä.
+on tarkoitettu laajoihin dokumentteihin, ja niissä on kirjatypografian
+piirteitä.
 
 Suurin edellä mainittujen perusluokkien ero on otsikoinnissa ja
 dokumentin jäsentämisessä: \luokka{report} ja \luokka{book} sisältävät
@@ -78,7 +78,7 @@ luokka sisältää komennot \komento{frontmatter}, \komento{mainmatter} ja
 erityyppiset osat: esittely\-/, sisältö\-/{} ja liitesivut. Näitä
 käsitellään luvussa \ref{luku:frontmainbackmatter}. Lisäksi
 \luokka{report}\-/ luokka sisältää ympäristön \ymparisto{abstract}, joka
-on tarkoitettu tekstin tiivis\-telmä\-osan tekemiseen; \luokka{book}\-/
+on tarkoitettu tekstin tiivistelmäosan tekemiseen; \luokka{book}\-/
 luokassa sitä ei ole.
 
 Muut erot koskevat lähinnä oletusasetuksia, mutta asetukset ovat
@@ -91,7 +91,7 @@ Muita perusdokumenttiluokkia ovat \luokkam{letter} ja \luokka{slides}.
 Nimensä mukaisesti \luokka{letter} on kirjeiden kirjoittamista varten.
 Se sisältää kirjeen tyypilliseen rakenteeseen liittyviä komentoja ja
 soveltuu varsinkin tarpeisiin, joissa täytyy automaattisesti tuottaa
-samanmuotoisia kirjeitä usealle vas\-taan\-otta\-jalle. Sama
+samanmuotoisia kirjeitä usealle vastaanottajalle. Sama
 Latex\-/dokumentti voi sisältää useita kirjeitä, ja sivunumerointi ja
 alaviitteiden numerointi alkaa joka kirjeessä alusta -- kuten on
 tietysti toivottavaa. \luokka{letter}\-/ luokkaa käsitellään tarkemmin
@@ -100,11 +100,11 @@ luvussa \ref{luku:kirjeet}.
 Piirtoheittimien läpinäkyvien kalvojen ja sen kaltaisten dokumenttien
 tekemiseen on dokumenttiluokka \luokkam{slides}. Piirtoheittimet ovat
 jääneet menneisyyteen, ja nykyään jokseenkin vastaavanlainen rooli on
-esi\-tys\-gra\-fiikka\-ohjel\-milla, joilla tehdään dia\-esi\-tyk\-siä
-esimerkiksi esitelmien havaintomateriaaliksi. \luokka{slides}\-/ luokkaa
-ei varmaan tarvita enää mihinkään, mutta esi\-tys\-gra\-fiik\-kaan on
-olemassa erittäin monipuolinen luokka \luokka{beamer}, jonka
-perus\-asioita käsitellään luvussa \ref{luku:diaesitykset}.
+esitysgrafiikkaohjelmilla, joilla tehdään diaesityksiä esimerkiksi
+esitelmien havaintomateriaaliksi. \luokka{slides}\-/ luokkaa ei varmaan
+tarvita enää mihinkään, mutta esitysgrafiikkaan on olemassa erittäin
+monipuolinen luokka \luokka{beamer}, jonka perusasioita käsitellään
+luvussa \ref{luku:diaesitykset}.
 
 \subsection{Perusdokumenttiluokkien asetukset}
 
@@ -135,7 +135,7 @@ dokumentin asetuksiin.
   \label{tlk:luokkavalitsimet}
 }
 
-Sivu on oletuksena pysty\-asen\-nossa, mutta valitsin \koodim{landscape}
+Sivu on oletuksena pystyasennossa, mutta valitsin \koodim{landscape}
 asettaa sen vaaka\-/asentoon. Tämä asetus koskee dokumentin kaikkia
 sivuja, mutta jos haluaa asettaa vain yksittäisiä sivuja
 vaaka\-/asentoon, täytyy käyttää
@@ -145,7 +145,7 @@ ympäristöä.
 Sivun koon ja muitakin mittoja voi määritellä monipuolisemmin
 \paketti{geometry}\-/paketin toimintojen avulla (luku
 \ref{luku:sivuasetukset}). Jos sitä pakettia käyttää, ei näitä
-dokumenttiluokan sivu\-koko\-ase\-tuk\-sia tarvita välttämättä lainkaan.
+dokumenttiluokan sivukokoasetuksia tarvita välttämättä lainkaan.
 
 Leipätekstin fontin koon voi määrittää valitsimilla \koodim{10pt},
 \koodim{11pt} ja \koodim{12pt}, joista ensin mainittu on oletus. Lyhenne
@@ -155,14 +155,14 @@ koska fontin koko vaikuttaa tekstiriville mahtuvien merkkien määrään ja
 Latex pyrkii pitämään rivit sopivan mittaisina lukemisen kannalta.
 
 Vain kolme eri fonttikokoa leipätekstille on kovin vähän ja peräisin
-ajalta, jolloin Latexin fontit olivat pik\-seli\-gra\-fiik\-kaa eli
-muodostuivat erillisistä kuvapisteistä. Nyky\-aika\-na fontit ovat
-vek\-tori\-gra\-fiik\-kaa eli matemaattisten kaavojen avulla
-muodostettavia kuvia, ja ne voi venyttää mihin kokoon tahansa. Sen
-vuoksi nämä dokumenttiluokkien fonttikokovalitsimet eivät ole kovin
-tarpeellisia eivätkä riitä kaikkiin tarpeisiin nykyaikana. Voi niitä
-silti käyttää, jos niiden avulla saa halutun lopputuloksen. Fontteja
-käsitellään tarkemmin luvussa \ref{luku:kirjaintyypit}.
+ajalta, jolloin Latexin fontit olivat pikseligrafiikkaa eli muodostuivat
+erillisistä kuvapisteistä. Nykyaikana fontit ovat vektorigrafiikkaa eli
+matemaattisten kaavojen avulla muodostettavia kuvia, ja ne voi venyttää
+mihin kokoon tahansa. Sen vuoksi nämä dokumenttiluokkien
+fonttikokovalitsimet eivät ole kovin tarpeellisia eivätkä riitä kaikkiin
+tarpeisiin nykyaikana. Voi niitä silti käyttää, jos niiden avulla saa
+halutun lopputuloksen. Fontteja käsitellään tarkemmin luvussa
+\ref{luku:kirjaintyypit}.
 
 Dokumentista voi latoa luonnosversion käyttämällä dokumenttiluokan
 valitsinta \koodim{draft}. Luonnoksena ladottuun dokumenttiin tulevat
@@ -239,7 +239,7 @@ palstaa, mutta \paketti{multicol}\-/makropaketin avulla saa enemmänkin.
 Palstoja käsitellään luvussa \ref{luku:palstat}.
 
 Dokumenttiluokassa \luokka{slides} toimii \koodim{clock}\-/ valitsin,
-joka latoo kellon\-ajan piirtoheitinkalvon loppuun \komento{note}\-/
+joka latoo kellonajan piirtoheitinkalvon loppuun \komento{note}\-/
 komennon yhteydessä. Tämä valitsin kuulunee samaan paikkaan kuin
 piirtoheittimet ja \luokka{slides}\-/luokkakin: kierrätykseen tai
 kaatopaikalle.
@@ -260,15 +260,14 @@ helpompaa lukea (lähes) pelkästään vain \luokka{memoir}\-/ luokan
 ohjekirjaa ja toteuttaa asiat yhtenäisen järjestelmän avulla.
 
 \luokka{beamer}\-/luokka on monipuolinen ja huippuunsa viritetty luokka
-esi\-tys\-gra\-fii\-kan eli dia\-esi\-tys\-ten tekemiseen. Vastaava
-mutta hieman helppokäyttöisempi luokka on \luokka{pow\-er\-dot}. Nämä
-luokat ovat eräänlaisia Latexin vastineita esimerkiksi
-\englanti{Libreoffice Impress}\-/{} ja \englanti{Microsoft Powerpoint}
-\=/ohjelmille.
+esitysgrafiikan eli diaesitysten tekemiseen. Vastaava mutta hieman
+helppokäyttöisempi luokka on \luokka{pow\-er\-dot}. Nämä luokat ovat
+eräänlaisia Latexin vastineita esimerkiksi \englanti{Libreoffice
+  Impress}\-/{} ja \englanti{Microsoft Powerpoint} \=/ohjelmille.
 
 Pienempiin, rajattuihin erityistarpeisiin on olemassa useita luokkia.
 Esimerkiksi yksisivuisten taitettavien lehtisten kuten tapahtuman
-käsi\-ohjel\-mien tekemiseen soveltuu \luokka{leaflet}\-/luokka.
+käsiohjelmien tekemiseen soveltuu \luokka{leaflet}\-/luokka.
 \textsc{cd}\-/levyjen kansia voi tehdä \luokka{cd}\-/luokan avulla.
 Kuvitettuja seinäkalentereita vartenkin on tehty oma luokkansa,
 \luokka{wallcalendar}. Kitaran tablatuureja eli otelautakuvaan
@@ -283,7 +282,7 @@ tutustua esimerkiksi \englanti{Comprehensive Tex Archive Network}
 \label{luku:sivuasetukset}
 
 Latex\-/dokumentit muodostuvat aina peräkkäisistä sivuista, eli
-taustalla kummittelee paperi\-arkkeihin perustuva julkaisumuoto, vaikka
+taustalla kummittelee paperiarkkeihin perustuva julkaisumuoto, vaikka
 dokumenttia ei varsinaisesti tulostettaisi tai painettaisi paperille.
 Tämän vuoksi melkein aina täytyy määrittää sivun asetukset kuten
 paperikoko ja marginaalit. Ne tehdään \paketti{geometry}\-/paketin
@@ -349,12 +348,11 @@ korkeusmitta.
   \geometry{papersize={10cm, 16cm}}
 \end{koodilohkosis}
 
-Sivu on oletuksena pysty\-asen\-nossa (\koodim{por\-trait}), mutta sen
-voi asettaa vaaka\-/asentoon valitsimella \koodim{land\-scape}. Tämä
-asetus on voimassa koko dokumentin ajan. Jos haluaa asettaa vain
-yksittäisiä sivuja vaaka\-/asentoon, täytyy käyttää
-\paketti{pdflscape}\-/ pakettia\avctan{pdflscape} ja sen tarjoamaa
-ympäristöä.
+Sivu on oletuksena pystyasennossa (\koodim{portrait}), mutta sen voi
+asettaa vaaka\-/asentoon valitsimella \koodim{landscape}. Tämä asetus on
+voimassa koko dokumentin ajan. Jos haluaa asettaa vain yksittäisiä
+sivuja vaaka\-/asentoon, täytyy käyttää \paketti{pdflscape}\-/
+pakettia\avctan{pdflscape} ja sen tarjoamaa ympäristöä.
 
 Sivun asetusten suunnittelussa voi olla avuksi valitsin
 \koodim{show\-frame}, joka piirtää viivat marginaalien kohdalle ja
@@ -428,20 +426,20 @@ taulukkoon \ref{tlk:sivun_marginaalit_suhd}.
   \label{tlk:sivun_marginaalit_suhd}
 }
 
-Klassisessa kirja\-typo\-grafiassa, jossa teksti ladotaan yhdelle
-palstalle, marginaalien suuruusjärjestys on suurimmasta pienimpään
-seuraavanlainen: ala-, ulko-, ylä- ja sisämarginaali. Suhdeluvut samassa
-järjestyksessä: 32, 28, 20, 17. \paketti{geometry}\-/paketin
-valitsimilla tämä ilmaistaan seuraavasti:
+Klassisessa kirjatypografiassa, jossa teksti ladotaan yhdelle palstalle,
+marginaalien suuruusjärjestys on suurimmasta pienimpään seuraavanlainen:
+ala-, ulko-, ylä- ja sisämarginaali. Suhdeluvut samassa järjestyksessä:
+32, 28, 20, 17. \paketti{geometry}\-/paketin valitsimilla tämä
+ilmaistaan seuraavasti:
 
 \komentoi{geometry}
 \begin{koodilohkosis}
   \geometry{hmarginratio=17:28, vmarginratio=20:32}
 \end{koodilohkosis}
 
-Klassisia suhteita ei nyky\-aikana yleensä noudateta kovin tarkasti,
-mutta niistä kannattaa ymmärtää yleinen ajatus. Alamarginaalin pitäisi
-olla hieman suurempi kuin ylämarginaali, koska muuten tekstialue tuntuu
+Klassisia suhteita ei nykyaikana yleensä noudateta kovin tarkasti, mutta
+niistä kannattaa ymmärtää yleinen ajatus. Alamarginaalin pitäisi olla
+hieman suurempi kuin ylämarginaali, koska muuten tekstialue tuntuu
 pudonneen sivulla alas. Alamarginaalissa (alatunnisteessa) on yleensä
 sivunumero. Kirjan sivuja katsotaan pareittain eli aukeamina, joten
 sisämarginaaleja on kaksi vierekkäin. Siksi sisämarginaalit yksittäin
@@ -452,11 +450,11 @@ käytäntö tietokirjoissa.
 Marginaalihuomautukset (luku \ref{luku:marginaalihuomautukset})
 sijaitsevat oletuksena sivujen ulkomarginaalissa tai oikeanpuoleisessa
 marginaalissa. Huomautuspalstan leveys asetetaan valitsimella
-\koodim{margin\-par\-width}, ja palstan etäisyys sivun varsinaisesta
-tekstialueesta määritellään valitsimella \koodim{margin\-par\-sep}.
-Kumpikin valitsin tarvitsee argumentiksi mitan. Jos haluaa vaihtaa
-huomautukset sivun vastakkaiseen marginaaliin, lisätään mukaan valitsin
-\koodi{reverse\-margin\-par}.
+\koodim{marginparwidth}, ja palstan etäisyys sivun varsinaisesta
+tekstialueesta määritellään valitsimella \koodim{marginparsep}. Kumpikin
+valitsin tarvitsee argumentiksi mitan. Jos haluaa vaihtaa huomautukset
+sivun vastakkaiseen marginaaliin, lisätään mukaan valitsin
+\koodi{reversemarginpar}.
 
 Perus Latex osaa latoa tekstin yhdelle tai kahdelle palstalle, ja
 \paketti{geometry}\-/ paketin valitsimella \koodim{onecolumn} tai
@@ -467,7 +465,7 @@ dokumentin voi vaihtaa yksipalstaiseen tilaan komennolla
 pakettia\avctan{multicol} voi olla useampiakin kuin kaksi palstaa.
 Palstoja käsitellään tarkemmin luvussa \ref{luku:palstat}.
 
-Valitsimen \koodim{column\-sep} avulla asetetaan palstojen välinen
+Valitsimen \koodim{columnsep} avulla asetetaan palstojen välinen
 etäisyys. Tämä valitsin on asettaa mitan \mitta{columnsep}, jota voi
 muokata myös komennolla \komento{setlength}, kuten muitakin Texin
 mittoja (luku \ref{luku:mitat}).
@@ -478,16 +476,16 @@ Sivu voi olla ulkoisesti erikokoinen kuin sisäisesti. On siis
 mahdollista asettaa sivu esimerkiksi \textsc{a4}\-/kokoiseksi ja
 käsitellä marginaalit ja muut sivun mitat \textsc{a4}-koon mukaan, mutta
 ulkoisesti tai fyysisesti sivu onkin osana suurempaa sivua tai
-paperi\-arkkia. Tällaista tarvitaan ainakin silloin, kun halutaan
+paperiarkkia. Tällaista tarvitaan ainakin silloin, kun halutaan
 merkitä leikkuuvarat dokumentin painamista varten.
 
-Painokoneen paperi\-arkkien leikkauskohta ei välttämättä osu täsmälleen
+Painokoneen paperiarkkien leikkauskohta ei välttämättä osu täsmälleen
 samaan kohtaan pdf\-/tiedoston sivun reunan kanssa, ja siksi
 dokumentissa reunaan saakka yltävät kuvat asetetaan varmuuden vuoksi
 hieman ylikokoiseksi. Sivun reunaan saakka aiotut kuvat siis yltävät
-lähde-pdf:ssä pari millimetriä varsinaisen sivu\-alueen ulkopuolelle eli
+lähde-pdf:ssä pari millimetriä varsinaisen sivualueen ulkopuolelle eli
 leikkuuvaran puolelle. Tällä varmistetaan, että painamisen jälkeen
-leikatuissa paperi\-arkeissa kuva varmasti yltää reunaan saakka.
+leikatuissa paperiarkeissa kuva varmasti yltää reunaan saakka.
 
 Jos dokumenttiin tarvitaan sivun ulkopuoliset leikkuuvarat, määritellään
 dokumentin ulommaiset mitat edelleen samalla tavalla kuin
@@ -677,7 +675,7 @@ argumenttien merkitys on seuraavanlainen:
 
 Valinnainen argumentti \koodi{paikka} kertoo, mihin paikkaan tai
 paikkoihin \koodi{sisältö} sijoitetaan. Vaihtoehtoina on ylä- tai
-alatunniste, pariton tai parillinen sivu, sivun vasen reuna, keski\-osa
+alatunniste, pariton tai parillinen sivu, sivun vasen reuna, keskiosa
 tai oikea reuna. Nämä vaihtoehdot ja niitä vastaavat valitsimet on
 koottu taulukkoon \ref{tlk:fancyhf_paikat}. Saman komennon avulla voi
 määrittää useitakin paikkoja, kun ne erottaa pilkulla, esimerkiksi
@@ -884,9 +882,9 @@ merkin kohokuviota, joka painaa mustejäljen paperille.
 Kuten Latexissa yleensäkin myös fonttien kanssa kannattaa käyttää
 korkean abstraktiotason komentoja, jotka piilottavat yksityiskohdat ja
 teknisen toteutuksen. Latexin fonttitoiminnot on suunniteltu juuri
-siihen: matalan tason font\-ti\-ase\-tuk\-set määritellään mieluiten
-vain kerran dokumentin esittelyosassa, ja sen jälkeen käytetään
-pelkästään korkean tason komentoja.
+siihen: matalan tason fonttiasetukset määritellään mieluiten vain kerran
+dokumentin esittelyosassa, ja sen jälkeen käytetään pelkästään korkean
+tason komentoja.
 
 Latexin fonttitekniikka rakentuu eri\-/ikäisistä kerroksista ja
 tekniikoista. Fontteja on aikoinaan tehty
@@ -895,22 +893,22 @@ kuvataan merkkien muodot. \englanti{Metafont} on myös tietokoneohjelma,
 joka tuottaa kuvauskielen perusteella bittikarttafontteja eli
 pikseleistä koostuvia fontteja. On käytetty myös kehittyneempää
 \englanti{Metapost}\-/kuvauskieltä\avctan{metapost} ja \=/ohjelmaa,
-joilla on tuotettu vek\-tori\-gra\-fiik\-ka\-font\-te\-ja \textsc{eps}-
-eli \englanti{Encapsulated Post Script} \=/muodossa ja muutettu niitä
+joilla on tuotettu vektorigrafiikkafontteja \textsc{eps}- eli
+\englanti{Encapsulated Post Script} \=/muodossa ja muutettu niitä
 edelleen \englanti{Post Script Type~1} \=/fonteiksi. Myöhemmin mukaan
-ovat tulleet nyky\-aikai\-set \englanti{True Type}- ja \englanti{Open
-  Type} \=/fontit, ja niihin tämä opas keskittyy.
+ovat tulleet nykyaikaiset \englanti{True Type}- ja \englanti{Open Type}
+\=/fontit, ja niihin tämä opas keskittyy.
 
 \subsection{Fonttien määrittäminen}
 \label{luku:fontin_valinta}
 
-Latexin fonttien perus\-toiminnot rakentuvat kolmen erityyppisen
+Latexin fonttien perustoiminnot rakentuvat kolmen erityyppisen
 kirjainperheen varaan:
 
 \begin{nluetelma}
 
 \item peruskirjainperhe eli dokumentin pääasiallinen kirjainperhe, joka
-  on kirja\-typo\-gra\-fias\-sa usein antiikva eli pääteviivallinen
+  on kirjatypografiassa usein antiikva eli pääteviivallinen
   (\englanti{serif, roman})%
   \footnote{Antiikva (lat. \emph{antiquus} 'vanha') perustuu antiikin
     Roomassa käytettyihin kirjainmuotoihin. Ne olivat pääteviivallisia,
@@ -931,7 +929,7 @@ kirjainperheen varaan:
 
 Kuvassa \ref{kuva:kirjainperhetyypit} ovat tässä oppaassa käytetyt kolme
 eri kirjainperhettä. Leipätekstissä käytetään antiikvaa, otsikoissa ja
-kuvateksteissä groteskia ja koodi\-esi\-mer\-keis\-sä tasalevyistä.
+kuvateksteissä groteskia ja koodiesimerkeissä tasalevyistä.
 Kirjoituskoneen kaltainen tasalevyinen kirjainperhe on tässä tapauksessa
 tyypiltään antiikva eli pääteviivallinen, mutta se voisi olla muutakin.
 Tasalevyisyys on sen kirjainperheen tärkein määrittävä tekijä Latexin
@@ -984,13 +982,12 @@ fontin ominaisuuksia. Edellisessä esimerkissä käytetään vain
 Peruskirjainperheen (\komento{setmainfont}) skaalaukseksi asetetaan
 \koodi{Scale=1}, eli sille ei tehdä mitään, ja koko valitsimen voisi
 jättää pois. Sen sijaan kahdella muulla kirjainperheellä
-(\komento{setsansfont}, \komento{setmonofont}) käytetään
-ker\-roin\-ase\-tus\-ta \koodi{MatchLowercase}, joka skaalaa fontin
-siten, että gemenakirjaimet eli pienet kirjaimet ovat yhtä korkeita kuin
-peruskirjainperheessä. Mikäli skaa\-laus\-ase\-tus
-\koodi{MatchLowercase} ei tuota ihan toivottua tulosta, voi
-kirjainperheen skaalausta hienosäätää vielä \koodi{Scale\-Again}\-/
-valitsimella seuraavaan tapaan:
+(\komento{setsansfont}, \komento{setmonofont}) käytetään kerroinasetusta
+\koodi{MatchLowercase}, joka skaalaa fontin siten, että gemenakirjaimet
+eli pienet kirjaimet ovat yhtä korkeita kuin peruskirjainperheessä.
+Mikäli skaalausasetus \koodi{MatchLowercase} ei tuota ihan toivottua
+tulosta, voi kirjainperheen skaalausta hienosäätää vielä
+\koodi{Scale\-Again}\-/ valitsimella seuraavaan tapaan:
 
 \komentoi{setmonofont}
 \begin{koodilohkosis}
@@ -1001,7 +998,7 @@ valitsimella seuraavaan tapaan:
 Kirjainperheen määrittelyn yhteydessä ei yleensä tarvitse antaa kuin
 kirjainperheen nimi, sillä \paketti{fontspec}\-/paketti ja kääntäjät
 osaavat automaattisesti ladata perheeseen sisältyviä eri
-fonttitiedostoja kuten pysty\-asen\-toi\-sen leikkauksen, kursiivin ja
+fonttitiedostoja kuten pystyasentoisen leikkauksen, kursiivin ja
 lihavoinnin. On kuitenkin mahdollista määritellä kirjainperheeseen
 kuuluvia leikkausten nimiä tai fonttitiedostoja erikseen. Tällainen on
 tarpeen esimerkiksi silloin, kun kirjainperhe sisältää useita eri
@@ -1079,20 +1076,20 @@ kirjainleikkauksen perheestä \englanti{TeX Gyre Schola}.
 
 Fonttien koot on tapana valita ja ilmaista typografisen pistemitan
 avulla. Esimerkiksi 10--12 pistettä on tyypillinen leipätekstin
-oletuskoko teks\-tin\-kä\-sit\-tely\-ohjel\-mis\-sa. Piste on
-typografiassa mitta\-yksikkö, jonka pituus on määritelty eri tavoin eri
-aikoina ja eri kulttuureissa.
+oletuskoko tekstinkäsittelyohjelmissa. Piste on typografiassa
+mittayksikkö, jonka pituus on määritelty eri tavoin eri aikoina ja eri
+kulttuureissa.
 
 Myös Latexissa fonttien koot voi määritellä pistemittojen avulla. Niitä
-ja muitakin Latexin mit\-ta\-yk\-si\-köi\-tä käsitellään tarkemmin
-luvussa \ref{luku:mitat}. Fonteissa ole\-tus\-mitta\-yk\-sik\-kö\-nä on
-vanha pica\-/järjestelmän piste, jonka pituus on noin 0,3515
-millimetriä. Sen lyhenne Latexissa on~\emph{pt}. Tämän oppaan
-esimerkeissä käytetään kuitenkin Post Script \=/standardin mukaista,
-julkaisuohjelmiin vakiintunutta uudempaa pica\-/pistettä, joka on hieman
-edellistä pidempi: noin 0,3528 millimetriä. Latexissa sen lyhenne
-on~\emph{bp}. Ero näiden kahden pistemitan välillä on hyvin pieni,
-tavallisilla fonttiko'oilla käytännössä merkityksetön.
+ja muitakin Latexin mittayksiköitä käsitellään tarkemmin luvussa
+\ref{luku:mitat}. Fonteissa oletusmittayksikkönä on vanha
+pica\-/järjestelmän piste, jonka pituus on noin 0,3515 millimetriä. Sen
+lyhenne Latexissa on~\emph{pt}. Tämän oppaan esimerkeissä käytetään
+kuitenkin Post Script \=/standardin mukaista, julkaisuohjelmiin
+vakiintunutta uudempaa pica\-/pistettä, joka on hieman edellistä
+pidempi: noin 0,3528 millimetriä. Latexissa sen lyhenne on~\emph{bp}.
+Ero näiden kahden pistemitan välillä on hyvin pieni, tavallisilla
+fonttiko'oilla käytännössä merkityksetön.
 
 Kirjainleikkauksen koko mitataan merkistön ylimmän ja alimman kohdan
 välillä, esimerkiksi k\=/kirjaimen ylimmän pisteen ja y\=/kirjaimen
@@ -1104,11 +1101,10 @@ Matalalla tasolla fonttien kokoon vaikuttaa Latexissa eräs yllättävä
 asia. Nimittäin dokumenttiluokalle (luku \ref{luku:dokumenttiluokat})
 voi antaa valitsimen, jolla koko asetetaan. Vaihtoehtoja on Latexin
 normaaleissa dokumenttiluokissa vain kolme: \koodi{10pt} (oletus),
-\koodi{11pt} ja \koodi{12pt}. Dokumenttiluokan koko\-asetus vaikuttaa
-myös sivun marginaaleihin, koska Latex pyrkii pitämään rivin
-merkkimäärän lukijalle sopivana: yhdelle riville ei kannata latoa ihan
-mahdottomasti merkkejä, koska rivin seuraaminen vaatii enemmän
-keskittymistä.
+\koodi{11pt} ja \koodi{12pt}. Dokumenttiluokan kokoasetus vaikuttaa myös
+sivun marginaaleihin, koska Latex pyrkii pitämään rivin merkkimäärän
+lukijalle sopivana: yhdelle riville ei kannata latoa ihan mahdottomasti
+merkkejä, koska rivin seuraaminen vaatii enemmän keskittymistä.
 
 Fontin koon määrittäminen dokumenttiluokan valitsimella ehkä kuuluu jo
 vähän menneisyyteen, mutta voi sitä edelleen käyttää, jos se riittää ja
@@ -1121,9 +1117,8 @@ muiden mittojen määrittämiseen on ohjeita luvussa
 
 Fonttiasetuksiin kuuluu fontin koon lisäksi toinenkin mitta: rivikorkeus
 (\mitta{baselineskip}). Se on peräkkäisten rivien peruslinjojen välinen
-etäisyys. Fontin koko ja rivikorkeus määritellään saman\-aikaisesti,
-koska ne ovat saman \komento{fontsize}\-/ komennon argumentteja.
-Esimerkki:
+etäisyys. Fontin koko ja rivikorkeus määritellään samanaikaisesti, koska
+ne ovat saman \komento{fontsize}\-/ komennon argumentteja. Esimerkki:
 
 \komentoi{fontsize}
 \komentoi{selectfont}
@@ -1132,7 +1127,7 @@ Esimerkki:
 \end{koodilohkosis}
 
 Ensimmäinen argumentti on fontin kokomitta ja toinen on rivikorkeus.
-Mitta\-yksiköt voivat olla mitä tahansa Texin mittoja, ja oletuksena
+Mittayksiköt voivat olla mitä tahansa Texin mittoja, ja oletuksena
 käytetään pt\-/pistemittaa, jos yksikköä ei ole mainittu. Komento
 \komento{selectfont} on mukana, koska vasta sen myötä matalan tason
 fonttikomennot tulevat voimaan. Korkean tason fonttikomennot (luku
@@ -1202,8 +1197,8 @@ käytettäväksi sen jälkeen, kun matalan tason asetukset on kerran
 määritetty. Taulukossa \ref{tlk:fonttimallikomennot} on komennot
 kirjainperheen ja kirjainleikkauksen valintaan. Joka rivillä ensin
 mainittu komento (esim. \komento{rmfamily}) vaikuttaa tekstiin, joka
-tulee komennon jälkeen. Vaikutus\-alue rajoittuu nykyisen ympäristön
-(luku \ref{luku:ymparistot}) sisään tai aaltosulkeilla (luku
+tulee komennon jälkeen. Vaikutusalue rajoittuu nykyisen ympäristön (luku
+\ref{luku:ymparistot}) sisään tai aaltosulkeilla (luku
 \ref{luku:aaltosulkeet}) rajatun alueen sisään. Rivillä toisena olevalle
 komennolle (esim. \komentox{textrm}) annetaan yksi argumentti, ja
 komennon vaikutus koskee vain argumenttina olevaa tekstiä.
@@ -1263,12 +1258,12 @@ tuloksena on \textbf{\itshape lihavoitua kursiivia}.
 Useimmissa fonteissa kursiivileikkaus (\komento{itshape}) ja kalteva
 leikkaus (\komento{slshape}) tuottavat saman lopputuloksen, mutta
 käsitteellisesti ne ovat eri asia. Kursiivi on aina muodoltaan erilainen
-leikkaus, joka hieman mukailee käsi\-ala\-kir\-joi\-tusta, joskaan
-kirjaimia ei ole sidottu toisiinsa. Sen sijaan kalteva leikkaus on
-tavallisen eli pys\-ty\-asen\-toi\-sen leikkauksen kallistettu versio.
-Kallistus voi olla kirjainmuotoilijan piirtämä leikkaus, tai kallistus
-on voitu toteuttaa mekaanisesti. Kallistuksen voi tehdä myös Latexissa
-(luku \ref{luku:fontit_venytys}).
+leikkaus, joka hieman mukailee käsialakirjoitusta, joskaan kirjaimia ei
+ole sidottu toisiinsa. Sen sijaan kalteva leikkaus on tavallisen eli
+pystyasentoisen leikkauksen kallistettu versio. Kallistus voi olla
+kirjainmuotoilijan piirtämä leikkaus, tai kallistus on voitu toteuttaa
+mekaanisesti. Kallistuksen voi tehdä myös Latexissa (luku
+\ref{luku:fontit_venytys}).
 
 Komennot fontin koon valintaan ovat taulukossa
 \ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä fontin
@@ -1357,9 +1352,9 @@ ensin peruskirjainperheen koon ja antaa muiden fonttien määräytyä
 suhteessa siihen. Esimerkki \ref{esim:fontti_suhteellinen} selventää,
 kuinka se tapahtuu. Alussa otetaan käyttöön dokumenttiluokka
 \luokka{article} ja annetaan sille valitsin \koodi{10pt}, joka määrittää
-fonttikooksi 10 pistettä. Se on dokumenttiluokan ole\-tus\-ase\-tus,
-jota ei tarvitsisi edes kirjoittaa näkyviin. Esimerkin toisella rivillä
-otetaan \paketti{fontspec}\-/paketti käyttöön.
+fonttikooksi 10 pistettä. Se on dokumenttiluokan oletusasetus, jota ei
+tarvitsisi edes kirjoittaa näkyviin. Esimerkin toisella rivillä otetaan
+\paketti{fontspec}\-/paketti käyttöön.
 
 Peruskirjainperheen (rivi~4) koko skaalataan 1,4\-/kertaiseksi, eli
 pistekooksi tulee 1,4 kertaa 10 pistettä eli 14 pistettä (pt).
@@ -1421,7 +1416,7 @@ lasketaan myös kirjainperheen skaalauskerroin. Tämän vuoksi
 \komento{fontsize}\-/ komennon käyttö menee aika oudoksi. Argumenttina
 annettu kokomitta ei pidä paikkaansa.
 
-Jos korkean tason font\-ti\-koko\-komen\-to\-jen (taulukko
+Jos korkean tason fonttikokokomentojen (taulukko
 \ref{tlk:fonttikokokomennot}) lisäksi tarvitaan jotakin muuta kokoa,
 voisi mahdollisesti \komento{fontsize}\-/ komennon sijasta käyttää
 \paketti{fontspec}\-/paketin tarjoamaa komentoa ja tilanteeseen sopivaa
@@ -1501,7 +1496,7 @@ asettamiseen.
 \label{esim:fontti_absoluuttinen}
 \end{esimerkki*}
 
-Esimerkistä \ref{esim:fontti_absoluuttinen} selviää perus\-ajatus.
+Esimerkistä \ref{esim:fontti_absoluuttinen} selviää perusajatus.
 Peruskirjainperhe (rivi~5) otetaan käyttöön ilman skaalausta (eli
 \koodi{Scale=1}), minkä vuoksi koon voi jatkossa asettaa täsmälleen
 kohdalleen \komento{fontsize}\-/komennolla. Samaa ei tehdä groteskin
@@ -1530,7 +1525,7 @@ olevien asetusten pohjalta antaa otsikolle seuraavat komennot:
 
 Esimerkin \ref{esim:fontti_absoluuttinen} riveillä 16--20 määritellään
 uudelleen Latexin korkean tason komennot, joilla fonttikoot asetetaan.
-Oletus\-arvot tulevat dokumenttiluokasta (luku
+Oletusarvot tulevat dokumenttiluokasta (luku
 \ref{luku:dokumenttiluokat}), mutta jos ne eivät ole sopivia, täytyy
 vähintäänkin määritellä komento \komento{normalsize} mutta sen lisäksi
 kaikki ne koot, joita omassa dokumentissa tarvitaan. Tässä esimerkissä
@@ -1560,7 +1555,7 @@ myös teknisesti eheä eli toimii Latexin sisäisen logiikan näkökulmasta
 oikein. Haittana voi pitää sitä, että kaikki koot täytyy määritellä
 erikseen.
 
-\subsection{Fonttien oletus\-asetuksia}
+\subsection{Fonttien oletusasetuksia}
 \label{luku:fontit_oletusasetukset}
 
 Oletuksena Latex\-/dokumentin peruskirjainperheessä
@@ -1658,9 +1653,9 @@ keskenään yhteensopivia. Kirjainten välistys voi olla ongelmallista:
 sopivalle etäisyydelle asetettaessa kirjainten osat voivat mennä
 rumannäköisesti päällekkäin. Riippuu fontista, mitkä ligatuurit ovat
 tarpeellisia ja mitkä ligatuurimerkit on ylipäätään toteutettu fontin
-merkistöön. Tavallisia an\-tiik\-va\-kir\-jain\-leik\-kaus\-ten
-ligatuureja ovat fi, ff, ffi, fl ja ffl, mutta jotkin fontit sisältävät
-muitakin. Kuvaan \ref{kuva:ligatuurit} on koottu esimerkkejä.
+merkistöön. Tavallisia antiikvojen ligatuureja ovat fi, ff, ffi, fl ja
+ffl, mutta jotkin fontit sisältävät muitakin. Kuvaan
+\ref{kuva:ligatuurit} on koottu esimerkkejä.
 
 \leijukuva{
   \erikoisfontti
@@ -1678,9 +1673,8 @@ automaattisesti, eli lähdedokumenttiin ei kannata kirjoittaa
 Unicode\-/merkistön typografisia ligatuurimerkkejä (esimerkiksi
 \uctunnus{u+fb01 latin small ligature fi}) vaan ihan tavallisia
 erillisiä kirjaimia. \englanti{Open Type} \=/fontin suunnittelija on
-päättänyt meidän puolestamme, mitkä kir\-jain\-yh\-dis\-tel\-mät on
-parasta latoa ligatuurin avulla, ja ole\-tus\-ase\-tuk\-sil\-la Latex
-noudattaa niitä ohjeita.
+päättänyt meidän puolestamme, mitkä kirjainyhdistelmät on parasta latoa
+ligatuurin avulla, ja oletusasetuksilla Latex noudattaa niitä ohjeita.
 
 Jos kuitenkin yksittäisen ligatuurin muodostumisen haluaa estää, voi
 kirjainten väliin kirjoittaa komennon \komento{textcompwordmark}, joka
@@ -1721,7 +1715,7 @@ olevat {%
   \hlig{st}- ja \hlig{ct}\-/ligatuurit%
 } on saatu fontin asetuksella \koodi{Liga\-tures=\katk His\-toric}.
 Joissakin fonteissa sama tehdään asetuksella \koodi{Liga\-tures=\katk
-  Dis\-cre\-tionary}. Useitakin ligatuurityyppejä voi kytkeä päälle
+  Discretionary}. Useitakin ligatuurityyppejä voi kytkeä päälle
 samanaikaisesti:
 
 \begin{koodilohkosis}
@@ -1754,7 +1748,7 @@ lukuja. Näihin asetuksiin vaikutetaan fontin asetuksella
 
 Jotkin koodi\-/ilmaukset sisältävät versaalikirjaimia ja numeroita
 sekaisin. Gemenanumerot eivät kuitenkaan sovi yhteen versaalikirjainten
-kanssa, koska merkkien koko\-ero on häiritsevän suuri. Ei siis näin:
+kanssa, koska merkkien kokoero on häiritsevän suuri. Ei siis näin:
 RJ45, R2D2. Gemenanumeroiden kanssa täytyy käyttää pienversaalia eli
 kapiteelia: \textsc{rj45}, \textsc{r2d2}. Toinen vaihtoehto on käyttää
 pelkästään versaaleja: {\versaalinum RJ45, R2D2}.
@@ -1793,7 +1787,7 @@ tietoa sanaväleistä myös luvusta \ref{luku:sanavali} tai
 tekstikappaleiden latomista käsittelevästä luvusta \ref{luku:kappale}.
 \noclub[2]
 
-Fontti\-asetusten valitsimella \koodim{Letter\-Space} säädetään merkkien
+Fonttiasetusten valitsimella \koodim{Letter\-Space} säädetään merkkien
 välistystä eli niiden välistä tyhjää tilaa. Arvoksi annetaan
 positiivinen tai negatiivinen prosenttiluku, joka ilmaisee alkuperäiseen
 lisättävän osuuden. Asetus \koodi{Letter\-Space=\katk 6} tuottaa siis
@@ -2339,11 +2333,11 @@ valitsinta.
   \usepackage[shortcuts]{extdash}
 \end{koodilohkosis}
 
-Paketti sisältää kaksi lisä\-vaihto\-ehtoa kolmelle viivavälimerkille
+Paketti sisältää kaksi lisävaihtoehtoa kolmelle viivavälimerkille
 eli yhdysmerkille, lyhyelle ajatusviivalle ja pitkälle ajatusviivalle.
 Kun Texin viivavälimerkit (luku \ref{luku:tavutuksen_merkit}) aina
 estävät tavutuksen muualta kuin välimerkin jälkeen,
-\paketti{extdash}\-/paketin perus\-vaihto\-ehdot sallivat tavutuksen
+\paketti{extdash}\-/paketin perusvaihtoehdot sallivat tavutuksen
 muualtakin. Lisäksi kaikille kolmelle viivavälimerkille on sitova
 versio, joka estää tavutuksen välimerkin jälkeen (mutta sallii muualta).
 
@@ -2444,14 +2438,14 @@ Asetukset \komento[~N]{lefthyphenmin} ja \komento[~N]{righthyphenmin}
 vaikuttavat tavutukseen sanan reunoissa. Argumentti \koodi{N} on
 positiivinen kokonaisluku, ja se määrittelee, kuinka monta merkkiä
 vähintään sanan vasemmasta tai oikeasta reunasta pidetään yhdessä.
-Oletus\-arvot ovat kielikohtaisia ja määritellään
+Oletusarvot ovat kielikohtaisia ja määritellään
 \paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketeissa. Suomen
 kielessä kumpikin asetus on kaksi (2) merkkiä.
 
 Nämä asetukset alustetaan kielikohtaisiin oletusarvoihin aina, kun
 kieliasetukset tulevat voimaan. Näin on esimerkiksi dokumentin
 aloittavan \ymparistox{document}\-/ ympäristön alussa ja aina kielen
-vaihtuessa. Jos asetuksia ha\-luaa muuttaa, täytyy omat muutokset tehdä
+vaihtuessa. Jos asetuksia haluaa muuttaa, täytyy omat muutokset tehdä
 aina edellä mainittujen asioiden jälkeen. Toisaalta vielä kätevämpää on
 sisällyttää omat asetukset kielikohtaisiin alustuskomentoihin. Sillä
 tavoin omat asetukset tulevat voimaan automaattisesti kielen vaihtuessa.
@@ -2567,13 +2561,13 @@ vaan yhdyssanan rajalla on myös tavutuskohta (\emph{al-ku-o-sa}).
 Lisäksi sanaa ei saa katkaista siten, että siitä jää yksittäinen kirjain
 eri riville (\emph{o-sa}).
 
-Parasta olisi katkaista suomen kielen yhdyssanat vain yhdys\-osien
-välistä (\emph{alku-osa}). Muualtakin voi katkaista (\emph{al-ku-osa}),
-kunhan sanasta eikä sen yhdys\-osasta ei jää yksittäinen kirjain eri
-riville. Mielellään ei katkaista myöskään kahden vokaalin välistä, jos
-ne kuuluvat samaan sanaan (\emph{kau-emmin}). Joskus halutaan välttää
-myös niin sanottuja orpotavuja eli sitä, että tekstikappaleen
-viimeiselle riville jää vain yksi tavu.
+Parasta olisi katkaista suomen kielen yhdyssanat vain yhdysosien välistä
+(\emph{alku-osa}). Muualtakin voi katkaista (\emph{al-ku-osa}), kunhan
+sanasta eikä sen yhdysosasta ei jää yksittäinen kirjain eri riville.
+Mielellään ei katkaista myöskään kahden vokaalin välistä, jos ne
+kuuluvat samaan sanaan (\emph{kau-emmin}). Joskus halutaan välttää myös
+niin sanottuja orpotavuja eli sitä, että tekstikappaleen viimeiselle
+riville jää vain yksi tavu.
 
 Käytännössä siis suomenkielinen teksti ja hyvä typografia vaativat
 välillä tavutusvihjeiden kirjoittamista. Yhdyssanojen osien väliin
@@ -2637,8 +2631,8 @@ sijasta.
 \end{koodilohkosis}
 
 Suomen kielessä käytetään heittomerkkiä myös taivutuspäätteen, liitteen
-tai johtimen edellä silloin, kun sanavartalon kir\-joi\-tus\-asu päättyy
-konsonanttiin mutta ääntö\-asu vokaaliin, esimerkiksi \emph{show'ssa}.
+tai johtimen edellä silloin, kun sanavartalon kirjoitusasu päättyy
+konsonanttiin mutta ääntöasu vokaaliin, esimerkiksi \emph{show'ssa}.
 Näissä tilanteissa ei ole kyse tavurajasta vaan morfeemirajasta eli
 merkityksellisten osien rajakohdasta. Tavurajakin voi sattua samaan
 paikkaan, mutta tavutettaessa heittomerkki säilyy: \emph{show'-hun}.%

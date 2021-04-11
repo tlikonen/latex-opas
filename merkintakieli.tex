@@ -8,7 +8,7 @@ Latex on merkintäkieli, mikä tarkoittaa, että se sisältää omat tapansa
 dokumentin rakenteen ja sisällön kuvaamiseen. Kaikkea ei kirjoiteta
 lähdedokumenttiin sellaisenaan, vaan täytyy käyttää tiettyjä kielen
 sääntöjen mukaisia merkintätapoja tai komentoja. Tässä luvussa
-käsitellään merkintäkielen perus\-asioita.
+käsitellään merkintäkielen perusasioita.
 
 \section{Merkistö}
 
@@ -58,7 +58,7 @@ erikoismerkit suojataan eli saadaan ladottua dokumenttiin sellaisenaan.
 }
 
 Jotkin makropaketit määrittelevät muitakin erikoismerkkejä. Esimerkiksi
-kieli\-asetuksiin (luku \ref{luku:kieliasetukset}) liittyvät
+kieliasetuksiin (luku \ref{luku:kieliasetukset}) liittyvät
 \paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketit voivat
 määritellä pari lainausmerkillä (\koodi{\textquotedbl}) alkavaa,
 tavutuksen hallintaan liittyvää komentoa tai erikoismerkkiä.
@@ -158,7 +158,7 @@ keinonsa, ja niistä käsitellään luvussa \ref{luku:kappale}.
 \subsection{Kommentit ja muistiinpanot}
 
 Latex\-/dokumentissa prosentin merkki (\koodi{\%}) on kommenttimerkki,
-jonka jälkeisen rivin\-osan kääntäjä jättää huomioimatta. Merkki on
+jonka jälkeisen rivinosan kääntäjä jättää huomioimatta. Merkki on
 tarkoitettu kirjoittajan omien kommenttien ja muistiinpanojen
 kirjoittamiseen.
 
@@ -193,7 +193,7 @@ asetukset kuin ulkopuolella. Aaltosulkeiden sisällä suoritetut komennot,
 uusien komentojen määrittelyt (luku \ref{luku:komennot}) tai asetetut
 mittojen arvot (luku \ref{luku:mitat}) ovat voimassa vain kyseisen
 ympäristön sisäpuolella. Seuraavassa esimerkissä aaltosulkeilla rajataan
-kursivointikomennon \komento{itshape} vai\-ku\-tus\-aluetta.
+kursivointikomennon \komento{itshape} vaikutusaluetta.
 
 % \pagebreak[3]
 
@@ -259,7 +259,7 @@ vertaillaan sanaväliä, ohuketta ja yhteen kirjoittamista.
   \end{tabular}
 }{
   \caption{Sanavälin, ohukkeen ja yhteen kirjoittamisen vertailu. Suomen
-    kielen vastaiset kirjoitus\-asut on viivattu yli}
+    kielen vastaiset kirjoitusasut on viivattu yli}
   \label{tlk:ohuke}
 }
 
@@ -303,16 +303,16 @@ saadaan kulmalainausmerkki~(>>).
 
 Yllä mainitut riittävät suomen kieleen, mutta englantia ja muita kieliä
 varten tarvitaan myös toisinpäin oleva merkki (``), joka tehdään
-kahdella gra\-vis\-ak\-sen\-til\-la (\koodi{``}). Vastaava
-puolilainausmerkki (`) tehdään yhdellä aksentilla (\koodi{`}). Joissakin
-kielissä käytetään erilaisia kulmalainausmerkkejä lainauksen alussa ja
-lopussa. Vasemmalle osoittava merkki (<<) tehdään kahdella pienempi kuin
-\=/merkillä (\koodi{<<}).
+kahdella gravisaksentilla (\koodi{``}). Vastaava puolilainausmerkki (`)
+tehdään yhdellä aksentilla (\koodi{`}). Joissakin kielissä käytetään
+erilaisia kulmalainausmerkkejä lainauksen alussa ja lopussa. Vasemmalle
+osoittava merkki (<<) tehdään kahdella pienempi kuin \=/merkillä
+(\koodi{<<}).
 
 Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
 \komentom{textquotedbl} ja \komentom{textquotesingle}. Yksittäinen
-gra\-vis\-ak\-sent\-ti (\`{}) tehdään komennolla \komento[\{\}]{`}.
+gravisaksentti (\`{}) tehdään komennolla \komento[\{\}]{`}.
 Lainausmerkkien merkintätapoja ja komentoja on koottu taulukkoon
 \ref{tlk:erikoismerkit-lainaus}
 (s.~\pageref{tlk:erikoismerkit-lainaus}). Toisaalta kielikohtaiset
@@ -388,8 +388,8 @@ täytyy olla ladattuna.
 \label{luku:yhdys_ajatus_miinus}
 
 Yhdyssanan osien välissä käytettävä yhdysmerkki on Latexissa tavallinen
-näppäimistöltä saatava yleis\-yh\-dys\-merk\-ki (\=/). Merkillä on
-vaikutusta myös sanan tavutukseen (luku \ref{luku:tavutus}).
+näppäimistöltä saatava yleisyhdysmerkki (\=/). Merkillä on vaikutusta
+myös sanan tavutukseen (luku \ref{luku:tavutus}).
 
 Ajatusviivaa tarvitaan esimerkiksi äärikohtien (27--29,
 Oulu--Rova\-niemi), luetelmien, vuorosanojen ja virkkeen irrallisen
@@ -411,7 +411,7 @@ vaikuttavat sanan tavutukseen samoin kuin yhdysmerkki.
 
 Myös Unicoden ajatusviivamerkit \uctunnus{u+2013 en dash} ja
 \uctunnus{u+2014 em dash} toimivat, mutta tavutuksen kannalta ne
-käyttäytyvät eri tavoin Lua\-latex- ja Xelatex\-/kääntäjillä.
+käyttäytyvät eri tavoin Lualatex\-/\ ja Xelatex\-/kääntäjillä.
 Yhteensopivuussyistä on parasta tehdä ajatusviivat Latexin omilla
 merkintätavoilla eikä Unicode\-/merkeillä.
 
@@ -505,10 +505,9 @@ oikeita ja mekaanisia (tähdelliset) ylä- ja alaindeksejä.
 
 Kuten esimerkki paljastaa, lopputuloksessa on eroa. Ensin mainitut ovat
 fontin suunnittelijan versioita ja jälkimmäiset Latexin mekaanisesti
-tekemiä. Mekaaninen ylä- ja ala\-in\-dek\-si\-toi\-min\-to ohentaa
-merkkejä turhan paljon, eikä se ymmärrä poistaa gemenanumeroita
-(3\,6\,2\,4) käytöstä vaan latoo ne sellaisenaan suunnilleen oikeaan
-paikkaan.
+tekemiä. Mekaaninen ylä- ja alaindeksitoiminto ohentaa merkkejä turhan
+paljon, eikä se ymmärrä poistaa gemenanumeroita (3\,6\,2\,4) käytöstä
+vaan latoo ne sellaisenaan suunnilleen oikeaan paikkaan.
 
 Ylä- ja alaindeksejä käytettäessä on siis syytä ladata
 \paketti{realscripts}\-/ paketti ja käyttää indeksit hallitsevaa
@@ -673,9 +672,9 @@ ja \komento{LaTeX}.
 
 \subsection{Tavutusvihje}
 
-Komento \komento{-} on tavutusvihje, joka neuvoo
-tavu\-tus\-algo\-rit\-mia katkaisemaan sanan tästä kohdasta. Samalla se
-voi estää sanan katkaisemisen muista kohdista.
+Komento \komento{-} on tavutusvihje, joka neuvoo tavutusalgoritmia
+katkaisemaan sanan tästä kohdasta. Samalla se voi estää sanan
+katkaisemisen muista kohdista.
 
 \begin{koodilohkosis}
   tavutus\-algo\-ritmi
@@ -922,7 +921,7 @@ seuraava esimerkki tuottaa käännettäessä virheen:
 \komento{newcommand*}\-/komennolla määritelty \komentox{komento} ei siis
 suostu ottamaan vastaan argumentteja, jotka sisältävät kappaleen
 vaihtumisen eli enemmän kuin yhden tekstikappaleen. Tähdelliset versiot
-tuovat tällaisen suo\-jaus\-omi\-nai\-suu\-den.
+tuovat tällaisen suojausominaisuuden.
 
 \subsection{Muita vinkkejä}
 \label{luku:komennot-lisä}
@@ -993,11 +992,11 @@ välilyönti.
 \end{tulossis}
 
 Aaltosulkeilla (luku \ref{luku:aaltosulkeet}) voi rajata
-komentomäärittelyn vai\-ku\-tus\-aluet\-ta. Seuraavan esimerkin alussa
-asetetaan \komentox{komento} tiettyyn alkuperäismääritelmään.
-Aaltosulkeiden sisällä se määritellään väliaikaisesti uudestaan.
-Aaltosulkeilla rajatun ympäristön jälkeen komennon uusi määritelmä
-lakkaa ja komento palautuu alkuperäiseksi.
+komentomäärittelyn vaikutusaluetta. Seuraavan esimerkin alussa asetetaan
+\komentox{komento} tiettyyn alkuperäismääritelmään. Aaltosulkeiden
+sisällä se määritellään väliaikaisesti uudestaan. Aaltosulkeilla rajatun
+ympäristön jälkeen komennon uusi määritelmä lakkaa ja komento palautuu
+alkuperäiseksi.
 
 % \pagebreak[3]
 
@@ -1114,8 +1113,8 @@ Ympäristön aloitusmääritelmässä voi argumentteihin viitata parametreilla
 
 Jos toinen valinnainen argumentti (\koodi{oletus}) on mukana, se
 ilmaisee, että määriteltävän ympäristön ensimmäinen argumentti on
-valinnainen ja että tämä on sen ole\-tus\-arvo. Oletusta käytetään
-silloin, kun valinnaista argumenttia ei ole annettu. Argumentit annetaan
+valinnainen ja että tämä on sen oletusarvo. Oletusta käytetään silloin,
+kun valinnaista argumenttia ei ole annettu. Argumentit annetaan
 ympäristön aloittavan \komento{begin}\-/ komennon yhteydessä.
 
 \komentoi{begin}
@@ -1214,8 +1213,8 @@ ja jota käytetään julkaisuohjelmissa. Sivun mittoja kuten leveyttä,
 korkeutta ja marginaaleja ilmaistaan tavallisesti metrijärjestelmän
 avulla eli senttimetreissä tai millimetreissä.
 
-Latexin mittojen mittaluvuissa desi\-maa\-li\-erot\-ti\-me\-na on piste,
-ja mittayksikön lyhenne kirjoitetaan kiinni mittalukuun. Seuraavassa
+Latexin mittojen mittaluvuissa desimaalierottimena on piste, ja
+mittayksikön lyhenne kirjoitetaan kiinni mittalukuun. Seuraavassa
 esimerkissä tehdään vaakasuuntaisia ja pystysuuntaisia välejä
 komennoilla \komento{hspace} ja \komento{vspace}:
 
@@ -1242,9 +1241,9 @@ komennoilla \komento{hspace} ja \komento{vspace}:
 Mittoja tallennetaan eräänlaisiin muuttujiin, jotka näyttävät päällepäin
 komennoilta eli niiden alussa on kenoviiva (\koodi{\keno}) ja sitten
 kirjaimista koostuva nimi. Esimerkiksi mitta \mitta{textwidth} on
-teks\-ti\-alueen leveys nykyisellä sivulla. Komentomaisesta
-ulko\-asus\-taan huolimatta mittoja ei voi suorittaa komentoina; ne
-sopivat vain komennon argumentiksi, silloin kun tarvitaan mitta.
+tekstialueen leveys nykyisellä sivulla. Komentomaisesta ulkoasustaan
+huolimatta mittoja ei voi suorittaa komentoina; ne sopivat vain komennon
+argumentiksi, silloin kun tarvitaan mitta.
 
 Uusia mittoja luodaan komennolla \komento{newlength} ja olemassa olevia
 mittoja asetetaan esimerkiksi komennoilla \komento{setlength} ja
@@ -1461,8 +1460,8 @@ plus 1fill\}]{vspace}.
 asiassa kolme eri versiota: \koodi{fil}, \koodi{fill} ja \koodi{filll}.
 Niiden erona on tärkeysjärjestys. Ensin mainittu \koodi{fil} on vähiten
 tärkeä, ja viimeinen eli \koodi{filll} on tärkein. Jos samassa
-yhteydessä käytetään eri tär\-keys\-as\-tei\-sia yksiköitä,
-korkeammantasoiset mitätöivät alemmantasoiset.
+yhteydessä käytetään eri tärkeysasteisia yksiköitä, korkeammantasoiset
+mitätöivät alemmantasoiset.
 
 % \pagebreak[3]
 
@@ -1477,10 +1476,10 @@ korkeammantasoiset mitätöivät alemmantasoiset.
 
 Edellisessä esimerkissä ensimmäinen venyvä mitta \koodi{1filll} mitätöi
 jälkimmäisen \koodi{1fill} kokonaan. Yleensä lienee parasta käyttää
-keskimmäistä (\koodi{fill}), mutta eri tär\-keys\-as\-teil\-le voi olla
-käyttöä esimerkiksi makropaketin koodissa: \koodi{fil} sallii, että
-käyttäjä tai muu koodi syrjäyttää asetuksen; \koodi{filll} on ehdoton
-sääntö, joka syrjäyttää muut.
+keskimmäistä (\koodi{fill}), mutta eri tärkeysasteille voi olla käyttöä
+esimerkiksi makropaketin koodissa: \koodi{fil} sallii, että käyttäjä tai
+muu koodi syrjäyttää asetuksen; \koodi{filll} on ehdoton sääntö, joka
+syrjäyttää muut.
 
 \section{Laskurit}
 \label{luku:laskurit}
@@ -1533,7 +1532,7 @@ kaavojen numerointiin \laskuri{equation}\-/laskuri. Leijuvista kuvista
 ja taulukoista (luku \ref{luku:leijuosat}) pidetään kirjaa laskureissa
 \laskuri{figure} ja \laskuri{table}, ja alaviitteiden (luku
 \ref{luku:alaviitteet}) numerointi on laskureissa \laskuri{footnote} ja
-\koodi{mp\-foot\-note}. Numeroidut luetelmat (luku \ref{luku:luetelmat})
+\laskuri{mpfootnote}. Numeroidut luetelmat (luku \ref{luku:luetelmat})
 käsitellään \laskurix{enum}\-/alkuisten laskureiden avulla siten, että
 perustasolla käytetään laskuria \laskuri{enumi}, ja jos sen
 luetelmakohta sisältää toisen numeroidun luetelman, käytetään siinä
@@ -1562,7 +1561,7 @@ muodoissa: arabialaisena tai roomalaisena lukuna, kirjaimena tai
 symbolien sarjana. Taulukossa \ref{tlk:laskurien_tulostus} ovat komennot
 laskurin arvon tulostamiseen. Komennon argumentiksi annetaan laskurin
 nimi. Laskurin voi tulostaa kirjainmuodossa, jos sen arvo on 1--26;
-symbolit toimivat vain lu\-ku\-alueel\-la 1--9.
+symbolit toimivat vain lukualueella 1--9.
 
 \leijutlk{
   \begin{tabular}{ll}

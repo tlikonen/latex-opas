@@ -274,11 +274,10 @@ Suomenkielisissä julkaisuissa on tavallista, että leipätekstin
 kappaleessa ei ole sisennystä, jos sitä ennen on pystysuuntainen väli.
 Tällainen tilanne on aina otsikoiden jälkeen mutta myös kokonaan
 sisennetyn tekstikappaleen jälkeen tai kuvan, taulukon, luetelman tai
-muun vastaavan tekstin\-osan jälkeen. Esimerkiksi tässä oppaassa
-Latex\-/ koodi\-esi\-merk\-kien jälkeen ei tekstikappaleissa ole
-sisennystä. Tähän käytäntöön on joskus poikkeuksia suomenkielisessäkin
-typografiassa, mutta eri kielten välillä käytäntö voi vaihdella
-enemmänkin.
+muun vastaavan tekstinosan jälkeen. Esimerkiksi tässä oppaassa Latex\-/
+koodiesimerkkien jälkeen ei tekstikappaleissa ole sisennystä. Tähän
+käytäntöön on joskus poikkeuksia suomenkielisessäkin typografiassa,
+mutta eri kielten välillä käytäntö voi vaihdella enemmänkin.
 
 Latex estää sisennyksen automaattisesti otsikoiden jälkeen mutta latoo
 sisennyksen kuitenkin kaikkien muiden elementtien ja pystysuuntaisen
@@ -341,8 +340,7 @@ komennon \komentom{hangpara}, jonka käyttöä esimerkki
 argumentti on sisennyksen mitta ja toinen argumentti (positiivinen
 kokonaisluku) määrittää, kuinka monta riviä kappaleen alusta jätetään
 sisentämättä. Jos taas toinen argumentti on negatiivinen luku, luvun
-it\-seis\-arvo määrittää, kuinka monta riviä kappaleen alusta
-sisennetään.
+itseisarvo määrittää, kuinka monta riviä kappaleen alusta sisennetään.
 
 Komennon \komento{hangpara} vaihtoehtona on ympäristö
 \ymparistom{hangparas}, jonka sisällä kaikki kappaleet sisennetään
@@ -443,10 +441,9 @@ kyseessä on ikään kuin luetelman kohta.
 
 Dokumentteihin tarvitaan välillä kokonaisia sisennettyjä
 tekstikappaleita, koska leipätekstin ohessa halutaan näyttää
-muuntyyppistä sisältöä. Kyse voi olla teksti- tai
-kuva\-esi\-mer\-keistä, esimerkiksi muualta lainatusta tekstistä. Tässä
-oppaassa käytetään paljon sisennettyjä tekstikappaleita Latex\-/koodien
-esimerkkeihin.
+muuntyyppistä sisältöä. Kyse voi olla teksti- tai kuvaesimerkeistä,
+esimerkiksi muualta lainatusta tekstistä. Tässä oppaassa käytetään
+paljon sisennettyjä tekstikappaleita Latex\-/koodien esimerkkeihin.
 
 Kokonaan sisennettyjä tekstikappaleita kutsutaan lohkolainauksiksi,
 koska ne ovat lainauksia, jotka käsittävät kokonaisen tekstilohkon.
@@ -475,12 +472,12 @@ runoihin sopiva ladontatapa, jossa säkeistöjen vasen reuna on samalla
 tasolla, oikealla on liehureuna ja säkeistöjen välissä on
 pystysuuntaista tilaa.
 
-Jos Latexin valmiit lohko\-lai\-naus\-ympä\-ris\-töt eivät tuota
-haluttua lopputulosta, voi sisennetyt tekstikappaleet toteuttaa myös
-luetelmien (luku \ref{luku:luetelmat}) tekemiseen tarkoitetun
-\ymparisto{list}\-/ ympäristön avulla. Sopivilla asetuksilla
-''luetelma'' sisältää ihan tavallisen näköisiä tekstikappaleita, jotka
-vain on sisennetty vasemmalta tai oikealta tai molemmista reunoista.
+Jos Latexin valmiit lohkolainausympäristöt eivät tuota haluttua
+lopputulosta, voi sisennetyt tekstikappaleet toteuttaa myös luetelmien
+(luku \ref{luku:luetelmat}) tekemiseen tarkoitetun \ymparisto{list}\-/
+ympäristön avulla. Sopivilla asetuksilla ''luetelma'' sisältää ihan
+tavallisen näköisiä tekstikappaleita, jotka vain on sisennetty
+vasemmalta tai oikealta tai molemmista reunoista.
 
 \begin{esimerkki*}
   \ymparistoi{list}
@@ -628,7 +625,7 @@ argumentiksi luvun, joka kertoo yhdessä pidettävien rivien määrän.
 Jos ei halua tai voi käyttää \paketti{nowidow}\-/pakettia, voi leski- ja
 orporivit estää myös Texin matalan tason toimintojen avulla.
 Ladonta\-/algoritmi käyttää leski- ja orporiveissä sisäisesti
-haitallisuusarvoa tai sakko\-arvoa (engl. \englanti{penalty}), ja jos
+haitallisuusarvoa tai sakkoarvoa (engl. \englanti{penalty}), ja jos
 lesket ja orvot halutaan estää, määritellään niiden haitallisuusarvo
 mahdollisimman korkeaksi. Käytännössä arvo 10\,000 tarkoittaa samaa kuin
 ääretön, eli silloin lesken tai orvon haitallisuus on niin suuri, että
@@ -659,7 +656,7 @@ luvussa~\ref{luku:tavutus}.
 \subsection{Marginaalihuomautukset}
 \label{luku:marginaalihuomautukset}
 
-Klassisessa kirja\-typo\-gra\-fias\-sa -- jota tämäkin opas suunnilleen
+Klassisessa kirjatypografiassa -- jota tämäkin opas suunnilleen
 noudattaa -- on aukeaman ulkoreunoissa melko suuret marginaalit. Niitä
 voidaan käyttää eräänlaisina apupalstoina, joihin voi kirjoittaa
 lyhyehköjä huomautuksia ja lisätietoa. Esimerkiksi tämän oppaan
@@ -726,8 +723,8 @@ Asetuksia voi muuttaa myös kesken dokumentin. Mitta
 \mitta{marginparwidth} määrittää marginaalihuomautuspalstan leveyden ja
 mitta \mitta{marginparsep} sen etäisyyden leipätekstistä. Lisäksi on
 mitta \mitta{marginparpush}, jolla asetetaan peräkkäisten
-marginaalihuomautusten vähim\-mäis\-etäi\-syys toisistaan. Seuraavassa
-on esimerkki näiden mittojen asettamisesta:
+marginaalihuomautusten vähimmäisetäisyys toisistaan. Seuraavassa on
+esimerkki näiden mittojen asettamisesta:
 
 \komentoi{setlength}
 \mittai{marginparwidth}
@@ -763,7 +760,7 @@ väliotsikon jälkeen. Tässä ne ovatkin vain esimerkin vuoksi. Anfangien
 käytön varsinainen tarkoitus on osoittaa tekstin alkamiskohta
 esimerkiksi artikkelin alussa tai kirjan päälukujen alussa. Varsinkin
 aikakauslehden artikkelit sisältävät monenlaisia visuaalisia elementtejä
-kuten pää- ja ala\-otsi\-kon, erillisen johdantokappaleen eli ingressin,
+kuten pää- ja alaotsikon, erillisen johdantokappaleen eli ingressin,
 kuvia ja tietolaatikoita. Anfangin avulla katse löytää artikkelin alun
 helposti.
 
@@ -815,7 +812,7 @@ Joskus vaihdetaan koko kirjainperhe toiseksi, esimerkiksi ladotaan
 Korostukset siis liittyvät läheisesti fonttien valintaan ja asetuksiin,
 ja siksi korostusten teknistä toteuttamista ja Latex\-/komentoja
 käsitellään pääasiassa fonttien yhteydessä luvussa
-\ref{luku:fontit_korkea}. \marginaali{Katso fontti\-komentoja taulukosta
+\ref{luku:fontit_korkea}. \marginaali{Katso fonttikomentoja taulukosta
   \ref{tlk:fonttimallikomennot} sivulla
   \pageref{tlk:fonttimallikomennot}.} Siellä muun muassa neuvotaan,
 kuinka kirjainperheet ja niiden eri kirjainleikkaukset valitaan. Sen
@@ -838,7 +835,7 @@ koodikielen esimerkit ladotaan usein leipätekstistä poikkeavalla
 fontilla, jotta käy selväksi, että kyse on koodikielisestä lainauksesta.
 Tällöin hyvin tavallista on tasalevyisen fontin käyttö, koska se
 jäljittelee tekstieditorien ja komentotulkkia suorittavien
-pääte\-oh\-jel\-mien fonttia.
+pääteohjelmien fonttia.
 
 Sopivan korostustavan valinnassa on olennaista saavuttaa riittävä
 kontrasti ympäröivään tekstiin. Liian lievä muutos ei erotu; toisaalta
@@ -948,7 +945,7 @@ Typografisesta estetiikasta juontuu sekin, että pienversaali on sopiva
 pari gemenanumeroiden kanssa erilaisiin teknisiin koodeihin ja muihin
 ilmauksiin, jotka koostuvat kirjaimista ja numeroista. Sen sijaan
 versaalikirjaimia ja gemenanumeroita ei sovi käyttää yhdessä, koska
-merkkien koko\-ero on häiritsevän suuri. Kuten seuraavista esimerkeistä
+merkkien kokoero on häiritsevän suuri. Kuten seuraavista esimerkeistä
 näkyy, versaalit ovat joskus miltei kaksinkertaisia gemenanumeroihin
 verrattuna, ja muutenkin gemenanumerot asettuvat keskimäärin eri
 korkeustasolle.
@@ -1005,9 +1002,9 @@ Komennon hyvä puoli on, että se toimii myös matematiikkatilassa
 
 Käytännössä alleviivaukset on parempi toteuttaa esimerkiksi makropaketin
 \paketti{ulem}\avctan{ulem} avulla. Tavallisen alleviivauksen lisäksi se
-sisältää kak\-sois\-alle\-vii\-vauk\-sen, aaltoviivat, pisteviivat ja
-erilaisia ylikirjoitusmerkintöjä. Taulukkoon \ref{tlk:ulem} on koottu
-paketin sisältämiä komentoja.
+sisältää kaksoisalleviivauksen, aaltoviivat, pisteviivat ja erilaisia
+ylikirjoitusmerkintöjä. Taulukkoon \ref{tlk:ulem} on koottu paketin
+sisältämiä komentoja.
 
 \providecommand{\rivi}{}
 \renewcommand{\rivi}[2]{\komento{#1} & #2}
@@ -1437,12 +1434,12 @@ käyttämällä samoja tunnisteita, ja Latex osaa automaattisesti poimia
 lähdeluettelosta esimerkiksi teoksen tekijöiden nimet ja vuosiluvun.
 
 Lähdeviittauksiin ja lähdemerkintöihin on useita käytäntöjä, jotka
-vaihtelevat eri ammatti- ja tieteen\-aloilla, oppilaitoksilla tai
+vaihtelevat eri ammatti\-/\ ja tieteenaloilla, oppilaitoksilla tai
 julkaisijoilla. Tässä yhteydessä käsitellään melko vakiintuneita
 suomalaisia käytäntöjä, jotka kuvataan \emph{Kielitoimiston
-  oikein\-kir\-joi\-tus\-oppaas\-sa} \parencite{kt_oik}. Samalla
-käsitellään joitakin asetuksia, joilla kukin voi muokata viittausten
-ulkoasua omiin tarpeisiin sopivaksi.
+  oikeinkirjoitusoppaassa} \parencite{kt_oik}. Samalla käsitellään
+joitakin asetuksia, joilla kukin voi muokata viittausten ulkoasua omiin
+tarpeisiin sopivaksi.
 
 Latex sisältää lähdeluetteloiden ja \=/viittausten perustoiminnot, mutta
 niiden avulla ei saa yleisen suomalaisen käytännön mukaisia
@@ -1612,13 +1609,12 @@ komennot kyseisen komennon määritelmään.
 \end{koodilohkosis}
 
 Oletuksena \ymparisto{thebibliography}\-/ ympäristö latoo
-lähdeluettelolle otsikon, ja otsikon teksti määräytyy
-kieli\-ase\-tus\-ten (luku \ref{luku:kieliasetukset}) ja
-dokumenttiluokan perusteella (luku \ref{luku:dokumenttiluokat}).
-Suomenkielisen lähdeluettelon otsikon voi määrittää dokumentin
-esittelyosassa seuraavan esimerkin tavoin. Esimerkissä hyödynnetään
-\komento{addto}\-/ komentoa, joka sisältyy \paketti{polyglossia}\-/{} ja
-\paketti{babel}\-/ paketteihin.
+lähdeluettelolle otsikon, ja otsikon teksti määräytyy kieliasetusten
+(luku \ref{luku:kieliasetukset}) ja dokumenttiluokan perusteella (luku
+\ref{luku:dokumenttiluokat}). Suomenkielisen lähdeluettelon otsikon voi
+määrittää dokumentin esittelyosassa seuraavan esimerkin tavoin.
+Esimerkissä hyödynnetään \komento{addto}\-/ komentoa, joka sisältyy
+\paketti{polyglossia}\-/{} ja \paketti{babel}\-/ paketteihin.
 
 \komentoi{addto}
 \komentoi{captionsfinnish}
@@ -1783,26 +1779,25 @@ teoksen sisällöstä ja teoksella on jokin julkaisijataho
 Teostyyppi \koodim{incollection} tarkoittaa esimerkiksi
 artikkelikokoelmaa, jonka yksittäiseen artikkeliin (\koodi{title}) ja
 sen kirjoittajaan (\koodi{author}) on tarkoitus viitata. Voidaan mainita
-myös artikkelin alku- ja lop\-pu\-si\-vut (\koodi{pages}). Kokoelmalla
-on toimittaja (\koodi{editor}) ja yhteinen nimi (\koodi{book\-title}).
+myös artikkelin alku- ja loppusivut (\koodi{pages}). Kokoelmalla on
+toimittaja (\koodi{editor}) ja yhteinen nimi (\koodi{book\-title}).
 
 Tyyppi \koodim{article} sopii säännöllisesti julkaistavan aikakaus- tai
 muun lehden artikkeleihin. Viittauskohteena on yksittäinen artikkeli ja
 sen kirjoittaja. Julkaisutiedoissa mainitaan lehden nimi
-(\koodi{jour\-nal\-title}), julkaisukausi (\koodi{vol\-ume}), kauteen
+(\koodi{jour\-nal\-title}), julkaisukausi (\koodi{vol-ume}), kauteen
 kuuluvan julkaisun järjestysnumero (\koodi{num\-ber}) sekä mahdollisesti
 artikkelin sivut (\koodi{pages}).
 
 Verkkolähteiden merkitsemiseen sopii \koodi{online}\-/ teostyyppi,
-joissa on ta\-van\-omais\-ten kenttien lisäksi ainakin verkko\-/osoite
-eli \koodi{url}\-/kenttä ja mahdollisesti viittauspäivä
-(\koodi{url\-date}) osoittamassa, milloin viitatut tiedot olivat
-saatavilla.
+joissa on tavanomaisten kenttien lisäksi ainakin verkko\-/osoite eli
+\koodi{url}\-/kenttä ja mahdollisesti viittauspäivä (\koodi{url\-date})
+osoittamassa, milloin viitatut tiedot olivat saatavilla.
 
 Teostyyppejä ja teoksiin liittyviä tietokenttiä on olemassa paljon
 muitakin. Niiden merkitystä ja käyttöä neuvotaan tarkemmin
 \paketti{biblatex}\-/paketin ohjeissa. Seuraavassa on kuitenkin pari
-huomiota tietokannan ja kenttien kieli\-opillisista asioista.
+huomiota tietokannan ja kenttien kieliopillisista asioista.
 
 Tietueissa joidenkin kenttien sisältö voi koostua useasta osasta kuten
 saman teoksen eri tekijöistä. Eri tekijöiden nimet erotetaan
@@ -1826,7 +1821,7 @@ erottimeksi. Seuraavassa on näistä esimerkit:
 
 Muunkinlaisia useasta osasta koostuvia kenttiä on olemassa.
 Asiasanakentän (\koodi{keywords}) eri sanat erotetaan toisistaan
-pilkulla, ja sivunumeroissa (\koodi{pages}) voi olla myös luku\-alueita,
+pilkulla, ja sivunumeroissa (\koodi{pages}) voi olla myös lukualueita,
 jotka ilmaistaan yhdysmerkillä \mbox{(\koodi{-})}.
 
 \begin{koodilohkosis}
@@ -2011,7 +2006,7 @@ Argumentti~\koodi{*} (tähti) valitsee kaikki teokset.
 
 \subsubsection{Lähdetiedostojen kääntäminen}
 
-Latexin kääntäjä\-ohjelmat Lualatex tai Xelatex eivät yksinään riitä,
+Latexin kääntäjäohjelmat Lualatex tai Xelatex eivät yksinään riitä,
 sillä teostietokanta ei ole tavallinen Latex\-/muotoinen tiedosto.
 Tarvitaan myös Latex\-/jakelun mukana tulevaa komentoa \koodi{biber},
 joka käsittelee teostietokantaan liittyviä tiedostoja. Lopulta
@@ -2088,10 +2083,10 @@ komennot kyseisen komennon määritelmään.
 \end{koodilohkosis}
 
 Lähdemerkinnät itsessään muodostetaan automaattisesti tiettyjen
-tyyli\-ase\-tus\-ten perusteella. Omiakin tyylejä voi tehdä, mutta
-yleensä riittää vain yksittäisen asetusten muuttaminen. Niistä
-käsitellään tässä yhteydessä muutama. Asetusten muuttamiseen tarvitaan
-yleensä \paketti{biblatex}\-/paketin omia asetuskomentoja.
+tyyliasetusten perusteella. Omiakin tyylejä voi tehdä, mutta yleensä
+riittää vain yksittäisen asetusten muuttaminen. Niistä käsitellään tässä
+yhteydessä muutama. Asetusten muuttamiseen tarvitaan yleensä
+\paketti{biblatex}\-/paketin omia asetuskomentoja.
 
 Lähdeluettelon nimet näkyvät oletusasetuksilla siten, että teoksen
 ensimmäisen tekijän sukunimi mainitaan ensin (luettelon
@@ -2135,9 +2130,9 @@ erottimeksi \&\=/merkin.
 Edellisten esimerkkikomentojen valinnainen argumentti \koodi{bib}
 tarkoittaa, että vaikutetaan vain lähdeluetteloon. Argumentti voi olla
 myös \mbox{\koodi{cite}}, jolloin vaikutetaan lähdeviittauksiin.
-Ero\-tin\-merkki\-ase\-tuk\-sen nimi \koodi{multi\-name\-delim}
-tarkoittaa muiden kuin kahden viimeisen tekijän nimen välissä olevaa
-erotinta. Kahden viimeisen nimen erotin määritellään asetuksella
+Erotinmerkkiasetuksen nimi \koodi{multi\-name\-delim} tarkoittaa muiden
+kuin kahden viimeisen tekijän nimen välissä olevaa erotinta. Kahden
+viimeisen nimen erotin määritellään asetuksella
 \koodi{final\-name\-delim}.
 
 Useiden saman teoksen tekijöiden luettelot lyhennetään automaattisesti

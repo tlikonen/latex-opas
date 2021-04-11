@@ -1342,8 +1342,9 @@ seuraavalla tavalla:
 
 ...
 
-% newpage, clearpage, minipage, nopagebreak
-% \flushbottom \raggedbottom -komennot liittyvät sivun latomiseen
+% \newpage, \clearpage, \cleardoublepage, minipage, \pagebreak,
+% \nopagebreak. \flushbottom \raggedbottom -komennot liittyvät sivun
+% latomiseen
 
 \section{Jäsennys}
 \label{luku:jäsennys}
@@ -1354,7 +1355,8 @@ seuraavalla tavalla:
 ...
 
 % \sectionbreak ym. ovat titlesec-paketin ominaisuuksia. titlesec
-% kannattaa täällä käsitellä.
+% kannattaa täällä käsitellä. Myös laskuri secnumdepth.
+% \phantomsection, \label
 %
 % Varoitus: Ei erikoisia komentoja otsikoihin (mm. extdash), koska ne
 % eivät toimi ainakaan pdf:n sisällysluettelossa tai ehkä muutenkaan.
@@ -1421,7 +1423,7 @@ seuraavalla tavalla:
 
 ...
 
-% titletoc-paketti, tocdepth-laskuri
+% titletoc-paketti, tocdepth-laskuri, \pdfbookmark, \tableofcontents
 
 \section{Lähdeluettelo ja lähdeviitteet}
 \label{luku:lähteet}

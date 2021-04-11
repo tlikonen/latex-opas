@@ -146,6 +146,7 @@ Extension=.otf]
 \makeindex[name=ymparistot, title={Ympäristöt}, columns=2, columnsep=1em]
 \makeindex[name=mitat, title={Mitat}, columns=2, columnsep=1em]
 \makeindex[name=laskurit, title={Laskurit}, columns=2, columnsep=1em]
+\makeindex[name=luokat, title={Dokumenttiluokat}, columns=1, columnsep=1em]
 
 \renewcommand{\theFancyVerbLine}
 {\sffamily\versaalinum\fontsize{6bp}{7bp}\selectfont\arabic{FancyVerbLine}}
@@ -216,8 +217,10 @@ Extension=.otf]
 \newcommand{\koodimargin}[1]{\marginaali{\koodi{#1}}}
 \newcommand{\koodim}[1]{\koodi{#1}\koodimargin{#1}}
 
-\newcommand{\luokka}[1]{\koodi{#1}}
-\newcommand{\luokkamargin}[1]{\koodimargin{#1}}
+\newcommand{\luokkax}[1]{\koodi{#1}}
+\newcommand{\luokkai}[1]{\index[luokat]{\luokkax{#1}}}
+\newcommand{\luokka}[1]{\luokkax{#1}\luokkai{#1}}
+\newcommand{\luokkamargin}[1]{\marginaali{\luokkax{#1}}}
 \newcommand{\luokkam}[1]{\luokka{#1}\luokkamargin{#1}}
 
 \newcommand{\komentox}[2][]{\koodi{\keno #2}\koodi{#1}}
@@ -485,8 +488,9 @@ yhtenäinen ulkoasu ja typografia.
 \label{luku:asiahakemisto}
 
 \printindex[paketit] \newpage
-\printindex[komennot] \newpage
+\printindex[luokat] \newpage
 \printindex[ymparistot] \newpage
+\printindex[komennot] \newpage
 \printindex[mitat]
 \printindex[laskurit]
 

@@ -29,6 +29,7 @@ pe\-rus\-ase\-tuk\-sia. Dokumenttiluokka määritellään komennolla
 nimi. Valinnaisilla argumenteilla vaikutetaan asetuksiin.
 
 \komentoi{documentclass}
+\luokkai{article}
 \begin{koodilohkosis}
   \documentclass[a4paper, 12pt]{article}
 \end{koodilohkosis}
@@ -86,14 +87,14 @@ valittaessa luokkien \luokka{article}, \luokka{report} ja \luokka{book}
 välillä. Dokumenttiluokkien asetuksia käsitellään seuraavassa
 alaluvussa.
 
-Muita perusdokumenttiluokkia ovat \luokkam{let\-ter} ja \luokka{slides}.
-Nimensä mukaisesti \luokka{let\-ter} on kirjeiden kirjoittamista varten.
+Muita perusdokumenttiluokkia ovat \luokkam{letter} ja \luokka{slides}.
+Nimensä mukaisesti \luokka{letter} on kirjeiden kirjoittamista varten.
 Se sisältää kirjeen tyypilliseen rakenteeseen liittyviä komentoja ja
 soveltuu varsinkin tarpeisiin, joissa täytyy automaattisesti tuottaa
 samanmuotoisia kirjeitä usealle vas\-taan\-otta\-jalle. Sama
 Latex\-/dokumentti voi sisältää useita kirjeitä, ja sivunumerointi ja
 alaviitteiden numerointi alkaa joka kirjeessä alusta -- kuten on
-tietysti toivottavaa. \luokka{letter}\-/luokkaa käsitellään tarkemmin
+tietysti toivottavaa. \luokka{letter}\-/ luokkaa käsitellään tarkemmin
 luvussa \ref{luku:kirjeet}.
 
 Piirtoheittimien läpinäkyvien kalvojen ja sen kaltaisten dokumenttien
@@ -267,11 +268,11 @@ luokat ovat eräänlaisia Latexin vastineita esimerkiksi
 
 Pienempiin, rajattuihin erityistarpeisiin on olemassa useita luokkia.
 Esimerkiksi yksisivuisten taitettavien lehtisten kuten tapahtuman
-käsi\-ohjel\-mien tekemiseen soveltuu \luokka{leaf\-let}\-/luokka.
+käsi\-ohjel\-mien tekemiseen soveltuu \luokka{leaflet}\-/luokka.
 \textsc{cd}\-/levyjen kansia voi tehdä \luokka{cd}\-/luokan avulla.
 Kuvitettuja seinäkalentereita vartenkin on tehty oma luokkansa,
-\luokka{wall\-cal\-en\-dar}. Kitaran tablatuureja eli otelautakuvaan
-perustuvia nuotteja voi tehdä \luokka{gui\-tar\-tabs}\-/luokan avulla.
+\luokka{wallcalendar}. Kitaran tablatuureja eli otelautakuvaan
+perustuvia nuotteja voi tehdä \luokka{guitartabs}\-/ luokan avulla.
 
 Kaikenlaista on siis olemassa. Saatavilla oleviin dokumenttiluokkiin voi
 tutustua esimerkiksi \englanti{Comprehensive Tex Archive Network}
@@ -792,6 +793,7 @@ toteutukseen.
 
 \begin{esimerkki*}
   \komentoi{documentclass}
+  \luokkai{book}
   \komentoi{usepackage}
   \pakettii{fancyhdr}
   \komentoi{fancypagestyle}
@@ -1379,6 +1381,7 @@ kohdan välillä ja koska fonttien mittasuhteet ovat erilaisia.
   \komentoi{setsansfont}
   \komentoi{setmonofont}
   \komentoi{linespread}
+  \luokkai{article}
 
 \begin{koodilohko}
   \documentclass[10pt]{article} % 10pt on oletus

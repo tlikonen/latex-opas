@@ -1,5 +1,5 @@
 nimi = kaytannollista_latexia
-hakemistot = paketit ymparistot komennot mitat laskurit
+hakemistot = paketit ymparistot komennot mitat laskurit luokat
 tavutus = tavutusvihjeet
 
 $(nimi).pdf: *.tex *.bib

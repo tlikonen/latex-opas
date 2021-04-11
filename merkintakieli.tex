@@ -749,37 +749,61 @@ argumentit voi siis kirjoittaa vaikka seuraavalla tavalla:
 \subsection{Omat komennot ja abstrahointi}
 
 Omien komentojen tärkein tarkoitus on merkintätapojen abstrahointi eli
-teknisen toteutuksen ja yksityiskohtien piilottaminen. Abstrahointi voi
-helpottaa työskentelyä huomattavastikin ja tehdä lähdedokumentista
-helppolukuisen. Otetaan esimerkki tämän oppaan toteutuksesta.
+teknisen toteutuksen ja yksityiskohtien piilottaminen. Sopiva
+abstrahointi helpottaa lähdedokumentin käsittelemistä.
 
-Tämä opas käsittelee välillä Unicode\-/merkkejä ja niiden tunnuksia
-kuten \uctunnus{u+0061 latin small letter~a}. Merkkien tunnukset
-ladotaan erilaisella kirjainleikkauksella, pienversaalilla eli
-kapiteelilla. Jos fontti vain tukee pienversaalia, sitä saadaan helposti
-komennolla \komento{textsc}. Silti tätä komentoa ei ehkä kannata käyttää
-suoraan dokumentissa. Jos nimittäin kirjoittaa dokumentin täyteen
-\komento{textsc}\-/komentoja, voi myöhemmin olla työlästä muuttaa
-Unicode\-/tunnusten ulko\-asu ja toteutus toisenlaiseksi.
+Esimerkiksi jos kirjoittaa Latexia käsittelevää kirjaa, kannattaa heti
+aluksi luoda komento, jolla merkitään kaikki Latexin komennot. Komennon
+nimi voisi olla vaikka \komentox{komento}, ja sen voisi määritellä
+siten, että se lisää automaattisesti komennon nimen alkuun kenoviivan
+(\keno) ja latoo koko ilmauksen tasalevyisellä kirjainperheellä.
+Seuraavassa on esimerkki tällaisen komennon määrittelemisestä ja
+käytöstä:
 
-Jossain vaiheessa kirjoittaja oivaltaa, että Unicode\-/tunnukset ovat
-englannin kieltä ja että sanoja pitäisi tavuttaa englannin sääntöjen
-mukaan eikä suomen. Pitäisi siis liittää \komento{textsc}\-/ komentojen
-ympärille vielä \komento{textenglish}\-/komento.%
-\footnote{Komento \komento{textenglish} on \paketti{polyglossia}\-/
-  paketin ominaisuus.} Lähdedokumentin kirjoittaminen on ikävää ja
-ulko\-asu sekava, jos Unicode\-/tunnusten kohdalla on aina \koodi{\keno
-  textenglish\{\keno text\-sc\{\ldots\}\}}.
+\komentoi{newcommand}
+\komentoi{texttt}
+\komentoi{textbackslash}
+\begin{koodilohkosis}
+  \newcommand{\komento}[1]{\texttt{\textbackslash #1}}
 
-Parasta olisi jo ennen kirjoittamista miettiä, mitä rakenteita teksti
-sisältää. Erilaisia rakenteita tai ilmauksia varten kannattaa luoda
-komento, jotta sen toteutusta voi myöhemmin muuttaa helposti.
-Esimerkiksi Unicoden merkkitunnuksille voisi luoda oman komennon
-\komentox{uctunnus}, jota käytetään aina tunnusten ilmaisemiseen
-Latex\-/dokumentissa. Komento määritellään vain yhdessä paikassa, ja
-määritelmää on helppoa muuttaa. Tekstikin pysyy selkeänä, kun siellä on
-vain korkean tason komentoja, jotka ilmaisevat tarkoituksen eivätkä
-teknistä toteutusta.
+  Komennolla \komento{section} tehdään otsikoita.
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Komennolla \komentox{section} tehdään otsikoita.
+\end{tulossis}
+
+Edellä mainitun komennon määritelmään voi olla tarpeen lisätä myöhemmin
+muitakin asioita. Latexin komentojen nimet ovat englantia, ja jos nimen
+tavuttaa, täytyisi se tehdä englannin sääntöjen mukaisesti. Esimerkkinä
+olleen \komentox{komento}\-/ komennon määritelmässä voisi siis vaihtaa
+myös kielen komennolla \komento{textenglish}.%
+\footnote{Katso kieliasetuksia luvusta \ref{luku:kieliasetukset}.}
+
+Jos ollaan kirjoittamassa laajaa tietoteosta, Latex\-/ komennot halutaan
+ehkä lisätä automaattisesti kirjan lopussa olevaan asiahakemistoon (ks.
+s.~\pageref{luku:asiahakemisto}). Niinpä komennon määritelmään lisätään
+vielä sitäkin varten komento \komento{index}.%
+\footnote{Lisätietoa asiahakemistoista on luvussa \ref{luku:asiasanat}.}
+Lopulta Latex\-/komentojen merkitsemiseen tarkoitettu \komentox{komento}
+määriteltäisiin seuraavalla tavalla:
+
+\komentoi{newcommand}
+\komentoi{textbackslash}
+\komentoi{texttt}
+\komentoi{index}
+\begin{koodilohkosis}
+  \newcommand{\komento}[1]{%
+    \texttt{\textbackslash\textenglish{#1}}%
+    \index[komennot]{\texttt{\textbackslash #1}}
+  }
+\end{koodilohkosis}
+
+Näin oma \komentox{komento} ilmaisee tiiviisti ja havainnollisesti
+tarkoituksen eli sen, että kyseessä on Latex\-/ komento. Se piilottaa
+monimutkaisen teknisen toteutuksen. Myöhemmin toteutusta on helppoa
+muuttaa, koska komennon määrittely on vain yhdessä paikassa
+lähdedokumentin alussa.
 
 \subsection{Komentojen määrittely}
 \label{luku:komennot-määr}

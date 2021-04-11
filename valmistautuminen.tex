@@ -193,7 +193,7 @@ Hyvän tekstieditorin ja pdf\-/katselimen kanssa työskentely on sujuvaa.
 Parhaimmillaan editorissa tietty näppäinkomento tallentaa ja kääntää
 dokumentin, ja pian pdf\-/katselin lataa muuttuneen pdf:n
 automaattisesti näkyviin. Sekä editorin että pdf\-/katselimen voi pitää
-sa\-man\-aikai\-ses\-ti esillä, eikä muualle tarvitse yleensä siirtyä.
+sa\-man\-aikai\-ses\-ti esillä.
 
 \subsection{Latexmk}
 \label{luku:latexmk}
@@ -288,11 +288,17 @@ Luodaan seuraavaksi yksinkertainen Latex\-/dokumentti, jota voi käyttää
 harjoitteluun ja pohjana omille dokumenteille. Tallenna esimerkin
 \ref{esim:ensimmainen} sisältö tekstieditorin avulla tiedostoon vaikkapa
 nimellä \koodi{teksti.tex}. Käännä eli lado se pdf\-/tiedostoksi
-komennolla \koodi{lualatex teksti.tex} tai komennolla \koodi{xelatex
-  teksti.tex} (tai \koodi{latexmk}\-/komennolla, luku
-\ref{luku:latexmk}). Tuloksena pitäisi olla tiedosto \koodi{teksti.pdf},
-jota voi ihailla jollakin pdf\-/tiedostojen katseluun tarkoitetulla
-ohjelmalla.
+käyttämällä jotakin seuraavista komennoista (valitse yksi):
+
+\begin{koodilohkosis}
+  lualatex teksti.tex
+  xelatex  teksti.tex
+  latexmk -lualatex teksti.tex
+  latexmk -xelatex  teksti.tex
+\end{koodilohkosis}
+
+Tuloksena pitäisi olla tiedosto \koodi{teksti.pdf}, jota voi ihailla
+jollakin pdf\-/tiedostojen katseluun tarkoitetulla ohjelmalla.
 
 Esimerkin \ref{esim:ensimmainen} ensimmäisellä rivillä määritellään
 dokumenttiluokka \luokka{article}, joka on tietynlainen sivupohja tai
@@ -300,21 +306,20 @@ asetusten kokoelma, jonka perustalle aletaan rakentaa omaa dokumenttia.
 Luokka \luokka{article} on tyypillinen valinta lyhyehköille teksteille.
 Lisätietoa dokumenttiluokista on luvussa \ref{luku:dokumenttiluokat}.
 
-Riveillä 2--4 käytetään komentoa \komentom{usepackage}, joiden avulla
-otetaan käyttöön sivun asetuksista huolehtiva
-\paketti{geometry}\-/paketti, fontti\-asetuksia hoitava
-\paketti{fontspec}\-/paketti ja kieli\-asetuksista vastaava
-\paketti{polyglossia}\-/paketti. Näitä kolmea tarvitaan melkein joka
-kerta dokumenteissa, ja niihin palataan tarkemmin luvuissa
-\ref{luku:sivuasetukset}, \ref{luku:kirjaintyypit} ja
+Riveillä 2--4 käytetään komentoa \komentom{usepackage}, jonka avulla
+otetaan käyttöön sivun asetuksista huolehtiva \paketti{geometry}\-/
+paketti, fontti\-asetuksia hoitava \paketti{fontspec}\-/ paketti ja
+kieli\-asetuksista vastaava \paketti{polyglossia}\-/ paketti. Näitä
+kolmea tarvitaan melkein joka kerta dokumenteissa, ja niihin palataan
+tarkemmin luvuissa \ref{luku:sivuasetukset}, \ref{luku:kirjaintyypit} ja
 \ref{luku:kieliasetukset}.
 
 Seuraavilla riveillä asetetaan kieleksi suomi (\koodi{finnish}) ja
 määritetään oletuksena käytettävä fontti tai oikeastaan kokonainen
 kirjainperhe. \englanti{Latin Modern Roman} \=/kirjainperheen tilalle
-voi toki asettaa jonkin muunkin. Fontin oletuskoko on 10 pistettä, mutta
-tässä esimerkissä se venytetään 1,3\-/kertaiseksi eli 13 pisteeseen.
-Riviväliin liittyvä kerroin asetetaan rivillä 8.
+voi toki asettaa jonkin muunkin. Fontin oletuskoko on 10 typografista
+pistettä, mutta tässä esimerkissä se venytetään 1,3\-/kertaiseksi eli 13
+pisteeseen. Riviväliin liittyvä kerroin asetetaan rivillä 8.
 
 \begin{esimerkki*}
   \komentoi{usepackage}
@@ -325,6 +330,7 @@ Riviväliin liittyvä kerroin asetetaan rivillä 8.
   \pakettii{geometry}
   \pakettii{fontspec}
   \pakettii{polyglossia}
+  \ymparistoi{document}
 
 \begin{koodilohko}
   \documentclass{article}

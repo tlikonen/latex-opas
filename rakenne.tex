@@ -19,7 +19,7 @@ Latexin lähdetiedostoissa kappaleen vaihtuminen ilmaistaan
 kirjoittamalla kappaleiden väliin vähintään yksi tyhjä rivi. Tätä
 merkintäkielen piirrettä käsitellään myös luvussa
 \ref{luku:kappaleen_vaihtuminen}. Kappale vaihtuu myös komennolla
-\komento{par}, joka sopii käytettäväksi esimerkiksi komentojen
+\komentom{par}, joka sopii käytettäväksi esimerkiksi komentojen
 määrittelyssä (luku \ref{luku:komennot}), kun halutaan varmistaa
 kappaleen vaihtuminen tietyssä kohdassa.
 
@@ -38,7 +38,8 @@ lukemista.
 \subsection{Tasaaminen ja palstan muoto}
 \label{luku:kappaleen_tasaus}
 
-Tekstikappaleet tasataan oletuksena palstan molempiin reunoihin, ja tätä
+Perusdokumenttiluokissa (luku \ref{luku:perusdokumenttiluokat})
+tekstikappaleet tasataan oletuksena palstan molempiin reunoihin, ja tätä
 palstan muotoa kutsutaan tasapalstaksi. Se tarkoittaa samalla sitä, että
 rivillä olevia sanavälejä venytetään sopivasti, jotta jokainen rivi
 näyttäisi yhtä pitkältä ja palstan molemmat reunat tasaiselta.
@@ -66,9 +67,9 @@ asettaa muun muassa sanavälien venymisen ylärajaksi 3\,em. Tämän
 komennon käyttö ei ole kovin suositeltavaa, koska sillä on muitakin
 seurauksia ja se voi vaikuttaa myös sellaisiin kappaleisiin, jotka
 muuten saataisiin ladottua nätisti. Parempi on asettaa vain mitta
-\mitta{emergencystretch} riittävän suureksi. \komentomargin{fussy}
-Sanavälien venymiseen ja kappaleiden tasaiseen latomiseen liittyvät
-asetukset voi palauttaa oletusarvoihin komennolla \komento{fussy}.
+\mitta{emergencystretch} riittävän suureksi. Sanavälien venymiseen ja
+kappaleiden tasaiseen latomiseen liittyvät asetukset voi palauttaa
+oletusarvoihin komennolla \komentom{fussy}.
 
 Hyvin tavallista on tasata teksti pelkästään vasempaan reunaan, jolloin
 rivien pituudet vaihtelevat ja oikealla on niin sanottu liehureuna.
@@ -234,10 +235,10 @@ merkki siitä, että tekstin sisällössä siirrytään seuraavaan asiaan.
 Oletusasetuksilla Latex latoo sisennyksen automaattisesti kappaleen
 alkuun mutta ei kuitenkaan otsikoiden jälkeen.
 
-Ensimmäisen rivin sisennyksen suuruus asetetaan mitan \mitta{parindent}
-avulla, esimerkiksi alla olevan esimerkin mukaisesti. Sopiva
-mittayksikkö tähän tarkoitukseen on \emph{em}, koska se viittaa suoraan
-nykyisen fontin kokoon.
+Ensimmäisen rivin sisennyksen suuruus asetetaan mitan \mittam{parindent}
+avulla, esimerkiksi seuraavan esimerkin mukaisesti. Sopiva mittayksikkö
+tähän tarkoitukseen on \emph{em}, koska se viittaa suoraan nykyisen
+fontin kokoon.
 
 \komentoi{setlength}
 \mittai{parindent}

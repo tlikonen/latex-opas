@@ -1,10 +1,11 @@
 versio = 0
 nimi = kaytannollista_latexia
-osat = kaytannollista_latexia.tex asetukset.tex esim-latexmkrc.tex \
-	esipuhe.tex merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
+osat = $(nimi).tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
+	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
 	valmistautuminen.tex kirjallisuutta.bib
 hakemistot = paketit ymparistot komennot mitat laskurit luokat
 tavutus = tavutusvihjeet
+texmf = $(HOME)/texmf
 
 $(nimi).pdf: versio.tex $(osat)
 	latexmk -lualatex \
@@ -20,14 +21,41 @@ aakkostus:
 		echo "}"; } > $(tavutus).tmp && \
 		mv -f $(tavutus).tmp $(tavutus).tex
 
+doc: $(nimi).pdf versio.tex $(osat)
+	mkdir -p doc/latex/$(nimi)
+	for f in $^; do ln -fn "$$f" doc/latex/$(nimi)/"$$f"; done
+	@touch $@
+
+$(nimi): doc
+	ln -sfn doc/latex/$(nimi)
+	@touch $@
+
+$(nimi).tds.zip: doc
+	zip -r9 $@ $^
+
+$(nimi).zip: $(nimi) $(nimi).tds.zip
+	zip -r9 $@ $(nimi).tds.zip $(nimi)
+
+paketti: $(nimi).zip
+
+install: doc
+	mkdir -p $(texmf)
+	cp -r doc $(texmf)
+	mktexlsr $(texmf)
+
+uninstall:
+	rm -r $(texmf)/doc/latex/$(nimi)
+	mktexlsr $(texmf)
+
 clean:
 	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls log out \
-		run.xml toc xdv) texput.log versio.tex
+		run.xml toc xdv) texput.log $(nimi)*.zip $(nimi)
 	rm -f $(addsuffix .idx,$(hakemistot))
 	rm -f $(addsuffix .ind,$(hakemistot))
 	rm -f $(addsuffix .ilg,$(hakemistot))
+	rm -fr doc
 
 distclean: clean
-	rm -f $(nimi).pdf
+	rm -f $(nimi).pdf versio.tex
 
-.PHONY: aakkostus clean distclean
+.PHONY: aakkostus clean distclean paketti install uninstall

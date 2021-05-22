@@ -329,7 +329,7 @@ Extension=.otf]
 %     220mm}, layout=a5paper, layoutoffset={5mm, 5mm}, showcrop }
 
 \pdfbookmark[0]{Kansi}{luku:kansi}
-\DTMsetstyle{finnish}
+\DTMsetstyle{finnish-numeric}
 
 \vspace*{.2\textheight}
 
@@ -355,14 +355,13 @@ Extension=.otf]
 
   \raggedleft
   Latex-ladontajärjestelmän opas \\
-  \DTMtoday
+  Versio \input{versio.tex}\ignorespaces
 
 }
 
 \clearpage
 \restoregeometry
 \pdfbookmark[0]{Tekijänoikeus}{luku:tekijänoikeus}
-\DTMsetstyle{finnish-numeric}
 
 \null\vfill
 
@@ -372,17 +371,19 @@ Extension=.otf]
 
   \section*{Käytännöllistä Latexia}
 
-  Tekijä: Teemu Likonen \kulmasp{tlikonen@iki.fi}
+  \textsc{Tekijä:} Teemu Likonen \kulmasp{tlikonen@iki.fi}
 
-  Päiväys: \DTMtoday{} kello \DTMcurrenttime{} (Ensijulkaisu: ei ole
-  julkaistu vielä)
+  \textsc{Versio:} \input{versio.tex}
 
-  Lisenssi: \emph{Creative Commons Nimeä-Jaa\-Samoin 4.0 Kansainvälinen}
-  (\textsc{cc by-sa} 4.0). Lisenssi antaa sinulle luvan kopioida ja
-  levittää tätä teosta tai sen osia missä tahansa välineessä ja
-  muodossa. Sisältöä saa muokata, ja sen pohjalta saa luoda uusia
-  teoksia mihin tahansa tarkoitukseen, myös kaupallisesti. Ehdot ovat
-  seuraavat:
+  \textsc{Päiväys:} \DTMtoday{} kello \DTMcurrenttime{} (Ensijulkaisu:
+  ei ole julkaistu vielä)
+
+  \textsc{Lisenssi:} \emph{Creative Commons Nimeä-Jaa\-Samoin 4.0
+    Kansainvälinen} (\textsc{cc by-sa} 4.0). Lisenssi antaa sinulle
+  luvan kopioida ja levittää tätä teosta tai sen osia missä tahansa
+  välineessä ja muodossa. Sisältöä saa muokata, ja sen pohjalta saa
+  luoda uusia teoksia mihin tahansa tarkoitukseen, myös kaupallisesti.
+  Ehdot ovat seuraavat:
 
   \begin{list}{\textbullet}{
       \setlength{\leftmargin}{1em}

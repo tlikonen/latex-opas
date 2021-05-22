@@ -72,8 +72,6 @@ Esimerkiksi rivin lopussa oleva rivinvaihto tarkoittaa samaa kuin
 sanojen välissä oleva välilyönti. Välilyöntejä ja sarkainmerkkejä voi
 kirjoittaa useita peräkkäin, mutta ne ovat sama asia kuin yksi väli.
 
-% \pagebreak[3]
-
 \begin{koodilohkosis}
   Nämä      kaikki
        ovat            vain
@@ -195,8 +193,6 @@ mittojen arvot (luku \ref{luku:mitat}) ovat voimassa vain kyseisen
 ympäristön sisäpuolella. Seuraavassa esimerkissä aaltosulkeilla rajataan
 kursivointikomennon \komento{itshape} vaikutusaluetta.
 
-% \pagebreak[3]
-
 \begin{koodilohkosis}
   tavallinen {\itshape kursiivi} tavallinen
 \end{koodilohkosis}
@@ -289,8 +285,6 @@ heittomerkkiä peräkkäin (\koodi{''}), on lopputuloksena yksi kaareva
 lainausmerkki (''). Kahdella suurempi kuin \=/merkillä (\koodi{>>})
 saadaan kulmalainausmerkki~(>>).
 
-% \pagebreak[3]
-
 \begin{koodilohkosis}
   ''Lainaus, jonka 'sisällä' on lainaus.'' \\
   >>Lainaus, jonka 'sisällä' on lainaus.>>
@@ -328,8 +322,6 @@ Fonteissa on yleensä oletuksena päällä Tex\-/ligatuurit eli asetus
 määrittelyn yhteydessä tai väliaikaisesti komennolla
 \komento{addfontfeatures}.
 
-% \pagebreak[3]
-
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
   {\addfontfeatures{Ligatures=TeXReset} `` '' >> '}
@@ -339,15 +331,11 @@ määrittelyn yhteydessä tai väliaikaisesti komennolla
   {\addfontfeatures{Ligatures=TeXReset} `` '' >> '}
 \end{tulossis}
 
-% \pagebreak[3]
-
 Tasalevyisessä fontissa Tex\-/ligatuurit eivät ole päällä oletuksena,
 joten yksittäisissä sanoissa tai lyhyissä ilmauksissa voi estää
 Tex\-/ligatuurit esimerkiksi komennolla \komento{texttt}. Samalla
 tietysti fonttikin vaihtuu. Fontteja käsitellään tarkemmin luvussa
 \ref{luku:kirjaintyypit}.
-
-% \pagebreak[3]
 
 \komentoi{texttt}
 \begin{koodilohkosis}
@@ -365,8 +353,6 @@ makropaketin huoleksi, miten aloittava ja lopettava lainausmerkki tai
 ulommat ja sisemmät lainausmerkit kirjoitetaan missäkin kielessä.
 Luonnollisesti kielipaketti \paketti{polyglossia} tai \paketti{babel}
 täytyy olla ladattuna.
-
-% \pagebreak[3]
 
 \komentoi{usepackage}
 \pakettii{polyglossia}
@@ -399,8 +385,6 @@ yhdysmerkillä \mbox{(\koodi{--})}. Pitkä ajatusviiva \mbox{(---)}
 tehdään kolmella yhdysmerkillä \mbox{(\koodi{---})}. Ajatusviivat
 vaikuttavat sanan tavutukseen samoin kuin yhdysmerkki.
 
-% \pagebreak[3]
-
 \begin{koodilohkosis}
   Oulu--Rovaniemi-yhteys
 \end{koodilohkosis}
@@ -422,8 +406,6 @@ ajatusviivatoiminnon. Saman asetuksen saa kyllä mihin tahansa fonttiin,
 kun poistaa fontista niin sanotut Tex\-/ligatuurit asetuksella
 \koodi{Liga\-tures=\katk TeX\-Reset}. Väliaikaisesti asetus tehdään
 seuraavasti:
-
-% \pagebreak[3]
 
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
@@ -482,8 +464,6 @@ komentoa, muun muassa tähdelliset versiot edellä mainituista:
 toteuttavat aina mekaanisen ylä- tai alaindeksin eli toimivat kuten
 Latexin alkuperäiset komennot. Seuraavassa esimerkissä vertaillaan
 oikeita ja mekaanisia (tähdelliset) ylä- ja alaindeksejä.
-
-% \pagebreak[3]
 
 \komentoi{textsuperscript}
 \komentoi{textsuperscript*}
@@ -832,8 +812,6 @@ Komentojen toinen pakollinen argumentti (\koodi{määritelmä}) sisältää
 komennon määritelmän eli mitä tahansa tekstiä tai komentoja.
 Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
 
-% \pagebreak[3]
-
 \komentoi{newcommand}
 \begin{koodilohkosis}
   \newcommand{\komento}{Minua komennettiin!}
@@ -850,8 +828,6 @@ Määritelmässä voi käyttää parametreja \koodi{\#1}, \koodi{\#2},
 \koodi{\#3} jne., ja ne korvautuvat komennon suoritusvaiheessa
 ensimmäisellä, toisella, kolmannella jne. argumentilla.
 
-% \pagebreak[3]
-
 \komentoi{newcommand}
 \begin{koodilohkosis}
   \newcommand{\komento}[2]{Sanoit #1 ja #2!}
@@ -866,8 +842,6 @@ Toinen valinnainen argumentti (\koodi{oletus}) -- jos se on mukana --
 kertoo, että määriteltävän komennon ensimmäinen argumentti on
 valinnainen ja että tämä on sen oletusarvo. Oletusarvoa käytetään
 silloin, kun valinnaista argumenttia ei ole annettu.
-
-% \pagebreak[3]
 
 \komentoi{newcommand}
 \begin{koodilohkosis}
@@ -931,8 +905,6 @@ aaltosulkeisiin, jos argumentiksi halutaan vain yksi merkki. Tällaisessa
 tilanteessa komento poimii argumentiksi seuraavan merkin, joka ei ole
 sanaväli.
 
-% \pagebreak[3]
-
 \komentoi{newcommand}
 \begin{koodilohkosis}
   \newcommand{\x}[1]{Argumentti: <#1>}
@@ -950,8 +922,6 @@ kirjoittaa aaltosulkeisiin. Latex\-/koodin lukemisen kannalta tällainen
 ei välttämättä ole hyvä käytäntö, koska joskus voi hämärtyä, onko kyse
 kahdesta peräkkäisestä komennosta vai onko toinen komento vain
 argumenttina toiselle.
-
-% \pagebreak[3]
 
 \komentoi{newcommand}
 \begin{koodilohkosis}
@@ -978,8 +948,6 @@ komennosta, joka jättää sanavälit huomioimatta komennon jälkeen. Ilman
 tätä komentoa tulisi seuraavassa esimerkissä sanojen väliin yksi
 välilyönti.
 
-% \pagebreak[3]
-
 \komentoi{newcommand}
 \komentoi{ignorespaces}
 \begin{koodilohkosis}
@@ -997,8 +965,6 @@ komentomäärittelyn vaikutusaluetta. Seuraavan esimerkin alussa asetetaan
 sisällä se määritellään väliaikaisesti uudestaan. Aaltosulkeilla rajatun
 ympäristön jälkeen komennon uusi määritelmä lakkaa ja komento palautuu
 alkuperäiseksi.
-
-% \pagebreak[3]
 
 \komentoi{newcommand}
 \komentoi{renewcommand}
@@ -1070,8 +1036,6 @@ Argumentit ovat lähes samanlaiset kuin komentojen määrittelyssä (luku
 pakollista argumenttia: ensimmäinen on ympäristön nimi, toinen on
 ympäristön aloitusmääritelmä (\koodi{aloitus}) ja kolmas on
 lopetusmääritelmä (\koodi{lopetus}).
-
-% \pagebreak[3]
 
 \komentoi{newenvironment}
 \komentoi{begin}
@@ -1147,8 +1111,6 @@ jälkeiset sanavälit. Toinen hyödyllinen on
 \komento{ignorespacesafterend}, joka jättää huomioimatta ympäristön
 lopettavan \komento{end}\-/ komennon jälkeiset sanavälit.
 
-% \pagebreak[3]
-
 \komentoi{newenvironment}
 \komentoi{ignorespaces}
 \komentoi{ignorespacesafterend}
@@ -1217,8 +1179,6 @@ Latexin mittojen mittaluvuissa desimaalierottimena on piste, ja
 mittayksikön lyhenne kirjoitetaan kiinni mittalukuun. Seuraavassa
 esimerkissä tehdään vaakasuuntaisia ja pystysuuntaisia välejä
 komennoilla \komento{hspace} ja \komento{vspace}:
-
-% \pagebreak[3]
 
 \komentoi{hspace}
 \komentoi{vspace}
@@ -1347,8 +1307,6 @@ vertailemalla näkee, että k\=/kirjaimen yläpääte yltää H\=/kirjaimen eli
 versaalilinjan yläpuolelle, ylälinjan tuntumaan. Myös tarkemerkit (luku
 \ref{luku:tarkkeet}) voivat sijaita versaalilinjan yläpuolella.
 
-% \pagebreak[3]
-
 Merkkien leveyden, korkeuden ja syvyyden voi mitata seuraavan esimerkin
 komennoilla. Esimerkin ensimmäisellä rivillä luodaan uudet mitat
 \mittax{leveys}, \mittax{korkeus} ja \mittax{syvyys}, joihin sitten
@@ -1364,8 +1322,6 @@ tallennetaan merkkien mitat.
   \settoheight{\korkeus}{H} % merkin ”H” korkeus
   \settodepth{\syvyys}{p}   % merkin ”p” syvyys
 \end{koodilohkosis}
-
-% \pagebreak[3]
 
 Mitat saa näkyviin kirjoittamalla mitan eteen komennon \komento{the}.
 Näin mitan pituus ladotaan dokumenttiin. Yksikkönä on typografinen piste
@@ -1417,8 +1373,6 @@ tila täyttyy. Äärettömän mittayksikön kanssa mittaluku ilmaisee
 suhdeluvun muihin äärettömiin mittoihin. Seuraava esimerkki
 havainnollistaa asiaa:
 
-% \pagebreak[3]
-
 \komentoi{hspace}
 \begin{koodilohkosis}
   x\hspace{0mm plus 1fill}x\hspace{0mm plus 2fill}x
@@ -1436,8 +1390,6 @@ jälkimmäinen väli on kaksinkertainen ensimmäiseen verrattuna. Saman
 äärettömästi venyvän mitan ja suhdeluvut voi ilmaista myös
 \komento{stretch}\-/ mittakomennon tai \komento{hfill}\-/ komentojen
 avulla seuraavasti:
-
-% \pagebreak[3]
 
 \komentoi{hspace}
 \komentoi{stretch}
@@ -1462,8 +1414,6 @@ Niiden erona on tärkeysjärjestys. Ensin mainittu \koodi{fil} on vähiten
 tärkeä, ja viimeinen eli \koodi{filll} on tärkein. Jos samassa
 yhteydessä käytetään eri tärkeysasteisia yksiköitä, korkeammantasoiset
 mitätöivät alemmantasoiset.
-
-% \pagebreak[3]
 
 \komentoi{hspace}
 \begin{koodilohkosis}
@@ -1601,8 +1551,6 @@ tarkoituksena ole latoa sitä näkyviin itse dokumenttiin, täytyy käyttää
 komentoa \komento{value}. Seuraava esimerkki luo laskurin nimeltä
 \laskurix{mitta}, jonka arvoa (3) käytetään \komento{hspace}\-/ komennon
 argumenttina mitan ilmaisemiseen (3\,em).
-
-% \pagebreak[3]
 
 \komentoi{newcounter}
 \komentoi{setcounter}

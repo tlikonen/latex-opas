@@ -1332,13 +1332,75 @@ seuraavalla tavalla:
   \newcommand{\sposti}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
 \end{koodilohkosis}
 
-\section{Sivun vaihto ja sivujen tasaaminen}
+\section{Sivunvaihto ja sivujen tasaaminen}
 
-...
+Kirjoittajan ei normaalisti tarvitse huolehtia sivun vaihtumisesta
+lainkaan, vaan järjestelmä pyrkii latomaan hyvännäköisiä sivuja
+automaattisesti. Välillä tietenkin halutaan aloittaa jokin uusi aihe
+puhtaalta sivulta, ja sitä varten Latexissa on muutama komento.
+Mainittakoon kuitenkin heti aluksi, että otsikoiden yhteyteen saa
+sivunvaihdon kätevimmin niillä keinoilla, jotka neuvotaan otsikoiden
+yhteydessä luvussa \ref{luku:otsikot}.
 
-% \newpage, \clearpage, \cleardoublepage, minipage, \pagebreak,
-% \nopagebreak. \flushbottom \raggedbottom -komennot liittyvät sivun
-% latomiseen
+Komento \komentom{clearpage} vaihtaa sivua, eli komennon jälkeinen
+dokumentin osa alkaa aina puhtaalta sivulta. Lähes samanlainen komento
+on \komentom{cleardoublepage}, joka kaksipuolisessa dokumentissa
+aloittaa uuden sisällön aina parittomilta sivuilta. Jos seuraavana ei
+satu olemaan pariton sivu, komento tekee väliin tyhjän sivun. Tätä
+ominaisuutta on käytetty tässä oppaassa: pääluvut alkavat aina
+oikeanpuoleiselta eli parittomalta sivulta.
+
+\komento{cleardoublepage}\-/komennon aiheuttamalle tyhjälle sivulle
+saatetaan kuitenkin latoa ylä- ja alatunnisteet, jos sellaiset on
+määritelty (luku \ref{luku:yla_ala_tunnisteet}). Täysin tyhjän sivun saa
+käyttämällä apuna makropakettia \paketti{titlesec}\avctan{titlesec} ja
+sen valitsinta \koodi{clear\-empty}:
+
+\komentoi{usepackage}
+\pakettii{titlesec}
+\begin{koodilohkosis}
+  \usepackage[clearempty]{titlesec}
+\end{koodilohkosis}
+
+Edellä mainittu \paketti{titlesec}\-/ paketti sisältää monenlaisia
+toimintoja otsikoiden muotoiluun, joten sitä käsitellään tarkemmin
+otsikoiden yhteydessä luvussa \ref{luku:otsikot}.
+
+Komennoilla \komento{clearpage} ja \komento{cleardoublepage} on lisäksi
+sellainen ominaisuus, että ne pakottavat aiemmin määritellyt leijuvat
+osat (luku \ref{luku:leijuosat}) ladottavaksi ennen uutta puhdasta
+sivua.
+
+Hieman toisenlainen sivunvaihtokomento on \komentom{newpage}. Se sallii
+aiempien leijuvien osien latomisen myös sivunvaihdon jälkeen.
+\komento{newpage} eroaa edellisistä sivuvaihtokomennoista myös siten,
+että kaksipalstaisessa tilassa (luku \ref{luku:palstat}) se aloittaa
+vain uuden palstan, ei välttämättä uutta sivua.
+
+Sivunvaihdon todennäköisyyteen tietyssä kohdassa voi vaikuttaa
+komennoilla \komentom{pagebreak} ja \komentom{nopagebreak}. Kummallekin
+voi antaa hakasulkeissa valinnaisen argumentin, joka on luku 0\==4.
+Nolla tarkoittaa pienintä todennäköisyyttä sivunvaihdolle
+(\komento[[0{]}]{pagebreak}) tai sen välttämiselle
+(\komento[[0{]}]{nopagebreak}). Luku neljä (joka on oletusarvo)
+tarkoittaa, että sivunvaihto pakotetaan tai estetään siinä kohdassa.
+Näiden komentojen tarkoitus on kertoa ladonta\-/ algoritmille vihje,
+kuinka toivottavaa sivunvaihto on tietyssä kohdassa. Jos ei käytä
+suurinta arvoa neljä~(4), algoritmi voi löytää omasta mielestään
+paremmankin sivunvaihtokohdan.
+
+\komentoi{pagebreak}
+\komentoi{nopagebreak}
+\begin{koodilohkosis}
+  \pagebreak[3]  % Lisätään sivunvaihdon todennäköisyyttä.
+  \nopagebreak   % Estetään sivunvaihto (oletusarvo 4).
+\end{koodilohkosis}
+
+Jos \komento{pagebreak}\-/ komentoa käyttää tekstikappaleen sisällä,
+sivunvaihto ei välttämättä satu juuri komennon kohdalle. Sivu vaihdetaan
+kohdalle osuvan rivin lopussa.
+
+% \enlargethispage \flushbottom \raggedbottom
 
 \section{Jäsennys}
 \label{luku:jäsennys}

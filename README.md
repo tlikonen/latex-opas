@@ -7,17 +7,28 @@ Käytännöllistä Latexia
 Esittely
 --------
 
-*Käytännöllistä Latexia* on suomenkielinen opas
+*Käytännöllistä Latexia* on nykyaikainen suomenkielinen opas
 [Latex](https://fi.wikipedia.org/wiki/LaTeX)-ladontajärjestelmän
 käyttäjälle. Se auttaa alkuun pääsyssä ja esittelee merkintäkielen
 perusasiat. Opas sisältää käytännönläheiset ohjeet esimerkiksi
 dokumentin sivu-, fontti- ja kieliasetusten tekemiseen. Se sisältää
-teknisiä ohjeita ja typografisia vinkkejä tavallisimpiin dokumentin
-rakenteen ja sisällön kirjoittamisen tarpeisiin.
+teknisiä ohjeita ja typografisia vinkkejä tavallisimpiin
+tekstidokumentin kirjoittamisen tarpeisiin. Oppaan avulla pitäisi
+pärjätä niin hyvin, että makropakettien ohjeita tarvitsee lukea vain
+harvoin.
+
+Edellisessä kappaleessa mainostettu nykyaikaisuus tarkoittaa esimerkiksi
+sitä, että tässä oppaassa keskitytään Open Type -fontteihin,
+Unicode-merkistöön ja PDF-tiedostoihin. Latexin vanha fonttitekniikka
+sivuutetaan, eikä merkistörajoitusten kanssa enää kamppailla. Oppaan
+ohjeet siis sopivat nykyaikaiselle tietokoneen käyttäjälle.
 
 
 Saatavuus
 ---------
+
+Ei saatavilla. Sijaitsee vain tekijän salatulla kiintolevyllä ja
+salatuilla varmuuskopioilla.
 
 
 Tekijänoikeus ja lisenssi
@@ -70,7 +81,7 @@ hakemistorakenteeseen, josta muut ohjelmat voivat sen löytää. Se tehdään
 seuraavalla komennolla:
 
     make install
-    
+
 Edellisen asennuskomennon voi suorittaa ilman erillistä
 kääntämisvaihettakin, koska ennen asentamista se varmistaa, että
 tarvittavat tiedostot on käännetty. Asennuskohde on käyttäjän
@@ -82,7 +93,7 @@ joitakin oppaan nimen kirjaimia, esimerkiksi `texdoc kaytannoll`.
 
 Asennus poistetaan komennolla `make uninstall`. Komento tosin säilyttää
 polun `$HOME/texmf`, koska siellä voi edelleen sijaita muita Latexiin
-liittyviä paketteja.
+liittyviä tiedostoja.
 
 Kääntämishakemiston voi siivota alla olevilla komennoilla. Ensin
 mainittu komento poistaa väliaikaistiedostot mutta säilyttää oppaan
@@ -99,3 +110,15 @@ seuraavassa järjestyksessä:
     biber kaytannollista_latexia
     lualatex kaytannollista_latexia
     lualatex kaytannollista_latexia
+
+
+Puutteita ja suunnitelmia
+-------------------------
+
+  - Rakenneluku kesken.
+  - Matematiikkaluku puuttuu.
+  - Esipuhe puuttuu.
+  - Muuta tekniikkaa -luku puuttuu.
+  - Lähdetiedostojen nimistä pitäisi mainita jossain: ei välilyöntejä.
+    Ehkä on muitakin merkistörajoituksia.
+  - Moniosaiset lähdedokumentit: \input, \include yms.

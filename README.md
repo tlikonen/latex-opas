@@ -1,11 +1,19 @@
 Käytännöllistä Latexia
 ======================
 
-**[Latex](https://fi.wikipedia.org/wiki/LaTeX)-ladontajärjestelmän opas**
+**Latex-ladontajärjestelmän opas**
 
 
 Esittely
 --------
+
+*Käytännöllistä Latexia* on suomenkielinen opas
+[Latex](https://fi.wikipedia.org/wiki/LaTeX)-ladontajärjestelmän
+käyttäjälle. Se auttaa alkuun pääsyssä ja esittelee merkintäkielen
+perusasiat. Opas sisältää käytännönläheiset ohjeet esimerkiksi
+dokumentin sivu-, fontti- ja kieliasetusten tekemiseen. Se sisältää
+teknisiä ohjeita ja typografisia vinkkejä tavallisimpiin dokumentin
+rakenteen ja sisällön kirjoittamisen tarpeisiin.
 
 
 Saatavuus

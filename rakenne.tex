@@ -1339,8 +1339,8 @@ lainkaan, vaan järjestelmä pyrkii latomaan hyvännäköisiä sivuja
 automaattisesti. Välillä tietenkin halutaan aloittaa jokin uusi aihe
 puhtaalta sivulta, ja sitä varten Latexissa on muutama komento.
 Mainittakoon kuitenkin heti aluksi, että otsikoiden yhteyteen saa
-sivunvaihdon kätevimmin niillä keinoilla, jotka neuvotaan otsikoiden
-yhteydessä luvussa \ref{luku:otsikot}.
+sivunvaihdon kätevimmin keinoilla, jotka neuvotaan otsikoiden yhteydessä
+luvussa \ref{luku:otsikot}.
 
 Komento \komentom{clearpage} vaihtaa sivua, eli komennon jälkeinen
 dokumentin osa alkaa aina puhtaalta sivulta. Lähes samanlainen komento
@@ -1400,7 +1400,38 @@ Jos \komento{pagebreak}\-/ komentoa käyttää tekstikappaleen sisällä,
 sivunvaihto ei välttämättä satu juuri komennon kohdalle. Sivu vaihdetaan
 kohdalle osuvan rivin lopussa.
 
-% \enlargethispage \flushbottom \raggedbottom
+Oletuksena Latex pyrkii latomaan kaikkien sivujen ylä- ja alareunan
+tasaiseksi. Toisin sanoen se saattaa venyttää tai kutistaa sivulla
+olevia pystysuuntaisia välejä niin, että kaikki sivut näyttävät yhtä
+korkeilta. Tämä tila voidaan asettaa päälle komennolla
+\komentom{flushbottom}, mutta se on jo oletuksena päällä ainakin Latexin
+perusdokumenttiluokissa.
+
+Vaihtoehtoinen tila asetetaan komennolla \komentom{raggedbottom}.
+Komennon seurauksena sivujen alareunoja ei tasata. Toisin sanoen sivun
+pystysuuntaisiin väleihin ei kosketa, joten eri sivujen alareunat voivat
+sattua eri korkeudelle.
+
+Dokumentin viimeistelyvaiheessa sivujen hienosäätöön sopinee komento
+\komentom{enlargethispage}, jolla voi muuttaa käsillä olevan sivun
+korkeutta, käytännössä \mitta{textheight}\-/mittaa. Komennolle annetaan
+argumentiksi positiivinen tai negatiivinen mitta. Seuraavassa on
+esimerkkejä:
+
+\komentoi{enlargethispage}
+\mittai{baselineskip}
+\begin{koodilohkosis}
+  \enlargethispage{12bp}          % 12 pistettä korkemmaksi
+  \enlargethispage{-4bp}          % 4 pistettä matalammaksi
+  \enlargethispage{\baselineskip} % yksi tekstirivi lisää
+\end{koodilohkosis}
+
+Komennon tähtiversio \komentom{enlargethispage*} pyrkii lisäksi
+tiivistämään sivun sisältöä pystysuunnassa niin paljon kuin mahdollista.
+Sen tyypillisin käyttötarkoitus lienee se, että sivulle pyritään
+mahduttamaan yksi ylimääräinen rivi. Tämäntyyppinen sivujen hienosäätö
+kannattaa tehdä vasta viimeisenä eli siinä vaiheessa, kun kaikki sisältö
+on valmiina ja muu typografinen asettelu tehty.
 
 \section{Jäsennys}
 \label{luku:jäsennys}

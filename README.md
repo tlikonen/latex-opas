@@ -124,3 +124,4 @@ Puutteita ja suunnitelmia
   - Moniosaiset lähdedokumentit: \input, \include yms.
   - Makropakettien tekeminen.
   - Dokumenttiluokkien tekeminen.
+  - Yhdenmukaista pakettien nimien latominen marginaaleihin.

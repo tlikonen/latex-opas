@@ -122,3 +122,5 @@ Puutteita ja suunnitelmia
   - Lähdetiedostojen nimistä pitäisi mainita jossain: ei välilyöntejä.
     Ehkä on muitakin merkistörajoituksia.
   - Moniosaiset lähdedokumentit: \input, \include yms.
+  - Makropakettien tekeminen.
+  - Dokumenttiluokkien tekeminen.

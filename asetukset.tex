@@ -296,7 +296,7 @@ ohjeita on luvussa \ref{luku:yla_ala_tunnisteet}.
 \subsection{Sivun koko ja marginaalit}
 \label{luku:sivun_mitat}
 
-Paperin kokoon ja marginaaleihin pääsee vaikuttamaan
+Paperin eli sivun kokoon ja marginaaleihin pääsee vaikuttamaan
 \paketti{geometry}\-/paketin\avctan{geometry} avulla. Halutut asetukset
 voi kertoa paketin lataamisen yhteydessä. Seuraavassa esimerkissä
 asetetaan paperikoko (\koodi{a4\-paper} eli \textsc{a4}-koko), ylä- ja
@@ -468,8 +468,46 @@ Palstoja käsitellään tarkemmin luvussa \ref{luku:palstat}.
 
 Valitsimen \koodim{columnsep} avulla asetetaan palstojen välinen
 etäisyys. Tämä valitsin on asettaa mitan \mitta{columnsep}, jota voi
-muokata myös komennolla \komento{setlength}, kuten muitakin Texin
-mittoja (luku \ref{luku:mitat}).
+muokata myös komennolla \komento{setlength}, kuten muitakin mittoja
+(luku \ref{luku:mitat}).
+
+\subsection{Sivun mittoja}
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[2]{\mitta{#1} & #2 \\}
+
+\leijutlk{
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Mitta} & \ots {Merkitys} \\
+    \midrule
+    \rivi{paperwidth}{paperin eli sivun leveys}
+    \rivi{paperheight}{paperin eli sivun korkeus}
+    \rivi{textwidth}{tekstialueen leveys}
+    \rivi{linewidth}{nykyisen rivin leveys}
+    \rivi{textheight}{tekstialueen korkeus}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Sivun mittoja}
+  \label{tlk:sivun_mittoja}
+}
+
+Sivun kokoasetusten määrittämisen jälkeenkin voi olla tarpeen viitata
+joihinkin sivun mittoihin. Usein esimerkiksi halutaan piirtää sivun
+tekstialueen levyinen tai siihen suhteutettu taulukko tai kuva. Silloin
+on kätevää käyttää mittaa, jonka arvona on juuri tekstialueen leveys.
+Tärkeimmät sivun mitat on koottu taulukkoon \ref{tlk:sivun_mittoja},
+mutta perusteellisemmin niitä käsitellään \paketti{geometry}\-/
+paketin\avctan{geometry} ohjekirjassa.
+
+Taulukossa \ref{tlk:sivun_mittoja} mainittu mitta \mitta{linewidth}
+eroaa tekstialueen leveysmitasta \mitta{textwidth} esimerkiksi silloin,
+kun riviä on sisennetty vasemmalta. Tekstikappaleiden ensimmäinen rivi
+voi olla sisennetty, ja sen vuoksi se ei ole koko tekstialueen levyinen
+kuten kappaleen muut rivit. Muutkin sisennykset vaikuttavat rivin
+leveysmittaan. Sisennysasiat liittyvät tekstikappaleiden muotoiluun,
+jota käsitellään luvussa~\ref{luku:kappale}.
 
 \subsection{Leikkuuvarat}
 

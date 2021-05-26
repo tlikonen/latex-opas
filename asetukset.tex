@@ -2237,10 +2237,11 @@ huomioimaan myös typografiaan liittyviä suosituksia.
 
 Automaattinen tavutus auttaa paljon, mutta se ei yksinään riitä, koska
 se tekee välillä virheitä tai tuottaa muuten suositusten vastaista
-jälkeä. Kirjoittajan täytyy kirjoittaa välillä eli tavutusvihjeitä. Yksi
-tapa tavutusvihjeiden kirjoittamiseen on \komento{hyphenation}\-/
-komento, jolla määritellään yksittäisten sanojen tavutuskohdat
-kaikkialla dokumentissa. Seuraava esimerkki selventää komennon käyttöä:
+jälkeä. Kirjoittajan täytyy auttaa välillä eli kirjoittaa
+tavutusvihjeitä. Yksi tapa tavutusvihjeiden kirjoittamiseen on
+\komento{hyphenation}\-/ komento, jolla määritellään yksittäisten
+sanojen tavutuskohdat kaikkialla dokumentissa. Seuraava esimerkki
+selventää komennon käyttöä:
 
 \komentoi{hyphenation}
 \begin{koodilohkosis}
@@ -2679,11 +2680,10 @@ kielipaketin komennolla \komentom{disablehyphenation}. Tavutuksen saa
 takaisin päälle komennolla \komento{enablehyphenation}.
 
 Toinen vaihtoehto on käyttää fontin asetusta \koodi{Hyphen\-Char=\katk
-  None} samalla, kun ottaa käyttöön tietyn kirjainperheen. Oletuksena
-tavutus on pois päältä tasalevyisestä fontista, eli esimerkiksi
-\komento{texttt}\-/ komennon argumenttina olevaa tekstiä ei tavuteta.
-Fontteja ja niiden asetuksia käsitellään luvussa
-\ref{luku:kirjaintyypit}.
+  None} kirjainperheen määrittelyn yhteydessä. Oletuksena tavutus on
+pois päältä tasalevyisestä fontista, eli esimerkiksi \komento{texttt}\-/
+komennon argumenttina olevaa tekstiä ei tavuteta. Fontteja ja niiden
+asetuksia käsitellään luvussa \ref{luku:kirjaintyypit}.
 
 Käytännössä tavutus menee pois päältä myös silloin, kun tekstikappaleet
 tasaa vain vasempaan reunaan eli tekee oikealle liehureunan komennolla

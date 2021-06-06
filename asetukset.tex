@@ -225,7 +225,7 @@ luvussa \ref{luku:matematiikka}.
 Kansilehden tai dokumentin perustietojen esitystapaan vaikutetaan
 valitsimilla \koodim{title\-page} ja \koodim{no\-title\-page}. Latexissa
 on yksinkertaiset komennot dokumentin perustietojen eli pääotsikon,
-tekijöiden nimien ja päiväyksen latomiseen (luku \ref{luku:kansilehti}),
+tekijöiden nimien ja päiväyksen latomiseen (luku \ref{luku:kansisivu}),
 ja näillä valitsimilla vaikutetaan siihen, ladotaanko perustiedot omalle
 sivulleen (\koodi{title\-page}) vaiko ensimmäisen sisältösivun alkuun
 (\koodi{no\-title\-page}). Oletus\-asetus vaihtelee eri
@@ -886,6 +886,72 @@ toteutukseen.
 \caption{Omien ylä- ja alatunnisteiden toteuttaminen}
 \label{esim:fancyhdr_koko}
 \end{esimerkki*}
+
+\section{Pdf-tiedoston asetukset}
+\label{luku:pdf_asetukset}
+
+Pdf-tiedostot voivat sisältää metatietoja kuten dokumentin nimen,
+tekijän ja päiväyksen. Niille voi määrittää myös monenlaisia asetuksia
+kuten ristiviitteiden ja linkkien ulkoasun tai katselutilan, jossa
+dokumenttia ehdotetaan katsottavan. Pdf\-/ tiedostot sisältävät oman
+sisäisen sisällysluettelonsa, jonka ominaisuuksiin voi vaikuttaa
+Latexista käsin.
+
+Pdf-tiedoston asetukset toteutetaan \pakettim{hyperref}\-/
+paketin\avctan{hyperref} avulla. Paketti täytyy ladata muiden pakettien
+jälkeen, koska se lisää ominaisuuksia muihin komentoihin. Paketin voisi
+ladata esimerkiksi seuraavalla tavalla:
+
+\komentoi{usepackage}
+\pakettii{hyperref}
+\begin{koodilohkosis}
+  % Muiden \usepackage-komentojen jälkeen.
+  \usepackage[unicode]{hyperref}
+\end{koodilohkosis}
+
+Esimerkissä käytetty valitsin \koodi{unicode} aiheuttaa sen, että pdf\-/
+tiedoston sisäisissä merkkijonoissa käytetään Unicode\-/ merkistöä ja
+sen \textsc{utf\=/8}\-/ koodausta. Ilman tätä valitsinta Lualatex\-/
+kääntäjän kanssa pdf\-/ tiedoston sisäinen sisällysluettelon merkistö ei
+näy välttämättä oikein.
+
+\paketti{hyperref}\-/ paketin asetuksia voi määritellä valitsimien
+avulla \komento{usepackage}\-/ komennon yhteydessä mutta myös
+erillisellä \komentom{hypersetup}\-/ komennolla. Komennolle annetaan
+yksi argumentti, joka sisältää pilkuilla erotettuna erilaisia valitsimia
+ja niiden arvoja. Monilla valitsimilla voi vaikuttaa pdf\-/ tiedoston
+asetuksiin kuten metatietoihin ja katselutilaan.
+
+\begin{esimerkki*}
+\begin{koodilohko}
+  \hypersetup{
+    hidelinks, bookmarksopen, bookmarksnumbered,
+    pdfinfo={
+      Title={Käytännöllistä Latexia},
+      Subject={Latex-ladontajärjestelmän opas},
+      Author={Teemu Likonen}
+    }
+  }
+\end{koodilohko}
+\caption{\komento{hypersetup}\-/ komennolla asetetaan
+  \paketti{hyperref}\-/ paketin asetuksia, esimerkiksi pdf:n
+  metatietoja}
+\label{esim:hypersetup}
+\end{esimerkki*}
+
+Esimerkissä \ref{esim:hypersetup} valitsin \koodi{hidelinks} saa aikaan
+sen, että pdf:ssä olevia linkkejä ei merkitä millään tavalla. Oletuksena
+linkit kehystetään eri väreillä riippuen linkin tyypistä. Valitsin
+\koodi{bookmarksopen} näyttää pdf:n sisällysluettelon kokonaan avattuna.
+Oletuksena alaluvut on piilotettuna, ja ne joutuu avaamaan
+napsauttamalla hiirellä ylemmäntasoisen otsikon avauspainiketta.
+Valitsin \koodi{bookmarksnumbered} näyttää pdf:n sisällysluettelossa
+lukujen numeroinnin (kuten 1.1, 1.2, 2.1 tms.). Valitsimella
+\koodi{pdfinfo} määritellään pdf:n metatietoja kuten otsikko, aihe ja
+tekijä mutta omiakin metatietoja voi lisätä.
+
+% Vielä: katselutila yms.: pdfpagelayout, pdfview, pdfstartview,
+% pdfremotestarview.
 
 \section{Fontit}
 \label{luku:kirjaintyypit}

@@ -1447,15 +1447,42 @@ on valmiina ja muu typografinen asettelu tehty.
 Tekstin jäsentäminen tarkoittaa sisällön järjestystä ja sen jakamista
 sopiviin kokonaisuuksiin. Esimerkiksi laaja teos voi koostua osista,
 osien sisäisistä pääluvuista ja niiden alaluvuista. Eri luvut ilmaistaan
-eritasoisilla otsikoilla. Varsinaisten sisältölukujen lisäksi kirjassa
-voi olla erilaisia liite- tai luettelosivuja. Lyhyempi artikkeli tai muu
-teksti sisältänee vain yhden- tai kahdentasoisia otsikoita. Tässä
-alaluvussa käsitellään kaikki Latexiin sisältyvät jäsennyskeinot.
+eritasoisilla otsikoilla. Varsinaisten sisältölukujen lisäksi teoksessa
+voi olla erilaisia liite- tai luettelosivuja. Toisaalta lyhyempi
+artikkeli tai muu teksti sisältänee vain yhden- tai kahdentasoisia
+otsikoita. Tässä alaluvussa käsitellään juuri tämäntyyppisiä asioita eli
+tekstikappaletta suurempien kokonaisuuksien jäsentämistä.
 
-\subsection{Kansilehti ja dokumentin perustiedot}
-\label{luku:kansilehti}
+Jos dokumentissa tarvitaan vähänkään otsikoita, kannattaa ladata mukaan
+paketti \paketti{hyperref}. Se huolehtii, että Latexiin merkityt otsikot
+tuodaan mukaan pdf\-/ tiedoston sisäiseen sisällysluetteloon ja että
+sisällysluettelossa olevat otsikot ovat automaattisesti myös linkkejä,
+joilla hypätään kyseiseen lukuun. \paketti{hyperref}\-/ pakettia ja
+pdf\-/ tiedoston ominaisuuksia käsitellään tarkemmin luvussa
+\ref{luku:pdf_asetukset}.
 
-...
+\subsection{Dokumentin perustiedot ja kansisivu}
+\label{luku:kansisivu}
+
+Latex\-/lähdedokumentin alussa -- ennen \ymparisto{document}\-/
+ympäristön alkua -- kannattaa lähes aina ilmaista dokumentin perustiedot
+eli teoksen nimi, tekijä ja päiväys. Ne ilmaistaan seuraavilla
+komennoilla:
+
+\komentoi{title}
+\komentoi{author}
+\komentoi{date}
+\begin{koodilohkosis}
+  \title{Käytännöllistä Latexia} % teoksen nimi
+  \author{Teemu Likonen}         % tekijöiden nimet
+  \date{\today}                  % päiväys
+\end{koodilohkosis}
+
+Edellisen esimerkin komennot eivät vielä kirjoita mitään tekstiä itse
+ladottavaan dokumenttiin. Komennot vain tallentavat perustiedot muistiin
+mahdollista myöhempää käyttöä varten. Ne päätyvät myös ladotun pdf\-/
+tiedoston sisäisiin tietoihin, jos \paketti{hyperref}\-/ paketti on
+ladattuna, kuten .
 
 % titlepage, \title, \author, \date, abstract
 
@@ -1521,9 +1548,12 @@ alaluvussa käsitellään kaikki Latexiin sisältyvät jäsennyskeinot.
 \section{Alaviitteet}
 \label{luku:alaviitteet}
 
+...
+
 % geometry: footnotesep
 
-...
+% hyperfootnotes=false, koska muuten footmisc-paketin jotkin asiat eivät
+% toimi.
 
 \section{Palstat}
 \label{luku:palstat}

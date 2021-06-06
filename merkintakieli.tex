@@ -441,10 +441,11 @@ Yläindeksit (a\textsuperscript{2}) tehdään komennolla
 \komentom{textsuperscript} ja alaindeksit (a\textsubscript{2})
 komennolla \komentom{textsubscript}. Oletusasetuksilla Latex toteuttaa
 indeksit mekaanisesti pienentämällä fonttia ja sijoittamalla pienennetyn
-tekstin peruslinjan tai gemenalinjan tuntumaan. Lopputulos ei ole
-typografisesti välttämättä kovin hyvä, koska fontin pienentäminen
-ohentaa samalla merkkien viivoja ja ohuimmat hiusviivat voivat lähes
-kadota.
+tekstin alas peruslinjan tuntumaan tai ylös gemenalinjan yläpuolelle.%
+\footnote{Katso typografinen viivasto, kuva \ref{kuva:kirjainmitat}
+  sivulla \pageref{kuva:kirjainmitat}.} Lopputulos ei ole typografisesti
+välttämättä kovin hyvä, koska fontin pienentäminen ohentaa samalla
+merkkien viivoja ja ohuimmat hiusviivat voivat lähes kadota.
 
 \englanti{Open Type} \=/fontit sisältävät usein tuen oikeille ylä- ja
 alaindekseille, jotka fontin suunnittelija on toteuttanut. Niitä
@@ -462,32 +463,33 @@ Latexin mekaanista keinoa. Paketti määrittelee pari muutakin hyödyllistä
 komentoa, muun muassa tähdelliset versiot edellä mainituista:
 \komento{textsuperscript*} ja \komento{textsubscript*}. Nämä komennot
 toteuttavat aina mekaanisen ylä- tai alaindeksin eli toimivat kuten
-Latexin alkuperäiset komennot. Seuraavassa esimerkissä vertaillaan
-oikeita ja mekaanisia (tähdelliset) ylä- ja alaindeksejä.
+Latexin alkuperäiset komennot.
 
-\komentoi{textsuperscript}
-\komentoi{textsuperscript*}
-\komentoi{textsubscript}
-\komentoi{textsubscript*}
-\begin{koodilohkosis}
-  x\textsuperscript {ab36}
-  x\textsuperscript*{ab36} \\
-  H\textsubscript {2}SO\textsubscript {4}
-  H\textsubscript*{2}SO\textsubscript*{4}
-\end{koodilohkosis}
+\leijutlk{
+  \gemenanum
+  \begin{tabular}{lll}
+    \toprule
+    \ots{Komento} & \ots{\englanti{Open Type}} & \ots{Mekaaninen} \\
+    \midrule
+    \komento{textsuperscript} & x\textsuperscript{ab36}
+                                               & x\textsuperscript*{ab36} \\
+    \komento{textsubscript} & H\textsubscript{2}SO\textsubscript{4}
+    & H\textsubscript*{2}SO\textsubscript*{4} \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Ylä- ja alaindeksien vertailua. Open Type \=/fonttien oikeat
+    indeksit saadaan \paketti{realscripts}\-/ paketin avulla. Mekaaninen
+    toteutus perustuu fontin pienentämiseen}
+  \label{tlk:indeksien_vertailu}
+}
 
-\begin{tulossis}
-  x\textsuperscript {ab36}
-  x\textsuperscript*{ab36} \\*
-  H\textsubscript {2}SO\textsubscript {4}
-  H\textsubscript*{2}SO\textsubscript*{4}
-\end{tulossis}
-
-Kuten esimerkki paljastaa, lopputuloksessa on eroa. Ensin mainitut ovat
-fontin suunnittelijan versioita ja jälkimmäiset Latexin mekaanisesti
-tekemiä. Mekaaninen ylä- ja alaindeksitoiminto ohentaa merkkejä turhan
-paljon, eikä se ymmärrä poistaa gemenanumeroita (3\,6\,2\,4) käytöstä
-vaan latoo ne sellaisenaan suunnilleen oikeaan paikkaan.
+Taulukossa \ref{tlk:indeksien_vertailu} vertaillaan oikeita ja
+mekaanisia ylä- ja alaindeksejä. Taulukon esimerkit paljastavat, että
+lopputuloksessa on eroa. Mekaaninen ylä- ja alaindeksitoiminto jättää
+merkit turhan suurikoisiksi mutta saattaa silti ohentaa merkkien viivoja
+liian paljon. Se ei myöskään ymmärrä poistaa gemenanumeroita (3624)
+käytöstä vaan latoo ne sellaisenaan suunnilleen oikeaan paikkaan.
 
 Ylä- ja alaindeksejä käytettäessä on siis syytä ladata
 \paketti{realscripts}\-/ paketti ja käyttää indeksit hallitsevaa
@@ -1458,7 +1460,7 @@ laskureista automaattisesti.
   \laskurii{mpfootnote}
   \laskurii{enumiv}
   \laskurii{subsubsection}
-  
+
   \ttfamily
   \begin{tabular}{llll}
     \toprule

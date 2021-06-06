@@ -1444,10 +1444,36 @@ on valmiina ja muu typografinen asettelu tehty.
 \section{Jäsennys}
 \label{luku:jäsennys}
 
-\subsection{Otsikot}
+Tekstin jäsentäminen tarkoittaa sisällön järjestystä ja sen jakamista
+sopiviin kokonaisuuksiin. Esimerkiksi laaja teos voi koostua osista,
+osien sisäisistä pääluvuista ja niiden alaluvuista. Eri luvut ilmaistaan
+eritasoisilla otsikoilla. Varsinaisten sisältölukujen lisäksi kirjassa
+voi olla erilaisia liite- tai luettelosivuja. Lyhyempi artikkeli tai muu
+teksti sisältänee vain yhden- tai kahdentasoisia otsikoita. Tässä
+alaluvussa käsitellään kaikki Latexiin sisältyvät jäsennyskeinot.
+
+\subsection{Kansilehti ja dokumentin perustiedot}
+\label{luku:kansilehti}
+
+...
+
+% titlepage, \title, \author, \date, abstract
+
+\subsection{Otsikointi}
 \label{luku:otsikot}
 
 ...
+
+% Tässä puhutaan väliotsikoista. Näitä komentoja ei käytetä pääotsikon
+% tekemiseen. Latex-olettaa, että aina ennen alemman tasoista komentoa
+% (\subsection) on ollut ylemmäntasoinen komento (\section).
+% otsikkokomennot, otsikkotasot, secnumdepth, tocdepth
+
+\subsection{Otsikoiden ulkoasu}
+
+...
+
+% \chaptername, \partname
 
 % \sectionbreak ym. ovat titlesec-paketin ominaisuuksia. titlesec
 % kannattaa täällä käsitellä. Myös laskuri secnumdepth.
@@ -1456,13 +1482,6 @@ on valmiina ja muu typografinen asettelu tehty.
 % Varoitus: Ei erikoisia komentoja otsikoihin (mm. extdash), koska ne
 % eivät toimi ainakaan pdf:n sisällysluettelossa tai ehkä muutenkaan.
 % Voi käyttää otsikkokomennon valinnaista argumenttia.
-
-\subsection{Kansilehti ja dokumentin perustiedot}
-\label{luku:kansilehti}
-
-...
-
-% titlepage, \title, \author, \date, abstract
 
 \subsection{Osat: esittely, pääluvut, liitteet}
 \label{luku:frontmainbackmatter}

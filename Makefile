@@ -21,7 +21,7 @@ aakkostus:
 		echo "}"; } > $(tavutus).tmp && \
 		mv -f $(tavutus).tmp $(tavutus).tex
 
-doc: $(nimi).pdf versio.tex $(osat) README.md
+doc: $(nimi).pdf $(osat) README.md
 	mkdir -p doc/latex/$(nimi)
 	for f in $^; do ln -fn "$$f" doc/latex/$(nimi)/"$$f"; done
 	@touch $@

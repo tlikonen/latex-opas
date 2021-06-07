@@ -1448,36 +1448,60 @@ on valmiina ja muu typografinen asettelu tehty.
 Tekstin jäsentäminen tarkoittaa sisällön järjestystä ja sen jakamista
 sopiviin kokonaisuuksiin. Esimerkiksi laaja teos voi koostua osista,
 osien sisäisistä pääluvuista ja niiden alaluvuista. Eri luvut ilmaistaan
-eritasoisilla otsikoilla. Varsinaisten sisältölukujen lisäksi teoksessa
-voi olla erilaisia liite- tai luettelosivuja. Toisaalta lyhyempi
-artikkeli tai muu teksti sisältänee vain yhden- tai kahdentasoisia
-otsikoita. Tässä alaluvussa käsitellään juuri tämäntyyppisiä asioita eli
-tekstikappaletta suurempien kokonaisuuksien jäsentämistä.
+eritasoisilla otsikoilla. Varsinaisten sisältölukujen jälkeen teoksessa
+voi olla erilaisia liite- tai luettelosivuja, esimerkiksi lähdeluettelo
+ja asiahakemisto. Toisaalta lyhyempi artikkeli sisältää ehkä vain yhden-
+tai kahdentasoisia otsikoita -- muuta ei tarvita. Tässä alaluvussa
+käsitellään juuri tämäntyyppisiä asioita eli tekstikappaletta suurempien
+kokonaisuuksien jäsentämistä.
 
-\subsection{Dokumentin perustiedot ja kansisivu}
-\label{luku:kansisivu}
+\subsection{Perustiedot, kansisivu ja tiivistelmä}
+\label{luku:dokumentin_perustiedot}
 
-Latex\-/lähdedokumentin alussa -- ennen \ymparisto{document}\-/
-ympäristön alkua -- kannattaa lähes aina ilmaista dokumentin perustiedot
-eli teoksen nimi, tekijä ja päiväys. Ne ilmaistaan seuraavilla
-komennoilla:
+Latexissa on yksinkertainen toiminto dokumentin perustietojen latomiseen
+dokumentin alkuun, mahdollisesti erilliselle kansisivulle. Perustietoja
+ovat teoksen nimi, tekijä ja päiväys. Lähdedokumentin alussa perustiedot
+ilmaistaan seuraavilla komennoilla:
 
 \komentoi{title}
 \komentoi{author}
 \komentoi{date}
 \begin{koodilohkosis}
-  \title{Käytännöllistä Latexia} % teoksen nimi
-  \author{Teemu Likonen}         % tekijöiden nimet
-  \date{\today}                  % päiväys
+  \title{Tieteellistä tiedettä}              % teoksen nimi
+  \author{Timo Tiedemies \and Tuija Tutkija} % tekijöiden nimet
+  \date{\today}                              % päiväys
 \end{koodilohkosis}
 
-Edellisen esimerkin komennot eivät vielä kirjoita mitään tekstiä itse
-ladottavaan dokumenttiin. Komennot vain tallentavat perustiedot muistiin
-mahdollista myöhempää käyttöä varten. Ne päätyvät myös ladotun pdf\-/
-tiedoston sisäisiin tietoihin, jos \paketti{hyperref}\-/ paketti on
-ladattuna, kuten .
+Edellisen esimerkin komentojen argumentissa voi käyttää komentoa
+\komento{thanks}, joka on tarkoitettu kiitosten osoittamiseen.
+Komennolle annetaan argumentiksi lyhyehkö teksti eli kiitosviesti, joka
+tulisi näkymään sivulla alaviitteessä.
 
-% titlepage, \title, \author, \date, abstract
+Komennot eivät kuitenkaan itse vielä lado mitään tekstiä dokumenttiin.
+Ne vain tallentavat perustiedot muistiin mahdollista myöhempää käyttöä
+varten. Vasta komennolla \komentom{maketitle} perustiedot ladotaan
+mukaan dokumenttiin. Tiedot voivat näkyä ensimmäisen sisältösivun alussa
+tai erillisellä kansisivulla; se riippuu dokumenttiluokan asetuksista ja
+valitsimista \koodi{titlepage} ja \koodi{notitlepage}. Se, kumpi asetus
+on oletuksena päällä, vaihtelee eri dokumenttiluokissa.
+Dokumenttiluokkia käsitellään luvussa \ref{luku:dokumenttiluokat}.
+
+Perustietokomentoihin \komento{title}, \komento{author} ja
+\komento{date} ei ole tarkoitus sisällyttää kovin monimutkaisia
+muotoilukomentoja. Jos haluaa vaikuttaa perustietojen ulkoasuun,
+kannattaa käyttää siihen tarkoitettua makropakettia
+\pakettim{titling}.\avctan{titling} Toisaalta mikään ei estä
+muotoilemasta oman dokumentin perustietoja ilman Latexin valmiita
+keinoja.
+
+Hyödyllisiä ympäristöjä dokumentin alussa käytettäväksi voivat olla
+\ymparistom{titlepage} ja \ymparistom{abstract}. Ensin mainittu luo
+tyhjän sivun kansisivun toteuttamiseen. Se myös aloittaa sivunumeroinnin
+alusta eli asettaa uudelleen \laskuri{page}\-/ laskurin arvon.
+\ymparisto{abstract}\-/ ympäristö on tarkoitettu tieteellisen artikkelin
+tiivistelmän kirjoittamiseen. Molempien edellä mainittujen ympäristöjen
+käyttö on vapaaehtoista. Kansisivun ja artikkelin tiivistelmän voi aivan
+hyvin toteuttaa ilman näitäkin.
 
 \subsection{Otsikointi}
 \label{luku:otsikot}

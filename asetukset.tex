@@ -38,11 +38,11 @@ asetusten kokoelma, jonka varaan oma dokumentti kirjoitetaan. Eri
 dokumenttiluokat sisältävät erilaisia ominaisuuksia ja erilaiset
 oletusasetukset. Edellä olevassa esimerkissä käytettiin
 \luokka{article}\-/ luokkaa, joka on yleiskäyttöinen luokka monenlaisten
-dokumenttien kirjoittamiseen.
+dokumenttien kirjoittamiseen. Seuraavissa alaluvuissa käsitellään
+tavallisimpia dokumenttiluokkia ja niiden asetuksia.
 
-Seuraavissa alaluvuissa käsitellään tavallisimpia dokumenttiluokkia ja
-niiden asetuksia. Dokumenttiluokkia voi tehdä itsekin, ja sitä aihetta
-käsitellään luvussa \ref{luku:omat_dokumenttiluokat}.
+% Dokumenttiluokkia voi tehdä itsekin, ja sitä aihetta käsitellään
+% luvussa X.Y.
 
 \subsection{Perusdokumenttiluokat}
 \label{luku:perusdokumenttiluokat}
@@ -69,8 +69,9 @@ dokumentin jäsentämisessä: \luokka{report} ja \luokka{book} sisältävät
 suuret pääluvut (\komento{chapter}) eli otsikot, jotka alkavat tyhjältä
 sivulta; \luokka{article} ei sisällä samanlaisia päälukuja vaan
 ainoastaan tavalliset leipätekstin mukana kulkevat väliotsikot
-(\komento{section}, \komento{subsection} jne.). Tekstin jäsentämistä ja
-otsikointia käsitellään tarkemmin luvussa \ref{luku:jäsennys}.
+(\komento{section}, \komento{subsection} jne.). Tekstin jäsentämistä
+käsitellään luvussa \ref{luku:jäsennys} ja otsikointia tarkemmin luvussa
+\ref{luku:otsikot}.
 
 Toinen ero perusluokkien välillä on se, että vain \luokka{book}\-/
 luokka sisältää komennot \komento{frontmatter}, \komento{mainmatter} ja
@@ -222,14 +223,14 @@ oletuksena sivun oikeaan reunaan, mutta valitsimella \koodim{leqno} ne
 saa ladottua sivun vasempaan reunaan. Matematiikkatilaa käsitellään
 luvussa \ref{luku:matematiikka}.
 
-Kansilehden tai dokumentin perustietojen esitystapaan vaikutetaan
+Kansisivun tai dokumentin perustietojen esitystapaan vaikutetaan
 valitsimilla \koodim{title\-page} ja \koodim{no\-title\-page}. Latexissa
 on yksinkertaiset komennot dokumentin perustietojen eli pääotsikon,
-tekijöiden nimien ja päiväyksen latomiseen (luku \ref{luku:kansisivu}),
-ja näillä valitsimilla vaikutetaan siihen, ladotaanko perustiedot omalle
-sivulleen (\koodi{title\-page}) vaiko ensimmäisen sisältösivun alkuun
-(\koodi{no\-title\-page}). Oletus\-asetus vaihtelee eri
-dokumenttiluokissa.
+tekijöiden nimien ja päiväyksen latomiseen (luku
+\ref{luku:dokumentin_perustiedot}), ja näillä valitsimilla vaikutetaan
+siihen, ladotaanko perustiedot omalle sivulleen (\koodi{title\-page})
+vaiko ensimmäisen sisältösivun alkuun (\koodi{no\-title\-page}).
+Oletus\-asetus vaihtelee eri dokumenttiluokissa.
 
 Oletuksena sivun tekstit ladotaan yhdelle palstalle
 (\koodim{onecolumn}), mutta valitsimella \koodim{twocolumn} teksti
@@ -887,20 +888,17 @@ toteutukseen.
 \label{esim:fancyhdr_koko}
 \end{esimerkki*}
 
-\section{Pdf-tiedosto KESKEN}
+\section{Pdf-tiedosto}
 \label{luku:pdf_asetukset}
 
 Pdf-tiedostot voivat sisältää metatietoja kuten dokumentin nimen,
-tekijän ja päiväyksen. Niille voi määrittää myös monenlaisia asetuksia
-kuten ristiviitteiden ja linkkien ulkoasun tai katselutilan, jossa
-dokumenttia ehdotetaan katsottavan. Pdf\-/ tiedostot sisältävät oman
-sisäisen sisällysluettelonsa, jonka ominaisuuksiin voi vaikuttaa
-Latexista käsin.
-
-Pdf-tiedoston asetukset toteutetaan \pakettim{hyperref}\-/
-paketin\avctan{hyperref} avulla. Paketti neuvotaan lataamaan muiden
-pakettien jälkeen, koska se lisää ominaisuuksia muihin komentoihin.
-Paketin voisi ladata esimerkiksi seuraavalla tavalla:
+aiheen, tekijän ja päiväyksen. Tiedostoille voi määrittää myös erilaisia
+asetuksia kuten ristiviitteiden ja linkkien ulkoasun tai sisäisen
+sisällysluettelon ominaisuuksia. Pdf\-/tiedoston asetukset toteutetaan
+\pakettim{hyperref}\-/ paketin\avctan{hyperref} avulla. Paketti
+neuvotaan lataamaan muiden pakettien jälkeen, koska se lisää
+ominaisuuksia muihin komentoihin. Paketin voisi ladata esimerkiksi
+seuraavalla tavalla:
 
 \komentoi{usepackage}
 \pakettii{hyperref}
@@ -919,8 +917,7 @@ näy välttämättä oikein.
 avulla \komento{usepackage}\-/ komennon yhteydessä mutta myös
 erillisellä \komentom{hypersetup}\-/ komennolla. Komennolle annetaan
 yksi argumentti, joka sisältää pilkuilla erotettuna erilaisia valitsimia
-ja niiden arvoja. Monilla valitsimilla voi vaikuttaa pdf\-/ tiedoston
-asetuksiin kuten metatietoihin ja katselutilaan.
+ja niiden arvoja.
 
 \begin{esimerkki*}
 \begin{koodilohko}
@@ -940,18 +937,17 @@ asetuksiin kuten metatietoihin ja katselutilaan.
 \end{esimerkki*}
 
 Esimerkissä \ref{esim:hypersetup} valitsin \koodi{hidelinks} saa aikaan
-sen, että pdf:ssä olevia linkkejä ei merkitä millään tavalla. Oletuksena
-linkit kehystetään eri väreillä riippuen linkin tyypistä. Valitsin
-\koodi{bookmarksopen} näyttää pdf:n sisällysluettelon kokonaan avattuna.
-Oletuksena alaluvut on piilotettuna, ja ne joutuu avaamaan
-napsauttamalla hiirellä ylemmäntasoisen otsikon avauspainiketta.
-Valitsin \koodi{bookmarksnumbered} näyttää pdf:n sisällysluettelossa
-lukujen numeroinnin (kuten 1.1, 1.2, 2.1 tms.). Valitsimella
-\koodi{pdfinfo} määritellään pdf:n metatietoja kuten otsikko, aihe ja
-tekijä mutta omiakin metatietoja voi lisätä.
-
-% Vielä: katselutila yms.: pdfpagelayout, pdfview, pdfstartview,
-% pdfremotestarview.
+sen, että pdf:ssä olevia linkkejä ja ristiviitteitä ei merkitä millään
+tavalla. Oletuksena linkit kehystetään eri väreillä riippuen linkin
+tyypistä. Valitsin \koodi{bookmarksopen} näyttää pdf:n sisällysluettelon
+kokonaan avattuna. Oletuksena alaluvut on piilotettuna, ja ne joutuu
+avaamaan napsauttamalla hiirellä ylemmäntasoisen otsikon
+avauspainiketta. Valitsin \koodi{bookmarksnumbered} näyttää pdf:n
+sisällysluettelossa lukujen numeroinnin (kuten 1.1, 1.2, 2.1 tms.).
+Valitsimella \koodi{pdfinfo} määritellään pdf:n metatietoja kuten
+otsikko, aihe ja tekijä mutta omiakin metatietoja voi lisätä. Paljon
+muitakin asetuksia on olemassa, ja niistä voi lukea lisää
+\paketti{hyperref}\-/ paketin ohjekirjasta.
 
 \section{Fontit}
 \label{luku:kirjaintyypit}

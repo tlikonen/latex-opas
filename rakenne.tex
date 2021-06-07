@@ -1244,9 +1244,10 @@ saatavilla.
 Latexissa verkko\-/osoitteet kannattaa toteuttaa siihen tarkoitetun
 makropaketin avulla. Paketti \paketti{hyperref}\avctan{hyperref}
 sisältää toimintoja paitsi verkko\-/ osoitteiden latomiseen mutta myös
-dokumentin ristiviitteiden hallintaan. Paketin avulla valmiin pdf\-/
-tiedoston verkkolinkit toimivat, eli pdf\-/lukijassa linkkiä
-napsauttamalla pitäisi avautua verkkoselain ja linkin osoittama sivu.
+pdf\-/tiedoston asetusten ja ristiviitteiden hallintaan (luku
+\ref{luku:pdf_asetukset}). Paketin avulla valmiin pdf\-/ tiedoston
+verkkolinkit toimivat, eli pdf\-/lukijassa linkkiä napsauttamalla
+pitäisi avautua verkkoselain ja linkin osoittama sivu.
 
 Makropaketin käyttämisen typografinen hyöty on se, että rivin vaihdon
 kohdalle sattuvat verkko\-/ osoitteet katkaistaan automaattisesti
@@ -1453,14 +1454,6 @@ artikkeli tai muu teksti sisältänee vain yhden- tai kahdentasoisia
 otsikoita. Tässä alaluvussa käsitellään juuri tämäntyyppisiä asioita eli
 tekstikappaletta suurempien kokonaisuuksien jäsentämistä.
 
-Jos dokumentissa tarvitaan vähänkään otsikoita, kannattaa ladata mukaan
-paketti \paketti{hyperref}. Se huolehtii, että Latexiin merkityt otsikot
-tuodaan mukaan pdf\-/ tiedoston sisäiseen sisällysluetteloon ja että
-sisällysluettelossa olevat otsikot ovat automaattisesti myös linkkejä,
-joilla hypätään kyseiseen lukuun. \paketti{hyperref}\-/ pakettia ja
-pdf\-/ tiedoston ominaisuuksia käsitellään tarkemmin luvussa
-\ref{luku:pdf_asetukset}.
-
 \subsection{Dokumentin perustiedot ja kansisivu}
 \label{luku:kansisivu}
 
@@ -1490,6 +1483,14 @@ ladattuna, kuten .
 \label{luku:otsikot}
 
 ...
+
+Jos dokumentissa tarvitaan vähänkään otsikoita, kannattaa ladata mukaan
+paketti \paketti{hyperref}. Se huolehtii, että Latexiin merkityt otsikot
+tuodaan mukaan pdf\-/ tiedoston sisäiseen sisällysluetteloon ja että
+sisällysluettelossa olevat otsikot ovat automaattisesti myös linkkejä,
+joilla hypätään kyseiseen lukuun. \paketti{hyperref}\-/ pakettia ja
+pdf\-/ tiedoston ominaisuuksia käsitellään tarkemmin luvussa
+\ref{luku:pdf_asetukset}.
 
 % Tässä puhutaan väliotsikoista. Näitä komentoja ei käytetä pääotsikon
 % tekemiseen. Latex-olettaa, että aina ennen alemman tasoista komentoa

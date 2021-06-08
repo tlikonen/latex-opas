@@ -676,13 +676,13 @@ luvussa \ref{luku:tavutus}.
 
 Latexin komennot alkavat kenoviivalla (\koodi{\textbackslash}), jonka
 jälkeen tulee komennon nimi. Nimi koostuu yleensä pienistä tai isoista
-kirjaimista, mutta komento voi olla myös merkkejä.
+kirjaimista, mutta komento voi koostua myös muista merkeistä.
 
 Komennot voivat ottaa vastaan argumentteja eli lisätietoa, jota komento
 käsittelee ja tarvitsee toimintaansa. Jotkin argumentit voivat olla
 pakollisia ja jotkin valinnaisia. Pakolliset kirjoitetaan
-aaltosulkeisiin \koodi{\{\ldots\}} ja valinnaiset hakasulkeisiin
-\koodi{[\ldots]}.
+aaltosulkeisiin \koodi{\{}\ldots\koodi{\}} ja valinnaiset hakasulkeisiin
+\koodi{[}\ldots\koodi{]}.
 
 \begin{koodilohkosis}
   \komento
@@ -760,23 +760,25 @@ käytöstä:
 \end{tulossis}
 
 Edellä mainitun komennon määritelmään voi olla tarpeen lisätä myöhemmin
-muitakin asioita. Latexin komentojen nimet ovat englantia, ja jos nimen
-tavuttaa, täytyisi se tehdä englannin sääntöjen mukaisesti. Esimerkkinä
-olleen \komentox{komento}\-/ komennon määritelmässä voisi siis vaihtaa
-myös kielen komennolla \komento{textenglish}.%
-\footnote{Katso kieliasetuksia luvusta \ref{luku:kieliasetukset}.}
+muitakin asioita. Latexin komentojen nimet ovat suunnilleen englantia,
+ja jos nimen tavuttaa, täytyisi se tehdä englannin sääntöjen mukaisesti.
+Esimerkkinä olleen \komentox{komento}\-/ komennon määritelmässä voisi
+siis vaihtaa myös kielen komennolla \komento{textenglish}.%
+\footnote{Lisätietoa kieliasetuksista voi lukea luvusta
+  \ref{luku:kieliasetukset}.}
 
 Jos ollaan kirjoittamassa laajaa tietoteosta, Latex\-/ komennot halutaan
 ehkä lisätä automaattisesti kirjan lopussa olevaan asiahakemistoon (ks.
 s.~\pageref{luku:asiahakemisto}). Niinpä komennon määritelmään lisätään
 vielä sitäkin varten komento \komento{index}.%
-\footnote{Lisätietoa asiahakemistoista on luvussa \ref{luku:asiasanat}.}
-Lopulta Latex\-/komentojen merkitsemiseen tarkoitettu \komentox{komento}
-määriteltäisiin seuraavalla tavalla:
+\footnote{Asiahakemistoja käsitellään luvussa \ref{luku:asiasanat}.}
+Lopulta Latex\-/ komentojen merkitsemiseen tarkoitettu
+\komentox{komento} määriteltäisiin seuraavalla tavalla:
 
 \komentoi{newcommand}
 \komentoi{textbackslash}
 \komentoi{texttt}
+\komentoi{textenglish}
 \komentoi{index}
 \begin{koodilohkosis}
   \newcommand{\komento}[1]{%
@@ -787,9 +789,10 @@ määriteltäisiin seuraavalla tavalla:
 
 Näin oma \komentox{komento} ilmaisee tiiviisti ja havainnollisesti
 tarkoituksen eli sen, että kyseessä on Latex\-/ komento. Se piilottaa
-monimutkaisen teknisen toteutuksen. Myöhemmin toteutusta on helppoa
-muuttaa, koska komennon määrittely on vain yhdessä paikassa
-lähdedokumentin alussa.
+monimutkaisen teknisen toteutuksen eli fontin ja kielen vaihtamiseen
+sekä asiahakemistoon liittyvät toiminnot. Lisäksi komennon teknistä
+toteutusta on helppoa muuttaa myöhemmin, koska komennon määrittely on
+vain yhdessä paikassa lähdedokumentin alussa.
 
 \subsection{Komentojen määrittely}
 \label{luku:komennot-määr}

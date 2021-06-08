@@ -1500,11 +1500,11 @@ laskuria \laskuri{enumii}, sen sisällä laskuria \laskuri{enumiii} jne.
 
 Edellä mainituista laskureista ei tarvitse yleensä itse huolehtia, sillä
 ne ovat vain tekniikkaa, joka toimii korkeamman tason toimintojen
-taustalla. Joskus on kuitenkin käyttöä myös omille laskureille. Alla
-ovat laskureiden käsittelyn peruskomennot. Niissä käytetään laskuria
-nimeltä \laskurix{oma}. Laskurien nimet koostuvat pelkistä kirjaimista,
-eikä niiden alussa ole kenoviivaa niin kuin komentojen ja mittojen
-alussa.
+taustalla. Joskus on kuitenkin käyttöä myös omille laskureille. Seuraava
+esimerkki esittelee laskureiden käsittelyn peruskomennot. Niissä
+käytetään laskuria nimeltä \laskurix{oma}. Laskurien nimet koostuvat
+pelkistä kirjaimista, eikä niiden alussa ole kenoviivaa niin kuin
+komentojen ja mittojen alussa.
 
 \komentoi{newcounter}
 \komentoi{setcounter}
@@ -1516,12 +1516,12 @@ alussa.
   \addtocounter{oma}{-1} % Vähennetään laskurin arvosta 1.
 \end{koodilohkosis}
 
-Laskuri on sisäisesti kokonaisluku, mutta sen arvon voi tulostaa eri
+Laskuri on sisäisesti kokonaisluku, mutta sen arvon voi latoa eri
 muodoissa: arabialaisena tai roomalaisena lukuna, kirjaimena tai
-symbolien sarjana. Taulukossa \ref{tlk:laskurien_tulostus} ovat komennot
-laskurin arvon tulostamiseen. Komennon argumentiksi annetaan laskurin
-nimi. Laskurin voi tulostaa kirjainmuodossa, jos sen arvo on 1--26;
-symbolit toimivat vain lukualueella 1--9.
+symbolien sarjana. Taulukossa \ref{tlk:laskurien_latominen} ovat komennot
+laskurin arvon latomiseen. Komennon argumentiksi annetaan laskurin nimi.
+Laskurin voi latoa kirjainmuodossa, jos sen arvo on 1--26; symbolit
+toimivat vain lukualueella 1--9.
 
 \leijutlk{
   \begin{tabular}{ll}
@@ -1540,21 +1540,21 @@ symbolit toimivat vain lukualueella 1--9.
     \bottomrule
   \end{tabular}
 }{
-  \caption{Komennot laskurien arvon tulostamiseen}
-  \label{tlk:laskurien_tulostus}
+  \caption{Komennot laskurien arvon latomiseen}
+  \label{tlk:laskurien_latominen}
 }
 
-Taulukon \ref{tlk:laskurien_tulostus} komentojen lisäksi laskuriin
-liittyvän arvon voi tulostaa komennolla, joka alkaa kirjaimilla
+Taulukon \ref{tlk:laskurien_latominen} komentojen lisäksi laskuriin
+liittyvän arvon voi latoa komennolla, joka alkaa kirjaimilla
 \komentox{the} ja jatkuu laskurin nimellä. Esimerkiksi komento
-\komento{thepage} tulostaa sivunumeron eli tekee käytännössä saman asian
-kuin komento \komento[\{page\}]{arabic}. Aina nämä eivät
-kuitenkaan ole sama asia, ja \komentox{the}\-/alkuinen komento voi olla
-määritelty toisellakin tavalla. Esimerkiksi tämän oppaan leijuvat
-taulukot numeroidaan laskurilla \laskuri{table}, mutta komento
-\komento{thetable} tulostaa ensin pääluvun ja sen perään pisteen ja
-taulukon numeron. Viimeisin taulukko on numeroltaan \thetable{} eli
-pääluvun \arabic{chapter} taulukko \arabic{table}.
+\komento{thepage} latoo sivunumeron eli tekee käytännössä saman asian
+kuin komento \komento[\{page\}]{arabic}. Aina nämä eivät kuitenkaan ole
+sama asia, ja \komentox{the}\-/alkuinen komento voi olla määritelty
+toisellakin tavalla. Esimerkiksi tämän oppaan leijuvat taulukot
+numeroidaan laskurilla \laskuri{table}, mutta komento \komento{thetable}
+latoo ensin pääluvun ja sen perään pisteen ja taulukon numeron.
+Viimeisin taulukko on numeroltaan \thetable{} eli
+pääluvun~\arabic{chapter} taulukko~\arabic{table}.
 
 Jos laskurin arvoa tarvitaan Latexin teknisessä tilanteessa eikä
 tarkoituksena ole latoa sitä näkyviin itse dokumenttiin, täytyy käyttää
@@ -1609,9 +1609,11 @@ kasvattamiseen on seuraavat kaksi komentoa:
 Edellä mainitut komennot kasvattavat argumenttina annetun laskurin arvoa
 yhdellä ja nollaavat siitä riippuvaiset alemman tason laskurit.
 Jälkimmäinen komento \komento{refstepcounter} asettaa lisäksi
-ristiviitteen numeron, joten tätä komentoa seuraava \komento{label}\-/
-komento viittaa tähän laskuriin ja sen \komentox{thelaskuri}\-/ komennon
-tulosteeseen. Ristiviitteitä käsitellään tarkemmin luvussa
+ristiviitteen numeron, joten tämän komenon jälkeen mahdollisesti tuleva
+\komento{label}\-/ komento luo ristiviitekohteen. Kun tähän kohtaan
+viitataan muualta käyttämällä \komento{ref}\-/ komentoa, viitteessä
+näkyy laskurin numero tai oikeastaan \komentox{thelaskuri}\-/ komennon
+latoma teksti. Ristiviitteitä käsitellään tarkemmin luvussa
 \ref{luku:ristiviitteet}.
 
 Makropaketti \pakettim{chngcntr}\avctan{chngcntr} helpottaa
@@ -1630,9 +1632,9 @@ laskurista tai poistaa riippuvuuden.
 
 Edellä mainitut \paketti{chngcntr}\-/paketin komennot määrittelevät
 uudelleen myös \komentox{the\-oma}\-/ komennon, jolla \laskurix{oma}\-/
-laskurin arvon voi tulostaa. Se tulostaa mukaan myös ylemmäntasoisen
-laskurin arvon. Jos tätä \komentox{the}\-/ alkuista komentoa ei halua
-määritellä uudelleen, täytyy käyttää tähdellisiä komennon versioita:
+laskurin arvon voi latoa. Se latoo mukaan myös ylemmäntasoisen laskurin
+arvon. Jos tätä \komentox{the}\-/ alkuista komentoa ei halua määritellä
+uudelleen, täytyy käyttää tähdellisiä komennon versioita:
 \komento{counterwithin*} ja \komento{counterwithout*}. Laskuriin
 liittyvän \komentox{the}\-/ komennon voi aina itsekin määritellä
 haluamansa laiseksi komennolla \komento{renewcommand} (luku
@@ -1661,7 +1663,7 @@ väliaikaistiedostoa. Dokumentin sivumäärän ja viimeisen sivunumeron
 tallentamiseen on olemassa makropaketti
 \pakettim{totpages},\avctan{totpages} joka lisää viimeiselle sivulle
 automaattisesti ristiviitteen nimeltä \koodi{Tot\-Pages}. Sivumäärän ja
-viimeisen sivun numeron voi tulostaa komennoilla \komento{ref} ja
+viimeisen sivun numeron voi latoa komennoilla \komento{ref} ja
 \komento{pageref}. Esimerkki \ref{esim:totpages} havainnollistaa niiden
 käyttöä.
 
@@ -1687,14 +1689,14 @@ käyttöä.
   \newpage Jotain... \newpage ...sisältöä.
   \end{document}
 \end{koodilohko}
-\caption{Dokumentin sivumäärän ja viimeisen sivun tulostaminen}
+\caption{Dokumentin sivumäärän ja viimeisen sivun numeron latominen}
 \label{esim:totpages}
 \end{esimerkki*}
 
 Muunlaisten kokonaislaskurien toteuttamiseen voi käyttää
 \pakettim{totcount}\-/ pakettia.\avctan{totcount} Se tarjoaa komennon,
 jolla rekisteröidään olemassa oleva laskuri kokonaislaskuriksi. Lisäksi
-on komento, jolla tulostetaan tai palautetaan laskurin lopullinen arvo.
+on komento, jolla ladotaan tai palautetaan laskurin lopullinen arvo.
 
 \komentoi{newcounter}
 \komentoi{regtotcounter}
@@ -1705,7 +1707,7 @@ on komento, jolla tulostetaan tai palautetaan laskurin lopullinen arvo.
   \newcounter{oma}      % Luodaan laskuri ”oma”.
   \regtotcounter{oma}   % Rekisteröidään ”oma” kokonaislaskuriksi.
   \addtocounter{oma}{1} % Kasvatetaan laskurin arvoa.
-  \total{oma}           % Tulostetaan laskurin lopullinen arvo.
+  \total{oma}           % Ladotaan laskurin lopullinen arvo.
   \totvalue{oma}        % Palautetaan laskurin lopullinen arvo.
 \end{koodilohkosis}
 
@@ -1722,5 +1724,5 @@ mainittu lukumäärä saatiin laskettua seuraavasti:
 \laskurii{chapter}
 \begin{koodilohkosis}
   \regtotcounter{chapter} % Sijoitetaan dokumentin esittelyosaan.
-  \total{chapter}         % Tulostaa päälukujen (chapter) lukumäärän.
+  \total{chapter}         % Latoo päälukujen (chapter) lukumäärän.
 \end{koodilohkosis}

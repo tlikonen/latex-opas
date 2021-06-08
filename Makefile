@@ -8,9 +8,16 @@ tavutus = tavutusvihjeet
 texmf = $(HOME)/texmf
 
 $(nimi).pdf: versio.tex $(osat)
-	latexmk -lualatex \
+	@if which latexmk >/dev/null; then \
+		latexmk -lualatex \
 		-pdflualatex="lualatex -interaction=nonstopmode %O %S" \
-		$(nimi)
+		$(nimi); \
+	else \
+		lualatex $(nimi) && \
+		biber $(nimi) && \
+		lualatex $(nimi) && \
+		lualatex $(nimi); \
+	fi
 	@touch $@
 
 versio.tex:

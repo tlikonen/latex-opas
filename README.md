@@ -71,7 +71,7 @@ Latexin makropaketteja ja pari fonttia. Latexin jakelukokonaisuus
 Esimerkiksi [Debian](https://www.debian.org) Linux -käyttöjärjestelmässä
 metapaketti `texlive-full` asentaa koko Texliven.
 
-Pelkän PDF-tiedoston tekeminen on helpointa `make`-ohjelmalla:
+Pelkän PDF-tiedoston tekeminen on helpointa yhdellä `make`-komennolla:
 
     make
 

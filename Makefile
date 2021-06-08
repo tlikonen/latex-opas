@@ -4,7 +4,6 @@ osat = $(nimi).tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
 	valmistautuminen.tex kirjallisuutta.bib
 hakemistot = paketit ymparistot komennot mitat laskurit luokat
-tavutus = tavutusvihjeet
 texmf = $(HOME)/texmf
 
 $(nimi).pdf: versio.tex $(osat)
@@ -24,9 +23,9 @@ versio.tex:
 	{ git describe || echo $(versio); } | tee $@
 
 aakkostus:
-	@{ echo "\hyphenation{"; grep -e '^  ' $(tavutus).tex | sort -u; \
-		echo "}"; } > $(tavutus).tmp && \
-		mv -f $(tavutus).tmp $(tavutus).tex
+	@{ echo "\hyphenation{"; grep -e '^  ' tavutusvihjeet.tex | sort -u; \
+		echo "}"; } > tavutusvihjeet.tmp && \
+		mv -f tavutusvihjeet.tmp tavutusvihjeet.tex
 
 doc: $(nimi).pdf versio.tex $(osat) README.md
 	mkdir -p doc/latex/$(nimi)

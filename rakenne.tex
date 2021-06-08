@@ -1466,6 +1466,8 @@ ilmaistaan seuraavilla komennoilla:
 \komentoi{title}
 \komentoi{author}
 \komentoi{date}
+\komentoi{and}
+\komentoi{today}
 \begin{koodilohkosis}
   \title{Tieteellistä tiedettä}              % teoksen nimi
   \author{Timo Tiedemies \and Tuija Tutkija} % tekijöiden nimet
@@ -1484,7 +1486,8 @@ mukaan dokumenttiin. Tiedot voivat näkyä ensimmäisen sisältösivun alussa
 tai erillisellä kansisivulla; se riippuu dokumenttiluokan asetuksista ja
 valitsimista \koodi{titlepage} ja \koodi{notitlepage}. Se, kumpi asetus
 on oletuksena päällä, vaihtelee eri dokumenttiluokissa.
-Dokumenttiluokkia käsitellään luvussa \ref{luku:dokumenttiluokat}.
+Dokumenttiluokkia ja niiden asetuksia käsitellään tarkemmin luvussa
+\ref{luku:dokumenttiluokat}.
 
 Perustietokomentoihin \komento{title}, \komento{author} ja
 \komento{date} ei ole tarkoitus sisällyttää kovin monimutkaisia
@@ -1506,7 +1509,35 @@ hyvin toteuttaa ilman näitäkin.
 \subsection{Otsikointi}
 \label{luku:otsikot}
 
+Otsikot toteutetaan Latexin lähdetiedostossa komennoilla, jotka
+
 ...
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[4]{\komento{#1} & #2 & #3 & #4 \\}
+
+\leijutlk{
+  \begin{tabular}{lccl}
+    \toprule
+    \multirow{2}{*}{\ots{Komento}} & \ots{Taso} & \ots{Taso}
+    & \multirow{2}{*}{\ots{Merkitys}} \\
+    & (\luokka{article}) & (\luokka{book}, \luokka{report}) \\
+    \midrule
+    \rivi{part}{0}{-1}{teoksen osa}
+    \rivi{chapter}{}{0}{pääluku}
+    \rivi{section}{1}{1}{otsikko 1, luku}
+    \rivi{subsection}{2}{2}{otsikko 2, alaluku}
+    \rivi{subsubsection}{3}{3}{otsikko 3, alaluvun alaluku}
+    \rivi{paragraph}{4}{4}{kappaleotsikko 1}
+    \rivi{subparagraph}{5}{5}{kappaleotsikko 2}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Otsikointikomennot ja niitä vastaavat otsikon tasot.
+    Dokumenttiluokassa \luokka{article} ei ole päälukuja
+    (\komento{chapter})}
+  \label{tlk:otsikkotasot}
+}
 
 Jos dokumentissa tarvitaan vähänkään otsikoita, kannattaa ladata mukaan
 paketti \paketti{hyperref}. Se huolehtii, että Latexiin merkityt otsikot

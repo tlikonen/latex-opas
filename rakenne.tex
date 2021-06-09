@@ -1592,10 +1592,10 @@ kokonaisuuksia.
 
 Otsikkokomennoille annetaan tyypillisesti vain yksi argumentti, joka on
 kyseisen otsikon teksti. Otsikkoon ei ole tarkoitus kirjoittaa kovin
-monimutkaisia fontti- eikä muotoilukomentoja, vaan otsikon ulkoasu ja
-muotoilu tehdään muilla keinoilla, joita esitellään alaluvussa
-\ref{luku:otsikot_ulkoasu}. Yksinkertaiset korostuskomennot tai
-tavutusvihjeet (\komento{-}) kuitenkin toimivat yleensä.
+monimutkaisia fontti- eikä muotoilukomentoja, vaan mieluiten vai otsikon
+teksti. Typografinen muotoilu tehdään muilla keinoilla, joita esitellään
+alaluvussa \ref{luku:otsikot_ulkoasu}. Yksinkertaiset korostuskomennot
+tai tavutusvihjeet (\komento{-}) kuitenkin toimivat yleensä.
 
 \komentoi{section}
 \begin{koodilohkosis}
@@ -1618,14 +1618,22 @@ ladotaan varsinainen otsikko.
   \section[Lyhyt otsikko]{Tämä tässä on pitkä otsikko}
 \end{koodilohkosis}
 
-Edellä jo todettiin, että Latex numeroi otsikot automaattisesti ja lisää
-ne ladottavaan sisällysluetteloon. Tähän on kuitenkin mahdollista
-vaikuttaa. Laskuri \laskurim{secnumdepth} on tarkoitettu käyttäjän
-asetettavaksi, ja sillä määritetään, mihin otsikkotasoon saakka otsikot
-numeroidaan. Otsikoiden tasonumerot ovat taulukossa
-\ref{tlk:otsikkotasot}. Seuraava esimerkki määrittelee, että vain
-tasoon~1 (\komento{section}) saakka otsikot numeroidaan. Sen alapuolella
-olevat (\komento{subsection} ym.) eivät saa numeroa.
+% Komentojen tähtiversiot: \chapter* yms.
+
+\subsection{Otsikoiden numerointi}
+
+Oletusasetuksilla Latex numeroi otsikot (\komento{chapter},
+\komento{section} jne.) automaattisesti, mutta käyttäjä voi vaikuttaa
+numerointiin monella tavalla, kuten siihen, mihin otsikkotasoon saakka
+numerointi yltää ja millä tyylillä otsikoiden numerot ylipäätään
+ladotaan.
+
+Laskuri \laskurim{secnumdepth} on tarkoitettu käyttäjän asetettavaksi,
+ja sillä määritetään, mihin otsikkotasoon saakka otsikot numeroidaan.
+Tasonumerot ovat taulukossa \ref{tlk:otsikkotasot}. Seuraava esimerkki
+määrittelee, että vain tasoon~1 (\komento{section}) saakka otsikot
+numeroidaan. Alemmantasoiset otsikot (\komento{subsection} ym.) eivät
+saa numeroa.
 
 \komentoi{setcounter}
 \laskurii{secnumdepth}
@@ -1633,15 +1641,68 @@ olevat (\komento{subsection} ym.) eivät saa numeroa.
   \setcounter{secnumdepth}{1}
 \end{koodilohkosis}
 
-% Komentojen tähtiversiot: \chapter* yms.
+Latexin otsikoiden numerointi noudattaa yleistä tietokirjallisuuden
+käytäntöä, eli numeroinnissa käytetään arabialaisia numeroita ja eri
+tasoja ilmaisevat numerot erotetaan toisistaan pisteellä: 1.1, 1.2,
+1.2.1, 1.2.2 jne. Sisäisesti Latex käyttää laskureita, joilla on sama
+nimi kuin vastaavalla otsikointikomennolla: \laskuri{part},
+\laskuri{chapter}, \laskuri{section}, \laskuri{subsection},
+\laskuri{subsubsection}, \laskuri{paragraph}, \laskuri{subparagraph}.
+
+Kuten laskureita käsittelevässä luvussa \ref{luku:laskurit} todetaan,
+laskurin arvon voi latoa dokumenttiin käyttämällä komentoa, joka alkaa
+kirjaimilla \komentox{the} ja jatkuu laskurin nimellä. Niin
+otsikkokomennot juuri tekevät: esimerkiksi \komento{section}\-/ otsikon
+kohdalla suoritetaan automaattisesti \komento{thesection}, joka tuottaa
+otsikon numeron. Vastaavasti \komento{subsection}\-/ otsikko latoo
+numeron käyttämällä komentoa \komento{thesubsection} jne.
+
+Kirjoittaja voi halutessaan määritellä nämä laskurinlatomiskomennot
+uudelleen. Jos esimerkiksi \komento{section}\-/ tasoiset numerot
+halutaan ilmaista kirjaimin (A, B, C jne.), tehdään se seuraavan
+esimerkin mukaisesti. Esimerkissä käytettävä komento \komento{Alph}
+latoo laskurin arvon versaalikirjaimin.
+
+\komentoi{renewcommand}
+\komentoi{thesection}
+\laskurii{section}
+\komentoi{Alph}
+\begin{koodilohkosis}
+  \renewcommand{\thesection}{\Alph{section}}
+\end{koodilohkosis}
+
+Joskus ehkä halutaan, että otsikoissa eri tasojen numeroita ei eroteta
+toisistaan pisteellä (2.1) vaan yhdysmerkillä tai ajatusviivalla
+(2\==1). Tällainen asetus saadaan määrittelemällä alemmantasoisten
+laskurien latomiskomennot uudelleen, esimerkiksi seuraavasti:%
+\footnote{Parempi olisi ehkä käyttää sitovaa ajatusviivaa, jonka saa
+  \paketti{extdash}\-/ paketin \komento{==}\-/ komennolla. Katso
+  lisätietoa luvusta \ref{luku:tavutus_sallivat_sitovat}.}
+
+\komentoi{renewcommand}
+\komentoi{thesection}
+\komentoi{thesubsection}
+\laskurii{subsection}
+\laskurii{subsubsection}
+\komentoi{arabic}
+\begin{koodilohkosis}
+  \renewcommand{\thesubsection}{\thesection--\arabic{subsection}}
+  \renewcommand{\thesubsubsection}{%
+    \thesubsection--\arabic{subsubsection}}
+\end{koodilohkosis}
+
+Otsikkonumeroinnin poistamista ei pidä toteuttaa siten, että määrittelee
+edellä mainitut \komentox{the}\-/ alkuiset komennot tyhjäksi. Numerointi
+poistetaan laskurin \laskuri{secnumdepth} avulla määrittämällä sen arvo
+tarpeeksi pieneksi. Sekin on syytä muistaa, että nämä \komentox{the}\-/
+alkuiset komennot on tarkoitettu vain laskurien arvon latomiseen.
+Komennon määritelmään ei pidä kirjoittaa typografiseen muotoiluun
+liittyviä komentoja. Otsikoiden ulkoasuun vaikutetaan muilla keinoilla.
 
 \subsection{Otsikoiden ulkoasu}
 \label{luku:otsikot_ulkoasu}
 
 ...
-
-% \thechapter, \thesection: näiden komentojen määrittely ja laskurien
-% hyödyntäminen
 
 % \chaptername, \partname
 

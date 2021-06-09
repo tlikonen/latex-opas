@@ -1509,9 +1509,21 @@ hyvin toteuttaa ilman näitäkin.
 \subsection{Otsikointi}
 \label{luku:otsikot}
 
-Otsikot toteutetaan Latexin lähdetiedostossa komennoilla, jotka
+Otsikoiden tehtävänä on tietenkin jakaa sisältö mielekkäisiin osiin ja
+ilmaista tekstikokonaisuuksien aihe. Ne auttavat lukijaa ennakoimaan,
+mitä on tulossa. Otsikot havainnollistavat myös asioiden
+hierarkkisuutta: ylemmäntasoiset otsikot nimeävät yläkäsitteitä tai
+laajempia kokonaisuuksia, alemmantasoiset otsikot alakäsitteitä ja
+pienempiä kokonaisuuksia.
 
-...
+Jos kirjoittaa Latexilla vähänkään otsikoita, kannattaa ladata mukaan
+paketti \paketti{hyperref}. Se huolehtii, että Latexiin merkityt otsikot
+tuodaan mukaan pdf\-/ tiedoston sisäiseen sisällysluetteloon ja että
+dokumenttiin mahdollisesti ladottavassa sisällysluettelossa otsikot ovat
+automaattisesti myös linkkejä, joilla voi hypätä kyseiseen lukuun.
+Pdf\-/ tiedoston selailu on näin mukavampaa. \paketti{hyperref}\-/
+pakettia ja pdf\-/ tiedoston ominaisuuksia käsitellään tarkemmin luvussa
+\ref{luku:pdf_asetukset}.
 
 \providecommand{\rivi}{}
 \renewcommand{\rivi}[4]{\komento{#1} & #2 & #3 & #4 \\}
@@ -1533,26 +1545,102 @@ Otsikot toteutetaan Latexin lähdetiedostossa komennoilla, jotka
     \bottomrule
   \end{tabular}
 }{
-  \caption{Otsikointikomennot ja niitä vastaavat otsikon tasot.
-    Dokumenttiluokassa \luokka{article} ei ole päälukuja
-    (\komento{chapter})}
+  \caption{Otsikointikomennot ja niitä vastaavat tasot Latexin
+    otsikkohierarkiassa. Dokumenttiluokassa \luokka{article} ei ole
+    päälukuja (\komento{chapter})}
   \label{tlk:otsikkotasot}
 }
 
-Jos dokumentissa tarvitaan vähänkään otsikoita, kannattaa ladata mukaan
-paketti \paketti{hyperref}. Se huolehtii, että Latexiin merkityt otsikot
-tuodaan mukaan pdf\-/ tiedoston sisäiseen sisällysluetteloon ja että
-sisällysluettelossa olevat otsikot ovat automaattisesti myös linkkejä,
-joilla hypätään kyseiseen lukuun. \paketti{hyperref}\-/ pakettia ja
-pdf\-/ tiedoston ominaisuuksia käsitellään tarkemmin luvussa
-\ref{luku:pdf_asetukset}.
+Latexissa eri otsikoiden tasoille on omat komentonsa, jotka on koottu
+taulukkoon \ref{tlk:otsikkotasot} -- suurimmasta otsikosta pienimpään.
+Ylin otsikkotaso on teoksen osa, ja sitä merkitään komennolla
+\komentom{part}. Tämän komennon käyttö on vapaaehtoista, mutta sillä on
+voi osoittaa laajan teoksen osia. Osat numeroidaan oletuksena
+roomalaisilla järjestysluvuilla: ''Osa~I'', ''Osa~II'', ''Osa~III'' jne.
+Ne eivät vaikuta alemmantasoisten otsikoiden numerointiin, eli osan
+vaihtuminen ei oletusasetuksilla nollaa alemmantasoisten lukujen
+laskuria.
 
-% Tässä puhutaan väliotsikoista. Näitä komentoja ei käytetä pääotsikon
-% tekemiseen. Latex-olettaa, että aina ennen alemman tasoista komentoa
-% (\subsection) on ollut ylemmäntasoinen komento (\section).
-% otsikkokomennot, otsikkotasot, secnumdepth, tocdepth
+Otsikkotaso \komentom{chapter} tarkoittaa kirjan päälukua, joka alkaa
+oletuksena puhtaalta sivulta. Näillä sopii ilmaista tietoteoksen tai
+romaan pääluvut, ja ne saavat oletuksena numeroinnin ''Luku~1'',
+''Luku~2'', ''Luku~3'' jne. Dokumenttiluokassa \luokka{article} ei tätä
+otsikkotasoa ole lainkaan.
+
+Seuraavat otsikkotasot \komentom{section}, \komentom{subsection} ja
+\komentom{subsubsection} ovat tavallisimpa tekstin väliotsikoita. Nekin
+saavat oletuksena numeroinnin, jossa pisteellä erotetaan mahdolliset
+alaluvut: 1.1, 1.2, 1.2.1, 1.2.2 yms.
+
+Otsikoinnissa on tärkeää säilyttää suora hierarkkinen suhde
+otsikkotasojen välillä: alemmantasoista otsikkoa ei saa käyttää ennen
+kuin on ensin ollut yhtä astetta ylempi otsikkotaso. Täytyy siis olla
+ensin \komento{section} ennen kuin voi olla \komento{subsection}. Muuten
+otsikoiden numerointi ei toimi oikein. Poikkeus on \komento{part}, jota
+ei välttämättä tarvitse käyttää.
+
+Otsikkotasot \komentom{paragraph} ja \komentom{subparagraph} eivät ole
+ihan perinteisiä otsikoita, vaan ne ladotaan tekstikappaleen alkuun.
+Nekin kyllä erottuvat leipätekstistä ja voivat toimia otsikon
+kaltaisessa tehtävässä. Oletuksena kappaleotsikoita ei numeroida eivätkä
+ne tule mukaan sisällysluetteloon. Oletusasetuksia on kuitenkin
+mahdollista muuttaa, ja tarvittaessa \komento{paragraph} ja
+\komento{subparagraph} voivat toimia normaaleina otsikoina tason
+\komento{subsubsection} jälkeen. Kovin syvää otsikkorakennetta ei
+yleensä suositeta, koska lukijan voi olla vaikeaa hahmottaa monitasoisia
+kokonaisuuksia.
+
+Otsikkokomennoille annetaan tyypillisesti vain yksi argumentti, joka on
+kyseisen otsikon teksti. Otsikkoon ei ole tarkoitus kirjoittaa kovin
+monimutkaisia fontti- eikä muotoilukomentoja, vaan otsikon ulkoasu ja
+muotoilu tehdään muilla keinoilla, joita esitellään alaluvussa
+\ref{luku:otsikot_ulkoasu}. Yksinkertaiset korostuskomennot tai
+tavutusvihjeet (\komento{-}) kuitenkin toimivat yleensä.
+
+\begin{koodilohkosis}
+  \section{Tämä teksti on otsikko}
+\end{koodilohkosis}
+
+Otsikko tulee automaattisesti mukaan teoksen sisällysluetteloon, jos
+sellainen on olemassa (luku \ref{luku:sisallysluettelo}). Otsikko näkyy
+automaattisesti myös pdf\-/ tiedoston sisällysluettelossa (luku
+\ref{luku:pdf_asetukset}). Lisäksi otsikon tekstiä voi käyttää
+ristiviittauksissa (luku~\ref{luku:ristiviitteet}).
+
+Otsikkokomennoille voi antaa yhden valinnaisen argumentin, jolla
+ilmaistaan otsikosta lyhempi versio. Tällöin sisällysluettelossa ja
+ristiviitteissä näytetään lyhempi otsikko ja otsikon kohdalle tekstiin
+ladotaan varsinainen otsikko.
+
+\begin{koodilohkosis}
+  \section[Lyhyt otsikko]{Tämä tässä on pitkä otsikko}
+\end{koodilohkosis}
+
+Edellä jo todettiin, että Latex numeroi otsikot automaattisesti ja lisää
+ne ladottavaan sisällysluetteloon. Tähän on kuitenkin mahdollista
+vaikuttaa. Laskuri \laskurim{secnumdepth} on tarkoitettu käyttäjän
+asetettavaksi, ja sillä määritetään, mihin otsikkotasoon saakka otsikot
+numeroidaan. Otsikoiden tasonumerot ovat taulukossa
+\ref{tlk:otsikkotasot}. Seuraava esimerkki määrittelee, että vain
+tasoon~1 (\komento{section}) saakka otsikot numeroidaan. Sen alapuolella
+olevat (\komento{subsection} ym.) eivät saa numeroa.
+
+\begin{koodilohkosis}
+  \setcounter{secnumdepth}{1}
+\end{koodilohkosis}
+
+Toinen laskuri \laskurim{tocdepth} puolestaan määrittelee, mihin tasoon
+saakka sisällysluettelossa näytetään otsikoita. Esimerkiksi romaanin
+(dokumenttiluokka \luokka{book}) sisällysluettelossa voisi näyttää
+ainoastaan osat (\komento{part}) ja pääluvut (\komento{chapter})
+asettamalla laskuri seuraavasti:
+
+\begin{koodilohkosis}
+  \setcounter{tocdepth}{0}
+\end{koodilohkosis}
 
 \subsection{Otsikoiden ulkoasu}
+\label{luku:otsikot_ulkoasu}
 
 ...
 

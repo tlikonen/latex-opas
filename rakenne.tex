@@ -1597,6 +1597,7 @@ muotoilu tehdään muilla keinoilla, joita esitellään alaluvussa
 \ref{luku:otsikot_ulkoasu}. Yksinkertaiset korostuskomennot tai
 tavutusvihjeet (\komento{-}) kuitenkin toimivat yleensä.
 
+\komentoi{section}
 \begin{koodilohkosis}
   \section{Tämä teksti on otsikko}
 \end{koodilohkosis}
@@ -1612,6 +1613,7 @@ ilmaistaan otsikosta lyhempi versio. Tällöin sisällysluettelossa ja
 ristiviitteissä näytetään lyhempi otsikko ja otsikon kohdalle tekstiin
 ladotaan varsinainen otsikko.
 
+\komentoi{section}
 \begin{koodilohkosis}
   \section[Lyhyt otsikko]{Tämä tässä on pitkä otsikko}
 \end{koodilohkosis}
@@ -1625,6 +1627,8 @@ numeroidaan. Otsikoiden tasonumerot ovat taulukossa
 tasoon~1 (\komento{section}) saakka otsikot numeroidaan. Sen alapuolella
 olevat (\komento{subsection} ym.) eivät saa numeroa.
 
+\komentoi{setcounter}
+\laskurii{secnumdepth}
 \begin{koodilohkosis}
   \setcounter{secnumdepth}{1}
 \end{koodilohkosis}
@@ -1635,6 +1639,8 @@ saakka sisällysluettelossa näytetään otsikoita. Esimerkiksi romaanin
 ainoastaan osat (\komento{part}) ja pääluvut (\komento{chapter})
 asettamalla laskuri seuraavasti:
 
+\komentoi{setcounter}
+\laskurii{tocdepth}
 \begin{koodilohkosis}
   \setcounter{tocdepth}{0}
 \end{koodilohkosis}

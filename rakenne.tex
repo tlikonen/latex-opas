@@ -1636,9 +1636,42 @@ ladotaan varsinainen otsikko.
   \section[Lyhyt otsikko]{Tämä tässä on pitkä otsikko}
 \end{koodilohkosis}
 
-% Komentojen tähtiversiot: \chapter* yms.
+Kaikille otsikkokomennoille on olemassa myös niin sanottu tähtiversio
+eli komentovaihtoehto, jonka nimen lopussa on tähti: \komento{part*},
+\komento{chapter*}, \komento{section*}, \komento{subsection*},
+\komento{subsubsection*}, \komento{paragraph*}, \komento{subparagraph*}.
+Nämä vaihtoehdot latovat otsikon, jolla ei ole numerointia ja jota ei
+lisätä sisällysluetteloon.
+
+Pelkän otsikon numeroinnin poistamiseen ei ehkä kannata käyttää näitä
+tähtiversiota, koska yleensä otsikko kuitenkin halutaan
+sisällysluetteloon. Otsikoiden numeroinnin saa pois muilla keinoilla,
+jotka neuvotaan luvussa \ref{luku:otsikot_numerointi}.
+
+Jos kuitenkin jostain syystä haluaa käyttää tähdellistä otsikkokomentoa
+ja haluaa otsikon myös sisällysluetteloon, täytyy se tehdä seuraavalla
+tavalla:
+
+\komentoi{section*}
+\komentoi{addcontentsline}
+\komentoi{phantomsection}
+\begin{koodilohkosis}
+  \section*{Tässäpä numeroimaton otsikko}
+  \phantomsection
+  \addcontentsline{toc}{section}{Tässäpä numeroimaton otsikko}
+\end{koodilohkosis}
+
+Edellä olevan esimerkin komento \komento{addcontentsline} lisää
+merkinnän sisällysluetteloon (''\koodi{toc}'', engl.
+\englanti{\textit{table of contents}}). Merkintä on tasoltaan
+''\koodi{section}'' eli vastaa muita \komento{section}\-/ komennolla
+syntyviä sisällysluettelon kohtia. Komento \komento{phantomsection}
+lisää pdf\-/ tiedostoon näkymättömän ankkurin tähän kohtaan
+dokumentissa. Sitä tarvitaan, jotta sisällysluettelon merkintä toimisi
+myös linkkinä, joka tuo juuri tähän kohtaan.
 
 \subsection{Otsikoiden numerointi}
+\label{luku:otsikot_numerointi}
 
 Oletusasetuksilla Latex numeroi otsikot (\komento{chapter},
 \komento{section} jne.) automaattisesti, mutta käyttäjä voi vaikuttaa

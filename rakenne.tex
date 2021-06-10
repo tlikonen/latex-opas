@@ -1692,6 +1692,11 @@ saa numeroa.
   \setcounter{secnumdepth}{1}
 \end{koodilohkosis}
 
+Asetusta voi muuttaa kesken dokumentin. Muuttaminen voi olla mielekästä
+esimerkiksi laajan teoksen lopussa, jossa on mahdollisesti
+lähdeluettelo, asiahakemistoja tai liitteitä, joille ei ehkä haluta
+samanlaista otsikkonumerointia kuin varsinaisille sisältöluvuille.
+
 Latexin otsikoiden numerointi noudattaa yleistä tietokirjallisuuden
 käytäntöä, eli numeroinnissa käytetään arabialaisia numeroita ja eri
 tasoja ilmaisevat numerot erotetaan toisistaan pisteellä: 1.1, 1.2,
@@ -1700,19 +1705,20 @@ nimi kuin vastaavalla otsikointikomennolla: \laskuri{part},
 \laskuri{chapter}, \laskuri{section}, \laskuri{subsection},
 \laskuri{subsubsection}, \laskuri{paragraph}, \laskuri{subparagraph}.
 
-Kuten laskureita käsittelevässä luvussa \ref{luku:laskurit} todetaan,
-laskurin arvon voi latoa dokumenttiin käyttämällä komentoa, joka alkaa
-kirjaimilla \komentox{the} ja jatkuu laskurin nimellä. Niin
-otsikkokomennot juuri tekevät: esimerkiksi \komento{section}\-/ otsikon
-kohdalla suoritetaan automaattisesti \komento{thesection}, joka tuottaa
-otsikon numeron. Vastaavasti \komento{subsection}\-/ otsikko latoo
-numeron käyttämällä komentoa \komento{thesubsection} jne.
+Laskureiden toimintaan voi perehtyä tarkemmin luvun \ref{luku:laskurit}
+avulla, mutta kerrataan tässä yhteydessä yksi asia. Laskurin arvon voi
+latoa dokumenttiin käyttämällä komentoa, joka alkaa kirjaimilla
+\komentox{the} ja jatkuu laskurin nimellä. Niin otsikkokomennot juuri
+tekevät: esimerkiksi \komento{section}\-/ otsikon kohdalla suoritetaan
+automaattisesti \komento{thesection}, joka tuottaa otsikon numeron.
+Vastaavasti \komento{subsection}\-/ otsikko latoo numeron käyttämällä
+komentoa \komento{thesubsection} jne.
 
-Kirjoittaja voi halutessaan määritellä nämä laskurinlatomiskomennot
-uudelleen. Jos esimerkiksi \komento{section}\-/ tasoiset numerot
-halutaan ilmaista kirjaimin (A, B, C jne.), tehdään se seuraavan
-esimerkin mukaisesti. Esimerkissä käytettävä komento \komento{Alph}
-latoo laskurin arvon versaalikirjaimin.
+Kirjoittaja voi halutessaan määritellä nämä laskurin latomiskomennot
+uudelleen. Jos esimerkiksi \komento{section}\-/ tasoiset luvut halutaan
+ilmaista kirjaimin (A, B, C jne.), tehdään se seuraavan esimerkin
+mukaisesti. Esimerkissä käytettävä komento \komento{Alph} latoo laskurin
+arvon versaalikirjaimin.
 
 \komentoi{renewcommand}
 \komentoi{thesection}

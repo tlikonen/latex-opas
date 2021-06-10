@@ -1506,6 +1506,24 @@ tiivistelmän kirjoittamiseen. Molempien edellä mainittujen ympäristöjen
 käyttö on vapaaehtoista. Kansisivun ja artikkelin tiivistelmän voi aivan
 hyvin toteuttaa ilman näitäkin.
 
+Teoksen kansisivu -- jos sellainen on -- kannattanee lisätä pdf\-/
+tiedoston sisäiseen sisällysluetteloon, jotta käyttäjä voi helposti
+palata alkuun myös luettelon kautta. Normaaliin ladottavaan
+sisällysluetteloon tuskin koskaan merkitään kansisivua. Pdf:n
+sisällysluetteloon saa oman merkinnän esimerkiksi seuraavalla
+komennolla:
+
+\begin{koodilohkosis}
+  \pdfbookmark[0]{Kansi}{luku:kansi}
+\end{koodilohkosis}
+
+Edellä mainittu komento \komento{pdfbookmark} täytyy sijoittaa Latex\-/
+lähdedokumentissa nimenomaan kansisivulle, koska
+sisällysluettelomerkintä on samalla linkki kyseiseen kohtaan
+dokumentissa. Komento kuuluu \paketti{hyperref}\-/ pakettiin, ja sitä
+käsitellään tarkemmin pdf:n asetusten yhteydessä luvussa
+\ref{luku:pdf_asetukset}.
+
 \subsection{Otsikointi}
 \label{luku:otsikot}
 

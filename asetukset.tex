@@ -949,6 +949,27 @@ otsikko, aihe ja tekijä mutta omiakin metatietoja voi lisätä. Paljon
 muitakin asetuksia on olemassa, ja niistä voi lukea lisää
 \paketti{hyperref}\-/ paketin ohjekirjasta.
 
+Pdf\-/ tiedoston sisäiseen sisällysluetteloon tulevat automaattisesti
+mukaan samat otsikot (luku \ref{luku:otsikot}) kuin ladottavaan
+sisällysluetteloonkin (luku \ref{luku:sisallysluettelo}). Pdf\-/
+tiedoston luetteloon voi kuitenkin itse lisäillä omia otsikoita, jotka
+eivät näy missään muualla. Se tehdään \paketti{hyperref}\-/ paketin
+komennolla \komento{pdfbookmark}:
+
+\komentoi{pdfbookmark}
+\begin{koodilohkosis}
+  \pdfbookmark[taso]{Teksti}{tunniste}
+\end{koodilohkosis}
+
+Komennon valinnainen argumentti ''\koodi{taso}'' on kokonaisluku, joka
+tarkoittaa otsikon tasoa. Se tarkoittaa samaa tasonumeroa kuin
+otsikkotasojen taulukossa \ref{tlk:otsikkotasot}
+(s.~\pageref{tlk:otsikkotasot}). Argumentti ''\koodi{Teksti}'' on pdf:n
+sisällysluettelomerkinnän teksti, ja ''\koodi{tunniste}'' on mikä
+tahansa yksilöllinen tekstimuotoinen tunniste kyseiselle
+luettelomerkinnälle. Tunniste ei näy missään, mutta pdf tarvitsee
+sisäiseen toimintaansa jonkin yksilöllisen tunnisteen.
+
 \section{Fontit}
 \label{luku:kirjaintyypit}
 

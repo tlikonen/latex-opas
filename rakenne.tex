@@ -1764,8 +1764,8 @@ Otsikoiden typografiaan eli esimerkiksi kirjainperheen ja \=/leikkauksen
 valintaan ja välistyksiin on kätevintä käyttää \pakettim{titlesec}\-/
 pakettia.\avctan{titlesec} Perus Latexissakin on kyllä otsikoiden
 muotoiluun tarkoitettu komento \komentox{@startsection}, mutta sen
-käyttö on hankalampaa eikä se toimi kaikilla otsikkotyypeillä. Perus
-Latexin omiin keinoihin voi tutustua esimerkiksi epävirallisen Latex\-/
+käyttö on hankalampaa eikä se toimi kaikilla otsikkotasoilla. Perus
+Latexin keinoihin voi tutustua esimerkiksi epävirallisen Latex\-/
 hakuteoksen \textcite{unoffref} avulla. Tässä oppaassa sen sijaan
 keskitytään \paketti{titlesec}\-/ pakettiin.
 
@@ -1792,13 +1792,13 @@ esimerkki vaihtaa otsikoihin groteskin kirjainperheen
 \end{koodilohkosis}
 
 Monimutkaisemmat muotoiluasetukset saa toteutettua komennon
-''tähdettömällä'' versiolla \komento{titleformat}. Se on tarpeen
+''tähdettömällä'' versiolla \komento{titleformat}. Se voi olla tarpeen
 esimerkiksi \komento{chapter}\-/ tasoisissa otsikoissa, joissa halutaan
-ehkä latoa eri riveille erityylinen luvun numero (''Luku~3'') ja luvun
-nimi. \komento{titleformat}\-/ komennon monista argumenteista ja
+ehkä muotoilla päälukujen aloitussivua enemmänkin. Tämän
+\komento{titleformat}\-/ komentoversion monista argumenteista ja
 asetuksista kannattaa lukea \paketti{titlesec}\-/ paketin ohjekirjasta.
 
-Luvun numeroinnin (1.1, 1.2) tyyliin vaikutetaan komennolla
+Luvun numeroinnin (1.1, 1.2 jne.) tyyliin vaikutetaan komennolla
 \komentom{titlelabel}. Komento suoritetaan yleensä vain kerran, ja se
 vaikuttaa kaikentasoisiin otsikoihin.
 
@@ -1814,9 +1814,40 @@ sisäiseen käyttöön. Se latoo kyseisen luvun numeron, olipa otsikkotaso
 mikä hyvänsä. Sen perään esimerkissä asetetaan 1\,em:n suuruinen väli
 \komento{hspace}\-/ komennolla.
 
-% \titlespacing
+Teoksen osien (\komento{part}) vaihtuessa sivulle ladotaan oletuksena
+teksti kuten ''Osa~I'', ''Osa~II'' jne. Mainittu sana ''Osa'' tulee
+suomen kieliasetuksista. Kaikkien kielten asetukset nimittäin
+määrittelevät komennon \komentom{partname} siten, että se sisältää ja
+latoo kyseiseen kieleen sopivan ilmauksen.
 
-% \chaptername, \partname
+Vastaavasti päälukujen (\komento{chapter}) yhteydessä ladotaan suomen
+kieliasetuksilla ilmaus ''Luku~1'', ''Luku~2'' jne. Sana ''Luku'' tulee
+komennosta \komentom{chaptername}. Jos omassa dokumentissa --
+esimerkiksi romaanissa -- haluaa kutsua teoksen osia ja päälukuja
+joksikin muuksi, voi määritellä mainitut komennot uudelleen, esimerkiksi
+seuraavasti:
+
+\komentoi{addto}
+\komentoi{captionsfinnish}
+\komentoi{renewcommand}
+\komentoi{partname}
+\komentoi{chaptername}
+\begin{koodilohkosis}
+  \addto{\captionsfinnish}{
+    \renewcommand{\partname}{Jakso}
+    \renewcommand{\chaptername}{Päivä}
+  }
+\end{koodilohkosis}
+
+Tässä \komento{renewcommand}\-/ komennot sijoitettiin \komento{addto}\-/
+komennon sisään, sen toiseen argumenttiin. Komento \komento{addto} lisää
+ne suomen kielen asetuksiin (\komento{captionsfinnish}), niin että ne
+tulevat voimaan samalla kun suomen kieliasetuksetkin. \komento{addto} on
+kuuluu \paketti{polyglossia}\-/\ ja \paketti{babel}\-/ paketteihin,
+joita käsitellään tarkemmin kieliasetusten yhteydessä luvussa
+\ref{luku:kieliasetukset}.
+
+% \titlespacing
 
 % \sectionbreak ym. ovat titlesec-paketin ominaisuuksia. titlesec
 % kannattaa täällä käsitellä. Myös laskuri secnumdepth.

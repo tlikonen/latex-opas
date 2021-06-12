@@ -2526,8 +2526,8 @@ ensin. Tämä saadaan toteutettua seuraavilla komennolla:
 \end{tulossis}
 
 Saman teoksen eri tekijöiden nimet erotetaan oletuksena toisistaan
-pilkuilla paitsi kahden viimeisen nimen välissä on ja-sana. Usein on
-kuitenkin tapana käyttää \&\=/merkkiä ainakin lähdeluettelossa.
+pilkuilla paitsi kahden viimeisen nimen välissä on \textit{ja}-sana.
+Usein on kuitenkin tapana käyttää \&\=/merkkiä ainakin lähdeluettelossa.
 Seuraavat esimerkkikomennot asettavat lähdeluettelon kaikkien nimien
 erottimeksi \&\=/merkin.
 
@@ -2542,13 +2542,30 @@ erottimeksi \&\=/merkin.
   --~--
 \end{tulossis}
 
-Edellisten esimerkkikomentojen valinnainen argumentti \koodi{bib}
-tarkoittaa, että vaikutetaan vain lähdeluetteloon. Argumentti voi olla
-myös \mbox{\koodi{cite}}, jolloin vaikutetaan lähdeviittauksiin.
 Erotinmerkkiasetuksen nimi \koodi{multi\-name\-delim} tarkoittaa muiden
 kuin kahden viimeisen tekijän nimen välissä olevaa erotinta. Kahden
 viimeisen nimen erotin määritellään asetuksella
 \koodi{final\-name\-delim}.
+
+Edellisten esimerkkikomentojen valinnainen argumentti \koodi{bib}
+tarkoittaa, että vaikutetaan vain lähdeluetteloon. Argumentti voi olla
+myös esimerkiksi \koodi{cite}, \koodi{textcite} tai \koodi{parencite},
+jolloin vaikutetaan samannimisillä komennoilla tehtyihin
+lähdeviittauksiin: \komento{cite}, \komento{textcite} ja
+\komento{parencite}. Katso lähdeviittauskomennot taulukosta
+\ref{tlk:biblatex-cite}. Seuraava esimerkki vaihtaa
+\komento{parencite}\-/ komentoon asetuksen, että kahden viimeisen
+henkilön nimen väliin ladotaan \&\=/merkki. Oletuksena viittauksissa
+käytetään \textit{ja}\-/sanaa.
+
+\komentoi{DeclareDelimFormat}
+\begin{koodilohkosis}
+  \DeclareDelimFormat[parencite]{finalnamedelim}{\space\&\space}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  (Meikäläinen, Teikäläinen \& Tutkija 2020)
+\end{tulossis}
 
 Useiden saman teoksen tekijöiden luettelot lyhennetään automaattisesti
 esimerkiksi muotoon ''Meikäläinen et~al.'', ja lyhentämisen säännöt

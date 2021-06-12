@@ -1715,17 +1715,17 @@ Vastaavasti \komento{subsection}\-/ otsikko latoo numeron käyttämällä
 komentoa \komento{thesubsection} jne.
 
 Kirjoittaja voi halutessaan määritellä nämä laskurin latomiskomennot
-uudelleen. Jos esimerkiksi \komento{section}\-/ tasoiset luvut halutaan
-ilmaista kirjaimin (A, B, C jne.), tehdään se seuraavan esimerkin
-mukaisesti. Esimerkissä käytettävä komento \komento{Alph} latoo laskurin
-arvon versaalikirjaimin.
+uudelleen. Jos esimerkiksi teoksen osat (\komento{part}) halutaan
+ilmaista arabialaisin numeroin eikä roomalaisin (kuten on oletus),
+tehdään se seuraavan esimerkin mukaisesti. Esimerkissä käytettävä
+komento \komento{arabic} latoo laskurin arabialaisilla numeroilla.
 
 \komentoi{renewcommand}
-\komentoi{thesection}
-\laskurii{section}
-\komentoi{Alph}
+\komentoi{thepart}
+\laskurii{part}
+\komentoi{arabic}
 \begin{koodilohkosis}
-  \renewcommand{\thesection}{\Alph{section}}
+  \renewcommand{\thepart}{\arabic{part}}
 \end{koodilohkosis}
 
 Joskus ehkä halutaan, että otsikoissa eri tasojen numeroita ei eroteta

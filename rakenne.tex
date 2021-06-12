@@ -1785,6 +1785,25 @@ liittyviä komentoja. Otsikoiden ulkoasuun vaikutetaan muilla keinoilla.
 % tiivistelmä. Varsinainen sisältö aloitetaan komennolla \koodi{\keno
 % mainmatter}. \backmatter lopettaa päälukujen numeroinnin.
 
+\section{Sisällysluettelo}
+\label{luku:sisallysluettelo}
+
+...
+
+% Laskuri \laskurim{tocdepth} määrittelee, mihin tasoon saakka
+% sisällysluettelossa näytetään otsikoita. Esimerkiksi romaanin
+% (dokumenttiluokka \luokka{book}) sisällysluettelossa voisi näyttää
+% ainoastaan osat (\komento{part}) ja pääluvut (\komento{chapter})
+% asettamalla laskuri seuraavasti:
+
+% \komentoi{setcounter}
+% \laskurii{tocdepth}
+% \begin{koodilohkosis}
+%   \setcounter{tocdepth}{0}
+% \end{koodilohkosis}
+
+% titletoc-paketti, tocdepth-laskuri, \pdfbookmark, \tableofcontents
+
 \section{Luetelmat}
 \label{luku:luetelmat}
 
@@ -1823,25 +1842,6 @@ liittyviä komentoja. Otsikoiden ulkoasuun vaikutetaan muilla keinoilla.
 % Käsitellään Latexin omat ja multicol-paketti erikseen.
 
 ...
-
-\section{Sisällysluettelo}
-\label{luku:sisallysluettelo}
-
-...
-
-% Laskuri \laskurim{tocdepth} määrittelee, mihin tasoon saakka
-% sisällysluettelossa näytetään otsikoita. Esimerkiksi romaanin
-% (dokumenttiluokka \luokka{book}) sisällysluettelossa voisi näyttää
-% ainoastaan osat (\komento{part}) ja pääluvut (\komento{chapter})
-% asettamalla laskuri seuraavasti:
-
-% \komentoi{setcounter}
-% \laskurii{tocdepth}
-% \begin{koodilohkosis}
-%   \setcounter{tocdepth}{0}
-% \end{koodilohkosis}
-
-% titletoc-paketti, tocdepth-laskuri, \pdfbookmark, \tableofcontents
 
 \section{Lähdeluettelo ja lähdeviitteet}
 \label{luku:lähteet}

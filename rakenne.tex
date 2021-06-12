@@ -1760,7 +1760,61 @@ liittyviä komentoja. Otsikoiden ulkoasuun vaikutetaan muilla keinoilla.
 \subsection{Otsikoiden ulkoasu}
 \label{luku:otsikot_ulkoasu}
 
-...
+Otsikoiden typografiaan eli esimerkiksi kirjainperheen ja \=/leikkauksen
+valintaan ja välistyksiin on kätevintä käyttää \pakettim{titlesec}\-/
+pakettia.\avctan{titlesec} Perus Latexissakin on kyllä otsikoiden
+muotoiluun tarkoitettu komento \komentox{@startsection}, mutta sen
+käyttö on hankalampaa eikä se toimi kaikilla otsikkotyypeillä. Perus
+Latexin omiin keinoihin voi tutustua esimerkiksi epävirallisen Latex\-/
+hakuteoksen \textcite{unoffref} avulla. Tässä oppaassa sen sijaan
+keskitytään \paketti{titlesec}\-/ pakettiin.
+
+Otsikoiden perusmuotoilu on helpointa toteuttaa
+\komentom{titleformat*}\-/ komennon avulla. Sille annetaan argumentiksi
+otsikkokomennon nimi ja sitä vastaavat muotoilukomennot. Seuraava
+esimerkki vaihtaa otsikoihin groteskin kirjainperheen
+(\komento{sffamily}) ja hieman toisistaan poikkeavan kirjainleikkauksen.
+
+\komentoi{titleformat*}
+\komentoi{section}
+\komentoi{subsection}
+\komentoi{subsubsection}
+\komentoi{sffamily}
+\komentoi{large}
+\komentoi{Large}
+\komentoi{normalsize}
+\komentoi{bfseries}
+\komentoi{itshape}
+\begin{koodilohkosis}
+  \titleformat*{\section}      {\sffamily\bfseries\Large}
+  \titleformat*{\subsection}   {\sffamily\bfseries\itshape\large}
+  \titleformat*{\subsubsection}{\sffamily\bfseries\normalsize}
+\end{koodilohkosis}
+
+Monimutkaisemmat muotoiluasetukset saa toteutettua komennon
+''tähdettömällä'' versiolla \komento{titleformat}. Se on tarpeen
+esimerkiksi \komento{chapter}\-/ tasoisissa otsikoissa, joissa halutaan
+ehkä latoa eri riveille erityylinen luvun numero (''Luku~3'') ja luvun
+nimi. \komento{titleformat}\-/ komennon monista argumenteista ja
+asetuksista kannattaa lukea \paketti{titlesec}\-/ paketin ohjekirjasta.
+
+Luvun numeroinnin (1.1, 1.2) tyyliin vaikutetaan komennolla
+\komentom{titlelabel}. Komento suoritetaan yleensä vain kerran, ja se
+vaikuttaa kaikentasoisiin otsikoihin.
+
+\komentoi{titlelabel}
+\komentoi{hspace}
+\begin{koodilohkosis}
+  \titlelabel{\thetitle\hspace{1em}}
+\end{koodilohkosis}
+
+Edellä olevan komennon argumentissa käytetty komento \komentox{thetitle}
+on tarkoitettu vain tämän komennon ja \paketti{titlesec}\-/ paketin
+sisäiseen käyttöön. Se latoo kyseisen luvun numeron, olipa otsikkotaso
+mikä hyvänsä. Sen perään esimerkissä asetetaan 1\,em:n suuruinen väli
+\komento{hspace}\-/ komennolla.
+
+% \titlespacing
 
 % \chaptername, \partname
 

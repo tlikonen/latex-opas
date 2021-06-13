@@ -236,6 +236,7 @@ komento tarkoittaa käytännössä samaa kuin \komento[\{0mm plus
 tarkemmin luvussa \ref{luku:venyvat_mitat}.
 
 \subsection{Ensimmäisen rivin sisennys}
+\label{luku:ensimmaisen_rivin_sisennys}
 
 Kirjojen ja lehtien typografiassa kappaleen ensimmäinen rivi on tapana
 sisentää merkiksi siitä, että alkaa uusi kappale. Sisennys on lukijalle
@@ -1342,6 +1343,7 @@ seuraavalla tavalla:
 \end{koodilohkosis}
 
 \section{Sivunvaihdot ja sivujen tasaaminen}
+\label{luku:sivunvaihdot}
 
 Kirjoittajan ei normaalisti tarvitse huolehtia sivun vaihtumisesta
 lainkaan, vaan järjestelmä pyrkii latomaan hyvännäköisiä sivuja
@@ -1349,7 +1351,7 @@ automaattisesti. Välillä tietenkin halutaan aloittaa jokin uusi aihe
 puhtaalta sivulta, ja sitä varten Latexissa on muutama komento.
 Mainittakoon kuitenkin heti aluksi, että otsikoiden yhteyteen saa
 sivunvaihdon kätevimmin keinoilla, jotka neuvotaan otsikoiden yhteydessä
-luvussa \ref{luku:otsikot}.
+luvussa \ref{luku:otsikot_ulkoasu}.
 
 Komento \komentom{clearpage} vaihtaa sivua, eli komennon jälkeinen
 dokumentin osa alkaa aina puhtaalta sivulta. Lähes samanlainen komento
@@ -1610,10 +1612,11 @@ kokonaisuuksia.
 
 Otsikkokomennoille annetaan tyypillisesti vain yksi argumentti, joka on
 kyseisen otsikon teksti. Otsikkoon ei ole tarkoitus kirjoittaa kovin
-monimutkaisia fontti- eikä muotoilukomentoja, vaan mieluiten vai otsikon
-teksti. Typografinen muotoilu tehdään muilla keinoilla, joita esitellään
-alaluvussa \ref{luku:otsikot_ulkoasu}. Yksinkertaiset korostuskomennot
-tai tavutusvihjeet (\komento{-}) kuitenkin toimivat yleensä.
+monimutkaisia fontti- eikä muotoilukomentoja, vaan mieluiten ainoastaan
+otsikon teksti. Typografinen muotoilu tehdään muilla keinoilla, joita
+esitellään alaluvussa \ref{luku:otsikot_ulkoasu}. Yksinkertaiset
+korostuskomennot tai tavutusvihjeet (\komento{-}) kuitenkin toimivat
+yleensä.
 
 \komentoi{section}
 \begin{koodilohkosis}
@@ -1661,13 +1664,13 @@ tavalla:
   \addcontentsline{toc}{section}{Tässäpä numeroimaton otsikko}
 \end{koodilohkosis}
 
-Edellä olevan esimerkin komento \komento{addcontentsline} lisää
+Edellä olevan esimerkin komento \komentom{addcontentsline} lisää
 merkinnän sisällysluetteloon (''\koodi{toc}'', engl.
 \englanti{\textit{table of contents}}). Merkintä on tasoltaan
 ''\koodi{section}'' eli vastaa muita \komento{section}\-/ komennolla
-syntyviä sisällysluettelon kohtia. Komento \komento{phantomsection}
-lisää pdf\-/ tiedostoon näkymättömän ankkurin tähän kohtaan
-dokumentissa. Sitä tarvitaan, jotta sisällysluettelon merkintä toimisi
+syntyviä sisällysluettelon kohtia. Komento \komentom{phantomsection}
+lisää näkymättömän ankkurin tähän kohtaan dokumentissa. Sitä tarvitaan,
+jotta sisällysluettelon merkintä viittaisi oikealle sivulle ja toimisi
 myös linkkinä, joka tuo juuri tähän kohtaan.
 
 \subsection{Otsikoiden numerointi}
@@ -1711,14 +1714,14 @@ latoa dokumenttiin käyttämällä komentoa, joka alkaa kirjaimilla
 \komentox{the} ja jatkuu laskurin nimellä. Niin otsikkokomennot juuri
 tekevät: esimerkiksi \komento{section}\-/ otsikon kohdalla suoritetaan
 automaattisesti \komento{thesection}, joka tuottaa otsikon numeron.
-Vastaavasti \komento{subsection}\-/ otsikko latoo numeron käyttämällä
+Vastaavasti \komento{subsection}\-/ komento latoo numeron käyttämällä
 komentoa \komento{thesubsection} jne.
 
 Kirjoittaja voi halutessaan määritellä nämä laskurin latomiskomennot
 uudelleen. Jos esimerkiksi teoksen osat (\komento{part}) halutaan
 ilmaista arabialaisin numeroin eikä roomalaisin (kuten on oletus),
 tehdään se seuraavan esimerkin mukaisesti. Esimerkissä käytettävä
-komento \komento{arabic} latoo laskurin arabialaisilla numeroilla.
+komento \komento{arabic} latoo laskurin arvon arabialaisilla numeroilla.
 
 \komentoi{renewcommand}
 \komentoi{thepart}
@@ -1791,16 +1794,20 @@ esimerkki vaihtaa otsikoihin groteskin kirjainperheen
   \titleformat*{\subsubsection}{\sffamily\bfseries\normalsize}
 \end{koodilohkosis}
 
-Monimutkaisemmat muotoiluasetukset saa toteutettua komennon
-''tähdettömällä'' versiolla \komento{titleformat}. Se voi olla tarpeen
+Monipuolisemmat muotoiluasetukset saa toteutettua komennon
+''tähdettömällä'' versiolla \komentom{titleformat}. Se voi olla tarpeen
 esimerkiksi \komento{chapter}\-/ tasoisissa otsikoissa, joissa halutaan
-ehkä muotoilla päälukujen aloitussivua enemmänkin. Tämän
+ehkä muotoilla päälukujen aloitussivua monipuolisesti. Tämän
 \komento{titleformat}\-/ komentoversion monista argumenteista ja
-asetuksista kannattaa lukea \paketti{titlesec}\-/ paketin ohjekirjasta.
+ominaisuuksista kannattaa lukea \paketti{titlesec}\-/ paketin
+ohjekirjasta.
 
-Luvun numeroinnin (1.1, 1.2 jne.) tyyliin vaikutetaan komennolla
+Luvun numeroinnin (1.1, 1.2 jne.) tyyliin voi vaikuttaa komennolla
 \komentom{titlelabel}. Komento suoritetaan yleensä vain kerran, ja se
-vaikuttaa kaikentasoisiin otsikoihin.
+vaikuttaa kaikentasoisiin otsikoihin. Tätä komentoa ei tarvita, jos
+käyttää edellä mainittua ''tähdetöntä'' \komento{titleformat}\-/
+komentoa, koska se sisältää jo toiminnot myös lukujen numeroinnin
+asetuksiin.
 
 \komentoi{titlelabel}
 \komentoi{hspace}
@@ -1814,18 +1821,50 @@ sisäiseen käyttöön. Se latoo kyseisen luvun numeron, olipa otsikkotaso
 mikä hyvänsä. Sen perään esimerkissä asetetaan 1\,em:n suuruinen väli
 \komento{hspace}\-/ komennolla.
 
+Otsikoiden yhteydessä ladottavaan sisennykseen ja pystysuuntaiseen
+väliin vaikutetaan komennolla \komentom{titlespacing*}. Sille annetaan
+argumentiksi otsikkokomennon nimi ja halutut mitat järjestyksessä vasen
+sisennys, yläpuolinen väli ja alapuolinen väli.
+
+\komentoi{titlespacing*}
+\komentoi{section}
+\begin{koodilohkosis}
+  \titlespacing*{\section}{0mm}{3ex plus 2bp minus 1bp}{2ex plus 1bp}
+\end{koodilohkosis}
+
+Pystysuuntaiset mitat on yleensä hyvä asettaa venyviksi (luku
+\ref{luku:venyvat_mitat}), jotta Tex saa pelivaraa sivujen latomiseen.
+Otsikon yläpuolella pitäisi olla isompi väli kuin alapuolella, koska
+otsikko kuuluu kiinteämmin sitä seuraavaan tekstiin. Pystysuuntaisten
+välien määrittämisessä voi käyttää *\=/lyhennettä, joka tarkoittaa
+oletuksena ex\-/mittayksikköä ja sallii hieman venymistä.
+
+\komentoi{titlespacing*}
+\komentoi{section}
+\begin{koodilohkosis}
+  \titlespacing*{\section}{0mm}{*3}{*2}
+\end{koodilohkosis}
+
+Tähdellinen \komento{titlespacing*}\-/ komento poistaa otsikon jälkeen
+tulevasta tekstikappaleesta ensimmäisen rivin sisennyksen (luku
+\ref{luku:ensimmaisen_rivin_sisennys}). Tähdetön komentoversio
+\komentom{titlespacing} sen sijaan säilyttää kappaleen sisennyksen. Sitä
+ei liene tarvetta käyttää koskaan, sillä otsikoiden jälkeen tulevaa
+tekstikappaletta ei kuulu sisentää.
+
 Teoksen osien (\komento{part}) vaihtuessa sivulle ladotaan oletuksena
 teksti kuten ''Osa~I'', ''Osa~II'' jne. Mainittu sana ''Osa'' tulee
-suomen kieliasetuksista. Kaikkien kielten asetukset nimittäin
-määrittelevät komennon \komentom{partname} siten, että se sisältää ja
-latoo kyseiseen kieleen sopivan ilmauksen.
-
+suomen kieliasetuksista ja komennosta \komentom{partname}. Kaikkien
+kielten asetukset nimittäin määrittelevät komennon \komento{partname}
+siten, että se sisältää ja latoo kyseiseen kieleen sopivan ilmauksen.
 Vastaavasti päälukujen (\komento{chapter}) yhteydessä ladotaan suomen
 kieliasetuksilla ilmaus ''Luku~1'', ''Luku~2'' jne. Sana ''Luku'' tulee
-komennosta \komentom{chaptername}. Jos omassa dokumentissa --
-esimerkiksi romaanissa -- haluaa kutsua teoksen osia ja päälukuja
-joksikin muuksi, voi määritellä mainitut komennot uudelleen, esimerkiksi
-seuraavasti:
+komennosta \komentom{chaptername}.
+
+Jos omassa dokumentissa haluaa kutsua teoksen osia ja päälukuja joksikin
+muuksi, voi määritellä edellä mainitut komennot uudelleen. Seuraavassa
+esimerkissä on kuvitteellinen romaani, jossa teoksen osat ovat
+''kausia'' ja pääluvut ovat ''päiviä''.
 
 \komentoi{addto}
 \komentoi{captionsfinnish}
@@ -1834,7 +1873,7 @@ seuraavasti:
 \komentoi{chaptername}
 \begin{koodilohkosis}
   \addto{\captionsfinnish}{
-    \renewcommand{\partname}{Jakso}
+    \renewcommand{\partname}{Kausi}
     \renewcommand{\chaptername}{Päivä}
   }
 \end{koodilohkosis}
@@ -1847,17 +1886,21 @@ kuuluu \paketti{polyglossia}\-/\ ja \paketti{babel}\-/ paketteihin,
 joita käsitellään tarkemmin kieliasetusten yhteydessä luvussa
 \ref{luku:kieliasetukset}.
 
-% \titlespacing
+Otsikoiden yhteyteen saa automaattisen sivunvaihdon määrittämällä
+komennon, jonka nimen alussa on otsikkokomennon nimi ja lopussa sana
+\koodi{break}. Tavallisin lienee \komentom{sectionbreak}. Komennon
+määritelmään kirjoitetaan jokin sivuvaihtokomento kuten
+\komento{clearpage}. Sivunvaihtokomentoja käsitellään tarkemmin luvussa
+\ref{luku:sivunvaihdot}.
 
-% \sectionbreak ym. ovat titlesec-paketin ominaisuuksia. titlesec
-% kannattaa täällä käsitellä. Myös laskuri secnumdepth.
-% \phantomsection, \label
-%
-% Varoitus: Ei erikoisia komentoja otsikoihin (mm. extdash), koska ne
-% eivät toimi ainakaan pdf:n sisällysluettelossa tai ehkä muutenkaan.
-% Voi käyttää otsikkokomennon valinnaista argumenttia.
+\komentoi{newcommand}
+\komentoi{sectionbreak}
+\komentoi{clearpage}
+\begin{koodilohkosis}
+  \newcommand{\sectionbreak}{\clearpage}
+\end{koodilohkosis}
 
-\subsection{Osat: esittely, pääluvut, liitteet}
+\subsection{Esittely, pääluvut, liitteet}
 \label{luku:frontmainbackmatter}
 
 ...

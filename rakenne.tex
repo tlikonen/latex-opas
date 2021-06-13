@@ -2041,8 +2041,8 @@ seuraavanlaisilta:
   Meikäläinen \& Teikäläinen (2020: 27--29)
 \end{tulossis}
 
-Lähdeluettelo kirjoitetaan \ymparisto{thebibliography}\-/ ympäristön ja
-\komento{bibitem}\-/ komentojen avulla esimerkin
+Lähdeluettelo kirjoitetaan \ymparistom{thebibliography}\-/ ympäristön ja
+\komentom{bibitem}\-/ komentojen avulla esimerkin
 \ref{esim:thebibliography} tavoin. Ympäristön aloittavan komennon
 (rivi~1) yhteydessä on argumentti \koodi{00}, jolla ei ole tässä
 yhteydessä merkitystä. Jos lähdeviittauksen tyylinä olisi
@@ -2131,8 +2131,8 @@ esimerkkiteos on peräisin esimerkistä \ref{esim:thebibliography}.
   \label{tlk:natbib-cite}
 }
 
-Lähdeluettelon ulkoasuun voi vaikuttaa mittojen \mitta{bibhang} ja
-\mitta{bibsep} avulla. Ensin mainittu on lähdemerkinnän vaakasuuntaisen
+Lähdeluettelon ulkoasuun voi vaikuttaa mittojen \mittam{bibhang} ja
+\mittam{bibsep} avulla. Ensin mainittu on lähdemerkinnän vaakasuuntaisen
 riippuvan sisennyksen suuruus, ja jälkimmäinen on lähdemerkintöjen
 välinen pystysuuntainen tila. Mitat asetetaan tavalliseen tapaan
 \komento{setlength}\-/ komennolla (luku \ref{luku:mitat}):
@@ -2148,7 +2148,7 @@ välinen pystysuuntainen tila. Mitat asetetaan tavalliseen tapaan
 \end{koodilohkosis}
 
 Lähdemerkintöjen fonttiin voi vaikuttaa määrittelemällä uudelleen
-komennon \komento{bibfont} ja sijoittamalla halutut fontti- tai muut
+komennon \komentom{bibfont} ja sijoittamalla halutut fontti- tai muut
 komennot kyseisen komennon määritelmään.
 
 \komentoi{renewcommand}
@@ -2182,7 +2182,7 @@ Esimerkissä hyödynnetään \komento{addto}\-/ komentoa, joka sisältyy
 
 On myös mahdollista määritellä koko komentosarja, joka suoritetaan
 lähdeluettelon otsikoinnin yhteydessä. Se tehdään määrittelemällä
-uudelleen komento \komento{bibsection}.
+uudelleen komento \komentom{bibsection}.
 
 \komentoi{renewcommand}
 \komentoi{bibsection}
@@ -2371,7 +2371,7 @@ erottimeksi. Seuraavassa on näistä esimerkit:
 Muunkinlaisia useasta osasta koostuvia kenttiä on olemassa.
 Asiasanakentän (\koodi{keywords}) eri sanat erotetaan toisistaan
 pilkulla, ja sivunumeroissa (\koodi{pages}) voi olla myös lukualueita,
-jotka ilmaistaan yhdysmerkillä \mbox{(\koodi{-})}.
+jotka ilmaistaan yhdysmerkillä~\mbox{(\koodi{-})}.
 
 \begin{koodilohkosis}
   keywords = {eri, sanoja, peräkkäin}
@@ -2583,7 +2583,7 @@ uudelleen kääntämiset. Yksi komento riittää käyttäjälle:
 
 Lähdeluettelon ulkoasuun voi vaikuttaa muutaman eri mitan avulla, joista
 esitellään tässä yhteydessä vain osa. Lähdemerkinnän riippuvan
-sisennyksen suuruus määräytyy mitan \mitta{bibhang} avulla. Yleensä
+sisennyksen suuruus määräytyy mitan \mittam{bibhang} avulla. Yleensä
 lienee sopivaa asettaa se samaksi kuin tekstikappaleiden ensimmäisen
 rivin sisennys \mitta{parindent}.
 
@@ -2596,16 +2596,17 @@ rivin sisennys \mitta{parindent}.
 \end{koodilohkosis}
 
 Mitta \mitta{bibitemsep} on lähdemerkintöjen välinen pystysuuntainen
-tila. Sen avulla voi harventaa lähdeluetteloa, jolloin lähdemerkinnät
-erottuvat paremmin toisistaan. Mitan \mitta{bibnamesep} avulla voi tehdä
-suuremman pystysuuntaisen välin lähdemerkintöjen väliin silloin, kun
-teoksen tekijä vaihtuu (\koodi{author} tai \koodi{editor}). Toisin
-sanoen tämän mitan avulla voi ryhmitellä saman tekijän teokset
-tiiviimmin yhteen ja jättää väliä seuraavan tekijän teoksiin.
-Vastaavanlainen mitta on \mitta{bibinitsep}, jota käytetään silloin, kun
-lähdemerkinnän aloittava kirjain vaihtuu. Tämän avulla voi ryhmitellä
-lähdemerkinnät aakkosittain eli tehdä suuremman välin aina
-lähdemerkinnän alkukirjaimen vaihtuessa.
+tila. \mittamargin{bibitemsep} Sen avulla voi harventaa lähdeluetteloa,
+jolloin lähdemerkinnät erottuvat paremmin toisistaan. Mitan
+\mittam{bibnamesep} avulla voi tehdä suuremman pystysuuntaisen välin
+lähdemerkintöjen väliin silloin, kun teoksen tekijä vaihtuu
+(\koodi{author} tai \koodi{editor}). Toisin sanoen tämän mitan avulla
+voi ryhmitellä saman tekijän teokset tiiviimmin yhteen ja jättää väliä
+seuraavan tekijän teoksiin. Vastaavanlainen mitta on
+\mittam{bibinitsep}, jota käytetään silloin, kun lähdemerkinnän
+aloittava kirjain vaihtuu. Tämän avulla voi ryhmitellä lähdemerkinnät
+aakkosittain eli tehdä suuremman välin aina lähdemerkinnän alkukirjaimen
+vaihtuessa.
 
 \komentoi{setlength}
 \mittai{bibitemsep}
@@ -2620,7 +2621,7 @@ lähdemerkinnän alkukirjaimen vaihtuessa.
 \subsubsection{Muita asetuksia}
 
 Lähdemerkintöjen fonttiin voi vaikuttaa määrittelemällä uudelleen
-komennon \komento{bibfont} ja sijoittamalla halutut fontti- tai muut
+komennon \komentom{bibfont} ja sijoittamalla halutut fontti- tai muut
 komennot kyseisen komennon määritelmään.
 
 \komentoi{renewcommand}
@@ -2633,7 +2634,7 @@ Lähdemerkinnät itsessään muodostetaan automaattisesti tiettyjen
 tyyliasetusten perusteella. Omiakin tyylejä voi tehdä, mutta yleensä
 riittää vain yksittäisen asetusten muuttaminen. Niistä käsitellään tässä
 yhteydessä muutama. Asetusten muuttamiseen tarvitaan yleensä
-\paketti{biblatex}\-/paketin omia asetuskomentoja.
+\paketti{biblatex}\-/ paketin omia asetuskomentoja.
 
 Lähdeluettelon nimet näkyvät oletusasetuksilla siten, että teoksen
 ensimmäisen tekijän sukunimi mainitaan ensin (luettelon

@@ -1900,23 +1900,116 @@ määritelmään kirjoitetaan jokin sivuvaihtokomento kuten
   \newcommand{\sectionbreak}{\clearpage}
 \end{koodilohkosis}
 
-\subsection{Esittely, pääluvut, liitteet}
+\subsection{Esittely, sisältö, liitteet}
 \label{luku:frontmainbackmatter}
 
-...
+Dokumenttiluokassa \luokka{book} (luku \ref{luku:perusdokumenttiluokat})
+on käytettävissä kolme lisäkomentoa dokumentin erilaisten osien
+ilmaisemiseen: \komento{frontmatter}, \komento{mainmatter} ja
+\komento{backmatter}. Niillä jaetaan laaja teos esittelysivuihin,
+varsinaisiin sisältölukuihin ja loppuosaan kuten liitesivuihin ja
+erilaisiin luetteloihin. Lisäksi muissakin dokumenttiluokissa on komento
+\komento{appendix}, jolla voi aloittaa liitesivuja sisältävän osan
+dokumentissa. Näiden komentojen käyttö on vapaaehtoista, mutta ne voivat
+olla joskus käyttökelpoisia.
 
-% \frontmatter, \mainmatter, \backmatter, \appendix
+Dokumentin alkuun voi kirjoittaa komennon \komentom{frontmatter}, joka
+asettaa sivunumeroiden tyyliksi roomalaiset numerot (i, ii, iii jne.) ja
+poistaa pääluvuilta (\komento{chapter}) numeroinnin. Tässä osassa ovat
+teoksen kansi ja perustiedot, sisällysluettelo, tietokirjan tai
+tutkimuksen tiivistelmä ja mahdollisesti teoksen esipuhe tai muu
+vastaava esittelyteksti, joka ei ole vielä varsinaista sisältöä.
 
-% Alussa käytetään komentoa \koodi{\keno frontmatter}, joka asettaa
-% sivunumeroiden tyyliksi roomalaiset numerot (i, ii, iii jne.). Tässä
-% osassa ovat ainakin sisällysluettelo ja tietokirjan tai tutkimuksen
-% tiivistelmä. Varsinainen sisältö aloitetaan komennolla \koodi{\keno
-% mainmatter}. \backmatter lopettaa päälukujen numeroinnin.
+Jos dokumentissa käytetään \komento{frontmatter}\-/ komentoa, täytynee
+varsinaisten sisältölukujen alkuun kirjoittaa komento
+\komentom{mainmatter}, joka nollaa sivunumerolaskurin, asettaa
+numeroinnin tyyliksi arabialaiset numerot (1, 2, 3 jne.) ja kytkee
+päälle lukujen numeroinnin. Sen jälkeen ensimmäinen \komento{chapter}\-/
+komennolla tehty luku on siis ''Luku~1''.
+
+Sisältösivujen lopussa voi olla komento \komentom{appendix}. Se
+ensinnäkin nollaa \luokka{book}- ja \luokka{report}\-/ luokissa
+päälukujen laskurin (\laskuri{chapter}); \luokka{article}\-/ luokassa se
+nollaa \laskuri{section}\-/ laskurin. Sen lisäksi \komento{appendix}\-/
+komento muuttaa lukujen numerointityyliksi kirjaimet (A, B, C jne.) ja
+päälukujen nimeksi (\komento{chaptername}) ''Liite''. Näin teoksen
+lopussa \komento{appendix}\-/ komennon jälkeen pääluvut tulevat
+nimetyksi liitteiksi: ''Liite~A'', ''Liite~B'' jne.
+
+Liitteiden jälkeen voi olla hyödyllistä käyttää komentoa
+\komentom{backmatter}, joka lopettaa päälukujen numeroinnin kokonaan.
+Tähän osaan voisi sijoittaa ainakin asiahakemistot sekä kirjallisuus\-/\
+tai lähdeluettelon.
+
+\input{esim-tietokirjarakenne.tex}
+
+Edellä mainitut komennot eivät ihan vastaa suomalaista tietokirjojen
+käytäntöä. Suomessa teoksen alun sivunumeroita ei ole tapana ilmaista
+roomalaisilla numeroilla eikä numerointia nollata sisältölukujen
+alkaessa. Esimerkkiin \ref{esim:tietokirjojen_rakenne} on koottu varsin
+tyypillinen suomalainen tietokirjojen rakenne. Esimerkissä ei käytetä
+lainkaan komentoja \komento{frontmatter}, \komento{mainmatter} eikä
+\komento{backmatter}, vaan esimerkiksi lukujen numerointiin vaikutetaan
+suoraan asettamalla laskuriin \laskuri{secnumdepth} sopiva arvo.
+
+Suomalaisissa kirjoissa sivunumeroinnin laskuri alkaa ensimmäiseltä
+sivulta, johon on painettu jotakin, yleensä pelkkä teoksen nimi. Sivu~1
+ei ole vielä kirjan kansi, koska kustantaja lisää kannet ikään kuin
+tekijöiden työn ympärille vielä erikseen.%
+\footnote{Aikakauslehdissä kansi on kuitenkin sivu~1.} Sivunumerot
+tulevat näkyviin hieman vaihtelevasti: joskus sivunumerot näytetään
+sisällysluettelon alusta saakka; joskus ne näytetään vasta
+sisällysluettelon jälkeen esipuheessa. Esimerkissä
+\ref{esim:tietokirjojen_rakenne} sivutyyli \koodi{plain} kytketään
+päälle sisällysluettelon alkaessa eli sivunumerotkin alkavat sen myötä
+näkyä. Sivutyylejä sekä ylä- ja alatunnisteita käsitellään tarkemmin
+luvussa \ref{luku:yla_ala_tunnisteet}.
+
+Mikäli haluaa, että sisällysluettelossa ei vielä näytetä sivunumeroita,
+joutuu dokumenttiluokassa \luokka{book} käyttämään vähän epätavallisia
+keinoja halutun lopputuloksen saavuttamiseksi. Niitä neuvotaan
+sisällysluettelon yhteydessä luvussa \ref{luku:sisallysluettelo}.
 
 \section{Sisällysluettelo}
 \label{luku:sisallysluettelo}
 
 ...
+
+Dokumenttiluokassa \luokka{book} sisällysluettelon alkusivulla
+suoritetaan automaattisesti komento \komento{thispagestyle} ja tyyliksi
+asetetaan \koodi{plain}. Niinpä sisällysluettelon ensimmäisellä sivulla
+sivunumerot näkyvät väistämättä. Monisivuisen sisällysluettelon
+seuraavilla sivuilla sen sijaan noudatetaan aiemmin
+\komento{pagestyle}\-/ komennolla asetettua sivutyyliä.
+
+On kuitenkin pari erilaista tapaa pakottaa myös sisällysluettelon
+ensimmäinen sivu \koodi{empty}\-/ tyyliseksi. Sen voi tehdä seuraavan
+esimerkin komennolla, joka pitää sijoittaa lähdedokumentin alkuun.
+Komento lisää ylimääräisen \komento{thispagestyle}\-/ komennon
+sisällysluetteloa varten tehtävään väliaikaiseen \koodi{toc}\-/
+päätteiseen tiedostoon. Mukana on myös \komento{protect}\-/ komento,
+joka estää sen jälkeen tulevan komennon suorittamisen vielä tässä
+vaiheessa.
+
+\komentoi{addtocontents}
+\komentoi{protect}
+\komentoi{thispagestyle}
+\begin{koodilohkosis}
+  \addtocontents{toc}{\protect\thispagestyle{empty}}
+\end{koodilohkosis}
+
+Vaihtoehtoinen tapa on määritellä väliaikaisesti
+\komento{thispagestyle}\-/ komento siten, ettei se tee mitään.
+Väliaikainen komennon määrittely saadaan aikaan aaltosulkeilla (luku
+\ref{luku:aaltosulkeet}), joiden sisään komennon uudelleen määrittely ja
+sisällysluettelon latomiskomento sijoitetaan.
+
+\begin{koodilohkosis}
+  {
+    \renewcommand{\thispagestyle}[1]{}
+    \tableofcontents
+  }
+\end{koodilohkosis}
 
 % Laskuri \laskurim{tocdepth} määrittelee, mihin tasoon saakka
 % sisällysluettelossa näytetään otsikoita. Esimerkiksi romaanin
@@ -1952,6 +2045,7 @@ määritelmään kirjoitetaan jokin sivuvaihtokomento kuten
 ...
 
 % \listoffigures, \listoftables, omat listat
+% \listoffigurename, \listoftablename
 
 \section{Ristiviitteet}
 \label{luku:ristiviitteet}

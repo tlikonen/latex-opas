@@ -1950,7 +1950,9 @@ alkaessa. Esimerkkiin \ref{esim:tietokirjojen_rakenne} on koottu varsin
 tyypillinen suomalainen tietokirjojen rakenne. Esimerkissä ei käytetä
 lainkaan komentoja \komento{frontmatter}, \komento{mainmatter} eikä
 \komento{backmatter}, vaan esimerkiksi lukujen numerointiin vaikutetaan
-suoraan asettamalla laskuriin \laskuri{secnumdepth} sopiva arvo.
+suoraan asettamalla laskuriin \laskuri{secnumdepth} sopiva arvo. Tätä
+laskuria käsitellään otsikoiden yhteydessä luvussa
+\ref{luku:otsikot_numerointi}.
 
 Suomalaisissa kirjoissa sivunumeroinnin laskuri alkaa ensimmäiseltä
 sivulta, johon on painettu jotakin, yleensä pelkkä teoksen nimi. Sivu~1
@@ -1961,9 +1963,9 @@ tulevat näkyviin hieman vaihtelevasti: joskus sivunumerot näytetään
 sisällysluettelon alusta saakka; joskus ne näytetään vasta
 sisällysluettelon jälkeen esipuheessa. Esimerkissä
 \ref{esim:tietokirjojen_rakenne} sivutyyli \koodi{plain} kytketään
-päälle sisällysluettelon alkaessa eli sivunumerotkin alkavat sen myötä
-näkyä. Sivutyylejä sekä ylä- ja alatunnisteita käsitellään tarkemmin
-luvussa \ref{luku:yla_ala_tunnisteet}.
+päälle sisällysluettelon alkaessa, eli sivunumerotkin alkavat sen myötä
+näkyä. Sivutyylejä ja muita ylä- ja alatunnisteisiin liittyviä asioita
+käsitellään tarkemmin luvussa \ref{luku:yla_ala_tunnisteet}.
 
 Mikäli haluaa, että sisällysluettelossa ei vielä näytetä sivunumeroita,
 joutuu dokumenttiluokassa \luokka{book} käyttämään vähän epätavallisia
@@ -1978,15 +1980,15 @@ sisällysluettelon yhteydessä luvussa \ref{luku:sisallysluettelo}.
 Dokumenttiluokassa \luokka{book} sisällysluettelon alkusivulla
 suoritetaan automaattisesti komento \komento{thispagestyle} ja tyyliksi
 asetetaan \koodi{plain}. Niinpä sisällysluettelon ensimmäisellä sivulla
-sivunumerot näkyvät väistämättä. Monisivuisen sisällysluettelon
-seuraavilla sivuilla sen sijaan noudatetaan aiemmin
-\komento{pagestyle}\-/ komennolla asetettua sivutyyliä.
+näkyvyy sivunumero, vaikka sitä ennen olisikin asettanut sivutyyliksi
+\koodi{empty}. Monisivuisen sisällysluettelon seuraavilla sivuilla sen
+sijaan noudatetaan aiemmin \komento{pagestyle}\-/ komennolla asetettua
+sivutyyliä.
 
 On kuitenkin pari erilaista tapaa pakottaa myös sisällysluettelon
 ensimmäinen sivu \koodi{empty}\-/ tyyliseksi. Sen voi tehdä seuraavan
-esimerkin komennolla, joka pitää sijoittaa lähdedokumentin alkuun.
-Komento lisää ylimääräisen \komento{thispagestyle}\-/ komennon
-sisällysluetteloa varten tehtävään väliaikaiseen \koodi{toc}\-/
+esimerkin komennolla, joka lisää ylimääräisen \komento{thispagestyle}\-/
+komennon sisällysluetteloa varten tehtävään väliaikaiseen \koodi{toc}\-/
 päätteiseen tiedostoon. Mukana on myös \komento{protect}\-/ komento,
 joka estää sen jälkeen tulevan komennon suorittamisen vielä tässä
 vaiheessa.
@@ -2002,14 +2004,26 @@ Vaihtoehtoinen tapa on määritellä väliaikaisesti
 \komento{thispagestyle}\-/ komento siten, ettei se tee mitään.
 Väliaikainen komennon määrittely saadaan aikaan aaltosulkeilla (luku
 \ref{luku:aaltosulkeet}), joiden sisään komennon uudelleen määrittely ja
-sisällysluettelon latomiskomento sijoitetaan.
+sisällysluettelon latomiskomento sijoitetaan. Esimerkistä
+\ref{esim:sisallysluettelo_empty} selviää, miten se tehdään.
 
-\begin{koodilohkosis}
+\begin{esimerkki*}
+  \komentoi{pagestyle}
+  \komentoi{renewcommand}
+  \komentoi{thispagestyle}
+  \komentoi{tableofcontents}
+\begin{koodilohko}
+  \pagestyle{empty}
   {
     \renewcommand{\thispagestyle}[1]{}
     \tableofcontents
   }
-\end{koodilohkosis}
+\end{koodilohko}
+\caption{Sisällysluettelon sivutyylin muuttaminen kokonaan
+  \koodi{empty}\-/ tyyliseksi. Komento \komento{thispagestyle} pitää
+  määritellä väliaikaisesti uudestaan}
+\label{esim:sisallysluettelo_empty}
+\end{esimerkki*}
 
 % Laskuri \laskurim{tocdepth} määrittelee, mihin tasoon saakka
 % sisällysluettelossa näytetään otsikoita. Esimerkiksi romaanin

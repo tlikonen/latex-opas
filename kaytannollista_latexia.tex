@@ -276,9 +276,6 @@ Extension=.otf]
   \renewcommand{\contentsname}{Sisällys}
 }
 
-\setcounter{tocdepth}{2}
-\setcounter{secnumdepth}{2}
-
 \counterwithout{footnote}{chapter}
 
 \newcommand{\otsikkotyyli}{ \raggedright \sffamily \bfseries }
@@ -333,7 +330,7 @@ Extension=.otf]
 % \newgeometry{ top=1cm, bottom=1.8cm, hmargin=1.3cm, papersize={158mm,
 %     220mm}, layout=a5paper, layoutoffset={5mm, 5mm}, showcrop }
 
-\pdfbookmark[0]{Kansi}{luku:kansi}
+\pdfbookmark[0]{Nimiö}{luku:nimiö}
 \DTMsetstyle{finnish-numeric}
 
 \vspace*{.2\textheight}
@@ -422,14 +419,17 @@ Extension=.otf]
 }
 
 \cleardoublepage
+
 \pagestyle{plain}
 \pdfbookmark[0]{Sisällys}{luku:sisallys}
-
 \tableofcontents
 
 \cleardoublepage
 
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{-1}
 \input{esipuhe}
+\setcounter{secnumdepth}{2}
 \input{valmistautuminen}
 \input{merkintakieli}
 \input{asetukset}
@@ -470,7 +470,7 @@ Extension=.otf]
 
 ...
 
-\backmatter
+\setcounter{secnumdepth}{-1}
 
 \chapter{Kirjallisuutta}
 \label{luku:kirjallisuutta}

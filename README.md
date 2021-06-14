@@ -30,7 +30,7 @@ Versionumerointi
 Oppaan versionumerot tulevat julkaisuajan vuosiluvusta sekä
 mahdollisesti kuukaudesta ja päivästä. Vuoden ensimmäinen tai ainoa
 julkaisu saa versionumeronsa pelkästä vuosiluvusta, esimerkiksi versio
-22 (vuosi 2022). Jos samana vuonna julkaistan oppaasta uusi versio,
+22 (vuosi 2022). Jos samana vuonna julkaistaan oppaasta uusi versio,
 lisätään versionumeroon kyseisen kuukauden numero, esimerkiksi versio
 22.4 (huhtikuu 2022). Saman kuun aikana toinen julkaisu saa
 versionumeroonsa vielä päivänkin numeron, esimerkiksi 22.4.15 (15.

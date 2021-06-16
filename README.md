@@ -138,3 +138,4 @@ Puutteita ja suunnitelmia
   - Makropakettien tekeminen.
   - Dokumenttiluokkien tekeminen.
   - Yhdenmukaista pakettien nimien latominen marginaaleihin.
+  - Käsitellään uusi fi-x-school-tavutuskaava.

@@ -1798,13 +1798,27 @@ esimerkki vaihtaa otsikoihin groteskin kirjainperheen
   \titleformat*{\subsubsection}{\sffamily\bfseries\normalsize}
 \end{koodilohkosis}
 
-Monipuolisemmat muotoiluasetukset saa toteutettua komennon
-''tähdettömällä'' versiolla \komentom{titleformat}. Se voi olla tarpeen
-esimerkiksi \komento{chapter}\-/ tasoisissa otsikoissa, joissa halutaan
-ehkä muotoilla päälukujen aloitussivua monipuolisesti. Tämän
-\komento{titleformat}\-/ komentoversion monista argumenteista ja
-ominaisuuksista kannattaa lukea \paketti{titlesec}\-/ paketin
-ohjekirjasta.
+Monipuolisemmat muotoiluasetukset saa toteutettua komennon tähdettömällä
+versiolla \komentom{titleformat}. Tämän komentoversion monista
+argumenteista ja ominaisuuksista kannattaa lukea \paketti{titlesec}\-/
+paketin ohjekirjasta, mutta esimerkistä \ref{esim:titleformat} selviää
+perustoiminnot.
+
+\begin{esimerkki*}
+\begin{koodilohko}
+  \titleformat{\section}     % otsikkotaso: \section
+  [hang]                     % muoto: riippuva sisennys
+  {\sffamily\bfseries\Large} % fonttikomentoja
+  {\thesection}              % numerointi
+  {1em}                      % numeroinnin ja otsikkotekstin väli
+  {}                         % komentoja ennen otsikkotekstiä
+  []                         % komentoja otsikon jälkeen
+\end{koodilohko}
+\caption{Otsikoiden ulkoasuun voi vaikuttaa monipuolisesti
+  \komento{titleformat}\-/ komennolla, joka kuuluu \paketti{titlesec}\-/
+  pakettiin}
+\label{esim:titleformat}
+\end{esimerkki*}
 
 Luvun numeroinnin (1.1, 1.2 jne.) tyyliin voi vaikuttaa komennolla
 \komentom{titlelabel}. Komento suoritetaan yleensä vain kerran, ja se

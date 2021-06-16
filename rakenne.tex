@@ -1982,37 +1982,76 @@ sisällysluettelon käsittelyn yhteydessä luvussa
 \section{Sisällysluettelo}
 \label{luku:sisallysluettelo}
 
-...
+Dokumentin sisällysluettelo syntyy helposti yhdellä komennolla:
+\komentom{tableofcontents}. Otsikkokomennoilla (luku \ref{luku:otsikot})
+tehdyt otsikot tulevat automaattisesti sisällysluetteloon. Jos käytössä
+on makropaketti \paketti{hyperref} (luku \ref{luku:pdf_asetukset}),
+sisällysluettelon otsikot ovat linkkejä, jotka vievät kyseiseen kohtaan
+dokumentissa. Oletuksena syntyvä sisällysluettelo on tyyliltään
+neutraali, ja se sopinee sellaisenaan useimpiin töihin. Ulkoasua voi
+kyllä muokatakin varsin helposti.
 
-Dokumenttiluokassa \luokka{book} sisällysluettelon alkusivulla
-suoritetaan automaattisesti komento \komento{thispagestyle} ja tyyliksi
-asetetaan \koodi{plain}. Niinpä sisällysluettelon ensimmäisellä sivulla
-näkyvyy sivunumero, vaikka sitä ennen olisikin asettanut sivutyyliksi
-\koodi{empty}. Monisivuisen sisällysluettelon seuraavilla sivuilla sen
-sijaan noudatetaan aiemmin \komento{pagestyle}\-/ komennolla asetettua
-sivutyyliä.
-
-On kuitenkin pari erilaista tapaa pakottaa myös sisällysluettelon
-ensimmäinen sivu \koodi{empty}\-/ tyyliseksi. Sen voi tehdä seuraavan
-esimerkin komennolla, joka lisää ylimääräisen \komento{thispagestyle}\-/
-komennon sisällysluetteloa varten tehtävään väliaikaiseen \koodi{toc}\-/
-päätteiseen tiedostoon. Mukana on myös \komento{protect}\-/ komento,
-joka estää sen jälkeen tulevan komennon suorittamisen vielä tässä
-vaiheessa.
-
-\komentoi{addtocontents}
-\komentoi{protect}
-\komentoi{thispagestyle}
+\komentoi{tableofcontents}
 \begin{koodilohkosis}
-  \addtocontents{toc}{\protect\thispagestyle{empty}}
+  % Ladotaan sisällysluettelo tähän kohtaan.
+  \tableofcontents
 \end{koodilohkosis}
 
-Vaihtoehtoinen tapa on määritellä väliaikaisesti
-\komento{thispagestyle}\-/ komento siten, ettei se tee mitään.
-Väliaikainen komennon määrittely saadaan aikaan aaltosulkeilla (luku
-\ref{luku:aaltosulkeet}), joiden sisään komennon uudelleen määrittely ja
-sisällysluettelon latomiskomento sijoitetaan. Esimerkistä
-\ref{esim:sisallysluettelo_empty} selviää, miten se tehdään.
+Laskurin \laskurim{tocdepth} avulla kirjoittaja voi määritellä, mihin
+tasoon saakka sisällysluettelossa näytetään otsikoita. Esimerkiksi
+jonkin kuvitteellisen romaanin (dokumenttiluokka \luokka{book})
+sisällysluettelossa voisi näyttää ainoastaan osat (\komento{part}) ja
+pääluvut (\komento{chapter}) asettamalla laskurin arvoksi nolla. Arvo
+nolla viittaa nimenomaan \komento{chapter}\-/ tasoisiin otsikoihin.
+Otsikoiden tasonumerot voi tarkistaa taulukosta \ref{tlk:otsikkotasot}
+(s.~\pageref{tlk:otsikkotasot}).
+
+\komentoi{setcounter}
+\laskurii{tocdepth}
+\begin{koodilohkosis}
+  \setcounter{tocdepth}{0}
+\end{koodilohkosis}
+
+Sisällysluettelolle ladotaan automaattisesti otsikko, joka tulee
+komennosta \komentom{contentsname}. Komento on määritelty
+kieliasetuksissa, ja se latoo suomen kielessä sanan ''Sisältö'' tai
+''Sisällys''.%
+\footnote{Se, kumpi otsikko on käytössä, riippuu kielipakettien
+  \paketti{polyglossia} ja \paketti{babel} versiosta. Vuonna 2020
+  kumpaankin kielipakettiin on muutettu otsikoksi ''Sisällys'', joka on
+  selvästi yleisin sisällysluettelon otsikko.} Jos otsikkoon ei ole
+tyytyväinen, voi lähdedokumentin esittelyosassa \komento{addto}\-/
+komennon avulla muuttaa kieliasetuksia. Seuraavassa esimerkissä
+muutetaan sisällysluettelon otsikko suomen kielen osalta:
+
+\komentoi{addto}
+\komentoi{captionsfinnish}
+\komentoi{renewcommand}
+\komentoi{contentsname}
+\begin{koodilohkosis}
+  \addto{\captionsfinnish}{
+    \renewcommand{\contentsname}{Sisällysluettelo}
+  }
+\end{koodilohkosis}
+
+Dokumenttiluokissa \luokka{report} ja \luokka{book} (luku
+\ref{luku:perusdokumenttiluokat}) on sellainen ominaisuus tai
+kummallisuus, että sisällysluettelon alkusivulla suoritetaan
+automaattisesti komento \komento{thispagestyle} ja tyyliksi asetetaan
+\koodi{plain}. Tämän vuoksi sisällysluettelon ensimmäinen sivu on aina
+\koodi{plain}\-/ tyylinen eli alatunnisteessa näkyy sivunumero, vaikka
+ennen sisällysluetteloa olisikin asettanut sivutyyliksi jonkin muun.
+Monisivuisen sisällysluettelon seuraavilla sivuilla sen sijaan
+noudatetaan aiemmin \komento{pagestyle}\-/ komennolla asetettua
+sivutyyliä.
+
+Jotta edellä mainitusta kummallisuudesta pääsisi eroon, täytyy
+esimerkiksi määritellä väliaikaisesti \komento{thispagestyle}\-/ komento
+siten, ettei se tee mitään. Väliaikainen komennon määrittely saadaan
+aikaan aaltosulkeilla (luku \ref{luku:aaltosulkeet}), joiden sisään
+komennon uudelleen määrittely ja sisällysluettelon latomiskomento
+sijoitetaan. Esimerkistä \ref{esim:sisallysluettelo_empty} selviää,
+miten se tehdään.
 
 \begin{esimerkki*}
   \komentoi{pagestyle}
@@ -2028,25 +2067,14 @@ sisällysluettelon latomiskomento sijoitetaan. Esimerkistä
 \end{koodilohko}
 \caption{Sisällysluettelon sivutyylin muuttaminen kokonaan
   \koodi{empty}\-/ tyyliseksi. Komento \komento{thispagestyle} pitää
-  määritellä väliaikaisesti uudestaan}
+  määritellä väliaikaisesti uudestaan dokumenttiluokissa \luokka{report}
+  ja \luokka{book}}
 \label{esim:sisallysluettelo_empty}
 \end{esimerkki*}
 
-% Laskuri \laskurim{tocdepth} määrittelee, mihin tasoon saakka
-% sisällysluettelossa näytetään otsikoita. Esimerkiksi romaanin
-% (dokumenttiluokka \luokka{book}) sisällysluettelossa voisi näyttää
-% ainoastaan osat (\komento{part}) ja pääluvut (\komento{chapter})
-% asettamalla laskuri seuraavasti:
+% \phantomsection, \addcontentsline
 
-% \komentoi{setcounter}
-% \laskurii{tocdepth}
-% \begin{koodilohkosis}
-%   \setcounter{tocdepth}{0}
-% \end{koodilohkosis}
-
-% titletoc-paketti, tocdepth-laskuri, \pdfbookmark, \tableofcontents
-
-% \contentsname
+% titletoc-paketti, \pdfbookmark
 
 \section{Luetelmat}
 \label{luku:luetelmat}

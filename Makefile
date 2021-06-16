@@ -20,7 +20,8 @@ $(nimi).pdf: versio.tex $(osat)
 	@touch $@
 
 versio.tex:
-	{ git describe || echo $(versio); } > $@
+	@printf '\\newcommand{\\versio}{%s}\n' \
+		"$$(git describe || echo $(versio))" > $@
 
 aakkostus:
 	@{ echo "\hyphenation{"; grep -e '^  ' tavutusvihjeet.tex | sort -u; \

@@ -1867,8 +1867,8 @@ komennosta \komentom{chaptername}.
 
 Jos omassa dokumentissa haluaa kutsua teoksen osia ja päälukuja joksikin
 muuksi, voi määritellä edellä mainitut komennot uudelleen. Seuraavassa
-esimerkissä on kuvitteellinen romaani, jossa teoksen osat ovat
-''kausia'' ja pääluvut ovat ''päiviä''.
+esimerkissä voisi olla jokin romaani, jossa teoksen osat ovat ''kausia''
+ja pääluvut ovat ''päiviä''.
 
 \komentoi{addto}
 \komentoi{captionsfinnish}
@@ -1883,12 +1883,13 @@ esimerkissä on kuvitteellinen romaani, jossa teoksen osat ovat
 \end{koodilohkosis}
 
 Tässä \komento{renewcommand}\-/ komennot sijoitettiin \komento{addto}\-/
-komennon sisään, sen toiseen argumenttiin. Komento \komento{addto} lisää
-ne suomen kielen asetuksiin (\komento{captionsfinnish}), niin että ne
-tulevat voimaan samalla kun suomen kieliasetuksetkin. \komento{addto}
-kuuluu \paketti{polyglossia}\-/\ ja \paketti{babel}\-/ paketteihin,
-joita käsitellään tarkemmin kieliasetusten yhteydessä luvussa
-\ref{luku:kieliasetukset}.
+komennon sisään, sen toiseen argumenttiin. Komento \komento{addto}
+täytyy suorittaa lähdedokumentin esittelyosassa, ja tässä se lisää uusia
+komentoja suomen kielen asetuksiin (\komento{captionsfinnish}), niin
+että ne tulevat voimaan samalla kun suomen kieliasetuksetkin.
+\komento{addto} kuuluu \paketti{polyglossia}\-/\ ja \paketti{babel}\-/
+paketteihin, joita käsitellään tarkemmin kieliasetusten yhteydessä
+luvussa \ref{luku:kieliasetukset}.
 
 Otsikoiden yhteyteen saa automaattisen sivunvaihdon määrittämällä
 komennon, jonka nimen alussa on otsikkokomennon nimi ja lopussa sana

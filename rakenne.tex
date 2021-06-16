@@ -1810,16 +1810,18 @@ perustoiminnot.
   \komentoi{sffamily}
   \komentoi{bfseries}
   \komentoi{Large}
+  \komentoi{raggedright}
   \komentoi{thesection}
 
 \begin{koodilohko}
   \titleformat{\section}     % otsikkotaso: \section
   [hang]                     % muoto: riippuva sisennys
-  {\sffamily\bfseries\Large} % fonttikomentoja
+  {\sffamily\bfseries\Large  % ulkoasukomentoja
+    \raggedright}
   {\thesection}              % numerointi
-  {1em}                      % numeroinnin ja otsikkotekstin väli
-  {}                         % komentoja ennen otsikkotekstiä
-  []                         % komentoja otsikon jälkeen
+  {.8em}                     % numeroinnin ja otsikkotekstin väli (mitta)
+  {}                         % koodia ennen otsikkotekstiä
+  []                         % koodia otsikon jälkeen
 \end{koodilohko}
 \caption{Otsikoiden ulkoasuun voi vaikuttaa monipuolisesti
   \komento{titleformat}\-/ komennolla, joka kuuluu \paketti{titlesec}\-/

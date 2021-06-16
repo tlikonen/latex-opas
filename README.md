@@ -115,12 +115,12 @@ PDF:n. Jälkimmäinen poistaa kaikki syntyneet tiedostot.
     make clean
     make distclean
 
-Mikäli ei pysty käyttämään `make`-komentoa, onnistuu kääntäminen myös
-komennoilla `lualatex` (tai `xelatex`) ja `biber`. Komennot täytyy antaa
-seuraavassa järjestyksessä:
+Mikäli ei pysty käyttämään `make`-komentoa, voi oppaan latoa myös
+komennoilla `lualatex` (tai `xelatex`) ja `biber`. Komennot täytyy
+suorittaa seuraavassa järjestyksessä:
 
     lualatex kaytannollista_latexia
-    biber kaytannollista_latexia
+    biber    kaytannollista_latexia
     lualatex kaytannollista_latexia
     lualatex kaytannollista_latexia
 

@@ -43,7 +43,7 @@ $(nimi).tds.zip: doc
 $(nimi).zip: $(nimi) $(nimi).tds.zip
 	zip -r9 $@ $(nimi).tds.zip $(nimi)
 
-paketti: $(nimi).zip
+ctan: $(nimi).zip
 
 install: doc
 	mkdir -p $(texmf)
@@ -65,4 +65,4 @@ clean:
 distclean: clean
 	rm -f $(nimi).pdf versio.tex
 
-.PHONY: aakkostus clean distclean paketti install uninstall
+.PHONY: aakkostus clean distclean ctan install uninstall

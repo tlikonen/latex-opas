@@ -1806,8 +1806,8 @@ esimerkki vaihtaa otsikoihin groteskin kirjainperheen
 Monipuolisemmat muotoiluasetukset saa toteutettua komennon tähdettömällä
 versiolla \komentom{titleformat}. Tämän komentoversion monista
 argumenteista ja ominaisuuksista kannattaa lukea \paketti{titlesec}\-/
-paketin ohjekirjasta, mutta esimerkistä \ref{esim:titleformat} selviää
-perustoiminnot.
+paketin ohjekirjasta, mutta esimerkistä \ref{esim:titleformat}
+selvinnevät perustoiminnot.
 
 \begin{esimerkki*}
   \komentoi{titleformat}
@@ -2002,9 +2002,9 @@ näkyä. Sivutyylejä ja muita ylä- ja alatunnisteisiin liittyviä asioita
 käsitellään tarkemmin luvussa \ref{luku:yla_ala_tunnisteet}.
 
 Mikäli haluaa, että sisällysluettelossa ei vielä näytetä sivunumeroita,
-joutuu dokumenttiluokassa \luokka{book} käyttämään vähän epätavallisia
-keinoja halutun lopputuloksen saavuttamiseksi. Niitä neuvotaan
-sisällysluettelon käsittelyn yhteydessä luvussa
+joutuu dokumenttiluokissa \luokka{book} ja \luokka{report} käyttämään
+vähän epätavallista keinoa halutun lopputuloksen saavuttamiseksi.
+Sellainen neuvotaan sisällysluettelon käsittelyn yhteydessä luvussa
 \ref{luku:sisallysluettelo}.
 
 \section{Sisällysluettelo}
@@ -2014,8 +2014,8 @@ Dokumentin sisällysluettelo syntyy helposti yhdellä komennolla:
 \komentom{tableofcontents}. Otsikkokomennoilla (luku \ref{luku:otsikot})
 tehdyt otsikot tulevat automaattisesti sisällysluetteloon. Jos käytössä
 on makropaketti \paketti{hyperref} (luku \ref{luku:pdf_asetukset}),
-sisällysluettelon otsikot ovat linkkejä, jotka vievät kyseiseen kohtaan
-dokumentissa. Oletuksena syntyvä sisällysluettelo on tyyliltään
+sisällysluettelon otsikot ovat myös linkkejä, jotka vievät kyseiseen
+kohtaan dokumentissa. Oletuksena syntyvä sisällysluettelo on tyyliltään
 neutraali, ja se sopinee sellaisenaan useimpiin töihin. Ulkoasua voi
 kyllä muokatakin varsin helposti.
 
@@ -2062,7 +2062,7 @@ muutetaan sisällysluettelon otsikko suomen kielen osalta:
   }
 \end{koodilohkosis}
 
-Dokumenttiluokissa \luokka{report} ja \luokka{book} (luku
+Dokumenttiluokissa \luokka{book} ja \luokka{report} (luku
 \ref{luku:perusdokumenttiluokat}) on sellainen ominaisuus tai
 kummallisuus, että sisällysluettelon alkusivulla suoritetaan
 automaattisesti komento \komento{thispagestyle} ja tyyliksi asetetaan
@@ -2073,19 +2073,12 @@ Monisivuisen sisällysluettelon seuraavilla sivuilla sen sijaan
 noudatetaan aiemmin \komento{pagestyle}\-/ komennolla asetettua
 sivutyyliä.
 
-Jotta edellä mainitusta kummallisuudesta pääsisi eroon, täytyy
-esimerkiksi määritellä väliaikaisesti \komento{thispagestyle}\-/ komento
-siten, ettei se tee mitään. Väliaikainen komennon määrittely saadaan
-aikaan aaltosulkeilla (luku \ref{luku:aaltosulkeet}), joiden sisään
-komennon uudelleen määrittely ja sisällysluettelon latomiskomento
-sijoitetaan. Esimerkistä \ref{esim:sisallysluettelo_empty} selviää,
-miten se tehdään.
-
 \begin{esimerkki*}
   \komentoi{pagestyle}
   \komentoi{renewcommand}
   \komentoi{thispagestyle}
   \komentoi{tableofcontents}
+
 \begin{koodilohko}
   \pagestyle{empty}
   {
@@ -2100,9 +2093,92 @@ miten se tehdään.
 \label{esim:sisallysluettelo_empty}
 \end{esimerkki*}
 
-% \phantomsection, \addcontentsline
+Jotta edellä mainitusta kummallisuudesta pääsisi eroon, täytyy
+esimerkiksi määritellä väliaikaisesti \komento{thispagestyle}\-/ komento
+siten, ettei se tee mitään. Väliaikainen komennon määrittely saadaan
+aikaan aaltosulkeilla (luku \ref{luku:aaltosulkeet}), joiden sisään
+komennon uudelleen määrittely ja sisällysluettelon latomiskomento
+sijoitetaan. Esimerkistä \ref{esim:sisallysluettelo_empty} selviää,
+miten se tehdään.
 
-% titletoc-paketti, \pdfbookmark
+Normaalit otsikot tulevat mukaan sisällysluetteloon itsestään, mutta
+joskus voi joutua lisäämään luetteloon kohtia myös keinotekoisesti. Se
+tehdään komennolla \komentom{addcontentsline}, jonka käytöstä on
+esimerkki luvussa \ref{luku:otsikot}. Pelkkään pdf\-/ tiedoston
+sisäiseen sisällysluetteloon voi lisätä kohtia komennolla
+\komentom{pdfbookmark}, joka kuuluu \paketti{hyperref}\-/ pakettiin.
+Tätä komentoa käsitellään luvussa \ref{luku:pdf_asetukset}.
+
+\begin{esimerkki*}
+  \komentoi{titlecontents}
+  \komentoi{addvspace}
+  \komentoi{rmfamily}
+  \komentoi{bfseries}
+  \komentoi{large}
+  \komentoi{small}
+  \komentoi{titlerule}
+  \komentoi{titlerule*}
+  \komentoi{normalsize}
+  \komentoi{thecontentslabel}
+  \komentoi{contentspage}
+  \komentoi{normalsize}
+  \komentoi{makebox}
+
+\begin{koodilohko}
+  \titlecontents{chapter}                     % otsikon taso: chapter
+  [0em]                                       % vasen sisennys (mitta)
+  {\addvspace{1.5ex}\rmfamily\bfseries\large} % yläpuolinen koodi
+  {\makebox[8mm][l]{\thecontentslabel}}       % numeroitu kohta
+  {}                                          % numeroimaton kohta
+  {\small\titlerule[0bp]\contentspage}  % pisteviiva (pois) ja sivunumero
+  [\addvspace{.5ex}]                    % alapuolinen koodi
+
+  \titlecontents{section}                     % otsikon taso: section
+  [0em]                                       % vasen sisennys (mitta)
+  {\addvspace{.5ex}\rmfamily\normalsize}      % yläpuolinen koodi
+  {\makebox[8mm][l]{\thecontentslabel}}       % numeroitu kohta
+  {}                                          % numeroimaton kohta
+  {~\small\titlerule*[3mm]{.}\contentspage}   % pisteviiva ja sivunumero
+  [\addvspace{.2ex}]                          % alapuolinen koodi
+
+  \titlecontents{subsection}                  % otsikon taso: subsection
+  [8mm]                                       % vasen sisennys (mitta)
+  {\rmfamily\small}                           % yläpuolinen koodi
+  {\makebox[10mm][l]{\thecontentslabel}}      % numeroitu kohta
+  {}                                          % numeroimaton kohta
+  {~\small\titlerule*[3mm]{.}\contentspage}   % pisteviiva ja sivunumero
+  []                                          % alapuolinen koodi
+\end{koodilohko}
+\caption{Sisällysluettelon ulkoasua muokataan \komento{titlecontents}\-/
+  komennolla, joka on peräisin \paketti{titletoc}\-/ paketista}
+\label{esim:titlecontents}
+\end{esimerkki*}
+
+Sisällysluettelon ulkoasun muokkaamista varten on paketti
+\paketti{titletoc},\avctan{titletoc} jonka tärkeimmän komennon
+(\komentom{titlecontents}) käyttöä esitellään esimerkissä
+\ref{esim:titlecontents}. Komennolla voi muokata paitsi
+sisällysluettelon kohtia mutta myös leijuvien osien (luku
+\ref{luku:leijuosat}) kuten kuvien ja taulukoiden luetteloita.
+
+Esimerkistä selvinnee, miten \komento{titlecontents}\-/ komennolla
+määritellään luettelokohdan vasemman sisennyksen mitta, yläpuolinen ja
+alapuolinen väli (\komento{addvspace}), mahdolliset ulkoasuun
+vaikuttavat komennot kuten \komento{rmfamily}, \komento{bfseries} ja
+\komento{large}.
+
+\komento{titlecontents}\-/ komennon argumenteissa käytetään jonkin
+verran muita komentoja, jotka on tarkoitettu nimenomaan tämän komennon
+argumentteihin. Komento \komento{thecontentslabel} latoo kyseisen
+otsikon numeron (1.2, 1.3 tms.). Komento \komento{contentspage} latoo
+sivunumeron. Komennolla \komento{titlerule} voi tehdä katsetta ohjaavan
+pisteviivan otsikkotekstin ja sivunumeron väliin. Latexin
+laatikkokomento \komento{makebox} tekee tietynlevyisiä näkymättömiä
+laatikoita, joilla saadaan näissä esimerkeissä sopivan levyinen alue
+otsikon numeroinnille. Laatikoihin liittyvää tekniikkaa käsitellään
+tarkemmin luvussa \ref{luku:laatikot}. Makropaketin \paketti{titletoc}
+ohjekirjassa on paljon muitakin toimintoja, komentoja ja esimerkkejä
+sisällysluetteloiden ehostamiseen.
 
 \section{Luetelmat}
 \label{luku:luetelmat}

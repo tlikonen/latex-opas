@@ -1629,14 +1629,18 @@ yleensä.
 
 Otsikko tulee automaattisesti mukaan teoksen sisällysluetteloon, jos
 sellainen on olemassa (luku \ref{luku:sisallysluettelo}). Otsikko näkyy
-automaattisesti myös pdf\-/ tiedoston sisällysluettelossa (luku
+myös pdf\-/ tiedoston sisällysluettelossa, jos vain
+\paketti{hyperref}\-/ paketti on käytössä (luku
 \ref{luku:pdf_asetukset}). Lisäksi otsikon tekstiä voi käyttää
 ristiviittauksissa (luku~\ref{luku:ristiviitteet}).
 
 Otsikkokomennoille voi antaa yhden valinnaisen argumentin, jolla
-ilmaistaan otsikosta lyhempi versio. Tällöin sisällysluettelossa ja
-ristiviitteissä näytetään lyhempi otsikko ja otsikon kohdalle tekstiin
-ladotaan varsinainen otsikko.
+ilmaistaan otsikosta lyhempi tai yksinkertaisempi versio. Tällöin
+sisällysluettelossa ja ristiviitteissä näytetään lyhempi otsikko ja
+tekstiin ladotaan varsinainen otsikko. Tätä ominaisuutta on syytä
+hyödyntää myös silloin, kun varsinainen otsikko sisältää otsikkotekstin
+lisäksi muotoilukomentoja. Silloin valinnaiseen argumenttiin
+kirjoitetaan vain puhdasta tekstiä sisältävä versio otsikosta.
 
 \komentoi{section}
 \begin{koodilohkosis}
@@ -1651,7 +1655,7 @@ Nämä vaihtoehdot latovat otsikon, jolla ei ole numerointia ja jota ei
 lisätä sisällysluetteloon.
 
 Pelkän otsikon numeroinnin poistamiseen ei ehkä kannata käyttää näitä
-tähtiversiota, koska yleensä otsikko kuitenkin halutaan
+tähtiversioita, koska yleensä otsikko kuitenkin halutaan
 sisällysluetteloon. Otsikoiden numeroinnin saa pois muilla keinoilla,
 jotka neuvotaan luvussa \ref{luku:otsikot_numerointi}.
 
@@ -1673,9 +1677,10 @@ merkinnän sisällysluetteloon (''\koodi{toc}'', engl.
 \englanti{\textit{table of contents}}). Merkintä on tasoltaan
 ''\koodi{section}'' eli vastaa muita \komento{section}\-/ komennolla
 syntyviä sisällysluettelon kohtia. Komento \komentom{phantomsection}
-lisää näkymättömän ankkurin tähän kohtaan dokumentissa. Sitä tarvitaan,
-jotta sisällysluettelon merkintä viittaisi oikealle sivulle ja toimisi
-myös linkkinä, joka tuo juuri tähän kohtaan.
+kuuluu \paketti{hyperref}\-/ pakettiin, ja se lisää näkymättömän
+ankkurin tähän kohtaan dokumentissa. Sitä tarvitaan, jotta
+sisällysluettelon merkintä viittaisi oikealle sivulle ja toimisi myös
+linkkinä, joka tuo juuri tähän kohtaan.
 
 \subsection{Otsikoiden numerointi}
 \label{luku:otsikot_numerointi}

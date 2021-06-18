@@ -121,6 +121,7 @@ komennot estävät sanojen tavuttamisen, kun taas \paketti{ragged2e}\-/
 paketin komennot sallivat tavutuksen normaalisti.
 
 \subsection{Pystysuuntaiset välit}
+\label{luku:pystysuuntaiset_valit}
 
 Kappaleiden väliin ladottava pystysuuntainen tyhjä tila asetetaan mitan
 \mittam{parskip} avulla. Se on oletuksena nolla, mutta pientä venymistä
@@ -2159,11 +2160,12 @@ Sisällysluettelon ulkoasun muokkaamista varten on paketti
 sisällysluettelon kohtia mutta myös leijuvien osien (luku
 \ref{luku:leijuosat}) kuten kuvien ja taulukoiden luetteloita.
 
-Esimerkistä selvinnee, miten \komento{titlecontents}\-/ komennolla
+Esimerkistä selviää, miten \komento{titlecontents}\-/ komennolla
 määritellään luettelokohdan vasemman sisennyksen mitta, yläpuolinen ja
-alapuolinen väli (\komento{addvspace}), mahdolliset ulkoasuun
-vaikuttavat komennot kuten \komento{rmfamily}, \komento{bfseries} ja
-\komento{large}.
+alapuolinen väli (\komento{addvspace}, luku
+\ref{luku:pystysuuntaiset_valit}), mahdolliset kirjainperheeseen ja
+\=/leikkaukseen vaikuttavat komennot kuten \komento{rmfamily},
+\komento{bfseries} ja \komento{large} (luku \ref{luku:fontit_korkea}).
 
 \komento{titlecontents}\-/ komennon argumenteissa käytetään jonkin
 verran muita komentoja, jotka on tarkoitettu nimenomaan tämän komennon
@@ -2174,9 +2176,11 @@ pisteviivan otsikkotekstin ja sivunumeron väliin. Latexin
 laatikkokomento \komento{makebox} tekee tietynlevyisiä näkymättömiä
 laatikoita, joilla saadaan näissä esimerkeissä sopivan levyinen alue
 otsikon numeroinnille. Laatikoihin liittyvää tekniikkaa käsitellään
-tarkemmin luvussa \ref{luku:laatikot}. Makropaketin \paketti{titletoc}
-ohjekirjassa on paljon muitakin toimintoja, komentoja ja esimerkkejä
-sisällysluetteloiden ehostamiseen.
+tarkemmin luvussa \ref{luku:laatikot}.
+
+Makropaketin \paketti{titletoc} ohjekirjassa on paljon muitakin
+toimintoja ja esimerkkejä sisällysluetteloiden ehostamiseen. Ohjeisiin
+kannattaa tutustua, mikäli kaipaa erikoisempia sisällysluettelomalleja.
 
 \section{Luetelmat}
 \label{luku:luetelmat}

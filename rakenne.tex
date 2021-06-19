@@ -2189,6 +2189,34 @@ kannattaa tutustua, mikäli kaipaa erikoisempia sisällysluettelomalleja.
 
 ...
 
+\leijukuva{
+  \begin{tikzpicture}
+    [viiva/.style={line width=.7bp}, x=.01\textwidth, y=.01\textwidth,
+    baseline=0pt]
+
+    \newcommand{\tikzlistkpl}[1]{\draw (15,#1) -- ++(70,0) -- ++(0,15)
+      -- ++(-60,0) -- ++(0,-5) -- ++(-10,0) -- (15,#1)}
+
+    \draw (0,110) rectangle ++(100,7);
+    \node at (50,113) {yläpuolinen teksti};
+
+    \tikzlistkpl{80};
+    \tikzlistkpl{55};
+    \tikzlistkpl{20};
+
+    \draw (0,0) rectangle ++(100,7);
+    \node at (50,3) {alapuolinen teksti};
+
+    % \draw [viiva, <->, color=black] (5.05,-.1) -- (7.95,-.1);
+\end{tikzpicture}
+}{
+  \caption{Luetelmien tekemiseen tarkoitetun \ymparisto{list}\-/
+    ympäristön mitat}
+  \label{kuva:list-mitat}
+}
+
+% Selvitä \makelabel, joka ohjaa luetelmamerkkien latomista.
+
 \section{Taulukot}
 \label{luku:taulukot}
 

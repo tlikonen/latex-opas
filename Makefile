@@ -6,17 +6,18 @@ osat = $(nimi).tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
 	kuva-list-mitat.tex
 hakemistot = paketit ymparistot komennot mitat laskurit luokat
 texmf = $(HOME)/texmf
+latex = lualatex -interaction=nonstopmode
+latexmk = latexmk -lualatex \
+	-pdflualatex="lualatex -interaction=nonstopmode %O %S"
 
 $(nimi).pdf: versio.tex $(osat)
 	@if which latexmk >/dev/null; then \
-		latexmk -lualatex \
-		-pdflualatex="lualatex -interaction=nonstopmode %O %S" \
-		$(nimi); \
+		$(latexmk) $(nimi); \
 	else \
-		lualatex $(nimi) && \
+		$(latex) $(nimi) && \
 		biber $(nimi) && \
-		lualatex $(nimi) && \
-		lualatex $(nimi); \
+		$(latex) $(nimi) && \
+		$(latex) $(nimi); \
 	fi
 	@touch $@
 

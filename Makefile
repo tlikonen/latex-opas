@@ -2,7 +2,8 @@ versio = 0
 nimi = kaytannollista_latexia
 osat = $(nimi).tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
-	valmistautuminen.tex esim-tietokirjarakenne.tex kirjallisuutta.bib
+	valmistautuminen.tex esim-tietokirjarakenne.tex kirjallisuutta.bib \
+	kuva-list-mitat.tex
 hakemistot = paketit ymparistot komennot mitat laskurit luokat
 texmf = $(HOME)/texmf
 

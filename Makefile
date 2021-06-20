@@ -22,7 +22,7 @@ $(nimi).pdf: versio.tex $(osat)
 
 versio.tex:
 	@printf '\\newcommand{\\versio}{%s}\n' \
-		"$$(git describe || echo $(versio))" > $@
+		"$$(git describe --always --dirty || echo $(versio))" > $@
 
 aakkostus:
 	@{ echo "\hyphenation{"; grep -e '^  ' tavutusvihjeet.tex | sort -u; \

@@ -1,16 +1,18 @@
 versio = 0
 nimi = kaytannollista_latexia
-osat = $(nimi).tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
+lahde = $(nimi).tex versio.tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
 	valmistautuminen.tex esim-tietokirjarakenne.tex kirjallisuutta.bib \
 	kuva-list-mitat.tex matematiikka.tex muuta.tex
-hakemistot = paketit ymparistot komennot mitat laskurit luokat
+julkaisutiedostot = $(nimi).pdf $(lahde) README.md
+julkaisukohteet = $(patsubst %,doc/latex/$(nimi)/%,$(julkaisutiedostot))
+asiahakemistot = paketit ymparistot komennot mitat laskurit luokat
 texmf = $(HOME)/texmf
 latex = lualatex -interaction=nonstopmode
 latexmk = latexmk -lualatex \
 	-pdflualatex="lualatex -interaction=nonstopmode %O %S"
 
-$(nimi).pdf: versio.tex $(osat)
+$(nimi).pdf: $(lahde)
 	@if which latexmk >/dev/null; then \
 		$(latexmk) $(nimi); \
 	else \
@@ -30,38 +32,34 @@ aakkostus:
 		echo "}"; } > tavutusvihjeet.tmp && \
 		mv -f tavutusvihjeet.tmp tavutusvihjeet.tex
 
-doc: $(nimi).pdf versio.tex $(osat) README.md
-	mkdir -p doc/latex/$(nimi)
-	for f in $^; do ln -fn "$$f" doc/latex/$(nimi)/"$$f"; done
-	@touch $@
+$(julkaisukohteet): doc/latex/$(nimi)/%: %
+	@mkdir -p doc/latex/$(nimi)
+	cp $< $@
 
-$(nimi): doc
-	ln -sfn doc/latex/$(nimi)
-	@touch $@
+$(nimi).tds.zip: $(julkaisukohteet)
+	zip -r9 $@ doc/latex/$(nimi)
 
-$(nimi).tds.zip: doc
-	zip -r9 $@ $^
-
-$(nimi).zip: $(nimi) $(nimi).tds.zip
-	zip -r9 $@ $(nimi).tds.zip $(nimi)
+$(nimi).zip: $(nimi).tds.zip $(julkaisukohteet)
+	zip -r9 $@ $(nimi).tds.zip
+	cd doc/latex && zip -r9 ../../$@ $(nimi)
 
 ctan: $(nimi).zip
 
-install: doc
+install: $(julkaisukohteet)
 	mkdir -p $(texmf)
 	cp -r doc $(texmf)
 	mktexlsr $(texmf)
 
 uninstall:
-	rm -r $(texmf)/doc/latex/$(nimi)
+	rm -fr $(texmf)/doc/latex/$(nimi)
 	mktexlsr $(texmf)
 
 clean:
 	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls log out \
-		run.xml toc xdv) texput.log $(nimi)*.zip $(nimi)
-	rm -f $(addsuffix .idx,$(hakemistot))
-	rm -f $(addsuffix .ind,$(hakemistot))
-	rm -f $(addsuffix .ilg,$(hakemistot))
+		run.xml toc xdv) texput.log $(nimi).zip $(nimi).tds.zip
+	rm -f $(addsuffix .idx,$(asiahakemistot))
+	rm -f $(addsuffix .ind,$(asiahakemistot))
+	rm -f $(addsuffix .ilg,$(asiahakemistot))
 	rm -fr doc
 
 distclean: clean

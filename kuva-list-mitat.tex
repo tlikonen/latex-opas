@@ -9,8 +9,7 @@
     \newcommand{\kpl}[1]{\draw (15,#1) -- ++(70,0) -- ++(0,15)
       -- ++(-60,0) -- ++(0,-5) -- ++(-10,0) -- cycle}
     \newcommand{\nuoli}[2]{\draw [color=red, <->] (#1) -- (#2)}
-    \newcommand{\kyltti}[2]{\draw (#1) node [anchor=west, fill=white,
-      baseline=0bp] {#2}}
+    \newcommand{\kyltti}[2]{\draw (#1) node [anchor=west] {#2}}
 
     \newcommand{\katko}[2]{\draw [color=black!40, densely dotted, line
       width=.5bp] (#1) -- (#2)}
@@ -47,10 +46,10 @@
 
     % Keskimmäinen kappale
     \node at (50,62) {toinen tekstikappale};
-    \nuoli{0,62}{15,62};
-    \kyltti{-3,66}{\mitta{leftmargin}};
-    \nuoli{85,62}{100,62};
-    \kyltti{85,66}{\mitta{rightmargin}};
+    \nuoli{0,57}{15,57};
+    \kyltti{0,52}{\mitta{leftmargin}};
+    \nuoli{85,57}{100,57};
+    \kyltti{82,52}{\mitta{rightmargin}};
     \katko{15,70}{15,65};
     \nuoli{15,70}{25,70};
     \kyltti{13,74}{\mitta{listparindent}};

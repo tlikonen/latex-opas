@@ -116,8 +116,8 @@ PDF:n. Jälkimmäinen poistaa kaikki syntyneet tiedostot.
     make distclean
 
 Mikäli ei pysty käyttämään `make`-komentoa, voi oppaan latoa myös
-komennoilla `lualatex` (tai `xelatex`) ja `biber`. Komennot täytyy
-suorittaa seuraavassa järjestyksessä:
+komennoilla `lualatex` ja `biber`. Komennot täytyy suorittaa seuraavassa
+järjestyksessä:
 
     lualatex kaytannollista_latexia
     biber    kaytannollista_latexia

@@ -427,8 +427,6 @@ Extension=.otf]
 \pdfbookmark[0]{Sisällys}{luku:sisallys}
 \tableofcontents
 
-\cleardoublepage
-
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{-1}
 \input{esipuhe}
@@ -437,42 +435,8 @@ Extension=.otf]
 \input{merkintakieli}
 \input{asetukset}
 \input{rakenne}
-
-\chapter{Matematiikka}
-\label{luku:matematiikka}
-
-% \section{Käyttöönotto}
-% \subsection{Unicode-math}
-% \subsection{Mathspec}
-% \subsection{Vanha tapa}
-% \section{Jotain sisältöäkin tarvitaan}
-% \section{Ympäristöjä}
-% align... (amsmath)
-
-...
-
-\chapter{Muuta tekniikkaa}
-
-...
-
-\section{Laatikot}
-\label{luku:laatikot}
-
-...
-
-\section{Päällekkäinen teksti}
-
-% textpos-paketti
-
-...
-
-\section{Päiväykset ja kellonajat}
-% \day\month\year
-% Em. laskureissa on kenoviiva
-% datetime2-paketti
-
-...
-
+\input{matematiikka}
+\input{muuta}
 \setcounter{secnumdepth}{-1}
 
 \chapter{Kirjallisuutta}

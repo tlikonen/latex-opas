@@ -3,7 +3,7 @@ nimi = kaytannollista_latexia
 osat = $(nimi).tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
 	valmistautuminen.tex esim-tietokirjarakenne.tex kirjallisuutta.bib \
-	kuva-list-mitat.tex
+	kuva-list-mitat.tex matematiikka.tex muuta.tex
 hakemistot = paketit ymparistot komennot mitat laskurit luokat
 texmf = $(HOME)/texmf
 latex = lualatex -interaction=nonstopmode

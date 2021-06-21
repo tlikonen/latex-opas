@@ -2188,34 +2188,41 @@ kannattaa tutustua, mikäli kaipaa erikoisempia sisällysluettelomalleja.
 \section{Luetelmat}
 \label{luku:luetelmat}
 
-\subsection{Perusympäristöt}
-
 Latexissa on helppokäyttöiset ympäristöt kolmelle erilaiselle luetelman
-perustyypille: Ympäristö \ymparistom{itemize} tekee numeroimattoman
-luetelman, jonka jokainen kohta merkitään samanlaisella merkillä,
-esimerkiksi luetelmaympyrällä~(\textbullet). \ymparistom{enumerate}
-puolestaan on numeroitu luetelma, eli luetelman kohdat saavat
-järjestysnumeron tai muun järjestystä ilmaisevan merkinnän kuten
-kirjaimen tai roomalaisen numeron. Ympäristö \ymparistom{description}
-luo määritelmäluetelman, jossa luetellaan käsitteitä ja niiden
-määritelmiä. Tämä on käytännössä sama kuin tekstikappaleen riippuva
-sisennys (luku \ref{luku:riippuva_sisennys}), joka alkaa määriteltävällä
-ilmauksella.
+perustyypille: numeroimaton (\ymparisto{itemize}), numeroitu
+(\ymparisto{enumerate}) ja määritelmäluetelma (\ymparisto{description}).
+Ne riittänevät perustarpeisiin ja ovat hieman myös muokattavissa
+typografisesti. Luetelmien perusympäristöjä käsitellään luvussa
+\ref{luku:luetelma_perus}.
 
-Edellisten perusluetelmien lisäksi on olemassa myös yleinen luetelmien
-rakenteluun tarkoitettu ympäristö \ymparisto{list}, jolla voi tehdä
-suunnilleen mitä tahansa luetelmiin tai tekstikappaleisiin liittyviä
-rakenteita. Teknisesti \ymparisto{list} sisältää kaikki tarvittavat
+Perusluetelmien lisäksi on olemassa yleinen luetelmien rakenteluun
+tarkoitettu ympäristö \ymparisto{list}, jolla voi toteuttaa suunnilleen
+mitä tahansa luetelmiin tai tekstikappaleisiin liittyviä rakenteita.
+Teknisesti \ymparisto{list}\-/ ympäristö sisältää kaikki tarvittavat
 luetelmiin liittyvät ominaisuudet, joten kirjoittaja voi aivan hyvin
 käyttää pelkästään sitä. Ympäristöä käsitellään luvussa
 \ref{luku:list-ymparisto}.
 
-Luetelmien perusajatus on samanlainen: luetelmaympäristön sisällä
+\subsection{Perusympäristöt}
+\label{luku:luetelma_perus}
+
+Ympäristö \ymparistom{itemize} tekee numeroimattoman luetelman, jonka
+jokainen kohta merkitään samanlaisella merkillä, esimerkiksi
+luetelmaympyrällä~(\textbullet). \ymparistom{enumerate} puolestaan on
+numeroitu luetelma, eli luetelman kohdat saavat järjestysnumeron tai
+muun järjestystä ilmaisevan merkinnän kuten kirjaimen tai roomalaisen
+numeron. Ympäristö \ymparistom{description} luo määritelmäluetelman,
+jossa luetellaan käsitteitä ja niiden määritelmiä. Tämä on käytännössä
+sama kuin tekstikappaleen riippuva sisennys (luku
+\ref{luku:riippuva_sisennys}), jossa kappale alkaa määriteltävällä
+ilmauksella.
+
+Luetelmien perusrakenne on samanlainen: luetelmaympäristön sisällä
 käytetään \komentom{item}\-/ komentoa, joka aloittaa uuden
-luetelmakohdan. Komennolle ei tarvitse antaa argumenttia, vaan se lisää
-automaattisesti uuden luetelmamerkin. Seuraavassa on esimerkki
+luetelmakohdan. Komennolle ei tarvitse antaa argumenttia: se vain
+aloittaa uuden luetelmakohdan. Seuraavassa on esimerkki
 \ymparisto{itemize}\-/ ympäristöstä, mutta \ymparisto{enumerate}\-/
-ympäristöäkin käytetään samalla tavalla.
+ympäristöäkin käytetään samalla tavalla:
 
 \ymparistoi{itemize}
 \komentoi{item}
@@ -2242,7 +2249,7 @@ argumentin sisältämä teksti tai koodi.
 
 \begin{koodilohko}
   \begin{description}
-  \item[Tex] Tekstin ladontaan erikoistunut ohjelmointikieli.
+  \item[Tex] Tekstidokumenttien ladontaan erikoistunut ohjelmointikieli.
   \item[Latex] Dokumenttien kirjoittajille tarkoitettu merkintäkieli.
   \item[Lualatex] Latex-muotoisten lähdedokumenttien kääntäjäohjelma.
     Sisältää Lua-nimisen ohjelmointikielen.
@@ -2251,15 +2258,15 @@ argumentin sisältämä teksti tai koodi.
 
 \begin{tulos}
   \begin{description}
-  \item[Tex] Tekstin ladontaan erikoistunut ohjelmointikieli.
+  \item[Tex] Tekstidokumenttien ladontaan erikoistunut ohjelmointikieli.
   \item[Latex] Dokumenttien kirjoittajille tarkoitettu merkintäkieli.
   \item[Lualatex] Latex-muotoisten lähdedokumenttien kääntäjäohjelma.
-    Sisältää Lua\-/nimisen ohjelmointikielen.
+    Sisältää Lua-nimi\-sen ohjelmointikielen.
   \end{description}
 \end{tulos}
 \caption{Käsitteiden määritelmiä ja sen kaltaisia luetelmia voi
   toteuttaa \ymparisto{description}\-/ ympäristön avulla. Käsitteet
-  lihavoidaan}
+  kirjoitetaan \komento{item}\-/ komennon valinnaiseen argumenttiin}
 \label{esim:description}
 \end{esimerkki*}
 
@@ -2271,97 +2278,154 @@ komennon valinnaisessa argumentissa.
 
 Edellä mainittuja luetelmaympäristöjä voi kirjoittaa sisäkkäin: yksi
 luetelman kohta (\komento{item}) voi siis aloittaa uuden
-luetelmaympäristön. Sisäkkäin voi olla neljä luetelmaa.
+luetelmaympäristön. Latex osaa käsitellä neljä sisäkkäistä luetelmaa.
 
-Latex sisentää sisäkkäiset luetelmat automaattisesti ja vaihtaa eri
-tasoilla luetelmakohtien merkkiä tai numerointitapaa. Esimerkiksi
-ulommaisin \ymparisto{itemize}\-/ ympäristö käyttää
+Latex sisentää sisäkkäiset luetelmat automaattisesti loogisella tavalla
+ja vaihtaa eri tasoilla luetelmakohtien merkkiä tai numerointitapaa.
+Esimerkiksi ulommaisin \ymparisto{itemize}\-/ ympäristö käyttää
 luetelmaympyrää~(\textbullet), mutta sen sisällä oleva käyttää
 ajatusviivaa~(\==). Ulommaisin \ymparisto{enumerate}\-/ ympäristö
 käyttää arabialaisia numeroita (1, 2, 3 jne.) mutta sen sisällä oleva
 kirjaimia (a, b, c jne.).
 
-Luetelmamerkkejä ja luetelmien numerointitapoja voi muuttaa.
-Ympäristössä \ymparisto{itemize} luetelmamerkit tulevat komennosta, joka
-alkaa kirjaimilla \komentox{label\-item} ja jatkuu luetelman tasoa
-ilmaisevalla roomalaisella numerolla \koodi{i}\==\koodi{iv}. Komennon
-voi määritellä uudelleen haluamallaan tavalla. Seuraava esimerkki
-näyttää, kuinka \ymparisto{itemize}\-/ ympäristön eritasoiset
-luetelmamerkit muutetaan. Samassa ovat niiden oletusarvot.
+\begin{esimerkki*}
+  \komentoi{renewcommand}
+  \komentoi{labelitemi}
+  \komentoi{labelitemii}
+  \komentoi{labelitemiii}
+  \komentoi{labelitemiv}
+  \komentoi{textbullet}
+  \komentoi{normalfont}
+  \komentoi{bfseries}
+  \komentoi{textendash}
+  \komentoi{textasteriskcentered}
+  \komentoi{textperiodcentered}
+  \komentoi{labelenumi}
+  \komentoi{labelenumii}
+  \komentoi{labelenumiii}
+  \komentoi{labelenumiv}
+  \komentoi{arabic}
+  \komentoi{alph}
+  \komentoi{Alph}
+  \komentoi{roman}
+  \laskurii{enumi}
+  \laskurii{enumii}
+  \laskurii{enumiii}
+  \laskurii{enumiv}
 
-\komentoi{renewcommand}
-\komentoi{labelitemi}
-\komentoi{labelitemii}
-\komentoi{labelitemiii}
-\komentoi{labelitemiv}
-\komentoi{textbullet}
-\komentoi{normalfont}
-\komentoi{bfseries}
-\komentoi{textendash}
-\komentoi{textasteriskcentered}
-\komentoi{textperiodcentered}
-\begin{koodilohkosis}
+\begin{koodilohko}
+  % itemize-ympäristön luetelmamerkki
   \renewcommand{\labelitemi}  {\textbullet} % ulommainen luetelma
   \renewcommand{\labelitemii} {\normalfont\bfseries\textendash}
   \renewcommand{\labelitemiii}{\textasteriskcentered}
   \renewcommand{\labelitemiv} {\textperiodcentered}
-\end{koodilohkosis}
 
-Myös numeroidun \ymparisto{enumerate}\-/ ympäristön numerointitapaa voi
-muuttaa jokaisella tasolla. Numeroidut kohdat tulevat komennosta, joka
-alkaa kirjaimilla \komentox{label\-enum} ja jatkuu luetelman tasoa
-ilmaisevalla roomalaisella numerolla \koodi{i}\==\koodi{iv}.
-Numeroidussa luetelmassa käytetään laskureita \laskuri{enumi},
-\laskuri{enumii}, \laskuri{enumiii}, \laskuri{enumiv}, joten
-luetelmakohtien täytyy latoa näiden laskurien arvo jossakin muodossa.
-Seuraavassa on esimerkki numeroidun luetelman eritasoisten kohtien
-muuttamiseksi ja samalla niiden oletusarvot:
-
-\komentoi{renewcommand}
-\komentoi{labelenumi}
-\komentoi{labelenumii}
-\komentoi{labelenumiii}
-\komentoi{labelenumiv}
-\komentoi{arabic}
-\komentoi{alph}
-\komentoi{Alph}
-\komentoi{roman}
-\laskurii{enumi}
-\laskurii{enumii}
-\laskurii{enumiii}
-\laskurii{enumiv}
-\begin{koodilohkosis}
+  % enumerate-ympäristön numerointitapa
   \renewcommand{\labelenumi}  {\arabic{enumi}.} % ulommainen luetelma
   \renewcommand{\labelenumii} {(\alph{enumii})}
   \renewcommand{\labelenumiii}{\roman{enumiii}.}
   \renewcommand{\labelenumiv} {\Alph{enumiv}.}
-\end{koodilohkosis}
+\end{koodilohko}
+\caption{Luetelmamerkkien ja numerointitapojen muuttaminen
+  \ymparisto{itemize}\-/\ ja \ymparisto{enumerate}\-/ ympäristöissä.
+  Esimerkissä näkyvät oletusarvot}
+\label{esim:labelitem_labelenum}
+\end{esimerkki*}
 
-Numeroiduista luetelmakohdista huolehtivat laskurit nollataan aina
-ympäristön alussa. Laskurin voi kuitenkin asettaa haluamaansa arvoon
-\ymparisto{enumerate}\-/ ympäristön sisällä. Seuraavassa on tästä
-esimerkki:
+Luetelmamerkit ja luetelmien numerointitavat ovat kirjoittajan
+muutettavissa. Ympäristössä \ymparisto{itemize} luetelmamerkit tulevat
+komennosta, joka alkaa sanoilla \komentox{label\-item} ja jatkuu
+luetelman tasoa ilmaisevalla roomalaisella numerolla
+\koodi{i}\==\koodi{iv}. Komennot voi määritellä uudelleen haluamallaan
+tavalla, kuten esimerkki \ref{esim:labelitem_labelenum} osoittaa.
 
-\ymparistoi{enumerate}
-\komentoi{item}
-\komentoi{setcounter}
-\laskurii{enumi}
-\begin{koodilohkosis}
+\ymparisto{enumerate}\-/ ympäristössä numeroidut kohdat tulevat
+komennosta, joka alkaa sanoilla \komentox{label\-enum} ja jatkuu
+luetelman tasoa ilmaisevalla roomalaisella numerolla
+\koodi{i}\==\koodi{iv}. Numeroidussa luetelmassa käytetään laskureita
+\laskuri{enumi}, \laskuri{enumii}, \laskuri{enumiii} ja
+\laskuri{enumiv}, joten luetelmakohtien täytyy latoa näiden laskurien
+arvo jossakin muodossa. Esimerkki \ref{esim:labelitem_labelenum}
+selventää asiaa.
+
+\begin{esimerkki*}
+  \ymparistoi{enumerate}
+  \komentoi{item}
+  \komentoi{setcounter}
+  \laskurii{enumi}
+
+\begin{koodilohko}
   \begin{enumerate}
   \setcounter{enumi}{3}
-  \item Tämä onkin luetelman kohta 4.
-  \item Tässä vielä kohta 5.
+  \item Luetelma alkaa kohdasta neljä.
+  \item Tässä on vielä viides
+  \item ja kuudes kohta.
   \end{enumerate}
+\end{koodilohko}
+\begin{tulos}
+  \begin{enumerate}
+    \setlength{\topsep}{0ex}
+    \setlength{\partopsep}{0ex}
+    \setlength{\parskip}{0ex}
+    \setcounter{enumi}{3}
+  \item Luetelma alkaa kohdasta neljä.
+  \item Tässä on vielä viides
+  \item ja kuudes kohta.
+  \end{enumerate}
+\end{tulos}
+\caption{Numeroitujen \ymparisto{enumerate}\-/ luetelmien laskurin voi
+  asettaa itse}
+\label{esim:luetelmalaskuri}
+\end{esimerkki*}
+
+Numeroiduista luetelmakohdista huolehtivat laskurit nollataan
+automaattisesti aina ympäristön alussa. Joskus voi kuitenkin olla
+tarpeen aloittaa luetelmakohdat jostain muusta kuin luvusta~1,
+kirjaimesta~\textit{a} tms. Silloin kirjoittajan täytyy asettaa laskuri
+\laskuri{enumi} haluamaansa arvoon \ymparisto{enumerate}\-/ ympäristön
+sisällä esimerkin \ref{esim:luetelmalaskuri} mukaisesti.
+
+Kirjoittaja voi vaikuttaa myös luetelmakohtien sisennykseen ja
+pystysuuntaisiin väleihin. Sisennykseen vaikuttavat mitat alkavat
+sanoilla \mittax{leftmargin} ja jatkuvat roomalaisella numerolla
+\koodi{i}\==\koodi{iv}, joka ilmaisee luetelman tasoa. Ulommaisen
+luetelman sisennys ilmaistaan suhteessa sivun tekstialueen reunaan;
+sisempien luetelmien sisennys ilmaistaan suhteessa edellisen tason
+sisennykseen. Oletuksena Latexin sisennykset ovat melko suuria, joten
+niitä on usein tarpeen pienentää, esimerkiksi seuraavan esimerkin
+mukaisesti:
+
+\komentoi{setlength}
+\mittai{leftmargini}
+\mittai{leftmarginii}
+\mittai{leftmarginiii}
+\mittai{leftmarginiv}
+\begin{koodilohkosis}
+  \setlength{\leftmargini}  {1.5em} % ulommainen luetelma
+  \setlength{\leftmarginii} {1.5em}
+  \setlength{\leftmarginiii}{1.5em}
+  \setlength{\leftmarginiv} {1.5em}
 \end{koodilohkosis}
 
-% \setlength{\leftmargini}{1.5em}
-% \setlength{\leftmarginii}{1.5em}
-% \setlength{\leftmarginiii}{1.5em}
-% \setlength{\leftmarginiv}{1.5em}
+Edellä olevat sisennysasetukset toimivat ympäristöissä
+\ymparisto{itemize}, \ymparisto{enumerate} ja \ymparisto{description}.
+Mainituissa ympäristöissä voi säätää pystysuuntaisia välejä kolmen
+seuraavassa esimerkissä mainitun mitan avulla. Mittojen sijainti
+luetelmassa on nähtävissä kuvassa \ref{kuva:list-mitat}
+(s.~\pageref{kuva:list-mitat}).
 
-% \setlength{\parsep}{0bp}
-% \setlength{\itemsep}{0bp}
-% \setlength{\parskip}{0bp}
+\komentoi{setlength}
+\mittai{parsep}
+\mittai{itemsep}
+\mittai{parskip}
+\begin{koodilohkosis}
+  \setlength{\parsep} {0bp}   % kappaleiden väli
+  \setlength{\itemsep}{3bp}   % luetelmakohtien väli
+  \setlength{\parskip}{1.2ex} % väli luetelman alussa ja lopussa
+\end{koodilohkosis}
+
+Edellä mainitut komennot on syytä sijoittaa luetelmaympäristön sisään
+heti \komento{begin}\-/ komennon jälkeen.
 
 \subsection{Luetelmien yleistyökalu}
 \label{luku:list-ymparisto}

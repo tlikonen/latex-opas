@@ -1,4 +1,4 @@
-versio = 0
+versio = $(shell git describe 2>/dev/null || echo 0)
 nimi = kaytannollista_latexia
 lahde = $(nimi).tex versio.tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
@@ -24,8 +24,7 @@ $(nimi).pdf: $(lahde)
 	@touch $@
 
 versio.tex:
-	@printf '\\newcommand{\\versio}{%s}\n' \
-		"$$(git describe --always --dirty || echo $(versio))" > $@
+	echo '\\newcommand{\\versio}{$(versio)}' > $@
 
 aakkostus:
 	@{ echo "\hyphenation{"; grep -e '^  ' tavutusvihjeet.tex | sort -u; \

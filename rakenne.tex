@@ -2348,42 +2348,24 @@ luetelman tasoa ilmaisevalla roomalaisella numerolla
 arvo jossakin muodossa. Esimerkki \ref{esim:labelitem_labelenum}
 selventää asiaa.
 
-\begin{esimerkki*}
-  \ymparistoi{enumerate}
-  \komentoi{item}
-  \komentoi{setcounter}
-  \laskurii{enumi}
-
-\begin{koodilohko}
-  \begin{enumerate}
-  \setcounter{enumi}{3}
-  \item Luetelma alkaa kohdasta neljä.
-  \item Tässä on vielä viides
-  \item ja kuudes kohta.
-  \end{enumerate}
-\end{koodilohko}
-\begin{tulos}
-  \begin{enumerate}
-    \setlength{\topsep}{0ex}
-    \setlength{\partopsep}{0ex}
-    \setlength{\parskip}{0ex}
-    \setcounter{enumi}{3}
-  \item Luetelma alkaa kohdasta neljä.
-  \item Tässä on vielä viides
-  \item ja kuudes kohta.
-  \end{enumerate}
-\end{tulos}
-\caption{Numeroitujen \ymparisto{enumerate}\-/ luetelmien laskurin voi
-  asettaa itse}
-\label{esim:luetelmalaskuri}
-\end{esimerkki*}
-
 Numeroiduista luetelmakohdista huolehtivat laskurit nollataan
 automaattisesti aina ympäristön alussa. Joskus voi kuitenkin olla
 tarpeen aloittaa luetelmakohdat jostain muusta kuin luvusta~1,
 kirjaimesta~\textit{a} tms. Silloin kirjoittajan täytyy asettaa laskuri
-\laskuri{enumi} haluamaansa arvoon \ymparisto{enumerate}\-/ ympäristön
-sisällä esimerkin \ref{esim:luetelmalaskuri} mukaisesti.
+haluamaansa arvoon \ymparisto{enumerate}\-/ ympäristön sisällä. Seuraava
+esimerkki asettaa uloimman luetelman \laskuri{enumi}\-/ laskurin
+arvoon~3, joten ensimmäiseksi luetelmakohdaksi tulee~4.
+
+\ymparistoi{enumerate}
+\komentoi{setcounter}
+\komentoi{item}
+\laskurii{enumi}
+\begin{koodilohkosis}
+  \begin{enumerate}
+    \setcounter{enumi}{3}
+    \item Tämä on luetelmakohta numero 4.
+  \end{enumerate}
+\end{koodilohkosis}
 
 Kirjoittaja voi vaikuttaa myös luetelmakohtien sisennykseen ja
 pystysuuntaisiin väleihin. Sisennykseen vaikuttavat mitat alkavat
@@ -2412,7 +2394,8 @@ Edellä olevat sisennysasetukset toimivat ympäristöissä
 Mainituissa ympäristöissä voi säätää pystysuuntaisia välejä kolmen
 seuraavassa esimerkissä mainitun mitan avulla. Mittojen sijainti
 luetelmassa on nähtävissä kuvassa \ref{kuva:list-mitat}
-(s.~\pageref{kuva:list-mitat}).
+(s.~\pageref{kuva:list-mitat}). Seuraavat komennot on syytä sijoittaa
+luetelmaympäristön sisään heti \komento{begin}\-/ komennon jälkeen.
 
 \komentoi{setlength}
 \mittai{parsep}
@@ -2423,9 +2406,6 @@ luetelmassa on nähtävissä kuvassa \ref{kuva:list-mitat}
   \setlength{\itemsep}{3bp}   % luetelmakohtien väli
   \setlength{\parskip}{1.2ex} % väli luetelman alussa ja lopussa
 \end{koodilohkosis}
-
-Edellä mainitut komennot on syytä sijoittaa luetelmaympäristön sisään
-heti \komento{begin}\-/ komennon jälkeen.
 
 \subsection{Luetelmien yleistyökalu}
 \label{luku:list-ymparisto}

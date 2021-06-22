@@ -2085,7 +2085,7 @@ sivutyyliä.
 \begin{koodilohko}
   \pagestyle{empty}
   {
-    \renewcommand{\thispagestyle}[1]{}
+    \renewcommand{\thispagestyle}[1]{} % tyhjä määritelmä
     \tableofcontents
   }
 \end{koodilohko}
@@ -2097,12 +2097,14 @@ sivutyyliä.
 \end{esimerkki*}
 
 Jotta edellä mainitusta kummallisuudesta pääsisi eroon, täytyy
-esimerkiksi määritellä väliaikaisesti \komento{thispagestyle}\-/ komento
-siten, ettei se tee mitään. Väliaikainen komennon määrittely saadaan
-aikaan aaltosulkeilla (luku \ref{luku:aaltosulkeet}), joiden sisään
-komennon uudelleen määrittely ja sisällysluettelon latomiskomento
-sijoitetaan. Esimerkistä \ref{esim:sisallysluettelo_empty} selviää,
-miten se tehdään.
+määritellä väliaikaisesti \komento{thispagestyle}\-/ komento
+toisenlaiseksi. Väliaikainen komennon määrittely saadaan aikaan
+aaltosulkeilla (luku \ref{luku:aaltosulkeet}), joiden sisään komennon
+uudelleen määrittely ja sisällysluettelon latomiskomento sijoitetaan.
+Esimerkistä \ref{esim:sisallysluettelo_empty} selviää, miten se tehdään.
+Tässä esimerkissä komennon määritelmä jätettiin tyhjäksi, koska sen ei
+haluta tekevän mitään. Näin ollen aiemmin annettu \komento{pagestyle}\-/
+komento vaikuttaa koko sisällysluetteloon.
 
 Normaalit otsikot tulevat mukaan sisällysluetteloon itsestään, mutta
 joskus voi joutua lisäämään luetteloon kohtia myös keinotekoisesti. Se

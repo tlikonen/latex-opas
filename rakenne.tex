@@ -448,6 +448,7 @@ sisennyksen toteuttamiseen. Kappale alkaa \komento{item}\-/ komennolla,
 koska kyseessä on ikään kuin luetelman kohta.
 
 \subsection{Vasen ja oikea sisennys sekä lohkolainaukset}
+\label{luku:lohkolainaukset}
 
 Dokumentteihin tarvitaan välillä kokonaisia sisennettyjä
 tekstikappaleita, koska leipätekstin ohessa halutaan näyttää
@@ -2410,11 +2411,119 @@ luetelmaympäristön sisään heti \komento{begin}\-/ komennon jälkeen.
 \subsection{Luetelmien yleistyökalu}
 \label{luku:list-ymparisto}
 
-...
+Ympäristö \ymparistom{list} on yleistyökalu, joka soveltuu moniin
+asioihin: se on tarkoitettu erilaisten luetelmien rakentamiseen, mutta
+sen avulla muotoilla mitä tahansa tekstikappaleita. Esimerkiksi luvussa
+\ref{luku:luetelma_perus} käsitellyt luetelmat voi toteuttaa myös
+\ymparisto{list}\-/ ympäristön avulla -- samoin luvuissa
+\ref{luku:riippuva_sisennys} ja \ref{luku:lohkolainaukset} käsitellyt
+riippuvat sisennykset ja lohkolainaukset.
+
+Tyypillisesti \ymparisto{list}\-/ ympäristöä ei käytetä dokumentin
+kirjoittamisessa sellaisenaan, vaan kirjoittaja määrittelee oman
+helppokäyttöisen luetelma\-/\ tai muun ympäristön, ja
+\ymparisto{list}\-/ ympäristöä hyödynnetään ympäristön määritelmässä.
+Omien ympäristöjen tekemistä käsitellään tarkemmin luvussa
+\ref{luku:ymparistot}, mutta tämänkin alaluvun loppupuolella on
+esimerkki, joka liittyy nimenomaan \ymparisto{list}\-/ ympäristöön.
+
+Seuraavassa on esimerkki \ymparisto{list}\-/ ympäristön rakenteesta. Se
+muistuttaa luvussa \ref{luku:luetelma_perus} käsiteltyjä perusluetelmia,
+mutta lisäksi sille täytyy antaa kaksi argumenttia. Niiden avulla
+vaikutetaan luetelman asetuksiin.
+
+\begin{koodilohkosis}
+  \begin{list}{merkki}{asetukset}
+  \item ...
+  \end{list}
+\end{koodilohkosis}
+
+Edellisen esimerkin argumentti ''\koodi{merk\-ki}'' sisältää tekstiä tai
+koodia, jonka avulla ladotaan luetelmakohdan merkki. Numeroimattomassa
+luetelmassa siihen voi laittaa esimerkiksi luetelmaympyrän eli komennon
+\komento{textbullet} tai ajatusviivan (\koodi{--}). Numeroidussa
+luetelmassa se voisi sisältää komennon, joka latoo jonkin laskurin
+arvon. Seuraava esimerkki latoo \laskuri{enumi}\-/ laskurin arvon
+arabialaisilla numeroilla ja sen perään pisteen. Luetelmamerkit
+näyttävät siis seuraavalta: ''1.'', ''2.'', ''3.'' jne.
+
+\komentoi{arabic}
+\laskurii{enumi}
+\begin{koodilohkosis}
+  \arabic{enumi}.
+\end{koodilohkosis}
+
+\begin{esimerkki*}
+  \ymparistoi{list}
+  \komentoi{alph}
+  \komentoi{setlength}
+  \komentoi{usecounter}
+  \mittai{leftmargin}
+  \mittai{itemsep}
+  \mittai{parsep}
+  \laskurii{enumi}
+\begin{koodilohko}
+  \begin{list}{\alph{enumi})}{       % kirjaimia: a) b) c) ...
+      \usecounter{enumi}             % käytetään enumi-laskuria
+      \setlength{\leftmargin}{1.5em} % vasen sisennys
+      \setlength{\itemsep}{.2ex}     % luetelmakohtien väli
+      \setlength{\parsep}{0ex}       % luetelmakappaleiden väli
+    }
+  \item Luetelman ensimmäinen kohta.
+  \item Tässä on vielä toinen
+  \item ja kolmas kohta.
+  \end{list}
+\end{koodilohko}
+\begin{tulos}
+  \begin{list}{\alph{enumi})}{       % kirjaimia: a) b) c) ...
+      \usecounter{enumi}             % käytetään enumi-laskuria
+      \setlength{\leftmargin}{1.5em} % vasen sisennys
+      \setlength{\itemsep}{.2ex}     % luetelmakohtien väli
+      \setlength{\parsep}{0ex}       % luetelmakappaleiden väli
+    }
+  \item Luetelman ensimmäinen kohta.
+  \item Tässä on vielä toinen
+  \item ja kolmas kohta.
+  \end{list}
+\end{tulos}
+\caption{\ymparisto{list}\-/ ympäristön argumenttien avulla vaikutetaan
+  luetelmakohtien merkintätapaan ja mittoihin}
+\label{esim:list_perus}
+\end{esimerkki*}
+
+Aiemmassa \ymparisto{list}\-/ ympäristön rakenne\-/esimerkissä toinen
+argumentti ''\koodi{ase\-tuk\-set}'' sisältää mitä hyvänsä koodia, jolla
+ympäristö asetetaan sopivanlaiseksi. Tyypillisesti siinä määritellään
+käytettävä luetelmalaskuri sekä asetetaan luetelman ulkoasuun
+vaikuttavat mitat sopivaksi.
+
+Esimerkissä \ref{esim:list_perus} on yksinkertainen numeroitu luetelma,
+joka hyödyntää olemassa olevaa \laskuri{enumi}\-/ laskuria (luku
+\ref{luku:luetelma_perus}). Laskurin arvo ladotaan kirjaimina
+(\komento{alph}). Laskurin \laskuri{enumi} sijasta voi käyttää mitä
+tahansa omaakin laskuria, kunhan luo sen etukäteen komennolla
+\komento{newcounter} (luku \ref{luku:laskurit}). Esimerkissä asetetaan
+myös eräitä luetelman sisäisiä mittoja.
 
 \input{kuva-list-mitat.tex}
 
-% Selvitä \makelabel, joka ohjaa luetelmamerkkien latomista.
+Erilaisia \ymparisto{list}\-/ ympäristön mittoja on olemassa useita, ja
+ne on koottu kuvaan \ref{kuva:list-mitat}. Seuraavassa on lisätietoa
+mittojen merkityksestä.
+
+\begin{maaritelma}{\mitta{#1}}
+\item [parskip]
+\item [topsep]
+\item [partopsep]
+\item [parsep]
+\item [itemsep]
+\item [leftmargin]
+\item [rightmargin]
+\item [labelwidth]
+\item [labelsep]
+\item [itemindent]
+\item [listparindent]
+\end{maaritelma}
 
 \section{Taulukot}
 \label{luku:taulukot}

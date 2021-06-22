@@ -202,7 +202,7 @@ Extension=.otf]
   \end{figure*}}
 
 \newenvironment{nluetelma}{%
-  \begin{list}{\theenumi.}{
+  \begin{list}{\arabic{enumi}.}{
       \usecounter{enumi}
       \setlength{\leftmargin}{1.3em}
       \setlength{\labelsep}{.3em}
@@ -210,8 +210,19 @@ Extension=.otf]
       \setlength{\parsep}{0em}
       \setlength{\topsep}{.2ex plus .2ex}
       \RaggedRight
-    }}{%
-  \end{list}}
+    }}{\end{list}}
+
+\newenvironment{maaritelma}[1]{%
+  \begin{list}{}{
+    \setlength{\leftmargin}{\parindent}
+    \setlength{\labelwidth}{\parindent}
+    \setlength{\labelsep}{1em}
+    \setlength{\itemindent}{1em}
+    \setlength{\itemsep}{.2ex plus .2ex}
+    \setlength{\parsep}{0em}
+    \setlength{\topsep}{.2ex plus .2ex}
+    \renewcommand{\makelabel}[1]{#1}
+  }}{\end{list}}
 
 \definecolor{tavu}{rgb}{1,0,0}
 

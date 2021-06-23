@@ -1976,7 +1976,68 @@ Liitteiden jälkeen voi olla hyödyllistä käyttää komentoa
 Tähän osaan voisi sijoittaa ainakin asiahakemistot sekä kirjallisuus\-/\
 tai lähdeluettelon.
 
-\input{esim-tietokirja}
+\begin{esimerkki*}
+  \komentoi{documentclass}
+  \luokkai{book}
+  \komentoi{pagestyle}
+  \komentoi{cleardoublepage}
+  \komentoi{setcounter}
+  \laskurii{tocdepth}
+  \laskurii{secnumdepth}
+  \komentoi{tableofcontents}
+  \komentoi{chapter}
+  \komentoi{appendix}
+  \komentoi{printbibliography}
+  \komentoi{printindex}
+  \ymparistoi{document}
+
+\begin{koodilohko}
+  \documentclass{book}
+
+  \begin{document}
+
+  \pagestyle{empty} % sivunumerot pois näkyvistä
+  % nimiösivu yms.
+
+  \cleardoublepage
+  \setcounter{tocdepth}{2} % sisällysluettelon syvyys
+  \pagestyle{plain}        % sivunumerot näkyviin
+  \tableofcontents         % sisällysluettelo
+
+  \setcounter{secnumdepth}{-1} % lukujen numerointi pois
+
+  \chapter{Esipuhe}
+  % esipuheen teksti
+
+  \setcounter{secnumdepth}{2} % aloitetaan lukujen numerointi
+
+  \chapter{Ensimmäinen pääluku}
+  % ...
+  \chapter{Toinen pääluku}
+  % ...
+
+  % mahdollisesti liitteet
+  \appendix
+  \chapter{Tärkeä liite}
+  % ...
+  \chapter{Tosi tärkeä liite}
+  % ...
+
+  % Kirjallisuusluettelot, asiahakemistot yms.
+  \setcounter{secnumdepth}{-1} % lukujen numerointi pois
+
+  \chapter{Kirjallisuutta}
+  \printbibliography
+
+  \chapter{Asiahakemisto}
+  \printindex
+
+  \end{document}
+\end{koodilohko}
+\caption{Tyypillinen suomalainen tietokirjojen rakenne sekä sivujen ja
+  lukujen numerointikäytännöt}
+\label{esim:tietokirjojen_rakenne}
+\end{esimerkki*}
 
 Edellä mainitut komennot eivät ihan vastaa suomalaista tietokirjojen
 käytäntöä. Suomessa teoksen alun sivunumeroita ei ole tapana ilmaista
@@ -2573,7 +2634,73 @@ luetellaan käsitteitä ja niiden määritelmä, voidaan haluta, että
 käsitteet erottuvat muusta tekstistä selvästi. Esimerkki
 \ref{esim:list_makelabel} selventää tätä asiaa.
 
-\input{kuva-list-mitat}
+\leijukuva{
+  \begin{tikzpicture}
+    [x=.01\textwidth, y=.01\textwidth, line width=1bp, rounded corners=2bp]
+
+    \newcommand{\kpl}[1]{\draw (15,#1) -- ++(70,0) -- ++(0,15)
+      -- ++(-60,0) -- ++(0,-5) -- ++(-10,0) -- cycle}
+    \newcommand{\nuoli}[2]{\draw [color=red, <->] (#1) -- (#2)}
+    \newcommand{\kyltti}[2]{\draw (#1) node [anchor=west] {#2}}
+
+    \newcommand{\katko}[2]{\draw [color=black!40, densely dotted, line
+      width=.5bp] (#1) -- (#2)}
+
+    \katko{0,10}{0,110};
+    \katko{100,10}{100,110};
+
+    \kpl{80};
+    \kpl{55};
+    \kpl{25};
+
+    \draw (0,10) rectangle ++(100,-7);
+    \node at (50,6) {alapuolinen teksti};
+
+    \draw (0,110) rectangle ++(100,7);
+    \node at (50,113) {yläpuolinen teksti};
+
+    \nuoli{50,110}{50,95};
+    \kyltti{51,103}{\mitta{topsep} + \mitta{parskip} (+ \mitta{partopsep})};
+
+    % Ylin kappale
+    \node at (50,87) {luetelmakohta 1};
+    \draw (5,91) rectangle ++(15,4);
+    \katko{5,98}{5,95};
+    \katko{20,98}{20,95};
+    \katko{25,98}{25,95};
+    \nuoli{5,98}{20,98}; \kyltti{2,102}{\mitta{labelwidth}};
+    \nuoli{20,98}{25,98}; \kyltti{20,102}{\mitta{labelsep}};
+    \katko{25,90}{25,87};
+    \nuoli{15,87}{25,87}; \kyltti{16,84}{\mitta{itemindent}};
+
+    \nuoli{50,70}{50,80};
+    \kyltti{51,75}{\mitta{parsep}};
+
+    % Keskimmäinen kappale
+    \node at (50,62) {toinen tekstikappale};
+    \nuoli{0,57}{15,57};
+    \kyltti{0,52}{\mitta{leftmargin}};
+    \nuoli{85,57}{100,57};
+    \kyltti{82,52}{\mitta{rightmargin}};
+    \katko{15,70}{15,65};
+    \nuoli{15,70}{25,70};
+    \kyltti{13,74}{\mitta{listparindent}};
+
+    \nuoli{50,40}{50,55};
+    \kyltti{51,47}{\mitta{itemsep} + \mitta{parsep}};
+
+    % Alin kappale
+    \node at (50,32) {luetelmakohta 2};
+    \draw (5,36) rectangle ++(15,4);
+
+    \nuoli{50,25}{50,10};
+    \kyltti{51,17}{\mitta{topsep} + \mitta{parskip} (+ \mitta{partopsep})};
+\end{tikzpicture}
+}{
+  \caption{Luetelmien tekemiseen tarkoitetun \ymparisto{list}\-/
+    ympäristön mitat}
+  \label{kuva:list-mitat}
+}
 
 Luetelmiin liittyviä mittoja on useita, ja ne voi asettaa sopiviin
 arvoihin \ymparisto{list}\-/ ympäristön toisen argumentin sisällä.

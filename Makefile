@@ -2,8 +2,8 @@ versio = 0
 nimi = kaytannollista_latexia
 lahde = $(nimi).tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
-	valmistautuminen.tex esim-tietokirja.tex kirjallisuutta.bib \
-	kuva-list-mitat.tex matematiikka.tex muuta.tex
+	valmistautuminen.tex kirjallisuutta.bib \
+	matematiikka.tex muuta.tex
 julkaisutiedostot = $(nimi).pdf versio.tex $(lahde) README.md
 julkaisukohteet = $(patsubst %,doc/latex/$(nimi)/%,$(julkaisutiedostot))
 asiahakemistot = paketit ymparistot komennot mitat laskurit luokat

@@ -2561,26 +2561,52 @@ luetellaan käsitteitä ja niiden määritelmä, voidaan haluta, että kaikki
 käsitteet ladotaan eri fontilla kuin muu teksti. Esimerkki
 \ref{esim:list_makelabel} selventää tätä asiaa.
 
-
 \input{kuva-list-mitat.tex}
-
 
 Erilaisia \ymparisto{list}\-/ ympäristön mittoja on olemassa useita, ja
 ne on koottu kuvaan \ref{kuva:list-mitat}. Seuraavassa on lisätietoa
 mittojen merkityksestä.
 
 \begin{maaritelma}{\mitta{#1}}
-\item [parskip]
-\item [topsep]
-\item [partopsep]
-\item [parsep]
-\item [itemsep]
-\item [leftmargin]
-\item [rightmargin]
-\item [labelwidth]
-\item [labelsep]
-\item [itemindent]
-\item [listparindent]
+\item [parskip] Pystysuuntainen mitta ja väli, joka ei liity pelkästään
+  \ymparisto{list}\-/ ympäristöön, vaan se on yleinen tekstikappaleiden
+  välinen väli (luku \ref{luku:pystysuuntaiset_valit}). Mitta on
+  vaikuttaa kuitenkin myös \ymparisto{list}\-/ ympäristöön, ja sen voi
+  määritellä väliaikaisesti uudelleen ympäristön yhteydessä.
+\item [topsep] Pystysuuntainen väli, joka ladotaan ennen ja jälkeen
+  \ymparisto{list}\-/ ympäristön, yhdessä mittojen \mitta{parskip} ja
+  \mitta{partopsep} kanssa.
+\item [partopsep] Pystysuuntainen väli, joka lisätään
+  \ymparisto{list}\-/ ympäristöä ennen ja sen jälkeen silloin, kun
+  ympäristö aloittaa uuden tekstikappaleen eli sitä ennen on tyhjä rivi.
+\item [parsep] Pystysuuntainen väli, joka tulee luetelman sisällä
+  kaikkien luetelmakohtien väliin sekä saman luetelmakohdan eri
+  tekstikappaleiden väliin.
+\item [itemsep] Pystysuuntainen väli, joka tulee luetelman sisällä
+  luetelmakohtien väliin.
+\item [leftmargin] Luetelman kappaleiden vasen sisennys. Tämä tarkoittaa
+  luetelmamerkistä seuraavien rivien sisennystä.
+\item [rightmargin] Luetelman kappaleiden oikea sisennys. Oletusarvo on
+  nolla.
+\item [labelwidth] Luetelmamerkin leveys. Merkki ladotaan tämän alueen
+  oikeaan reunaan. Jos luetelmamerkki eli \komento{makelabel}\-/
+  komennon latoma teksti on leveämpi kuin tämä mitta, luetelman tekstin
+  ensimmäinen rivi siirtyy oikealle siten, että luetelmamerkki mahtuu.
+
+  Luetelmamerkin alueen vasen reuna sijaitsee kohdassa, jonka voi laskea
+  seuraavasta kaavasta: \mitta{leftmargin} + \mitta{itemindent} −
+  \mitta{labelsep} − \mitta{labelwidth}. Mikäli haluaa, että
+  luetelmamerkin vasen reuna on sisennyksen nollakohdassa, täytyy edellä
+  mainitut mitat asettaa siten, että mittojen yhteistulos on nolla.
+  Esimerkissä \ref{esim:list_makelabel} näin on juuri tehty.
+\item [labelsep] Vaakasuuntainen väli luetelmamerkin jälkeen, ennen
+  luetelman sisältötekstiä. Oletusarvo on 0,5\,em.
+\item [itemindent] Ylimääräinen luetelmakohtien ensimmäisen rivin
+  sisennys. Tätä voi tarvita, kun haluaa säätää luetelmamerkin vasemman
+  reunan tiettyyn kohtaa. Katso mitta \mitta{labelwidth} edellä.
+  Oletusarvo on nolla.
+\item [listparindent] Luetelmakohtien toisen ja sitä seuraavien
+  tekstikappaleiden ensimmäisen rivin sisennys. Oletusarvo on nolla.
 \end{maaritelma}
 
 \section{Taulukot}

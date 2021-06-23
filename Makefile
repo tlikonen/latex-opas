@@ -1,4 +1,4 @@
-versio = $(shell git describe --always --dirty 2>/dev/null || echo 0)
+versio = 0
 nimi = kaytannollista_latexia
 lahde = $(nimi).tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
@@ -22,9 +22,13 @@ $(nimi).pdf: versio.tex $(lahde)
 		$(latex) $(nimi); \
 	fi
 	@touch $@
+	@printf 'Versio: %s\n' "$(shell cat versio.txt)"
 
-versio.tex: $(lahde)
-	echo '\\newcommand{\\versio}{$(versio)}' > $@
+versio.txt: $(lahde)
+	@{ git describe --always --dirty 2>/dev/null || echo $(versio); } > $@
+
+versio.tex: versio.txt
+	@printf '\\newcommand{\\versio}{%s}\n' "$(shell cat versio.txt)" > $@
 
 aakkostus:
 	@{ echo "\hyphenation{"; grep -e '^  ' tavutusvihjeet.tex | sort -u; \
@@ -62,6 +66,6 @@ clean:
 	rm -fr doc
 
 distclean: clean
-	rm -f $(nimi).pdf versio.tex
+	rm -f $(nimi).pdf versio.tex versio.txt
 
 .PHONY: aakkostus clean distclean ctan install uninstall

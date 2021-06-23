@@ -2424,9 +2424,9 @@ riippuvat sisennykset ja lohkolainaukset.
 Tyypillisesti \ymparisto{list}\-/ ympäristöä ei käytetä dokumentin
 kirjoittamisessa sellaisenaan, vaan kirjoittaja määrittelee oman
 helppokäyttöisen luetelma\-/\ tai muun ympäristön, ja
-\ymparisto{list}\-/ ympäristöä hyödynnetään ympäristön määritelmässä.
-Omien ympäristöjen tekemistä käsitellään tarkemmin luvussa
-\ref{luku:ymparistot}, mutta tämänkin alaluvun loppupuolella on
+\ymparisto{list}\-/ ympäristöä hyödynnetään ympäristön
+määrittelemisessä. Omien ympäristöjen tekemistä käsitellään tarkemmin
+luvussa \ref{luku:ymparistot}, mutta tämänkin alaluvun loppupuolella on
 esimerkki, joka liittyy nimenomaan \ymparisto{list}\-/ ympäristöön.
 
 Seuraavassa on esimerkki \ymparisto{list}\-/ ympäristön rakenteesta. Se
@@ -2441,19 +2441,18 @@ vaikutetaan luetelman asetuksiin.
 \end{koodilohkosis}
 
 Edellisen esimerkin argumentti ''\koodi{merk\-ki}'' sisältää tekstiä tai
-koodia, jonka avulla ladotaan luetelmakohdan merkki. Numeroimattomassa
+koodia, jonka muodostaa luetelmakohdan merkin. Numeroimattomassa
 luetelmassa siihen voi laittaa esimerkiksi luetelmaympyrän eli komennon
 \komento{textbullet} tai ajatusviivan (\koodi{--}). Numeroidussa
-luetelmassa se voisi sisältää komennon, joka latoo jonkin laskurin
-arvon. Seuraava esimerkki latoo \laskuri{enumi}\-/ laskurin arvon
-arabialaisilla numeroilla ja sen perään pisteen. Luetelmamerkit
-näyttävät siis seuraavalta: ''1.'', ''2.'', ''3.'' jne.
+luetelmassa siihen kirjoitetaan komento, joka latoo jonkin laskurin
+arvon.
 
-\komentoi{arabic}
-\laskurii{enumi}
-\begin{koodilohkosis}
-  \arabic{enumi}.
-\end{koodilohkosis}
+\ymparisto{list}\-/ ympäristön toinen argumentti
+''\koodi{ase\-tuk\-set}'' sisältää mitä hyvänsä koodia, jolla
+vaikutetaan ympäristön asetuksiin. Tyypillisesti siinä määritellään
+käytettävä luetelmalaskuri sekä asetetaan luetelman ulkoasuun
+vaikuttavat mitat sopivaksi. Mahdollisesti siinä myös määritellään
+luetelmamerkkien latomiseen vaikuttava komento \komento{makelabel}.
 
 \begin{esimerkki*}
   \ymparistoi{list}
@@ -2493,21 +2492,78 @@ näyttävät siis seuraavalta: ''1.'', ''2.'', ''3.'' jne.
 \label{esim:list_perus}
 \end{esimerkki*}
 
-Aiemmassa \ymparisto{list}\-/ ympäristön rakenne\-/esimerkissä toinen
-argumentti ''\koodi{ase\-tuk\-set}'' sisältää mitä hyvänsä koodia, jolla
-ympäristö asetetaan sopivanlaiseksi. Tyypillisesti siinä määritellään
-käytettävä luetelmalaskuri sekä asetetaan luetelman ulkoasuun
-vaikuttavat mitat sopivaksi.
-
 Esimerkissä \ref{esim:list_perus} on yksinkertainen numeroitu luetelma,
 joka hyödyntää olemassa olevaa \laskuri{enumi}\-/ laskuria (luku
 \ref{luku:luetelma_perus}). Laskurin arvo ladotaan kirjaimina
 (\komento{alph}). Laskurin \laskuri{enumi} sijasta voi käyttää mitä
 tahansa omaakin laskuria, kunhan luo sen etukäteen komennolla
 \komento{newcounter} (luku \ref{luku:laskurit}). Esimerkissä asetetaan
-myös eräitä luetelman sisäisiä mittoja.
+myös eräitä luetelman sisäisiä mittoja, joista on lisätietoa kuvassa
+\ref{kuva:list-mitat}.
+
+\begin{esimerkki*}
+  \ymparistoi{list}
+  \komentoi{renewcommand}
+  \komentoi{makelabel}
+  \komentoi{textsc}
+  \komentoi{setlength}
+  \komentoi{item}
+  \mittai{leftmargin}
+  \mittai{labelwidth}
+  \mittai{labelsep}
+  \mittai{itemindent}
+  \mittai{itemsep}
+  
+\begin{koodilohko}
+  \begin{list}{}{
+      \renewcommand{\makelabel}[1]{\textsc{#1:}}
+      \setlength{\leftmargin}{1.5em}
+      \setlength{\labelwidth}{1.5em}
+      \setlength{\labelsep}{1em}
+      \setlength{\itemindent}{1em}
+      \setlength{\itemsep}{.2ex}
+    }
+  \item[Tex] Tekstidokumenttien ladontaan erikoistunut ohjelmointikieli.
+  \item[Latex] Dokumenttien kirjoittajille tarkoitettu merkintäkieli.
+  \item[Lualatex] Latex-muotoisten lähdedokumenttien kääntäjäohjelma.
+    Sisältää Lua-nimi\-sen ohjelmointikielen.
+  \end{list}
+\end{koodilohko}
+\begin{tulos}
+  \begin{list}{}{
+      \renewcommand{\makelabel}[1]{\textsc{#1:}}
+      \setlength{\leftmargin}{1.5em}
+      \setlength{\labelwidth}{1.5em}
+      \setlength{\labelsep}{1em}
+      \setlength{\itemindent}{1em}
+      \setlength{\itemsep}{.2ex}
+    }
+  \item[Tex] Tekstidokumenttien ladontaan erikoistunut ohjelmointikieli.
+  \item[Latex] Dokumenttien kirjoittajille tarkoitettu merkintäkieli.
+  \item[Lualatex] Latex-muotoisten lähdedokumenttien kääntäjäohjelma.
+    Sisältää Lua-nimi\-sen ohjelmointikielen.
+  \end{list}
+\end{tulos}
+\caption{Määritelmäluetelmien tekeminen \ymparisto{list}\-/ ympäristön
+  avulla. Sisäisesti komento \komento{makelabel} huolehtii
+  luetelmamerkkien eli tässä käsitteiden nimien latomisesta}
+\label{esim:list_makelabel}
+\end{esimerkki*}
+
+Luetelmamerkit \ymparisto{list}\-/ ympäristö latoo siten, että se
+suorittaa aina komennon \komento{makelabel} ja antaa sille argumentiksi
+ympäristön ensimmäisenä argumenttina (''\koodi{merk\-ki}'') annetun
+tekstin. Kirjoittaja voi määritellä \komento{makelabel}\-/ komennon
+uudelleen sellaiseksi kuin haluaa. Se on tarpeen esimerkiksi silloin,
+kun täytyy latoa kaikki luetelmamerkit tietynlaisella fontilla.
+Varsinkin määritelmäluetelmissa (luku \ref{luku:luetelma_perus}), joissa
+luetellaan käsitteitä ja niiden määritelmä, voidaan haluta, että kaikki
+käsitteet ladotaan eri fontilla kuin muu teksti. Esimerkki
+\ref{esim:list_makelabel} selventää tätä asiaa.
+
 
 \input{kuva-list-mitat.tex}
+
 
 Erilaisia \ymparisto{list}\-/ ympäristön mittoja on olemassa useita, ja
 ne on koottu kuvaan \ref{kuva:list-mitat}. Seuraavassa on lisätietoa

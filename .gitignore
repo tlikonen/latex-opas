@@ -17,6 +17,6 @@
 *.zip
 .dir-locals-2.el
 doc
-kaytannollista_latexia
+tavutusvihjeet.tex
 versio.tex
 versio.txt

@@ -30,10 +30,11 @@ versio.txt: $(lahde)
 versio.tex: versio.txt
 	echo '\\newcommand{\\versio}{$(shell cat versio.txt)}' > $@
 
-aakkostus:
-	{ echo "\hyphenation{"; grep -e '^  ' tavutusvihjeet.tex | sort -u; \
-		echo "}"; } > tavutusvihjeet.tmp && \
-		mv -f tavutusvihjeet.tmp tavutusvihjeet.tex
+tavutusvihjeet.txt:
+	sort -u $@ > $@.tmp && mv $@.tmp $@
+
+tavutusvihjeet.tex: tavutusvihjeet.txt
+	{ echo '\\hyphenation{'; cat $<; echo '}'; } > $@
 
 $(julkaisukohteet): doc/latex/$(nimi)/%: %
 	@mkdir -p doc/latex/$(nimi)
@@ -67,6 +68,6 @@ clean:
 	rm -fr doc
 
 distclean: clean
-	rm -f $(nimi).pdf versio.tex versio.txt
+	rm -f $(nimi).pdf versio.tex versio.txt tavutusvihjeet.tex
 
-.PHONY: aakkostus clean distclean ctan install uninstall
+.PHONY: clean distclean ctan install uninstall

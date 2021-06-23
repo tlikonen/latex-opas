@@ -1,10 +1,10 @@
-versio = $(shell git describe 2>/dev/null || echo 0)
+versio = $(shell git describe --always --dirty 2>/dev/null || echo 0)
 nimi = kaytannollista_latexia
-lahde = $(nimi).tex versio.tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
+lahde = $(nimi).tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
 	valmistautuminen.tex esim-tietokirjarakenne.tex kirjallisuutta.bib \
 	kuva-list-mitat.tex matematiikka.tex muuta.tex
-julkaisutiedostot = $(nimi).pdf $(lahde) README.md
+julkaisutiedostot = $(nimi).pdf versio.tex $(lahde) README.md
 julkaisukohteet = $(patsubst %,doc/latex/$(nimi)/%,$(julkaisutiedostot))
 asiahakemistot = paketit ymparistot komennot mitat laskurit luokat
 texmf = $(HOME)/texmf
@@ -12,7 +12,7 @@ latex = lualatex -interaction=nonstopmode
 latexmk = latexmk -lualatex \
 	-pdflualatex="lualatex -interaction=nonstopmode %O %S"
 
-$(nimi).pdf: $(lahde)
+$(nimi).pdf: versio.tex $(lahde)
 	@if which latexmk >/dev/null; then \
 		$(latexmk) $(nimi); \
 	else \
@@ -23,7 +23,7 @@ $(nimi).pdf: $(lahde)
 	fi
 	@touch $@
 
-versio.tex:
+versio.tex: $(lahde)
 	echo '\\newcommand{\\versio}{$(versio)}' > $@
 
 aakkostus:

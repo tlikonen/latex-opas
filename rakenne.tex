@@ -2616,21 +2616,20 @@ suorittaa aina komennon \komento{makelabel} ja antaa sille argumentiksi
 kulloisenkin luetelmamerkin eli \ymparisto{list}\-/ ympäristön
 ensimmäisenä argumenttina annetun tekstin. Luetelmamerkki ladotaan sille
 varatun alueen oikeaan reunaan. Oletuksena \komento{makelabel}\-/
-komennon määritelmä on suunnilleen seuraavanlainen:
+komento toimii ikään kuin se olisi määritelty seuraavalla tavalla:
 
 \komentoi{renewcommand}
 \komentoi{makelabel}
-\komentoi{makebox}
-\mittai{labelwidth}
+\komentoi{hfill}
 \begin{koodilohkosis}
-  \renewcommand{\makelabel}[1]{\makebox[\labelwidth][r]{#1}}
+  \renewcommand{\makelabel}[1]{\hfill #1}
 \end{koodilohkosis}
 
 Kirjoittaja voi määritellä \komento{makelabel}\-/ komennon uudelleen
 sellaiseksi kuin haluaa. Se on tarpeen esimerkiksi silloin, kun täytyy
-latoa kaikki luetelmamerkit tietynlaisella fontilla. Varsinkin
+latoa kaikki luetelmamerkit eri fontilla kuin muu teksti. Varsinkin
 määritelmäluetelmissa (luku \ref{luku:luetelma_perus}), joissa
-luetellaan käsitteitä ja niiden määritelmä, voidaan haluta, että
+luetellaan käsitteitä ja niiden määritelmiä, on usein hyödyllistä, että
 käsitteet erottuvat muusta tekstistä selvästi. Esimerkki
 \ref{esim:list_makelabel} selventää tätä asiaa.
 
@@ -2709,7 +2708,7 @@ seuraavassa on lisätietoa niiden merkityksestä.
 
 \begin{maaritelma}{\mitta{#1}}
 \item [parskip] Pystysuuntainen mitta ja väli, joka ei liity pelkästään
-  \ymparisto{list}\-/ ympäristöön, vaan se on yleinen tekstikappaleiden
+  \ymparisto{list}\-/ ympäristöön vaan on yleinen tekstikappaleiden
   välinen etäisyysmitta (luku \ref{luku:pystysuuntaiset_valit}). Mitta
   on vaikuttaa kuitenkin myös \ymparisto{list}\-/ ympäristöön, ja sen
   voi määritellä väliaikaisesti uudelleen ympäristön yhteydessä.
@@ -2724,15 +2723,14 @@ seuraavassa on lisätietoa niiden merkityksestä.
   tekstikappaleiden väliin.
 \item [itemsep] Pystysuuntainen väli, joka tulee luetelman sisällä
   luetelmakohtien väliin.
-\item [leftmargin] Luetelman kappaleiden vasen sisennys. Tämä tarkoittaa
-  luetelmamerkistä seuraavien rivien sisennystä.
+\item [leftmargin] Luetelman kappaleiden vasen sisennys.
 \item [rightmargin] Luetelman kappaleiden oikea sisennys. Oletusarvo on
   nolla.
 \item [labelwidth] Luetelmamerkin leveys. Merkki ladotaan oletuksena
   tämän alueen oikeaan reunaan, mutta se riippuu \komento{makelabel}\-/
   komennon on määrittelystä. Jos luetelmamerkki on leveämpi kuin
   \mitta{labelwidth}\-/ mitta, luetelman teksti siirtyy oikealle siten,
-  että luetelmamerkki mahtuu. Luetelmamerkin alueen vasen reuna
+  että merkki mahtuu kokonaan. Luetelmamerkin alueen vasen reuna
   sijaitsee kohdassa, jonka voi laskea seuraavasta kaavasta:
   \mitta{leftmargin} + \mitta{itemindent} − \mitta{labelsep} −
   \mitta{labelwidth}. Mikäli haluaa, että luetelmamerkin vasen reuna on

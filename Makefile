@@ -15,23 +15,23 @@ latexmk = latexmk -lualatex \
 $(nimi).pdf: versio.tex versio.txt $(lahde)
 	@if which latexmk >/dev/null; then \
 		$(latexmk) $(nimi); \
+		touch $@; \
 	else \
 		$(latex) $(nimi) && \
 		biber $(nimi) && \
 		$(latex) $(nimi) && \
 		$(latex) $(nimi); \
 	fi
-	@touch $@
-	@printf 'Versio: %s\n' "$(shell cat versio.txt)"
+	@echo Versio: $(shell cat versio.txt)
 
 versio.txt: $(lahde)
-	@{ git describe --always --dirty 2>/dev/null || echo $(versio); } > $@
+	{ git describe --always --dirty 2>/dev/null || echo $(versio); } > $@
 
 versio.tex: versio.txt
-	@printf '\\newcommand{\\versio}{%s}\n' "$(shell cat versio.txt)" > $@
+	echo '\\newcommand{\\versio}{$(shell cat versio.txt)}' > $@
 
 aakkostus:
-	@{ echo "\hyphenation{"; grep -e '^  ' tavutusvihjeet.tex | sort -u; \
+	{ echo "\hyphenation{"; grep -e '^  ' tavutusvihjeet.tex | sort -u; \
 		echo "}"; } > tavutusvihjeet.tmp && \
 		mv -f tavutusvihjeet.tmp tavutusvihjeet.tex
 

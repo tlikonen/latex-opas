@@ -2456,7 +2456,7 @@ luetelmamerkkien latomiseen vaikuttava komento \komento{makelabel}.
 
 \begin{esimerkki*}
   \ymparistoi{list}
-  \komentoi{alph}
+  \komentoi{arabic}
   \komentoi{setlength}
   \komentoi{usecounter}
   \mittai{leftmargin}
@@ -2464,7 +2464,7 @@ luetelmamerkkien latomiseen vaikuttava komento \komento{makelabel}.
   \mittai{parsep}
   \laskurii{enumi}
 \begin{koodilohko}
-  \begin{list}{\alph{enumi})}{       % kirjaimia: a) b) c) ...
+  \begin{list}{\arabic{enumi})}{
       \usecounter{enumi}             % käytetään enumi-laskuria
       \setlength{\leftmargin}{1.5em} % vasen sisennys
       \setlength{\itemsep}{.2ex}     % luetelmakohtien väli
@@ -2476,7 +2476,7 @@ luetelmamerkkien latomiseen vaikuttava komento \komento{makelabel}.
   \end{list}
 \end{koodilohko}
 \begin{tulos}
-  \begin{list}{\alph{enumi})}{       % kirjaimia: a) b) c) ...
+  \begin{list}{\arabic{enumi})}{
       \usecounter{enumi}             % käytetään enumi-laskuria
       \setlength{\leftmargin}{1.5em} % vasen sisennys
       \setlength{\itemsep}{.2ex}     % luetelmakohtien väli
@@ -2494,12 +2494,12 @@ luetelmamerkkien latomiseen vaikuttava komento \komento{makelabel}.
 
 Esimerkissä \ref{esim:list_perus} on yksinkertainen numeroitu luetelma,
 joka hyödyntää olemassa olevaa \laskuri{enumi}\-/ laskuria (luku
-\ref{luku:luetelma_perus}). Laskurin arvo ladotaan kirjaimina
-(\komento{alph}). Laskurin \laskuri{enumi} sijasta voi käyttää mitä
-tahansa omaakin laskuria, kunhan luo sen etukäteen komennolla
-\komento{newcounter} (luku \ref{luku:laskurit}). Esimerkissä asetetaan
-myös eräitä luetelman sisäisiä mittoja, joista on lisätietoa kuvassa
-\ref{kuva:list-mitat}.
+\ref{luku:luetelma_perus}). Laskurin arvo ladotaan arabialaisilla
+numeroilla (\komento{arabic}). Laskurin \laskuri{enumi} sijasta voi
+käyttää mitä tahansa omaakin laskuria, kunhan luo sen etukäteen
+komennolla \komento{newcounter} (luku \ref{luku:laskurit}). Esimerkissä
+asetetaan myös eräitä luetelman sisäisiä mittoja, joista on lisätietoa
+kuvassa \ref{kuva:list-mitat}.
 
 \begin{esimerkki*}
   \ymparistoi{list}

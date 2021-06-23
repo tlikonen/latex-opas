@@ -14,8 +14,7 @@ latexmk = latexmk -lualatex \
 
 $(nimi).pdf: versio.tex versio.txt $(lahde)
 	@if which latexmk >/dev/null; then \
-		$(latexmk) $(nimi); \
-		touch $@; \
+		$(latexmk) $(nimi) && touch $@; \
 	else \
 		$(latex) $(nimi) && \
 		biber $(nimi) && \

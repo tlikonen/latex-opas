@@ -340,14 +340,16 @@ pistettä, mutta tässä esimerkissä se venytetään 1,3\-/ kertaiseksi eli
 13 pisteeseen. Riviväliin liittyvä kerroin asetetaan rivillä 8.
 
 \begin{esimerkki*}
-  \luokkai{article}
-  \komentoi{usepackage}
+  \komentoi{begin}
+  \komentoi{documentclass}
+  \komentoi{end}
+  \komentoi{linespread}
   \komentoi{setdefaultlanguage}
   \komentoi{setmainfont}
-  \komentoi{linespread}
-  \komentoi{documentclass}
-  \pakettii{geometry}
+  \komentoi{usepackage}
+  \luokkai{article}
   \pakettii{fontspec}
+  \pakettii{geometry}
   \pakettii{polyglossia}
   \ymparistoi{document}
 
@@ -367,7 +369,7 @@ Minun Latex-dokumenttini!
 
 \end{document}
 \end{koodilohko}
-  \caption{Latex-dokumentin runko ja perusasetukset}
+  \caption{Latex\-/ lähdedokumentin runko ja perusasetukset}
   \label{esim:ensimmainen}
 \end{esimerkki*}
 
@@ -376,7 +378,8 @@ Dokumentin alkuosaa riville 9 saakka kutsutaan esittelyosaksi (engl.
 määritetään dokumentin asetuksia ja taustatietoja. Riviltä 10 alkaa
 varsinainen tekstiosa eli dokumentin sivuille ladottava sisältö. Se osa
 kirjoitetaan \ymparistom{document}\-/ ympäristön sisään eli riveillä 10
-ja 14 olevien ympäristön aloitus\-/\ ja lopetuskomentojen väliin.
+ja 14 olevien ympäristön aloitus\-/\ ja lopetuskomentojen väliin
+(\komento{begin}, \komento{end}).
 
 Tällaisen merkintäkielen avulla dokumentit kirjoitetaan. Osa
 merkintäkielen komennoista tulee Latexin perusosasta ja osa tulee

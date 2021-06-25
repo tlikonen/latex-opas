@@ -1,6 +1,6 @@
 % Tekijä:   Teemu Likonen <tlikonen@iki.fi>
 % Lisenssi: Creative Commons Nimeä-JaaSamoin 4.0 Kansainvälinen (CC BY-SA 4.0)
-%           https://creativecommons.org/licenses/by-sa/4.0/legalcode.fi
+% https://creativecommons.org/licenses/by-sa/4.0/legalcode.fi
 
 \chapter{Asetukset}
 
@@ -30,7 +30,7 @@ nimi. Valinnaisilla argumenteilla vaikutetaan asetuksiin.
 \komentoi{documentclass}
 \luokkai{article}
 \begin{koodilohkosis}
-  \documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 12pt]{article}
 \end{koodilohkosis}
 
 Dokumenttiluokka on eräänlainen pohjadokumentti eli ominaisuuksien ja
@@ -305,8 +305,8 @@ oikean marginaalin pituus (\koodi{left}, \koodi{right}).
 
 \komentoi{usepackage}
 \begin{koodilohkosis}
-  \usepackage[a4paper, top=20mm, bottom=30mm,
-    left=20mm, right=20mm]{geometry}
+\usepackage[a4paper, top=20mm, bottom=30mm,
+  left=20mm, right=20mm]{geometry}
 \end{koodilohkosis}
 
 Vaihtoehtoisesti asetukset voi ilmaista erikseen \komento{geometry}\-/
@@ -315,8 +315,8 @@ komennon avulla seuraavalla tavalla:
 \komentoi{usepackage}
 \komentoi{geometry}
 \begin{koodilohkosis}
-  \usepackage{geometry}
-  \geometry{a4paper, top=20mm, bottom=30mm, left=20mm, right=20mm}
+\usepackage{geometry}
+\geometry{a4paper, top=20mm, bottom=30mm, left=20mm, right=20mm}
 \end{koodilohkosis}
 
 Mikäli myöhemmin dokumentissa täytyy vaihtaa sivun asettelua, käytetään
@@ -326,8 +326,8 @@ komennolla \komento{restoregeometry}.
 \komentoi{newgeometry}
 \komentoi{restoregeometry}
 \begin{koodilohkosis}
-  \newgeometry{top=…, bottom=…, …} % Uudet asetukset.
-  \restoregeometry     % Palautetaan alkuperäiset asetukset.
+\newgeometry{top=…, bottom=…, …} % Uudet asetukset.
+\restoregeometry     % Palautetaan alkuperäiset asetukset.
 \end{koodilohkosis}
 
 Valmiiksi määriteltyjä standardipaperikokoja on useita.
@@ -346,7 +346,7 @@ korkeusmitta.
 
 \komentoi{geometry}
 \begin{koodilohkosis}
-  \geometry{papersize={10cm, 16cm}}
+\geometry{papersize={10cm, 16cm}}
 \end{koodilohkosis}
 
 Sivu on oletuksena pystyasennossa (\koodim{portrait}), mutta sen voi
@@ -435,7 +435,7 @@ ilmaistaan seuraavasti:
 
 \komentoi{geometry}
 \begin{koodilohkosis}
-  \geometry{hmarginratio=17:28, vmarginratio=20:32}
+\geometry{hmarginratio=17:28, vmarginratio=20:32}
 \end{koodilohkosis}
 
 Klassisia suhteita ei nykyaikana yleensä noudateta kovin tarkasti, mutta
@@ -536,16 +536,16 @@ käyttämällä valitsinta \koodi{lay\-out} tai \koodi{layout\-size}.
 \begin{esimerkki*}
   \komentoi{geometry}
 \begin{koodilohko}
-  \geometry{
-    papersize={220mm, 307mm},
-    layout=a4paper,           % tai: layoutsize={210mm, 297mm}
-    layoutoffset={5mm, 5mm},
-    showcrop
-  }
+\geometry{
+  papersize={220mm, 307mm},
+  layout=a4paper,           % tai: layoutsize={210mm, 297mm}
+  layoutoffset={5mm, 5mm},
+  showcrop
+}
 \end{koodilohko}
-\caption{Sivun ulkoisten ja sisäisten mittojen sekä leikkuvaarojen
-  määrittäminen}
-\label{esim:leikkuuvarat}
+  \caption{Sivun ulkoisten ja sisäisten mittojen sekä leikkuvaarojen
+    määrittäminen}
+  \label{esim:leikkuuvarat}
 \end{esimerkki*}
 
 Esimerkissä \ref{esim:leikkuuvarat} käytetään sisäisesti \textsc{a4}\-/
@@ -574,7 +574,7 @@ sivun mittojen suunnittelussa.
 
 \komentoi{geometry}
 \begin{koodilohkosis}
-  \geometry{head=24bp, headsep=8bp, footskip=12mm, showframe}
+\geometry{head=24bp, headsep=8bp, footskip=12mm, showframe}
 \end{koodilohkosis}
 
 \leijutlk{
@@ -603,7 +603,7 @@ perusteella, ja haluttu tyyli asetetaan voimaan komennolla
 
 \komentoi{pagestyle}
 \begin{koodilohkosis}
-  \pagestyle{plain}
+\pagestyle{plain}
 \end{koodilohkosis}
 
 Edellä mainittu sivutyyli \koodim{plain} latoo alatunnisteeseen
@@ -621,7 +621,7 @@ taas voimassa olevaan tyyliin, joka on aiemmin määritelty komennolla
 
 \komentoi{thispagestyle}
 \begin{koodilohkosis}
-  \thispagestyle{empty}
+\thispagestyle{empty}
 \end{koodilohkosis}
 
 Sivutyyli \koodim{headings} latoo ylätunnisteeseen aukeaman
@@ -651,8 +651,8 @@ aina alalukujen yhteydessä.
 \komentoi{markboth}
 \komentoi{markright}
 \begin{koodilohkosis}
-  \markboth{vasen}{oikea}  % määrittelee: \leftmark ja \rightmark
-  \markright{oikea}        % määrittelee: \rightmark
+\markboth{vasen}{oikea}  % määrittelee: \leftmark ja \rightmark
+\markright{oikea}        % määrittelee: \rightmark
 \end{koodilohkosis}
 
 Sivunumeroinnin tyyliin voi vaikuttaa esimerkiksi komennolla
@@ -661,7 +661,7 @@ nimi. Ne on koottu taulukkoon \ref{tlk:sivu_numerointityylit}.
 
 \komentoi{pagenumbering}
 \begin{koodilohkosis}
-  \pagenumbering{roman}
+\pagenumbering{roman}
 \end{koodilohkosis}
 
 Edellä mainittu komento määrittelee käytännössä uudelleen komennon
@@ -699,8 +699,8 @@ sivutyylinä voi olla myös \koodim{fancy}:
 \komentoi{usepackage}
 \komentoi{pagestyle}
 \begin{koodilohkosis}
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \end{koodilohkosis}
 
 Kun käytössä on sivutyyli \koodi{fancy}, voi ylä- ja alatunnisteiden
@@ -709,7 +709,7 @@ argumenttien merkitys on seuraavanlainen:
 
 \komentoi{fancyhf}
 \begin{koodilohkosis}
-  \fancyhf[paikka]{sisältö}
+\fancyhf[paikka]{sisältö}
 \end{koodilohkosis}
 
 Valinnainen argumentti \koodi{paikka} kertoo, mihin paikkaan tai
@@ -745,8 +745,8 @@ seuraavalla tavalla:
 
 \komentoi{fancyhf}
 \begin{koodilohkosis}
-  \fancyhf{}  % Tyhjennetään ylä- ja alatunnisteet.
-  \fancyhf[HEL,HOR]{\thepage}
+\fancyhf{}  % Tyhjennetään ylä- ja alatunnisteet.
+\fancyhf[HEL,HOR]{\thepage}
 \end{koodilohkosis}
 
 Edellä mainittu komento sijoittaa sivunumeron (\komento{thepage})
@@ -760,7 +760,7 @@ sivun keskelle (\koodi{C}):
 \komentoi{fancyhf}
 \komentoi{thepage}
 \begin{koodilohkosis}
-  \fancyhf[FC]{-- \thepage\ --}
+\fancyhf[FC]{-- \thepage\ --}
 \end{koodilohkosis}
 
 Makropaketin \paketti{fancyhdr} avulla voi myös määritellä Latexin
@@ -776,7 +776,7 @@ komennolla määriteltyjä ylä- ja alatunnisteita:
 
 \komentoi{fancypagestyle}
 \begin{koodilohkosis}
-  \fancypagestyle{plain}{}
+\fancypagestyle{plain}{}
 \end{koodilohkosis}
 
 Seuraava esimerkki määrittelee kokonaan oman sivutyylin:
@@ -784,10 +784,10 @@ Seuraava esimerkki määrittelee kokonaan oman sivutyylin:
 \komentoi{fancypagestyle}
 \komentoi{fancyhf}
 \begin{koodilohkosis}
-  \fancypagestyle{omatyyli}{
-    \fancyhf{}
-    \fancyhf[FEL,FOR]{\thepage}
-  }
+\fancypagestyle{omatyyli}{
+  \fancyhf{}
+  \fancyhf[FEL,FOR]{\thepage}
+}
 \end{koodilohkosis}
 
 Ylä- ja alatunniste voidaan erottaa tekstipalstasta vaakasuuntaisella
@@ -802,8 +802,8 @@ näkyvistä.
 \komentoi{headrulewidth}
 \komentoi{footrulewidth}
 \begin{koodilohkosis}
-  \renewcommand{\headrulewidth}{1bp} % ylätunnisteen erotinviiva
-  \renewcommand{\footrulewidth}{1bp} % alatunnisteen erotinviiva
+\renewcommand{\headrulewidth}{1bp} % ylätunnisteen erotinviiva
+\renewcommand{\footrulewidth}{1bp} % alatunnisteen erotinviiva
 \end{koodilohkosis}
 
 Mikäli haluaa omiin ylätunnisteisiin esimerkiksi päälukujen ja
@@ -815,8 +815,8 @@ sisältää pääluvun nimen ja jälkimmäinen alaluvun nimen.
 \komentoi{leftmark}
 \komentoi{rightmark}
 \begin{koodilohkosis}
-  \fancyhf[HEL]{\leftmark}
-  \fancyhf[HOR]{\rightmark}
+\fancyhf[HEL]{\leftmark}
+\fancyhf[HOR]{\rightmark}
 \end{koodilohkosis}
 
 Latex latoo pää- ja alalukujen nimet oletuksena versaalikirjaimilla eli
@@ -850,42 +850,42 @@ toteutukseen.
   \komentoi{thesection}
 
 \begin{koodilohko}
-  \documentclass{book}
-  \usepackage{fancyhdr}
+\documentclass{book}
+\usepackage{fancyhdr}
 
-  % Päälukujen (\chapter) aloitussivu käyttää plain-sivutyyliä.
-  % Tässä määritellään se uudestaan.
-  \fancypagestyle{plain}{
-    \fancyhf{}
-    \fancyhf[FC]{-- \thepage\ --}
-    \renewcommand{\headrulewidth}{0bp}
-    \renewcommand{\footrulewidth}{0bp}
-  }
-
-  % fancy-sivutyylin asetukset:
+% Päälukujen (\chapter) aloitussivu käyttää plain-sivutyyliä.
+% Tässä määritellään se uudestaan.
+\fancypagestyle{plain}{
   \fancyhf{}
-  \fancyhf[HEL]{\leftmark}
-  \fancyhf[HOR]{\rightmark}
   \fancyhf[FC]{-- \thepage\ --}
-  \renewcommand{\headrulewidth}{1bp}
+  \renewcommand{\headrulewidth}{0bp}
   \renewcommand{\footrulewidth}{0bp}
+}
 
-  \begin{document}
+% fancy-sivutyylin asetukset:
+\fancyhf{}
+\fancyhf[HEL]{\leftmark}
+\fancyhf[HOR]{\rightmark}
+\fancyhf[FC]{-- \thepage\ --}
+\renewcommand{\headrulewidth}{1bp}
+\renewcommand{\footrulewidth}{0bp}
 
-  \pagestyle{fancy}
+\begin{document}
 
-  % Päälukujen (\chapter) yhteydessä komento \markboth{…}{…} määrittää
-  % sekä \leftmark- että \rightmark-komennot. Tässä jälkimmäinen
-  % määritellään tyhjäksi.
-  \renewcommand{\chaptermark}[1]{%
-    \markboth{\chaptername\ \thechapter: #1}{}}
+\pagestyle{fancy}
 
-  % Alalukujen (\section) yhteydessä komento \markright{…} määrittää
-  % vain \rightmark-komennon.
-  \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+% Päälukujen (\chapter) yhteydessä komento \markboth{…}{…} määrittää
+% sekä \leftmark- että \rightmark-komennot. Tässä jälkimmäinen
+% määritellään tyhjäksi.
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\chaptername\ \thechapter: #1}{}}
+
+% Alalukujen (\section) yhteydessä komento \markright{…} määrittää
+% vain \rightmark-komennon.
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
 \end{koodilohko}
-\caption{Omien ylä- ja alatunnisteiden toteuttaminen}
-\label{esim:fancyhdr_koko}
+  \caption{Omien ylä- ja alatunnisteiden toteuttaminen}
+  \label{esim:fancyhdr_koko}
 \end{esimerkki*}
 
 \section{Pdf-tiedosto}
@@ -903,8 +903,8 @@ seuraavalla tavalla:
 \komentoi{usepackage}
 \pakettii{hyperref}
 \begin{koodilohkosis}
-  % Muiden \usepackage-komentojen jälkeen.
-  \usepackage[unicode]{hyperref}
+% Muiden \usepackage-komentojen jälkeen.
+\usepackage[unicode]{hyperref}
 \end{koodilohkosis}
 
 Esimerkissä käytetty valitsin \koodi{unicode} aiheuttaa sen, että pdf\-/
@@ -921,19 +921,19 @@ ja niiden arvoja.
 
 \begin{esimerkki*}
 \begin{koodilohko}
-  \hypersetup{
-    hidelinks, bookmarksopen, bookmarksnumbered,
-    pdfinfo={
-      Title={Käytännöllistä Latexia},
-      Subject={Latex-ladontajärjestelmän opas},
-      Author={Teemu Likonen}
-    }
+\hypersetup{
+  hidelinks, bookmarksopen, bookmarksnumbered,
+  pdfinfo={
+    Title={Käytännöllistä Latexia},
+    Subject={Latex-ladontajärjestelmän opas},
+    Author={Teemu Likonen}
   }
+}
 \end{koodilohko}
-\caption{\komento{hypersetup}\-/ komennolla asetetaan
-  \paketti{hyperref}\-/ paketin asetuksia, esimerkiksi pdf:n
-  metatietoja}
-\label{esim:hypersetup}
+  \caption{\komento{hypersetup}\-/ komennolla asetetaan
+    \paketti{hyperref}\-/ paketin asetuksia, esimerkiksi pdf:n
+    metatietoja}
+  \label{esim:hypersetup}
 \end{esimerkki*}
 
 Esimerkissä \ref{esim:hypersetup} valitsin \koodi{hidelinks} saa aikaan
@@ -958,7 +958,7 @@ komennolla \komento{pdfbookmark}:
 
 \komentoi{pdfbookmark}
 \begin{koodilohkosis}
-  \pdfbookmark[taso]{Teksti}{tunniste}
+\pdfbookmark[taso]{Teksti}{tunniste}
 \end{koodilohkosis}
 
 Komennon valinnainen argumentti ''\koodi{taso}'' on kokonaisluku, joka
@@ -1085,9 +1085,9 @@ mukaisesti.
 \komentoi{setsansfont}
 \komentoi{setmonofont}
 \begin{koodilohkosis}
-  \setmainfont{TeX Gyre Termes}[Scale=1]
-  \setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
-  \setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
+\setmainfont{TeX Gyre Termes}[Scale=1]
+\setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
+\setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
 \end{koodilohkosis}
 
 Edellisessä esimerkissä \englanti{TeX Gyre Termes, Heros} ja
@@ -1112,8 +1112,8 @@ tulosta, voi kirjainperheen skaalausta hienosäätää vielä
 
 \komentoi{setmonofont}
 \begin{koodilohkosis}
-  \setmonofont{TeX Gyre Cursor}
-  [Scale=MatchLowercase, ScaleAgain=.97]
+\setmonofont{TeX Gyre Cursor}
+[Scale=MatchLowercase, ScaleAgain=.97]
 \end{koodilohkosis}
 
 Kirjainperheen määrittelyn yhteydessä ei yleensä tarvitse antaa kuin
@@ -1137,33 +1137,33 @@ kirjainperheen nimellä (\englanti{Macklin Text}).
 \begin{esimerkki*}
   \komentoi{setmainfont}
 \begin{koodilohko}
-  \setmainfont{…}[
-    UprightFont={…},     UprightFeatures={…},
-    ItalicFont={…},      ItalicFeatures={…},
-    BoldFont={…},        BoldFeatures={…},
-    BoldItalicFont={…},  BoldItalicFeatures={…},
-    SlantedFont={…},     SlantedFeatures={…},
-    BoldSlantedFont={…}, BoldSlantedFeatures={…},
-    SmallCapsFont={…},   SmallCapsFeatures={…}]
+\setmainfont{…}[
+  UprightFont={…},     UprightFeatures={…},
+  ItalicFont={…},      ItalicFeatures={…},
+  BoldFont={…},        BoldFeatures={…},
+  BoldItalicFont={…},  BoldItalicFeatures={…},
+  SlantedFont={…},     SlantedFeatures={…},
+  BoldSlantedFont={…}, BoldSlantedFeatures={…},
+  SmallCapsFont={…},   SmallCapsFeatures={…}]
 \end{koodilohko}
-\caption{Kirjainperheeseen sisältyvien leikkausten nimien ja
-  kirjainleikkauskohtaisten ominaisuuksien määrittely}
-\label{esim:fontit_leik_omin}
+  \caption{Kirjainperheeseen sisältyvien leikkausten nimien ja
+    kirjainleikkauskohtaisten ominaisuuksien määrittely}
+  \label{esim:fontit_leik_omin}
 \end{esimerkki*}
 
 \begin{esimerkki*}
   \komentoi{setmainfont}
 \begin{koodilohko}
-  \setmainfont{Macklin Text}[
-    UprightFont    = {* Light},
-    ItalicFont     = {* Light Italic},
-    BoldFont       = {* Medium},
-    BoldItalicFont = {* Medium Italic}]
+\setmainfont{Macklin Text}[
+  UprightFont    = {* Light},
+  ItalicFont     = {* Light Italic},
+  BoldFont       = {* Medium},
+  BoldItalicFont = {* Medium Italic}]
 \end{koodilohko}
-\caption{Eri leikkausten nimien määrittely \englanti{Macklin Text}
-  \=/kirjainperheelle. Leikkauksen nimessä tähti (\koodi{*}) korvautuu
-  automaattisesti koko perheen nimellä}
-\label{esim:fontit_leik_omin_kayt}
+  \caption{Eri leikkausten nimien määrittely \englanti{Macklin Text}
+    \=/kirjainperheelle. Leikkauksen nimessä tähti (\koodi{*}) korvautuu
+    automaattisesti koko perheen nimellä}
+  \label{esim:fontit_leik_omin_kayt}
 \end{esimerkki*}
 
 Jos edellä kuvatut kolme kirjainperhettä (\komento{setmainfont},
@@ -1173,7 +1173,7 @@ määrittämiseen. Uusi perhe määritellään seu\-raa\-vasti:
 
 \komentoi{newfontfamily}
 \begin{koodilohkosis}
-  \newfontfamily{\hienoperhe}{TeX Gyre Schola}[…]
+\newfontfamily{\hienoperhe}{TeX Gyre Schola}[…]
 \end{koodilohkosis}
 
 Komento \komento{newfontfamily} toimii samalla tavalla kuin aiemmin
@@ -1190,7 +1190,7 @@ kirjainleikkauksen perheestä \englanti{TeX Gyre Schola}.
 
 \komentoi{newfontface}
 \begin{koodilohkosis}
-  \newfontface{\hienoleikkaus}{TeX Gyre Schola Bold}[…]
+\newfontface{\hienoleikkaus}{TeX Gyre Schola Bold}[…]
 \end{koodilohkosis}
 
 \subsection{Fontin koko ja rivikorkeus}
@@ -1245,7 +1245,7 @@ ne ovat saman \komento{fontsize}\-/ komennon argumentteja. Esimerkki:
 \komentoi{fontsize}
 \komentoi{selectfont}
 \begin{koodilohkosis}
-  \fontsize{10bp}{12bp} \selectfont
+\fontsize{10bp}{12bp} \selectfont
 \end{koodilohkosis}
 
 Ensimmäinen argumentti on fontin kokomitta ja toinen on rivikorkeus.
@@ -1265,25 +1265,25 @@ lähellä toisiaan. Esimerkissä \ref{esim:rivikorkeus} on kaksi erilaista
   \komentoi{selectfont}
 
 \begin{koodilohko}
-  \fontsize{8bp}{11bp}\selectfont Tässä on pienehkö leipätekstin
-  fonttikoko ja suhteellisen suuri rivikorkeus. Pitkät rivit vaativat
-  suuremman rivikorkeuden kuin lyhyet rivit.
+\fontsize{8bp}{11bp}\selectfont Tässä on pienehkö leipätekstin
+fonttikoko ja suhteellisen suuri rivikorkeus. Pitkät rivit vaativat
+suuremman rivikorkeuden kuin lyhyet rivit.
 
-  \fontsize{16bp}{17bp}\selectfont Tässä on melko suuri fontti ja
-  suhteellisen pieni rivikorkeus. Suuri fontti ja lyhyet rivit eivät
-  tarvitse kovin suurta rivikorkeutta.
+\fontsize{16bp}{17bp}\selectfont Tässä on melko suuri fontti ja
+suhteellisen pieni rivikorkeus. Suuri fontti ja lyhyet rivit eivät
+tarvitse kovin suurta rivikorkeutta.
 \end{koodilohko}
-\begin{tulos}
-  \fontsize{8bp}{11bp}\selectfont Tässä on pienehkö leipätekstin
-  fonttikoko ja suhteellisen suuri rivikorkeus. Pitkät rivit vaativat
-  suuremman rivikorkeuden kuin lyhyet rivit.
+  \begin{tulos}
+    \fontsize{8bp}{11bp}\selectfont Tässä on pienehkö leipätekstin
+    fonttikoko ja suhteellisen suuri rivikorkeus. Pitkät rivit vaativat
+    suuremman rivikorkeuden kuin lyhyet rivit.
 
-  \fontsize{16bp}{17bp}\selectfont Tässä on melko suuri fontti ja
-  suhteellisen pieni rivikorkeus. Suuri fontti ja lyhyet rivit eivät
-  tarvitse kovin suurta rivikorkeutta.
-\end{tulos}
-\caption{Fontin koon ja rivikorkeuden asettaminen ja vaikutus}
-\label{esim:rivikorkeus}
+    \fontsize{16bp}{17bp}\selectfont Tässä on melko suuri fontti ja
+    suhteellisen pieni rivikorkeus. Suuri fontti ja lyhyet rivit eivät
+    tarvitse kovin suurta rivikorkeutta.
+  \end{tulos}
+  \caption{Fontin koon ja rivikorkeuden asettaminen ja vaikutus}
+  \label{esim:rivikorkeus}
 \end{esimerkki*}
 
 Toinen tekstirivien peruslinjojen väliseen etäisyyteen vaikuttava asetus
@@ -1296,7 +1296,7 @@ rivikorkeus kerrotaan. Kerroin asetetaan helpoimmin komennolla
 \komentoi{linespread}
 \komentoi{selectfont}
 \begin{koodilohkosis}
-  \fontsize{10bp}{12bp} \linespread{1.3} \selectfont
+\fontsize{10bp}{12bp} \linespread{1.3} \selectfont
 \end{koodilohkosis}
 
 Edellä oleva esimerkki asettaa fontin kooksi 10 pistettä ja
@@ -1447,11 +1447,11 @@ kaksi fontteihin vaikuttavaa ympäristöä sisäkkäin.
 \ymparistoi{footnotesize}
 \ymparistoi{scshape}
 \begin{koodilohkosis}
-  \begin{footnotesize}
-    \begin{scshape}
-      Tämä teksti on pientä pienversaalia.
-    \end{scshape}
-  \end{footnotesize}
+\begin{footnotesize}
+  \begin{scshape}
+    Tämä teksti on pientä pienversaalia.
+  \end{scshape}
+\end{footnotesize}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1497,16 +1497,16 @@ kohdan välillä ja koska fonttien mittasuhteet ovat erilaisia.
   \luokkai{article}
 
 \begin{koodilohko}
-  \documentclass[10pt]{article} % 10pt on oletus
-  \usepackage{fontspec}
+\documentclass[10pt]{article} % 10pt on oletus
+\usepackage{fontspec}
 
-  \setmainfont{TeX Gyre Termes}[Scale=1.4]
-  \setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
-  \setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
-  \linespread{1.45}
+\setmainfont{TeX Gyre Termes}[Scale=1.4]
+\setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
+\setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
+\linespread{1.45}
 \end{koodilohko}
-\caption{Fonttikokojen määrittäminen suhteessa peruskirjainperheeseen}
-\label{esim:fontti_suhteellinen}
+  \caption{Fonttikokojen määrittäminen suhteessa peruskirjainperheeseen}
+  \label{esim:fontti_suhteellinen}
 \end{esimerkki*}
 
 Viimeisellä rivillä oleva \komento{linespread}\-/ komento on tärkeä. Se
@@ -1526,7 +1526,7 @@ siksi esimerkiksi komentojen
 \komentoi{fontsize}
 \komentoi{selectfont}
 \begin{koodilohkosis}
-  \fontsize{10bp}{12bp} \selectfont
+\fontsize{10bp}{12bp} \selectfont
 \end{koodilohkosis}
 
 tuloksena ei todellisuudessa ole 10 pisteen (bp) fontti, vaan mukaan
@@ -1542,7 +1542,7 @@ skaalauskerrointa esimerkiksi seuraavalla tavalla:
 
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-  {\addfontfeatures{Scale=3.2} Poikkeuksellisen isoa tekstiä}
+{\addfontfeatures{Scale=3.2} Poikkeuksellisen isoa tekstiä}
 \end{koodilohkosis}
 
 Jos edellä mainitut kummallisuudet eivät häiritse eikä ole tarvetta
@@ -1587,31 +1587,31 @@ asettamiseen.
   \komentoi{Large}
 
 \begin{koodilohko}
-  \documentclass{article}
-  \usepackage{fontspec}
+\documentclass{article}
+\usepackage{fontspec}
 
-  % Leipätekstiin samankokoiset fontit
-  \setmainfont{TeX Gyre Termes}
-  \setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
-  \setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
+% Leipätekstiin samankokoiset fontit
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros} [Scale=MatchLowercase]
+\setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
 
-  % Muualle sans ja mono ilman skaalausta
-  \newfontfamily{\sffamilyabs}{TeX Gyre Heros}
-  \newfontfamily{\ttfamilyabs}{TeX Gyre Cursor}
+% Muualle sans ja mono ilman skaalausta
+\newfontfamily{\sffamilyabs}{TeX Gyre Heros}
+\newfontfamily{\ttfamilyabs}{TeX Gyre Cursor}
 
-  \linespread{1} % ei välttämättä tarvita
+\linespread{1} % ei välttämättä tarvita
 
-  % Kaikki tarvittavat fonttikoot ja komennot
-  \renewcommand{\footnotesize}{\fontsize{10bp}{12bp}\selectfont}
-  \renewcommand{\small}       {\fontsize{12bp}{14bp}\selectfont}
-  \renewcommand{\normalsize}  {\fontsize{14bp}{17bp}\selectfont}
-  \renewcommand{\large}       {\fontsize{17bp}{19bp}\selectfont}
-  \renewcommand{\Large}       {\fontsize{20bp}{22bp}\selectfont}
+% Kaikki tarvittavat fonttikoot ja komennot
+\renewcommand{\footnotesize}{\fontsize{10bp}{12bp}\selectfont}
+\renewcommand{\small}       {\fontsize{12bp}{14bp}\selectfont}
+\renewcommand{\normalsize}  {\fontsize{14bp}{17bp}\selectfont}
+\renewcommand{\large}       {\fontsize{17bp}{19bp}\selectfont}
+\renewcommand{\Large}       {\fontsize{20bp}{22bp}\selectfont}
 
-  \normalsize % jotta tulee heti voimaan eikä vasta tekstiosassa
+\normalsize % jotta tulee heti voimaan eikä vasta tekstiosassa
 \end{koodilohko}
-\caption{Fonttikokojen määrittäminen pistekoon avulla}
-\label{esim:fontti_absoluuttinen}
+  \caption{Fonttikokojen määrittäminen pistekoon avulla}
+  \label{esim:fontti_absoluuttinen}
 \end{esimerkki*}
 
 Esimerkistä \ref{esim:fontti_absoluuttinen} selviää perusajatus.
@@ -1638,7 +1638,7 @@ olevien asetusten pohjalta antaa otsikolle seuraavat komennot:
 \komentoi{fontsize}
 \komentoi{bfseries}
 \begin{koodilohkosis}
-  \sffamilyabs\fontsize{16bp}{18bp}\bfseries
+\sffamilyabs\fontsize{16bp}{18bp}\bfseries
 \end{koodilohkosis}
 
 Esimerkin \ref{esim:fontti_absoluuttinen} riveillä 16--20 määritellään
@@ -1681,8 +1681,8 @@ Oletuksena Latex\-/dokumentin peruskirjainperheessä
 (\komentom{setsansfont}) ovat päällä muun muassa seuraavat asetukset:%
 
 \begin{koodilohkosis}
-  Ligatures={TeX, Common}
-  HyphenChar={-}
+Ligatures={TeX, Common}
+HyphenChar={-}
 \end{koodilohkosis}
 
 \koodi{TeX}\-/ligatuurit tarkoittavat lainausmerkkien ja ajatusviivojen
@@ -1696,7 +1696,7 @@ käsitellään tarkemmin luvussa \ref{luku:typo_liga}. Molemmat edellä
 mainitut ligatuurityypit saa pois päältä seuraavalla asetuksella:
 
 \begin{koodilohkosis}
-  Ligatures={TeXReset, NoCommon}
+Ligatures={TeXReset, NoCommon}
 \end{koodilohkosis}
 
 Valitsin \koodi{Hyphen\-Char} asettaa tavutusmerkin kyseiselle
@@ -1713,8 +1713,8 @@ ajatusviivojen kirjoittamiseen tarkoitetut Tex\-/ligatuurit päällä.
 Oletusasetuksia ovat muun muassa seuraavat:
 
 \begin{koodilohkosis}
-  Ligatures=Common
-  HyphenChar=None
+Ligatures=Common
+HyphenChar=None
 \end{koodilohkosis}
 
 Yleensä tasalevyisestä kirjainperheestä kannattaa kytkeä typografiset
@@ -1737,8 +1737,8 @@ kirjainperheiden määrittelyä.
 \komentoi{rmfamily}
 \komentoi{sffamily}
 \begin{koodilohkosis}
-  \defaultfontfeatures[\rmfamily,\sffamily]{Ligatures={TeX, Common},
-    Numbers=Lowercase}
+\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures={TeX, Common},
+  Numbers=Lowercase}
 \end{koodilohkosis}
 
 Komennon valinnaisella argumentilla voi rajata, mitä kirjainperheitä
@@ -1801,7 +1801,7 @@ tekee näkymättömän, juuri tähän tarkoitukseen olevan merkin
 
 \komentoi{textcompwordmark}
 \begin{koodilohkosis}
-  fi f\textcompwordmark i
+fi f\textcompwordmark i
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1816,7 +1816,7 @@ voi vaikuttaa komennolla \komento{addfontfeatures}, joka sekin on
 
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-  {\addfontfeatures{Ligatures=NoCommon} fi fl}
+{\addfontfeatures{Ligatures=NoCommon} fi fl}
 \end{koodilohkosis}
 
 Tavallisten ligatuurien lisäksi \englanti{Open Type} \=/fontit voivat
@@ -1835,8 +1835,8 @@ Joissakin fonteissa sama tehdään asetuksella \koodi{Liga\-tures=\katk
 samanaikaisesti:
 
 \begin{koodilohkosis}
-  Ligatures={TeX, Required, Common, Historic, Discretionary,
-    Contextual}
+Ligatures={TeX, Required, Common, Historic, Discretionary,
+  Contextual}
 \end{koodilohkosis}
 
 Harva fontti sisältää kaikkia ligatuurityyppejä, eikä se ole
@@ -1858,8 +1858,8 @@ lukuja. Näihin asetuksiin vaikutetaan fontin asetuksella
 \koodi{Numbers}. Tosin kaikissa fonteissa ei gemenanumeroita edes ole.
 
 \begin{koodilohkosis}
-  Numbers=Lowercase % gemenanumerot
-  Numbers=Uppercase % versaalinumerot (oletus)
+Numbers=Lowercase % gemenanumerot
+Numbers=Uppercase % versaalinumerot (oletus)
 \end{koodilohkosis}
 
 Jotkin koodi\-/ilmaukset sisältävät versaalikirjaimia ja numeroita
@@ -1876,7 +1876,7 @@ sekoitu O\=/kirjaimeen. Nollaan saadaan poikkiviiva seuraavalla
 asetuksella, jos vain fontissa on tämä ominaisuus:
 
 \begin{koodilohkosis}
-  Numbers=SlashedZero
+Numbers=SlashedZero
 \end{koodilohkosis}
 
 Kun numeroita ladotaan taulukkoon, voidaan haluta käyttää tasalevyisiä
@@ -1886,8 +1886,8 @@ lisäksi myös tasalevyiset. Numeroiden leveyteen vaikutetaan seuraavilla
 asetuksilla:
 
 \begin{koodilohkosis}
-  Numbers=Monospaced   % tasalevyiset numerot
-  Numbers=Proportional % vaihtelevan levyiset numerot (oletus)
+Numbers=Monospaced   % tasalevyiset numerot
+Numbers=Proportional % vaihtelevan levyiset numerot (oletus)
 \end{koodilohkosis}
 
 \subsection{Välistykset: harvennus ja tiivistys}
@@ -1915,8 +1915,8 @@ teknisesti toteutetaan:
 \komentoi{scshape}
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-  \scshape {\addfontfeatures{LetterSpace=-2} tiivistys} \\
-  normaali \\ {\addfontfeatures{LetterSpace=6} harvennus}
+\scshape {\addfontfeatures{LetterSpace=-2} tiivistys} \\
+normaali \\ {\addfontfeatures{LetterSpace=6} harvennus}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1930,7 +1930,7 @@ kirjainperheeseen kuuluvaan pienversaaliin, käytetään valitsinta
 
 \komentoi{setmainfont}
 \begin{koodilohkosis}
-  \setmainfont{…}[SmallCapsFeatures={LetterSpace=6}]
+\setmainfont{…}[SmallCapsFeatures={LetterSpace=6}]
 \end{koodilohkosis}
 
 \subsection{Keinotekoinen venytys, lihavointi ja kallistus}
@@ -1943,8 +1943,8 @@ esimerkki:
 
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-  esimerkki \\
-  {\addfontfeatures{FakeStretch=1.3} esimerkki}
+esimerkki \\
+{\addfontfeatures{FakeStretch=1.3} esimerkki}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1971,7 +1971,7 @@ Niille annetaan arvoksi desimaalilukukerroin. Valitettavasti
 
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-  pysty {\addfontfeatures{FakeSlant=.2} kalteva}
+pysty {\addfontfeatures{FakeSlant=.2} kalteva}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1989,9 +1989,9 @@ eri asia kuin \textit{kursiivi} (\komento{itshape}).
 
 \komentoi{setmainfont}
 \begin{koodilohkosis}
-  \setmainfont{…}[
-    SlantedFont={…}, % tähän pystyasentoinen leikkaus
-    SlantedFeatures={FakeSlant=.2}]
+\setmainfont{…}[
+  SlantedFont={…}, % tähän pystyasentoinen leikkaus
+  SlantedFeatures={FakeSlant=.2}]
 \end{koodilohkosis}
 
 \subsection{Keinotekoinen pienversaali}
@@ -2008,9 +2008,9 @@ liian ohuita.
 \komentoi{textsc}
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-  \textsc{pienversaali} oikea \\
-  {\addfontfeatures{ScaleAgain=.68, FakeStretch=1.17, LetterSpace=4}
-    PIENVERSAALI} keinotekoinen
+\textsc{pienversaali} oikea \\
+{\addfontfeatures{ScaleAgain=.68, FakeStretch=1.17, LetterSpace=4}
+  PIENVERSAALI} keinotekoinen
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -2073,10 +2073,10 @@ esittelyosassa näyttää seuraavanlaiselta:
 \komentoi{setotherlanguage}
 \pakettii{polyglossia}
 \begin{koodilohkosis}
-  \usepackage{polyglossia}
-  \setdefaultlanguage{finnish}
-  \setotherlanguage{english}
-  \setotherlanguage{greek}
+\usepackage{polyglossia}
+\setdefaultlanguage{finnish}
+\setotherlanguage{english}
+\setotherlanguage{greek}
 \end{koodilohkosis}
 
 Eri kielillä on erilaisia valinnaisia asetuksia, jotka täytyy selvittää
@@ -2089,7 +2089,7 @@ ottaa käyttöön myös seuraavalla tavalla:
 
 \komentoi{setdefaultlanguage}
 \begin{koodilohkosis}
-  \setdefaultlanguage[babelshorthands]{finnish}
+\setdefaultlanguage[babelshorthands]{finnish}
 \end{koodilohkosis}
 
 Dokumentin tekstiosa käyttää kieltä, joka määriteltiin komennolla
@@ -2100,15 +2100,15 @@ kirjaimilla \komentox{text} ja jatkuu kielen nimellä, esimerkiksi
 
 \komentoi{textenglish}
 \begin{koodilohkosis}
-  Englannin sana \textenglish{shorthand} tarkoittaa 'pikakirjoitusta'.
+Englannin sana \textenglish{shorthand} tarkoittaa 'pikakirjoitusta'.
 \end{koodilohkosis}
 
 Toinen vaihtoehto on käyttää kielen nimen mukaista ympäristöä:
 
 \begin{koodilohkosis}
-  \begin{greek}
-    ...
-  \end{greek}
+\begin{greek}
+  ...
+\end{greek}
 \end{koodilohkosis}
 
 Tietynkieliseksi merkitty teksti voi näyttää ladotussa dokumentissa ihan
@@ -2128,8 +2128,8 @@ komennon vaikutuksen ajaksi tulee käyttöön perusfontti
 \komentoi{sffamily}
 \komentoi{textenglish}
 \begin{koodilohkosis}
-  \sffamily
-  pääteviivaton \textenglish{main font} pääteviivaton
+\sffamily
+pääteviivaton \textenglish{main font} pääteviivaton
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -2148,7 +2148,7 @@ ei muuta fonttia millään tavalla vaan käytetään samaa kirjainperhettä
 kuin muutenkin siinä kohdassa dokumenttia.
 
 \begin{koodilohkosis}
-  \newcommand{\englishfont}{}
+\newcommand{\englishfont}{}
 \end{koodilohkosis}
 
 Mikäli haluaa jollekin kielelle kokonaan eri kirjainperheen, kannattaa
@@ -2159,7 +2159,7 @@ peruskirjainperhe ei sisällä kyseisen kielen kirjaimia.
 
 \komentoi{newfontfamily}
 \begin{koodilohkosis}
-  \newfontfamily{\greekfont}{GFS Artemisia}[Scale=MatchLowercase]
+\newfontfamily{\greekfont}{GFS Artemisia}[Scale=MatchLowercase]
 \end{koodilohkosis}
 
 % Seuraat eivät tunnu toimivan:
@@ -2195,7 +2195,7 @@ halutaan pääasialliseksi kieleksi.
 \komentoi{usepackage}
 \pakettii{babel}
 \begin{koodilohkosis}
-  \usepackage[english,greek,finnish]{babel}
+\usepackage[english,greek,finnish]{babel}
 \end{koodilohkosis}
 
 Pääasiallisen kielen voi valita myös \koodi{main}\-/valitsimella:
@@ -2203,7 +2203,7 @@ Pääasiallisen kielen voi valita myös \koodi{main}\-/valitsimella:
 \komentoi{usepackage}
 \pakettii{babel}
 \begin{koodilohkosis}
-  \usepackage[main=finnish,english,greek]{babel}
+\usepackage[main=finnish,english,greek]{babel}
 \end{koodilohkosis}
 
 Dokumentin tekstissä yksittäiset vieraskieliset sanat tai ilmaukset
@@ -2212,8 +2212,8 @@ argumentti on kielen nimi ja toinen on sillä kielellä ladottava teksti.
 
 \komentoi{foreignlanguage}
 \begin{koodilohkosis}
-  Englannin sana \foreignlanguage{english}{shorthand} tarkoittaa
-  'pikakirjoitusta'.
+Englannin sana \foreignlanguage{english}{shorthand} tarkoittaa
+'pikakirjoitusta'.
 \end{koodilohkosis}
 
 Komennon sijasta voi käyttää ympäristöä \ymparisto{otherlanguage}, joka
@@ -2221,9 +2221,9 @@ vaihtaa kieltä ympäristön ajaksi.
 
 \ymparistoi{otherlanguage}
 \begin{koodilohkosis}
-  \begin{otherlanguage}{greek}
-    ...
-  \end{otherlanguage}
+\begin{otherlanguage}{greek}
+  ...
+\end{otherlanguage}
 \end{koodilohkosis}
 
 Kielen vaihtamista voi helpottaa \komento{babeltags}\-/ komennolla, joka
@@ -2234,7 +2234,7 @@ tai ympäristöä \ymparistox{eng}.
 
 \komentoi{babeltags}
 \begin{koodilohkosis}
-  \babeltags{eng = english}
+\babeltags{eng = english}
 \end{koodilohkosis}
 
 Oletuskieli voidaan vaihtaa kesken dokumentin komennolla
@@ -2243,7 +2243,7 @@ esimerkiksi seuraavalla tavalla:
 
 \komentoi{selectlanguage}
 \begin{koodilohkosis}
-  \selectlanguage{english}
+\selectlanguage{english}
 \end{koodilohkosis}
 
 Eri kielille on mahdollista asettaa eri kirjainperheet
@@ -2265,17 +2265,17 @@ peruskirjainperhe ja pääteviivaton perhe.
   \komentoi{babelfont}
 
 \begin{koodilohko}
-  \babelfont{rm}{TeX Gyre Termes}
-  \babelfont{sf}[Scale=MatchLowercase]{TeX Gyre Heros}
-  \babelfont{tt}[Scale=MatchLowercase]{TeX Gyre Cursor}
+\babelfont{rm}{TeX Gyre Termes}
+\babelfont{sf}[Scale=MatchLowercase]{TeX Gyre Heros}
+\babelfont{tt}[Scale=MatchLowercase]{TeX Gyre Cursor}
 
-  \babelfont[greek]{rm}[Scale=MatchLowercase]{GFS Artemisia}
-  \babelfont[greek]{sf}[Scale=MatchLowercase]{GFS Neohellenic}
+\babelfont[greek]{rm}[Scale=MatchLowercase]{GFS Artemisia}
+\babelfont[greek]{sf}[Scale=MatchLowercase]{GFS Neohellenic}
 \end{koodilohko}
-\caption{\komento{babelfont}\-/komennon käyttö dokumentin
-  kirjainperheiden valintaan ja kielikohtaisten kirjainperheiden
-  valintaan}
-\label{esim:babelfont}
+  \caption{\komento{babelfont}\-/komennon käyttö dokumentin
+    kirjainperheiden valintaan ja kielikohtaisten kirjainperheiden
+    valintaan}
+  \label{esim:babelfont}
 \end{esimerkki*}
 
 Esimerkissä ennen fontin nimeä (esim. TeX Gyre Heros) oleva valinnainen
@@ -2303,8 +2303,8 @@ kirjoittaa seuraavat komennot:
 \komentoi{setdefaultlanguage}
 \pakettii{polyglossia}
 \begin{koodilohkosis}
-  \usepackage{polyglossia}
-  \setdefaultlanguage{finnish}
+\usepackage{polyglossia}
+\setdefaultlanguage{finnish}
 \end{koodilohkosis}
 
 Tavutusta käsitellään tässä yhteydessä lähinnä
@@ -2329,11 +2329,11 @@ selventää komennon käyttöä:
 
 \komentoi{hyphenation}
 \begin{koodilohkosis}
-  \hyphenation{
-    ala-indek-si alku-osa
-    nimen-omaan
-    typo-gra-fi-nen
-  }
+\hyphenation{
+  ala-indek-si alku-osa
+  nimen-omaan
+  typo-gra-fi-nen
+}
 \end{koodilohkosis}
 
 Komennon perään aaltosulkeiden sisään kirjoitetaan sanoja, jotka
@@ -2448,7 +2448,7 @@ valitsinta.
 \komentoi{usepackage}
 \pakettii{extdash}
 \begin{koodilohkosis}
-  \usepackage[shortcuts]{extdash}
+\usepackage[shortcuts]{extdash}
 \end{koodilohkosis}
 
 Paketti sisältää kaksi lisävaihtoehtoa kolmelle viivavälimerkille
@@ -2490,26 +2490,26 @@ vertaillaan \paketti{extdash}\-/paketin komentoja Texin vastaaviin.
     \cmidrule(l){3-4}
     \koodi{matka-aika}
                 & matka-\tavukohta aika
-                & \koodi{Oulu--Rovaniemi}
-                & Oulu--\tavukohta Rovaniemi \\
+    & \koodi{Oulu--Rovaniemi}
+                  & Oulu--\tavukohta Rovaniemi \\
     \koodi{matka\komento{-/}aika}
                 & mat\tavukohta ka-\tavukohta ai\tavukohta ka
-                & \koodi{Oulu\komento{--}Rovaniemi}
-                & Ou\tavukohta lu--\tavukohta Ro\tavukohta va\tavukohta
-                  nie\tavukohta mi \\
+    & \koodi{Oulu\komento{--}Rovaniemi}
+                  & Ou\tavukohta lu--\tavukohta Ro\tavukohta va\tavukohta
+                    nie\tavukohta mi \\
     \koodi{matka\komento{=/}aika}
                 & mat\tavukohta ka-ai\tavukohta ka
-                & \koodi{Oulu\komento{==}Rovaniemi}
-                & Ou\tavukohta lu--Ro\tavukohta va\tavukohta
-                  nie\tavukohta mi \\
+    & \koodi{Oulu\komento{==}Rovaniemi}
+                  & Ou\tavukohta lu--Ro\tavukohta va\tavukohta
+                    nie\tavukohta mi \\
     \koodi{matka-}
                 & matka-
-                & \koodi{-aika}
-                & -\tavukohta aika \\
+    & \koodi{-aika}
+                  & -\tavukohta aika \\
     \koodi{matka\komento{-/}}
                 & mat\tavukohta ka-
-                & \koodi{\komento{=/}aika}
-                & -ai\tavukohta ka \\
+    & \koodi{\komento{=/}aika}
+                  & -ai\tavukohta ka \\
     \bottomrule
   \end{tabular}
 }{
@@ -2524,7 +2524,7 @@ tilanteessa, jossa käytetään tavutuksen sallivaa yhdysmerkkikomentoa:
 
 \komentoi{-/}
 \begin{koodilohkosis}
-  matka\-/ ja aika\-/arvio
+matka\-/ ja aika\-/arvio
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -2537,8 +2537,8 @@ kirjoittaa komennon perään aaltosuljeparin tai kenoviivan ja sanavälin.
 
 \komentoi{-/}
 \begin{koodilohkosis}
-  matka\-/{} ja aika\-/arvio \\
-  matka\-/\ ja aika\-/arvio
+matka\-/{} ja aika\-/arvio \\
+matka\-/\ ja aika\-/arvio
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -2569,10 +2569,10 @@ tavoin omat asetukset tulevat voimaan automaattisesti kielen vaihtuessa.
 \komentoi{lefthyphenmin}
 \komentoi{righthyphenmin}
 \begin{koodilohkosis}
-  \addto{\captionsfinnish}{
-    \lefthyphenmin  3
-    \righthyphenmin 3
-  }
+\addto{\captionsfinnish}{
+  \lefthyphenmin  3
+  \righthyphenmin 3
+}
 \end{koodilohkosis}
 
 Edellisessä esimerkissä oleva komento \komento{addto} on
@@ -2624,7 +2624,7 @@ esimerkin tavoin:
 
 \komentoi{discretionary}
 \begin{koodilohkosis}
-  ta\discretionary{-}{}{}vu
+ta\discretionary{-}{}{}vu
 \end{koodilohkosis}
 
 Edellisessä esimerkissä komennon ensimmäinen argumentti on yhdysmerkki,
@@ -2643,7 +2643,7 @@ katkaisutilanteessa.
 
 \komentoi{discretionary}
 \begin{koodilohkosis}
-  \discretionary{}{}{}
+\discretionary{}{}{}
 \end{koodilohkosis}
 
 Joissakin kielissä sanan katkaiseminen yhdysmerkin kohdalta vaatii, että
@@ -2655,7 +2655,7 @@ edellä kuvatun tavutuskohdan saa myös seuraavalla tavalla:
 
 \komentoi{discretionary}
 \begin{koodilohkosis}
-  \discretionary{-}{-}{-}
+\discretionary{-}{-}{-}
 \end{koodilohkosis}
 
 Tavutuksen suunnittelussa ja tutkimisessa voi auttaa
@@ -2693,7 +2693,7 @@ ei tiedä, ellei ole kokemusta.
 
 \komentoi{-}
 \begin{koodilohkosis}
-  alku\-osa pusku\-traktori
+alku\-osa pusku\-traktori
 \end{koodilohkosis}
 
 Yhdysmerkin tai ajatusviivan sisältävät pitkät yhdyssanat voivat vaatia
@@ -2713,8 +2713,8 @@ tavutuksen hallintaa sanalle \emph{Molo\-tov--Ribben\-trop-sopi\-mus}:
 \komentoi{--}
 \komentoi{-/}
 \begin{koodilohkosis}
-  Molo\-tov--Ribben\-trop-sopi\-mus % tavutusvihjeet
-  Molotov\--Ribben\-trop\-/sopimus  % tavutuksen sallivat välimerkit
+Molo\-tov--Ribben\-trop-sopi\-mus % tavutusvihjeet
+Molotov\--Ribben\-trop\-/sopimus  % tavutuksen sallivat välimerkit
 \end{koodilohkosis}
 
 \komento{discretionary}\-/komentoa (luku \ref{luku:tavutus_muut}) voi
@@ -2730,7 +2730,7 @@ voisi siis kirjoittaa seuraavalla tavalla:
 
 \komentoi{discretionary}
 \begin{koodilohkosis}
-  vaa\discretionary{-}{}{'}an
+vaa\discretionary{-}{}{'}an
 \end{koodilohkosis}
 
 Komennon kolmas argumentti on heittomerkki, koska se pitää latoa
@@ -2741,8 +2741,8 @@ sijasta.
 
 \komentoi{discretionary}
 \begin{koodilohkosis}
-  \newcommand{\hm}{\discretionary{-}{}{'}}
-  vaa\hm an
+\newcommand{\hm}{\discretionary{-}{}{'}}
+vaa\hm an
 \end{koodilohkosis}
 
 Suomen kielessä käytetään heittomerkkiä myös taivutuspäätteen, liitteen

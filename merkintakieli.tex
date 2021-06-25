@@ -1,6 +1,6 @@
 % Tekijä:   Teemu Likonen <tlikonen@iki.fi>
 % Lisenssi: Creative Commons Nimeä-JaaSamoin 4.0 Kansainvälinen (CC BY-SA 4.0)
-%           https://creativecommons.org/licenses/by-sa/4.0/legalcode.fi
+% https://creativecommons.org/licenses/by-sa/4.0/legalcode.fi
 
 \chapter{Merkintäkieli}
 
@@ -24,7 +24,7 @@ Muutamalla merkillä on perus Latexissa erikoismerkitys, eikä niitä voi
 käyttää normaalilla tavalla. Merkit ovat seuraavat:
 
 \begin{koodilohkosis}
-  % $ ^ _ # & { } ~ \
+% $ ^ _ # & { } ~ \
 \end{koodilohkosis}
 
 Useimmat näistä merkeistä voi suojata erikoismerkitykseltään
@@ -73,10 +73,10 @@ sanojen välissä oleva välilyönti. Välilyöntejä ja sarkainmerkkejä voi
 kirjoittaa useita peräkkäin, mutta ne ovat sama asia kuin yksi väli.
 
 \begin{koodilohkosis}
-  Nämä      kaikki
-       ovat            vain
-  sanoja  peräkkäin  ja               kuuluvat
-      samaan kappaleeseen.
+Nämä      kaikki
+     ovat            vain
+sanoja  peräkkäin  ja               kuuluvat
+    samaan kappaleeseen.
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -106,7 +106,7 @@ poikkeukselliset sanavälit.
 \komentoi{setlength}
 \mittai{spaceskip}
 \begin{koodilohkosis}
-  \setlength{\spaceskip}{0.8em plus 0.3em minus 0.2em}
+\setlength{\spaceskip}{0.8em plus 0.3em minus 0.2em}
 \end{koodilohkosis}
 
 Myös kirjainperheelle voi asettaa oman sanavälikertoimensa fontin
@@ -140,12 +140,12 @@ voi olla useita peräkkäin, mutta ne tarkoittavat samaa kuin yksi tyhjä
 rivi. Uuden tekstikappaleen voi aloittaa myös komennolla \komento{par}.
 
 \begin{koodilohkosis}
-  Nämä rivit kuuluvat
-  samaan kappaleeseen.
+Nämä rivit kuuluvat
+samaan kappaleeseen.
 
-  Tässä on toinen tekstikappale.
-  Nyt ei oteta kantaa siihen, miten
-  rivit ja kappaleet muotoillaan.
+Tässä on toinen tekstikappale.
+Nyt ei oteta kantaa siihen, miten
+rivit ja kappaleet muotoillaan.
 \end{koodilohkosis}
 
 Ladotuissa teksteissä uuden tekstikappaleen alkaminen ilmaistaan usein
@@ -161,8 +161,8 @@ tarkoitettu kirjoittajan omien kommenttien ja muistiinpanojen
 kirjoittamiseen.
 
 \begin{koodilohkosis}
-  % Nyt ei tosin ole
-  % mitään kommentoitavaa.
+% Nyt ei tosin ole
+% mitään kommentoitavaa.
 \end{koodilohkosis}
 
 Kommenttimerkki vaikuttaa kääntäjään myös siten, että se syö kaikki
@@ -171,9 +171,9 @@ Tämän vuoksi kommenttimerkin avulla voi yhdistää eri riveillä olevan
 tekstin. Seuraava esimerkki tuottaa ladottuna ehjän sanan \emph{Latex}:
 
 \begin{koodilohkosis}
-  La% Nämä rivit
-    t% yhdistyvät.
-      ex
+La% Nämä rivit
+  t% yhdistyvät.
+    ex
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -194,7 +194,7 @@ ympäristön sisäpuolella. Seuraavassa esimerkissä aaltosulkeilla rajataan
 kursivointikomennon \komento{itshape} vaikutusaluetta.
 
 \begin{koodilohkosis}
-  tavallinen {\itshape kursiivi} tavallinen
+tavallinen {\itshape kursiivi} tavallinen
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -232,8 +232,8 @@ kun sanaväli.
 
 \komentoi{,}
 \begin{koodilohkosis}
-  12\,750\,000
-  J.\,R.\,R. Tolkien
+12\,750\,000
+J.\,R.\,R. Tolkien
 \end{koodilohkosis}
 
 Myös henkilön etunimen alkukirjainten välissä voi käyttää ohuketta, jos
@@ -286,8 +286,8 @@ lainausmerkki (''). Kahdella suurempi kuin \=/merkillä (\koodi{>>})
 saadaan kulmalainausmerkki~(>>).
 
 \begin{koodilohkosis}
-  ''Lainaus, jonka 'sisällä' on lainaus.'' \\
-  >>Lainaus, jonka 'sisällä' on lainaus.>>
+''Lainaus, jonka 'sisällä' on lainaus.'' \\
+>>Lainaus, jonka 'sisällä' on lainaus.>>
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -324,7 +324,7 @@ määrittelyn yhteydessä tai väliaikaisesti komennolla
 
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-  {\addfontfeatures{Ligatures=TeXReset} `` '' >> '}
+{\addfontfeatures{Ligatures=TeXReset} `` '' >> '}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -339,7 +339,7 @@ tietysti fonttikin vaihtuu. Fontteja käsitellään tarkemmin luvussa
 
 \komentoi{texttt}
 \begin{koodilohkosis}
-  \texttt{`` '' >> '}
+\texttt{`` '' >> '}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -360,10 +360,10 @@ täytyy olla ladattuna.
 \komentoi{setdefaultlanguage}
 \komentoi{enquote}
 \begin{koodilohkosis}
-  \usepackage{polyglossia} \setdefaultlanguage{finnish}
-  \usepackage[autostyle=true]{csquotes}
-  % ...
-  \enquote{Lainauksen \enquote{sisällä} lainaus.}
+\usepackage{polyglossia} \setdefaultlanguage{finnish}
+\usepackage[autostyle=true]{csquotes}
+% ...
+\enquote{Lainauksen \enquote{sisällä} lainaus.}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -386,7 +386,7 @@ tehdään kolmella yhdysmerkillä \mbox{(\koodi{---})}. Ajatusviivat
 vaikuttavat sanan tavutukseen samoin kuin yhdysmerkki.
 
 \begin{koodilohkosis}
-  Oulu--Rovaniemi-yhteys
+Oulu--Rovaniemi-yhteys
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -409,7 +409,7 @@ seuraavasti:
 
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-  {\addfontfeatures{Ligatures=TeXReset} -- ---}
+{\addfontfeatures{Ligatures=TeXReset} -- ---}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -524,8 +524,10 @@ ja \komento{LaTeX}.
 \leijutlk{
   \begin{tabular}{cllcll}
     \toprule
-    \multicolumn{2}{l}{\ots{Merkki}} & \ots{Merkitys}
-    & \multicolumn{2}{l}{\ots{Merkki}} & \ots{Merkitys} \\
+    \multicolumn{2}{l}{\ots{Merkki}}
+    & \ots{Merkitys}
+    & \multicolumn{2}{l}{\ots{Merkki}}
+    & \ots{Merkitys} \\
     \cmidrule(r){1-3}
     \cmidrule(l){4-6}
     \rivi[a]{`}{\`a}{gravis}
@@ -558,7 +560,7 @@ ja \komento{LaTeX}.
     & \rivi{j}{\j}{pisteetön j} \\
     \rivi[ a]{k}{\k a}{ogonek}
     & \rivi{AE}{\AE}{AE-ligatuuri} \\
-    %\rivi{t\{ae\}}{\t{ae}}{sidontakaari}
+    % \rivi{t\{ae\}}{\t{ae}}{sidontakaari}
     &&& \rivi{ae}{\ae}{ae-ligatuuri} \\
     \rivi{L}{\L}{poikkiviiva-L}
     & \rivi{OE}{\OE}{OE-ligatuuri} \\
@@ -664,7 +666,7 @@ katkaisemaan sanan tästä kohdasta. Samalla se voi estää sanan
 katkaisemisen muista kohdista.
 
 \begin{koodilohkosis}
-  tavutus\-algo\-ritmi
+tavutus\-algo\-ritmi
 \end{koodilohkosis}
 
 Myös sanassa olevat yhdysmerkit ja ajatusviivat vaikuttavat sanan
@@ -685,9 +687,9 @@ aaltosulkeisiin \koodi{\{}\ldots\koodi{\}} ja valinnaiset hakasulkeisiin
 \koodi{[}\ldots\koodi{]}.
 
 \begin{koodilohkosis}
-  \komento
-  \komento{argu}{mentteja}
-  \komento[valinnainen]{argu}{mentteja}
+\komento
+\komento{argu}{mentteja}
+\komento[valinnainen]{argu}{mentteja}
 \end{koodilohkosis}
 
 Jos pakolliseen argumenttiin haluaa sisällyttää aaltosulkeen, täytyy sen
@@ -714,7 +716,7 @@ komennolle ei anneta yhtään argumenttia. Seuraavassa esimerkissä sana
 kirjoita mitään eikä vaikuta tekstin latomiseen.
 
 \begin{koodilohkosis}
-  La\komento   tex
+La\komento   tex
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -728,8 +730,8 @@ välissä voi olla sanavälejä, ja ne kaikki syödään pois. Komennon ja sen
 argumentit voi siis kirjoittaa vaikka seuraavalla tavalla:
 
 \begin{koodilohkosis}
-  \komento  [valinnainen]
-     {argu-}   {mentteja}
+\komento  [valinnainen]
+   {argu-}   {mentteja}
 \end{koodilohkosis}
 
 \subsection{Omat komennot ja abstrahointi}
@@ -750,9 +752,9 @@ käytöstä:
 \komentoi{texttt}
 \komentoi{textbackslash}
 \begin{koodilohkosis}
-  \newcommand{\komento}[1]{\texttt{\textbackslash #1}}
+\newcommand{\komento}[1]{\texttt{\textbackslash #1}}
 
-  Komennolla \komento{section} tehdään otsikoita.
+Komennolla \komento{section} tehdään otsikoita.
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -781,10 +783,10 @@ Lopulta Latex\-/ komentojen merkitsemiseen tarkoitettu
 \komentoi{textenglish}
 \komentoi{index}
 \begin{koodilohkosis}
-  \newcommand{\komento}[1]{%
-    \texttt{\textbackslash\textenglish{#1}}%
-    \index[komennot]{\texttt{\textbackslash #1}}
-  }
+\newcommand{\komento}[1]{%
+  \texttt{\textbackslash\textenglish{#1}}%
+  \index[komennot]{\texttt{\textbackslash #1}}
+}
 \end{koodilohkosis}
 
 Näin oma \komentox{komento} ilmaisee tiiviisti ja havainnollisesti
@@ -804,9 +806,9 @@ annetaan samanlaiset argumentit. Komennot ovat seuraavat:
 \komentoi{renewcommand}
 \komentoi{providecommand}
 \begin{koodilohkosis}
-  \newcommand     {\nimi}[n][oletus]{määritelmä}
-  \renewcommand   {\nimi}[n][oletus]{määritelmä}
-  \providecommand {\nimi}[n][oletus]{määritelmä}
+\newcommand     {\nimi}[n][oletus]{määritelmä}
+\renewcommand   {\nimi}[n][oletus]{määritelmä}
+\providecommand {\nimi}[n][oletus]{määritelmä}
 \end{koodilohkosis}
 
 Ensimmäinen pakollinen argumentti on komennon nimi (\komentox{nimi}), ja
@@ -824,8 +826,8 @@ Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
 
 \komentoi{newcommand}
 \begin{koodilohkosis}
-  \newcommand{\komento}{Minua komennettiin!}
-  \komento
+\newcommand{\komento}{Minua komennettiin!}
+\komento
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -840,8 +842,8 @@ ensimmäisellä, toisella, kolmannella jne. argumentilla.
 
 \komentoi{newcommand}
 \begin{koodilohkosis}
-  \newcommand{\komento}[2]{Sanoit #1 ja #2!}
-  \komento{hip}{hei}
+\newcommand{\komento}[2]{Sanoit #1 ja #2!}
+\komento{hip}{hei}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -855,9 +857,9 @@ silloin, kun valinnaista argumenttia ei ole annettu.
 
 \komentoi{newcommand}
 \begin{koodilohkosis}
-  \newcommand{\komento}[3][tyyppi]{Hei #1, sanoit #2 ja #3!}
-  \komento{hip}{hei} \\
-  \komento[Leslie]{hip}{hei}
+\newcommand{\komento}[3][tyyppi]{Hei #1, sanoit #2 ja #3!}
+\komento{hip}{hei} \\
+\komento[Leslie]{hip}{hei}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -881,9 +883,9 @@ näkökulman.
 \komentoi{renewcommand*}
 \komentoi{providecommand*}
 \begin{koodilohkosis}
-  \newcommand*     {\nimi}[n][oletus]{määritelmä}
-  \renewcommand*   {\nimi}[n][oletus]{määritelmä}
-  \providecommand* {\nimi}[n][oletus]{määritelmä}
+\newcommand*     {\nimi}[n][oletus]{määritelmä}
+\renewcommand*   {\nimi}[n][oletus]{määritelmä}
+\providecommand* {\nimi}[n][oletus]{määritelmä}
 \end{koodilohkosis}
 
 Komentojen määrittelyssä tähdelliset versiot toimivat muuten samalla
@@ -893,13 +895,13 @@ seuraava esimerkki tuottaa käännettäessä virheen:
 
 \komentoi{newcommand*}
 \begin{koodilohkosis}
-  \newcommand*{\komento}[1]{Teksti: #1}
+\newcommand*{\komento}[1]{Teksti: #1}
 
-  \komento{
-    Ensimmäinen tekstikappale.
+\komento{
+  Ensimmäinen tekstikappale.
 
-    Toinen tekstikappale.
-  }
+  Toinen tekstikappale.
+}
 \end{koodilohkosis}
 
 \komento{newcommand*}\-/komennolla määritelty \komentox{komento} ei siis
@@ -917,9 +919,9 @@ sanaväli.
 
 \komentoi{newcommand}
 \begin{koodilohkosis}
-  \newcommand{\x}[1]{Argumentti: <#1>}
-  \x abc \\
-  \x.abc
+\newcommand{\x}[1]{Argumentti: <#1>}
+\x abc \\
+\x.abc
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -935,9 +937,9 @@ argumenttina toiselle.
 
 \komentoi{newcommand}
 \begin{koodilohkosis}
-  \newcommand{\x}[1]{Argumentti: <#1>}
-  \newcommand{\yyy}{abc}
-  \x\yyy
+\newcommand{\x}[1]{Argumentti: <#1>}
+\newcommand{\yyy}{abc}
+\x\yyy
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -950,7 +952,7 @@ oleva komennon nimi ilman aaltosulkeita.
 
 \komentoi{newcommand}
 \begin{koodilohkosis}
-  \newcommand\yyy{abc}
+\newcommand\yyy{abc}
 \end{koodilohkosis}
 
 Komennon määrittelyssä on välillä hyötyä \komento{ignorespaces}\-/
@@ -961,8 +963,8 @@ välilyönti.
 \komentoi{newcommand}
 \komentoi{ignorespaces}
 \begin{koodilohkosis}
-  \newcommand{\komento}[1]{#1\ignorespaces}
-  \komento{yhdys}       sana
+\newcommand{\komento}[1]{#1\ignorespaces}
+\komento{yhdys}       sana
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -979,13 +981,13 @@ alkuperäiseksi.
 \komentoi{newcommand}
 \komentoi{renewcommand}
 \begin{koodilohkosis}
-  \newcommand{\komento}{alkuperäinen}
+\newcommand{\komento}{alkuperäinen}
+\komento
+{%
+  \renewcommand{\komento}{muutettu}
   \komento
-  {%
-    \renewcommand{\komento}{muutettu}
-    \komento
-  }
-  \komento
+}
+\komento
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1015,10 +1017,10 @@ kyseisessä ympäristössä.
 \komentoi{begin}
 \komentoi{end}
 \begin{koodilohkosis}
-  \begin{nimi}
-    % ympäristön
-    % vaikutusalue
-  \end{nimi}
+\begin{nimi}
+  % ympäristön
+  % vaikutusalue
+\end{nimi}
 \end{koodilohkosis}
 
 Yleisin ympäristö on nimeltään \ymparistom{document}, jonka sisään koko
@@ -1031,8 +1033,8 @@ tarkoitukseen. Niitä määritellään seuraavilla komennoilla:
 \komentoi{newenvironment}
 \komentoi{renewenvironment}
 \begin{koodilohkosis}
-  \newenvironment   {nimi}[n][oletus]{aloitus}{lopetus}
-  \renewenvironment {nimi}[n][oletus]{aloitus}{lopetus}
+\newenvironment   {nimi}[n][oletus]{aloitus}{lopetus}
+\renewenvironment {nimi}[n][oletus]{aloitus}{lopetus}
 \end{koodilohkosis}
 
 Komento \komento{newenvironment} määrittelee uuden ympäristön. Se antaa
@@ -1051,11 +1053,11 @@ lopetusmääritelmä (\koodi{lopetus}).
 \komentoi{begin}
 \komentoi{end}
 \begin{koodilohkosis}
-  \newenvironment{ymp}{Tästä se alkaa.}{Tähän se päättyy.}
+\newenvironment{ymp}{Tästä se alkaa.}{Tähän se päättyy.}
 
-  \begin{ymp}
-    Ympäristön sisältöä.
-  \end{ymp}
+\begin{ymp}
+  Ympäristön sisältöä.
+\end{ymp}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1073,10 +1075,10 @@ piilottaa teknisen toteutuksen.
 \komentoi{begin}
 \komentoi{end}
 \begin{koodilohkosis}
-  \newenvironment{ymp}
-  {\begin{mahtavuus}
-      \omia\hienoja\asetuksia}
-    {\end{mahtavuus}}
+\newenvironment{ymp}
+{\begin{mahtavuus}
+    \omia\hienoja\asetuksia}
+  {\end{mahtavuus}}
 \end{koodilohkosis}
 
 Omille ympäristölle voi määritellä argumentteja samalla tavalla kuin
@@ -1094,10 +1096,10 @@ ympäristön aloittavan \komento{begin}\-/ komennon yhteydessä.
 \komentoi{begin}
 \komentoi{end}
 \begin{koodilohkosis}
-  \begin{ymp}[valinnainen]{argu}{mentteja}
-    % ympäristön
-    % vaikutusalue
-  \end{ymp}
+\begin{ymp}[valinnainen]{argu}{mentteja}
+  % ympäristön
+  % vaikutusalue
+\end{ymp}
 \end{koodilohkosis}
 
 Ympäristön määrittelykomennoille on myös tähdelliset versiot
@@ -1111,8 +1113,8 @@ komentojenkin määrittelyn tähdellisissä versioissa (luku
 \komentoi{newenvironment*}
 \komentoi{renewenvironment*}
 \begin{koodilohkosis}
-  \newenvironment*   {nimi}[n][oletus]{aloitus}{lopetus}
-  \renewenvironment* {nimi}[n][oletus]{aloitus}{lopetus}
+\newenvironment*   {nimi}[n][oletus]{aloitus}{lopetus}
+\renewenvironment* {nimi}[n][oletus]{aloitus}{lopetus}
 \end{koodilohkosis}
 
 Joskus ympäristöjen määrittelyyn on hyödyllistä sisällyttää komento
@@ -1127,13 +1129,13 @@ lopettavan \komento{end}\-/ komennon jälkeiset sanavälit.
 \komentoi{begin}
 \komentoi{end}
 \begin{koodilohkosis}
-  \newenvironment{ymp}
-    {Yhdys\ignorespaces}
-    {esi\ignorespacesafterend}
+\newenvironment{ymp}
+{Yhdys\ignorespaces}
+{esi\ignorespacesafterend}
 
-  \begin{ymp}
-    sana% Kommentti poistaa seuraavan sanavälin.
-  \end{ymp}   merkki.
+\begin{ymp}
+  sana% Kommentti poistaa seuraavan sanavälin.
+\end{ymp}   merkki.
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1193,10 +1195,10 @@ komennoilla \komento{hspace} ja \komento{vspace}:
 \komentoi{hspace}
 \komentoi{vspace}
 \begin{koodilohkosis}
-  Sanat\hspace{1.2cm}hassusti
-  \vspace{2mm}
+Sanat\hspace{1.2cm}hassusti
+\vspace{2mm}
 
-  \hspace{1.75em}erillään.
+\hspace{1.75em}erillään.
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1225,10 +1227,10 @@ koodissa useita kertoja.
 \komentoi{setlength}
 \komentoi{addtolength}
 \begin{koodilohkosis}
-  \newlength{\omamitta}         % Luodaan mitta.
-  \setlength{\omamitta}{2.3em}  % Asetetaan mitta.
-  \addtolength{\omamitta}{1em}  % Lisätään mittaan.
-  \addtolength{\omamitta}{-1em} % Vähennetään mitasta.
+\newlength{\omamitta}         % Luodaan mitta.
+\setlength{\omamitta}{2.3em}  % Asetetaan mitta.
+\addtolength{\omamitta}{1em}  % Lisätään mittaan.
+\addtolength{\omamitta}{-1em} % Vähennetään mitasta.
 \end{koodilohkosis}
 
 Näin luotuja mittoja voi käyttää mittayksiköiden tavoin, eli niille voi
@@ -1238,7 +1240,7 @@ komento luo vaakasuuntaisen välin, jonka pituus on 0,7 kertaa
 
 \komentoi{hspace}
 \begin{koodilohkosis}
-  \hspace{0.7\omamitta}
+\hspace{0.7\omamitta}
 \end{koodilohkosis}
 
 Koska vaakasuuntaisten välien tekeminen on typografiassa varsin
@@ -1287,7 +1289,7 @@ josta on tarkempaa tietoa luvussa \ref{luku:ohuke}.
 
     \draw [viiva, <->, color=black] (5.05,-.1) -- (7.95,-.1);
     \node at (6.5,-.3) {leveys};
-\end{tikzpicture}
+  \end{tikzpicture}
 }{
   \caption{Kirjainten mitat ja typografinen viivasto}
   \label{kuva:kirjainmitat}
@@ -1327,10 +1329,10 @@ tallennetaan merkkien mitat.
 \komentoi{settoheight}
 \komentoi{settodepth}
 \begin{koodilohkosis}
-  \newlength{\leveys} \newlength{\korkeus} \newlength{\syvyys}
-  \settowidth{\leveys}{abc} % merkkien ”abc” leveys
-  \settoheight{\korkeus}{H} % merkin ”H” korkeus
-  \settodepth{\syvyys}{p}   % merkin ”p” syvyys
+\newlength{\leveys} \newlength{\korkeus} \newlength{\syvyys}
+\settowidth{\leveys}{abc} % merkkien ”abc” leveys
+\settoheight{\korkeus}{H} % merkin ”H” korkeus
+\settodepth{\syvyys}{p}   % merkin ”p” syvyys
 \end{koodilohkosis}
 
 Mitat saa näkyviin kirjoittamalla mitan eteen komennon \komento{the}.
@@ -1339,7 +1341,7 @@ Näin mitan pituus ladotaan dokumenttiin. Yksikkönä on typografinen piste
 
 \komentoi{the}
 \begin{koodilohkosis}
-  Leveys: \the\leveys, korkeus: \the\korkeus, syvyys: \the\syvyys.
+Leveys: \the\leveys, korkeus: \the\korkeus, syvyys: \the\syvyys.
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1369,8 +1371,8 @@ ensimmäisen rivin sisennys (\mitta{parindent}) nollaan (\koodi{0em}).
 \mittai{parskip}
 \mittai{parindent}
 \begin{koodilohkosis}
-  \setlength{\parskip}{2ex plus 0.2ex minus 0.1ex}
-  \setlength{\parindent}{0em}
+\setlength{\parskip}{2ex plus 0.2ex minus 0.1ex}
+\setlength{\parindent}{0em}
 \end{koodilohkosis}
 
 Venyvissä mitoissa mainitaan ensin normaali pituus ja sitten sanoilla
@@ -1385,7 +1387,7 @@ havainnollistaa asiaa:
 
 \komentoi{hspace}
 \begin{koodilohkosis}
-  x\hspace{0mm plus 1fill}x\hspace{0mm plus 2fill}x
+x\hspace{0mm plus 1fill}x\hspace{0mm plus 2fill}x
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1405,8 +1407,8 @@ avulla seuraavasti:
 \komentoi{stretch}
 \komentoi{hfill}
 \begin{koodilohkosis}
-  x\hspace{\stretch{1}}x\hspace{\stretch{2}}x \\
-  x\hfill x\hfill\hfill x
+x\hspace{\stretch{1}}x\hspace{\stretch{2}}x \\
+x\hfill x\hfill\hfill x
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1427,7 +1429,7 @@ mitätöivät alemmantasoiset.
 
 \komentoi{hspace}
 \begin{koodilohkosis}
-  x\hspace{0mm plus 1filll}x\hspace{0mm plus 1fill}x
+x\hspace{0mm plus 1filll}x\hspace{0mm plus 1fill}x
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1510,10 +1512,10 @@ komentojen ja mittojen alussa.
 \komentoi{setcounter}
 \komentoi{addtocounter}
 \begin{koodilohkosis}
-  \newcounter{oma}       % Luodaan uusi laskuri ”oma”.
-  \setcounter{oma}{3}    % Asetetaan laskurin arvoksi 3.
-  \addtocounter{oma}{1}  % Lisätään laskurin arvoon 1.
-  \addtocounter{oma}{-1} % Vähennetään laskurin arvosta 1.
+\newcounter{oma}       % Luodaan uusi laskuri ”oma”.
+\setcounter{oma}{3}    % Asetetaan laskurin arvoksi 3.
+\addtocounter{oma}{1}  % Lisätään laskurin arvoon 1.
+\addtocounter{oma}{-1} % Vähennetään laskurin arvosta 1.
 \end{koodilohkosis}
 
 Laskuri on sisäisesti kokonaisluku, mutta sen arvon voi latoa eri
@@ -1567,9 +1569,9 @@ argumenttina mitan ilmaisemiseen (3\,em).
 \komentoi{hspace}
 \komentoi{value}
 \begin{koodilohkosis}
-  \newcounter{mitta}
-  \setcounter{mitta}{3}
-  x\hspace{\value{mitta}em}x
+\newcounter{mitta}
+\setcounter{mitta}{3}
+x\hspace{\value{mitta}em}x
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1591,7 +1593,7 @@ kun sivu vaihtuu eli laskurin \laskuri{page} arvo kasvaa.
 
 \komentoi{newcounter}
 \begin{koodilohkosis}
-  \newcounter{oma}[page]
+\newcounter{oma}[page]
 \end{koodilohkosis}
 
 Ylemmän tason laskureita ei kannata kasvattaa komennolla
@@ -1602,8 +1604,8 @@ kasvattamiseen on seuraavat kaksi komentoa:
 \komentoi{stepcounter}
 \komentoi{refstepcounter}
 \begin{koodilohkosis}
-  \stepcounter{laskuri}
-  \refstepcounter{laskuri}
+\stepcounter{laskuri}
+\refstepcounter{laskuri}
 \end{koodilohkosis}
 
 Edellä mainitut komennot kasvattavat argumenttina annetun laskurin arvoa
@@ -1625,9 +1627,9 @@ laskurista tai poistaa riippuvuuden.
 \komentoi{counterwithin}
 \komentoi{counterwithout}
 \begin{koodilohkosis}
-  \newcounter{oma}           % Luodaan laskuri ”oma”.
-  \counterwithin {oma}{page} % Asetetaan riippuvuus page-laskurista.
-  \counterwithout{oma}{page} % Poistetaan riippuvuus.
+\newcounter{oma}           % Luodaan laskuri ”oma”.
+\counterwithin {oma}{page} % Asetetaan riippuvuus page-laskurista.
+\counterwithout{oma}{page} % Poistetaan riippuvuus.
 \end{koodilohkosis}
 
 Edellä mainitut \paketti{chngcntr}\-/paketin komennot määrittelevät
@@ -1645,7 +1647,7 @@ haluamansa laiseksi komennolla \komento{renewcommand} (luku
 \komentoi{alph}
 \laskurii{page}
 \begin{koodilohkosis}
-  \renewcommand{\theoma}{\arabic{page}/\alph{oma}}
+\renewcommand{\theoma}{\arabic{page}/\alph{oma}}
 \end{koodilohkosis}
 
 \subsection{Kokonaislaskurit}
@@ -1679,18 +1681,18 @@ käyttöä.
   \komentoi{newpage}
 
 \begin{koodilohko}
-  \documentclass{article}
-  \usepackage{totpages}
+\documentclass{article}
+\usepackage{totpages}
 
-  \begin{document}
-  Sivumäärä: \ref{TotPages}. Viimeinen sivu: \pageref{TotPages}.
+\begin{document}
+Sivumäärä: \ref{TotPages}. Viimeinen sivu: \pageref{TotPages}.
 
-  \addtocounter{page}{10} % Sivunumerot 11, 12, 13...
-  \newpage Jotain... \newpage ...sisältöä.
-  \end{document}
+\addtocounter{page}{10} % Sivunumerot 11, 12, 13...
+\newpage Jotain... \newpage ...sisältöä.
+\end{document}
 \end{koodilohko}
-\caption{Dokumentin sivumäärän ja viimeisen sivun numeron latominen}
-\label{esim:totpages}
+  \caption{Dokumentin sivumäärän ja viimeisen sivun numeron latominen}
+  \label{esim:totpages}
 \end{esimerkki*}
 
 Muunlaisten kokonaislaskurien toteuttamiseen voi käyttää
@@ -1704,11 +1706,11 @@ on komento, jolla ladotaan tai palautetaan laskurin lopullinen arvo.
 \komentoi{total}
 \komentoi{totvalue}
 \begin{koodilohkosis}
-  \newcounter{oma}      % Luodaan laskuri ”oma”.
-  \regtotcounter{oma}   % Rekisteröidään ”oma” kokonaislaskuriksi.
-  \addtocounter{oma}{1} % Kasvatetaan laskurin arvoa.
-  \total{oma}           % Ladotaan laskurin lopullinen arvo.
-  \totvalue{oma}        % Palautetaan laskurin lopullinen arvo.
+\newcounter{oma}      % Luodaan laskuri ”oma”.
+\regtotcounter{oma}   % Rekisteröidään ”oma” kokonaislaskuriksi.
+\addtocounter{oma}{1} % Kasvatetaan laskurin arvoa.
+\total{oma}           % Ladotaan laskurin lopullinen arvo.
+\totvalue{oma}        % Palautetaan laskurin lopullinen arvo.
 \end{koodilohkosis}
 
 Edellä olevan esimerkin viimeistä komentoa \komento{totvalue} ei käytetä
@@ -1723,6 +1725,6 @@ mainittu lukumäärä saatiin laskettua seuraavasti:
 \komentoi{total}
 \laskurii{chapter}
 \begin{koodilohkosis}
-  \regtotcounter{chapter} % Sijoitetaan dokumentin esittelyosaan.
-  \total{chapter}         % Latoo päälukujen (chapter) lukumäärän.
+\regtotcounter{chapter} % Sijoitetaan dokumentin esittelyosaan.
+\total{chapter}         % Latoo päälukujen (chapter) lukumäärän.
 \end{koodilohkosis}

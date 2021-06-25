@@ -1,6 +1,6 @@
 % Tekijä:   Teemu Likonen <tlikonen@iki.fi>
 % Lisenssi: Creative Commons Nimeä-JaaSamoin 4.0 Kansainvälinen (CC BY-SA 4.0)
-%           https://creativecommons.org/licenses/by-sa/4.0/legalcode.fi
+% https://creativecommons.org/licenses/by-sa/4.0/legalcode.fi
 
 \chapter{Rakenne ja sisältö}
 
@@ -66,7 +66,7 @@ esimerkiksi seuraavasti:
 \komentoi{setlength}
 \mittai{emergencystretch}
 \begin{koodilohkosis}
-  \setlength{\emergencystretch}{1em}
+\setlength{\emergencystretch}{1em}
 \end{koodilohkosis}
 
 Kaikenlaiset kappaleiden latomiseen liittyvät tekniset rajoitukset voi
@@ -132,7 +132,7 @@ tilanteessa, asetetaan mitta vain nollaksi:
 \komentoi{setlength}
 \mittai{parskip}
 \begin{koodilohkosis}
-  \setlength{\parskip}{0ex}
+\setlength{\parskip}{0ex}
 \end{koodilohkosis}
 
 Seuraava esimerkkikomento asettaa kappaleväliksi 1,3\,ex. Lisäksi se
@@ -142,7 +142,7 @@ verran.
 \komentoi{setlength}
 \mittai{parskip}
 \begin{koodilohkosis}
-  \setlength{\parskip}{1.3ex plus .2ex minus .1ex}
+\setlength{\parskip}{1.3ex plus .2ex minus .1ex}
 \end{koodilohkosis}
 
 Silloin kun kappaleet ladotaan erilleen toisistaan, on yleensä hyvä
@@ -170,9 +170,9 @@ mittojen määrittelemiseen ja samalla niiden oletusarvot:
 \mittai{medskipamount}
 \mittai{smallskipamount}
 \begin{koodilohkosis}
-  \setlength{\bigskipamount} {12pt plus 4pt minus 4pt}
-  \setlength{\medskipamount}  {6pt plus 2pt minus 2pt}
-  \setlength{\smallskipamount}{3pt plus 1pt minus 1pt}
+\setlength{\bigskipamount} {12pt plus 4pt minus 4pt}
+\setlength{\medskipamount}  {6pt plus 2pt minus 2pt}
+\setlength{\smallskipamount}{3pt plus 1pt minus 1pt}
 \end{koodilohkosis}
 
 Komentojen \komento{bigskip}, \komento{medskip} ja \komento{smallskip}
@@ -192,10 +192,10 @@ joka tapauksessa, vaikka se olisi sivun lopussa tai alussa.
 
 \komentoi{vspace}
 \begin{koodilohkosis}
-  Tekstikappale.
-  \vspace{5ex plus 1ex minus .5ex}
+Tekstikappale.
+\vspace{5ex plus 1ex minus .5ex}
 
-  Toinen tekstikappale.
+Toinen tekstikappale.
 \end{koodilohkosis}
 
 Komento \komentom{addvspace} toimii lähes samoin kuin \komento{vspace},
@@ -208,10 +208,10 @@ pystysuuntaisen välin:
 
 \komentoi{addvspace}
 \begin{koodilohkosis}
-  Tekstikappale.
+Tekstikappale.
 
-  \addvspace{1ex} \addvspace{2ex} \addvspace{.5ex}
-  Toinen tekstikappale.
+\addvspace{1ex} \addvspace{2ex} \addvspace{.5ex}
+Toinen tekstikappale.
 \end{koodilohkosis}
 
 Jos edellisessä esimerkissä olisi käytetty \komento{vspace}\-/ komentoa,
@@ -251,7 +251,7 @@ fontin kokoon.
 \komentoi{setlength}
 \mittai{parindent}
 \begin{koodilohkosis}
-  \setlength{\parindent}{1em}
+\setlength{\parindent}{1em}
 \end{koodilohkosis}
 
 Edellä mainittu mitta pitäisi asettaa nollaan silloin, kun kappaleiden
@@ -262,8 +262,8 @@ että kappale vaihtuu.
 \mittai{parskip}
 \mittai{parindent}
 \begin{koodilohkosis}
-  \setlength{\parskip}{1.3ex plus .2ex minus .1ex}
-  \setlength{\parindent}{0em}  % Ei sisennystä.
+\setlength{\parskip}{1.3ex plus .2ex minus .1ex}
+\setlength{\parindent}{0em}  % Ei sisennystä.
 \end{koodilohkosis}
 
 \mitta{parindent}\-/ mitan levyisen välin voi tehdä mihin tahansa
@@ -275,8 +275,8 @@ ensimmäisen rivin sisentäminen.
 
 \komentoi{noindent}
 \begin{koodilohkosis}
-  \noindent
-  Tämän tekstikappaleen ensimmäistä riviä ei sisennetä.
+\noindent
+Tämän tekstikappaleen ensimmäistä riviä ei sisennetä.
 \end{koodilohkosis}
 
 Suomenkielisissä julkaisuissa on tavallista, että leipätekstin
@@ -303,8 +303,8 @@ Lisätietoja mainituista ympäristöistä on luvuissa
 \ymparistoi{list}
 \ymparistoi{tabular}
 \begin{koodilohkosis}
-  \NoIndentAfterEnv{list}
-  \NoIndentAfterEnv{tabular}
+\NoIndentAfterEnv{list}
+\NoIndentAfterEnv{tabular}
 \end{koodilohkosis}
 
 \subsection{Riippuva sisennys}
@@ -329,18 +329,18 @@ sisennettynä samalla tasolle.
   \komentoi{,}
 
 \begin{koodilohko}
-  \hangpara{2cm}{1}Tässä tekstikappaleessa on riippuva sisennys. Kappale
-  alkaa yhdellä sisentämättömällä rivillä, ja kappaleen seuraavat rivit
-  on sisennetty 2\,cm. Ei ole kovin vaikeaa.
+\hangpara{2cm}{1}Tässä tekstikappaleessa on riippuva sisennys. Kappale
+alkaa yhdellä sisentämättömällä rivillä, ja kappaleen seuraavat rivit
+on sisennetty 2\,cm. Ei ole kovin vaikeaa.
 \end{koodilohko}
-\begin{tulos}
-  \hangpara{2cm}{1}Tässä tekstikappaleessa on riippuva sisennys. Kappale
-  alkaa yhdellä sisentämättömällä rivillä, ja kappaleen seuraavat rivit
-  on sisennetty 2\,cm. Ei ole kovin vaikeaa.
-\end{tulos}
-\caption{Riippuva sisennys \paketti{hanging}\-/ paketin ja sen
-  \komento{hangpara}\-/ komennon avulla}
-\label{esim:riippuva_sis_hangpara}
+  \begin{tulos}
+    \hangpara{2cm}{1}Tässä tekstikappaleessa on riippuva sisennys. Kappale
+    alkaa yhdellä sisentämättömällä rivillä, ja kappaleen seuraavat rivit
+    on sisennetty 2\,cm. Ei ole kovin vaikeaa.
+  \end{tulos}
+  \caption{Riippuva sisennys \paketti{hanging}\-/ paketin ja sen
+    \komento{hangpara}\-/ komennon avulla}
+  \label{esim:riippuva_sis_hangpara}
 \end{esimerkki*}
 
 Helpoin tapa riippuvien sisennysten toteuttamiseen lienee
@@ -360,9 +360,9 @@ komennollekin.
 
 \ymparistoi{hangparas}
 \begin{koodilohkosis}
-  \begin{hangparas}{2cm}{1}
-    ...
-  \end{hangparas}
+\begin{hangparas}{2cm}{1}
+  ...
+\end{hangparas}
 \end{koodilohkosis}
 
 \begin{esimerkki*}
@@ -371,19 +371,19 @@ komennollekin.
   \komentoi{,}
 
 \begin{koodilohko}
-  \hangpara{2cm}{1}\makebox[2cm][l]{Otsikko}Tässä tekstikappaleessa on
-  riippuva sisennys. Kappale alkaa yhdellä sisentämättömällä rivillä,
-  joka sisältää näkymättömässä 2\,cm leveässä laatikossa olevan otsikon.
-  Kappaleen muut rivit on sisennetty 2\,cm.
+\hangpara{2cm}{1}\makebox[2cm][l]{Otsikko}Tässä tekstikappaleessa on
+riippuva sisennys. Kappale alkaa yhdellä sisentämättömällä rivillä,
+joka sisältää näkymättömässä 2\,cm leveässä laatikossa olevan otsikon.
+Kappaleen muut rivit on sisennetty 2\,cm.
 \end{koodilohko}
-\begin{tulos}
-  \hangpara{2cm}{1}\makebox[2cm][l]{Otsikko}Tässä tekstikappaleessa on
-  riippuva sisennys. Kappale alkaa yhdellä sisentämättömällä rivillä,
-  joka sisältää näkymättömässä 2\,cm leveässä laatikossa olevan otsikon.
-  Kappaleen muut rivit on sisennetty 2\,cm.
-\end{tulos}
-\caption{Asiakirjan tyylisten tekstikappaleiden toteutus}
-\label{esim:riippuva_sis_asiakirja}
+  \begin{tulos}
+    \hangpara{2cm}{1}\makebox[2cm][l]{Otsikko}Tässä tekstikappaleessa on
+    riippuva sisennys. Kappale alkaa yhdellä sisentämättömällä rivillä,
+    joka sisältää näkymättömässä 2\,cm leveässä laatikossa olevan otsikon.
+    Kappaleen muut rivit on sisennetty 2\,cm.
+  \end{tulos}
+  \caption{Asiakirjan tyylisten tekstikappaleiden toteutus}
+  \label{esim:riippuva_sis_asiakirja}
 \end{esimerkki*}
 
 Asiakirjan tyylisen otsikon saa toteutettua \komento{makebox}\-/
@@ -403,10 +403,10 @@ esimerkki:
 \komentoi{hangpara}
 \komentoi{ignorespaces}
 \begin{koodilohkosis}
-  \newlength{\sarkain}
-  \setlength{\sarkain}{2.3cm}
-  \newcommand{\kappale}[1][]{\par\hangpara{2\sarkain}{1}%
-    \makebox[2\sarkain][l]{\ignorespaces #1}\ignorespaces}
+\newlength{\sarkain}
+\setlength{\sarkain}{2.3cm}
+\newcommand{\kappale}[1][]{\par\hangpara{2\sarkain}{1}%
+  \makebox[2\sarkain][l]{\ignorespaces #1}\ignorespaces}
 \end{koodilohkosis}
 
 Tämän jälkeen voi komennolla \komentox{kappale} aloittaa asiakirjan
@@ -424,18 +424,18 @@ komentoa ja muita laatikoita käsitellään tarkemmin luvussa
   \komentoi{,}
 
 \begin{koodilohko}
-  \begin{list}{}{
-      \setlength{\leftmargin}{2cm}
-      \setlength{\itemindent}{-2cm}
-    }
-  \item Tässä tekstikappaleessa on riippuva sisennys. Kappale alkaa
-    yhdellä sisentämättömällä rivillä, ja kappaleen muut rivit on
-    sisennetty 2\,cm.
-  \end{list}
+\begin{list}{}{
+    \setlength{\leftmargin}{2cm}
+    \setlength{\itemindent}{-2cm}
+  }
+\item Tässä tekstikappaleessa on riippuva sisennys. Kappale alkaa
+  yhdellä sisentämättömällä rivillä, ja kappaleen muut rivit on
+  sisennetty 2\,cm.
+\end{list}
 \end{koodilohko}
-\caption{Riippuvan sisennyksen toteuttaminen \ymparisto{list}\-/
-  ympäristön avulla}
-\label{esim:riippuva_sis_list}
+  \caption{Riippuvan sisennyksen toteuttaminen \ymparisto{list}\-/
+    ympäristön avulla}
+  \label{esim:riippuva_sis_list}
 \end{esimerkki*}
 
 Riippuvan sisennyksen voi toteuttaa myös \ymparisto{list}\-/ ympäristön
@@ -506,24 +506,24 @@ vasemmalta tai oikealta tai molemmista reunoista.
   \komentoi{small}
 
 \begin{koodilohko}
-  \newenvironment{lohkolainaus}{%
-    \begin{list}{}{
-        \setlength{\leftmargin}{1cm}
-        \setlength{\rightmargin}{1cm}
-        \setlength{\itemindent}{0bp}
-        \setlength{\listparindent}{\parindent}
-        \setlength{\parsep}{\parskip}
-        \setlength{\topsep}{1em}
-        \setlength{\partopsep}{0bp}
-      }
-    \item\linespread{1}\small
-    }{\end{list}}
+\newenvironment{lohkolainaus}{%
+  \begin{list}{}{
+      \setlength{\leftmargin}{1cm}
+      \setlength{\rightmargin}{1cm}
+      \setlength{\itemindent}{0bp}
+      \setlength{\listparindent}{\parindent}
+      \setlength{\parsep}{\parskip}
+      \setlength{\topsep}{1em}
+      \setlength{\partopsep}{0bp}
+    }
+  \item\linespread{1}\small
+  }{\end{list}}
 \end{koodilohko}
-\caption{Lohkolainausten eli tekstikappaleen vasemman ja oikean
-  sisennyksen toteutus \ymparisto{list}\-/ ympäristön avulla.
-  Esimerkkikoodi määrittelee uuden ympäristön nimeltä
-  \ymparistox{lohkolainaus}}
-\label{esim:vasen_oikea_sisennys}
+  \caption{Lohkolainausten eli tekstikappaleen vasemman ja oikean
+    sisennyksen toteutus \ymparisto{list}\-/ ympäristön avulla.
+    Esimerkkikoodi määrittelee uuden ympäristön nimeltä
+    \ymparistox{lohkolainaus}}
+  \label{esim:vasen_oikea_sisennys}
 \end{esimerkki*}
 
 Esimerkistä \ref{esim:vasen_oikea_sisennys} selviää, kuinka
@@ -532,10 +532,10 @@ Esimerkki määrittelee uuden ympäristön nimeltä
 \ymparistox{lohkolainaus}, jota voi hyödyntää myöhemmin dokumentissa.
 
 \begin{koodilohkosis}
-  \begin{lohkolainaus}
-    Tämä tekstikappale on sisennetty vasemmalta ja oikealta. Lisäksi
-    kirjainleikkaus on hieman pienempi (\small) kuin leipätekstissä.
-  \end{lohkolainaus}
+\begin{lohkolainaus}
+  Tämä tekstikappale on sisennetty vasemmalta ja oikealta. Lisäksi
+  kirjainleikkaus on hieman pienempi (\small) kuin leipätekstissä.
+\end{lohkolainaus}
 \end{koodilohkosis}
 
 Omien ympäristöjen määrittelyä käsitellään tarkemmin luvussa
@@ -559,8 +559,8 @@ Komennon ei tarvitse sijaita lähdedokumentissa rivin lopussa.
 
 \komentoi{\keno}
 \begin{koodilohkosis}
-  ensimmäinen \\ toinen \\
-  kolmas
+ensimmäinen \\ toinen \\
+kolmas
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -573,7 +573,7 @@ tilan. Argumentin on siis oltava mitta (luku \ref{luku:mitat}).
 
 \komentoi{\keno}
 \begin{koodilohkosis}
-  ensimmäinen \\ toinen \\[1.3ex] kolmas
+ensimmäinen \\ toinen \\[1.3ex] kolmas
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -622,9 +622,9 @@ vaikuttavat koko dokumenttiin eli kaikkiin tekstikappaleisiin.
 \komentoi{setnowidow}
 \komentoi{setnoclub}
 \begin{koodilohkosis}
-  \usepackage{nowidow}
-  \setnowidow   % leskirivien esto
-  \setnoclub    % orporivien esto
+\usepackage{nowidow}
+\setnowidow   % leskirivien esto
+\setnoclub    % orporivien esto
 \end{koodilohkosis}
 
 Paketti \paketti{nowidow} määrittelee myös komennot \komentom{nowidow}
@@ -645,8 +645,8 @@ sellaisia ei sallita.
 \komentoi{widowpenalty}
 \komentoi{clubpenalty}
 \begin{koodilohkosis}
-  \widowpenalty 10000   % leskirivien esto
-  \clubpenalty  10000   % orporivien esto
+\widowpenalty 10000   % leskirivien esto
+\clubpenalty  10000   % orporivien esto
 \end{koodilohkosis}
 
 Leskien ja orpojen haitallisuusarvoiksi voi kokeilla hieman pienempiäkin
@@ -684,9 +684,9 @@ lähempänä olevaan marginaaliin.
 
 \komentoi{marginpar}
 \begin{koodilohkosis}
-  Tämä on leipätekstin tekstikappale,
-    \marginpar{Tämä ladotaan marginaaliin.}
-  joka ladotaan sivun normaalille tekstialueelle.
+Tämä on leipätekstin tekstikappale,
+\marginpar{Tämä ladotaan marginaaliin.}
+joka ladotaan sivun normaalille tekstialueelle.
 \end{koodilohkosis}
 
 % Miten valinnainen argumentti toimii? \marginpar[left]{right}
@@ -705,8 +705,8 @@ esimerkki tällaisen komennon määrittelystä:
 \komentoi{scriptsize}
 \komentoi{RaggedRight}
 \begin{koodilohkosis}
-  \newcommand{\huomautus}[1]{%
-    \marginpar{\sffamily\scriptsize\RaggedRight #1}}
+\newcommand{\huomautus}[1]{%
+  \marginpar{\sffamily\scriptsize\RaggedRight #1}}
 \end{koodilohkosis}
 
 Omien komentojen määrittelyä käsitellään tarkemmin luvussa
@@ -742,9 +742,9 @@ esimerkki näiden mittojen asettamisesta:
 \mittai{marginparsep}
 \mittai{marginparpush}
 \begin{koodilohkosis}
-  \setlength{\marginparwidth}{50bp}
-  \setlength{\marginparsep}{10bp}
-  \setlength{\marginparpush}{6bp}
+\setlength{\marginparwidth}{50bp}
+\setlength{\marginparsep}{10bp}
+\setlength{\marginparpush}{6bp}
 \end{koodilohkosis}
 
 Kesken dokumentin komennolla \komento{reversemarginpar} voidaan vaihtaa
@@ -789,7 +789,7 @@ Komentoa käytetään seuraavalla tavalla:
 
 \komentoi{lettrine}
 \begin{koodilohkosis}
-  \lettrine[lines=3, loversize=.06, lhang=.02, findent=-5bp,
+\lettrine[lines=3, loversize=.06, lhang=.02, findent=-5bp,
   nindent=4bp, slope=4bp]{A}{nfangi} aloittaa tämän tekstikappaleen.
 \end{koodilohkosis}
 
@@ -906,8 +906,8 @@ on voimassa.
 
 \komentoi{emph}
 \begin{koodilohkosis}
-  tavallinen \emph{korostettu} tavallinen \\
-  \emph{korostettu \emph{kaksoiskorostettu} korostettu}
+tavallinen \emph{korostettu} tavallinen \\
+\emph{korostettu \emph{kaksoiskorostettu} korostettu}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -998,7 +998,7 @@ alempana j- ja y\=/kirjainten alapidennyksen vuoksi.
 
 \komentoi{underline}
 \begin{koodilohkosis}
-  \underline{äiti} \underline{öljy}
+\underline{äiti} \underline{öljy}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1021,7 +1021,7 @@ sisältämiä komentoja.
 \renewcommand{\rivi}[2]{\komento{#1} & #2}
 
 \leijutlk{
-  %\setlength{\ULdepth}{.2ex}
+  % \setlength{\ULdepth}{.2ex}
   \begin{tabular}{llll}
     \toprule
     \ots{Komento}
@@ -1056,7 +1056,7 @@ määrittelyn.
 \pakettii{ulem}
 \komentoi{usepackage}
 \begin{koodilohkosis}
-  \usepackage[normalem]{ulem}
+\usepackage[normalem]{ulem}
 \end{koodilohkosis}
 
 Paketin \paketti{ulem} myötä on käytettävissä mitta \mitta{ULdepth},
@@ -1072,9 +1072,9 @@ määritellä uudestaan. Seuraavassa on näistä esimerkki:
 \komentoi{ULthickness}
 \komentoi{uline}
 \begin{koodilohkosis}
-  \setlength{\ULdepth}{.2ex}        % viivan etäisyys
-  \renewcommand{\ULthickness}{.1ex} % viivan paksuus
-  \uline{äiti} \uline{öljy}
+\setlength{\ULdepth}{.2ex}        % viivan etäisyys
+\renewcommand{\ULthickness}{.1ex} % viivan paksuus
+\uline{äiti} \uline{öljy}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1103,8 +1103,8 @@ ohjeita on luvussa \ref{luku:fontit_valistys}.
 \komentoi{large}
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-  \large TAVALLINEN \\
-  {\addfontfeatures{LetterSpace=10} KLASSINEN HARVENNUS}
+\large TAVALLINEN \\
+{\addfontfeatures{LetterSpace=10} KLASSINEN HARVENNUS}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1129,7 +1129,7 @@ sanahahmo pysyy visuaalisesti koossa.
 \komentoi{bfseries}
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-  {\sffamily\bfseries\addfontfeatures{LetterSpace=40} SEIS!}
+{\sffamily\bfseries\addfontfeatures{LetterSpace=40} SEIS!}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1193,8 +1193,8 @@ kirjainperheellä. Seuraavassa on tästä kaksi esimerkkiä:
 
 \komentoi{verb}
 \begin{koodilohkosis}
-  \verb.tasalevyinen.   % aloitus- ja lopetusmerkkinä piste
-  \verb|tasalevyinen|   % aloitus- ja lopetusmerkkinä pystyviiva
+\verb.tasalevyinen.   % aloitus- ja lopetusmerkkinä piste
+\verb|tasalevyinen|   % aloitus- ja lopetusmerkkinä pystyviiva
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1208,10 +1208,10 @@ tulkitaan kirjaimellisesti -- myös välilyönnit ja rivinvaihdot.
 
 \ymparistoi{verbatim}
 \begin{koodilohkosis}
-  \begin{verbatim}
-  tieto-       kone-
-         koodia
-  \end{verbatim}
+\begin{verbatim}
+tieto-       kone-
+       koodia
+\end{verbatim}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1266,9 +1266,9 @@ muokkaa joidenkin muualla määriteltyjen komentojen ominaisuuksia.
 \komentoi{hypersetup}
 \komentoi{urlstyle}
 \begin{koodilohkosis}
-  \usepackage{hyperref}  % paketin lataaminen
-  \hypersetup{hidelinks} % linkeistä pois kehykset
-  \urlstyle{same}        % linkkien fontti
+\usepackage{hyperref}  % paketin lataaminen
+\hypersetup{hidelinks} % linkeistä pois kehykset
+\urlstyle{same}        % linkkien fontti
 \end{koodilohkosis}
 
 Edellisen esimerkin komennolla \komento{hypersetup} vaikutetaan
@@ -1293,7 +1293,7 @@ napsauttamalla linkin osoittama sivusto avautuu.
 
 \komentoi{href}
 \begin{koodilohkosis}
-  \href{https://www.ctan.org/}{CTAN-sivusto}
+\href{https://www.ctan.org/}{CTAN-sivusto}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1307,7 +1307,7 @@ argumentti, verkko\-/osoite.
 
 \komentoi{url}
 \begin{koodilohkosis}
-  \url{https://www.ctan.org/}
+\url{https://www.ctan.org/}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -1328,7 +1328,7 @@ kannattaa kirjoittaa seuraavalla tavalla:
 \komentoi{href}
 \komentoi{nolinkurl}
 \begin{koodilohkosis}
-  \href{mailto:tunnus@osoite.net}{\nolinkurl{tunnus@osoite.net}}
+\href{mailto:tunnus@osoite.net}{\nolinkurl{tunnus@osoite.net}}
 \end{koodilohkosis}
 
 Osoite pitää siis kirjoittaa kaksi kertaa: itse linkkiä varten ja
@@ -1340,7 +1340,7 @@ seuraavalla tavalla:
 \komentoi{href}
 \komentoi{nolinkurl}
 \begin{koodilohkosis}
-  \newcommand{\sposti}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+\newcommand{\sposti}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
 \end{koodilohkosis}
 
 \subsection{Värit KESKEN}
@@ -1375,7 +1375,7 @@ sen valitsinta \koodi{clear\-empty}:
 \komentoi{usepackage}
 \pakettii{titlesec}
 \begin{koodilohkosis}
-  \usepackage[clearempty]{titlesec}
+\usepackage[clearempty]{titlesec}
 \end{koodilohkosis}
 
 Edellä mainittu \paketti{titlesec}\-/ paketti sisältää monenlaisia
@@ -1408,8 +1408,8 @@ paremmankin sivunvaihtokohdan.
 \komentoi{pagebreak}
 \komentoi{nopagebreak}
 \begin{koodilohkosis}
-  \pagebreak[3]  % Lisätään sivunvaihdon todennäköisyyttä.
-  \nopagebreak   % Estetään sivunvaihto (oletusarvo 4).
+\pagebreak[3]  % Lisätään sivunvaihdon todennäköisyyttä.
+\nopagebreak   % Estetään sivunvaihto (oletusarvo 4).
 \end{koodilohkosis}
 
 Jos \komento{pagebreak}\-/ komentoa käyttää tekstikappaleen sisällä,
@@ -1437,9 +1437,9 @@ esimerkkejä:
 \komentoi{enlargethispage}
 \mittai{baselineskip}
 \begin{koodilohkosis}
-  \enlargethispage{12bp}          % 12 pistettä korkemmaksi
-  \enlargethispage{-4bp}          % 4 pistettä matalammaksi
-  \enlargethispage{\baselineskip} % yksi tekstirivi lisää
+\enlargethispage{12bp}          % 12 pistettä korkemmaksi
+\enlargethispage{-4bp}          % 4 pistettä matalammaksi
+\enlargethispage{\baselineskip} % yksi tekstirivi lisää
 \end{koodilohkosis}
 
 Komennon tähtiversio \komentom{enlargethispage*} pyrkii lisäksi
@@ -1476,9 +1476,9 @@ ilmaistaan seuraavilla komennoilla:
 \komentoi{and}
 \komentoi{today}
 \begin{koodilohkosis}
-  \title{Tieteellistä tiedettä}              % teoksen nimi
-  \author{Timo Tiedemies \and Tuija Tutkija} % tekijöiden nimet
-  \date{\today}                              % päiväys
+\title{Tieteellistä tiedettä}              % teoksen nimi
+\author{Timo Tiedemies \and Tuija Tutkija} % tekijöiden nimet
+\date{\today}                              % päiväys
 \end{koodilohkosis}
 
 Edellisen esimerkin komentojen argumentissa voi käyttää komentoa
@@ -1521,7 +1521,7 @@ sisällysluetteloon saa oman merkinnän esimerkiksi seuraavalla
 komennolla:
 
 \begin{koodilohkosis}
-  \pdfbookmark[0]{Kansi}{luku:kansi}
+\pdfbookmark[0]{Kansi}{luku:kansi}
 \end{koodilohkosis}
 
 Edellä mainittu komento \komento{pdfbookmark} täytyy sijoittaa Latex\-/
@@ -1556,7 +1556,9 @@ pakettia ja pdf\-/ tiedoston ominaisuuksia käsitellään tarkemmin luvussa
 \leijutlk{
   \begin{tabular}{lccl}
     \toprule
-    \multirow{2}{*}{\ots{Komento}} & \ots{Taso} & \ots{Taso}
+    \multirow{2}{*}{\ots{Komento}}
+    & \ots{Taso}
+    & \ots{Taso}
     & \multirow{2}{*}{\ots{Merkitys}} \\
     & (\luokka{article}) & (\luokka{book}, \luokka{report}) \\
     \midrule
@@ -1625,7 +1627,7 @@ yleensä.
 
 \komentoi{section}
 \begin{koodilohkosis}
-  \section{Tämä teksti on otsikko}
+\section{Tämä teksti on otsikko}
 \end{koodilohkosis}
 
 Otsikko tulee automaattisesti mukaan teoksen sisällysluetteloon, jos
@@ -1645,7 +1647,7 @@ kirjoitetaan vain puhdasta tekstiä sisältävä versio otsikosta.
 
 \komentoi{section}
 \begin{koodilohkosis}
-  \section[Lyhyt otsikko]{Tämä tässä on pitkä otsikko}
+\section[Lyhyt otsikko]{Tämä tässä on pitkä otsikko}
 \end{koodilohkosis}
 
 Kaikille otsikkokomennoille on olemassa myös niin sanottu tähtiversio
@@ -1668,9 +1670,9 @@ tavalla:
 \komentoi{addcontentsline}
 \komentoi{phantomsection}
 \begin{koodilohkosis}
-  \section*{Tässäpä numeroimaton otsikko}
-  \phantomsection
-  \addcontentsline{toc}{section}{Tässäpä numeroimaton otsikko}
+\section*{Tässäpä numeroimaton otsikko}
+\phantomsection
+\addcontentsline{toc}{section}{Tässäpä numeroimaton otsikko}
 \end{koodilohkosis}
 
 Edellä olevan esimerkin komento \komentom{addcontentsline} lisää
@@ -1702,7 +1704,7 @@ saa numeroa.
 \komentoi{setcounter}
 \laskurii{secnumdepth}
 \begin{koodilohkosis}
-  \setcounter{secnumdepth}{1}
+\setcounter{secnumdepth}{1}
 \end{koodilohkosis}
 
 Asetusta voi muuttaa kesken dokumentin. Muuttaminen voi olla mielekästä
@@ -1738,7 +1740,7 @@ komento \komento{arabic} latoo laskurin arvon arabialaisilla numeroilla.
 \laskurii{part}
 \komentoi{arabic}
 \begin{koodilohkosis}
-  \renewcommand{\thepart}{\arabic{part}}
+\renewcommand{\thepart}{\arabic{part}}
 \end{koodilohkosis}
 
 Joskus ehkä halutaan, että otsikoissa eri tasojen numeroita ei eroteta
@@ -1757,9 +1759,9 @@ laskurien latomiskomennot uudelleen, esimerkiksi seuraavasti:%
 \laskurii{subsubsection}
 \komentoi{arabic}
 \begin{koodilohkosis}
-  \renewcommand{\thesubsection}{\thesection--\arabic{subsection}}
-  \renewcommand{\thesubsubsection}{%
-    \thesubsection--\arabic{subsubsection}}
+\renewcommand{\thesubsection}{\thesection--\arabic{subsection}}
+\renewcommand{\thesubsubsection}{%
+  \thesubsection--\arabic{subsubsection}}
 \end{koodilohkosis}
 
 Otsikkonumeroinnin poistamista ei pidä toteuttaa siten, että määrittelee
@@ -1799,9 +1801,9 @@ esimerkki vaihtaa otsikoihin groteskin kirjainperheen
 \komentoi{bfseries}
 \komentoi{itshape}
 \begin{koodilohkosis}
-  \titleformat*{\section}      {\sffamily\bfseries\Large}
-  \titleformat*{\subsection}   {\sffamily\bfseries\itshape\large}
-  \titleformat*{\subsubsection}{\sffamily\bfseries\normalsize}
+\titleformat*{\section}      {\sffamily\bfseries\Large}
+\titleformat*{\subsection}   {\sffamily\bfseries\itshape\large}
+\titleformat*{\subsubsection}{\sffamily\bfseries\normalsize}
 \end{koodilohkosis}
 
 Monipuolisemmat muotoiluasetukset saa toteutettua komennon tähdettömällä
@@ -1820,19 +1822,19 @@ selvinnevät perustoiminnot.
   \komentoi{thesection}
 
 \begin{koodilohko}
-  \titleformat{\section}     % otsikkotaso: \section
-  [hang]                     % muoto: riippuva sisennys
-  {\sffamily\bfseries\Large  % ulkoasukomentoja
-    \raggedright}
-  {\thesection}              % numerointi
-  {.8em}                     % numeroinnin ja otsikkotekstin väli (mitta)
-  {}                         % koodia ennen otsikkotekstiä
-  []                         % koodia otsikon jälkeen
+\titleformat{\section}     % otsikkotaso: \section
+[hang]                     % muoto: riippuva sisennys
+{\sffamily\bfseries\Large  % ulkoasukomentoja
+  \raggedright}
+{\thesection}              % numerointi
+{.8em}                     % numeroinnin ja otsikkotekstin väli (mitta)
+{}                         % koodia ennen otsikkotekstiä
+[]                         % koodia otsikon jälkeen
 \end{koodilohko}
-\caption{Otsikoiden ulkoasuun voi vaikuttaa monipuolisesti
-  \komento{titleformat}\-/ komennolla, joka kuuluu \paketti{titlesec}\-/
-  pakettiin}
-\label{esim:titleformat}
+  \caption{Otsikoiden ulkoasuun voi vaikuttaa monipuolisesti
+    \komento{titleformat}\-/ komennolla, joka kuuluu \paketti{titlesec}\-/
+    pakettiin}
+  \label{esim:titleformat}
 \end{esimerkki*}
 
 Luvun numeroinnin (1.1, 1.2 jne.) tyyliin voi vaikuttaa komennolla
@@ -1845,7 +1847,7 @@ asetuksiin.
 \komentoi{titlelabel}
 \komentoi{hspace}
 \begin{koodilohkosis}
-  \titlelabel{\thetitle\hspace{1em}}
+\titlelabel{\thetitle\hspace{1em}}
 \end{koodilohkosis}
 
 Edellä olevan komennon argumentissa käytetty komento \komentox{thetitle}
@@ -1862,7 +1864,7 @@ sisennys, yläpuolinen väli ja alapuolinen väli.
 \komentoi{titlespacing*}
 \komentoi{section}
 \begin{koodilohkosis}
-  \titlespacing*{\section}{0mm}{3ex plus 2bp minus 1bp}{2ex plus 1bp}
+\titlespacing*{\section}{0mm}{3ex plus 2bp minus 1bp}{2ex plus 1bp}
 \end{koodilohkosis}
 
 Pystysuuntaiset mitat on yleensä hyvä asettaa venyviksi (luku
@@ -1875,7 +1877,7 @@ oletuksena ex\-/mittayksikköä ja sallii hieman venymistä.
 \komentoi{titlespacing*}
 \komentoi{section}
 \begin{koodilohkosis}
-  \titlespacing*{\section}{0mm}{*3}{*2}
+\titlespacing*{\section}{0mm}{*3}{*2}
 \end{koodilohkosis}
 
 Tähdellinen \komento{titlespacing*}\-/ komento poistaa otsikon jälkeen
@@ -1905,10 +1907,10 @@ ovat ''kausia'' ja pääluvut ovat ''päiviä''.
 \komentoi{partname}
 \komentoi{chaptername}
 \begin{koodilohkosis}
-  \addto{\captionsfinnish}{
-    \renewcommand{\partname}{Kausi}
-    \renewcommand{\chaptername}{Päivä}
-  }
+\addto{\captionsfinnish}{
+  \renewcommand{\partname}{Kausi}
+  \renewcommand{\chaptername}{Päivä}
+}
 \end{koodilohkosis}
 
 Tässä \komento{renewcommand}\-/ komennot sijoitettiin \komento{addto}\-/
@@ -1931,7 +1933,7 @@ määritelmään kirjoitetaan jokin sivuvaihtokomento kuten
 \komentoi{sectionbreak}
 \komentoi{clearpage}
 \begin{koodilohkosis}
-  \newcommand{\sectionbreak}{\clearpage}
+\newcommand{\sectionbreak}{\clearpage}
 \end{koodilohkosis}
 
 \subsection{Esittely, pääluvut, liitteet ja luettelot}
@@ -1992,51 +1994,51 @@ tai lähdeluettelon.
   \ymparistoi{document}
 
 \begin{koodilohko}
-  \documentclass{book}
+\documentclass{book}
 
-  \begin{document}
+\begin{document}
 
-  \pagestyle{empty} % sivunumerot pois näkyvistä
-  % nimiösivu yms.
+\pagestyle{empty} % sivunumerot pois näkyvistä
+% nimiösivu yms.
 
-  \cleardoublepage
-  \setcounter{tocdepth}{2} % sisällysluettelon syvyys
-  \pagestyle{plain}        % sivunumerot näkyviin
-  \tableofcontents         % sisällysluettelo
+\cleardoublepage
+\setcounter{tocdepth}{2} % sisällysluettelon syvyys
+\pagestyle{plain}        % sivunumerot näkyviin
+\tableofcontents         % sisällysluettelo
 
-  \setcounter{secnumdepth}{-1} % lukujen numerointi pois
+\setcounter{secnumdepth}{-1} % lukujen numerointi pois
 
-  \chapter{Esipuhe}
-  % esipuheen teksti
+\chapter{Esipuhe}
+% esipuheen teksti
 
-  \setcounter{secnumdepth}{2} % aloitetaan lukujen numerointi
+\setcounter{secnumdepth}{2} % aloitetaan lukujen numerointi
 
-  \chapter{Ensimmäinen pääluku}
-  % ...
-  \chapter{Toinen pääluku}
-  % ...
+\chapter{Ensimmäinen pääluku}
+% ...
+\chapter{Toinen pääluku}
+% ...
 
-  % mahdollisesti liitteet
-  \appendix
-  \chapter{Tärkeä liite}
-  % ...
-  \chapter{Tosi tärkeä liite}
-  % ...
+% mahdollisesti liitteet
+\appendix
+\chapter{Tärkeä liite}
+% ...
+\chapter{Tosi tärkeä liite}
+% ...
 
-  % Kirjallisuusluettelot, asiahakemistot yms.
-  \setcounter{secnumdepth}{-1} % lukujen numerointi pois
+% Kirjallisuusluettelot, asiahakemistot yms.
+\setcounter{secnumdepth}{-1} % lukujen numerointi pois
 
-  \chapter{Kirjallisuutta}
-  \printbibliography
+\chapter{Kirjallisuutta}
+\printbibliography
 
-  \chapter{Asiahakemisto}
-  \printindex
+\chapter{Asiahakemisto}
+\printindex
 
-  \end{document}
+\end{document}
 \end{koodilohko}
-\caption{Tyypillinen suomalainen tietokirjojen rakenne sekä sivujen ja
-  lukujen numerointikäytännöt}
-\label{esim:tietokirjojen_rakenne}
+  \caption{Tyypillinen suomalainen tietokirjojen rakenne sekä sivujen ja
+    lukujen numerointikäytännöt}
+  \label{esim:tietokirjojen_rakenne}
 \end{esimerkki*}
 
 Edellä mainitut komennot eivät ihan vastaa suomalaista tietokirjojen
@@ -2085,8 +2087,8 @@ kyllä muokatakin varsin helposti.
 
 \komentoi{tableofcontents}
 \begin{koodilohkosis}
-  % Ladotaan sisällysluettelo tähän kohtaan.
-  \tableofcontents
+% Ladotaan sisällysluettelo tähän kohtaan.
+\tableofcontents
 \end{koodilohkosis}
 
 Laskurin \laskurim{tocdepth} avulla kirjoittaja voi määritellä, mihin
@@ -2101,7 +2103,7 @@ Otsikoiden tasonumerot voi tarkistaa taulukosta \ref{tlk:otsikkotasot}
 \komentoi{setcounter}
 \laskurii{tocdepth}
 \begin{koodilohkosis}
-  \setcounter{tocdepth}{0}
+\setcounter{tocdepth}{0}
 \end{koodilohkosis}
 
 Sisällysluettelolle ladotaan automaattisesti otsikko, joka tulee
@@ -2121,9 +2123,9 @@ muutetaan sisällysluettelon otsikko suomen kielen osalta:
 \komentoi{renewcommand}
 \komentoi{contentsname}
 \begin{koodilohkosis}
-  \addto{\captionsfinnish}{
-    \renewcommand{\contentsname}{Sisällysluettelo}
-  }
+\addto{\captionsfinnish}{
+  \renewcommand{\contentsname}{Sisällysluettelo}
+}
 \end{koodilohkosis}
 
 Dokumenttiluokissa \luokka{book} ja \luokka{report} (luku
@@ -2144,17 +2146,17 @@ sivutyyliä.
   \komentoi{tableofcontents}
 
 \begin{koodilohko}
-  \pagestyle{empty}
-  {
-    \renewcommand{\thispagestyle}[1]{} % tyhjä määritelmä
-    \tableofcontents
-  }
+\pagestyle{empty}
+{
+  \renewcommand{\thispagestyle}[1]{} % tyhjä määritelmä
+  \tableofcontents
+}
 \end{koodilohko}
-\caption{Sisällysluettelon sivutyylin muuttaminen kokonaan
-  \koodi{empty}\-/ tyyliseksi. Komento \komento{thispagestyle} pitää
-  määritellä väliaikaisesti uudestaan dokumenttiluokissa \luokka{report}
-  ja \luokka{book}}
-\label{esim:sisallysluettelo_empty}
+  \caption{Sisällysluettelon sivutyylin muuttaminen kokonaan
+    \koodi{empty}\-/ tyyliseksi. Komento \komento{thispagestyle} pitää
+    määritellä väliaikaisesti uudestaan dokumenttiluokissa \luokka{report}
+    ja \luokka{book}}
+  \label{esim:sisallysluettelo_empty}
 \end{esimerkki*}
 
 Jotta edellä mainitusta kummallisuudesta pääsisi eroon, täytyy
@@ -2191,33 +2193,33 @@ Tätä komentoa käsitellään luvussa \ref{luku:pdf_asetukset}.
   \komentoi{makebox}
 
 \begin{koodilohko}
-  \titlecontents{chapter}                     % otsikon taso: chapter
-  [0em]                                       % vasen sisennys (mitta)
-  {\addvspace{1.5ex}\rmfamily\bfseries\large} % yläpuolinen koodi
-  {\makebox[8mm][l]{\thecontentslabel}}       % numeroitu kohta
-  {}                                          % numeroimaton kohta
-  {\small\titlerule[0bp]\contentspage}  % pisteviiva (pois) ja sivunumero
-  [\addvspace{.5ex}]                    % alapuolinen koodi
+\titlecontents{chapter}                     % otsikon taso: chapter
+[0em]                                       % vasen sisennys (mitta)
+{\addvspace{1.5ex}\rmfamily\bfseries\large} % yläpuolinen koodi
+{\makebox[8mm][l]{\thecontentslabel}}       % numeroitu kohta
+{}                                          % numeroimaton kohta
+{\small\titlerule[0bp]\contentspage}  % pisteviiva (pois) ja sivunumero
+[\addvspace{.5ex}]                    % alapuolinen koodi
 
-  \titlecontents{section}                     % otsikon taso: section
-  [0em]                                       % vasen sisennys (mitta)
-  {\addvspace{.5ex}\rmfamily\normalsize}      % yläpuolinen koodi
-  {\makebox[8mm][l]{\thecontentslabel}}       % numeroitu kohta
-  {}                                          % numeroimaton kohta
-  {~\small\titlerule*[3mm]{.}\contentspage}   % pisteviiva ja sivunumero
-  [\addvspace{.2ex}]                          % alapuolinen koodi
+\titlecontents{section}                     % otsikon taso: section
+[0em]                                       % vasen sisennys (mitta)
+{\addvspace{.5ex}\rmfamily\normalsize}      % yläpuolinen koodi
+{\makebox[8mm][l]{\thecontentslabel}}       % numeroitu kohta
+{}                                          % numeroimaton kohta
+{~\small\titlerule*[3mm]{.}\contentspage}   % pisteviiva ja sivunumero
+[\addvspace{.2ex}]                          % alapuolinen koodi
 
-  \titlecontents{subsection}                  % otsikon taso: subsection
-  [8mm]                                       % vasen sisennys (mitta)
-  {\rmfamily\small}                           % yläpuolinen koodi
-  {\makebox[10mm][l]{\thecontentslabel}}      % numeroitu kohta
-  {}                                          % numeroimaton kohta
-  {~\small\titlerule*[3mm]{.}\contentspage}   % pisteviiva ja sivunumero
-  []                                          % alapuolinen koodi
+\titlecontents{subsection}                  % otsikon taso: subsection
+[8mm]                                       % vasen sisennys (mitta)
+{\rmfamily\small}                           % yläpuolinen koodi
+{\makebox[10mm][l]{\thecontentslabel}}      % numeroitu kohta
+{}                                          % numeroimaton kohta
+{~\small\titlerule*[3mm]{.}\contentspage}   % pisteviiva ja sivunumero
+[]                                          % alapuolinen koodi
 \end{koodilohko}
-\caption{Sisällysluettelon ulkoasua muokataan \komento{titlecontents}\-/
-  komennolla, joka on peräisin \paketti{titletoc}\-/ paketista}
-\label{esim:titlecontents}
+  \caption{Sisällysluettelon ulkoasua muokataan \komento{titlecontents}\-/
+    komennolla, joka on peräisin \paketti{titletoc}\-/ paketista}
+  \label{esim:titlecontents}
 \end{esimerkki*}
 
 Sisällysluettelon ulkoasun muokkaamista varten on paketti
@@ -2291,11 +2293,11 @@ ympäristöäkin käytetään samalla tavalla:
 \ymparistoi{itemize}
 \komentoi{item}
 \begin{koodilohkosis}
-  \begin{itemize}
-  \item Luetelman ensimmäinen kohta.
-  \item Toinen kohta heti perään.
-  \item Kolmaskin kohta on tarpeen.
-  \end{itemize}
+\begin{itemize}
+\item Luetelman ensimmäinen kohta.
+\item Toinen kohta heti perään.
+\item Kolmaskin kohta on tarpeen.
+\end{itemize}
 \end{koodilohkosis}
 
 \komento{item}\-/ komennolle voi antaa hakasulkeissa valinnaisen
@@ -2304,7 +2306,7 @@ argumentin sisältämä teksti tai koodi.
 
 \komentoi{item}
 \begin{koodilohkosis}
-  \item[--] Tässä kohdassa onkin ajatusviiva (--).
+\item[--] Tässä kohdassa onkin ajatusviiva (--).
 \end{koodilohkosis}
 
 \begin{esimerkki*}
@@ -2312,26 +2314,26 @@ argumentin sisältämä teksti tai koodi.
   \komentoi{item}
 
 \begin{koodilohko}
-  \begin{description}
-  \item[Tex] Tekstidokumenttien ladontaan erikoistunut ohjelmointikieli.
-  \item[Latex] Dokumenttien kirjoittajille tarkoitettu merkintäkieli.
-  \item[Lualatex] Latex-muotoisten lähdedokumenttien kääntäjäohjelma.
-    Sisältää Lua-nimisen ohjelmointikielen.
-  \end{description}
+\begin{description}
+\item[Tex] Tekstidokumenttien ladontaan erikoistunut ohjelmointikieli.
+\item[Latex] Dokumenttien kirjoittajille tarkoitettu merkintäkieli.
+\item[Lualatex] Latex-muotoisten lähdedokumenttien kääntäjäohjelma.
+  Sisältää Lua-nimisen ohjelmointikielen.
+\end{description}
 \end{koodilohko}
 
-\begin{tulos}
-  \begin{description}
-  \item[Tex] Tekstidokumenttien ladontaan erikoistunut ohjelmointikieli.
-  \item[Latex] Dokumenttien kirjoittajille tarkoitettu merkintäkieli.
-  \item[Lualatex] Latex-muotoisten lähdedokumenttien kääntäjäohjelma.
-    Sisältää Lua-nimi\-sen ohjelmointikielen.
-  \end{description}
-\end{tulos}
-\caption{Käsitteiden määritelmiä ja sen kaltaisia luetelmia voi
-  toteuttaa \ymparisto{description}\-/ ympäristön avulla. Käsitteet
-  kirjoitetaan \komento{item}\-/ komennon valinnaiseen argumenttiin}
-\label{esim:description}
+  \begin{tulos}
+    \begin{description}
+    \item[Tex] Tekstidokumenttien ladontaan erikoistunut ohjelmointikieli.
+    \item[Latex] Dokumenttien kirjoittajille tarkoitettu merkintäkieli.
+    \item[Lualatex] Latex-muotoisten lähdedokumenttien kääntäjäohjelma.
+      Sisältää Lua-nimi\-sen ohjelmointikielen.
+    \end{description}
+  \end{tulos}
+  \caption{Käsitteiden määritelmiä ja sen kaltaisia luetelmia voi
+    toteuttaa \ymparisto{description}\-/ ympäristön avulla. Käsitteet
+    kirjoitetaan \komento{item}\-/ komennon valinnaiseen argumenttiin}
+  \label{esim:description}
 \end{esimerkki*}
 
 Komennon valinnaista argumenttia hyödynnetään varsinkin
@@ -2378,22 +2380,22 @@ kirjaimia (a, b, c jne.).
   \laskurii{enumiv}
 
 \begin{koodilohko}
-  % itemize-ympäristön luetelmamerkki
-  \renewcommand{\labelitemi}  {\textbullet} % ulommainen luetelma
-  \renewcommand{\labelitemii} {\normalfont\bfseries\textendash}
-  \renewcommand{\labelitemiii}{\textasteriskcentered}
-  \renewcommand{\labelitemiv} {\textperiodcentered}
+% itemize-ympäristön luetelmamerkki
+\renewcommand{\labelitemi}  {\textbullet} % ulommainen luetelma
+\renewcommand{\labelitemii} {\normalfont\bfseries\textendash}
+\renewcommand{\labelitemiii}{\textasteriskcentered}
+\renewcommand{\labelitemiv} {\textperiodcentered}
 
-  % enumerate-ympäristön numerointitapa
-  \renewcommand{\labelenumi}  {\arabic{enumi}.} % ulommainen luetelma
-  \renewcommand{\labelenumii} {(\alph{enumii})}
-  \renewcommand{\labelenumiii}{\roman{enumiii}.}
-  \renewcommand{\labelenumiv} {\Alph{enumiv}.}
+% enumerate-ympäristön numerointitapa
+\renewcommand{\labelenumi}  {\arabic{enumi}.} % ulommainen luetelma
+\renewcommand{\labelenumii} {(\alph{enumii})}
+\renewcommand{\labelenumiii}{\roman{enumiii}.}
+\renewcommand{\labelenumiv} {\Alph{enumiv}.}
 \end{koodilohko}
-\caption{Luetelmamerkkien ja numerointitapojen muuttaminen
-  \ymparisto{itemize}\-/\ ja \ymparisto{enumerate}\-/ ympäristöissä.
-  Esimerkissä näkyvät oletusarvot}
-\label{esim:labelitem_labelenum}
+  \caption{Luetelmamerkkien ja numerointitapojen muuttaminen
+    \ymparisto{itemize}\-/\ ja \ymparisto{enumerate}\-/ ympäristöissä.
+    Esimerkissä näkyvät oletusarvot}
+  \label{esim:labelitem_labelenum}
 \end{esimerkki*}
 
 Luetelmamerkit ja luetelmien numerointitavat ovat kirjoittajan
@@ -2425,10 +2427,10 @@ arvoon~3, joten ensimmäiseksi luetelmakohdaksi tulee~4.
 \komentoi{item}
 \laskurii{enumi}
 \begin{koodilohkosis}
-  \begin{enumerate}
-    \setcounter{enumi}{3}
-    \item Tämä on luetelmakohta numero 4.
-  \end{enumerate}
+\begin{enumerate}
+  \setcounter{enumi}{3}
+\item Tämä on luetelmakohta numero 4.
+\end{enumerate}
 \end{koodilohkosis}
 
 Kirjoittaja voi vaikuttaa myös luetelmakohtien sisennykseen ja
@@ -2447,10 +2449,10 @@ mukaisesti:
 \mittai{leftmarginiii}
 \mittai{leftmarginiv}
 \begin{koodilohkosis}
-  \setlength{\leftmargini}  {1.5em} % ulommainen luetelma
-  \setlength{\leftmarginii} {1.5em}
-  \setlength{\leftmarginiii}{1.5em}
-  \setlength{\leftmarginiv} {1.5em}
+\setlength{\leftmargini}  {1.5em} % ulommainen luetelma
+\setlength{\leftmarginii} {1.5em}
+\setlength{\leftmarginiii}{1.5em}
+\setlength{\leftmarginiv} {1.5em}
 \end{koodilohkosis}
 
 Edellä olevat sisennysasetukset toimivat ympäristöissä
@@ -2466,9 +2468,9 @@ luetelmaympäristön sisään heti \komento{begin}\-/ komennon jälkeen.
 \mittai{itemsep}
 \mittai{parskip}
 \begin{koodilohkosis}
-  \setlength{\parsep} {0bp}   % kappaleiden väli
-  \setlength{\itemsep}{3bp}   % luetelmakohtien väli
-  \setlength{\parskip}{1.2ex} % väli luetelman alussa ja lopussa
+\setlength{\parsep} {0bp}   % kappaleiden väli
+\setlength{\itemsep}{3bp}   % luetelmakohtien väli
+\setlength{\parskip}{1.2ex} % väli luetelman alussa ja lopussa
 \end{koodilohkosis}
 
 \subsection{Luetelmien yleistyökalu (list)}
@@ -2496,9 +2498,9 @@ mutta lisäksi sille täytyy antaa kaksi argumenttia. Niiden avulla
 vaikutetaan luetelman asetuksiin.
 
 \begin{koodilohkosis}
-  \begin{list}{merkki}{asetukset}
-  \item ...
-  \end{list}
+\begin{list}{merkki}{asetukset}
+\item ...
+\end{list}
 \end{koodilohkosis}
 
 Edellisen esimerkin argumentti ''\koodi{merk\-ki}'' sisältää tekstiä tai
@@ -2524,33 +2526,34 @@ luetelmamerkkien latomiseen vaikuttava komento \komento{makelabel}.
   \mittai{itemsep}
   \mittai{parsep}
   \laskurii{enumi}
+
 \begin{koodilohko}
-  \begin{list}{\arabic{enumi})}{
-      \usecounter{enumi}             % käytetään enumi-laskuria
-      \setlength{\leftmargin}{1.5em} % vasen sisennys
-      \setlength{\itemsep}{.2ex}     % luetelmakohtien väli
-      \setlength{\parsep}{0ex}       % luetelmakappaleiden väli
-    }
-  \item Luetelman ensimmäinen kohta.
-  \item Tässä on vielä toinen
-  \item ja kolmas kohta.
-  \end{list}
+\begin{list}{\arabic{enumi})}{
+    \usecounter{enumi}             % käytetään enumi-laskuria
+    \setlength{\leftmargin}{1.5em} % vasen sisennys
+    \setlength{\itemsep}{.2ex}     % luetelmakohtien väli
+    \setlength{\parsep}{0ex}       % luetelmakappaleiden väli
+  }
+\item Luetelman ensimmäinen kohta.
+\item Tässä on vielä toinen
+\item ja kolmas kohta.
+\end{list}
 \end{koodilohko}
-\begin{tulos}
-  \begin{list}{\arabic{enumi})}{
-      \usecounter{enumi}             % käytetään enumi-laskuria
-      \setlength{\leftmargin}{1.5em} % vasen sisennys
-      \setlength{\itemsep}{.2ex}     % luetelmakohtien väli
-      \setlength{\parsep}{0ex}       % luetelmakappaleiden väli
-    }
-  \item Luetelman ensimmäinen kohta.
-  \item Tässä on vielä toinen
-  \item ja kolmas kohta.
-  \end{list}
-\end{tulos}
-\caption{\ymparisto{list}\-/ ympäristön argumenttien avulla vaikutetaan
-  luetelmakohtien merkintätapaan ja mittoihin}
-\label{esim:list_perus}
+  \begin{tulos}
+    \begin{list}{\arabic{enumi})}{
+        \usecounter{enumi}             % käytetään enumi-laskuria
+        \setlength{\leftmargin}{1.5em} % vasen sisennys
+        \setlength{\itemsep}{.2ex}     % luetelmakohtien väli
+        \setlength{\parsep}{0ex}       % luetelmakappaleiden väli
+      }
+    \item Luetelman ensimmäinen kohta.
+    \item Tässä on vielä toinen
+    \item ja kolmas kohta.
+    \end{list}
+  \end{tulos}
+  \caption{\ymparisto{list}\-/ ympäristön argumenttien avulla vaikutetaan
+    luetelmakohtien merkintätapaan ja mittoihin}
+  \label{esim:list_perus}
 \end{esimerkki*}
 
 Esimerkissä \ref{esim:list_perus} on yksinkertainen numeroitu luetelma,
@@ -2576,39 +2579,39 @@ myöhemmin tässä alaluvussa sekä kuvassa \ref{kuva:list-mitat}.
   \mittai{itemsep}
 
 \begin{koodilohko}
-  \begin{list}{}{
-      \renewcommand{\makelabel}[1]{\textsc{#1:}}
-      \setlength{\leftmargin}{1.5em}
-      \setlength{\labelwidth}{1.5em}
-      \setlength{\itemindent}{1em}
-      \setlength{\labelsep}{1em}
-      \setlength{\itemsep}{.2ex}
-    }
-  \item[Tex] Tekstidokumenttien ladontaan erikoistunut ohjelmointikieli.
-  \item[Latex] Dokumenttien kirjoittajille tarkoitettu merkintäkieli.
-  \item[Lualatex] Latex-muotoisten lähdedokumenttien kääntäjäohjelma.
-    Sisältää Lua-nimi\-sen ohjelmointikielen.
-  \end{list}
+\begin{list}{}{
+    \renewcommand{\makelabel}[1]{\textsc{#1:}}
+    \setlength{\leftmargin}{1.5em}
+    \setlength{\labelwidth}{1.5em}
+    \setlength{\itemindent}{1em}
+    \setlength{\labelsep}{1em}
+    \setlength{\itemsep}{.2ex}
+  }
+\item[Tex] Tekstidokumenttien ladontaan erikoistunut ohjelmointikieli.
+\item[Latex] Dokumenttien kirjoittajille tarkoitettu merkintäkieli.
+\item[Lualatex] Latex-muotoisten lähdedokumenttien kääntäjäohjelma.
+  Sisältää Lua-nimi\-sen ohjelmointikielen.
+\end{list}
 \end{koodilohko}
-\begin{tulos}
-  \begin{list}{}{
-      \renewcommand{\makelabel}[1]{\textsc{#1:}}
-      \setlength{\leftmargin}{1.5em}
-      \setlength{\labelwidth}{1.5em}
-      \setlength{\itemindent}{1em}
-      \setlength{\labelsep}{1em}
-      \setlength{\itemsep}{.2ex}
-    }
-  \item[Tex] Tekstidokumenttien ladontaan erikoistunut ohjelmointikieli.
-  \item[Latex] Dokumenttien kirjoittajille tarkoitettu merkintäkieli.
-  \item[Lualatex] Latex-muotoisten lähdedokumenttien kääntäjäohjelma.
-    Sisältää Lua-nimi\-sen ohjelmointikielen.
-  \end{list}
-\end{tulos}
-\caption{Määritelmäluetelmien tekeminen \ymparisto{list}\-/ ympäristön
-  avulla. Sisäisesti komento \komento{makelabel} huolehtii
-  luetelmamerkkien eli tässä käsitteiden nimien latomisesta}
-\label{esim:list_makelabel}
+  \begin{tulos}
+    \begin{list}{}{
+        \renewcommand{\makelabel}[1]{\textsc{#1:}}
+        \setlength{\leftmargin}{1.5em}
+        \setlength{\labelwidth}{1.5em}
+        \setlength{\itemindent}{1em}
+        \setlength{\labelsep}{1em}
+        \setlength{\itemsep}{.2ex}
+      }
+    \item[Tex] Tekstidokumenttien ladontaan erikoistunut ohjelmointikieli.
+    \item[Latex] Dokumenttien kirjoittajille tarkoitettu merkintäkieli.
+    \item[Lualatex] Latex-muotoisten lähdedokumenttien kääntäjäohjelma.
+      Sisältää Lua-nimi\-sen ohjelmointikielen.
+    \end{list}
+  \end{tulos}
+  \caption{Määritelmäluetelmien tekeminen \ymparisto{list}\-/ ympäristön
+    avulla. Sisäisesti komento \komento{makelabel} huolehtii
+    luetelmamerkkien eli tässä käsitteiden nimien latomisesta}
+  \label{esim:list_makelabel}
 \end{esimerkki*}
 
 Luetelmamerkit \ymparisto{list}\-/ ympäristö latoo siten, että se
@@ -2622,7 +2625,7 @@ komento toimii ikään kuin se olisi määritelty seuraavalla tavalla:
 \komentoi{makelabel}
 \komentoi{hfill}
 \begin{koodilohkosis}
-  \renewcommand{\makelabel}[1]{\hfill #1}
+\renewcommand{\makelabel}[1]{\hfill #1}
 \end{koodilohkosis}
 
 Kirjoittaja voi määritellä \komento{makelabel}\-/ komennon uudelleen
@@ -2694,7 +2697,7 @@ käsitteet erottuvat muusta tekstistä selvästi. Esimerkki
 
     \nuoli{50,25}{50,10};
     \kyltti{51,17.5}{\mitta{topsep} + \mitta{parskip} (+ \mitta{partopsep})};
-\end{tikzpicture}
+  \end{tikzpicture}
 }{
   \caption{Luetelmien tekemiseen tarkoitetun \ymparisto{list}\-/
     ympäristön mitat}
@@ -2764,18 +2767,18 @@ useitakin kertoja omassa lähdedokumentissa.
   \ymparistoi{list}
 
 \begin{koodilohko}
-  \newenvironment{numeroimaton}[1][\textbullet]{%
-    \begin{list}{#1}{
-        \setlength{\leftmargin}{1.1em}
-        \setlength{\labelsep}{.2em}
-        \setlength{\itemsep}{.4ex plus .1ex}
-        \setlength{\parsep}{.2ex}
-      }
-    }{\end{list}}
+\newenvironment{numeroimaton}[1][\textbullet]{%
+  \begin{list}{#1}{
+      \setlength{\leftmargin}{1.1em}
+      \setlength{\labelsep}{.2em}
+      \setlength{\itemsep}{.4ex plus .1ex}
+      \setlength{\parsep}{.2ex}
+    }
+  }{\end{list}}
 \end{koodilohko}
-\caption{Oman numeroimattoman luetelman tekeminen \ymparisto{list}\-/
-  ympäristön avulla}
-\label{esim:list_oma_numeroimaton}
+  \caption{Oman numeroimattoman luetelman tekeminen \ymparisto{list}\-/
+    ympäristön avulla}
+  \label{esim:list_oma_numeroimaton}
 \end{esimerkki*}
 
 \begin{esimerkki*}
@@ -2797,21 +2800,21 @@ useitakin kertoja omassa lähdedokumentissa.
   \ymparistoi{list}
 
 \begin{koodilohko}
-  \newenvironment{numeroitu}[1][0]{%
-    \begin{list}{\arabic{enumi}.}{
-        \usecounter{enumi}
-        \setcounter{enumi}{#1}
-        \renewcommand{\makelabel}[1]{\hfill\bfseries\large ##1}
-        \setlength{\leftmargin}{2em}
-        \setlength{\labelsep}{.5em}
-        \setlength{\itemsep}{.4ex plus .1ex}
-        \setlength{\parsep}{.2ex}
-      }
-    }{\end{list}}
+\newenvironment{numeroitu}[1][0]{%
+  \begin{list}{\arabic{enumi}.}{
+      \usecounter{enumi}
+      \setcounter{enumi}{#1}
+      \renewcommand{\makelabel}[1]{\hfill\bfseries\large ##1}
+      \setlength{\leftmargin}{2em}
+      \setlength{\labelsep}{.5em}
+      \setlength{\itemsep}{.4ex plus .1ex}
+      \setlength{\parsep}{.2ex}
+    }
+  }{\end{list}}
 \end{koodilohko}
-\caption{Oman numeroidun luetelman tekeminen \ymparisto{list}\-/
-  ympäristön avulla}
-\label{esim:list_oma_numeroitu}
+  \caption{Oman numeroidun luetelman tekeminen \ymparisto{list}\-/
+    ympäristön avulla}
+  \label{esim:list_oma_numeroitu}
 \end{esimerkki*}
 
 Esimerkissä \ref{esim:list_oma_numeroimaton} on vinkkejä oman
@@ -2912,8 +2915,8 @@ esimerkki havainnollistaa paketin käyttöönottoa ja asetuksia.
 \pakettii{natbib}
 \komentoi{setcitestyle}
 \begin{koodilohkosis}
-  \usepackage{natbib}
-  \setcitestyle{authoryear,aysep={},notesep={: }}
+\usepackage{natbib}
+\setcitestyle{authoryear,aysep={},notesep={: }}
 \end{koodilohkosis}
 
 Edellisessä esimerkissä viittaustyyli valitaan \komento{setcitestyle}\-/
@@ -2931,7 +2934,7 @@ seuraavanlaisilta:
 
 \komentoi{citet*}
 \begin{koodilohkosis}
-  \citet*[27--29]{johdatus} % Viittaus teokseen ”johdatus”.
+\citet*[27--29]{johdatus} % Viittaus teokseen ”johdatus”.
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -2958,21 +2961,21 @@ kappaletta jne.
   \komentoi{bibitem}
 
 \begin{koodilohko}
-  \begin{thebibliography}{00}
+\begin{thebibliography}{00}
 
-  \bibitem[Meikäläinen ym.(2020)Meikäläinen \& Teikäläinen]{johdatus}
-    Meikäläinen, Matti \& Teikäläinen, Teija (2020): Johdatus alkeiden
-    perusteisiin. Toinen painos. Kustantaja Oy.
+\bibitem[Meikäläinen ym.(2020)Meikäläinen \& Teikäläinen]{johdatus}
+  Meikäläinen, Matti \& Teikäläinen, Teija (2020): Johdatus alkeiden
+  perusteisiin. Toinen painos. Kustantaja Oy.
 
-  \bibitem[Itkonen(2019)]{typografia} Itkonen, Markus (2019):
-    Typografian käsikirja. Viides, tarkistettu painos. Typoteekki.
-    Graafinen suunnittelu Markus Itkonen Oy.
+\bibitem[Itkonen(2019)]{typografia} Itkonen, Markus (2019): Typografian
+  käsikirja. Viides, tarkistettu painos. Typoteekki. Graafinen
+  suunnittelu Markus Itkonen Oy.
 
-  \end{thebibliography}
+\end{thebibliography}
 \end{koodilohko}
-\caption{Lähdeluettelon kirjoittaminen \ymparisto{thebibliography}\-/
-  ympäristön ja \komento{bibitem}\-/ komentojen avulla.}
-\label{esim:thebibliography}
+  \caption{Lähdeluettelon kirjoittaminen \ymparisto{thebibliography}\-/
+    ympäristön ja \komento{bibitem}\-/ komentojen avulla.}
+  \label{esim:thebibliography}
 \end{esimerkki*}
 
 Komennolla \komento{bibitem} tehdään varsinaiset teosmerkinnät. Samalla
@@ -2981,7 +2984,7 @@ lähdeviittauksissa näytetään. Yleinen muoto on seuraavanlainen:
 
 \komentoi{bibitem}
 \begin{koodilohkosis}
-  \bibitem[lyhyt(vuosi)pitkä]{tunniste} Lähdeluettelon tekstit.
+\bibitem[lyhyt(vuosi)pitkä]{tunniste} Lähdeluettelon tekstit.
 \end{koodilohkosis}
 
 Valinnaisen argumentin aluksi kirjoitetaan lähdeviittauksen lyhyt
@@ -3039,9 +3042,9 @@ välinen pystysuuntainen tila. Mitat asetetaan tavalliseen tapaan
 \mittai{bibhang}
 \mittai{bibsep}
 \begin{koodilohkosis}
-  \setlength{\parindent}{1.1em} % tekstikappaleiden 1. rivin sisennys
-  \setlength{\bibhang}{\parindent}
-  \setlength{\bibsep}{.5ex plus .1ex minus .1ex}
+\setlength{\parindent}{1.1em} % tekstikappaleiden 1. rivin sisennys
+\setlength{\bibhang}{\parindent}
+\setlength{\bibsep}{.5ex plus .1ex minus .1ex}
 \end{koodilohkosis}
 
 Lähdemerkintöjen fonttiin voi vaikuttaa määrittelemällä uudelleen
@@ -3051,7 +3054,7 @@ komennot kyseisen komennon määritelmään.
 \komentoi{renewcommand}
 \komentoi{bibfont}
 \begin{koodilohkosis}
-  \renewcommand{\bibfont}{\sffamily\small}
+\renewcommand{\bibfont}{\sffamily\small}
 \end{koodilohkosis}
 
 Oletuksena \ymparisto{thebibliography}\-/ ympäristö latoo
@@ -3071,10 +3074,10 @@ Esimerkissä hyödynnetään \komento{addto}\-/ komentoa, joka sisältyy
 \luokkai{book}
 \luokkai{report}
 \begin{koodilohkosis}
-  \addto{\captionsfinnish}{%
-    \renewcommand{\refname}{Lähteet} % article-dokumenttiluokka
-    \renewcommand{\bibname}{Lähteet} % report- ja book-luokat
-  }
+\addto{\captionsfinnish}{%
+  \renewcommand{\refname}{Lähteet} % article-dokumenttiluokka
+  \renewcommand{\bibname}{Lähteet} % report- ja book-luokat
+}
 \end{koodilohkosis}
 
 On myös mahdollista määritellä koko komentosarja, joka suoritetaan
@@ -3087,10 +3090,10 @@ uudelleen komento \komentom{bibsection}.
 \laskurii{secnumdepth}
 \komentoi{section}
 \begin{koodilohkosis}
-  \renewcommand{\bibsection}{%
-    \setcounter{secnumdepth}{-1}
-    \section{Lähteet}
-  }
+\renewcommand{\bibsection}{%
+  \setcounter{secnumdepth}{-1}
+  \section{Lähteet}
+}
 \end{koodilohkosis}
 
 Edellisessä esimerkissä komennolla \komento{setcounter} määritetään,
@@ -3106,7 +3109,7 @@ tyhjäksi.
 \komentoi{renewcommand}
 \komentoi{bibsection}
 \begin{koodilohkosis}
-  \renewcommand{\bibsection}{}
+\renewcommand{\bibsection}{}
 \end{koodilohkosis}
 
 Tässä alaluvussa on käsitelty lähdeluettelon ja lähdeviitteiden
@@ -3153,10 +3156,10 @@ Tiedosto koostuu \koodi{@}\=/merkillä ja teostyypin nimellä alkavista
 tietueista, joiden yleinen muoto on seuraavanlainen:
 
 \begin{koodilohkosis}
-  @teostyyppi{tunniste,
-    author = {...},
-    title = "..."
-  }
+@teostyyppi{tunniste,
+  author = {...},
+  title = "..."
+}
 \end{koodilohkosis}
 
 Teostyypin nimen jälkeen aaltosulkeiden sisään kirjoitetaan teoksen
@@ -3170,48 +3173,48 @@ näyttää.
 
 \begin{esimerkki*}
 \begin{koodilohko}
-  @book{itkonen_typogr,
-    author = {Itkonen, Markus},
-    title = {Typografian käsikirja},
-    date = {2019},
-    edition = {5},
-    publisher = {Typoteekki. Graafinen suunnittelu Markus Itkonen Oy}
-  }
+@book{itkonen_typogr,
+  author = {Itkonen, Markus},
+  title = {Typografian käsikirja},
+  date = {2019},
+  edition = {5},
+  publisher = {Typoteekki. Graafinen suunnittelu Markus Itkonen Oy}
+}
 
-  @incollection{likonen_teams,
-    author = {Likonen, Teemu and Riskilä, Kaisa},
-    title = {Verkkoyhteistyö Teams-ympäristössä},
-    editor = {Tammi, Tuomo and Horila, Mikko},
-    booktitle = {Oppimis- ja toimintaympäristöjen kehittäminen
-      harjoittelukouluissa II},
-    booksubtitle = {Tilat ja tekniikka pedagogisen kehittämisen tukena},
-    publisher = {E-norssi. Opettajankouluttajien yhteistyöverkosto},
-    date = {2020},
-    pages = {85-92},
-    url = {http://www.enorssi.fi/oppimisymparistojulkaisu2020/}
-  }
+@incollection{likonen_teams,
+  author = {Likonen, Teemu and Riskilä, Kaisa},
+  title = {Verkkoyhteistyö Teams-ympäristössä},
+  editor = {Tammi, Tuomo and Horila, Mikko},
+  booktitle = {Oppimis- ja toimintaympäristöjen kehittäminen
+    harjoittelukouluissa II},
+  booksubtitle = {Tilat ja tekniikka pedagogisen kehittämisen tukena},
+  publisher = {E-norssi. Opettajankouluttajien yhteistyöverkosto},
+  date = {2020},
+  pages = {85-92},
+  url = {http://www.enorssi.fi/oppimisymparistojulkaisu2020/}
+}
 
-  @article{likonen_tietokanta,
-    author = {Likonen, Teemu},
-    title = {Tietoa kantaan ja takaisin},
-    journaltitle = {Skrolli},
-    journalsubtitle = {Tietokonekulttuurin erikoislehti},
-    date = {2015},
-    volume = {2015},
-    number = {4},
-    pages = {52-55},
-    url = {https://skrolli.fi/numerot/2015-4/}
-  }
+@article{likonen_tietokanta,
+  author = {Likonen, Teemu},
+  title = {Tietoa kantaan ja takaisin},
+  journaltitle = {Skrolli},
+  journalsubtitle = {Tietokonekulttuurin erikoislehti},
+  date = {2015},
+  volume = {2015},
+  number = {4},
+  pages = {52-55},
+  url = {https://skrolli.fi/numerot/2015-4/}
+}
 
-  @online{ctan,
-    title = {Comprehensive TeX Archive Network},
-    shorttitle = {CTAN},
-    date = {1992/},
-    url = {https://www.ctan.org/}
-  }
+@online{ctan,
+  title = {Comprehensive TeX Archive Network},
+  shorttitle = {CTAN},
+  date = {1992/},
+  url = {https://www.ctan.org/}
+}
 \end{koodilohko}
-\caption{Lähdeteosten tietokantatiedosto}
-\label{esim:bib-tiedosto}
+  \caption{Lähdeteosten tietokantatiedosto}
+  \label{esim:bib-tiedosto}
 \end{esimerkki*}
 
 Todellista käyttöä vastaava tietokanta tai sen osa on esimerkissä
@@ -3261,8 +3264,8 @@ henkilönnimeksi. Tällaisten aaltosulkeiden sisällä voi käyttää
 erottimeksi. Seuraavassa on näistä esimerkit:
 
 \begin{koodilohkosis}
-  author = {Meikäläinen, Matti and Teikäläinen, Teija}
-  author = {{Org. of Latex and Typography} and Meikäläinen, Matti}
+author = {Meikäläinen, Matti and Teikäläinen, Teija}
+author = {{Org. of Latex and Typography} and Meikäläinen, Matti}
 \end{koodilohkosis}
 
 Muunkinlaisia useasta osasta koostuvia kenttiä on olemassa.
@@ -3271,8 +3274,8 @@ pilkulla, ja sivunumeroissa (\koodi{pages}) voi olla myös lukualueita,
 jotka ilmaistaan yhdysmerkillä~\mbox{(\koodi{-})}.
 
 \begin{koodilohkosis}
-  keywords = {eri, sanoja, peräkkäin}
-  pages = {15-19}
+keywords = {eri, sanoja, peräkkäin}
+pages = {15-19}
 \end{koodilohkosis}
 
 Teostietokantaan voi määrittää vakiosisältöisiä muuttujia käyttämällä
@@ -3286,25 +3289,25 @@ esimerkin rivillä 13 on tehty.
 
 \begin{esimerkki*}
 \begin{koodilohko}
-  @string{
-    oma = {Meikäläinen, Matti},
-    lehti = {Hienon hieno aikakauslehti}
-  }
+@string{
+  oma = {Meikäläinen, Matti},
+  lehti = {Hienon hieno aikakauslehti}
+}
 
-  @article{hieno_artikkeli,
-    author = oma,
-    journaltitle = lehti,
-    ...
-  }
+@article{hieno_artikkeli,
+  author = oma,
+  journaltitle = lehti,
+  ...
+}
 
-  @article{toinen_artikkeli,
-    author = oma # { and Teikäläinen, Teija},
-    journaltitle = lehti,
-    ...
-  }
+@article{toinen_artikkeli,
+  author = oma # { and Teikäläinen, Teija},
+  journaltitle = lehti,
+  ...
+}
 \end{koodilohko}
-\caption{Muuttujien käyttö ja \koodi{@string}\-/rakenne}
-\label{esim:bib-muuttujat}
+  \caption{Muuttujien käyttö ja \koodi{@string}\-/rakenne}
+  \label{esim:bib-muuttujat}
 \end{esimerkki*}
 
 \subsubsection{Käyttöönotto}
@@ -3324,16 +3327,16 @@ amerikkalaisia (``~'').
   \pakettii{biblatex}
 
 \begin{koodilohko}
-  % Polyglossia tai babel on ladattava ennen biblatexia.
-  \usepackage{polyglossia}
+% Polyglossia tai babel on ladattava ennen biblatexia.
+\usepackage{polyglossia}
 
-  % Kielikohtaiset lainausmerkit oikein csquoten avulla.
-  \usepackage{csquotes}
+% Kielikohtaiset lainausmerkit oikein csquoten avulla.
+\usepackage{csquotes}
 
-  \usepackage[style=authoryear]{biblatex}
+\usepackage[style=authoryear]{biblatex}
 \end{koodilohko}
-\caption{\paketti{biblatex}\-/ makropaketin käyttöönotto ja asetuksia}
-\label{esim:biblatex-käyttöönotto}
+  \caption{\paketti{biblatex}\-/ makropaketin käyttöönotto ja asetuksia}
+  \label{esim:biblatex-käyttöönotto}
 \end{esimerkki*}
 
 Paketin asetuksissa käytetään valitsinta \koodi{style} ja sen asetusta
@@ -3368,9 +3371,9 @@ dokumentin esittelyosaan.
 
 \komentoi{addbibresource}
 \begin{koodilohkosis}
-  \addbibresource{teokset.bib}
-  \addbibresource{~/texmf/omat_kirjoitukset.bib}
-  \addbibresource[location=remote]{http://osoite.netissä/yhteiset.bib}
+\addbibresource{teokset.bib}
+\addbibresource{~/texmf/omat_kirjoitukset.bib}
+\addbibresource[location=remote]{http://osoite.netissä/yhteiset.bib}
 \end{koodilohkosis}
 
 Lähdeluettelo ladotaan dokumenttiin komennolla
@@ -3384,10 +3387,10 @@ toiseen ja verkkolähteet kolmanteen.
 
 \komentoi{printbibliography}
 \begin{koodilohkosis}
-  \printbibliography
-  \printbibliography[title={Lähteet}]
-  \printbibliography[heading=none,  % Ei automaattista otsikkoa,
-    type=online]           % ja rajataan vain online-tyyppisiin.
+\printbibliography
+\printbibliography[title={Lähteet}]
+\printbibliography[heading=none,  % Ei automaattista otsikkoa,
+  type=online]           % ja rajataan vain online-tyyppisiin.
 \end{koodilohkosis}
 
 Lähdeluetteloon tulevat mukaan vain ne teokset, joihin on viitattu.
@@ -3429,7 +3432,7 @@ Viittaus näkyy dokumentissa esimerkiksi seuraavalla tavalla:
 
 \komentoi{textcite}
 \begin{koodilohkosis}
-  \textcite[27--29]{johdatus} % Viittaus teokseen ”johdatus”.
+\textcite[27--29]{johdatus} % Viittaus teokseen ”johdatus”.
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -3444,8 +3447,8 @@ Argumentti~\koodi{*} (tähti) valitsee kaikki teokset.
 
 \komentoi{nocite}
 \begin{koodilohkosis}
-  \nocite{meikäläinen, teikäläinen} % Nämä teokset mukaan.
-  \nocite{*}                        % Kaikki mukaan.
+\nocite{meikäläinen, teikäläinen} % Nämä teokset mukaan.
+\nocite{*}                        % Kaikki mukaan.
 \end{koodilohkosis}
 
 \subsubsection{Lähdetiedostojen kääntäminen}
@@ -3459,10 +3462,10 @@ ristiviitteet saadaan kuntoon. Komentojen suoritusjärjestys on
 seuraavanlainen:
 
 \begin{koodilohkosis}
-  lualatex teksti.tex
-  biber teksti.bcf
-  lualatex teksti.tex
-  lualatex teksti.tex
+lualatex teksti.tex
+biber teksti.bcf
+lualatex teksti.tex
+lualatex teksti.tex
 \end{koodilohkosis}
 
 Edellisen esimerkin komennoissa voi tiedoston nimistä jättää päätteet
@@ -3473,7 +3476,7 @@ automaattisesti suorittaa myös \koodi{biber}\-/ ohjelman ja tarvittavat
 uudelleen kääntämiset. Yksi komento riittää käyttäjälle:
 
 \begin{koodilohkosis}
-  latexmk -lualatex teksti.tex    % tai: -xelatex
+latexmk -lualatex teksti.tex    % tai: -xelatex
 \end{koodilohkosis}
 
 \subsubsection{Lähdeluettelon mittoja}
@@ -3488,8 +3491,8 @@ rivin sisennys \mitta{parindent}.
 \mittai{parindent}
 \mittai{bibhang}
 \begin{koodilohkosis}
-  \setlength{\parindent}{1.1em} % tekstikappaleiden 1. rivin sisennys
-  \setlength{\bibhang}{\parindent}
+\setlength{\parindent}{1.1em} % tekstikappaleiden 1. rivin sisennys
+\setlength{\bibhang}{\parindent}
 \end{koodilohkosis}
 
 Mitta \mitta{bibitemsep} on lähdemerkintöjen välinen pystysuuntainen
@@ -3510,9 +3513,9 @@ vaihtuessa.
 \mittai{bibnamesep}
 \mittai{bibinitsep}
 \begin{koodilohkosis}
-  \setlength{\bibitemsep}{.5ex plus .1ex minus .1ex}
-  \setlength{\bibnamesep}{1em  plus .2ex minus .1ex}
-  \setlength{\bibinitsep}{2em  plus .2ex minus .1ex}
+\setlength{\bibitemsep}{.5ex plus .1ex minus .1ex}
+\setlength{\bibnamesep}{1em  plus .2ex minus .1ex}
+\setlength{\bibinitsep}{2em  plus .2ex minus .1ex}
 \end{koodilohkosis}
 
 \subsubsection{Muita asetuksia}
@@ -3524,7 +3527,7 @@ komennot kyseisen komennon määritelmään.
 \komentoi{renewcommand}
 \komentoi{bibfont}
 \begin{koodilohkosis}
-  \renewcommand{\bibfont}{\sffamily\small}
+\renewcommand{\bibfont}{\sffamily\small}
 \end{koodilohkosis}
 
 Lähdemerkinnät itsessään muodostetaan automaattisesti tiettyjen
@@ -3543,8 +3546,8 @@ ensin. Tämä saadaan toteutettua seuraavilla komennolla:
 
 \komentoi{DeclareNameAlias}
 \begin{koodilohkosis}
-  \DeclareNameAlias{default} {family-given}
-  \DeclareNameAlias{sortname}{family-given}
+\DeclareNameAlias{default} {family-given}
+\DeclareNameAlias{sortname}{family-given}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -3559,8 +3562,8 @@ erottimeksi \&\=/merkin.
 
 \komentoi{DeclareDelimFormat}
 \begin{koodilohkosis}
-  \DeclareDelimFormat[bib]{multinamedelim}{\space\&\space}
-  \DeclareDelimFormat[bib]{finalnamedelim}{\space\&\space}
+\DeclareDelimFormat[bib]{multinamedelim}{\space\&\space}
+\DeclareDelimFormat[bib]{finalnamedelim}{\space\&\space}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -3586,7 +3589,7 @@ käytetään \textit{ja}\-/sanaa.
 
 \komentoi{DeclareDelimFormat}
 \begin{koodilohkosis}
-  \DeclareDelimFormat[parencite]{finalnamedelim}{\space\&\space}
+\DeclareDelimFormat[parencite]{finalnamedelim}{\space\&\space}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -3612,8 +3615,8 @@ oletuksena päällä viittaustyylissä \koodi{author\-year}.
 \komentoi{usepackage}
 \pakettii{biblatex}
 \begin{koodilohkosis}
-  \usepackage[style=authoryear, maxbibnames=99, minbibnames=3,
-    maxcitenames=3, mincitenames=1, uniquelist=true]{biblatex}
+\usepackage[style=authoryear, maxbibnames=99, minbibnames=3,
+  maxcitenames=3, mincitenames=1, uniquelist=true]{biblatex}
 \end{koodilohkosis}
 
 Kun halutaan näyttää lähdeluettelossa vain tekijän etunimen alkukirjain
@@ -3622,7 +3625,7 @@ eikä koko etunimeä, käytetään paketin valitsinta \koodi{given\-inits}.
 \komentoi{usepackage}
 \pakettii{biblatex}
 \begin{koodilohkosis}
-  \usepackage[…, giveninits]{biblatex}
+\usepackage[…, giveninits]{biblatex}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -3637,7 +3640,7 @@ jos tekijä on sama kuin luettelon edelliselläkin teoksella. Mikäli tätä
 \komentoi{usepackage}
 \pakettii{biblatex}
 \begin{koodilohkosis}
-  \usepackage[…, dashed=false]{biblatex}
+\usepackage[…, dashed=false]{biblatex}
 \end{koodilohkosis}
 
 Joskus on tapana latoa lähdeluettelossa tekijöiden nimet esimerkiksi
@@ -3654,12 +3657,12 @@ automaattiseksi seuraavilla komennoilla:
 \komentoi{mkbibnameprefix}
 \komentoi{mkbibnamesuffix}
 \begin{koodilohkosis}
-  \AtBeginBibliography{%
-    \renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
-    \renewcommand{\mkbibnamegiven} [1]{\textsc{#1}}
-    \renewcommand{\mkbibnameprefix}[1]{\textsc{#1}}
-    \renewcommand{\mkbibnamesuffix}[1]{\textsc{#1}}
-  }
+\AtBeginBibliography{%
+  \renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
+  \renewcommand{\mkbibnamegiven} [1]{\textsc{#1}}
+  \renewcommand{\mkbibnameprefix}[1]{\textsc{#1}}
+  \renewcommand{\mkbibnamesuffix}[1]{\textsc{#1}}
+}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -3673,7 +3676,7 @@ saadaan toteutettua seuraavalla komennolla:
 
 \komentoi{DeclareDelimFormat}
 \begin{koodilohkosis}
-  \DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space}
+\DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -3695,9 +3698,9 @@ lähdeluettelon kenttien muuttamiseen.
 
 \komentoi{DeclareFieldFormat}
 \begin{koodilohkosis}
-  \DeclareFieldFormat[article,incollection]{title}{\emph{#1}}
-  \DeclareFieldFormat[article]{journaltitle}{#1}
-  \DeclareFieldFormat[incollection]{booktitle}{#1}
+\DeclareFieldFormat[article,incollection]{title}{\emph{#1}}
+\DeclareFieldFormat[article]{journaltitle}{#1}
+\DeclareFieldFormat[incollection]{booktitle}{#1}
 \end{koodilohkosis}
 
 Edellä olevissa esimerkkikomennoissa on valinnaisena argumenttina ne
@@ -3717,7 +3720,7 @@ lainausmerkkikäytännöt ja mahdolliset sisäkkäiset sulkeet.
 \komentoi{DeclareFieldFormat}
 \komentoi{mkbibquote}
 \begin{koodilohkosis}
-  \DeclareFieldFormat[incollection]{booktitle}{\mkbibquote{#1}}
+\DeclareFieldFormat[incollection]{booktitle}{\mkbibquote{#1}}
 \end{koodilohkosis}
 
 Oletuksena teoksen vuosiluku tai muu päiväys ladotaan lähdeluetteloon
@@ -3733,9 +3736,9 @@ asetusta.
 \pakettii{biblatex}
 \komentoi{DeclareFieldFormat}
 \begin{koodilohkosis}
-  \usepackage[style=ext-authoryear]{biblatex}
+\usepackage[style=ext-authoryear]{biblatex}
 
-  \DeclareFieldFormat{biblabeldate}{#1}
+\DeclareFieldFormat{biblabeldate}{#1}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -3757,10 +3760,10 @@ toimittajarooli sulkeisiin. Tällaiset asetukset saa käyttämällä tyyliä
 \komentoi{DeclareDelimFormat}
 \komentoi{mkbibparens}
 \begin{koodilohkosis}
-  \usepackage[style=ext-authoryear, innamebeforetitle=true]{biblatex}
+\usepackage[style=ext-authoryear, innamebeforetitle=true]{biblatex}
 
-  \DeclareFieldFormat{editortype}{\mkbibparens{#1}}
-  \DeclareDelimFormat{editortypedelim}{\addspace}
+\DeclareFieldFormat{editortype}{\mkbibparens{#1}}
+\DeclareDelimFormat{editortypedelim}{\addspace}
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -3777,10 +3780,10 @@ Seuraavilla komennoilla vaikutetaan näihin asetuksiin:
 \komentoi{DeclareDelimFormat}
 \komentoi{textcite}
 \begin{koodilohkosis}
-  \DeclareFieldFormat{postnote}{#1} % Lyhenne ”s.” pois.
-  \DeclareDelimFormat{postnotedelim}{\addcolon\space} % Kaksoispiste.
+\DeclareFieldFormat{postnote}{#1} % Lyhenne ”s.” pois.
+\DeclareDelimFormat{postnotedelim}{\addcolon\space} % Kaksoispiste.
 
-  \textcite[15--16]{tunniste} toteaa artikkelissaan -- --
+\textcite[15--16]{tunniste} toteaa artikkelissaan -- --
 \end{koodilohkosis}
 
 \begin{tulossis}
@@ -3794,9 +3797,9 @@ seuraavalla komennolla:
 
 \komentoi{DefineBibliographyStrings}
 \begin{koodilohkosis}
-  \DefineBibliographyStrings{finnish}{
-    andothers = {ym.},
-  }
+\DefineBibliographyStrings{finnish}{
+  andothers = {ym.},
+}
 \end{koodilohkosis}
 
 \begin{tulossis}

@@ -9,7 +9,8 @@
                 (TeX-master . "kaytannollista_latexia.tex")
                 (TeX-open-quote . "''")
                 (LaTeX-verbatim-environments-local
-                 . ("koodilohkosis" "koodilohko"))))
+                 . ("koodilohkosis" "koodilohko"))
+                (font-latex-quotes . nil)))
  (bibtex-mode . ((bibtex-dialect . biblatex)
                  (bibtex-text-indentation . 17)
                  (bibtex-contline-indentation . 18)

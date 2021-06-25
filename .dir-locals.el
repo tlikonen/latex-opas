@@ -7,7 +7,7 @@
                 (mode . outline-minor)
                 (TeX-engine . luatex)
                 (TeX-master . "kaytannollista_latexia.tex")
-                (TeX-open-quote "''")))
+                (TeX-open-quote . "''")))
  (bibtex-mode . ((bibtex-dialect . biblatex)
                  (bibtex-text-indentation . 17)
                  (bibtex-contline-indentation . 18)

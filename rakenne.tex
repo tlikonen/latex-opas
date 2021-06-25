@@ -2574,7 +2574,7 @@ myöhemmin tässä alaluvussa sekä kuvassa \ref{kuva:list-mitat}.
   \mittai{labelsep}
   \mittai{itemindent}
   \mittai{itemsep}
-  
+
 \begin{koodilohko}
   \begin{list}{}{
       \renewcommand{\makelabel}[1]{\textsc{#1:}}
@@ -2746,6 +2746,92 @@ seuraavassa on lisätietoa niiden merkityksestä.
 \item [listparindent] Luetelmakohtien toisen ja sitä seuraavien
   tekstikappaleiden ensimmäisen rivin sisennys. Oletusarvo on nolla.
 \end{maaritelma}
+
+Kun on lopulta saanut \ymparisto{list}\-/ ympäristön asetukset
+kohdalleen ja luetelmat ovat sellaisia kuin pitääkin, on varmaankin hyvä
+aika luoda oma ympäristö, joka piilottaa asetukset yhden
+ympäristömäärittelyn sisään. Omaa ympäristöä on sitten helppoa käyttää
+useitakin kertoja omassa lähdedokumentissa.
+
+\begin{esimerkki*}
+  \komentoi{newenvironment}
+  \komentoi{setlength}
+  \komentoi{textbullet}
+  \mittai{itemsep}
+  \mittai{labelsep}
+  \mittai{leftmargin}
+  \mittai{parsep}
+  \ymparistoi{list}
+
+\begin{koodilohko}
+  \newenvironment{numeroimaton}[1][\textbullet]{%
+    \begin{list}{#1}{
+        \setlength{\leftmargin}{1.1em}
+        \setlength{\labelsep}{.2em}
+        \setlength{\itemsep}{.4ex plus .1ex}
+        \setlength{\parsep}{.2ex}
+      }
+    }{\end{list}}
+\end{koodilohko}
+\caption{Oman numeroimattoman luetelman tekeminen \ymparisto{list}\-/
+  ympäristön avulla}
+\label{esim:list_oma_numeroimaton}
+\end{esimerkki*}
+
+\begin{esimerkki*}
+  \komentoi{arabic}
+  \komentoi{bfseries}
+  \komentoi{hfill}
+  \komentoi{large}
+  \komentoi{makelabel}
+  \komentoi{newenvironment}
+  \komentoi{renewcommand}
+  \komentoi{setcounter}
+  \komentoi{setlength}
+  \komentoi{usecounter}
+  \laskurii{enumi}
+  \mittai{itemsep}
+  \mittai{labelsep}
+  \mittai{leftmargin}
+  \mittai{parsep}
+  \ymparistoi{list}
+
+\begin{koodilohko}
+  \newenvironment{numeroitu}[1][0]{%
+    \begin{list}{\arabic{enumi}.}{
+        \usecounter{enumi}
+        \setcounter{enumi}{#1}
+        \renewcommand{\makelabel}[1]{\hfill\bfseries\large ##1}
+        \setlength{\leftmargin}{2em}
+        \setlength{\labelsep}{.5em}
+        \setlength{\itemsep}{.4ex plus .1ex}
+        \setlength{\parsep}{.2ex}
+      }
+    }{\end{list}}
+\end{koodilohko}
+\caption{Oman numeroidun luetelman tekeminen \ymparisto{list}\-/
+  ympäristön avulla}
+\label{esim:list_oma_numeroitu}
+\end{esimerkki*}
+
+Esimerkissä \ref{esim:list_oma_numeroimaton} on vinkkejä oman
+numeroimattoman luetelman tekemiseen. Luetelma on nimeltään
+\ymparistox{numeroimaton}, ja sille voi antaa hakasulkeissa valinnaisen
+argumentin, jolla valitaan luetelmamerkki. Oletuksena se on
+luetelmaympyrä (\komento{textbullet}).
+
+Esimerkki \ref{esim:list_oma_numeroitu} tekee numeroidun ympäristön
+nimeltä \ymparistox{numeroitu}. Tälle ympäristölle voi antaa valinnaisen
+argumentin, jolla ilmaistaan numerointilaskurin alkukohta. Oletuksena se
+on nolla, eli luetelmakohtien numerointi alkaa luvusta~1. Tämä ympäristö
+määrittelee myös \komento{makelabel}\-/ komennon siten, että
+luetelmanumerot ladotaan lihavoituna (\komento{bfseries}) ja suuremmalla
+fontilla (\komento{large}). Numerot myös tasataan luetelmamerkille
+varatun tilan oikeaan reunaan (\komento{hfill}). Huomaa, että parametri
+\koodi{\#1} kuuluu \ymparistox{numeroitu}\-/ ympäristön määritelmään ja
+parametri \koodi{\#\#1} kuuluu sisempään, \komento{renewcommand}\-/
+komennolla tehtävään määritelmään. Katso lisätietoa komentojen
+määrittelyä käsittelevästä luvusta \ref{luku:komennot_maarittely}.
 
 \section{Taulukot}
 \label{luku:taulukot}

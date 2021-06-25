@@ -1,6 +1,6 @@
 versio = 0
 nimi = kaytannollista_latexia
-lahde = $(nimi).tex asetukset.tex esim-latexmkrc.tex esipuhe.tex \
+lahde = $(nimi).tex asetukset.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
 	valmistautuminen.tex kirjallisuutta.bib \
 	matematiikka.tex muuta.tex

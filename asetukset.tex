@@ -1385,7 +1385,7 @@ mekaanisesti. Kallistuksen voi tehdä myös Latexissa (luku
 Komennot fontin koon valintaan ovat taulukossa
 \ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä fontin
 pistekokoa (pt) mikäkin komento tarkoittaa oletuksena. Oletus riippuu
-Latexin dokumenttiluokkien (luku \ref{luku:dokumenttiluokat})
+Latexin dokumenttiluokkien (luku \ref{luku:perusdokumenttiluokat})
 fonttikokovalitsimista \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}.
 
 \leijutlk{
@@ -1610,8 +1610,8 @@ asettamiseen.
 \end{esimerkki*}
 
 Esimerkistä \ref{esim:fontti_absoluuttinen} selviää perusajatus.
-Peruskirjainperhe (rivi~5) otetaan käyttöön ilman skaalausta (eli
-\koodi{Scale=1}), minkä vuoksi koon voi jatkossa asettaa täsmälleen
+Peruskirjainperhe (rivi~5) otetaan käyttöön ilman skaalausta
+(\koodi{Scale=1}), minkä vuoksi koon voi jatkossa asettaa täsmälleen
 kohdalleen \komento{fontsize}\-/komennolla. Samaa ei tehdä groteskin
 eikä tasalevyisen fontin kanssa (rivit 6--7), vaan käytetään skaalausta
 \koodi{MatchLowercase}, jotta tekstikappaleessa kaikki kirjainperheet
@@ -1626,14 +1626,15 @@ Uusien skaalaamattomien kirjainperheiden komentojen nimiksi on valittu
 \komento{sffamily} ja \komento{ttfamily}, taulukko
 \ref{tlk:fonttimallikomennot}), ja näillä komennoilla kirjainperheet
 kytketään päälle. Jos esimerkiksi jonkin julkaisun vaatimuksiin kuuluu,
-että otsikossa täytyy olla 16 pisteen lihavoitu TeX Gyre Heros
+että otsikossa täytyy olla 20 pisteen lihavoitu TeX Gyre Heros
 \=/kirjainleikkaus, voi esimerkissä \ref{esim:fontti_absoluuttinen}
-olevien asetusten pohjalta antaa otsikolle seuraavat komennot:
+olevien asetusten pohjalta antaa otsikon ulkoasun (luku
+\ref{luku:otsikot_ulkoasu}) määrittelyn yhteydessä seuraavat komennot:
 
-\komentoi{fontsize}
+\komentoi{Large}
 \komentoi{bfseries}
 \begin{koodilohkosis}
-\sffamilyabs\fontsize{16bp}{18bp}\bfseries
+\sffamilyabs\Large\bfseries
 \end{koodilohkosis}
 
 Esimerkin \ref{esim:fontti_absoluuttinen} riveillä 16--20 määritellään
@@ -1834,7 +1835,7 @@ Ligatures={TeX, Required, Common, Historic, Discretionary,
   Contextual}
 \end{koodilohkosis}
 
-Harva fontti sisältää kaikkia ligatuurityyppejä, eikä se ole
+Tuskin mikään fontti sisältää kaikkia ligatuurityyppejä, eikä se ole
 tarkoituskaan. Jotkin ligatuurit kuuluvat vain tiettyyn typografian
 aikakauteen tai kirjaintyyliin. Open Type \=/fontin ominaisuuksia voi
 selvittää käyttöjärjestelmän komentotulkissa komennolla

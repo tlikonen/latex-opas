@@ -279,10 +279,10 @@ esimerkki. Samoin on puolilainausmerkin kohdalla: `näin'.
 Latexissa voi käyttää Unicode\-/merkistöä ja lähdedokumenttiin voi
 kirjoittaa suoraan ne lainausmerkit, jotka halutaan ladottavaksi, mutta
 edellä mainituille merkeille on myös omat komentonsa. Näppäimistöltä
-kirjoitettava yleisheittomerkki (\koodi{'}) tuottaa ladottuna
+kirjoitettava yleisheittomerkki (\koodim{'}) tuottaa ladottuna
 automaattisesti oikean kaarevan heittomerkin ('). Kun kirjoittaa kaksi
-heittomerkkiä peräkkäin (\koodi{''}), on lopputuloksena yksi kaareva
-lainausmerkki (''). Kahdella suurempi kuin \=/merkillä (\koodi{>>})
+heittomerkkiä peräkkäin (\koodim{''}), on lopputuloksena yksi kaareva
+lainausmerkki (''). Kahdella suurempi kuin \=/merkillä (\koodim{>>})
 saadaan kulmalainausmerkki~(>>).
 
 \begin{koodilohkosis}
@@ -297,11 +297,11 @@ saadaan kulmalainausmerkki~(>>).
 
 Yllä mainitut riittävät suomen kieleen, mutta englantia ja muita kieliä
 varten tarvitaan myös toisinpäin oleva merkki (``), joka tehdään
-kahdella gravisaksentilla (\koodi{``}). Vastaava puolilainausmerkki (`)
-tehdään yhdellä aksentilla (\koodi{`}). Joissakin kielissä käytetään
+kahdella gravisaksentilla (\koodim{``}). Vastaava puolilainausmerkki (`)
+tehdään yhdellä aksentilla (\koodim{`}). Joissakin kielissä käytetään
 erilaisia kulmalainausmerkkejä lainauksen alussa ja lopussa. Vasemmalle
 osoittava merkki (<<) tehdään kahdella pienempi kuin \=/merkillä
-(\koodi{<<}).
+(\koodim{<<}).
 
 Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
@@ -348,7 +348,7 @@ tietysti fonttikin vaihtuu. Fontteja käsitellään tarkemmin luvussa
 
 Makropaketti \pakettim{csquotes}\avctan{csquotes} sisältää
 lainausmerkkeihin liittyviä komentoja ja kielikohtaista logiikkaa.
-Paketissa olevan \komento{enquote}\-/komennon avulla voi jättää
+Paketissa olevan \komentom{enquote}\-/ komennon avulla voi jättää
 makropaketin huoleksi, miten aloittava ja lopettava lainausmerkki tai
 ulommat ja sisemmät lainausmerkit kirjoitetaan missäkin kielessä.
 Luonnollisesti kielipaketti \paketti{polyglossia} tai \paketti{babel}
@@ -381,9 +381,9 @@ Ajatusviivaa tarvitaan esimerkiksi äärikohtien (27--29,
 Oulu--Rova\-niemi), luetelmien, vuorosanojen ja virkkeen irrallisen
 lisäysten merkitseminen. Suomen kielessä käytetään yleensä vain lyhyttä
 ajatusviivaa \mbox{(--)}, joka tehdään Latexissa kahdella peräkkäisellä
-yhdysmerkillä \mbox{(\koodi{--})}. Pitkä ajatusviiva \mbox{(---)}
-tehdään kolmella yhdysmerkillä \mbox{(\koodi{---})}. Ajatusviivat
-vaikuttavat sanan tavutukseen samoin kuin yhdysmerkki.
+yhdysmerkillä (\koodim{--}). Pitkä ajatusviiva \mbox{(---)} tehdään
+kolmella yhdysmerkillä (\koodim{---}). Ajatusviivat vaikuttavat sanan
+tavutukseen samoin kuin yhdysmerkki.
 
 \begin{koodilohkosis}
 Oulu--Rovaniemi-yhteys
@@ -431,7 +431,7 @@ eli ellipsille (\ldots) on oma merkkinsä, ja fontissa se saattaa näyttää
 hieman erilaiselta kuin kolme peräkkäistä pistemerkkiä. Tyypillisesti
 ellipsimerkissä pisteet ovat hieman harvemmassa ja erottuvat toisistaan
 paremmin kuin kolmena erillisenä merkkinä ladotut pisteet. Ellipsi
-tehdään Latexissa komennoilla \komento{dots}, \komento{ldots},
+tehdään Latexissa komennoilla \komentom{dots}, \komento{ldots},
 \komento{textellipsis} tai Unicode\-/merkillä \uctunnus{u+2026
   horizontal ellipsis}.
 
@@ -661,7 +661,7 @@ ja \komento{LaTeX}.
 
 \subsection{Tavutusvihje}
 
-Komento \komento{-} on tavutusvihje, joka neuvoo tavutusalgoritmia
+Komento \komentom{-} on tavutusvihje, joka neuvoo tavutusalgoritmia
 katkaisemaan sanan tästä kohdasta. Samalla se voi estää sanan
 katkaisemisen muista kohdista.
 
@@ -694,9 +694,9 @@ aaltosulkeisiin \koodi{\{}\ldots\koodi{\}} ja valinnaiset hakasulkeisiin
 
 Jos pakolliseen argumenttiin haluaa sisällyttää aaltosulkeen, täytyy sen
 eteen kirjoittaa kenoviiva \komento{\{}~\komento{\}}, tai voi myös
-käyttää taulukossa \ref{tlk:merkkien_suojaus}
-(s.~\pageref{tlk:merkkien_suojaus}) mainittuja komentoja aaltosulkeiden
-tuottamiseen. Sama pätee aaltosulkeiden latomiseen muutenkin.
+käyttää taulukossa \ref{tlk:erikoismerkit-muut} mainittuja komentoja
+aaltosulkeiden tuottamiseen. Sama pätee aaltosulkeiden latomiseen
+muutenkin.
 
 Hakasulkeet sen sijaan ladotaan tekstiin normaalisti, eikä niiden kanssa
 käytetä kenoviivaa. Poikkeustilanne on komennon valinnaisen argumentin
@@ -785,8 +785,7 @@ Lopulta Latex\-/ komentojen merkitsemiseen tarkoitettu
 \begin{koodilohkosis}
 \newcommand{\komento}[1]{%
   \texttt{\textbackslash\textenglish{#1}}%
-  \index[komennot]{\texttt{\textbackslash #1}}
-}
+  \index[komennot]{\texttt{\textbackslash #1}}}
 \end{koodilohkosis}
 
 Näin oma \komentox{komento} ilmaisee tiiviisti ja havainnollisesti
@@ -891,10 +890,11 @@ näkökulman.
 Komentojen määrittelyssä tähdelliset versiot toimivat muuten samalla
 tavalla, mutta ne antavat virheilmoituksen, jos komennolle annetut
 argumentit sisältävät enemmän kuin yhden tekstikappaleen. Niinpä
-seuraava esimerkki tuottaa käännettäessä virheen:
+esimerkin \ref{esim:newcommand} koodi tuottaa käännettäessä virheen.
 
-\komentoi{newcommand*}
-\begin{koodilohkosis}
+\begin{esimerkki*}
+  \komentoi{newcommand*}
+\begin{koodilohko}
 \newcommand*{\komento}[1]{Teksti: #1}
 
 \komento{
@@ -902,12 +902,17 @@ seuraava esimerkki tuottaa käännettäessä virheen:
 
   Toinen tekstikappale.
 }
-\end{koodilohkosis}
+\end{koodilohko}
+  \caption{\komento{newcommand*}\-/ komennolla määritelty komento ei
+    salli argumentteja, joissa on useita tekstikappaleita. Tämä
+    esimerkki tuottaa käännettäessä virheilmoituksen}
+  \label{esim:newcommand}
+\end{esimerkki*}
 
 \komento{newcommand*}\-/komennolla määritelty \komentox{komento} ei siis
 suostu ottamaan vastaan argumentteja, jotka sisältävät kappaleen
-vaihtumisen eli enemmän kuin yhden tekstikappaleen. Tähdelliset versiot
-tuovat tällaisen suojausominaisuuden.
+vaihtumisen eli enemmän kuin yhden tekstikappaleen. Tämä voi olla
+hyödyllinen suojausominaisuus.
 
 \subsection{Muita vinkkejä}
 \label{luku:komennot-lisä}
@@ -955,7 +960,7 @@ oleva komennon nimi ilman aaltosulkeita.
 \newcommand\yyy{abc}
 \end{koodilohkosis}
 
-Komennon määrittelyssä on välillä hyötyä \komento{ignorespaces}\-/
+Komennon määrittelyssä on välillä hyötyä \komentom{ignorespaces}\-/
 komennosta, joka jättää sanavälit huomioimatta komennon jälkeen. Ilman
 tätä komentoa tulisi seuraavassa esimerkissä sanojen väliin yksi
 välilyönti.
@@ -971,34 +976,38 @@ välilyönti.
   yhdyssana
 \end{tulossis}
 
-Aaltosulkeilla (luku \ref{luku:aaltosulkeet}) voi rajata
-komentomäärittelyn vaikutusaluetta. Seuraavan esimerkin alussa asetetaan
-\komentox{komento} tiettyyn alkuperäismääritelmään. Aaltosulkeiden
-sisällä se määritellään väliaikaisesti uudestaan. Aaltosulkeilla rajatun
-ympäristön jälkeen komennon uusi määritelmä lakkaa ja komento palautuu
-alkuperäiseksi.
-
-\komentoi{newcommand}
-\komentoi{renewcommand}
-\begin{koodilohkosis}
+\begin{esimerkki*}
+  \komentoi{newcommand}
+  \komentoi{renewcommand}
+\begin{koodilohko}
 \newcommand{\komento}{alkuperäinen}
 \komento
 {%
-  \renewcommand{\komento}{muutettu}
+  \renewcommand{\komento}{\textit{muutettu}}
   \komento
 }
 \komento
-\end{koodilohkosis}
+\end{koodilohko}
+\begin{tulos}
+  alkuperäinen \textit{muutettu} alkuperäinen
+\end{tulos}
+\caption{Aaltosulkeilla voi rajata komennon määrittelyn
+  vaikutusaluetta}
+\label{esim:aaltosulkeet_rajaaminen}
+\end{esimerkki*}
 
-\begin{tulossis}
-  alkuperäinen muutettu alkuperäinen
-\end{tulossis}
+Aaltosulkeilla (luku \ref{luku:aaltosulkeet}) voi rajata
+komentomäärittelyn vaikutusaluetta. Esimerkin
+\ref{esim:aaltosulkeet_rajaaminen} alussa asetetaan \komentox{komento}
+tiettyyn alkuperäismääritelmään. Aaltosulkeiden sisällä se määritellään
+väliaikaisesti uudestaan. Aaltosulkeilla rajatun ympäristön jälkeen
+komennon uusi määritelmä lakkaa ja komento palautuu alkuperäiseksi.
 
 Monimutkaisiin komentoihin voidaan tarvita ehtorakenteita. Ne saa
-toteutettua \pakettim{ifthen}\=/paketin\avctan{ifthen} tarjoaman
-\komento{ifthenelse}\-/ komennon avulla. Se on ohjelmointikielistä tuttu
-ehtorakenne: jos annettu ehtolauseke on tosi, käsitellään then\-/haara;
-muussa tapauksessa käsitellään else-haara.
+toteutettua \pakettim{ifthen}\=/ paketin\avctan{ifthen} tarjoaman
+\komentom{ifthenelse}\-/ komennon avulla. Se on ohjelmointikielistä
+tuttu ehtorakenne: jos annettu ehtolauseke on tosi, käsitellään
+then\-/haara; muussa tapauksessa käsitellään else-haara.
 
 \section{Ympäristöt}
 \label{luku:ymparistot}
@@ -1117,18 +1126,14 @@ komentojenkin määrittelyn tähdellisissä versioissa (luku
 \renewenvironment* {nimi}[n][oletus]{aloitus}{lopetus}
 \end{koodilohkosis}
 
-Joskus ympäristöjen määrittelyyn on hyödyllistä sisällyttää komento
-\komento{ignorespaces}, joka jättää huomioimatta tämän komennon
-jälkeiset sanavälit. Toinen hyödyllinen on
-\komento{ignorespacesafterend}, joka jättää huomioimatta ympäristön
-lopettavan \komento{end}\-/ komennon jälkeiset sanavälit.
+\begin{esimerkki*}
+  \komentoi{newenvironment}
+  \komentoi{ignorespaces}
+  \komentoi{ignorespacesafterend}
+  \komentoi{begin}
+  \komentoi{end}
 
-\komentoi{newenvironment}
-\komentoi{ignorespaces}
-\komentoi{ignorespacesafterend}
-\komentoi{begin}
-\komentoi{end}
-\begin{koodilohkosis}
+\begin{koodilohko}
 \newenvironment{ymp}
 {Yhdys\ignorespaces}
 {esi\ignorespacesafterend}
@@ -1136,11 +1141,22 @@ lopettavan \komento{end}\-/ komennon jälkeiset sanavälit.
 \begin{ymp}
   sana% Kommentti poistaa seuraavan sanavälin.
 \end{ymp}   merkki.
-\end{koodilohkosis}
-
-\begin{tulossis}
+\end{koodilohko}
+\begin{tulos}
   Yhdyssanaesimerkki.
-\end{tulossis}
+\end{tulos}
+\caption{Sanavälien käyttäytyminen ympäristöjen yhteydessä. Komennoilla
+  \komento{ignorespaces} ja \komento{ignorespacesafterend} voi poistaa
+  seuraavat sanavälit}
+\label{esim:ignorespacesafterend}
+\end{esimerkki*}
+
+Joskus ympäristöjen määrittelyyn on hyödyllistä sisällyttää komento
+\komentom{ignorespaces}, joka jättää huomioimatta tämän komennon
+jälkeiset sanavälit. Toinen hyödyllinen on
+\komentom{ignorespacesafterend}, joka jättää huomioimatta ympäristön
+lopettavan \komento{end}\-/ komennon jälkeiset sanavälit. Esimerkki
+\ref{esim:ignorespacesafterend} selventää näiden toimintaa.
 
 \section{Mitat}
 \label{luku:mitat}
@@ -1217,9 +1233,9 @@ tekstialueen leveys nykyisellä sivulla. Komentomaisesta ulkoasustaan
 huolimatta mittoja ei voi suorittaa komentoina; ne sopivat vain komennon
 argumentiksi, silloin kun tarvitaan mitta.
 
-Uusia mittoja luodaan komennolla \komento{newlength} ja olemassa olevia
-mittoja asetetaan esimerkiksi komennoilla \komento{setlength} ja
-\komento{addtolength}. Omien mittoja on tarpeen luoda silloin, kun
+Uusia mittoja luodaan komennolla \komentom{newlength} ja olemassa olevia
+mittoja asetetaan esimerkiksi komennoilla \komentom{setlength} ja
+\komentom{addtolength}. Omien mittoja on tarpeen luoda silloin, kun
 halutaan määritellä tietynsuuruinen mitta, jota käytetään Latex\-/
 koodissa useita kertoja.
 
@@ -1335,7 +1351,7 @@ tallennetaan merkkien mitat.
 \settodepth{\syvyys}{p}   % merkin ”p” syvyys
 \end{koodilohkosis}
 
-Mitat saa näkyviin kirjoittamalla mitan eteen komennon \komento{the}.
+Mitat saa näkyviin kirjoittamalla mitan eteen komennon \komentom{the}.
 Näin mitan pituus ladotaan dokumenttiin. Yksikkönä on typografinen piste
 (pt).
 

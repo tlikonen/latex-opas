@@ -410,7 +410,7 @@ sub-para-graph
 sub-sec-tion
 sub-section-mark
 sub-sub-sec-tion
-suo-jaus-omi-nai-suu-den
+suo-jaus-omi-nai-suus
 suur-aak-kos-ten
 säh-kö-pos-ti-osoi-te
 säh-kö-pos-ti-osoit-tei-den

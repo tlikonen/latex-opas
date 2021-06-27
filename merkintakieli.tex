@@ -93,12 +93,12 @@ Sanavälit eivät kuitenkaan veny loputtomasti, ainakaan
 oletusasetuksilla, koska kovin suuret sanavälit olisivat
 tekstikappaleessa rumia. Jos sanaväleille haluaa antaa
 ''hätätilanteissa'' lisää venymisvaraa, täytyy käyttää mittaa
-\mitta{emergencystretch}, jota käsitellään tarkemmin tekstikappaleiden
+\mittam{emergencystretch}, jota käsitellään tarkemmin tekstikappaleiden
 yhteydessä luvussa \ref{luku:kappale}. Mittoihin liittyvää tekniikkaa
 käsitellään puolestaan luvussa \ref{luku:mitat}.
 
 Matalatasoinen sanavälejä ja niiden venymistä säätelevä mitta on
-\mitta{spaceskip}, johon voi asettaa haluamansa leveyden ja mahdolliset
+\mittam{spaceskip}, johon voi asettaa haluamansa leveyden ja mahdolliset
 venymisen rajat. Tätä mittaa ei ole suositeltavaa käyttää tavallisen
 tekstin kanssa, mutta se sopii tilanteisiin, joihin tarvitaan hyvin
 poikkeukselliset sanavälit.
@@ -813,15 +813,15 @@ annetaan samanlaiset argumentit. Komennot ovat seuraavat:
 \end{koodilohkosis}
 
 Ensimmäinen pakollinen argumentti on komennon nimi (\komentox{nimi}), ja
-se voi koostua vain kirjaimista. Komento \komento{newcommand}
+se voi koostua vain kirjaimista. Komento \komentom{newcommand}
 määrittelee uuden komennon. Mikäli komento on jo olemassa, annetaan
-virheilmoitus. Toinen komento \komento{renewcommand} määrittelee
+virheilmoitus. Toinen komento \komentom{renewcommand} määrittelee
 olemassa olevan komennon uudelleen. Se antaa virheilmoituksen, jos
-komentoa ei ollut olemassa. Kolmas komento \komento{providecommand}
+komentoa ei ollut olemassa. Kolmas komento \komentom{providecommand}
 puolestaan määrittelee uuden komennon vain siinä tapauksessa, että
 sellaista ei ollut ennen olemassa. Se ei anna virheilmoitusta.
 
-Komentojen toinen pakollinen argumentti (\koodi{määritelmä}) sisältää
+Komentojen toinen pakollinen argumentti ''\koodi{määritelmä}'' sisältää
 komennon määritelmän eli mitä tahansa tekstiä tai komentoja.
 Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
 
@@ -1048,9 +1048,9 @@ tarkoitukseen. Niitä määritellään seuraavilla komennoilla:
 \renewenvironment {nimi}[n][oletus]{aloitus}{lopetus}
 \end{koodilohkosis}
 
-Komento \komento{newenvironment} määrittelee uuden ympäristön. Se antaa
+Komento \komentom{newenvironment} määrittelee uuden ympäristön. Se antaa
 virheilmoituksen, jos samanniminen ympäristö on jo olemassa. Komento
-\komento{renewenvironment} puolestaan määrittelee uudelleen ympäristön,
+\komentom{renewenvironment} puolestaan määrittelee uudelleen ympäristön,
 joka on jo olemassa. Se antaa virheilmoituksen, jos ympäristöä ei
 ollutkaan olemassa.
 
@@ -1114,7 +1114,7 @@ ympäristön aloittavan \komento{begin}\-/ komennon yhteydessä.
 \end{koodilohkosis}
 
 Ympäristön määrittelykomennoille on myös tähdelliset versiot
-\komento{newenvironment*} ja \komento{renewenvironment*}. Ne toimivat
+\komentom{newenvironment*} ja \komentom{renewenvironment*}. Ne toimivat
 samoin kuin edellä kuvatut tavallisetkin komentoversiot, mutta ne eivät
 salli, että määritellylle ympäristölle annetut argumentit sisältävät
 enemmän kuin yhden tekstikappaleen. Toiminta on siis sama kuin

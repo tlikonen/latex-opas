@@ -950,7 +950,7 @@ mukaan samat otsikot (luku \ref{luku:otsikot}) kuin ladottavaan
 sisällysluetteloonkin (luku \ref{luku:sisallysluettelo}). Pdf\-/
 tiedoston luetteloon voi kuitenkin itse lisäillä omia otsikoita, jotka
 eivät näy missään muualla. Se tehdään \paketti{hyperref}\-/ paketin
-komennolla \komento{pdfbookmark}:
+komennolla \komentom{pdfbookmark}:
 
 \komentoi{pdfbookmark}
 \begin{koodilohkosis}
@@ -1091,15 +1091,15 @@ asetuksia kuten ligatuureja, gemenanumeroita, optisia kokoja ja muita
 fontin ominaisuuksia. Edellisessä esimerkissä käytetään vain
 \koodi{Scale}\-/ valitsinta, jolla fontin voi skaalata haluttuun kokoon.
 
-Peruskirjainperheen (\komento{setmainfont}) skaalaukseksi asetetaan
+Peruskirjainperheen (\komentom{setmainfont}) skaalaukseksi asetetaan
 \koodi{Scale=1}, eli sille ei tehdä mitään, ja koko valitsimen voisi
 jättää pois. Sen sijaan kahdella muulla kirjainperheellä
-(\komento{setsansfont}, \komento{setmonofont}) käytetään kerroinasetusta
-\koodi{MatchLowercase}, joka skaalaa fontin siten, että gemenakirjaimet
-eli pienet kirjaimet ovat yhtä korkeita kuin peruskirjainperheessä.
-Mikäli skaalausasetus \koodi{MatchLowercase} ei tuota ihan toivottua
-tulosta, voi kirjainperheen skaalausta hienosäätää vielä
-\koodi{Scale\-Again}\-/ valitsimella seuraavaan tapaan:
+(\komentom{setsansfont}, \komentom{setmonofont}) käytetään
+kerroinasetusta \koodi{MatchLowercase}, joka skaalaa fontin siten, että
+gemenakirjaimet eli pienet kirjaimet ovat yhtä korkeita kuin
+peruskirjainperheessä. Mikäli skaalausasetus \koodi{MatchLowercase} ei
+tuota ihan toivottua tulosta, voi kirjainperheen skaalausta hienosäätää
+vielä \koodi{Scale\-Again}\-/ valitsimella seuraavaan tapaan:
 
 \komentoi{setmonofont}
 \begin{koodilohkosis}
@@ -1231,7 +1231,7 @@ muiden mittojen määrittämiseen on ohjeita luvussa
 Fonttiasetuksiin kuuluu fontin koon lisäksi toinenkin mitta: rivikorkeus
 (\mitta{baselineskip}). Se on peräkkäisten rivien peruslinjojen välinen
 etäisyys. Fontin koko ja rivikorkeus määritellään samanaikaisesti, koska
-ne ovat saman \komento{fontsize}\-/ komennon argumentteja. Esimerkki:
+ne ovat saman \komentom{fontsize}\-/ komennon argumentteja. Esimerkki:
 
 \komentoi{fontsize}
 \komentoi{selectfont}
@@ -1242,7 +1242,7 @@ ne ovat saman \komento{fontsize}\-/ komennon argumentteja. Esimerkki:
 Ensimmäinen argumentti on fontin kokomitta ja toinen on rivikorkeus.
 Mittayksiköt voivat olla mitä tahansa Texin mittoja, ja oletuksena
 käytetään pt\-/pistemittaa, jos yksikköä ei ole mainittu. Komento
-\komento{selectfont} on mukana, koska vasta sen myötä matalan tason
+\komentom{selectfont} on mukana, koska vasta sen myötä matalan tason
 fonttikomennot tulevat voimaan. Korkean tason fonttikomennot (luku
 \ref{luku:fontit_korkea}) suorittavat sen automaattisesti.
 
@@ -1531,6 +1531,7 @@ voisi mahdollisesti \komento{fontsize}\-/ komennon sijasta käyttää
 \paketti{fontspec}\-/paketin tarjoamaa komentoa ja tilanteeseen sopivaa
 skaalauskerrointa esimerkiksi seuraavalla tavalla:
 
+\komentomargin{addfontfeatures}
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
 {\addfontfeatures{Scale=3.2} Poikkeuksellisen isoa tekstiä}
@@ -1787,7 +1788,7 @@ päättänyt meidän puolestamme, mitkä kirjainyhdistelmät on parasta latoa
 ligatuurin avulla, ja oletusasetuksilla Latex noudattaa niitä ohjeita.
 
 Jos kuitenkin yksittäisen ligatuurin muodostumisen haluaa estää, voi
-kirjainten väliin kirjoittaa komennon \komento{textcompwordmark}, joka
+kirjainten väliin kirjoittaa komennon \komentom{textcompwordmark}, joka
 tekee näkymättömän, juuri tähän tarkoitukseen olevan merkin
 \uctunnus{u+200c zero width non-joiner}.
 
@@ -1803,7 +1804,7 @@ fi f\textcompwordmark i
 Mikäli tavallisia ligatuureja ei halua käyttöön lainkaan, on parasta
 valita jo kirjainperheen tai \=/leikkauksen käyttöönotossa asetus
 \koodi{Liga\-tures=\katk No\-Com\-mon}. Väliaikaisesti fontin asetuksiin
-voi vaikuttaa komennolla \komento{addfontfeatures}, joka sekin on
+voi vaikuttaa komennolla \komentom{addfontfeatures}, joka sekin on
 \paketti{fontspec}\-/pakettiin sisältyvä komento.
 
 \komentoi{addfontfeatures}

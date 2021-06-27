@@ -2642,11 +2642,11 @@ käsitteet erottuvat muusta tekstistä selvästi. Esimerkki
 
     \newcommand{\kpl}[1]{\draw (15,#1) -- ++(70,0) -- ++(0,15)
       -- ++(-60,0) -- ++(0,-5) -- ++(-10,0) -- cycle}
-    \newcommand{\nuoli}[2]{\draw [color=red, <->] (#1) -- (#2)}
+    \newcommand{\nuoli}[2]{\draw [color=mittanuoli, <->] (#1) -- (#2)}
     \newcommand{\kyltti}[2]{\draw (#1) node [anchor=west] {#2}}
 
-    \newcommand{\katko}[2]{\draw [color=black!40, densely dotted, line
-      width=.5bp] (#1) -- (#2)}
+    \newcommand{\katko}[2]{\draw [color=apuviiva, densely dotted, line
+      width=.7bp] (#1) -- (#2)}
 
     \katko{0,10}{0,110};
     \katko{100,10}{100,110};

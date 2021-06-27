@@ -1268,23 +1268,25 @@ josta on tarkempaa tietoa luvussa \ref{luku:ohuke}.
 
 \leijukuva{
   \begin{tikzpicture}
-    [viiva/.style={line width=.7bp}, xscale=1.1, yscale=1.9,
-    baseline=0pt]
+    [viiva/.style={line width=.7bp, densely dotted, color=apuviiva},
+    nuoli/.style={<->, line width=1bp, color=mittanuoli}, xscale=1.1,
+    yscale=1.9, baseline=0pt]
+
     \node at (.04,.25) {\fontsize{120bp}{120bp}\viivastofontti p};
 
-    \draw [viiva, color=red] (-1,.98) rectangle (1,-.5);
-    \draw [viiva, color=red] (1,.98) -- (2.25,.98);
-    \draw [viiva, color=red] (-1,.02) -- (2.25,.02);
-    \draw [viiva, color=red] (1,-.5) -- (2.25,-.5);
+    \draw [viiva] (-1,.98) rectangle (1,-.5);
+    \draw [viiva] (1,.98) -- (2.25,.98);
+    \draw [viiva] (-1,.02) -- (2.25,.02);
+    \draw [viiva] (1,-.5) -- (2.25,-.5);
 
-    \draw [viiva, <->, color=black] (1.2,.02) -- (1.2,.98);
-    \node at (1.9,.5) {korkeus};
+    \draw [nuoli] (1.2,.02) -- (1.2,.98);
+    \node at (1.9,.5) [color=mittanuoli] {korkeus};
 
-    \draw [viiva, <->, color=black] (1.2,.02) -- (1.2,-.5);
-    \node at (1.9,-.25) {syvyys};
+    \draw [nuoli] (1.2,.02) -- (1.2,-.5);
+    \node at (1.9,-.25) [color=mittanuoli] {syvyys};
 
-    \draw [viiva, <->, color=black] (-1,1.1) -- (1,1.1);
-    \node at (0,1.25) {leveys};
+    \draw [nuoli] (-1,1.1) -- (1,1.1);
+    \node at (0,1.25) [color=mittanuoli] {leveys};
 
     \node at (3.13,1.64) {ylälinja};
     \node at (3.13,1.44) {versaalilinja};
@@ -1294,17 +1296,17 @@ josta on tarkempaa tietoa luvussa \ref{luku:ohuke}.
 
     \node at (6.52,.74) {\fontsize{120bp}{120bp}\viivastofontti H};
 
-    \draw [viiva, color=red] (5.05,1.47) rectangle (7.95,.02);
-    \draw [viiva, color=red] (5.05,.02) -- (4,.02);
-    \draw [viiva, color=red] (5.05,1.47) -- (4,1.47);
-    \draw [viiva, color=red] (7.95,1.62) -- (4,1.62);
-    \draw [viiva, color=red] (7.95,.98) -- (4,.98);
+    \draw [viiva] (5.05,1.47) rectangle (7.95,.02);
+    \draw [viiva] (5.05,.02) -- (4,.02);
+    \draw [viiva] (5.05,1.47) -- (4,1.47);
+    \draw [viiva] (7.95,1.62) -- (4,1.62);
+    \draw [viiva] (7.95,.98) -- (4,.98);
 
-    \draw [viiva, <->, color=black] (4.86,.02) -- (4.86,1.47);
-    \node at (4.1,.5) {korkeus};
+    \draw [nuoli] (4.86,.02) -- (4.86,1.47);
+    \node at (4.1,.5) [color=mittanuoli] {korkeus};
 
-    \draw [viiva, <->, color=black] (5.05,-.1) -- (7.95,-.1);
-    \node at (6.5,-.3) {leveys};
+    \draw [nuoli] (5.05,-.1) -- (7.95,-.1);
+    \node at (6.5,-.3) [color=mittanuoli] {leveys};
   \end{tikzpicture}
 }{
   \caption{Kirjainten mitat ja typografinen viivasto}

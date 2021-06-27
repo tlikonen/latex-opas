@@ -593,8 +593,6 @@ sivun mittojen suunnittelussa.
   \label{tlk:yla_ala_tunnistemitat}
 }
 
-\subsubsection{Sivutyylit}
-
 Latexin perusosat eivät sisällä kovin kummoista keinovalikoimaa ylä- ja
 alatunnisteiden muokkaamiseen, mutta pari hyödyllistä sivutyyliä on
 kuitenkin mukana. Ylä- ja alatunnisteet määräytyvät sivutyylin
@@ -690,10 +688,8 @@ latomiseen. Lisätietoa sivunumeroista ja muista laskureista on luvussa
   \label{tlk:sivu_numerointityylit}
 }
 
-\subsubsection{Fancyhdr}
-
 Monipuolisemmin ylä- ja alatunnisteita voi muokata paketin
-\paketti{fancyhdr}\avctan{fancyhdr} toimintojen avulla. Silloin
+\pakettim{fancyhdr}\avctan{fancyhdr} toimintojen avulla. Silloin
 sivutyylinä voi olla myös \koodim{fancy}:
 
 \komentoi{usepackage}
@@ -704,7 +700,7 @@ sivutyylinä voi olla myös \koodim{fancy}:
 \end{koodilohkosis}
 
 Kun käytössä on sivutyyli \koodi{fancy}, voi ylä- ja alatunnisteiden
-sisällön asettaa vapaasti komennolla \komento{fancyhf}. Komennon
+sisällön asettaa vapaasti komennolla \komentom{fancyhf}. Komennon
 argumenttien merkitys on seuraavanlainen:
 
 \komentoi{fancyhf}
@@ -765,7 +761,7 @@ sivun keskelle (\koodi{C}):
 
 Makropaketin \paketti{fancyhdr} avulla voi myös määritellä Latexin
 sivutyylejä toisenlaiseksi tai luoda kokonaan omia sivutyylejä. Nämä
-tehdään komennolla \komento{fancypagestyle}, jonka ensimmäinen
+tehdään komennolla \komentom{fancypagestyle}, jonka ensimmäinen
 argumentti on sivutyylin nimi ja toinen argumentti on sivutyylin
 määritelmä. Määritelmä sisältää tarvittavat \komento{fancyhf}\-/
 komennot, joilla ylä- ja alatunnisteet määritellään.
@@ -792,7 +788,7 @@ Seuraava esimerkki määrittelee kokonaan oman sivutyylin:
 
 Ylä- ja alatunniste voidaan erottaa tekstipalstasta vaakasuuntaisella
 viivalla, jonka leveyttä on mahdollista muuttaa määrittelemällä
-uudelleen komennot \komento{headrulewidth} ja \komento{footrulewidth}.
+uudelleen komennot \komentom{headrulewidth} ja \komentom{footrulewidth}.
 Komennon määritelmäksi kirjoitetaan Texin mitta. Seuraavassa esimerkissä
 asetetaan yhden typografisen pisteen (1\,bp) levyiset viivat. Mitan
 voisi asettaa myös nollaksi (0\,bp), jolloin erotinviiva katoaa kokonaan
@@ -808,7 +804,7 @@ näkyvistä.
 
 Mikäli haluaa omiin ylätunnisteisiin esimerkiksi päälukujen ja
 alalukujen nimiä, täytyy tunnisteisiin sisällyttää aiemmin kuvatut
-\komento{leftmark}- ja \komento{rightmark}\-/komennot. Ensin mainittu
+\komentom{leftmark}- ja \komentom{rightmark}\-/komennot. Ensin mainittu
 sisältää pääluvun nimen ja jälkimmäinen alaluvun nimen.
 
 \komentoi{fancyhf}
@@ -821,8 +817,8 @@ sisältää pääluvun nimen ja jälkimmäinen alaluvun nimen.
 
 Latex latoo pää- ja alalukujen nimet oletuksena versaalikirjaimilla eli
 isoilla kirjaimilla. Jos ne haluaa johonkin toiseen muotoon, täytyy itse
-määritellä uudelleen komennot \komento{chaptermark},
-\komento{sectionmark} tai \komento{subsectionmark} (vain kaksi näistä)
+määritellä uudelleen komennot \komentom{chaptermark},
+\komentom{sectionmark} tai \komentom{subsectionmark} (vain kaksi näistä)
 ja käyttää määritelmässä komentoja \komento{markboth} ja
 \komento{markright}. Esimerkkiin \ref{esim:fancyhdr_koko} on koottu
 varsin kokonaisvaltainen koodi omien ylä- ja alatunnisteiden

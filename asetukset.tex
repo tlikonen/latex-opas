@@ -286,7 +286,7 @@ Latex\-/dokumentit muodostuvat aina peräkkäisistä sivuista, eli
 taustalla kummittelee paperiarkkeihin perustuva julkaisumuoto, vaikka
 dokumenttia ei varsinaisesti tulostettaisi tai painettaisi paperille.
 Tämän vuoksi melkein aina täytyy määrittää sivun asetukset kuten
-paperikoko ja marginaalit. Ne tehdään \paketti{geometry}\-/paketin
+paperikoko ja marginaalit. Ne tehdään \pakettim{geometry}\-/ paketin
 avulla, jota käsitellään luvussa \ref{luku:sivun_mitat}. Joskus halutaan
 muokata sivun ylä- tai alatunnistetta eli verrattain pysyviä
 tunnistetietoja, jotka toistuvat joka sivulla ylä- tai alareunassa.
@@ -309,7 +309,7 @@ oikean marginaalin pituus (\koodi{left}, \koodi{right}).
   left=20mm, right=20mm]{geometry}
 \end{koodilohkosis}
 
-Vaihtoehtoisesti asetukset voi ilmaista erikseen \komento{geometry}\-/
+Vaihtoehtoisesti asetukset voi ilmaista erikseen \komentom{geometry}\-/
 komennon avulla seuraavalla tavalla:
 
 \komentoi{usepackage}
@@ -320,8 +320,8 @@ komennon avulla seuraavalla tavalla:
 \end{koodilohkosis}
 
 Mikäli myöhemmin dokumentissa täytyy vaihtaa sivun asettelua, käytetään
-komentoa \komento{newgeometry}. Alkuperäiset asetukset palautetaan
-komennolla \komento{restoregeometry}.
+komentoa \komentom{newgeometry}. Alkuperäiset asetukset palautetaan
+komennolla \komentom{restoregeometry}.
 
 \komentoi{newgeometry}
 \komentoi{restoregeometry}
@@ -597,7 +597,7 @@ Latexin perusosat eivät sisällä kovin kummoista keinovalikoimaa ylä- ja
 alatunnisteiden muokkaamiseen, mutta pari hyödyllistä sivutyyliä on
 kuitenkin mukana. Ylä- ja alatunnisteet määräytyvät sivutyylin
 perusteella, ja haluttu tyyli asetetaan voimaan komennolla
-\komento{pagestyle}:
+\komentom{pagestyle}:
 
 \komentoi{pagestyle}
 \begin{koodilohkosis}
@@ -612,7 +612,7 @@ on \koodim{empty}, joka nimensä mukaisesti tarkoittaa tyhjää, eli ylä-
 eikä alatunnisteeseen ei ladota mitään.
 
 Yksittäiselle sivulle voi asettaa muusta dokumentista poikkeavan
-sivutyylin komennolla \komento{thispagestyle}. Komento siis vaikuttaa
+sivutyylin komennolla \komentom{thispagestyle}. Komento siis vaikuttaa
 vain sillä hetkellä ladottavan sivun tyyliin, ja sen jälkeen palataan
 taas voimassa olevaan tyyliin, joka on aiemmin määritelty komennolla
 \komento{pagestyle}.

@@ -1345,7 +1345,113 @@ seuraavalla tavalla:
 
 \subsection{Värit KESKEN}
 
-...
+Eri värien käyttö voi sopia tekstin erilaisten osien korostamiseen.
+Esimerkiksi otsikot, taulukot tai leijuvat osat saa erottumaan selvemmin
+leipätekstistä, kun niiden toteutuksessa käyttää värejä. Sen sijaan
+leipätekstin sisällä värien käyttö on ehkä liian voimakas tehokeino.
+Värikäs leipäteksti voi näyttää rauhattomalta.
+
+Latexiin saa värit \pakettim{xcolor}\-/ paketin\avctan{xcolor}
+avulla.\footnote{Toinen vaihtoehto on yksinkertaisempi väripaketti
+  \paketti{color}, joka sisältää värien käsittelyn perustoiminnot.} Se
+tarjoaa muun muassa komentoja, joilla tekstin väriä, tekstin taustaväriä
+tai sivun taustaväriä voi muuttaa. Lisäksi se sisältää värien
+sekoittamiseen ja muuntamiseen liittyvää tekniikkaa. Paketin komentojen
+avulla voi myös värittää taulukoiden (luku \ref{luku:taulukot}) rivit
+vuorottelevin värein.
+
+Omassa dokumentissa käytettävät värit on hyvä määritellä alussa.
+Määrittely tarkoittaa sitä, että annetaan väreille nimet -- esimerkiksi
+käyttötarkoituksen mukaan -- ja myöhemmin lähdedokumentissa viitataan
+väreihin käyttämällä alussa määriteltyjä nimiä. Näin väri on määritelty
+yhdessä paikassa ja sen muuttaminen on myöhemmin helppoa. On kyllä
+mahdollista käyttää värejä ilman etukäteismäärittelyäkin.
+
+\providecommand{\rivi}{}
+\renewcommand{\rivi}[3]{\koodi{#1} & #2 & \koodi{#3}
+  & \textcolor[#1]{#3}{\rule{.9em}{.9em}} \\}
+
+\leijutlk{
+  \begin{tabular}{llll}
+    \toprule
+    \ots{Malli}
+    & \ots{Parametrit}
+    & \multicolumn{2}{l}{\ots{Esimerkki}} \\
+    \midrule
+    \rivi{rgb}{punainen, vihreä, sininen}{1,.7,.3}
+    \rivi{HTML}{punainen, vihreä, sininen}{33aaf3}
+    \rivi{cmyk}{syaani, magenta, keltainen, musta}{.1,1,.5,0}
+    \rivi{hsb}{sävy, kylläisyys, kirkkaus}{.2,1,.6}
+    \rivi{gray}{harmaa}{.55}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Erilaisia värimalleja ja niiden parametreja
+    \paketti{xcolor}\-/ paketissa}
+  \label{tlk:varimalleja}
+}
+
+Omat värit määritellään komennolla \komentom{definecolor}. Se tarvitsee
+kolme argumenttia: värin nimen, värimallin ja värikoodin. Komennon
+argumenttien rakenteesta on seuraavassa esimerkki:
+
+\komentoi{definecolor}
+\begin{koodilohkosis}
+\definecolor{nimi}{välimalli}{parametrit}
+\end{koodilohkosis}
+
+Komennon argumentti ''\koodi{nimi}'' on kirjoittajan itse valitsema
+nimi, ja se voi liittyä esimerkiksi värin käyttötarkoitukseen
+(''nuoli'') tai värin yleiseen nimeen (''keltainen''). Argumentti
+''\koodi{väri\-malli}'' tarkoittaa värin ilmaisemisen tapaa. Niitä on
+useita erilaisia, mutta yleisimmät on koottu taulukkoon
+\ref{tlk:varimalleja}. Eri malleilla on eri määrä parametreja, joilla
+ilmaistaan värin ominaisuuksia. Kunkin parametrin arvo on yleensä
+desimaaliluku 0\==1, mutta \koodi{HTML}\-/ värimallissa parametrit
+ilmaistaan yhtenä kolmen kaksinumeroisen heksadesimaaliluvun sarjana
+\textsc{html}\-/ merkintäkielen tavoin. Värin parametrit kirjoitetaan
+komennon argumenttiin ''\koodi{para\-metrit}'' ja ne erotetaan
+toisistaan pilkulla. Taulukon \ref{tlk:varimalleja}
+Esimerkki\-/sarakkeessa on parametrien antamisesta esimerkki. Muista
+värimalleista voi lukea \paketti{xcolor}\-/ paketin ohjekirjasta.
+
+Kun värit on määritelty, niitä voi käyttää eri komentojen yhteydessä.
+Tekstin väri vaihdetaan toiseksi komennolla \komentom{color}, josta on
+kaksi erilaista versiota. Komento vaihtaa värin pysyvästi nykyisen
+ympäristön (luku \ref{luku:ymparistot}) tai aaltosulkeilla (luku
+\ref{luku:aaltosulkeet}) rajatun alueen sisällä.
+
+\komentoi{color}
+\begin{koodilohkosis}
+\color{nimi}                  % väriksi ennalta määritelty ”nimi”
+\color[värimalli]{parametrit} % värimallin ja parametrien avulla
+\end{koodilohkosis}
+
+Toinen vaihtoehto on käyttää komentoa \komentom{textcolor}, jolle
+annetaan edelliseen verrattuna vielä yksi argumentti lisää. Argumenttina
+on teksti, johon värin halutaan vaikuttavan. Vaikutusalueena on siis
+vain kyseinen teksti.
+
+\komentoi{textcolor}
+\begin{koodilohkosis}
+\textcolor{nimi}{teksti}
+\textcolor[värimalli]{parametrit}{teksti}
+\end{koodilohkosis}
+
+Seuraavassa on esimerkki oman nimetyn värin määrittelemisestä ja väri
+käytöstä.
+
+\komentoi{definecolor}
+\komentoi{textcolor}
+\begin{koodilohkosis}
+\definecolor{korostus}{rgb}{1,.2,.2}
+Tekstiä voi korostaa \textcolor{korostus}{väreillä}!
+\end{koodilohkosis}
+
+\begin{tulossis}
+\definecolor{korostus}{rgb}{1,.2,.2}
+Tekstiä voi korostaa \textcolor{korostus}{väreillä}!
+\end{tulossis}
 
 \section{Sivunvaihdot ja sivujen tasaaminen}
 \label{luku:sivunvaihdot}

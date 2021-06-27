@@ -73,6 +73,7 @@ cs-quotes
 De-clare-Bib-li-og-ra-phy-Driv-er
 De-clare-Sort-ing-Tem-plate
 default-font-fea-tures
+de-fine-col-or
 de-scrip-tion
 desi-maa-li-erot-ti-me-na
 dia-esi-tyk-siä
@@ -438,6 +439,7 @@ teks-ti-osan
 teks-ti-osas-sa
 text-bullet
 text-cite
+text-color
 text-comp-word-mark
 text-el-lip-sis
 text-en-glish
@@ -516,6 +518,7 @@ vaih-to-eh-toi-ses-ti
 vaih-to-eh-to-ja
 vaih-to-eh-to-na
 vai-ku-tus-alue
+vai-ku-tus-alueena
 vai-ku-tus-aluet-ta
 value
 va-paa-eh-toi-sia

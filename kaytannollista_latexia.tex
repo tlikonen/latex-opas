@@ -167,8 +167,10 @@ Extension=.otf]
   numbersep=0em, xleftmargin=\sisennys, xrightmargin=0mm,
   baselinestretch=1, samepage=true }
 
+\newcommand{\seurausnuoli}{\textcolor[gray]{.5}{⇒}}
+
 \newenvironment{tulos}{%
-  \makebox[0em][r]{⇒\enspace}%
+  \makebox[0em][r]{\seurausnuoli\enspace}%
   \begin{minipage}[t]{\linewidth}
     \linespread{1}\erikoisfontti\small
   }{%
@@ -182,7 +184,7 @@ Extension=.otf]
   \begin{list}{}{
       \setlength{\leftmargin}{\sisennys}
       \erikoisfontti\small
-    }\item[⇒]}{%
+    }\item[\seurausnuoli]}{%
   \end{list}}
 
 \floatsetup{ font={small}, justification=raggedright,

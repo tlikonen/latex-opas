@@ -168,13 +168,14 @@ Extension=.otf]
   baselinestretch=1, samepage=true }
 
 \newenvironment{tulos}{%
-  \begin{minipage}{\linewidth}
+  \makebox[0em][r]{⇒\enspace}%
+  \begin{minipage}[t]{\linewidth}
     \linespread{1}\erikoisfontti\small
   }{%
   \end{minipage}
   \par\vspace{1ex}
   \hrulefill
-  \par\vspace{2ex}
+  \par\addvspace{2ex}
 }
 
 \newenvironment{tulossis}{%

@@ -87,10 +87,9 @@ Nimittäin kapealla palstalla venyviä sanavälejä on käytettävissä hyvin
 vähän ja oikean reunan tasaaminen vaatii sanavälien venyttämistä joskus
 kohtuuttoman paljon. Tekstiin jää rumia aukkoja.
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[3]{\komento{#1} & \ymparisto{#2} & #3 \\}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[3]{\komento{#1} & \ymparisto{#2} & #3 \\}
   \begin{tabular}{lll}
     \toprule
     \ots{Komento} & \ots{Ympäristö} & \ots{Merkitys} \\
@@ -1017,10 +1016,9 @@ se sisältää kaksoisalleviivauksen, aaltoviivat, pisteviivat ja erilaisia
 ylikirjoitusmerkintöjä. Taulukkoon \ref{tlk:ulem} on koottu paketin
 sisältämiä komentoja.
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[2]{\komento{#1} & #2}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\komento{#1} & #2}
   % \setlength{\ULdepth}{.2ex}
   \begin{tabular}{llll}
     \toprule
@@ -1367,11 +1365,10 @@ väreihin käyttämällä alussa määriteltyjä nimiä. Näin väri on määrit
 yhdessä paikassa ja sen muuttaminen on myöhemmin helppoa. On kyllä
 mahdollista käyttää värejä ilman etukäteismäärittelyäkin.
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[3]{\koodi{#1} & #2 & \koodi{#3}
-  & \textcolor[#1]{#3}{\rule{.9em}{.9em}} \\}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[3]{\koodi{#1} & #2 & \koodi{#3}
+    & \textcolor[#1]{#3}{\rule{.9em}{.9em}} \\}
   \begin{tabular}{llll}
     \toprule
     \ots{Malli}
@@ -1656,10 +1653,9 @@ Pdf\-/ tiedoston selailu on näin mukavampaa. \paketti{hyperref}\-/
 pakettia ja pdf\-/ tiedoston ominaisuuksia käsitellään tarkemmin luvussa
 \ref{luku:pdf_asetukset}.
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[4]{\komento{#1} & #2 & #3 & #4 \\}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[4]{\komento{#1} & #2 & #3 & #4 \\}
   \begin{tabular}{lccl}
     \toprule
     \multirow{2}{*}{\ots{Komento}}
@@ -3113,10 +3109,9 @@ lähdeviittaus tai sen osa sulkeissa vai ei. Taulukossa
 viittauskomentoja sekä esimerkki viittauksen ulkoasusta. Kuviteltu
 esimerkkiteos on peräisin esimerkistä \ref{esim:thebibliography}.
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[2]{\komento[\{\ldots\}]{#1} & #2 \\}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\komento[\{\ldots\}]{#1} & #2 \\}
   \begin{tabular}{ll}
     \toprule
     \ots{Komento} & \ots{Esimerkki} \\
@@ -3508,10 +3503,9 @@ viittausta.
 
 \subsubsection{Lähdeviittaukset}
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[2]{\komento[\{\ldots\}]{#1} & #2 \\}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\komento[\{\ldots\}]{#1} & #2 \\}
   \begin{tabular}{ll}
     \toprule
     \ots{Komento} & \ots{Esimerkki} \\

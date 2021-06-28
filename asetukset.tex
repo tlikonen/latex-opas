@@ -374,10 +374,9 @@ valitsimen \koodi{left} sijasta valitsinta \koodi{inner}, ja vastaavasti
 Teknisesti näillä ei ole mitään eroa, mutta nimet ovat ihmisille
 havainnollisempia.
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[3]{\koodi{#1} & \koodi{#2} & #3 \\}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[3]{\koodi{#1} & \koodi{#2} & #3 \\}
   \begin{tabular}{lll}
     \toprule
     \multicolumn{2}{l}{\ots{Valitsin}} & \ots{Merkitys} \\
@@ -405,10 +404,9 @@ tekstialueen ja marginaalien suhteet säilyvät, vaikka sivukokoa
 muuttaisikin. Suhteellisia mittoja koskevia valitsimia on koottu
 taulukkoon \ref{tlk:sivun_marginaalit_suhd}.
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
   \begin{tabular}{ll}
     \toprule
     \ots{Valitsin} & \ots{Merkitys} \\
@@ -473,10 +471,9 @@ muokata myös komennolla \komento{setlength}, kuten muitakin mittoja
 
 \subsection{Sivun mittoja}
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[2]{\mitta{#1} & #2 \\}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\mitta{#1} & #2 \\}
   \begin{tabular}{ll}
     \toprule
     \ots{Mitta} & \ots {Merkitys} \\
@@ -667,10 +664,9 @@ Edellä mainittu komento määrittelee käytännössä uudelleen komennon
 latomiseen. Lisätietoa sivunumeroista ja muista laskureista on luvussa
 \ref{luku:laskurit}.
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
   \begin{tabular}{ll}
     \toprule
     \ots{Tyyli} & \ots{Merkitys} \\
@@ -716,10 +712,9 @@ koottu taulukkoon \ref{tlk:fancyhf_paikat}. Saman komennon avulla voi
 määrittää useitakin paikkoja, kun ne erottaa pilkulla, esimerkiksi
 seuraavalla tavalla:
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
   \begin{tabular}{cl}
     \toprule
     \ots{Valitsin} & \ots{Merkitys} \\
@@ -1316,11 +1311,10 @@ tulee komennon jälkeen. Vaikutusalue rajoittuu nykyisen ympäristön (luku
 komennolle (esim. \komentox{textrm}) annetaan yksi argumentti, ja
 komennon vaikutus koskee vain argumenttina olevaa tekstiä.
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[4]{%
-  \komento{#1} & \komento[\{\dots\}]{#2} & #3 & #4 \\}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[4]{%
+    \komento{#1} & \komento[\{\dots\}]{#2} & #3 & #4 \\}
   \begin{tabular}{llll}
     \toprule
     \multicolumn{2}{l}{\ots{Komento}}

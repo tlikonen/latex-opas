@@ -518,10 +518,9 @@ käyttö ei ole välttämätöntä. Tarke- ja erikoismerkkikomentojen lisäksi
 on komennot ladontajärjestelmän logojen kirjoittamiseen: \komento{TeX}
 ja \komento{LaTeX}.
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[4][]{{\erikoisfontti #3} & \komento[#1]{#2} & #4}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[4][]{{\erikoisfontti #3} & \komento[#1]{#2} & #4}
   \begin{tabular}{cllcll}
     \toprule
     \multicolumn{2}{l}{\ots{Merkki}}
@@ -574,10 +573,9 @@ ja \komento{LaTeX}.
   \label{tlk:tarkkeet}
 }
 
-\providecommand{\rivi}{}
-\renewcommand{\rivi}[4][]{{\erikoisfontti #2} & \komento{#3} #1 & #4 \\}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[4][]{{\erikoisfontti #2} & \komento{#3} #1 & #4 \\}
   \begin{tabular}{cll}
     \toprule
     \multicolumn{2}{l}{\ots{Merkki ja komennot}} & \ots{Merkitys} \\
@@ -604,12 +602,15 @@ ja \komento{LaTeX}.
   \label{tlk:erikoismerkit-lainaus}
 }
 
-\newcommand{\textbigcirclekorvike}{%
-  \begin{tikzpicture}
-    \draw (0,0) circle [radius=.65ex];
-  \end{tikzpicture}}
-
 \leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[4][]{{\erikoisfontti #2} & \komento{#3} #1 & #4 \\}
+  \providecommand{\textbigcirclekorvike}{}
+  \renewcommand{\textbigcirclekorvike}{%
+    \begin{tikzpicture}
+      \draw (0,0) circle [radius=.65ex];
+    \end{tikzpicture}}
+
   \begin{tabular}{cll}
     \toprule
     \multicolumn{2}{l}{\ots{Merkki ja komennot}} & \ots{Merkitys} \\

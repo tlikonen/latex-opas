@@ -14,6 +14,7 @@
  (bibtex-mode . ((bibtex-dialect . biblatex)
                  (bibtex-text-indentation . 17)
                  (bibtex-contline-indentation . 18)
+                 ;; Seuraavaa ei tarvita enää Emacs 28:ssa:
                  (fill-prefix . "                  ")))
  (makefile-mode . ((indent-tabs-mode . t)))
  (markdown-mode . ((mode . auto-fill))))

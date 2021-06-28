@@ -4,8 +4,9 @@ lahde = $(nimi).tex asetukset.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
 	valmistautuminen.tex kirjallisuutta.bib \
 	matematiikka.tex muuta.tex
+tds = doc/finnish/latex
 julkaisutiedostot = $(nimi).pdf versio.tex $(lahde) README.md
-julkaisukohteet = $(patsubst %,doc/latex/$(nimi)/%,$(julkaisutiedostot))
+julkaisukohteet = $(patsubst %,$(tds)/$(nimi)/%,$(julkaisutiedostot))
 asiahakemistot = paketit ymparistot komennot mitat laskurit luokat
 texmf = $(HOME)/texmf
 latex = lualatex -interaction=nonstopmode
@@ -35,16 +36,16 @@ tavutusvihjeet.txt:
 tavutusvihjeet.tex: tavutusvihjeet.txt
 	{ echo '\\hyphenation{'; cat $<; echo '}'; } > $@
 
-$(julkaisukohteet): doc/latex/$(nimi)/%: %
-	@mkdir -p doc/latex/$(nimi)
+$(julkaisukohteet): $(tds)/$(nimi)/%: %
+	@mkdir -p $(tds)/$(nimi)
 	cp $< $@
 
 $(nimi).tds.zip: $(julkaisukohteet)
-	zip -r9 $@ doc/latex/$(nimi)
+	zip -r9 $@ $(tds)/$(nimi)
 
 $(nimi).zip: $(nimi).tds.zip $(julkaisukohteet)
 	zip -r9 $@ $(nimi).tds.zip
-	cd doc/latex && zip -r9 ../../$@ $(nimi)
+	cd $(tds) && zip -r9 ../../../$@ $(nimi)
 
 ctan: $(nimi).zip
 
@@ -54,7 +55,7 @@ install: $(julkaisukohteet)
 	mktexlsr $(texmf)
 
 uninstall:
-	rm -fr $(texmf)/doc/latex/$(nimi)
+	rm -fr $(texmf)/$(tds)/$(nimi)
 	mktexlsr $(texmf)
 
 clean:

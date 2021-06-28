@@ -75,14 +75,14 @@ haluat, voit poistaa tämän poikkeuksen, jolloin myös fonttien lisenssin
 on oltava yhteensopiva tämän lisenssin kanssa.)
 
 
-Kääntäminen Latexilla
----------------------
+Kääntäminen ja asentaminen
+--------------------------
 
 Oppaan Latex-lähdetiedostojen kääntäminen PDF-dokumentiksi vaatii useita
 Latexin makropaketteja ja pari fonttia. Latexin jakelukokonaisuus
 [Texlive](https://tug.org/texlive/) sisältää kaiken tarvittavan.
 Esimerkiksi [Debian](https://www.debian.org) Linux -käyttöjärjestelmässä
-metapaketti `texlive-full` asentaa koko Texliven.
+asennuspaketti `texlive-full` asentaa koko Texliven.
 
 Pelkän PDF-tiedoston tekeminen on helpointa yhdellä `make`-komennolla:
 
@@ -109,8 +109,8 @@ polun `$HOME/texmf`, koska siellä voi edelleen sijaita muita Latexiin
 liittyviä tiedostoja.
 
 Kääntämishakemiston voi siivota alla olevilla komennoilla. Ensin
-mainittu komento poistaa väliaikaistiedostot mutta säilyttää oppaan
-PDF:n. Jälkimmäinen poistaa kaikki syntyneet tiedostot.
+mainittu komento poistaa useimmat väliaikaistiedostot mutta säilyttää
+oppaan PDF:n. Jälkimmäinen poistaa kaikki syntyneet tiedostot.
 
     make clean
     make distclean
@@ -137,5 +137,4 @@ Puutteita ja suunnitelmia
   - Moniosaiset lähdedokumentit: \input, \include yms.
   - Makropakettien tekeminen.
   - Dokumenttiluokkien tekeminen.
-  - Yhdenmukaista pakettien nimien latominen marginaaleihin.
   - Käsitellään uusi fi-x-school-tavutuskaava.

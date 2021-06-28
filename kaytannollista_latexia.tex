@@ -245,43 +245,50 @@ Extension=.otf]
 \newcommand{\marginaali}[1]{\marginpar{\RaggedRight\footnotesize #1}}
 
 \newcommand{\koodi}[1]{\texttt{#1}}
-\newcommand{\koodimargin}[1]{\marginaali{\koodi{#1}}}
+% \newcommand{\koodimargin}[1]{\marginaali{\koodi{#1}}}
+\newcommand{\koodimargin}[1]{}
 \newcommand{\koodim}[1]{\koodi{#1}\koodimargin{#1}}
 
 \newcommand{\luokkax}[1]{\textcolor{luokka}{\textsf{#1}}}
 \newcommand{\luokkai}[1]{\index[luokat]{\luokkax{#1}}}
 \newcommand{\luokka}[1]{\luokkax{#1}\luokkai{#1}}
-\newcommand{\luokkamargin}[1]{\marginaali{\luokkax{#1}}}
+% \newcommand{\luokkamargin}[1]{\marginaali{\luokkax{#1}}}
+\newcommand{\luokkamargin}[1]{}
 \newcommand{\luokkam}[1]{\luokka{#1}\luokkamargin{#1}}
 
 \newcommand{\komentox}[2][]{\textcolor{komento}{\koodi{\keno #2}\koodi{#1}}}
 \newcommand{\komentoi}[1]{\index[komennot]{\komentox{#1}}}
 \newcommand{\komento}[2][]{\komentox[#1]{#2}\komentoi{#2}}
-\newcommand{\komentomargin}[1]{\marginaali{\komentox{#1}}}
+% \newcommand{\komentomargin}[1]{\marginaali{\komentox{#1}}}
+\newcommand{\komentomargin}[1]{}
 \newcommand{\komentom}[2][]{\komento[#1]{#2}\komentomargin{#2}}
 
 \newcommand{\ymparistox}[1]{\textcolor{ymparisto}{\koodi{#1}}}
 \newcommand{\ymparistoi}[1]{\index[ymparistot]{\ymparistox{#1}}}
 \newcommand{\ymparisto}[1]{\ymparistox{#1}\ymparistoi{#1}}
-\newcommand{\ymparistomargin}[1]{\marginaali{\ymparistox{#1}}}
+% \newcommand{\ymparistomargin}[1]{\marginaali{\ymparistox{#1}}}
+\newcommand{\ymparistomargin}[1]{}
 \newcommand{\ymparistom}[1]{\ymparisto{#1}\ymparistomargin{#1}}
 
 \newcommand{\mittax}[1]{\textcolor{mitta}{\koodi{\keno #1}}}
 \newcommand{\mittai}[1]{\index[mitat]{\mittax{#1}}}
 \newcommand{\mitta}[1]{\mittax{#1}\mittai{#1}}
-\newcommand{\mittamargin}[1]{\marginaali{\mittax{#1}}}
+% \newcommand{\mittamargin}[1]{\marginaali{\mittax{#1}}}
+\newcommand{\mittamargin}[1]{}
 \newcommand{\mittam}[1]{\mitta{#1}\mittamargin{#1}}
 
 \newcommand{\laskurix}[1]{\textcolor{laskuri}{\koodi{#1}}}
 \newcommand{\laskurii}[1]{\index[laskurit]{\laskurix{#1}}}
 \newcommand{\laskuri}[1]{\laskurix{#1}\laskurii{#1}}
-\newcommand{\laskurimargin}[1]{\marginaali{\laskurix{#1}}}
+% \newcommand{\laskurimargin}[1]{\marginaali{\laskurix{#1}}}
+\newcommand{\laskurimargin}[1]{}
 \newcommand{\laskurim}[1]{\laskuri{#1}\laskurimargin{#1}}
 
 \newcommand{\pakettix}[1]{\textcolor{paketti}{\textsf{#1}}}
 \newcommand{\pakettii}[1]{\index[paketit]{\pakettix{#1}}}
 \newcommand{\paketti}[1]{\pakettix{#1}\pakettii{#1}}
-\newcommand{\pakettimargin}[1]{\marginaali{\pakettix{#1}}}
+% \newcommand{\pakettimargin}[1]{\marginaali{\pakettix{#1}}}
+\newcommand{\pakettimargin}[1]{}
 \newcommand{\pakettim}[1]{\paketti{#1}\pakettimargin{#1}}
 
 \newcommand{\tavukohta}{\textcolor{tavu}{\raisebox{-.2ex}{\rule{.6bp}{2ex}}}}

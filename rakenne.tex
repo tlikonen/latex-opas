@@ -1341,7 +1341,7 @@ seuraavalla tavalla:
 \newcommand{\sposti}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
 \end{koodilohkosis}
 
-\subsection{Värit KESKEN}
+\subsection{Värit}
 
 Eri värien käyttö voi sopia tekstin erilaisten osien korostamiseen.
 Esimerkiksi otsikot, taulukot tai leijuvat osat saa erottumaan
@@ -1435,20 +1435,54 @@ vain kyseinen teksti.
 \textcolor[värimalli]{parametrit}{teksti}
 \end{koodilohkosis}
 
-Seuraavassa on esimerkki oman nimetyn värin määrittelemisestä ja väri
-käytöstä.
+Tekstin taustaväri vaihdetaan komennoilla \komentom{colorbox} ja
+\komentom{fcolorbox}. Komennot luovat ikään kuin laatikon, jonka sisällä
+taustaväri on voimassa. Ensin mainittu komento vahtaa vain taustavärin,
+ja jälkimäinen sisältää lisäksi värillisen kehyksen, eli sille
+määritellään kaksi väriä. Kehystetyn laatikon kehysviivan leveys on
+mitassa \mittam{fboxrule}.
 
-\komentoi{definecolor}
-\komentoi{textcolor}
 \begin{koodilohkosis}
-\definecolor{korostus}{rgb}{1,.2,.2}
-Tekstiä voi korostaa \textcolor{korostus}{väreillä}!
+\colorbox{nimi}{teksti} % taustaväriksi ennalta määritelty ”nimi”
+\colorbox[värimalli]{parametrit}{teksti}
+\fcolorbox{nimi(kehys)}{nimi(tausta)}{teksti}
+\fcolorbox[värimalli]{parametrit(kehys)}{parametrit(tausta)}{teksti}
+\end{koodilohkosis}
+
+Seuraavassa on esimerkki joidenkin edellä mainittujen komentojen
+käytöstä. Vakavaan typografiaan tuskin kannattaa ottaa mallia tästä.
+
+\komentoi{colorbox}
+\komentoi{color}
+\komentoi{definecolor}
+\komentoi{fcolorbox}
+\komentoi{setlength}
+\komentoi{textcolor}
+\mittai{fboxrule}
+\begin{koodilohkosis}
+\definecolor{pun}{rgb}{1,.2,.2} \setlength{\fboxrule}{2bp}
+\fcolorbox[gray]{.4}{.2}{\color[gray]{1}Tekstiä}
+\textcolor{pun}{voi korostaa} \colorbox{pun}{väreillä}.
 \end{koodilohkosis}
 
 \begin{tulossis}
-\definecolor{korostus}{rgb}{1,.2,.2}
-Tekstiä voi korostaa \textcolor{korostus}{väreillä}!
+  \definecolor{pun}{rgb}{1,.2,.2} \setlength{\fboxrule}{2bp}
+  \fcolorbox[gray]{.4}{.2}{\color[gray]{1}Tekstiä}
+  \textcolor{pun}{voi korostaa} \colorbox{pun}{väreillä}.
 \end{tulossis}
+
+Sivulle voi määrittää taustavärin komennolla \komentom{pagecolor}.
+Taustäväri vaihtuu nykyiselle ja seuraaville sivuille, kunnes väri
+vaihdetaan toiseksi tai poistetaan. Komennolle annetaan samanlaiset
+argumentit kuin muillekin värikomennoille. Komento
+\komentom{nopagecolor} poistaa taustavärin kokonaan eli palauttaa
+taustan oletustilaan.
+
+\begin{koodilohkosis}
+\pagecolor{nimi} % sivun taustaväriksi ennalta määritelty ”nimi”
+\pagecolor[värimalli]{parametrit}
+\nopagecolor
+\end{koodilohkosis}
 
 \section{Sivunvaihdot ja sivujen tasaaminen}
 \label{luku:sivunvaihdot}

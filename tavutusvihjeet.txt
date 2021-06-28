@@ -64,6 +64,7 @@ chapter-name
 cite
 clear-double-page
 clear-page
+color-box
 column-sep
 con-tents-name
 con-tents-page
@@ -109,6 +110,8 @@ fancy-hdr
 fancyhf
 fancy-page-style
 fancy-vrb
+fbox-rule
+fcolor-box
 flush-bottom
 font-size
 font-spec
@@ -273,6 +276,7 @@ no-in-dent
 no-indent-after
 no-link-url
 no-page-break
+no-page-color
 normal-margin-par
 normal-size
 note
@@ -300,6 +304,7 @@ on-line
 other-lan-guage
 page
 page-break
+page-color
 page-number-ing
 page-ref
 pages

@@ -132,6 +132,7 @@ Puutteita ja suunnitelmia
   - Matematiikkaluku puuttuu.
   - Esipuhe puuttuu.
   - Muuta tekniikkaa -luku puuttuu.
+  - `\marginpar`-komennon puutteet ja vaihtoehto `marginnote`
   - Lähdetiedostojen nimistä pitäisi mainita jossain: ei välilyöntejä.
     Ehkä on muitakin merkistörajoituksia.
   - Moniosaiset lähdedokumentit: \input, \include yms.

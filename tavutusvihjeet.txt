@@ -430,6 +430,7 @@ tab-col-sep
 table
 table-of-con-tents
 tab-u-lar
+tab-u-larx
 ta-van-omais-ten
 tavu-tus-algo-rit-mia
 teks-ti-alue
@@ -498,6 +499,7 @@ ty-po-gra-fiaan
 ty-po-gra-fian
 ty-po-gra-fias-sa
 ty-po-gra-fi-sen
+ty-po-gra-fi-se-na
 ty-po-gra-fi-ses-ta
 ty-po-gra-fi-ses-ti
 ty-po-gra-fi-set

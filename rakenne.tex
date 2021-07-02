@@ -3034,10 +3034,10 @@ Merkit ''\koodi{|}'' ja ''\koodi{@}'' voi sijoittaa edellä mainittujen
 sarakemerkkien väliin tai ennen ensimmäistä saraketta tai viimeisen
 sarakkeen jälkeen. Ensin mainittu tekee sarakkeiden väliin pystyviivan.
 Viiva yltää taulukon kaikille riveille, mutta komennolla
-\komento{multicolumn} voi tehdä rivikohtaisia poikkeuksia. Tässä
-komentoa käsitellään myöhemmin. Merkki ''\koodi{@}'' tarvitsee
-argumentin aaltosulkeissa. Se voi olla mitä hyvänsä tekstiä tai
-komentoja, jotka halutaan suorittaa joka rivillä sarakkeiden välissä.
+\komento{multicolumn} voi tehdä rivikohtaisia poikkeuksia. Tätä komentoa
+käsitellään myöhemmin. Merkki ''\koodi{@}'' tarvitsee argumentin
+aaltosulkeissa. Se voi olla mitä hyvänsä tekstiä tai komentoja, jotka
+halutaan suorittaa joka rivillä sarakkeiden välissä.
 
 Sarakemerkki ''\koodi{*}'' on vain keino toistaa tiettyjä
 sarakemäärityksiä useamman kerran. Se tarvitsee aaltosulkeissa kaksi
@@ -3091,7 +3091,7 @@ määrän. Esimerkiksi ''\koodi{*\{3\}\{rl|\}}'' tarkoittaa samaa kuin
 
 Esimerkki \ref{esim:taulukkomaarityksia} havainnollistaa taulukon
 ominaisuuksia ja eri saraketyyppejä. Sitä tuskin kannattaa pitää
-typografisensa esimerkkinä, mutta tarkoituksena on osoittaa eri
+typografisena esimerkkinä, mutta tarkoituksena on osoittaa eri
 saraketyyppien toiminta käytännössä. Sarakkeiden välissä on yleensä
 pystyviiva, mutta yhdessä välissä on \koodi{@\{\dots\}}\=/ merkeillä
 määritelty komento \komento{hspace}, jolla tehdään poikkeuksellisen
@@ -3129,8 +3129,8 @@ Sarakkeiden määritelmään voi kirjoittaa useitakin pystyviivoja eli
 \koodi{|}\=/ merkkejä peräkkäin. Silloin pystyviivoja ladotaan
 taulukkoon useita vierekkäin. Viivojen väliseen etäisyyteen voi
 vaikuttaa mitan \mittam{doublerulesep} avulla. Sen oletusarvo on 2\,pt.
-Kaikkien viivoja paksuus on mitassa \mittam{arrayrulewidth}, jonka
-oletusarvo on 0,4\,pt.
+Kaikkien viivoja paksuus puolestaan on mitassa \mittam{arrayrulewidth},
+jonka oletusarvo on 0,4\,pt.
 
 Jos sarakkeiden välissä ei ole \koodi{@}\=/ merkillä tehtyjä
 poikkeuksia, ladotaan joka solun vasempaan ja oikeaan reunaan väli, joka
@@ -3138,11 +3138,10 @@ on määritelty mitassa \mittam{tabcolsep}. Tämän mitan suuruinen väli
 siis ladotaan kerran taulukon vasempaan ja oikeaan reunaan ja kaksi
 kertaa jokaisen sarakkeen väliin. Oletusarvo on 6\,pt.
 
-Sarakemääritelmässä voi \koodi{@}\=/ merkillä säätää välit täysin
-haluamansa laiseksi. Esimerkiksi merkeillä \koodi{@\{\}} sarakeväli
-poistetaan kokonaan. Tätä tarvittaneen välillä taulukon vasemmassa ja
-oikeassa reunassa. Jos \koodi{@\{\dots\}}\=/ määrittelyyn halutaan
-mukaan normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
+Sarakemääritelmässä voi \koodi{@}\=/ merkillä säätää sarakkeiden välit
+täysin haluamansa laiseksi. Esimerkiksi merkeillä \koodi{@\{\}}
+sarakeväli poistetaan kokonaan. Jos \koodi{@\{\dots\}}\=/ määrittelyyn
+halutaan mukaan normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
 \komento{vline}, esimerkiksi seuraavasti:
 
 \ymparistoi{tabular}
@@ -3201,17 +3200,22 @@ sarakemäärityksiä. Tässä esimerkissä sen avulla sarakkeen otsikko
 alueen vasempaan reunaan~(\koodi{l}). Lisäksi komennon avulla jätetään
 taulukon pystyviivat pois otsikkoriviltä.
 
+\begin{koodilohkosis}
+\multicolumn{n}{sarakkeet}{teksti}
+\end{koodilohkosis}
+
 Komennon \komento{multicolumn} voi sijoittaa mihin hyvänsä taulukon
-soluun. Komennon ensimmäinen argumentti on luku ja ilmaisee, kuinka
-monen sarakkeen alue varataan. Toinen argumentti sisältää uuden
-sarakemäärittelyn tälle alueelle, ja se tehdään taulukon
-\ref{tlk:taulukko_sarakemerkit} merkkien avulla. Kolmas argumentti on
-teksti, joka sijoitetaan tähän uudella tavalla määriteltyyn
-sarakkeeseen.
+soluun. Komennon ensimmäinen argumentti ''\koodi{n}'' on luku ja
+ilmaisee, kuinka monen sarakkeen alueeseen vaikutetaan. Toinen
+argumentti ''\koodi{sarak\-keet}'' sisältää uuden sarakemäärittelyn
+tälle alueelle, ja se tehdään taulukon \ref{tlk:taulukko_sarakemerkit}
+merkkien avulla. Kolmas argumentti on teksti, joka ladotaan tähän
+uudella tavalla määriteltyyn alueeseen.
 
 % \newline ja moniriviset p-sarakkeet
-% tabular, tabular*, tabularx, tabulary, longtable(?)
 % multirow
+
+% tabular*, tabularx, tabulary, longtable(?)
 % booktabs
 % taulukoiden väritys xcolor-paketin avulla
 

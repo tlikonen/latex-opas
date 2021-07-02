@@ -1428,31 +1428,23 @@ täyttää koko käytettävissä olevan tilan. Ensin mainitulla on suhdeluku 1
 (\koodi{1fill}) ja jälkimmäisellä suhdeluku 2 (\koodi{2fill}), joten
 jälkimmäinen väli on kaksinkertainen ensimmäiseen verrattuna. Saman
 äärettömästi venyvän mitan ja suhdeluvut voi ilmaista myös
-\komento{stretch}\-/ mittakomennon tai \komento{hfill}\-/ komentojen
-avulla seuraavasti:
+\komento{stretch}\-/ mittakomennon avulla seuraavasti:
 
 \komentoi{hspace}
 \komentoi{stretch}
-\komentoi{hfill}
 \begin{koodilohkosis}
-x\hspace{\stretch{1}}x\hspace{\stretch{2}}x \\
-x\hfill x\hfill\hfill x
+x\hspace{\stretch{1}}x\hspace{\stretch{2}}x
 \end{koodilohkosis}
 
 \begin{tulossis}
-  x\hspace{\stretch{1}}x\hspace{\stretch{2}}x \\
-  x\hfill x\hfill\hfill x
+  x\hspace{\stretch{1}}x\hspace{\stretch{2}}x
 \end{tulossis}
-
-Vastaavasti pystysuuntaisen äärettömästi venyvän välin voi tehdä
-komennolla \komento{vfill}, joka tekee saman asian kuin \komento[\{0mm
-plus 1fill\}]{vspace}.
 
 Äärettömästi venyvälle, koko tilan täyttävälle mittayksikölle on itse
 asiassa kolme eri versiota: \koodi{fil}, \koodi{fill} ja \koodi{filll}.
 Niiden erona on tärkeysjärjestys. Ensin mainittu \koodi{fil} on vähiten
 tärkeä, ja viimeinen eli \koodi{filll} on tärkein. Jos samassa
-yhteydessä käytetään eri tärkeysasteisia yksiköitä, korkeammantasoiset
+yhteydessä käytetään eri tärkeysasteisia yksiköitä, ylemmäntasoiset
 mitätöivät alemmantasoiset.
 
 \komentoi{hspace}
@@ -1467,9 +1459,36 @@ x\hspace{0mm plus 1filll}x\hspace{0mm plus 1fill}x
 Edellisessä esimerkissä ensimmäinen venyvä mitta \koodi{1filll} mitätöi
 jälkimmäisen \koodi{1fill} kokonaan. Yleensä lienee parasta käyttää
 keskimmäistä (\koodi{fill}), mutta eri tärkeysasteille voi olla käyttöä
-esimerkiksi makropaketin koodissa: \koodi{fil} sallii, että käyttäjä tai
-muu koodi syrjäyttää asetuksen; \koodi{filll} on ehdoton sääntö, joka
-syrjäyttää muut.
+esimerkiksi makropaketin koodissa: \koodi{fil} sallii, että kirjoittaja
+tai muu koodi syrjäyttää asetuksen; \koodi{filll} on ehdoton sääntö,
+joka syrjäyttää muut.
+
+Käytännöllisyyssyistä äärettömästi venyvä pituus ''\koodi{0mm plus
+  1fill}'' on jo valmiiksi asetettu mittaan \mittam{fill}. Sitä on
+kätevää käyttää esimerkiksi vaaka- ja pystysuuntaisia välejä latovien
+komentojen \komento{hspace} ja \komento{vspace} kanssa:
+
+\komentoi{hspace}
+\komentoi{vspace}
+\mittai{fill}
+\begin{koodilohkosis}
+\hspace{\fill} % ääretön vaakasuuntainen väli
+\vspace{\fill} % ääretön pystysuuntainen väli
+\end{koodilohkosis}
+
+Edellisen esimerkin komennoista on olemassa vieläkin lyhemmät versiot.
+Vaakasuuntainen ääretön väli syntyy myös komennolla \komento{hfill} ja
+pystysuuntainen väli komennolla \komento{vfill}. Seuraavassa toistetaan
+eräs aiempi esimerkki yksinkertaisemmalla tavalla:
+
+\komentoi{hfill}
+\begin{koodilohkosis}
+x\hfill x\hfill\hfill x
+\end{koodilohkosis}
+
+\begin{tulossis}
+  x\hfill x\hfill\hfill x
+\end{tulossis}
 
 \section{Laskurit}
 \label{luku:laskurit}

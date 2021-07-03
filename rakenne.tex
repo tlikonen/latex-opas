@@ -1649,11 +1649,10 @@ käyttö on vapaaehtoista. Kansisivun ja artikkelin tiivistelmän voi aivan
 hyvin toteuttaa ilman näitäkin.
 
 Teoksen kansisivu -- jos sellainen on -- kannattanee lisätä pdf\-/
-tiedoston sisäiseen sisällysluetteloon, jotta käyttäjä voi helposti
-palata alkuun myös luettelon kautta. Normaaliin ladottavaan
-sisällysluetteloon tuskin koskaan merkitään kansisivua. Pdf:n
-sisällysluetteloon saa oman merkinnän esimerkiksi seuraavalla
-komennolla:
+tiedoston sisäiseen sisällysluetteloon, jotta lukija voi helposti palata
+alkuun myös luettelon kautta. Normaaliin ladottavaan sisällysluetteloon
+tuskin koskaan merkitään kansisivua. Pdf:n sisällysluetteloon saa oman
+merkinnän esimerkiksi seuraavalla komennolla:
 
 \begin{koodilohkosis}
 \pdfbookmark[0]{Kansi}{luku:kansi}
@@ -1823,17 +1822,17 @@ linkkinä, joka tuo juuri tähän kohtaan.
 \label{luku:otsikot_numerointi}
 
 Oletusasetuksilla Latex numeroi otsikot (\komento{chapter},
-\komento{section} jne.) automaattisesti, mutta käyttäjä voi vaikuttaa
+\komento{section} jne.) automaattisesti, mutta kirjoittaja voi vaikuttaa
 numerointiin monella tavalla, kuten siihen, mihin otsikkotasoon saakka
 numerointi yltää ja millä tyylillä otsikoiden numerot ylipäätään
 ladotaan.
 
-Laskuri \laskurim{secnumdepth} on tarkoitettu käyttäjän asetettavaksi,
-ja sillä määritetään, mihin otsikkotasoon saakka otsikot numeroidaan.
-Tasonumerot ovat taulukossa \ref{tlk:otsikkotasot}. Seuraava esimerkki
-määrittelee, että vain tasoon~1 (\komento{section}) saakka otsikot
-numeroidaan. Alemmantasoiset otsikot (\komento{subsection} ym.) eivät
-saa numeroa.
+Laskuri \laskurim{secnumdepth} on tarkoitettu kirjoittajan
+asetettavaksi, ja sillä määritetään, mihin otsikkotasoon saakka otsikot
+numeroidaan. Tasonumerot ovat taulukossa \ref{tlk:otsikkotasot}.
+Seuraava esimerkki määrittelee, että vain tasoon~1 (\komento{section})
+saakka otsikot numeroidaan. Alemmantasoiset otsikot
+(\komento{subsection} ym.) eivät saa numeroa.
 
 \komentoi{setcounter}
 \laskurii{secnumdepth}
@@ -4081,7 +4080,7 @@ pois (\koodi{.tex}, \koodi{.bcf}). \koodi{lualatex}\-/ ohjelman paikalla
 voi olla myös \koodi{xelatex}. Kääntäminen on vielä helpompaa, kun
 käyttää \koodi{latexmk}\-/ ohjelmaa (luku \ref{luku:latexmk}), joka osaa
 automaattisesti suorittaa myös \koodi{biber}\-/ ohjelman ja tarvittavat
-uudelleen kääntämiset. Yksi komento riittää käyttäjälle:
+uudelleen kääntämiset. Yksi komento riittää:
 
 \begin{koodilohkosis}
 latexmk -lualatex teksti.tex    % tai: -xelatex

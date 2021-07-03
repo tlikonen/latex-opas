@@ -2975,11 +2975,51 @@ määrittelyä käsittelevästä luvusta \ref{luku:komennot_maarittely}.
 \label{luku:taulukot}
 
 Taulukoiden tekemiseen on perus Latexissa kaksi ympäristöä
-\ymparisto{tabular} ja \ymparisto{tabular*}. Jälkimmäisen tilalle sopii
-usein paremmin \paketti{tabularx}\-/ paketin ympäristö
-\ymparisto{tabularx}. Tässä alaluvussa käsitellään ensin taulukoiden
-perusasiat \ymparisto{tabular}\-/ ympäristön avulla ja myöhemmin on
-tietoa muista ympäristöistä. Taulukon luomisen perusrakenne on seuraava:
+\ymparisto{tabular} ja \ymparisto{tabular*}, joskin jälkimmäisen tilalle
+sopii yleensä paremmin \paketti{tabularx}\-/ paketin ympäristö
+\ymparisto{tabularx}. Ennen varsinaista taulukoiden tekniikkaa
+käsitellään kuitenkin niiden sijoittamista ja typografiaa.
+
+Taulukon voi sijoittaa dokumenttiin eri tavoin. Yksi mahdollisuus on
+sijoittaa taulukot normaalin tekstivirran mukaan omiksi
+tekstikappaleikseen. Pieni pystysuuntainen väli on silloin tarpeen ennen
+ja jälkeen taulukon. Jos tekstikappaleiden välissä ei ole normaalisti
+ole väliä (\mitta{parskip}\-/ mitta), täytyy sellainen lisätä käsin.
+Pystysuuntaisia välejä käsitellään luvussa
+\ref{luku:pystysuuntaiset_valit}. Taulukolle tulee oletuksena sama
+sisennys kuin tekstikappaleiden ensimmäisellä rivillä on eli mitta
+\mitta{parindent} (luku \ref{luku:ensimmaisen_rivin_sisennys}). Jos
+sisennyksen haluaa pois, täytyy käyttää komentoa \komento{noindent}.
+
+Toinen vaihtoehto on sijoittaa taulukko vaakasuunnassa sivun keskelle,
+jolloin se erottuu muusta tekstistä vielä selvemmin. Taulukkoympäristö
+kirjoitetaan \ymparisto{center}\-/ ympäristön sisään
+(\ref{luku:kappaleen_tasaus}).
+
+Kolmas vaihtoehto on tehdä taulukosta ''leijuva'' eli antaa Latexin
+sijoittaa se sopivaan paikkaan. Samalla taulukolle voidaan antaa
+kuvateksti ja numero, niin että siihen voi viitata tekstistä. Leijuvia
+osia ja ristiviitteitä käsitellään luvuissa \ref{luku:leijuosat} ja
+\ref{luku:ristiviitteet}.
+
+Taulukkojen ulkoasua ja helppolukuisuutta käsittelevät ohjeet yleensä
+neuvovat, että pystyviivoja ei pitäisi juuri käyttää. Ne häiritsevät
+vasemmalta oikealle lukemista ja paljon käytettynä vaikeuttavat katseen
+tarkentamista solujen sisältöön. Tavallinen sarakkeiden välinen tyhjä
+tila on yleensä riittävä erottamaan solut toisistaan.
+
+Se on hyvä yleisohje, mutta sitä tuskin kannattaa pitää ihan ehdottomana
+sääntönä. Joskus on tarpeen jakaa sarakkeet mielekkäisiin ryhmiin ja
+nimenomaan ohjata katsetta pystysuunnassa tiettyjä sarakkeita pitkin.
+Katseen ei välttämättä haluta lipsuvan tietyn kohdan yli, ja pystyviiva
+sopii hyvin tähän tarkoitukseen. Tämän luvun esimerkeissä käytetään
+paljon vaaka- ja pystyviivoja, jotta lukija hahmottaa helposti, miten
+esimerkkikoodin solut ovat yhteydessä ladottuun taulukkoon.
+
+\subsection{Perustoiminnot}
+
+Taulukoiden perusympäristö on \ymparisto{tabular}, jonka rakenne on
+seuraava:
 
 \komentoi{\keno}
 \ymparistoi{tabular}
@@ -3004,7 +3044,7 @@ alareunassa.
   \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
   \begin{tabular}{ll}
     \toprule
-    \ots{Merkki} & \ots{Merkitys} \\
+    \ots{Tyyppi} & \ots{Merkitys} \\
     \midrule
     \rivi{l}{vasemmalle tasattu sarake (\englanti{left})}
     \rivi{c}{keskitetty sarake (\englanti{center})}
@@ -3025,18 +3065,18 @@ alareunassa.
 Ensimmäinen pakollinen argumentti ''\koodi{sarakkeet}'' määrittelee
 taulukon sarakkeiden määrän ja tyypin. Ne ilmaistaan tietyillä
 kirjaimilla tai muilla merkeillä, jotka on koottu taulukkoon
-\ref{tlk:taulukko_sarakemerkit}. Taulukon neljä ensimmäistä merkkiä
-''\koodi{lcrp}'' määrittelevät sarakkeen tyypin. Syntyvässä taulukossa
-tulee olemaan niin monta saraketta kuin näitä merkkejä on ympäristön
-''\koodi{sarakkeet}''\-/ argumentissa. Kolme ensin mainittua merkkiä
+\ref{tlk:taulukko_sarakemerkit}. Taulukon neljä ensimmäistä tyyppiä
+''\koodi{lcrp}'' määrittelevät, millaisesta sarakkeesta on kyse.
+Syntyvässä taulukossa tulee olemaan niin monta saraketta kuin näitä on
+ympäristön ''\koodi{sarakkeet}''\-/ argumentissa. Kolme ensin mainittua
 luovat sarakkeen, jonka leveys määräytyy sarakkeen leveimmän solun
 perusteella. Neljäs eli saraketyyppi ''\koodi{p}'' tarvitsee
-aaltosulkeissa argumentiksi Texin mitan (luku \ref{luku:mitat}), ja
-sillä ilmaistaan sarakkeen kiinteä leveys. Tässä saraketyypissä teksti
-tasataan solun molemmista reunoista eli sanavälejä voidaan venyttää.
+aaltosulkeissa argumentiksi mitan (luku \ref{luku:mitat}), ja sillä
+ilmaistaan sarakkeen kiinteä leveys. Tässä saraketyypissä teksti
+tasataan solun molemmista reunoista eli sanavälit voivat venyä.
 
 Merkit ''\koodi{|}'' ja ''\koodi{@}'' voi sijoittaa edellä mainittujen
-sarakemerkkien väliin tai ennen ensimmäistä saraketta tai viimeisen
+saraketyyppien väliin tai ennen ensimmäistä saraketta tai viimeisen
 sarakkeen jälkeen. Ensin mainittu tekee sarakkeiden väliin pystyviivan.
 Viiva yltää taulukon kaikille riveille, mutta komennolla
 \komento{multicolumn} voi tehdä rivikohtaisia poikkeuksia. Tätä komentoa
@@ -3061,10 +3101,9 @@ määrän. Esimerkiksi ''\koodi{*\{3\}\{rl|\}}'' tarkoittaa samaa kuin
   \ymparistoi{tabular}
 
 \begin{koodilohko}
-\renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|l@{\hspace{4em}}r|c|}
   \hline
-  Vasen & Oikea & Keskitetty \\
+  Vasen & Oikea & Keskitetty \\[.5ex]
   \hline
   16 & 32 & 11732 \\
   \cline{1-2}
@@ -3080,7 +3119,7 @@ määrän. Esimerkiksi ''\koodi{*\{3\}\{rl|\}}'' tarkoittaa samaa kuin
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{|l@{\hspace{4em}}r|c|}
       \hline
-      Vasen & Oikea & Keskitetty \\
+      Vasen & Oikea & Keskitetty \\[.5ex]
       \hline
       16 & 32 & 11732 \\
       \cline{1-2}
@@ -3105,9 +3144,10 @@ leveä (4\,em) tyhjä tila sarakkeiden väliin.
 
 Rivillä olevat peräkkäiset solut erotetaan toisistaan \koodi{\&}\=/
 merkillä, ja taulukon rivi täytyy päättää aina \komento{\keno}\=/
-komentoon. Rivinvaihtokomennolle voi antaa hakasulkeissa yhden
-argumentin. Se on mitta, jolla ilmaistaan ylimääräistä tyhjää tilaa
-rivin jälkeen.
+komentoon. Tälle rivinvaihtokomennolle voi antaa hakasulkeissa yhden
+argumentin. Se on mitta ja tarkoittaa, kuinka paljon ylimääräistä
+pystysuuntaista tyhjää tilaa halutaan rivin jälkeen, esimerkiksi
+\komento[[.5ex{]}]{\keno}.
 
 Vaakasuuntainen, koko taulukon levyinen viiva tehdään komennolla
 \komento{hline} ja määrämittaisia viivoja komennolla \komento{cline}.
@@ -3115,24 +3155,23 @@ Tälle komennolle täytyy antaa yksi argumentti, joka sisältää kaksi
 yhdysmerkillä erotettua lukua. Luvuilla ilmaistaan, mistä sarakkeesta
 mihin sarakkeeseen viiva yltää.
 
-Esimerkin \ref{esim:taulukkomaarityksia} koodin ensimmäisellä rivillä
-määritellään uudelleen komento \komentom{arraystretch}. Komennon
-määritelmässä pitää olla luku, joka tarkoittaa taulukoiden sisäistä
-rivivälikerrointa. Oletusarvo on~1, mutta usein taulukon rivit vaativat
-hieman harventamista eli suurempaa lukua -- varsinkin jos on käytetty
-vaakaviivoja.
+\subsection{Asetuksia}
 
-Taulukkojen ulkoasua ja helppolukuisuutta käsittelevät ohjeet yleensä
-sanovat, että pystyviivoja ei pitäisi juuri käyttää. Ne häiritsevät
-vasemmalta oikealle lukemista. Tavallinen sarakkeiden välinen tyhjä tila
-yleensä riittää. Se on hyvä yleisohje, mutta sitä tuskin kannattaa pitää
-ihan ehdottomana sääntönä. Joskus on tarpeen jakaa sarakkeet
-mielekkäisiin ryhmiin ja nimenomaan ohjata katsetta pystysuunnassa
-tiettyjä sarakkeita pitkin. Usein kuitenkin pelkät vaakaviivat
-riittävät. Tämän alaluvun esimerkeissä kuitenkin käytetään paljon
-viivoja, jotta lukija hahmottaa helpommin taulukon rivit ja sarakkeet.
+Taulukon rivit saatetaan latoa oletuksena vähän liian lähelle toisiaan
+-- varsinkin jos käytetään vaakaviivoja. Sen korjaamiseksi on
+taulukoille olemassa oma rivivälikerroin, joka on komennossa
+\komentom{arraystretch}. Kerroin on desimaaliluku, jolla normaali
+rivikorkeus kerrotaan taulukoiden sisällä. Sopiva kerroin lienee yleensä
+1\==1,3. Oletusarvo on~1. Kerroinkomennon voi määritellä milloin hyvänsä
+uudelleen, ja se tehdään seuraavan esimerkin mukaisesti:
 
-Sarakkeiden määritelmään voi kirjoittaa useitakin pystyviivoja eli
+\komentoi{renewcommand}
+\komentoi{arraystretch}
+\begin{koodilohkosis}
+\renewcommand{\arraystretch}{1.3}
+\end{koodilohkosis}
+
+Sarakkeiden määrittelyssä voi kirjoittaa useita pystyviivoja eli
 \koodi{|}\=/ merkkejä peräkkäin. Silloin pystyviivoja ladotaan
 taulukkoon useita vierekkäin. Viivojen väliseen etäisyyteen voi
 vaikuttaa mitan \mittam{doublerulesep} avulla. Sen oletusarvo on 2\,pt.
@@ -3161,6 +3200,15 @@ halutaan mukaan normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
 \end{tabular}
 \end{koodilohkosis}
 
+\subsection{Poikkeuksellisia sarakkeita ja rivejä}
+
+Taulukkoympäristön argumenteissa määritellään taulukon sarakkeiden määrä
+tyypit, mutta siihen on mahdollista tehdä yksittäisiä poikkeuksia
+taulukon sisällä. Sarakekohtaiset poikkeukset tehdään komennolla
+\komentom{multicolumn} ja rivikohtaiset poikkeukset komennolla
+\komentom{multirow}, joka kuuluu pakettiin
+\paketti{multirow}.\avctan{multirow}
+
 \begin{esimerkki*}
   \komentoi{\keno}
   \komentoi{multicolumn}
@@ -3173,11 +3221,13 @@ halutaan mukaan normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
   432 & ,32 \\
     4 & ,021 \\
    32 & \\
+    0 & ,75 \\
   \hline
 \end{tabular}
 \end{koodilohko}
 
   \begin{tulos}
+    \renewcommand{\arraystretch}{1.2}
     \versaalinum
     \begin{tabular}{|r@{}l|}
       \multicolumn{2}{l}{Tulokset} \\
@@ -3185,6 +3235,7 @@ halutaan mukaan normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
       432 & ,32 \\
       4 & ,021 \\
       32 & \\
+      0 & ,75 \\
       \hline
     \end{tabular}
   \end{tulos}
@@ -3195,19 +3246,19 @@ halutaan mukaan normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
   \label{esim:taulukko_desimaalipilkku}
 \end{esimerkki*}
 
-Poikkeuksellista sarakeväliä käytetään välillä desimaalilukujen kanssa,
-koska allekkain olevat desimaaliluvut on mielekästä tasata
-desimaalipilkun kohdalta. Se toteutetaan määrittämällä sarakkeiden
-väliksi joko pilkku tai tyhjä, kuten esimerkissä
-\ref{esim:taulukko_desimaalipilkku} on tehty. Viereiset sarakkeet
-tasataan tätä pilkkua vasten.
+Esimerkissä \ref{esim:taulukko_desimaalipilkku} on taulukoitu lukuja,
+jotka halutaan latoa samaan linjaan desimaalipilkun kohdalta.
+Tasaamisessa hyödynnetään kahden sarakkeen rajakohtaa: luvun
+kokonaislukuosa ja desimaaliosa tasataan tätä rajakohtaa vasten --
+toinen oikealle~(\koodi{r}), toinen vasemmalle~(\koodi{l}). Sarakeväli
+on poistettu tästä kohdasta kokonaan \koodi{@\{\}}\=/ merkeillä.
 
-Esimerkissä \ref{esim:taulukko_desimaalipilkku} käytetään myös komentoa
-\komentom{multicolumn}, jolla voi luoda poikkeuksellisia
-sarakemäärityksiä. Tässä esimerkissä sen avulla sarakkeen otsikko
-''Tulokset'' yltää kahden sarakkeen alueelle ja teksti tasataan sen
-alueen vasempaan reunaan~(\koodi{l}). Lisäksi komennon avulla jätetään
-taulukon pystyviivat pois otsikkoriviltä.
+Esimerkkitaulukon otsikko ''Tulokset'' halutaan kuitenkin sijoittaa
+desimaalilukujen koko leveydelle eli kahden sarakkeen päälle. Lisäksi
+otsikkoriviltä halutaan poistaa pystyviivat, jotka muutoin ladotaan
+taulukon reunoille. Näihin asioihin tarvitaan komentoa
+\komento{multicolumn}, joka on tarkoitettu poikkeuksellisten
+sarakemääritysten tekemiseen. Komentoa käytetään seuraavasti:
 
 \komentoi{multicolumn}
 \begin{koodilohkosis}
@@ -3222,13 +3273,15 @@ tälle alueelle, ja se tehdään taulukon \ref{tlk:taulukko_sarakemerkit}
 merkkien avulla. Kolmas argumentti on teksti, joka ladotaan tähän
 uudella tavalla määriteltyyn alueeseen.
 
-Yhteen soluun voidaan tietyissä tilanteissa latoa useampia rivejä.
+Edellä on käsitelty vain soluja, joissa on yksirivinen teksti, mutta
+tietyissä tilanteissa yhteen soluun voidaan latoa useampia rivejä.
 Saraketyyppi~''\koodi{p}'' (taulukko \ref{tlk:taulukko_sarakemerkit}) on
 leveydeltään kiinteä, ja jos solun sisältö ei mahdu kyseiseen tilaan, se
-pyritään jakamaan useammalle riville ja sanoja mahdollisesti katkaistaan
+pyritään jakamaan useammalle riville. Sanoja mahdollisesti katkaistaan
 tavurajojen kohdalta. Myös \komentom{newline}\-/ komennolla voi vaihtaa
 riviä yksittäisen solun sisällä. Tämäkin toimii vain
-kiinteäleveyksisillä \koodi{p}\-/ tyypin sarakkeilla.
+kiinteäleveyksisillä \koodi{p}\-/ tyypin sarakkeilla. Seuraavassa
+esimerkissä on yksi kaksirivinen solu:
 
 \komentoi{\keno}
 \komentoi{hline}
@@ -3240,28 +3293,30 @@ kiinteäleveyksisillä \koodi{p}\-/ tyypin sarakkeilla.
 \end{koodilohkosis}
 
 \begin{tulossis}
+  \renewcommand{\arraystretch}{1.2}
   \begin{tabular}{|l|p{6.5em}|l|}
     \hline solu & Tämä ei mahdu yhdelle riville. & solu \\ \hline
   \end{tabular}
 \end{tulossis}
 
 Joskus puolestaan halutaan, että yksi solu levittäytyy useamman rivin
-alueelle. Tällaiseen tarvitaan \pakettim{multirow}\-/
-pakettia\avctan{multirow} ja sen \komentom{multirow}\-/ komentoa.
-Komennon pakolliset argumentit ovat seuraavat:
+alueelle. Tällaiseen tarvitaan \pakettim{multirow}\-/ pakettia ja sen
+\komentom{multirow}\-/ komentoa. Komennon pakolliset argumentit ovat
+seuraavat:
 
 \komentoi{multirow}
 \begin{koodilohkosis}
 \multirow{n}{leveys}{teksti}
 \end{koodilohkosis}
 
-Ensimmäisen argumentin ''\koodi{n}'' avulla ilmaistaan, kuinka monen
-rivin alueelle solu levitetään. Toinen argumentti ''\koodi{leveys}'' on
-tekstin leveyttä ilmaiseva mitta. Argumentiksi voi kirjoittaa pelkän
-tähden (\koodi{*}), jolloin käytetään tekstin luonnollista leveyttä.
-Kolmas argumentti on teksti, joka ladotaan soluun. Komennolla on myös
-valinnaisia argumentteja, jotka ilmaistaan hakasulkeiden avulla. Niistä
-ehkä tärkein on ensimmäinen:
+Ensimmäinen argumentti ''\koodi{n}'' on luku, joka ilmaisee, kuinka
+monen rivin alueelle solu levitetään. Toinen argumentti
+''\koodi{leveys}'' on tekstin leveyttä ilmaiseva mitta. Argumentiksi voi
+kirjoittaa pelkän tähden (\koodi{*}), jolloin käytetään tekstin
+luonnollista leveyttä. Kolmas argumentti on teksti, joka ladotaan tähän
+pystysuunnassa laajennettuun soluun. Komennolla on myös valinnaisia
+argumentteja, jotka ilmaistaan hakasulkeiden avulla. Niistä ehkä tärkein
+on ensimmäinen:
 
 \komentoi{multirow}
 \begin{koodilohkosis}
@@ -3297,11 +3352,12 @@ soluja tyhjäksi.
 \end{koodilohko}
 
   \begin{tulos}
+    \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{|l|l|l|}
       \hline
-      \multirow{2}{*}{kaksirivinen solu} & tavallisia & soluja \\
+      \multirow{2}{*}[-1bp]{kaksirivinen solu} & tavallisia & soluja \\
       \cline{2-3}
-                                         & kahdella & rivillä \\
+                                               & kahdella & rivillä \\
       \hline
     \end{tabular}
   \end{tulos}
@@ -3310,6 +3366,8 @@ soluja tyhjäksi.
     komennolla voi levittää yhden solun useamman rivin alueelle}
   \label{esim:taulukko_multirow}
 \end{esimerkki*}
+
+\subsection{Muita ympäristöjä ja mahdollisuuksia}
 
 Latexin toinen taulukkoympäristö \ymparistom{tabular*} toimii muuten
 samalla tavalla kuin \ymparisto{tabular}, mutta se tarvitsee yhden
@@ -3322,10 +3380,9 @@ argumentin lisää, taulukon leveysmitan:
 \end{tabular*}
 \end{koodilohkosis}
 
-Valitettavasti taulukon leveysmittaa (\koodi{leveys}) voi hyödyntää vain
-rajallisesti. Se vaikuttaa taulukon leveyteen silloin, kun sarakkeiden
-välit on määritelty venyviksi käyttämällä seuraavaa sarakevälin
-määritystä:
+Valitettavasti taulukon leveysmittaa voi hyödyntää vain rajallisesti. Se
+vaikuttaa taulukon leveyteen silloin, kun sarakkeiden välit on
+määritelty venyviksi käyttämällä seuraavaa sarakevälin määritystä:
 
 \komentoi{extracolsep}
 \mittai{fill}
@@ -3355,7 +3412,7 @@ saraketyypin:~''\koodi{X}'' (vrt. taulukko
 tyyppi~''\koodi{p}'', mutta sille ei anneta argumentiksi mittaa, vaan
 sen leveys on äärettömästi venyvä. Tämäntyyppiset sarakkeet täyttävät
 siis kaiken vapaana olevan tilan ja ovat oletuksena keskenään yhtä
-leveitä.
+leveitä. Tämä ilmenee seuraavasta esimerkistä:
 
 \komentoi{hline}
 \mittai{linewidth}
@@ -3367,16 +3424,17 @@ leveitä.
 \end{koodilohkosis}
 
 \begin{tulossis}
+  \renewcommand{\arraystretch}{1.2}
   \begin{tabularx}{\linewidth}{|l|X|X|}
     \hline luonnollinen & venyvä & venyvä \\ \hline
   \end{tabularx}
 \end{tulossis}
 
-Saraketyypissä ''\koodi{X}'' teksti tasataan molemmista reunoista, mutta
-tähän on mahdollista vaikuttaa käyttämällä sarakemäärittelyssä
-\koodi{>}\=/ merkkiä ja antamalla sen argumentiksi sopivia
-asetuskomentoja. Seuraava sarakemäärittely tekee vasemmalle tasatun
-\koodi{X}\=/ sarakkeen:
+Saraketyypissä ''\koodi{X}'' teksti tasataan oletuksena molemmista
+reunoista, mutta tähän on mahdollista vaikuttaa käyttämällä
+sarakemäärittelyssä \koodi{>}\=/ merkkiä ja antamalla sen argumentiksi
+sopivia asetuskomentoja. Seuraava sarakemäärittely tekee vasemmalle
+tasatun \koodi{X}\=/ sarakkeen:
 
 \begin{koodilohkosis}
 >{\raggedright\arraybackslash}X
@@ -3410,14 +3468,14 @@ voisi määritellä seuraavasti:
 \end{koodilohkosis}
 
 Mitä hyvänsä saraketyyppejä voi tehdä vastaavalla tavalla. Esimerkiksi
-otsikkorivejä ilmaisevaan saraketyyppiin ''\koodi{O}'' voitaisiin
-laittaa fonttikomento, jotta koko sarake ladotaan automaattisesti eri
+otsikoita ilmaisevaan saraketyyppiin ''\koodi{O}'' voitaisiin laittaa
+fonttikomento, jotta koko sarake ladotaan automaattisesti eri
 kirjainleikkauksella kuin muu taulukko.
 
 \komentoi{newcolumntype}
 \komentoi{bfseries}
 \begin{koodilohkosis}
-\newcolumntype{O}{>{\bfseries}l}
+\newcolumntype{O}{>{\bfseries}l} % lihavoitu otsikkosarake
 \end{koodilohkosis}
 
 Ympäristön \ymparisto{tabularx} käyttöön liittyy tiettyjä rajoituksia:

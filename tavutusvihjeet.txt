@@ -81,6 +81,7 @@ default-font-fea-tures
 de-fine-col-or
 de-scrip-tion
 desi-maa-li-erot-ti-me-na
+desi-maa-li-osa
 dia-esi-tyk-siä
 dia-esi-tys-ten
 dis-able-hy-phen-ation
@@ -199,6 +200,7 @@ kir-joi-tus-asut
 koko-ase-tus
 koko-ase-tus-ten
 koko-ero
+koko-nais-luku-osa
 ko-men-to-vaih-to-eh-to
 konk-reet-ti-ses-ti
 konk-reet-ti-sia
@@ -344,6 +346,7 @@ pe-rus-osat
 pe-rus-osien
 pe-rus-osiin
 pe-rus-vaih-to-eh-dot
+pe-rus-ympä-ris-tö
 phan-tom-sec-tion
 pien-aak-ko-set
 pien-aak-kos-ten

@@ -433,8 +433,8 @@ säh-kö-pos-ti-osoit-tei-ta
 tab-col-sep
 table
 table-of-con-tents
-tab-u-lar
-tab-u-larx
+tabu-lar
+tabu-larx
 tau-luk-ko-ympä-ris-tö
 tau-luk-ko-ympä-ris-tön
 ta-van-omais-ten

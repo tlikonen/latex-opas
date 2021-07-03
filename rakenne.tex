@@ -295,7 +295,7 @@ käyttää \paketti{noindentafter}\-/ pakettia\avctan{noindentafter} ja
 määritellä sen tarjoaman komennon avulla, minkä ympäristöjen jälkeen ei
 haluta sisennystä. Seuraava esimerkki poistaa sisennyksen aina
 \ymparisto{list}- ja \ymparisto{tabular}\-/ ympäristöjen jälkeen.
-Lisätietoja mainituista ympäristöistä on luvuissa
+Lisätietoa mainituista ympäristöistä on luvuissa
 \ref{luku:list-ymparisto} ja \ref{luku:taulukot}.
 
 \komentoi{NoIndentAfterEnv}
@@ -2751,7 +2751,8 @@ myöhemmin tässä alaluvussa sekä kuvassa \ref{kuva:list-mitat}.
 Luetelmamerkit \ymparisto{list}\-/ ympäristö latoo siten, että se
 suorittaa aina komennon \komento{makelabel} ja antaa sille argumentiksi
 kulloisenkin luetelmamerkin eli \ymparisto{list}\-/ ympäristön
-ensimmäisenä argumenttina annetun tekstin. Luetelmamerkki ladotaan sille
+ensimmäisenä argumenttina annetun tekstin tai \komento{item}\-/ komennon
+valinnaisena argumenttina olevan tekstin. Luetelmamerkki ladotaan sille
 varatun alueen oikeaan reunaan. Oletuksena \komento{makelabel}\-/
 komento toimii ikään kuin se olisi määritelty seuraavalla tavalla:
 
@@ -2974,16 +2975,18 @@ määrittelyä käsittelevästä luvusta \ref{luku:komennot_maarittely}.
 \label{luku:taulukot}
 
 Taulukoiden tekemiseen on perus Latexissa kaksi ympäristöä
-\ymparisto{tabular} ja \ymparisto{tabular*}. Usein niillä pärjää, mutta
-varsinkin jälkimmäisen ympäristön tilalle sopii paremmin
-\paketti{tabularx}\-/ paketin ympäristö \ymparisto{tabularx}. Taulukon
-luomisen perusrakenne on seuraava:
+\ymparisto{tabular} ja \ymparisto{tabular*}. Jälkimmäisen tilalle sopii
+usein paremmin \paketti{tabularx}\-/ paketin ympäristö
+\ymparisto{tabularx}. Tässä alaluvussa käsitellään ensin taulukoiden
+perusasiat \ymparisto{tabular}\-/ ympäristön avulla ja myöhemmin on
+tietoa muista ympäristöistä. Taulukon luomisen perusrakenne on seuraava:
 
 \komentoi{\keno}
 \ymparistoi{tabular}
 \begin{koodilohkosis}
 \begin{tabular}[sijainti]{sarakkeet}
   solu 1 & solu 2 \\
+  solu 3 & solu 4 \\
 \end{tabular}
 \end{koodilohkosis}
 

@@ -2980,6 +2980,8 @@ varsinkin jälkimmäisen ympäristön tilalle sopii paremmin
 \paketti{tabularx}\-/ paketin ympäristö \ymparisto{tabularx}. Taulukon
 luomisen perusrakenne on seuraava:
 
+\komentoi{\keno}
+\ymparistoi{tabular}
 \begin{koodilohkosis}
 \begin{tabular}[sijainti]{sarakkeet}
   solu 1 & solu 2 \\
@@ -3028,7 +3030,8 @@ tulee olemaan niin monta saraketta kuin näitä merkkejä on ympäristön
 luovat sarakkeen, jonka leveys määräytyy sarakkeen leveimmän solun
 perusteella. Neljäs eli saraketyyppi ''\koodi{p}'' tarvitsee
 aaltosulkeissa argumentiksi Texin mitan (luku \ref{luku:mitat}), ja
-sillä ilmaistaan sarakkeen kiinteä leveys.
+sillä ilmaistaan sarakkeen kiinteä leveys. Tässä saraketyypissä teksti
+tasataan solun molemmista reunoista eli sanavälejä voidaan venyttää.
 
 Merkit ''\koodi{|}'' ja ''\koodi{@}'' voi sijoittaa edellä mainittujen
 sarakemerkkien väliin tai ennen ensimmäistä saraketta tai viimeisen
@@ -3047,6 +3050,7 @@ määrän. Esimerkiksi ''\koodi{*\{3\}\{rl|\}}'' tarkoittaa samaa kuin
 ''\koodi{rl|rl|rl|}''.
 
 \begin{esimerkki*}
+  \komentoi{\keno}
   \komentoi{arraystretch}
   \komentoi{cline}
   \komentoi{hline}
@@ -3072,7 +3076,7 @@ määrän. Esimerkiksi ''\koodi{*\{3\}\{rl|\}}'' tarkoittaa samaa kuin
   \begin{tulos}
     \versaalinum
     \renewcommand{\arraystretch}{1.3}
-    \begin{tabular}[t]{|l@{\hspace{4em}}r|c|}
+    \begin{tabular}{|l@{\hspace{4em}}r|c|}
       \hline
       Vasen & Oikea & Keskitetty \\
       \hline
@@ -3104,8 +3108,8 @@ argumentin. Se on mitta, jolla ilmaistaan ylimääräistä tyhjää tilaa
 rivin jälkeen.
 
 Vaakasuuntainen, koko taulukon levyinen viiva tehdään komennolla
-\komento{hline} ja lyhempiä viivoja komennolla \komento{cline}. Tälle
-komennolle täytyy antaa yksi argumentti, joka sisältää kaksi
+\komento{hline} ja määrämittaisia viivoja komennolla \komento{cline}.
+Tälle komennolle täytyy antaa yksi argumentti, joka sisältää kaksi
 yhdysmerkillä erotettua lukua. Luvuilla ilmaistaan, mistä sarakkeesta
 mihin sarakkeeseen viiva yltää.
 
@@ -3118,12 +3122,13 @@ vaakaviivoja.
 
 Taulukkojen ulkoasua ja helppolukuisuutta käsittelevät ohjeet yleensä
 sanovat, että pystyviivoja ei pitäisi juuri käyttää. Ne häiritsevät
-vasemmalta oikealle lukemista, ja tavallinen sarakkeiden välinen tyhjä
-tila yleensä riittää. Se on hyvä yleisohje, mutta sitä tuskin kannattaa
-pitää ihan ehdottomana sääntönä. Joskus on tarpeen jakaa sarakkeet
+vasemmalta oikealle lukemista. Tavallinen sarakkeiden välinen tyhjä tila
+yleensä riittää. Se on hyvä yleisohje, mutta sitä tuskin kannattaa pitää
+ihan ehdottomana sääntönä. Joskus on tarpeen jakaa sarakkeet
 mielekkäisiin ryhmiin ja nimenomaan ohjata katsetta pystysuunnassa
 tiettyjä sarakkeita pitkin. Usein kuitenkin pelkät vaakaviivat
-riittävät.
+riittävät. Tämän alaluvun esimerkeissä kuitenkin käytetään paljon
+viivoja, jotta lukija hahmottaa helpommin taulukon rivit ja sarakkeet.
 
 Sarakkeiden määritelmään voi kirjoittaa useitakin pystyviivoja eli
 \koodi{|}\=/ merkkejä peräkkäin. Silloin pystyviivoja ladotaan
@@ -3144,9 +3149,10 @@ sarakeväli poistetaan kokonaan. Jos \koodi{@\{\dots\}}\=/ määrittelyyn
 halutaan mukaan normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
 \komento{vline}, esimerkiksi seuraavasti:
 
-\ymparistoi{tabular}
+\komentoi{\keno}
 \komentoi{hspace}
 \komentoi{vline}
+\ymparistoi{tabular}
 \begin{koodilohkosis}
 \begin{tabular}{|l@{\hspace{1em}\vline\hspace{1em}}l|}
   ensimmäinen & toinen \\
@@ -3154,8 +3160,9 @@ halutaan mukaan normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
 \end{koodilohkosis}
 
 \begin{esimerkki*}
-  \ymparistoi{tabular}
+  \komentoi{\keno}
   \komentoi{multicolumn}
+  \ymparistoi{tabular}
 
 \begin{koodilohko}
 \begin{tabular}{|r@{}l|}
@@ -3170,7 +3177,7 @@ halutaan mukaan normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
 
   \begin{tulos}
     \versaalinum
-    \begin{tabular}[t]{|r@{}l|}
+    \begin{tabular}{|r@{}l|}
       \multicolumn{2}{l}{Tulokset} \\
       \hline
       432 & ,32 \\
@@ -3200,6 +3207,7 @@ sarakemäärityksiä. Tässä esimerkissä sen avulla sarakkeen otsikko
 alueen vasempaan reunaan~(\koodi{l}). Lisäksi komennon avulla jätetään
 taulukon pystyviivat pois otsikkoriviltä.
 
+\komentoi{multicolumn}
 \begin{koodilohkosis}
 \multicolumn{n}{sarakkeet}{teksti}
 \end{koodilohkosis}
@@ -3212,10 +3220,235 @@ tälle alueelle, ja se tehdään taulukon \ref{tlk:taulukko_sarakemerkit}
 merkkien avulla. Kolmas argumentti on teksti, joka ladotaan tähän
 uudella tavalla määriteltyyn alueeseen.
 
-% \newline ja moniriviset p-sarakkeet
-% multirow
+Yhteen soluun voidaan tietyissä tilanteissa latoa useampia rivejä.
+Saraketyyppi~''\koodi{p}'' (taulukko \ref{tlk:taulukko_sarakemerkit}) on
+leveydeltään kiinteä, ja jos solun sisältö ei mahdu kyseiseen tilaan, se
+pyritään jakamaan useammalle riville ja sanoja mahdollisesti katkaistaan
+tavurajojen kohdalta. Myös \komentom{newline}\-/ komennolla voi vaihtaa
+riviä yksittäisen solun sisällä. Tämäkin toimii vain
+kiinteäleveyksisillä \koodi{p}\-/ tyypin sarakkeilla.
 
-% tabular*, tabularx, tabulary, longtable(?)
+\komentoi{\keno}
+\komentoi{hline}
+\ymparistoi{tabular}
+\begin{koodilohkosis}
+\begin{tabular}{|l|p{6.5em}|l|}
+  \hline solu & Tämä ei mahdu yhdelle riville. & solu \\ \hline
+\end{tabular}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \begin{tabular}{|l|p{6.5em}|l|}
+    \hline solu & Tämä ei mahdu yhdelle riville. & solu \\ \hline
+  \end{tabular}
+\end{tulossis}
+
+Joskus puolestaan halutaan, että yksi solu levittäytyy useamman rivin
+alueelle. Tällaiseen tarvitaan \pakettim{multirow}\-/
+pakettia\avctan{multirow} ja sen \komentom{multirow}\-/ komentoa.
+Komennon pakolliset argumentit ovat seuraavat:
+
+\komentoi{multirow}
+\begin{koodilohkosis}
+\multirow{n}{leveys}{teksti}
+\end{koodilohkosis}
+
+Ensimmäisen argumentin ''\koodi{n}'' avulla ilmaistaan, kuinka monen
+rivin alueelle solu levitetään. Toinen argumentti ''\koodi{leveys}'' on
+tekstin leveyttä ilmaiseva mitta. Argumentiksi voi kirjoittaa pelkän
+tähden (\koodi{*}), jolloin käytetään tekstin luonnollista leveyttä.
+Kolmas argumentti on teksti, joka ladotaan soluun. Komennolla on myös
+valinnaisia argumentteja, jotka ilmaistaan hakasulkeiden avulla. Niistä
+ehkä tärkein on ensimmäinen:
+
+\komentoi{multirow}
+\begin{koodilohkosis}
+\multirow[sijainti]{n}{leveys}{teksti}
+\end{koodilohkosis}
+
+Edellisen esimerkin valinnainen argumentti ''\koodi{sijainti}'' on
+kirjain, jolla ilmaistaan solun sisällön pystysuuntainen asemointi ylös,
+keskelle tai alas: ''\koodi{t}'' (\englanti{top}), ''\koodi{c}''
+(\englanti{center}, oletus) tai ''\koodi{b}'' (\englanti{bottom}).
+Komennon muista valinnaisista argumenteista ja mahdollisuuksista
+kannattaa lukea \paketti{multirow}\-/ paketin ohjekirjasta. Esimerkki
+\ref{esim:taulukko_multirow} havainnollistaa komennon peruskäyttöä.
+Komento \komento{multirow}\-/ kirjoitetaan siihen soluun, josta
+monirivinen solu alkaa. Sen alapuolelta täytyy jättää riittävä määrä
+soluja tyhjäksi.
+
+\begin{esimerkki*}
+  \komentoi{\keno}
+  \komentoi{cline}
+  \komentoi{hline}
+  \komentoi{multirow}
+  \ymparistoi{tabular}
+
+\begin{koodilohko}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \multirow{2}{*}{kaksirivinen solu} & tavallisia & soluja \\
+  \cline{2-3}
+                                     & kahdella & rivillä \\
+  \hline
+\end{tabular}
+\end{koodilohko}
+
+  \begin{tulos}
+    \begin{tabular}{|l|l|l|}
+      \hline
+      \multirow{2}{*}{kaksirivinen solu} & tavallisia & soluja \\
+      \cline{2-3}
+                                         & kahdella & rivillä \\
+      \hline
+    \end{tabular}
+  \end{tulos}
+
+  \caption{\paketti{multirow}\-/ paketin \komento{multirow}\-/
+    komennolla voi levittää yhden solun useamman rivin alueelle}
+  \label{esim:taulukko_multirow}
+\end{esimerkki*}
+
+Latexin toinen taulukkoympäristö \ymparistom{tabular*} toimii muuten
+samalla tavalla kuin \ymparisto{tabular}, mutta se tarvitsee yhden
+argumentin lisää, taulukon leveysmitan:
+
+\ymparistoi{tabular*}
+\begin{koodilohkosis}
+\begin{tabular*}{leveys}[sijainti]{sarakkeet}
+  ...
+\end{tabular*}
+\end{koodilohkosis}
+
+Valitettavasti taulukon leveysmittaa (\koodi{leveys}) voi hyödyntää vain
+rajallisesti. Se vaikuttaa taulukon leveyteen silloin, kun sarakkeiden
+välit on määritelty venyviksi käyttämällä seuraavaa sarakevälin
+määritystä:
+
+\komentoi{extracolsep}
+\mittai{fill}
+\begin{koodilohkosis}
+@{\extracolsep{\fill}}
+\end{koodilohkosis}
+
+Edellisestä on tärkeää huomata, että sarakkeiden leveydet eivät veny
+vaan ainoastaan niiden välissä oleva tyhjä tila. Usein olisi kuitenkin
+hyödyllisempää, että joidenkin sarakkeiden leveys olisi venyvä ja ne
+mukautuisivat koko taulukon leveyteen. Tämä ominaisuus saadaan
+\pakettim{tabularx}\-/ paketin\avctan{tabularx} avulla. Se määrittelee
+uuden taulukkoympäristön \ymparistom{tabularx}, joka on käytännössä
+parempi versio \ymparisto{tabular*}\-/ ympäristöstä. Sen käyttö on
+samanlaista:
+
+\ymparistoi{tabularx}
+\begin{koodilohkosis}
+\begin{tabularx}{leveys}[sijainti]{sarakkeet}
+  ...
+\end{tabularx}
+\end{koodilohkosis}
+
+Ympäristö \ymparisto{tabularx} sisältää yhden uuden
+saraketyypin:~''\koodi{X}'' (vrt. taulukko
+\ref{tlk:taulukko_sarakemerkit}). Tämä saraketyyppi toimii kuten
+tyyppi~''\koodi{p}'', mutta sille ei anneta argumentiksi mittaa, vaan
+sen leveys on äärettömästi venyvä. Tämäntyyppiset sarakkeet täyttävät
+siis kaiken vapaana olevan tilan ja ovat oletuksena keskenään yhtä
+leveitä.
+
+\komentoi{hline}
+\mittai{linewidth}
+\ymparistoi{tabularx}
+\begin{koodilohkosis}
+\begin{tabularx}{\linewidth}{|l|X|X|}
+  \hline luonnollinen & venyvä & venyvä \\ \hline
+\end{tabularx}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \begin{tabularx}{\linewidth}{|l|X|X|}
+    \hline luonnollinen & venyvä & venyvä \\ \hline
+  \end{tabularx}
+\end{tulossis}
+
+Saraketyypissä ''\koodi{X}'' teksti tasataan molemmista reunoista, mutta
+tähän on mahdollista vaikuttaa käyttämällä sarakemäärittelyssä
+\koodi{>}\=/ merkkiä ja antamalla sen argumentiksi sopivia
+asetuskomentoja. Seuraava sarakemäärittely tekee vasemmalle tasatun
+\koodi{X}\=/ sarakkeen:
+
+\begin{koodilohkosis}
+>{\raggedright\arraybackslash}X
+\end{koodilohkosis}
+
+Sarakkeen solujen tasaaminen vasemmalle tulee komennon
+\komento{raggedright} vaikutuksesta (luku \ref{luku:kappaleen_tasaus}).
+Sen perään tarvitaan myös komento \komento{arraybackslash}, koska
+\komento{raggedright} määrittelee \komento{\keno}\=/ rivinvaihtokomennon
+uudelleen tavalla, joka on ristiriidassa taulukon rivien lopussa
+tarvittavan vastaavan komennon kanssa. \komento{arraybackslash}
+palauttaa määritelmän sellaiseksi, että se toimii taulukossa.
+
+\paketti{tabularx}\-/ paketin myötä voi määritellä omiakin
+saraketyyppejä. Hyödyllisiä tyyppejä voisivat olla esimerkiksi
+''\koodi{LCR}'', jotka toimisivat lähes samoin kuin perus Latexin
+saraketyypit ''\koodi{lcr}'' (taulukko \ref{tlk:taulukko_sarakemerkit})
+mutta olisivat kuitenkin leveydeltään venyviä. Omia saraketyyppejä
+tehdään komennolla \komentom{newcolumntype}, ja edellä mainitut tyypit
+voisi määritellä seuraavasti:
+
+\komentoi{arraybackslash}
+\komentoi{centering}
+\komentoi{newcolumntype}
+\komentoi{raggedleft}
+\komentoi{raggedright}
+\begin{koodilohkosis}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\end{koodilohkosis}
+
+Mitä hyvänsä saraketyyppejä voi tehdä vastaavalla tavalla. Esimerkiksi
+otsikkorivejä ilmaisevaan saraketyyppiin ''\koodi{O}'' voitaisiin
+laittaa fonttikomento, jotta koko sarake ladotaan automaattisesti eri
+kirjainleikkauksella kuin muu taulukko.
+
+\komentoi{newcolumntype}
+\komentoi{bfseries}
+\begin{koodilohkosis}
+\newcolumntype{O}{>{\bfseries}l}
+\end{koodilohkosis}
+
+Ympäristön \ymparisto{tabularx} käyttöön liittyy tiettyjä rajoituksia:
+sitä ei voi käyttää normaalisti omien ympäristöjen määrittelyssä (luku
+\ref{luku:ymparistot}). Esimerkiksi seuraava ympäristön määrittely ei
+käytännössä toimi:
+
+\komentoi{newenvironment}
+\ymparistoi{tabularx}
+\mittai{linewidth}
+\begin{koodilohkosis}
+\newenvironment{omataulukko}[1]
+{\begin{tabularx}{\linewidth}{#1}}
+{\end{tabularx}}
+\end{koodilohkosis}
+
+Edellä mainitun puutteen saa korjattua käyttämällä oman ympäristön
+määrittelyssä \ymparisto{tabularx}\-/ ympäristön aloitukseen komentoa
+\komentom{tabularx} ja lopetukseen komentoa \komentom{endtabularx}. Ei
+siis käytetä normaaleja aloitus\-/\ ja lopetuskomentoja \komento{begin}
+ja \komento{end}.
+
+\komentoi{newenvironment}
+\komentoi{tabularx}
+\komentoi{endtabularx}
+\mittai{linewidth}
+\begin{koodilohkosis}
+\newenvironment{omataulukko}[1]
+{\tabularx{\linewidth}{#1}}
+{\endtabularx}
+\end{koodilohkosis}
+
+% tabulary, longtable(?)
 % booktabs
 % taulukoiden väritys xcolor-paketin avulla
 

@@ -32,6 +32,7 @@ an-tiik-vat
 an-tiik-vo-jen
 ap-pendix
 apu-ohjel-ma
+array-back-slash
 array-rule-width
 array-stretch
 ar-ti-cle
@@ -92,6 +93,7 @@ emer-gen-cy-stretch
 empty
 en-able-hy-phen-ation
 Endash
+end-tab-u-larx
 en-glish-font
 en-large-this-page
 en-space
@@ -263,8 +265,10 @@ mk-bib-name-suf-fix
 mk-bib-parens
 mk-bib-quote
 mp-foot-note
+multi-row
 muo-toi-lu-ase-tuk-set
 my-head-ings
+new-column-type
 new-com-mand
 new-counter
 new-en-vi-ron-ment
@@ -431,6 +435,8 @@ table
 table-of-con-tents
 tab-u-lar
 tab-u-larx
+tau-luk-ko-ympä-ris-tö
+tau-luk-ko-ympä-ris-tön
 ta-van-omais-ten
 tavu-tus-algo-rit-mia
 teks-ti-alue

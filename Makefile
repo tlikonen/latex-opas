@@ -32,7 +32,7 @@ versio.txt: $(lahde)
 	fi
 
 versio.tex: versio.txt
-	echo '\\newcommand{\\versio}{$(shell cat versio.txt)}' > $@
+	echo '\\newcommand{\\versio}{$(shell cat $<)}' > $@
 
 tavutusvihjeet.txt:
 	sort -u $@ > $@.tmp && mv $@.tmp $@

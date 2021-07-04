@@ -2991,16 +2991,16 @@ sisennys kuin tekstikappaleiden ensimmäisellä rivillä on eli mitta
 \mitta{parindent} (luku \ref{luku:ensimmaisen_rivin_sisennys}). Jos
 sisennyksen haluaa pois, täytyy käyttää komentoa \komento{noindent}.
 
-Toinen vaihtoehto on sijoittaa taulukko vaakasuunnassa sivun keskelle,
-jolloin se erottuu muusta tekstistä vielä selvemmin. Taulukkoympäristö
-kirjoitetaan \ymparisto{center}\-/ ympäristön sisään
-(\ref{luku:kappaleen_tasaus}).
+Toinen tyypillinen vaihtoehto on sijoittaa taulukko vaakasuunnassa sivun
+keskelle, jolloin se erottuu muusta tekstistä vielä selvemmin. Tämän voi
+toteuttaa kirjoittamalla taulukkoympäristö \ymparisto{center}\-/
+ympäristön sisään (\ref{luku:kappaleen_tasaus}).
 
-Kolmas vaihtoehto on tehdä taulukosta ''leijuva'' eli antaa Latexin
-sijoittaa se sopivaan paikkaan. Samalla taulukolle voidaan antaa
-kuvateksti ja numero, niin että siihen voi viitata tekstistä. Leijuvia
-osia ja ristiviitteitä käsitellään luvuissa \ref{luku:leijuosat} ja
-\ref{luku:ristiviitteet}.
+Kolmas vaihtoehto on tehdä taulukosta leijuva eli antaa Latexin
+sijoittaa se sopivaan paikkaan. Samalla taulukolle annetaan kuvateksti
+ja yksilöllinen tunniste, niin että siihen voi viitata tekstistä.
+Leijuvia osia ja ristiviitteitä käsitellään luvuissa
+\ref{luku:leijuosat} ja \ref{luku:ristiviitteet}.
 
 Taulukkojen ulkoasua ja helppolukuisuutta käsittelevät ohjeet yleensä
 neuvovat, että pystyviivoja ei pitäisi juuri käyttää. Ne häiritsevät
@@ -3012,9 +3012,11 @@ Se on hyvä yleisohje, mutta sitä tuskin kannattaa pitää ihan ehdottomana
 sääntönä. Joskus on tarpeen jakaa sarakkeet mielekkäisiin ryhmiin ja
 nimenomaan ohjata katsetta pystysuunnassa tiettyjä sarakkeita pitkin.
 Katseen ei välttämättä haluta lipsuvan tietyn kohdan yli, ja pystyviiva
-sopii hyvin tähän tarkoitukseen. Tämän luvun esimerkeissä käytetään
+sopii hyvin siihen tarkoitukseen. Tämän luvun esimerkeissä käytetään
 paljon vaaka- ja pystyviivoja, jotta lukija hahmottaa helposti, miten
-esimerkkikoodin solut ovat yhteydessä ladottuun taulukkoon.
+esimerkkikoodin solut ovat yhteydessä ladottuun taulukkoon. Käytännössä
+viivoja ei kannata käyttää niin paljon, vaan pari vaakaviivaa yleensä
+riittää.
 
 \subsection{Perustoiminnot}
 
@@ -3182,7 +3184,18 @@ Jos sarakkeiden välissä ei ole \koodi{@}\=/ merkillä tehtyjä
 poikkeuksia, ladotaan joka solun vasempaan ja oikeaan reunaan väli, joka
 on määritelty mitassa \mittam{tabcolsep}. Tämän mitan suuruinen väli
 siis ladotaan kerran taulukon vasempaan ja oikeaan reunaan ja kaksi
-kertaa jokaisen sarakkeen väliin. Oletusarvo on 6\,pt.
+kertaa jokaisen sarakkeen väliin. Oletusarvo on 6\,pt. Seuraavassa on
+koonti edellä mainittujen mittojen asettamisesta ja niiden oletusarvot.
+
+\komentoi{setlength}
+\mittai{doublerulesep}
+\mittai{arrayrulewidth}
+\mittai{tabcolsep}
+\begin{koodilohkosis}
+\setlength{\doublerulesep}{2pt}
+\setlength{\arrayrulewidth}{.4pt}
+\setlength{\tabcolsep}{6pt}
+\end{koodilohkosis}
 
 Sarakemääritelmässä voi \koodi{@}\=/ merkillä säätää sarakkeiden välit
 täysin haluamansa laiseksi. Esimerkiksi merkeillä \koodi{@\{\}}
@@ -3279,9 +3292,12 @@ Saraketyyppi~''\koodi{p}'' (taulukko \ref{tlk:taulukko_sarakemerkit}) on
 leveydeltään kiinteä, ja jos solun sisältö ei mahdu kyseiseen tilaan, se
 pyritään jakamaan useammalle riville. Sanoja mahdollisesti katkaistaan
 tavurajojen kohdalta. Myös \komentom{newline}\-/ komennolla voi vaihtaa
-riviä yksittäisen solun sisällä. Tämäkin toimii vain
-kiinteäleveyksisillä \koodi{p}\-/ tyypin sarakkeilla. Seuraavassa
-esimerkissä on yksi kaksirivinen solu:
+riviä yksittäisen solun sisällä. Sekin toimii vain kiinteäleveyksisillä
+\koodi{p}\-/ tyypin sarakkeilla.
+
+Seuraavassa on esimerkki, kuinka yhden solun sisältö voi jakautua
+kahdelle riville. Teknisessä mielessä taulukkorivien määrä ei kuitenkaan
+kasva, vaan muihin saman taulukkorivin soluihin tulee tyhjää tilaa.
 
 \komentoi{\keno}
 \komentoi{hline}
@@ -3300,9 +3316,9 @@ esimerkissä on yksi kaksirivinen solu:
 \end{tulossis}
 
 Joskus puolestaan halutaan, että yksi solu levittäytyy useamman rivin
-alueelle. Tällaiseen tarvitaan \pakettim{multirow}\-/ pakettia ja sen
-\komentom{multirow}\-/ komentoa. Komennon pakolliset argumentit ovat
-seuraavat:
+alueelle verrattuna taulukon muihin riveihin. Tämän toteutukseen
+tarvitaan \pakettim{multirow}\-/ pakettia ja sen \komentom{multirow}\-/
+komentoa. Komennon pakolliset argumentit ovat seuraavat:
 
 \komentoi{multirow}
 \begin{koodilohkosis}
@@ -3314,25 +3330,29 @@ monen rivin alueelle solu levitetään. Toinen argumentti
 ''\koodi{leveys}'' on tekstin leveyttä ilmaiseva mitta. Argumentiksi voi
 kirjoittaa pelkän tähden (\koodi{*}), jolloin käytetään tekstin
 luonnollista leveyttä. Kolmas argumentti on teksti, joka ladotaan tähän
-pystysuunnassa laajennettuun soluun. Komennolla on myös valinnaisia
-argumentteja, jotka ilmaistaan hakasulkeiden avulla. Niistä ehkä tärkein
-on ensimmäinen:
+pystysuunnassa laajennettuun soluun.
+
+Komennolla on myös valinnaisia argumentteja, jotka ilmaistaan
+hakasulkeiden avulla. Tässä niistä tärkeimmät:
 
 \komentoi{multirow}
 \begin{koodilohkosis}
-\multirow[sijainti]{n}{leveys}{teksti}
+\multirow[sijainti]{n}{leveys}[pysty]{teksti}
 \end{koodilohkosis}
 
 Edellisen esimerkin valinnainen argumentti ''\koodi{sijainti}'' on
 kirjain, jolla ilmaistaan solun sisällön pystysuuntainen asemointi ylös,
 keskelle tai alas: ''\koodi{t}'' (\englanti{top}), ''\koodi{c}''
 (\englanti{center}, oletus) tai ''\koodi{b}'' (\englanti{bottom}).
-Komennon muista valinnaisista argumenteista ja mahdollisuuksista
-kannattaa lukea \paketti{multirow}\-/ paketin ohjekirjasta. Esimerkki
-\ref{esim:taulukko_multirow} havainnollistaa komennon peruskäyttöä.
-Komento \komento{multirow}\-/ kirjoitetaan siihen soluun, josta
-monirivinen solu alkaa. Sen alapuolelta täytyy jättää riittävä määrä
-soluja tyhjäksi.
+Valinnainen argumentti ''\koodi{pysty}'' on mitta, jolla hienosäädetään
+solun sisällön sijaintia pystysuunnassa. Positiivinen mitta siirtää
+sisältöä ylöspäin, negatiivinen alaspäin.
+
+Komennon muista mahdollisuuksista kannattaa lukea \paketti{multirow}\-/
+paketin ohjekirjasta. Esimerkki \ref{esim:taulukko_multirow}
+havainnollistaa komennon peruskäyttöä. \komento{multirow}\-/ komento
+kirjoitetaan siihen soluun, josta monirivinen solu alkaa. Sen
+alapuolelta täytyy jättää riittävä määrä soluja tyhjäksi.
 
 \begin{esimerkki*}
   \komentoi{\keno}
@@ -3346,7 +3366,7 @@ soluja tyhjäksi.
   \hline
   \multirow{2}{*}{kaksirivinen solu} & tavallisia & soluja \\
   \cline{2-3}
-                                     & kahdella & rivillä \\
+                                     & kahdella   & rivillä \\
   \hline
 \end{tabular}
 \end{koodilohko}
@@ -3367,7 +3387,7 @@ soluja tyhjäksi.
   \label{esim:taulukko_multirow}
 \end{esimerkki*}
 
-\subsection{Muita ympäristöjä ja mahdollisuuksia}
+\subsection{Muita ympäristöjä ja paketteja}
 
 Latexin toinen taulukkoympäristö \ymparistom{tabular*} toimii muuten
 samalla tavalla kuin \ymparisto{tabular}, mutta se tarvitsee yhden
@@ -3411,8 +3431,8 @@ saraketyypin:~''\koodi{X}'' (vrt. taulukko
 \ref{tlk:taulukko_sarakemerkit}). Tämä saraketyyppi toimii kuten
 tyyppi~''\koodi{p}'', mutta sille ei anneta argumentiksi mittaa, vaan
 sen leveys on äärettömästi venyvä. Tämäntyyppiset sarakkeet täyttävät
-siis kaiken vapaana olevan tilan ja ovat oletuksena keskenään yhtä
-leveitä. Tämä ilmenee seuraavasta esimerkistä:
+siis kaiken vapaana olevan tilan, ja jos niitä on useita, ne ovat
+oletuksena keskenään yhtä leveitä. Tämä ilmenee seuraavasta esimerkistä:
 
 \komentoi{hline}
 \mittai{linewidth}
@@ -3430,11 +3450,12 @@ leveitä. Tämä ilmenee seuraavasta esimerkistä:
   \end{tabularx}
 \end{tulossis}
 
-Saraketyypissä ''\koodi{X}'' teksti tasataan oletuksena molemmista
-reunoista, mutta tähän on mahdollista vaikuttaa käyttämällä
-sarakemäärittelyssä \koodi{>}\=/ merkkiä ja antamalla sen argumentiksi
-sopivia asetuskomentoja. Seuraava sarakemäärittely tekee vasemmalle
-tasatun \koodi{X}\=/ sarakkeen:
+Saraketyypissä ''\koodi{X}'' teksti tasataan oletuksena solujen
+molemmista reunoista, mutta siihen on mahdollista vaikuttaa
+sijoittamalla sarakemäärittelyssä \koodi{>}\=/ merkki ja sen
+aaltosulkeissa olevat argumentit ennen \koodi{X}\=/ merkkiä.
+Argumentiksi kirjoitetaan sopivia asetuskomentoja. Seuraava
+sarakemäärittely tekee vasemmalle tasatun \koodi{X}\=/ sarakkeen:
 
 \begin{koodilohkosis}
 >{\raggedright\arraybackslash}X

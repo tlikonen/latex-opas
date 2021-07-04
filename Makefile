@@ -35,7 +35,7 @@ versio.tex: versio.txt
 	echo '\\newcommand{\\versio}{$(shell cat versio.txt)}' > $@
 
 tavutusvihjeet.txt:
-	sort -f $@ | uniq > $@.tmp && mv $@.tmp $@
+	sort -u $@ > $@.tmp && mv $@.tmp $@
 	sed -e s/-//g $@ | uniq -cdi
 
 tavutusvihjeet.tex: tavutusvihjeet.txt

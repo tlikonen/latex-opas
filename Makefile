@@ -14,22 +14,19 @@ latexmk = latexmk -lualatex \
 	-pdflualatex="lualatex -interaction=nonstopmode %O %S"
 
 $(nimi).pdf: versio.tex versio.txt $(lahde)
-	@if which latexmk >/dev/null; then \
-		$(latexmk) $(nimi) && touch $@; \
-	else \
-		$(latex) $(nimi) && \
-		biber $(nimi) && \
-		$(latex) $(nimi) && \
-		$(latex) $(nimi); \
-	fi
+	@if which latexmk >/dev/null; \
+		then $(latexmk) $(nimi) && touch $@; \
+		else $(latex) $(nimi) && biber $(nimi) && \
+			$(latex) $(nimi) && $(latex) $(nimi); \
+		fi
 	@echo "Versio: $(shell cat versio.txt)"
 
 versio.txt: $(lahde)
 	if v=$$(git describe --always --dirty) && \
 		pvm=$$(git log -1 --format=format:%at); \
-	then echo "$$v ($$(date +%Y -d@$$pvm))" > $@; \
-	else echo "$(versio)" > $@; \
-	fi
+		then echo "$$v ($$(date +%Y -d@$$pvm))" > $@; \
+		else echo "$(versio)" > $@; \
+		fi
 
 versio.tex: versio.txt
 	echo '\\newcommand{\\versio}{$(shell cat $<)}' > $@

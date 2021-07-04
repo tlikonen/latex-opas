@@ -298,11 +298,9 @@ nyky-aika-na
 obey-cr
 oikein-kir-joi-tus-oppaas-sa
 ole-tus-ar-vo
-ole-tus-arvo
 ole-tus-ar-voa
 ole-tus-ar-voi-hin
 ole-tus-ar-vot
-ole-tus-arvot
 ole-tus-ase-tuk-set
 ole-tus-ase-tuk-sia
 ole-tus-ase-tuk-siin

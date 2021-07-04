@@ -60,6 +60,8 @@ big-skip
 big-skip-amount
 book-marks-num-ber-ed
 book-marks-open
+book-tabs
+bottom-rule
 break
 cap-tions-finnish
 chapter-mark
@@ -68,6 +70,7 @@ cite
 clear-double-page
 clear-page
 cline
+cmid-rule
 color-box
 column-sep
 con-tents-name
@@ -234,6 +237,7 @@ line-width
 list-par-indent
 lisä-vaih-to-eh-toa
 lohko-lai-naus-ympä-ris-töt
+long-table
 Lua-latex
 lue-tel-ma-ympy-rä
 lue-tel-ma-ympy-räl-lä
@@ -254,6 +258,7 @@ med-break
 med-skip
 med-skip-amount
 mem-oir
+mid-rule
 mit-ta-yk-sik-kö
 mit-ta-yk-si-köi-den
 mit-ta-yk-si-köi-tä
@@ -436,8 +441,10 @@ table
 table-of-con-tents
 tabu-lar
 tabu-larx
+tabu-lary
 tau-luk-ko-ympä-ris-tö
 tau-luk-ko-ympä-ris-tön
+tau-luk-ko-ympä-ris-töt
 ta-van-omais-ten
 tavu-tus-algo-rit-mia
 teks-ti-alue
@@ -493,6 +500,7 @@ title-sec
 title-spacing
 title-toc
 toc-depth
+top-rule
 top-sep
 total
 tot-count

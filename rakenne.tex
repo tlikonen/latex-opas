@@ -1340,6 +1340,7 @@ seuraavalla tavalla:
 \end{koodilohkosis}
 
 \subsection{Värit}
+\label{luku:korostus_varit}
 
 Eri värien käyttö voi sopia tekstin erilaisten osien korostamiseen.
 Esimerkiksi otsikot, taulukot tai leijuvat osat saa erottumaan
@@ -3529,9 +3530,36 @@ ja \komento{end}.
 {\endtabularx}
 \end{koodilohkosis}
 
-% tabulary, longtable(?)
-% booktabs
-% taulukoiden väritys xcolor-paketin avulla
+\paketti{tabularx}\-/ paketin kanssa samankaltainen on paketti
+\pakettim{tabulary},\avctan{tabulary} jossa on joitakin erilaisia
+ominaisuuksia. Se muun muassa sisältää valmiiksi uudet saraketyypit
+''\koodi{LCRJ}''.
+
+Edellä esitellyt taulukkoympäristöt ladotaan aina kokonaisena eli vain
+yhden sivun alueelle. Useammalle sivulle jakautuvia taulukoita voi tehdä
+\pakettim{longtable}\-/ paketin\avctan{longtable} taulukkoympäristön
+\ymparistom{longtable} avulla.
+
+Hyödyllinen taulukoiden apupaketti on
+\pakettim{booktabs},\avctan{booktabs} jonka avulla saa tyylikkäämpiä ja
+erilaisia vaakaviivoja. Paketin komennot \komento{toprule},
+\komento{midrule}, \komento{bottomrule} ja \komento{cmidrule} piirtävät
+rivien väliin erilaisia viivoja ja huolehtivat myös niiden ylä- ja
+alapuolisesta välistä paremmin kuin Latexin omat viivakomennot.
+
+Taulukon rivien taustan voi värittää \paketti{xcolor}\-/
+paketin\avctan{xcolor} (luku \ref{luku:korostus_varit}) komentojen
+avulla. Varsinkin leveiden taulukoiden lukemista voi helpottaa, jos
+rivien taustavärit vuorottelevat. Tarkemmat tiedot selviävät paketin
+ohjekirjasta, mutta seuraavan esimerkin avulla ominaisuutta pääsee
+kokeilemaan:
+
+\pakettii{xcolor}
+\komentoi{rowcolors}
+\begin{koodilohkosis}
+\usepackage[table]{xcolor}     % lähdedokumentin esittelyosaan
+\rowcolors{1}{blue!10}{red!10} % ennen taulukkoympäristöjä
+\end{koodilohkosis}
 
 \section{Leijuvat osat}
 \label{luku:leijuosat}

@@ -45,18 +45,18 @@ $(julkaisukohteet): $(tds)/$(nimi)/%: %
 	@mkdir -p $(tds)/$(nimi)
 	cp $< $@
 
-$(nimi).tds.zip: $(julkaisukohteet)
+$(tds)/$(nimi).tds.zip: $(julkaisukohteet)
 	zip -r9 $@ $(tds)/$(nimi)
 
-$(nimi).zip: $(nimi).tds.zip $(julkaisukohteet)
-	zip -r9 $@ $(nimi).tds.zip
-	cd $(tds) && zip -r9 ../../../$@ $(nimi)
+$(nimi).zip: $(tds)/$(nimi).tds.zip $(julkaisukohteet)
+	cd $(tds) && zip -r9 $@ $(nimi).tds.zip $(nimi)
+	mv $(tds)/$@ .
 
 ctan: $(nimi).zip
 
 install: $(julkaisukohteet)
-	mkdir -p $(texmf)
-	cp -r doc $(texmf)
+	mkdir -p $(texmf)/$(tds)
+	cp -r $(tds)/$(nimi) $(texmf)/$(tds)
 	mktexlsr $(texmf)
 
 uninstall:
@@ -66,7 +66,7 @@ uninstall:
 clean:
 	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls log out \
 		run.xml toc xdv)
-	rm -f texput.log $(nimi).zip $(nimi).tds.zip
+	rm -f texput.log $(nimi).zip
 	rm -f $(addsuffix .idx,$(asiahakemistot))
 	rm -f $(addsuffix .ind,$(asiahakemistot))
 	rm -f $(addsuffix .ilg,$(asiahakemistot))

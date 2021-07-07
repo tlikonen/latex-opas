@@ -21,6 +21,7 @@ ala-in-dek-sin
 ala-in-dek-sit
 ala-in-dek-si-toi-min-to
 ala-in-dek-siä
+ala-osaan
 ala-otsi-kon
 alku-osaa
 an-tiik-va
@@ -63,6 +64,7 @@ book-marks-open
 book-tabs
 bottom-rule
 break
+cap-tion
 cap-tions-finnish
 chapter-mark
 chapter-name
@@ -122,6 +124,10 @@ fancy-page-style
 fancy-vrb
 fbox-rule
 fcolor-box
+fig-ure
+fig-ure-name
+float
+float-row
 flush-bottom
 font-size
 font-spec
@@ -219,6 +225,7 @@ käyt-töön-ottoa
 käyt-töön-ot-toon
 kään-täjä-ohjel-mat
 kään-täjä-ohjel-milla
+label
 label-sep
 label-width
 la-don-ta-oh-jei-ta
@@ -234,7 +241,11 @@ let-ter
 lett-rine
 line-spread
 line-width
+list-fig-ure-name
+list-of-fig-ures
+list-of-tables
 list-par-indent
+list-table-name
 lisä-vaih-to-eh-toa
 lohko-lai-naus-ympä-ris-töt
 long-table
@@ -279,6 +290,7 @@ new-column-type
 new-com-mand
 new-counter
 new-en-vi-ron-ment
+new-float
 new-font-face
 new-font-fam-i-ly
 new-ge-om-e-try
@@ -438,6 +450,7 @@ säh-kö-pos-ti-osoit-tei-den
 säh-kö-pos-ti-osoit-tei-ta
 tab-col-sep
 table
+table-name
 table-of-con-tents
 tabu-lar
 tabu-larx
@@ -445,6 +458,7 @@ tabu-lary
 tau-luk-ko-ympä-ris-tö
 tau-luk-ko-ympä-ris-tön
 tau-luk-ko-ympä-ris-töt
+tau-luk-ko-ympä-ris-töä
 ta-van-omais-ten
 tavu-tus-algo-rit-mia
 teks-ti-alue
@@ -579,4 +593,5 @@ yleis-ohje
 yleis-yhdys-merk-ki
 ylä-in-dek-si
 ylä-in-dek-sit
+ylä-osaan
 ääntö-asu

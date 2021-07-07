@@ -3567,11 +3567,209 @@ kokeilemaan:
 \section{Leijuvat osat}
 \label{luku:leijuosat}
 
-...
+Leijuvat osat (engl. \englanti{\textit{float}}) ovat sellaisia
+dokumentin osia -- käytännössä ympäristöjä~--, joita ei ladota normaalin
+leipätekstin sekaan tiettyyn kohtaan. Ne ''leijuvat'' muun tekstin
+ulkopuolella, ja Latex huolehtii niiden sijoittamisesta. Leijuvilla
+osilla on yleensä kuvateksti, jonka alussa on sen tyyppi ja numero,
+esimerkiksi ''Kuva~1'' tai ''Taulukko 4.2''. Näiden perässä on
+varsinainen kuvateksti, joka kertoo kyseisen leijuvan osan sisällöstä
+tai merkityksestä. Leipätekstistä voi viitata leijuviin osiin
+käyttämällä ilmauksia kuten ''kuvassa~1''. Näissä hyödynnetään Latexin
+ristiviittaustoimintoja (luku \ref{luku:ristiviitteet}).
 
-% \listoffigures, \listoftables, omat listat
-% \listoffigurename, \listoftablename
-% newfloat-paketti
+Leijuvien osien keskinäinen järjestys säilyy osittain: samantyyppiset
+leijuvat osat, esimerkiksi kuvat, ladotaan aina siinä järjestyksessä
+kuin ne ovat lähdedokumentissa. Sen sijaan erityyppiset leijuvat osat
+saattavat sekoittua: esimerkiksi jokin taulukko saatetaan latoa ennen
+tiettyä kuvaa, vaikka ne olisivat lähdedokumentissa päinvastaisessa
+järjestyksessä. Latex pyrkii latomaan hyvännäköisiä sivuja, ja leijuvien
+osien sijoittelulla se voi vaikuttaa asiaan.
+
+Perus Latex tarjoaa kaksi erityyppistä leijuvaa osaa, kuvat ja taulukot,
+mutta \pakettim{newfloat}\-/ makropaketin avulla niitä voi tehdä lisää.
+Tässä oppaassa on käytössä myös tyyppi ''Esimerkki'', jota käytetään
+leijuvien Latex\-/ koodiesimerkkien toteuttamiseen. Seuraavissa
+alaluvuissa käsitellään ensin perus Latexin ominaisuudet ja asiaan
+liittyvät käsitteet. Sitten annetaan vinkkejä omien leijuvien osien
+tekemisestä ja asettelumahdollisuuksista muiden makropakettien avulla.
+
+\subsection{Leijuvat taulukot ja kuvat KESKEN}
+
+Käytännössä leijuvat osat ovat ympäristöjä, joiden sijoittelusta vastaa
+Latex eikä kirjoittaja. Tosin kirjoittajakin voi hieman vaikuttaa asiaan
+(luku \ref{luku:leijuosat_asetukset}). Ympäristö \ymparistom{table} on
+tarkoitettu taulukoille, ja ympäristö \ymparistom{figure} on kuville.
+Molemmat toimivat samoin, mutta esimerkissä \ref{esim:leijuosat_table}
+käytetään taulukkoa.
+
+\begin{esimerkki*}
+  \komentoi{arraystretch}
+  \komentoi{caption}
+  \komentoi{hline}
+  \komentoi{renewcommand}
+  \ymparistoi{center}
+  \ymparistoi{table}
+  \ymparistoi{tabular}
+
+\begin{koodilohko}
+\begin{table}
+  \begin{center}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{ll}
+      Upeita & Lukuja \\
+      \hline
+      324 & 33 \\
+      2   & 49 \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \caption{Upea kuvateksti.}
+\end{table}
+\end{koodilohko}
+
+  \caption{Leijuvan taulukon toteuttaminen \ymparisto{table}\-/
+    ympäristön avulla. Varsinainen taulukko syntyy ympäristön
+    \ymparisto{tabular} avulla}
+  \label{esim:leijuosat_table}
+\end{esimerkki*}
+
+Latex sinänsä ei ota kantaa siihen, mitä leijuva ympäristö sisältää, eli
+\ymparisto{table}\-/ ympäristön sisällä ei tarvitse olla
+taulukkoympäristöä (luku \ref{luku:taulukot}), eikä
+\ymparisto{figure}\-/ ympäristön sisällä ole pakko olla kuvaa (luku
+\ref{luku:grafiikka}). Valitut ympäristöt vaikuttavat kuitenkin
+kuvatekstiin: \ymparisto{table}\-/ ympäristön kuvatekstiin tulee suomen
+kieliasetuksilla sana ''Taulukko'', ja \ymparisto{figure}\-/
+ympäristössä se on ''Kuva''. Näiden muuttamista käsitellään asetusten
+yhteydessä luvussa \ref{luku:leijuosat_asetukset}.
+
+Kuvatekstit tehdään komennolla \komentom{caption}, joka sijoitetaan
+leijuvan ympäristön sisälle, kuten esimerkissä
+\ref{esim:leijuosat_table} on tehty. Komennolle annetaan yksi argumentti
+eli haluttu kuvateksti. Siihen ei pidä kirjoittaa leijuvan osan tyyppiä
+eikä numeroa (esim. ''Taulukko~3''), sillä nämä Latex tekee
+automaattisesti. \komento{caption}\-/ komennolle voi antaa myös
+valinnaisen argumentin, jolla ilmaistaan kuvatekstistä lyhyempi versio:
+
+\komentoi{caption}
+\begin{koodilohkosis}
+\caption[lyhyt kuvateksti]{varsinainen pitkä kuvateksti}
+\end{koodilohkosis}
+
+Varsinainen (pitkä) kuvateksti ladotaan aina leijuvan osan yhteyteen ja
+lyhempää versiota käytetään mahdollisesti luettelossa ja
+ristiviitteissä. Leijuvista osista voi nimittäin latoa automaattisen
+luettelon esimerkiksi dokumentin alkuun tai loppuun, ja luettelossa
+käytetään kuvatekstin lyhyttä versiota, jos sellainen on annettu. Myös
+ristiviittauksissa (luku \ref{luku:ristiviitteet}) voidaan käyttää
+kuvatekstiä, ja silloin niihin tulee lyhempi versio.
+
+Leijuvien osien luettelot voidaan latoa tyypeittäin: komennolla
+\komentom{listoftables} syntyy taulukkoluettelo ja komennolla
+\komentom{listoffigures} kuvaluettelo. Nämä muistuttavat
+sisällysluetteloita (luku \ref{luku:sisallysluettelo}), eli niille tulee
+automaattisesti otsikko kuten ''Taulukot'' ja ''Kuvat'' ja
+automaattisesti sisältö eli kaikki \komento{caption}\-/ komennolla
+ilmaistut (lyhyet) kuvatekstit.
+
+% table*, figure*
+
+\subsection{Sijoittelu ja asetuksia KESKEN}
+\label{luku:leijuosat_asetukset}
+
+Latex sijoittaa leijuvat osat yleensä sivun yläosaan, joskus alaosaan
+tai omalle sivulleen, jossa ei ole leipätekstiä lainkaan. Sijoitteluun
+voi vaikuttaa ympäristön valinnaisen argumentin avulla:
+
+\ymparistoi{figure}
+\begin{koodilohkosis}
+\begin{figure}[sijainti]
+  ...
+\end{figure}
+\end{koodilohkosis}
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+  \begin{tabular}{cl}
+    \toprule
+    \ots{Valitsin} & \ots{Merkitys} \\
+    \midrule
+    \rivi{t}{sivun yläosaan (\englanti{top})}
+    \rivi{b}{sivun alaosaan (\englanti{bottom})}
+    \rivi{p}{leijuvien osien sivulle}
+    \rivi{h}{mieluiten tähän kohtaan (\englanti{here})}
+    \rivi{H}{ehdottomasti tähän kohtaan (\paketti{floatrow}, \paketti{float})}
+    \rivi{!}{ei huomioida tiettyjä sijoittelurajoituksia}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Leijuvien osien sijoitteluun voi vaikuttaa ympäristön
+    valinnaisen argumentin avulla. Valitsin ''\koodi{H}'' on
+    \paketti{floatrow}\-/\ ja \paketti{float}\-/ pakettien ominaisuus}
+  \label{tlk:leijuosat_sijoittelukirjaimet}
+}
+
+Valinnainen argumentti ''\koodi{sijainti}'' on tietty merkki tai
+merkkien yhdistelmä, jolla vaikutetaan leijuvan osan sijoitteluun.
+Taulukossa \ref{tlk:leijuosat_sijoittelukirjaimet} ovat mahdolliset
+vaihtoehdot. Oletusarvo on ''\koodi{tbp}'', eli sen mukaan leijuva osa
+pyritään sijoittamaan ensisijaisesti sivun yläosaan (\koodi{t}) mutta
+mahdollisesti myös alaosaan (\koodi{b}) tai omalle sivulleen (\koodi{p})
+muiden leijuvien osien kanssa.
+
+Vaihtoehto ''\koodi{h}'' pyrkii latomaan leijuvan osan siihen kohtaan
+kuin se on lähdetiedostossa. Se on kuitenkin vain ehdotus eikä useinkaan
+toteudu: Latex lisää automaattisesti aina \koodi{h}\=/ valitsimen perään
+\koodi{t}:n eli sivun yläosaan sijoittamisen. Latex käyttää sitä, jos se
+saa sillä tavoin omasta mielestään paremman lopputuloksen. Lataamalla
+makropaketin \pakettim{floatrow}\avctan{floatrow} (tai yksinkertaisemman
+\paketti{float}\-/ paketin\avctan{float}) voi käyttää myös myös
+valitsinta ''\koodi{H}''. Se tarkoittaa ehdotonta vaatimusta, että juuri
+tähän kohtaan leijuva osa pitää sijoittaa. Tätä valitsinta ei voi
+yhdistää muiden valitsimien kanssa.
+
+% \textfloatsep, \floatsep, \intextsep, \bottomfraction,
+% \floatpagefraction, \textfraction, \topfraction, bottomnumber,
+% dbltopnumber, topnumber, totalnumber.
+%
+% \dbltopfraction, \dblfloatpagefraction, dblfloatsepå, dbltextfloatsep,
+% \dbltopnumber
+
+Kuvatekstissä näkyvät, leijuvan osan tyyppiä ilmaisevat sanat
+''Taulukko'' tai ''Kuva'' tulevat komennoista \komento{tablename} ja
+\komento{figurename}, jotka kirjoittaja voi määrittää uudelleen:
+
+\begin{koodilohkosis}
+\addto{\captionsfinnish}{
+  \renewcommand{\tablename}{Taulukko}
+  \renewcommand{\figurename}{Kuva}
+}
+\end{koodilohkosis}
+
+Edellä käytettiin \komento{addto}\-/ komentoa, joka kuuluu
+kielipaketteihin \paketti{polyglossia} ja \paketti{babel}. Sillä
+lisätään omia komentoja tietyn kielen asetuksiin, tässä suomen
+kieliasetuksiin (\komento{captionsfinnish}). Kieliasetuksia käsitellään
+luvussa \ref{luku:kieliasetukset}.
+
+
+
+\begin{koodilohkosis}
+\renewcommand{\listtablename}{Omat taulukot}
+\renewcommand{\listfigurename}{Omat Kuvat}
+\end{koodilohkosis}
+
+% !-sijoitteluvalitsin
+% \textfloatsep
+% \floatsep
+
+\subsection{Muut}
+
+% newfloat-paketti, omien leijuosien luettelot
+% floatrow-paketti
+% caption-paketti
 
 \section{Ristiviitteet}
 \label{luku:ristiviitteet}

@@ -78,13 +78,34 @@ on oltava yhteensopiva tämän lisenssin kanssa.)
 Kääntäminen ja asentaminen
 --------------------------
 
-Oppaan Latex-lähdetiedostojen kääntäminen PDF-dokumentiksi vaatii useita
-Latexin makropaketteja ja pari fonttia. Latexin jakelukokonaisuus
-[Texlive](https://tug.org/texlive/) sisältää kaiken tarvittavan.
-Esimerkiksi [Debian](https://www.debian.org) Linux -käyttöjärjestelmässä
-asennuspaketti `texlive-full` asentaa koko Texliven.
+Oppaan Latex-lähdetiedostojen kääntäminen eli latominen PDF-dokumentiksi
+vaatii useita Latexin makropaketteja ja pari fonttia. Latexin
+jakelukokonaisuus [Texlive](https://tug.org/texlive/) sisältää kaiken
+tarvittavan. Esimerkiksi [Debian](https://www.debian.org) Linux
+-käyttöjärjestelmässä asennuspaketti `texlive-full` asentaa koko
+Texliven.
 
-Pelkän PDF-tiedoston tekeminen on helpointa yhdellä `make`-komennolla:
+Oppaan voi latoa julkaisupaketin ja asennettujen tiedostojen avulla tai
+versionhallinnan tiedostojen pohjalta.
+
+
+### Julkaisupaketti
+
+Oppaan julkaisupaketin lähdetiedostot voi latoa PDF-tiedostoksi
+komennoilla `lualatex` ja `biber`. Komennot täytyy suorittaa seuraavassa
+järjestyksessä:
+
+    lualatex kaytannollista_latexia
+    biber    kaytannollista_latexia
+    lualatex kaytannollista_latexia
+    lualatex kaytannollista_latexia
+
+
+### Versionhallinta (Git)
+
+Git-versionhallintajärjestelmässä säilytettävä opas sisältää tiedoston
+`Makefile`, joka puolestaan sisältää kääntämisohjeet `make`-komennolle.
+PDF-tiedoston saa ladottua yhdellä komennolla:
 
     make
 
@@ -110,19 +131,11 @@ liittyviä tiedostoja.
 
 Kääntämishakemiston voi siivota alla olevilla komennoilla. Ensin
 mainittu komento poistaa useimmat väliaikaistiedostot mutta säilyttää
-oppaan PDF:n. Jälkimmäinen poistaa kaikki syntyneet tiedostot.
+oppaan PDF:n ja muut julkaisuun vaadittavat tiedostot. Jälkimmäinen
+poistaa kaikki syntyneet tiedostot.
 
     make clean
     make distclean
-
-Mikäli ei ole käytettävissä `make`-komentoa ja `Makefile`-tiedostoa, voi
-oppaan latoa myös komennoilla `lualatex` ja `biber`. Komennot täytyy
-suorittaa seuraavassa järjestyksessä:
-
-    lualatex kaytannollista_latexia
-    biber    kaytannollista_latexia
-    lualatex kaytannollista_latexia
-    lualatex kaytannollista_latexia
 
 
 Puutteita ja suunnitelmia
@@ -135,7 +148,8 @@ Puutteita ja suunnitelmia
   - `\marginpar`-komennon puutteet ja vaihtoehto `marginnote`
   - Lähdetiedostojen nimistä pitäisi mainita jossain: ei välilyöntejä.
     Ehkä on muitakin merkistörajoituksia.
-  - Moniosaiset lähdedokumentit: \input, \include yms.
+  - Komentojen ja makrojen käsitteitä pitäisi avata.
+  - Moniosaiset lähdedokumentit: `\input`, `\include` yms.
   - Makropakettien tekeminen.
   - Dokumenttiluokkien tekeminen.
-  - Käsitellään uusi fi-x-school-tavutuskaava.
+  - Käsitellään uusi `fi-x-school`-tavutuskaava.

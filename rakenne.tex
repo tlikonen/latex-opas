@@ -3572,7 +3572,7 @@ dokumentin osia -- käytännössä ympäristöjä~--, joita ei ladota normaalin
 leipätekstin sekaan tiettyyn kohtaan. Ne ''leijuvat'' muun tekstin
 ulkopuolella, ja Latex huolehtii niiden sijoittamisesta. Leijuvilla
 osilla on yleensä kuvateksti, jonka alussa on sen tyyppi ja numero,
-esimerkiksi ''Kuva~1'' tai ''Taulukko 4.2''. Näiden perässä on
+esimerkiksi ''\figurename~1'' tai ''\tablename\ 4.2''. Näiden perässä on
 varsinainen kuvateksti, joka kertoo kyseisen leijuvan osan sisällöstä
 tai merkityksestä. Leipätekstistä voi viitata leijuviin osiin
 käyttämällä ilmauksia kuten ''kuvassa~1''. Näissä hyödynnetään Latexin
@@ -3640,15 +3640,15 @@ taulukkoympäristöä (luku \ref{luku:taulukot}), eikä
 \ymparisto{figure}\-/ ympäristön sisällä ole pakko olla kuvaa (luku
 \ref{luku:grafiikka}). Valitut ympäristöt vaikuttavat kuitenkin
 kuvatekstiin: \ymparisto{table}\-/ ympäristön kuvatekstiin tulee suomen
-kieliasetuksilla sana ''Taulukko'', ja \ymparisto{figure}\-/
-ympäristössä se on ''Kuva''. Näiden muuttamista käsitellään asetusten
-yhteydessä luvussa \ref{luku:leijuosat_asetukset}.
+kieliasetuksilla sana ''\tablename'', ja \ymparisto{figure}\-/
+ympäristössä se on ''\figurename''. Näiden muuttamista käsitellään
+asetusten yhteydessä luvussa \ref{luku:leijuosat_asetukset}.
 
 Kuvatekstit tehdään komennolla \komentom{caption}, joka sijoitetaan
 leijuvan ympäristön sisälle, kuten esimerkissä
 \ref{esim:leijuosat_table} on tehty. Komennolle annetaan yksi argumentti
 eli haluttu kuvateksti. Siihen ei pidä kirjoittaa leijuvan osan tyyppiä
-eikä numeroa (esim. ''Taulukko~3''), sillä nämä Latex tekee
+eikä numeroa (esim. ''\tablename~3''), sillä nämä Latex tekee
 automaattisesti. \komento{caption}\-/ komennolle voi antaa myös
 valinnaisen argumentin, jolla ilmaistaan kuvatekstistä lyhyempi versio:
 
@@ -3669,8 +3669,8 @@ Leijuvien osien luettelot voidaan latoa tyypeittäin: komennolla
 \komentom{listoftables} syntyy taulukkoluettelo ja komennolla
 \komentom{listoffigures} kuvaluettelo. Nämä muistuttavat
 sisällysluetteloita (luku \ref{luku:sisallysluettelo}), eli niille tulee
-automaattisesti otsikko kuten ''Taulukot'' ja ''Kuvat'' ja
-automaattisesti sisältö eli kaikki \komento{caption}\-/ komennolla
+automaattisesti otsikko kuten ''\listtablename'' ja ''\listfigurename''
+ja automaattisesti sisältö eli kaikki \komento{caption}\-/ komennolla
 ilmaistut (lyhyet) kuvatekstit.
 
 % table*, figure*
@@ -3738,8 +3738,9 @@ yhdistää muiden valitsimien kanssa.
 % \dbltopnumber
 
 Kuvatekstissä näkyvät, leijuvan osan tyyppiä ilmaisevat sanat
-''Taulukko'' tai ''Kuva'' tulevat komennoista \komento{tablename} ja
-\komento{figurename}, jotka kirjoittaja voi määrittää uudelleen:
+''\tablename'' tai ''\figurename'' tulevat komennoista
+\komento{tablename} ja \komento{figurename}, jotka kirjoittaja voi
+määrittää uudelleen:
 
 \begin{koodilohkosis}
 \addto{\captionsfinnish}{

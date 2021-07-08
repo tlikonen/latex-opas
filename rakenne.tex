@@ -229,9 +229,10 @@ Jotkin Latexin valmiit ympäristöt tekevät juuri näin eli käyttävät
 Sivun alueella äärettömästi venyvän pystysuuntaisen välin saa komennolla
 \komentom{vfill}. Mitan luonnollinen arvo on nolla, mutta se voi venyä
 niin, että se täyttää kaiken tyhjän tilan sivulla. \komento{vfill}\-/
-komento tarkoittaa käytännössä samaa kuin \komento[\{0mm plus
-1fill\}]{vspace} \=/komento. Texin venyviä mittoja ja välejä käsitellään
-tarkemmin luvussa \ref{luku:venyvat_mitat}.
+komento tarkoittaa käytännössä samaa kuin
+\komento{vspace}\komentoarg{0mm plus 1fill} \=/komento. Texin venyviä
+mittoja ja välejä käsitellään tarkemmin luvussa
+\ref{luku:venyvat_mitat}.
 
 \subsection{Ensimmäisen rivin sisennys}
 \label{luku:ensimmaisen_rivin_sisennys}
@@ -1533,8 +1534,8 @@ Sivunvaihdon todennäköisyyteen tietyssä kohdassa voi vaikuttaa
 komennoilla \komentom{pagebreak} ja \komentom{nopagebreak}. Kummallekin
 voi antaa hakasulkeissa valinnaisen argumentin, joka on luku 0\==4.
 Nolla tarkoittaa pienintä todennäköisyyttä sivunvaihdolle
-(\komento[[0{]}]{pagebreak}) tai sen välttämiselle
-(\komento[[0{]}]{nopagebreak}). Luku neljä (joka on oletusarvo)
+(\komento{pagebreak}\komentoargv{0}) tai sen välttämiselle
+(\komento{nopagebreak}\komentoargv{0}). Luku neljä (joka on oletusarvo)
 tarkoittaa, että sivunvaihto pakotetaan tai estetään siinä kohdassa.
 Näiden komentojen tarkoitus on kertoa ladonta\-/ algoritmille vihje,
 kuinka toivottavaa sivunvaihto on tietyssä kohdassa. Jos ei käytä
@@ -3150,7 +3151,7 @@ merkillä, ja taulukon rivi täytyy päättää aina \komento{\keno}\=/
 komentoon. Tälle rivinvaihtokomennolle voi antaa hakasulkeissa yhden
 argumentin. Se on mitta ja tarkoittaa, kuinka paljon ylimääräistä
 pystysuuntaista tyhjää tilaa halutaan rivin jälkeen, esimerkiksi
-\komento[[.5ex{]}]{\keno}.
+\komento{\keno}\komentoargv{.5ex}.
 
 Vaakasuuntainen, koko taulukon levyinen viiva tehdään komennolla
 \komento{hline} ja määrämittaisia viivoja komennolla \komento{cline}.
@@ -3928,7 +3929,7 @@ esimerkkiteos on peräisin esimerkistä \ref{esim:thebibliography}.
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[2]{\komento[\{\ldots\}]{#1} & #2 \\}
+  \renewcommand{\rivi}[2]{\komento{#1}\komentoarg{\dots} & #2 \\}
   \begin{tabular}{ll}
     \toprule
     \ots{Komento} & \ots{Esimerkki} \\
@@ -4322,7 +4323,7 @@ viittausta.
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[2]{\komento[\{\ldots\}]{#1} & #2 \\}
+  \renewcommand{\rivi}[2]{\komento{#1}\komentoarg{\dots} & #2 \\}
   \begin{tabular}{ll}
     \toprule
     \ots{Komento} & \ots{Esimerkki} \\

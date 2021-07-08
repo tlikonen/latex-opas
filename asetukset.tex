@@ -1314,7 +1314,7 @@ komennon vaikutus koskee vain argumenttina olevaa tekstiä.
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[4]{%
-    \komento{#1} & \komento[\{\dots\}]{#2} & #3 & #4 \\}
+    \komento{#1} & \komento{#2}\komentoarg{\dots} & #3 & #4 \\}
   \begin{tabular}{llll}
     \toprule
     \multicolumn{2}{l}{\ots{Komento}}
@@ -2412,7 +2412,7 @@ tilanteen. Esimerkiksi ilmauksessa \emph{matkasuunnitelma ja
   \mbox{-aika}} ei riviä saa katkaista sanassa \emph{\mbox{-aika}}
 olevan yhdysmerkin jälkeen, koska rivin loppuun jäisi yksinäinen
 yhdysmerkki. Latexin peruskeinoilla sana täytyy laittaa näkymättömään
-laatikkoon, joka pitää merkit yhdessä: \mbox{\komento[\{-aika\}]{mbox}}.
+laatikkoon, joka pitää merkit yhdessä: \komento{mbox}\komentoarg{-aika}.
 Toinen vaihtoehto on sitovan yhdysmerkin käyttö, jota käsitellään
 seuraavassa alaluvussa.
 
@@ -2535,13 +2535,13 @@ matka\-/\ ja aika\-/arvio
 
 \subsection{Tavutus sanan reunasta}
 
-Asetukset \komento[~N]{lefthyphenmin} ja \komento[~N]{righthyphenmin}
-vaikuttavat tavutukseen sanan reunoissa. Argumentti \koodi{N} on
-positiivinen kokonaisluku, ja se määrittelee, kuinka monta merkkiä
-vähintään sanan vasemmasta tai oikeasta reunasta pidetään yhdessä.
-Oletusarvot ovat kielikohtaisia ja määritellään
-\paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketeissa. Suomen
-kielessä kumpikin asetus on kaksi (2) merkkiä.
+Asetukset \komento{lefthyphenmin}\komentoj{~N} ja
+\komento{righthyphenmin}\komentoj{~N} vaikuttavat tavutukseen sanan
+reunoissa. Argumentti \koodi{N} on positiivinen kokonaisluku, ja se
+määrittelee, kuinka monta merkkiä vähintään sanan vasemmasta tai
+oikeasta reunasta pidetään yhdessä. Oletusarvot ovat kielikohtaisia ja
+määritellään \paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketeissa.
+Suomen kielessä kumpikin asetus on kaksi (2) merkkiä.
 
 Nämä asetukset alustetaan kielikohtaisiin oletusarvoihin aina, kun
 kieliasetukset tulevat voimaan. Näin on esimerkiksi dokumentin

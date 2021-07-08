@@ -42,13 +42,13 @@ erikoismerkit suojataan eli saadaan ladottua dokumenttiin sellaisenaan.
     \midrule
     \koodi{\%} & \komento{\%} \\
     \koodi{\$} & \komento{\$} & \komento{textdollar} \\
-    \koodi{\^{}} & \komento[\{\}]{\^{}} & \komento{textasciicircum} \\
+    \koodi{\^{}} & \komento{\^{}}\komentoarg{} & \komento{textasciicircum} \\
     \koodi{\_} & \komento{\_} & \komento{textunderscore} \\
     \koodi{\#} & \komento{\#} \\
     \koodi{\&} & \komento{\&} \\
     \koodi{\{} & \komento{\{} & \komento{textbraceleft} \\
     \koodi{\}} & \komento{\}} & \komento{textbraceright} \\
-    \koodi{\~{}} & \komento[\{\}]{\~{}} & \komento{textasciitilde} \\
+    \koodi{\~{}} & \komento{\~{}}\komentoarg{} & \komento{textasciitilde} \\
     \koodi{\keno} && \komento{textbackslash} \\
     \bottomrule
   \end{tabular}
@@ -306,7 +306,7 @@ osoittava merkki (<<) tehdään kahdella pienempi kuin \=/merkillä
 Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
 \komentom{textquotedbl} ja \komentom{textquotesingle}. Yksittäinen
-gravisaksentti (\`{}) tehdään komennolla \komento[\{\}]{`}.
+gravisaksentti (\`{}) tehdään komennolla \komento{`}\komentoarg{}.
 Lainausmerkkien merkintätapoja ja komentoja on koottu taulukkoon
 \ref{tlk:erikoismerkit-lainaus}
 (s.~\pageref{tlk:erikoismerkit-lainaus}). Toisaalta kielikohtaiset
@@ -401,7 +401,7 @@ merkintätavoilla eikä Unicode\-/merkeillä.
 
 Silloin kun todella täytyy latoa kaksi tai kolme peräkkäistä
 yhdysmerkkiä, voi käyttää tasalevyistä fonttia
-(\komento[\{--\}]{texttt}), joka oletuksena kytkee pois Latexin
+(\komento{texttt}\komentoarg{--}), joka oletuksena kytkee pois Latexin
 ajatusviivatoiminnon. Saman asetuksen saa kyllä mihin tahansa fonttiin,
 kun poistaa fontista niin sanotut Tex\-/ligatuurit asetuksella
 \koodi{Liga\-tures=\katk TeX\-Reset}. Väliaikaisesti asetus tehdään
@@ -520,7 +520,8 @@ ja \komento{LaTeX}.
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[4][]{{\erikoisfontti #3} & \komento[#1]{#2} & #4}
+  \renewcommand{\rivi}[4][]{{\erikoisfontti #3}
+    & \komento{#2}\komentoj{#1} & #4}
   \begin{tabular}{cllcll}
     \toprule
     \multicolumn{2}{l}{\ots{Merkki}}
@@ -639,9 +640,9 @@ ja \komento{LaTeX}.
     \rivi{\texttrademark}{texttrademark}{tavaramerkki}
     \rivi[\komento{dag}]{\dag}{textdagger}{risti}
     \rivi[\komento{ddag}]{\ddag}{textdaggerdbl}{kaksoisristi}
-    \rivi[\komento{\^{}}\textcolor{komento}{\koodi{\{\}}}]
+    \rivi[\komento{\^{}}\komentoarg{}]
     {\textasciicircum}{textasciicircum}{sirkumfleksi}
-    \rivi[\komento{\~{}}\textcolor{komento}{\koodi{\{\}}}]
+    \rivi[\komento{\~{}}\komentoarg{}]
     {\textasciitilde}{textasciitilde}{tilde}
     \rivi{\textasteriskcentered}{textasteriskcentered}
     {rivinkeskinen asteriski, tähti}
@@ -716,8 +717,8 @@ hakasulkeiden sisään. Hakasulkeita ei voi suojata kenoviivalla, koska
 niillä luodaan matematiikkatilassa (luku \ref{luku:matematiikka}) oleva
 tekstilohko. Valinnaisen argumentin sisään saa hakasulkeen, kun sen
 kirjoittaa aaltosulkeiden sisään. Esimerkiksi komennon
-\komentox[{[}\{{]}\}{]}]{komento} valinnaiseksi argumentiksi tulee yksi
-\koodi{]}-merkki.
+\komentox{komento}\komentoargv{\{]\}} valinnaiseksi argumentiksi tulee
+lopulta yksi \koodi{]}-merkki.
 
 Komennon yhteydessä sanavälejä käsitellään hieman poikkeuksellisesti.
 Esimerkiksi komennon nimen perässä olevat sanavälit syödään pois, jos
@@ -734,10 +735,11 @@ La\komento   tex
 \end{tulossis}
 
 Jos haluaa komennon jälkeen yhden sanavälin, täytyy kirjoittaa komennon
-nimen jälkeen aaltosulkeet (\komentox[\{\}]{komento}) tai kenoviiva ja
-sanaväli (\komentox[\keno~]{komento}). Komennon nimen ja argumenttien
-välissä voi olla sanavälejä, ja ne kaikki syödään pois. Komennon ja sen
-argumentit voi siis kirjoittaa vaikka seuraavalla tavalla:
+nimen jälkeen aaltosulkeet (\komentox{komento}\komentoarg{}) tai
+kenoviiva ja sanaväli (\komentox{komento}\komentoj{\keno~}). Komennon
+nimen ja argumenttien välissä voi olla sanavälejä, ja ne kaikki syödään
+pois. Komennon ja sen argumentit voi siis kirjoittaa vaikka seuraavalla
+tavalla:
 
 \begin{koodilohkosis}
 \komento  [valinnainen]
@@ -1600,12 +1602,12 @@ Taulukon \ref{tlk:laskurien_latominen} komentojen lisäksi laskuriin
 liittyvän arvon voi latoa komennolla, joka alkaa kirjaimilla
 \komentox{the} ja jatkuu laskurin nimellä. Esimerkiksi komento
 \komento{thepage} latoo sivunumeron eli tekee käytännössä saman asian
-kuin komento \komento[\{page\}]{arabic}. Aina nämä eivät kuitenkaan ole
-sama asia, ja \komentox{the}\-/alkuinen komento voi olla määritelty
-toisellakin tavalla. Esimerkiksi tämän oppaan leijuvat taulukot
-numeroidaan laskurilla \laskuri{table}, mutta komento \komento{thetable}
-latoo ensin pääluvun ja sen perään pisteen ja taulukon numeron.
-Viimeisin taulukko on numeroltaan \thetable{} eli
+kuin komento \komento{arabic}\komentoarg{page}. Aina nämä eivät
+kuitenkaan ole sama asia, ja \komentox{the}\-/alkuinen komento voi olla
+määritelty toisellakin tavalla. Esimerkiksi tämän oppaan leijuvat
+taulukot numeroidaan laskurilla \laskuri{table}, mutta komento
+\komento{thetable} latoo ensin pääluvun ja sen perään pisteen ja
+taulukon numeron. Viimeisin taulukko on numeroltaan \thetable{} eli
 pääluvun~\arabic{chapter} taulukko~\arabic{table}.
 
 Jos laskurin arvoa tarvitaan Latexin teknisessä tilanteessa eikä

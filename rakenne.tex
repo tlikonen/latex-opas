@@ -1397,20 +1397,20 @@ argumenttien rakenteesta on seuraavassa esimerkki:
 \definecolor{nimi}{välimalli}{parametrit}
 \end{koodilohkosis}
 
-Komennon argumentti ''\koodi{nimi}'' on kirjoittajan itse valitsema
-nimi, ja se voi liittyä esimerkiksi värin käyttötarkoitukseen
-(''nuoli'') tai värin yleiseen nimeen (''keltainen''). Argumentti
-''\koodi{väri\-malli}'' tarkoittaa värin ilmaisemisen tapaa. Niitä on
-useita erilaisia, mutta yleisimmät on koottu taulukkoon
-\ref{tlk:varimalleja}. Eri malleilla on eri määrä parametreja, joilla
-ilmaistaan värin ominaisuuksia. Kunkin parametrin arvo on yleensä
-desimaaliluku 0\==1, mutta \koodi{HTML}\-/ värimallissa parametrit
-ilmaistaan yhtenä kolmen kaksinumeroisen heksadesimaaliluvun sarjana
-\textsc{html}\-/ merkintäkielen tavoin. Värin parametrit kirjoitetaan
-komennon argumenttiin ''\koodi{para\-metrit}'' ja ne erotetaan
-toisistaan pilkulla. Taulukon \ref{tlk:varimalleja}
-Esimerkki\-/sarakkeessa on parametrien antamisesta esimerkki. Muista
-värimalleista voi lukea \paketti{xcolor}\-/ paketin ohjekirjasta.
+Komennon argumentti \koodil{nimi} on kirjoittajan itse valitsema nimi,
+ja se voi liittyä esimerkiksi värin käyttötarkoitukseen (''nuoli'') tai
+värin yleiseen nimeen (''keltainen''). Argumentti \koodil{väri\-malli}
+tarkoittaa värin ilmaisemisen tapaa. Niitä on useita erilaisia, mutta
+yleisimmät on koottu taulukkoon \ref{tlk:varimalleja}. Eri malleilla on
+eri määrä parametreja, joilla ilmaistaan värin ominaisuuksia. Kunkin
+parametrin arvo on yleensä desimaaliluku 0\==1, mutta \koodi{HTML}\-/
+värimallissa parametrit ilmaistaan yhtenä kolmen kaksinumeroisen
+heksadesimaaliluvun sarjana \textsc{html}\-/ merkintäkielen tavoin.
+Värin parametrit kirjoitetaan komennon argumenttiin
+\koodil{para\-metrit} ja ne erotetaan toisistaan pilkulla. Taulukon
+\ref{tlk:varimalleja} Esimerkki\-/sarakkeessa on parametrien antamisesta
+esimerkki. Muista värimalleista voi lukea \paketti{xcolor}\-/ paketin
+ohjekirjasta.
 
 Kun värit on määritelty, niitä voi käyttää eri komentojen yhteydessä.
 Tekstin väri vaihdetaan toiseksi komennolla \komentom{color}, josta on
@@ -1811,9 +1811,9 @@ tavalla:
 \end{koodilohkosis}
 
 Edellä olevan esimerkin komento \komentom{addcontentsline} lisää
-merkinnän sisällysluetteloon (''\koodi{toc}'', engl.
+merkinnän sisällysluetteloon (\koodil{toc}, engl.
 \englanti{\textit{table of contents}}). Merkintä on tasoltaan
-''\koodi{section}'' eli vastaa muita \komento{section}\-/ komennolla
+\koodil{section} eli vastaa muita \komento{section}\-/ komennolla
 syntyviä sisällysluettelon kohtia. Komento \komentom{phantomsection}
 kuuluu \paketti{hyperref}\-/ pakettiin, ja se lisää näkymättömän
 ankkurin tähän kohtaan dokumentissa. Sitä tarvitaan, jotta
@@ -2638,19 +2638,19 @@ vaikutetaan luetelman asetuksiin.
 \end{list}
 \end{koodilohkosis}
 
-Edellisen esimerkin argumentti ''\koodi{merk\-ki}'' sisältää tekstiä tai
+Edellisen esimerkin argumentti \koodil{merk\-ki} sisältää tekstiä tai
 koodia, jonka muodostaa luetelmakohdan merkin. Numeroimattomassa
 luetelmassa siihen voi laittaa esimerkiksi luetelmaympyrän eli komennon
 \komento{textbullet} tai ajatusviivan (\koodi{--}). Numeroidussa
 luetelmassa siihen kirjoitetaan komento, joka latoo jonkin laskurin
 arvon.
 
-\ymparisto{list}\-/ ympäristön toinen argumentti
-''\koodi{ase\-tuk\-set}'' sisältää mitä hyvänsä koodia, jolla
-vaikutetaan ympäristön asetuksiin. Tyypillisesti siinä määritellään
-käytettävä luetelmalaskuri sekä asetetaan luetelman ulkoasuun
-vaikuttavat mitat sopivaksi. Mahdollisesti siinä myös määritellään
-luetelmamerkkien latomiseen vaikuttava komento \komento{makelabel}.
+\ymparisto{list}\-/ ympäristön toinen argumentti \koodil{ase\-tuk\-set}
+sisältää mitä hyvänsä koodia, jolla vaikutetaan ympäristön asetuksiin.
+Tyypillisesti siinä määritellään käytettävä luetelmalaskuri sekä
+asetetaan luetelman ulkoasuun vaikuttavat mitat sopivaksi. Mahdollisesti
+siinä myös määritellään luetelmamerkkien latomiseen vaikuttava komento
+\komento{makelabel}.
 
 \begin{esimerkki*}
   \ymparistoi{list}
@@ -3034,14 +3034,13 @@ seuraava:
 \end{tabular}
 \end{koodilohkosis}
 
-Ympäristön valinnainen argumentti ''\koodi{sijainti}'' määrittelee
+Ympäristön valinnainen argumentti \koodil{sijainti} määrittelee
 taulukkoympäristön sijainnin pystysuunnassa, jos se on samassa
-kappaleessa muun tekstin kanssa. Oletusarvo on ''\koodi{c}''
+kappaleessa muun tekstin kanssa. Oletusarvo on \koodil{c}
 (\englanti{center}), joka tarkoittaa, että pystysuunnassa taulukon
-peruslinja on sen keskellä. Muut vaihtoehdot ovat ''\koodi{t}''
-(\englanti{top}), eli taulukon peruslinja on yläreunassa, ja
-''\koodi{b}'' (\englanti{bottom}), eli taulukon peruslinja on sen
-alareunassa.
+peruslinja on sen keskellä. Muut vaihtoehdot ovat \koodil{t}
+(\englanti{top}), eli taulukon peruslinja on yläreunassa, ja \koodil{b}
+(\englanti{bottom}), eli taulukon peruslinja on sen alareunassa.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -3053,12 +3052,11 @@ alareunassa.
     \rivi{l}{vasemmalle tasattu sarake (\englanti{left})}
     \rivi{c}{keskitetty sarake (\englanti{center})}
     \rivi{r}{oikealle tasattu sarake (\englanti{right})}
-    \rivi{p\{m\}}{sarake, jonka leveys on mitta ''\koodi{m}''}
+    \rivi{p\{m\}}{sarake, jonka leveys on mitta \koodil{m}}
     \midrule
     \rivi{|}{sarakkeiden välissä pystyviiva}
     \rivi{@\{…\}}{sarakkeiden välissä olevaa tekstiä tai komentoja}
-    \rivi{*\{n\}\{s\}}{toistetaan ''\koodi{n}'' kertaa sarakkeet
-    ''\koodi{s}''}
+    \rivi{*\{n\}\{s\}}{toistetaan \koodil{n} kertaa sarakkeet \koodil{s}}
     \bottomrule
   \end{tabular}
 }{
@@ -3066,34 +3064,34 @@ alareunassa.
   \label{tlk:taulukko_sarakemerkit}
 }
 
-Ensimmäinen pakollinen argumentti ''\koodi{sarakkeet}'' määrittelee
+Ensimmäinen pakollinen argumentti \koodil{sarakkeet} määrittelee
 taulukon sarakkeiden määrän ja tyypin. Ne ilmaistaan tietyillä
 kirjaimilla tai muilla merkeillä, jotka on koottu taulukkoon
 \ref{tlk:taulukko_sarakemerkit}. Taulukon neljä ensimmäistä tyyppiä
-''\koodi{lcrp}'' määrittelevät, millaisesta sarakkeesta on kyse.
-Syntyvässä taulukossa tulee olemaan niin monta saraketta kuin näitä on
-ympäristön ''\koodi{sarakkeet}''\-/ argumentissa. Kolme ensin mainittua
-luovat sarakkeen, jonka leveys määräytyy sarakkeen leveimmän solun
-perusteella. Neljäs eli saraketyyppi ''\koodi{p}'' tarvitsee
-aaltosulkeissa argumentiksi mitan (luku \ref{luku:mitat}), ja sillä
-ilmaistaan sarakkeen kiinteä leveys. Tässä saraketyypissä teksti
-tasataan solun molemmista reunoista eli sanavälit voivat venyä.
+\koodil{lcrp} määrittelevät, millaisesta sarakkeesta on kyse. Syntyvässä
+taulukossa tulee olemaan niin monta saraketta kuin näitä on ympäristön
+\koodil{sarakkeet}\-/ argumentissa. Kolme ensin mainittua luovat
+sarakkeen, jonka leveys määräytyy sarakkeen leveimmän solun perusteella.
+Neljäs eli saraketyyppi \koodil{p} tarvitsee aaltosulkeissa argumentiksi
+mitan (luku \ref{luku:mitat}), ja sillä ilmaistaan sarakkeen kiinteä
+leveys. Tässä saraketyypissä teksti tasataan solun molemmista reunoista
+eli sanavälit voivat venyä.
 
-Merkit ''\koodi{|}'' ja ''\koodi{@}'' voi sijoittaa edellä mainittujen
+Merkit \koodil{|} ja \koodil{@} voi sijoittaa edellä mainittujen
 saraketyyppien väliin tai ennen ensimmäistä saraketta tai viimeisen
 sarakkeen jälkeen. Ensin mainittu tekee sarakkeiden väliin pystyviivan.
 Viiva yltää taulukon kaikille riveille, mutta komennolla
 \komento{multicolumn} voi tehdä rivikohtaisia poikkeuksia. Tätä komentoa
-käsitellään myöhemmin. Merkki ''\koodi{@}'' tarvitsee argumentin
+käsitellään myöhemmin. Merkki \koodil{@} tarvitsee argumentin
 aaltosulkeissa. Se voi olla mitä hyvänsä tekstiä tai komentoja, jotka
 halutaan suorittaa joka rivillä sarakkeiden välissä.
 
-Sarakemerkki ''\koodi{*}'' on vain keino toistaa tiettyjä
-sarakemäärityksiä useamman kerran. Se tarvitsee aaltosulkeissa kaksi
-argumenttia: ensimmäinen on luku, ja toinen sisältää mitä hyvänsä edellä
-mainittuja saraketyyppejä. Nämä sarakkeet toistuvat luvun ilmaiseman
-määrän. Esimerkiksi ''\koodi{*\{3\}\{rl|\}}'' tarkoittaa samaa kuin
-''\koodi{rl|rl|rl|}''.
+Sarakemerkki \koodil{*} on vain keino toistaa tiettyjä sarakemäärityksiä
+useamman kerran. Se tarvitsee aaltosulkeissa kaksi argumenttia:
+ensimmäinen on luku, ja toinen sisältää mitä hyvänsä edellä mainittuja
+saraketyyppejä. Nämä sarakkeet toistuvat luvun ilmaiseman määrän.
+Esimerkiksi \koodil{*\{3\}\{rl|\}} tarkoittaa samaa kuin
+\koodil{rl|rl|rl|}.
 
 \begin{esimerkki*}
   \komentoi{\keno}
@@ -3281,16 +3279,16 @@ sarakemääritysten tekemiseen. Komentoa käytetään seuraavasti:
 \end{koodilohkosis}
 
 Komennon \komento{multicolumn} voi sijoittaa mihin hyvänsä taulukon
-soluun. Komennon ensimmäinen argumentti ''\koodi{n}'' on luku ja
-ilmaisee, kuinka monen sarakkeen alueeseen vaikutetaan. Toinen
-argumentti ''\koodi{sarak\-keet}'' sisältää uuden sarakemäärittelyn
-tälle alueelle, ja se tehdään taulukon \ref{tlk:taulukko_sarakemerkit}
-merkkien avulla. Kolmas argumentti on teksti, joka ladotaan tähän
-uudella tavalla määriteltyyn alueeseen.
+soluun. Komennon ensimmäinen argumentti \koodil{n} on luku ja ilmaisee,
+kuinka monen sarakkeen alueeseen vaikutetaan. Toinen argumentti
+\koodil{sarak\-keet} sisältää uuden sarakemäärittelyn tälle alueelle, ja
+se tehdään taulukon \ref{tlk:taulukko_sarakemerkit} merkkien avulla.
+Kolmas argumentti on teksti, joka ladotaan tähän uudella tavalla
+määriteltyyn alueeseen.
 
 Edellä on käsitelty vain soluja, joissa on yksirivinen teksti, mutta
 tietyissä tilanteissa yhteen soluun voidaan latoa useampia rivejä.
-Saraketyyppi~''\koodi{p}'' (taulukko \ref{tlk:taulukko_sarakemerkit}) on
+Saraketyyppi~\koodil{p} (taulukko \ref{tlk:taulukko_sarakemerkit}) on
 leveydeltään kiinteä, ja jos solun sisältö ei mahdu kyseiseen tilaan, se
 pyritään jakamaan useammalle riville. Sanoja mahdollisesti katkaistaan
 tavurajojen kohdalta. Myös \komentom{newline}\-/ komennolla voi vaihtaa
@@ -3327,12 +3325,12 @@ komentoa. Komennon pakolliset argumentit ovat seuraavat:
 \multirow{n}{leveys}{teksti}
 \end{koodilohkosis}
 
-Ensimmäinen argumentti ''\koodi{n}'' on luku, joka ilmaisee, kuinka
-monen rivin alueelle solu levitetään. Toinen argumentti
-''\koodi{leveys}'' on tekstin leveyttä ilmaiseva mitta. Argumentiksi voi
-kirjoittaa pelkän tähden (\koodi{*}), jolloin käytetään tekstin
-luonnollista leveyttä. Kolmas argumentti on teksti, joka ladotaan tähän
-pystysuunnassa laajennettuun soluun.
+Ensimmäinen argumentti \koodil{n} on luku, joka ilmaisee, kuinka monen
+rivin alueelle solu levitetään. Toinen argumentti \koodil{leveys} on
+tekstin leveyttä ilmaiseva mitta. Argumentiksi voi kirjoittaa pelkän
+tähden (\koodi{*}), jolloin käytetään tekstin luonnollista leveyttä.
+Kolmas argumentti on teksti, joka ladotaan tähän pystysuunnassa
+laajennettuun soluun.
 
 Komennolla on myös valinnaisia argumentteja, jotka ilmaistaan
 hakasulkeiden avulla. Tässä niistä tärkeimmät:
@@ -3342,13 +3340,13 @@ hakasulkeiden avulla. Tässä niistä tärkeimmät:
 \multirow[sijainti]{n}{leveys}[pysty]{teksti}
 \end{koodilohkosis}
 
-Edellisen esimerkin valinnainen argumentti ''\koodi{sijainti}'' on
-kirjain, jolla ilmaistaan solun sisällön pystysuuntainen asemointi ylös,
-keskelle tai alas: ''\koodi{t}'' (\englanti{top}), ''\koodi{c}''
-(\englanti{center}, oletus) tai ''\koodi{b}'' (\englanti{bottom}).
-Valinnainen argumentti ''\koodi{pysty}'' on mitta, jolla hienosäädetään
-solun sisällön sijaintia pystysuunnassa. Positiivinen mitta siirtää
-sisältöä ylöspäin, negatiivinen alaspäin.
+Edellisen esimerkin valinnainen argumentti \koodil{sijainti} on kirjain,
+jolla ilmaistaan solun sisällön pystysuuntainen asemointi ylös, keskelle
+tai alas: \koodil{t} (\englanti{top}), \koodil{c} (\englanti{center},
+oletus) tai \koodil{b} (\englanti{bottom}). Valinnainen argumentti
+\koodil{pysty} on mitta, jolla hienosäädetään solun sisällön sijaintia
+pystysuunnassa. Positiivinen mitta siirtää sisältöä ylöspäin,
+negatiivinen alaspäin.
 
 Komennon muista mahdollisuuksista kannattaa lukea \paketti{multirow}\-/
 paketin ohjekirjasta. Esimerkki \ref{esim:taulukko_multirow}
@@ -3429,12 +3427,12 @@ samanlaista:
 \end{koodilohkosis}
 
 Ympäristö \ymparisto{tabularx} sisältää yhden uuden
-saraketyypin:~''\koodi{X}'' (vrt. taulukko
+saraketyypin:~\koodil{X} (vrt. taulukko
 \ref{tlk:taulukko_sarakemerkit}). Tämä saraketyyppi toimii kuten
-tyyppi~''\koodi{p}'', mutta sille ei anneta argumentiksi mittaa, vaan
-sen leveys on äärettömästi venyvä. Tämäntyyppiset sarakkeet täyttävät
-siis kaiken vapaana olevan tilan, ja jos niitä on useita, ne ovat
-oletuksena keskenään yhtä leveitä. Tämä ilmenee seuraavasta esimerkistä:
+tyyppi~\koodil{p}, mutta sille ei anneta argumentiksi mittaa, vaan sen
+leveys on äärettömästi venyvä. Tämäntyyppiset sarakkeet täyttävät siis
+kaiken vapaana olevan tilan, ja jos niitä on useita, ne ovat oletuksena
+keskenään yhtä leveitä. Tämä ilmenee seuraavasta esimerkistä:
 
 \komentoi{hline}
 \mittai{linewidth}
@@ -3452,7 +3450,7 @@ oletuksena keskenään yhtä leveitä. Tämä ilmenee seuraavasta esimerkistä:
   \end{tabularx}
 \end{tulossis}
 
-Saraketyypissä ''\koodi{X}'' teksti tasataan oletuksena solujen
+Saraketyypissä \koodil{X} teksti tasataan oletuksena solujen
 molemmista reunoista, mutta siihen on mahdollista vaikuttaa
 sijoittamalla sarakemäärittelyssä \koodi{>}\=/ merkki ja sen
 aaltosulkeissa olevat argumentit ennen \koodi{X}\=/ merkkiä.
@@ -3473,8 +3471,8 @@ palauttaa määritelmän sellaiseksi, että se toimii taulukossa.
 
 \paketti{tabularx}\-/ paketin myötä voi määritellä omiakin
 saraketyyppejä. Hyödyllisiä tyyppejä voisivat olla esimerkiksi
-''\koodi{LCR}'', jotka toimisivat lähes samoin kuin perus Latexin
-saraketyypit ''\koodi{lcr}'' (taulukko \ref{tlk:taulukko_sarakemerkit})
+\koodil{LCR}, jotka toimisivat lähes samoin kuin perus Latexin
+saraketyypit \koodil{lcr} (taulukko \ref{tlk:taulukko_sarakemerkit})
 mutta olisivat kuitenkin leveydeltään venyviä. Omia saraketyyppejä
 tehdään komennolla \komentom{newcolumntype}, ja edellä mainitut tyypit
 voisi määritellä seuraavasti:
@@ -3491,9 +3489,9 @@ voisi määritellä seuraavasti:
 \end{koodilohkosis}
 
 Mitä hyvänsä saraketyyppejä voi tehdä vastaavalla tavalla. Esimerkiksi
-taulukon ensimmäiseen, otsikoita ilmaisevaan saraketyyppiin
-''\koodi{O}'' voitaisiin laittaa fonttikomento, jotta koko sarake
-ladotaan automaattisesti eri kirjainleikkauksella kuin muu taulukko.
+taulukon ensimmäiseen, otsikoita ilmaisevaan saraketyyppiin \koodil{O}
+voitaisiin laittaa fonttikomento, jotta koko sarake ladotaan
+automaattisesti eri kirjainleikkauksella kuin muu taulukko.
 
 \komentoi{newcolumntype}
 \komentoi{bfseries}
@@ -3534,7 +3532,7 @@ ja \komento{end}.
 \paketti{tabularx}\-/ paketin kanssa samankaltainen on paketti
 \pakettim{tabulary},\avctan{tabulary} jossa on joitakin erilaisia
 ominaisuuksia. Se muun muassa sisältää valmiiksi uudet saraketyypit
-''\koodi{LCRJ}''.
+\koodil{LCRJ}.
 
 Edellä esitellyt taulukkoympäristöt ladotaan aina kokonaisena eli vain
 yhden sivun alueelle. Useammalle sivulle jakautuvia taulukoita voi tehdä
@@ -3708,27 +3706,27 @@ voi vaikuttaa ympäristön valinnaisen argumentin avulla:
   \end{tabular}
 }{
   \caption{Leijuvien osien sijoitteluun voi vaikuttaa ympäristön
-    valinnaisen argumentin avulla. Valitsin ''\koodi{H}'' on
+    valinnaisen argumentin avulla. Valitsin \koodil{H} on
     \paketti{floatrow}\-/\ ja \paketti{float}\-/ pakettien ominaisuus}
   \label{tlk:leijuosat_sijoittelukirjaimet}
 }
 
-Valinnainen argumentti ''\koodi{sijainti}'' on tietty merkki tai
-merkkien yhdistelmä, jolla vaikutetaan leijuvan osan sijoitteluun.
-Taulukossa \ref{tlk:leijuosat_sijoittelukirjaimet} ovat mahdolliset
-vaihtoehdot. Oletusarvo on ''\koodi{tbp}'', eli sen mukaan leijuva osa
-pyritään sijoittamaan ensisijaisesti sivun yläosaan (\koodi{t}) mutta
+Valinnainen argumentti \koodil{sijainti} on tietty merkki tai merkkien
+yhdistelmä, jolla vaikutetaan leijuvan osan sijoitteluun. Taulukossa
+\ref{tlk:leijuosat_sijoittelukirjaimet} ovat mahdolliset vaihtoehdot.
+Oletusarvo on \koodil{tbp}, eli sen mukaan leijuva osa pyritään
+sijoittamaan ensisijaisesti sivun yläosaan (\koodi{t}) mutta
 mahdollisesti myös alaosaan (\koodi{b}) tai omalle sivulleen (\koodi{p})
 muiden leijuvien osien kanssa.
 
-Vaihtoehto ''\koodi{h}'' pyrkii latomaan leijuvan osan siihen kohtaan
-kuin se on lähdetiedostossa. Se on kuitenkin vain ehdotus eikä useinkaan
+Vaihtoehto \koodil{h} pyrkii latomaan leijuvan osan siihen kohtaan kuin
+se on lähdetiedostossa. Se on kuitenkin vain ehdotus eikä useinkaan
 toteudu: Latex lisää automaattisesti aina \koodi{h}\=/ valitsimen perään
 \koodi{t}:n eli sivun yläosaan sijoittamisen. Latex käyttää sitä, jos se
 saa sillä tavoin omasta mielestään paremman lopputuloksen. Lataamalla
 makropaketin \pakettim{floatrow}\avctan{floatrow} (tai yksinkertaisemman
 \paketti{float}\-/ paketin\avctan{float}) voi käyttää myös myös
-valitsinta ''\koodi{H}''. Se tarkoittaa ehdotonta vaatimusta, että juuri
+valitsinta \koodil{H}. Se tarkoittaa ehdotonta vaatimusta, että juuri
 tähän kohtaan leijuva osa pitää sijoittaa. Tätä valitsinta ei voi
 yhdistää muiden valitsimien kanssa.
 

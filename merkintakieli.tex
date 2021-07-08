@@ -521,7 +521,7 @@ ja \komento{LaTeX}.
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[4][]{{\erikoisfontti #3}
-    & \komento{#2}\komentoj{#1} & #4}
+    & \komento{#2}\komentojatko{#1} & #4}
   \begin{tabular}{cllcll}
     \toprule
     \multicolumn{2}{l}{\ots{Merkki}}
@@ -736,10 +736,10 @@ La\komento   tex
 
 Jos haluaa komennon jälkeen yhden sanavälin, täytyy kirjoittaa komennon
 nimen jälkeen aaltosulkeet (\komentox{komento}\komentoarg{}) tai
-kenoviiva ja sanaväli (\komentox{komento}\komentoj{\keno~}). Komennon
-nimen ja argumenttien välissä voi olla sanavälejä, ja ne kaikki syödään
-pois. Komennon ja sen argumentit voi siis kirjoittaa vaikka seuraavalla
-tavalla:
+kenoviiva ja sanaväli (\komentox{komento}\komentojatko{\keno~}).
+Komennon nimen ja argumenttien välissä voi olla sanavälejä, ja ne kaikki
+syödään pois. Komennon ja sen argumentit voi siis kirjoittaa vaikka
+seuraavalla tavalla:
 
 \begin{koodilohkosis}
 \komento  [valinnainen]

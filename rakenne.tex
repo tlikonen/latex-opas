@@ -1811,12 +1811,14 @@ tavalla:
 \end{koodilohkosis}
 
 Edellä olevan esimerkin komento \komentom{addcontentsline} lisää
-merkinnän sisällysluetteloon (\koodil{toc}, engl.
-\englanti{\textit{table of contents}}). Merkintä on tasoltaan
+merkinnän sisällysluetteloon. Komennon ensimmäinen argumentti on
+\koodil{toc} (engl. \englanti{\textit{table of contents}}), joka on
+sisällysluetteloiden tekemisessä tarvittavan väliaikaistiedoston pääte.
+Esimerkissä lisättävä sisällysluettelon merkintä on tasoltaan
 \koodil{section} eli vastaa muita \komento{section}\-/ komennolla
 syntyviä sisällysluettelon kohtia. Komento \komentom{phantomsection}
-kuuluu \paketti{hyperref}\-/ pakettiin, ja se lisää näkymättömän
-ankkurin tähän kohtaan dokumentissa. Sitä tarvitaan, jotta
+kuuluu \paketti{hyperref}\-/ pakettiin, ja se lisää pdf\-/ tiedostoon
+näkymättömän ankkurin tähän kohtaan dokumentissa. Sitä tarvitaan, jotta
 sisällysluettelon merkintä viittaisi oikealle sivulle ja toimisi myös
 linkkinä, joka tuo juuri tähän kohtaan.
 

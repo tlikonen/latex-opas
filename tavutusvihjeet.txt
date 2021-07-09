@@ -581,6 +581,7 @@ vähim-mäis-etäi-syys
 väli-ai-kai-ses-ti
 väli-ai-kais-tie-dos-toa
 väli-ai-kais-tie-dos-to-jen
+väli-ai-kais-tie-dos-ton
 väli-ai-kais-tie-dos-toon
 väli-ai-kais-tie-dos-tot
 väli-ot-si-kois-sa

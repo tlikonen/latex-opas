@@ -3387,7 +3387,7 @@ alapuolelta täytyy jättää riittävä määrä soluja tyhjäksi.
   \label{esim:taulukko_multirow}
 \end{esimerkki*}
 
-\subsection{Muita ympäristöjä ja paketteja}
+\subsection{Kiinteälevyiset taulukot}
 
 Latexin toinen taulukkoympäristö \ymparistom{tabular*} toimii muuten
 samalla tavalla kuin \ymparisto{tabular}, mutta se tarvitsee yhden
@@ -3529,6 +3529,8 @@ ja \komento{end}.
 {\endtabularx}
 \end{koodilohkosis}
 
+\subsection{Muita paketteja}
+
 \paketti{tabularx}\-/ paketin kanssa samankaltainen on paketti
 \pakettim{tabulary},\avctan{tabulary} jossa on joitakin erilaisia
 ominaisuuksia. Se muun muassa sisältää valmiiksi uudet saraketyypit
@@ -3540,7 +3542,10 @@ yhden sivun alueelle. Useammalle sivulle jakautuvia taulukoita voi tehdä
 \ymparistom{longtable} avulla. Sitä voi käyttää kuten
 \ymparisto{tabular}\-/ ympäristöä, mutta lisäksi se sisältää komentoja,
 joiden avulla saa joka sivulla toistumaan automaattisesti tietyt
-otsikkorivit tai yhteenvetorivit.
+otsikkorivit tai yhteenvetorivit. Toinen mahdollisuus yli sivurajan
+yltävien taulukon kaltaisten rakenteiden tekemiseen on
+\ymparisto{tabbing}\-/ ympäristö, jota käsitellään luvussa
+\ref{luku:taulukot_tabbing}.
 
 Hyödyllinen taulukoiden apupaketti on
 \pakettim{booktabs},\avctan{booktabs} jonka avulla saa tyylikkäämpiä ja
@@ -3563,6 +3568,13 @@ kokeilemaan:
 \usepackage[table]{xcolor}     % lähdedokumentin esittelyosaan
 \rowcolors{1}{blue!10}{red!10} % ennen taulukkoympäristöjä
 \end{koodilohkosis}
+
+\subsection{Sarkaimet KESKEN}
+\label{luku:taulukot_tabbing}
+
+...
+
+% tabbing-ympäristö, voi ylittää sivurajan.
 
 \section{Leijuvat osat}
 \label{luku:leijuosat}

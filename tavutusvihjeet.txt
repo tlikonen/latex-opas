@@ -448,6 +448,7 @@ suur-aak-kos-ten
 säh-kö-pos-ti-osoi-te
 säh-kö-pos-ti-osoit-tei-den
 säh-kö-pos-ti-osoit-tei-ta
+tab-bing
 tab-col-sep
 table
 table-name

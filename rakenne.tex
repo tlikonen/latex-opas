@@ -3598,7 +3598,7 @@ tekemisestä ja asettelumahdollisuuksista muiden makropakettien avulla.
 
 Käytännössä leijuvat osat ovat ympäristöjä, joiden sijoittelusta vastaa
 Latex eikä kirjoittaja. Tosin kirjoittajakin voi hieman vaikuttaa asiaan
-(luku \ref{luku:leijuosat_asetukset}). Ympäristö \ymparistom{table} on
+(luku \ref{luku:leijuosat_sijoittelu}). Ympäristö \ymparistom{table} on
 tarkoitettu taulukoille, ja ympäristö \ymparistom{figure} on kuville.
 Molemmat toimivat samoin, mutta esimerkissä \ref{esim:leijuosat_table}
 käytetään taulukkoa.
@@ -3641,8 +3641,27 @@ taulukkoympäristöä (luku \ref{luku:taulukot}), eikä
 \ref{luku:grafiikka}). Valitut ympäristöt vaikuttavat kuitenkin
 kuvatekstiin: \ymparisto{table}\-/ ympäristön kuvatekstiin tulee suomen
 kieliasetuksilla sana ''\tablename'', ja \ymparisto{figure}\-/
-ympäristössä se on ''\figurename''. Näiden muuttamista käsitellään
-asetusten yhteydessä luvussa \ref{luku:leijuosat_asetukset}.
+ympäristössä se on ''\figurename''. Nimet tulevat komennoista
+\komento{tablename} ja \komento{figurename}, jotka kirjoittaja voi
+määrittää uudelleen. Se kannattaa tehdä dokumentin esittelyosassa
+seuraavalla tavalla:
+
+\komentoi{addto}
+\komentoi{captionsfinnish}
+\komentoi{figurename}
+\komentoi{tablename}
+\begin{koodilohkosis}
+\addto{\captionsfinnish}{
+  \renewcommand{\tablename}{Taulukko}
+  \renewcommand{\figurename}{Kuva}
+}
+\end{koodilohkosis}
+
+Edellä käytettiin \komento{addto}\-/ komentoa, joka kuuluu
+kielipaketteihin \paketti{polyglossia} ja \paketti{babel}. Sillä
+lisätään omia komentoja tietyn kielen asetuksiin, tässä suomen
+kieliasetuksiin (\komento{captionsfinnish}). Kieliasetuksia käsitellään
+luvussa \ref{luku:kieliasetukset}.
 
 Kuvatekstit tehdään komennolla \komentom{caption}, joka sijoitetaan
 leijuvan ympäristön sisälle, kuten esimerkissä
@@ -3668,15 +3687,41 @@ kuvatekstiä, ja silloin niihin tulee lyhempi versio.
 Leijuvien osien luettelot voidaan latoa tyypeittäin: komennolla
 \komentom{listoftables} syntyy taulukkoluettelo ja komennolla
 \komentom{listoffigures} kuvaluettelo. Nämä muistuttavat
-sisällysluetteloita (luku \ref{luku:sisallysluettelo}), eli niille tulee
-automaattisesti otsikko kuten ''\listtablename'' ja ''\listfigurename''
-ja automaattisesti sisältö eli kaikki \komento{caption}\-/ komennolla
-ilmaistut (lyhyet) kuvatekstit.
+sisällysluetteloita (\komento{tableofcontents}, luku
+\ref{luku:sisallysluettelo}), eli niille tulee automaattisesti otsikko
+kuten ''\listtablename'' tai ''\listfigurename'' ja automaattisesti
+sisältö eli kaikki \komento{caption}\-/ komennolla ilmaistut (lyhyet)
+kuvatekstit.
+
+Leijuvien osien luettelojen ulkoasua voi muokata samalla tavalla kuin
+sisällysluetteloidenkin, joita käsitellään luvussa
+\ref{luku:sisallysluettelo}. Luetteloiden otsikot tulevat komennoista
+\komento{listtablename} ja \komento{listfigurename}, jotka kirjoittaja
+voi määritellä uudestaan. Järkevää on tehdä se lähdedokumentin
+esittelyosassa ja käyttää \komento{addto}\-/ komentoa, jolla asetukset
+lisätään tietyn kielen asetuksiin.
+
+\komentoi{addto}
+\komentoi{captionsfinnish}
+\komentoi{listfigurename}
+\komentoi{listtablename}
+\begin{koodilohkosis}
+\addto{\captionsfinnish}{
+  \renewcommand{\listtablename}{Omat taulukot}
+  \renewcommand{\listfigurename}{Omat kuvat}
+}
+\end{koodilohkosis}
 
 % table*, figure*
 
-\subsection{Sijoittelu ja asetuksia KESKEN}
-\label{luku:leijuosat_asetukset}
+\subsection{Muut leijuvat osat KESKEN}
+
+...
+
+% newfloat
+
+\subsection{Sijoittelu KESKEN}
+\label{luku:leijuosat_sijoittelu}
 
 Latex sijoittaa leijuvat osat yleensä sivun yläosaan, joskus alaosaan
 tai omalle sivulleen, jossa ei ole leipätekstiä lainkaan. Sijoitteluun
@@ -3737,36 +3782,14 @@ yhdistää muiden valitsimien kanssa.
 % \dbltopfraction, \dblfloatpagefraction, dblfloatsepå, dbltextfloatsep,
 % \dbltopnumber
 
-Kuvatekstissä näkyvät, leijuvan osan tyyppiä ilmaisevat sanat
-''\tablename'' tai ''\figurename'' tulevat komennoista
-\komento{tablename} ja \komento{figurename}, jotka kirjoittaja voi
-määrittää uudelleen:
-
-\begin{koodilohkosis}
-\addto{\captionsfinnish}{
-  \renewcommand{\tablename}{Taulukko}
-  \renewcommand{\figurename}{Kuva}
-}
-\end{koodilohkosis}
-
-Edellä käytettiin \komento{addto}\-/ komentoa, joka kuuluu
-kielipaketteihin \paketti{polyglossia} ja \paketti{babel}. Sillä
-lisätään omia komentoja tietyn kielen asetuksiin, tässä suomen
-kieliasetuksiin (\komento{captionsfinnish}). Kieliasetuksia käsitellään
-luvussa \ref{luku:kieliasetukset}.
-
-
-
-\begin{koodilohkosis}
-\renewcommand{\listtablename}{Omat taulukot}
-\renewcommand{\listfigurename}{Omat Kuvat}
-\end{koodilohkosis}
 
 % !-sijoitteluvalitsin
 % \textfloatsep
 % \floatsep
 
-\subsection{Muut}
+\subsection{Typografia ja muita asetuksia}
+
+...
 
 % newfloat-paketti, omien leijuosien luettelot
 % floatrow-paketti

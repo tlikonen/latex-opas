@@ -126,6 +126,7 @@ fbox-rule
 fcolor-box
 fig-ure
 fig-ure-name
+fig-ures
 float
 float-row
 flush-bottom
@@ -241,6 +242,7 @@ let-ter
 lett-rine
 line-spread
 line-width
+list
 list-fig-ure-name
 list-of-fig-ures
 list-of-tables
@@ -453,6 +455,7 @@ tab-col-sep
 table
 table-name
 table-of-con-tents
+tables
 tabu-lar
 tabu-larx
 tabu-lary

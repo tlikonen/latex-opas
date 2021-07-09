@@ -3696,28 +3696,76 @@ valinnaisen argumentin, jolla ilmaistaan kuvatekstistä lyhempi versio:
 
 Varsinainen (pitkä) kuvateksti ladotaan aina leijuvan osan yhteyteen ja
 lyhempää versiota käytetään mahdollisesti luettelossa ja
-ristiviitteissä. Kuvatekstin eli \komento{caption}\-/ komennon lisäksi
+ristiviitteissä. Kuvatekstin eli \komento{caption}\-/ komennon jälkeen
 leijuvaan ympäristöön lisätään usein yksilöllinen tunniste
 ristiviittausta varten. Se tehdään \komento{label}\-/ komennolla, jota
 käsitellään ristiviitteiden yhteydessä luvussa \ref{luku:ristiviitteet}.
 
-Dokumentin leijuvista osista voi latoa luetteloita: komennolla
-\komentom{listoftables} syntyy taulukkoluettelo ja komennolla
+% table*, figure*
+
+\subsection{Muut leijuvat osat KESKEN}
+\label{luku:leijuosat_omat}
+
+...
+
+% newfloat
+
+\subsection{Leijuvien osien luettelot KESKEN}
+
+Dokumentin leijuvista osista voi latoa automaattisesti luetteloita:
+komennolla \komentom{listoftables} syntyy taulukkoluettelo ja komennolla
 \komentom{listoffigures} kuvaluettelo. Nämä muistuttavat
 sisällysluetteloita (\komento{tableofcontents}, luku
 \ref{luku:sisallysluettelo}), eli niille tulee automaattisesti otsikko
 kuten ''\listtablename'' tai ''\listfigurename'' ja automaattisesti
 sisältö eli kaikki \komento{caption}\-/ komennolla ilmaistut (lyhyet)
-kuvatekstit.
+kuvatekstit sekä tietysti sivunumerot.
+
+\begin{esimerkki*}
+  \komentoi{titlecontents}
+  \komentoi{addvspace}
+  \komentoi{rmfamily}
+  \komentoi{small}
+  \komentoi{titlerule*}
+  \komentoi{contentslabel}
+  \komentoi{contentspage}
+  \komentoi{makebox}
+
+\begin{koodilohko}
+\titlecontents{table}                       % taulukkoluettelo (table)
+[8mm]                                       % vasen sisennys (mitta)
+{\addvspace{3bp}\rmfamily\small}            % yläpuolinen koodi
+{\contentslabel{8mm}}                       % numeroitu kohta
+{}                                          % numeroimaton kohta
+{~\small\titlerule*[3mm]{.}\contentspage}   % pisteviiva ja sivunumero
+[]                                          % alapuolinen koodi
+
+\titlecontents{figure}                      % kuvaluettelo (figure)
+[8mm]                                       % vasen sisennys (mitta)
+{\addvspace{3bp}\rmfamily\small}            % yläpuolinen koodi
+{\contentslabel{8mm}}                       % numeroitu kohta
+{}                                          % numeroimaton kohta
+{~\small\titlerule*[3mm]{.}\contentspage}   % pisteviiva ja sivunumero
+[]                                          % alapuolinen koodi
+\end{koodilohko}
+  \caption{Leijuvien osien ulkoasua muokataan \komento{titlecontents}\-/
+    komennolla, joka on peräisin \paketti{titletoc}\-/ paketista}
+  \label{esim:leijuosat_titlecontents}
+\end{esimerkki*}
 
 Leijuvien osien luettelojen ulkoasua voi muokata samalla tavalla kuin
-sisällysluetteloidenkin, joita käsitellään luvussa
-\ref{luku:sisallysluettelo}. Luetteloiden otsikot tulevat
-kieliasetuksista ja komennoista \komento{listtablename} ja
-\komento{listfigurename}, jotka kirjoittaja voi määritellä uudestaan.
-Järkevää on tehdä se lähdedokumentin esittelyosassa ja käyttää
-\komento{addto}\-/ komentoa, jolla asetukset lisätään tietyn kielen
-asetuksiin.
+sisällysluetteloidenkin: ladataan paketti
+\paketti{titletoc}\avctan{titletoc} ja määritellään sen
+\komento{titlecontents}\-/ komennolla luettelokohtien ulkoasu.
+Esimerkistä \ref{esim:leijuosat_titlecontents} selvinnee perusajatus, ja
+lisätietoa on sisällysluetteloita käsittelevässä luvussa
+\ref{luku:sisallysluettelo} sekä tietysti paketin ohjekirjassa.
+
+Luetteloiden otsikot tulevat kieliasetuksista ja komennoista
+\komento{listtablename} ja \komento{listfigurename}, jotka kirjoittaja
+voi määritellä uudestaan. Järkevää on tehdä se lähdedokumentin
+esittelyosassa ja käyttää \komento{addto}\-/ komentoa, jolla asetukset
+lisätään tietyn kielen asetuksiin.
 
 \komentoi{addto}
 \komentoi{captionsfinnish}
@@ -3730,16 +3778,24 @@ asetuksiin.
 }
 \end{koodilohkosis}
 
-% \addcontentsline{lof}{lof}{...}
-% \addcontentsline{lot}{lot}{...}
-% table*, figure*
+Luetteloihin saa lisättyä omia otsikoita samoilla keinoilla kuin
+sisällysluetteloihinkin, komennolla \komento{addcontentsline}. Komennon
+ensimmäinen argumentti on luettelon tyyppiä vastaavan tiedoston pääte.
+Tyyppi \koodil{lot} (engl. \englanti{\textit{list of tables}}) on
+taulukoille ja tyyppi \koodil{lof} (\englanti{\textit{list of figures}})
+on kuville.
 
-\subsection{Muut leijuvat osat KESKEN}
-\label{luku:leijuosat_omat}
+\komentoi{addcontentsline}
+\begin{koodilohkosis}
+\addcontentsline{lot}{table}{Ylimääräinen taulukko}
+\addcontentsline{lof}{figure}{Ylimääräinen kuva}
+\end{koodilohkosis}
 
-...
-
-% newfloat
+Komennon toinen argumentti tarkoittaa luettelomerkinnän tasoa (vrt.
+otsikkotasot). Leijuvien osien luetteloissa on vain yksi taso, ja siihen
+kirjoitetaan kyseisen leijuvan ympäristön nimi, esimerkiksi
+\ymparisto{table} tai \ymparisto{figure}. Komennon kolmas argumentti on
+luetteloon lisättävä merkintä.
 
 \subsection{Sijoittelu KESKEN}
 \label{luku:leijuosat_sijoittelu}

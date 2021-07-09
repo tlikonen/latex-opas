@@ -2315,41 +2315,41 @@ sisäiseen sisällysluetteloon voi lisätä kohtia komennolla
 Tätä komentoa käsitellään luvussa \ref{luku:pdf_asetukset}.
 
 \begin{esimerkki*}
-  \komentoi{titlecontents}
   \komentoi{addvspace}
-  \komentoi{rmfamily}
   \komentoi{bfseries}
-  \komentoi{large}
-  \komentoi{small}
-  \komentoi{titlerule}
-  \komentoi{titlerule*}
-  \komentoi{normalsize}
-  \komentoi{thecontentslabel}
+  \komentoi{contentslabel}
   \komentoi{contentspage}
+  \komentoi{hspace}
+  \komentoi{large}
   \komentoi{normalsize}
-  \komentoi{makebox}
+  \komentoi{normalsize}
+  \komentoi{rmfamily}
+  \komentoi{small}
+  \komentoi{titlecontents}
+  \komentoi{titlerule*}
+  \komentoi{titlerule}
 
 \begin{koodilohko}
 \titlecontents{chapter}                     % otsikon taso: chapter
-[0em]                                       % vasen sisennys (mitta)
+[8mm]                                       % vasen sisennys (mitta)
 {\addvspace{1.5ex}\rmfamily\bfseries\large} % yläpuolinen koodi
-{\makebox[8mm][l]{\thecontentslabel}}       % numeroitu kohta
-{}                                          % numeroimaton kohta
+{\contentslabel{8mm}}                       % numeroitu kohta
+{\hspace{-8mm}}                             % numeroimaton kohta
 {\small\titlerule[0bp]\contentspage}  % pisteviiva (pois) ja sivunumero
 [\addvspace{.5ex}]                    % alapuolinen koodi
 
 \titlecontents{section}                     % otsikon taso: section
-[0em]                                       % vasen sisennys (mitta)
+[8mm]                                       % vasen sisennys (mitta)
 {\addvspace{.5ex}\rmfamily\normalsize}      % yläpuolinen koodi
-{\makebox[8mm][l]{\thecontentslabel}}       % numeroitu kohta
+{\contentslabel{8mm}}                       % numeroitu kohta
 {}                                          % numeroimaton kohta
 {~\small\titlerule*[3mm]{.}\contentspage}   % pisteviiva ja sivunumero
 [\addvspace{.2ex}]                          % alapuolinen koodi
 
 \titlecontents{subsection}                  % otsikon taso: subsection
-[8mm]                                       % vasen sisennys (mitta)
+[18mm]                                      % vasen sisennys (mitta)
 {\rmfamily\small}                           % yläpuolinen koodi
-{\makebox[10mm][l]{\thecontentslabel}}      % numeroitu kohta
+{\contentslabel{10mm}}                      % numeroitu kohta
 {}                                          % numeroimaton kohta
 {~\small\titlerule*[3mm]{.}\contentspage}   % pisteviiva ja sivunumero
 []                                          % alapuolinen koodi
@@ -2375,14 +2375,11 @@ alapuolinen väli (\komento{addvspace}, luku
 
 \komento{titlecontents}\-/ komennon argumenteissa käytetään jonkin
 verran muita komentoja, jotka on tarkoitettu nimenomaan tämän komennon
-argumentteihin. Komento \komento{thecontentslabel} latoo kyseisen
-otsikon numeron (1.2, 1.3 tms.). Komento \komento{contentspage} latoo
-sivunumeron. Komennolla \komento{titlerule} voi tehdä katsetta ohjaavan
-viivan tai pisteviivan otsikkotekstin ja sivunumeron väliin. Latexin
-laatikkokomento \komento{makebox} tekee tietynlevyisiä näkymättömiä
-laatikoita, joilla saadaan näissä esimerkeissä sopivan levyinen alue
-otsikon numeroinnille. Laatikoihin liittyvää tekniikkaa käsitellään
-tarkemmin luvussa \ref{luku:laatikot}.
+argumentteihin. Komento \komento{contentslabel} latoo kyseisen otsikon
+numeron (1.2, 1.3 tms.) tietynlevyiseen tilaan. Komento
+\komento{contentspage} latoo sivunumeron. Komennolla \komento{titlerule}
+voi tehdä katsetta ohjaavan viivan tai pisteviivan otsikkotekstin ja
+sivunumeron väliin.
 
 Makropaketin \paketti{titletoc} ohjekirjassa on paljon muitakin
 toimintoja ja esimerkkejä sisällysluetteloiden ehostamiseen. Ohjeisiin

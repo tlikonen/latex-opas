@@ -75,6 +75,7 @@ cline
 cmid-rule
 color-box
 column-sep
+con-tents-label
 con-tents-name
 con-tents-page
 counter-with-in
@@ -496,7 +497,6 @@ text-super-script
 text-width
 the-bib-li-og-ra-phy
 the-chapter
-the-con-tents-label
 the-page
 the-section
 the-sub-section

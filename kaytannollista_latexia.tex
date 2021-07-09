@@ -333,23 +333,26 @@ Extension=.otf]
 {\thesubsubsection}{.8em}{}[]
 \titlespacing*{\subsubsection}{0bp}{*2}{*1}
 
-\titlecontents{chapter}[0em]
+\titlecontents{chapter}
+[8mm]
 {\addvspace{1.5ex}\rmfamily\bfseries\large}
-{\makebox[8mm][l]{\thecontentslabel}}
-{}
+{\contentslabel{8mm}}
+{\hspace{-8mm}}
 {\small\titlerule[0bp]\contentspage}
 [\addvspace{.5ex}]
 
-\titlecontents{section}[0em]
+\titlecontents{section}
+[8mm]
 {\addvspace{.5ex}\rmfamily\normalsize}
-{\makebox[8mm][l]{\thecontentslabel}}
+{\contentslabel{8mm}}
 {}
 {~\small\titlerule*[3mm]{.}\contentspage}
 [\addvspace{.2ex}]
 
-\titlecontents{subsection}[8mm]
+\titlecontents{subsection}
+[18mm]
 {\rmfamily\small}
-{\makebox[10mm][l]{\thecontentslabel}}
+{\contentslabel{10mm}}
 {}
 {~\small\titlerule*[3mm]{.}\contentspage}
 []

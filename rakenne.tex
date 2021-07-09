@@ -3569,39 +3569,43 @@ kokeilemaan:
 
 Leijuvat osat (engl. \englanti{\textit{float}}) ovat sellaisia
 dokumentin osia -- käytännössä ympäristöjä~--, joita ei ladota normaalin
-leipätekstin sekaan tiettyyn kohtaan. Ne ''leijuvat'' muun tekstin
-ulkopuolella, ja Latex huolehtii niiden sijoittamisesta. Leijuvilla
-osilla on yleensä kuvateksti, jonka alussa on sen tyyppi ja numero,
-esimerkiksi ''\figurename~1'' tai ''\tablename\ 4.2''. Näiden perässä on
-varsinainen kuvateksti, joka kertoo kyseisen leijuvan osan sisällöstä
-tai merkityksestä. Leipätekstistä voi viitata leijuviin osiin
-käyttämällä ilmauksia kuten ''kuvassa~1''. Näissä hyödynnetään Latexin
-ristiviittaustoimintoja (luku \ref{luku:ristiviitteet}).
+leipätekstin sekaan tiettyyn kohtaan. Ne ''leijuvat'' irrallaan
+tekstistä eli ovat muun tekstin ulkopuolella. Latex huolehtii niiden
+sijoittamisesta. Leijuvilla osilla on yleensä kuvateksti, jonka alussa
+on sen tyyppi ja numero, esimerkiksi ''\figurename~1'' tai ''\tablename\
+4.2''. Näiden perässä on varsinainen kuvateksti, joka kertoo kyseisen
+leijuvan osan sisällöstä tai merkityksestä. Leipätekstistä voi viitata
+leijuviin osiin käyttämällä ilmauksia kuten ''kuvassa~1''. Näissä
+hyödynnetään Latexin ristiviittaustoimintoja (luku
+\ref{luku:ristiviitteet}).
 
-Leijuvien osien keskinäinen järjestys säilyy osittain: samantyyppiset
-leijuvat osat, esimerkiksi kuvat, ladotaan aina siinä järjestyksessä
-kuin ne ovat lähdedokumentissa. Sen sijaan erityyppiset leijuvat osat
-saattavat sekoittua: esimerkiksi jokin taulukko saatetaan latoa ennen
+Perus Latex sisältää kaksi erityyppistä leijuvaa osaa, kuvat ja taulukot
+(luku \ref{luku:leijuosat_latex}), mutta \pakettim{newfloat}\-/
+makropaketin avulla niitä voi tehdä muitakin (luku
+\ref{luku:leijuosat_omat}). Esimerkiksi tässä oppaassa on käytössä myös
+tyyppi ''Esimerkki'', jota käytetään leijuvien Latex\-/ koodiesimerkkien
+toteuttamiseen.
+
+Koska Latex huolehtii leijuvien osien sijoittamisesta, niiden lopullinen
+järjestyskin voi hieman poiketa siitä, miten ne esiintyvät Latex\-/
+lähdedokumentissa. Tosin samantyyppiset leijuvat osat, esimerkiksi
+kuvat, ladotaan aina siinä järjestyksessä kuin ne ovat
+lähdedokumentissa. Sen sijaan erityyppiset leijuvat osat saatetaan latoa
+eri järjestyksessä: esimerkiksi jokin taulukko saatetaan latoa ennen
 tiettyä kuvaa, vaikka ne olisivat lähdedokumentissa päinvastaisessa
 järjestyksessä. Latex pyrkii latomaan hyvännäköisiä sivuja, ja leijuvien
 osien sijoittelulla se voi vaikuttaa asiaan.
 
-Perus Latex tarjoaa kaksi erityyppistä leijuvaa osaa, kuvat ja taulukot,
-mutta \pakettim{newfloat}\-/ makropaketin avulla niitä voi tehdä lisää.
-Tässä oppaassa on käytössä myös tyyppi ''Esimerkki'', jota käytetään
-leijuvien Latex\-/ koodiesimerkkien toteuttamiseen. Seuraavissa
-alaluvuissa käsitellään ensin perus Latexin ominaisuudet ja asiaan
-liittyvät käsitteet. Sitten annetaan vinkkejä omien leijuvien osien
-tekemisestä ja asettelumahdollisuuksista muiden makropakettien avulla.
-
 \subsection{Leijuvat taulukot ja kuvat KESKEN}
+\label{luku:leijuosat_latex}
 
 Käytännössä leijuvat osat ovat ympäristöjä, joiden sijoittelusta vastaa
-Latex eikä kirjoittaja. Tosin kirjoittajakin voi hieman vaikuttaa asiaan
-(luku \ref{luku:leijuosat_sijoittelu}). Ympäristö \ymparistom{table} on
-tarkoitettu taulukoille, ja ympäristö \ymparistom{figure} on kuville.
-Molemmat toimivat samoin, mutta esimerkissä \ref{esim:leijuosat_table}
-käytetään taulukkoa.
+Latex eikä kirjoittaja. Tosin kirjoittajakin voi hieman vaikuttaa
+asiaan, ja tätä käsitellään luvussa \ref{luku:leijuosat_sijoittelu}.
+Ympäristö \ymparistom{table} on tarkoitettu taulukoille, ja ympäristö
+\ymparistom{figure} on kuville. Esimerkistä \ref{esim:leijuosat_perus}
+ilmenee leijuvan taulukon toteuttamisen perusasiat. Muuntyyppiset
+leijuvat osat tehdään samalla tavalla, ympäristö on vain eri.
 
 \begin{esimerkki*}
   \komentoi{arraystretch}
@@ -3631,7 +3635,7 @@ käytetään taulukkoa.
   \caption{Leijuvan taulukon toteuttaminen \ymparisto{table}\-/
     ympäristön avulla. Varsinainen taulukko syntyy ympäristön
     \ymparisto{tabular} avulla}
-  \label{esim:leijuosat_table}
+  \label{esim:leijuosat_perus}
 \end{esimerkki*}
 
 Latex sinänsä ei ota kantaa siihen, mitä leijuva ympäristö sisältää, eli
@@ -3661,15 +3665,15 @@ Edellä käytettiin \komento{addto}\-/ komentoa, joka kuuluu
 kielipaketteihin \paketti{polyglossia} ja \paketti{babel}. Sillä
 lisätään omia komentoja tietyn kielen asetuksiin, tässä suomen
 kieliasetuksiin (\komento{captionsfinnish}). Kieliasetuksia käsitellään
-luvussa \ref{luku:kieliasetukset}.
+tarkemmin luvussa \ref{luku:kieliasetukset}.
 
 Kuvatekstit tehdään komennolla \komentom{caption}, joka sijoitetaan
 leijuvan ympäristön sisälle, kuten esimerkissä
-\ref{esim:leijuosat_table} on tehty. Komennolle annetaan yksi argumentti
+\ref{esim:leijuosat_perus} on tehty. Komennolle annetaan yksi argumentti
 eli haluttu kuvateksti. Siihen ei pidä kirjoittaa leijuvan osan tyyppiä
 eikä numeroa (esim. ''\tablename~3''), sillä nämä Latex tekee
 automaattisesti. \komento{caption}\-/ komennolle voi antaa myös
-valinnaisen argumentin, jolla ilmaistaan kuvatekstistä lyhyempi versio:
+valinnaisen argumentin, jolla ilmaistaan kuvatekstistä lyhempi versio:
 
 \komentoi{caption}
 \begin{koodilohkosis}
@@ -3678,13 +3682,12 @@ valinnaisen argumentin, jolla ilmaistaan kuvatekstistä lyhyempi versio:
 
 Varsinainen (pitkä) kuvateksti ladotaan aina leijuvan osan yhteyteen ja
 lyhempää versiota käytetään mahdollisesti luettelossa ja
-ristiviitteissä. Leijuvista osista voi nimittäin latoa automaattisen
-luettelon esimerkiksi dokumentin alkuun tai loppuun, ja luettelossa
-käytetään kuvatekstin lyhyttä versiota, jos sellainen on annettu. Myös
-ristiviittauksissa (luku \ref{luku:ristiviitteet}) voidaan käyttää
-kuvatekstiä, ja silloin niihin tulee lyhempi versio.
+ristiviitteissä. Kuvatekstin eli \komento{caption}\-/ komennon lisäksi
+leijuvaan ympäristöön lisätään usein yksilöllinen tunniste
+ristiviittausta varten. Se tehdään \komento{label}\-/ komennolla, jota
+käsitellään ristiviitteiden yhteydessä luvussa \ref{luku:ristiviitteet}.
 
-Leijuvien osien luettelot voidaan latoa tyypeittäin: komennolla
+Dokumentin leijuvista osista voi latoa luetteloita: komennolla
 \komentom{listoftables} syntyy taulukkoluettelo ja komennolla
 \komentom{listoffigures} kuvaluettelo. Nämä muistuttavat
 sisällysluetteloita (\komento{tableofcontents}, luku
@@ -3695,11 +3698,12 @@ kuvatekstit.
 
 Leijuvien osien luettelojen ulkoasua voi muokata samalla tavalla kuin
 sisällysluetteloidenkin, joita käsitellään luvussa
-\ref{luku:sisallysluettelo}. Luetteloiden otsikot tulevat komennoista
-\komento{listtablename} ja \komento{listfigurename}, jotka kirjoittaja
-voi määritellä uudestaan. Järkevää on tehdä se lähdedokumentin
-esittelyosassa ja käyttää \komento{addto}\-/ komentoa, jolla asetukset
-lisätään tietyn kielen asetuksiin.
+\ref{luku:sisallysluettelo}. Luetteloiden otsikot tulevat
+kieliasetuksista ja komennoista \komento{listtablename} ja
+\komento{listfigurename}, jotka kirjoittaja voi määritellä uudestaan.
+Järkevää on tehdä se lähdedokumentin esittelyosassa ja käyttää
+\komento{addto}\-/ komentoa, jolla asetukset lisätään tietyn kielen
+asetuksiin.
 
 \komentoi{addto}
 \komentoi{captionsfinnish}
@@ -3715,6 +3719,7 @@ lisätään tietyn kielen asetuksiin.
 % table*, figure*
 
 \subsection{Muut leijuvat osat KESKEN}
+\label{luku:leijuosat_omat}
 
 ...
 

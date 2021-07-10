@@ -82,6 +82,7 @@ counter-with-in
 counter-with-out
 cs-quotes
 De-clare-Bib-li-og-ra-phy-Driv-er
+De-clare-Float-ing-Envi-ron-ment
 De-clare-Sort-ing-Tem-plate
 default-font-fea-tures
 de-fine-col-or
@@ -186,6 +187,7 @@ it-seis-arvo
 it-shape
 jul-kai-su-oh-jel-miin
 jul-kai-su-oh-jel-mis-sa
+kak-si-osai-nen
 kak-sois-alle-vii-vauk-sen
 kap-pa-le-ot-sik-ko
 kap-pa-le-ot-si-koi-ta
@@ -425,8 +427,11 @@ set-sans-font
 set-to-depth
 set-to-height
 set-to-width
+Setup-Float-ing-Envi-ron-ment
 sf-fam-i-ly
 show-hy-phens
+si-joit-te-lu-ase-tuk-set
+si-joit-te-lu-ase-tuk-sia
 si-sen-nys-ase-tuk-set
 si-sen-nys-asiat
 si-vu-alueen
@@ -591,6 +596,7 @@ väli-ot-si-kois-sa
 väli-ot-si-kon
 väli-ot-si-kot
 wall-cal-en-dar
+with-in
 Xe-latex
 yh-dys-osas-ta
 yh-dys-osien

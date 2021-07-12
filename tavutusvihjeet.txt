@@ -62,6 +62,8 @@ big-skip-amount
 book-marks-num-ber-ed
 book-marks-open
 book-tabs
+bottom-fraction
+bottom-number
 bottom-rule
 break
 cap-tion
@@ -82,6 +84,11 @@ con-tents-page
 counter-with-in
 counter-with-out
 cs-quotes
+dbl-float-page-fraction
+dbl-float-sep
+dbl-text-float-sep
+dbl-top-fraction
+dbl-top-number
 De-clare-Bib-li-og-ra-phy-Driv-er
 De-clare-Float-ing-Envi-ron-ment
 De-clare-Sort-ing-Tem-plate
@@ -131,7 +138,9 @@ fig-ure
 fig-ure-name
 fig-ures
 float
+float-page-fraction
 float-row
+float-sep
 flush-bottom
 font-size
 font-spec
@@ -181,6 +190,7 @@ if-then-else
 ig-nore-spaces
 ig-nore-spaces-af-ter-end
 in-col-lec-tion
+in-text-sep
 item-indent
 item-ize
 item-sep
@@ -495,6 +505,8 @@ text-color
 text-comp-word-mark
 text-el-lip-sis
 text-en-glish
+text-float-sep
+text-fraction
 text-greek
 text-height
 text-quote-dbl
@@ -525,9 +537,12 @@ title-sec
 title-spacing
 title-toc
 toc-depth
+top-fraction
+top-number
 top-rule
 top-sep
 total
+total-number
 tot-count
 tot-pages
 tot-value

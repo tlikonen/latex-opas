@@ -66,6 +66,7 @@ bottom-rule
 break
 cap-tion
 cap-tions-finnish
+chapter-lists-gaps
 chapter-mark
 chapter-name
 cite
@@ -247,6 +248,7 @@ line-spread
 line-width
 list
 list-fig-ure-name
+list-of
 list-of-fig-ures
 list-of-tables
 list-par-indent

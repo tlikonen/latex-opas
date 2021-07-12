@@ -3705,7 +3705,7 @@ jossa normaaliversio (esim. \ymparisto{table}) ladotaan yhden palstan
 sisään ja tähdellinen versio (esim. \ymparisto{table*}) sijoitetaan
 palstojen ulkopuolelle, koko sivun tilaan.
 
-\subsection{Muut leijuvat osat KESKEN}
+\subsection{Muut leijuvat osat}
 \label{luku:leijuosat_omat}
 
 Omia, itse nimettyjä leijuvia osia tehdään \pakettim{newfloat}\-/
@@ -3723,10 +3723,10 @@ ja käytännössä myös ympäristön nimi. Jos tyypiksi antaa sanan
 \koodi{esimerkki}, syntyy leijuvat ympäristöt \ymparistox{esimerkki} ja
 \ymparistox{esimerkki*}, joiden kuvateksteissä on sana ''Esimerkki'' eli
 sama sana mutta isolla alkukirjaimella. Automaattisesti syntyy myös uusi
-komento \komentox{list\-of\-esi\-merk\-kis} (vrt.
-\komento{listoftables}), jota voi käyttää luettelon (luku
-\ref{luku:leijuosat_luettelot}) latomiseen tämäntyyppisistä leijuvista
-osista.
+\komentox{listof}\-/ alkuinen komento
+\komentox{list\-of\-esi\-merk\-kis} (tai \koodi{-es}), jota voi käyttää
+luettelon (luku \ref{luku:leijuosat_luettelot}) latomiseen
+tämäntyyppisistä leijuvista osista.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -3740,7 +3740,7 @@ osista.
     \rivi{placement}{sijoitteluasetukset}
     \rivi{fileext}{väliaikaistiedoston pääte}
     \rivi{within}{ylemmäntasoinen laskuri (tai \koodi{none})}
-    \rivi{chapterlistgaps}{luettelossa väli päälukujen välissä
+    \rivi{chapterlistsgaps}{luettelossa väli päälukujen välissä
     (\koodi{on} tai \koodi{off})}
     \bottomrule
   \end{tabular}
@@ -3760,7 +3760,7 @@ osista.
   placement=tbp,
   fileext=loesim,
   within=chapter,
-  chapterlistgaps=off
+  chapterlistsgaps=off
 ]{esimerkki}
 \end{koodilohko}
 
@@ -3778,8 +3778,8 @@ tyyppinä ja valitsimen \koodil{listname} arvo on puolestaan otsikko,
 joka ladotaan tämäntyyppisten leijuvien osien luettelon alkuun (luku
 \ref{luku:leijuosat_luettelot}). Valitsimella \koodil{placement} tehdään
 sijoitteluasetuksia, joita käsitellään luvussa
-\label{luku:leijuosat_sijoittelu}. Käytännössä ne ovat tiettyjä
-kirjaimia, joilla vaikutetaan leijuvan osan sijoitteluun. Oletusarvo on
+\ref{luku:leijuosat_sijoittelu}. Käytännössä ne ovat tiettyjä kirjaimia,
+joilla vaikutetaan leijuvan osan sijoitteluun. Oletusarvo on
 \koodil{tbp}.
 
 Valitsin \koodil{file\-ext} on tiedoston pääte. Leijuvien osien
@@ -3805,16 +3805,35 @@ esimerkiksi kirjan pääluvun numero -- ja toinen on leijuvan osan
 laskurin arvo. Tällaisia hierarkkisia laskureita käsitellään tarkemmin
 luvussa \ref{luku:hierarkkiset_laskurit}.
 
-% chapterlistgaps
-% \SetupFloatingEnvironment
+Jos valitsimen \koodil{chapterlistsgaps} arvo on \koodil{on},
+luettelossa eri päälukuihin kuuluvat leijuvat osat erotetaan toisistaan
+pienellä pystysuuntaisella välillä. Tämä kytketään pois antamalla
+arvoksi \koodil{off}. Asetuksella on merkitystä vain dokumenttiluokissa,
+joissa on \komento{chapter}\-/ otsikot. Esimerkiksi \luokka{article}\-/
+luokassa ei ole.
 
-\subsection{Leijuvien osien luettelot KESKEN}
+Paketti \paketti{newfloat} mahdollistaa myös aiemmin määriteltyjen
+leijuvien osien muokkaamisen jälkikäteen. Se tehdään komennolla
+\komentom{SetupFloatingEnvironment}, jolle annetaan argumentiksi
+leijuvan osan tyyppi eli ympäristön nimi (\ymparisto{table},
+\ymparisto{figure} tms.) ja muutettavat asetukset (taulukko
+\ref{tlk:declarefloat}).
+
+\komentoi{SetupFloatingEnvironment}
+\begin{koodilohkosis}
+\SetupFloatingEnvironment{tyyppi}{valitsimet}
+\end{koodilohkosis}
+
+\subsection{Leijuvien osien luettelot}
 \label{luku:leijuosat_luettelot}
 
 Dokumentin leijuvista osista voi latoa automaattisesti luetteloita:
 komennolla \komentom{listoftables} syntyy taulukkoluettelo ja komennolla
-\komentom{listoffigures} kuvaluettelo. Nämä muistuttavat
-sisällysluetteloita (\komento{tableofcontents}, luku
+\komentom{listoffigures} kuvaluettelo. Omien leijuvien osien luettelo
+tehdään vastaavalla \komentox{listof}\-/ alkuisella komennolla (luku
+\ref{luku:leijuosat_omat}).
+
+Leijuvien osien luettelot muistuttavat sisällysluetteloita (luku
 \ref{luku:sisallysluettelo}), eli niille tulee automaattisesti otsikko
 kuten ''\listtablename'' tai ''\listfigurename'' ja automaattisesti
 sisältö eli kaikki \komento{caption}\-/ komennolla ilmaistut (lyhyet)
@@ -3830,7 +3849,7 @@ kuvatekstit sekä tietysti sivunumerot.
   \komentoi{titlerule*}
 
 \begin{koodilohko}
-\titlecontents{table}                       % taulukkoluettelo (table)
+\titlecontents{table}                       % tyyppi: table
 [8mm]                                       % vasen sisennys (mitta)
 {\addvspace{3bp}\rmfamily\small}            % yläpuolinen koodi
 {\contentslabel{8mm}}                       % numeroitu kohta
@@ -3844,18 +3863,19 @@ kuvatekstit sekä tietysti sivunumerot.
 \end{esimerkki*}
 
 Leijuvien osien luettelojen ulkoasua voi muokata samalla tavalla kuin
-sisällysluetteloidenkin: ladataan paketti
+sisällysluetteloidenkin: käytetään pakettia
 \paketti{titletoc}\avctan{titletoc} ja määritellään sen
 \komento{titlecontents}\-/ komennolla luettelokohtien ulkoasu.
 Esimerkistä \ref{esim:leijuosat_titlecontents} selvinnee perusajatus, ja
 lisätietoa on sisällysluetteloita käsittelevässä luvussa
 \ref{luku:sisallysluettelo} sekä tietysti paketin ohjekirjassa.
 
-Luetteloiden otsikot tulevat kieliasetuksista ja komennoista
-\komento{listtablename} ja \komento{listfigurename}, jotka kirjoittaja
-voi määritellä uudestaan. Järkevää on tehdä se lähdedokumentin
-esittelyosassa ja käyttää \komento{addto}\-/ komentoa, jolla asetukset
-lisätään tietyn kielen asetuksiin.
+Latexin omien leijuvien osien luetteloiden otsikot tulevat
+kieliasetuksista ja komennoista \komento{listtablename} ja
+\komento{listfigurename}, jotka kirjoittaja voi määritellä uudestaan.
+Järkevää on tehdä se lähdedokumentin esittelyosassa ja käyttää
+\komento{addto}\-/ komentoa, jolla asetukset lisätään tietyn kielen
+asetuksiin.
 
 \komentoi{addto}
 \komentoi{captionsfinnish}
@@ -3868,7 +3888,7 @@ lisätään tietyn kielen asetuksiin.
 }
 \end{koodilohkosis}
 
-Luetteloihin saa lisättyä omia otsikoita samoilla keinoilla kuin
+Luetteloihin saa lisättyä omia rivejä samoilla keinoilla kuin
 sisällysluetteloihinkin, komennolla \komento{addcontentsline}. Komennon
 ensimmäinen argumentti on luettelon tyyppiä vastaavan tiedoston pääte.
 Tyyppi \koodil{lot} (\englantik{list of tables}) on taulukoille ja
@@ -3884,20 +3904,16 @@ ja valitaan osan määrittelyn yhteydessä.
 
 Komennon toinen argumentti tarkoittaa luettelomerkinnän tasoa (vrt.
 otsikkotasot). Leijuvien osien luetteloissa on vain yksi taso, ja siihen
-kirjoitetaan kyseisen leijuvan ympäristön nimi, esimerkiksi
-\ymparisto{table} tai \ymparisto{figure}. Komennon kolmas argumentti on
-luetteloon lisättävä merkintä.
-
-% Omat leijuvien osien luettelot noudattavt ilmeisesti figure-luettelon
-% ulkoasua, koska ne sisäisesti käyttävät komentoa \listoffigures (ks.
-% newfloat-paketin ohjeet).
+kirjoitetaan kyseisen leijuvan osan tyyppi eli ympäristön nimi,
+esimerkiksi \ymparisto{table} tai \ymparisto{figure}. Komennon kolmas
+argumentti on luetteloon lisättävä merkintä.
 
 \subsection{Sijoittelu KESKEN}
 \label{luku:leijuosat_sijoittelu}
 
 Latex sijoittaa leijuvat osat yleensä sivun yläosaan, joskus alaosaan
-tai omalle sivulleen, jossa ei ole leipätekstiä lainkaan. Sijoitteluun
-voi vaikuttaa ympäristön valinnaisen argumentin avulla:
+tai omalle sivulleen, jossa ei ole leipätekstiä lainkaan. Yksittäisen
+ympäristön sijoitteluun voi vaikuttaa valinnaisen argumentin avulla:
 
 \ymparistoi{figure}
 \begin{koodilohkosis}
@@ -3947,15 +3963,18 @@ valitsinta \koodil{H}. Se tarkoittaa ehdotonta vaatimusta, että juuri
 tähän kohtaan leijuva osa pitää sijoittaa. Tätä valitsinta ei voi
 yhdistää muiden valitsimien kanssa.
 
+Valitsinta \koodil{!} käytetään yhdessä muiden valitsimien kanssa, ja se
+poistaa tietyt sijoitteluun vaikuttavat säännöt tai rajoitukset. Tähän
+liittyvät rajoitukset tulevat \koodi{number}-loppuisista laskureista ja
+\koodi{fraction}\-/ loppuisista komennoista, joita käsitellään
+seuraavaksi.
+
 % \textfloatsep, \floatsep, \intextsep, \bottomfraction,
 % \floatpagefraction, \textfraction, \topfraction, bottomnumber,
 % dbltopnumber, topnumber, totalnumber.
 %
 % \dbltopfraction, \dblfloatpagefraction, dblfloatsepå, dbltextfloatsep,
-% \dbltopnumber
 
-
-% !-sijoitteluvalitsin
 % \textfloatsep
 % \floatsep
 

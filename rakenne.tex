@@ -3963,17 +3963,69 @@ valitsinta \koodil{H}. Se tarkoittaa ehdotonta vaatimusta, että juuri
 tähän kohtaan leijuva osa pitää sijoittaa. Tätä valitsinta ei voi
 yhdistää muiden valitsimien kanssa.
 
-Valitsinta \koodil{!} käytetään yhdessä muiden valitsimien kanssa, ja se
-poistaa tietyt sijoitteluun vaikuttavat säännöt tai rajoitukset. Tähän
-liittyvät rajoitukset tulevat \koodi{number}-loppuisista laskureista ja
-\koodi{fraction}\-/ loppuisista komennoista, joita käsitellään
-seuraavaksi.
+Valitsinta \koodil{!} käytetään yhdessä edellä mainittujen valitsimien
+\koodil{tbp} kanssa. Se poistaa tietyt sijoitteluun vaikuttavat säännöt
+tai rajoitukset. Niitä käsitellään seuraavaksi.
+
+Leijuvien osien automaattisessa sijoittelussa vaikuttaa kymmenen
+erilaista parametria, joihin kirjoittaja voi vaikuttaa: kolme laskuria,
+kolme mittaa ja neljä komentoa. Joillekin asetuksille on olemassa
+rinnakkainen versio, jota käytetään kahden palstan tilassa (luku
+\ref{luku:palstat}). Ne koskevat leijuvien ympäristöjen tähdellisiä
+versiota, kuten \ymparisto{table*} ja \ymparisto{figure*}, eli
+tilannetta, jossa leijuva osa ei ole palstojen sisällä, vaan koko sivun
+leveys on käytettävissä.
+
+Seuraavat kolme laskuria vaikuttavat sivulle ladottavien leijuvien osien
+enimmäismäärään. Ne koskevat tilannetta, jossa sivulla on myös
+tavallista leipätekstiä tai muuta sisältöä. Laskureille asetetaan uusi
+arvo kuten tavallisestikin eli komennolla \komento{setcounter} (luku
+\ref{luku:laskurit}). Näiden laskurien vaikutuksen voi poistaa kokonaan
+käyttämällä leijuvan ympäristön valitsinta \koodil{!} (taulukko
+\ref{tlk:leijuosat_sijoittelukirjaimet}).
 
 \begin{maaritelma}{\laskuri{#1}}
-\item [topnumber] ...
-\item [bottomnumber] ...
-\item [totalnumber] ...
+\item [topnumber] Sivun yläosaan sijoitettavien leijuvien osien
+  enimmäismäärä. Oletusarvo on~2. Kahden palstan tilassa käytetään
+  laskuria \laskuri{dbltopnumber}.
+\item [bottomnumber] Sivun alaosaan sijoitettavien leijuvien osien
+  enimmäismäärä. Oletusarvo on~1. Kahden palstan tilassa leijuvia osia
+  ei sijoiteta koskaan sivun alaosaan.
+\item [totalnumber] Samalla sivulla olevien leijuvien osien
+  enimmäismäärä, kun sivulla on myös tavallista leipätekstiä. Oletusarvo
+  on~3.
 \end{maaritelma}
+
+Seuraavat kolme mittaa vaikuttavat leijuvien osien pystysuuntaisiin
+väleihin. Mitat asetetaan komennolla \komento{setlength} (luku
+\ref{luku:mitat}).
+
+\begin{maaritelma}{\mitta{#1}}
+\item [floatsep] Samalla sivulla kahden peräkkäisen leijuvan osan
+  pystysuuntainen väli. Oletusarvo on venyvä mitta \koodil{12pt plus 2pt
+    minus 2pt}. Kahden palstan tilassa käytetään mittaa
+  \mitta{dblfloatsep}.
+\item [textfloatsep] Leijuvan osan ja leipätekstin välinen
+  pystysuuntainen väli. Oletusarvo on venyvä mitta \koodil{20pt plus 2pt
+    minus 4pt}. Kahden palstan tilassa käytetään mittaa
+  \mitta{dbltextfloatsep}.
+\item [intextsep] Pystysuuntainen väli leipätekstin ja leijuvan osan
+  välissä silloin, kun leijuva osa sijoitetaan tekstivirran sekaan. Tämä
+  koskee sijoitteluasetuksia \koodil{h} ja \koodil{H} (taulukko
+  \ref{tlk:leijuosat_sijoittelukirjaimet}). Oletusarvo vaihtelee
+  dokumenttiluokan fonttikokoasetusten (luku
+  \ref{luku:perusdokumenttiluokat_asetukset}) perusteella. Jos
+  dokumenttiluokan valitsin on \koodil{10pt} (oletus) tai \koodil{11pt},
+  oletusmitta on \koodil{12pt plus 2pt minus 2pt}. Dokumenttiluokan
+  valitsimella \koodil{12pt} oletus on \koodil{14pt plus 4pt minus 4pt}.
+\end{maaritelma}
+
+Seuraavat neljä komentoa sisältävät desimaaliluvun 0\==1. Luku liittyy
+leijuvien osien ja leipätekstin suhteelliseen määrään samalla sivulla.
+Komennot määritellään uudelleen komennolla \komento{renewcommand} (luku
+\ref{luku:komennot_maarittely}). Näiden vaikutuksen voi poistaa kokonaan
+leijuvan ympäristön valitsimella \koodil{!} (taulukko
+\ref{tlk:leijuosat_sijoittelukirjaimet}).
 
 \begin{maaritelma}{\komento{#1}}
 \item [topfraction] ...
@@ -3982,17 +4034,9 @@ seuraavaksi.
 \item [textfraction] ...
 \end{maaritelma}
 
-\begin{maaritelma}{\mitta{#1}}
-\item [floatsep] ...
-\item [textfloatsep] ...
-\item [intextsep] ...
-\end{maaritelma}
-
 \komento{dbltopfraction}
 \komento{dblfloatpagefraction}
-\mitta{dblfloatsep}
-\mitta{dbltextfloatsep}
-\laskuri{dbltopnumber}
+
 
 % \clearpage, \cleardoublepage ja \chapter. placeins-paketti
 

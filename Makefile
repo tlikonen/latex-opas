@@ -61,8 +61,8 @@ uninstall:
 	mktexlsr $(texmf)
 
 clean:
-	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls log out \
-		run.xml toc xdv lo*)
+	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls lo* out \
+		run.xml toc xdv)
 	rm -f texput.log $(nimi).zip
 	rm -f $(addsuffix .idx,$(asiahakemistot))
 	rm -f $(addsuffix .ind,$(asiahakemistot))

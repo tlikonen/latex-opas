@@ -130,8 +130,11 @@ Extension=.otf]
 \newlength{\sisennys}\setlength{\sisennys}{1.8em}
 \setlength{\parskip}{0em}
 \setlength{\footnotemargin}{.8em}
-\setlength{\floatsep}{.8em plus .3em minus .1em}
-\setlength{\textfloatsep}{1.3em plus .3em minus .1em}
+\setlength{\floatsep}{2ex plus 1ex minus .5ex}
+\setlength{\textfloatsep}{4ex plus 1ex minus .5ex}
+
+\renewcommand{\topfraction}{.75}
+\renewcommand{\floatpagefraction}{.7}
 
 \addbibresource{kirjallisuutta.bib}
 \nocite{*}

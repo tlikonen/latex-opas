@@ -154,3 +154,4 @@ Puutteita ja suunnitelmia
   - Makropakettien tekeminen.
   - Dokumenttiluokkien tekeminen.
   - Käsitellään uusi `fi-x-school`-tavutuskaava.
+  - Pitäisikö yleiskäsite "mitta" muuttaa täsmällisemmäksi "pituudeksi"?

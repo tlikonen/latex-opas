@@ -1450,7 +1450,8 @@ mitassa \mittam{fboxrule}.
 \end{koodilohkosis}
 
 Seuraavassa on esimerkki joidenkin edellä mainittujen komentojen
-käytöstä. Vakavaan typografiaan tuskin kannattaa ottaa mallia tästä.
+käytöstä. Tästä tuskin kannattaa ottaa mallia vakavaan typografiseen
+työhön.
 
 \komentoi{colorbox}
 \komentoi{color}
@@ -1718,16 +1719,18 @@ taulukkoon \ref{tlk:otsikkotasot} -- suurimmasta otsikosta pienimpään.
 Ylin otsikkotaso on teoksen osa, ja sitä merkitään komennolla
 \komentom{part}. Tämän komennon käyttö on vapaaehtoista, mutta sillä on
 voi osoittaa laajan teoksen osia. Osat numeroidaan oletuksena
-roomalaisilla järjestysluvuilla: ''Osa~I'', ''Osa~II'', ''Osa~III'' jne.
-Ne eivät vaikuta alemmantasoisten otsikoiden numerointiin, eli osan
-vaihtuminen ei oletusasetuksilla nollaa alemmantasoisten lukujen
-laskuria.
+roomalaisilla järjestysluvuilla: ''\partname~I'', ''\partname~II'',
+''\partname~III'' jne. Ne eivät vaikuta alemmantasoisten otsikoiden
+numerointiin, eli osan vaihtuminen ei oletusasetuksilla nollaa
+alemmantasoisten lukujen laskuria.
 
 Otsikkotaso \komentom{chapter} tarkoittaa kirjan päälukua, joka alkaa
-oletuksena puhtaalta sivulta. Näillä sopii ilmaista tietoteoksen tai
-romaanin pääluvut, ja ne saavat oletuksena numeroinnin ''Luku~1'',
-''Luku~2'', ''Luku~3'' jne. Dokumenttiluokassa \luokka{article} ei tätä
-otsikkotasoa ole lainkaan.
+oletuksena puhtaalta sivulta. Otsikkoa ennen siis suoritetaan
+automaattisesti sivunvaihtokomento \komento{clearpage} tai
+\komento{cleardoublepage} (luku \ref{luku:sivunvaihdot}).
+\komento{chapter}\-/ tasoiset otsikot saavat oletuksena numeroinnin
+''\chaptername~1'', ''\chaptername~2'', ''\chaptername~3'' jne.
+Dokumenttiluokassa \luokka{article} ei tätä otsikkotasoa ole lainkaan.
 
 Seuraavat otsikkotasot \komentom{section}, \komentom{subsection} ja
 \komentom{subsubsection} ovat tavallisimpia tekstin väliotsikoita. Nekin
@@ -2025,13 +2028,14 @@ ei liene tarvetta käyttää koskaan, sillä otsikoiden jälkeen tulevaa
 tekstikappaletta ei kuulu sisentää.
 
 Teoksen osien (\komento{part}) vaihtuessa sivulle ladotaan oletuksena
-teksti kuten ''Osa~I'', ''Osa~II'' jne. Mainittu sana ''Osa'' tulee
-suomen kieliasetuksista ja komennosta \komentom{partname}. Kaikkien
-kielten asetukset nimittäin määrittelevät komennon \komento{partname}
-siten, että se sisältää ja latoo kyseiseen kieleen sopivan ilmauksen.
-Vastaavasti päälukujen (\komento{chapter}) yhteydessä ladotaan suomen
-kieliasetuksilla ilmaus ''Luku~1'', ''Luku~2'' jne. Sana ''Luku'' tulee
-komennosta \komentom{chaptername}.
+teksti kuten ''\partname~I'', ''\partname~II'' jne. Mainittu sana
+''\partname'' tulee suomen kieliasetuksista ja komennosta
+\komentom{partname}. Kaikkien kielten asetukset nimittäin määrittelevät
+komennon \komento{partname} siten, että se sisältää ja latoo kyseiseen
+kieleen sopivan ilmauksen. Vastaavasti päälukujen (\komento{chapter})
+yhteydessä ladotaan suomen kieliasetuksilla ilmaus ''\chaptername~1'',
+''\chaptername~2'' jne. Sana ''\chaptername'' tulee komennosta
+\komentom{chaptername}.
 
 Jos omassa dokumentissa haluaa kutsua teoksen osia tai päälukuja
 joksikin muuksi, voi määritellä edellä mainitut komennot uudelleen.

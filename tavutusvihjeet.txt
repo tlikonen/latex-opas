@@ -554,6 +554,7 @@ ty-po-gra-fia
 ty-po-gra-fiaan
 ty-po-gra-fian
 ty-po-gra-fias-sa
+ty-po-gra-fi-seen
 ty-po-gra-fi-sen
 ty-po-gra-fi-se-na
 ty-po-gra-fi-ses-ta

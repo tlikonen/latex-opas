@@ -138,6 +138,7 @@ fig-ure
 fig-ure-name
 fig-ures
 float
+Float-Bar-rier
 float-page-fraction
 float-row
 float-sep
@@ -384,6 +385,7 @@ phan-tom-sec-tion
 pien-aak-ko-set
 pien-aak-kos-ten
 pik-seli-gra-fiik-kaa
+place-ins
 poly-glos-sia
 por-trait
 print-bib-li-og-ra-phy

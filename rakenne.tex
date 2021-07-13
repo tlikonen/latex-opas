@@ -3912,7 +3912,7 @@ kirjoitetaan kyseisen leijuvan osan tyyppi eli ympäristön nimi,
 esimerkiksi \ymparisto{table} tai \ymparisto{figure}. Komennon kolmas
 argumentti on luetteloon lisättävä merkintä.
 
-\subsection{Sijoittelu KESKEN}
+\subsection{Sijoittelu}
 \label{luku:leijuosat_sijoittelu}
 
 Latex sijoittaa leijuvat osat yleensä sivun yläosaan, joskus alaosaan
@@ -3983,9 +3983,9 @@ leveys on käytettävissä.
 Seuraavat kolme laskuria vaikuttavat sivulle ladottavien leijuvien osien
 enimmäismäärään. Ne koskevat tilannetta, jossa sivulla on myös
 tavallista leipätekstiä tai muuta sisältöä. Laskureille asetetaan uusi
-arvo kuten tavallisestikin eli komennolla \komento{setcounter} (luku
-\ref{luku:laskurit}). Näiden laskurien vaikutuksen voi poistaa kokonaan
-käyttämällä leijuvan ympäristön valitsinta \koodil{!} (taulukko
+arvo komennolla \komento{setcounter} (luku \ref{luku:laskurit}). Näiden
+laskurien vaikutuksen voi poistaa kokonaan käyttämällä leijuvan
+ympäristön valitsinta \koodil{!} (taulukko
 \ref{tlk:leijuosat_sijoittelukirjaimet}).
 
 \begin{maaritelma}{\laskuri{#1}}
@@ -4024,25 +4024,53 @@ väleihin. Mitat asetetaan komennolla \komento{setlength} (luku
   valitsimella \koodil{12pt} oletus on \koodil{14pt plus 4pt minus 4pt}.
 \end{maaritelma}
 
-Seuraavat neljä komentoa sisältävät desimaaliluvun 0\==1. Luku liittyy
-leijuvien osien ja leipätekstin suhteelliseen määrään samalla sivulla.
-Komennot määritellään uudelleen komennolla \komento{renewcommand} (luku
-\ref{luku:komennot_maarittely}). Näiden vaikutuksen voi poistaa kokonaan
-leijuvan ympäristön valitsimella \koodil{!} (taulukko
-\ref{tlk:leijuosat_sijoittelukirjaimet}).
+Seuraavat neljä komentoa sisältävät pelkän desimaaliluvun 0\==1. Luku
+kertoo leijuvien osien tai leipätekstin viemän suhteellisen tilan
+samalla sivulla. Komennot määritellään uudelleen komennolla
+\komento{renewcommand} (luku \ref{luku:komennot_maarittely}). Näiden
+vaikutuksen voi poistaa kokonaan leijuvan ympäristön valitsimella
+\koodil{!} (taulukko \ref{tlk:leijuosat_sijoittelukirjaimet}).
 
 \begin{maaritelma}{\komento{#1}}
-\item [topfraction] ...
-\item [bottomfraction] ...
-\item [floatpagefraction] ...
-\item [textfraction] ...
+\item [topfraction] Sivun yläosaan sijoitettavien leijuvien osien viemä
+  enimmäistila suhteessa sivun tekstialueen korkeuteen. Oletusarvo
+  on~\koodil{0.7}, mikä tarkoittaa, että leijuvat osat voivat viedä
+  korkeintaan 0,7\=/ kertaisesti (70\,\%) sivulla olevan pystysuuntaisen
+  tilan. Kahden palstan tilassa käytetään komentoa
+  \komento{dbltopfraction}.
+\item [bottomfraction] Sivun alaosaan sijoitettavien leijuvien osien
+  viemä enimmäistila suhteessa sivun tekstialueen korkeuteen. Oletusarvo
+  on~\koodil{0.3} (30\,\%). Kahden palstan tilassa leijuvia osia ei
+  koskaan sijoiteta sivun alaosaan.
+\item [textfraction] Leipätekstin vähimmäistila sivulla, kun samalla
+  sivulla on myös leijuvia osia. Oletusarvo on \koodil{0.2} (20\,\%).
+\item [floatpagefraction] Omalle sivulleen sijoitettavien leijuvien
+  osien vähimmäistila sivun tekstialueen korkeudesta. Toisin sanoen
+  leijuvien osien täytyy viedä vähintään tämän verran tilaa sivulta,
+  ennen kuin ne sijoitetaan omalle sivulleen, jossa ei ole leipätekstiä
+  lainkaan. Oletusarvo on~\koodil{0.5} (50\,\%). Kahden palstan tilassa
+  käytetään komentoa \komento{dblfloatpagefraction}.
 \end{maaritelma}
 
-\komento{dbltopfraction}
-\komento{dblfloatpagefraction}
+Sivunvaihtokomennot \komento{clearpage} ja \komento{cleardoublepage}
+(luku \ref{luku:sivunvaihdot}) pakottavat kaikki aiemmin
+lähdetiedostossa olleet leijuvat osat ladottavaksi. Osanvaihtokomento
+\komento{part} ja otsikkokomento \komento{chapter} (luku
+\ref{luku:otsikot}) tekevät myös saman automaattisesti joissakin
+dokumenttiluokissa.
 
+Paketin \pakettim{placeins}\avctan{placeins} avulla voi tehdä omiakin
+rajakohtia, jonka yli leijuvat osat eivät voi siirtyä. Paketin
+komennolla \komento{FloatBarrier} tehdään raja kyseiseen kohtaan
+lähdedokumentissa. Jos paketin lataamisessa antaa argumentin
+\koodil{section}, asetetaan tällainen raja automaattisesti
+\komento{section}\-/ tasoisille otsikoille.
 
-% \clearpage, \cleardoublepage ja \chapter. placeins-paketti
+\komentoi{usepackage}
+\pakettii{placeins}
+\begin{koodilohkosis}
+\usepackage[section]{placeins}
+\end{koodilohkosis}
 
 \subsection{Typografia ja muita asetuksia}
 

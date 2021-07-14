@@ -3579,10 +3579,8 @@ kokeilemaan:
 
 % tabbing-ympäristö, voi ylittää sivurajan.
 
-\section{Leijuvat osat KESKEN}
+\section{Leijuvat osat}
 \label{luku:leijuosat}
-
-% Muutetaan newfloat-paketin tilalle floatrow
 
 Leijuvat osat (engl. \englantik{float}) ovat sellaisia dokumentin osia
 -- käytännössä ympäristöjä~--, joita ei ladota normaalin leipätekstin
@@ -3596,11 +3594,10 @@ käyttämällä ilmauksia kuten ''kuvassa~1''. Näissä hyödynnetään Latexin
 ristiviittaustoimintoja (luku \ref{luku:ristiviitteet}).
 
 Perus Latex sisältää kaksi erityyppistä leijuvaa osaa, kuvat ja taulukot
-(luku \ref{luku:leijuosat_latex}), mutta \pakettim{newfloat}\-/
-makropaketin avulla niitä voi tehdä muitakin (luku
-\ref{luku:leijuosat_omat}). Esimerkiksi tässä oppaassa on käytössä myös
-tyyppi ''Esimerkki'', jota käytetään leijuvien Latex\-/ koodiesimerkkien
-toteuttamiseen.
+(luku \ref{luku:leijuosat_latex}), mutta \pakettim{floatrow}\-/ paketin
+avulla niitä voi tehdä muitakin (luku \ref{luku:leijuosat_omat}).
+Esimerkiksi tässä oppaassa on käytössä myös tyyppi ''Esimerkki'', jota
+käytetään leijuvien Latex\-/ koodiesimerkkien toteuttamiseen.
 
 Koska Latex huolehtii leijuvien osien sijoittamisesta, niiden lopullinen
 järjestyskin voi hieman poiketa siitä, miten ne ovat Latex\-/
@@ -3711,30 +3708,26 @@ jossa normaaliversio (esim. \ymparisto{table}) ladotaan yhden palstan
 sisään ja tähdellinen versio (esim. \ymparisto{table*}) sijoitetaan
 palstojen ulkopuolelle, koko sivun tilaan.
 
-\subsection{Muut leijuvat osat KESKEN}
+\subsection{Muut leijuvat osat}
 \label{luku:leijuosat_omat}
 
-% Muutetaan newfloat-paketin tilalle floatrow
+Omia, itse nimettyjä leijuvia osia tehdään \pakettim{floatrow}\-/
+paketin\avctan{floatrow} avustuksella. Se sisältää komennon on
+\komentom{DeclareNewFloatType}, jonka argumentit ovat seuraavanlaiset:
 
-Omia, itse nimettyjä leijuvia osia tehdään \pakettim{newfloat}\-/
-paketin\avctan{newfloat} avustuksella. Sen tärkein komento on
-\komentom{DeclareFloatingEnvironment}, jonka argumentit ovat
-seuraavanlaiset:
-
-\komentoi{DeclareFloatingEnvironment}
+\komentoi{DeclareNewFloatType}
 \begin{koodilohkosis}
-\DeclareFloatingEnvironment[valitsimet]{tyyppi}
+\DeclareNewFloatType{tyyppi}{valitsimet}
 \end{koodilohkosis}
 
-Komennon pakollinen argumentti \koodil{tyyppi} on leijuvan osan tyyppi
+Komennon ensimmäinen argumentti \koodil{tyyppi} on leijuvan osan tyyppi
 ja käytännössä myös ympäristön nimi. Jos tyypiksi antaa sanan
-\koodi{esimerkki}, syntyy leijuvat ympäristöt \ymparistox{esimerkki} ja
-\ymparistox{esimerkki*}, joiden kuvateksteissä on sana ''Esimerkki'' eli
-sama sana mutta isolla alkukirjaimella. Automaattisesti syntyy myös uusi
-\komentox{listof}\-/ alkuinen komento
-\komentox{list\-of\-esi\-merk\-kis} (tai \koodi{-es}), jota voi käyttää
-luettelon (luku \ref{luku:leijuosat_luettelot}) latomiseen
-tämäntyyppisistä leijuvista osista.
+\koodil{esimerkki}, syntyy leijuvat ympäristöt \ymparistox{esimerkki} ja
+\ymparistox{esimerkki*}. Argumentin \koodil{valitsimet} avulla voi
+vaikuttaa tarkemmin leijuvan osan ominaisuuksiin. Mahdolliset valitsimet
+on koottu taulukkoon \ref{tlk:declarenewfloat}. Eri valitsimet erotetaan
+toisistaan pilkulla, eli komentoa käytetään esimerkin
+\ref{esim:declarenewfloat} tavoin.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -3744,51 +3737,41 @@ tämäntyyppisistä leijuvista osista.
     \ots{Valitsin} & \ots{Merkitys} \\
     \midrule
     \rivi{name}{kuvateksteissä näkyvä tyyppi}
-    \rivi{listname}{luettelon otsikko}
     \rivi{placement}{sijoitteluasetukset}
     \rivi{fileext}{väliaikaistiedoston pääte}
-    \rivi{within}{ylemmäntasoinen laskuri (tai \koodi{none})}
-    \rivi{chapterlistsgaps}{luettelossa väli päälukujen välissä
-    (\koodi{on} tai \koodi{off})}
+    \rivi{within}{ylemmäntasoinen laskuri}
+    % \rivi{relatedcapstyle}{??}
     \bottomrule
   \end{tabular}
 }{
-  \caption{\komento{DeclareFloatingEnvironment}\-/ komennon valitsimia,
-    joilla vaikutetaan leijuvan osan ominaisuuksiin}
-  \label{tlk:declarefloat}
+  \caption{\komento{DeclareNewFloatType}\-/ komennon valitsimia, joilla
+    vaikutetaan leijuvan osan ominaisuuksiin. Komento kuuluu
+    \paketti{floatrow}\-/ pakettiin}
+  \label{tlk:declarenewfloat}
 }
 
 \begin{esimerkki*}
-\komentoi{DeclareFloatingEnvironment}
+\komentoi{DeclareNewFloatType}
 
 \begin{koodilohko}
-\DeclareFloatingEnvironment[
+\DeclareNewFloatType{esimerkki}{
   name=Esimerkki,
-  listname={Luettelo esimerkeistä},
   placement=tbp,
   fileext=loesim,
-  within=chapter,
-  chapterlistsgaps=off
-]{esimerkki}
+  within=chapter
+}
 \end{koodilohko}
 
-\caption{\komento{DeclareFloatingEnvironment}\-/ komennon käyttö}
-\label{esim:declarefloat}
+\caption{\komento{DeclareNewFloatType}\-/ komennon käyttö. Komento
+  kuuluu \paketti{floatrow}\-/ pakettiin}
+\label{esim:declarenewfloat}
 \end{esimerkki*}
 
-Argumentin \koodil{valitsimet} avulla voi vaikuttaa tarkemmin leijuvan
-osan ominaisuuksiin. Mahdolliset valitsimet on koottu taulukkoon
-\ref{tlk:declarefloat}. Eri valitsimet erotetaan toisistaan pilkulla,
-eli komentoa käytetään esimerkin \ref{esim:declarefloat} tavoin.
-
 Valitsimen \koodil{name} arvo näkyy kuvateksteissä leijuvan osan
-tyyppinä ja valitsimen \koodil{listname} arvo on puolestaan otsikko,
-joka ladotaan tämäntyyppisten leijuvien osien luettelon alkuun (luku
-\ref{luku:leijuosat_luettelot}). Valitsimella \koodil{placement} tehdään
-sijoitteluasetuksia, joita käsitellään luvussa
-\ref{luku:leijuosat_sijoittelu}. Käytännössä ne ovat tiettyjä kirjaimia,
-joilla vaikutetaan leijuvan osan sijoitteluun. Oletusarvo on
-\koodil{tbp}.
+tyyppinä. Valitsimella \koodil{placement} tehdään sijoitteluasetuksia,
+joita käsitellään luvussa \ref{luku:leijuosat_sijoittelu}. Käytännössä
+ne ovat tiettyjä kirjaimia, joilla vaikutetaan leijuvan osan
+sijoitteluun. Oletusarvo on \koodil{tbp}.
 
 Valitsin \koodil{file\-ext} on tiedoston pääte. Leijuvien osien
 luetteloita tehtäessä Latex käyttää väliaikaistiedostoa, ja sen päätteen
@@ -3800,11 +3783,10 @@ tiedostopäätettä, joka alkaa kirjaimilla \koodil{lo} (\englantik{list
 \koodil{lo}, jonka perässä on osan tyyppi.
 
 Valitsimen \koodil{within} avulla vaikutetaan leijuvien osien
-numeroinnin riippuvuuteen muista laskureista. Oletusarvo on
-\koodil{none}, joka tarkoittaa, että leijuvan osan laskuri ei ole
-riippuvainen muista laskureista eli osat numeroidaan dokumentin alusta
-saakka yhdellä luvulla. Arvoksi voi antaa myös Latexin laskurin nimen:
-mielekkäitä arvoja ovat esimerkiksi \laskuri{chapter} ja
+numeroinnin riippuvuuteen muista laskureista. Oletuksena leijuvan osan
+laskuri ei ole riippuvainen muista laskureista eli osat numeroidaan
+dokumentin alusta saakka yhdellä luvulla. Arvoksi voi antaa myös Latexin
+laskurin nimen: mielekkäitä arvoja ovat esimerkiksi \laskuri{chapter} ja
 \laskuri{section}. Vaikutus on se, että leijuvan osan laskuri on
 riippuvainen näistä laskureista ja nollautuu aina, kun toisen laskurin
 arvo kasvaa. Lisäksi kuvateksteissä näkyy kaksiosainen numerointi (4.2,
@@ -3813,33 +3795,24 @@ esimerkiksi kirjan pääluvun numero -- ja toinen on leijuvan osan
 laskurin arvo. Tällaisia hierarkkisia laskureita käsitellään tarkemmin
 luvussa \ref{luku:hierarkkiset_laskurit}.
 
-Jos valitsimen \koodil{chapterlistsgaps} arvo on \koodil{on},
-luettelossa eri päälukuihin kuuluvat leijuvat osat erotetaan toisistaan
-pienellä pystysuuntaisella välillä. Tämä kytketään pois antamalla
-arvoksi \koodil{off}. Asetuksella on merkitystä vain dokumenttiluokissa,
-joissa on \komento{chapter}\-/ otsikot. Esimerkiksi \luokka{article}\-/
-luokassa ei ole.
-
-Paketti \paketti{newfloat} mahdollistaa myös aiemmin määriteltyjen
-leijuvien osien muokkaamisen jälkikäteen. Se tehdään komennolla
-\komentom{SetupFloatingEnvironment}, jolle annetaan argumentiksi
-leijuvan osan tyyppi eli ympäristön nimi (\ymparisto{table},
-\ymparisto{figure} tms.) ja muutettavat asetukset (taulukko
-\ref{tlk:declarefloat}).
-
-\komentoi{SetupFloatingEnvironment}
-\begin{koodilohkosis}
-\SetupFloatingEnvironment{tyyppi}{valitsimet}
-\end{koodilohkosis}
-
-\subsection{Luettelot}
+\subsection{Leijuvien osien luettelot}
 \label{luku:leijuosat_luettelot}
 
 Dokumentin leijuvista osista voi latoa automaattisesti luetteloita:
 komennolla \komentom{listoftables} syntyy taulukkoluettelo ja komennolla
-\komentom{listoffigures} kuvaluettelo. Omien leijuvien osien luettelo
-tehdään vastaavalla \komentox{listof}\-/ alkuisella komennolla (luku
-\ref{luku:leijuosat_omat}).
+\komentom{listoffigures} kuvaluettelo. Omien leijuvien osien (luku
+\ref{luku:leijuosat_omat}) luettelo tehdään \paketti{floatrow}\-/
+paketin komennolla \komento{listof}, jolle annetaan argumentiksi
+leijuvan osan tyyppi sekä luettelon otsikko.
+
+\komentoi{listoftables}
+\komentoi{listoffigures}
+\komentoi{listof}
+\begin{koodilohkosis}
+\listoftables                  % taulukkoluettelo (table)
+\listoffigures                 % kuvaluettelo (figure)
+\listof{esimerkki}{Esimerkit}  % luettelo esimerkki-tyyppisistä osista
+\end{koodilohkosis}
 
 Leijuvien osien luettelot muistuttavat sisällysluetteloita (luku
 \ref{luku:sisallysluettelo}), eli niille tulee automaattisesti otsikko
@@ -3897,10 +3870,10 @@ asetuksiin.
 \end{koodilohkosis}
 
 Luetteloihin saa lisättyä omia rivejä samoilla keinoilla kuin
-sisällysluetteloihinkin, komennolla \komento{addcontentsline}. Komennon
-ensimmäinen argumentti on luettelon tyyppiä vastaavan tiedoston pääte.
-Tyyppi \koodil{lot} (\englantik{list of tables}) on taulukoille ja
-tyyppi \koodil{lof} (\englantik{list of figures}) on kuville. Omilla
+sisällysluetteloihinkin eli komennolla \komento{addcontentsline}.
+Komennon ensimmäinen argumentti on luettelon tyyppiä vastaavan tiedoston
+pääte. Tyyppi \koodil{lot} (\englantik{list of tables}) on taulukoille
+ja tyyppi \koodil{lof} (\englantik{list of figures}) on kuville. Omilla
 leijuvilla osilla (luku \ref{luku:leijuosat_omat}) se on jotakin muuta
 ja valitaan osan määrittelyn yhteydessä.
 
@@ -3916,7 +3889,7 @@ kirjoitetaan kyseisen leijuvan osan tyyppi eli ympäristön nimi,
 esimerkiksi \ymparisto{table} tai \ymparisto{figure}. Komennon kolmas
 argumentti on luetteloon lisättävä merkintä.
 
-\subsection{Sijoittelu}
+\subsection{Sijoittelu sivulle}
 \label{luku:leijuosat_sijoittelu}
 
 Latex sijoittaa leijuvat osat yleensä sivun yläosaan, joskus alaosaan
@@ -3941,14 +3914,15 @@ ympäristön sijoitteluun voi vaikuttaa valinnaisen argumentin avulla:
     \rivi{b}{sivun alaosaan (\englanti{bottom})}
     \rivi{p}{leijuvien osien sivulle (\englanti{page})}
     \rivi{h}{mieluiten tähän kohtaan (\englanti{here})}
-    \rivi{H}{ehdottomasti tähän kohtaan (\paketti{floatrow}, \paketti{float})}
+    \rivi{H}{ehdottomasti tähän kohtaan (\englanti{here},
+    \paketti{floatrow})}
     \rivi{!}{ei huomioida tiettyjä sijoittelurajoituksia}
     \bottomrule
   \end{tabular}
 }{
   \caption{Leijuvien osien sijoitteluun voi vaikuttaa ympäristön
     valinnaisen argumentin avulla. Valitsin \koodil{H} on
-    \paketti{floatrow}\-/\ ja \paketti{float}\-/ pakettien ominaisuus}
+    \paketti{floatrow}\-/ paketin ominaisuus}
   \label{tlk:leijuosat_sijoittelukirjaimet}
 }
 
@@ -3965,8 +3939,7 @@ se on lähdetiedostossa. Se on kuitenkin vain ehdotus eikä useinkaan
 toteudu: Latex lisää automaattisesti aina \koodi{h}\=/ valitsimen perään
 \koodi{t}:n eli sivun yläosaan sijoittamisen. Latex käyttää sitä, jos se
 saa sillä tavoin omasta mielestään paremman lopputuloksen. Lataamalla
-makropaketin \pakettim{floatrow}\avctan{floatrow} (tai yksinkertaisemman
-\paketti{float}\-/ paketin\avctan{float}) voi käyttää myös myös
+makropaketin \pakettim{floatrow}\avctan{floatrow} voi käyttää myös myös
 valitsinta \koodil{H}. Se tarkoittaa ehdotonta vaatimusta, että juuri
 tähän kohtaan leijuva osa pitää sijoittaa. Tätä valitsinta ei voi
 yhdistää muiden valitsimien kanssa.

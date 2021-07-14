@@ -90,7 +90,7 @@ dbl-text-float-sep
 dbl-top-fraction
 dbl-top-number
 De-clare-Bib-li-og-ra-phy-Driv-er
-De-clare-Float-ing-Envi-ron-ment
+De-clare-New-Float-Type
 De-clare-Sort-ing-Tem-plate
 default-font-fea-tures
 de-fine-col-or
@@ -442,7 +442,6 @@ set-sans-font
 set-to-depth
 set-to-height
 set-to-width
-Setup-Float-ing-Envi-ron-ment
 sf-fam-i-ly
 show-hy-phens
 si-joit-te-lu-ase-tuk-set

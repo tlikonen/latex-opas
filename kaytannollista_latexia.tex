@@ -15,7 +15,6 @@
 \usepackage{xcolor}
 \usepackage{floatrow}
 \usepackage{caption}
-\usepackage{newfloat}
 \usepackage{fancyvrb}
 \usepackage{tabularx}
 \usepackage{booktabs}
@@ -149,7 +148,7 @@ Extension=.otf]
 \DeclareNameAlias{default}{family-given}
 \DefineBibliographyStrings{finnish}{andothers = {ym.}}
 
-\DeclareFloatingEnvironment[ name={Esimerkki} ]{esimerkki}
+\DeclareNewFloatType{esimerkki}{name=Esimerkki, within=chapter}
 
 \indexsetup{level=\section*, toclevel=section, noclearpage}
 
@@ -190,14 +189,15 @@ Extension=.otf]
     }\item[\seurausnuoli]}{%
   \end{list}}
 
-\floatsetup{ font={small}, justification=raggedright,
-  margins=raggedright, captionskip=2ex, capposition=bottom }
+\floatsetup{ style=plain, font={small}, justification=raggedright,
+  margins=raggedright, captionskip=0ex, capposition=bottom }
+
+\floatsetup[table]{ style=plain, captionskip=2ex }
+\floatsetup[figure]{ style=plain, captionskip=2ex }
 
 \captionsetup{ font={small, sf}, labelfont={bf}, textfont={},
   textformat=period, margin=.5em, justification=RaggedRight,
   singlelinecheck=off }
-
-\captionsetup[esimerkki]{ skip=-0.5ex, margin=.5em }
 
 \newcommand{\leijutlk}[2]{%
   \begin{table*}

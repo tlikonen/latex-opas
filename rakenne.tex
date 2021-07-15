@@ -4111,55 +4111,32 @@ sisällön levyinen. Käyttämällä tätä mittaa kuvatekstit rivitetään vain
 sisällön levyiseksi. Esimerkki \ref{esim:floatbox_perus} selventää,
 miten \komento{floatbox}\-/ komento toimii käytännössä.
 
-\begin{esimerkki*}
-  \komentoi{caption}
-  \komentoi{floatbox}
-  \mittai{FBwidth}
-  \ymparistoi{floatrow}
-  \ymparistoi{table}
-  \ymparistoi{tabular}
-
-\begin{koodilohko}
-\begin{table}
-  \begin{floatrow}[2]
-    \floatbox{table}[\FBwidth]{
-      \caption{Vasemmanpuoleinen taulukko}
-    }{
-      \begin{tabular}{ll}
-        soluja & vain \\
-        esimerkin & vuoksi \\
-      \end{tabular}
-    }
-    \floatbox{table}[\FBwidth]{
-      \caption{Oikeanpuoleinen taulukko}
-    }{
-      \begin{tabular}{ll}
-        soluja & vain \\
-        esimerkin & vuoksi \\
-      \end{tabular}
-    }
-  \end{floatrow}
-\end{table}
-\end{koodilohko}
-  \caption{\ymparisto{floatrow}\-/ ympäristöllä voi latoa samaan
-    leijuvaan osaan useita taulukoita, kuvia tms. Niistä jokainen
-    toteutetaan komennon \komento{floatbox} avulla ja jokaisella on oma
-    kuvatekstinsä}
-  \label{esim:floatrow_floatbox}
-\end{esimerkki*}
-
 Yksi leijuva ympäristö voi sisältää rinnakkain useampia taulukoita,
 kuvia tms., joilla jokaisella on oma kuvatekstinstä. Se tehdään
 ympäristöllä \ymparisto{floatrow}, jonka valinnainen argumentti
 ilmaisee, kuinka monta kuvaa tms. ladotaan rinnakkain. Oletusarvo on~2.
 Ympäristön sisällä täytyy olla yhtä monta \komento{floatbox}\-/
-komentoa. Esimerkki \ref{esim:floatrow_floatbox} selventää, kuinka
-ladotaan kaksi taulukkoa rinnakkain.
+komentoa. Seuraavasta esimerkistä selviää perusajatus kahden taulukon
+latomiseksi rinnakkain:
+
+\komentoi{caption}
+\komentoi{floatbox}
+\mittai{FBwidth}
+\ymparistoi{floatrow}
+\ymparistoi{table}
+\begin{koodilohkosis}
+\begin{table}
+  \begin{floatrow}[2]  % kaksi rinnakkain
+    \floatbox{table}[\FBwidth]{\caption{Vasen}}{…}
+    \floatbox{table}[\FBwidth]{\caption{Oikea}}{…}
+  \end{floatrow}
+\end{table}
+\end{koodilohkosis}
 
 Kun leijuvat osat on toteutettu \komento{floatbox}\-/ komennon avulla,
 voi niiden ulkoasuun vaikuttaa komennolla \komento{floatsetup}. Sille
-annetaan yksi argumentti, joka voi sisältää useita pilkulla toisistaan
-erotettuja valitsimia ja niiden arvoja.
+annetaan ainakin yksi argumentti, joka voi sisältää useita pilkulla
+toisistaan erotettuja valitsimia ja niiden arvoja.
 
 \komentoi{floatsetup}
 \begin{koodilohkosis}

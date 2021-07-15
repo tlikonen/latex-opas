@@ -7,7 +7,7 @@
 *.idx
 *.ilg
 *.ind
-*.log
+*.lo*
 *.out
 *.pdf
 *.run.xml

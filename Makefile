@@ -7,7 +7,7 @@ lahde = $(nimi).tex asetukset.tex esipuhe.tex \
 tds = doc/finnish/latex
 julkaisutiedostot = $(nimi).pdf versio.tex $(lahde) README.md
 julkaisukohteet = $(patsubst %,$(tds)/$(nimi)/%,$(julkaisutiedostot))
-asiahakemistot = paketit ymparistot komennot mitat laskurit luokat
+asiahakemistot = paketit ymparistot komennot mitat laskurit dokumenttiluokat
 texmf = $(HOME)/texmf
 latex = lualatex -interaction=nonstopmode
 latexmk = latexmk -lualatex \

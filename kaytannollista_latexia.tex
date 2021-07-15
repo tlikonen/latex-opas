@@ -157,7 +157,8 @@ Extension=.otf]
 \makeindex[name=ymparistot, title={Ympäristöt}, columns=2, columnsep=1em]
 \makeindex[name=mitat, title={Mitat}, columns=2, columnsep=1em]
 \makeindex[name=laskurit, title={Laskurit}, columns=1, columnsep=1em]
-\makeindex[name=luokat, title={Dokumenttiluokat}, columns=1, columnsep=1em]
+\makeindex[name=dokumenttiluokat, title={Dokumenttiluokat}, columns=1,
+columnsep=1em]
 
 \renewcommand{\theFancyVerbLine}
 {\sffamily\versaalinum\fontsize{6bp}{7bp}\selectfont\arabic{FancyVerbLine}}
@@ -256,7 +257,7 @@ Extension=.otf]
 \newcommand{\koodil}[1]{\enquote{\koodi{#1}}}
 
 \newcommand{\luokkax}[1]{\textcolor{luokka}{\textsf{#1}}}
-\newcommand{\luokkai}[1]{\index[luokat]{\luokkax{#1}}}
+\newcommand{\luokkai}[1]{\index[dokumenttiluokat]{\luokkax{#1}}}
 \newcommand{\luokka}[1]{\luokkax{#1}\luokkai{#1}}
 % \newcommand{\luokkamargin}[1]{\marginaali{\luokkax{#1}}}
 \newcommand{\luokkamargin}[1]{}
@@ -490,7 +491,7 @@ Extension=.otf]
 \chapter{Asiahakemisto}
 \label{luku:asiahakemisto}
 
-\printindex[luokat]
+\printindex[dokumenttiluokat]
 \newpage
 \printindex[komennot]
 \newpage

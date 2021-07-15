@@ -90,6 +90,7 @@ dbl-text-float-sep
 dbl-top-fraction
 dbl-top-number
 De-clare-Bib-li-og-ra-phy-Driv-er
+De-clare-Float-Font
 De-clare-New-Float-Type
 De-clare-Sort-ing-Tem-plate
 default-font-fea-tures
@@ -133,15 +134,18 @@ fancyhf
 fancy-page-style
 fancy-vrb
 fbox-rule
+FB-width
 fcolor-box
 fig-ure
 fig-ure-name
 fig-ures
 float
 Float-Bar-rier
+float-box
 float-page-fraction
 float-row
 float-sep
+float-setup
 flush-bottom
 font-size
 font-spec
@@ -200,6 +204,7 @@ it-seis-arvo
 it-shape
 jul-kai-su-oh-jel-miin
 jul-kai-su-oh-jel-mis-sa
+jus-ti-fi-ca-tion
 kak-si-osai-nen
 kak-sois-alle-vii-vauk-sen
 kap-pa-le-ot-sik-ko

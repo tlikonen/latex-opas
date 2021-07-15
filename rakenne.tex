@@ -4033,7 +4033,7 @@ Sivunvaihtokomennot \komento{clearpage} ja \komento{cleardoublepage}
 (luku \ref{luku:sivunvaihdot}) pakottavat kaikki aiemmin
 lähdetiedostossa olleet leijuvat osat ladottavaksi. Osanvaihtokomento
 \komento{part} ja otsikkokomento \komento{chapter} (luku
-\ref{luku:otsikot}) tekevät myös saman automaattisesti joissakin
+\ref{luku:otsikot}) tekevät saman automaattisesti joissakin
 dokumenttiluokissa.
 
 Paketin \pakettim{placeins}\avctan{placeins} avulla voi tehdä omiakin
@@ -4051,9 +4051,163 @@ lähdedokumentissa. Jos paketin lataamisessa antaa argumentin
 
 \subsection{Ulkoasu}
 
-...
+Leijuvan osan sisäisen asettelun, ulkoasun ja muun typografian
+hallintaan ja muokkaamiseen tarvitaan paketteja
+\paketti{floatrow}\avctan{floatrow} ja
+\paketti{caption}.\avctan{caption} Jälkimmäisen avulla muokataan
+kuvatekstin fonttia ja rivitystä, ja sitä käsitellään myöhemmin tässä
+alaluvussa.
 
-% floatrow-paketti
+Paketti \paketti{floatrow} tarjoaa runsaasti mahdollisuuksia leijuvien
+osien sijoitteluun: osat voi kehystää laatikolla, kuvatekstin voi
+sijoittaa ylös, alas tai sivulle, useita leijuvia osia voi sijoittaa
+vierekkäin ym. Tässä oppaassa käsitellään ainoastaan peruskäyttöä.
+
+Jotta \paketti{floatrow}\-/ paketin ominaisuudet saisi käyttöönsä,
+täytyy leijuvat osat toteuttaa sen oman \komento{floatbox}\-/ komennon
+avulla. Komento sijoitetaan leijuvan ympäristön sisään. Sen
+argumenteiksi annetaan ainakin leijuvan osan tyyppi, kuvatekstikomento
+ja varsinainen leijuva sisältö. Seuraavassa esimerkissä käytetään
+\ymparisto{table}\-/ ympäristöä, mutta muut tyypit toimivat samalla
+tavalla.
+
+\komentoi{floatbox}
+\ymparistoi{table}
+\begin{koodilohkosis}
+\begin{table}
+  \floatbox{table}[leveys]{kuvatekstit}{sisältö}
+\end{table}
+\end{koodilohkosis}
+
+\begin{esimerkki*}
+  \komentoi{caption}
+  \komentoi{floatbox}
+  \komentoi{label}
+  \mittai{FBwidth}
+  \ymparistoi{table*}
+  \ymparistoi{tabular}
+
+\begin{koodilohko}
+\begin{table*}
+  \floatbox{table}[\FBwidth]{
+    \caption{Upea taulukko}    % kuvateksti
+    \label{tlk:upea_taulukko}  % tunniste ristiviittausta varten
+  }{
+    \begin{tabular}{ll}
+      jotain & soluja \\
+      esimerkin & vuoksi \\
+    \end{tabular}
+  } 
+\end{table*}
+\end{koodilohko}
+  \caption{\komento{floatbox}\-/ komennon peruskäyttö}
+  \label{esim:floatbox_perus}
+\end{esimerkki*}
+
+Valinnaisen argumentin \koodil{leveys} voi jättää poiskin, jolloin
+leijuva osa varaa itselleen sivun leveyden verran tilaan. Argumentiksi
+on joskus hyödyllistä antaa mitta \mitta{FBwidth}, joka on leijuvan osan
+sisällön levyinen. Käyttämällä tätä mittaa kuvatekstit rivitetään vain
+sisällön levyiseksi. Esimerkki \ref{esim:floatbox_perus} selventää,
+miten \komento{floatbox}\-/ komento toimii käytännössä.
+
+\begin{esimerkki*}
+  \komentoi{floatbox}
+  \komentoi{newcommand}
+  \ymparistoi{figure*}
+  \ymparistoi{table*}
+
+\begin{koodilohko}
+\newcommand{\leijutlk}[2]{%
+  \begin{table*}
+    \floatbox{table}{#1}{#2}
+  \end{table*}}
+
+\newcommand{\leijukuva}[2]{%
+  \begin{figure*}
+    \floatbox{figure}{#1}{#2}
+  \end{figure*}}
+\end{koodilohko}
+  \caption{Leijuvien osien toteutus omien komentojen avulla}
+  \label{esim:floatbox_oma_ymparisto}
+\end{esimerkki*}
+
+Usein lienee järkevää määritellä oma komento tai ympäristö, joka
+sisältää tarvittavat leijuvat ympäristöt ja \komento{floatbox}\-/
+komennon. Näin ei tarvitse kirjoittaa niin paljon samoja komentoja.
+Esimerkki \ref{esim:floatbox_oma_ymparisto} määrittelee kaksi komentoa,
+\komentox{leiju\-tlk} ja \komentox{leiju\-kuva}, joilla on helppoa luoda
+leijuva taulukko tai kuva, esimerkiksi seuraavalla tavalla:
+
+\begin{koodilohkosis}
+\leijutlk{\caption{Kuvateksti}}{varsinainen taulukko}
+\end{koodilohkosis}
+
+Kun leijuvat osat on toteutettu \komento{floatbox}\-/ komennon avulla,
+voi niiden ulkoasuun vaikuttaa komennolla \komento{floatsetup}. Sille
+annetaan yksi argumentti, joka voi sisältää useita pilkulla toisistaan
+erotettuja valitsimia ja niiden arvoja.
+
+\begin{koodilohkosis}
+\floatsetup[tyyppi]{valitsimet}
+\end{koodilohkosis}
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+  \begin{tabularx}{\linewidth}{lL}
+    \toprule
+    \ots{Valitsin} & \ots{Merkitys ja vaihtoehtoja} \\
+    \midrule
+
+    \rivi{style}{tyyli: \koodi{plain}, \koodi{ruled}, \koodi{boxed} ym.}
+
+    \rivi{capposition}{kuvatekstin sijainti: \koodi{top}, \koodi{bottom}
+      ym.}
+
+    \rivi{font}{fonttiasetukset:
+      \koodi{rm}, \koodi{sf}, \koodi{tt}, \koodi{md}, \koodi{bf},
+      \koodi{up}, \koodi{it}, \koodi{sl}, \koodi{sc},
+      \koodi{scriptsize}, \koodi{footnotesize}, \koodi{small},
+      \koodi{normalsize}, \koodi{large}, \koodi{Large}}
+
+    \rivi{justification}{tasaus: \koodi{justified},
+      \koodi{centering}, \koodi{raggedright}, \koodi{raggedleft},
+      \koodi{RaggedRight} (\paketti{ragged2e}),
+      \koodi{RaggedLeft}  (\paketti{ragged2e})}
+
+    \rivi{captionskip}{kuvatekstin etäisyys sisällöstä (mitta)}
+    \bottomrule
+  \end{tabularx}
+}{
+  \caption{Muutama \komento{floatsetup}\-/ komennon valitsin, joilla
+    vaikutetaan leijuvien osien ulkoasuun. Osa tarvitsee paketin
+    \paketti{ragged2e}}
+  \label{tlk:floatsetup_valitsimia}
+}
+
+Valinnainen argumentti \koodil{tyyppi} on leijuvan osan tyyppi,
+esimerkiksi \ymparisto{table} tai \ymparisto{figure}. Jos se on annettu,
+asetukset vaikuttavat vain kyseiseen tyyppiin; muuten asetukset koskevat
+kaikentyyppisiä leijuvia osia. Asetukset tehdään valitsimien avulla,
+joita on olemassa paljon. Niistä muutama on koottu taulukkoon
+\ref{tlk:floatsetup_valitsimia}.
+
+Valitsin \koodil{font} asettaa leijuvan ympäristön fontin mutta ei
+vaikuta kuvatekstiin. Fonttiasetukset ovat käytännössä avainsanoja,
+jotka vastaavat lähes samannimisiä fonttikomentoja. Niitä käsiteltiin
+luvussa \ref{luku:fontit_korkea}. Omiakin fonttien avainsanoja voi luoda
+komennolla \komento{DeclareFloatFont}. Valitsimen \koodil{justification}
+arvoksi annetaan myös tietty sana, joka vastaava samannimisiä palstan
+tasauskomentoja (luku \ref{luku:kappaleen_tasaus}). Käytännössä leijuvan
+osan asetukset voisivat näyttää vaikka seuraavanlaiselta:
+
+\begin{koodilohkosis}
+\floatsetup{ style=plain, capposition=bottom, font={sf, small},
+  justification=centering, captionskip=2ex }
+\floatsetup[figure]{ style=boxed }
+\end{koodilohkosis}
+
 % caption-paketti
 
 \section{Ristiviitteet}

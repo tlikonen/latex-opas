@@ -4112,37 +4112,49 @@ sisällön levyiseksi. Esimerkki \ref{esim:floatbox_perus} selventää,
 miten \komento{floatbox}\-/ komento toimii käytännössä.
 
 \begin{esimerkki*}
+  \komentoi{caption}
   \komentoi{floatbox}
-  \komentoi{newcommand}
-  \ymparistoi{figure*}
+  \mittai{FBwidth}
+  \ymparistoi{floatrow}
   \ymparistoi{table*}
+  \ymparistoi{tabular}
 
 \begin{koodilohko}
-\newcommand{\leijutlk}[2]{%
-  \begin{table*}
-    \floatbox{table}{#1}{#2}
-  \end{table*}}
-
-\newcommand{\leijukuva}[2]{%
-  \begin{figure*}
-    \floatbox{figure}{#1}{#2}
-  \end{figure*}}
+\begin{table*}
+  \begin{floatrow}[2]
+    \floatbox{table}[\FBwidth]{
+      \caption{Vasemmanpuoleinen taulukko}
+    }{
+      \begin{tabular}{ll}
+        soluja & vain \\
+        esimerkin & vuoksi \\
+      \end{tabular}
+    }
+    \floatbox{table}[\FBwidth]{
+      \caption{Oikeanpuoleinen taulukko}
+    }{
+      \begin{tabular}{ll}
+        soluja & vain \\
+        esimerkin & vuoksi \\
+      \end{tabular}
+    }
+  \end{floatrow}
+\end{table*}
 \end{koodilohko}
-  \caption{Leijuvien osien toteutus omien komentojen avulla}
-  \label{esim:floatbox_oma_ymparisto}
+  \caption{\ymparisto{floatrow}\-/ ympäristöllä voi latoa samaan
+    leijuvaan osaan useita taulukoita, kuvia tms. Niistä jokainen
+    toteutetaan komennon \komento{floatbox} avulla ja jokaisella on oma
+    kuvatekstinsä}
+  \label{esim:floatrow_floatbox}
 \end{esimerkki*}
 
-Usein lienee järkevää määritellä oma komento tai ympäristö, joka
-sisältää tarvittavat leijuvat ympäristöt ja \komento{floatbox}\-/
-komennon. Näin ei tarvitse kirjoittaa niin paljon samoja komentoja.
-Esimerkki \ref{esim:floatbox_oma_ymparisto} määrittelee kaksi komentoa,
-\komentox{leiju\-tlk} ja \komentox{leiju\-kuva}, joilla on helppoa luoda
-leijuva taulukko tai kuva, esimerkiksi seuraavalla tavalla:
-
-\komentoi{caption}
-\begin{koodilohkosis}
-\leijutlk{\caption{Kuvateksti}}{varsinainen taulukko}
-\end{koodilohkosis}
+Yksi leijuva ympäristö voi sisältää rinnakkain useampia taulukoita,
+kuvia tms., joilla jokaisella on oma kuvatekstinstä. Se tehdään
+ympäristöllä \ymparisto{floatrow}, jonka valinnainen argumentti
+ilmaisee, kuinka monta kuvaa tms. ladotaan rinnakkain. Oletusarvo on~2.
+Ympäristön sisällä täytyy olla yhtä monta \komento{floatbox}\-/
+komentoa. Esimerkki \ref{esim:floatrow_floatbox} selventää, kuinka
+ladotaan kaksi taulukkoa rinnakkain.
 
 Kun leijuvat osat on toteutettu \komento{floatbox}\-/ komennon avulla,
 voi niiden ulkoasuun vaikuttaa komennolla \komento{floatsetup}. Sille
@@ -4167,18 +4179,21 @@ erotettuja valitsimia ja niiden arvoja.
     \rivi{capposition}{kuvatekstin sijainti: \koodi{top}, \koodi{bottom}
       ym.}
 
-    \rivi{font}{fonttiasetukset:
-      \koodi{rm}, \koodi{sf}, \koodi{tt}, \koodi{md}, \koodi{bf},
-      \koodi{up}, \koodi{it}, \koodi{sl}, \koodi{sc},
-      \koodi{scriptsize}, \koodi{footnotesize}, \koodi{small},
-      \koodi{normalsize}, \koodi{large}, \koodi{Large}}
-
-    \rivi{justification}{tasaus: \koodi{justified},
-      \koodi{centering}, \koodi{raggedright}, \koodi{raggedleft},
-      \koodi{RaggedRight} (\paketti{ragged2e}),
-      \koodi{RaggedLeft}  (\paketti{ragged2e})}
-
     \rivi{captionskip}{kuvatekstin etäisyys sisällöstä (mitta)}
+
+    \rivi{font}{fonttiasetukset: \koodi{rm}, \koodi{sf}, \koodi{tt},
+      \koodi{md}, \koodi{bf}, \koodi{up}, \koodi{it}, \koodi{sl},
+      \koodi{sc}, \koodi{scriptsize}, \koodi{footnotesize},
+      \koodi{small}, \koodi{normalsize}, \koodi{large}, \koodi{Large}}
+
+    \rivi{margins}{leijuvan osan sijainti: \koodi{centering},
+      \koodi{raggedright}, \koodi{raggedleft} ym.}
+
+    \rivi{justification}{sisällön tasaus: \koodi{justified},
+      \koodi{centering}, \koodi{raggedright}, \koodi{raggedleft},
+      \koodi{RaggedRight} (\paketti{ragged2e}), \koodi{RaggedLeft}
+      (\paketti{ragged2e})}
+
     \bottomrule
   \end{tabularx}
 }{

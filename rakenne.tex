@@ -4139,6 +4139,7 @@ Esimerkki \ref{esim:floatbox_oma_ymparisto} määrittelee kaksi komentoa,
 \komentox{leiju\-tlk} ja \komentox{leiju\-kuva}, joilla on helppoa luoda
 leijuva taulukko tai kuva, esimerkiksi seuraavalla tavalla:
 
+\komentoi{caption}
 \begin{koodilohkosis}
 \leijutlk{\caption{Kuvateksti}}{varsinainen taulukko}
 \end{koodilohkosis}
@@ -4148,6 +4149,7 @@ voi niiden ulkoasuun vaikuttaa komennolla \komento{floatsetup}. Sille
 annetaan yksi argumentti, joka voi sisältää useita pilkulla toisistaan
 erotettuja valitsimia ja niiden arvoja.
 
+\komentoi{floatsetup}
 \begin{koodilohkosis}
 \floatsetup[tyyppi]{valitsimet}
 \end{koodilohkosis}
@@ -4202,6 +4204,7 @@ arvoksi annetaan myös tietty sana, joka vastaava samannimisiä palstan
 tasauskomentoja (luku \ref{luku:kappaleen_tasaus}). Käytännössä leijuvan
 osan asetukset voisivat näyttää vaikka seuraavanlaiselta:
 
+\komentoi{floatsetup}
 \begin{koodilohkosis}
 \floatsetup{ style=plain, capposition=bottom, font={sf, small},
   justification=centering, captionskip=2ex }

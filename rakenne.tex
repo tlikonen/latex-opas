@@ -4084,11 +4084,11 @@ tavalla.
   \komentoi{floatbox}
   \komentoi{label}
   \mittai{FBwidth}
-  \ymparistoi{table*}
+  \ymparistoi{table}
   \ymparistoi{tabular}
 
 \begin{koodilohko}
-\begin{table*}
+\begin{table}
   \floatbox{table}[\FBwidth]{
     \caption{Upea taulukko}    % kuvateksti
     \label{tlk:upea_taulukko}  % tunniste ristiviittausta varten
@@ -4098,7 +4098,7 @@ tavalla.
       esimerkin & vuoksi \\
     \end{tabular}
   } 
-\end{table*}
+\end{table}
 \end{koodilohko}
   \caption{\komento{floatbox}\-/ komennon peruskäyttö}
   \label{esim:floatbox_perus}
@@ -4116,11 +4116,11 @@ miten \komento{floatbox}\-/ komento toimii käytännössä.
   \komentoi{floatbox}
   \mittai{FBwidth}
   \ymparistoi{floatrow}
-  \ymparistoi{table*}
+  \ymparistoi{table}
   \ymparistoi{tabular}
 
 \begin{koodilohko}
-\begin{table*}
+\begin{table}
   \begin{floatrow}[2]
     \floatbox{table}[\FBwidth]{
       \caption{Vasemmanpuoleinen taulukko}
@@ -4139,7 +4139,7 @@ miten \komento{floatbox}\-/ komento toimii käytännössä.
       \end{tabular}
     }
   \end{floatrow}
-\end{table*}
+\end{table}
 \end{koodilohko}
   \caption{\ymparisto{floatrow}\-/ ympäristöllä voi latoa samaan
     leijuvaan osaan useita taulukoita, kuvia tms. Niistä jokainen

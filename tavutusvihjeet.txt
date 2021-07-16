@@ -67,6 +67,7 @@ bottom-number
 bottom-rule
 break
 cap-tion
+cap-tion-setup
 cap-tions-finnish
 chapter-lists-gaps
 chapter-mark
@@ -81,6 +82,7 @@ column-sep
 con-tents-label
 con-tents-name
 con-tents-page
+Con-tin-ued-Float
 counter-with-in
 counter-with-out
 cs-quotes
@@ -129,6 +131,7 @@ esi-tys-gra-fii-kan
 esi-tys-gra-fiik-kaan
 esi-tys-gra-fiikka-ohjel-mil-la
 ext-dash
+false
 fancy-hdr
 fancyhf
 fancy-page-style
@@ -248,6 +251,8 @@ käyt-töön-ot-toon
 kään-täjä-ohjel-mat
 kään-täjä-ohjel-milla
 label
+label-font
+label-format
 label-sep
 label-width
 la-don-ta-oh-jei-ta
@@ -329,6 +334,7 @@ no-indent-after
 no-link-url
 no-page-break
 no-page-color
+normal-font
 normal-margin-par
 normal-size
 note
@@ -451,6 +457,7 @@ sf-fam-i-ly
 show-hy-phens
 si-joit-te-lu-ase-tuk-set
 si-joit-te-lu-ase-tuk-sia
+single-line-check
 si-sen-nys-ase-tuk-set
 si-sen-nys-asiat
 si-vu-alueen
@@ -513,6 +520,7 @@ text-comp-word-mark
 text-el-lip-sis
 text-en-glish
 text-float-sep
+text-font
 text-fraction
 text-greek
 text-height

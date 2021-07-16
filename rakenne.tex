@@ -4183,8 +4183,8 @@ toisistaan erotettuja valitsimia ja niiden arvoja.
 Valinnainen argumentti \koodil{tyyppi} on leijuvan osan tyyppi,
 esimerkiksi \ymparisto{table} tai \ymparisto{figure}. Jos se on annettu,
 asetukset vaikuttavat vain kyseiseen tyyppiin; muuten asetukset koskevat
-kaikentyyppisiä leijuvia osia. Asetukset tehdään valitsimien avulla,
-joita on olemassa paljon. Niistä muutama on koottu taulukkoon
+kaikentyyppisiä leijuvia osia. Asetukset tehdään erilaisten valitsimien
+avulla, joista muutama on koottu taulukkoon
 \ref{tlk:floatsetup_valitsimia}.
 
 Valitsin \koodil{font} asettaa leijuvan ympäristön fontin mutta ei
@@ -4203,7 +4203,126 @@ osan asetukset voisivat näyttää vaikka seuraavanlaiselta:
 \floatsetup[figure]{ style=boxed }
 \end{koodilohkosis}
 
-% caption-paketti
+Kuvatekstien fonttia ja rivittämistä hallitaan \paketti{caption}\-/
+paketin\avctan{caption} avulla. Tärkein komento on
+\komento{captionsetup}, joka yleensä sijoitetaan dokumentin
+esittelyosaan tai muuten alkuun, koska silloin se vaikuttaa koko
+dokumentissa. Komennon voi sijoittaa myös esimerkiksi yksittäisen
+leijuvan ympäristön sisään, jolloin se vaikuttaa vain kyseisessä
+ympäristössä.
+
+\komentoi{captionsetup}
+\begin{koodilohkosis}
+\captionsetup[tyyppi]{valitsimet}
+\end{koodilohkosis}
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+  \begin{tabularx}{\linewidth}{lL}
+    \toprule
+    \ots{Valitsin} & \ots{Merkitys ja vaihtoehtoja} \\
+    \midrule
+
+    \rivi{font}{kuvatekstin fontti: \koodi{normalfont}, \koodi{rm},
+      \koodi{sf}, \koodi{tt}, \koodi{md}, \koodi{bf}, \koodi{up},
+      \koodi{it}, \koodi{sl}, \koodi{sc}, \koodi{scriptsize},
+      \koodi{footnotesize}, \koodi{small}, \koodi{normalsize},
+      \koodi{large}, \koodi{Large}}
+
+    \rivi{labelfont}{leijuvan osan tyypin ja numeroinnin fontti}
+
+    \rivi{textfont}{varsinaisen kuvatekstin fontti}
+
+    \rivi{format}{kappaleen tyyppi, tavallinen \koodi{plain} vai
+      riippuva \koodi{hang}}
+
+    \rivi{indentation}{sisennysmitta kuvatekstin toisesta rivistä
+      alkaen}
+
+    \rivi{labelformat}{leijuvan osan tyypin muoto: \koodi{default},
+      \koodi{empty}, \koodi{simple}, \koodi{brace}, \koodi{parens}}
+
+    \rivi{labelsep}{leijuvan osan tyypin erotinmerkki: \koodi{none},
+      \koodi{colon}, \koodi{period}, \koodi{space}, \koodi{quad},
+      \koodi{newline}, \koodi{endash}}
+
+    \rivi{textformat}{kuvatekstin lopetusmerkki: \koodi{simple},
+      \koodi{period}}
+
+    \rivi{justification}{kuvatekstin tasaus: \koodi{justified},
+      \koodi{centering}, \koodi{centerlast}, \koodi{centerfirst},
+      \koodi{raggedright}, \koodi{RaggedRight} (\paketti{ragged2e}),
+      \koodi{raggedleft}}
+
+    \rivi{singlelinecheck}{yksirivisten kuvatekstien poikkeuksellinen
+      tasaus: \koodi{true} (oletus), \koodi{false}}
+
+    \rivi{margin}{kuvatekstin marginaalit: yksi mitta tai kaksi pilkulla
+      erotettua mittaa (vasen ja oikea marginaali)}
+
+    \rivi{width}{kuvatekstikappaleen leveys (mitta)}
+
+    \bottomrule
+  \end{tabularx}
+}{
+  \caption{Tärkeimpiä \komento{captionsetup}\-/ komennon valitsimia}
+  \label{tlk:captionsetup_valitsimia}
+}
+
+Komennon valinnainen argumentti \koodil{tyyppi} on leijuvan osan tyyppi,
+esimerkiksi \ymparisto{table} tai \ymparisto{figure}, johon halutaan
+vaikuttaa. Jos sen jättää pois, asetukset vaikuttavat kaikkien leijuvien
+osien kuvateksteihin. Pakollinen argumentti on \koodil{valitsimet},
+johon kirjoitetaan valitsimia eli avainsanoja ja niiden arvoja.
+Tärkeimpiä valitsimia on koottu taulukkoon
+\ref{tlk:captionsetup_valitsimia}. Käytännössä komento voisi näyttää
+esimerkiksi seuraavanlaiselta:
+
+\begin{koodilohkosis}
+\captionsetup{ font={small, sf}, labelfont={bf}, textfont={},
+  textformat=period, margin={.5em,0em}, justification=raggedright,
+  singlelinecheck=false }
+\end{koodilohkosis}
+
+Oletuksena Latex käsittelee yksiriviset kuvatekstit poikkeuksellisella
+tavalla eli keskittää ne. Sen vuoksi tasausvalitsin
+\koodil{justification} ei vaikuta yksirivisiin kuvateksteihin. Tämän
+poikkeuksen saa pois päältä käyttämällä asetusta
+\koodil{singlelinecheck=\katk false}, jolloin sama
+\koodil{justification} pätee yhtä lailla niin yksi- kuin monirivisiinkin
+kuvateksteihin.
+
+\begin{esimerkki*}
+  \ymparistoi{table}
+  \komentoi{caption}
+  \komentoi{ContinuedFloat}
+
+\begin{koodilohko}
+\begin{table}                 % kokonaisuuden 1. leijuva ympäristö
+  \caption{Hieno taulukko}
+  ...
+\end{table}
+...
+\begin{table}                 % kokonaisuuden 2. leijuva ympäristö
+  \ContinuedFloat             % sama numerointi kuin edelliselle
+  \caption{Hieno taulukko (jatkuu)}
+  ...
+\end{table}
+\end{koodilohko}
+
+  \caption{Usealle leijuvalle osalle saa saman numeroinin käyttämällä
+    komentoa \komento{ContinuedFloat}}
+  \label{esim:continuedfloat}
+\end{esimerkki*}
+
+Joskus halutaan, että kaksi tai useampi taulukko, kuva tai muu leijuva
+osa muodostavat kokonaisuuden, jolla on sama numero, esimerkiksi
+''\tablename~3''. Ajatuksena on, että sama sisältö on jakautunut
+useampaan osaan. Se onnistuu sijoittamalla komento
+\komento{ContinuedFloat} ensimmäisen jälkeisiin leijuviin ympäristöihin.
+Komento pitäisi sijoittaa heti ympäristön alkuun. Esimerkki
+\ref{esim:continuedfloat} havainnollistaa sen käyttöä.
 
 \section{Ristiviitteet}
 \label{luku:ristiviitteet}

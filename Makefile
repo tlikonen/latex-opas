@@ -70,6 +70,9 @@ clean:
 	rm -fr doc
 
 distclean: clean
-	rm -f $(nimi).pdf versio.tex versio.txt tavutusvihjeet.tex
+	rm -f $(nimi).pdf versio.tex versio.txt tavutusvihjeet.tex TAGS
+
+TAGS: $(lahde)
+	etags $(lahde)
 
 .PHONY: clean distclean ctan install uninstall

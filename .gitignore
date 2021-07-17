@@ -17,6 +17,7 @@
 *.zip
 .dir-locals-2.el
 doc
+TAGS
 tavutusvihjeet.tex
 versio.tex
 versio.txt

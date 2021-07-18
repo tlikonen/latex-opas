@@ -62,7 +62,7 @@ julkaistiin jo vuonna 1994 ja johon ilmestyy pieniä parannuksia
 vuosittain. Perusosat ovat kuitenkin varsin muuttumattomia. Varsinainen
 kiinnostava kehitys tapahtuukin esimerkiksi Latexin kääntäjissä
 (Lualatex ja Xelatex) sekä eri tekijöiden dokumenttiluokissa (luku
-\ref{luku:dokumenttiluokat}) ja makropaketeissa. Viimeksi mainitut
+\ref{luku/dokumenttiluokat}) ja makropaketeissa. Viimeksi mainitut
 laajentavat perus\-/ Latexia tuomalla niihin lisää helppokäyttöisiä
 toimintoja.
 
@@ -136,7 +136,7 @@ siinä muodossa kuin ne tietokoneelle annetaan, esimerkiksi
 siitä, että kyse on tietokonekoodista.
 
 \section{Asentaminen tietokoneelle}
-\label{luku:asentaminen}
+\label{luku/asentaminen}
 
 Latex pitää tietysti asentaa tietokoneelle, jotta sitä voisi käyttää.
 Miten edellisessä luvussa kuvattu sekava kokonaisuus saadaan ehjänä
@@ -204,7 +204,7 @@ automaattisesti näkyviin. Sekä editorin että pdf\-/ katselimen voi pitää
 samanaikaisesti esillä.
 
 \subsection{Latexmk}
-\label{luku:latexmk}
+\label{luku/latexmk}
 
 Erinomaisen hyödyllinen apuohjelma on Latexmk, koska se helpottaa
 dokumenttien kääntämistä ja muutakin työskentelyä. Varsin usein Latex\-/
@@ -254,7 +254,7 @@ lainkaan, käännetään kaikki nykyisessä hakemistossa olevat
 Latexmk\-/ ohjelmalle voi tehdä asetustiedoston, johon voi kirjoittaa
 omaan käyttöön sopivat asetukset. Asetustiedosto sijoitetaan
 tiedostojärjestelmässä käyttäjän kotihakemistoon nimellä
-\koodi{.latexmkrc}. Esimerkki \ref{esim:latexmkrc} näyttää, mitä se
+\koodi{.latexmkrc}. Esimerkki \ref{esim/latexmkrc} näyttää, mitä se
 voisi ehkä sisältää.
 
 Esimerkin ensimmäisen rivin asetus määrittää, miten pdf\-/ tiedostot
@@ -276,10 +276,10 @@ $pdf_previewer = 'okular %S';
 \end{koodilohko}
   \caption{Latexmk-ohjelman asetustiedosto (\koodi{\textasciitilde
       /.latexmkrc})}
-  \label{esim:latexmkrc}
+  \label{esim/latexmkrc}
 \end{esimerkki*}
 
-Esimerkin \ref{esim:latexmkrc} neljännellä rivillä luetellaan
+Esimerkin \ref{esim/latexmkrc} neljännellä rivillä luetellaan
 kääntämisen aikana syntyvien väliaikaistiedostojen päätteitä. Latexmk\-/
 ohjelma tuntee yleisimmät väliaikaistiedostot (\koodi{log}, \koodi{aux},
 \koodi{out} ym.), mutta tällä asetuksella mukaan voi lisätä
@@ -293,11 +293,11 @@ Latexin kirjoittajan täytyy silloin tällöin lukea ohjekirjoja. Vaikka
 Latexin perusosat joskus oppisikin ulkoa, ei voi koskaan muistaa
 kaikkien hyödyllisten makropakettien kaikkia ominaisuuksia.
 
-Tex Live \=/jakelun (luku \ref{luku:asentaminen}) mukana tulee mainio
+Tex Live \=/jakelun (luku \ref{luku/asentaminen}) mukana tulee mainio
 komentotulkissa toimiva komento \koodi{texdoc}, jolla voi hakea ja avata
 omaan järjestelmään asennettuja Latex\-/ aiheisia ohjeita. Jos vaikka
-haluaa tutustua esimerkissä \ref{esim:ensimmainen}
-(s.~\pageref{esim:ensimmainen}) mainittavaan \paketti{fontspec}\-/
+haluaa tutustua esimerkissä \ref{esim/ensimmainen}
+(s.~\pageref{esim/ensimmainen}) mainittavaan \paketti{fontspec}\-/
 pakettiin syvällisemmin, tarvitsee vain komentaa \koodi{texdoc
   fontspec}, ja paketin pdf\-/ muotoinen ohjekirja avautuu.
 
@@ -305,7 +305,7 @@ pakettiin syvällisemmin, tarvitsee vain komentaa \koodi{texdoc
 
 Luodaan seuraavaksi yksinkertainen Latex\-/ dokumentti, jota voi käyttää
 harjoitteluun ja pohjana omille dokumenteille. Tallenna esimerkin
-\ref{esim:ensimmainen} sisältö tekstieditorin avulla tiedostoon vaikkapa
+\ref{esim/ensimmainen} sisältö tekstieditorin avulla tiedostoon vaikkapa
 nimellä \koodi{teksti.tex}. Käännä eli lado se pdf\-/ tiedostoksi
 käyttämällä jotakin seuraavista komennoista (valitse yksi):
 
@@ -319,19 +319,19 @@ latexmk -xelatex  teksti.tex
 Tuloksena pitäisi olla tiedosto \koodi{teksti.pdf}, jota voi ihailla
 jollakin pdf\-/ tiedostojen katseluun tarkoitetulla ohjelmalla.
 
-Esimerkin \ref{esim:ensimmainen} ensimmäisellä rivillä määritellään
+Esimerkin \ref{esim/ensimmainen} ensimmäisellä rivillä määritellään
 dokumenttiluokka \luokka{article}, joka on tietynlainen sivupohja tai
 asetusten kokoelma, jonka perustalle aletaan rakentaa omaa dokumenttia.
 Luokka \luokka{article} on tyypillinen valinta lyhyehköille teksteille.
-Lisätietoa dokumenttiluokista on luvussa \ref{luku:dokumenttiluokat}.
+Lisätietoa dokumenttiluokista on luvussa \ref{luku/dokumenttiluokat}.
 
 Riveillä 2--4 käytetään komentoa \komentom{usepackage}, jonka avulla
 otetaan käyttöön sivun asetuksista huolehtiva \paketti{geometry}\-/
 paketti, fonttiasetuksia hoitava \paketti{fontspec}\-/ paketti ja
 kieliasetuksista vastaava \paketti{polyglossia}\-/ paketti. Näitä kolmea
 tarvitaan melkein joka kerta dokumenteissa, ja niihin palataan tarkemmin
-luvuissa \ref{luku:sivuasetukset}, \ref{luku:kirjaintyypit} ja
-\ref{luku:kieliasetukset}.
+luvuissa \ref{luku/sivuasetukset}, \ref{luku/kirjaintyypit} ja
+\ref{luku/kieliasetukset}.
 
 Seuraavilla riveillä asetetaan kieleksi suomi (\koodi{finnish}) ja
 määritetään oletuksena käytettävä fontti tai oikeastaan kokonainen
@@ -371,7 +371,7 @@ Minun Latex-dokumenttini!
 \end{document}
 \end{koodilohko}
   \caption{Latex\-/ lähdedokumentin runko ja perusasetukset}
-  \label{esim:ensimmainen}
+  \label{esim/ensimmainen}
 \end{esimerkki*}
 
 Dokumentin alkuosaa riville 9 saakka kutsutaan esittelyosaksi (engl.

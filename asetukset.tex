@@ -14,12 +14,12 @@ ehkä jopa suotavaakin keskittyä aluksi lähinnä dokumentin sisällön ja
 rakenteen suunnitteluun ja tuottamiseen. Ulkoasuun kyllä ehtii tulla
 kirjoittamisen aikana monenlaisia ajatuksia, joita ei olisi välttämättä
 alussa osannut huomioida. Kirjoittamaan pääsee hyvinkin yksinkertaisen
-dokumenttirungon avulla (esimerkki \ref{esim:ensimmainen},
-s.~\pageref{esim:ensimmainen}), mutta tässä luvussa käsitellään
+dokumenttirungon avulla (esimerkki \ref{esim/ensimmainen},
+s.~\pageref{esim/ensimmainen}), mutta tässä luvussa käsitellään
 asetusten määrittelyä ja mahdollisuuksia melko perusteellisesti.
 
 \section{Dokumenttiluokat}
-\label{luku:dokumenttiluokat}
+\label{luku/dokumenttiluokat}
 
 Latexin lähdedokumenttien alussa on aina samankaltainen rivi, joka
 määrittelee käytettävän dokumenttiluokan ja mahdollisesti dokumentin
@@ -45,7 +45,7 @@ tavallisimpia dokumenttiluokkia ja niiden asetuksia.
 % luvussa X.Y.
 
 \subsection{Perusdokumenttiluokat}
-\label{luku:perusdokumenttiluokat}
+\label{luku/perusdokumenttiluokat}
 
 Muutama dokumenttiluokka kuuluu Latexin perusvalikoimaan, eli ne ovat
 aina saatavilla ja asennettuna, kun itse Latexkin on. Niitä kutsutaan
@@ -70,14 +70,14 @@ suuret pääluvut (\komento{chapter}) eli otsikot, jotka alkavat tyhjältä
 sivulta; \luokka{article} ei sisällä samanlaisia päälukuja vaan
 ainoastaan tavalliset leipätekstin mukana kulkevat väliotsikot
 (\komento{section}, \komento{subsection} jne.). Tekstin jäsentämistä
-käsitellään luvussa \ref{luku:jäsennys} ja otsikointia tarkemmin luvussa
-\ref{luku:otsikot}.
+käsitellään luvussa \ref{luku/jäsennys} ja otsikointia tarkemmin luvussa
+\ref{luku/otsikot}.
 
 Toinen ero perusluokkien välillä on se, että vain \luokka{book}\-/
 luokka sisältää komennot \komento{frontmatter}, \komento{mainmatter} ja
 \komento{backmatter}, joita voi käyttää ilmaisemaan tietokirjan
 erityyppiset osat: esittely\-/, sisältö\-/{} ja liitesivut. Näitä
-käsitellään luvussa \ref{luku:frontmainbackmatter}. Lisäksi
+käsitellään luvussa \ref{luku/frontmainbackmatter}. Lisäksi
 \luokka{report}\-/ luokka sisältää ympäristön \ymparisto{abstract}, joka
 on tarkoitettu tekstin tiivistelmäosan tekemiseen; \luokka{book}\-/
 luokassa sitä ei ole.
@@ -96,7 +96,7 @@ samanmuotoisia kirjeitä usealle vastaanottajalle. Sama
 Latex\-/dokumentti voi sisältää useita kirjeitä, ja sivunumerointi ja
 alaviitteiden numerointi alkaa joka kirjeessä alusta -- kuten on
 tietysti toivottavaa. \luokka{letter}\-/ luokkaa käsitellään tarkemmin
-luvussa \ref{luku:kirjeet}.
+luvussa \ref{luku/kirjeet}.
 
 Piirtoheittimien läpinäkyvien kalvojen ja sen kaltaisten dokumenttien
 tekemiseen on dokumenttiluokka \luokkam{slides}. Piirtoheittimet ovat
@@ -105,12 +105,12 @@ esitysgrafiikkaohjelmilla, joilla tehdään diaesityksiä esimerkiksi
 esitelmien havaintomateriaaliksi. \luokka{slides}\-/ luokkaa ei varmaan
 tarvita enää mihinkään, mutta esitysgrafiikkaan on olemassa erittäin
 monipuolinen luokka \luokka{beamer}, jonka perusasioita käsitellään
-luvussa \ref{luku:diaesitykset}.
+luvussa \ref{luku/diaesitykset}.
 
 \subsection{Perusdokumenttiluokkien asetukset}
-\label{luku:perusdokumenttiluokat_asetukset}
+\label{luku/perusdokumenttiluokat-asetukset}
 
-Taulukkoon \ref{tlk:luokkavalitsimet} on koottu perusdokumenttiluokkien
+Taulukkoon \ref{tlk/luokkavalitsimet} on koottu perusdokumenttiluokkien
 valitsimet. Sivun koko asetetaan valitsimilla \koodi{a4\-paper} (210 ×
 297 mm), \koodimargin{*paper} \koodi{a5\-paper} (148 × 210 mm),
 \koodi{b5\-paper} (176 × 250 mm), \koodi{execu\-tive\-paper} (7,25 ×
@@ -134,7 +134,7 @@ dokumentin asetuksiin.
   \end{tabular}
 }{
   \caption{Perusdokumenttiluokkien valitsimet}
-  \label{tlk:luokkavalitsimet}
+  \label{tlk/luokkavalitsimet}
 }
 
 Sivu on oletuksena pystyasennossa, mutta valitsin \koodim{landscape}
@@ -146,13 +146,13 @@ ympäristöä.
 
 Sivun koon ja muitakin mittoja voi määritellä monipuolisemmin
 \paketti{geometry}\-/paketin toimintojen avulla (luku
-\ref{luku:sivuasetukset}). Jos sitä pakettia käyttää, ei näitä
+\ref{luku/sivuasetukset}). Jos sitä pakettia käyttää, ei näitä
 dokumenttiluokan sivukokoasetuksia tarvita välttämättä lainkaan.
 
 Leipätekstin fontin koon voi määrittää valitsimilla \koodim{10pt},
 \koodim{11pt} ja \koodim{12pt}, joista ensin mainittu on oletus. Lyhenne
 pt tarkoittaa typografista pistemittaa, joita käsitellään luvussa
-\ref{luku:mitat}. Nämä asetukset vaikuttavat myös sivun marginaaleihin,
+\ref{luku/mitat}. Nämä asetukset vaikuttavat myös sivun marginaaleihin,
 koska fontin koko vaikuttaa tekstiriville mahtuvien merkkien määrään ja
 Latex pyrkii pitämään rivit sopivan mittaisina lukemisen kannalta.
 
@@ -164,19 +164,19 @@ mihin kokoon tahansa. Sen vuoksi nämä dokumenttiluokkien
 fonttikokovalitsimet eivät ole kovin tarpeellisia eivätkä riitä kaikkiin
 tarpeisiin nykyaikana. Voi niitä silti käyttää, jos niiden avulla saa
 halutun lopputuloksen. Fontteja käsitellään tarkemmin luvussa
-\ref{luku:kirjaintyypit}.
+\ref{luku/kirjaintyypit}.
 
 Dokumentista voi latoa luonnosversion käyttämällä dokumenttiluokan
 valitsinta \koodim{draft}. Luonnoksena ladottuun dokumenttiin tulevat
 merkityksi (musta suorakulmio) ainakin tekstipalstan yli pursuavat
 rivit, mikä voi auttaa tekstikappaleiden ulkoasun korjailussa (luku
-\ref{luku:kappale}). Eri makropaketit voivat hyödyntää \koodi{draft}\-/
+\ref{luku/kappale}). Eri makropaketit voivat hyödyntää \koodi{draft}\-/
 valitsinta omalla tavallaan eli muuttaa toimintaansa sen perusteella.
 Esimerkiksi grafiikkaan liittyvä paketti \paketti{graphicx} (luku
-\ref{luku:grafiikka}) jättää luonnosversiosta kuvat pois, ja niiden
+\ref{luku/grafiikka}) jättää luonnosversiosta kuvat pois, ja niiden
 paikalla on vain suorakulmio. Pdf\-/tiedoston ristiviitteistä huolehtiva
 \paketti{hyperref}\-/paketti jättää pdf:n sisäiset ristiviitteet ja
-sisällysluettelon tekemättä (luku \ref{luku:ristiviitteet}). Latominen
+sisällysluettelon tekemättä (luku \ref{luku/ristiviitteet}). Latominen
 voi nopeutua huomattavasti.
 
 Lopullinen ladontatila on \koodim{final}, joka tarkoittaa, että
@@ -200,9 +200,9 @@ parillinen sivunumero ja oikealla pariton. Marginaalien asetuksissa
 puhutaan sisämarginaaleista (\englanti{inner}) ja ulkomarginaaleista
 (\englanti{outer}). Sisämarginaalit ovat oletuksena pienemmät, koska
 niitä on aukeamalla aina kaksi vierekkäin. Ulkomarginaaleissa on tilaa
-marginaalihuomautuksille (luku \ref{luku:marginaalihuomautukset}).
+marginaalihuomautuksille (luku \ref{luku/marginaalihuomautukset}).
 Marginaaleja ja muita sivun asetuksia käsitellään tarkemmin luvussa
-\ref{luku:sivuasetukset}.
+\ref{luku/sivuasetukset}.
 
 Jos dokumentti on määritetty kaksipuoliseksi (\koodi{twoside}), voidaan
 \koodim{open\-right}\-/ valitsimella määrittää pääluvut
@@ -214,7 +214,7 @@ Valitsin \koodim{open\-bib} liittyy automaattiseen lähdeluettelon
 muotoiluun. Jos tämä valitsin on mukana, automaattisessa lähdeluettelon
 muotoilussa lisätään rivinvaihtoja lähdemerkinnän eri osien kuten
 teoksen tekijöiden ja teoksen nimen jälkeen. Lähdemerkintöjä ja
-lähdeluettelon laatimista käsitellään luvussa \ref{luku:lähteet}.
+lähdeluettelon laatimista käsitellään luvussa \ref{luku/lähteet}.
 
 Matemaattisten kaavojen ladontaan liittyvässä \ymparisto{equation}\-/
 ympäristössä kaavat ladotaan normaalisti vaakasuunnassa sivun keskelle.
@@ -222,13 +222,13 @@ Dokumenttiluokan valitsinta \koodim{fleqn} käyttämällä kaavat ladotaan
 kuitenkin sivun vasempaan reunaan. Kaavojen numerot sijoitetaan
 oletuksena sivun oikeaan reunaan, mutta valitsimella \koodim{leqno} ne
 saa ladottua sivun vasempaan reunaan. Matematiikkatilaa käsitellään
-luvussa \ref{luku:matematiikka}.
+luvussa \ref{luku/matematiikka}.
 
 Kansisivun tai dokumentin perustietojen esitystapaan vaikutetaan
 valitsimilla \koodim{title\-page} ja \koodim{no\-title\-page}. Latexissa
 on yksinkertaiset komennot dokumentin perustietojen eli pääotsikon,
 tekijöiden nimien ja päiväyksen latomiseen (luku
-\ref{luku:dokumentin_perustiedot}), ja näillä valitsimilla vaikutetaan
+\ref{luku/dokumentin-perustiedot}), ja näillä valitsimilla vaikutetaan
 siihen, ladotaanko perustiedot omalle sivulleen (\koodi{title\-page})
 vaiko ensimmäisen sisältösivun alkuun (\koodi{no\-title\-page}).
 Oletus\-asetus vaihtelee eri dokumenttiluokissa.
@@ -238,7 +238,7 @@ Oletuksena sivun tekstit ladotaan yhdelle palstalle
 ladotaan kahdelle palstalle. Nämä valitsimet vaikuttavat myös sivun
 marginaaleihin. Latexin perusosat eivät hallitse useampaa kuin kaksi
 palstaa, mutta \paketti{multicol}\-/makropaketin avulla saa enemmänkin.
-Palstoja käsitellään luvussa \ref{luku:palstat}.
+Palstoja käsitellään luvussa \ref{luku/palstat}.
 
 Dokumenttiluokassa \luokka{slides} toimii \koodim{clock}\-/ valitsin,
 joka latoo kellonajan piirtoheitinkalvon loppuun \komento{note}\-/
@@ -281,21 +281,21 @@ tutustua esimerkiksi \englanti{Comprehensive Tex Archive Network}
 \footnote{\url{https://www.ctan.org/topic/class}}
 
 \section{Sivu}
-\label{luku:sivuasetukset}
+\label{luku/sivuasetukset}
 
 Latex\-/dokumentit muodostuvat aina peräkkäisistä sivuista, eli
 taustalla kummittelee paperiarkkeihin perustuva julkaisumuoto, vaikka
 dokumenttia ei varsinaisesti tulostettaisi tai painettaisi paperille.
 Tämän vuoksi melkein aina täytyy määrittää sivun asetukset kuten
 paperikoko ja marginaalit. Ne tehdään \pakettim{geometry}\-/ paketin
-avulla, jota käsitellään luvussa \ref{luku:sivun_mitat}. Joskus halutaan
+avulla, jota käsitellään luvussa \ref{luku/sivun-mitat}. Joskus halutaan
 muokata sivun ylä- tai alatunnistetta eli verrattain pysyviä
 tunnistetietoja, jotka toistuvat joka sivulla ylä- tai alareunassa.
 Niiden muokkaamiseen käytetään \paketti{fancyhdr}\-/ pakettia, jonka
-ohjeita on luvussa \ref{luku:yla_ala_tunnisteet}.
+ohjeita on luvussa \ref{luku/yla-ala-tunnisteet}.
 
 \subsection{Sivun koko ja marginaalit}
-\label{luku:sivun_mitat}
+\label{luku/sivun-mitat}
 
 Paperin eli sivun kokoon ja marginaaleihin pääsee vaikuttamaan
 \paketti{geometry}\-/paketin\avctan{geometry} avulla. Halutut asetukset
@@ -361,10 +361,10 @@ Sivun asetusten suunnittelussa voi olla avuksi valitsin
 merkitsee myös ylä- ja alatunnisteiden sekä marginaalihuomautusten
 rajoja.
 
-Taulukkoon \ref{tlk:sivun_marginaalit} on koottu tärkeimpiä valitsimia
+Taulukkoon \ref{tlk/sivun-marginaalit} on koottu tärkeimpiä valitsimia
 marginaalien mittojen asettamiseksi. Valitsimille annetaan arvoksi Texin
-mittayksikkö, jotka ovat taulukossa \ref{tlk:mittayksikot}
-(s.~\pageref{tlk:mittayksikot}). Kaksipuolisessa
+mittayksikkö, jotka ovat taulukossa \ref{tlk/mittayksikot}
+(s.~\pageref{tlk/mittayksikot}). Kaksipuolisessa
 \koodimargin{twoside=\katk true} \koodimargin{twoside=\katk false}
 asettelussa (\koodi{twoside=\katk true}) sivut muodostavat aukeaman eli
 on erikseen vasemmanpuoleinen ja oikeanpuoleinen sivu. Tällöin vasen ja
@@ -391,7 +391,7 @@ havainnollisempia.
 }{
   \caption{\paketti{geometry}\-/paketin valitsimia sivun marginaalien
     määrittelemiseen}
-  \label{tlk:sivun_marginaalit}
+  \label{tlk/sivun-marginaalit}
 }
 
 Sivun tekstialueen koon ja marginaalit voi määrittää myös
@@ -403,7 +403,7 @@ suhde voisi olla 2:3. Suhteellisessa tavassa ei tarvitse ottaa kantaa
 sivun kokoon eikä muihinkaan varsinaisiin mittoihin, vaan samat
 tekstialueen ja marginaalien suhteet säilyvät, vaikka sivukokoa
 muuttaisikin. Suhteellisia mittoja koskevia valitsimia on koottu
-taulukkoon \ref{tlk:sivun_marginaalit_suhd}.
+taulukkoon \ref{tlk/sivun-marginaalit-suhd}.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -423,7 +423,7 @@ taulukkoon \ref{tlk:sivun_marginaalit_suhd}.
     marginaalien suhteiden määrittämiseen. Osuudet (\koodi{*hscale})
     ilmaistaan prosenttikertoimella (esim. \koodi{0.7}). Suhteet
     (\koodi{*marginratio}) ilmaistaan suhdelukuna (esim. \koodi{2:3})}
-  \label{tlk:sivun_marginaalit_suhd}
+  \label{tlk/sivun-marginaalit-suhd}
 }
 
 Klassisessa kirjatypografiassa, jossa teksti ladotaan yhdelle palstalle,
@@ -447,7 +447,7 @@ ajateltuna ovat pienemmät kuin ulkomarginaalit. Lisäksi ulkomarginaaleja
 voidaan käyttää huomautusten kirjoittamiseen, mikä on melko yleinen
 käytäntö tietokirjoissa.
 
-Marginaalihuomautukset (luku \ref{luku:marginaalihuomautukset})
+Marginaalihuomautukset (luku \ref{luku/marginaalihuomautukset})
 sijaitsevat oletuksena sivujen ulkomarginaalissa tai oikeanpuoleisessa
 marginaalissa. Huomautuspalstan leveys asetetaan valitsimella
 \koodim{marginparwidth}, ja palstan etäisyys sivun varsinaisesta
@@ -463,12 +463,12 @@ dokumentin voi vaihtaa yksipalstaiseen tilaan komennolla
 \komento{onecolumn} tai kaksipalstaiseen tilaan komennolla
 \komento{twocolumn}. Käyttämällä \paketti{multicol}\-/
 pakettia\avctan{multicol} voi olla useampiakin kuin kaksi palstaa.
-Palstoja käsitellään tarkemmin luvussa \ref{luku:palstat}.
+Palstoja käsitellään tarkemmin luvussa \ref{luku/palstat}.
 
 Valitsimen \koodim{columnsep} avulla asetetaan palstojen välinen
 etäisyys. Tämä valitsin on asettaa mitan \mitta{columnsep}, jota voi
 muokata myös komennolla \komento{setlength}, kuten muitakin mittoja
-(luku \ref{luku:mitat}).
+(luku \ref{luku/mitat}).
 
 \subsection{Sivun mittoja}
 
@@ -488,24 +488,24 @@ muokata myös komennolla \komento{setlength}, kuten muitakin mittoja
   \end{tabular}
 }{
   \caption{Sivun mittoja}
-  \label{tlk:sivun_mittoja}
+  \label{tlk/sivun-mittoja}
 }
 
 Sivun kokoasetusten määrittämisen jälkeenkin voi olla tarpeen viitata
 joihinkin sivun mittoihin. Usein esimerkiksi halutaan piirtää sivun
 tekstialueen levyinen tai siihen suhteutettu taulukko tai kuva. Silloin
 on kätevää käyttää mittaa, jonka arvona on juuri tekstialueen leveys.
-Tärkeimmät sivun mitat on koottu taulukkoon \ref{tlk:sivun_mittoja},
+Tärkeimmät sivun mitat on koottu taulukkoon \ref{tlk/sivun-mittoja},
 mutta perusteellisemmin niitä käsitellään \paketti{geometry}\-/
 paketin\avctan{geometry} ohjekirjassa.
 
-Taulukossa \ref{tlk:sivun_mittoja} mainittu mitta \mitta{linewidth}
+Taulukossa \ref{tlk/sivun-mittoja} mainittu mitta \mitta{linewidth}
 eroaa tekstialueen leveysmitasta \mitta{textwidth} esimerkiksi silloin,
 kun riviä on sisennetty vasemmalta. Tekstikappaleiden ensimmäinen rivi
 voi olla sisennetty, ja sen vuoksi se ei ole koko tekstialueen levyinen
 kuten kappaleen muut rivit. Muutkin sisennykset vaikuttavat rivin
 leveysmittaan. Sisennysasiat liittyvät tekstikappaleiden muotoiluun,
-jota käsitellään luvussa~\ref{luku:kappale}.
+jota käsitellään luvussa~\ref{luku/kappale}.
 
 \subsection{Leikkuuvarat}
 
@@ -527,7 +527,7 @@ leikatuissa paperiarkeissa kuva varmasti yltää reunaan saakka.
 Jos dokumenttiin tarvitaan sivun ulkopuoliset leikkuuvarat, määritellään
 dokumentin ulommaiset mitat edelleen samalla tavalla kuin
 tavallisestikin eli esimerkiksi valitsimella \koodi{paper\-size} (luku
-\ref{luku:sivun_mitat}). \koodimargin{layout} \koodimargin{layout\-size}
+\ref{luku/sivun-mitat}). \koodimargin{layout} \koodimargin{layout\-size}
 Sen sijaan sivun sisäiset mitat täytyy määritellä toisella tavalla,
 käyttämällä valitsinta \koodi{lay\-out} tai \koodi{layout\-size}.
 
@@ -543,10 +543,10 @@ käyttämällä valitsinta \koodi{lay\-out} tai \koodi{layout\-size}.
 \end{koodilohko}
   \caption{Sivun ulkoisten ja sisäisten mittojen sekä leikkuvaarojen
     määrittäminen}
-  \label{esim:leikkuuvarat}
+  \label{esim/leikkuuvarat}
 \end{esimerkki*}
 
-Esimerkissä \ref{esim:leikkuuvarat} käytetään sisäisesti \textsc{a4}\-/
+Esimerkissä \ref{esim/leikkuuvarat} käytetään sisäisesti \textsc{a4}\-/
 kokoista (210 × 297~mm) sivua, mutta sivulle on määritetty joka puolelle
 5\,mm:n leikkuuvarat. Niinpä ulkoisesti sivu on 10\,mm leveämpi ja
 korkeampi, eli ulkoiset mitat ovat 220 × 307~mm. Valitsimella
@@ -558,14 +558,14 @@ leikkuuvaran puolella, joten ne eivät päädy lopulliseen
 painotuotteeseen.
 
 \subsection{Ylä- ja alatunnisteet}
-\label{luku:yla_ala_tunnisteet}
+\label{luku/yla-ala-tunnisteet}
 
 \paketti{geometry}\-/paketin asetuksiin kuuluu pari valitsinta, joilla
 vaikutetaan ylä- ja alatunnisteiden mittoihin. Valitsimella \koodi{head}
 ilmaistaan ylätunnisteen korkeus ja valitsimella \koodi{headsep} sen
 etäisyys sivun tekstipalstasta. Alatunnisteen peruslinjan etäisyys
 tekstipalstasta säädetään valitsimella \koodi{footskip}. Taulukkoon
-\ref{tlk:yla_ala_tunnistemitat} on koottu näiden valitsimien merkitys,
+\ref{tlk/yla-ala-tunnistemitat} on koottu näiden valitsimien merkitys,
 ja seuraavassa on niiden käyttämisestä esimerkki. Mukana on myös
 valitsin \koodi{show\-frame}, joka piirtää sivulle apuviivoja. Se auttaa
 sivun mittojen suunnittelussa.
@@ -588,7 +588,7 @@ sivun mittojen suunnittelussa.
 }{
   \caption{\paketti{geometry}\-/paketin valitsimet ylä- ja
     alatunnisteiden mittojen asettamiseen}
-  \label{tlk:yla_ala_tunnistemitat}
+  \label{tlk/yla-ala-tunnistemitat}
 }
 
 Latexin perusosat eivät sisällä kovin kummoista keinovalikoimaa ylä- ja
@@ -605,7 +605,7 @@ perusteella, ja haluttu tyyli asetetaan voimaan komennolla
 Edellä mainittu sivutyyli \koodim{plain} latoo alatunnisteeseen
 sivunumeron. Se on yleensä oletustyyli. Sivunumero on peräisin
 laskurista \laskuri{page} ja sen arvon tulostavasta komennosta
-\komento{thepage} (luku \ref{luku:laskurit}). Toinen hyödyllinen tyyli
+\komento{thepage} (luku \ref{luku/laskurit}). Toinen hyödyllinen tyyli
 on \koodim{empty}, joka nimensä mukaisesti tarkoittaa tyhjää, eli ylä-
 eikä alatunnisteeseen ei ladota mitään.
 
@@ -653,7 +653,7 @@ aina alalukujen yhteydessä.
 
 Sivunumeroinnin tyyliin voi vaikuttaa esimerkiksi komennolla
 \komento{pagenumbering}, jonka argumentiksi annetaan numerointityylin
-nimi. Ne on koottu taulukkoon \ref{tlk:sivu_numerointityylit}.
+nimi. Ne on koottu taulukkoon \ref{tlk/sivu-numerointityylit}.
 
 \komentoi{pagenumbering}
 \begin{koodilohkosis}
@@ -663,7 +663,7 @@ nimi. Ne on koottu taulukkoon \ref{tlk:sivu_numerointityylit}.
 Edellä mainittu komento määrittelee käytännössä uudelleen komennon
 \komento{thepage}, joka on tarkoitettu juuri sivunumerolaskurin
 latomiseen. Lisätietoa sivunumeroista ja muista laskureista on luvussa
-\ref{luku:laskurit}.
+\ref{luku/laskurit}.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -682,7 +682,7 @@ latomiseen. Lisätietoa sivunumeroista ja muista laskureista on luvussa
 }{
   \caption{Sivunumerointityylit \komento{pagenumbering}\-/ komennon
     argumentiksi}
-  \label{tlk:sivu_numerointityylit}
+  \label{tlk/sivu-numerointityylit}
 }
 
 Monipuolisemmin ylä- ja alatunnisteita voi muokata paketin
@@ -709,7 +709,7 @@ Valinnainen argumentti \koodil{paikka} kertoo, mihin paikkaan tai
 paikkoihin \koodil{sisältö} sijoitetaan. Vaihtoehtoina on ylä- tai
 alatunniste, pariton tai parillinen sivu, sivun vasen reuna, keskiosa
 tai oikea reuna. Nämä vaihtoehdot ja niitä vastaavat valitsimet on
-koottu taulukkoon \ref{tlk:fancyhf_paikat}. Saman komennon avulla voi
+koottu taulukkoon \ref{tlk/fancyhf-paikat}. Saman komennon avulla voi
 määrittää useitakin paikkoja, kun ne erottaa pilkulla, esimerkiksi
 seuraavalla tavalla:
 
@@ -732,7 +732,7 @@ seuraavalla tavalla:
 }{
   \caption{\komento{fancyhf}\-/ komennon valitsimia ylä- tai
     alatunnisteen paikan määrittämiseen}
-  \label{tlk:fancyhf_paikat}
+  \label{tlk/fancyhf-paikat}
 }
 
 \komentoi{fancyhf}
@@ -816,7 +816,7 @@ isoilla kirjaimilla. Jos ne haluaa johonkin toiseen muotoon, täytyy itse
 määritellä uudelleen komennot \komentom{chaptermark},
 \komentom{sectionmark} tai \komentom{subsectionmark} (vain kaksi näistä)
 ja käyttää määritelmässä komentoja \komento{markboth} ja
-\komento{markright}. Esimerkkiin \ref{esim:fancyhdr_koko} on koottu
+\komento{markright}. Esimerkkiin \ref{esim/fancyhdr-koko} on koottu
 varsin kokonaisvaltainen koodi omien ylä- ja alatunnisteiden
 toteutukseen.
 
@@ -877,11 +877,11 @@ toteutukseen.
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
 \end{koodilohko}
   \caption{Omien ylä- ja alatunnisteiden toteuttaminen}
-  \label{esim:fancyhdr_koko}
+  \label{esim/fancyhdr-koko}
 \end{esimerkki*}
 
 \section{Pdf-tiedosto}
-\label{luku:pdf_asetukset}
+\label{luku/pdf-asetukset}
 
 Pdf-tiedostot voivat sisältää metatietoja kuten dokumentin nimen,
 aiheen, tekijän ja päiväyksen. Tiedostoille voi määrittää myös erilaisia
@@ -925,10 +925,10 @@ ja niiden arvoja.
   \caption{\komento{hypersetup}\-/ komennolla asetetaan
     \paketti{hyperref}\-/ paketin asetuksia, esimerkiksi pdf:n
     metatietoja}
-  \label{esim:hypersetup}
+  \label{esim/hypersetup}
 \end{esimerkki*}
 
-Esimerkissä \ref{esim:hypersetup} valitsin \koodi{hidelinks} saa aikaan
+Esimerkissä \ref{esim/hypersetup} valitsin \koodi{hidelinks} saa aikaan
 sen, että pdf:ssä olevia linkkejä ja ristiviitteitä ei merkitä millään
 tavalla. Oletuksena linkit kehystetään eri väreillä riippuen linkin
 tyypistä. Valitsin \koodi{bookmarksopen} näyttää pdf:n sisällysluettelon
@@ -942,8 +942,8 @@ muitakin asetuksia on olemassa, ja niistä voi lukea lisää
 \paketti{hyperref}\-/ paketin ohjekirjasta.
 
 Pdf\-/ tiedoston sisäiseen sisällysluetteloon tulevat automaattisesti
-mukaan samat otsikot (luku \ref{luku:otsikot}) kuin ladottavaan
-sisällysluetteloonkin (luku \ref{luku:sisallysluettelo}). Pdf\-/
+mukaan samat otsikot (luku \ref{luku/otsikot}) kuin ladottavaan
+sisällysluetteloonkin (luku \ref{luku/sisallysluettelo}). Pdf\-/
 tiedoston luetteloon voi kuitenkin itse lisäillä omia otsikoita, jotka
 eivät näy missään muualla. Se tehdään \paketti{hyperref}\-/ paketin
 komennolla \komentom{pdfbookmark}:
@@ -955,15 +955,15 @@ komennolla \komentom{pdfbookmark}:
 
 Komennon valinnainen argumentti \koodil{taso} on kokonaisluku, joka
 tarkoittaa otsikon tasoa. Se tarkoittaa samaa tasonumeroa kuin
-otsikkotasojen taulukossa \ref{tlk:otsikkotasot}
-(s.~\pageref{tlk:otsikkotasot}). Argumentti \koodil{Teksti} on pdf:n
+otsikkotasojen taulukossa \ref{tlk/otsikkotasot}
+(s.~\pageref{tlk/otsikkotasot}). Argumentti \koodil{Teksti} on pdf:n
 sisällysluettelomerkinnän teksti, ja \koodil{tunniste} on mikä tahansa
 yksilöllinen tekstimuotoinen tunniste kyseiselle luettelomerkinnälle.
 Tunniste ei näy missään, mutta pdf tarvitsee sisäiseen toimintaansa
 jonkin yksilöllisen tunnisteen.
 
 \section{Fontit}
-\label{luku:kirjaintyypit}
+\label{luku/kirjaintyypit}
 
 Fontit ja niiden asettaminen on Latexissa melko monimutkainen
 kokonaisuus, koska fonteilla on paljon ominaisuuksia ja niihin
@@ -1013,7 +1013,7 @@ ovat tulleet nykyaikaiset \englanti{True Type}- ja \englanti{Open Type}
 \=/fontit, ja niihin tämä opas keskittyy.
 
 \subsection{Fonttien määrittäminen}
-\label{luku:fontin_valinta}
+\label{luku/fontin-valinta}
 
 Latexin fonttien perustoiminnot rakentuvat kolmen erityyppisen
 kirjainperheen varaan:
@@ -1035,7 +1035,7 @@ kirjainperheen varaan:
   (\englanti{type\-writer, mono\-spaced, tele\-type}).
 \end{nluetelma}
 
-Kuvassa \ref{kuva:kirjainperhetyypit} ovat tässä oppaassa käytetyt kolme
+Kuvassa \ref{kuva/kirjainperhetyypit} ovat tässä oppaassa käytetyt kolme
 eri kirjainperhettä. Leipätekstissä käytetään antiikvaa, otsikoissa ja
 kuvateksteissä groteskia ja koodiesimerkeissä tasalevyistä.
 Kirjoituskoneen kaltainen tasalevyinen kirjainperhe on tässä tapauksessa
@@ -1052,14 +1052,14 @@ asetusten näkökulmasta.
 }{
   \caption{Vasemmalla pääteviivallinen, keskellä pääteviivaton ja
     oikealla tasalevyinen pääteviivallinen kirjainperhe}
-  \label{kuva:kirjainperhetyypit}
+  \label{kuva/kirjainperhetyypit}
 }
 
 Joidenkin fonttien käyttöönottoon on tehty oma makropakettinsa, joten
 sellaiset fontit voi ladata dokumentin esittelyosassa komennolla
 \komento{usepackage}. Fonttikohtaisia makropaketteja on olemassa
 varsinkin vanhalle fonttitekniikalle (\englanti{Metafont, Post Script
-  Type~1}) mutta myös matematiikkatilan (luku \ref{luku:matematiikka})
+  Type~1}) mutta myös matematiikkatilan (luku \ref{luku/matematiikka})
 fonttiasetuksille ja joillekin kir\-jain\-perhe\-koko\-nai\-suuk\-sille.
 
 Valmiita makropaketteja on kuitenkin vain harvoille fonteille, ja
@@ -1113,11 +1113,11 @@ tarpeen esimerkiksi silloin, kun kirjainperhe sisältää useita eri
 vahvuuksia ja halutaan itse määritellä, mikä niistä tulee
 perusvahvuudeksi ja mikä lihavoiduksi.
 
-Esimerkki \ref{esim:fontit_leik_omin} selventää, kuinka kirjainperheen
+Esimerkki \ref{esim/fontit-leik-omin} selventää, kuinka kirjainperheen
 eri leikkausten nimet tai fonttitiedostot määritellään. Kullekin
 leikkaukselle voi määrittää myös omat asetuksensa \koodi{Fea\-tures}\-/
 loppuisella valitsimella. Samaa asiaa havainnollistetaan myös
-konkreettisemmin esimerkissä \ref{esim:fontit_leik_omin_kayt}.
+konkreettisemmin esimerkissä \ref{esim/fontit-leik-omin-kayt}.
 Leikkauksen nimessä voi käyttää tähteä (\koodi{*}), joka korvautuu
 kirjainperheen nimellä (\englanti{Macklin Text}).
 
@@ -1135,7 +1135,7 @@ kirjainperheen nimellä (\englanti{Macklin Text}).
 \end{koodilohko}
   \caption{Kirjainperheeseen sisältyvien leikkausten nimien ja
     kirjainleikkauskohtaisten ominaisuuksien määrittely}
-  \label{esim:fontit_leik_omin}
+  \label{esim/fontit-leik-omin}
 \end{esimerkki*}
 
 \begin{esimerkki*}
@@ -1150,7 +1150,7 @@ kirjainperheen nimellä (\englanti{Macklin Text}).
   \caption{Eri leikkausten nimien määrittely \englanti{Macklin Text}
     \=/kirjainperheelle. Leikkauksen nimessä tähti (\koodi{*}) korvautuu
     automaattisesti koko perheen nimellä}
-  \label{esim:fontit_leik_omin_kayt}
+  \label{esim/fontit-leik-omin-kayt}
 \end{esimerkki*}
 
 Jos edellä kuvatut kolme kirjainperhettä (\komento{setmainfont},
@@ -1190,7 +1190,7 @@ kulttuureissa.
 
 Myös Latexissa fonttien koot voi määritellä pistemittojen avulla. Niitä
 ja muitakin Latexin mittayksiköitä käsitellään tarkemmin luvussa
-\ref{luku:mitat}. Fonteissa oletusmittayksikkönä on vanha
+\ref{luku/mitat}. Fonteissa oletusmittayksikkönä on vanha
 pica\-/järjestelmän piste, jonka pituus on noin 0,3515 millimetriä. Sen
 lyhenne Latexissa on~\emph{pt}. Tämän oppaan esimerkeissä käytetään
 kuitenkin Post Script \=/standardin mukaista, julkaisuohjelmiin
@@ -1206,7 +1206,7 @@ ja alapuolella oleva pieni tyhjä tila, jonka fontin suunnittelija on
 määritellyt.
 
 Matalalla tasolla fonttien kokoon vaikuttaa Latexissa eräs yllättävä
-asia. Nimittäin dokumenttiluokalle (luku \ref{luku:dokumenttiluokat})
+asia. Nimittäin dokumenttiluokalle (luku \ref{luku/dokumenttiluokat})
 voi antaa valitsimen, jolla fontin koko asetetaan. Vaihtoehtoja on
 Latexin normaaleissa dokumenttiluokissa vain kolme: \koodi{10pt}
 (oletus), \koodi{11pt} ja \koodi{12pt}. Dokumenttiluokan kokoasetus
@@ -1219,10 +1219,10 @@ Fontin koon määrittäminen dokumenttiluokan valitsimella ehkä kuuluu jo
 vähän menneisyyteen, mutta voi sitä edelleen käyttää, jos se riittää ja
 sillä saa halutun lopputuloksen. Yleensä lienee järkevää jättää
 dokumenttiluokan fonttiasetus oletukseksi (\koodi{10pt}) ja käyttää koon
-asettamiseen luvuissa \ref{luku:fontti_suhteellinen} ja
-\ref{luku:fontti_absoluuttinen} kerrottuja tapoja. Sivun marginaalien ja
+asettamiseen luvuissa \ref{luku/fontti-suhteellinen} ja
+\ref{luku/fontti-absoluuttinen} kerrottuja tapoja. Sivun marginaalien ja
 muiden mittojen määrittämiseen on ohjeita luvussa
-\ref{luku:sivuasetukset}.
+\ref{luku/sivuasetukset}.
 
 Fonttiasetuksiin kuuluu fontin koon lisäksi toinenkin mitta: rivikorkeus
 (\mitta{baselineskip}). Se on peräkkäisten rivien peruslinjojen välinen
@@ -1240,11 +1240,11 @@ Mittayksiköt voivat olla mitä tahansa Texin mittoja, ja oletuksena
 käytetään pt\-/pistemittaa, jos yksikköä ei ole mainittu. Komento
 \komentom{selectfont} on mukana, koska vasta sen myötä matalan tason
 fonttikomennot tulevat voimaan. Korkean tason fonttikomennot (luku
-\ref{luku:fontit_korkea}) suorittavat sen automaattisesti.
+\ref{luku/fontit-korkea}) suorittavat sen automaattisesti.
 
 Rivikorkeus on vähintään sama kuin fontin koko, mutta yleensä se
 asetetaan pari pistettä suuremmaksi, jotta rivit eivät olisi liian
-lähellä toisiaan. Esimerkissä \ref{esim:rivikorkeus} on kaksi erilaista
+lähellä toisiaan. Esimerkissä \ref{esim/rivikorkeus} on kaksi erilaista
 \komento{fontsize}\-/komentoa ja ladottu lopputulos.
 
 \begin{esimerkki*}
@@ -1270,7 +1270,7 @@ tarvitse kovin suurta rivikorkeutta.
     tarvitse kovin suurta rivikorkeutta.
   \end{tulos}
   \caption{Fontin koon ja rivikorkeuden asettaminen ja vaikutus}
-  \label{esim:rivikorkeus}
+  \label{esim/rivikorkeus}
 \end{esimerkki*}
 
 Toinen tekstirivien peruslinjojen väliseen etäisyyteen vaikuttava asetus
@@ -1299,16 +1299,16 @@ hienosäätöön esimerkiksi dokumentin esittelyosassa. Tilannekohtainen
 rivikorkeus on parasta asettaa \komento{fontsize}\-/komennolla.
 
 \subsection{Kirjainperheen ja -leikkauksen valitseminen}
-\label{luku:fontit_korkea}
+\label{luku/fontit-korkea}
 
 Latexissa on joukko korkean tason fonttikomentoja, jotka on tarkoitettu
 käytettäväksi sen jälkeen, kun matalan tason asetukset on kerran
-määritetty. Taulukossa \ref{tlk:fonttimallikomennot} on komennot
+määritetty. Taulukossa \ref{tlk/fonttimallikomennot} on komennot
 kirjainperheen ja kirjainleikkauksen valintaan. Joka rivillä ensin
 mainittu komento (esim. \komento{rmfamily}) vaikuttaa tekstiin, joka
 tulee komennon jälkeen. Vaikutusalue rajoittuu nykyisen ympäristön (luku
-\ref{luku:ymparistot}) sisään tai aaltosulkeilla (luku
-\ref{luku:aaltosulkeet}) rajatun alueen sisään. Rivillä toisena olevalle
+\ref{luku/ymparistot}) sisään tai aaltosulkeilla (luku
+\ref{luku/aaltosulkeet}) rajatun alueen sisään. Rivillä toisena olevalle
 komennolle (esim. \komentox{textrm}) annetaan yksi argumentti, ja
 komennon vaikutus koskee vain argumenttina olevaa tekstiä.
 
@@ -1350,7 +1350,7 @@ komennon vaikutus koskee vain argumenttina olevaa tekstiä.
   \caption{Komennot kirjainperheen ja kirjainleikkauksen valintaan.
     Perustila on \komento{rmfamily}, \komento{mdseries} ja
     \komento{upshape}}
-  \label{tlk:fonttimallikomennot}
+  \label{tlk/fonttimallikomennot}
 }
 
 Taulukossa on ensimmäisillä riveillä kirjainperhekomennot (3\,kpl),
@@ -1371,12 +1371,12 @@ ole sidottu toisiinsa. Sen sijaan kalteva leikkaus on tavallisen eli
 pystyasentoisen leikkauksen kallistettu versio. Kallistus voi olla
 kirjainmuotoilijan piirtämä leikkaus, tai kallistus on voitu toteuttaa
 mekaanisesti. Kallistuksen voi tehdä myös Latexissa (luku
-\ref{luku:fontit_venytys}).
+\ref{luku/fontit-venytys}).
 
 Komennot fontin koon valintaan ovat taulukossa
-\ref{tlk:fonttikokokomennot}. Taulukko kertoo myös, mitä fontin
+\ref{tlk/fonttikokokomennot}. Taulukko kertoo myös, mitä fontin
 pistekokoa (pt) mikäkin komento tarkoittaa oletuksena. Oletus riippuu
-Latexin dokumenttiluokkien (luku \ref{luku:perusdokumenttiluokat})
+Latexin dokumenttiluokkien (luku \ref{luku/perusdokumenttiluokat})
 fonttikokovalitsimista \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}.
 
 \leijutlk{
@@ -1402,7 +1402,7 @@ fonttikokovalitsimista \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}.
 }{
   \caption{Fonttien oletuspistekoot dokumenttiluokkien valitsimilla
     \koodi{10pt}, \koodi{11pt} ja \koodi{12pt}}
-  \label{tlk:fonttikokokomennot}
+  \label{tlk/fonttikokokomennot}
 }
 
 \ymparistoi{rmfamily}
@@ -1449,11 +1449,11 @@ kaksi fontteihin vaikuttavaa ympäristöä sisäkkäin.
 \end{tulossis}
 
 \subsection{Fonttikoon määrittely suhteellisesti}
-\label{luku:fontti_suhteellinen}
+\label{luku/fontti-suhteellinen}
 
 Dokumentin fonttien koot on helpointa määrittää siten, että asettaa
 ensin peruskirjainperheen koon ja antaa muiden fonttien määräytyä
-suhteessa siihen. Esimerkki \ref{esim:fontti_suhteellinen} selventää,
+suhteessa siihen. Esimerkki \ref{esim/fontti-suhteellinen} selventää,
 kuinka se tapahtuu. Alussa otetaan käyttöön dokumenttiluokka
 \luokka{article} ja annetaan sille valitsin \koodi{10pt}, joka määrittää
 fonttikooksi 10 pistettä. Se on dokumenttiluokan oletusasetus, jota ei
@@ -1492,7 +1492,7 @@ kohdan välillä ja koska fonttien mittasuhteet ovat erilaisia.
 \linespread{1.45}
 \end{koodilohko}
   \caption{Fonttikokojen määrittäminen suhteessa peruskirjainperheeseen}
-  \label{esim:fontti_suhteellinen}
+  \label{esim/fontti-suhteellinen}
 \end{esimerkki*}
 
 Viimeisellä rivillä oleva \komento{linespread}\-/ komento on tärkeä. Se
@@ -1501,7 +1501,7 @@ yhtä suuri kuin peruskirjainperheen skaalauskerroin (1,4), jotta
 rivivälit ovat riittävän suuret. Näiden asetusten jälkeen dokumentissa
 käytetään korkeamman tason komentoja fonttien valintaan, esimerkiksi
 fonttikoon valintakomentoja \komento{small}, \komento{normalsize},
-\komento{large} (taulukko \ref{tlk:fonttikokokomennot}).
+\komento{large} (taulukko \ref{tlk/fonttikokokomennot}).
 
 Edellä kuvatussa suhteellisessa kirjainperheiden koon määrittelyssä on
 sellainen ongelma tai kummallisuus, että Latex koko ajan luulee, että
@@ -1521,7 +1521,7 @@ lasketaan myös kirjainperheen skaalauskerroin. Tämän vuoksi
 annettu kokomitta ei pidä paikkaansa.
 
 Jos korkean tason fonttikokokomentojen (taulukko
-\ref{tlk:fonttikokokomennot}) lisäksi tarvitaan jotakin muuta kokoa,
+\ref{tlk/fonttikokokomennot}) lisäksi tarvitaan jotakin muuta kokoa,
 voisi mahdollisesti \komento{fontsize}\-/ komennon sijasta käyttää
 \paketti{fontspec}\-/paketin tarjoamaa komentoa ja tilanteeseen sopivaa
 skaalauskerrointa esimerkiksi seuraavalla tavalla:
@@ -1543,14 +1543,14 @@ absoluuttisen menetelmän avulla, jota käsitellään seuraavassa
 alaluvussa.
 
 \subsection{Fonttikoon määrittely absoluuttisesti}
-\label{luku:fontti_absoluuttinen}
+\label{luku/fontti-absoluuttinen}
 
 Absoluuttinen fonttien koonmääritystapa tarkoittaa sitä, että koot
 asetetaan tietyn kokoiseksi käyttämällä esimerkiksi pistemittoja ja että
 kirjaimet myös päätyvät lopulliseen dokumenttiin juuri sen kokoisena.
 Tämä tapa on myös teknisesti eheä, eli Latexin eri osat ovat samaa
 mieltä siitä, minkäkokoisesta fontista on kyse. Näin ei ollut
-suhteellisen tavan kanssa (luku \ref{luku:fontti_suhteellinen}).
+suhteellisen tavan kanssa (luku \ref{luku/fontti-suhteellinen}).
 
 Joskus oppilaitoksen, yhtiön tai muun julkaisijan ohjeissa määritellään
 tarkasti, mitä fontteja käytetään ja mikä on leipätekstin ja otsikoiden
@@ -1598,10 +1598,10 @@ asettamiseen.
 \normalsize % jotta tulee heti voimaan eikä vasta tekstiosassa
 \end{koodilohko}
   \caption{Fonttikokojen määrittäminen pistekoon avulla}
-  \label{esim:fontti_absoluuttinen}
+  \label{esim/fontti-absoluuttinen}
 \end{esimerkki*}
 
-Esimerkistä \ref{esim:fontti_absoluuttinen} selviää perusajatus.
+Esimerkistä \ref{esim/fontti-absoluuttinen} selviää perusajatus.
 Peruskirjainperhe (rivi~5) otetaan käyttöön ilman skaalausta
 (\koodi{Scale=1}), minkä vuoksi koon voi jatkossa asettaa täsmälleen
 kohdalleen \komento{fontsize}\-/komennolla. Samaa ei tehdä groteskin
@@ -1616,12 +1616,12 @@ samoja mutta ilman skaalausta.
 Uusien skaalaamattomien kirjainperheiden komentojen nimiksi on valittu
 \komentox{sf\-fam\-i\-ly\-abs} ja \komentox{tt\-fam\-i\-ly\-abs} (vrt.
 \komento{sffamily} ja \komento{ttfamily}, taulukko
-\ref{tlk:fonttimallikomennot}), ja näillä komennoilla kirjainperheet
+\ref{tlk/fonttimallikomennot}), ja näillä komennoilla kirjainperheet
 kytketään päälle. Jos esimerkiksi jonkin julkaisun vaatimuksiin kuuluu,
 että otsikossa täytyy olla 20 pisteen lihavoitu TeX Gyre Heros
-\=/kirjainleikkaus, voi esimerkissä \ref{esim:fontti_absoluuttinen}
+\=/kirjainleikkaus, voi esimerkissä \ref{esim/fontti-absoluuttinen}
 olevien asetusten pohjalta antaa otsikon ulkoasun (luku
-\ref{luku:otsikot_ulkoasu}) määrittelyn yhteydessä seuraavat komennot:
+\ref{luku/otsikot-ulkoasu}) määrittelyn yhteydessä seuraavat komennot:
 
 \komentoi{Large}
 \komentoi{bfseries}
@@ -1629,10 +1629,10 @@ olevien asetusten pohjalta antaa otsikon ulkoasun (luku
 \sffamilyabs\Large\bfseries
 \end{koodilohkosis}
 
-Esimerkin \ref{esim:fontti_absoluuttinen} riveillä 16--20 määritellään
+Esimerkin \ref{esim/fontti-absoluuttinen} riveillä 16--20 määritellään
 uudelleen Latexin korkean tason komennot, joilla fonttikoot asetetaan.
 Oletusarvot tulevat dokumenttiluokasta (luku
-\ref{luku:dokumenttiluokat}), mutta jos ne eivät ole sopivia, täytyy
+\ref{luku/dokumenttiluokat}), mutta jos ne eivät ole sopivia, täytyy
 vähintäänkin määritellä komento \komento{normalsize} mutta sen lisäksi
 kaikki ne koot, joita omassa dokumentissa tarvitaan. Tässä esimerkissä
 normaali koko asetetaan 14 pisteen kokoiseksi.
@@ -1662,7 +1662,7 @@ oikein. Haittana voi pitää sitä, että kaikki koot täytyy määritellä
 erikseen.
 
 \subsection{Fonttien oletusasetuksia}
-\label{luku:fontit_oletusasetukset}
+\label{luku/fontit-oletusasetukset}
 
 Oletuksena Latex\-/dokumentin peruskirjainperheessä
 (\komentom{setmainfont}) ja pääteviivattomassa kirjainperheessä
@@ -1675,12 +1675,12 @@ HyphenChar={-}
 
 \koodi{TeX}\-/ligatuurit tarkoittavat lainausmerkkien ja ajatusviivojen
 tuottamiseen tarkoitettuja Texin erikoismerkkejä kuten \koodi{''} ja
-\koodi{\==}, joita käsitellään luvuissa \ref{luku:lainausmerkit} ja
-\ref{luku:yhdys_ajatus_miinus}. Ne eivät ole varsinaisia luonnollisen
+\koodi{\==}, joita käsitellään luvuissa \ref{luku/lainausmerkit} ja
+\ref{luku/yhdys-ajatus-miinus}. Ne eivät ole varsinaisia luonnollisen
 kielen eivätkä typografisia ligatuureja vaan kuuluvat ainoastaan
 Tex\-/kielen merkintätapoihin. \koodi{Common}\-/ ligatuurit sen sijaan
 ovat oikeita typografisia ligatuureja kuten fi, ff ja fl, ja niitä
-käsitellään tarkemmin luvussa \ref{luku:typo_liga}. Molemmat edellä
+käsitellään tarkemmin luvussa \ref{luku/typo-liga}. Molemmat edellä
 mainitut ligatuurityypit saa pois päältä seuraavalla asetuksella:
 
 \begin{koodilohkosis}
@@ -1693,7 +1693,7 @@ vaihtaminen muuksi kuin yhdysmerkiksi toimii vain Xelatex\-/kääntäjän
 kanssa, ei esimerkiksi Lualatexilla. Sen sijaan kaikilla kääntäjillä
 tavutuksen voi kytkeä kirjainperheeltä pois, kun antaa arvoksi
 \koodi{None}. Tavutusta käsitellään perusteellisemmin luvussa
-\ref{luku:tavutus}.
+\ref{luku/tavutus}.
 
 Tasalevyinen kirjainperhe (\komentom{setmonofont}) toimii oletuksena
 hieman eri tavalla. Niissä muun muassa ei ole lainausmerkkien ja
@@ -1733,13 +1733,13 @@ Komennon valinnaisella argumentilla voi rajata, mitä kirjainperheitä
 oletusasetukset koskevat. Valinnaiseen argumenttiin kirjoitetaan yksi
 tai useampia pilkulla erotettuja komentoja, joilla kirjainperheet
 kytketään päälle: \komento{rmfamily}, \komento{sffamily},
-\komento{ttfamily} (taulukko \ref{tlk:fonttimallikomennot},
-s.~\pageref{tlk:fonttimallikomennot}) tai komennolla
+\komento{ttfamily} (taulukko \ref{tlk/fonttimallikomennot},
+s.~\pageref{tlk/fonttimallikomennot}) tai komennolla
 \komento{newfontfamily} määritelty fonttikomento (luku
-\ref{luku:fontin_valinta}).
+\ref{luku/fontin-valinta}).
 
 \subsection{Typografiset ligatuurit}
-\label{luku:typo_liga}
+\label{luku/typo-liga}
 
 Typografiset ligatuurit ovat fontissa olevia yhdistelmämerkkejä, joissa
 on typografisista syistä yhdistetty kaksi tai useampia kirjaimia yhteen
@@ -1761,7 +1761,7 @@ rumannäköisesti päällekkäin. Riippuu fontista, mitkä ligatuurit ovat
 tarpeellisia ja mitkä ligatuurimerkit on ylipäätään toteutettu fontin
 merkistöön. Tavallisia antiikvojen ligatuureja ovat fi, ff, ffi, fl ja
 ffl, mutta jotkin fontit sisältävät muitakin. Kuvaan
-\ref{kuva:ligatuurit} on koottu esimerkkejä.
+\ref{kuva/ligatuurit} on koottu esimerkkejä.
 
 \leijukuva{
   \erikoisfontti
@@ -1771,7 +1771,7 @@ ffl, mutta jotkin fontit sisältävät muitakin. Kuvaan
   \caption{Tavalliset f\=/alkuiset typografiset ligatuurit, vähän
     harvinaisemmat Th ja fb sekä erikseen päälle kytkettävät
     historialliset ligatuurit st ja ct}
-  \label{kuva:ligatuurit}
+  \label{kuva/ligatuurit}
 }
 
 Latex hoitaa tavallisten typografisten ligatuurien latomisen
@@ -1812,7 +1812,7 @@ sisältää myös harvinaisempia ligatuureja, jotka täytyy erikseen kytkeä
 päälle. Niiden tarkoituksena on esimerkiksi erityinen koristeellisuus
 tai historiallisen kirjoitustavan jäljittely. Harvinaisia ligatuureja ei
 ole tarkoitus käyttää joka tilanteessa vaan ainoastaan erityisestä
-syystä. Kuvassa \ref{kuva:ligatuurit} ja tässäkin tekstikappaleessa
+syystä. Kuvassa \ref{kuva/ligatuurit} ja tässäkin tekstikappaleessa
 olevat {%
   \newcommand{\hlig}[1]{{\erikoisfontti
       \addfontfeatures{Ligatures=Historic}#1}}%
@@ -1835,7 +1835,7 @@ selvittää käyttöjärjestelmän komentotulkissa komennolla
 fonttitiedoston nimi.
 
 \subsection{Numeroiden muoto}
-\label{luku:fontit_numerot}
+\label{luku/fontit-numerot}
 
 Varsinkin kirjatypografiassa on tavallista käyttää pääasiassa
 gemenanumeroita ({\gemenanum 1967}) eikä versaalinumeroita
@@ -1879,7 +1879,7 @@ Numbers=Proportional % vaihtelevan levyiset numerot (oletus)
 \end{koodilohkosis}
 
 \subsection{Välistykset: harvennus ja tiivistys}
-\label{luku:fontit_valistys}
+\label{luku/fontit-valistys}
 
 Fontin kanssa käytettäviä sanavälejä voi säätää \koodim{Word\-Space}\-/
 valitsimella, jonka arvoksi annetaan desimaalilukukerroin eli suhdeluku
@@ -1887,8 +1887,8 @@ normaaliin verrattuna. Arvona voi olla myös kolme eri kerrointa, jolloin
 mukana on lisäksi sanavälin venymisen rajat. Tämä asetus on tehtävä
 kirjainperheen tai \=/leikkauksen määrittelyn yhteydessä, eli se ei
 toimi esimerkiksi \komento{addfontfeatures}\-/ komennon kanssa. Katso
-tietoa sanaväleistä myös luvusta \ref{luku:sanavali} tai
-tekstikappaleiden latomista käsittelevästä luvusta \ref{luku:kappale}.
+tietoa sanaväleistä myös luvusta \ref{luku/sanavali} tai
+tekstikappaleiden latomista käsittelevästä luvusta \ref{luku/kappale}.
 \noclub[2]
 
 Fonttiasetusten valitsimella \koodim{Letter\-Space} säädetään merkkien
@@ -1897,7 +1897,7 @@ positiivinen tai negatiivinen prosenttiluku, joka ilmaisee alkuperäiseen
 lisättävän osuuden. Asetus \koodi{Letter\-Space=\katk 6} tuottaa siis
 kuusi prosenttia leveämmät merkkien välit. Välistyksen tiivistäminen ja
 harvennuksen typografiaa käsitellään luvussa
-\ref{luku:korostus_harvennus}, mutta seuraavassa on esimerkki, kuinka ne
+\ref{luku/korostus-harvennus}, mutta seuraavassa on esimerkki, kuinka ne
 teknisesti toteutetaan:
 
 \komentoi{scshape}
@@ -1922,7 +1922,7 @@ kirjainperheeseen kuuluvaan pienversaaliin, käytetään valitsinta
 \end{koodilohkosis}
 
 \subsection{Keinotekoinen venytys, lihavointi ja kallistus}
-\label{luku:fontit_venytys}
+\label{luku/fontit-venytys}
 
 Valitsimella \koodim{Fake\-Stretch} voi venyttää tai kutistaa merkkejä
 leveyssuunnassa. Arvoksi annetaan desimaalilukukerroin, joka on
@@ -1983,7 +1983,7 @@ eri asia kuin \textit{kursiivi} (\komento{itshape}).
 \end{koodilohkosis}
 
 \subsection{Keinotekoinen pienversaali}
-\label{luku:fontit_keinopienversaali}
+\label{luku/fontit-keinopienversaali}
 
 Moniin fontteihin ei sisälly lainkaan pienversaalia. Jos sellaisen silti
 haluaa omaan korostusvalikoimaan, voi yrittää pienentää
@@ -2008,11 +2008,11 @@ liian ohuita.
 \end{tulossis}
 
 \section{Kieli}
-\label{luku:kieliasetukset}
+\label{luku/kieliasetukset}
 
 Melkein aina Latex\-/dokumenttiin täytyy ladata kielipaketti ja sen
 mukana asetukset tiettyjä kieliä varten. Kieliasetukset sisältävät
-ainakin tavutussäännöt (luku \ref{luku:tavutus}) sekä kielelle
+ainakin tavutussäännöt (luku \ref{luku/tavutus}) sekä kielelle
 mukautettuja nimiä dokumentin eri osille. Esimerkiksi sisällysluettelon
 ja kirjallisuusluettelon otsikot tulevat kieliasetuksista, samoin
 leijuvien taulukoiden ja kuvien nimet ''\tablename'' ja ''\figurename''.
@@ -2072,7 +2072,7 @@ Eri kielillä on erilaisia valinnaisia asetuksia, jotka täytyy selvittää
 esimerkiksi kielen kirjoitusjärjestelmän alueelliseen tai
 historialliseen vaihteluun. Yleinen moniin kieliin sopiva valitsin on
 \koodi{babel\-short\-hands}, joka lisää erilaisia, lähinnä tavutukseen
-liittyviä komentoja (luku \ref{luku:tavutus}). Suomen kielen voisi siis
+liittyviä komentoja (luku \ref{luku/tavutus}). Suomen kielen voisi siis
 ottaa käyttöön myös seuraavalla tavalla:
 
 \komentoi{setdefaultlanguage}
@@ -2107,7 +2107,7 @@ typografisia yksityiskohtia eri tavalla.
 Kirjoittaja voi määritellä eri kielille eri fontin. Oletuksena käytetään
 peruskirjainperhettä, mikä samalla tarkoittaa, että kielen vaihtuessa
 pois oletuskielestä suoritetaan \komento{rmfamily}\-/komento (taulukko
-\ref{tlk:fonttimallikomennot}, s.~\pageref{tlk:fonttimallikomennot}).
+\ref{tlk/fonttimallikomennot}, s.~\pageref{tlk/fonttimallikomennot}).
 Tätä havainnollistaa seuraava esimerkki, jossa \komento{textenglish}\-/
 komennon vaikutuksen ajaksi tulee käyttöön perusfontti
 \komento{rmfamily} eikä ympärillä oleva pääteviivaton
@@ -2141,7 +2141,7 @@ kuin muutenkin siinä kohdassa dokumenttia.
 
 Mikäli haluaa jollekin kielelle kokonaan eri kirjainperheen, kannattaa
 käyttää \paketti{fontspec}\-/paketin komentoa \komento{newfontfamily}
-(luku \ref{luku:fontin_valinta}) ja määritellä kielen fonttikomennot
+(luku \ref{luku/fontin-valinta}) ja määritellä kielen fonttikomennot
 sillä. Tällainen on tarpeen ainakin silloin, kun dokumentin
 peruskirjainperhe ei sisällä kyseisen kielen kirjaimia.
 
@@ -2237,13 +2237,13 @@ esimerkiksi seuraavalla tavalla:
 Eri kielille on mahdollista asettaa eri kirjainperheet
 \komento{babelfont}\-/ komennolla. Tämä komento korvaa
 \paketti{fontspec}\-/ paketin fontinvalintakomennot (luku
-\ref{luku:fontin_valinta}) ja muodostaa uuden korkeamman tason komennon,
+\ref{luku/fontin-valinta}) ja muodostaa uuden korkeamman tason komennon,
 joka sisältää myös kielen. Jos siis käyttää komentoa
 \komento{babelfont}, ei saa samanaikaisesti käyttää komentoja
 \komento{setmainfont}, \komento{setsansfont} eikä \komento{setmonofont}.
 
 Oman dokumentin kirjainperheet voitaisiin määrittää
-\komento{babelfont}\-/ komennolla esimerkin \ref{esim:babelfont} tavoin.
+\komento{babelfont}\-/ komennolla esimerkin \ref{esim/babelfont} tavoin.
 Ensin esimerkissä määritellään peruskirjainperhe (\koodi{rm}),
 pääteviivaton perhe (\koodi{sf}) ja tasalevyinen perhe (\koodi{tt}). Sen
 jälkeen määritellään kreikan kielessä (\koodi{greek}) käytettävä
@@ -2263,18 +2263,18 @@ peruskirjainperhe ja pääteviivaton perhe.
   \caption{\komento{babelfont}\-/komennon käyttö dokumentin
     kirjainperheiden valintaan ja kielikohtaisten kirjainperheiden
     valintaan}
-  \label{esim:babelfont}
+  \label{esim/babelfont}
 \end{esimerkki*}
 
 Esimerkissä ennen fontin nimeä (esim. TeX Gyre Heros) oleva valinnainen
 argumentti on sama kuin \paketti{fontspec}\-/paketin
 fontinvalintakomennoissa. Sen avulla määritellään kyseisen
 kirjainperheen asetuksia. Lisätietoa voi lukea fontteja käsittelevästä
-luvusta \ref{luku:kirjaintyypit} ja \paketti{fontspec}\-/paketin
+luvusta \ref{luku/kirjaintyypit} ja \paketti{fontspec}\-/paketin
 ohjekirjasta.\avctan{fontspec}
 
 \section{Tavutus}
-\label{luku:tavutus}
+\label{luku/tavutus}
 
 Tex tavuttaa eli katkaisee sanoja automaattisesti rivien lopussa, jotta
 se saa tekstikappaleet näyttämään tasapainoisilta. Lähtökohtaisesti
@@ -2283,7 +2283,7 @@ perusteella, mutta kirjoittaja voi tehdä poikkeuksia kirjoittamalla
 tavutusvihjeitä. Käytännössä tavutusvihjeitä tarvitaan välillä.
 
 Kielen valintaa ja yleisiä kieliasetuksia käsitellään tarkemmin luvussa
-\ref{luku:kieliasetukset}, mutta mainitaan tässäkin, että suomen kieli
+\ref{luku/kieliasetukset}, mutta mainitaan tässäkin, että suomen kieli
 ja sen mukainen tavutus saadaan päälle, kun dokumentin esittelyosaan
 kirjoittaa seuraavat komennot:
 
@@ -2328,7 +2328,7 @@ Komennon perään aaltosulkeiden sisään kirjoitetaan sanoja, jotka
 erotetaan toisistaan sanaväleillä. Sanoihin kirjoitetaan yhdysmerkki
 niihin kohtiin, joista sanan katkaiseminen on sallittua. Jos sanassa
 itsessään on yhdysmerkki, sen tavutusta ei voi käsitellä tällä
-komennolla. Luvussa \ref{luku:tavutuksen_merkit} kerrotaan muita tapoja.
+komennolla. Luvussa \ref{luku/tavutuksen-merkit} kerrotaan muita tapoja.
 
 \komento{hyphenation}\-/komennon voi sijoittaa dokumentin esittelyosaan
 tai tekstiosaan, mutta sijainti vaikuttaa sen toimintaan. Jos komennon
@@ -2339,7 +2339,7 @@ valitsemisen jälkeen, se vaikuttaa vain kyseisen kielen eli yleensä
 dokumentin pääasiallisen kielen tavutukseen.
 
 \subsection{Yksittäisten sanojen tavutus}
-\label{luku:tavutuksen_merkit}
+\label{luku/tavutuksen-merkit}
 
 Tietyt sanassa mukana olevat merkit kytkevät muut tavutussäännöt pois
 päältä ja muuttavat sanan tavutuksen yksilölliseksi. Jos sanassa on
@@ -2399,10 +2399,10 @@ Latex\-/lähdetiedostossa.
 }{
   \caption{Tavutusvihjeen, yhdysmerkin ja ajatusviivan vaikutus
     tavutukseen}
-  \label{tlk:tex-tavutus}
+  \label{tlk/tex-tavutus}
 }
 
-Taulukossa \ref{tlk:tex-tavutus} on esimerkkejä tavutusvihjeiden,
+Taulukossa \ref{tlk/tex-tavutus} on esimerkkejä tavutusvihjeiden,
 yhdysmerkin ja ajatusviivan vaikutuksesta. Ensimmäisessä sarakkeessa on
 esimerkkisana siinä muodossa kuin se kirjoitetaan lähdetiedostoon.
 Toisessa sarakkeessa on ladottu sana, johon on pystyviivalla merkittynä
@@ -2418,7 +2418,7 @@ Toinen vaihtoehto on sitovan yhdysmerkin käyttö, jota käsitellään
 seuraavassa alaluvussa.
 
 \subsection{Tavutuksen sallivia ja sitovia merkkejä}
-\label{luku:tavutus_sallivat_sitovat}
+\label{luku/tavutus-sallivat-sitovat}
 
 Unicode\-/merkistön sitova yhdysmerkki \uctunnus{u+2011 non\-/breaking
   hyphen} näkyy tavallisena yhdysmerkkinä, mutta se estää sanan
@@ -2441,14 +2441,14 @@ valitsinta.
 
 Paketti sisältää kaksi lisävaihtoehtoa kolmelle viivavälimerkille
 eli yhdysmerkille, lyhyelle ajatusviivalle ja pitkälle ajatusviivalle.
-Kun Texin viivavälimerkit (luku \ref{luku:tavutuksen_merkit}) aina
+Kun Texin viivavälimerkit (luku \ref{luku/tavutuksen-merkit}) aina
 estävät tavutuksen muualta kuin välimerkin jälkeen,
 \paketti{extdash}\-/paketin perusvaihtoehdot sallivat tavutuksen
 muualtakin. Lisäksi kaikille kolmelle viivavälimerkille on sitova
 versio, joka estää tavutuksen välimerkin jälkeen (mutta sallii muualta).
 
-Taulukossa \ref{tlk:extdash} ovat \paketti{extdash}\-/paketin tärkeimmät
-komennot ja niiden merkitykset. Taulukossa \ref{tlk:extdash-vertailu}
+Taulukossa \ref{tlk/extdash} ovat \paketti{extdash}\-/paketin tärkeimmät
+komennot ja niiden merkitykset. Taulukossa \ref{tlk/extdash-vertailu}
 vertaillaan \paketti{extdash}\-/paketin komentoja Texin vastaaviin.
 
 \leijutlk{
@@ -2466,7 +2466,7 @@ vertaillaan \paketti{extdash}\-/paketin komentoja Texin vastaaviin.
   \end{tabular}
 }{
   \caption{\paketti{extdash}-paketin komentoja}
-  \label{tlk:extdash}
+  \label{tlk/extdash}
 }
 
 \leijutlk{
@@ -2502,7 +2502,7 @@ vertaillaan \paketti{extdash}\-/paketin komentoja Texin vastaaviin.
   \end{tabular}
 }{
   \caption{Texin ja \paketti{extdash}-paketin komentojen vertailua}
-  \label{tlk:extdash-vertailu}
+  \label{tlk/extdash-vertailu}
 }
 
 On tärkeää huomioida, että \paketti{extdash}\-/paketin komennot ovat
@@ -2571,7 +2571,7 @@ esimerkissä käsitellään suomen kielen asetuksia
 esittelyosassa.
 
 \subsection{Muita tavutusasetuksia ja -vinkkejä}
-\label{luku:tavutus_muut}
+\label{luku/tavutus-muut}
 
 Aiemmin mainittu \paketti{extdash}\-/makropaketti sisältää tavutuksen
 hallintaan liittyviä välimerkkejä, mutta sellaisia on myös
@@ -2694,7 +2694,7 @@ joistakin riveistä tulee ylipitkiä, eli ne yltävät marginaalin puolelle.
 Tavutuskohtia voi lisätä sopiviin kohtiin omilla tavutusvihjeillä
 (\komento{-}). Vaihtoehtoisesti kaikki yleisten tavutussääntöjen
 mukaiset tavutuskohdat saa käyttöön \paketti{extdash}\-/paketin
-komennoilla (taulukko \ref{tlk:extdash}). Seuraavassa esimerkissä on
+komennoilla (taulukko \ref{tlk/extdash}). Seuraavassa esimerkissä on
 tavutuksen hallintaa sanalle \emph{Molo\-tov--Ribben\-trop-sopi\-mus}:
 
 \komentoi{-}
@@ -2705,7 +2705,7 @@ Molo\-tov--Ribben\-trop-sopi\-mus % tavutusvihjeet
 Molotov\--Ribben\-trop\-/sopimus  % tavutuksen sallivat välimerkit
 \end{koodilohkosis}
 
-\komento{discretionary}\-/komentoa (luku \ref{luku:tavutus_muut}) voi
+\komento{discretionary}\-/komentoa (luku \ref{luku/tavutus-muut}) voi
 hyödyntää suomen kielen sanoissa silloin, kun niissä on heittomerkki
 erottamassa kahta tavurajan molemmin puolin olevaa samaa vokaalia,
 esimerkiksi sanoissa \emph{vaa'an} ja \emph{liu'uttaa}. Normaalisti Tex
@@ -2756,9 +2756,9 @@ Toinen vaihtoehto on käyttää fontin asetusta \koodi{Hyphen\-Char=\katk
   None} kirjainperheen määrittelyn yhteydessä. Oletuksena tavutus on
 pois päältä tasalevyisestä fontista, eli esimerkiksi \komento{texttt}\-/
 komennon argumenttina olevaa tekstiä ei tavuteta. Fontteja ja niiden
-asetuksia käsitellään luvussa \ref{luku:kirjaintyypit}.
+asetuksia käsitellään luvussa \ref{luku/kirjaintyypit}.
 
 Käytännössä tavutus menee pois päältä myös silloin, kun tekstikappaleet
 tasaa vain vasempaan reunaan eli tekee oikealle liehureunan komennolla
 \komento{raggedright}. Tekstikappaleiden tasaamista ja palstan muotoa
-käsitellään luvussa \ref{luku:kappaleen_tasaus}.
+käsitellään luvussa \ref{luku/kappaleen-tasaus}.

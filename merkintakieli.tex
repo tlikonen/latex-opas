@@ -32,7 +32,7 @@ kirjoittamalla niiden eteen kenoviivan (\koodi{\keno}). Tildeä
 (\textasciitilde), sirkumfleksia (\textasciicircum) eikä kenoviivaa
 itseään ei voi suojata pelkän kenoviivan avulla, koska kenoviivan kanssa
 ne muodostavat eräitä muita komentoja. Taulukossa
-\ref{tlk:merkkien_suojaus} on koottuna, kuinka edellä mainitut
+\ref{tlk/merkkien-suojaus} on koottuna, kuinka edellä mainitut
 erikoismerkit suojataan eli saadaan ladottua dokumenttiin sellaisenaan.
 
 \leijutlk{
@@ -54,17 +54,17 @@ erikoismerkit suojataan eli saadaan ladottua dokumenttiin sellaisenaan.
   \end{tabular}
 }{
   \caption{Varattujen erikoismerkkien kirjoittaminen}
-  \label{tlk:merkkien_suojaus}
+  \label{tlk/merkkien-suojaus}
 }
 
 Jotkin makropaketit määrittelevät muitakin erikoismerkkejä. Esimerkiksi
-kieliasetuksiin (luku \ref{luku:kieliasetukset}) liittyvät
+kieliasetuksiin (luku \ref{luku/kieliasetukset}) liittyvät
 \paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketit voivat
 määritellä pari lainausmerkillä (\koodi{\textquotedbl}) alkavaa,
 tavutuksen hallintaan liittyvää komentoa tai erikoismerkkiä.
 
 \subsection{Sanaväli}
-\label{luku:sanavali}
+\label{luku/sanavali}
 
 Välilyönti, sarkainmerkki ja yksi rivinvaihto ovat kaikki tavallisia
 sanavälejä Latex\-/dokumentissa, ja näillä kolmella on sama merkitys.
@@ -94,8 +94,8 @@ oletusasetuksilla, koska kovin suuret sanavälit olisivat
 tekstikappaleessa rumia. Jos sanaväleille haluaa antaa
 ''hätätilanteissa'' lisää venymisvaraa, täytyy käyttää mittaa
 \mittam{emergencystretch}, jota käsitellään tarkemmin tekstikappaleiden
-yhteydessä luvussa \ref{luku:kappale}. Mittoihin liittyvää tekniikkaa
-käsitellään puolestaan luvussa \ref{luku:mitat}.
+yhteydessä luvussa \ref{luku/kappale}. Mittoihin liittyvää tekniikkaa
+käsitellään puolestaan luvussa \ref{luku/mitat}.
 
 Matalatasoinen sanavälejä ja niiden venymistä säätelevä mitta on
 \mittam{spaceskip}, johon voi asettaa haluamansa leveyden ja mahdolliset
@@ -111,17 +111,17 @@ poikkeukselliset sanavälit.
 
 Myös kirjainperheelle voi asettaa oman sanavälikertoimensa fontin
 asetusten \koodi{Word\-Space}\-/valitsimella. Tätä asetusta käsitellään
-fonttien yhteydessä luvussa \ref{luku:fontit_valistys}.
+fonttien yhteydessä luvussa \ref{luku/fontit-valistys}.
 
 \subsection{Rivinvaihto lähdedokumentissa}
-\label{luku:rivinvaihtomerkit}
+\label{luku/rivinvaihtomerkit}
 
 Kuten edellä todettiin, lähdedokumentissa olevat rivinvaihdot tulkitaan
 vain sanaväleiksi eivätkä ne vaihda riviä lopullisessa dokumentissa. Jos
 ladottuun dokumenttiin tarvitaan rivinvaihto, kirjoitetaan
 lähdedokumenttiin kaksi kenoviivaa (\komentom{\keno}). Tätä komentoa
 käsitellään tarkemmin tekstikappaleiden yhteydessä luvussa
-\ref{luku:rivinvaihtokomennot}.
+\ref{luku/rivinvaihtokomennot}.
 
 On kuitenkin mahdollista saada myös lähdedokumentin rivinvaihdot
 toteutumaan automaattisesti ladotussa tekstissä. Sellainen tila
@@ -131,7 +131,7 @@ olla hyötyä väliaikaisesti ja erityistilanteissa, mutta pysyväksi koko
 dokumentin tilaksi \komento{obeycr} ei yleensä sovi.
 
 \subsection{Kappaleen vaihtuminen}
-\label{luku:kappaleen_vaihtuminen}
+\label{luku/kappaleen-vaihtuminen}
 
 Tyhjä rivi tarkoittaa kappaleen vaihtumista. Rivi on tyhjä silloin, kun
 se ei sisällä mitään muuta kuin rivinvaihdon tai kun se sisältää vain
@@ -151,7 +151,7 @@ rivit ja kappaleet muotoillaan.
 Ladotuissa teksteissä uuden tekstikappaleen alkaminen ilmaistaan usein
 sisennetyllä rivillä, mutta sisennyksiä eikä muitakaan muotoiluja ei
 tehdä tekstieditorissa välien avulla. Kappaleiden muotoiluun on omat
-keinonsa, ja niistä käsitellään luvussa \ref{luku:kappale}.
+keinonsa, ja niistä käsitellään luvussa \ref{luku/kappale}.
 
 \subsection{Kommentit ja muistiinpanot}
 
@@ -183,13 +183,13 @@ La% Nämä rivit
 \end{tulossis}
 
 \subsection{Aaltosulkeet}
-\label{luku:aaltosulkeet}
+\label{luku/aaltosulkeet}
 
 Aaltosulkeet \mbox{\koodi{\{\}}} muodostavat eräänlaisen näkymättömän
 ympäristön, jonka sisällä voi olla väliaikaisesti voimassa erilaiset
 asetukset kuin ulkopuolella. Aaltosulkeiden sisällä suoritetut komennot,
-uusien komentojen määrittelyt (luku \ref{luku:komennot}) tai asetetut
-mittojen arvot (luku \ref{luku:mitat}) ovat voimassa vain kyseisen
+uusien komentojen määrittelyt (luku \ref{luku/komennot}) tai asetetut
+mittojen arvot (luku \ref{luku/mitat}) ovat voimassa vain kyseisen
 ympäristön sisäpuolella. Seuraavassa esimerkissä aaltosulkeilla rajataan
 kursivointikomennon \komento{itshape} vaikutusaluetta.
 
@@ -214,18 +214,18 @@ tai nimenomaan siihen tarkoitetulla merkillä, jonka Unicode\-/tunnus on
 Nämä kaksi eri merkkiä, tilde ja \uctunnus{u+00a0}, toimivat hieman eri
 tavoin. Molemmat estävät rivinvaihdon, mutta tildemerkki sallii välin
 venymisen samalla tavalla kuin tavallinenkin sanaväli sallii (luku
-\ref{luku:sanavali}). Sen sijaan merkki \uctunnus{u+00a0} on
+\ref{luku/sanavali}). Sen sijaan merkki \uctunnus{u+00a0} on
 vakiolevyinen eikä siis veny muiden sanavälien tapaan. Unicoden sitovaa
 välilyöntiä \uctunnus{u+00a0} täytyy käyttää ainakin vuorosanaviivan
 (\==) ja sitä seuraavan sanan välissä, koska se väli ei saa venyä.
 
 \subsection{Ohuke}
-\label{luku:ohuke}
+\label{luku/ohuke}
 
 Ohuke on tavallista sanaväliä kapeampi väli, ja se tehdään
 komennolla~\komentom{,} (kenoviiva ja pilkku). Ohukkeen leveys Latexissa
 on \murtoluku{1}{6} typografisen neliön leveydestä eli em-mitasta (luku
-\ref{luku:mitat}). Ohuke on tasalevyinen ja sitova, eli se ei veny
+\ref{luku/mitat}). Ohuke on tasalevyinen ja sitova, eli se ei veny
 muiden sanavälien tapaan, ja se estää rivinvaihdon. Siksi ohuke sopii
 esimerkiksi pitkien lukujen ja puhelinnumeroiden ryhmittelyyn paremmin
 kun sanaväli.
@@ -239,7 +239,7 @@ J.\,R.\,R. Tolkien
 Myös henkilön etunimen alkukirjainten välissä voi käyttää ohuketta, jos
 tavallinen sanaväli vie kirjaimet turhan kauas toisistaan. Sukunimi
 erotetaan kuitenkin aina sanavälillä. Joskus myös päiväyksissä käytetään
-ohuketta järjestysluvun pisteiden jälkeen. Taulukossa \ref{tlk:ohuke}
+ohuketta järjestysluvun pisteiden jälkeen. Taulukossa \ref{tlk/ohuke}
 vertaillaan sanaväliä, ohuketta ja yhteen kirjoittamista.
 
 \leijutlk{
@@ -256,11 +256,11 @@ vertaillaan sanaväliä, ohuketta ja yhteen kirjoittamista.
 }{
   \caption{Sanavälin, ohukkeen ja yhteen kirjoittamisen vertailu. Suomen
     kielen vastaiset kirjoitusasut on viivattu yli}
-  \label{tlk:ohuke}
+  \label{tlk/ohuke}
 }
 
 \subsection{Lainausmerkit ja heittomerkki}
-\label{luku:lainausmerkit}
+\label{luku/lainausmerkit}
 
 Näppäilemällä \textsc{shift} eli vaihtonäppäin ja 2 saadaan yleensä
 lainausmerkin yleisversio, niin sanottu \textsc{ascii}\-/lainausmerkki
@@ -308,9 +308,9 @@ yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
 \komentom{textquotedbl} ja \komentom{textquotesingle}. Yksittäinen
 gravisaksentti (\`{}) tehdään komennolla \komento{`}\komentoarg{}.
 Lainausmerkkien merkintätapoja ja komentoja on koottu taulukkoon
-\ref{tlk:erikoismerkit-lainaus}
-(s.~\pageref{tlk:erikoismerkit-lainaus}). Toisaalta kielikohtaiset
-asetukset (luku \ref{luku:kieliasetukset}) voivat tuoda mukanaan myös
+\ref{tlk/erikoismerkit-lainaus}
+(s.~\pageref{tlk/erikoismerkit-lainaus}). Toisaalta kielikohtaiset
+asetukset (luku \ref{luku/kieliasetukset}) voivat tuoda mukanaan myös
 kielikohtaisia keinoja lainausmerkkien kirjoittamiseen.
 
 Edellä kuvatut Latexin omat lainausmerkkien merkintätavat (\koodi{''},
@@ -335,7 +335,7 @@ Tasalevyisessä fontissa Tex\-/ligatuurit eivät ole päällä oletuksena,
 joten yksittäisissä sanoissa tai lyhyissä ilmauksissa voi estää
 Tex\-/ligatuurit esimerkiksi komennolla \komento{texttt}. Samalla
 tietysti fonttikin vaihtuu. Fontteja käsitellään tarkemmin luvussa
-\ref{luku:kirjaintyypit}.
+\ref{luku/kirjaintyypit}.
 
 \komentoi{texttt}
 \begin{koodilohkosis}
@@ -371,11 +371,11 @@ täytyy olla ladattuna.
 \end{tulossis}
 
 \subsection{Yhdysmerkki, ajatusviiva ja miinusmerkki}
-\label{luku:yhdys_ajatus_miinus}
+\label{luku/yhdys-ajatus-miinus}
 
 Yhdyssanan osien välissä käytettävä yhdysmerkki on Latexissa tavallinen
 näppäimistöltä saatava yleisyhdysmerkki (\=/). Merkillä on vaikutusta
-myös sanan tavutukseen (luku \ref{luku:tavutus}).
+myös sanan tavutukseen (luku \ref{luku/tavutus}).
 
 Ajatusviivaa tarvitaan esimerkiksi äärikohtien (27--29,
 Oulu--Rova\-niemi), luetelmien, vuorosanojen ja virkkeen irrallisen
@@ -417,7 +417,7 @@ seuraavasti:
 \end{tulossis}
 
 Miinusmerkille (−) ei Latexissa ole erityistä merkintätapaa muuten kuin
-matematiikkatilassa (luku \ref{luku:matematiikka}). Tavallisessa
+matematiikkatilassa (luku \ref{luku/matematiikka}). Tavallisessa
 tekstitilassa lyhyttä ajatusviivaa voi ja saa käyttää myös
 miinusmerkkinä, mutta vielä parempi olisi käyttää varsinaista Unicoden
 miinusmerkkiä \uctunnus{u+2212 minus sign}, koska se on fonteissa
@@ -442,8 +442,8 @@ Yläindeksit (a\textsuperscript{2}) tehdään komennolla
 komennolla \komentom{textsubscript}. Oletusasetuksilla Latex toteuttaa
 indeksit mekaanisesti pienentämällä fonttia ja sijoittamalla pienennetyn
 tekstin alas peruslinjan tuntumaan tai ylös gemenalinjan yläpuolelle.%
-\footnote{Katso typografinen viivasto, kuva \ref{kuva:kirjainmitat}
-  sivulla \pageref{kuva:kirjainmitat}.} Lopputulos ei ole typografisesti
+\footnote{Katso typografinen viivasto, kuva \ref{kuva/kirjainmitat}
+  sivulla \pageref{kuva/kirjainmitat}.} Lopputulos ei ole typografisesti
 välttämättä kovin hyvä, koska fontin pienentäminen ohentaa samalla
 merkkien viivoja ja ohuimmat hiusviivat voivat lähes kadota.
 
@@ -486,10 +486,10 @@ Latexin alkuperäiset komennot.
   \caption{Ylä- ja alaindeksien vertailua. Oikeat Open Type \=/fonttien
     indeksit saadaan \paketti{realscripts}\-/ paketin avulla. Mekaaninen
     toteutus perustuu fontin pienentämiseen}
-  \label{tlk:indeksien_vertailu}
+  \label{tlk/indeksien-vertailu}
 }
 
-Taulukossa \ref{tlk:indeksien_vertailu} vertaillaan oikeita ja
+Taulukossa \ref{tlk/indeksien-vertailu} vertaillaan oikeita ja
 mekaanisia ylä- ja alaindeksejä. Taulukon esimerkit paljastavat, että
 lopputuloksessa on eroa. Mekaaninen ylä- ja alaindeksitoiminto jättää
 merkit turhan suurikoisiksi mutta saattaa silti ohentaa merkkien viivoja
@@ -504,13 +504,13 @@ Toisaalta fonttiin sisältyviä ylä- ja alaindeksejä voi myös kirjoittaa
 Unicode\-/merkistön avulla sellaisenaan. Lopputulos on sama.
 
 \subsection{Tarkkeet ja erikoismerkit}
-\label{luku:tarkkeet}
+\label{luku/tarkkeet}
 
 Latexissa on useita komentoja tarkkeellisten kirjainten
 (\'a\,\v{s}\,\c{c}\,\~o) kirjoittamiseen sekä muille merkeille, joita ei
 ehkä ihan helposti saa suoraan näppäimistöltä. Komentoja on koottu
-taulukoihin \ref{tlk:tarkkeet}, \ref{tlk:erikoismerkit-lainaus} ja
-\ref{tlk:erikoismerkit-muut}. Taulukon tarkekomennoissa on käytetty
+taulukoihin \ref{tlk/tarkkeet}, \ref{tlk/erikoismerkit-lainaus} ja
+\ref{tlk/erikoismerkit-muut}. Taulukon tarkekomennoissa on käytetty
 a\=/kirjainta esimerkkinä, mutta tarke voi liittyä muihinkin kirjaimiin.
 \marginaali{\TeX} \marginaali{\LaTeX} Merkit voi kirjoittaa
 Latex\-/lähdedokumenttiin myös sellaisenaan, eli näiden komentojen
@@ -571,7 +571,7 @@ ja \komento{LaTeX}.
 }{
   \caption{Komentoja tarkkeellisten ja muiden kirjainten
     kirjoittamiseen}
-  \label{tlk:tarkkeet}
+  \label{tlk/tarkkeet}
 }
 
 \leijutlk{
@@ -605,7 +605,7 @@ ja \komento{LaTeX}.
   \end{tabular}
 }{
   \caption{Komentoja lainausmerkkien kirjoittamiseen}
-  \label{tlk:erikoismerkit-lainaus}
+  \label{tlk/erikoismerkit-lainaus}
 }
 
 \leijutlk{
@@ -667,7 +667,7 @@ ja \komento{LaTeX}.
   \end{tabular}
 }{
   \caption{Komentoja erikoismerkkien kirjoittamiseen}
-  \label{tlk:erikoismerkit-muut}
+  \label{tlk/erikoismerkit-muut}
 }
 
 \subsection{Tavutusvihje}
@@ -682,10 +682,10 @@ tavutus\-algo\-ritmi
 
 Myös sanassa olevat yhdysmerkit ja ajatusviivat vaikuttavat sanan
 tavuttamiseen. Perusteellisemmin tavutusta ja sen asetuksia käsitellään
-luvussa \ref{luku:tavutus}.
+luvussa \ref{luku/tavutus}.
 
 \section{Komennot}
-\label{luku:komennot}
+\label{luku/komennot}
 
 Latexin komennot alkavat kenoviivalla (\koodi{\textbackslash}), jonka
 jälkeen tulee komennon nimi. Nimi koostuu yleensä pienistä tai isoista
@@ -705,7 +705,7 @@ aaltosulkeisiin \koodi{\{}\ldots\koodi{\}} ja valinnaiset hakasulkeisiin
 
 Jos pakolliseen argumenttiin haluaa sisällyttää aaltosulkeen, täytyy sen
 eteen kirjoittaa kenoviiva \komento{\{}~\komento{\}}, tai voi myös
-käyttää taulukossa \ref{tlk:erikoismerkit-muut} mainittuja komentoja
+käyttää taulukossa \ref{tlk/erikoismerkit-muut} mainittuja komentoja
 aaltosulkeiden tuottamiseen. Sama pätee aaltosulkeiden latomiseen
 muutenkin.
 
@@ -714,7 +714,7 @@ käytetä kenoviivaa. Poikkeustilanne on komennon valinnaisen argumentin
 sisällä, koska valinnainen argumentti jo sinänsä kirjoitetaan
 hakasulkeiden sisään. Hakasulkeita ei voi suojata kenoviivalla, koska
 \komento{[} ja \komento{]} ovat jo muuhun tarkoitettuja komentoja:
-niillä luodaan matematiikkatilassa (luku \ref{luku:matematiikka}) oleva
+niillä luodaan matematiikkatilassa (luku \ref{luku/matematiikka}) oleva
 tekstilohko. Valinnaisen argumentin sisään saa hakasulkeen, kun sen
 kirjoittaa aaltosulkeiden sisään. Esimerkiksi komennon
 \komentox{komento}\komentoargv{\{]\}} valinnaiseksi argumentiksi tulee
@@ -779,13 +779,13 @@ ja jos nimen tavuttaa, täytyisi se tehdä englannin sääntöjen mukaisesti.
 Esimerkkinä olleen \komentox{komento}\-/ komennon määritelmässä voisi
 siis vaihtaa myös kielen komennolla \komento{textenglish}.%
 \footnote{Lisätietoa kieliasetuksista voi lukea luvusta
-  \ref{luku:kieliasetukset}.}
+  \ref{luku/kieliasetukset}.}
 
 Jos ollaan kirjoittamassa laajaa tietoteosta, Latex\-/ komennot halutaan
 ehkä lisätä automaattisesti kirjan lopussa olevaan asiahakemistoon (ks.
-s.~\pageref{luku:asiahakemisto}). Niinpä komennon määritelmään lisätään
+s.~\pageref{luku/asiahakemisto}). Niinpä komennon määritelmään lisätään
 vielä sitäkin varten komento \komento{index}.%
-\footnote{Asiahakemistoja käsitellään luvussa \ref{luku:asiasanat}.}
+\footnote{Asiahakemistoja käsitellään luvussa \ref{luku/asiasanat}.}
 Lopulta Latex\-/ komentojen merkitsemiseen tarkoitettu
 \komentox{komento} määriteltäisiin seuraavalla tavalla:
 
@@ -808,7 +808,7 @@ toteutusta on helppoa muuttaa myöhemmin, koska komennon määrittely on
 vain yhdessä paikassa lähdedokumentin alussa.
 
 \subsection{Komentojen määrittely}
-\label{luku:komennot_maarittely}
+\label{luku/komennot-maarittely}
 
 Komentojen määrittelyyn on kolme erilaista komentoa, ja niille kaikille
 annetaan samanlaiset argumentit. Komennot ovat seuraavat:
@@ -902,7 +902,7 @@ näkökulman.
 Komentojen määrittelyssä tähdelliset versiot toimivat muuten samalla
 tavalla, mutta ne antavat virheilmoituksen, jos komennolle annetut
 argumentit sisältävät enemmän kuin yhden tekstikappaleen. Niinpä
-esimerkin \ref{esim:newcommand} koodi tuottaa käännettäessä virheen.
+esimerkin \ref{esim/newcommand} koodi tuottaa käännettäessä virheen.
 
 \begin{esimerkki*}
   \komentoi{newcommand*}
@@ -918,7 +918,7 @@ esimerkin \ref{esim:newcommand} koodi tuottaa käännettäessä virheen.
   \caption{\komento{newcommand*}\-/ komennolla määritelty komento ei
     salli argumentteja, joissa on useita tekstikappaleita. Tämä
     esimerkki tuottaa käännettäessä virheilmoituksen}
-  \label{esim:newcommand}
+  \label{esim/newcommand}
 \end{esimerkki*}
 
 \komento{newcommand*}\-/komennolla määritelty \komentox{komento} ei siis
@@ -927,7 +927,7 @@ vaihtumisen eli enemmän kuin yhden tekstikappaleen. Tämä voi olla
 hyödyllinen suojausominaisuus.
 
 \subsection{Muita vinkkejä}
-\label{luku:komennot-lisä}
+\label{luku/komennot-lisä}
 
 Komennon viimeistä argumenttia ei välttämättä tarvitse kirjoittaa
 aaltosulkeisiin, jos argumentiksi halutaan vain yksi merkki. Tällaisessa
@@ -1005,12 +1005,12 @@ välilyönti.
 \end{tulos}
 \caption{Aaltosulkeilla voi rajata komennon määrittelyn
   vaikutusaluetta}
-\label{esim:aaltosulkeet_rajaaminen}
+\label{esim/aaltosulkeet-rajaaminen}
 \end{esimerkki*}
 
-Aaltosulkeilla (luku \ref{luku:aaltosulkeet}) voi rajata
+Aaltosulkeilla (luku \ref{luku/aaltosulkeet}) voi rajata
 komentomäärittelyn vaikutusaluetta. Esimerkin
-\ref{esim:aaltosulkeet_rajaaminen} alussa asetetaan \komentox{komento}
+\ref{esim/aaltosulkeet-rajaaminen} alussa asetetaan \komentox{komento}
 tiettyyn alkuperäismääritelmään. Aaltosulkeiden sisällä se määritellään
 väliaikaisesti uudestaan. Aaltosulkeilla rajatun ympäristön jälkeen
 komennon uusi määritelmä lakkaa ja komento palautuu alkuperäiseksi.
@@ -1022,15 +1022,15 @@ tuttu ehtorakenne: jos annettu ehtolauseke on tosi, käsitellään
 then\-/haara; muussa tapauksessa käsitellään else-haara.
 
 \section{Ympäristöt}
-\label{luku:ymparistot}
+\label{luku/ymparistot}
 
 Ympäristöt ovat rakenteita, joilla on aloittava \komentom{begin}\-/
 komento ja lopettava \komentom{end}\-/ komento sekä nimi. Ympäristöjen
 ajatuksena on, että jokin ominaisuus tai jotkin toiminnot ovat voimassa
 vain ympäristön sisällä ja asiat palautuvat ennalleen ympäristön
 jälkeen. Tässä mielessä ne toimivat samalla tavalla kuin aaltosulkeet
-(luku \ref{luku:aaltosulkeet}). Jos esimerkiksi fonttiasetusta (luku
-\ref{luku:kirjaintyypit}) muuttaa ympäristön sisäpuolella, asetus
+(luku \ref{luku/aaltosulkeet}). Jos esimerkiksi fonttiasetusta (luku
+\ref{luku/kirjaintyypit}) muuttaa ympäristön sisäpuolella, asetus
 palautuu ympäristön jälkeen samaksi kuin se oli ennen ympäristön alkua.
 Samoin ympäristön sisällä määritellyt komennot ovat voimassa vain
 kyseisessä ympäristössä.
@@ -1047,8 +1047,8 @@ kyseisessä ympäristössä.
 Yleisin ympäristö on nimeltään \ymparistom{document}, jonka sisään koko
 dokumentin sisältö kirjoitetaan. Muita ympäristöjä käytetään
 tavallisesta leipätekstistä poikkeavien rakenteiden ilmaisemiseen,
-esimerkiksi luetelmiin ja taulukoihin (luvut \ref{luku:luetelmat} ja
-\ref{luku:taulukot}). Ympäristöjä voi tehdä itsekin mihin hyvänsä
+esimerkiksi luetelmiin ja taulukoihin (luvut \ref{luku/luetelmat} ja
+\ref{luku/taulukot}). Ympäristöjä voi tehdä itsekin mihin hyvänsä
 tarkoitukseen. Niitä määritellään seuraavilla komennoilla:
 
 \komentoi{newenvironment}
@@ -1065,7 +1065,7 @@ joka on jo olemassa. Se antaa virheilmoituksen, jos ympäristöä ei
 ollutkaan olemassa.
 
 Argumentit ovat lähes samanlaiset kuin komentojen määrittelyssä (luku
-\ref{luku:komennot_maarittely}). Ympäristöjen määrittelykomennoilla on
+\ref{luku/komennot-maarittely}). Ympäristöjen määrittelykomennoilla on
 kolme pakollista argumenttia: ensimmäinen on ympäristön nimi, toinen on
 ympäristön aloitusmääritelmä (\koodi{aloitus}) ja kolmas on
 lopetusmääritelmä (\koodi{lopetus}).
@@ -1129,7 +1129,7 @@ samoin kuin edellä kuvatut tavallisetkin komentoversiot, mutta ne eivät
 salli, että määritellylle ympäristölle annetut argumentit sisältävät
 enemmän kuin yhden tekstikappaleen. Toiminta on siis sama kuin
 komentojenkin määrittelyn tähdellisissä versioissa (luku
-\ref{luku:komennot_maarittely}).
+\ref{luku/komennot-maarittely}).
 
 \komentoi{newenvironment*}
 \komentoi{renewenvironment*}
@@ -1160,7 +1160,7 @@ komentojenkin määrittelyn tähdellisissä versioissa (luku
 \caption{Sanavälien käyttäytyminen ympäristöjen yhteydessä. Komennoilla
   \komento{ignorespaces} ja \komento{ignorespacesafterend} voi poistaa
   seuraavat sanavälit}
-\label{esim:ignorespacesafterend}
+\label{esim/ignorespacesafterend}
 \end{esimerkki*}
 
 Joskus ympäristöjen määrittelyyn on hyödyllistä sisällyttää komento
@@ -1168,17 +1168,17 @@ Joskus ympäristöjen määrittelyyn on hyödyllistä sisällyttää komento
 jälkeiset sanavälit. Toinen hyödyllinen on
 \komentom{ignorespacesafterend}, joka jättää huomioimatta ympäristön
 lopettavan \komento{end}\-/ komennon jälkeiset sanavälit. Esimerkki
-\ref{esim:ignorespacesafterend} selventää näiden toimintaa.
+\ref{esim/ignorespacesafterend} selventää näiden toimintaa.
 
 \section{Mitat}
-\label{luku:mitat}
+\label{luku/mitat}
 
 \subsection{Mittayksiköt}
 
 Koska typografia on pitkälti teksti- ja muiden elementtien sijoittelua,
 tarvitaan sitä varten mittavälineitä. Niinpä Texissäkin on pituusmittoja
 (engl. \emph{length}) ja useita pituuden mittayksiköitä. Taulukkoon
-\ref{tlk:mittayksikot} on koottu mittayksiköiden lyhenteet ja
+\ref{tlk/mittayksikot} on koottu mittayksiköiden lyhenteet ja
 merkitykset. Teknisesti on samantekevää, mitä yksiköitä käyttää, sillä
 ne ovat vain välineitä pituuden ilmaisemiseen. Sisäisesti Tex käyttää
 sp-yksikköä, joka ilmaisee samalla mittojen tarkkuuden: pienin jakamaton
@@ -1204,7 +1204,7 @@ mitta on 1\,sp (5,36\,nm).
   \end{tabular}
 }{
   \caption{Texin mittayksiköiden lyhenteet ja merkitykset}
-  \label{tlk:mittayksikot}
+  \label{tlk/mittayksikot}
 }
 
 Usein tietyt yksiköt ovat vakiintuneet tiettyihin tilanteisiin.
@@ -1276,7 +1276,7 @@ tavallista, on niitä varten olemassa omia komentoja. Typografisen neliön
 levyisen (1\,em) välin voi tehdä komennolla \komentom{quad}. Sen
 puolikkaan (\murtoluku{1}{2}\,em) saa komennolla \komentom{enspace}.
 Ohuke eli \murtoluku{1}{6}\,em-väli tehdään \komentom{,}\-/ komennolla,
-josta on tarkempaa tietoa luvussa \ref{luku:ohuke}.
+josta on tarkempaa tietoa luvussa \ref{luku/ohuke}.
 
 \leijukuva{
   \begin{tikzpicture}
@@ -1322,7 +1322,7 @@ josta on tarkempaa tietoa luvussa \ref{luku:ohuke}.
   \end{tikzpicture}
 }{
   \caption{Kirjainten mitat ja typografinen viivasto}
-  \label{kuva:kirjainmitat}
+  \label{kuva/kirjainmitat}
 }
 
 Latex sisältää myös komennot mittojen poimimiseen kirjaimista tai muista
@@ -1330,7 +1330,7 @@ merkeistä. Mittoja on kolme: leveys (\englanti{width}), korkeus
 (\englanti{height}) ja syvyys (\englanti{depth}). Leveys on merkin
 viemä tila leveyssuunnassa. Korkeus tarkoittaa merkin korkeutta
 peruslinjan yläpuolella, ja syvyys on merkin korkeus peruslinjan
-alapuolella. Kuva \ref{kuva:kirjainmitat} havainnollistaa näitä kolmea
+alapuolella. Kuva \ref{kuva/kirjainmitat} havainnollistaa näitä kolmea
 mittaa sekä typografista viivastoa.
 
 Gemenalinja sijaitsee gemenakirjainten eli pienaakkosten korkeudella.
@@ -1347,7 +1347,7 @@ korkeudella. Jotkin kirjaimet voivat yltää hieman versaalilinjan
 yläpuolellekin. Esimerkiksi joidenkin fonttien Hk\=/kirjaimia
 vertailemalla näkee, että k\=/kirjaimen yläpääte yltää H\=/kirjaimen eli
 versaalilinjan yläpuolelle, ylälinjan tuntumaan. Myös tarkemerkit (luku
-\ref{luku:tarkkeet}) voivat sijaita versaalilinjan yläpuolella.
+\ref{luku/tarkkeet}) voivat sijaita versaalilinjan yläpuolella.
 
 Merkkien leveyden, korkeuden ja syvyyden voi mitata seuraavan esimerkin
 komennoilla. Esimerkin ensimmäisellä rivillä luodaan uudet mitat
@@ -1385,7 +1385,7 @@ verran linjojen ylä- ja alapuolelle. Ihmisen silmään ne näyttävät yhtä
 korkeilta.
 
 \subsection{Venyvät mitat ja välit}
-\label{luku:venyvat_mitat}
+\label{luku/venyvat-mitat}
 
 Edellä on puhuttu vain kiinteistä mitoista, mutta Latex tuntee myös
 venyvät mitat. Niiden ajatuksena on, että Latexille voi antaa luvan
@@ -1493,7 +1493,7 @@ x\hfill x\hfill\hfill x
 \end{tulossis}
 
 \section{Laskurit}
-\label{luku:laskurit}
+\label{luku/laskurit}
 
 Laskureiden avulla Latex pitää kirjaa esimerkiksi sivunumeroista,
 lukujen ja alalukujen sekä kuvien ja muiden elementtien numeroinnista.
@@ -1535,18 +1535,18 @@ laskureista automaattisesti.
   \end{tabular}
 }{
   \caption{Latexin laskurit}
-  \label{tlk:latexin_laskurit}
+  \label{tlk/latexin-laskurit}
 }
 
-Taulukossa \ref{tlk:latexin_laskurit} ovat Latexin perus laskurit. Monet
+Taulukossa \ref{tlk/latexin-laskurit} ovat Latexin perus laskurit. Monet
 niistä ovat otsikoiden numerointia varten (\englanti{\laskuri{part},
   \laskuri{chapter}, \laskuri{section}, \laskuri{paragraph}}).
 Sivunumeroita varten on \laskuri{page}\-/laskuri ja matemaattisten
 kaavojen numerointiin \laskuri{equation}\-/laskuri. Leijuvista kuvista
-ja taulukoista (luku \ref{luku:leijuosat}) pidetään kirjaa laskureissa
+ja taulukoista (luku \ref{luku/leijuosat}) pidetään kirjaa laskureissa
 \laskuri{figure} ja \laskuri{table}, ja alaviitteiden (luku
-\ref{luku:alaviitteet}) numerointi on laskureissa \laskuri{footnote} ja
-\laskuri{mpfootnote}. Numeroidut luetelmat (luku \ref{luku:luetelmat})
+\ref{luku/alaviitteet}) numerointi on laskureissa \laskuri{footnote} ja
+\laskuri{mpfootnote}. Numeroidut luetelmat (luku \ref{luku/luetelmat})
 käsitellään \laskurix{enum}\-/alkuisten laskureiden avulla siten, että
 perustasolla käytetään laskuria \laskuri{enumi}, ja jos sen
 luetelmakohta sisältää toisen numeroidun luetelman, käytetään siinä
@@ -1572,7 +1572,7 @@ komentojen ja mittojen alussa.
 
 Laskuri on sisäisesti kokonaisluku, mutta sen arvon voi latoa eri
 muodoissa: arabialaisena tai roomalaisena lukuna, kirjaimena tai
-symbolien sarjana. Taulukossa \ref{tlk:laskurien_latominen} ovat komennot
+symbolien sarjana. Taulukossa \ref{tlk/laskurien-latominen} ovat komennot
 laskurin arvon latomiseen. Komennon argumentiksi annetaan laskurin nimi.
 Laskurin voi latoa kirjainmuodossa, jos sen arvo on 1--26; symbolit
 toimivat vain lukualueella 1--9.
@@ -1595,10 +1595,10 @@ toimivat vain lukualueella 1--9.
   \end{tabular}
 }{
   \caption{Komennot laskurien arvon latomiseen}
-  \label{tlk:laskurien_latominen}
+  \label{tlk/laskurien-latominen}
 }
 
-Taulukon \ref{tlk:laskurien_latominen} komentojen lisäksi laskuriin
+Taulukon \ref{tlk/laskurien-latominen} komentojen lisäksi laskuriin
 liittyvän arvon voi latoa komennolla, joka alkaa kirjaimilla
 \komentox{the} ja jatkuu laskurin nimellä. Esimerkiksi komento
 \komento{thepage} latoo sivunumeron eli tekee käytännössä saman asian
@@ -1631,7 +1631,7 @@ x\hspace{\value{mitta}em}x
 \end{tulossis}
 
 \subsection{Hierarkkiset laskurit}
-\label{luku:hierarkkiset_laskurit}
+\label{luku/hierarkkiset-laskurit}
 
 Laskurit voivat olla hierarkkisia ja riippuvaisia toisista laskureista:
 kun yhden laskurin arvo kasvaa, nollautuu jokin toinen laskuri
@@ -1669,7 +1669,7 @@ ristiviitteen numeron, joten tämän komenon jälkeen mahdollisesti tuleva
 viitataan muualta käyttämällä \komento{ref}\-/ komentoa, viitteessä
 näkyy laskurin numero tai oikeastaan \komentox{thelaskuri}\-/ komennon
 latoma teksti. Ristiviitteitä käsitellään tarkemmin luvussa
-\ref{luku:ristiviitteet}.
+\ref{luku/ristiviitteet}.
 
 Makropaketti \pakettim{chngcntr}\avctan{chngcntr} helpottaa
 hierarkkisten laskurien muuttamista jälkikäteen. Paketin komentojen
@@ -1693,7 +1693,7 @@ uudelleen, täytyy käyttää tähdellisiä komennon versioita:
 \komento{counterwithin*} ja \komento{counterwithout*}. Laskuriin
 liittyvän \komentox{the}\-/ komennon voi aina itsekin määritellä
 haluamansa laiseksi komennolla \komento{renewcommand} (luku
-\ref{luku:komennot_maarittely}), esimerkiksi seuraavalla tavalla:
+\ref{luku/komennot-maarittely}), esimerkiksi seuraavalla tavalla:
 
 \komentoi{renewcommand}
 \komentoi{arabic}
@@ -1711,7 +1711,7 @@ esimerkiksi dokumentin sivumäärää ei voi ihan yksinkertaisella
 komennolla latoa dokumentin alkusivuille.
 
 Vastaus tämäntyyppisiin ongelmiin löytyy ristiviitteistä (luku
-\ref{luku:ristiviitteet}). Ne toimivat sisäisesti niin, että dokumentin
+\ref{luku/ristiviitteet}). Ne toimivat sisäisesti niin, että dokumentin
 ensimmäisellä kääntökerralla kirjoitetaan väliaikaistiedostoon muistiin
 tarpeellisia asioita ja seuraavalla kääntökerralla hyödynnetään
 väliaikaistiedostoa. Dokumentin sivumäärän ja viimeisen sivunumeron
@@ -1719,7 +1719,7 @@ tallentamiseen on olemassa makropaketti
 \pakettim{totpages},\avctan{totpages} joka lisää viimeiselle sivulle
 automaattisesti ristiviitteen nimeltä \koodi{Tot\-Pages}. Sivumäärän ja
 viimeisen sivun numeron voi latoa komennoilla \komento{ref} ja
-\komento{pageref}. Esimerkki \ref{esim:totpages} havainnollistaa niiden
+\komento{pageref}. Esimerkki \ref{esim/totpages} havainnollistaa niiden
 käyttöä.
 
 \begin{esimerkki*}
@@ -1745,7 +1745,7 @@ Sivumäärä: \ref{TotPages}. Viimeinen sivu: \pageref{TotPages}.
 \end{document}
 \end{koodilohko}
   \caption{Dokumentin sivumäärän ja viimeisen sivun numeron latominen}
-  \label{esim:totpages}
+  \label{esim/totpages}
 \end{esimerkki*}
 
 Muunlaisten kokonaislaskurien toteuttamiseen voi käyttää

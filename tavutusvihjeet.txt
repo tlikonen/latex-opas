@@ -62,7 +62,7 @@ big-skip-amount
 book-marks-num-ber-ed
 book-marks-open
 book-tabs
-bottom-fraction
+bottom-frac-tion
 bottom-number
 bottom-rule
 break
@@ -86,10 +86,10 @@ Con-tin-ued-Float
 counter-with-in
 counter-with-out
 cs-quotes
-dbl-float-page-fraction
+dbl-float-page-frac-tion
 dbl-float-sep
 dbl-text-float-sep
-dbl-top-fraction
+dbl-top-frac-tion
 dbl-top-number
 De-clare-Bib-li-og-ra-phy-Driv-er
 De-clare-Float-Font
@@ -145,7 +145,7 @@ fig-ures
 float
 Float-Bar-rier
 float-box
-float-page-fraction
+float-page-frac-tion
 float-row
 float-sep
 float-setup
@@ -521,7 +521,7 @@ text-el-lip-sis
 text-en-glish
 text-float-sep
 text-font
-text-fraction
+text-frac-tion
 text-greek
 text-height
 text-quote-dbl
@@ -552,7 +552,7 @@ title-sec
 title-spacing
 title-toc
 toc-depth
-top-fraction
+top-frac-tion
 top-number
 top-rule
 top-sep

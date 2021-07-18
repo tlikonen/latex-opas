@@ -4328,10 +4328,104 @@ komento \komento{ContinuedFloat} ensimmäisen jälkeisiin leijuviin
 ympäristöihin. Komento pitäisi sijoittaa heti ympäristön alkuun.
 Esimerkki \ref{esim/continuedfloat} havainnollistaa sen käyttöä.
 
-\section{Ristiviitteet}
+\section{Ristiviittaukset}
 \label{luku/ristiviitteet}
 
-...
+Ristiviittaukset tarkoittavat dokumentin sisäisiä viittauksia eli
+viittauksia toisiin kohtiin samassa dokumentissa. Lukijalle ne ilmenevät
+ilmauksina kuten ''luvussa 4.2'' tai ''kuvassa~5''. Kirjoittajan ei
+kuitenkaan kannata naputella luvun numeroa (esim. ''4.2'') käsin
+lähdedokumenttiin, koska lukujen järjestys ja numerointi voi muuttua
+kirjoittamisen edetessä. Joutuisi korjaamaan muuttuneet numerot
+mahdollisesti useitakin kertoja ennen kuin työ on valmis.
+
+Latex osaa numeroida dokumentin otsikot eli luvut ja leijuvat osat
+automaattisesti, eli se tietää, minkä numeron mikäkin dokumentin osa
+saa. Niinpä Latex osaa -- kirjoittajan pienellä avustuksella -- myös
+ylläpitää ajantasaisia ristiviittauksia dokumentin eri osiin. Teknisesti
+tämä toteutetaan siten, että otsikoille ja leijuville osille annetaan
+yksilöllinen tunniste ja viittaamisessa käytetään samoja tunnisteita.
+Tunnisteet annetaan \komento{label}\-/ komennolla, joka sijoitetaan heti
+otsikkokomennon (\komento{section}, \komento{subsection} ym.) tai
+leijuvan osan kuvatekstikomennon (\komento{caption}) jälkeen:
+
+\komentoi{section}
+\komentoi{label}
+\begin{koodilohkosis}
+\section{Jokin otsikko}
+\label{tunniste}
+\end{koodilohkosis}
+
+\komento{label}\-/ komennon argumentti \koodi{tunniste} voi olla
+suunnilleen mitä tahansa tekstiä. Sen täytyy olla yksilöllinen, eli sama
+tunniste ei saa olla käytössä missään toisessa \komento{label}\-/
+komennossa. Jos sama tunniste sattuu olemaan useassa paikassa, vain
+viimeinen jää käytännössä voimaan.
+
+Järkevää on kirjoittaa tunnisteeseen sana tai sanoja, jotka kertovat
+jotakin kyseisen osan sisällöstä. Hyödyllistä voi olla myös kirjoittaa
+tunnisteen tieto, onko kyse luvusta, taulukosta, kuvasta vai muusta
+leijuvasta osasta, koska erityyppiset osat voivat käsitellä samaa
+aihetta. Seuraavassa on esimerkkejä \komento{label}\-/ komennoista:
+
+\komentoi{label}
+\begin{koodilohkosis}
+\label{luku/fonttien-valinta}    % otsikkokomennon jälkeen
+\label{taulukko/fonttikomentoja} % taulukon \caption-komennon jälkeen
+\label{kuva/kirjainleikkauksia}  % kuvan \caption-komennon jälkeen
+\end{koodilohkosis}
+
+Ristiviittauksissa vähimmällä vaivalla selviää, kun muistaa kaksi asiaa:
+1)~kirjoittaa \komento{label}\-/ komentoja vain niihin kohtiin, joihin
+täytyy viitata muualta, 2)~valitsee tunnisteet siten, ettei niitä
+tarvitse muuttaa enää sen jälkeen, kun ne on kerran valinnut.
+
+Ei siis ehkä kannata kirjoittaa ja ylläpitää tunnisteessa samaa tekstiä
+kuin otsikossa tai kuvatekstissä. Otsikot voivat muuttua kirjoittamisen
+aikana, ja samakin otsikko voi esiintyä dokumentissa eri paikoissa. Ei
+ehkä myöskään kannata kirjoittaa otsikoiden tunnisteeseen tietoa, minkä
+tasoisesta otsikosta on kyse (\komento{section}, \komento{subsection}
+ym.). Joskus dokumentin jäsennyskin muuttuu kirjoittamisen aikana:
+esimerkiksi alussa korkeatasoinen luku siirtyy myöhemmin toisen
+laajemman kokonaisuuden osaksi eli alaluvuksi.
+
+Tavallisimmat ristiviittaukset tehdään \komento{ref}\-/ komennolla,
+jonka argumentiksi annetaan sama tunniste kuin jossakin dokumentin
+\komento{label}\-/ komennossa. Latex latoo \komento{ref}\-/ komentojen
+kohdalle kyseisen luvun tai leijuvan osan numeron. Toinen tarpeellinen
+ristiviittauskomento on \komento{pageref}, joka kääntämisvaiheessa
+korvautuu kyseisen kohteen sivunumerolla. Näitä voi hyödyntää
+lähdedokumentissa esimerkiksi seuraavasti:
+
+\komentoi{ref}
+\komentoi{pageref}
+\begin{koodilohkosis}
+Katso taulukko \ref{taulukko/fonttimallikomennot} sivulla
+\pageref{taulukko/fonttimallikomennot}.
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Katso taulukko \ref{tlk/fonttimallikomennot} sivulla
+  \pageref{tlk/fonttimallikomennot}.
+\end{tulossis}
+
+Jos ladattuna on paketti \paketti{hyperref} (luku
+\ref{luku/pdf-asetukset}), on ristiviittauksiin käytettävissä myös
+komento \komento{nameref}. Sillekin annetaan argumentiksi jokin
+\komento{label}\-/ komennolla määritetty tunniste, ja kääntämisvaiheessa
+komennon tilalle ladotaan kyseisen kohteen teksti eli otsikko tai
+kuvateksti. Ristiviittauksissa ladotaan otsikon tai kuvatekstin lyhempi
+versio, jos sellainen on annettu. Katso lisätietoa otsikkokomentojen ja
+kuvatekstikomennon argumenteista luvuista \ref{luku/otsikot}
+(\nameref{luku/otsikot}) ja \ref{luku/leijuosat-latex}
+(\nameref{luku/leijuosat-latex}).
+
+Ristiviittaukset vaativat, että Latex\-/ lähdedokumentti käännetään
+kahdesti. Ensimmäisellä kääntämiskerralla \komento{label}\-/ komennolla
+mainittujen kohteiden tiedot kirjoitetaan muistiin väliaikaistiedostoon.
+Toisella kääntämiskerralla hyödynnetään väliaikaistiedostoa ja
+\komento{ref}-, \komento{pageref}\-/\ ja \komento{nameref}\-/ komentojen
+tilalle ladotaan viittauskohteen oikeat tiedot.
 
 \section{Alaviitteet}
 \label{luku/alaviitteet}

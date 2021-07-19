@@ -64,7 +64,7 @@ määritellä pari lainausmerkillä (\koodi{\textquotedbl}) alkavaa,
 tavutuksen hallintaan liittyvää komentoa tai erikoismerkkiä.
 
 \subsection{Sanaväli}
-\label{luku/sanavali}
+\label{luku/sanaväli}
 
 Välilyönti, sarkainmerkki ja yksi rivinvaihto ovat kaikki tavallisia
 sanavälejä Latex\-/dokumentissa, ja näillä kolmella on sama merkitys.
@@ -111,7 +111,7 @@ poikkeukselliset sanavälit.
 
 Myös kirjainperheelle voi asettaa oman sanavälikertoimensa fontin
 asetusten \koodi{Word\-Space}\-/valitsimella. Tätä asetusta käsitellään
-fonttien yhteydessä luvussa \ref{luku/fontit-valistys}.
+fonttien yhteydessä luvussa \ref{luku/fontit-välistys}.
 
 \subsection{Rivinvaihto lähdedokumentissa}
 \label{luku/rivinvaihtomerkit}
@@ -214,7 +214,7 @@ tai nimenomaan siihen tarkoitetulla merkillä, jonka Unicode\-/tunnus on
 Nämä kaksi eri merkkiä, tilde ja \uctunnus{u+00a0}, toimivat hieman eri
 tavoin. Molemmat estävät rivinvaihdon, mutta tildemerkki sallii välin
 venymisen samalla tavalla kuin tavallinenkin sanaväli sallii (luku
-\ref{luku/sanavali}). Sen sijaan merkki \uctunnus{u+00a0} on
+\ref{luku/sanaväli}). Sen sijaan merkki \uctunnus{u+00a0} on
 vakiolevyinen eikä siis veny muiden sanavälien tapaan. Unicoden sitovaa
 välilyöntiä \uctunnus{u+00a0} täytyy käyttää ainakin vuorosanaviivan
 (\==) ja sitä seuraavan sanan välissä, koska se väli ei saa venyä.
@@ -808,7 +808,7 @@ toteutusta on helppoa muuttaa myöhemmin, koska komennon määrittely on
 vain yhdessä paikassa lähdedokumentin alussa.
 
 \subsection{Komentojen määrittely}
-\label{luku/komennot-maarittely}
+\label{luku/komennot-määrittely}
 
 Komentojen määrittelyyn on kolme erilaista komentoa, ja niille kaikille
 annetaan samanlaiset argumentit. Komennot ovat seuraavat:
@@ -1021,7 +1021,7 @@ tuttu ehtorakenne: jos annettu ehtolauseke on tosi, käsitellään
 then\-/haara; muussa tapauksessa käsitellään else-haara.
 
 \section{Ympäristöt}
-\label{luku/ymparistot}
+\label{luku/ympäristöt}
 
 Ympäristöt ovat rakenteita, joilla on aloittava \komentom{begin}\-/
 komento ja lopettava \komentom{end}\-/ komento sekä nimi. Ympäristöjen
@@ -1064,7 +1064,7 @@ joka on jo olemassa. Se antaa virheilmoituksen, jos ympäristöä ei
 ollutkaan olemassa.
 
 Argumentit ovat lähes samanlaiset kuin komentojen määrittelyssä (luku
-\ref{luku/komennot-maarittely}). Ympäristöjen määrittelykomennoilla on
+\ref{luku/komennot-määrittely}). Ympäristöjen määrittelykomennoilla on
 kolme pakollista argumenttia: ensimmäinen on ympäristön nimi, toinen on
 ympäristön aloitusmääritelmä (\koodi{aloitus}) ja kolmas on
 lopetusmääritelmä (\koodi{lopetus}).
@@ -1128,7 +1128,7 @@ samoin kuin edellä kuvatut tavallisetkin komentoversiot, mutta ne eivät
 salli, että määritellylle ympäristölle annetut argumentit sisältävät
 enemmän kuin yhden tekstikappaleen. Toiminta on siis sama kuin
 komentojenkin määrittelyn tähdellisissä versioissa (luku
-\ref{luku/komennot-maarittely}).
+\ref{luku/komennot-määrittely}).
 
 \komentoi{newenvironment*}
 \komentoi{renewenvironment*}
@@ -1177,7 +1177,7 @@ lopettavan \komento{end}\-/ komennon jälkeiset sanavälit. Esimerkki
 Koska typografia on pitkälti teksti- ja muiden elementtien sijoittelua,
 tarvitaan sitä varten mittavälineitä. Niinpä Texissäkin on pituusmittoja
 (engl. \emph{length}) ja useita pituuden mittayksiköitä. Taulukkoon
-\ref{tlk/mittayksikot} on koottu mittayksiköiden lyhenteet ja
+\ref{tlk/mittayksiköt} on koottu mittayksiköiden lyhenteet ja
 merkitykset. Teknisesti on samantekevää, mitä yksiköitä käyttää, sillä
 ne ovat vain välineitä pituuden ilmaisemiseen. Sisäisesti Tex käyttää
 sp-yksikköä, joka ilmaisee samalla mittojen tarkkuuden: pienin jakamaton
@@ -1203,7 +1203,7 @@ mitta on 1\,sp (5,36\,nm).
   \end{tabular}
 }{
   \caption{Texin mittayksiköiden lyhenteet ja merkitykset}
-  \label{tlk/mittayksikot}
+  \label{tlk/mittayksiköt}
 }
 
 Usein tietyt yksiköt ovat vakiintuneet tiettyihin tilanteisiin.
@@ -1384,7 +1384,7 @@ verran linjojen ylä- ja alapuolelle. Ihmisen silmään ne näyttävät yhtä
 korkeilta.
 
 \subsection{Venyvät mitat ja välit}
-\label{luku/venyvat-mitat}
+\label{luku/venyvät-mitat}
 
 Edellä on puhuttu vain kiinteistä mitoista, mutta Latex tuntee myös
 venyvät mitat. Niiden ajatuksena on, että Latexille voi antaa luvan
@@ -1692,7 +1692,7 @@ uudelleen, täytyy käyttää tähdellisiä komennon versioita:
 \komento{counterwithin*} ja \komento{counterwithout*}. Laskuriin
 liittyvän \komentox{the}\-/ komennon voi aina itsekin määritellä
 haluamansa laiseksi komennolla \komento{renewcommand} (luku
-\ref{luku/komennot-maarittely}), esimerkiksi seuraavalla tavalla:
+\ref{luku/komennot-määrittely}), esimerkiksi seuraavalla tavalla:
 
 \komentoi{renewcommand}
 \komentoi{arabic}

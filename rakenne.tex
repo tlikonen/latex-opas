@@ -120,7 +120,7 @@ komennot estävät sanojen tavuttamisen, kun taas \paketti{ragged2e}\-/
 paketin komennot sallivat tavutuksen normaalisti.
 
 \subsection{Pystysuuntaiset välit}
-\label{luku/pystysuuntaiset-valit}
+\label{luku/pystysuuntaiset-välit}
 
 Kappaleiden väliin ladottava pystysuuntainen tyhjä tila asetetaan mitan
 \mittam{parskip} avulla. Se on oletuksena nolla, mutta pientä venymistä
@@ -218,7 +218,7 @@ pystysuuntaisen välin suuruus olisi 3,5\,ex, joka on välien
 yhteenlaskettu suuruus.
 
 \komento{addvspace}\-/komento soveltuu hyvin komentojen ja ympäristöjen
-määrittelyyn (luvut \ref{luku/komennot} ja \ref{luku/ymparistot}).
+määrittelyyn (luvut \ref{luku/komennot} ja \ref{luku/ympäristöt}).
 Esimerkiksi itse määritellyn ympäristön alussa ja lopussa voi
 \komento{addvspace}\-/ komennolla varmistaa tietynsuuruisen välin, mutta
 jos sama tai muu vastaava ympäristö on dokumentissa kahdesti peräkkäin,
@@ -232,10 +232,10 @@ niin, että se täyttää kaiken tyhjän tilan sivulla. \komento{vfill}\-/
 komento tarkoittaa käytännössä samaa kuin
 \komento{vspace}\komentoarg{0mm plus 1fill} \=/komento. Texin venyviä
 mittoja ja välejä käsitellään tarkemmin luvussa
-\ref{luku/venyvat-mitat}.
+\ref{luku/venyvät-mitat}.
 
 \subsection{Ensimmäisen rivin sisennys}
-\label{luku/ensimmaisen-rivin-sisennys}
+\label{luku/ensimmäisen-rivin-sisennys}
 
 Kirjojen ja lehtien typografiassa kappaleen ensimmäinen rivi on tapana
 sisentää merkiksi siitä, että alkaa uusi kappale. Sisennys on lukijalle
@@ -297,7 +297,7 @@ määritellä sen tarjoaman komennon avulla, minkä ympäristöjen jälkeen ei
 haluta sisennystä. Seuraava esimerkki poistaa sisennyksen aina
 \ymparisto{list}- ja \ymparisto{tabular}\-/ ympäristöjen jälkeen.
 Lisätietoa mainituista ympäristöistä on luvuissa
-\ref{luku/list-ymparisto} ja \ref{luku/taulukot}.
+\ref{luku/list-ympäristö} ja \ref{luku/taulukot}.
 
 \komentoi{NoIndentAfterEnv}
 \ymparistoi{list}
@@ -442,7 +442,7 @@ Riippuvan sisennyksen voi toteuttaa myös \ymparisto{list}\-/ ympäristön
 avulla. Se on tarkoitettu luetelmien tekemiseen, mutta sopivilla
 asetuksilla yksi ''luetelman'' kohta on riippuvasti sisennetty kappale.
 Tarkemmin \ymparisto{list}\-/ ympäristöä käsitellään luetelmien
-yhteydessä luvussa \ref{luku/list-ymparisto}, mutta oheisessa
+yhteydessä luvussa \ref{luku/list-ympäristö}, mutta oheisessa
 esimerkissä \ref{esim/riippuva-sis-list} on sopivat asetukset riippuvan
 sisennyksen toteuttamiseen. Kappale alkaa \komento{item}\-/ komennolla,
 koska kyseessä on ikään kuin luetelman kohta.
@@ -486,7 +486,7 @@ pystysuuntaista tilaa.
 Jos Latexin valmiit lohkolainausympäristöt eivät tuota haluttua
 lopputulosta, voi sisennetyt tekstikappaleet toteuttaa myös luetelmien
 tekemiseen tarkoitetun \ymparisto{list}\-/ ympäristön avulla (luku
-\ref{luku/list-ymparisto}). Sopivilla asetuksilla ''luetelma'' sisältää
+\ref{luku/list-ympäristö}). Sopivilla asetuksilla ''luetelma'' sisältää
 ihan tavallisen näköisiä tekstikappaleita, jotka vain on sisennetty
 vasemmalta tai oikealta tai molemmista reunoista.
 
@@ -539,7 +539,7 @@ Esimerkki määrittelee uuden ympäristön nimeltä
 \end{koodilohkosis}
 
 Omien ympäristöjen määrittelyä käsitellään tarkemmin luvussa
-\ref{luku/ymparistot}. Esimerkin \ref{esim/vasen-oikea-sisennys} rivillä
+\ref{luku/ympäristöt}. Esimerkin \ref{esim/vasen-oikea-sisennys} rivillä
 11 oleva \komento{item}\-/ komento on pakollinen, koska se aloittaa
 \ymparisto{list}\-/ ympäristöön kuuluvan luetelman kohdan. Sen perässä
 olevat komennot \komento{linespread} ja \komento{small} sen sijaan ovat
@@ -552,7 +552,7 @@ kirjainleikkauksella kuin leipäteksti.
 
 Latex\-/lähdedokumentissa olevat rivinvaihdot tulkitaan sanaväleiksi
 siinä missä välilyönnitkin, eli ne rivinvaihdot eivät päädy ladottuun
-dokumenttiin (luvut \ref{luku/sanavali} ja
+dokumenttiin (luvut \ref{luku/sanaväli} ja
 \ref{luku/rivinvaihtomerkit}). Sen sijaan ladottuun dokumenttiin saadaan
 rivinvaihto käyttämällä komentoa \komentom{\keno} eli kaksi kenoviivaa.
 Komennon ei tarvitse sijaita lähdedokumentissa rivin lopussa.
@@ -930,7 +930,7 @@ mekaanisesti pienentämä versio versaalikirjaimista. Jos fonttiin ei
 sisälly pienversaalia ja sellaisen silti haluaa omaan
 keinovalikoimaansa, voi yrittää vähemmän tyylikästä mekaanista
 toteutusta luvussa \ref{luku/fontit-keinopienversaali} kerrotuilla
-asetuksilla. Luvuissa \ref{luku/fontit-valistys} ja
+asetuksilla. Luvuissa \ref{luku/fontit-välistys} ja
 \ref{luku/korostus-harvennus} puolestaan käsitellään merkkivälien
 {\scshape\addfontfeatures{LetterSpace=6} harvennusta}, joka voi
 maltillisesti käytettynä sopia pienversaaleihin.
@@ -1095,7 +1095,7 @@ kirjainperheen versaali\-/\ tai pienversaalikirjainten (luku
 \ref{luku/korostus-pienversaali}) kanssa. Antiikin aikana
 gemenakirjaimet eivät olleet vielä käytössä. Tässä alaluvussa
 keskitytään harventamisen ja tiivistämisen typografiaan; teknisiä
-ohjeita on luvussa \ref{luku/fontit-valistys}.
+ohjeita on luvussa \ref{luku/fontit-välistys}.
 
 \komentoi{large}
 \komentoi{addfontfeatures}
@@ -1341,7 +1341,7 @@ seuraavalla tavalla:
 \end{koodilohkosis}
 
 \subsection{Värit}
-\label{luku/korostus-varit}
+\label{luku/korostus-värit}
 
 Eri värien käyttö voi sopia tekstin erilaisten osien korostamiseen.
 Esimerkiksi otsikot, taulukot tai leijuvat osat saa erottumaan
@@ -1385,7 +1385,7 @@ mahdollista käyttää värejä ilman etukäteismäärittelyäkin.
 }{
   \caption{Erilaisia värimalleja ja niiden parametreja
     \paketti{xcolor}\-/ paketissa}
-  \label{tlk/varimalleja}
+  \label{tlk/värimalleja}
 }
 
 Omat värit määritellään komennolla \komentom{definecolor}. Se tarvitsee
@@ -1401,21 +1401,21 @@ Komennon argumentti \koodi{nimi} on kirjoittajan itse valitsema nimi,
 ja se voi liittyä esimerkiksi värin käyttötarkoitukseen (''nuoli'') tai
 värin yleiseen nimeen (''keltainen''). Argumentti \koodi{väri\-malli}
 tarkoittaa värin ilmaisemisen tapaa. Niitä on useita erilaisia, mutta
-yleisimmät on koottu taulukkoon \ref{tlk/varimalleja}. Eri malleilla on
+yleisimmät on koottu taulukkoon \ref{tlk/värimalleja}. Eri malleilla on
 eri määrä parametreja, joilla ilmaistaan värin ominaisuuksia. Kunkin
 parametrin arvo on yleensä desimaaliluku 0\==1, mutta \koodi{HTML}\-/
 värimallissa parametrit ilmaistaan yhtenä kolmen kaksinumeroisen
 heksadesimaaliluvun sarjana \textsc{html}\-/ merkintäkielen tavoin.
 Värin parametrit kirjoitetaan komennon argumenttiin
 \koodi{para\-metrit} ja ne erotetaan toisistaan pilkulla. Taulukon
-\ref{tlk/varimalleja} Esimerkki\-/sarakkeessa on parametrien antamisesta
+\ref{tlk/värimalleja} Esimerkki\-/sarakkeessa on parametrien antamisesta
 esimerkki. Muista värimalleista voi lukea \paketti{xcolor}\-/ paketin
 ohjekirjasta.
 
 Kun värit on määritelty, niitä voi käyttää eri komentojen yhteydessä.
 Tekstin väri vaihdetaan toiseksi komennolla \komentom{color}, josta on
 kaksi erilaista versiota. Komento vaihtaa värin pysyvästi nykyisen
-ympäristön (luku \ref{luku/ymparistot}) tai aaltosulkeilla (luku
+ympäristön (luku \ref{luku/ympäristöt}) tai aaltosulkeilla (luku
 \ref{luku/aaltosulkeet}) rajatun alueen sisällä.
 
 \komentoi{color}
@@ -1506,7 +1506,7 @@ oikeanpuoleiselta eli parittomalta sivulta.
 
 \komento{cleardoublepage}\-/komennon aiheuttamalle tyhjälle sivulle
 saatetaan kuitenkin latoa ylä- ja alatunnisteet, jos sellaiset on
-määritelty (luku \ref{luku/yla-ala-tunnisteet}). Täysin tyhjän sivun saa
+määritelty (luku \ref{luku/ylä-ala-tunnisteet}). Täysin tyhjän sivun saa
 käyttämällä apuna makropakettia \paketti{titlesec}\avctan{titlesec} ja
 sen valitsinta \koodi{clear\-empty}:
 
@@ -1770,7 +1770,7 @@ yleensä.
 \end{koodilohkosis}
 
 Otsikko tulee automaattisesti mukaan teoksen sisällysluetteloon, jos
-sellainen on olemassa (luku \ref{luku/sisallysluettelo}). Otsikko näkyy
+sellainen on olemassa (luku \ref{luku/sisällysluettelo}). Otsikko näkyy
 myös pdf\-/ tiedoston sisällysluettelossa, jos vain
 \paketti{hyperref}\-/ paketti on käytössä (luku
 \ref{luku/pdf-asetukset}). Lisäksi otsikon tekstiä voi käyttää
@@ -2009,7 +2009,7 @@ sisennys, yläpuolinen väli ja alapuolinen väli.
 \end{koodilohkosis}
 
 Pystysuuntaiset mitat on yleensä hyvä asettaa venyviksi (luku
-\ref{luku/venyvat-mitat}), jotta Tex saa pelivaraa sivujen latomiseen.
+\ref{luku/venyvät-mitat}), jotta Tex saa pelivaraa sivujen latomiseen.
 Otsikon yläpuolella pitäisi olla isompi väli kuin alapuolella, koska
 otsikko kuuluu kiinteämmin sitä seuraavaan tekstiin. Pystysuuntaisten
 välien määrittämisessä voi käyttää *\=/lyhennettä, joka tarkoittaa
@@ -2023,7 +2023,7 @@ oletuksena ex\-/mittayksikköä ja sallii hieman venymistä.
 
 Tähdellinen \komento{titlespacing*}\-/ komento poistaa otsikon jälkeen
 tulevasta tekstikappaleesta ensimmäisen rivin sisennyksen (luku
-\ref{luku/ensimmaisen-rivin-sisennys}). Tähdetön komentoversio
+\ref{luku/ensimmäisen-rivin-sisennys}). Tähdetön komentoversio
 \komentom{titlespacing} sen sijaan säilyttää kappaleen sisennyksen. Sitä
 ei liene tarvetta käyttää koskaan, sillä otsikoiden jälkeen tulevaa
 tekstikappaletta ei kuulu sisentää.
@@ -2207,16 +2207,16 @@ sisällysluetteloa ja sivunumerot näkyvät esipuheen alusta saakka.
 Esimerkissä \ref{esim/tietokirjojen-rakenne} sivutyyli \koodi{plain}
 kytketään päälle sisällysluettelon alkaessa, eli sivunumerotkin alkavat
 sen myötä näkyä. Sivutyylejä ja muita ylä- ja alatunnisteisiin liittyviä
-asioita käsitellään tarkemmin luvussa \ref{luku/yla-ala-tunnisteet}.
+asioita käsitellään tarkemmin luvussa \ref{luku/ylä-ala-tunnisteet}.
 
 Mikäli haluaa, että sisällysluettelossa ei vielä näytetä sivunumeroita,
 joutuu dokumenttiluokissa \luokka{book} ja \luokka{report} käyttämään
 vähän epätavallista keinoa halutun lopputuloksen saavuttamiseksi.
 Sellainen neuvotaan sisällysluettelon käsittelyn yhteydessä luvussa
-\ref{luku/sisallysluettelo}.
+\ref{luku/sisällysluettelo}.
 
 \section{Sisällysluettelo}
-\label{luku/sisallysluettelo}
+\label{luku/sisällysluettelo}
 
 Dokumentin sisällysluettelo syntyy helposti yhdellä komennolla:
 \komentom{tableofcontents}. Otsikkokomennoilla (luku \ref{luku/otsikot})
@@ -2298,7 +2298,7 @@ sivutyyliä.
     \koodi{empty}\-/ tyyliseksi. Komento \komento{thispagestyle} pitää
     määritellä väliaikaisesti uudestaan dokumenttiluokissa \luokka{report}
     ja \luokka{book}}
-  \label{esim/sisallysluettelo-empty}
+  \label{esim/sisällysluettelo-empty}
 \end{esimerkki*}
 
 Jotta edellä mainitusta kummallisuudesta pääsisi eroon, täytyy
@@ -2306,7 +2306,7 @@ määritellä väliaikaisesti \komento{thispagestyle}\-/ komento
 toisenlaiseksi. Väliaikainen komennon määrittely saadaan aikaan
 aaltosulkeilla (luku \ref{luku/aaltosulkeet}), joiden sisään komennon
 uudelleen määrittely ja sisällysluettelon latomiskomento sijoitetaan.
-Esimerkistä \ref{esim/sisallysluettelo-empty} selviää, miten se tehdään.
+Esimerkistä \ref{esim/sisällysluettelo-empty} selviää, miten se tehdään.
 Tässä esimerkissä komennon määritelmä jätettiin tyhjäksi, koska sen ei
 haluta tekevän mitään. Näin ollen aiemmin annettu \komento{pagestyle}\-/
 komento vaikuttaa koko sisällysluetteloon.
@@ -2373,7 +2373,7 @@ sisällysluettelon kohtia mutta myös leijuvien osien (luku
 Esimerkistä selviää, miten \komento{titlecontents}\-/ komennolla
 määritellään luettelokohdan vasemman sisennyksen mitta, yläpuolinen ja
 alapuolinen väli (\komento{addvspace}, luku
-\ref{luku/pystysuuntaiset-valit}), mahdolliset kirjainperheeseen ja
+\ref{luku/pystysuuntaiset-välit}), mahdolliset kirjainperheeseen ja
 \=/leikkaukseen vaikuttavat komennot kuten \komento{rmfamily},
 \komento{bfseries} ja \komento{large} (luku \ref{luku/fontit-korkea}).
 
@@ -2406,7 +2406,7 @@ mitä tahansa luetelmiin tai tekstikappaleisiin liittyviä rakenteita.
 Teknisesti \ymparisto{list}\-/ ympäristö sisältää kaikki tarvittavat
 luetelmiin liittyvät ominaisuudet, joten kirjoittaja voi aivan hyvin
 käyttää pelkästään sitä. Ympäristöä käsitellään luvussa
-\ref{luku/list-ymparisto}.
+\ref{luku/list-ympäristö}.
 
 \subsection{Perusympäristöt}
 \label{luku/luetelma-perus}
@@ -2613,7 +2613,7 @@ luetelmaympäristön sisään heti \komento{begin}\-/ komennon jälkeen.
 \end{koodilohkosis}
 
 \subsection{Omat luetelmat (list)}
-\label{luku/list-ymparisto}
+\label{luku/list-ympäristö}
 
 Ympäristö \ymparistom{list} on yleistyökalu, joka soveltuu moniin
 asioihin: se on tarkoitettu erilaisten luetelmien rakentamiseen, mutta
@@ -2628,7 +2628,7 @@ kirjoittamisessa sellaisenaan, vaan kirjoittaja määrittelee oman
 helppokäyttöisen luetelma\-/\ tai muun ympäristön, ja
 \ymparisto{list}\-/ ympäristöä hyödynnetään ympäristön
 määrittelemisessä. Omien ympäristöjen tekemistä käsitellään tarkemmin
-luvussa \ref{luku/ymparistot}, mutta tämänkin alaluvun loppupuolella on
+luvussa \ref{luku/ympäristöt}, mutta tämänkin alaluvun loppupuolella on
 esimerkki, joka liittyy nimenomaan \ymparisto{list}\-/ ympäristöön.
 
 Seuraavassa on esimerkki \ymparisto{list}\-/ ympäristön rakenteesta. Se
@@ -2853,7 +2853,7 @@ seuraavassa on lisätietoa niiden merkityksestä.
 \begin{maaritelma}{\mitta{#1}}
 \item [parskip] Pystysuuntainen mitta ja väli, joka ei liity pelkästään
   \ymparisto{list}\-/ ympäristöön vaan on yleinen tekstikappaleiden
-  välinen etäisyysmitta (luku \ref{luku/pystysuuntaiset-valit}). Mitta
+  välinen etäisyysmitta (luku \ref{luku/pystysuuntaiset-välit}). Mitta
   on vaikuttaa kuitenkin myös \ymparisto{list}\-/ ympäristöön, ja sen
   voi määritellä väliaikaisesti uudelleen ympäristön yhteydessä.
 \item [topsep] Pystysuuntainen väli, joka ladotaan ennen ja jälkeen
@@ -2975,7 +2975,7 @@ varatun tilan oikeaan reunaan (\komento{hfill}). Huomaa, että parametri
 \koodi{\#1} kuuluu \ymparistox{numeroitu}\-/ ympäristön määritelmään ja
 parametri \koodi{\#\#1} kuuluu sisempään, \komento{renewcommand}\-/
 komennolla tehtävään määritelmään. Katso lisätietoa komentojen
-määrittelyä käsittelevästä luvusta \ref{luku/komennot-maarittely}.
+määrittelyä käsittelevästä luvusta \ref{luku/komennot-määrittely}.
 
 \section{Taulukot}
 \label{luku/taulukot}
@@ -2992,9 +2992,9 @@ tekstikappaleikseen. Pieni pystysuuntainen väli on silloin tarpeen ennen
 ja jälkeen taulukon. Jos tekstikappaleiden välissä ei ole normaalisti
 ole väliä (\mitta{parskip}\-/ mitta), täytyy sellainen lisätä käsin.
 Pystysuuntaisia välejä käsitellään luvussa
-\ref{luku/pystysuuntaiset-valit}. Taulukolle tulee oletuksena sama
+\ref{luku/pystysuuntaiset-välit}. Taulukolle tulee oletuksena sama
 sisennys kuin tekstikappaleiden ensimmäisellä rivillä on eli mitta
-\mitta{parindent} (luku \ref{luku/ensimmaisen-rivin-sisennys}). Jos
+\mitta{parindent} (luku \ref{luku/ensimmäisen-rivin-sisennys}). Jos
 sisennyksen haluaa pois, täytyy käyttää komentoa \komento{noindent}.
 
 Toinen tyypillinen vaihtoehto on sijoittaa taulukko vaakasuunnassa sivun
@@ -3137,10 +3137,10 @@ Esimerkiksi \koodi{*\{3\}\{rl|\}} tarkoittaa samaa kuin
   \end{tulos}
 
   \caption{Taulukoiden erilaisia saraketyyppejä ja viivoja}
-  \label{esim/taulukkomaarityksia}
+  \label{esim/taulukkomäärityksiä}
 \end{esimerkki*}
 
-Esimerkki \ref{esim/taulukkomaarityksia} havainnollistaa taulukon
+Esimerkki \ref{esim/taulukkomäärityksiä} havainnollistaa taulukon
 ominaisuuksia ja eri saraketyyppejä. Sitä tuskin kannattaa pitää
 typografisena esimerkkinä, mutta tarkoituksena on osoittaa eri
 saraketyyppien toiminta käytännössä. Sarakkeiden välissä on yleensä
@@ -3507,7 +3507,7 @@ automaattisesti eri kirjainleikkauksella kuin muu taulukko.
 
 Ympäristön \ymparisto{tabularx} käyttöön liittyy tiettyjä rajoituksia:
 sitä ei voi käyttää normaalisti omien ympäristöjen määrittelyssä (luku
-\ref{luku/ymparistot}). Esimerkiksi seuraava ympäristön määrittely ei
+\ref{luku/ympäristöt}). Esimerkiksi seuraava ympäristön määrittely ei
 käytännössä toimi:
 
 \komentoi{newenvironment}
@@ -3561,7 +3561,7 @@ rivien väliin erilaisia viivoja ja huolehtivat myös niiden ylä- ja
 alapuolisesta välistä paremmin kuin Latexin omat viivakomennot.
 
 Taulukon rivien taustan voi värittää \paketti{xcolor}\-/
-paketin\avctan{xcolor} (luku \ref{luku/korostus-varit}) komentojen
+paketin\avctan{xcolor} (luku \ref{luku/korostus-värit}) komentojen
 avulla. Varsinkin leveiden taulukoiden lukemista voi helpottaa, jos
 rivien eri taustavärit vuorottelevat. Tarkemmat tiedot selviävät paketin
 ohjekirjasta, mutta seuraavan esimerkin avulla ominaisuutta pääsee
@@ -3818,7 +3818,7 @@ leijuvan osan tyyppi sekä luettelon otsikko.
 \end{koodilohkosis}
 
 Leijuvien osien luettelot muistuttavat sisällysluetteloita (luku
-\ref{luku/sisallysluettelo}), eli niille tulee automaattisesti otsikko
+\ref{luku/sisällysluettelo}), eli niille tulee automaattisesti otsikko
 kuten ''\listtablename'' tai ''\listfigurename'' ja automaattisesti
 sisältö eli kaikki \komento{caption}\-/ komennolla ilmaistut (lyhyet)
 kuvatekstit sekä tietysti sivunumerot.
@@ -3852,7 +3852,7 @@ sisällysluetteloidenkin: käytetään pakettia
 \komento{titlecontents}\-/ komennolla luettelokohtien ulkoasu.
 Esimerkistä \ref{esim/leijuosat-titlecontents} selvinnee perusajatus, ja
 lisätietoa on sisällysluetteloita käsittelevässä luvussa
-\ref{luku/sisallysluettelo} sekä tietysti paketin ohjekirjassa.
+\ref{luku/sisällysluettelo} sekä tietysti paketin ohjekirjassa.
 
 Latexin omien leijuvien osien luetteloiden otsikot tulevat
 kieliasetuksista ja komennoista \komento{listtablename} ja
@@ -4007,7 +4007,7 @@ väleihin. Mitat asetetaan komennolla \komento{setlength} (luku
 Seuraavat neljä komentoa sisältävät pelkän desimaaliluvun 0\==1. Luku
 kertoo leijuvien osien tai leipätekstin viemän suhteellisen tilan
 samalla sivulla. Komennot määritellään uudelleen komennolla
-\komento{renewcommand} (luku \ref{luku/komennot-maarittely}). Näiden
+\komento{renewcommand} (luku \ref{luku/komennot-määrittely}). Näiden
 vaikutuksen voi poistaa kokonaan leijuvan ympäristön valitsimella
 \koodi{!} (taulukko \ref{tlk/leijuosat-sijoittelukirjaimet}).
 

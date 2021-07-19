@@ -14,8 +14,8 @@ ehkä jopa suotavaakin keskittyä aluksi lähinnä dokumentin sisällön ja
 rakenteen suunnitteluun ja tuottamiseen. Ulkoasuun kyllä ehtii tulla
 kirjoittamisen aikana monenlaisia ajatuksia, joita ei olisi välttämättä
 alussa osannut huomioida. Kirjoittamaan pääsee hyvinkin yksinkertaisen
-dokumenttirungon avulla (esimerkki \ref{esim/ensimmainen},
-s.~\pageref{esim/ensimmainen}), mutta tässä luvussa käsitellään
+dokumenttirungon avulla (esimerkki \ref{esim/ensimmäinen},
+s.~\pageref{esim/ensimmäinen}), mutta tässä luvussa käsitellään
 asetusten määrittelyä ja mahdollisuuksia melko perusteellisesti.
 
 \section{Dokumenttiluokat}
@@ -292,7 +292,7 @@ avulla, jota käsitellään luvussa \ref{luku/sivun-mitat}. Joskus halutaan
 muokata sivun ylä- tai alatunnistetta eli verrattain pysyviä
 tunnistetietoja, jotka toistuvat joka sivulla ylä- tai alareunassa.
 Niiden muokkaamiseen käytetään \paketti{fancyhdr}\-/ pakettia, jonka
-ohjeita on luvussa \ref{luku/yla-ala-tunnisteet}.
+ohjeita on luvussa \ref{luku/ylä-ala-tunnisteet}.
 
 \subsection{Sivun koko ja marginaalit}
 \label{luku/sivun-mitat}
@@ -363,8 +363,8 @@ rajoja.
 
 Taulukkoon \ref{tlk/sivun-marginaalit} on koottu tärkeimpiä valitsimia
 marginaalien mittojen asettamiseksi. Valitsimille annetaan arvoksi Texin
-mittayksikkö, jotka ovat taulukossa \ref{tlk/mittayksikot}
-(s.~\pageref{tlk/mittayksikot}). Kaksipuolisessa
+mittayksikkö, jotka ovat taulukossa \ref{tlk/mittayksiköt}
+(s.~\pageref{tlk/mittayksiköt}). Kaksipuolisessa
 \koodimargin{twoside=\katk true} \koodimargin{twoside=\katk false}
 asettelussa (\koodi{twoside=\katk true}) sivut muodostavat aukeaman eli
 on erikseen vasemmanpuoleinen ja oikeanpuoleinen sivu. Tällöin vasen ja
@@ -558,14 +558,14 @@ leikkuuvaran puolella, joten ne eivät päädy lopulliseen
 painotuotteeseen.
 
 \subsection{Ylä- ja alatunnisteet}
-\label{luku/yla-ala-tunnisteet}
+\label{luku/ylä-ala-tunnisteet}
 
 \paketti{geometry}\-/paketin asetuksiin kuuluu pari valitsinta, joilla
 vaikutetaan ylä- ja alatunnisteiden mittoihin. Valitsimella \koodi{head}
 ilmaistaan ylätunnisteen korkeus ja valitsimella \koodi{headsep} sen
 etäisyys sivun tekstipalstasta. Alatunnisteen peruslinjan etäisyys
 tekstipalstasta säädetään valitsimella \koodi{footskip}. Taulukkoon
-\ref{tlk/yla-ala-tunnistemitat} on koottu näiden valitsimien merkitys,
+\ref{tlk/ylä-ala-tunnistemitat} on koottu näiden valitsimien merkitys,
 ja seuraavassa on niiden käyttämisestä esimerkki. Mukana on myös
 valitsin \koodi{show\-frame}, joka piirtää sivulle apuviivoja. Se auttaa
 sivun mittojen suunnittelussa.
@@ -588,7 +588,7 @@ sivun mittojen suunnittelussa.
 }{
   \caption{\paketti{geometry}\-/paketin valitsimet ylä- ja
     alatunnisteiden mittojen asettamiseen}
-  \label{tlk/yla-ala-tunnistemitat}
+  \label{tlk/ylä-ala-tunnistemitat}
 }
 
 Latexin perusosat eivät sisällä kovin kummoista keinovalikoimaa ylä- ja
@@ -943,7 +943,7 @@ muitakin asetuksia on olemassa, ja niistä voi lukea lisää
 
 Pdf\-/ tiedoston sisäiseen sisällysluetteloon tulevat automaattisesti
 mukaan samat otsikot (luku \ref{luku/otsikot}) kuin ladottavaan
-sisällysluetteloonkin (luku \ref{luku/sisallysluettelo}). Pdf\-/
+sisällysluetteloonkin (luku \ref{luku/sisällysluettelo}). Pdf\-/
 tiedoston luetteloon voi kuitenkin itse lisäillä omia otsikoita, jotka
 eivät näy missään muualla. Se tehdään \paketti{hyperref}\-/ paketin
 komennolla \komentom{pdfbookmark}:
@@ -1117,7 +1117,7 @@ Esimerkki \ref{esim/fontit-leik-omin} selventää, kuinka kirjainperheen
 eri leikkausten nimet tai fonttitiedostot määritellään. Kullekin
 leikkaukselle voi määrittää myös omat asetuksensa \koodi{Fea\-tures}\-/
 loppuisella valitsimella. Samaa asiaa havainnollistetaan myös
-konkreettisemmin esimerkissä \ref{esim/fontit-leik-omin-kayt}.
+konkreettisemmin esimerkissä \ref{esim/fontit-leik-omin-käyt}.
 Leikkauksen nimessä voi käyttää tähteä (\koodi{*}), joka korvautuu
 kirjainperheen nimellä (\englanti{Macklin Text}).
 
@@ -1150,7 +1150,7 @@ kirjainperheen nimellä (\englanti{Macklin Text}).
   \caption{Eri leikkausten nimien määrittely \englanti{Macklin Text}
     \=/kirjainperheelle. Leikkauksen nimessä tähti (\koodi{*}) korvautuu
     automaattisesti koko perheen nimellä}
-  \label{esim/fontit-leik-omin-kayt}
+  \label{esim/fontit-leik-omin-käyt}
 \end{esimerkki*}
 
 Jos edellä kuvatut kolme kirjainperhettä (\komento{setmainfont},
@@ -1307,7 +1307,7 @@ määritetty. Taulukossa \ref{tlk/fonttimallikomennot} on komennot
 kirjainperheen ja kirjainleikkauksen valintaan. Joka rivillä ensin
 mainittu komento (esim. \komento{rmfamily}) vaikuttaa tekstiin, joka
 tulee komennon jälkeen. Vaikutusalue rajoittuu nykyisen ympäristön (luku
-\ref{luku/ymparistot}) sisään tai aaltosulkeilla (luku
+\ref{luku/ympäristöt}) sisään tai aaltosulkeilla (luku
 \ref{luku/aaltosulkeet}) rajatun alueen sisään. Rivillä toisena olevalle
 komennolle (esim. \komentox{textrm}) annetaan yksi argumentti, ja
 komennon vaikutus koskee vain argumenttina olevaa tekstiä.
@@ -1879,7 +1879,7 @@ Numbers=Proportional % vaihtelevan levyiset numerot (oletus)
 \end{koodilohkosis}
 
 \subsection{Välistykset: harvennus ja tiivistys}
-\label{luku/fontit-valistys}
+\label{luku/fontit-välistys}
 
 Fontin kanssa käytettäviä sanavälejä voi säätää \koodim{Word\-Space}\-/
 valitsimella, jonka arvoksi annetaan desimaalilukukerroin eli suhdeluku
@@ -1887,7 +1887,7 @@ normaaliin verrattuna. Arvona voi olla myös kolme eri kerrointa, jolloin
 mukana on lisäksi sanavälin venymisen rajat. Tämä asetus on tehtävä
 kirjainperheen tai \=/leikkauksen määrittelyn yhteydessä, eli se ei
 toimi esimerkiksi \komento{addfontfeatures}\-/ komennon kanssa. Katso
-tietoa sanaväleistä myös luvusta \ref{luku/sanavali} tai
+tietoa sanaväleistä myös luvusta \ref{luku/sanaväli} tai
 tekstikappaleiden latomista käsittelevästä luvusta \ref{luku/kappale}.
 \noclub[2]
 

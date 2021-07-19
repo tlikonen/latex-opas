@@ -4339,9 +4339,9 @@ lähdedokumenttiin, koska lukujen järjestys ja numerointi voi muuttua
 kirjoittamisen edetessä. Joutuisi korjaamaan muuttuneet numerot
 mahdollisesti useitakin kertoja ennen kuin työ on valmis.
 
-Latex osaa numeroida dokumentin otsikot eli luvut ja leijuvat osat
+Latex osaa numeroida dokumentin otsikot (luvut) ja leijuvat osat
 automaattisesti, eli se tietää, minkä numeron mikäkin dokumentin osa
-saa. Niinpä Latex osaa -- kirjoittajan pienellä avustuksella -- myös
+saa. Niinpä Latex osaa myös -- kirjoittajan pienellä avustuksella --
 ylläpitää ajantasaisia ristiviittauksia dokumentin eri osiin. Teknisesti
 tämä toteutetaan siten, että otsikoille ja leijuville osille annetaan
 yksilöllinen tunniste ja viittaamisessa käytetään samoja tunnisteita.
@@ -4380,15 +4380,6 @@ Ristiviittauksissa vähimmällä vaivalla selviää, kun muistaa kaksi asiaa:
 täytyy viitata muualta, 2)~valitsee tunnisteet siten, ettei niitä
 tarvitse muuttaa enää sen jälkeen, kun ne on kerran valinnut.
 
-Ei siis ehkä kannata kirjoittaa ja ylläpitää tunnisteessa samaa tekstiä
-kuin otsikossa tai kuvatekstissä. Otsikot voivat muuttua kirjoittamisen
-aikana, ja samakin otsikko voi esiintyä dokumentissa eri paikoissa. Ei
-ehkä myöskään kannata kirjoittaa otsikoiden tunnisteeseen tietoa, minkä
-tasoisesta otsikosta on kyse (\komento{section}, \komento{subsection}
-ym.). Joskus dokumentin jäsennyskin muuttuu kirjoittamisen aikana:
-esimerkiksi alussa korkeatasoinen luku siirtyy myöhemmin toisen
-laajemman kokonaisuuden osaksi eli alaluvuksi.
-
 Tavallisimmat ristiviittaukset tehdään \komento{ref}\-/ komennolla,
 jonka argumentiksi annetaan sama tunniste kuin jossakin dokumentin
 \komento{label}\-/ komennossa. Latex latoo \komento{ref}\-/ komentojen
@@ -4415,8 +4406,8 @@ komento \komento{nameref}. Sillekin annetaan argumentiksi jokin
 \komento{label}\-/ komennolla määritetty tunniste, ja kääntämisvaiheessa
 komennon tilalle ladotaan kyseisen kohteen teksti eli otsikko tai
 kuvateksti. Ristiviittauksissa ladotaan otsikon tai kuvatekstin lyhempi
-versio, jos sellainen on annettu. Katso lisätietoa otsikkokomentojen ja
-kuvatekstikomennon argumenteista luvuista \ref{luku/otsikot}
+versio, jos sellainen on annettu. Otsikkokomentojen ja
+kuvatekstikomennon argumentteja käsitellään luvuissa \ref{luku/otsikot}
 (\nameref{luku/otsikot}) ja \ref{luku/leijuosat-latex}
 (\nameref{luku/leijuosat-latex}).
 

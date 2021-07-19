@@ -19,6 +19,8 @@ $(nimi).pdf: versio.tex versio.txt $(lahde)
 		else $(latex) $(nimi) && biber $(nimi) && \
 			$(latex) $(nimi) && $(latex) $(nimi); \
 		fi
+	@sed -En -e 's/^ *(\\label\{[^}]+\}).*$$/\1/p' $(lahde) | \
+		sort | uniq -cd
 	@echo "Versio: $(shell cat versio.txt)"
 
 versio.txt: $(lahde)

@@ -4421,12 +4421,76 @@ tilalle ladotaan viittauskohteen oikeat tiedot.
 \section{Alaviitteet}
 \label{luku/alaviitteet}
 
-...
+Alaviitteet ovat sivun alareunassa olevia numeroituja tai muulla tavalla
+merkittyjä huomautuksia. Niihin viitataan sanojen tai virkkeiden perässä
+olevalla yläindeksinumerolla, \=/kirjaimella tai
+\=/symbolilla.\footnote{Tässä on esimerkki alaviitteestä.} Alaviitteiden
+tarkoituksena on lisätä tekstiin lähes huomaamaton lisätieto, joka ei
+häiritse lukemista. Se sopii esimerkiksi lisätietoihin, joilla ei ole
+kovin suurta merkitystä tai jotka sopivat huonosti ladottavaksi
+leipätekstiin. Joskus myös tiedonlähteet ilmaistaan alaviitteiden
+avulla.\footcites[162]{kt_oik}[127--128]{typokk}
 
-% geometry: footnotesep
+Alaviite tehdään komennolla \komento{footnote}, jonka argumentiksi
+kirjoitetaan alaviitteeseen tuleva teksti. Oletuksena Latex latoo
+komennon paikalle yläindeksinumeron, joka tulee automaattisesti
+kasvavasta laskurista \laskuri{footnote}. Komennolle voi antaa myös
+valinnaisen argumentin, joka on kyseisen alaviitteen numero. Tässä
+tapauksessa komento ei kasvata \laskuri{footnote}\-/ laskuria.
 
-% hyperfootnotes=false, koska muuten footmisc-paketin jotkin asiat eivät
-% toimi.
+\komentoi{footnote}
+\begin{koodilohkosis}
+\footnote{Alaviitteen teksti.}
+\footnote[numero]{Alaviitteen teksti.}
+\end{koodilohkosis}
+
+Itse alaviite ladotaan samalla kirjaintyypillä kuin leipätekstikin mutta
+pienempänä: sen koko tulee komennosta \komento{footnotesize} (luku
+\ref{luku/fontit-korkea}). Samalle sivulle voi sattua useampikin
+alaviite, ja ne erotetaan leipätekstistä pienellä pystysuuntaisella
+välillä sekä oletuksena myös lyhyellä vaakaviivalla. Jos alaviitteen
+tekee leijuvaan osaan (luku \ref{luku/leijuosat}) tai laatikkoon (luku
+\ref{luku/laatikot}), se merkitään oletuksena kirjaimen avulla, ja
+alaviitteen teksti ladotaan kyseisen osan alapuolelle.
+
+% \footnotemark[n], \footnotetext[n]{...}
+
+% \renewcommand{\thefootnote}{\alph{footnote}}
+% \renewcommand{\thempfootnote}{\symbol{mpfootnote}}
+
+% footmisc-paketti
+
+Leipätekstin ja alaviitteet erotetaan pystysuuntaisella välillä, jonka
+voi asettaa sivun asetusten yhteydessä (luku \ref{luku/sivuasetukset}).
+Asetus on \paketti{geometry}\-/ paketin valitsin \koodi{footnotesep},
+jota käytetään esimerkiksi \komento{geometry}\-/ komennon kanssa:
+
+\komentoi{geometry}
+\begin{koodilohkosis}
+\geometry{ footnotesep=13bp }
+\end{koodilohkosis}
+
+Välin täytyy olla ainakin niin suuri, ettei lukija sekoita alaviitteitä
+leipätekstin kappaleeseen. Ehkä riittävä väli on noin yhden
+rivikorkeuden verran tai vähän enemmän. Sopivan välin suuruus voi
+riippua siitäkin, erotetaanko leipäteksti ja alaviitteet toisistaan myös
+vaakaviivalla.
+
+Jos ladattuna on \paketti{hyperref}\-/ paketti (luku
+\ref{luku/pdf-asetukset}), alaviitteisiin liittyvistä
+yläindeksinumeroista tulee myös hiirellä napsautettavia linkkejä. Tästä
+ominaisuudesta on aika harvoin mitään hyötyä, koska alaviite on melkein
+aina samalla sivulla. Linkkitoiminto myös häiritsee eräitä
+\paketti{footmisc}\-/ paketin toimintoja. Paketti on tarkoitettu
+alaviitteiden typografian asetuksiin. Linkkitoiminnon voi kytkeä pois
+\paketti{hyperref}\-/ paketin lataamisen yhteydessä seuraavalla
+asetuksella:
+
+\komentoi{usepackage}
+\pakettii{hyperref}
+\begin{koodilohkosis}
+\usepackage[hyperfootnotes=false]{hyperref}
+\end{koodilohkosis}
 
 \section{Palstat}
 \label{luku/palstat}

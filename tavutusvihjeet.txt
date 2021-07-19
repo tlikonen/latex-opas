@@ -164,7 +164,9 @@ font-ti-asiat
 font-ti-koko-ase-tus-ten
 font-ti-koko-komen-to-jen
 font-ti-komen-to-ja
+foot-misc
 foot-note
+foot-note-sep
 foot-rule-width
 foot-skip
 for-eign-lan-guage
@@ -532,6 +534,8 @@ text-super-script
 text-width
 the-bib-li-og-ra-phy
 the-chapter
+the-foot-note
+the-mp-foot-note
 the-page
 the-section
 the-sub-section
@@ -637,6 +641,9 @@ yh-dys-osien
 yleis-ohje
 yleis-yhdys-merk-ki
 ylä-in-dek-si
+ylä-in-dek-si-nume-rois-ta
+ylä-in-dek-si-nume-rol-la
+ylä-in-dek-si-nume-ron
 ylä-in-dek-sit
 ylä-osaan
 ääntö-asu

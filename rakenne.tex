@@ -3785,18 +3785,19 @@ tiedostopäätettä, joka alkaa kirjaimilla \koodi{lo} (\englantik{list
   figures}). Oletuksena omille leijuville osille tulee päätteeksi
 \koodi{lo}, jonka perässä on osan tyyppi.
 
-Valitsimen \koodi{within} avulla vaikutetaan leijuvien osien
-numeroinnin riippuvuuteen muista laskureista. Oletuksena leijuvan osan
-laskuri ei ole riippuvainen muista laskureista eli osat numeroidaan
-dokumentin alusta saakka yhdellä luvulla. Arvoksi voi antaa myös Latexin
-laskurin nimen: mielekkäitä arvoja ovat esimerkiksi \laskuri{chapter} ja
+Valitsimen \koodi{within} avulla vaikutetaan leijuvien osien numeroinnin
+riippuvuuteen muista laskureista. Oletuksena leijuvan osan laskuri ei
+ole riippuvainen muista laskureista eli osat numeroidaan dokumentin
+alusta saakka yhdellä luvulla. Arvoksi voi antaa myös Latexin laskurin
+nimen: mielekkäitä arvoja ovat esimerkiksi \laskuri{chapter} ja
 \laskuri{section}. Vaikutus on se, että leijuvan osan laskuri on
 riippuvainen näistä laskureista ja nollautuu aina, kun toisen laskurin
-arvo kasvaa. Lisäksi kuvateksteissä näkyy kaksiosainen numerointi (4.2,
-4.3 jne.), jossa ensimmäinen luku on ylemmäntasoisen laskurin arvo --
-esimerkiksi kirjan pääluvun numero -- ja toinen on leijuvan osan
+arvo kasvaa. Lisäksi kuvateksteissä näkyy kaksiosainen numerointi (4.1,
+4.2, 4.3 jne.), jossa ensimmäinen luku on ylemmäntasoisen laskurin arvo
+-- esimerkiksi kirjan pääluvun numero -- ja toinen on leijuvan osan
 laskurin arvo. Tällaisia hierarkkisia laskureita käsitellään tarkemmin
-luvussa \ref{luku/hierarkkiset-laskurit}.
+luvussa \ref{luku/hierarkkiset-laskurit}. Leijuvan osan numeroinnin
+ulkoasun muokkaamista käsitellään luvussa \ref{luku/leijuosat-ulkoasu}.
 
 \subsection{Leijuvien osien luettelot}
 \label{luku/leijuosat-luettelot}
@@ -4053,9 +4054,10 @@ lähdedokumentissa. Jos paketin lataamisessa antaa argumentin
 \end{koodilohkosis}
 
 \subsection{Ulkoasu}
+\label{luku/leijuosat-ulkoasu}
 
 Leijuvan osan sisäisen asettelun, ulkoasun ja muun typografian
-hallintaan ja muokkaamiseen tarvitaan paketteja
+hallintaan ja muokkaamiseen tarvitaan yleensä paketteja
 \paketti{floatrow}\avctan{floatrow} ja
 \paketti{caption}.\avctan{caption} Jälkimmäisen avulla muokataan
 kuvatekstin fonttia ja rivitystä, ja sitä käsitellään myöhemmin tässä
@@ -4327,6 +4329,32 @@ useampaan osaan. Se onnistuu sijoittamalla \paketti{caption}\-/ paketin
 komento \komento{ContinuedFloat} ensimmäisen jälkeisiin leijuviin
 ympäristöihin. Komento pitäisi sijoittaa heti ympäristön alkuun.
 Esimerkki \ref{esim/continuedfloat} havainnollistaa sen käyttöä.
+
+Kuvatekstissä oleva leijuvan osan numero tulee laskurista, ja
+erityyppisellä osilla on oma laskurinsa. Laskurin nimi on sama kuin
+vastaavan leijuvan ympäristön nimi, eli esimerkiksi \ymparisto{table}\-/
+ympäristöt numeroidaan laskurin \laskuri{table} avulla.
+
+Käytännössä laskurien arvo ladotaan \komentox{the}\-/ alkuisella
+komennolla, jonka perässä on laskurin nimi, esimerkiksi
+\komento{thetable}. Oletuksena nämä komennot latovat laskurin
+arabialaisilla numeroilla. Jos laskuri on riippuvainen teoksen
+pääluvuista (\komento{chapter}), ladotaan ensin pääluvun numero,
+erotinpiste ja leijuvan osan numero: 2.1, 2.2, 2.3 jne.
+
+Kirjoittaja voi määritellä laskurien latomiskomennon haluamallaan
+tavalla. Seuraavassa esimerkissä leijuville kuville (\ymparisto{figure})
+määritellään numerointitapa, jossa on pääluvun numero, ajatusviiva (\==)
+ja leijuvan kuvan numero:
+
+\komentoi{arabic}
+\komentoi{renewcommand}
+\komentoi{thechapter}
+\komentoi{thefigure}
+\laskurii{figure}
+\begin{koodilohkosis}
+\renewcommand{\thefigure}{\thechapter--\arabic{figure}}
+\end{koodilohkosis}
 
 \section{Ristiviittaukset}
 \label{luku/ristiviitteet}

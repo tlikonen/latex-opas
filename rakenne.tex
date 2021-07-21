@@ -4477,25 +4477,78 @@ pienempänä: sen koko tulee komennosta \komento{footnotesize} (luku
 \ref{luku/fontit-korkea}). Samalle sivulle voi sattua useampikin
 alaviite, ja ne erotetaan leipätekstistä pienellä pystysuuntaisella
 välillä sekä oletuksena myös lyhyellä vaakaviivalla. Jos alaviitteen
-tekee leijuvaan osaan (luku \ref{luku/leijuosat}) tai laatikkoon (luku
-\ref{luku/laatikot}), se merkitään oletuksena kirjaimen avulla, ja
-alaviitteen teksti ladotaan kyseisen osan alapuolelle.
+tekee leijuvaan osaan (luku \ref{luku/leijuosat}) tai
+\ymparisto{minipage}\-/ ympäristöön (luku \ref{luku/laatikot}), se
+merkitään oletuksena kirjaimen avulla, ja alaviitteen teksti ladotaan
+kyseisen osan alapuolelle.
 
-% \footnotemark[n], \footnotetext[n]{...}
+\komento{footnote}\-/ komennon toiminnan voi jakaa kahteen erilliseen
+osaan komentojen \komento{footnotemark} ja \komento{footnotetext}
+avulla. Ensin mainittu komento latoo pelkän yläindeksinumeron, joka
+tulee alaviitelaskurista. Komento ei lado varsinaista alaviitettä.
+Jälkimmäinen komento puolestaan latoo pelkän alaviitteen. Kummallekin
+komennolle voi antaa valinnaisen argumentin, jolla ilmaistaan kyseisen
+alaviitteen numero.
 
-% \renewcommand{\thefootnote}{\alph{footnote}}
-% \renewcommand{\thempfootnote}{\symbol{mpfootnote}}
+\komentoi{footnotemark}
+\komentoi{footnotetext}
+\begin{koodilohkosis}
+\footnotemark[numero]                      % yläindeksinumero
+\footnotetext[numero]{Alaviitteen teksti.} % alaviite
+\end{koodilohkosis}
 
-% footmisc-paketti
+Alaviitteiden numerointi on laskurissa \laskuri{footnote}, mutta sen
+arvo ladotaan komennon \komento{thefootnote} avulla. Tämän komennon
+määritelmässä on oletuksena komento
+\komento{arabic}\komentoarg{footnote}, eli laskuri ladotaan
+arabialaisilla numeroilla. Kirjoittaja voi kuitenkin määritellä komennon
+uudestaan. Seuraavassa esimerkissä määritellään komento siten, että
+alaviitteet ilmaistaan symbolien avulla:
 
-Leipätekstin ja alaviitteet erotetaan pystysuuntaisella välillä, jonka
+\komentoi{renewcommand}
+\komentoi{thefootnote}
+\komentoi{fnsymbol}
+\laskurii{footnote}
+\begin{koodilohkosis}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\end{koodilohkosis}
+
+Laskurien symboliesitys toimii vain lukualueella 1\==9, joten samaan
+dokumenttiin ei mahdu kovin monta alaviitettä, ellei laskuria nollaa
+välillä. Laskurin voi määritellä riippuvaiseksi toisesta laskurista,
+jolloin se nollautuu itsestään, kun toisen laskurin arvo kasvaa.
+Esimerkiksi dokumenttiluokassa \luokka{book} alaviitteiden laskuri
+nollautuu oletuksena aina päälukujen (\komento{chapter}) vaihtuessa.
+Joskus voi olla tarpeen tehdä alaviitteiden laskuri sivukohtaiseksi eli
+riippuvaiseksi \laskuri{page}\-/ laskurista. Sen voi toteuttaa
+\paketti{chngcntr}\-/ paketin ja \komento{counterwithin*}\-/ komennon
+(luku \ref{luku/hierarkkiset-laskurit}) avulla seuraavan esimerkin
+mukaisesti. Toinen vaihtoehto on paketti \paketti{footmisc} ja valitsin
+\koodi{perpage}, jota käsitellään myöhemmin tässä luvussa.
+
+\komentoi{counterwithin}
+\laskurii{footnote}
+\laskurii{page}
+\begin{koodilohkosis}
+\counterwithin*{footnote}{page}
+\end{koodilohkosis}
+
+Edellisissä esimerkeissä on käsitelty koko dokumentin alaviitelaskuria
+\laskuri{footnote}, mutta leijuvissa osissa ja \ymparisto{minipage}\-/
+ympäristöissä (luku \ref{luku/laatikot}) alaviitteet numeroidaan
+laskurin \laskuri{mpfootnote} avulla. Tämän laskurin arvo ladotaan
+käytännössä komennolla \komento{thempfootnote}, jonka kirjoittaja voi
+määritellä uudelleen tarpeen mukaan. Laskureihin liittyvää tekniikkaa
+käsitellään tarkemmin luvussa \ref{luku/laskurit}.
+
+Leipäteksti ja alaviitteet erotetaan pystysuuntaisella välillä, jonka
 voi asettaa sivun asetusten yhteydessä (luku \ref{luku/sivuasetukset}).
 Asetus on \paketti{geometry}\-/ paketin valitsin \koodi{footnotesep},
 jota käytetään esimerkiksi \komento{geometry}\-/ komennon kanssa:
 
 \komentoi{geometry}
 \begin{koodilohkosis}
-\geometry{ footnotesep=13bp }
+\geometry{ footnotesep=14bp }
 \end{koodilohkosis}
 
 Välin täytyy olla ainakin niin suuri, ettei lukija sekoita alaviitteitä
@@ -4504,21 +4557,84 @@ rivikorkeuden verran tai vähän enemmän. Sopivan välin suuruus voi
 riippua siitäkin, erotetaanko leipäteksti ja alaviitteet toisistaan myös
 vaakaviivalla.
 
+Muunlaiset alaviitteisiin vaikuttavat asetukset täytyy tehdä paketin
+\paketti{footmisc}\avctan{footmisc} avustuksella. Sen avulla voi
+esimerkiksi poistaa alaviitteiden erotinviivan ja muotoilla
+alaviitekappaleita. Erotinviiva poistetaan paketin valitsimella
+\koodi{norule}. Samalla pystysuuntainen väli hieman kasvaa.
+
+\pakettii{footmisc}
+\komentoi{usepackage}
+\begin{koodilohkosis}
+\usepackage[norule]{footmisc}
+\end{koodilohkosis}
+
+Paketin lataamisen yhteydessä voi antaa useita pilkulla erotettuja
+valitsimia. Valitsin \koodi{perpage} numeroi alaviitteet
+sivukohtaisesti, eli niiden laskuri nollautuu aina sivun vaihtuessa.
+Valitsin \koodi{bottom} pakottaa alaviitteen aina sivun alareunaan.
+Oletusasetuksilla alaviite voi sijoittua joskus ylemmäksi, jos sivun
+alaosaan ladotaan leijuva osa tai jos sivun alareunan tasaaminen on pois
+päältä (\komento{raggedbottom}, luku \ref{luku/sivunvaihdot}).
+
+Oletuksena alaviitekappaleet ladotaan samalla tavalla kuin
+tekstikappaleet oletuksena muutenkin: alaviitteen ensimmäinen rivi on
+sisennetty ja sen alussa on alaviitteen numero. Seuraavia rivejä ei
+sisennetä. Tällainen asetus sopii hyvin pitkien alaviitetekstien
+latomiseen. Usein ne ovat kuitenkin lyhyitä, ja silloin voi sopia
+paremmin luetelmatyyppiset alaviitekappaleet (riippuva sisennys), joissa
+alaviitteen numero on omalla alueellaan ja varsinainen alaviiteteksti on
+sisennetty. Tällainen asetus tehdään \paketti{footmisc}\-/ paketin
+valitsimella \koodi{hang}. Sisennyksen suuruuteen voi vaikuttaa mitan
+\mitta{footnotemargin} avulla:
+
+\komentoi{setlength}
+\komentoi{usepackage}
+\mittai{footnotemargin}
+\pakettii{footmisc}
+\begin{koodilohkosis}
+\usepackage[hang]{footmisc}
+\setlength{\footnotemargin}{1.5em}
+\end{koodilohkosis}
+
+Valitsin \koodi{multiple} mahdollistaa peräkkäisten
+\komento{footnote}\-/ komentojen kirjoittamisen helposti. Peräkkäin
+olevien yläindeksinumeroiden väliin ladotaan automaattisesti pilkku,
+kuten seuraava esimerkki osoittaa:
+
+\komentoi{footnote}
+\begin{koodilohkosis}
+sana\footnote{…}\footnote{…}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  sana\textsuperscript{7}%
+  \textsuperscript*{,}%
+  \textsuperscript{8}
+\end{tulossis}
+
+Toisaalta yläindeksiin voi sijoittaa pilkun tai muuta tekstiä käsinkin
+komennolla \komento{textsuperscript} (luku \ref{luku/ylä-alaindeksit}).
+\koodi{multiple}\-/ valitsin vaatii toimiakseen tietyn
+\paketti{hyperref}\-/ paketin valitsimen, joka käsitellään seuraavaksi.
+
 Jos ladattuna on \paketti{hyperref}\-/ paketti (luku
 \ref{luku/pdf-asetukset}), alaviitteisiin liittyvistä
 yläindeksinumeroista tulee myös hiirellä napsautettavia linkkejä. Tästä
-ominaisuudesta on aika harvoin mitään hyötyä, koska alaviite on melkein
-aina samalla sivulla. Linkkitoiminto myös häiritsee eräitä
-\paketti{footmisc}\-/ paketin toimintoja. Paketti on tarkoitettu
-alaviitteiden typografian asetuksiin. Linkkitoiminnon voi kytkeä pois
-\paketti{hyperref}\-/ paketin lataamisen yhteydessä seuraavalla
-asetuksella:
+ominaisuudesta on harvoin mitään hyötyä, koska alaviite on melkein aina
+samalla sivulla. Linkkitoiminto myös häiritsee \paketti{footmisc}\-/
+paketin \koodi{multiple}\-/ valitsimen toimintaa. Alaviitteiden linkit
+voi kytkeä pois \paketti{hyperref}\-/ paketin lataamisen yhteydessä
+seuraavalla asetuksella:
 
 \komentoi{usepackage}
 \pakettii{hyperref}
 \begin{koodilohkosis}
 \usepackage[hyperfootnotes=false]{hyperref}
 \end{koodilohkosis}
+
+\paketti{footmisc}\-/ paketti sisältää muitakin toimintoja alaviitteiden
+ulkoasun säätämiseen. Lisätietoa saa paketin ohjekirjasta.
 
 \section{Palstat}
 \label{luku/palstat}

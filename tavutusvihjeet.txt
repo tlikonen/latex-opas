@@ -72,6 +72,7 @@ cap-tions-finnish
 chapter-lists-gaps
 chapter-mark
 chapter-name
+chng-cntr
 cite
 clear-double-page
 clear-page
@@ -166,7 +167,9 @@ font-ti-koko-komen-to-jen
 font-ti-komen-to-ja
 foot-misc
 foot-note
+foot-note-mark
 foot-note-sep
+foot-note-text
 foot-rule-width
 foot-skip
 for-eign-lan-guage
@@ -301,6 +304,7 @@ med-skip
 med-skip-amount
 mem-oir
 mid-rule
+mini-page
 mit-ta-yk-sik-kö
 mit-ta-yk-si-köi-den
 mit-ta-yk-si-köi-tä
@@ -314,6 +318,7 @@ mk-bib-name-suf-fix
 mk-bib-parens
 mk-bib-quote
 mp-foot-note
+mul-ti-ple
 multi-row
 muo-toi-lu-ase-tuk-set
 my-head-ings
@@ -340,6 +345,7 @@ no-page-color
 normal-font
 normal-margin-par
 normal-size
+no-rule
 note
 no-widow
 nyky-aikai-set
@@ -385,6 +391,7 @@ pdf-book-mark
 pdf-info
 pdf-latex
 pdf-lscape
+per-page
 pe-rus-aja-tus
 pe-rus-ase-tuk-set
 pe-rus-ase-tuk-sia
@@ -474,6 +481,7 @@ small-break
 small-skip
 small-skip-amount
 space-skip
+stable
 step-counter
 style
 sub-para-graph
@@ -482,6 +490,7 @@ sub-section-mark
 sub-sub-sec-tion
 suo-jaus-omi-nai-suus
 suur-aak-kos-ten
+sym-bo-li-esi-tys
 säh-kö-pos-ti-osoi-te
 säh-kö-pos-ti-osoit-tei-den
 säh-kö-pos-ti-osoit-tei-ta
@@ -641,6 +650,7 @@ yh-dys-osien
 yleis-ohje
 yleis-yhdys-merk-ki
 ylä-in-dek-si
+ylä-in-dek-si-nume-roi-den
 ylä-in-dek-si-nume-rois-ta
 ylä-in-dek-si-nume-rol-la
 ylä-in-dek-si-nume-ron

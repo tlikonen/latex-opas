@@ -64,8 +64,7 @@ uninstall:
 
 clean:
 	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls lo* out \
-		run.xml toc xdv)
-	rm -f texput.log $(nimi).zip
+		run.xml toc xdv zip) texput.log
 	rm -f $(addsuffix .idx,$(asiahakemistot))
 	rm -f $(addsuffix .ind,$(asiahakemistot))
 	rm -f $(addsuffix .ilg,$(asiahakemistot))

@@ -4553,8 +4553,30 @@ vaakaviivalla.
 Muunlaiset alaviitteisiin vaikuttavat asetukset täytyy tehdä paketin
 \paketti{footmisc}\avctan{footmisc} avustuksella. Sen avulla voi
 esimerkiksi poistaa alaviitteiden erotinviivan ja muotoilla
-alaviitekappaleita. Erotinviiva poistetaan paketin valitsimella
-\koodi{norule}. Samalla pystysuuntainen väli hieman kasvaa.
+alaviitekappaleita. Paketin lataamisen yhteydessä voi antaa useita
+pilkulla erotettuja valitsimia, joita on koottu taulukkoon
+\ref{tlk/footmisc-valitsimet}. Erotinviiva poistetaan paketin
+valitsimella \koodi{norule}. Samalla pystysuuntainen väli hieman kasvaa.
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Valitsin} & \ots{Merkitys} \\
+    \midrule
+    \rivi{norule}{vaakasuuntainen erotinviiva pois}
+    \rivi{perpage}{numerointi sivukohtaiseksi}
+    \rivi{bottom}{alaviite aina sivun alareunaan}
+    \rivi{hang}{luetelmatyyppiset alaviitteet, riippuva sisennys}
+    \rivi{multiple}{useat peräkkäiset yläindeksinumerot}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{\paketti{footmisc}\-/ paketin asetusten avulla muotoillaan
+    alaviitteitä}
+  \label{tlk/footmisc-valitsimet}
+}
 
 \pakettii{footmisc}
 \komentoi{usepackage}
@@ -4562,13 +4584,12 @@ alaviitekappaleita. Erotinviiva poistetaan paketin valitsimella
 \usepackage[norule]{footmisc}
 \end{koodilohkosis}
 
-Paketin lataamisen yhteydessä voi antaa useita pilkulla erotettuja
-valitsimia. Valitsin \koodi{perpage} numeroi alaviitteet
-sivukohtaisesti, eli niiden laskuri nollautuu aina sivun vaihtuessa.
-Valitsin \koodi{bottom} pakottaa alaviitteen aina sivun alareunaan.
-Oletusasetuksilla alaviite voi sijoittua joskus ylemmäksi, jos sivun
-alaosaan ladotaan leijuva osa tai jos sivun alareunan tasaaminen on pois
-päältä (\komento{raggedbottom}, luku \ref{luku/sivunvaihdot}).
+Valitsin \koodi{perpage} numeroi alaviitteet sivukohtaisesti, eli niiden
+laskuri nollautuu aina sivun vaihtuessa. Valitsin \koodi{bottom}
+pakottaa alaviitteen aina sivun alareunaan. Oletusasetuksilla alaviite
+voi sijoittua joskus ylemmäksi, jos sivun alaosaan ladotaan leijuva osa
+tai jos sivun alareunan tasaaminen on pois päältä
+(\komento{raggedbottom}, luku \ref{luku/sivunvaihdot}).
 
 Oletuksena alaviitekappaleet ladotaan samalla tavalla kuin
 tekstikappaleet oletuksena muutenkin: alaviitteen ensimmäinen rivi on

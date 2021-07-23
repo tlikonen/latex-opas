@@ -318,6 +318,8 @@ mk-bib-name-suf-fix
 mk-bib-parens
 mk-bib-quote
 mp-foot-note
+multi-col
+multi-cols
 mul-ti-ple
 multi-row
 muo-toi-lu-ase-tuk-set

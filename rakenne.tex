@@ -4632,15 +4632,32 @@ ulkoasun säätämiseen. Lisätietoa saa paketin ohjekirjasta.
 \section{Palstat}
 \label{luku/palstat}
 
-% Käsitellään Latexin omat ja multicol-paketti erikseen.
+Latex sopii aika huonosti aikakauslehtien kaltaiseen julkaisuun, jossa
+teksti ladotaan aina usealle palstalle ja erilaisia kuvia,
+tietolaatikoita, taulukoita, tekstinostoja ja muita osia sommitellaan
+tyylikkäästi sivulle. Verrattain yksinkertaiset monipalstaiset tekstit
+kuitenkin onnistuvat Latexissakin varsin mukavasti.
 
-...
+Perus Latexissa on kaksi palstoihin liittyvää tilaa: yhden ja kahden
+palstan tila. Tilan voi valita jo dokumenttiluokan asetuksissa (luku
+\ref{luku/perusdokumenttiluokat-asetukset}) käyttämällä valitsinta
+\koodi{onecolumn} (oletus) tai \koodi{twocolumn}. Kesken dokumentin
+tilaa voi vaihtaa komennoilla \komento{onecolumn} ja
+\komento{twocolumn}. Kahden palstan tilaa käsitellään luvussa
+\ref{luku/kahden-palstan-tila}.
+
+Toinen palstojen toteuttamisen vaihtoehto on käyttää Latexin yhden
+palstan tilaa ja käyttää palstaympäristöä. Ympäristön sisällä teksti
+rivitetään kahdelle tai useammalle palstalle. Tätä vaihtoehtoa
+käsitellään luvussa \ref{luku/multicol}.
 
 \subsection{Kahden palstan tila}
+\label{luku/kahden-palstan-tila}
 
 ...
 
 \subsection{Palstaympäristö}
+\label{luku/multicol}
 
 ...
 

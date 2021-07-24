@@ -458,17 +458,13 @@ sivun vastakkaiseen marginaaliin, lisätään mukaan valitsin
 
 Perus Latex osaa latoa tekstin yhdelle tai kahdelle palstalle, ja
 \paketti{geometry}\-/ paketin valitsimella \koodim{onecolumn} tai
-\koodim{twocolumn} asetetaan, kumpi tila on oletuksena päällä. Kesken
-dokumentin voi vaihtaa yksipalstaiseen tilaan komennolla
-\komento{onecolumn} tai kaksipalstaiseen tilaan komennolla
-\komento{twocolumn}. Käyttämällä \paketti{multicol}\-/
-pakettia\avctan{multicol} voi olla useampiakin kuin kaksi palstaa.
-Palstoja käsitellään tarkemmin luvussa \ref{luku/palstat}.
-
-Valitsimen \koodim{columnsep} avulla asetetaan palstojen välinen
-etäisyys. Tämä valitsin on asettaa mitan \mitta{columnsep}, jota voi
+\koodim{twocolumn} asetetaan, kumpi tila on oletuksena päällä.
+Useampikin palsta on mahdollista makropaketin avulla. Valitsimen
+\koodim{columnsep} avulla asetetaan palstojen välinen etäisyys.
+Käytännössä tämä valitsin on asettaa mitan \mitta{columnsep}, jota voi
 muokata myös komennolla \komento{setlength}, kuten muitakin mittoja
-(luku \ref{luku/mitat}).
+(luku \ref{luku/mitat}). Tarkempaa tietoa palstoista on luvussa
+\ref{luku/palstat}.
 
 \subsection{Sivun mittoja}
 
@@ -482,6 +478,7 @@ muokata myös komennolla \komento{setlength}, kuten muitakin mittoja
     \rivi{paperwidth}{paperin eli sivun leveys}
     \rivi{paperheight}{paperin eli sivun korkeus}
     \rivi{textwidth}{tekstialueen leveys}
+    \rivi{columnwidth}{nykyisen palstan leveys}
     \rivi{linewidth}{nykyisen rivin leveys}
     \rivi{textheight}{tekstialueen korkeus}
     \bottomrule
@@ -500,12 +497,14 @@ mutta perusteellisemmin niitä käsitellään \paketti{geometry}\-/
 paketin\avctan{geometry} ohjekirjassa.
 
 Taulukossa \ref{tlk/sivun-mittoja} mainittu mitta \mitta{linewidth}
-eroaa tekstialueen leveysmitasta \mitta{textwidth} esimerkiksi silloin,
-kun riviä on sisennetty vasemmalta. Tekstikappaleiden ensimmäinen rivi
-voi olla sisennetty, ja sen vuoksi se ei ole koko tekstialueen levyinen
-kuten kappaleen muut rivit. Muutkin sisennykset vaikuttavat rivin
-leveysmittaan. Sisennysasiat liittyvät tekstikappaleiden muotoiluun,
-jota käsitellään luvussa~\ref{luku/kappale}.
+eroaa tekstialueen (\mitta{textwidth}) tai palstan (\mitta{columnwidth})
+leveysmitasta esimerkiksi silloin, kun tekstikappaletta on sisennetty.
+Kappaleiden ensimmäinen rivi voi olla sisennetty, ja sen vuoksi rivi ei
+ole täysilevyinen. Muutkin sisennykset kuten lohkolainaukset tai
+luetelmat vaikuttavat rivin leveysmittaan. Sisennysasiat liittyvät
+tekstikappaleiden muotoiluun, jota käsitellään
+luvussa~\ref{luku/kappale}. Luetelmia puolestaan käsitellään
+luvussa~\ref{luku/luetelmat}.
 
 \subsection{Leikkuuvarat}
 

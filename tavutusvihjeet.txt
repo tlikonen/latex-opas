@@ -80,6 +80,8 @@ cline
 cmid-rule
 color-box
 column-sep
+column-sep-rule
+column-width
 con-tents-label
 con-tents-name
 con-tents-page

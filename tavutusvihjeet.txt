@@ -79,6 +79,7 @@ clear-page
 cline
 cmid-rule
 color-box
+column-break
 column-sep
 column-sep-rule
 column-width
@@ -153,6 +154,7 @@ float-row
 float-sep
 float-setup
 flush-bottom
+flush-columns
 font-size
 font-spec
 font-ti-ase-tuk-set
@@ -322,6 +324,7 @@ mk-bib-quote
 mp-foot-note
 multi-col
 multi-cols
+multi-col-sep
 mul-ti-ple
 multi-row
 muo-toi-lu-ase-tuk-set
@@ -429,6 +432,7 @@ pääte-oh-jel-mien
 quo-ta-tion
 quote
 ragged-bottom
+ragged-columns
 ragged-left
 ragged-right
 real-scripts
@@ -660,4 +664,5 @@ ylä-in-dek-si-nume-rol-la
 ylä-in-dek-si-nume-ron
 ylä-in-dek-sit
 ylä-osaan
+ylä-osas-sa
 ääntö-asu

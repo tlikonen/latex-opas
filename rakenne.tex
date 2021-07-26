@@ -4091,7 +4091,7 @@ tavalla.
       jotain & soluja \\
       esimerkin & vuoksi \\
     \end{tabular}
-  } 
+  }
 \end{table}
 \end{koodilohko}
   \caption{\komento{floatbox}\-/ komennon peruskäyttö}
@@ -4725,7 +4725,127 @@ pituus on mitassa \mitta{linewidth}.
 \subsection{Palstaympäristö}
 \label{luku/multicol}
 
-...
+Perus Latex osaa vain yhden ja kahden palstan tilan, ja ne ovat voimassa
+koko sivulla. Paketti \paketti{multicol}\avctan{multicol} tuo käyttöön
+myös ympäristön \ymparisto{multicols}, jonka sisällä tietty palstamäärä
+on voimassa. Ympäristön avulla samallakin sivulla voi olla eri tavoin
+palstoitettua sisältöä. Esimerkki \ref{esim/multicols} havainnollistaa
+ympäristön käyttöä ja ladottua lopputulosta. Oleelliset tiedot ovat
+seuraavat:
+
+\ymparistoi{multicols}
+\begin{koodilohkosis}
+\begin{multicols}{palstamäärä}
+  ...
+\end{multicols}
+\end{koodilohkosis}
+
+Argumentti \koodi{palstamäärä} on kokonaisluku, joka ilmaisee, kuinka
+monelle palstalle ympäristön sisältö ladotaan. Palstojen korkeus
+pyritään tasaamaan automaattisesti, niin että kaikki palstat ovat yhtä
+korkeita. Käytännössä palstaympäristön viimeisen sivun viimeinen palsta
+jää hieman vajaaksi, mutta se on normaalia muutenkin. Jos käyttää
+ympäristön tähtiversiota \ymparisto{multicols*}, ei viimeisen sivun
+palstojen korkeuksia tasata, vaan ensin täytetään vasemmanpuoleinen
+palsta kokonaan, sitten seuraava jne.
+
+\begin{esimerkki*}
+  \ymparistoi{multicols}
+  \komentoi{noindent}
+
+\begin{koodilohko}
+\begin{multicols}{3}  % kolme palstaa
+  \noindent Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen
+  pohjoisella rinteellä, liki Toukolan kylää. Sen läheisin ympäristö on
+  kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo
+  oli häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu,
+  apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se
+  heiniä, ennenkuin joutui laitumeksi kylän karjalle. Muutoin on talolla
+  avaria metsiä, soita ja erämaita, jotka, tämän tilustan ensimmäisen
+  perustajan oivallisen toiminnan kautta, olivat langenneet sille osaksi
+  jo ison jaon käydessä entisinä aikoina.
+\end{multicols}
+\end{koodilohko}
+  \begin{tulos}
+    \footnotesize
+    \setlength{\columnsep}{1em}
+    \setlength{\multicolsep}{0bp}
+    \begin{multicols}{3}
+      \noindent Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen
+      pohjoisella rinteellä, liki Toukolan kylää. Sen läheisin ympäristö
+      on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin
+      talo oli häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on
+      niittu, api\-la\-äyräi\-nen, halkileikkaama monipolvisen ojan; ja
+      runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän
+      karjalle. Muutoin on talolla avaria metsiä, soita ja erämaita,
+      jotka, tämän tilustan ensimmäisen perustajan oivallisen toiminnan
+      kautta, olivat langenneet sille osaksi jo ison jaon käydessä
+      entisinä aikoina.
+    \end{multicols}
+  \end{tulos}
+
+  \caption{Palstojen toteutus \paketti{multicol}\-/ paketin
+    \ymparisto{multicols}\-/ ympäristön avulla. Teksti on Aleksis Kiven
+    \emph{Seitsemän veljestä} \=/romaanin alusta}
+  \label{esim/multicols}
+\end{esimerkki*}
+
+Ympäristölle voi antaa hakasulkeissa valinnaisen argumentin, joka voi
+sisältää mitä tahansa tekstiä tai koodia. Se on tarkoitettu otsikolle
+(\komento{section} ym.) tai muulle sisällölle, joka ladotaan ennen
+palstoja ja jonka täytyy päätyä samalle sivulle kuin palstasisällön
+alku.
+
+\ymparistoi{multicols}
+\begin{koodilohkosis}
+\begin{multicols}{palstamäärä}
+  [tekstiä tai koodia ennen palstoja]
+  ...
+\end{multicols}
+\end{koodilohkosis}
+
+Ennen palstaympäristöä ja sen jälkeen ladotaan mitan \mitta{multicolsep}
+suuruinen pystysuuntainen väli. Väliä ei kuitenkaan ladota, jos se
+sattuu sivunvaihdon kohdalle. Palstojen välissä oleva tyhjä tila
+asetetaan mitan \mitta{columnsep} avulla, ja väliin mahdollisesti
+ladottavan pystyviivan leveys on mitassa \mitta{columnseprule}. Tämän
+mitan oletusarvo on nolla, eli pystyviivaa ei ladota.
+
+\komentoi{setlength}
+\mittai{multicolsep}
+\mittai{columnsep}
+\mittai{columnseprule}
+\begin{koodilohkosis}
+\setlength{\multicolsep}{.5ex plus .2ex}  % väli ennen ja jälkeen
+\setlength{\columnsep}{6mm}               % palstojen väli
+\setlength{\columnseprule}{.2mm}          % pystyviivan leveys
+\end{koodilohkosis}
+
+Oletuksena palstojen alareuna pyritään joka sivulla pitämään tarkasti
+samalla tasolla. Tämä toteutuu siten, että palstoilla olevia
+pystysuuntaisia välejä voidaan venyttää, jotta niiden viimeiset rivit
+saataisiin samalle tasolle. Tämä on yhdenmukainen sivujen
+tasaamiskäytännön kanssa, jota käsitellään luvussa
+\ref{luku/sivunvaihdot}. Palstojen alareunan tasaamisen ja
+pystysuuntaisten välien venyttämisen saa pois komennolla
+\komento{raggedcolumns}. Oletustilaan palataan komennolla
+\komento{flushcolumns}. Palstanvaihdon voi pakottaa tiettyyn kohtaan
+komennolla \komento{columnbreak}. Jos komento sijaitsee tekstikappaleen
+sisällä, palsta vaihtuu nykyisen rivin lopussa.
+
+Leijuvat osat (luku \ref{luku/leijuosat}) toimivat
+\ymparisto{multicols}\-/ ympäristössä hieman toisin kuin muualla.
+Leijuvien ympäristöjen tähdellisiä versioita kuten \ymparisto{table*} ja
+\ymparisto{figure*} ei koskaan ladota samalle sivulle kuin missä ne
+esiintyvät. Ensimmäinen mahdollinen paikka on seuraavan sivun yläosassa.
+
+Leijuvien osien sijoitteluun vaikuttavat tavalliset yhden palstan tilan
+asetukset kuten laskuri \laskuri{topnumber}, mitta \mitta{floatsep} ja
+komento \komento{topfraction}. \ymparisto{multicols}\-/ ympäristössä ei
+käytetä \koodi{dbl}\-/ alkuisia kahden palstan tilan laskureita, mittoja
+eikä komentoja, kuten \laskuri{dbltopnumber}, \mitta{dblfloatsep} ja
+\komento{dbltopfraction}. Lisätietoa leijuvien osien sijoittelusta on
+luvussa \ref{luku/leijuosat-sijoittelu}.
 
 \section{Lähdeluettelo ja lähdeviitteet}
 \label{luku/lähteet}

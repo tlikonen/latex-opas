@@ -33,6 +33,8 @@
 %\usepackage{showhyphens}
 \usepackage{hanging}
 \usepackage{lettrine}
+\usepackage{multicol}
+\usepackage{textpos}
 \usepackage[unicode,hyperfootnotes=false]{hyperref}
 \usepackage[shortcuts]{extdash}
 
@@ -175,8 +177,10 @@ columnsep=1em]
 \newcommand{\seurausnuoli}{\textcolor[gray]{.5}{⇒}}
 
 \newenvironment{tulos}{%
-  \makebox[0em][r]{\seurausnuoli\enspace}%
-  \begin{minipage}[t]{\linewidth}
+  \begin{textblock*}{1cm}(-2em,3bp)
+    \seurausnuoli
+  \end{textblock*}
+  \begin{minipage}{\linewidth}
     \linespread{1}\erikoisfontti\small
   }{%
   \end{minipage}

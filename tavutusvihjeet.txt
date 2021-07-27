@@ -207,7 +207,9 @@ hy-phen-ation
 if-then-else
 ig-nore-spaces
 ig-nore-spaces-af-ter-end
+imake-idx
 in-col-lec-tion
+index-tools
 in-text-sep
 item-indent
 item-ize

@@ -257,17 +257,6 @@ tiedostojärjestelmässä käyttäjän kotihakemistoon nimellä
 \koodi{.latexmkrc}. Esimerkki \ref{esim/latexmkrc} näyttää, mitä se
 voisi ehkä sisältää.
 
-Esimerkin ensimmäisen rivin asetus määrittää, miten pdf\-/ tiedostot
-tuotetaan tai mitä kääntäjää käytetään oletuksena. Toisella ja
-kolmannella rivillä määritellään, millä tavoin Lualatex ja Xelatex
-suoritetaan. Tässä esimerkissä oletusasetuksiin on lisätty
-\koodi{inter\-action=\katk non\-stop\-mode}, joka estää kaiken
-vuorovaikutteisen toiminnan. Asetus on tarpeen ainakin silloin, kun
-kääntäjä käynnistetään toisesta ohjelmasta kuten tekstieditorista eikä
-vuorovaikutus kääntäjän kanssa ole mahdollista. Asetus
-\koodi{shell-escape} tarvitaan eräiden monimutkaisempien makropakettien
-toimintaan.
-
 \begin{esimerkki*}
 \begin{koodilohko}
 $pdf_mode = 4; # 4=lualatex, 5=xelatex
@@ -276,10 +265,24 @@ $xelatex  = 'xelatex  -interaction=nonstopmode -shell-escape %O %S';
 $clean_ext = 'snm nav xdv bbl run.xml';
 $pdf_previewer = 'okular %S';
 \end{koodilohko}
-  \caption{Latexmk-ohjelman asetustiedosto (\koodi{\textasciitilde
+  \caption{Latexmk\-/ ohjelman asetustiedosto (\koodi{\textasciitilde
       /.latexmkrc})}
   \label{esim/latexmkrc}
 \end{esimerkki*}
+
+Esimerkin ensimmäisen rivin asetus määrittää, miten pdf\-/ tiedostot
+tuotetaan tai mitä kääntäjää käytetään oletuksena. Toisella ja
+kolmannella rivillä määritellään, millä tavoin Lualatex ja Xelatex
+suoritetaan. Tässä esimerkissä oletusasetuksiin on lisätty
+\koodi{-inter\-action=\katk non\-stop\-mode}, joka estää kaiken
+vuorovaikutteisen toiminnan. Asetus on tarpeen ainakin silloin, kun
+kääntäjä käynnistetään toisesta ohjelmasta kuten tekstieditorista eikä
+vuorovaikutus kääntäjän kanssa ole mahdollista. Valitsin
+\koodi{-shell-escape} kytkee päälle ominaisuuden, jota tarvitaan
+joidenkin makropakettien toimintaan.\footnote{Ainakin
+  asiahakemistopaketit \paketti{indextools} ja \paketti{imakeidx}
+  tarvitsevat \koodi{-shell-escape}\-/ toiminnon (luku
+  \ref{luku/asiasanat}).}
 
 Esimerkin \ref{esim/latexmkrc} neljännellä rivillä luetellaan
 kääntämisen aikana syntyvien väliaikaistiedostojen päätteitä. Latexmk\-/

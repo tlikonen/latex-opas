@@ -9,15 +9,14 @@ julkaisutiedostot = $(nimi).pdf versio.tex $(lahde) README.md
 julkaisukohteet = $(patsubst %,$(tds)/$(nimi)/%,$(julkaisutiedostot))
 asiahakemistot = paketit ymparistot komennot mitat laskurit dokumenttiluokat
 texmf = $(HOME)/texmf
-latex = lualatex -interaction=nonstopmode -shell-escape
-latexmk = latexmk -lualatex \
-	-pdflualatex="lualatex -interaction=nonstopmode -shell-escape %O %S"
+lualatex = lualatex -interaction=nonstopmode -shell-escape
+latexmk = latexmk -lualatex -pdflualatex="$(lualatex) %O %S"
 
 $(nimi).pdf: versio.tex versio.txt $(lahde)
 	@if which latexmk >/dev/null; \
 		then $(latexmk) $(nimi) && touch $@; \
-		else $(latex) $(nimi) && biber $(nimi) && \
-			$(latex) $(nimi) && $(latex) $(nimi); \
+		else $(lualatex) $(nimi) && biber $(nimi) && \
+			$(lualatex) $(nimi) && $(lualatex) $(nimi); \
 		fi
 	@sed -En -e 's/^ *(\\label\{[^}]+\}).*$$/\1/p' $(lahde) | \
 		sort | uniq -cd

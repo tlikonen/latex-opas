@@ -95,10 +95,10 @@ Oppaan julkaisupaketin lähdetiedostot voi latoa PDF-tiedostoksi
 komennoilla `lualatex` ja `biber`. Komennot täytyy suorittaa seuraavassa
 järjestyksessä:
 
-    lualatex kaytannollista_latexia
-    biber    kaytannollista_latexia
-    lualatex kaytannollista_latexia
-    lualatex kaytannollista_latexia
+    lualatex -shell-escape kaytannollista_latexia
+    biber kaytannollista_latexia
+    lualatex -shell-escape kaytannollista_latexia
+    lualatex -shell-escape kaytannollista_latexia
 
 
 ### Versionhallinta (Git)

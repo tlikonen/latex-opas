@@ -9,9 +9,9 @@ julkaisutiedostot = $(nimi).pdf versio.tex $(lahde) README.md
 julkaisukohteet = $(patsubst %,$(tds)/$(nimi)/%,$(julkaisutiedostot))
 asiahakemistot = paketit ymparistot komennot mitat laskurit dokumenttiluokat
 texmf = $(HOME)/texmf
-latex = lualatex -interaction=nonstopmode
+latex = lualatex -interaction=nonstopmode -shell-escape
 latexmk = latexmk -lualatex \
-	-pdflualatex="lualatex -interaction=nonstopmode %O %S"
+	-pdflualatex="lualatex -interaction=nonstopmode -shell-escape %O %S"
 
 $(nimi).pdf: versio.tex versio.txt $(lahde)
 	@if which latexmk >/dev/null; \
@@ -64,10 +64,8 @@ uninstall:
 
 clean:
 	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls lo* out \
-		run.xml toc xdv zip) texput.log
-	rm -f $(addsuffix .idx,$(asiahakemistot))
-	rm -f $(addsuffix .ind,$(asiahakemistot))
-	rm -f $(addsuffix .ilg,$(asiahakemistot))
+		run.xml toc idx xdv zip) texput.log
+	rm -f $(addprefix $(nimi)-*.,idx ilg ind)
 	rm -fr doc
 
 distclean: clean

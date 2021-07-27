@@ -209,6 +209,7 @@ ig-nore-spaces
 ig-nore-spaces-af-ter-end
 imake-idx
 in-col-lec-tion
+in-dex
 index-tools
 in-text-sep
 item-indent
@@ -535,6 +536,7 @@ teks-ti-osa
 teks-ti-osaan
 teks-ti-osan
 teks-ti-osas-sa
+text-back-slash
 text-bullet
 text-cite
 text-color

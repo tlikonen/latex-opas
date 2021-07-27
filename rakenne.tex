@@ -5787,11 +5787,68 @@ Komennolla \komento{DeclareSortingTemplate} voi määritellä omia
 aakkostustapoja. Lisätietoa saa paketin ohjekirjasta.%
 \avctan{biblatex}
 
-\section{Asiahakemisto}
+\section{Asiahakemistot}
 \label{luku/asiasanat}
 
-...
+Asiahakemistot ovat asiasanojen eli tärkeiden käsitteiden tai
+henkilöiden luetteloita, ja ne ovat yleensä tietokirjan viimeisillä
+sivuilla. Kunkin hakemiston asiasanat ovat aakkosjärjestyksessä, ja
+jokaisen sanan kohdalla luetellaan sivunumerot, joilla kyseistä asiaa
+käsitellään. Asiahakemistojen tarkoituksena on helpottaa tiedon
+löytämistä. Tämän oppaan luku asiahakemistot alkavat sivulta
+\pageref{luku/asiahakemisto}.
 
+Latex tarvitsee asiahakemistojen tekemiseen makropaketin. Niitä tehty
+useampia, mutta parhaita taitavat olla
+\paketti{indextools}\avctan{indextools} ja
+\paketti{imakeidx}\avctan{imakeidx}. Ne ovat käytännössä lähes sama
+paketti: \paketti{indextools} perustuu \paketti{imakeidx}\-/ pakettiin
+ja korjaa joitakin sen puutteita.
+
+Kirjoittajan kannalta asiahakemiston toteutuksen perusajatus on
+yksinkertainen: komennolla \komento{index} lisätään haluttuja asiasanoja
+hakemistoon ja komennolla \komento{printindex} ladotaan varsinaiset
+hakemistot. \komento{index}\-/ komento sijoitetaan lähdedokumentissa
+juuri siihen kohtaan, jossa kyseistä asiaa käsitellään. Komento
+itsessään ei lado mitään; se vain kirjaa asiasanan ja sivunumeron
+muistiin. Komentoa käytetään esimerkiksi seuraavalla tavalla:
+
+\komentoi{index}
+\begin{koodilohkosis}
+Yhteen \index{kirjainperhe} kirjainperheeseen kuuluu tavallisesti
+useita \index{kirjainleikkaus} leikkauksia.
+\end{koodilohkosis}
+
+Asiahakemistot aakkostetaan automaattisesti, mutta yksittäisten sanojen
+aakkostustapaan voi vaikuttaa käyttämällä \koodi{@}\=/ merkkiä
+\komento{index}\-/ komennon argumentissa. Ennen \koodi{@}\=/ merkkiä on
+asiasana siinä muodossa, miten se aakkostetaan; \koodi{@}\=/ merkin
+jälkeen annetaan asiasana siinä muodossa kuin se ladotaan
+asiahakemistoon. Seuraavassa esimerkissä asiahakemistoon lisätään
+Latex\-/ komento \komento{textbullet}:
+
+\komentoi{index}
+\komentoi{texttt}
+\komentoi{textbackslash}
+\begin{koodilohkosis}
+\index{textbullet@\texttt{\textbackslash textbullet}}
+\end{koodilohkosis}
+
+Edellisen esimerkin asiasana aakkostetaan sanan
+''\englanti{textbullet}'' mukaan mutta hakemistoon se ladotaan
+tasalevyisellä fontilla (\komento{texttt}) ja alkuun lisätään kenoviiva
+(\komento{textbackslash}). Käytännössä \komento{index}\-/ komentoja ei
+aina kannata kirjoittaa lähdedokumenttiin sellaisenaan, vaan komennon
+voi sisällyttää jonkin toisen komennon määritelmään. Tästä on esimerkki
+luvussa \ref{luku/komennot-abst}.
+
+% \index[komennot]{fontit}
+% \index[komennot]{fontit!kirjainperhe}
+% \index[komennot]{fontit!kirjainleikkaus}
+
+% @-merkin suojaaminen: "@
+% hierarkkisuus: !
+% fontti: |
 % imakeidx-paketti (sen johdos: indextools): splitindex ja xindy:
 % -shell-escape
 

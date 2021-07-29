@@ -5808,10 +5808,15 @@ ja korjaa joitakin sen puutteita.
 Kirjoittajan kannalta asiahakemiston toteutuksen perusajatus on
 yksinkertainen: komennolla \komento{index} lisätään haluttuja asiasanoja
 hakemistoon ja komennolla \komento{printindex} ladotaan varsinaiset
-hakemistot. \komento{index}\-/ komento sijoitetaan lähdedokumentissa
-juuri siihen kohtaan, jossa kyseistä asiaa käsitellään. Komento
-itsessään ei lado mitään; se vain kirjaa asiasanan ja sivunumeron
-muistiin. Komentoa käytetään esimerkiksi seuraavalla tavalla:
+hakemistot. Näitä käsitellään erillisissä alaluvuissa.
+
+\subsection{Asiasanojen lisääminen}
+
+Asiasanat lisätään komennolla \komento{index}, joka sijoitetaan
+lähdedokumentissa juuri siihen kohtaan, jossa kyseistä asiaa
+käsitellään. Komento itsessään ei lado mitään; se vain kirjaa asiasanan
+ja sivunumeron muistiin. Komentoa käytetään esimerkiksi seuraavalla
+tavalla:
 
 \komentoi{index}
 \begin{koodilohkosis}
@@ -5824,8 +5829,34 @@ aakkostustapaan voi vaikuttaa käyttämällä \koodi{@}\=/ merkkiä
 \komento{index}\-/ komennon argumentissa. Ennen \koodi{@}\=/ merkkiä on
 asiasana siinä muodossa, miten se aakkostetaan; \koodi{@}\=/ merkin
 jälkeen annetaan asiasana siinä muodossa kuin se ladotaan
-asiahakemistoon. Seuraavassa esimerkissä asiahakemistoon lisätään
-Latex\-/ komento \komento{textbullet}:
+asiahakemistoon.
+
+Seuraavassa esimerkissä asiahakemistoon lisätään kolme eri henkilöä,
+joiden sukunimet ovat joko Varis tai Waris. Kaikki nimet aakkostetaan
+nimen Varis mukaisesti, eli \emph{v} ja \emph{w} katsotaan aakkostuksen
+kannalta samaksi kirjaimeksi. Tämä on tavallinen käytäntö suomalaisten
+sanojen ja nimien aakkostuksessa.\footcite[26]{kt_oik}
+
+\komentoi{index}
+\begin{koodilohkosis}
+\index{Varis, Jukka}
+\index{Varis, Anita@Waris, Anita}
+\index{Varis, Yrjö@Waris, Yrjö}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Waris, Anita, \arabic{page} \\*
+  Varis, Jukka, \arabic{page} \\*
+  Waris, Yrjö, \arabic{page}
+\end{tulossis}
+
+Edellä mainittua aakkostustoimintoa tarvitaan myös silloin, kun
+hakemiston sanojen latomisessa käytetään Latex\-/ komentoja eli asiasana
+ei ole pelkkää tekstiä. Seuraavassa esimerkissä asiahakemistoon lisätään
+Latex\-/ komento \komento{textbullet}. Se aakkostetaan sanan
+''\englanti{textbullet}'' mukaan mutta hakemistoon se ladotaan
+tasalevyisellä fontilla (\komento{texttt}) ja alkuun lisätään kenoviiva
+(\komento{textbackslash}).
 
 \komentoi{index}
 \komentoi{texttt}
@@ -5834,23 +5865,192 @@ Latex\-/ komento \komento{textbullet}:
 \index{textbullet@\texttt{\textbackslash textbullet}}
 \end{koodilohkosis}
 
-Edellisen esimerkin asiasana aakkostetaan sanan
-''\englanti{textbullet}'' mukaan mutta hakemistoon se ladotaan
-tasalevyisellä fontilla (\komento{texttt}) ja alkuun lisätään kenoviiva
-(\komento{textbackslash}). Käytännössä \komento{index}\-/ komentoja ei
-aina kannata kirjoittaa lähdedokumenttiin sellaisenaan, vaan komennon
-voi sisällyttää jonkin toisen komennon määritelmään. Tästä on esimerkki
-luvussa \ref{luku/komennot-abst}.
+Käytännössä \komento{index}\-/ komentoja ei kannata aina kirjoittaa
+lähdedokumenttiin sellaisenaan, vaan komennon voi sisällyttää jonkin
+toisen komennon määritelmään. Tästä on esimerkki luvussa
+\ref{luku/komennot-abst}.
 
-% \index[komennot]{fontit}
-% \index[komennot]{fontit!kirjainperhe}
-% \index[komennot]{fontit!kirjainleikkaus}
+Asiasanat voi järjestää hakemistoon hierarkkisesti eli aihepiirien
+mukaisesti. Se toteutetaan \komento{index}\-/ komennon argumentissa
+\koodi{!}\=/ merkin avulla, jolla erotetaan ylemmäntasoiset käsitteet
+alemmantasoisista. Seuraava esimerkki lisää asiahakemistoon sanan
+''fontit'' ja sen alle kaksi asiasanaa sivunumeroineen:
 
-% @-merkin suojaaminen: "@
-% hierarkkisuus: !
-% fontti: |
-% imakeidx-paketti (sen johdos: indextools): splitindex ja xindy:
-% -shell-escape
+\komentoi{index}
+\begin{koodilohkosis}
+\index{fontit!kirjainperhe}
+\index{fontit!kirjainleikkaus}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  fontit \\*
+  \makebox[\sisennys]{}kirjainleikkaus, \arabic{page} \\*
+  \makebox[\sisennys]{}kirjainperhe, \arabic{page}
+\end{tulossis}
+
+Asiasanahierarkiassa voi olla korkeintaan kolme tasoa, ja tasot
+erotetaan toisistaan \koodi{!}\=/ merkillä. Jokainen \koodi{!}\=/
+merkillä erotettu osa voi sisältää \koodi{@}\=/ merkin, jolla voi
+vaikuttaa sanan aakkostamiseen: ensin mainitaan hakusanasta
+aakkostamisessa käytetty versio ja \koodi{@}\=/ merkin jälkeen annetaan
+hakemistoon ladottava versio.
+
+Kirjoittaja voi vaikuttaa asiasanojen sivunumeroiden latomiseen
+käyttämällä \komento{index}\-/ komennon argumentissa asiasanan perässä
+\koodi{|}\=/ merkkiä ja antamalla sen jälkeen komennon nimen.
+Seuraavassa esimerkissä asiasanan sivunumero ladotaan kursiivilla:
+
+\komentoi{index}
+\begin{koodilohkosis}
+\index{asiasana|textit}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  asiasana, \textit{\arabic{page}}
+\end{tulossis}
+
+\komento{index}\-/ komennon argumenttiin ei kirjoiteta varsinaista
+komentoa (\komento{textit}) vaan ainoastaan komennon nimi \koodi{|}\=/
+merkin jälkeen. Komento voi olla mikä hyvänsä ja sen pitäisi hyväksyä
+ainakin yksi argumentti: sivunumero. Asiahakemistoissa on joskus tapana
+merkitä asiasanan pääasiallinen käsittelysivu eri tavalla, esimerkiksi
+kursiivilla tai lihavoinnilla, ja tämä \koodi{|}\=/ ominaisuus sopii
+siihen.
+
+Yksi hyödyllinen käyttökohde \koodi{|}\=/ ominaisuudelle on viittaus
+toiseen asiasanaan. On määritelty jo valmiiksi komennot \komento{see} ja
+\komento{seealso}, joita voi käyttää \komento{index}\-/ komennossa
+seuraavasti:
+
+\komentoi{index}
+\begin{koodilohkosis}
+\index{fontit}
+\index{kirjainleikkaus|see{fontit}}
+\index{kirjainperhe|seealso{fontit}}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  fontit, \arabic{page} \\*
+  kirjainleikkaus, \textit{\seename} fontit \\*
+  kirjainperhe, \textit{\alsoname} fontit
+\end{tulossis}
+
+Molemmat komennot hyväksyvät kaksi argumenttia, mutta edellisessä
+esimerkissä annettiin vain yksi: \koodi{fontit}. Viimeiseksi
+argumentiksi tulee automaattisesti aina sivunumero, mutta nämä komennot
+jättävät sen huomioimatta. Sivunumeroa ei haluta näkyviin, koska
+tarkoitus on vain lisätä asiahakemistoon viittaus toiseen
+asiasanaan.
+
+Suomen kieliasetuksilla edellä mainitut komennot latovat kursivoidun
+ilmauksen \textit{\seename} tai \textit{\alsoname}. Kielikohtaisen
+määritelmän voi muuttaa kielipaketteihin \paketti{polyglossia} ja
+\paketti{babel} kuuluvan \komento{addto}\-/ komennon avulla. Seuraavassa
+esimerkissä vaikutetaan suomen kieliasetuksiin
+(\komento{captionsfinnish}). Komennot täytyy sijoittaa dokumentin
+esittelyosaan:
+
+\komentoi{addto}
+\komentoi{captionsfinnish}
+\komentoi{renewcommand}
+\komentoi{seename}
+\komentoi{alsoname}
+\begin{koodilohkosis}
+\addto{\captionsfinnish}{
+  \renewcommand{\seename}{katso}
+  \renewcommand{\alsoname}{katso myös}
+}
+\end{koodilohkosis}
+
+Toisaalta kirjoittaja voi määritellä ihan oman komentonsa
+asiasanaviittausten tekemiseen. Oman komennon avulla lopputulokseen voi
+vaikuttaa enemmän. Esimerkissä \ref{esim/see-katso-komento} määritellään
+komento \komentox{katso}, jolla voi toteuttaa viittauksia toisiin
+asiasanoihin. Komento hyväksyy kaksi argumenttia mutta jälkimmäinen eli
+sivunumero jätetään käsittelemättä.
+
+\begin{esimerkki*}
+  \komentoi{newcommand}
+  \komentoi{textrightarrow}
+  \komentoi{index}
+
+\begin{koodilohko}
+\newcommand{\katso}[2]{\textrightarrow{} #1}
+
+% Seuraavat komennot tarvitaan vain kerran dokumentissa, koska ne vain
+% viittaavat toisiin asiasanoihin.
+\index{kirjainleikkaus|katso{fontit}}
+\index{kirjainperhe|katso{fontit}}
+
+% Seuraavassa on esimerkki varsinaisista asiasanoista. Komennot
+% sijoitetaan paikkoihin, joissa aihetta käsitellään.
+\index{fontit!kirjainleikkaus}
+\index{fontit!kirjainperhe}
+\end{koodilohko}
+
+\begin{tulos}
+  fontit \\*
+  \makebox[\sisennys]{}kirjainleikkaus, \arabic{page} \\*
+  \makebox[\sisennys]{}kirjainperhe, \arabic{page} \\*
+  kirjainleikkaus, \textrightarrow{} fontit \\*
+  kirjainperhe, \textrightarrow{} fontit
+\end{tulos}
+
+\caption{Oman \komentox{katso}\-/ komennon määrittely. Komennon nimeä
+  käytetään \komento{index}\-/ komennon argumentissa ja sillä viitataan
+  toisiin asiasanoihin}
+\label{esim/see-katso-komento}
+\end{esimerkki*}
+
+Tavallisesti \komento{index} kirjaa muistiin vain sen sivun, jolla
+komento esiintyy. Jos komento esiintyy usealla peräkkäisellä sivulla,
+hakemistoon ladotaan automaattisesti sivualue, esimerkiksi 53--55.
+
+Aina ei kuitenkaan ole mielekästä ilmaista aiheen käsittelyä usean
+\komento{index}\-/ komennon avulla. Toisinaan voi olla sopivampaa
+määrittää aiheen käsittelyn alku- ja loppukohta. Alkukohta ilmaistaan
+\komento{index}\-/ komennon argumentissa merkkien \koodi{|(} avulla ja
+loppukohta merkkien \koodi{|)} avulla. Jos aloitus ja lopetus sattuvat
+samalle sivulle, hakemistoon ladotaan vain yksi sivunumero. Muussa
+tapauksessa ladotaan sivualue. Seuraavassa on esimerkki aiheen
+käsittelyn alun ja lopun merkitsemiseen:
+
+\komentoi{index}
+\begin{koodilohkosis}
+\index{asiasana|(}  % aiheen käsittely alkaa
+...
+\index{asiasana|)}  % aiheen käsittely loppuu
+\end{koodilohkosis}
+
+\begin{tulossis}
+  asiasana, 53--55
+\end{tulossis}
+
+Edellä mainittujen aloitusmerkkien \koodi{|(} perään voi kirjoittaa
+komennon nimen, jos haluaa vaikuttaa sivunumeroiden latomiseen. Tätä
+käsiteltiin jo edellä, mutta seuraavassa on käytännön esimerkki:
+
+\komentoi{index}
+\begin{koodilohkosis}
+\index{asiasana|(textit}  % aiheen käsittely alkaa
+...
+\index{asiasana|)}        % aiheen käsittely loppuun
+\end{koodilohkosis}
+
+\begin{tulossis}
+  asiasana, \textit{53--55}
+\end{tulossis}
+
+Jos itse asiasanaan täytyy sisällyttää \koodi{@}-, \koodi{!}- tai
+\koodi{|}-merkki, pitää niiden eteen kirjoitta yleislainausmerkki
+(\koodi{\textquotedbl}), joka estää niiden tulkitsemisen
+\komento{index}\-/ komennon erikoismerkiksi.
+
+\subsection{Asiahakemisto ja asetukset}
+
+...
+
+% splitindex ja xindy: -shell-escape
 
 \section{Kuvat}
 \label{luku/grafiikka}

@@ -232,6 +232,7 @@ kie-li-ase-tuk-set
 kie-li-ase-tuk-set-kin
 kie-li-ase-tuk-sia
 kie-li-ase-tuk-siin
+kie-li-ase-tuk-sil-la
 kie-li-ase-tuk-sis-ta
 kie-li-ase-tus-ten
 kie-li-opil-li-sis-ta
@@ -460,6 +461,7 @@ sec-num-depth
 sec-tion
 sec-tion-break
 sec-tion-mark
+see-also
 select-font
 select-lan-guage
 set-cite-style
@@ -481,7 +483,10 @@ si-joit-te-lu-ase-tuk-sia
 single-line-check
 si-sen-nys-ase-tuk-set
 si-sen-nys-asiat
+sivu-alue
+si-vu-alueel-le
 si-vu-alueen
+si-vu-aluei-den
 sivu-koko-ase-tuk-sia
 skaa-laus-ase-tus
 slides

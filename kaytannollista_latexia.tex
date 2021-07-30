@@ -4,7 +4,7 @@
 
 \documentclass{book}
 \usepackage{geometry}
-\usepackage[quiet]{fontspec}
+\usepackage{fontspec}
 \usepackage{polyglossia}
 \usepackage[finnish,showseconds=false]{datetime2}
 \usepackage{ragged2e}
@@ -61,13 +61,13 @@
 \newcommand{\englanti}[1]{\textenglish{#1}}
 \newcommand{\englantik}[1]{\textenglish{\emph{#1}}}
 
-\defaultfontfeatures{Ligatures={TeX, Required, Common}, Numbers=Lowercase}
-
 % Perusfontin on oltava antiikva, ja tekstissä siitä käytetään seuraavia
 % asetuksia: Numbers={Lowercase}, Numbers={Uppercase, SlashedZero},
 % Fractions, pienversaalit, aitoja ylä- ja alaindeksejä.
-\setmainfont {libertinusserif}
-[UprightFont=*-regular,
+\setmainfont {libertinusserif}[
+Ligatures={TeX, Common},
+Numbers=Lowercase,
+UprightFont=*-regular,
 ItalicFont=*-italic,
 SlantedFont=*-regular, SlantedFeatures={FakeSlant=.2},
 BoldFont=*-semibold,
@@ -77,8 +77,10 @@ Extension=.otf]
 
 % Fonttiluvussa viitataan tähän perheeseen siten, että se on antiikvan
 % ja groteskin välimuoto (päätteetön kaksivahva).
-\setsansfont {libertinussans}
-[Scale=MatchLowercase,
+\setsansfont {libertinussans}[
+Scale=MatchLowercase,
+Ligatures={TeX, Common},
+Numbers=Lowercase,
 UprightFont=*-regular,
 ItalicFont=*-italic,
 SlantedFont=*-regular, SlantedFeatures={FakeSlant=.2},
@@ -88,9 +90,12 @@ Extension=.otf]
 
 % Fonttien asetuksia käsittelevässä luvussa viitataan tähän fonttiin ja
 % välistyksen tiivistämiseen (FakeStretch).
-\setmonofont {libertinusmono}
-[Scale=MatchLowercase, Ligatures={TeXReset, NoCommon}, FakeStretch=.8,
-Numbers={Uppercase, SlashedZero}, HyphenChar=-,
+\setmonofont {libertinusmono}[
+Scale=MatchLowercase,
+FakeStretch=.8,
+HyphenChar=-,
+Ligatures={TeXReset, NoCommon},
+Numbers=SlashedZero,
 UprightFont=*-regular,
 ItalicFont=*-italic,
 BoldFont=*-bold,

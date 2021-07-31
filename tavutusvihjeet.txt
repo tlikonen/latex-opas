@@ -210,6 +210,7 @@ ig-nore-spaces-af-ter-end
 imake-idx
 in-col-lec-tion
 in-dex
+index-setup
 index-tools
 in-text-sep
 item-indent
@@ -298,6 +299,7 @@ luku-alueel-la
 luku-aluei-ta
 main-mat-ter
 make-box
+make-index
 make-label
 margin-par
 margin-par-push

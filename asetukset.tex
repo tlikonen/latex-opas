@@ -1688,11 +1688,10 @@ Ligatures={TeXReset, NoCommon}
 
 Valitsin \koodi{Hyphen\-Char} asettaa tavutusmerkin kyseiselle
 kirjainperheelle. Oletuksena se on yhdysmerkki (\=/), mutta merkin
-vaihtaminen muuksi kuin yhdysmerkiksi toimii vain Xelatex\-/kääntäjän
-kanssa, ei esimerkiksi Lualatexilla. Sen sijaan kaikilla kääntäjillä
-tavutuksen voi kytkeä kirjainperheeltä pois, kun antaa arvoksi
-\koodi{None}. Tavutusta käsitellään perusteellisemmin luvussa
-\ref{luku/tavutus}.
+vaihtaminen toimii vain Xelatex\-/kääntäjän kanssa, ei esimerkiksi
+Lualatexilla. Sen sijaan kaikilla kääntäjillä tavutuksen voi kytkeä
+kirjainperheeltä pois, kun antaa arvoksi \koodi{None}. Tavutusta
+käsitellään perusteellisemmin luvussa \ref{luku/tavutus}.
 
 Tasalevyinen kirjainperhe (\komentom{setmonofont}) toimii oletuksena
 hieman eri tavalla. Niissä muun muassa ei ole lainausmerkkien ja
@@ -1709,11 +1708,22 @@ ligatuurit pois päältä asetuksella \koodi{Liga\-tures=\katk No\-Common}.
 Tasalevyisen fontin ajatukseen nimenomaan kuuluu, että merkit ovat
 samanlevyisiä eikä yhden merkin tilaan sovi sulloa useampaa kirjainta.
 
-Oletuksena tavutus on kytketty pois päältä, koska tasalevyistä fonttia
-käytetään tavallisesti tietokoneisiin liittyvien koodien tai vastaavien
-ilmausten latomiseen, eikä niitä haluta yleensä tavuttaa. Tavutuksen saa
-kuitenkin päälle antamalla arvoksi yhdysmerkin (\koodi{Hyphen\-Char=-})
-tai Xelatex\-/kääntäjällä minkä tahansa merkin.
+Oletuksena tavutus on kytketty pois päältä tasalevyiseltä
+kirjainperheeltä, koska sitä käytetään tavallisesti tietokoneisiin
+liittyvien koodien tai vastaavien ilmausten latomiseen, eikä niitä
+haluta yleensä tavuttaa. Tavutuksen saa kuitenkin päälle Xelatexissa
+määrittämällä tavutusmerkiksi esimerkiksi yhdysmerkin
+(\koodi{Hyphen\-Char=-}) tai kaikilla kääntäjillä poistamalla
+tasalevyisen kirjainperheen oletusasetukset ennen sen määrittelyä
+seuraavasti:
+
+\komentoi{defaultfontfeatures}
+\komentoi{ttfamily}
+\komentoi{setmonofont}
+\begin{koodilohkosis}
+\defaultfontfeatures[\ttfamily]{}
+\setmonofont{…}[…]
+\end{koodilohkosis}
 
 Komennolla \komentom{defaultfontfeatures} voi asettaa (joidenkin)
 kirjainperheiden oletusasetukset, kun komennon suorittaa ennen

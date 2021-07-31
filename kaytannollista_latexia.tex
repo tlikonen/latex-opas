@@ -88,12 +88,15 @@ BoldFont=*-bold,
 BoldItalicFont=*-bolditalic,
 Extension=.otf]
 
+% Poistetaan tasalevyiseltä fontilta oletusasetukset. Se muun muassa
+% kytkee tavutuksen päälle, koska oletus on HyphenChar=None.
+\defaultfontfeatures[\ttfamily]{}
+
 % Fonttien asetuksia käsittelevässä luvussa viitataan tähän fonttiin ja
 % välistyksen tiivistämiseen (FakeStretch).
 \setmonofont {libertinusmono}[
 Scale=MatchLowercase,
 FakeStretch=.8,
-HyphenChar=-,
 Ligatures={TeXReset, NoCommon},
 Numbers=SlashedZero,
 UprightFont=*-regular,

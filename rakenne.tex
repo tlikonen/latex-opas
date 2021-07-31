@@ -2085,9 +2085,9 @@ ilmaisemiseen: \komento{frontmatter}, \komento{mainmatter} ja
 varsinaisiin sisältölukuihin ja loppuosaan kuten liitesivuihin ja
 erilaisiin luetteloihin. Lisäksi muissakin dokumenttiluokissa on komento
 \komento{appendix}, jolla voi aloittaa liitesivuja sisältävän osan
-dokumentissa. Näiden komentojen käyttö on vapaaehtoista. Tämän alaluvun
-lopussa käsitellään tyypillisen suomalaisen tietokirjan rakennetta ja
-teknistä toteuttamista.
+dokumentissa. Näiden komentojen käyttö on vapaaehtoista. Luvussa
+\ref{luku/tyypillinen-tietokirja} käsitellään tyypillisen suomalaisen
+tietokirjan rakennetta ja teknistä toteuttamista.
 
 Dokumentin alkuun voi kirjoittaa komennon \komentom{frontmatter}, joka
 asettaa sivunumeroiden tyyliksi roomalaiset numerot (i, ii, iii jne.) ja
@@ -2101,21 +2101,37 @@ varsinaisten sisältölukujen alkuun kirjoittaa komento
 \komentom{mainmatter}, joka nollaa sivunumerolaskurin, asettaa
 numeroinnin tyyliksi arabialaiset numerot (1, 2, 3 jne.) ja kytkee
 päälle lukujen numeroinnin. Sen jälkeen ensimmäinen \komento{chapter}\-/
-komennolla tehty luku on siis ''Luku~1''.
+komennolla tehty luku on siis ''\chaptername~1''.
 
 Sisältösivujen lopussa voi olla komento \komentom{appendix}. Se
 ensinnäkin nollaa \luokka{book}- ja \luokka{report}\-/ luokissa
-päälukujen laskurin (\laskuri{chapter}); \luokka{article}\-/ luokassa se
-nollaa \laskuri{section}\-/ laskurin. Sen lisäksi \komento{appendix}\-/
-komento muuttaa lukujen numerointityyliksi kirjaimet (A, B, C jne.) ja
-päälukujen nimeksi (\komento{chaptername}) ''Liite''. Näin teoksen
-lopussa \komento{appendix}\-/ komennon jälkeen pääluvut tulevat
-nimetyksi liitteiksi: ''Liite~A'', ''Liite~B'' jne.
+päälukujen laskurin \laskuri{chapter}. Sen sijaan \luokka{article}\-/
+luokassa se nollaa \laskuri{section}\-/ laskurin. Sen lisäksi
+\komento{appendix}\-/ komento muuttaa lukujen numerointityyliksi
+kirjaimet (A, B, C jne.) ja päälukujen nimeksi ''\appendixname'', joka
+tulee komennosta \komento{appendixname}. Näin teoksen lopussa
+\komento{appendix}\-/ komennon jälkeen pääluvut tulevat nimetyksi
+uudella tavalla: ''\appendixname~A'', ''\appendixname~B'' jne.
 
-Liitteiden jälkeen voi olla hyödyllistä käyttää komentoa
-\komentom{backmatter}, joka lopettaa päälukujen numeroinnin kokonaan.
-Tähän osaan voisi sijoittaa ainakin asiahakemistot sekä kirjallisuus\-/\
-tai lähdeluettelon.
+Sisältösivujen ja mahdollisten liitteiden jälkeen voi olla hyödyllistä
+käyttää komentoa \komentom{backmatter}, joka lopettaa päälukujen
+numeroinnin kokonaan. Tähän osaan voisi sijoittaa ainakin asiahakemistot
+sekä kirjallisuus\-/\ tai lähdeluettelon.
+
+\subsection{Tyypillinen tietokirjan rakenne}
+\label{luku/tyypillinen-tietokirja}
+
+Latexin komennot \komento{frontmatter} ja \komento{mainmatter} (luku
+\ref{luku/frontmainbackmatter}) eivät ihan vastaa suomalaista
+tietokirjojen käytäntöä. Suomessa teoksen alun sivunumeroita ei ole
+tapana ilmaista roomalaisilla numeroilla eikä sivunumerointia nollata
+sisältölukujen alkaessa. Esimerkkiin \ref{esim/tietokirjojen-rakenne} on
+koottu varsin tyypillinen suomalainen tietokirjojen rakenne. Esimerkissä
+ei käytetä lainkaan komentoja \komento{frontmatter},
+\komento{mainmatter} eikä \komento{backmatter}, vaan lukujen
+numerointiin vaikutetaan suoraan asettamalla laskuriin
+\laskuri{secnumdepth} sopiva arvo. Tätä laskuria käsitellään otsikoiden
+yhteydessä luvussa \ref{luku/otsikot-numerointi}.
 
 \begin{esimerkki*}
   \komentoi{documentclass}
@@ -2180,17 +2196,6 @@ tai lähdeluettelon.
   \label{esim/tietokirjojen-rakenne}
 \end{esimerkki*}
 
-Edellä mainitut komennot eivät ihan vastaa suomalaista tietokirjojen
-käytäntöä. Suomessa teoksen alun sivunumeroita ei ole tapana ilmaista
-roomalaisilla numeroilla eikä numerointia nollata sisältölukujen
-alkaessa. Esimerkkiin \ref{esim/tietokirjojen-rakenne} on koottu varsin
-tyypillinen suomalainen tietokirjojen rakenne. Esimerkissä ei käytetä
-lainkaan komentoja \komento{frontmatter}, \komento{mainmatter} eikä
-\komento{backmatter}, vaan esimerkiksi lukujen numerointiin vaikutetaan
-suoraan asettamalla laskuriin \laskuri{secnumdepth} sopiva arvo. Tätä
-laskuria käsitellään otsikoiden yhteydessä luvussa
-\ref{luku/otsikot-numerointi}.
-
 Suomalaisissa kirjoissa sivunumeroinnin laskuri alkaa ensimmäiseltä
 sivulta, johon on painettu jotakin, yleensä pelkkä teoksen nimi tai
 kirjailijan nimi. Sivu~1 ei ole vielä kirjan kansi, koska kirjapainossa
@@ -2209,8 +2214,8 @@ asioita käsitellään tarkemmin luvussa \ref{luku/ylä-ala-tunnisteet}.
 Mikäli haluaa, että sisällysluettelossa ei vielä näytetä sivunumeroita,
 joutuu dokumenttiluokissa \luokka{book} ja \luokka{report} käyttämään
 vähän epätavallista keinoa halutun lopputuloksen saavuttamiseksi.
-Sellainen neuvotaan sisällysluettelon käsittelyn yhteydessä luvussa
-\ref{luku/sisällysluettelo}.
+Sellainen neuvotaan sisällysluettelon käsittelyn yhteydessä esimerkissä
+\ref{esim/sisällysluettelo-empty}.
 
 \section{Sisällysluettelo}
 \label{luku/sisällysluettelo}

@@ -6011,13 +6011,13 @@ Tavallisesti \komento{index} kirjaa muistiin vain sen sivun, jolla
 komento esiintyy. Jos komento esiintyy usealla peräkkäisellä sivulla,
 hakemistoon ladotaan automaattisesti sivualue, esimerkiksi 53--55.
 
-Aina ei kuitenkaan ole mielekästä ilmaista aiheen käsittelyä usean
-\komento{index}\-/ komennon avulla. Toisinaan voi olla sopivampaa
-määrittää aiheen käsittelyn alku- ja loppukohta. Alkukohta ilmaistaan
-\komento{index}\-/ komennon argumentissa merkkien \koodi{|(} avulla ja
-loppukohta merkkien \koodi{|)} avulla. Jos aloitus ja lopetus sattuvat
-samalle sivulle, hakemistoon ladotaan vain yksi sivunumero. Muussa
-tapauksessa ladotaan sivualue. Seuraavassa on esimerkki aiheen
+Aina ei kuitenkaan ole mielekästä ilmaista aiheen käsittelyä
+yksittäisten \komento{index}\-/ komentojen avulla. Toisinaan voi olla
+sopivampaa määrittää aiheen käsittelyn alku- ja loppukohta. Alkukohta
+ilmaistaan \komento{index}\-/ komennon argumentissa merkkien \koodi{|(}
+avulla ja loppukohta merkkien \koodi{|)} avulla. Jos aloitus ja lopetus
+sattuvat samalle sivulle, hakemistoon ladotaan vain yksi sivunumero.
+Muussa tapauksessa ladotaan sivualue. Seuraavassa on esimerkki aiheen
 käsittelyn alun ja lopun merkitsemiseen:
 
 \komentoi{index}
@@ -6039,17 +6039,18 @@ käsiteltiin jo edellä, mutta seuraavassa on käytännön esimerkki:
 \begin{koodilohkosis}
 \index{asiasana|(textit}  % aiheen käsittely alkaa
 ...
-\index{asiasana|)}        % aiheen käsittely loppuun
+\index{asiasana|)}        % aiheen käsittely loppuu
 \end{koodilohkosis}
 
 \begin{tulossis}
   asiasana, \textit{53--55}
 \end{tulossis}
 
-Jos itse asiasanaan täytyy sisällyttää \koodi{@}-, \koodi{!}- tai
-\koodi{|}-merkki, pitää niiden eteen kirjoitta yleislainausmerkki
-(\koodi{\textquotedbl}), joka estää niiden tulkitsemisen
-\komento{index}\-/ komennon erikoismerkiksi.
+Jos itse asiasanaan täytyy sisällyttää edellä mainittuja
+\komento{index}\-/ komennon erikoismerkkejä (\koodi{@!|}), pitää niiden
+eteen kirjoitta yleislainausmerkki (\koodi{\textquotedbl}). Se estää
+seuraavan merkin tulkitsemisen \komento{index}\-/ komennon
+erikoismerkiksi.
 
 \subsection{Asiahakemisto ja asetukset}
 

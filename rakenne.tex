@@ -5818,6 +5818,7 @@ Dokumentin lopussa komennolla \komento{printindex} ladotaan varsinaiset
 hakemistot. Näitä komentoja käsitellään erillisissä alaluvuissa.
 
 \subsection{Asiahakemistojen määrittely}
+\label{luku/asiasanat-määrittely}
 
 ...
 
@@ -5835,6 +5836,17 @@ tavalla:
 \begin{koodilohkosis}
 Yhteen \index{kirjainperhe} kirjainperheeseen kuuluu tavallisesti
 useita \index{kirjainleikkaus} leikkauksia.
+\end{koodilohkosis}
+
+\komento{index}\-/ komennolle voi antaa yhden valinnaisen argumentin.
+Sitä tarvitaan silloin, kun asiasana halutaan lisätä tiettyyn,
+määrittelyn yhteydessä nimettyyn hakemistoon (luku
+\ref{luku/asiasanat-määrittely}). Jos esimerkiksi dokumentissa on
+määritelty asiahakemisto \komento{makeindex}\komentoargv{name=\katk
+  henkilöt}, lisättäisiin asiasana kyseiseen hakemistoon seuraavasti:
+
+\begin{koodilohkosis}
+\index[henkilöt]{Waltari, Mika}
 \end{koodilohkosis}
 
 Asiahakemistot aakkostetaan automaattisesti, mutta yksittäisten sanojen

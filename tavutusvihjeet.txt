@@ -210,9 +210,11 @@ ig-nore-spaces-af-ter-end
 imake-idx
 in-col-lec-tion
 in-dex
+index-name
 index-setup
 index-tools
 in-text-sep
+in-toc
 item-indent
 item-ize
 item-sep
@@ -409,6 +411,7 @@ per-page
 pe-rus-aja-tus
 pe-rus-ase-tuk-set
 pe-rus-ase-tuk-sia
+pe-rus-asiat
 pe-rus-asioi-ta
 pe-rus-osas-ta
 pe-rus-osat

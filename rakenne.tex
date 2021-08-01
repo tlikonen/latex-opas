@@ -5793,10 +5793,10 @@ aakkostustapoja. Lisätietoa saa paketin ohjekirjasta.%
 Asiahakemistot ovat asiasanojen eli tärkeiden käsitteiden tai
 henkilöiden luetteloita, ja ne ovat yleensä tietokirjan viimeisillä
 sivuilla. Kunkin hakemiston asiasanat ovat aakkosjärjestyksessä, ja
-jokaisen sanan kohdalla luetellaan sivunumerot, joilla kyseistä asiaa
+jokaisen sanan perässä luetellaan sivunumerot, joilla kyseistä asiaa
 käsitellään. Asiahakemistojen tarkoituksena on helpottaa tiedon
-löytämistä. Tämän oppaan luku asiahakemistot alkavat sivulta
-\pageref{luku/asiahakemisto}.
+löytämistä. Tämän oppaan luku \enquote{\nameref{luku/asiahakemisto}}
+alkaa sivulta \pageref{luku/asiahakemisto}.
 
 Latex tarvitsee asiahakemistojen tekemiseen makropaketin. Niitä tehty
 useampia, mutta parhaita taitavat olla
@@ -5805,22 +5805,118 @@ useampia, mutta parhaita taitavat olla
 paketti: \paketti{indextools} perustuu \paketti{imakeidx}\-/ pakettiin
 ja korjaa joitakin sen puutteita.
 
-Kirjoittajan kannalta asiahakemiston toteutuksen perusajatus on
-yksinkertainen: Lähdetiedoston alussa komennolla \komento{makeindex}
-määritellään asiahakemistot. Dokumentin sisältösivuilla
-\komento{index}\-/ komennolla lisätään haluttuja asiasanoja
-hakemistoihin. Dokumentin lopussa komennolla \komento{printindex}
-ladotaan varsinaiset hakemistot. Näitä komentoja käsitellään erillisissä
-alaluvuissa.
+\begin{esimerkki*}
+  \komentoi{documentclass}
+  \komentoi{index}
+  \komentoi{makeindex}
+  \komentoi{printindex}
+  \komentoi{usepackage}
+  \luokkai{article}
+  \pakettii{indextools}
+  \ymparistoi{document}
 
-\subsection{Asiahakemistojen määrittely}
-\label{luku/asiasanat-määrittely}
+\begin{koodilohko}
+\documentclass{article}
+\usepackage{indextools}
+\makeindex
+
+\begin{document}
+
+\index{erilaisia} \index{asiasanoja}
 
 ...
 
-% \makeindex
+\printindex
+
+\end{document}
+\end{koodilohko}
+  \caption{Asiahakemistojen toteutuksen perusteet}
+  \label{esim/asiasanat-perus}
+\end{esimerkki*}
+
+Asiahakemiston toteutuksen perusajatus on yksinkertainen: Lähdetiedoston
+alussa komennolla \komento{makeindex} määritellään asiahakemistot.
+Dokumentin sisältösivuilla \komento{index}\-/ komennolla lisätään
+haluttuja asiasanoja hakemistoihin. Dokumentin lopussa komennolla
+\komento{printindex} ladotaan varsinaiset hakemistot. Näitä komentoja
+käsitellään tarkemmin erillisissä alaluvuissa, mutta esimerkissä
+\ref{esim/asiasanat-perus} ovat perusasiat tiiviisti.
+
+\subsection{Asiahakemistojen määrittely KESKEN}
+\label{luku/asiasanat-määrittely}
+
+Ennen asiasanojen ja \=/hakemistojen käyttöä täytyy hakemistot
+määritellä. Yksinkertaisimmillaan määrittelyksi riittää pelkkä yksi
+\komento{makeindex}\-/ komento lähdedokumentin esittelyosassa, kuten
+esimerkissä \ref{esim/asiasanat-perus} on tehty. Jos haluaa vaikuttaa
+asetuksiin tai jos dokumenttiin tarvitaan useampia asiahakemistoja,
+täytyy tietää \komento{makeindex}\-/ komennosta enemmän. Tässä luvussa
+käsitellään kyseisen komennon muita ominaisuuksia pakettien
+\paketti{indextools} ja \paketti{imakeidx} näkökulmasta.
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Valitsin} & \ots{Merkitys} \\
+    \midrule
+    \rivi{name}{asiahakemiston tekninen nimi}
+    \rivi{title}{asiahakemistolle ladottava otsikko}
+    \rivi{intoc}{sisällysluetteloon lisääminen}
+    \rivi{columns}{asiahakemiston sarakkeiden lukumäärä}
+    \rivi{columnsep}{asiahakemiston sarakkeiden väli (mitta)}
+    \rivi{columnseprule}{pystyviiva sarakkeiden väliin}
+    \rivi{program}{asiahakemiston tekemisestä vastaava ohjelma}
+    \rivi{options}{ohjelman komentorivin valitsimia}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{\komento{makeindex}\-/ komennon valitsimia}
+  \label{tlk/makeindex-valitsimia}
+}
+
+\komento{makeindex}\-/ komennolle voi antaa yhden valinnaisen
+argumentin, joka voi sisältää useita pilkulla toisistaan erotettuja
+valitsimia ja niiden arvoja. Valitsimia on koottu taulukkoon
+\ref{tlk/makeindex-valitsimia}.
+
+Valitsin \koodi{name} on asiahakemiston tekninen nimi, jota käytetään
+Latexissa sisäisesti. Valitsinta ei tarvitse käyttää, jos tarvitaan vain
+yksi asiahakemisto. Tällöin nimeksi tulee sama kuin Latex\-/
+lähdedokumentin eli tiedoston nimi. Jos asiahakemistoja tarvitaan
+useita, on järkevää nimetä jokainen erikseen \koodi{name}\-/ valitsimen
+avulla. Seuraavassa esimerkissä määritellään kolme eri hakemistoa, jotka
+voisivat olla Latexin komennoille, mitoille ja laskureille:
+
+\komentoi{makeindex}
+\begin{koodilohkosis}
+\makeindex[name=komennot, title=Komennot, colums=2, intoc]
+\makeindex[name=mitat,    title=Mitat,    colums=2, intoc]
+\makeindex[name=laskurit, title=Laskurit, colums=2, intoc]
+\end{koodilohkosis}
+
+\komento{makeindex}\-/ komennon valitsin \koodi{title} antaa otsikon
+hakemistolle, joka ladotaan \komento{printindex}\-/ komennolla (luku
+\ref{luku/asiasanat-asetukset}). Jos \koodi{title}\-/ valitsinta ei ole
+annettu, otsikko tulee komennosta \komento{indexname}, joka puolestaan
+määräytyy kieliasetusten perusteella. Se on \paketti{polyglossia}\-/
+kielipaketissa suomen kieliasetuksilla ''\indexname''.
+
+Jos valitsin \koodi{intoc} on mukana, kyseinen asiahakemisto eli sen
+otsikko lisätään myös sisällysluetteloon. Valitsimella \koodi{columns}
+asetetaan hakemiston sarakkeiden lukumäärää ja valitsimella
+\koodi{columnsep} mitta, joka on sarakkeiden välinen tyhjä tila.
+Sarakkeiden väliin saa pystyviivaan antamalla valitsimen
+\koodi{columnseprule}.
+
+% program, options
+
+Muita hakemistojen latomiseen liittyviä asetuksia käsitellään luvussa
+\ref{luku/asiasanat-asetukset}.
 
 \subsection{Asiasanojen lisääminen}
+\label{luku/asiasanat-lisääminen}
 
 Asiasanat lisätään komennolla \komento{index}, joka sijoitetaan
 lähdedokumentissa juuri siihen kohtaan, jossa kyseistä asiaa
@@ -5836,14 +5932,20 @@ useita \index{kirjainleikkaus} leikkauksia.
 
 \komento{index}\-/ komennolle voi antaa yhden valinnaisen argumentin.
 Sitä tarvitaan silloin, kun asiasana halutaan lisätä tiettyyn,
-määrittelyn yhteydessä nimettyyn hakemistoon (luku
-\ref{luku/asiasanat-määrittely}). Jos esimerkiksi dokumentissa on
-määritelty asiahakemisto \komento{makeindex}\komentoargv{name=\katk
-  henkilöt}, lisättäisiin asiasana kyseiseen hakemistoon seuraavasti:
+määrittelyn yhteydessä \koodi{name}\-/ valitsimella nimettyyn
+hakemistoon (luku \ref{luku/asiasanat-määrittely}). Jos esimerkiksi
+dokumentissa on määritelty asiahakemisto
+\komento{makeindex}\komentoargv{name=\katk henkilöt}, lisättäisiin
+asiasana kyseiseen hakemistoon seuraavasti:
 
 \begin{koodilohkosis}
 \index[henkilöt]{Waltari, Mika}
 \end{koodilohkosis}
+
+Tämän luvun muissa esimerkeissä ei yleensä käytetä \komento{index}\-/
+komennon valinnaista argumenttia. Argumentti on kuitenkin tarpeen aina,
+kun halutaan lisätä asiasanoja tiettyyn, määrittelyn yhteydessä
+nimettyyn hakemistoon.
 
 Asiahakemistot aakkostetaan automaattisesti, mutta yksittäisten sanojen
 aakkostustapaan voi vaikuttaa käyttämällä \koodi{@}\=/ merkkiä
@@ -6069,9 +6171,11 @@ seuraavan merkin tulkitsemisen \komento{index}\-/ komennon
 erikoismerkiksi.
 
 \subsection{Asiahakemisto ja asetukset}
+\label{luku/asiasanat-asetukset}
 
 ...
 
+% \indexsetup
 % splitindex ja xindy: -shell-escape
 
 \section{Kuvat}

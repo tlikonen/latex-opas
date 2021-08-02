@@ -45,13 +45,24 @@
 % \geometry{ papersize={158mm, 220mm}, layout=a5paper, layoutoffset={5mm,
 %     5mm}, showcrop }
 
+\urlstyle{sf}
+\newcommand{\kulmaurl}[1]
+{\href{#1}{\guilsinglleft\nolinkurl{#1}\guilsinglright}}
+\newcommand{\kulmasp}[1]
+{\href{mailto:#1}{\guilsinglleft\nolinkurl{#1}\guilsinglright}}
+
 \input{versio}
+
+\newcommand{\otsikko}{Käytännöllistä Latexia}
+\newcommand{\alaotsikko}{Latex-ladontajärjestelmän opas}
+\newcommand{\tekija}{Teemu Likonen}
+\newcommand{\tekijat}{Teemu Likonen \kulmasp{tlikonen@iki.fi}}
 
 \hypersetup{ hidelinks, bookmarksopen, bookmarksnumbered,
   pdfinfo={
-    Title={Käytännöllistä Latexia},
-    Subject={Latex-ladontajärjestelmän opas, versio \versio},
-    Author={Teemu Likonen <tlikonen@iki.fi>}
+    Title={\otsikko},
+    Subject={\alaotsikko, versio \versio},
+    Author={\tekija}
   }
 }
 
@@ -125,12 +136,6 @@ Extension=.otf]
 \newcommand{\gemenanum}{\addfontfeatures{Numbers=Lowercase}}
 \newcommand{\versaalinum}{\addfontfeatures{Numbers=Uppercase}}
 \newcommand{\murtoluku}[2]{{\addfontfeatures{Fractions=On}#1/#2}}
-
-\urlstyle{sf}
-\newcommand{\kulmaurl}[1]
-{\href{#1}{\guilsinglleft\nolinkurl{#1}\guilsinglright}}
-\newcommand{\kulmasp}[1]
-{\href{mailto:#1}{\guilsinglleft\nolinkurl{#1}\guilsinglright}}
 
 \setlength{\emergencystretch}{1em}
 
@@ -396,7 +401,7 @@ columnsep=1em]
 
   \setlength{\parindent}{0pt}
 
-  \fontsize{16bp}{16bp}\rmfamily Teemu Likonen
+  \fontsize{16bp}{16bp}\rmfamily \tekija
 
   \fontsize{52bp}{52bp}\sffamily\bfseries%
   \hspace{-3bp}%
@@ -413,7 +418,7 @@ columnsep=1em]
 {
 
   \raggedleft
-  Latex-ladontajärjestelmän opas \\
+  \alaotsikko \\
   Versio \versio
 
 }
@@ -428,9 +433,9 @@ columnsep=1em]
   \setlength{\parindent}{0em}
   \setlength{\parskip}{1.2ex plus .1ex}
 
-  \section*{Käytännöllistä Latexia}
+  \section*{\otsikko}
 
-  \textsc{Tekijä:} Teemu Likonen \kulmasp{tlikonen@iki.fi}
+  \textsc{Tekijä:} \tekijat
 
   \textsc{Versio:} \versio
 

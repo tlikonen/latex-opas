@@ -564,8 +564,10 @@ text-quote-single
 text-sub-script
 text-super-script
 text-width
+the-author
 the-bib-li-og-ra-phy
 the-chapter
+the-date
 the-foot-note
 the-mp-foot-note
 the-page

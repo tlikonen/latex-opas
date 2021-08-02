@@ -1616,15 +1616,16 @@ Edellisen esimerkin komentojen argumentissa voi käyttää komentoa
 Komennolle annetaan argumentiksi lyhyehkö teksti eli kiitosviesti, joka
 tulisi näkymään sivulla alaviitteessä.
 
-Komennot eivät kuitenkaan itse vielä lado mitään tekstiä dokumenttiin.
-Ne vain tallentavat perustiedot muistiin mahdollista myöhempää käyttöä
-varten. Vasta komennolla \komentom{maketitle} perustiedot ladotaan
-mukaan dokumenttiin. Tiedot voivat näkyä ensimmäisen sisältösivun alussa
-tai erillisellä kansisivulla; se riippuu dokumenttiluokan asetuksista ja
-valitsimista \koodi{titlepage} ja \koodi{notitlepage}. Se, kumpi asetus
-on oletuksena päällä, vaihtelee eri dokumenttiluokissa.
-Dokumenttiluokkia ja niiden asetuksia käsitellään tarkemmin luvussa
-\ref{luku/dokumenttiluokat}.
+Komennot eivät itse vielä lado mitään tekstiä dokumenttiin. Ne vain
+tallentavat perustiedot muistiin mahdollista myöhempää käyttöä varten.
+Komennolla \komentom{maketitle} voi latoa kaikki edellä mainitut tiedot.
+Ne voivat näkyä ensimmäisen sisältösivun alussa tai erillisellä
+kansisivulla; se riippuu dokumenttiluokan asetuksista ja valitsimista
+\koodi{titlepage} ja \koodi{notitlepage}. Se, kumpi asetus on oletuksena
+päällä, vaihtelee eri dokumenttiluokissa. Dokumenttiluokkia ja niiden
+asetuksia käsitellään tarkemmin luvussa \ref{luku/dokumenttiluokat}.
+Yksittäiset perustiedot saa ladottua seuraavilla komennoilla:
+\komento{thetitle}, \komento{theauthor} ja \komento{thedate}.
 
 Perustietokomentoihin \komento{title}, \komento{author} ja
 \komento{date} ei ole tarkoitus sisällyttää kovin monimutkaisia

@@ -379,6 +379,14 @@ columnsep=1em]
 {~\small\titlerule*[3mm]{.}\contentspage}
 []
 
+\titlecontents*{subsubsection}
+[18mm]
+{\rmfamily\footnotesize}
+{\thecontentslabel. }
+{}
+{ (\thecontentspage)}
+[ -- ][.]
+
 \regtotcounter{chapter}
 
 \begin{document}
@@ -486,7 +494,7 @@ columnsep=1em]
 
 \pagestyle{plain}
 \pdfbookmark[0]{Sisällys}{sivu/sisällys}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 \tableofcontents
 
 \setcounter{secnumdepth}{-1}

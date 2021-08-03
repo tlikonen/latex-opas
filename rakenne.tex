@@ -6191,13 +6191,86 @@ eteen kirjoitta yleislainausmerkki (\koodi{\textquotedbl}). Se estää
 seuraavan merkin tulkitsemisen \komento{index}\-/ komennon
 erikoismerkiksi.
 
-\subsection{Asiahakemisto ja asetukset}
+\subsection{Hakemiston latominen ja asetukset KESKEN}
 \label{luku/asiasanat-asetukset}
 
-...
+Hakemistot ladotaan komennolla \komento{printindex}. Tyypillisesti
+komento sijaitsee dokumentin lopussa eli lähinnä artikkelin tai
+tietokirjan viimeisillä sivuilla. Jos komennon suorittaa ilman
+argumentteja, se latoo oletushakemiston eli sen, jolle ei ole annettu
+teknistä nimeä \komento{makeindex}\-/ komennon \koodi{name}\-/
+valitsimella (luku \ref{luku/asiasanat-määrittely}). Komennolle voi
+antaa hakasulkeissa yhden valinnaisen argumentin, joka ilmaisee
+ladottavan hakemiston teknisen nimen, esimerkiksi:
 
-% \indexsetup
-% splitindex ja xindy: -shell-escape
+\komentoi{printindex}
+\begin{koodilohkosis}
+\printindex            % Latoo nimeämättömän hakemiston.
+\printindex[henkilöt]  % Latoo hakemiston nimeltä ”henkilöt”.
+\end{koodilohkosis}
+
+Luvussa luku \ref{luku/asiasanat-määrittely} käsitellään yksittäisten
+hakemistojen asetuksia, mutta \komento{indexsetup}\-/ komennolla voi
+määrittää kaikkia hakemistoja koskevia yleisempiä asetuksia. Komennolle
+annetaan yksi argumentti, joka voi sisältää useita pilkuilla erotettuja
+valitsimia ja niiden arvoja. Valitsimia on koottu taulukkoon
+\ref{tlk/indexsetup-valitsimia}, ja seuraavassa on käytännön esimerkki:
+
+\begin{koodilohkosis}
+\indexsetup{level=\section*, noclearpage}
+\end{koodilohkosis}
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+  \begin{tabularx}{\linewidth}{lL}
+    \toprule
+    \ots{Valitsin} & \ots{Merkitys ja vaihtoehtoja} \\
+    \midrule
+    \rivi{level}{Hakemistojen otsikkokomento: \komento{chapter*},
+      \komento{chapter}, \komento{section*}, \komento{section} ym.}
+    \rivi{toclevel}{Hakemiston taso sisällysluettelossa:
+      \koodi{chapter}, \koodi{section} ym.}
+    \rivi{noclearpage}{Ei automaattista sivunvaihtoa hakemistojen
+      alussa.}
+    \rivi{firstpagestyle}{Hakemiston ensimmäisen sivun sivutyyli:
+      \koodi{plain}, \koodi{empty} ym.}
+    \bottomrule
+  \end{tabularx}
+}{
+  \caption{\komento{indexsetup}\-/ komennon valitsimia, joilla
+    vaikutetaan kaikkien asiahakemistojen latomiseen}
+  \label{tlk/indexsetup-valitsimia}
+}
+
+Valitsimen \koodi{level} arvoksi annetaan tyypillisesti otsikkokomento,
+joka suoritetaan kunkin hakemiston alussa. Itse otsikon tekstin voi
+määritellä \komento{makeindex}\-/ komennon \koodi{title}\-/ valitsimella
+kullekin hakemistolle erikseen. Oletusarvo on dokumenttiluokkakohtainen
+korkein otsikkotaso eli \komento{chapter*} tai \komento{section*}. Jos
+arvoksi antaa tähdettömän otsikkokomennon kuten \komento{chapter}, se
+luo automaattisesti merkinnän sisällysluetteloon. Silloin ei kannata
+käyttää \komento{makeindex}\-/ komennon \koodi{intoc}\-/ valitsinta.
+
+Käytännössä \koodi{level}\-/ valitsimen arvoksi voi antaa minkä hyvänsä
+komennon, joka hyväksyy yhden argumentin eli kyseisen hakemiston
+otsikkotekstin. Kirjoittaja voi siis asettaa tähän oman komentonsa,
+jonka määritelmässä mahdollisesti suoritetaan muutakin kuin pelkkä
+otsikkokomento. \koodi{toclevel}\-/ valitsimella ilmaistaan hakemistojen
+taso sisällysluettelossa. Valitsimen arvoksi annetaan otsikkokomentojen
+nimi kuten \koodi{section} tai \koodi{subsection}.
+
+Oletuksena jokaisen asiahakemiston alussa suoritetaan sivunvaihtokomento
+\komento{clearpage}. Käyttämällä valitsinta \koodi{noclearpage} estetään
+automaattinen sivunvaihto. Valitsimella \koodi{firstpagestyle} asetetaan
+kunkin asiahakemiston ensimmäisen sivun sivutyyli (luku
+\ref{luku/ylä-ala-tunnisteet}). Oletusarvo on \koodi{plain} eli
+tavallinen, oletuksena pelkän sivunumeron sisältävä sivutyyli. Tämä
+valitsin ei ole käytössä, jos ladattuna on paketti \paketti{fancyhdr}.
+
+% \indexprologue[spacing]{text} % vaikuttaan seuraavaan \printindex'iin
+% \printindex
+% \usepackage: splitindex ja xindy: -shell-escape
 
 \section{Kuvat}
 \label{luku/grafiikka}

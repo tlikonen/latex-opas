@@ -146,6 +146,7 @@ fcolor-box
 fig-ure
 fig-ure-name
 fig-ures
+first-page-style
 float
 Float-Bar-rier
 float-box
@@ -282,6 +283,7 @@ left-margin
 left-mark
 let-ter
 lett-rine
+level
 line-spread
 line-width
 list
@@ -353,6 +355,7 @@ new-line
 new-page
 ni-men-omaan
 no-cite
+no-clear-page
 no-club
 no-in-dent
 no-indent-after
@@ -594,6 +597,7 @@ title-sec
 title-spacing
 title-toc
 toc-depth
+toc-level
 top-frac-tion
 top-number
 top-rule

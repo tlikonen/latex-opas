@@ -291,6 +291,7 @@ list-of-fig-ures
 list-of-tables
 list-par-indent
 list-table-name
+lisä-omi-nai-suu-den
 lisä-vaih-to-eh-toa
 lohko-lai-naus-ympä-ris-töt
 long-table
@@ -382,6 +383,7 @@ ole-tus-mitta-yk-sik-kö-nä
 one-column
 one-side
 on-line
+op-tions
 other-lan-guage
 page
 page-break
@@ -428,6 +430,7 @@ poly-glos-sia
 por-trait
 print-bib-li-og-ra-phy
 print-index
+pro-gram
 pro-tect
 pro-vide-com-mand
 pub-lish-er

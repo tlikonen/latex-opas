@@ -5843,7 +5843,7 @@ haluttuja asiasanoja hakemistoihin. Dokumentin lopussa komennolla
 käsitellään tarkemmin erillisissä alaluvuissa, mutta esimerkissä
 \ref{esim/asiasanat-perus} ovat perusasiat tiiviisti.
 
-\subsection{Asiahakemistojen määrittely KESKEN}
+\subsection{Asiahakemistojen määrittely}
 \label{luku/asiasanat-määrittely}
 
 Ennen asiasanojen ja \=/hakemistojen käyttöä täytyy hakemistot
@@ -5852,13 +5852,16 @@ määritellä. Yksinkertaisimmillaan määrittelyksi riittää pelkkä yksi
 esimerkissä \ref{esim/asiasanat-perus} on tehty. Jos haluaa vaikuttaa
 asetuksiin tai jos dokumenttiin tarvitaan useampia asiahakemistoja,
 täytyy tietää \komento{makeindex}\-/ komennosta enemmän. Tässä luvussa
-käsitellään kyseisen komennon muita ominaisuuksia pakettien
-\paketti{indextools} ja \paketti{imakeidx} näkökulmasta.
+käsitellään \komento{makeindex}\-/ komennon muita ominaisuuksia
+pakettien \paketti{indextools} ja \paketti{imakeidx} näkökulmasta.
+Komennolla vaikutetaan yksittäisen hakemiston ominaisuuksiin. Yleisiä,
+kaikkien hakemistojen latomiseen liittyviä asetuksia käsitellään luvussa
+\ref{luku/asiasanat-asetukset}.
 
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
-  \begin{tabular}{ll}
+  \begin{tabularx}{\linewidth}{lL}
     \toprule
     \ots{Valitsin} & \ots{Merkitys} \\
     \midrule
@@ -5868,10 +5871,11 @@ käsitellään kyseisen komennon muita ominaisuuksia pakettien
     \rivi{columns}{asiahakemiston sarakkeiden lukumäärä}
     \rivi{columnsep}{asiahakemiston sarakkeiden väli (mitta)}
     \rivi{columnseprule}{pystyviiva sarakkeiden väliin}
-    \rivi{program}{asiahakemiston tekemisestä vastaava ohjelma}
+    \rivi{program}{asiahakemiston tekemisestä vastaava ohjelma:
+      \koodi{makeindex} (oletus), \koodi{xindy} ym.}
     \rivi{options}{ohjelman komentorivin valitsimia}
     \bottomrule
-  \end{tabular}
+  \end{tabularx}
 }{
   \caption{\komento{makeindex}\-/ komennon valitsimia}
   \label{tlk/makeindex-valitsimia}
@@ -5901,8 +5905,9 @@ voisivat olla Latexin komennoille, mitoille ja laskureille:
 hakemistolle, joka ladotaan \komento{printindex}\-/ komennolla (luku
 \ref{luku/asiasanat-asetukset}). Jos \koodi{title}\-/ valitsinta ei ole
 annettu, otsikko tulee komennosta \komento{indexname}, joka puolestaan
-määräytyy kieliasetusten perusteella. Se on \paketti{polyglossia}\-/
-kielipaketissa suomen kieliasetuksilla ''\indexname''.
+määräytyy kieliasetusten perusteella (luku \ref{luku/kieliasetukset}).
+Se on \paketti{polyglossia}\-/ kielipaketissa suomen kieliasetuksilla
+''\indexname''.
 
 Jos valitsin \koodi{intoc} on mukana, kyseinen asiahakemisto eli sen
 otsikko lisätään myös sisällysluetteloon. Valitsimella \koodi{columns}
@@ -5911,10 +5916,25 @@ asetetaan hakemiston sarakkeiden lukumäärää ja valitsimella
 Sarakkeiden väliin saa pystyviivaan antamalla valitsimen
 \koodi{columnseprule}.
 
-% program, options
+Asiahakemiston järjestelystä vastaa erillinen tietokoneohjelma, joka
+suoritetaan automaattisesti lähdedokumentin kääntämisen yhteydessä.
+Ohjelmalle on olemassa pari vaihtoehtoa, ja sen voi valita valitsimella
+\koodi{program}. Tärkeimmät vaihtoehdot ovat \koodi{makeindex} (oletus)
+ja \koodi{xindy}, joka käytännössä suorittaa \koodi{texindy}\-/ nimisen
+ohjelman. Näillä ohjelmilla on omat ohjekirjansa, joita pääsee lukemaan
+GNU/\katk Linux\-/ järjestelmissä \koodi{man}\-/ komennolla. Jos käyttää
+vaihtoehtoa \koodi{program=\katk xindy}, täytyy Latexin kääntäjälle
+(\koodi{lualatex} tai \koodi{xelatex}) antaa komentorivivalitsin
+\koodi{\=/shell-escape}, joka kytkee päälle erään
+lisäominaisuuden.\footnote{Lisätietoa \koodi{tex}\-/ komennon
+  ohjekirjasta: \koodi{man tex}.}
 
-Muita hakemistojen latomiseen liittyviä asetuksia käsitellään luvussa
-\ref{luku/asiasanat-asetukset}.
+Valitsimella \koodi{options} annetaan edellä mainitulle ohjelmalle
+komentorivivalitsimet. Tätä tarvitaan lähinnä silloin, kun kirjoittaja
+on tehnyt oman tyylitiedoston tai muita erikoisempia asetuksia
+asiahakemistolle. Varsinkin \koodi{xindy} on monipuolinen ohjelma, jonka
+toimintaan voi vaikuttaa monella tavalla. Lisätietoa saa
+\koodi{makeindex}\-/{} ja \koodi{xindy}\-/ ohjelmien ohjekirjoista.
 
 \subsection{Asiasanojen lisääminen}
 \label{luku/asiasanat-lisääminen}

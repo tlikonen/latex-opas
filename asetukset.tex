@@ -33,6 +33,7 @@ nimi. Valinnaisilla argumenteilla vaikutetaan asetuksiin.
 \documentclass[a4paper, 12pt]{article}
 \end{koodilohkosis}
 
+\noindent
 Dokumenttiluokka on eräänlainen pohjadokumentti eli ominaisuuksien ja
 asetusten kokoelma, jonka varaan oma dokumentti kirjoitetaan. Eri
 dokumenttiluokat sisältävät erilaisia ominaisuuksia ja erilaiset
@@ -310,6 +311,7 @@ oikean marginaalin pituus (\koodi{left}, \koodi{right}).
   left=20mm, right=20mm]{geometry}
 \end{koodilohkosis}
 
+\noindent
 Vaihtoehtoisesti asetukset voi ilmaista erikseen \komentom{geometry}\-/
 komennon avulla seuraavalla tavalla:
 
@@ -320,6 +322,7 @@ komennon avulla seuraavalla tavalla:
 \geometry{a4paper, top=20mm, bottom=30mm, left=20mm, right=20mm}
 \end{koodilohkosis}
 
+\noindent
 Mikäli myöhemmin dokumentissa täytyy vaihtaa sivun asettelua, käytetään
 komentoa \komentom{newgeometry}. Alkuperäiset asetukset palautetaan
 komennolla \komentom{restoregeometry}.
@@ -331,6 +334,7 @@ komennolla \komentom{restoregeometry}.
 \restoregeometry     % Palautetaan alkuperäiset asetukset.
 \end{koodilohkosis}
 
+\noindent
 Valmiiksi määriteltyjä standardipaperikokoja on useita.
 \textsc{iso}\-/standardin mukaiset koot \textsc{a0}--\textsc{a6}
 valitaan valitsimilla kuten \koodimargin{*paper} \koodi{a3paper},
@@ -350,6 +354,7 @@ korkeusmitta.
 \geometry{papersize={10cm, 16cm}}
 \end{koodilohkosis}
 
+\noindent
 Sivu on oletuksena pystyasennossa (\koodim{portrait}), mutta sen voi
 asettaa vaaka\-/asentoon valitsimella \koodim{landscape}. Tämä asetus on
 voimassa koko dokumentin ajan. Jos haluaa asettaa vain yksittäisiä
@@ -437,6 +442,7 @@ ilmaistaan seuraavasti:
 \geometry{hmarginratio=17:28, vmarginratio=20:32}
 \end{koodilohkosis}
 
+\noindent
 Klassisia suhteita ei nykyaikana yleensä noudateta kovin tarkasti, mutta
 niistä kannattaa ymmärtää yleinen ajatus. Alamarginaalin pitäisi olla
 hieman suurempi kuin ylämarginaali, koska muuten tekstialue tuntuu
@@ -590,6 +596,7 @@ sivun mittojen suunnittelussa.
   \label{tlk/ylä-ala-tunnistemitat}
 }
 
+\noindent
 Latexin perusosat eivät sisällä kovin kummoista keinovalikoimaa ylä- ja
 alatunnisteiden muokkaamiseen, mutta pari hyödyllistä sivutyyliä on
 kuitenkin mukana. Ylä- ja alatunnisteet määräytyvät sivutyylin
@@ -601,6 +608,7 @@ perusteella, ja haluttu tyyli asetetaan voimaan komennolla
 \pagestyle{plain}
 \end{koodilohkosis}
 
+\noindent
 Edellä mainittu sivutyyli \koodim{plain} latoo alatunnisteeseen
 sivunumeron. Se on yleensä oletustyyli. Sivunumero on peräisin
 laskurista \laskuri{page} ja sen arvon tulostavasta komennosta
@@ -619,6 +627,7 @@ taas voimassa olevaan tyyliin, joka on aiemmin määritelty komennolla
 \thispagestyle{empty}
 \end{koodilohkosis}
 
+\noindent
 Sivutyyli \koodim{headings} latoo ylätunnisteeseen aukeaman
 vasemmanpuoleisille sivuille esimerkiksi kirjan pääluvun nimen ja
 oikeanpuoleisille sivuille meneillään olevan alaluvun nimen. Mainitut
@@ -650,6 +659,7 @@ aina alalukujen yhteydessä.
 \markright{oikea}        % määrittelee: \rightmark
 \end{koodilohkosis}
 
+\noindent
 Sivunumeroinnin tyyliin voi vaikuttaa esimerkiksi komennolla
 \komento{pagenumbering}, jonka argumentiksi annetaan numerointityylin
 nimi. Ne on koottu taulukkoon \ref{tlk/sivu-numerointityylit}.
@@ -659,6 +669,7 @@ nimi. Ne on koottu taulukkoon \ref{tlk/sivu-numerointityylit}.
 \pagenumbering{roman}
 \end{koodilohkosis}
 
+\noindent
 Edellä mainittu komento määrittelee käytännössä uudelleen komennon
 \komento{thepage}, joka on tarkoitettu juuri sivunumerolaskurin
 latomiseen. Lisätietoa sivunumeroista ja muista laskureista on luvussa
@@ -695,6 +706,7 @@ sivutyylinä voi olla myös \koodim{fancy}:
 \pagestyle{fancy}
 \end{koodilohkosis}
 
+\noindent
 Kun käytössä on sivutyyli \koodi{fancy}, voi ylä- ja alatunnisteiden
 sisällön asettaa vapaasti komennolla \komentom{fancyhf}. Komennon
 argumenttien merkitys on seuraavanlainen:
@@ -704,6 +716,7 @@ argumenttien merkitys on seuraavanlainen:
 \fancyhf[paikka]{sisältö}
 \end{koodilohkosis}
 
+\noindent
 Valinnainen argumentti \koodi{paikka} kertoo, mihin paikkaan tai
 paikkoihin \koodi{sisältö} sijoitetaan. Vaihtoehtoina on ylä- tai
 alatunniste, pariton tai parillinen sivu, sivun vasen reuna, keskiosa
@@ -740,6 +753,7 @@ seuraavalla tavalla:
 \fancyhf[HEL,HOR]{\thepage}
 \end{koodilohkosis}
 
+\noindent
 Edellä mainittu komento sijoittaa sivunumeron (\komento{thepage})
 ylätunnisteeseen (\koodi{H}) parillisten sivujen (\koodi{E}) vasempaan
 reunaan (\koodi{L}) ja parittomien sivujen (\koodi{O}) oikeaan reunaan
@@ -754,6 +768,7 @@ sivun keskelle (\koodi{C}):
 \fancyhf[FC]{-- \thepage\ --}
 \end{koodilohkosis}
 
+\noindent
 Makropaketin \paketti{fancyhdr} avulla voi myös määritellä Latexin
 sivutyylejä toisenlaiseksi tai luoda kokonaan omia sivutyylejä. Nämä
 tehdään komennolla \komentom{fancypagestyle}, jonka ensimmäinen
@@ -770,6 +785,7 @@ komennolla määriteltyjä ylä- ja alatunnisteita:
 \fancypagestyle{plain}{}
 \end{koodilohkosis}
 
+\noindent
 Seuraava esimerkki määrittelee kokonaan oman sivutyylin:
 
 \komentoi{fancypagestyle}
@@ -781,6 +797,7 @@ Seuraava esimerkki määrittelee kokonaan oman sivutyylin:
 }
 \end{koodilohkosis}
 
+\noindent
 Ylä- ja alatunniste voidaan erottaa tekstipalstasta vaakasuuntaisella
 viivalla, jonka leveyttä on mahdollista muuttaa määrittelemällä
 uudelleen komennot \komentom{headrulewidth} ja \komentom{footrulewidth}.
@@ -797,6 +814,7 @@ näkyvistä.
 \renewcommand{\footrulewidth}{1bp} % alatunnisteen erotinviiva
 \end{koodilohkosis}
 
+\noindent
 Mikäli haluaa omiin ylätunnisteisiin esimerkiksi päälukujen ja
 alalukujen nimiä, täytyy tunnisteisiin sisällyttää aiemmin kuvatut
 \komentom{leftmark}- ja \komentom{rightmark}\-/komennot. Ensin mainittu
@@ -810,6 +828,7 @@ sisältää pääluvun nimen ja jälkimmäinen alaluvun nimen.
 \fancyhf[HOR]{\rightmark}
 \end{koodilohkosis}
 
+\noindent
 Latex latoo pää- ja alalukujen nimet oletuksena versaalikirjaimilla eli
 isoilla kirjaimilla. Jos ne haluaa johonkin toiseen muotoon, täytyy itse
 määritellä uudelleen komennot \komentom{chaptermark},
@@ -898,6 +917,7 @@ seuraavalla tavalla:
 \usepackage[unicode]{hyperref}
 \end{koodilohkosis}
 
+\noindent
 Esimerkissä käytetty valitsin \koodi{unicode} aiheuttaa sen, että pdf\-/
 tiedoston sisäisissä merkkijonoissa käytetään Unicode\-/ merkistöä ja
 sen \textsc{utf\=/8}\-/ koodausta. Ilman tätä valitsinta Lualatex\-/
@@ -952,6 +972,7 @@ komennolla \komentom{pdfbookmark}:
 \pdfbookmark[taso]{Teksti}{tunniste}
 \end{koodilohkosis}
 
+\noindent
 Komennon valinnainen argumentti \koodi{taso} on kokonaisluku, joka
 tarkoittaa otsikon tasoa. Se tarkoittaa samaa tasonumeroa kuin
 otsikkotasojen taulukossa \ref{tlk/otsikkotasot}
@@ -1034,6 +1055,7 @@ kirjainperheen varaan:
   (\englanti{type\-writer, mono\-spaced, tele\-type}).
 \end{nluetelma}
 
+\noindent
 Kuvassa \ref{kuva/kirjainperhetyypit} ovat tässä oppaassa käytetyt kolme
 eri kirjainperhettä. Leipätekstissä käytetään antiikvaa, otsikoissa ja
 kuvateksteissä groteskia ja koodiesimerkeissä tasalevyistä.
@@ -1076,6 +1098,7 @@ mukaisesti.
 \setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
 \end{koodilohkosis}
 
+\noindent
 Edellisessä esimerkissä \englanti{TeX Gyre Termes, Heros} ja
 \englanti{Cursor} ovat kirjainperheiden nimiä. Fonttitiedostojen
 tulee olla asennettuna käyttöjärjestelmän normaalien käytäntöjen
@@ -1102,6 +1125,7 @@ vielä \koodi{Scale\-Again}\-/ valitsimella seuraavaan tapaan:
 [Scale=MatchLowercase, ScaleAgain=.97]
 \end{koodilohkosis}
 
+\noindent
 Kirjainperheen määrittelyn yhteydessä ei yleensä tarvitse antaa kuin
 kirjainperheen nimi, sillä \paketti{fontspec}\-/paketti ja kääntäjät
 osaavat automaattisesti ladata perheeseen sisältyviä eri
@@ -1162,6 +1186,7 @@ määrittämiseen. Uusi perhe määritellään seu\-raa\-vasti:
 \newfontfamily{\hienoperhe}{TeX Gyre Schola}[…]
 \end{koodilohkosis}
 
+\noindent
 Komento \komento{newfontfamily} toimii samalla tavalla kuin aiemmin
 esitellyt \komento{setmainfont} ym. komennot, mutta lisäksi
 ensimmäisellä argumentilla nimetään komento, jolla kirjainperhe otetaan
@@ -1234,6 +1259,7 @@ ne ovat saman \komentom{fontsize}\-/ komennon argumentteja. Esimerkki:
 \fontsize{10bp}{12bp} \selectfont
 \end{koodilohkosis}
 
+\noindent
 Ensimmäinen argumentti on fontin kokomitta ja toinen on rivikorkeus.
 Mittayksiköt voivat olla mitä tahansa Texin mittoja, ja oletuksena
 käytetään pt\-/pistemittaa, jos yksikköä ei ole mainittu. Komento
@@ -1285,6 +1311,7 @@ rivikorkeus kerrotaan. Kerroin asetetaan helpoimmin komennolla
 \fontsize{10bp}{12bp} \linespread{1.3} \selectfont
 \end{koodilohkosis}
 
+\noindent
 Edellä oleva esimerkki asettaa fontin kooksi 10 pistettä ja
 rivikorkeudeksi 12 pistettä. \komento{linespread}\-/ komennolla asetetun
 kertoimen vuoksi rivien peruslinjojen väliseksi etäisyydeksi tulee
@@ -1514,6 +1541,7 @@ siksi esimerkiksi komentojen
 \fontsize{10bp}{12bp} \selectfont
 \end{koodilohkosis}
 
+\noindent
 tuloksena ei todellisuudessa ole 10 pisteen (bp) fontti, vaan mukaan
 lasketaan myös kirjainperheen skaalauskerroin. Tämän vuoksi
 \komento{fontsize}\-/ komennon käyttö menee aika oudoksi. Argumenttina
@@ -1531,6 +1559,7 @@ skaalauskerrointa esimerkiksi seuraavalla tavalla:
 {\addfontfeatures{Scale=3.2} Poikkeuksellisen isoa tekstiä}
 \end{koodilohkosis}
 
+\noindent
 Jos edellä mainitut kummallisuudet eivät häiritse eikä ole tarvetta
 määritellä fontteja tarkasti tietyn pistekoon mukaiseksi, on
 suhteellinen määrittelytapa todella helppo. Kaikki dokumentin fontit
@@ -1628,6 +1657,7 @@ olevien asetusten pohjalta antaa otsikon ulkoasun (luku
 \sffamilyabs\Large\bfseries
 \end{koodilohkosis}
 
+\noindent
 Esimerkin \ref{esim/fontti-absoluuttinen} riveillä 16--20 määritellään
 uudelleen Latexin korkean tason komennot, joilla fonttikoot asetetaan.
 Oletusarvot tulevat dokumenttiluokasta (luku
@@ -1672,6 +1702,7 @@ Ligatures={TeX, Common}
 HyphenChar=-
 \end{koodilohkosis}
 
+\noindent
 \koodi{TeX}\-/ligatuurit tarkoittavat lainausmerkkien ja ajatusviivojen
 tuottamiseen tarkoitettuja Texin merkintätapoja kuten \koodi{''} ja
 \koodi{\==}, joita käsitellään luvuissa \ref{luku/lainausmerkit} ja
@@ -1686,6 +1717,7 @@ mainitut ligatuurityypit saa pois päältä seuraavalla asetuksella:
 Ligatures={TeXReset, NoCommon}
 \end{koodilohkosis}
 
+\noindent
 Valitsin \koodi{Hyphen\-Char} asettaa tavutusmerkin kyseiselle
 kirjainperheelle. Oletuksena se on yhdysmerkki (\=/), mutta merkin
 vaihtaminen toimii vain Xelatex\-/kääntäjän kanssa, ei esimerkiksi
@@ -1703,6 +1735,7 @@ Ligatures=Common
 HyphenChar=None
 \end{koodilohkosis}
 
+\noindent
 Yleensä tasalevyisestä kirjainperheestä kannattaa kytkeä typografiset
 ligatuurit pois päältä asetuksella \koodi{Liga\-tures=\katk No\-Common}.
 Tasalevyisen fontin ajatukseen nimenomaan kuuluu, että merkit ovat
@@ -1725,6 +1758,7 @@ seuraavasti:
 \setmonofont{…}[…]
 \end{koodilohkosis}
 
+\noindent
 Komennolla \komentom{defaultfontfeatures} voi asettaa (joidenkin)
 kirjainperheiden oletusasetukset, kun komennon suorittaa ennen
 kirjainperheiden määrittelyä.
@@ -1737,6 +1771,7 @@ kirjainperheiden määrittelyä.
   Numbers=Lowercase}
 \end{koodilohkosis}
 
+\noindent
 Komennon valinnaisella argumentilla voi rajata, mitä kirjainperheitä
 oletusasetukset koskevat. Valinnaiseen argumenttiin kirjoitetaan yksi
 tai useampia pilkulla erotettuja komentoja, joilla kirjainperheet
@@ -1804,6 +1839,7 @@ fi f\textcompwordmark i
   fi f\textcompwordmark i
 \end{tulossis}
 
+\noindent
 Mikäli tavallisia ligatuureja ei halua käyttöön lainkaan, on parasta
 valita jo kirjainperheen tai \=/leikkauksen käyttöönotossa asetus
 \koodi{Liga\-tures=\katk No\-Com\-mon}. Väliaikaisesti fontin asetuksiin
@@ -1815,6 +1851,7 @@ voi vaikuttaa komennolla \komentom{addfontfeatures}, joka sekin on
 {\addfontfeatures{Ligatures=NoCommon} fi fl}
 \end{koodilohkosis}
 
+\noindent
 Tavallisten ligatuurien lisäksi \englanti{Open Type} \=/fontit voivat
 sisältää myös harvinaisempia ligatuureja, jotka täytyy erikseen kytkeä
 päälle. Niiden tarkoituksena on esimerkiksi erityinen koristeellisuus
@@ -1835,6 +1872,7 @@ Ligatures={TeX, Required, Common, Historic, Discretionary,
   Contextual}
 \end{koodilohkosis}
 
+\noindent
 Tuskin mikään fontti sisältää kaikkia ligatuurityyppejä, eikä se ole
 tarkoituskaan. Jotkin ligatuurit kuuluvat vain tiettyyn typografian
 aikakauteen tai kirjaintyyliin. Open Type \=/fontin ominaisuuksia voi
@@ -1858,6 +1896,7 @@ Numbers=Lowercase % gemenanumerot
 Numbers=Uppercase % versaalinumerot (oletus)
 \end{koodilohkosis}
 
+\noindent
 Jotkin koodi\-/ilmaukset sisältävät versaalikirjaimia ja numeroita
 sekaisin. Gemenanumerot eivät kuitenkaan sovi yhteen versaalikirjainten
 kanssa, koska merkkien kokoero on häiritsevän suuri. Ei siis näin:
@@ -1875,6 +1914,7 @@ asetuksella, jos vain fontissa on tämä ominaisuus:
 Numbers=SlashedZero
 \end{koodilohkosis}
 
+\noindent
 Kun numeroita ladotaan taulukkoon, voidaan haluta käyttää tasalevyisiä
 numeroita, jotta ne sijoittuvat allekkain samalle linjalle. Joissakin
 fonteissa on tarjolla tavallisten vaihtelevan levyisten numeroiden
@@ -1920,6 +1960,7 @@ normaali \\ {\addfontfeatures{LetterSpace=6} harvennus}
   normaali \\ {\addfontfeatures{LetterSpace=6} harvennus}
 \end{tulossis}
 
+\noindent
 Jos esimerkiksi harvennuksen haluaa automaattisesti mukaan
 kirjainperheeseen kuuluvaan pienversaaliin, käytetään valitsinta
 \koodi{Small\-Caps\-Features}:
@@ -1948,6 +1989,7 @@ esimerkki \\
   {\addfontfeatures{FakeStretch=1.3} esimerkki}
 \end{tulossis}
 
+\noindent
 Kirjainleikkauksen leventäminen tekee tekstistä samalla lihavampaa,
 koska kirjainten viivat tulevat vahvemmiksi leveyssuunnassa.
 Korkeussuunnassa vahvuus säilyy ennallaan, joten kirjainten
@@ -1974,6 +2016,7 @@ pysty {\addfontfeatures{FakeSlant=.2} kalteva}
   pysty {\addfontfeatures{FakeSlant=.2} kalteva}
 \end{tulossis}
 
+\noindent
 Mekaanisen lihavoinnin tai kallistuksen saa osaksi kirjainperhettä, kun
 asettaa kirjainperheen määrittelyn yhteydessä halutun kirjainleikkauksen
 valitsimella \koodi{Bold\-Font} tai \koodi{Slanted\-Font} ja määrittää
@@ -2075,6 +2118,7 @@ esittelyosassa näyttää seuraavanlaiselta:
 \setotherlanguage{greek}
 \end{koodilohkosis}
 
+\noindent
 Eri kielillä on erilaisia valinnaisia asetuksia, jotka täytyy selvittää
 \paketti{polyglossia}\-/paketin ohjekirjasta. Asetukset liittyvät
 esimerkiksi kielen kirjoitusjärjestelmän alueelliseen tai
@@ -2088,6 +2132,7 @@ ottaa käyttöön myös seuraavalla tavalla:
 \setdefaultlanguage[babelshorthands]{finnish}
 \end{koodilohkosis}
 
+\noindent
 Dokumentin tekstiosa käyttää kieltä, joka määriteltiin komennolla
 \komento{setdefaultlanguage}. Muita dokumentin esittelyosassa
 määriteltyjä kieliä voi käyttää väliaikaisesti komennolla, joka alkaa
@@ -2099,6 +2144,7 @@ kirjaimilla \komentox{text} ja jatkuu kielen nimellä, esimerkiksi
 Englannin sana \textenglish{shorthand} tarkoittaa 'pikakirjoitusta'.
 \end{koodilohkosis}
 
+\noindent
 Toinen vaihtoehto on käyttää kielen nimen mukaista ympäristöä:
 
 \begin{koodilohkosis}
@@ -2107,6 +2153,7 @@ Toinen vaihtoehto on käyttää kielen nimen mukaista ympäristöä:
 \end{greek}
 \end{koodilohkosis}
 
+\noindent
 Tietynkieliseksi merkitty teksti voi näyttää ladotussa dokumentissa ihan
 samalta kuin muukin teksti. Tavutuksessa kuitenkin käytetään eri
 kielissä eri asetuksia, ja joissakin kielissä voi olla myös pieniä
@@ -2132,6 +2179,7 @@ pääteviivaton \textenglish{main font} pääteviivaton
   \sffamily pääteviivaton {\rmfamily main font} pääteviivaton
 \end{tulossis}
 
+\noindent
 Erikielisten tekstikatkelmien fonttiin voi vaikuttaa määrittelemällä
 komennon, jonka nimessä on ensin kielen nimi ja lopuksi sana
 \koodi{font}, esimerkiksi \komento{englishfont} tai \komento{greekfont}.
@@ -2147,6 +2195,7 @@ kuin muutenkin siinä kohdassa dokumenttia.
 \newcommand{\englishfont}{}
 \end{koodilohkosis}
 
+\noindent
 Mikäli haluaa jollekin kielelle kokonaan eri kirjainperheen, kannattaa
 käyttää \paketti{fontspec}\-/paketin komentoa \komento{newfontfamily}
 (luku \ref{luku/fontin-valinta}) ja määritellä kielen fonttikomennot
@@ -2194,6 +2243,7 @@ halutaan pääasialliseksi kieleksi.
 \usepackage[english,greek,finnish]{babel}
 \end{koodilohkosis}
 
+\noindent
 Pääasiallisen kielen voi valita myös \koodi{main}\-/valitsimella:
 
 \komentoi{usepackage}
@@ -2202,6 +2252,7 @@ Pääasiallisen kielen voi valita myös \koodi{main}\-/valitsimella:
 \usepackage[main=finnish,english,greek]{babel}
 \end{koodilohkosis}
 
+\noindent
 Dokumentin tekstissä yksittäiset vieraskieliset sanat tai ilmaukset
 merkitään komennolla \komento{foreignlanguage}. Komennon ensimmäinen
 argumentti on kielen nimi ja toinen on sillä kielellä ladottava teksti.
@@ -2212,6 +2263,7 @@ Englannin sana \foreignlanguage{english}{shorthand} tarkoittaa
 'pikakirjoitusta'.
 \end{koodilohkosis}
 
+\noindent
 Komennon sijasta voi käyttää ympäristöä \ymparisto{otherlanguage}, joka
 vaihtaa kieltä ympäristön ajaksi.
 
@@ -2222,6 +2274,7 @@ vaihtaa kieltä ympäristön ajaksi.
 \end{otherlanguage}
 \end{koodilohkosis}
 
+\noindent
 Kielen vaihtamista voi helpottaa \komento{babeltags}\-/ komennolla, joka
 määrittelee lyhempiä komentoja ja ympäristöjä kielen vaihtamiseen.
 Komentoa käytetään seuraavan esimerkin tavoin. Sen jälkeen voi käyttää
@@ -2233,6 +2286,7 @@ tai ympäristöä \ymparistox{eng}.
 \babeltags{eng = english}
 \end{koodilohkosis}
 
+\noindent
 Oletuskieli voidaan vaihtaa kesken dokumentin komennolla
 \komento{selectlanguage}. Komennon argumentiksi annetaan kielen nimi,
 esimerkiksi seuraavalla tavalla:
@@ -2242,6 +2296,7 @@ esimerkiksi seuraavalla tavalla:
 \selectlanguage{english}
 \end{koodilohkosis}
 
+\noindent
 Eri kielille on mahdollista asettaa eri kirjainperheet
 \komento{babelfont}\-/ komennolla. Tämä komento korvaa
 \paketti{fontspec}\-/ paketin fontinvalintakomennot (luku
@@ -2303,6 +2358,7 @@ kirjoittaa seuraavat komennot:
 \setdefaultlanguage{finnish}
 \end{koodilohkosis}
 
+\noindent
 Tavutusta käsitellään tässä yhteydessä lähinnä
 \paketti{polyglossia}\-/kielipaketin näkökulmasta. Toinen kielipaketti
 \paketti{babel} toimii joissakin tavutukseen liittyvissä asioissa eri
@@ -2332,6 +2388,7 @@ selventää komennon käyttöä:
 }
 \end{koodilohkosis}
 
+\noindent
 Komennon perään aaltosulkeiden sisään kirjoitetaan sanoja, jotka
 erotetaan toisistaan sanaväleillä. Sanoihin kirjoitetaan yhdysmerkki
 niihin kohtiin, joista sanan katkaiseminen on sallittua. Jos sanassa
@@ -2447,6 +2504,7 @@ valitsinta.
 \usepackage[shortcuts]{extdash}
 \end{koodilohkosis}
 
+\noindent
 Paketti sisältää kaksi lisävaihtoehtoa kolmelle viivavälimerkille
 eli yhdysmerkille, lyhyelle ajatusviivalle ja pitkälle ajatusviivalle.
 Kun Texin viivavälimerkit (luku \ref{luku/tavutuksen-merkit}) aina
@@ -2527,6 +2585,7 @@ matka\-/ ja aika\-/arvio
   matka\-/ ja aika\-/arvio
 \end{tulossis}
 
+\noindent
 Ensimmäisen yhdysmerkkikomennon jälkeinen sanaväli hävisi, ja syntyi
 virheellinen sana \emph{matka-ja}. Sanavälin saa säilymään, kun
 kirjoittaa komennon perään aaltosuljeparin tai kenoviivan ja sanavälin.
@@ -2571,6 +2630,7 @@ tavoin omat asetukset tulevat voimaan automaattisesti kielen vaihtuessa.
 }
 \end{koodilohkosis}
 
+\noindent
 Edellisessä esimerkissä oleva komento \komento{addto} on
 \paketti{polyglossia}\-/{} ja \paketti{babel}\-/ paketin ominaisuus,
 jolla lisätään omia komentoja kielikohtaisiin asetuksiin. Tässä
@@ -2615,6 +2675,7 @@ Komennolle annetaan kolme argumenttia järjestyksessä seuraavasti:
 \item katkaisemattomaan sanaan ladottavat merkit.
 \end{nluetelma}
 
+\noindent
 Normaali tavutuskohta sanaan \emph{tavu} määriteltäisiin alla olevan
 esimerkin tavoin:
 
@@ -2623,6 +2684,7 @@ esimerkin tavoin:
 ta\discretionary{-}{}{}vu
 \end{koodilohkosis}
 
+\noindent
 Edellisessä esimerkissä komennon ensimmäinen argumentti on yhdysmerkki,
 koska rivin loppuun tietenkin halutaan yhdysmerkki silloin, kun sana
 katkaistaan tästä kohdasta. Toinen argumentti on tyhjä, koska seuraavan
@@ -2642,6 +2704,7 @@ katkaisutilanteessa.
 \discretionary{}{}{}
 \end{koodilohkosis}
 
+\noindent
 Joissakin kielissä sanan katkaiseminen yhdysmerkin kohdalta vaatii, että
 rivin loppuun kirjoitetaan yksi yhdysmerkki ja seuraavan rivin alkuun
 toinen. Näin ilmaistaan, että sanassa on pysyvä yhdysmerkki eikä vain
@@ -2654,6 +2717,7 @@ edellä kuvatun tavutuskohdan saa myös seuraavalla tavalla:
 \discretionary{-}{-}{-}
 \end{koodilohkosis}
 
+\noindent
 Tavutuksen suunnittelussa ja tutkimisessa voi auttaa
 \paketti{showhyphens}\-/paketti,\avctan{showhyphens} jonka lataamalla
 kaikki tavutuskohdat tulevat näkyviin. Dokumentin kaikkien sanojen
@@ -2692,6 +2756,7 @@ ei tiedä, ellei ole kokemusta.
 alku\-osa pusku\-traktori
 \end{koodilohkosis}
 
+\noindent
 Yhdysmerkin tai ajatusviivan sisältävät pitkät yhdyssanat voivat vaatia
 tavutuskohtien lisäämistä, koska Texin yhdysmerkki ja ajatusviivat
 estävät tavutuksen muualta kuin näiden merkkien jälkeen. Ilman
@@ -2713,6 +2778,7 @@ Molo\-tov--Ribben\-trop-sopi\-mus % tavutusvihjeet
 Molotov\--Ribben\-trop\-/sopimus  % tavutuksen sallivat välimerkit
 \end{koodilohkosis}
 
+\noindent
 \komento{discretionary}\-/komentoa (luku \ref{luku/tavutus-muut}) voi
 hyödyntää suomen kielen sanoissa silloin, kun niissä on heittomerkki
 erottamassa kahta tavurajan molemmin puolin olevaa samaa vokaalia,
@@ -2729,6 +2795,7 @@ voisi siis kirjoittaa seuraavalla tavalla:
 vaa\discretionary{-}{}{'}an
 \end{koodilohkosis}
 
+\noindent
 Komennon kolmas argumentti on heittomerkki, koska se pitää latoa
 tavurajalle silloin, kun sanaa ei katkaista tästä kohdasta. Mikäli
 tällaisia tarvitsee paljon, on järkevää määritellä sitä varten
@@ -2741,6 +2808,7 @@ sijasta.
 vaa\hm an
 \end{koodilohkosis}
 
+\noindent
 Suomen kielessä käytetään heittomerkkiä myös taivutuspäätteen, liitteen
 tai johtimen edellä silloin, kun sanavartalon kirjoitusasu päättyy
 konsonanttiin mutta ääntöasu vokaaliin, esimerkiksi \emph{show'ssa}.

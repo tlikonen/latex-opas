@@ -69,6 +69,7 @@ esimerkiksi seuraavasti:
 \setlength{\emergencystretch}{1em}
 \end{koodilohkosis}
 
+\noindent
 Kaikenlaiset kappaleiden latomiseen liittyvät tekniset rajoitukset voi
 poistaa tai asettaa hyvin suuriksi komennolla \komentom{sloppy}. Komento
 asettaa muun muassa sanavälien venymisen ylärajaksi 3\,em. Tämän
@@ -134,6 +135,7 @@ tilanteessa, asetetaan mitta vain nollaksi:
 \setlength{\parskip}{0ex}
 \end{koodilohkosis}
 
+\noindent
 Seuraava esimerkkikomento asettaa kappaleväliksi 1,3\,ex. Lisäksi se
 sallii kappalevälin venyä 0,2\,ex:n verran tai kutistua 0,1\,ex:n
 verran.
@@ -144,6 +146,7 @@ verran.
 \setlength{\parskip}{1.3ex plus .2ex minus .1ex}
 \end{koodilohkosis}
 
+\noindent
 Silloin kun kappaleet ladotaan erilleen toisistaan, on yleensä hyvä
 sallia kappalevälin venyä tai kutistua hieman, koska venyvät
 pystysuuntaiset välit antavat Texille paremmat mahdollisuudet latoa
@@ -174,6 +177,7 @@ mittojen määrittelemiseen ja samalla niiden oletusarvot:
 \setlength{\smallskipamount}{3pt plus 1pt minus 1pt}
 \end{koodilohkosis}
 
+\noindent
 Komentojen \komento{bigskip}, \komento{medskip} ja \komento{smallskip}
 sijasta voi käyttää myös komentoja \komentom{bigbreak},
 \komentom{medbreak} tai \komentom{smallbreak}. Nämä toimivat lähes
@@ -197,6 +201,7 @@ Tekstikappale.
 Toinen tekstikappale.
 \end{koodilohkosis}
 
+\noindent
 Komento \komentom{addvspace} toimii lähes samoin kuin \komento{vspace},
 mutta se huomioi mahdolliset peräkkäiset \komento{addvspace}\-/ komennot
 ja varmistaa, että vain suurin väli toteutuu. Jos siis useita
@@ -213,6 +218,7 @@ Tekstikappale.
 Toinen tekstikappale.
 \end{koodilohkosis}
 
+\noindent
 Jos edellisessä esimerkissä olisi käytetty \komento{vspace}\-/ komentoa,
 pystysuuntaisen välin suuruus olisi 3,5\,ex, joka on välien
 yhteenlaskettu suuruus.
@@ -254,6 +260,7 @@ fontin kokoon.
 \setlength{\parindent}{1em}
 \end{koodilohkosis}
 
+\noindent
 Edellä mainittu mitta pitäisi asettaa nollaan silloin, kun kappaleiden
 välissä on tyhjää tilaa. Pystysuuntainen välihän jo sinänsä ilmaisee,
 että kappale vaihtuu.
@@ -266,6 +273,7 @@ että kappale vaihtuu.
 \setlength{\parindent}{0em}  % Ei sisennystä.
 \end{koodilohkosis}
 
+\noindent
 \mitta{parindent}\-/ mitan levyisen välin voi tehdä mihin tahansa
 komennolla \komentom{indent}. Tätä komentoa ei tavallisesti tarvita,
 koska kappaleet alkavat automaattisesti sen suuruisella sisennyksellä.
@@ -279,6 +287,7 @@ ensimmäisen rivin sisentäminen.
 Tämän tekstikappaleen ensimmäistä riviä ei sisennetä.
 \end{koodilohkosis}
 
+\noindent
 Suomenkielisissä julkaisuissa on tavallista, että leipätekstin
 kappaleessa ei ole sisennystä, jos sitä ennen on pystysuuntainen väli.
 Tällainen tilanne on aina otsikoiden jälkeen mutta myös kokonaan
@@ -386,6 +395,7 @@ Kappaleen muut rivit on sisennetty 2\,cm.
   \label{esim/riippuva-sis-asiakirja}
 \end{esimerkki*}
 
+\noindent
 Asiakirjan tyylisen otsikon saa toteutettua \komento{makebox}\-/
 komennon avulla esimerkin \ref{esim/riippuva-sis-asiakirja} tavoin.
 Komento latoo näkymättömän laatikon, jonka leveys määritellään
@@ -409,6 +419,7 @@ esimerkki:
   \makebox[2\sarkain][l]{\ignorespaces #1}\ignorespaces}
 \end{koodilohkosis}
 
+\noindent
 Tämän jälkeen voi komennolla \komentox{kappale} aloittaa asiakirjan
 sisennetyn tekstikappaleen. Komennolle voi antaa hakasulkeissa
 valinnaisen argumentin, joka on kappaleen otsikko. \komento{makebox}\-/
@@ -538,6 +549,7 @@ Esimerkki määrittelee uuden ympäristön nimeltä
 \end{lohkolainaus}
 \end{koodilohkosis}
 
+\noindent
 Omien ympäristöjen määrittelyä käsitellään tarkemmin luvussa
 \ref{luku/ympäristöt}. Esimerkin \ref{esim/vasen-oikea-sisennys} rivillä
 11 oleva \komento{item}\-/ komento on pakollinen, koska se aloittaa
@@ -567,6 +579,7 @@ kolmas
   ensimmäinen \\* toinen \\* kolmas
 \end{tulossis}
 
+\noindent
 Rivinvaihtokomennolle voi antaa hakasulkeissa valinnaisen argumentin,
 joka ilmaisee rivien väliin ladottavan ylimääräisen pystysuuntaisen
 tilan. Argumentin on siis oltava mitta (luku \ref{luku/mitat}).
@@ -580,6 +593,7 @@ ensimmäinen \\ toinen \\[1.3ex] kolmas
   ensimmäinen \\* toinen \\*[1.3ex] kolmas
 \end{tulossis}
 
+\noindent
 Komennosta on olemassa tähtiversio \komentom{\keno *}, joka edellisten
 ominaisuuksien lisäksi estää sivun vaihtumisen tämän rivinvaihdon
 kohdalla. Myös tähtiversiolle voi antaa valinnaiseksi argumentiksi
@@ -627,6 +641,7 @@ vaikuttavat koko dokumenttiin eli kaikkiin tekstikappaleisiin.
 \setnoclub    % orporivien esto
 \end{koodilohkosis}
 
+\noindent
 Paketti \paketti{nowidow} määrittelee myös komennot \komentom{nowidow}
 ja \komentom{noclub}, joilla voi vaikuttaa yksittäisen tekstikappaleen
 leski- ja orporiveihin. Nämä komennot täytyy sijoittaa tekstikappaleen
@@ -649,6 +664,7 @@ sellaisia ei sallita.
 \clubpenalty  10000   % orporivien esto
 \end{koodilohkosis}
 
+\noindent
 Leskien ja orpojen haitallisuusarvoiksi voi kokeilla hieman pienempiäkin
 lukuja. Silloin leski- tai orporivit voidaan sallia joissakin
 tilanteissa, jos ladonta\-/algoritmi ei löydä parempaakaan ratkaisua.
@@ -689,6 +705,7 @@ joka ladotaan sivun normaalille tekstialueelle.
 
 % Miten valinnainen argumentti toimii? \marginpar[left]{right}
 
+\noindent
 Yleensä marginaalihuomautukset ladotaan erilaisella kirjainleikkauksella
 kuin leipäteksti, jotta ne erottuvat toisistaan. Jos leipätekstissä
 käytetään antiikvaa, voisi marginaalissa käyttää esimerkiksi pienempää
@@ -707,6 +724,7 @@ esimerkki tällaisen komennon määrittelystä:
   \marginpar{\sffamily\scriptsize\RaggedRight #1}}
 \end{koodilohkosis}
 
+\noindent
 Omien komentojen määrittelyä käsitellään tarkemmin luvussa
 \ref{luku/komennot} ja fonttiasetuksia luvussa~\ref{luku/kirjaintyypit}.
 Edellä olevassa komennon määrittelyssä on mukana myös palstan muotoon
@@ -745,6 +763,7 @@ esimerkki näiden mittojen asettamisesta:
 \setlength{\marginparpush}{6bp}
 \end{koodilohkosis}
 
+\noindent
 Kesken dokumentin komennolla \komentom{reversemarginpar} voidaan vaihtaa
 marginaalihuomautukset vastakkaiseen marginaaliin ja komennolla
 \komentom{normalmarginpar} palautetaan oletusasetukset.
@@ -791,6 +810,7 @@ Komentoa käytetään seuraavalla tavalla:
   nindent=4bp, slope=4bp]{A}{nfangi} aloittaa tämän tekstikappaleen.
 \end{koodilohkosis}
 
+\noindent
 Edellä oleva esimerkki tekee kolmerivisen upotetun A\-/anfangin, jonka
 perässä oleva sanan osa ''nfangi'' ladotaan pienversaalilla.
 Valitsimella \koodi{lover\-size} kasvatetaan hieman anfangikirjaimen
@@ -864,6 +884,7 @@ viivojen vahvistaminen ei tuo riittävää kontrastia.
   huonommin.
 \end{tulossis}
 
+\noindent
 \textbf{Lihavointi} (\komentom{textbf}) toimii huomattavasti paremmin
 groteskityyppisen kirjainperheen kanssa, koska lihavoitu leikkaus on
 usein selvästi vahvempi normaaliin verrattuna. Groteskin kursiivi sen
@@ -880,6 +901,7 @@ riittävää muotokontrastia.\footnote{Joissakin niin sanotuissa
   erotu riittävästi.
 \end{tulossis}
 
+\noindent
 Joissakin kirjainperheissä on mukana useita erivahvuisia leikkauksia.
 Silloin täytyy valita käyttöön riittävästi toisistaan poikkeavat
 vahvuudet. Esimerkiksi kaksi vierekkäistä vahvuutta eivät välttämättä
@@ -965,6 +987,7 @@ korkeustasolle.
   \end{tabular}
 \end{tulossis}
 
+\noindent
 Fontin näkökulmasta gemenanumerot ovat erillinen ominaisuus, jonka
 fontin suunnittelija on toteuttanut. Ominaisuuden käyttöönottoa ja muita
 numeroihin liittyviä fonttiasetuksia käsitellään luvussa
@@ -995,6 +1018,7 @@ alempana j- ja y\=/kirjainten alapidennyksen vuoksi.
   \underline{kone}, \underline{öljy}
 \end{tulossis}
 
+\noindent
 Toinen \komento{underline}\-/ komennon ongelma on, että se estää sanojen
 tavuttamisen ja muutenkin tekstin katkaisemisen rivin lopussa. Komennon
 argumentiksi annettua tekstiä ei katkaista edes sanavälien kohdalta.
@@ -1048,6 +1072,7 @@ määrittelyn.
 \usepackage[normalem]{ulem}
 \end{koodilohkosis}
 
+\noindent
 Paketin \paketti{ulem} myötä on käytettävissä mitta \mitta{ULdepth},
 joka on alleviivauksen etäisyys tekstin peruslinjasta. Mitta asetetaan
 tavalliseen tapaan \komento{setlength}\-/ komennolla (luku
@@ -1072,6 +1097,7 @@ määritellä uudestaan. Seuraavassa on näistä esimerkki:
   \uline{kone}, \uline{öljy}
 \end{tulossis}
 
+\noindent
 Toinen makropaketti alleviivausten ja yliviivausten tekemiseen on
 \paketti{soul}.\avctan{soul} Se ei sisällä erikoisempia korostustapoja
 kuten aalto- ja katkoviivoja, mutta viivan etäisyyden ja paksuuden
@@ -1102,6 +1128,7 @@ ohjeita on luvussa \ref{luku/fontit-välistys}.
   {\addfontfeatures{LetterSpace=10} KLASSINEN HARVENNUS}
 \end{tulossis}
 
+\noindent
 Klassisesti eli antiikin tyyliin harvennetut (n.~10\,\%)
 versaalikirjaimet voivat sopia joihinkin otsikoihin. Sen sijaan
 pienversaalit lievästi {\addfontfeatures{LetterSpace=6}
@@ -1125,6 +1152,7 @@ sanahahmo pysyy visuaalisesti koossa.
   {\sffamily\bfseries\addfontfeatures{LetterSpace=40} SEIS!}
 \end{tulossis}
 
+\noindent
 Merkkivälien tiivistäminen on joskus tarpeen suurikokoisissa otsikoissa.
 Fontin merkkivälit on ehkä suunniteltu ensisijaisesti pienten kokojen
 ehdoilla, ja siksi reilusti suuremmilla fonttiko'oilla välit voivat olla
@@ -1191,6 +1219,7 @@ kirjainperheellä. Seuraavassa on tästä kaksi esimerkkiä:
   \verb|tasalevyinen|
 \end{tulossis}
 
+\noindent
 Yksittäisiä sanoja pidempien tietokonekoodien latomiseen on olemassa
 \ymparistom{verbatim}\-/ ympäristö, jonka sisällä kaikki teksti
 tulkitaan kirjaimellisesti -- myös välilyönnit ja rivinvaihdot.
@@ -1210,6 +1239,7 @@ tieto-       kone-
 \end{verbatim}
 \end{tulossis}
 
+\noindent
 Paljon monipuolisemman ympäristön tarjoaa makropaketti
 \pakettim{fancyvrb}.\avctan{fancyvrb} Sen mukana tuleva
 \ymparistom{Verbatim}\-/ ympäristö ymmärtää monenlaisia asetuksia,
@@ -1260,6 +1290,7 @@ muokkaa joidenkin muualla määriteltyjen komentojen ominaisuuksia.
 \urlstyle{same}        % linkkien fontti
 \end{koodilohkosis}
 
+\noindent
 Edellisen esimerkin komennolla \komentom{hypersetup} vaikutetaan
 makropaketin asetuksiin. Oletuksena esimerkiksi linkkien ympärille
 ladotaan värilliset kehykset, mutta valitsin \koodi{hide\-links} poistaa
@@ -1289,6 +1320,7 @@ napsauttamalla linkin osoittama sivusto avautuu.
   \href{https://www.ctan.org/}{CTAN-sivusto}
 \end{tulossis}
 
+\noindent
 Kun halutaan latoa dokumenttiin itse verkko\-/osoite, käytetään komentoa
 \komento{url}, \komentomargin{url} joka osaa katkaista osoitteet
 järkevällä tavalla rivin lopussa. Komennolle annetaan vain yksi
@@ -1303,6 +1335,7 @@ argumentti, verkko\-/osoite.
   \url{https://www.ctan.org/}
 \end{tulossis}
 
+\noindent
 Joskus dokumenttiin voidaan tarvita verkko\-/osoite, joka ei ole
 pdf\-/dokumentissa napsautettava linkki. Silloin käytetään komentoa
 \komentom{nolinkurl}. Tämän komennon argumenttina oleva verkko\-/osoite
@@ -1320,6 +1353,7 @@ kannattaa kirjoittaa seuraavalla tavalla:
 \href{mailto:tunnus@osoite.net}{\nolinkurl{tunnus@osoite.net}}
 \end{koodilohkosis}
 
+\noindent
 Osoite pitää siis kirjoittaa kaksi kertaa: itse linkkiä varten ja
 dokumenttiin ladottavaa tekstiä varten. Omaa työtä kannattaa helpottaa
 määrittelemällä sähköpostiosoitteita varten oma komento, esimerkiksi
@@ -1389,6 +1423,7 @@ argumenttien rakenteesta on seuraavassa esimerkki:
 \definecolor{nimi}{välimalli}{parametrit}
 \end{koodilohkosis}
 
+\noindent
 Komennon argumentti \koodi{nimi} on kirjoittajan itse valitsema nimi,
 ja se voi liittyä esimerkiksi värin käyttötarkoitukseen (''nuoli'') tai
 värin yleiseen nimeen (''keltainen''). Argumentti \koodi{väri\-malli}
@@ -1416,6 +1451,7 @@ ympäristön (luku \ref{luku/ympäristöt}) tai aaltosulkeilla (luku
 \color[värimalli]{parametrit} % värimallin ja parametrien avulla
 \end{koodilohkosis}
 
+\noindent
 Toinen vaihtoehto on käyttää komentoa \komentom{textcolor}, jolle
 annetaan edelliseen verrattuna vielä yksi argumentti lisää. Argumenttina
 on teksti, johon värin halutaan vaikuttavan. Vaikutusalueena on siis
@@ -1427,6 +1463,7 @@ vain kyseinen teksti.
 \textcolor[värimalli]{parametrit}{teksti}
 \end{koodilohkosis}
 
+\noindent
 Tekstin taustaväri vaihdetaan komennoilla \komentom{colorbox} ja
 \komentom{fcolorbox}. Komennot luovat ikään kuin laatikon, jonka sisällä
 taustaväri on voimassa. Ensin mainittu komento vahtaa vain taustavärin,
@@ -1441,6 +1478,7 @@ mitassa \mittam{fboxrule}.
 \fcolorbox[värimalli]{parametrit(kehys)}{parametrit(tausta)}{teksti}
 \end{koodilohkosis}
 
+\noindent
 Seuraavassa on esimerkki joidenkin edellä mainittujen komentojen
 käytöstä. Tästä tuskin kannattaa ottaa mallia vakavaan typografiseen
 työhön.
@@ -1464,6 +1502,7 @@ työhön.
   \textcolor{pun}{voi korostaa} \colorbox{pun}{väreillä}.
 \end{tulossis}
 
+\noindent
 Sivulle voi määrittää taustavärin komennolla \komentom{pagecolor}.
 Taustäväri vaihtuu nykyiselle ja seuraaville sivuille, kunnes väri
 vaihdetaan toiseksi tai poistetaan. Komennolle annetaan samanlaiset
@@ -1508,6 +1547,7 @@ sen valitsinta \koodi{clear\-empty}:
 \usepackage[clearempty]{titlesec}
 \end{koodilohkosis}
 
+\noindent
 Edellä mainittu \paketti{titlesec}\-/ paketti sisältää monenlaisia
 toimintoja otsikoiden muotoiluun, joten sitä käsitellään tarkemmin
 otsikoiden yhteydessä luvussa \ref{luku/otsikot-ulkoasu}.
@@ -1542,6 +1582,7 @@ paremmankin sivunvaihtokohdan.
 \nopagebreak   % Estetään sivunvaihto (oletusarvo 4).
 \end{koodilohkosis}
 
+\noindent
 Jos \komento{pagebreak}\-/ komentoa käyttää tekstikappaleen sisällä,
 sivunvaihto ei välttämättä satu juuri komennon kohdalle. Sivu vaihdetaan
 kohdalle osuvan rivin lopussa.
@@ -1572,6 +1613,7 @@ esimerkkejä:
 \enlargethispage{\baselineskip} % yksi tekstirivi lisää
 \end{koodilohkosis}
 
+\noindent
 Komennon tähtiversio \komentom{enlargethispage*} pyrkii lisäksi
 tiivistämään sivun sisältöä pystysuunnassa niin paljon kuin mahdollista.
 Sen tyypillisin käyttötarkoitus lienee se, että sivulle pyritään
@@ -1611,6 +1653,7 @@ ilmaistaan seuraavilla komennoilla:
 \date{\today}                              % päiväys
 \end{koodilohkosis}
 
+\noindent
 Edellisen esimerkin komentojen argumentissa voi käyttää komentoa
 \komento{thanks}, joka on tarkoitettu kiitosten osoittamiseen.
 Komennolle annetaan argumentiksi lyhyehkö teksti eli kiitosviesti, joka
@@ -1655,6 +1698,7 @@ merkinnän esimerkiksi seuraavalla komennolla:
 \pdfbookmark[0]{Kansi}{sivu/kansi}
 \end{koodilohkosis}
 
+\noindent
 Edellä mainittu komento \komento{pdfbookmark} täytyy sijoittaa Latex\-/
 lähdedokumentissa nimenomaan kansisivulle, koska
 sisällysluettelomerkintä on samalla linkki kyseiseen kohtaan
@@ -1762,6 +1806,7 @@ yleensä.
 \section{Tämä teksti on otsikko}
 \end{koodilohkosis}
 
+\noindent
 Otsikko tulee automaattisesti mukaan teoksen sisällysluetteloon, jos
 sellainen on olemassa (luku \ref{luku/sisällysluettelo}). Otsikko näkyy
 myös pdf\-/ tiedoston sisällysluettelossa, jos vain
@@ -1782,6 +1827,7 @@ kirjoitetaan vain puhdasta tekstiä sisältävä versio otsikosta.
 \section[Lyhyt otsikko]{Tämä tässä on pitkä otsikko}
 \end{koodilohkosis}
 
+\noindent
 Kaikille otsikkokomennoille on olemassa myös niin sanottu tähtiversio
 eli komentovaihtoehto, jonka nimen lopussa on tähti: \komento{part*},
 \komento{chapter*}, \komento{section*}, \komento{subsection*},
@@ -1807,6 +1853,7 @@ tavalla:
 \addcontentsline{toc}{section}{Tässäpä numeroimaton otsikko}
 \end{koodilohkosis}
 
+\noindent
 Edellä olevan esimerkin komento \komentom{addcontentsline} lisää
 merkinnän sisällysluetteloon. Komennon ensimmäinen argumentti on
 \koodi{toc} (\englantik{table of contents}), joka on
@@ -1841,6 +1888,7 @@ saakka otsikot numeroidaan. Alemmantasoiset otsikot
 \setcounter{secnumdepth}{1}
 \end{koodilohkosis}
 
+\noindent
 Asetusta voi muuttaa kesken dokumentin. Muuttaminen voi olla mielekästä
 esimerkiksi laajan teoksen lopussa, jossa on mahdollisesti
 lähdeluettelo, asiahakemistoja tai liitteitä, joille ei ehkä haluta
@@ -1877,6 +1925,7 @@ komento \komento{arabic} latoo laskurin arvon arabialaisilla numeroilla.
 \renewcommand{\thepart}{\arabic{part}}
 \end{koodilohkosis}
 
+\noindent
 Joskus ehkä halutaan, että otsikoissa eri tasojen numeroita ei eroteta
 toisistaan pisteellä (2.1) vaan yhdysmerkillä tai ajatusviivalla
 (2\==1). Tällainen asetus saadaan määrittelemällä alemmantasoisten
@@ -1898,6 +1947,7 @@ laskurien latomiskomennot uudelleen, esimerkiksi seuraavasti:%
   \thesubsection--\arabic{subsubsection}}
 \end{koodilohkosis}
 
+\noindent
 Otsikkonumeroinnin poistamista ei pidä toteuttaa siten, että määrittelee
 edellä mainitut \komentox{the}\-/ alkuiset komennot tyhjäksi. Numerointi
 poistetaan laskurin \laskuri{secnumdepth} avulla määrittämällä sen arvo
@@ -1940,6 +1990,7 @@ esimerkki vaihtaa otsikoihin groteskin kirjainperheen
 \titleformat*{\subsubsection}{\sffamily\bfseries\normalsize}
 \end{koodilohkosis}
 
+\noindent
 Monipuolisemmat muotoiluasetukset saa toteutettua komennon tähdettömällä
 versiolla \komentom{titleformat}. Tämän komentoversion monista
 argumenteista ja ominaisuuksista kannattaa lukea \paketti{titlesec}\-/
@@ -1984,6 +2035,7 @@ asetuksiin.
 \titlelabel{\thetitle\hspace{1em}}
 \end{koodilohkosis}
 
+\noindent
 Edellä olevan komennon argumentissa käytetty komento \komentox{thetitle}
 on tarkoitettu vain tämän komennon ja \paketti{titlesec}\-/ paketin
 sisäiseen käyttöön. Se latoo kyseisen luvun numeron, olipa otsikkotaso
@@ -2001,6 +2053,7 @@ sisennys, yläpuolinen väli ja alapuolinen väli.
 \titlespacing*{\section}{0mm}{3ex plus 2bp minus 1bp}{2ex plus 1bp}
 \end{koodilohkosis}
 
+\noindent
 Pystysuuntaiset mitat on yleensä hyvä asettaa venyviksi (luku
 \ref{luku/venyvät-mitat}), jotta Tex saa pelivaraa sivujen latomiseen.
 Otsikon yläpuolella pitäisi olla isompi väli kuin alapuolella, koska
@@ -2014,6 +2067,7 @@ oletuksena ex\-/mittayksikköä ja sallii hieman venymistä.
 \titlespacing*{\section}{0mm}{*3}{*2}
 \end{koodilohkosis}
 
+\noindent
 Tähdellinen \komento{titlespacing*}\-/ komento poistaa otsikon jälkeen
 tulevasta tekstikappaleesta ensimmäisen rivin sisennyksen (luku
 \ref{luku/ensimmäisen-rivin-sisennys}). Tähdetön komentoversio
@@ -2048,6 +2102,7 @@ ovat ''kausia'' ja pääluvut ovat ''päiviä''.
 }
 \end{koodilohkosis}
 
+\noindent
 Tässä \komento{renewcommand}\-/ komennot sijoitettiin \komento{addto}\-/
 komennon sisään, sen toiseen argumenttiin. Komento \komento{addto}
 täytyy suorittaa lähdedokumentin esittelyosassa, ja tässä se lisää uusia
@@ -2231,6 +2286,7 @@ kyllä muokatakin varsin helposti.
 \tableofcontents
 \end{koodilohkosis}
 
+\noindent
 Laskurin \laskurim{tocdepth} avulla kirjoittaja voi määritellä, mihin
 tasoon saakka sisällysluettelossa näytetään otsikoita. Esimerkiksi
 jonkin kuvitteellisen romaanin (dokumenttiluokka \luokka{book})
@@ -2246,6 +2302,7 @@ Otsikoiden tasonumerot voi tarkistaa taulukosta \ref{tlk/otsikkotasot}
 \setcounter{tocdepth}{0}
 \end{koodilohkosis}
 
+\noindent
 Sisällysluettelolle ladotaan automaattisesti otsikko, joka tulee
 komennosta \komentom{contentsname}. Komento on määritelty
 kieliasetuksissa, ja se latoo suomen kielessä sanan ''Sisältö'' tai
@@ -2268,6 +2325,7 @@ muutetaan sisällysluettelon otsikko suomen kielen osalta:
 }
 \end{koodilohkosis}
 
+\noindent
 Dokumenttiluokissa \luokka{book} ja \luokka{report} (luku
 \ref{luku/perusdokumenttiluokat}) on sellainen ominaisuus tai
 kummallisuus, että sisällysluettelon alkusivulla suoritetaan
@@ -2437,6 +2495,7 @@ ympäristöäkin käytetään samalla tavalla:
 \end{itemize}
 \end{koodilohkosis}
 
+\noindent
 \komento{item}\-/ komennolle voi antaa hakasulkeissa valinnaisen
 argumentin. Silloin ei ladota tavanomaista luetelmamerkkiä vaan
 argumentin sisältämä teksti tai koodi.
@@ -2473,6 +2532,7 @@ argumentin sisältämä teksti tai koodi.
   \label{esim/description}
 \end{esimerkki*}
 
+\noindent
 Komennon valinnaista argumenttia hyödynnetään varsinkin
 \ymparisto{description}\-/ ympäristössä, jossa luetellaan sanoja tai
 käsitteitä ja niiden määritelmiä. Esimerkistä \ref{esim/description}
@@ -2570,6 +2630,7 @@ arvoon~3, joten ensimmäiseksi luetelmakohdaksi tulee~4.
 \end{enumerate}
 \end{koodilohkosis}
 
+\noindent
 Kirjoittaja voi vaikuttaa myös luetelmakohtien sisennykseen ja
 pystysuuntaisiin väleihin. Sisennykseen vaikuttavat mitat alkavat
 sanoilla \mittax{leftmargin} ja jatkuvat roomalaisella numerolla
@@ -2592,6 +2653,7 @@ mukaisesti:
 \setlength{\leftmarginiv} {1.5em}
 \end{koodilohkosis}
 
+\noindent
 Edellä olevat sisennysasetukset toimivat ympäristöissä
 \ymparisto{itemize}, \ymparisto{enumerate} ja \ymparisto{description}.
 Mainituissa ympäristöissä voi säätää pystysuuntaisia välejä kolmen
@@ -2640,6 +2702,7 @@ vaikutetaan luetelman asetuksiin.
 \end{list}
 \end{koodilohkosis}
 
+\noindent
 Edellisen esimerkin argumentti \koodi{merk\-ki} sisältää tekstiä tai
 koodia, jonka muodostaa luetelmakohdan merkin. Numeroimattomassa
 luetelmassa siihen voi laittaa esimerkiksi luetelmaympyrän eli komennon
@@ -2766,6 +2829,7 @@ komento toimii ikään kuin se olisi määritelty seuraavalla tavalla:
 \renewcommand{\makelabel}[1]{\hfill #1}
 \end{koodilohkosis}
 
+\noindent
 Kirjoittaja voi määritellä \komento{makelabel}\-/ komennon uudelleen
 sellaiseksi kuin haluaa. Se on tarpeen esimerkiksi silloin, kun täytyy
 latoa kaikki luetelmamerkit eri fontilla kuin muu teksti. Varsinkin
@@ -2888,6 +2952,7 @@ seuraavassa on lisätietoa niiden merkityksestä.
   tekstikappaleiden ensimmäisen rivin sisennys. Oletusarvo on nolla.
 \end{maaritelma}
 
+\noindent
 Kun on lopulta saanut \ymparisto{list}\-/ ympäristön asetukset
 kohdalleen ja luetelmat ovat sellaisia kuin pitääkin, on varmaankin hyvä
 aika luoda oma ympäristö, joka piilottaa asetukset yhden
@@ -3035,6 +3100,7 @@ seuraava:
 \end{tabular}
 \end{koodilohkosis}
 
+\noindent
 Ympäristön valinnainen argumentti \koodi{sijainti} määrittelee
 taulukkoympäristön sijainnin pystysuunnassa, jos se on samassa
 kappaleessa muun tekstin kanssa. Oletusarvo on \koodi{c}
@@ -3174,6 +3240,7 @@ uudelleen, ja se tehdään seuraavan esimerkin mukaisesti:
 \renewcommand{\arraystretch}{1.3}
 \end{koodilohkosis}
 
+\noindent
 Sarakkeiden määrittelyssä voi kirjoittaa useita pystyviivoja eli
 \koodi{|}\=/ merkkejä peräkkäin. Silloin pystyviivoja ladotaan
 taulukkoon useita vierekkäin. Viivojen väliseen etäisyyteen voi
@@ -3198,6 +3265,7 @@ koonti edellä mainittujen mittojen asettamisesta ja niiden oletusarvot.
 \setlength{\tabcolsep}{6pt}
 \end{koodilohkosis}
 
+\noindent
 Sarakemääritelmässä voi \koodi{@}\=/ merkillä säätää sarakkeiden välit
 täysin haluamansa laiseksi. Esimerkiksi merkeillä \koodi{@\{\}}
 sarakeväli poistetaan kokonaan. Jos \koodi{@\{\dots\}}\=/ määrittelyyn
@@ -3279,6 +3347,7 @@ sarakemääritysten tekemiseen. Komentoa käytetään seuraavasti:
 \multicolumn{n}{sarakkeet}{teksti}
 \end{koodilohkosis}
 
+\noindent
 Komennon \komento{multicolumn} voi sijoittaa mihin hyvänsä taulukon
 soluun. Komennon ensimmäinen argumentti \koodi{n} on luku ja ilmaisee,
 kuinka monen sarakkeen alueeseen vaikutetaan. Toinen argumentti
@@ -3316,6 +3385,7 @@ kasva, vaan muihin saman taulukkorivin soluihin tulee tyhjää tilaa.
   \end{tabular}
 \end{tulossis}
 
+\noindent
 Joskus puolestaan halutaan, että yksi solu levittäytyy useamman rivin
 alueelle verrattuna taulukon muihin riveihin. Tämän toteutukseen
 tarvitaan \pakettim{multirow}\-/ pakettia ja sen \komentom{multirow}\-/
@@ -3326,6 +3396,7 @@ komentoa. Komennon pakolliset argumentit ovat seuraavat:
 \multirow{n}{leveys}{teksti}
 \end{koodilohkosis}
 
+\noindent
 Ensimmäinen argumentti \koodi{n} on luku, joka ilmaisee, kuinka monen
 rivin alueelle solu levitetään. Toinen argumentti \koodi{leveys} on
 tekstin leveyttä ilmaiseva mitta. Argumentiksi voi kirjoittaa pelkän
@@ -3341,6 +3412,7 @@ hakasulkeiden avulla. Tässä niistä tärkeimmät:
 \multirow[sijainti]{n}{leveys}[pysty]{teksti}
 \end{koodilohkosis}
 
+\noindent
 Edellisen esimerkin valinnainen argumentti \koodi{sijainti} on kirjain,
 jolla ilmaistaan solun sisällön pystysuuntainen asemointi ylös, keskelle
 tai alas: \koodi{t} (\englanti{top}), \koodi{c} (\englanti{center},
@@ -3401,6 +3473,7 @@ argumentin lisää, taulukon leveysmitan:
 \end{tabular*}
 \end{koodilohkosis}
 
+\noindent
 Valitettavasti taulukon leveysmittaa voi hyödyntää vain rajallisesti. Se
 vaikuttaa taulukon leveyteen silloin, kun sarakkeiden välit on
 määritelty venyviksi käyttämällä seuraavaa sarakevälin määritystä:
@@ -3411,6 +3484,7 @@ määritelty venyviksi käyttämällä seuraavaa sarakevälin määritystä:
 @{\extracolsep{\fill}}
 \end{koodilohkosis}
 
+\noindent
 Edellisestä on tärkeää huomata, että sarakkeiden leveydet eivät veny
 vaan ainoastaan niiden välissä oleva tyhjä tila. Usein olisi kuitenkin
 hyödyllisempää, että joidenkin sarakkeiden leveys olisi venyvä ja ne
@@ -3427,6 +3501,7 @@ samanlaista:
 \end{tabularx}
 \end{koodilohkosis}
 
+\noindent
 Ympäristö \ymparisto{tabularx} sisältää yhden uuden
 saraketyypin:~\koodi{X} (vrt. taulukko
 \ref{tlk/taulukko-sarakemerkit}). Tämä saraketyyppi toimii kuten
@@ -3451,6 +3526,7 @@ keskenään yhtä leveitä. Tämä ilmenee seuraavasta esimerkistä:
   \end{tabularx}
 \end{tulossis}
 
+\noindent
 Saraketyypissä \koodi{X} teksti tasataan oletuksena solujen
 molemmista reunoista, mutta siihen on mahdollista vaikuttaa
 sijoittamalla sarakemäärittelyssä \koodi{>}\=/ merkki ja sen
@@ -3464,6 +3540,7 @@ sarakemäärittely tekee vasemmalle tasatun \koodi{X}\=/ sarakkeen:
 >{\raggedright\arraybackslash}X
 \end{koodilohkosis}
 
+\noindent
 Sarakkeen solujen tasaaminen vasemmalle tulee komennon
 \komento{raggedright} vaikutuksesta (luku \ref{luku/kappaleen-tasaus}).
 Sen perään tarvitaan myös komento \komento{arraybackslash}, koska
@@ -3491,6 +3568,7 @@ voisi määritellä seuraavasti:
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 \end{koodilohkosis}
 
+\noindent
 Mitä hyvänsä saraketyyppejä voi tehdä vastaavalla tavalla. Esimerkiksi
 taulukon ensimmäiseen, otsikoita ilmaisevaan saraketyyppiin \koodi{O}
 voitaisiin laittaa fonttikomento, jotta koko sarake ladotaan
@@ -3502,6 +3580,7 @@ automaattisesti eri kirjainleikkauksella kuin muu taulukko.
 \newcolumntype{O}{>{\bfseries}l} % lihavoitu otsikkosarake
 \end{koodilohkosis}
 
+\noindent
 Ympäristön \ymparisto{tabularx} käyttöön liittyy tiettyjä rajoituksia:
 sitä ei voi käyttää normaalisti omien ympäristöjen määrittelyssä (luku
 \ref{luku/ympäristöt}). Esimerkiksi seuraava ympäristön määrittely ei
@@ -3516,6 +3595,7 @@ käytännössä toimi:
 {\end{tabularx}}
 \end{koodilohkosis}
 
+\noindent
 Edellä mainitun puutteen saa korjattua käyttämällä oman ympäristön
 määrittelyssä \ymparisto{tabularx}\-/ ympäristön aloitukseen komentoa
 \komentom{tabularx} ja lopetukseen komentoa \komentom{endtabularx}. Ei
@@ -3667,6 +3747,7 @@ seuraavalla tavalla:
 }
 \end{koodilohkosis}
 
+\noindent
 Edellä käytettiin \komento{addto}\-/ komentoa, joka kuuluu
 kielipaketteihin \paketti{polyglossia} ja \paketti{babel}. Sillä
 lisätään omia komentoja tietyn kielen asetuksiin, tässä suomen
@@ -3686,6 +3767,7 @@ valinnaisen argumentin, jolla ilmaistaan kuvatekstistä lyhempi versio:
 \caption[lyhyt kuvateksti]{varsinainen pitkä kuvateksti}
 \end{koodilohkosis}
 
+\noindent
 Varsinainen (pitkä) kuvateksti ladotaan aina leijuvan osan yhteyteen ja
 lyhempää versiota käytetään mahdollisesti luettelossa (luku
 \ref{luku/leijuosat-luettelot}) ja ristiviitteissä. Kuvatekstin eli
@@ -3713,6 +3795,7 @@ paketin\avctan{floatrow} avustuksella. Se sisältää komennon on
 \DeclareNewFloatType{tyyppi}{valitsimet}
 \end{koodilohkosis}
 
+\noindent
 Komennon ensimmäinen argumentti \koodi{tyyppi} on leijuvan osan tyyppi
 ja käytännössä myös ympäristön nimi. Jos tyypiksi antaa sanan
 \koodi{esimerkki}, syntyy leijuvat ympäristöt \ymparistox{esimerkki} ja
@@ -3808,6 +3891,7 @@ leijuvan osan tyyppi sekä luettelon otsikko.
 \listof{esimerkki}{Esimerkit}  % luettelo esimerkki-tyyppisistä osista
 \end{koodilohkosis}
 
+\noindent
 Leijuvien osien luettelot muistuttavat sisällysluetteloita (luku
 \ref{luku/sisällysluettelo}), eli niille tulee automaattisesti otsikko
 kuten ''\listtablename'' tai ''\listfigurename'' ja automaattisesti
@@ -3863,6 +3947,7 @@ asetuksiin.
 }
 \end{koodilohkosis}
 
+\noindent
 Luetteloihin saa lisättyä omia rivejä samoilla keinoilla kuin
 sisällysluetteloihinkin eli komennolla \komento{addcontentsline}.
 Komennon ensimmäinen argumentti on luettelon tyyppiä vastaavan tiedoston
@@ -3877,6 +3962,7 @@ ja valitaan osan määrittelyn yhteydessä.
 \addcontentsline{lof}{figure}{Ylimääräinen kuva}
 \end{koodilohkosis}
 
+\noindent
 Komennon toinen argumentti tarkoittaa luettelomerkinnän tasoa (vrt.
 otsikkotasot). Leijuvien osien luetteloissa on vain yksi taso, ja siihen
 kirjoitetaan kyseisen leijuvan osan tyyppi eli ympäristön nimi,
@@ -3920,6 +4006,7 @@ ympäristön sijoitteluun voi vaikuttaa valinnaisen argumentin avulla:
   \label{tlk/leijuosat-sijoittelukirjaimet}
 }
 
+\noindent
 Valinnainen argumentti \koodi{sijainti} on tietty merkki tai merkkien
 yhdistelmä, jolla vaikutetaan leijuvan osan sijoitteluun. Taulukossa
 \ref{tlk/leijuosat-sijoittelukirjaimet} ovat mahdolliset vaihtoehdot.
@@ -3971,6 +4058,7 @@ ympäristön valitsinta \koodi{!} (taulukko
   on~3.
 \end{maaritelma}
 
+\noindent
 Seuraavat kolme mittaa vaikuttavat leijuvien osien pystysuuntaisiin
 väleihin. Mitat asetetaan komennolla \komento{setlength} (luku
 \ref{luku/mitat}).
@@ -3995,6 +4083,7 @@ väleihin. Mitat asetetaan komennolla \komento{setlength} (luku
   valitsimella \koodi{12pt} oletus on \koodi{14pt plus 4pt minus 4pt}.
 \end{maaritelma}
 
+\noindent
 Seuraavat neljä komentoa sisältävät pelkän desimaaliluvun 0\==1. Luku
 kertoo leijuvien osien tai leipätekstin viemän suhteellisen tilan
 samalla sivulla. Komennot määritellään uudelleen komennolla
@@ -4023,6 +4112,7 @@ vaikutuksen voi poistaa kokonaan leijuvan ympäristön valitsimella
   käytetään komentoa \komento{dblfloatpagefraction}.
 \end{maaritelma}
 
+\noindent
 Sivunvaihtokomennot \komento{clearpage} ja \komento{cleardoublepage}
 (luku \ref{luku/sivunvaihdot}) pakottavat kaikki aiemmin
 lähdetiedostossa olleet leijuvat osat ladottavaksi. Osanvaihtokomento
@@ -4099,6 +4189,7 @@ tavalla.
   \label{esim/floatbox-perus}
 \end{esimerkki*}
 
+\noindent
 Valinnaisen argumentin \koodi{leveys} voi jättää poiskin, jolloin
 leijuva osa varaa itselleen sivun leveyden verran tilaan. Argumentiksi
 on joskus hyödyllistä antaa mitta \mitta{FBwidth}, joka on leijuvan osan
@@ -4128,6 +4219,7 @@ latomiseksi rinnakkain:
 \end{table}
 \end{koodilohkosis}
 
+\noindent
 Kun leijuvat osat on toteutettu \komento{floatbox}\-/ komennon avulla,
 voi niiden ulkoasuun vaikuttaa komennolla \komento{floatsetup}. Sille
 annetaan ainakin yksi argumentti, joka voi sisältää useita pilkulla
@@ -4175,6 +4267,7 @@ toisistaan erotettuja valitsimia ja niiden arvoja.
   \label{tlk/floatsetup-valitsimia}
 }
 
+\noindent
 Valinnainen argumentti \koodi{tyyppi} on leijuvan osan tyyppi,
 esimerkiksi \ymparisto{table} tai \ymparisto{figure}. Jos se on annettu,
 asetukset vaikuttavat vain kyseiseen tyyppiin; muuten asetukset koskevat
@@ -4198,6 +4291,7 @@ osan asetukset voisivat näyttää vaikka seuraavanlaiselta:
 \floatsetup[figure]{ style=boxed }
 \end{koodilohkosis}
 
+\noindent
 Kuvatekstien fonttia ja rivittämistä hallitaan \paketti{caption}\-/
 paketin\avctan{caption} avulla. Tärkein komento on
 \komento{captionsetup}, joka yleensä sijoitetaan dokumentin
@@ -4265,6 +4359,7 @@ ympäristössä.
   \label{tlk/captionsetup-valitsimia}
 }
 
+\noindent
 Komennon valinnainen argumentti \koodi{tyyppi} on leijuvan osan tyyppi,
 esimerkiksi \ymparisto{table} tai \ymparisto{figure}, johon halutaan
 vaikuttaa. Jos sen jättää pois, asetukset vaikuttavat kaikkien leijuvien
@@ -4281,6 +4376,7 @@ esimerkiksi seuraavanlaiselta:
   singlelinecheck=false }
 \end{koodilohkosis}
 
+\noindent
 Oletuksena Latex käsittelee yksiriviset kuvatekstit poikkeuksellisella
 tavalla eli keskittää ne. Sen vuoksi tasausvalitsin
 \koodi{justification} ei vaikuta yksirivisiin kuvateksteihin. Tämän
@@ -4374,6 +4470,7 @@ leijuvan osan kuvatekstikomennon (\komento{caption}) jälkeen:
 \label{tunniste}
 \end{koodilohkosis}
 
+\noindent
 \komento{label}\-/ komennon argumentti \koodi{tunniste} voi olla
 suunnilleen mitä tahansa tekstiä. Sen täytyy olla yksilöllinen, eli sama
 tunniste ei saa olla käytössä missään toisessa \komento{label}\-/
@@ -4393,6 +4490,7 @@ aihetta. Seuraavassa on esimerkkejä \komento{label}\-/ komennoista:
 \label{kuva/kirjainleikkauksia}  % kuvan \caption-komennon jälkeen
 \end{koodilohkosis}
 
+\noindent
 Ristiviittauksissa vähimmällä vaivalla selviää, kun muistaa kaksi asiaa:
 1)~kirjoittaa \komento{label}\-/ komentoja vain niihin kohtiin, joihin
 täytyy viitata muualta, 2)~valitsee tunnisteet siten, ettei niitä
@@ -4418,6 +4516,7 @@ Katso taulukko \ref{taulukko/fonttimallikomennot} sivulla
   \pageref{tlk/fonttimallikomennot}.
 \end{tulossis}
 
+\noindent
 Jos ladattuna on paketti \paketti{hyperref} (luku
 \ref{luku/pdf-asetukset}), on ristiviittauksiin käytettävissä myös
 komento \komento{nameref}. Sillekin annetaan argumentiksi jokin
@@ -4462,6 +4561,7 @@ tapauksessa komento ei kasvata \laskuri{footnote}\-/ laskuria.
 \footnote[numero]{Alaviitteen teksti.}
 \end{koodilohkosis}
 
+\noindent
 Itse alaviite ladotaan samalla kirjaintyypillä kuin leipätekstikin mutta
 pienempänä: sen koko tulee komennosta \komento{footnotesize} (luku
 \ref{luku/fontit-korkea}). Samalle sivulle voi sattua useampikin
@@ -4487,6 +4587,7 @@ alaviitteen numero.
 \footnotetext[numero]{Alaviitteen teksti.} % alaviite
 \end{koodilohkosis}
 
+\noindent
 Alaviitteiden numerointi on laskurissa \laskuri{footnote}, mutta sen
 arvo ladotaan komennon \komento{thefootnote} avulla. Tämän komennon
 määritelmässä on oletuksena komento
@@ -4503,6 +4604,7 @@ alaviitteet ilmaistaan symbolien avulla:
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \end{koodilohkosis}
 
+\noindent
 Laskurien symboliesitys toimii vain lukualueella 1\==9, joten samaan
 dokumenttiin ei mahdu kovin monta alaviitettä, ellei laskuria nollaa
 välillä. Laskurin voi määritellä riippuvaiseksi toisesta laskurista,
@@ -4523,6 +4625,7 @@ mukaisesti. Toinen vaihtoehto on paketti \paketti{footmisc} ja valitsin
 \counterwithin*{footnote}{page}
 \end{koodilohkosis}
 
+\noindent
 Edellisissä esimerkeissä on käsitelty koko dokumentin alaviitelaskuria
 \laskuri{footnote}, mutta leijuvissa osissa ja \ymparisto{minipage}\-/
 ympäristöissä (luku \ref{luku/laatikot}) alaviitteet numeroidaan
@@ -4541,6 +4644,7 @@ jota käytetään esimerkiksi \komento{geometry}\-/ komennon kanssa:
 \geometry{ footnotesep=14bp }
 \end{koodilohkosis}
 
+\noindent
 Välin täytyy olla ainakin niin suuri, ettei lukija sekoita alaviitteitä
 leipätekstin kappaleeseen. Ehkä riittävä väli on noin yhden
 rivikorkeuden verran tai vähän enemmän. Sopivan välin suuruus voi
@@ -4581,6 +4685,7 @@ valitsimella \koodi{norule}. Samalla pystysuuntainen väli hieman kasvaa.
 \usepackage[norule]{footmisc}
 \end{koodilohkosis}
 
+\noindent
 Valitsin \koodi{perpage} numeroi alaviitteet sivukohtaisesti, eli niiden
 laskuri nollautuu aina sivun vaihtuessa. Valitsin \koodi{bottom}
 pakottaa alaviitteen aina sivun alareunaan. Oletusasetuksilla alaviite
@@ -4608,6 +4713,7 @@ valitsimella \koodi{hang}. Sisennyksen suuruuteen voi vaikuttaa mitan
 \setlength{\footnotemargin}{1.5em}
 \end{koodilohkosis}
 
+\noindent
 Valitsin \koodi{multiple} mahdollistaa peräkkäisten
 \komento{footnote}\-/ komentojen kirjoittamisen helposti. Peräkkäin
 olevien yläindeksinumeroiden väliin ladotaan automaattisesti pilkku,
@@ -4624,6 +4730,7 @@ sana\footnote{…}\footnote{…}
   \textsuperscript{8}
 \end{tulossis}
 
+\noindent
 Toisaalta yläindeksiin voi sijoittaa pilkun tai muuta tekstiä käsinkin
 komennolla \komento{textsuperscript} (luku \ref{luku/ylä-alaindeksit}).
 \koodi{multiple}\-/ valitsin vaatii toimiakseen tietyn
@@ -4644,6 +4751,7 @@ seuraavalla asetuksella:
 \usepackage[hyperfootnotes=false]{hyperref}
 \end{koodilohkosis}
 
+\noindent
 \paketti{footmisc}\-/ paketti sisältää muitakin toimintoja alaviitteiden
 ulkoasun säätämiseen. Lisätietoa saa paketin ohjekirjasta.
 
@@ -4683,6 +4791,7 @@ jolla ilmaistaan sivun alkuun ladottava koko sivun levyinen sisältö:
 \twocolumn[yksipalstaista sisältöä]
 \end{koodilohkosis}
 
+\noindent
 \komento{twocolumn}\-/ komennon valinnainen argumentti mahdollistaa sen,
 että sivun alkuun voi sijoittaa esimerkiksi koko sivun levyisen otsikon,
 kuvan tai muun osan. Sen jälkeen lähes kaikki sisältö on ladotaan
@@ -4715,6 +4824,7 @@ ladota.
 \setlength{\columnseprule}{.2mm}  % pystyviivan leveys
 \end{koodilohkosis}
 
+\noindent
 Latex laskee automaattisesti palstan leveyden ja asettaa sen mittaan
 \mitta{columnwidth}. Tätä mittaa ei siis tarvitse eikä pidä itse
 asettaa, mutta sitä voi hyödyntää esimerkiksi taulukoiden tai kuvien
@@ -4741,6 +4851,7 @@ seuraavat:
 \end{multicols}
 \end{koodilohkosis}
 
+\noindent
 Argumentti \koodi{palstamäärä} on kokonaisluku, joka ilmaisee, kuinka
 monelle palstalle ympäristön sisältö ladotaan. Palstojen korkeus
 pyritään tasaamaan automaattisesti, niin että kaikki palstat ovat yhtä
@@ -4805,6 +4916,7 @@ alku.
 \end{multicols}
 \end{koodilohkosis}
 
+\noindent
 Ennen palstaympäristöä ja sen jälkeen ladotaan mitan \mitta{multicolsep}
 suuruinen pystysuuntainen väli. Väliä ei kuitenkaan ladota, jos se
 sattuu sivunvaihdon kohdalle. Palstojen välissä oleva tyhjä tila
@@ -4822,6 +4934,7 @@ mitan oletusarvo on nolla, eli pystyviivaa ei ladota.
 \setlength{\columnseprule}{.2mm}          % pystyviivan leveys
 \end{koodilohkosis}
 
+\noindent
 Oletuksena palstojen alareuna pyritään joka sivulla pitämään tarkasti
 samalla tasolla. Tämä toteutuu siten, että palstoilla olevia
 pystysuuntaisia välejä voidaan venyttää, jotta niiden viimeiset rivit
@@ -4895,6 +5008,7 @@ esimerkki havainnollistaa paketin käyttöönottoa ja asetuksia.
 \setcitestyle{authoryear,aysep={},notesep={: }}
 \end{koodilohkosis}
 
+\noindent
 Edellisessä esimerkissä viittaustyyli valitaan \komento{setcitestyle}\-/
 komennon argumentissa valitsimella \koodi{author\-year}
 (tekijä\--vuosi). Valitsimella \koodi{aysep} määritetään, mikä
@@ -4917,6 +5031,7 @@ seuraavanlaisilta:
   Meikäläinen \& Teikäläinen (2020: 27--29)
 \end{tulossis}
 
+\noindent
 Lähdeluettelo kirjoitetaan \ymparistom{thebibliography}\-/ ympäristön ja
 \komentom{bibitem}\-/ komentojen avulla esimerkin
 \ref{esim/thebibliography} tavoin. Ympäristön aloittavan komennon
@@ -4963,6 +5078,7 @@ lähdeviittauksissa näytetään. Yleinen muoto on seuraavanlainen:
 \bibitem[lyhyt(vuosi)pitkä]{tunniste} Lähdeluettelon tekstit.
 \end{koodilohkosis}
 
+\noindent
 Valinnaisen argumentin aluksi kirjoitetaan lähdeviittauksen lyhyt
 merkintä, joka tulisi näkymään lähdeviittauksissa esimerkiksi muodossa
 ''Meikäläinen ym.''. Heti sen perään kirjoitetaan sulkeissa teoksen
@@ -5022,6 +5138,7 @@ välinen pystysuuntainen tila. Mitat asetetaan tavalliseen tapaan
 \setlength{\bibsep}{.5ex plus .1ex minus .1ex}
 \end{koodilohkosis}
 
+\noindent
 Lähdemerkintöjen fonttiin voi vaikuttaa määrittelemällä uudelleen
 komennon \komentom{bibfont} ja sijoittamalla halutut fontti- tai muut
 komennot kyseisen komennon määritelmään.
@@ -5032,6 +5149,7 @@ komennot kyseisen komennon määritelmään.
 \renewcommand{\bibfont}{\sffamily\small}
 \end{koodilohkosis}
 
+\noindent
 Oletuksena \ymparisto{thebibliography}\-/ ympäristö latoo
 lähdeluettelolle otsikon, ja otsikon teksti määräytyy kieliasetusten
 (luku \ref{luku/kieliasetukset}) ja dokumenttiluokan perusteella (luku
@@ -5055,6 +5173,7 @@ Esimerkissä hyödynnetään \komento{addto}\-/ komentoa, joka sisältyy
 }
 \end{koodilohkosis}
 
+\noindent
 On myös mahdollista määritellä koko komentosarja, joka suoritetaan
 lähdeluettelon otsikoinnin yhteydessä. Se tehdään määrittelemällä
 uudelleen komento \komentom{bibsection}.
@@ -5071,6 +5190,7 @@ uudelleen komento \komentom{bibsection}.
 }
 \end{koodilohkosis}
 
+\noindent
 Edellisessä esimerkissä komennolla \komento{setcounter} määritetään,
 mille otsikkotasolle dokumentin otsikoiden eli lukujen numerointi yltää.
 Pieni arvo \mbox{(\koodi{-1})} käytännössä tarkoittaa, että seuraaviin
@@ -5087,6 +5207,7 @@ tyhjäksi.
 \renewcommand{\bibsection}{}
 \end{koodilohkosis}
 
+\noindent
 Tässä alaluvussa on käsitelty lähdeluettelon ja lähdeviitteiden
 tekemistä \paketti{natbib}\-/paketin toimintojen avulla. Paketti
 sisältää muitakin ominaisuuksia, joihin kannattaa tutustua paketin
@@ -5137,6 +5258,7 @@ tietueista, joiden yleinen muoto on seuraavanlainen:
 }
 \end{koodilohkosis}
 
+\noindent
 Teostyypin nimen jälkeen aaltosulkeiden sisään kirjoitetaan teoksen
 kaikki tiedot. Ne alkavat teoksen yksilöllisellä tunnisteella, jota
 käytetään lähdeviittauksissa. Tunnisteen jälkeen tulevat muut kentät.
@@ -5243,6 +5365,7 @@ author = {Meikäläinen, Matti and Teikäläinen, Teija}
 author = {{Org. of Latex and Typography} and Meikäläinen, Matti}
 \end{koodilohkosis}
 
+\noindent
 Muunkinlaisia useasta osasta koostuvia kenttiä on olemassa.
 Asiasanakentän (\koodi{keywords}) eri sanat erotetaan toisistaan
 pilkulla, ja sivunumeroissa (\koodi{pages}) voi olla myös lukualueita,
@@ -5253,6 +5376,7 @@ keywords = {eri, sanoja, peräkkäin}
 pages = {15-19}
 \end{koodilohkosis}
 
+\noindent
 Teostietokantaan voi määrittää vakiosisältöisiä muuttujia käyttämällä
 \koodi{@string}\-/ rakennetta. Vakioihin voi sitten viitata
 teostietueiden kentistä esimerkin \ref{esim/bib-muuttujat} tavoin.
@@ -5351,6 +5475,7 @@ dokumentin esittelyosaan.
 \addbibresource[location=remote]{http://osoite.netissä/yhteiset.bib}
 \end{koodilohkosis}
 
+\noindent
 Lähdeluettelo ladotaan dokumenttiin komennolla
 \komento{printbibliography}. Komennolle voi antaa valinnaisen
 argumentin, jonka valitsimilla vaikutetaan esimerkiksi lähdeluettelon
@@ -5368,6 +5493,7 @@ toiseen ja verkkolähteet kolmanteen.
   type=online]           % ja rajataan vain online-tyyppisiin.
 \end{koodilohkosis}
 
+\noindent
 Lähdeluetteloon tulevat mukaan vain ne teokset, joihin on viitattu.
 Mitään ei siis näy, jos ei ole lähdeviittauksia. Seuraavassa alaluvussa
 käsitellään lähdeviittauskomentoja ja myös ''näkymätöntä''
@@ -5413,6 +5539,7 @@ Viittaus näkyy dokumentissa esimerkiksi seuraavalla tavalla:
   Meikäläinen ja Teikäläinen (2020, s. 27--29)
 \end{tulossis}
 
+\noindent
 Jos halutaan sisällyttää lähdeluetteloon teoksia, joihin ei ole
 välttämättä viitattu, käytetään dokumentissa kerran ''näkymätöntä''
 viittauskomentoa \komento{nocite}. Sille annetaan argumentiksi
@@ -5442,6 +5569,7 @@ lualatex teksti.tex
 lualatex teksti.tex
 \end{koodilohkosis}
 
+\noindent
 Edellisen esimerkin komennoissa voi tiedoston nimistä jättää päätteet
 pois (\koodi{.tex}, \koodi{.bcf}). \koodi{lualatex}\-/ ohjelman paikalla
 voi olla myös \koodi{xelatex}. Kääntäminen on vielä helpompaa, kun
@@ -5469,6 +5597,7 @@ rivin sisennys \mitta{parindent}.
 \setlength{\bibhang}{\parindent}
 \end{koodilohkosis}
 
+\noindent
 Mitta \mitta{bibitemsep} on lähdemerkintöjen välinen pystysuuntainen
 tila. \mittamargin{bibitemsep} Sen avulla voi harventaa lähdeluetteloa,
 jolloin lähdemerkinnät erottuvat paremmin toisistaan. Mitan
@@ -5504,6 +5633,7 @@ komennot kyseisen komennon määritelmään.
 \renewcommand{\bibfont}{\sffamily\small}
 \end{koodilohkosis}
 
+\noindent
 Lähdemerkinnät itsessään muodostetaan automaattisesti tiettyjen
 tyyliasetusten perusteella. Omiakin tyylejä voi tehdä, mutta yleensä
 riittää vain yksittäisen asetusten muuttaminen. Niistä käsitellään tässä
@@ -5528,6 +5658,7 @@ ensin. Tämä saadaan toteutettua seuraavilla komennolla:
   Meikäläinen, Matti ja Teikäläinen, Teija (2020). --~--
 \end{tulossis}
 
+\noindent
 Saman teoksen eri tekijöiden nimet erotetaan oletuksena toisistaan
 pilkuilla paitsi kahden viimeisen nimen välissä on \textit{ja}-sana.
 Usein on kuitenkin tapana käyttää \&\=/merkkiä ainakin lähdeluettelossa.
@@ -5545,6 +5676,7 @@ erottimeksi \&\=/merkin.
   --~--
 \end{tulossis}
 
+\noindent
 Erotinmerkkiasetuksen nimi \koodi{multi\-name\-delim} tarkoittaa muiden
 kuin kahden viimeisen tekijän nimen välissä olevaa erotinta. Kahden
 viimeisen nimen erotin määritellään asetuksella
@@ -5570,6 +5702,7 @@ käytetään \textit{ja}\-/sanaa.
   (Meikäläinen, Teikäläinen \& Tutkija 2020)
 \end{tulossis}
 
+\noindent
 Useiden saman teoksen tekijöiden luettelot lyhennetään automaattisesti
 esimerkiksi muotoon ''Meikäläinen et~al.'', ja lyhentämisen säännöt
 määritellään tiettyjen \koodi{max}- ja \koodi{min}\-/alkuisten paketin
@@ -5593,6 +5726,7 @@ oletuksena päällä viittaustyylissä \koodi{author\-year}.
   maxcitenames=3, mincitenames=1, uniquelist=true]{biblatex}
 \end{koodilohkosis}
 
+\noindent
 Kun halutaan näyttää lähdeluettelossa vain tekijän etunimen alkukirjain
 eikä koko etunimeä, käytetään paketin valitsinta \koodi{given\-inits}.
 
@@ -5606,6 +5740,7 @@ eikä koko etunimeä, käytetään paketin valitsinta \koodi{given\-inits}.
   Meikäläinen, M. (2020). -- --
 \end{tulossis}
 
+\noindent
 Lähdeluettelossa näytetään teoksen tekijän nimen kohdalla ajatusviiva,
 jos tekijä on sama kuin luettelon edelliselläkin teoksella. Mikäli tätä
 (sinänsä yleistä) käytäntöä ei haluta, täytyy käyttää paketin asetusta
@@ -5617,6 +5752,7 @@ jos tekijä on sama kuin luettelon edelliselläkin teoksella. Mikäli tätä
 \usepackage[…, dashed=false]{biblatex}
 \end{koodilohkosis}
 
+\noindent
 Joskus on tapana latoa lähdeluettelossa tekijöiden nimet esimerkiksi
 pienversaalilla, jotta ne erottuvat luettelosta paremmin. Tällainen
 muutos vaatii, että lähdeluettelon latomisen yhteydessä määritellään
@@ -5644,6 +5780,7 @@ automaattiseksi seuraavilla komennoilla:
   \textsc{Teija} (2020). -- --
 \end{tulossis}
 
+\noindent
 Lähdeluettelon eri osien erottimena on yleensä piste. Joskus kuitenkin
 tekijöiden nimien ja vuosiluvun jälkeen halutaan kaksoispiste. Se
 saadaan toteutettua seuraavalla komennolla:
@@ -5657,6 +5794,7 @@ saadaan toteutettua seuraavalla komennolla:
   Meikäläinen, Matti (2020): -- --
 \end{tulossis}
 
+\noindent
 Oletuksena \paketti{biblatex} kursivoi \koodi{book}\-/ tyyppisten
 teosten nimen (\koodi{title}). Sen sijaan artikkelikokoelmissa
 (\koodi{incollection}) ja aikakauslehdissä (\koodi{article})
@@ -5677,6 +5815,7 @@ lähdeluettelon kenttien muuttamiseen.
 \DeclareFieldFormat[incollection]{booktitle}{#1}
 \end{koodilohkosis}
 
+\noindent
 Edellä olevissa esimerkkikomennoissa on valinnaisena argumenttina ne
 teostyypit, joihin halutaan vaikuttaa. Jos valinnaisen argumentin jättää
 pois, vaikutetaan kaikkiin teostyyppeihin, ellei tarkempaa
@@ -5697,6 +5836,7 @@ lainausmerkkikäytännöt ja mahdolliset sisäkkäiset sulkeet.
 \DeclareFieldFormat[incollection]{booktitle}{\mkbibquote{#1}}
 \end{koodilohkosis}
 
+\noindent
 Oletuksena teoksen vuosiluku tai muu päiväys ladotaan lähdeluetteloon
 sulkeissa. Joissakin lähdeluettelokäytännöissä sulkeita ei kuitenkaan
 ole, joten seuraavaksi käsitellään keino sulkeiden poistamiseen.
@@ -5719,6 +5859,7 @@ asetusta.
   Meikäläinen, Matti 2020. -- --
 \end{tulossis}
 
+\noindent
 Artikkelikokoelmissa (teostyyppi \koodi{incollection}) mainitaan
 oletuksena kokoelman nimi ja toimittajat seuraavassa muodossa:
 ''Teoksessa: \textit{Hieno artikkelikokoelma.} Toim. Kirjailija,
@@ -5745,6 +5886,7 @@ toimittajarooli sulkeisiin. Tällaiset asetukset saa käyttämällä tyyliä
     artikkelikokoelma}. -- --
 \end{tulossis}
 
+\noindent
 Lähdeviittauksissa vuosiluvun ja sivunumeroiden välissä käytetään
 toisinaan pilkkua ja toisinaan kaksoispistettä. Sivunumeroiden
 yhteydessä voi olla lyhenne ''s.'' tai se voidaan jättää pois.
@@ -5764,6 +5906,7 @@ Seuraavilla komennoilla vaikutetaan näihin asetuksiin:
   Meikäläinen (2020: 15--16) toteaa artikkelissaan -- --
 \end{tulossis}
 
+\noindent
 Kun saman teoksen usean tekijän luettelo lyhennetään, käytetään
 oletuksena latinankielistä ilmausta pois jäävien nimien tilalla:
 ''Meikäläinen et al.''. Ilmauksen voi muuttaa suomenkieliseksi
@@ -5780,6 +5923,7 @@ seuraavalla komennolla:
   Meikäläinen ym. (2020)
 \end{tulossis}
 
+\noindent
 \paketti{biblatex}\-/paketti sisältää valtavan paljon asetuksia ja
 mahdollisuuksia lähdeluettelon ja \=/viitteiden ulkoasun säätämiseen.
 Esimerkiksi komennolla \komento{DeclareBibliographyDriver} voi ottaa
@@ -5901,6 +6045,7 @@ voisivat olla Latexin komennoille, mitoille ja laskureille:
 \makeindex[name=laskurit, title=Laskurit, colums=2, intoc]
 \end{koodilohkosis}
 
+\noindent
 \komento{makeindex}\-/ komennon valitsin \koodi{title} antaa otsikon
 hakemistolle, joka ladotaan \komento{printindex}\-/ komennolla (luku
 \ref{luku/asiasanat-asetukset}). Jos \koodi{title}\-/ valitsinta ei ole
@@ -5951,6 +6096,7 @@ Yhteen \index{kirjainperhe} kirjainperheeseen kuuluu tavallisesti
 useita \index{kirjainleikkaus} leikkauksia.
 \end{koodilohkosis}
 
+\noindent
 \komento{index}\-/ komennolle voi antaa yhden valinnaisen argumentin.
 Sitä tarvitaan silloin, kun asiasana halutaan lisätä tiettyyn,
 määrittelyn yhteydessä \koodi{name}\-/ valitsimella nimettyyn
@@ -5963,6 +6109,7 @@ asiasana kyseiseen hakemistoon seuraavasti:
 \index[henkilöt]{Waltari, Mika}
 \end{koodilohkosis}
 
+\noindent
 Tämän luvun muissa esimerkeissä ei yleensä käytetä \komento{index}\-/
 komennon valinnaista argumenttia. Argumentti on kuitenkin tarpeen aina,
 kun halutaan lisätä asiasanoja tiettyyn, määrittelyn yhteydessä
@@ -5994,6 +6141,7 @@ sanojen ja nimien aakkostuksessa.
   Wuori, Yrjö, \arabic{page}
 \end{tulossis}
 
+\noindent
 Edellä mainittua aakkostustoimintoa tarvitaan myös silloin, kun
 hakemiston sanojen latomisessa käytetään Latex\-/ komentoja eli asiasana
 ei ole pelkkää tekstiä. Seuraavassa esimerkissä asiahakemistoon lisätään
@@ -6009,6 +6157,7 @@ tasalevyisellä fontilla (\komento{texttt}) ja alkuun lisätään kenoviiva
 \index{textbullet@\texttt{\textbackslash textbullet}}
 \end{koodilohkosis}
 
+\noindent
 Käytännössä \komento{index}\-/ komentoja ei kannata aina kirjoittaa
 lähdedokumenttiin sellaisenaan, vaan komennon voi sisällyttää jonkin
 toisen komennon määritelmään. Tästä on esimerkki luvussa
@@ -6032,6 +6181,7 @@ alemmantasoisista. Seuraava esimerkki lisää asiahakemistoon sanan
   \makebox[\sisennys]{}kirjainperhe, \arabic{page}
 \end{tulossis}
 
+\noindent
 Asiasanahierarkiassa voi olla korkeintaan kolme tasoa, ja tasot
 erotetaan toisistaan \koodi{!}\=/ merkillä. Jokainen \koodi{!}\=/
 merkillä erotettu osa voi sisältää \koodi{@}\=/ merkin, jolla voi
@@ -6053,6 +6203,7 @@ Seuraavassa esimerkissä asiasanan sivunumero ladotaan kursiivilla:
   asiasana, \textit{\arabic{page}}
 \end{tulossis}
 
+\noindent
 \komento{index}\-/ komennon argumenttiin ei kirjoiteta varsinaista
 komentoa (\komento{textit}) vaan ainoastaan komennon nimi \koodi{|}\=/
 merkin jälkeen. Komento voi olla mikä hyvänsä ja sen pitäisi hyväksyä
@@ -6079,6 +6230,7 @@ seuraavasti:
   kirjainperhe, \textit{\alsoname} fontit
 \end{tulossis}
 
+\noindent
 Molemmat komennot hyväksyvät kaksi argumenttia, mutta edellisessä
 esimerkissä annettiin vain yksi: \koodi{fontit}. Viimeiseksi
 argumentiksi tulee automaattisesti aina sivunumero, mutta nämä komennot
@@ -6106,6 +6258,7 @@ esittelyosaan:
 }
 \end{koodilohkosis}
 
+\noindent
 Toisaalta kirjoittaja voi määritellä ihan oman komentonsa
 asiasanaviittausten tekemiseen. Oman komennon avulla lopputulokseen voi
 vaikuttaa enemmän. Esimerkissä \ref{esim/see-katso-komento} määritellään
@@ -6170,6 +6323,7 @@ käsittelyn alun ja lopun merkitsemiseen:
   asiasana, 53--55
 \end{tulossis}
 
+\noindent
 Edellä mainittujen aloitusmerkkien \koodi{|(} perään voi kirjoittaa
 komennon nimen, jos haluaa vaikuttaa sivunumeroiden latomiseen. Tätä
 käsiteltiin jo edellä, mutta seuraavassa on käytännön esimerkki:
@@ -6185,6 +6339,7 @@ käsiteltiin jo edellä, mutta seuraavassa on käytännön esimerkki:
   asiasana, \textit{53--55}
 \end{tulossis}
 
+\noindent
 Jos itse asiasanaan täytyy sisällyttää edellä mainittuja
 \komento{index}\-/ komennon erikoismerkkejä (\koodi{@!|}), pitää niiden
 eteen kirjoitta yleislainausmerkki (\koodi{\textquotedbl}). Se estää
@@ -6209,6 +6364,7 @@ ladottavan hakemiston teknisen nimen, esimerkiksi:
 \printindex[henkilöt]  % Latoo hakemiston nimeltä ”henkilöt”.
 \end{koodilohkosis}
 
+\noindent
 Luvussa luku \ref{luku/asiasanat-määrittely} käsitellään yksittäisten
 hakemistojen asetuksia, mutta \komento{indexsetup}\-/ komennolla voi
 määrittää kaikkia hakemistoja koskevia yleisempiä asetuksia. Komennolle
@@ -6243,6 +6399,7 @@ valitsimia ja niiden arvoja. Valitsimia on koottu taulukkoon
   \label{tlk/indexsetup-valitsimia}
 }
 
+\noindent
 Valitsimen \koodi{level} arvoksi annetaan tyypillisesti otsikkokomento,
 joka suoritetaan kunkin hakemiston alussa. Itse otsikon tekstin voi
 määritellä \komento{makeindex}\-/ komennon \koodi{title}\-/ valitsimella

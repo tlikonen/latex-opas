@@ -27,6 +27,7 @@ käyttää normaalilla tavalla. Merkit ovat seuraavat:
 % $ ^ _ # & { } ~ \
 \end{koodilohkosis}
 
+\noindent
 Useimmat näistä merkeistä voi suojata erikoismerkitykseltään
 kirjoittamalla niiden eteen kenoviivan (\koodi{\keno}). Tildeä
 (\textasciitilde), sirkumfleksia (\textasciicircum) eikä kenoviivaa
@@ -84,6 +85,7 @@ sanoja  peräkkäin  ja               kuuluvat
   kappaleeseen.
 \end{tulossis}
 
+\noindent
 Sanavälien leveys ei ole vakio. Silloin kun tekstipalsta tasataan
 molemmista reunoista -- kuten tämänkin oppaan leipätekstissä \==,
 rivillä olevia sanavälejä venytetään sopivasti, jotta tekstipalstan
@@ -109,6 +111,7 @@ poikkeukselliset sanavälit.
 \setlength{\spaceskip}{0.8em plus 0.3em minus 0.2em}
 \end{koodilohkosis}
 
+\noindent
 Myös kirjainperheelle voi asettaa oman sanavälikertoimensa fontin
 asetusten \koodi{Word\-Space}\-/valitsimella. Tätä asetusta käsitellään
 fonttien yhteydessä luvussa \ref{luku/fontit-välistys}.
@@ -148,6 +151,7 @@ Nyt ei oteta kantaa siihen, miten
 rivit ja kappaleet muotoillaan.
 \end{koodilohkosis}
 
+\noindent
 Ladotuissa teksteissä uuden tekstikappaleen alkaminen ilmaistaan usein
 sisennetyllä rivillä, mutta sisennyksiä eikä muitakaan muotoiluja ei
 tehdä tekstieditorissa välien avulla. Kappaleiden muotoiluun on omat
@@ -165,6 +169,7 @@ kirjoittamiseen.
 % mitään kommentoitavaa.
 \end{koodilohkosis}
 
+\noindent
 Kommenttimerkki vaikuttaa kääntäjään myös siten, että se syö kaikki
 välilyönnit ja sarkainmerkit, jotka tulevat kyseisen kommentin jälkeen.
 Tämän vuoksi kommenttimerkin avulla voi yhdistää eri riveillä olevan
@@ -236,6 +241,7 @@ kun sanaväli.
 J.\,R.\,R. Tolkien
 \end{koodilohkosis}
 
+\noindent
 Myös henkilön etunimen alkukirjainten välissä voi käyttää ohuketta, jos
 tavallinen sanaväli vie kirjaimet turhan kauas toisistaan. Sukunimi
 erotetaan kuitenkin aina sanavälillä. Joskus myös päiväyksissä käytetään
@@ -295,6 +301,7 @@ saadaan kulmalainausmerkki~(>>).
   >>Lainaus, jonka 'sisällä' on lainaus.>>
 \end{tulossis}
 
+\noindent
 Yllä mainitut riittävät suomen kieleen, mutta englantia ja muita kieliä
 varten tarvitaan myös toisinpäin oleva merkki (``), joka tehdään
 kahdella gravisaksentilla (\koodim{``}). Vastaava puolilainausmerkki (`)
@@ -331,6 +338,7 @@ määrittelyn yhteydessä tai väliaikaisesti komennolla
   {\addfontfeatures{Ligatures=TeXReset} `` '' >> '}
 \end{tulossis}
 
+\noindent
 Tasalevyisessä fontissa Tex\-/ligatuurit eivät ole päällä oletuksena,
 joten yksittäisissä sanoissa tai lyhyissä ilmauksissa voi estää
 Tex\-/ligatuurit esimerkiksi komennolla \komento{texttt}. Samalla
@@ -346,6 +354,7 @@ tietysti fonttikin vaihtuu. Fontteja käsitellään tarkemmin luvussa
   \texttt{`` '' >> '}
 \end{tulossis}
 
+\noindent
 Makropaketti \pakettim{csquotes}\avctan{csquotes} sisältää
 lainausmerkkeihin liittyviä komentoja ja kielikohtaista logiikkaa.
 Paketissa olevan \komentom{enquote}\-/ komennon avulla voi jättää
@@ -393,6 +402,7 @@ Oulu--Rovaniemi-yhteys
   Oulu--Rovaniemi-yhteys
 \end{tulossis}
 
+\noindent
 Myös Unicoden ajatusviivamerkit \uctunnus{u+2013 en dash} ja
 \uctunnus{u+2014 em dash} toimivat, mutta tavutuksen kannalta ne
 käyttäytyvät eri tavoin Lualatex\-/\ ja Xelatex\-/kääntäjillä.
@@ -416,6 +426,7 @@ seuraavasti:
   {\addfontfeatures{Ligatures=TeXReset} -- ---}
 \end{tulossis}
 
+\noindent
 Miinusmerkille (−) ei Latexissa ole erityistä merkintätapaa muuten kuin
 matematiikkatilassa (luku \ref{luku/matematiikka}). Tavallisessa
 tekstitilassa lyhyttä ajatusviivaa voi ja saa käyttää myös
@@ -681,6 +692,7 @@ katkaisemisen muista kohdista.
 tavutus\-algo\-ritmi
 \end{koodilohkosis}
 
+\noindent
 Myös sanassa olevat yhdysmerkit ja ajatusviivat vaikuttavat sanan
 tavuttamiseen. Perusteellisemmin tavutusta ja sen asetuksia käsitellään
 luvussa \ref{luku/tavutus}.
@@ -704,6 +716,7 @@ aaltosulkeisiin \koodi{\{}\ldots\koodi{\}} ja valinnaiset hakasulkeisiin
 \komento[valinnainen]{argu}{mentteja}
 \end{koodilohkosis}
 
+\noindent
 Jos pakolliseen argumenttiin haluaa sisällyttää aaltosulkeen, täytyy sen
 eteen kirjoittaa kenoviiva \komento{\{}~\komento{\}}, tai voi myös
 käyttää taulukossa \ref{tlk/erikoismerkit-muut} mainittuja komentoja
@@ -735,6 +748,7 @@ La\komento   tex
   Latex
 \end{tulossis}
 
+\noindent
 Jos täytyy saada komennon nimen jälkeinen sanaväli näkyviin, täytyy
 kirjoittaa komennon nimen perään aaltosulkeet
 (\komentox{komento}\komentoarg{}) tai kenoviiva
@@ -777,6 +791,7 @@ Komennolla \komento{section} tehdään otsikoita.
   Komennolla \texttt{\textbackslash section} tehdään otsikoita.
 \end{tulossis}
 
+\noindent
 Edellä mainitun komennon määritelmään voi olla tarpeen lisätä myöhemmin
 muitakin asioita. Latexin komentojen nimet ovat suunnilleen englantia,
 ja jos nimen tavuttaa, täytyisi se tehdä englannin sääntöjen mukaisesti.
@@ -807,6 +822,7 @@ Lopulta Latex\-/ komentojen merkitsemiseen tarkoitettu
 % Asiahakemistot-luvussa on viittaus tähän lukuun ja maininta
 % \index-komennon sisällyttämisestä toisen komennon määritelmään.
 
+\noindent
 Näin oma \komentox{komento} ilmaisee tiiviisti ja havainnollisesti
 tarkoituksen eli sen, että kyseessä on Latex\-/ komento. Se piilottaa
 monimutkaisen teknisen toteutuksen eli fontin ja kielen vaihtamiseen
@@ -829,6 +845,7 @@ annetaan samanlaiset argumentit. Komennot ovat seuraavat:
 \providecommand {\nimi}[n][oletus]{määritelmä}
 \end{koodilohkosis}
 
+\noindent
 Ensimmäinen pakollinen argumentti on komennon nimi (\komentox{nimi}), ja
 se voi koostua vain kirjaimista. Komento \komentom{newcommand}
 määrittelee uuden komennon. Mikäli komento on jo olemassa, annetaan
@@ -852,6 +869,7 @@ Suoritusvaiheessa komento ikään kuin vaihdetaan sen määritelmäksi.
   Minua komennettiin!
 \end{tulossis}
 
+\noindent
 Komentojen ensimmäinen valinnainen argumentti \koodi{n} on luku, joka
 kertoo, kuinka monta argumenttia määriteltävä komento käsittelee.
 Määritelmässä voi käyttää parametreja \koodi{\#1}, \koodi{\#2},
@@ -868,6 +886,7 @@ ensimmäisellä, toisella, kolmannella jne. argumentilla.
   Sanoit hip ja hei!
 \end{tulossis}
 
+\noindent
 Toinen valinnainen argumentti \koodi{oletus} -- jos se on mukana --
 kertoo, että määriteltävän komennon ensimmäinen argumentti on
 valinnainen ja että tämä on sen oletusarvo. Oletusarvoa käytetään
@@ -885,6 +904,7 @@ silloin, kun valinnaista argumenttia ei ole annettu.
   Hei Leslie, sanoit hip ja hei!
 \end{tulossis}
 
+\noindent
 Joskus yhden komennon määritelmä sisältää komennon
 \komento{renewcommand}, joka sitten määrittelee uudelleen jonkin toisen
 komennon. Silloin parametrit \koodi{\#1}, \koodi{\#2} jne. on
@@ -906,6 +926,7 @@ näkökulman.
 \providecommand* {\nimi}[n][oletus]{määritelmä}
 \end{koodilohkosis}
 
+\noindent
 Komentojen määrittelyssä tähdelliset versiot toimivat muuten samalla
 tavalla, mutta ne antavat virheilmoituksen, jos komennolle annetut
 argumentit sisältävät enemmän kuin yhden tekstikappaleen. Niinpä
@@ -952,6 +973,7 @@ sanaväli.
   Argumentti: <.>abc
 \end{tulossis}
 
+\noindent
 Mikäli argumenttina on kenoviivalla alkava komento, sitäkään ei tarvitse
 kirjoittaa aaltosulkeisiin. Latex\-/koodin lukemisen kannalta tällainen
 ei välttämättä ole hyvä käytäntö, koska joskus voi hämärtyä, onko kyse
@@ -969,6 +991,7 @@ argumenttina toiselle.
   Argumentti: <abc>
 \end{tulossis}
 
+\noindent
 Tätä merkintätapaa esiintyy jokin verran komentojen määrittelyssä, niin
 että jätetään \komento{newcommand}\-/komennon ensimmäisenä argumenttina
 oleva komennon nimi ilman aaltosulkeita.
@@ -978,6 +1001,7 @@ oleva komennon nimi ilman aaltosulkeita.
 \newcommand\yyy{abc}
 \end{koodilohkosis}
 
+\noindent
 Komennon määrittelyssä on välillä hyötyä \komentom{ignorespaces}\-/
 komennosta, joka jättää sanavälit huomioimatta komennon jälkeen. Ilman
 tätä komentoa tulisi seuraavassa esimerkissä sanojen väliin yksi
@@ -1014,6 +1038,7 @@ välilyönti.
 \label{esim/aaltosulkeet-rajaaminen}
 \end{esimerkki*}
 
+\noindent
 Aaltosulkeilla (luku \ref{luku/aaltosulkeet}) voi rajata
 komentomäärittelyn vaikutusaluetta. Esimerkin
 \ref{esim/aaltosulkeet-rajaaminen} alussa asetetaan \komentox{komento}
@@ -1050,6 +1075,7 @@ kyseisessä ympäristössä.
 \end{nimi}
 \end{koodilohkosis}
 
+\noindent
 Yleisin ympäristö on nimeltään \ymparistom{document}, jonka sisään koko
 dokumentin sisältö kirjoitetaan. Muita ympäristöjä käytetään
 tavallisesta leipätekstistä poikkeavien rakenteiden ilmaisemiseen,
@@ -1064,6 +1090,7 @@ tarkoitukseen. Niitä määritellään seuraavilla komennoilla:
 \renewenvironment {nimi}[n][oletus]{aloitus}{lopetus}
 \end{koodilohkosis}
 
+\noindent
 Komento \komentom{newenvironment} määrittelee uuden ympäristön. Se antaa
 virheilmoituksen, jos samanniminen ympäristö on jo olemassa. Komento
 \komentom{renewenvironment} puolestaan määrittelee uudelleen ympäristön,
@@ -1091,6 +1118,7 @@ lopetusmääritelmä (\koodi{lopetus}).
   Tästä se alkaa. Ympäristön sisältöä. Tähän se päättyy.
 \end{tulossis}
 
+\noindent
 Tavallisesti ympäristön aloitusmääritelmään kirjoitetaan jonkin toisen
 ympäristön aloituskomento sekä mahdollisesti suoritetaan joitakin
 asetuskomentoja. Vastaavasti lopetusmääritelmässä lopetetaan ympäristö
@@ -1108,6 +1136,7 @@ piilottaa teknisen toteutuksen.
   {\end{mahtavuus}}
 \end{koodilohkosis}
 
+\noindent
 Omille ympäristölle voi määritellä argumentteja samalla tavalla kuin
 komennoillekin. Ensimmäinen valinnainen argumentti \koodi{n} on luku
 joka kertoo, kuinka monta argumenttia määriteltävä ympäristö käsittelee.
@@ -1129,6 +1158,7 @@ ympäristön aloittavan \komento{begin}\-/ komennon yhteydessä.
 \end{ymp}
 \end{koodilohkosis}
 
+\noindent
 Ympäristön määrittelykomennoille on myös tähdelliset versiot
 \komentom{newenvironment*} ja \komentom{renewenvironment*}. Ne toimivat
 samoin kuin edellä kuvatut tavallisetkin komentoversiot, mutta ne eivät
@@ -1169,6 +1199,7 @@ komentojenkin määrittelyn tähdellisissä versioissa (luku
 \label{esim/ignorespacesafterend}
 \end{esimerkki*}
 
+\noindent
 Joskus ympäristöjen määrittelyyn on hyödyllistä sisällyttää komento
 \komentom{ignorespaces}, joka jättää huomioimatta tämän komennon
 jälkeiset sanavälit. Toinen hyödyllinen on
@@ -1267,6 +1298,7 @@ koodissa useita kertoja.
 \addtolength{\omamitta}{-1em} % Vähennetään mitasta.
 \end{koodilohkosis}
 
+\noindent
 Näin luotuja mittoja voi käyttää mittayksiköiden tavoin, eli niille voi
 asettaa eteen kertoimen. Esimerkiksi seuraava \komento{hspace}\-/
 komento luo vaakasuuntaisen välin, jonka pituus on 0,7 kertaa
@@ -1277,6 +1309,7 @@ komento luo vaakasuuntaisen välin, jonka pituus on 0,7 kertaa
 \hspace{0.7\omamitta}
 \end{koodilohkosis}
 
+\noindent
 Koska vaakasuuntaisten välien tekeminen on typografiassa varsin
 tavallista, on niitä varten olemassa omia komentoja. Typografisen neliön
 levyisen (1\,em) välin voi tehdä komennolla \komentom{quad}. Sen
@@ -1371,6 +1404,7 @@ tallennetaan merkkien mitat.
 \settodepth{\syvyys}{p}   % merkin ”p” syvyys
 \end{koodilohkosis}
 
+\noindent
 Mitat saa näkyviin kirjoittamalla mitan eteen komennon \komentom{the}.
 Näin mitan pituus ladotaan dokumenttiin. Yksikkönä on typografinen piste
 (pt).
@@ -1384,6 +1418,7 @@ Leveys: \the\leveys, korkeus: \the\korkeus, syvyys: \the\syvyys.
   Leveys: 14.62865pt, korkeus: 6.81897pt, syvyys: 2.4662pt.
 \end{tulossis}
 
+\noindent
 Aiemmin mainituista optisista korjauksista johtuu, että gemenakirjaimet
 eivät ole välttämättä täsmälleen samankorkuisia. Gemena\=/x asettuu
 perus- ja gemenalinjojen väliin, mutta gemena\=/o voi yltää aavistuksen
@@ -1411,6 +1446,7 @@ ensimmäisen rivin sisennys (\mitta{parindent}) nollaan (\koodi{0em}).
 \setlength{\parindent}{0em}
 \end{koodilohkosis}
 
+\noindent
 Venyvissä mitoissa mainitaan ensin normaali pituus ja sitten sanoilla
 \koodi{plus} ja \koodi{minus} ilmaistaan, kuinka paljon mitta voi venyä
 tai kutistua. Molempia ei välttämättä tarvitse antaa.
@@ -1430,6 +1466,7 @@ x\hspace{0mm plus 1fill}x\hspace{0mm plus 2fill}x
   x\hspace{0mm plus 1fill}x\hspace{0mm plus 2fill}x
 \end{tulossis}
 
+\noindent
 Edellisen esimerkin mittojen luonnollinen pituus on nolla (\koodi{0mm}),
 mutta \koodi{plus} ja \koodi{fill} \=/mitan vuoksi ne voivat venyä ja
 täyttää koko käytettävissä olevan tilan. Ensin mainitulla on suhdeluku 1
@@ -1448,6 +1485,7 @@ x\hspace{\stretch{1}}x\hspace{\stretch{2}}x
   x\hspace{\stretch{1}}x\hspace{\stretch{2}}x
 \end{tulossis}
 
+\noindent
 Äärettömästi venyvälle, koko tilan täyttävälle mittayksikölle on itse
 asiassa kolme eri versiota: \koodi{fil}, \koodi{fill} ja \koodi{filll}.
 Niiden erona on tärkeysjärjestys. Ensin mainittu \koodi{fil} on vähiten
@@ -1464,6 +1502,7 @@ x\hspace{0mm plus 1filll}x\hspace{0mm plus 1fill}x
   x\hspace{0mm plus 1filll}x\hspace{0mm plus 1fill}x
 \end{tulossis}
 
+\noindent
 Edellisessä esimerkissä ensimmäinen venyvä mitta \koodi{1filll} mitätöi
 jälkimmäisen \koodi{1fill} kokonaan. Yleensä lienee parasta käyttää
 keskimmäistä (\koodi{fill}), mutta eri tärkeysasteille voi olla käyttöä
@@ -1484,6 +1523,7 @@ esimerkiksi vaaka- ja pystysuuntaisia välejä latovien komentojen
 \vspace{\fill} % ääretön pystysuuntainen väli
 \end{koodilohkosis}
 
+\noindent
 Edellisen esimerkin komennoista on olemassa vieläkin lyhemmät versiot.
 Vaakasuuntainen ääretön väli syntyy myös komennolla \komento{hfill} ja
 pystysuuntainen väli komennolla \komento{vfill}. Seuraavassa toistetaan
@@ -1576,6 +1616,7 @@ komentojen ja mittojen alussa.
 \addtocounter{oma}{-1} % Vähennetään laskurin arvosta 1.
 \end{koodilohkosis}
 
+\noindent
 Laskuri on sisäisesti kokonaisluku, mutta sen arvon voi latoa eri
 muodoissa: arabialaisena tai roomalaisena lukuna, kirjaimena tai
 symbolien sarjana. Taulukossa \ref{tlk/laskurien-latominen} ovat komennot
@@ -1655,6 +1696,7 @@ kun sivu vaihtuu eli laskurin \laskuri{page} arvo kasvaa.
 \newcounter{oma}[page]
 \end{koodilohkosis}
 
+\noindent
 Ylemmän tason laskureita ei kannata kasvattaa komennolla
 \komento{addtocounter}, koska se vain muuttaa laskurin arvoa mutta ei
 huolehdi alemman tason laskurien nollaamisesta. Hierarkkisten laskurien
@@ -1667,6 +1709,7 @@ kasvattamiseen on seuraavat kaksi komentoa:
 \refstepcounter{laskuri}
 \end{koodilohkosis}
 
+\noindent
 Edellä mainitut komennot kasvattavat argumenttina annetun laskurin arvoa
 yhdellä ja nollaavat siitä riippuvaiset alemman tason laskurit.
 Jälkimmäinen komento \komento{refstepcounter} asettaa lisäksi
@@ -1691,6 +1734,7 @@ laskurista tai poistaa riippuvuuden.
 \counterwithout{oma}{page} % Poistetaan riippuvuus.
 \end{koodilohkosis}
 
+\noindent
 Edellä mainitut \paketti{chngcntr}\-/paketin komennot määrittelevät
 uudelleen myös \komentox{the\-oma}\-/ komennon, jolla \laskurix{oma}\-/
 laskurin arvon voi latoa. Se latoo mukaan myös ylemmäntasoisen laskurin
@@ -1772,6 +1816,7 @@ on komento, jolla ladotaan tai palautetaan laskurin lopullinen arvo.
 \totvalue{oma}        % Palautetaan laskurin lopullinen arvo.
 \end{koodilohkosis}
 
+\noindent
 Edellä olevan esimerkin viimeistä komentoa \komento{totvalue} ei käytetä
 laskurin arvon latomiseen itse dokumenttiin vaan sitä käytetään
 teknisissä yhteyksissä kuten toisen Latex\-/komennon argumenttina.

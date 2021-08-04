@@ -141,6 +141,7 @@ poistaa kaikki syntyneet tiedostot.
 Puutteita ja suunnitelmia
 -------------------------
 
+  - noindentafter-paketti ei toimi Tex Live 2020:ssa.
   - Rakenneluku kesken.
   - Matematiikkaluku puuttuu.
   - Esipuhe puuttuu.
@@ -154,4 +155,3 @@ Puutteita ja suunnitelmia
   - Makropakettien tekeminen.
   - Dokumenttiluokkien tekeminen.
   - Käsitellään uusi `fi-x-school`-tavutuskaava.
-  - Pitäisikö yleiskäsite "mitta" muuttaa täsmällisemmäksi "pituudeksi"?

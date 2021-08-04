@@ -75,29 +75,33 @@
 % Perusfontin on oltava antiikva, ja tekstissä siitä käytetään seuraavia
 % asetuksia: Numbers={Lowercase}, Numbers={Uppercase, SlashedZero},
 % Fractions, pienversaalit, aitoja ylä- ja alaindeksejä.
-\setmainfont {libertinusserif}[
+\setmainfont {LibertinusSerif}[
 Ligatures={TeX, Common},
 Numbers=Lowercase,
-UprightFont=*-regular,
-ItalicFont=*-italic,
-SlantedFont=*-regular, SlantedFeatures={FakeSlant=.2},
-BoldFont=*-semibold,
-BoldItalicFont=*-semibolditalic,
-BoldSlantedFont=*-semibold, BoldSlantedFeatures={FakeSlant=.2},
+UprightFont=*-Regular,
+ItalicFont=*-Italic,
+SlantedFont=*-Regular,
+SlantedFeatures={FakeSlant=.2},
+BoldFont=*-Semibold,
+BoldItalicFont=*-SemiboldItalic,
+BoldSlantedFont=*-Semibold,
+BoldSlantedFeatures={FakeSlant=.2},
 Extension=.otf]
 
 % Fonttiluvussa viitataan tähän perheeseen siten, että se on antiikvan
 % ja groteskin välimuoto (päätteetön kaksivahva).
-\setsansfont {libertinussans}[
+\setsansfont {LibertinusSans}[
 Scale=MatchLowercase,
 Ligatures={TeX, Common},
 Numbers=Lowercase,
-UprightFont=*-regular,
-ItalicFont=*-italic,
-SlantedFont=*-regular, SlantedFeatures={FakeSlant=.2},
-BoldFont=*-bold,
-BoldItalicFont=*-bolditalic,
-BoldSlantedFont=*-bold, BoldSlantedFeatures={FakeSlant=.2},
+UprightFont=*-Regular,
+ItalicFont=*-Italic,
+SlantedFont=*-Regular,
+SlantedFeatures={FakeSlant=.2},
+BoldFont=*-Bold,
+BoldItalicFont=*-Bold,
+BoldSlantedFont=*-Bold,
+BoldSlantedFeatures={FakeSlant=.2},
 Extension=.otf]
 
 % Poistetaan tasalevyiseltä fontilta oletusasetukset. Se muun muassa
@@ -106,21 +110,22 @@ Extension=.otf]
 
 % Fonttien asetuksia käsittelevässä luvussa viitataan tähän fonttiin ja
 % välistyksen tiivistämiseen (FakeStretch).
-\setmonofont {libertinusmono}[
+\setmonofont {LibertinusMono}[
 Scale=MatchLowercase,
 FakeStretch=.8,
 Ligatures={TeXReset, NoCommon},
 Numbers=SlashedZero,
-UprightFont=*-regular,
-ItalicFont=*-italic,
-BoldFont=*-bold,
-BoldItalicFont=*-bolditalic,
+UprightFont=*-Regular,
+ItalicFont=*-Regular,
+BoldFont=*-Regular,
+BoldItalicFont=*-Regular,
+SmallCapsFont=*-Regular,
 Extension=.otf]
 
 % Esimerkkien tulosteet tällä fontilla:
 \newcommand{\erikoisfontti}{\rmfamily}
 
-\newfontface{\viivastofontti}{libertinusserif-regular.otf}
+\newfontface{\viivastofontti}{LibertinusSerif-Regular.otf}
 
 \renewcommand{\scriptsize}{\fontsize{7bp}{7bp}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{8bp}{9bp}\selectfont}
@@ -390,6 +395,7 @@ columnsep=1em]
 \regtotcounter{chapter}
 
 \begin{document}
+\rmfamily % Pienversaali ei toimi leipätekstissä ilman tätä.
 
 \input{tavutusvihjeet}
 

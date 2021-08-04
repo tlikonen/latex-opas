@@ -72,60 +72,10 @@
 \newcommand{\englanti}[1]{\textenglish{#1}}
 \newcommand{\englantik}[1]{\textenglish{\emph{#1}}}
 
-% Perusfontin on oltava antiikva, ja tekstissä siitä käytetään seuraavia
-% asetuksia: Numbers={Lowercase}, Numbers={Uppercase, SlashedZero},
-% Fractions, pienversaalit, aitoja ylä- ja alaindeksejä.
-\setmainfont {LibertinusSerif}[
-Ligatures={TeX, Common},
-Numbers=Lowercase,
-UprightFont=*-Regular,
-ItalicFont=*-Italic,
-SlantedFont=*-Regular,
-SlantedFeatures={FakeSlant=.2},
-BoldFont=*-Semibold,
-BoldItalicFont=*-SemiboldItalic,
-BoldSlantedFont=*-Semibold,
-BoldSlantedFeatures={FakeSlant=.2},
-Extension=.otf]
-
-% Fonttiluvussa viitataan tähän perheeseen siten, että se on antiikvan
-% ja groteskin välimuoto (päätteetön kaksivahva).
-\setsansfont {LibertinusSans}[
-Scale=MatchLowercase,
-Ligatures={TeX, Common},
-Numbers=Lowercase,
-UprightFont=*-Regular,
-ItalicFont=*-Italic,
-SlantedFont=*-Regular,
-SlantedFeatures={FakeSlant=.2},
-BoldFont=*-Bold,
-BoldItalicFont=*-Bold,
-BoldSlantedFont=*-Bold,
-BoldSlantedFeatures={FakeSlant=.2},
-Extension=.otf]
-
-% Poistetaan tasalevyiseltä fontilta oletusasetukset. Se muun muassa
-% kytkee tavutuksen päälle, koska oletus on HyphenChar=None.
-\defaultfontfeatures[\ttfamily]{}
-
-% Fonttien asetuksia käsittelevässä luvussa viitataan tähän fonttiin ja
-% välistyksen tiivistämiseen (FakeStretch).
-\setmonofont {LibertinusMono}[
-Scale=MatchLowercase,
-FakeStretch=.8,
-Ligatures={TeXReset, NoCommon},
-Numbers=SlashedZero,
-UprightFont=*-Regular,
-ItalicFont=*-Regular,
-BoldFont=*-Regular,
-BoldItalicFont=*-Regular,
-SmallCapsFont=*-Regular,
-Extension=.otf]
-
-% Esimerkkien tulosteet tällä fontilla:
+\defaultfontfeatures[\ttfamily]{Ligatures={TeXReset, NoCommon}}
+\usepackage[oldstyle,semibold,ScaleSF=MatchLowercase,StretchTT=.8]{libertinus-otf}
 \newcommand{\erikoisfontti}{\rmfamily}
-
-\newfontface{\viivastofontti}{LibertinusSerif-Regular.otf}
+\newcommand{\viivastofontti}{\rmfamily}
 
 \renewcommand{\scriptsize}{\fontsize{7bp}{7bp}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{8bp}{9bp}\selectfont}

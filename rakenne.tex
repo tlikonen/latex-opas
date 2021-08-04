@@ -292,21 +292,21 @@ Suomenkielisissä julkaisuissa on tavallista, että leipätekstin
 kappaleessa ei ole sisennystä, jos sitä ennen on pystysuuntainen väli.
 Tällainen tilanne on aina otsikoiden jälkeen mutta myös kokonaan
 sisennetyn tekstikappaleen jälkeen tai kuvan, taulukon, luetelman tai
-muun vastaavan tekstinosan jälkeen. Esimerkiksi tässä oppaassa Latex\-/
-koodiesimerkkien jälkeen ei tekstikappaleissa ole sisennystä. Tähän
-käytäntöön on joskus poikkeuksia suomenkielisessäkin typografiassa,
-mutta eri kielten välillä käytäntö voi vaihdella enemmänkin.
+muun vastaavan osan jälkeen. Käytäntöön on joskus poikkeuksia
+suomenkielisessäkin typografiassa, mutta eri kielten välillä käytäntö
+voi vaihdella enemmänkin.
 
 Latex estää sisennyksen automaattisesti otsikoiden jälkeen mutta latoo
 sisennyksen kuitenkin kaikkien muiden elementtien ja pystysuuntaisen
 välin jälkeen. Jos sisennys halutaan estää, pitäisi kyseiset kappaleet
-aloittaa aina \komento{noindent}\-/komennolla. Toinen vaihtoehto on
-käyttää \paketti{noindentafter}\-/ pakettia\avctan{noindentafter} ja
-määritellä sen tarjoaman komennon avulla, minkä ympäristöjen jälkeen ei
-haluta sisennystä. Seuraava esimerkki poistaa sisennyksen aina
-\ymparisto{list}- ja \ymparisto{tabular}\-/ ympäristöjen jälkeen.
-Lisätietoa mainituista ympäristöistä on luvuissa
-\ref{luku/list-ympäristö} ja \ref{luku/taulukot}.
+aloittaa aina \komento{noindent}\-/komennolla.
+
+Toinen vaihtoehto on käyttää \paketti{noindentafter}\-/
+pakettia\avctan{noindentafter} ja määritellä sen tarjoaman komennon
+avulla, minkä ympäristöjen jälkeen ei haluta sisennystä. Seuraava
+esimerkki poistaa sisennyksen aina \ymparisto{list}- ja
+\ymparisto{tabular}\-/ ympäristöjen jälkeen (luvut
+\ref{luku/list-ympäristö} ja \ref{luku/taulukot}).
 
 \komentoi{NoIndentAfterEnv}
 \ymparistoi{list}
@@ -315,6 +315,15 @@ Lisätietoa mainituista ympäristöistä on luvuissa
 \NoIndentAfterEnv{list}
 \NoIndentAfterEnv{tabular}
 \end{koodilohkosis}
+
+\noindent
+Tosin \paketti{noindentafter}\-/ paketti ei ole aina toiminut
+luotettavasti yhdessä \paketti{polyglossia}\-/ kielipaketin kanssa. Jos
+sisennyksen poistaminen ei tahdo toimia, kyse voi olla juuri tästä.
+
+Kolmas keino kappaleen ensimmäisen rivin sisennyksen estämiseksi jonkin
+ympäristön jälkeen on se, että aloittaa tekstikappaleen heti ympäristön
+lopettavan \komento{end}\-/ komennon jälkeen -- ilman tyhjää riviä.
 
 \subsection{Riippuva sisennys}
 \label{luku/riippuva-sisennys}

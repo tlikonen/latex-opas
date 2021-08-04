@@ -141,7 +141,6 @@ poistaa kaikki syntyneet tiedostot.
 Puutteita ja suunnitelmia
 -------------------------
 
-  - noindentafter-paketti ei toimi Tex Live 2020:ssa.
   - Rakenneluku kesken.
   - Matematiikkaluku puuttuu.
   - Esipuhe puuttuu.

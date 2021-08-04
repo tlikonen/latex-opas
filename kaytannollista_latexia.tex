@@ -19,7 +19,6 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{multirow}
-\usepackage{noindentafter}
 \usepackage[normalem]{ulem}
 \usepackage[makeindex, splitindex]{indextools}
 % \usepackage{ifthen}
@@ -280,13 +279,6 @@ columnsep=1em]
 \newcommand{\ots}[1]{{\sffamily\bfseries #1}}
 \newcommand{\otsrivi}[1]{{\sffamily #1}}
 \newcommand{\katk}{\discretionary{}{}{}}
-
-% Oppaan tekstissä mainitaan typografinen käytäntö, että
-% koodiesimerkkien jälkeen ei sisennetä.
-\NoIndentAfterEnv{koodilohkosis}
-\NoIndentAfterEnv{tulossis}
-\NoIndentAfterEnv{nluetelma}
-\NoIndentAfterEnv{maaritelma}
 
 \addto{\captionsfinnish}{
   \renewcommand{\contentsname}{Sisällys}

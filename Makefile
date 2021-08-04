@@ -10,7 +10,7 @@ julkaisukohteet = $(patsubst %,$(tds)/$(nimi)/%,$(julkaisutiedostot))
 asiahakemistot = paketit ymparistot komennot mitat laskurit dokumenttiluokat
 texmf = $(HOME)/texmf
 lualatex = lualatex -interaction=nonstopmode -shell-escape
-latexmk = latexmk -lualatex -pdflualatex="$(lualatex) %O %S"
+latexmk = latexmk -lualatex -lualatex="$(lualatex) %O %S"
 
 $(nimi).pdf: versio.tex versio.txt $(lahde)
 	@if which latexmk >/dev/null; \

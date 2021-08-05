@@ -286,20 +286,33 @@ columnsep=1em]
 
 \newcommand{\otsikkotyyli}{ \raggedright \sffamily \bfseries }
 
-\titleformat{\chapter}[display]{\Large\bfseries}
-{\chaptertitlename\hspace{.3em}\thechapter}{1.5ex}{\otsikkotyyli\huge}[]
+\titleformat{\chapter}
+[display]
+{\Large\bfseries}
+{\chaptertitlename\hspace{.3em}\thechapter}
+{1.5ex}
+{\otsikkotyyli\huge}[]
 \titlespacing*{\chapter}{0em}{*13}{*8}
 
-\titleformat{\section}{\otsikkotyyli\large}
-{\thesection}{.8em}{}[]
+\titleformat{\section}
+{\otsikkotyyli\large}
+{\thesection}
+{.8em}
+{}[]
 \titlespacing*{\section}{0pt}{*4}{*2}
 
-\titleformat{\subsection}{\otsikkotyyli\normalsize}
-{\thesubsection}{.8em}{}[]
+\titleformat{\subsection}
+{\otsikkotyyli\normalsize}
+{\thesubsection}
+{.8em}
+{}[]
 \titlespacing*{\subsection}{0bp}{*2}{*1}
 
-\titleformat{\subsubsection}{\otsikkotyyli\mdseries\itshape\normalsize}
-{\thesubsubsection}{.8em}{}[]
+\titleformat{\subsubsection}
+{\otsikkotyyli\mdseries\scshape\normalsize}
+{\thesubsubsection}
+{.8em}
+{}[]
 \titlespacing*{\subsubsection}{0bp}{*2}{*1}
 
 \titlecontents{chapter}

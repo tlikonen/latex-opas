@@ -6358,7 +6358,7 @@ eteen kirjoitta yleislainausmerkki (\koodi{\textquotedbl}). Se estää
 seuraavan merkin tulkitsemisen \komento{index}\-/ komennon
 erikoismerkiksi.
 
-\subsection{Hakemiston latominen ja asetukset KESKEN}
+\subsection{Hakemiston latominen ja asetukset}
 \label{luku/asiasanat-asetukset}
 
 Hakemistot ladotaan komennolla \komento{printindex}. Tyypillisesti
@@ -6438,9 +6438,59 @@ kunkin asiahakemiston ensimmäisen sivun sivutyyli (luku
 tavallinen, oletuksena pelkän sivunumeron sisältävä sivutyyli. Tämä
 valitsin ei ole käytössä, jos ladattuna on paketti \paketti{fancyhdr}.
 
-% \indexprologue[spacing]{text} % vaikuttaan seuraavaan \printindex'iin
-% \printindex
-% \usepackage: splitindex ja xindy: -shell-escape
+Ennen \komento{printindex}\-/ komentoa voi käyttää komentoa
+\komento{indexprologue}, jolla määritetään johdantoteksti asiahakemiston
+alkuun. Komento vaikuttaa seuraavaksi ladottavaan asiahakemistoon, eli
+se kannattaa sijoittaa juuri ennen \komento{printindex}\-/ komentoa.
+Komentoa käytetään seuraavasti:
+
+\komentoi{indexprologue}
+\begin{koodilohkosis}
+\indexprologue[väli]{teksti}
+\end{koodilohkosis}
+
+\noindent
+Pakollinen argumentti \koodi{teksti} on hakemiston johdannoksi
+tarkoitettu teksti. Valinnainen argumentti \koodi{väli} on tarkoitettu
+komennolle, joka latoo pystysuuntaisen välin johdantotekstin jälkeen,
+ennen asiasanojen luetteloa. Oletuksena väliksi tulee komennon
+\komento{bigskip} latoma väli, mutta muunlaisen välin saa kirjoittamalla
+valinnaiseen argumenttiin esimerkiksi \komento{vspace}\-/ komennon ja
+sen argumentiksi halutun mitan.
+
+Asiahakemistopaketin -- \paketti{indextools} tai \paketti{imakeidx} --
+lataamisen yhteydessä voi määrittää asetuksia tiettyjen valitsimien
+avulla. \komento{usepackage}\-/ komennon valinnaiseen argumenttiin
+kirjoittaa useita valitsimia, ja ne erotetaan toisistaan pilkulla.
+Mahdollisia valitsimia on useita, mutta tässä oppaassa käsitellään vain
+pari tärkeintä.
+
+Esimerkiksi valitsin \koodi{xindy}, aiheuttaa sen, että
+\komento{makeindex}\-/ komennoilla määritetyille asiahakemistoille tulee
+oletuksena asetus \koodi{program=\katk xindy}. Muutoin oletus on
+\koodi{program=\katk makeindex} (luku \ref{luku/asiasanat-määrittely}).
+
+\komentoi{usepackage}
+\pakettii{indextools}
+\begin{koodilohkosis}
+\usepackage[xindy}{indextools}
+\end{koodilohkosis}
+
+\noindent
+Jos omassa dokumentissa tarvitaan useita asiahakemistoja, saatetaan
+joskus tarvita valitsinta \koodi{splitindex}. Se kiertää erästä Latexin
+tiedostojen käsittelyn puutetta. Nimittäin Latex ei voi kääntämisen
+yhteydessä kirjoittaa kovin moneen tiedostoon, ja jokainen asiahakemisto
+tarvitsisi omansa. Rajoitukset saattavat tulla vastaan useiden
+asiahakemistojen käsittelyssä.
+
+Käyttämällä valitsinta \koodi{splitindex} kierretään edellä mainittua
+rajoitusta siten, että ensin kaikki asiahakemistot kirjoitetaan yhteen
+väliaikaistiedostoon ja myöhemmin ne erotetaan automaattisesti
+toisistaan suorittamalla \koodi{splitindex}\-/ niminen ohjelma. Tämän
+valitsimen käyttö vaatii, että Latexin kääntäjäohjelmalle
+(\koodi{lualatex} tai \koodi{xelatex}) annetaan komentorivivalitsin
+\koodi{\=/shell-escape}.
 
 \section{Kuvat}
 \label{luku/grafiikka}

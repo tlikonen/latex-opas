@@ -212,6 +212,7 @@ imake-idx
 in-col-lec-tion
 in-dex
 index-name
+index-pro-logue
 index-setup
 index-tools
 in-text-sep
@@ -360,6 +361,7 @@ no-club
 no-in-dent
 no-indent-after
 no-link-url
+no-new-page
 no-page-break
 no-page-color
 normal-font
@@ -509,6 +511,7 @@ small-break
 small-skip
 small-skip-amount
 space-skip
+split-index
 stable
 step-counter
 style

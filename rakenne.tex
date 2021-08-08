@@ -6073,15 +6073,18 @@ Sarakkeiden väliin saa pystyviivaan antamalla valitsimen
 Asiahakemiston järjestelystä vastaa erillinen tietokoneohjelma, joka
 suoritetaan automaattisesti lähdedokumentin kääntämisen yhteydessä.
 Ohjelmalle on olemassa pari vaihtoehtoa, ja sen voi valita valitsimella
-\koodi{program}. Tärkeimmät vaihtoehdot ovat \koodi{makeindex} (oletus)
-ja \koodi{xindy}, joka käytännössä suorittaa \koodi{texindy}\-/ nimisen
+\koodi{program}. Tärkeimmät vaihtoehdot ovat
+\koodi{makeindex}\footnote{\koodi{program=\katk makeindex} on
+  oletusasetus, mutta yleisen oletusasetuksen voi vaihtaa paketin
+  lataamisen yhteydessä. Katso luku \ref{luku/asiasanat-asetukset}.} ja
+\koodi{xindy}, joka käytännössä suorittaa \koodi{texindy}\-/ nimisen
 ohjelman. Näillä ohjelmilla on omat ohjekirjansa, joita pääsee lukemaan
 GNU/\katk Linux\-/ järjestelmissä \koodi{man}\-/ komennolla. Jos käyttää
 vaihtoehtoa \koodi{program=\katk xindy}, täytyy Latexin kääntäjälle
 (\koodi{lualatex} tai \koodi{xelatex}) antaa komentorivivalitsin
 \koodi{\=/shell-escape}, joka kytkee päälle erään
 lisäominaisuuden.\footnote{Lisätietoa \koodi{tex}\-/ komennon
-  ohjekirjasta: \koodi{man tex}.}
+  ohjekirjasta, komennolla \koodi{man tex}.}
 
 Valitsimella \koodi{options} annetaan edellä mainitulle ohjelmalle
 komentorivivalitsimet. Tätä tarvitaan lähinnä silloin, kun kirjoittaja

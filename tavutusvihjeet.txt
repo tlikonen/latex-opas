@@ -24,6 +24,7 @@ ala-in-dek-siä
 ala-osaan
 ala-otsi-kon
 alku-osaa
+angle
 an-tiik-va
 an-tiik-vaa
 an-tiik-vaan
@@ -209,6 +210,7 @@ if-then-else
 ig-nore-spaces
 ig-nore-spaces-af-ter-end
 imake-idx
+in-clude-graph-ics
 in-col-lec-tion
 in-dex
 index-name
@@ -389,6 +391,7 @@ one-column
 one-side
 on-line
 op-tions
+origin
 other-lan-guage
 page
 page-break

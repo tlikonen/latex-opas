@@ -6495,7 +6495,106 @@ valitsimen käyttö vaatii, että Latexin kääntäjäohjelmalle
 \section{Kuvat KESKEN}
 \label{luku/grafiikka}
 
+Perus Latex ei pysty juuri minkäänlaiseen kuvien eli tietokonegrafiikan
+käsittelyyn, mutta sopivan makropaketin avulla voidaan käsitellä
+esimerkiksi kuvatiedostoja helposti. Myös omia vektorigrafiikkakuvia voi
+piirtää Latex\-/ komentojen avulla, kun lataa siihen tarkoitetun
+ulkoisen makropaketin. Tässä alaluvussa neuvotaan ensin kuvatiedostojen
+käsittelyä ja sitten muita grafiikantuottamiskeinoja.
+
+\subsection{Kuvatiedostot KESKEN}
+
+Paketti \paketti{graphicx}\avctan{graphicx} sisältää toiminnot
+kuvatiedostojen käsittelyyn sekä tekstin tai muun sisällön kääntelyyn ja
+skaalaamisen. Kuvatiedostojen peruskäyttö sujuu komennolla
+\komento{includegraphics} seuraavasti:
+
+\komentoi{includegraphics}
+\begin{koodilohkosis}
+\includegraphics[width=6cm]{kuvatiedosto.jpg}
+\end{koodilohkosis}
+
+\noindent
+Tällä tavoin lisätty kuvatiedosto käyttäytyy tekstikappaleessa kuin mikä
+tahansa kirjain. Edellisen esimerkin pakollisessa argumentissa oleva
+\koodi{kuvatiedosto.\katk jpg} on tiedoston nimi. Se voi sisältää myös
+hakemistopolun, jos tiedosto ei sijaitse samassa hakemistossa Latex\-/
+lähdetiedostojen kanssa. Kaikki käyttöjärjestelmän hyväksymät
+tiedostonnimet eivät Latexissa toimi, vaan kannattaa jättää välilyönnit
+pois ja pitäytyä suppeassa latinalaisessa merkkivalikoimassa.
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+  \begin{tabularx}{\textwidth}{lL}
+    \toprule
+    \ots{Valitsin} & \ots{Merkitys} \\
+    \midrule
+    \rivi{width}{kuvan leveysmitta}
+    \rivi{height}{kuvan korkeusmitta}
+    \rivi{angle}{kuvan kääntökulma asteina}
+    \rivi{origin}{kuvan kääntämisen keskipiste:
+      \koodi{c} (keskikohta),
+      \koodi{l} (vasen),
+      \koodi{r} (oikea),
+      \koodi{t} (ylä),
+      \koodi{b} (ala),
+      \koodi{B} (rivin peruslinja)
+    }
+
+    \rivi{trim}{kuvan reunaviivojen siirto: vasen, ala, oikea, ylä}
+    \rivi{clip}{kuvan leikkaaminen päälle}
+    \bottomrule
+  \end{tabularx}
+}{
+  \caption{\komento{includegraphics}\-/ komennon valinnaiseen
+    argumenttiin sopivia valitsimia}
+  \label{tlk/includegraphics-valitsimia}
+}
+
+\komento{includegraphics}\-/ komennon valinnaiseen argumenttiin voi
+kirjoittaa monenlaisia pilkulla toisistaan erotettuja valitsimia ja
+niiden arvoja. Joitakin valitsimia on koottu taulukkoon
+\ref{tlk/includegraphics-valitsimia}. Tavallisimpia ovat varmaankin
+\koodi{width} ja \koodi{height}, joilla määritetään, minkä levyisenä tai
+korkuisena kuva halutaan latoa. Näistä voi asettaa vain jommankumman, ja
+toinen mitta määräytyy alkuperäiskuvan mittasuhteiden perusteella.
+Asettamalla sekä leveyden että korkeuden kuva skaalataan juuri kyseisiin
+mittoihin.
+
+Kuvan kääntämisessä käytetään \koodi{angle}\-/ valitsinta ja astelukua.
+Kuva kääntyy \koodi{origin}\-/ valitsimella määritetyn pisteen kautta,
+ja valitsimen arvoksi annetaan taulukossa
+\ref{tlk/includegraphics-valitsimia} mainittuja kirjaimia tai niiden
+yhdistelmiä. Esimerkiksi \koodi{origin=\katk lt} tarkoittaa vasenta
+(\koodi{l}) ylänurkkaa (\koodi{t}).
+
+Kuvaa voi rajata sivuilta käyttämällä yhdessä valitsimia \koodi{trim} ja
+\koodi{clip}. \koodi{trim}\-/ valitsimen arvoksi annetaan neljä
+välilyönnillä erotettua mittaa, joiden järjestys on seuraava: vasen,
+ala, oikea, ylä. Tämä valitsin vain siirtää kuvan reunojen sijaintia,
+mutta kun mukaan ottaa valitsimen \koodi{clip}, kuvaa myös leikataan
+reunojen ulkopuolelta. Seuraavassa esimerkissä kuvaa leikataan
+vasemmalta 1\,mm, alhaalta 2\,mm, oikealta 3\,mm ja ylhäältä 4\,mm.
+Kuvan lopulliseksi leveydeksi tulee 40\,mm.
+
+\komentoi{includegraphics}
+\begin{koodilohkosis}
+\includegraphics[width=40mm,
+  clip, trim={1mm 2mm 3mm 4mm}]{kuvatiedosto.jpg}
+\end{koodilohkosis}
+
+\noindent
 ...
+
+% \scalebox, \resizebox, \rotatebox
+
+\subsection{Vektorigrafiikan piirtäminen KESKEN}
+
+...
+
+% tikzpicture
+% graphviz
 
 \section{Diaesitykset KESKEN}
 \label{luku/diaesitykset}

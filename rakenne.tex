@@ -6588,13 +6588,99 @@ Paketti \paketti{tikz}\avctan{tikz} tuo Latexiin monipuolisen apukielen,
 käytännössä Latexin komentoja, joilla kirjoittaja voi piirtää
 vektorigrafiikkaa. Paketin taustalla toimii toinen paketti ja
 grafiikkajärjestelmä \paketti{pgf} eli \englantik{portable graphics
-  format}, mutta kirjoittajan ei yleensä tarvitse välittää siitä.
+  format}, mutta kirjoittajan ei yleensä tarvitse välittää taustalla
+olevasta matalan tason tekniikasta.
 
-Tässä oppaassa voidaan käsitellä vain joitakin \paketti{tikz}\-/ paketin
+Tässä oppaassa käsitellään vain joitakin \paketti{tikz}\-/ paketin
 perustoimintoja. Paketin omassa ohjekirjassa on yli 1\,300 sivua, eli
-valtavan paljon ominaisuuksia jää tämän oppaan ulkopuolelle.
+valtavan paljon hienoja ominaisuuksia jää lukijan itse selvitettäväksi.
+Runsasta sivumäärää ei kannata säikähtää: ei opasta tarvitse kokonaan
+lukea, ja alkupuolella teksti johdattelee lukijaa eteenpäin helppojen ja
+käytännöllisten esimerkkien avulla.
 
-% tikzpicture
+Vektorigrafiikkaan erikoistunut kieli ja komennot toimivat ympäristön
+\ymparisto{tikzpicture} sisällä. Se ei ole mikä tahansa Latexin tekstiä
+ja merkintätapoja sisältävä ympäristö, vaan se on tarkoitettu vain
+piirtokomennoille, joilla on oma, muusta Latexista hieman poikkeava
+kielioppinsa. Seuraavassa on pieni esimerkki:
+
+\ymparistoi{tikzpicture}
+\komentoi{draw}
+\begin{koodilohkosis}
+\begin{tikzpicture}[x=1mm, y=1mm]
+  \draw (0,0) -- (25,5) -- (50,0) -- cycle;
+  \draw (25,0) -- (25,5);
+\end{tikzpicture}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \begin{tikzpicture}[x=1mm, y=1mm]
+    \draw (0,0) -- (25,5) -- (50,0) -- cycle;
+    \draw (25,0) -- (25,5);
+  \end{tikzpicture}
+\end{tulossis}
+
+\noindent
+Edellisessä esimerkissä ympäristön alussa määritellään hakasulkeissa
+perusasetuksia. Tässä asetetaan x- ja y\=/ koordinaattien suuntaiset
+yksikkömitat 1\,mm:n pituiseksi. Oletusyksikkö on 10\,mm.
+Piirustusalustan origo eli koordinaatti (0,~0) sijaitsee vasemmassa
+alanurkassa, ja koordinaatisto kasvaa ylös ja oikealle.
+
+Komennolla \komento{draw} piirretään viivakuvio ilmaisemalla sulkeissa
+välipisteiden koordinaatit. Lopussa oleva \koodi{cycle} piirtää viivan
+takaisin saman \komento{draw}\-/ komennon alkupisteeseen. Tätä
+kokonaisuutta kutsutaan poluksi, ja sen lopussa täytyy olla puolipiste
+(\koodi{;}). Esimerkissä on toinenkin polku eli toinen \komento{draw}\-/
+komento piirtää pystyviivan suuren kolmion keskelle ja jakaa sen
+kahdeksi pienemmäksi kolmioksi.
+
+Koordinaatit voi ilmaista suhteessa polun edelliseen pisteeseen
+lisäämällä koordinaatin eteen kaksi plusmerkkiä. Seuraavan esimerkin
+neljä ensimmäistä pistettä ilmaistaan normaalisti x- ja y\=/
+koordinaateilla, mutta viimeinen piste ilmaistaan kulman (25°) ja
+pituuden (8) avulla.
+
+\ymparistoi{tikzpicture}
+\komentoi{draw}
+\begin{koodilohkosis}
+\begin{tikzpicture}[x=1mm, y=1mm]
+  \draw (0,0) -- ++(0,5) -- ++(10,0) -- ++(0,-5)
+  -- ++(25:8);
+\end{tikzpicture}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \begin{tikzpicture}[x=1mm, y=1mm]
+    \draw (0,0) -- ++(0,5) -- ++(10,0) -- ++(0,-5)
+    -- ++(25:8);
+  \end{tikzpicture}
+\end{tulossis}
+
+\noindent
+Viivojen lisäksi on olemassa komentoja muillekin geometrisille
+peruskuvioille. Seuraavassa piirretään suorakulmio, ympyrä ja ellipsi:
+
+\ymparistoi{tikzpicture}
+\komentoi{draw}
+\begin{koodilohkosis}
+\begin{tikzpicture}[x=1mm, y=1mm]
+  \draw (0,0) rectangle (10,5);
+  \draw (20,2.5) circle [radius=2.5];
+  \draw (35,2.5) ellipse [x radius=4, y radius=2, rotate=30];
+\end{tikzpicture}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \begin{tikzpicture}[x=1mm, y=1mm]
+    \draw (0,0) rectangle (10,5);
+    \draw (20,2.5) circle [radius=2.5];
+    \draw (35,2.5) ellipse [x radius=4, y radius=2, rotate=30];
+  \end{tikzpicture}
+\end{tulossis}
+
+% Seuraavaksi käsitellään ehkä [] eli valinnaiset argumentit. fill,
+% color, fillcolor, <-> ym.
 
 \subsection{Solmut, nuolet ja verkot KESKEN}
 

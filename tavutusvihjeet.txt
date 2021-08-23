@@ -91,6 +91,7 @@ Con-tin-ued-Float
 counter-with-in
 counter-with-out
 cs-quotes
+cycle
 dbl-float-page-frac-tion
 dbl-float-sep
 dbl-text-float-sep
@@ -243,6 +244,7 @@ kie-li-ase-tuk-sil-la
 kie-li-ase-tuk-sis-ta
 kie-li-ase-tus-ten
 kie-li-opil-li-sis-ta
+kie-li-op-pin-sa
 kir-jain-yh-dis-tel-mät
 kir-ja-typo-gra-fian
 kir-ja-typo-gra-fias-sa
@@ -387,6 +389,7 @@ ole-tus-ase-tuk-siin
 ole-tus-ase-tuk-sil-la
 ole-tus-ase-tus
 ole-tus-mitta-yk-sik-kö-nä
+ole-tus-yk-sik-kö
 one-column
 one-side
 on-line
@@ -432,6 +435,7 @@ pe-rus-ympä-ris-tö
 phan-tom-sec-tion
 pien-aak-ko-set
 pien-aak-kos-ten
+pii-rus-tus-alus-tan
 pik-seli-gra-fiik-kaa
 place-ins
 poly-glos-sia
@@ -594,6 +598,7 @@ tie-to-kone-oh-jel-mal-le
 tie-to-kone-oh-jel-mat
 tie-to-kone-oh-jel-mia
 tii-vis-tel-mä-osan
+tikz-pic-ture
 title
 title-con-tents
 title-for-mat

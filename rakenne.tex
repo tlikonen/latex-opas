@@ -6679,8 +6679,56 @@ peruskuvioille. Seuraavassa piirretään suorakulmio, ympyrä ja ellipsi:
   \end{tikzpicture}
 \end{tulossis}
 
-% Seuraavaksi käsitellään ehkä [] eli valinnaiset argumentit. fill,
-% color, fillcolor, <-> ym.
+\noindent
+Kuten edellinen esimerkki osoittaa, piirtokomennoille voi antaa
+hakasulkeissa lisätietoja. Mahdollisuuksia on valtavan paljon,
+esimerkiksi värit, viivojen paksuus, nuolenkärjet ja kulmien pyöristys.
+Esimerkki \ref{esim/tikz-asetuksia} havainnollistaa tavallisimpia
+valinnaisia argumentteja. Värivalitsimien \koodi{color} ja \koodi{fill}
+arvoksi voi antaa mitä hyvänsä nimettyjä värejä, joita käsitellään
+tarkemmin luvussa \ref{luku/korostus-värit}.
+
+\begin{esimerkki*}
+  \ymparistoi{tikzpicture}
+  \komentoi{draw}
+
+\begin{koodilohko}
+\begin{tikzpicture}[x=1mm, y=1mm,
+  nuoli/.style={line width=1bp, color=red}]
+
+  % Nuolia
+  \draw [nuoli, ->] (0,0) -- (10,5);
+  \draw [nuoli, <<-, color=blue] (10,0) -- (20,5);
+  \draw [nuoli, <->] (20,0) -- (30,5);
+
+  % Täytetty nelikulmio, viivan paksuus ja kulmien pyöristys
+  \draw [color=black, fill=yellow, line width=1.5bp, rounded
+    corners=3bp] (40,0) -- ++(3,5) -- ++(20,0) -- ++(3,-5) -- cycle;
+\end{tikzpicture}
+\end{koodilohko}
+
+  \begin{tulos}
+    \begin{tikzpicture}[x=1mm, y=1mm,
+      nuoli/.style={line width=1bp, color=red}]
+
+      % Nuolia
+      \draw [nuoli, ->] (0,0) -- (10,5);
+      \draw [nuoli, <<-, color=blue] (10,0) -- (20,5);
+      \draw [nuoli, <->] (20,0) -- (30,5);
+
+      % Täytetty nelikulmio, viivan paksuus ja kulmien pyöristys
+      \draw [color=black, fill=yellow, line width=1.5bp, rounded
+      corners=3bp] (40,0) -- ++(3,5) -- ++(20,0) -- ++(3,-5) -- cycle;
+    \end{tikzpicture}
+  \end{tulos}
+
+\caption{Erilaisia piirtokomentojen argumentteja: nuolenkärjet, värit,
+  viivan paksuus ja kulmien pyöristys}
+\label{esim/tikz-asetuksia}
+\end{esimerkki*}
+
+\noindent
+...
 
 \subsection{Solmut, nuolet ja verkot KESKEN}
 

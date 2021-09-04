@@ -365,6 +365,7 @@ ni-men-omaan
 no-cite
 no-clear-page
 no-club
+node
 no-in-dent
 no-indent-after
 no-link-url

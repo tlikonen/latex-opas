@@ -6635,10 +6635,13 @@ Edellä olleessa esimerkissä piirretään komennolla \komento{draw}
 viivakuvio, jonka välipisteiden kordinaatit ilmaistaan sulkeissa.
 Lopussa oleva \koodi{cycle} piirtää viivan takaisin saman
 \komento{draw}\-/ komennon alkupisteeseen. Tätä kokonaisuutta kutsutaan
-poluksi, ja sen lopussa täytyy olla puolipiste (\koodi{;}). Esimerkissä
-on toinenkin polku eli toinen \komento{draw}\-/ komento piirtää
-pystyviivan suuren kolmion keskelle ja jakaa sen kahdeksi pienemmäksi
-kolmioksi.
+poluksi, ja sen lopussa täytyy olla puolipiste
+(\koodi{;}).\footnote{Polkujen luomisen peruskomento on \komento{path},
+  joka ei piirrä mitään, ellei sille anna valinnaista argumenttia
+  \koodi{draw}. Komento \komento{draw} on itse asiassa sama kuin
+  \komento{path}\komentoargv{draw}.} Esimerkissä on toinenkin polku eli
+toinen \komento{draw}\-/ komento piirtää pystyviivan suuren kolmion
+keskelle ja jakaa sen kahdeksi pienemmäksi kolmioksi.
 
 Koordinaatit voi ilmaista suhteessa polun edelliseen pisteeseen
 lisäämällä koordinaatin eteen kaksi plusmerkkiä. Seuraavassa esimerkissä
@@ -6666,7 +6669,7 @@ peruskuvioille. Esimerkissä \ref{esim/tikz-kuvioita} piirretään
 suorakulmio, ympyrä, ellipsi, sektorin kaari (0--90°) ja taivutettu
 viiva. Viimeksi mainittu (rivi~6) sisältää alkupisteen, kaksi
 näkymätöntä ohjauspistettä (\koodi{controls}, \koodi{and}), joiden
-kautta viivaa taivutetaan, sekä loppupisteen.
+suuntaan viivaa taivutetaan, sekä loppupisteen.
 
 \begin{esimerkki*}
   \ymparistoi{tikzpicture}
@@ -6702,7 +6705,7 @@ antaa hakasulkeissa lisätietoja. Mahdollisuuksia on valtavan paljon:
 esimerkiksi värit, viivojen paksuus, nuolenkärjet ja kulmien pyöristys
 ilmaistaan tällaisten listätietojen avulla. Esimerkki
 \ref{esim/tikz-asetuksia} havainnollistaa tavallisimpia valinnaisia
-argumentteja. Värivalitsimien \koodi{color} ja \koodi{fill} arvoksi voi
+argumentteja. Värivalitsimien \koodi{draw} ja \koodi{fill} arvoksi voi
 antaa mitä hyvänsä nimettyjä värejä, joita käsitellään tarkemmin luvussa
 \ref{luku/korostus-värit}.
 
@@ -6712,30 +6715,30 @@ antaa mitä hyvänsä nimettyjä värejä, joita käsitellään tarkemmin luvuss
 
 \begin{koodilohko}
 \begin{tikzpicture}[x=1mm, y=1mm,
-  nuoli/.style={line width=1bp, color=red}]
+  nuoli/.style={line width=1bp, draw=red}]
 
   % Nuolia
   \draw [nuoli, ->] (0,0) -- (10,5);
-  \draw [nuoli, <<-, color=blue] (10,0) -- (20,5);
+  \draw [nuoli, <<-, draw=blue] (10,0) -- (20,5);
   \draw [nuoli, <->] (20,0) -- (30,5);
 
   % Täytetty nelikulmio, viivan paksuus ja kulmien pyöristys
-  \draw [color=black, fill=yellow, line width=1.5bp, rounded
+  \draw [draw=black, fill=yellow, line width=1.5bp, rounded
     corners=3bp] (40,0) -- ++(3,5) -- ++(20,0) -- ++(3,-5) -- cycle;
 \end{tikzpicture}
 \end{koodilohko}
 
   \begin{tulos}
     \begin{tikzpicture}[x=1mm, y=1mm,
-      nuoli/.style={line width=1bp, color=red}]
+      nuoli/.style={line width=1bp, draw=red}]
 
       % Nuolia
       \draw [nuoli, ->] (0,0) -- (10,5);
-      \draw [nuoli, <<-, color=blue] (10,0) -- (20,5);
+      \draw [nuoli, <<-, draw=blue] (10,0) -- (20,5);
       \draw [nuoli, <->] (20,0) -- (30,5);
 
       % Täytetty nelikulmio, viivan paksuus ja kulmien pyöristys
-      \draw [color=black, fill=yellow, line width=1.5bp, rounded
+      \draw [draw=black, fill=yellow, line width=1.5bp, rounded
       corners=3bp] (40,0) -- ++(3,5) -- ++(20,0) -- ++(3,-5) -- cycle;
     \end{tikzpicture}
   \end{tulos}
@@ -6748,7 +6751,7 @@ antaa mitä hyvänsä nimettyjä värejä, joita käsitellään tarkemmin luvuss
 Esimerkissä \ref{esim/tikz-asetuksia} olevan \ymparisto{tikzpicture}\=/
 ympäristön valinnaisessa argumentissa määritellään rivillä~2 oma
 tyyliasetus nimeltä \koodi{nuoli}. Asetukseen kuuluu viivan leveys
-(\koodi{line width}) ja väri (\koodi{color}). Näin määriteltyä
+(\koodi{line width}) ja väri (\koodi{draw}). Näin määriteltyä
 \koodi{nuoli}\-/ tyyliä käytetään rivien 5\==7 \komento{draw}\=/
 komennoissa. Tähän tapaan omia tyylejä määrittelemällä säästää
 todennäköisesti aikaa ja vaivaa, koska tyyliasetuksia voi sen jälkeen
@@ -6760,7 +6763,60 @@ piilottaa omien komentojen sisään. Kirjoittaja voi siis tehdä
 vastaavilla omia, mahdollisesti kokeamman tason piirtokomentoja, jotka
 piirtävät usein tarvittavia kuvan osia.
 
-% \draw .. node, \node
+Kuvaan voi sisällyttää myös tekstiä tai muuta Latexin sisältöä. Se
+tapahtuu helpoimmin komennolla \komento{node}, joka tekee niin sanottuja
+solmuja. Komento tarvitsee ainakin solmun sijaintikoordinaatit ja
+ladottavan sisällön. Seuraavassa esimerkissä on kolme erityyppistä
+solmua:
+
+\begin{koodilohkosis}
+\begin{tikzpicture}[x=1mm, y=1mm]
+  \node at (0,0) [draw=red, rectangle, rounded corners=3bp] {vasen};
+  \node [color=blue] at (30,0) {keski};
+  \node at (60,0) [draw, circle, inner sep=0bp, fill=yellow] {oikea};
+\end{tikzpicture}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \begin{tikzpicture}[x=1mm, y=1mm]
+    \node at (0,0) [draw=red, rectangle, rounded corners=3bp] {vasen};
+    \node [color=blue] at (30,0) {keski};
+    \node at (60,0) [draw, circle, inner sep=0bp, fill=yellow] {oikea};
+  \end{tikzpicture}
+\end{tulossis}
+
+\noindent
+Kuten esimerkistä näkyy, laatikolle voi määrittää kehykset ja niiden
+värin, (\koodi{draw}), täyttövärin (\koodi{fill}), sisällön värin
+(\koodi{color}), kehyksen kulmien pyöristyksen (\koodi{\englanti{rounded
+    corners}}) ja sisäisen tyhjän tilan suuruuden (\koodi{inner sep}).
+Kaikenlaista muutakin voi tehdä valinnaiseen argumenttiin
+sisällytettävien valitsimien avulla, mutta niistä täytyy lukea lisää
+paketin omasta ohjekirjasta.
+
+Solmulle voi määrittää yksilöllisen nimen, jota voi sitten käyttää
+esimerkiksi viivojen piirtämiseen solmujen välille. Viivojen
+piirtämisessä \komento{draw}\=/ komennon koordinaattien sijasta
+käytetäänkin solmulle annettua nimeä. Tätä havainnollistetaan
+seuraavassa esimerkissä:
+
+\begin{koodilohkosis}
+\begin{tikzpicture}[x=1mm, y=1mm]
+  \node (ympyrä)      at  (0,0) [draw, circle]    {vasen};
+  \node (suorakulmio) at (20,0) [draw, rectangle] {oikea};
+  \draw [->] (ympyrä) -- (suorakulmio);
+\end{tikzpicture}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \begin{tikzpicture}[x=1mm, y=1mm]
+    \node (ympyrä) at (0,0) [draw, circle] {vasen};
+    \node (suorakulmio) at (20,0) [draw, rectangle] {oikea};
+    \draw [->] (ympyrä) -- (suorakulmio);
+  \end{tikzpicture}
+\end{tulossis}
+
+% \draw () to [in=, out=] ();
 
 \subsection{Solmut, nuolet ja verkot KESKEN}
 

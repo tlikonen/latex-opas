@@ -6585,11 +6585,10 @@ Kuvan lopulliseksi leveydeksi tulee 40\,mm.
 \subsection{Vektorigrafiikka KESKEN}
 
 Paketti \paketti{tikz}\avctan{tikz} tuo Latexiin monipuolisen apukielen,
-käytännössä Latexin komentoja, joilla kirjoittaja voi piirtää
-vektorigrafiikkaa. Paketin taustalla toimii toinen paketti ja
-grafiikkajärjestelmä \paketti{pgf} eli \englantik{portable graphics
-  format}, mutta kirjoittajan ei yleensä tarvitse välittää taustalla
-olevasta matalan tason tekniikasta.
+jolla kirjoittaja voi piirtää vektorigrafiikkaa. Paketin taustalla
+toimii toinen paketti ja grafiikkajärjestelmä \paketti{pgf} eli
+\englantik{portable graphics format}, mutta kirjoittajan ei yleensä
+tarvitse välittää taustalla olevasta matalan tason tekniikasta.
 
 Tässä oppaassa käsitellään vain joitakin \paketti{tikz}\-/ paketin
 perustoimintoja. Paketin omassa ohjekirjassa on yli 1\,300 sivua, eli
@@ -6622,71 +6621,90 @@ kielioppinsa. Seuraavassa on pieni esimerkki:
 
 \noindent
 Edellisessä esimerkissä ympäristön alussa määritellään hakasulkeissa
-perusasetuksia. Tässä asetetaan x- ja y\=/ koordinaattien suuntaiset
-yksikkömitat 1\,mm:n pituiseksi. Oletusyksikkö on 10\,mm.
-Piirustusalustan origo eli koordinaatti (0,~0) sijaitsee vasemmassa
-alanurkassa, ja koordinaatisto kasvaa ylös ja oikealle.
+perusasetuksia. Tässä asetetaan x- ja y\=/ akselien suuntaiset
+yksikkömitat 1\,mm:n pituiseksi. Piirtokomentojen koordinaatit käyttävät
+sen jälkeen näitä yksiköitä. Jos yksiköitä ei määritellä, käytetään
+oletusyksikköä, joka on 10\,mm. On myös mahdollista antaa
+piirtokomentojen koordinaateissa suoraan Latexin mittayksiköt,
+esimerkiksi \koodi{(25mm,5mm)} tai \koodi{(10bp,20bp)}, jolloin
+koordinaatit tulevat juuri näiden mittojen mukaiseksi. Piirustusalustan
+origo eli koordinaatti (0,~0) sijaitsee vasemmassa alanurkassa, ja
+koordinaatisto kasvaa ylös ja oikealle.
 
-Komennolla \komento{draw} piirretään viivakuvio ilmaisemalla sulkeissa
-välipisteiden koordinaatit. Lopussa oleva \koodi{cycle} piirtää viivan
-takaisin saman \komento{draw}\-/ komennon alkupisteeseen. Tätä
-kokonaisuutta kutsutaan poluksi, ja sen lopussa täytyy olla puolipiste
-(\koodi{;}). Esimerkissä on toinenkin polku eli toinen \komento{draw}\-/
-komento piirtää pystyviivan suuren kolmion keskelle ja jakaa sen
-kahdeksi pienemmäksi kolmioksi.
+Edellä olleessa esimerkissä piirretään komennolla \komento{draw}
+viivakuvio, jonka välipisteiden kordinaatit ilmaistaan sulkeissa.
+Lopussa oleva \koodi{cycle} piirtää viivan takaisin saman
+\komento{draw}\-/ komennon alkupisteeseen. Tätä kokonaisuutta kutsutaan
+poluksi, ja sen lopussa täytyy olla puolipiste (\koodi{;}). Esimerkissä
+on toinenkin polku eli toinen \komento{draw}\-/ komento piirtää
+pystyviivan suuren kolmion keskelle ja jakaa sen kahdeksi pienemmäksi
+kolmioksi.
 
 Koordinaatit voi ilmaista suhteessa polun edelliseen pisteeseen
-lisäämällä koordinaatin eteen kaksi plusmerkkiä. Seuraavan esimerkin
-neljä ensimmäistä pistettä ilmaistaan normaalisti x- ja y\=/
-koordinaateilla, mutta viimeinen piste ilmaistaan kulman (25°) ja
-pituuden (8) avulla.
+lisäämällä koordinaatin eteen kaksi plusmerkkiä. Seuraavassa esimerkissä
+havainnollistetaan sitä. Kuvion (polun) neljä ensimmäistä pistettä
+ilmaistaan x- ja y\=/ koordinaateilla mutta viimeinen piste ilmaistaan
+kulman (25°) ja pituuden (8) avulla.
 
 \ymparistoi{tikzpicture}
 \komentoi{draw}
 \begin{koodilohkosis}
 \begin{tikzpicture}[x=1mm, y=1mm]
-  \draw (0,0) -- ++(0,5) -- ++(10,0) -- ++(0,-5)
-  -- ++(25:8);
+  \draw (0,0) -- ++(0,5) -- ++(10,0) -- ++(0,-5) -- ++(25:8);
 \end{tikzpicture}
 \end{koodilohkosis}
 
 \begin{tulossis}
   \begin{tikzpicture}[x=1mm, y=1mm]
-    \draw (0,0) -- ++(0,5) -- ++(10,0) -- ++(0,-5)
-    -- ++(25:8);
+    \draw (0,0) -- ++(0,5) -- ++(10,0) -- ++(0,-5) -- ++(25:8);
   \end{tikzpicture}
 \end{tulossis}
 
 \noindent
 Viivojen lisäksi on olemassa komentoja muillekin geometrisille
-peruskuvioille. Seuraavassa piirretään suorakulmio, ympyrä ja ellipsi:
+peruskuvioille. Esimerkissä \ref{esim/tikz-kuvioita} piirretään
+suorakulmio, ympyrä, ellipsi, sektorin kaari (0--90°) ja taivutettu
+viiva. Viimeksi mainittu (rivi~6) sisältää alkupisteen, kaksi
+näkymätöntä ohjauspistettä (\koodi{controls}, \koodi{and}), joiden
+kautta viivaa taivutetaan, sekä loppupisteen.
 
-\ymparistoi{tikzpicture}
-\komentoi{draw}
-\begin{koodilohkosis}
+\begin{esimerkki*}
+  \ymparistoi{tikzpicture}
+  \komentoi{draw}
+
+\begin{koodilohko}
 \begin{tikzpicture}[x=1mm, y=1mm]
   \draw (0,0) rectangle (10,5);
   \draw (20,2.5) circle [radius=2.5];
   \draw (35,2.5) ellipse [x radius=4, y radius=2, rotate=30];
+  \draw (55,0) arc [start angle=0, end angle=90, radius=5];
+  \draw (65,0) .. controls (75,7) and (80,7) .. (80,0);
 \end{tikzpicture}
-\end{koodilohkosis}
+\end{koodilohko}
 
-\begin{tulossis}
-  \begin{tikzpicture}[x=1mm, y=1mm]
-    \draw (0,0) rectangle (10,5);
-    \draw (20,2.5) circle [radius=2.5];
-    \draw (35,2.5) ellipse [x radius=4, y radius=2, rotate=30];
-  \end{tikzpicture}
-\end{tulossis}
+  \begin{tulos}
+    \begin{tikzpicture}[x=1mm, y=1mm]
+      \draw (0,0) rectangle (10,5);
+      \draw (20,2.5) circle [radius=2.5];
+      \draw (35,2.5) ellipse [x radius=4, y radius=2, rotate=30];
+      \draw (55,0) arc [start angle=0, end angle=90, radius=5];
+      \draw (65,0) .. controls (75,7) and (80,7) .. (80,0);
+    \end{tikzpicture}
+  \end{tulos}
 
-\noindent
-Kuten edellinen esimerkki osoittaa, piirtokomennoille voi antaa
-hakasulkeissa lisätietoja. Mahdollisuuksia on valtavan paljon,
-esimerkiksi värit, viivojen paksuus, nuolenkärjet ja kulmien pyöristys.
-Esimerkki \ref{esim/tikz-asetuksia} havainnollistaa tavallisimpia
-valinnaisia argumentteja. Värivalitsimien \koodi{color} ja \koodi{fill}
-arvoksi voi antaa mitä hyvänsä nimettyjä värejä, joita käsitellään
-tarkemmin luvussa \ref{luku/korostus-värit}.
+  \caption{Erilaisia geometrisia kuvioita: suorakulmio, ympyrä, ellipsi,
+    ympyrän kaari ja taivutettu viiva}
+  \label{esim/tikz-kuvioita}
+\end{esimerkki*}
+
+Kuten esimerkki \ref{esim/tikz-kuvioita} osoittaa, piirtokomennoille voi
+antaa hakasulkeissa lisätietoja. Mahdollisuuksia on valtavan paljon:
+esimerkiksi värit, viivojen paksuus, nuolenkärjet ja kulmien pyöristys
+ilmaistaan tällaisten listätietojen avulla. Esimerkki
+\ref{esim/tikz-asetuksia} havainnollistaa tavallisimpia valinnaisia
+argumentteja. Värivalitsimien \koodi{color} ja \koodi{fill} arvoksi voi
+antaa mitä hyvänsä nimettyjä värejä, joita käsitellään tarkemmin luvussa
+\ref{luku/korostus-värit}.
 
 \begin{esimerkki*}
   \ymparistoi{tikzpicture}
@@ -6727,8 +6745,22 @@ tarkemmin luvussa \ref{luku/korostus-värit}.
 \label{esim/tikz-asetuksia}
 \end{esimerkki*}
 
-\noindent
-...
+Esimerkissä \ref{esim/tikz-asetuksia} olevan \ymparisto{tikzpicture}\=/
+ympäristön valinnaisessa argumentissa määritellään rivillä~2 oma
+tyyliasetus nimeltä \koodi{nuoli}. Asetukseen kuuluu viivan leveys
+(\koodi{line width}) ja väri (\koodi{color}). Näin määriteltyä
+\koodi{nuoli}\-/ tyyliä käytetään rivien 5\==7 \komento{draw}\=/
+komennoissa. Tähän tapaan omia tyylejä määrittelemällä säästää
+todennäköisesti aikaa ja vaivaa, koska tyyliasetuksia voi sen jälkeen
+muuttaa yhdestä paikasta.
+
+Usein tarvittavat \komento{draw}\=/ polut ja komentosarjat kannattanee
+piilottaa omien komentojen sisään. Kirjoittaja voi siis tehdä
+\komento{newcommand}\=/komennolla (luku \ref{luku/komennot}) ja muilla
+vastaavilla omia, mahdollisesti kokeamman tason piirtokomentoja, jotka
+piirtävät usein tarvittavia kuvan osia.
+
+% \draw .. node, \node
 
 \subsection{Solmut, nuolet ja verkot KESKEN}
 

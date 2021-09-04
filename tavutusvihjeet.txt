@@ -88,6 +88,7 @@ con-tents-label
 con-tents-name
 con-tents-page
 Con-tin-ued-Float
+con-trols
 counter-with-in
 counter-with-out
 cs-quotes
@@ -289,6 +290,7 @@ left-mark
 let-ter
 lett-rine
 level
+line
 line-spread
 line-width
 list
@@ -345,6 +347,7 @@ mul-ti-ple
 multi-row
 muo-toi-lu-ase-tuk-set
 my-head-ings
+mää-rit-te-ly-omi-nai-suut-ta
 name
 name-ref
 new-column-type
@@ -390,6 +393,7 @@ ole-tus-ase-tuk-sil-la
 ole-tus-ase-tus
 ole-tus-mitta-yk-sik-kö-nä
 ole-tus-yk-sik-kö
+ole-tus-yk-sik-köä
 one-column
 one-side
 on-line
@@ -635,6 +639,7 @@ ty-po-gra-fi-sia
 ty-po-gra-fi-sin
 ty-po-gra-fi-sis-ta
 ty-po-gra-fis-ten
+tyy-li-ase-tus
 tyy-li-ase-tus-ten
 tär-keys-as-teil-le
 tär-keys-as-tei-sia

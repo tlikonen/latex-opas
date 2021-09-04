@@ -6582,7 +6582,7 @@ Kuvan lopulliseksi leveydeksi tulee 40\,mm.
   clip, trim={1mm 2mm 3mm 4mm}]{kuvatiedosto.jpg}
 \end{koodilohkosis}
 
-\subsection{Vektorigrafiikka KESKEN}
+\subsection{Vektorigrafiikka}
 
 Paketti \paketti{tikz}\avctan{tikz} tuo Latexiin monipuolisen apukielen,
 jolla kirjoittaja voi piirtää vektorigrafiikkaa. Paketin taustalla
@@ -6748,44 +6748,52 @@ antaa mitä hyvänsä nimettyjä värejä, joita käsitellään tarkemmin luvuss
 \label{esim/tikz-asetuksia}
 \end{esimerkki*}
 
-Esimerkissä \ref{esim/tikz-asetuksia} olevan \ymparisto{tikzpicture}\=/
+Esimerkissä \ref{esim/tikz-asetuksia} olevan \ymparisto{tikzpicture}\-/
 ympäristön valinnaisessa argumentissa määritellään rivillä~2 oma
 tyyliasetus nimeltä \koodi{nuoli}. Asetukseen kuuluu viivan leveys
 (\koodi{line width}) ja väri (\koodi{draw}). Näin määriteltyä
-\koodi{nuoli}\-/ tyyliä käytetään rivien 5\==7 \komento{draw}\=/
+\koodi{nuoli}\-/ tyyliä käytetään rivien 5\==7 \komento{draw}\-/
 komennoissa. Tähän tapaan omia tyylejä määrittelemällä säästää
 todennäköisesti aikaa ja vaivaa, koska tyyliasetuksia voi sen jälkeen
 muuttaa yhdestä paikasta.
 
-Usein tarvittavat \komento{draw}\=/ polut ja komentosarjat kannattanee
+Usein tarvittavat \komento{draw}\-/ polut ja komentosarjat kannattanee
 piilottaa omien komentojen sisään. Kirjoittaja voi siis tehdä
-\komento{newcommand}\=/komennolla (luku \ref{luku/komennot}) ja muilla
+\komento{newcommand}\-/komennolla (luku \ref{luku/komennot}) ja muilla
 vastaavilla omia, mahdollisesti kokeamman tason piirtokomentoja, jotka
 piirtävät usein tarvittavia kuvan osia.
+
+\begin{esimerkki*}
+  \ymparistoi{tikzpicture}
+  \komentoi{node}
+
+\begin{koodilohko}
+\begin{tikzpicture}[x=1mm, y=1mm]
+  \node at (0,0) [draw=red, rectangle, rounded corners=3bp] {vasen};
+  \node [color=blue] at (20,0) {keski};
+  \node at (40,0) [draw, circle, inner sep=0bp, fill=yellow] {oikea};
+\end{tikzpicture}
+\end{koodilohko}
+
+  \begin{tulos}
+    \begin{tikzpicture}[x=1mm, y=1mm]
+      \node at (0,0) [draw=red, rectangle, rounded corners=3bp] {vasen};
+      \node [color=blue] at (20,0) {keski};
+      \node at (40,0) [draw, circle, inner sep=0bp, fill=yellow] {oikea};
+    \end{tikzpicture}
+  \end{tulos}
+
+  \caption{Tekstiä tai muuta sisältäviä solmuja tehdään
+    \komento{node}\-/ komennolla}
+  \label{esim/tikz-solmut}
+\end{esimerkki*}
 
 Kuvaan voi sisällyttää myös tekstiä tai muuta Latexin sisältöä. Se
 tapahtuu helpoimmin komennolla \komento{node}, joka tekee niin sanottuja
 solmuja. Komento tarvitsee ainakin solmun sijaintikoordinaatit ja
-ladottavan sisällön. Seuraavassa esimerkissä on kolme erityyppistä
-solmua:
+ladottavan sisällön. Esimerkissä \ref{esim/tikz-solmut} on kolme
+erityyppistä solmua.
 
-\begin{koodilohkosis}
-\begin{tikzpicture}[x=1mm, y=1mm]
-  \node at (0,0) [draw=red, rectangle, rounded corners=3bp] {vasen};
-  \node [color=blue] at (30,0) {keski};
-  \node at (60,0) [draw, circle, inner sep=0bp, fill=yellow] {oikea};
-\end{tikzpicture}
-\end{koodilohkosis}
-
-\begin{tulossis}
-  \begin{tikzpicture}[x=1mm, y=1mm]
-    \node at (0,0) [draw=red, rectangle, rounded corners=3bp] {vasen};
-    \node [color=blue] at (30,0) {keski};
-    \node at (60,0) [draw, circle, inner sep=0bp, fill=yellow] {oikea};
-  \end{tikzpicture}
-\end{tulossis}
-
-\noindent
 Kuten esimerkistä näkyy, laatikolle voi määrittää kehykset ja niiden
 värin, (\koodi{draw}), täyttövärin (\koodi{fill}), sisällön värin
 (\koodi{color}), kehyksen kulmien pyöristyksen (\koodi{\englanti{rounded
@@ -6794,29 +6802,45 @@ Kaikenlaista muutakin voi tehdä valinnaiseen argumenttiin
 sisällytettävien valitsimien avulla, mutta niistä täytyy lukea lisää
 paketin omasta ohjekirjasta.
 
-Solmulle voi määrittää yksilöllisen nimen, jota voi sitten käyttää
-esimerkiksi viivojen piirtämiseen solmujen välille. Viivojen
-piirtämisessä \komento{draw}\=/ komennon koordinaattien sijasta
-käytetäänkin solmulle annettua nimeä. Tätä havainnollistetaan
-seuraavassa esimerkissä:
+\begin{esimerkki*}
+  \ymparistoi{tikzpicture}
+  \komentoi{node}
+  \komentoi{draw}
 
 \begin{koodilohkosis}
 \begin{tikzpicture}[x=1mm, y=1mm]
   \node (ympyrä)      at  (0,0) [draw, circle]    {vasen};
   \node (suorakulmio) at (20,0) [draw, rectangle] {oikea};
-  \draw [->] (ympyrä) -- (suorakulmio);
+  \draw [->, shorten >=1mm] (ympyrä) to [out=45, in=135] (suorakulmio);
 \end{tikzpicture}
 \end{koodilohkosis}
 
-\begin{tulossis}
-  \begin{tikzpicture}[x=1mm, y=1mm]
-    \node (ympyrä) at (0,0) [draw, circle] {vasen};
-    \node (suorakulmio) at (20,0) [draw, rectangle] {oikea};
-    \draw [->] (ympyrä) -- (suorakulmio);
-  \end{tikzpicture}
-\end{tulossis}
+  \begin{tulossis}
+    \begin{tikzpicture}[x=1mm, y=1mm]
+      \node (ympyrä) at (0,0) [draw, circle] {vasen};
+      \node (suorakulmio) at (20,0) [draw, rectangle] {oikea};
+      \draw [->, shorten >=1mm] (ympyrä) to [out=45, in=135] (suorakulmio);
+    \end{tikzpicture}
+  \end{tulossis}
 
-% \draw () to [in=, out=] ();
+  \caption{Solmujen nimeäminen ja kytkeminen viivan avulla}
+  \label{esim/tikz-solmujen-yhdistäminen}
+\end{esimerkki*}
+
+Solmulle voi määrittää yksilöllisen nimen, jota voi sitten käyttää
+esimerkiksi viivojen piirtämiseen solmujen välille. Viivojen
+piirtämisessä \komento{draw}\-/ komennon koordinaattien sijasta
+käytetäänkin solmulle annettua nimeä. Tätä havainnollistetaan
+esimerkissä \ref{esim/tikz-solmujen-yhdistäminen}, jossa esitellään myös
+\komento{draw}\-/ komennon \koodi{to}\-/ operaatio. Se mahdollistaa
+solmujen välisen viivan lähtö- ja tulokulman valinnan valitsimilla
+\koodi{out} ja \koodi{in}. Esimerkissä myös lyhennetään nuolta
+loppupäästä käyttämällä valitsinta \koodil{shorten~>}.
+
+Tämän alaluvun ohjeiden avulla pääsee aika mukavasti alkuun
+\paketti{tikz}\-/ paketin käytössä ja saa toteutettua tavallisimmat
+kuviot. Paketin omaan ohjekirjaan kannattaa silti tutustua, sillä
+\ymparisto{tikzpicture}\-/ ympäristön mahdollisuudet ovat valtavat.
 
 \subsection{Solmut, nuolet ja verkot KESKEN}
 

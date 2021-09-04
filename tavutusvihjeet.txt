@@ -503,6 +503,7 @@ set-to-depth
 set-to-height
 set-to-width
 sf-fam-i-ly
+short-en
 show-hy-phens
 si-joit-te-lu-ase-tuk-set
 si-joit-te-lu-ase-tuk-sia

@@ -674,6 +674,7 @@ va-paa-eh-tois-ta
 vas-taan-otta-jal-le
 vek-tori-gra-fiik-kaa
 vek-tori-gra-fiik-ka-font-te-ja
+vek-tori-gra-fiik-ka-ku-viot
 ver-ba-tim
 verse
 vir-he-il-moi-tuk-sen

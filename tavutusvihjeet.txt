@@ -136,7 +136,7 @@ esit-te-ly-osak-si
 esit-te-ly-osas-sa
 esi-tys-gra-fii-kan
 esi-tys-gra-fiik-kaan
-esi-tys-gra-fiikka-ohjel-mil-la
+esi-tys-gra-fiik-ka-ohjel-mil-la
 ext-dash
 false
 fancy-hdr

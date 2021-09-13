@@ -6843,10 +6843,69 @@ vektorigrafiikkakuviot. Paketin omaan ohjekirjaan kannattaa silti
 tutustua, sillä \ymparisto{tikzpicture}\-/ ympäristön mahdollisuudet
 ovat valtavat.
 
-\section{Diaesitykset KESKEN}
-\label{luku/diaesitykset}
+\section{Esitysgrafiikka KESKEN}
+\label{luku/esitysgrafiikka}
 
-...
+Esitelmien ja muiden puhe\-/ esitysten tukena käytetään usein
+esitysgrafiikkaohjelmia kuten \englanti{Microsoft Powerpointia} tai
+\englanti{Libreoffice Impressiä}. Myös Latex sopii esitysgrafiikan
+tekemiseen, ja se voi olla osaavissa käsissä jopa kaikkein nopein ja
+typografisesti tyylikkäin työkalu esitysdiojen tuottamiseen.
+
+Latexin tunnetuin ja monipuolisin esitysgrafiikkajärjestelmä on
+\luokka{beamer},\avctan{beamer} joka on oma dokumenttiluokkansa. Sen
+omassa ohjekirjassa on reilu kaksisataa sivua, joten tässä oppaassa
+esitellään vain perusasioita.
+
+\begin{esimerkki*}
+  % Tarvitaan indeksikomennot
+
+\begin{koodilohko}
+\documentclass[aspectratio=169,t]{beamer}
+\usepackage{polyglossia} \setdefaultlanguage{finnish}
+\usepackage{hyperref}
+
+\title{Esitysgrafiikkaa Latexilla}
+\author{Teppo Tekijä}
+\institute{Ladontatieteiden tiedekunta}
+\date{13.9.2021}
+
+\begin{document}
+
+\section{Otsikkodia}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+\section{Ensimmäinen väliotsikko}
+
+\begin{frame}{Pääotsikko}{Alaotsikko}
+
+  \pause Seuraavassa luetellaan jotakin: \pause
+
+  \begin{enumerate}
+  \item ensimmäinen \pause
+  \item toinen \pause
+  \item kolmas
+  \end{enumerate}
+
+\end{frame}
+
+\section{Toinen väliotsikko}
+
+\begin{frame}[c]
+
+  Sisältö keskitetty pystysuunnassa.
+
+\end{frame}
+
+\end{document}
+\end{koodilohko}
+
+  \caption{\paketti{beamer}\-/ paketin avulla tehdyn diaesityksen runko}
+  \label{esim/beamer-runko}
+\end{esimerkki*}
 
 \section{Kirjeet KESKEN}
 \label{luku/kirjeet}

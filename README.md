@@ -148,6 +148,7 @@ Puutteita ja suunnitelmia
   - `\marginpar`-komennon puutteet ja vaihtoehto `marginnote`
   - Lähdetiedostojen nimistä pitäisi mainita jossain: ei välilyöntejä.
     Ehkä on muitakin merkistörajoituksia.
+  - Mahdollisesti käsitellään wrapfig-paketti.
   - Lainausmerkkejä voisi lisätä \koodi{}-ilmausten ympärille.
   - Komentojen ja makrojen käsitteitä pitäisi avata.
   - Moniosaiset lähdedokumentit: `\input`, `\include` yms.

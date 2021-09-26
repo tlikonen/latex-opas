@@ -22,6 +22,7 @@ ala-in-dek-sit
 ala-in-dek-si-toi-min-to
 ala-in-dek-siä
 ala-osaan
+ala-ot-sik-ko
 ala-otsi-kon
 alku-osaa
 angle
@@ -38,6 +39,7 @@ array-back-slash
 array-rule-width
 array-stretch
 ar-ti-cle
+as-pect-ra-tio
 author
 babel
 babel-font
@@ -70,6 +72,7 @@ break
 cap-tion
 cap-tion-setup
 cap-tions-finnish
+cen-ter
 chapter-lists-gaps
 chapter-mark
 chapter-name
@@ -219,6 +222,7 @@ index-name
 index-pro-logue
 index-setup
 index-tools
+in-sti-tute
 in-text-sep
 in-toc
 item-indent
@@ -313,6 +317,7 @@ main-mat-ter
 make-box
 make-index
 make-label
+make-title
 margin-par
 margin-par-push
 margin-par-sep
@@ -421,6 +426,7 @@ par-sep
 par-skip
 part-name
 par-top-sep
+pause
 pdf-book-mark
 pdf-info
 pdf-latex
@@ -458,6 +464,7 @@ pää-asial-li-nen
 pää-asial-li-sek-si
 pää-asial-li-sen
 pää-asias-sa
+pää-ot-sik-ko
 pääte-oh-jel-mien
 quo-ta-tion
 quote

@@ -6854,11 +6854,26 @@ typografisesti tyylikkäin työkalu esitysdiojen tuottamiseen.
 
 Latexin tunnetuin ja monipuolisin esitysgrafiikkajärjestelmä on
 \luokka{beamer},\avctan{beamer} joka on oma dokumenttiluokkansa. Sen
-omassa ohjekirjassa on reilu kaksisataa sivua, joten tässä oppaassa
-esitellään vain perusasioita.
+ohjekirjassa on reilu kaksisataa sivua, joten tässä oppaassa voidaan
+esitellä vain perusasioita, joilla pääsee alkuun.
 
 \begin{esimerkki*}
-  % Tarvitaan indeksikomennot
+  \komentoi{author}
+  \komentoi{date}
+  \komentoi{documentclass}
+  \komentoi{institute}
+  \komentoi{item}
+  \komentoi{maketitle}
+  \komentoi{pause}
+  \komentoi{section}
+  \komentoi{setdefaultlanguage}
+  \komentoi{title}
+  \komentoi{usepackage}
+  \luokkai{beamer}
+  \pakettii{hyperref}
+  \pakettii{polyglossia}
+  \ymparistoi{enumerate}
+  \ymparistoi{frame}
 
 \begin{koodilohko}
 \documentclass[aspectratio=169,t]{beamer}
@@ -6896,16 +6911,68 @@ esitellään vain perusasioita.
 
 \begin{frame}[c]
 
-  Sisältö keskitetty pystysuunnassa.
+  Sisältö on keskitetty pystysuunnassa.
 
 \end{frame}
 
 \end{document}
 \end{koodilohko}
 
-  \caption{\paketti{beamer}\-/ paketin avulla tehdyn diaesityksen runko}
+  \caption{\luokka{beamer}\-/ dokumenttiluokan avulla tehdyn
+    diaesityksen runko}
   \label{esim/beamer-runko}
 \end{esimerkki*}
+
+Esimerkissä \ref{esim/beamer-runko} on kokonainen Latexin lähdetiedosto
+ja diaesityksen runko. Dokumenttiluokan \luokka{beamer} lataamisen
+yhteydessä (rivi~1) määritellään valitsimella \koodi{aspectratio}, mitkä
+ovat diojen mittasuhteet. Tässä esimerkissä arvoksi annetaan
+\koodi{169}, joka tarkoittaa leveyden ja korkeuden suhdetta 16:9.
+Oletusarvo on \koodi{43} eli kuvasuhde 4:3. Muita mahdollisia arvoja
+ovat esimerkiksi \koodi{1610} (16:10) ja \koodi{54} (5:4).
+
+Esimerkin ensimmäisellä rivillä oleva toinen valitsin \koodi{t} tulee
+englannin kielen sanasta \englantik{top}, ja tässä se tarkoittaa, että
+diojen sisältö sijoitetaan dian yläreunaan. Oletusasetus on \koodi{c}
+(engl. \englantik{center}), joka keskittää dian sisällön pystysuunnassa.
+Tämän asetuksen voi muuttaa kuhunkin diaan käyttämällä
+\ymparisto{frame}\-/ ympäristön valinnaista argumenttia, kuten esimerkin
+rivillä 34 on tehty.
+
+Riveillä 5--8 määritellään dokumentin perustiedot normaaliin tapaan
+(\ref{luku/dokumentin-perustiedot}), mutta lisänä perus Latexiin on
+\komento{institute}\-/ komento, jolla voi määritellä tekijän edustaman
+laitoksen. Nämä perustiedot ladotaan näkyviin vasta
+\komento{maketitle}\-/ komennolla, joka on esimerkin rivillä~15.
+
+Jokainen yksittäinen sivu eli dia täytyy kirjoittaa \ymparisto{frame}\-/
+ympäristön sisään. Ympäristö siis aloittaa aina puhtaan sivun.
+Ympäristön alussa voi olla aaltosulkeissa sivun pääotsikko ja toisissa
+aaltosulkeissa alaotsikko. Esimerkin rivillä 20 on tehty juuri näin.
+Toisen tai molemmat otsikot voi jättää poiskin.
+
+Sivun eli \ymparisto{frame}\-/ ympäristön sisällä voi olla tavallista
+tekstiä ja käyttää suunnilleen normaaleja Latexin komentoja. Esimerkissä
+\ref{esim/beamer-runko} on käytetty muutaman kerran \komento{pause}\-/
+komentoa, joka tekee esitykseen tauon. Käytännössä se jakaa sivun
+sisällön erillisiksi pdf\-/ sivuiksi, ja siten sisällön voi paljastaa
+yleisölle vaihe vaiheelta. Esimerkin riveillä 24--28 käytetään luetelmaa
+eli \ymparisto{enumerate}. Se toimii suunnilleen samoin kuin perus
+Latexin vastaava ympäristö (luku \ref{luku/luetelma-perus}), mutta
+\luokka{beamer}\-/ versiossa on hieman enemmän ominaisuuksia.
+
+Otsikkokomennot \komento{chapter}, \komento{section},
+\komento{subsection} ym. täytyy kirjoittaa \ymparisto{frame}\-/
+ympäristöjen ulkopuolelle. \luokka{beamer}\-/ luokassa otsikkokomennot
+eivät lado mitään itse dokumenttiin, vaan ne ainoastaan muodostavat
+pdf\-/ tiedoston sisällysluettelon. Tosin sisällysluettelon kaltaista
+rakennetietoa on mahdollista saada näkyviin itse diojen reunoillekin.
+Niiden tarkoituksena on helpottaa esimerkiksi pitkän diaesityksen
+seuraamista ja jäsentämistä. Näistä ominaisuuksista voi lukea lisää
+\luokka{beamer}\-/ luokan ohjekirjasta.
+
+% fonttien vaihtaminen
+% värimuutoksia
 
 \section{Kirjeet KESKEN}
 \label{luku/kirjeet}

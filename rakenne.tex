@@ -6067,8 +6067,12 @@ Jos valitsin \koodi{intoc} on mukana, kyseinen asiahakemisto eli sen
 otsikko lisätään myös sisällysluetteloon. Valitsimella \koodi{columns}
 asetetaan hakemiston sarakkeiden lukumäärää ja valitsimella
 \koodi{columnsep} mitta, joka on sarakkeiden välinen tyhjä tila.
-Sarakkeiden väliin saa pystyviivaan antamalla valitsimen
-\koodi{columnseprule}.
+Sarakkeiden väliin saa pystyviivan antamalla valitsimen
+\koodi{columnseprule}. Teknisesti sarakkeet toteutetaan
+\paketti{multicol}\-/ paketin avulla, joten sen paketin mitat ovat
+käytettävissä myös asiahakemistojen latomisessa. Katso lisätietoa
+sarakkeista ja \paketti{multicol}\-/ paketista luvusta
+\ref{luku/multicol}.
 
 Asiahakemiston järjestelystä vastaa erillinen tietokoneohjelma, joka
 suoritetaan automaattisesti lähdedokumentin kääntämisen yhteydessä.

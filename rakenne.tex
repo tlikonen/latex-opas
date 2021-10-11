@@ -6975,7 +6975,88 @@ seuraamista ja jäsentämistä. Näistä ominaisuuksista voi lukea lisää
 
 \subsection{Asetuksia KESKEN}
 
-...
+\luokka{beamer}\-/ dokumenttiluokka sisältää omat komentonsa esimerkiksi
+fonttien, kirjainleikkausten ja värien valintaan. Fontit sinänsä
+määritellään ja tuodaan dokumenttiin samalla tavalla kuin Latexissa
+muutenkin (luku \ref{luku/kirjaintyypit}), mutta tietyn
+kirjainleikkausten valitsemiseen esimerkiksi dian otsikkoon tai muihin
+erityisiin kohtiin vaatii \luokka{beamer}\-/ luokan omia komentoja.
+
+Edellisten lisäksi \luokka{beamer} sisältää valmiita ulkoasuteemoja.
+Teemat ovat asetusten kokonaisuuksia, joita toimitetaan dokumenttiluokan
+mukana ja joita voi tehdä itsekin. Käyttämällä valmista teemaa saa
+helposti käyttöönsä jonkun suunnitteleman tyylikkään kokonaisuuden.
+Tässä alaluvussa käsitellään ensin teemojen valintaa ja joitakin
+dokumenttiluokan mukana toimitettavia valmiita teemoja. Vasta sen
+jälkeen neuvotaan, kuinka fontteihin ja väreihin pääsee itse
+vaikuttamaan.
+
+Korkeimman tason teemojen valintakomento on \komento{usetheme}. Sillä
+valitaan teema, joka voi määritellä vähän kaikkea diaesityksen ulkoasuun
+liittyvää: kirjainleikkaukset, värit ja dian reunoille ladottavaa
+lisätietoa. Alemmantasoisia teemakomentoja ovat \komento{usecolortheme}
+ja \komento{usefonttheme}, joilla valitaan vain väri- tai
+kirjainleikkausteema. Lisäksi on teemakomennot \komento{useinnertheme}
+ja \komento{useoutertheme}, joilla valitaan dian reunoille ladottavaan
+lisätietoon erikoistuneet teemat. Yleensä kyse on diaesityksen
+otsikoihin ja kokonaisrakenteeseen liittyvästä lisätiedosta. Näiden
+käytännön merkitys selviää parhaiten kokeilemalla vaihtoehtoja, joita
+esitellään lyhyesti seuraavaksi.
+
+\leijutlk{
+  \begin{tabular}{lll}
+    \toprule
+    \komento{usetheme}
+    & \komento{usefonttheme}
+    & \komento{usecolortheme} \\
+    \midrule
+    ... \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{\luokka{beamer}\-/ luokan teemanvalintakomentoja ja valmiita
+    teemoja~(1)}
+  \label{tlk/usetheme1}
+}
+
+\leijutlk{
+  \begin{tabular}{ll}
+    \toprule
+    \komento{useinnertheme}
+    & \komento{useoutertheme} \\
+    \midrule
+    ... \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{\luokka{beamer}\-/ luokan teemanvalintakomentoja ja valmiita
+    teemoja~(2)}
+  \label{tlk/usetheme2}
+}
+
+Taulukoissa \ref{tlk/usetheme1} ja \ref{tlk/usetheme2} on
+\luokka{beamer}\-/ luokan valmiita teemoja. Taulukon otsikkorivillä on
+teeman valintakomento ja sen alla samassa sarakkeessa teeman nimiä,
+joita voi antaa komennolle argumentiksi. Teemat valitaan kirjoittamalla
+lähdedokumentin esittelyosaan teemakomentoja, esimerkiksi seuraavalla
+tavalla:
+
+\begin{koodilohkosis}
+\usetheme{...}
+\usecolortheme{...}
+\end{koodilohkosis}
+
+\noindent
+Teemanvalintakomennoille voi antaa hakasulkeissa valinnaisen argumentin,
+joka sijoitetaan ensimmäiseksi eli ennen pakollista teeman nimeä.
+Valinnaisen argumentin avulla määritetään kyseisen teeman asetuksia, jos
+teema sellaisia tukee. Asetukset ovat täysin teemakohtaisia, ja niistä
+voi lukea lisää dokumenttiluokan ohjekirjasta. Seuraavassa esimerkissä
+... KESKEN
+
+\begin{koodilohkosis}
+\usetheme[...]{...}
+\end{koodilohkosis}
 
 % Esitellään lyhyesti theme-komennot ja tehdään taulukoita, joissa vain
 % listataan valmiita teemoja.
@@ -6999,6 +7080,9 @@ seuraamista ja jäsentämistä. Näistä ominaisuuksista voi lukea lisää
 % \setbeamercolor{block title}{fg=black}
 
 % \setbeamertemplate{navigation symbols}{}
+
+% Mahdollisesti käsitellään teemat eri alaluvussa kuin
+% template-asetukset.
 
 \section{Kirjeet KESKEN}
 \label{luku/kirjeet}

@@ -105,6 +105,7 @@ De-clare-Bib-li-og-ra-phy-Driv-er
 De-clare-Float-Font
 De-clare-New-Float-Type
 De-clare-Sort-ing-Tem-plate
+de-fault
 default-font-fea-tures
 de-fine-col-or
 de-scrip-tion
@@ -517,6 +518,7 @@ si-joit-te-lu-ase-tuk-sia
 single-line-check
 si-sen-nys-ase-tuk-set
 si-sen-nys-asiat
+si-säl-tö-ele-ment-tien
 sivu-alue
 si-vu-alueel-le
 si-vu-alueen

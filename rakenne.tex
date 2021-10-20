@@ -6977,77 +6977,148 @@ Niiden tarkoituksena on helpottaa esimerkiksi pitkän diaesityksen
 seuraamista ja jäsentämistä. Näistä ominaisuuksista voi lukea lisää
 \luokka{beamer}\-/ luokan ohjekirjasta.
 
-\subsection{Asetuksia KESKEN}
+\subsection{Ulkoasuteemat}
 
-\luokka{beamer}\-/ dokumenttiluokka sisältää omat komentonsa esimerkiksi
-fonttien, kirjainleikkausten ja värien valintaan. Fontit sinänsä
-määritellään ja tuodaan dokumenttiin samalla tavalla kuin Latexissa
-muutenkin (luku \ref{luku/kirjaintyypit}), mutta tietyn
-kirjainleikkausten valitsemiseen esimerkiksi dian otsikkoon tai muihin
-erityisiin kohtiin vaatii \luokka{beamer}\-/ luokan omia komentoja.
-
-Edellisten lisäksi \luokka{beamer} sisältää valmiita ulkoasuteemoja.
-Teemat ovat asetusten kokonaisuuksia, joita toimitetaan dokumenttiluokan
-mukana ja joita voi tehdä itsekin. Käyttämällä valmista teemaa saa
-helposti käyttöönsä jonkun suunnitteleman tyylikkään kokonaisuuden.
-Tässä alaluvussa käsitellään ensin teemojen valintaa ja joitakin
-dokumenttiluokan mukana toimitettavia valmiita teemoja. Vasta sen
-jälkeen neuvotaan, kuinka fontteihin ja väreihin pääsee itse
-vaikuttamaan.
+\luokka{beamer}\-/ dokumenttiluokka sisältää valmiita ulkoasuteemoja eli
+ulkoasuun vaikuttavia asetusten kokonaisuuksia. Käyttämällä valmista
+teemaa saa helposti käyttöönsä jonkun henkilön suunnitteleman tyylikkään
+kokonaisuuden.
 
 Korkeimman tason teemojen valintakomento on \komento{usetheme}. Sillä
 valitaan teema, joka voi määritellä vähän kaikkea diaesityksen ulkoasuun
-liittyvää: kirjainleikkaukset, värit ja dian reunoille ladottavaa
-lisätietoa. Alemmantasoisia teemakomentoja ovat \komento{usecolortheme}
-ja \komento{usefonttheme}, joilla valitaan vain väri- tai
-kirjainleikkausteema. Lisäksi on teemakomennot \komento{useinnertheme}
-ja \komento{useoutertheme}, joilla valitaan dian reunoille ladottavaan
-lisätietoon erikoistuneet teemat. Yleensä kyse on diaesityksen
-otsikoihin ja kokonaisrakenteeseen liittyvästä lisätiedosta. Näiden
-käytännön merkitys selviää parhaiten kokeilemalla vaihtoehtoja, joita
-esitellään lyhyesti seuraavaksi.
+liittyvää: fontit, värit, sisällön asettelua ja dian reunoille
+ladottavaa lisätietoa. Alemmantasoisilla teemakomennoilla valitaan vain
+vain jonkin pienemmän osa\-/alueen teema. Esimerkiksi komennoilla
+\komento{usecolortheme} ja \komento{usefonttheme} valitaan vain väri-
+tai fonttiteema.
+
+Fontit tai kirjainperheet sinänsä määritellään ja otetaan käyttöön
+samalla tavalla kuin Latexissa muutenkin (luku
+\ref{luku/kirjaintyypit}), mutta teema voi määritellä, mitä
+kirjainperhettä tai \=/leikkausta käytetään esimerkiksi diojen
+otsikoissa tai muissa tilanteisssa. Näiden asetusten muuttaminen voi
+vaatia \luokka{beamer}\-/ luokan omia komentoja, joista annetaan tietoa
+luvussa \ref{luku/beamer-asetuksia}.
+
+Alemmantasoisia teemakomentoja ovat myös \komento{useinnertheme} ja
+\komento{useoutertheme}. Niillä vaikutetaan erilaisiin diojen
+sisältöelementtien (\englanti{inner}) ulkoasuun ja dian reunoille
+(\englanti{outer}) ladottavaan lisätietoon.
 
 \leijutlk{
-  \begin{tabular}{lll}
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\midrule \komento{#1} & #2 \\}
+  \providecommand{\teema}{}
+  \renewcommand{\teema}[2][,]{\mbox{\koodi{#2}#1}}
+
+  \begin{tabularx}{\linewidth}{lL}
     \toprule
-    \komento{usetheme}
-    & \komento{usefonttheme}
-    & \komento{usecolortheme} \\
-    \midrule
-    ... \\
+    \ots{Komento} & \ots{Valmiita teemoja} \\
+    \rivi{usetheme}{
+      \teema{default}
+      \teema{boxes}
+      \teema{Bergen}
+      \teema{Boadilla}
+      \teema{Madrid}
+      \teema{AnnArbor}
+      \teema{CambridgeUS}
+      \teema{EastLansing}
+      \teema{Pittsburgh}
+      \teema{Rochester}
+      \teema{Antibes}
+      \teema{JuanLesPins}
+      \teema{Montpellier}
+      \teema{Berkeley}
+      \teema{PaloAlto}
+      \teema{Goettingen}
+      \teema{Marburg}
+      \teema{Hannover}
+      \teema{Berlin}
+      \teema{Ilmenau}
+      \teema{Dresden}
+      \teema{Darmstadt}
+      \teema{Frankfurt}
+      \teema{Singapore}
+      \teema{Szeged}
+      \teema{Copenhagen}
+      \teema{Luebeck}
+      \teema{Malmoe}
+      \teema[]{Warsaw}
+    }
+
+    \rivi{usecolortheme}{
+      \teema{default}
+      \teema{structure}
+      \teema{sidebartab}
+      \teema{albatross}
+      \teema{beetle}
+      \teema{crane}
+      \teema{dove}
+      \teema{fly}
+      \teema{monarca}
+      \teema{seagull}
+      \teema{wolverine}
+      \teema{beaver}
+      \teema{spruce}
+      \teema{lily}
+      \teema{orchid}
+      \teema{rose}
+      \teema{whale}
+      \teema{seahorse}
+      \teema{dolphin}
+      \teema[]{seahorse}
+    }
+
+    \rivi{usefonttheme}{
+      \teema{default}
+      \teema{serif}
+      \teema{structurebold}
+      \teema{structureitalicserif}
+      \teema[]{structuresmallcapsserif}
+    }
+
+    \rivi{useinnertheme}{
+      \teema{default}
+      \teema{circles}
+      \teema{rectangles}
+      \teema{rounded}
+      \teema[]{inmargin}
+    }
+
+    \rivi{useoutertheme}{
+      \teema{default}
+      \teema{infolines}
+      \teema{miniframes}
+      \teema{smoothbars}
+      \teema{sidebar}
+      \teema{split}
+      \teema{shadow}
+      \teema{tree}
+      \teema[]{smoothtree}
+    }
     \bottomrule
-  \end{tabular}
+  \end{tabularx}
 }{
-  \caption{\luokka{beamer}\-/ luokan teemanvalintakomentoja ja valmiita
-    teemoja~(1)}
-  \label{tlk/usetheme1}
+  \caption{\luokka{beamer}\-/ luokan teemanvalintakomennot ja valmiita
+    teemoja}
+  \label{tlk/usetheme}
 }
 
-\leijutlk{
-  \begin{tabular}{ll}
-    \toprule
-    \komento{useinnertheme}
-    & \komento{useoutertheme} \\
-    \midrule
-    ... \\
-    \bottomrule
-  \end{tabular}
-}{
-  \caption{\luokka{beamer}\-/ luokan teemanvalintakomentoja ja valmiita
-    teemoja~(2)}
-  \label{tlk/usetheme2}
-}
+Taulukkoon \ref{tlk/usetheme} on koottu \luokka{beamer}\-/ luokan
+teemakomennot ja valmiita teemoja. Taulukon ensimmäisessä sarakkeessa
+ovat teeman valintakomennot ja toisessa sarakkeessa teemojen nimiä,
+joita voi antaa komennolle argumentiksi. Ensimmäisenä mainittu
+\koodi{default}\-/ teema on käytössä oletuksena. Teemat otetaan käyttöön
+kirjoittamalla lähdedokumentin esittelyosaan teemakomentoja, esimerkiksi
+seuraavalla tavalla:
 
-Taulukoissa \ref{tlk/usetheme1} ja \ref{tlk/usetheme2} on
-\luokka{beamer}\-/ luokan valmiita teemoja. Taulukon otsikkorivillä on
-teeman valintakomento ja sen alla samassa sarakkeessa teeman nimiä,
-joita voi antaa komennolle argumentiksi. Teemat valitaan kirjoittamalla
-lähdedokumentin esittelyosaan teemakomentoja, esimerkiksi seuraavalla
-tavalla:
-
+\komentoi{usetheme}
+\komentoi{usecolortheme}
+\komentoi{usefonttheme}
 \begin{koodilohkosis}
-\usetheme{...}
-\usecolortheme{...}
+\usetheme{Bergen}
+\usecolortheme{albatross}
+\usefonttheme{serif}
 \end{koodilohkosis}
 
 \noindent
@@ -7055,21 +7126,20 @@ Teemanvalintakomennoille voi antaa hakasulkeissa valinnaisen argumentin,
 joka sijoitetaan ensimmäiseksi eli ennen pakollista teeman nimeä.
 Valinnaisen argumentin avulla määritetään kyseisen teeman asetuksia, jos
 teema sellaisia tukee. Asetukset ovat täysin teemakohtaisia, ja niistä
-voi lukea lisää dokumenttiluokan ohjekirjasta. Seuraavassa esimerkissä
-... KESKEN
+voi lukea lisää dokumenttiluokan ohjekirjasta. Seuraavassa on
+yleisluontoinen esimerkki:
 
+\komentoi{usetheme}
+\komentoi{useoutertheme}
 \begin{koodilohkosis}
-\usetheme[...]{...}
+\usetheme[valitsin]{teeman nimi}
+\useoutertheme[valitsin=arvo]{teeman nimi}
 \end{koodilohkosis}
 
-% Esitellään lyhyesti theme-komennot ja tehdään taulukoita, joissa vain
-% listataan valmiita teemoja.
+\subsection{Muita asetuksia KESKEN}
+\label{luku/beamer-asetuksia}
 
-% \usetheme{}
-% \usecolortheme{}
-% \usefonttheme{serif}
-% \useinnertheme{}
-% \useoutertheme{}
+...
 
 % \setbeamerfont{title}{series=\bfseries,family=\sffamily,size=\Huge}
 % \setbeamerfont{frametitle}{series=\bfseries,family=\sffamily,size=\LARGE}
@@ -7084,9 +7154,6 @@ voi lukea lisää dokumenttiluokan ohjekirjasta. Seuraavassa esimerkissä
 % \setbeamercolor{block title}{fg=black}
 
 % \setbeamertemplate{navigation symbols}{}
-
-% Mahdollisesti käsitellään teemat eri alaluvussa kuin
-% template-asetukset.
 
 \section{Kirjeet KESKEN}
 \label{luku/kirjeet}

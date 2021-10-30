@@ -1,4 +1,4 @@
-versio = 0 (2021)
+versio = 0
 nimi = kaytannollista_latexia
 lahde = $(nimi).tex asetukset.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
@@ -23,9 +23,8 @@ $(nimi).pdf: versio.tex versio.txt $(lahde)
 	@echo "Versio: $(shell cat versio.txt)"
 
 versio.txt: $(lahde)
-	if v=$$(git describe --always --dirty) && \
-		pvm=$$(git log -1 --format=format:%at); \
-		then echo "$$v ($$(date +%Y -d@$$pvm))" > $@; \
+	if v=$$(git describe --always --dirty); \
+		then echo "$$v" > $@; \
 		else echo "$(versio)" > $@; \
 		fi
 

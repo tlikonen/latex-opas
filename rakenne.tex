@@ -6967,6 +6967,18 @@ eli \ymparisto{enumerate}. Se toimii suunnilleen samoin kuin perus
 Latexin vastaava ympäristö (luku \ref{luku/luetelma-perus}), mutta
 \luokka{beamer}\-/ versiossa on hieman enemmän ominaisuuksia.
 
+Tästä esimerkistä puuttuu hyödyllinen \ymparisto{block}\-/ ympäristö,
+jolla saa dian sisälle pienen väliotsikon ja siihen kuuluvan
+tekstikokonaisuuden. Otsikon teksti annetaan ympäristön argumentissa:
+
+\ymparistoi{block}
+\begin{koodilohkosis}
+\begin{block}{Väliotsikko}
+  ...
+\end{block}
+\end{koodilohkosis}
+
+\noindent
 Otsikkokomennot \komento{chapter}, \komento{section},
 \komento{subsection} ym. täytyy kirjoittaa \ymparisto{frame}\-/
 ympäristöjen ulkopuolelle. \luokka{beamer}\-/ luokassa otsikkokomennot

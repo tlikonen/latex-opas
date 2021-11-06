@@ -7188,7 +7188,57 @@ reunojen mahdollisiin lisätietoihin. Muualla käytetään antiikvaa.
 \subsection{Muita asetuksia KESKEN}
 \label{luku/beamer-asetuksia}
 
-...
+Jos haluaa vaikuttaa \luokka{beamer}\-/ dokumenttien otsikoiden tai
+muiden rakenteellisten osien fontteihin ja väreihin, täytyy käyttää
+dokumenttiluokan omia komentoja. Niiden käyttöä neuvotaan tässä
+alaluvussa. Sen sijaan diojen sisällä väliaikaiset kirjaintyypin tai
+\=/leikkauksen muutokset tehdään samalla tavalla kuin Latexissa
+muutenkin. Fonttien tekniikkaa käsitellään luvussa
+\ref{luku/kirjaintyypit} ja tekstin korostamisen typografiaa luvussa
+\ref{luku/korostus}.
+
+\luokka{beamer}\-/ luokan erityisten tekstielementtien kuten otsikoiden
+fonttiin voi vaikuttaa komennolla \komento{setbeamerfont}. Sen
+ensimmäinen argumentti on tekstielementin nimi ja toinen argumentti
+sisältää fonttiasetukset. Esimerkiksi seuraava komento muuttaa
+aloitusdian (\komento{maketitle}) otsikon kirjainperheen ja
+\=/leikkauksen:
+
+\komentoi{setbeamerfont}
+\begin{koodilohkosis}
+\setbeamerfont{title}{family=\rmfamily, series=\bfseries,
+  shape=\itshape, size=\Huge}
+\end{koodilohkosis}
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+
+  \begin{tabular}{ll}
+    \toprule
+    \ots{Tekstielementti} & \ots{Merkitys} \\
+    \midrule
+    \rivi{title}{aloitusdian otsikko (\komento{maketitle})}
+    \rivi{frametitle}{diojen otsikot}
+    \rivi{framesubtitle}{diojen alaotsikot}
+    \rivi{blocktitle}{\ymparisto{block}\-/ ympäristön otsikko}
+    \rivi{normal text}{normaali teksti diojen sisällä}
+    \rivi{footnote}{alaviitteiden fontti}
+    %\rivi{item}{luetelmien luetelmamerkki}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{\luokka{beamer}\-/ luokan tekstielementtejä. Elementtien
+    nimiä käytetään esimerkiksi komentojen \komento{setbeamerfont} ja
+    \komento{setbeamercolor} kanssa}
+  \label{tlk/beamer-tekstielementtejä}
+}
+
+\noindent
+Aloitusdian otsikko on tekstielementti nimeltä \koodi{title}, ja siksi
+se oli edellisen komennon ensimmäisenä argumenttina. Muita oleellisia
+tekstielementtejä on koottu taulukkoon
+\ref{tlk/beamer-tekstielementtejä}.
 
 % \setbeamerfont{title}{series=\bfseries,family=\sffamily,size=\Huge}
 % \setbeamerfont{frametitle}{series=\bfseries,family=\sffamily,size=\LARGE}
@@ -7199,10 +7249,10 @@ reunojen mahdollisiin lisätietoihin. Muualla käytetään antiikvaa.
 
 % \setbeamertemplate{itemize item}{--}
 % \setbeamertemplate{itemize subitem}[circle]
+% \setbeamertemplate{navigation symbols}{}
+
 % \setbeamercolor{item}{fg=black}
 % \setbeamercolor{block title}{fg=black}
-
-% \setbeamertemplate{navigation symbols}{}
 
 \section{Kirjeet KESKEN}
 \label{luku/kirjeet}

@@ -498,6 +498,9 @@ sec-tion-mark
 see-also
 select-font
 select-lan-guage
+set-beamer-color
+set-beamer-font
+set-beamer-tem-plate
 set-cite-style
 set-counter
 set-default-lan-guage
@@ -536,6 +539,10 @@ space-skip
 split-index
 stable
 step-counter
+still-sans-serif-large
+still-sans-serif-math
+still-sans-serif-small
+still-sans-serif-text
 style
 sub-para-graph
 sub-sec-tion
@@ -572,6 +579,10 @@ teks-ti-edi-to-rin
 teks-ti-edi-to-ris-sa
 teks-ti-edi-to-ris-sa-kin
 teks-ti-edi-to-ris-ta
+teks-ti-ele-men-tin
+teks-ti-ele-ment-te-jä
+teks-ti-ele-ment-ti
+teks-ti-ele-ment-tien
 teks-tin-kä-sit-tely-ohjel-mis-sa
 teks-tin-osan
 teks-ti-osa

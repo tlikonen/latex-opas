@@ -7148,6 +7148,43 @@ yleisluontoinen esimerkki:
 \useoutertheme[valitsin=arvo]{teeman nimi}
 \end{koodilohkosis}
 
+\noindent
+Fonttiteema \koodi{serif} vaihtaa koko diaesityksen kirjainperheeksi
+antiikvan. Oletuksena olevaa groteskia (\englanti{sans serif}) ei siis
+käytetä enää missään. \koodi{serif}\-/ teema sisältää kuitenkin muutaman
+valitsimen, jolla tähän voi tehdä pieniä hyödyllisiä poikkeuksia.
+Valitsimia on koottu taulukkoon \ref{tlk/beamer-serif-teema}, ja niitä
+voi antaa useampia kerralla. Seuraava esimerkki asettaa groteskin
+suuriin elementteihin eli otsikoihin ja pieniin elementteihin eli dian
+reunojen mahdollisiin lisätietoihin. Muualla käytetään antiikvaa.
+
+\komentoi{usefonttheme}
+\begin{koodilohkosis}
+\usefonttheme[stillsansseriflarge, stillsansserifsmall]{serif}
+\end{koodilohkosis}
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
+
+  \begin{tabularx}{\linewidth}{lL}
+    \toprule
+    \ots{Valitsin} & \ots{Merkitys} \\
+    \midrule
+    \rivi{stillsansseriflarge}{suuret elementit eli otsikot käyttävät
+    groteskifonttia}
+    \rivi{stillsansserifsmall}{pienet elementit kuten dian reuna\-/
+    alueiden lisätiedot käyttävät groteskia}
+    \rivi{stillsansseriftext}{normaali teksti groteskilla}
+    \rivi{stillsansserifmath}{matematiikkatilassa groteski}
+    \bottomrule
+  \end{tabularx}
+}{
+  \caption{\luokka{beamer}\-/ luokan \koodi{serif}\-/ fonttiteeman
+    asetusvalitsimia}
+  \label{tlk/beamer-serif-teema}
+}
+
 \subsection{Muita asetuksia KESKEN}
 \label{luku/beamer-asetuksia}
 

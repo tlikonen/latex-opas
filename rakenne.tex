@@ -6847,7 +6847,7 @@ vektorigrafiikkakuviot. Paketin omaan ohjekirjaan kannattaa silti
 tutustua, sillä \ymparisto{tikzpicture}\-/ ympäristön mahdollisuudet
 ovat valtavat.
 
-\section{Esitysgrafiikka KESKEN}
+\section{Esitysgrafiikka}
 \label{luku/esitysgrafiikka}
 
 Esitelmien ja muiden puhe\-/ esitysten tukena käytetään usein
@@ -6988,6 +6988,14 @@ rakennetietoa on mahdollista saada näkyviin itse diojen reunoillekin.
 Niiden tarkoituksena on helpottaa esimerkiksi pitkän diaesityksen
 seuraamista ja jäsentämistä. Näistä ominaisuuksista voi lukea lisää
 \luokka{beamer}\-/ luokan ohjekirjasta.
+
+Tämän luvun ohjeilla saa rakennettua selkeitä perussisältöisiä
+diaesityksiä. Dioihin voi lisätä kuvatiedostoja tai vektorigrafiikkaa
+normaalin Latexin tavoin eli luvun \ref{luku/grafiikka} ohjeilla.
+Palstoja ei kuitenkaan kannata toteuttaa luvun \ref{luku/palstat}
+keinoilla vaan \luokka{beamer}\-/ luokan oman \ymparisto{columns}\-/
+ympäristön avulla. Siihen ja kaikkeen muuhunkin saa apua
+dokumenttiluokan omasta ohjekirjasta.
 
 \subsection{Ulkoasuteemat}
 
@@ -7185,7 +7193,7 @@ reunojen mahdollisiin lisätietoihin. Muualla käytetään antiikvaa.
   \label{tlk/beamer-serif-teema}
 }
 
-\subsection{Muita asetuksia KESKEN}
+\subsection{Muita asetuksia}
 \label{luku/beamer-asetuksia}
 
 Jos haluaa vaikuttaa \luokka{beamer}\-/ dokumenttien otsikoiden tai
@@ -7221,10 +7229,10 @@ aloitusdian (\komento{maketitle}) otsikon kirjainperheen ja
     \rivi{title}{aloitusdian otsikko (\komento{maketitle})}
     \rivi{frametitle}{diojen otsikot}
     \rivi{framesubtitle}{diojen alaotsikot}
-    \rivi{blocktitle}{\ymparisto{block}\-/ ympäristön otsikko}
+    \rivi{blocktitle}{\ymparisto{block}\-/ ympäristön otsikot}
     \rivi{normal text}{normaali teksti diojen sisällä}
-    \rivi{footnote}{alaviitteiden fontti}
-    %\rivi{item}{luetelmien luetelmamerkki}
+    \rivi{footnote}{alaviitteet}
+    \rivi{item}{luetelmien luetelmamerkit}
     \bottomrule
   \end{tabular}
 }{
@@ -7240,19 +7248,93 @@ se oli edellisen komennon ensimmäisenä argumenttina. Muita oleellisia
 tekstielementtejä on koottu taulukkoon
 \ref{tlk/beamer-tekstielementtejä}.
 
-% \setbeamerfont{title}{series=\bfseries,family=\sffamily,size=\Huge}
-% \setbeamerfont{frametitle}{series=\bfseries,family=\sffamily,size=\LARGE}
-% \setbeamerfont{framesubtitle}{series=\bfseries,family=\sffamily,size=\footnotesize}
-% \setbeamerfont{block title}{series=\bfseries,family=\sffamily,size=\large}
-% \setbeamerfont{normal text}{family=\rmfamily}
-% \setbeamerfont{footnote}{family=\rmfamily,size=\footnotesize}
+Tekstielementtien väreihin vaikutetaan komennolla
+\komento{setbeamerfont}, joka toimii lähes samalla tavalla kuin edellä
+esitelty \komento{setbeamerfont}. Värin asettamisessa käytetään
+valitsimia \koodi{fg} ja \koodi{bg}, joista ensin mainittu vaihtaa
+varsinaisen värin (\englanti{foreground}) ja jälkimmäinen taustavärin
+(\englanti{background}). Seuraavassa esimerkissä vaihdetaan diojen
+otsikon teksti valkeaksi ja tausta siniseksi:
 
-% \setbeamertemplate{itemize item}{--}
-% \setbeamertemplate{itemize subitem}[circle]
-% \setbeamertemplate{navigation symbols}{}
+\komentoi{setbeamercolor}
+\begin{koodilohkosis}
+\setbeamercolor{frametitle}{fg=white, bg=blue}
+\end{koodilohkosis}
 
-% \setbeamercolor{item}{fg=black}
-% \setbeamercolor{block title}{fg=black}
+\noindent
+Värien nimien täytyy olla ennalta määriteltyjä. Perusvärit on määritelty
+valmiiksi, mutta lisää värejä voi määritellä ohjeilla, joita kerrotaan
+luvussa \ref{luku/korostus-värit}.
+
+Oletuksena luetelmaympäristöt \ymparisto{itemize} ja
+\ymparisto{enumerate} latovat luetelmamerkit eri värillä kuin normaalin
+tekstin. Väri riippuu käytetystä väriteemasta (\komento{usecolortheme}).
+Jos haluaa, että luetelmamerkit ovat samalla värillä kuin normaali
+teksti, kannattaa käyttää seuraavan esimerkin komentoa:
+
+\komentoi{setbeamercolor}
+\begin{koodilohkosis}
+\setbeamercolor{item}{parent={normal text}}
+\end{koodilohkosis}
+
+\noindent
+Edellisessä esimerkissä viitataan \koodi{item}\-/ nimiseen
+tekstielementtiin, joka tarkoittaa luetelmamerkkejä. Valitsin
+\koodi{parent} tarkoittaa, että väri peritään toiselta
+tekstielementiltä, tässä tapauksessa normaalilta tekstiltä
+(\koodi{\englanti{normal text}}). Toki tässäkin voi käyttää valitsimia
+\koodi{fg} ja~\koodi{bg}.
+
+Normaalin tekstin (\koodi{normal text}) taustaväri tarkoittaa koko dian
+tekstialueen taustaväriä. Seuraavassa on käytännön esimerkki, joka
+muuttaa diojen otsikon taustan kirkkaan vihreäksi (70\,\%) ja
+tekstialueen taustan vaalean vihreäksi (30\,\%).
+
+\komentoi{setbeamercolor}
+\begin{koodilohkosis}
+\setbeamercolor{frametitle} {fg=black, bg=green!90}
+\setbeamercolor{normal text}{fg=black, bg=green!30}
+\end{koodilohkosis}
+
+\noindent
+Numeroimattomien luetelmien eli \ymparisto{itemize}\-/ ympäristön
+luetelmamerkki on \luokka{beamer}\-/ dokumenttiluokassa oletuksena
+kolmionmuotoinen, mutta asetusta voi muuttaa komennolla
+\komento{setbeamertemplate}. Tällä komennolla tehdään sekalaisia diojen
+asetuksia, joista annetaan tässä yhteydessä vain pari esimerkkiä.
+Luetelmamerkki vaihdetaan seuraavan esimerkin komennoilla.
+
+\komentoi{setbeamertemplate}
+\begin{koodilohkosis}
+\setbeamertemplate{itemize item}[circle]          % perustaso
+\setbeamertemplate{itemize subitem}[square]       % toinen taso
+\setbeamertemplate{itemize subsubitem}[triangle]  % kolmas taso
+\end{koodilohkosis}
+
+\noindent
+Vielä monipuolisemmin voi luetelmamerkkeihin vaikuttaa, kun vaihtaa
+hakasulkeissa olevan argumentin tilalle aaltosulkeet. Tällaiseen
+argumenttiin voi kirjoittaa suunnilleen mitä hyvänsä Latex\-/ komentoja,
+joilla luetelmamerkki tuotetaan. Seuraavassa esimerkissä tätä voimakasta
+komentomuotoa käytetään maltillisesti pelkästään ajatusviivan
+tuottamiseen.
+
+\komentoi{setbeamertemplate}
+\begin{koodilohkosis}
+\setbeamertemplate{itemize item}{--}
+\end{koodilohkosis}
+
+\noindent
+Samalla \komento{setbeamertemplate}\-/ komennolla voi asettaa myös
+diojen oikeaan alareunaan ladottaviin navigointisymboleihin. Tässä
+yhteydessä ei käsitellä niitä sen syvällisemmin, mutta
+navigointisymbolien poistaminen onnistuu helposti seuraavalla
+komennolla:
+
+\komentoi{setbeamertemplate}
+\begin{koodilohkosis}
+\setbeamertemplate{navigation symbols}{}
+\end{koodilohkosis}
 
 \section{Kirjeet KESKEN}
 \label{luku/kirjeet}

@@ -44,6 +44,7 @@ author
 babel
 babel-font
 babel-tags
+back-ground
 back-mat-ter
 base-line-skip
 beamer
@@ -184,6 +185,7 @@ foot-note-sep
 foot-note-text
 foot-rule-width
 foot-skip
+fore-ground
 for-eign-lan-guage
 front-mat-ter
 ge-om-e-try
@@ -378,6 +380,7 @@ no-link-url
 no-new-page
 no-page-break
 no-page-color
+nor-mal
 normal-font
 normal-margin-par
 normal-size
@@ -422,6 +425,7 @@ pa-pe-ri-ark-kien
 paper-width
 para-graph
 paren-cite
+par-ent
 par-in-dent
 par-sep
 par-skip
@@ -579,10 +583,12 @@ teks-ti-edi-to-rin
 teks-ti-edi-to-ris-sa
 teks-ti-edi-to-ris-sa-kin
 teks-ti-edi-to-ris-ta
+teks-ti-ele-men-til-tä
 teks-ti-ele-men-tin
 teks-ti-ele-ment-te-jä
 teks-ti-ele-ment-ti
 teks-ti-ele-ment-tien
+teks-ti-ele-ment-tiin
 teks-tin-kä-sit-tely-ohjel-mis-sa
 teks-tin-osan
 teks-ti-osa

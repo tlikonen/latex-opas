@@ -48,6 +48,8 @@ Tekijänoikeus ja lisenssi
 
 Tekijä: Teemu Likonen <<tlikonen@iki.fi>>
 
+OpenPGP-avain: [6965F03973F0D4CA22B9410F0F2CAE0E07608462][PGP]
+
 Lisenssi: *Creative Commons Nimeä-JaaSamoin 4.0 Kansainvälinen* (CC
 BY-SA 4.0). Lisenssi antaa sinulle luvan kopioida ja levittää tätä
 teosta tai sen osia missä tahansa välineessä ja muodossa. Sisältöä saa
@@ -72,6 +74,8 @@ fonttien lisenssi rajoittaa käyttöä eri tavalla kuin tämä lisenssi ja
 että tämä lisenssi on silti voimassa teoksen muun sisällön osalta. (Jos
 haluat, voit poistaa tämän poikkeuksen, jolloin myös fonttien lisenssin
 on oltava yhteensopiva tämän lisenssin kanssa.)
+
+[PGP]: http://www.iki.fi/tlikonen/pgp-key.asc
 
 
 Kääntäminen ja asentaminen

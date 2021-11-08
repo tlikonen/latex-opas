@@ -255,9 +255,8 @@ lainkaan, käännetään kaikki nykyisessä hakemistossa olevat
 
 Latexmk\-/ ohjelmalle voi tehdä asetustiedoston, johon voi kirjoittaa
 omaan käyttöön sopivat asetukset. Asetustiedosto sijoitetaan
-tiedostojärjestelmässä käyttäjän kotihakemistoon nimellä
-\koodi{.latexmkrc}. Esimerkki \ref{esim/latexmkrc} näyttää, mitä se
-voisi ehkä sisältää.
+tiedostojärjestelmässä käyttäjän kotihakemistoon. Esimerkki
+\ref{esim/latexmkrc} näyttää, mitä se voisi ehkä sisältää.
 
 \begin{esimerkki*}
 \begin{koodilohko}
@@ -268,7 +267,7 @@ $clean_ext = 'snm nav xdv bbl run.xml';
 $pdf_previewer = 'okular %S';
 \end{koodilohko}
   \caption{Latexmk\-/ ohjelman asetustiedosto (\koodi{\textasciitilde
-      /.latexmkrc})}
+      /.config/\katk latexmk/\katk latexmkrc})}
   \label{esim/latexmkrc}
 \end{esimerkki*}
 

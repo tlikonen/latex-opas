@@ -8,6 +8,7 @@ abst-rak-tio-ta-son
 add-bib-re-source
 add-con-tents-line
 add-font-fea-tures
+ad-dress
 add-to
 add-to-con-tents
 add-to-counter
@@ -82,6 +83,7 @@ cite
 clear-double-page
 clear-page
 cline
+clos-ing
 cmid-rule
 color-box
 column-break
@@ -320,6 +322,7 @@ main-mat-ter
 make-box
 make-index
 make-label
+make-labels
 make-title
 margin-par
 margin-par-push
@@ -407,6 +410,7 @@ ole-tus-yk-sik-köä
 one-column
 one-side
 on-line
+open-ing
 op-tions
 origin
 other-lan-guage
@@ -520,6 +524,7 @@ set-to-width
 sf-fam-i-ly
 short-en
 show-hy-phens
+sig-na-ture
 si-joit-te-lu-ase-tuk-set
 si-joit-te-lu-ase-tuk-sia
 single-line-check
@@ -704,6 +709,7 @@ value
 va-paa-eh-toi-sia
 va-paa-eh-tois-ta
 vas-taan-otta-jal-le
+vas-taan-otta-jil-le
 vek-tori-gra-fiik-kaa
 vek-tori-gra-fiik-ka-font-te-ja
 vek-tori-gra-fiik-ka-ku-viot

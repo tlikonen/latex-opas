@@ -7336,7 +7336,92 @@ komennolla:
 \setbeamertemplate{navigation symbols}{}
 \end{koodilohkosis}
 
-\section{Kirjeet KESKEN}
+\section{Kirjeet}
 \label{luku/kirjeet}
 
-...
+Latexin \luokka{letter}\-/ dokumenttiluokka on tarkoitettu kirjeiden
+latomiseen. Tyylillisesti se soveltuu ehkä paremmin virallisiin
+kirjeisiin kuin henkilökohtaisiin. Myös joukkojakelukirjeiden tekemiseen
+se voi olla käytännöllinen, koska tietokoneohjelman avulla voi helposti
+tuottaa Latex\-/ koodia eli lähes samanlaisia kirjeitä eri
+vastaanottajille.
+
+\begin{esimerkki*}
+  \komentoi{address}
+  \komentoi{cc}
+  \komentoi{closing}
+  \komentoi{documentclass}
+  \komentoi{encl}
+  \komentoi{makelabels}
+  \komentoi{opening}
+  \komentoi{ps}
+  \komentoi{signature}
+  \komentoi{usepackage}
+  \luokkai{letter}
+  \ymparistoi{letter}
+
+\begin{koodilohko}
+\documentclass{letter}
+\usepackage[a4paper]{geometry}
+\usepackage{polyglossia}
+\setdefaultlanguage{finnish}
+
+\address{Liisa Lähettäjä \\ Katuosoite 1 \\ 00000 Kaupunki}
+\signature{Liisa Lähettäjä}
+
+\makelabels
+
+\begin{document}
+
+\begin{letter}{Virpi Vastaanottaja \\ Tiennimi 3 \\ 99999 Kunta}
+
+  \opening{Hei!}
+
+  Tässä kirjeessä ei ole kovin mielenkiintoista sisältöä, mutta tähän
+  kohtaan se kirjoitettaisiin.
+
+  \closing{Terveisin}
+
+  \ps{Jk. Tässä on kirjeen jälkikirjoitus.}
+
+  \cc{Mauno Muuhenkilö}
+  \encl{lippu, lappu, paperi}
+
+\end{letter}
+
+\end{document}
+\end{koodilohko}
+
+  \caption{Latexin \luokka{letter}\-/ dokumenttiluokka on tarkoitettu
+    kirjeiden latomiseen}
+  \label{esim/letter}
+\end{esimerkki*}
+
+Esimerkissä \ref{esim/letter} on yhden kirjeen runko ja oleelliset
+komennot. Dokumentin esittelyosassa olevalla \komento{address}\-/
+komennolla määritellään lähettäjän nimi ja osoitetiedot. Ne ladotaan
+jokaisen kirjeen alkuun. Myös komennolla \komento{signature} ilmaistaan
+lähettäjän nimi, tarkemmin allekirjoitus, joka ladotaan kirjeen loppuun.
+Komento \komento{makelabels} aiheuttaa sen, että kaikkien kirjeiden
+jälkeen ladotaan sivu (tai useampia), jossa ovat kaikkien
+vastaanottajien osoitetiedot. Tämä on tarkoitettu osoitetarrojen
+tulostamiseen.
+
+Varsinainen kirjeen sisältö toteutetaan \ymparisto{letter}\-/ ympäristön
+avulla. Ympäristölle annetaan yksi argumentti, jossa on kyseisen kirjeen
+vastaanottajan nimi ja osoitetiedot. Itse kirje alkaa
+\komento{opening}\-/ komennolla, jolla ilmaistaan tervehdys tai muu
+kirjeen aloitussanat.
+
+Kirjeen lopussa \komento{closing}\-/ komennolla on sopivaa ilmaista
+lopputoivotus tai muu vastaava. Lähettäjän nimi ladotaan sen jälkeen
+automaattisesti, jos lähettäjä on ilmaistu aiemmin
+\komento{signature}\-/ komennolla. Mahdollisen jälkikirjoituksen voi
+ilmaista komennolla \komento{ps}, kirjeen jakelutietoja komennolla
+\komento{cc} ja liitteet komennolla \komento{encl}.
+
+Yksi Latex\-/ lähdedokumentti voi sisältää useita \ymparisto{letter}\-/
+ympäristöjä, ja jokainen niistä muodostaa erillisen, uudelta sivulta
+alkavan kirjeen. Kaikkiin kirjeisiin ladotaan sama lähettäjä, ellei
+lähettäjätietoja välillä vaihda \komento{address}\-/\ ja
+\komento{signature}\-/ komennoilla.

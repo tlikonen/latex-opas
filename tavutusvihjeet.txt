@@ -220,6 +220,7 @@ if-then-else
 ig-nore-spaces
 ig-nore-spaces-af-ter-end
 imake-idx
+in-clude
 in-clude-graph-ics
 in-col-lec-tion
 in-dex
@@ -227,6 +228,7 @@ index-name
 index-pro-logue
 index-setup
 index-tools
+in-put
 in-sti-tute
 in-text-sep
 in-toc

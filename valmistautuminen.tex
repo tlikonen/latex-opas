@@ -307,20 +307,14 @@ haluaa tutustua esimerkissä \ref{esim/ensimmäinen}
 pakettiin syvällisemmin, tarvitsee vain komentaa \koodi{texdoc
   fontspec}, ja paketin pdf\-/ muotoinen ohjekirja avautuu.
 
-\section{Lähdetiedostot KESKEN}
+\section{Lähdetiedostot}
 
-...
-
-% Välilyönnit eivät ehkä aina toimi.
-% \input, \include
-
-\section{Dokumentin runko}
-
-Luodaan seuraavaksi yksinkertainen Latex\-/ dokumentti, jota voi käyttää
-harjoitteluun ja pohjana omille dokumenteille. Tallenna esimerkin
-\ref{esim/ensimmäinen} sisältö tekstieditorin avulla tiedostoon vaikkapa
-nimellä \koodi{teksti.tex}. Käännä eli lado se pdf\-/ tiedostoksi
-käyttämällä jotakin seuraavista komennoista (valitse yksi):
+Seuraavassa ovat ohjeet alkuun pääsemiseksi. Luodaan yksinkertainen
+Latex\-/ lähdetiedosto, jota voi käyttää harjoitteluun ja pohjana omille
+töille. Tallenna esimerkin \ref{esim/ensimmäinen} sisältö tekstieditorin
+avulla tiedostoon vaikkapa nimellä \koodi{teksti.\katk tex}. Käännä eli
+lado se pdf\-/ tiedostoksi käyttämällä jotakin seuraavista komennoista
+(valitse yksi):
 
 \begin{koodilohkosis}
 lualatex teksti.tex
@@ -330,8 +324,8 @@ latexmk -xelatex  teksti.tex
 \end{koodilohkosis}
 
 \noindent
-Tuloksena pitäisi olla tiedosto \koodi{teksti.pdf}, jota voi ihailla
-jollakin pdf\-/ tiedostojen katseluun tarkoitetulla ohjelmalla.
+Tuloksena pitäisi olla tiedosto \koodi{teksti.\katk pdf}, jota voi
+ihailla jollakin pdf\-/ tiedostojen katseluun tarkoitetulla ohjelmalla.
 
 Esimerkin \ref{esim/ensimmäinen} ensimmäisellä rivillä määritellään
 dokumenttiluokka \luokka{article}, joka on tietynlainen sivupohja tai
@@ -402,6 +396,34 @@ erikseen ladattavista makropaketeista (\paketti{geometry},
 \paketti{fontspec}, \paketti{polyglossia} ym.). Komentoja voi luoda
 itsekin.
 
-Voi olla hyödyllistä tallentaa tämänkaltainen pohjadokumentti myöhempää
-käyttöä varten. Välttyy samojen perusjuttujen kirjoittamiselta, kun voi
+Myöhempää käyttöä varten voisi olla hyödyllistä tallentaa tämänkaltainen
+pohjadokumentti. Välttyy samojen perusjuttujen kirjoittamiselta, kun voi
 aloittaa työt valmiista dokumenttipohjasta.
+
+Lähdetiedoston nimissä kannattaa pitäytyä melko suppeassa
+merkkivalikoimassa, ja varsinkin välilyöntejä kannattaa välttää.
+Nimittäin kääntämisen aikana Latex ja sen makropaketit luovat
+väliaikaistiedostoja, joilla sama nimen osa kuin lähdetiedostossa, ja
+näitä tiedostoja saattavat käsitellä monet erilaiset taustalla
+vaikuttavat työkaluohjelmat. Tiedoston nimissä olevat välilyönnit ja
+ehkä muutkin erikoisemmat merkit aiheuttavat ongelmia.
+
+Pitkä lähdedokumentti voi olla mielekästä jakaa useammaksi tiedostoksi.
+Yhteen lähdetiedostoon voi sisällyttää toisen tiedoston käyttämällä
+\komento{input}\-/ komentoa. Komennon argumentiksi annetaan ladattavan
+lähdetiedoston nimi:
+
+\komentoi{input}
+\begin{koodilohkosis}
+\input{toinen.tex}
+\end{koodilohkosis}
+
+\noindent
+Hieman vastaava komento on \komento{include}, joka myös lisää
+automaattisen sivunvaihdon (\komento{clearpage}, luku
+\ref{luku/sivunvaihdot}) sisällytetyn tiedoston alkuun.
+
+Nyt lienee sopiva aika alkaa opiskella itse Latexia eli merkintäkieltä
+ja kokeilla sen ominaisuuksia itse. Tätä opasta ei tarvitse lukea
+järjestyksessä luku luvulta eteenpäin, vaan eri aiheita voi vapaasti
+opiskella mielenkiinnon ja tarpeiden mukaan. Onnea matkaan!

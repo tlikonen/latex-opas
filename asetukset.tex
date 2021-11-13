@@ -1082,11 +1082,23 @@ varsinkin vanhalle fonttitekniikalle (\englanti{Metafont, Post Script
   Type~1}) mutta myös matematiikkatilan (luku \ref{luku/matematiikka})
 fonttiasetuksille ja joillekin kir\-jain\-perhe\-koko\-nai\-suuk\-sille.
 
+Latexissa pisimmälle ''tuotteistettu'' kokonaisuus taitaa olla
+Libertinus\-/ kirjainperhe, joka sisältää antiikvan, groteskin ja
+tasalevyisen kirjainperheen sekä matematiikkatilan symboleita.
+Libertinus\-/ kirjainperheet saa käyttöön lataamalla paketti
+\paketti{libertinus}:\avctan{libertinus}
+
+\komentoi{usepackage}
+\pakettii{libertinus}
+\begin{koodilohkosis}
+\usepackage{libertinus}
+\end{koodilohkosis}
+
+\noindent
 Valmiita makropaketteja on kuitenkin vain harvoille fonteille, ja
 käytännössä lähes aina \englanti{True Type}- ja \englanti{Open Type}
-\=/muodossa olevat kirjainperheet otetaan käyttöön
-\paketti{fontspec}\-/paketin komennoilla alla olevan esimerkin
-mukaisesti.
+\=/muodossa olevat fontit otetaan käyttöön \paketti{fontspec}\-/paketin
+komennoilla seuraavan esimerkin mukaisesti:
 
 \komentoi{setmainfont}
 \komentoi{setsansfont}
@@ -1116,7 +1128,7 @@ kerroinasetusta \koodi{MatchLowercase}, joka skaalaa fontin siten, että
 gemenakirjaimet eli pienet kirjaimet ovat yhtä korkeita kuin
 peruskirjainperheessä. Mikäli skaalausasetus \koodi{MatchLowercase} ei
 tuota ihan toivottua tulosta, voi kirjainperheen skaalausta hienosäätää
-vielä \koodi{Scale\-Again}\-/ valitsimella seuraavaan tapaan:
+vielä \koodi{Scale\-Again}\-/ valitsimella seuraavalla tavalla:
 
 \komentoi{setmonofont}
 \begin{koodilohkosis}

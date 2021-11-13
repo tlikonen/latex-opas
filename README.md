@@ -149,7 +149,6 @@ Puutteita ja suunnitelmia
   - Muuta tekniikkaa -luku puuttuu.
   - `\marginpar`-komennon puutteet ja vaihtoehto `marginnote`
   - Mahdollisesti käsitellään wrapfig-paketti.
-  - Fonttilukuun maininta libertinus-otf-paketista.
   - Komentojen ja makrojen käsitteitä pitäisi avata.
   - Makropakettien tekeminen.
   - Dokumenttiluokkien tekeminen.

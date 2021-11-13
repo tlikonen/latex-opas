@@ -122,15 +122,15 @@ seuraavalla komennolla:
 Edellisen asennuskomennon voi suorittaa ilman erillistä
 kääntämisvaihettakin, koska ennen asentamista se varmistaa, että
 tarvittavat tiedostot on käännetty. Asennuskohde on käyttäjän
-kotihakemistossa polussa `$HOME/texmf`. Kohteeseen asentuu paitsi oppaan
-PDF-tiedosto myös Latexin lähdetiedostot ja tämä käsillä oleva
+kotihakemistossa eli polussa `$HOME/texmf`. Kohteeseen asentuu paitsi
+oppaan PDF-tiedosto myös Latexin lähdetiedostot ja tämä käsillä oleva
 `README.md`. Asentamisen jälkeen esimerkiksi Texliveen sisältyvä komento
 `texdoc` osaa löytää ja avata oppaan, kun komennolle antaa argumentiksi
 joitakin oppaan nimen kirjaimia, esimerkiksi `texdoc kaytannoll`.
 
 Asennus poistetaan komennolla `make uninstall`. Komento tosin säilyttää
-polun `$HOME/texmf`, koska siellä voi edelleen sijaita muita Latexiin
-liittyviä tiedostoja.
+polun `$HOME/texmf`, koska siellä voi edelleen sijaita muita Texiin ja
+Latexiin liittyviä tiedostoja.
 
 Kääntämishakemiston voi siivota alla olevilla komennoilla. Ensin
 mainittu komento poistaa useimmat väliaikaistiedostot mutta säilyttää
@@ -144,17 +144,13 @@ poistaa kaikki syntyneet tiedostot.
 Puutteita ja suunnitelmia
 -------------------------
 
-  - Rakenneluku kesken.
   - Matematiikkaluku puuttuu.
   - Esipuhe puuttuu.
   - Muuta tekniikkaa -luku puuttuu.
   - `\marginpar`-komennon puutteet ja vaihtoehto `marginnote`
-  - Lähdetiedostojen nimistä pitäisi mainita jossain: ei välilyöntejä.
-    Ehkä on muitakin merkistörajoituksia.
   - Mahdollisesti käsitellään wrapfig-paketti.
-  - Lainausmerkkejä voisi lisätä \koodi{}-ilmausten ympärille.
+  - Fonttilukuun maininta libertinus-otf-paketista.
   - Komentojen ja makrojen käsitteitä pitäisi avata.
-  - Moniosaiset lähdedokumentit: `\input`, `\include` yms.
   - Makropakettien tekeminen.
   - Dokumenttiluokkien tekeminen.
   - Käsitellään uusi `fi-x-school`-tavutuskaava.

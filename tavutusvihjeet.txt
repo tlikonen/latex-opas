@@ -517,6 +517,7 @@ set-counter
 set-default-lan-guage
 set-length
 set-main-font
+set-math-font
 set-mono-font
 set-no-club
 set-no-widow

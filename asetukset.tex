@@ -2069,14 +2069,110 @@ liian ohuita.
     PIENVERSAALI} keinotekoinen
 \end{tulossis}
 
-\subsection{Matematiikkatilan fontit KESKEN}
+\subsection{Matematiikkatilan fontti}
 \label{luku/matematiikka-fontit}
 
-...
+Latexin matematiikkatilan (luku \ref{luku/matematiikka}) fontti
+asetetaan eri tavalla kuin normaalin tilan eli tekstitilan fontit.
+Matematiikkatilaa varten tarvitaan paketti
+\paketti{unicode-math},\avctan{unicode-math} joka täytyy ladata muiden
+matematiikkaan tai fontteihin liittyvien pakettien jälkeen. Paketti tuo
+komennon \komento{setmathfont}, joka on matematiikkatilan vastine
+luvussa \ref{luku/fontin-valinta} esitellyille
+fontinmäärittelykomennoille \komento{setmainfont}, \komento{setsansfont}
+ja \komento{setmonofont}.
 
-% unicode-math
-% mathspec
-% usepackage{fonttipaketti}
+\pakettii{fontspec}
+\pakettii{unicode-math}
+\komentoi{setmainfont}
+\komentoi{setmathfont}
+\begin{koodilohkosis}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}       % tekstitilan perusfontti
+\setmathfont{TeX Gyre Pagella Math}  % matematiikkatilan fontti
+\end{koodilohkosis}
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[3]{\koodi{#1} & \koodi{#2} & \koodi{#3} \\}
+
+  \begin{tabular}{lll}
+    \toprule
+    \ots{Yleistyyli} & \ots{Lihavointi} & \ots{Pääteviivaton} \\
+    \midrule
+    \rivi{math-style=ISO}    {bold-style=ISO}    {sans-style=upright}
+    \rivi{math-style=TeX}    {bold-style=TeX}    {sans-style=italic}
+    \rivi{math-style=french} {bold-style=upright}{sans-style=literal}
+    \rivi{math-style=upright}{}{}
+    \rivi{math-style=literal}{}{}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Matematiikkatilan tyyliasetuksia (\paketti{unicode-math}\-/
+    paketti)}
+  \label{tlk/unicode-math-style}
+}
+
+\noindent
+Paketin \paketti{unicode-math} lataamisen yhteydessä voi
+\komento{usepackage}\-/ komennon valinnaisen argumentin avulla vaikuttaa
+matematiikkatilassa käytettyihin kirjainleikkauksiin. Argumenttiin
+sopivia valitsimia ovat \koodi{math-style}, \koodi{bold-style} ja
+\koodi{sans-style}, ja niille sopivia arvoja on koottu taulukkoon
+\ref{tlk/unicode-math-style}. Asetukset vaikuttavat esimerkiksi siihen,
+mitä kirjainleikkausta käytetään, kun ladotaan matematiikkatilan
+latinalaisia tai kreikkalaisia kirjaimia.
+
+\begin{koodilohkosis}
+\usepackage[math-style=ISO]{unicode-math}
+\end{koodilohkosis}
+
+\noindent
+Matematiikkatilan fontiksi ei kelpaa mikä tahansa, koska tarvittavien
+matemaattisten symbolien täytyy sisältyä \englanti{Open Type} \=/fontin
+merkkivalikoimaan. Tukea ei ehkä ole, jos sitä ei fontille erikseen
+mainosteta. Fonttitiedoston ominaisuuksia voi tutkia esimerkiksi
+käyttöjärjestelmän komentotulkissa \koodi{otfinfo}\-/ komennolla:
+
+\begin{koodilohkosis}
+otfinfo -s texgyrepagella-math.otf
+\end{koodilohkosis}
+
+\noindent
+Tex Live \=/jakelun mukana tulee muutama \englanti{Open Type}
+\=/kirjainperhe, joihin kuuluvat myös matematiikan symbolit. Tällaisia
+kirjainperheitä ovat ainakin Libertinus sekä eri TeX Gyre \-/perheet.
+Koko Libertinus\-/ perheen voi ottaa käyttöön hyvin yksinkertaisesti:
+ladataan vain paketti \paketti{libertinus}, joka määrittää kerralla
+antiikvan, groteskin, tasalevyisen ja matematiikkafontin. Myös
+tavallisten fontinmäärityskomentojen käyttö on mahdollista.
+
+\begin{esimerkki*}
+  \komentoi{setmathfont}
+
+\begin{koodilohko}
+\setmathfont{Libertinus Math Regular}
+\setmathfont{TeX Gyre Bonum Math}
+\setmathfont{TeX Gyre Dejavu Math}
+\setmathfont{TeX Gyre Pagella Math}
+\setmathfont{TeX Gyre Schola Math}
+\setmathfont{TeX Gyre Termes Math}
+\end{koodilohko}
+
+  \caption{Matematiikan symboleja sisältäviä vapaita fontteja. Komento
+    \komento{setmathfont} sisältyy pakettiin \paketti{unicode-math}}
+  \label{esim/matematiikka-fontteja}
+\end{esimerkki*}
+
+Esimerkissä \ref{esim/matematiikka-fontteja} on komentoja joidenkin
+matematiikkafonttien lataamiseen. Lähes aina on järkevää käyttää
+asetusta \koodi{Scale=\katk MatchLowercase}, joka asettaa fontin
+samankokoiseksi kuin vastaava peruskirjainperhe.
+
+\begin{koodilohkosis}
+\setmathfont{TeX Gyre Pagella Math}[Scale=MatchLowercase]
+\end{koodilohkosis}
 
 \section{Kieli}
 \label{luku/kieliasetukset}

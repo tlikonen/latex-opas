@@ -118,6 +118,7 @@ dia-esi-tyk-siä
 dia-esi-tys-ten
 dis-able-hy-phen-ation
 dis-cre-tionary
+dis-play-math
 doc-u-ment
 doc-u-ment-class
 double-rule-sep
@@ -333,6 +334,7 @@ margin-par-width
 mark-both
 mark-right
 Match-Low-er-case
+ma-te-ma-tiik-ka-ym-pä-ris-tö-jä
 md-se-ries
 med-break
 med-skip
@@ -625,6 +627,7 @@ the-author
 the-bib-li-og-ra-phy
 the-chapter
 the-date
+the-equa-tion
 the-foot-note
 the-mp-foot-note
 the-page

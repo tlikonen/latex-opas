@@ -6850,7 +6850,120 @@ ovat valtavat.
 \section{Matematiikka KESKEN}
 \label{luku/matematiikka}
 
-...
+Latexin matematiikkatila on suunniteltu matemaattisten kaavojen
+latomiseen eli matematiikan syntaksia varten. Matematiikkatila on aivan
+oma todellisuutensa, joka ei pintapuolisesti tarkastellessa tunnu
+noudattavan samoja sääntöjä kuin tekstitila.
 
-% align... (amsmath)
-% equation, array
+Matematiikkatilassa ovat voimassa eri komennot, eri fontit, erilainen
+merkkien käyttäytyminen ja erilaiset välistykset. Matematiikkatilan
+fonttiasetuksia käsitellään luvussa \ref{luku/matematiikka-fontit}.
+
+\subsection{Matematiikkatilan käyttö}
+
+Matematiikkatila voidaan kytkeä päälle joko tavallisen tekstitilassa
+toimivan rivin sisällä tai omassa tekstikappaleessaan. Tekstirivillä
+matemaattinen teksti lisätään komentojen \komento{(} ja \komento{)}
+väliin, kahden \koodi{\$}\-/ merkin väliin tai ympäristön
+\ymparisto{math} sisälle. Tässä oppaassa käytetään jatkossa aina
+\komento{(} \komento{)} \=/komentoja, mutta seuraavassa on esimerkki
+kaikista kolmesta:
+
+\begin{koodilohkosis}
+Kaava \( y = 2x + 3 \) on suoran yhtälö.
+Kaava $ y = 2x + 3 $ on suoran yhtälö.
+Kaava \begin{math} y = 2x + 3 \end{math} on suoran yhtälö.
+\end{koodilohkosis}
+
+\begin{tulossis}
+Kaava \( y = 2x + 3 \) on suoran yhtälö.
+Kaava $ y = 2x + 3 $ on suoran yhtälö.
+Kaava \begin{math} y = 2x + 3 \end{math} on suoran yhtälö.
+\end{tulossis}
+
+\noindent
+Kuten edellä olevasta esimerkistä näkyy, matematiikkatilassa kirjaimet
+ladotaan kursiivilla. Tavalliset lähdetiedostoon kirjoitetut kirjaimet
+on tarkoitettu muuttujiksi kuten tässä esimerkissä \(x\) ja \(y\).
+
+Jos matemaattiset kaavat ovat pitkiä tai vievät pystysuuntaista tilaa
+enemmän kuin tavallisen rivikorkeuden verran, on parasta latoa ne omaksi
+kappaleekseen. Se toteutetaan esimerkiksi kirjoittamalla kaavat
+ympäristön \ymparisto{displaymath} sisään tai komentojen \komento{[} ja
+\komento{]} väliin. Molemmat toimivat samalla tavalla.
+
+\ymparistoi{displaymath}
+\komentoi{left}
+\komentoi{right}
+\komentoi{frac}
+\begin{koodilohkosis}
+\begin{displaymath}
+  \left(\frac{1}{x}\right)^2 = \frac{1}{x^2}
+\end{displaymath}
+\end{koodilohkosis}
+
+\begin{displaymath}
+  \left(\frac{1}{x}\right)^2 = \frac{1}{x^2}
+\end{displaymath}
+
+\noindent
+Ympäristö \ymparisto{equation} toimii muuten samalla tavalla, mutta se
+latoo kaavan viereen myös järjestysnumeron ristiviittauksia varten.
+Ympäristön sisälle voi kirjoittaa \komento{label}\-/ komennon, jonka
+argumentissa annetaan kaavalle yksilöllinen tunniste. Tekstistä voi
+viitata kaavaan \komento{ref}\-/ komennolla, jonka argumenttina on
+kaavan tunniste. Ristiviittauksista on tarkempaa tietoa luvussa
+\ref{luku/ristiviitteet}.
+
+Kaavojen numerot tulevat laskurista \laskuri{equation}, ja numeron
+latomiseen voi vaikuttaa määrittelemällä uudelleen komennon
+\komento{theequation}. Seuraavassa esimerkissä kaavan numeroon asetetaan
+ensiksi \komento{section}\-/ tasoisen otsikon numero, piste erottimeksi
+ja lopuksi kyseisen kaavan numero.
+
+\komentoi{renewcommand}
+\komentoi{theequation}
+\komentoi{thesection}
+\komentoi{arabic}
+\laskurii{equation}
+\begin{koodilohkosis}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\end{koodilohkosis}
+
+\noindent
+Matemaattiset kaavat ladotaan oletuksena sivun keskelle, mutta jos
+asettaa Latexin dokumenttiluokalle (luku
+\ref{luku/perusdokumenttiluokat}) valitsimen \koodi{fleqn}, ne ladotaan
+sivun vasempaan reunaan. Kaavojen numerot ladotaan oletuksena sivun
+oikeaan reunaan, mutta vasemmalle ne saa käyttämällä dokumenttiluokan
+valitsinta \koodi{leqno}.
+
+\noindent
+Kehittyneempiä matematiikkaympäristöjä on paketissa
+\paketti{amsmath}.\avctan{amsmath} Esimerkiksi \ymparisto{align}\-/
+ympäristöllä pystyy tasaamaan allekkaiset kaavat tietystä kohdasta.
+Tasauskohta ilmaistaan lähdedokumentissa \koodi{\&}\-/ merkillä, joka
+toimii hieman samalla tavalla kuin taulukoiden (luku
+\ref{luku/taulukot}) sarake\-/ erottimet.
+
+\ymparistoi{align}
+\begin{koodilohkosis}
+\begin{align}
+  4x - 2 &= 6 \\
+      4x &= 8 \\
+       x &= 2
+\end{align}
+\end{koodilohkosis}
+
+\begin{align}
+  4x - 2 &= 6 \\
+  4x &= 8 \\
+  x &= 2
+\end{align}
+
+\noindent
+Paketti \paketti{amsmath} sisältää paljon muitakin hyödyllisiä
+ympäristöjä ja komentoja matematiikan latomiseen. Paketin ohjekirjaan on
+erittäin suositeltavaa tutustua.
+
+% array

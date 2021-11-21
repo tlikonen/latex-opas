@@ -3,8 +3,8 @@
 
 ((nil . ((fill-column . 72)
          (indent-tabs-mode . nil)))
- (latex-mode . ((mode . auto-fill)
-                (mode . outline-minor)
+ (latex-mode . ((eval . (auto-fill-mode))
+                (eval . (outline-minor-mode))
                 (TeX-engine . luatex)
                 (TeX-master . "kaytannollista_latexia.tex")
                 (TeX-open-quote . "''")
@@ -17,4 +17,4 @@
                  ;; Seuraavaa ei tarvita enää Emacs 28:ssa:
                  (fill-prefix . "                  ")))
  (makefile-mode . ((indent-tabs-mode . t)))
- (markdown-mode . ((mode . auto-fill))))
+ (markdown-mode . ((eval . (auto-fill-mode)))))

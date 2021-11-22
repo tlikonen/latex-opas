@@ -6865,9 +6865,7 @@ Matematiikkatila voidaan kytkeä päälle joko tavallisen tekstitilassa
 toimivan rivin sisällä tai omassa tekstikappaleessaan. Tekstirivillä
 matemaattinen teksti lisätään komentojen \komento{(} ja \komento{)}
 väliin, kahden \koodi{\$}\-/ merkin väliin tai ympäristön
-\ymparisto{math} sisälle. Tässä oppaassa käytetään jatkossa aina
-\komento{(} \komento{)} \=/komentoja, mutta seuraavassa on esimerkki
-kaikista kolmesta:
+\ymparisto{math} sisälle. Seuraavassa on esimerkki kaikista kolmesta:
 
 \begin{koodilohkosis}
 Kaava \( y = 2x + 3 \) on suoran yhtälö.
@@ -6938,36 +6936,59 @@ sivun vasempaan reunaan. Kaavojen numerot ladotaan oletuksena sivun
 oikeaan reunaan, mutta vasemmalle ne saa käyttämällä dokumenttiluokan
 valitsinta \koodi{leqno}.
 
-% \[ \begin{array}{r@{~}l}
-%      4x - 2 & = 6 \\
-%      4x & = 8 \\
-%      x & = 2 \\
-%    \end{array} \]
+Matematiikkaympäristössä on käytettävissä taulukkoympäristö
+\ymparisto{array}, joka toimii pitkälti samalla tavalla kuin tekstitilan
+taulukotkin (luku \ref{luku/taulukot}). Pelkästään matematiikkatilassa
+toimiva \ymparisto{array}\-/ ympäristö mahdollistaa useiden kaavarivien
+latomisen ja kohdistamisen vaakasuunnassa tietylle kohdalle. Esimerkiksi
+yhtälöt on mielekästä sijoittaa samalle tasalle yhtäsuuruusmerkin
+kohdalta.
+
+\komentoi{[}
+\komentoi{]}
+\ymparistoi{array}
+\begin{koodilohkosis}
+\[ \begin{array}{r@{~}l}
+     4x - 2 &= 6 \\
+     x      &= 2 \\
+   \end{array} \]
+\end{koodilohkosis}
+
+\[ \begin{array}{r@{~}l}
+     4x - 2 &= 6 \\
+     x      &= 2 \\
+   \end{array} \]
 
 \noindent
-Kehittyneempiä matematiikkaympäristöjä on paketissa
+Pidemmälle kehitettyjä matematiikkaympäristöjä on paketissa
 \paketti{amsmath}.\avctan{amsmath} Esimerkiksi \ymparisto{align}\-/
-ympäristöllä pystyy tasaamaan allekkaiset kaavat tietystä kohdasta.
-Tasauskohta ilmaistaan lähdedokumentissa \koodi{\&}\-/ merkillä, joka
-toimii hieman samalla tavalla kuin taulukoiden (luku
-\ref{luku/taulukot}) sarake\-/ erottimet.
+ympäristö pystyy tasaamaan allekkaiset kaavat tietystä kohdasta, eikä
+taulukon sarakkeita tarvitse erikseen määritellä. Tasauskohta ilmaistaan
+lähdedokumentissa \koodi{\&}\-/ merkillä normaalien taulukoiden tavoin.
+Edellä olleen esimerkin voi toteuttaa yksinkertaisemmin:
 
 \ymparistoi{align}
 \begin{koodilohkosis}
 \begin{align}
   4x - 2 &= 6 \\
-      4x &= 8 \\
-       x &= 2
+  x      &= 2
 \end{align}
 \end{koodilohkosis}
-
-\begin{align}
-  4x - 2 &= 6 \\
-  4x &= 8 \\
-  x &= 2
-\end{align}
 
 \noindent
 Paketti \paketti{amsmath} sisältää paljon muitakin hyödyllisiä
 ympäristöjä ja komentoja matematiikan latomiseen. Paketin ohjekirjaan on
 erittäin suositeltavaa tutustua.
+
+\subsection{Syntaksi}
+
+...
+
+% Unicode-merkit, erityiset komennot
+% desimaalipilkku
+% vaikutusalue { }
+% ylä- ja alaindeksi
+% sulkeet
+% murtoluvut
+% neliöjuuri
+% matriisi

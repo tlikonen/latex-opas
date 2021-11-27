@@ -6882,7 +6882,7 @@ Kaava \begin{math} y = 2x + 3 \end{math} on suoran yhtälö.
 \noindent
 Kuten edellä olevasta esimerkistä näkyy, matematiikkatilassa kirjaimet
 ladotaan kursiivilla. Tavalliset lähdetiedostoon kirjoitetut kirjaimet
-on tarkoitettu muuttujiksi kuten tässä esimerkissä \(x\) ja \(y\).
+on tarkoitettu muuttujiksi kuten tässä esimerkissä $x$ ja $y$.
 
 Jos matemaattiset kaavat ovat pitkiä tai vievät pystysuuntaista tilaa
 enemmän kuin tavallisen rivikorkeuden verran, on parasta latoa ne omaksi
@@ -6890,19 +6890,16 @@ kappaleekseen. Se toteutetaan esimerkiksi kirjoittamalla kaavat
 ympäristön \ymparisto{displaymath} sisään tai komentojen \komento{[} ja
 \komento{]} väliin. Molemmat toimivat samalla tavalla.
 
-\ymparistoi{displaymath}
+\komentoi{[}
+\komentoi{]}
 \komentoi{left}
 \komentoi{right}
 \komentoi{frac}
 \begin{koodilohkosis}
-\begin{displaymath}
-  \left(\frac{1}{x}\right)^2 = \frac{1}{x^2}
-\end{displaymath}
+\[ \left(\frac{1}{x}\right)^2 = \frac{1}{x^2} \]
 \end{koodilohkosis}
 
-\begin{displaymath}
-  \left(\frac{1}{x}\right)^2 = \frac{1}{x^2}
-\end{displaymath}
+\[ \left(\frac{1}{x}\right)^2 = \frac{1}{x^2} \]
 
 \noindent
 Ympäristö \ymparisto{equation} toimii muuten samalla tavalla, mutta se
@@ -6929,12 +6926,13 @@ ja lopuksi kyseisen kaavan numero.
 \end{koodilohkosis}
 
 \noindent
-Matemaattiset kaavat ladotaan oletuksena sivun keskelle, mutta jos
-asettaa Latexin dokumenttiluokalle (luku
-\ref{luku/perusdokumenttiluokat}) valitsimen \koodi{fleqn}, ne ladotaan
-sivun vasempaan reunaan. Kaavojen numerot ladotaan oletuksena sivun
-oikeaan reunaan, mutta vasemmalle ne saa käyttämällä dokumenttiluokan
-valitsinta \koodi{leqno}.
+Latexin lähdedokumentissa matematiikkatilassa kaiken täytyy sisältyä
+yhteen kappaleeseen eli tyhjiä rivejä ei sallita. Matemaattiset kaavat
+ladotaan oletuksena sivun keskelle, mutta jos asettaa Latexin
+dokumenttiluokalle (luku \ref{luku/perusdokumenttiluokat}) valitsimen
+\koodi{fleqn}, ne ladotaan sivun vasempaan reunaan. Kaavojen numerot
+ladotaan oletuksena sivun oikeaan reunaan, mutta vasemmalle ne saa
+käyttämällä dokumenttiluokan valitsinta \koodi{leqno}.
 
 Matematiikkaympäristössä on käytettävissä taulukkoympäristö
 \ymparisto{array}, joka toimii pitkälti samalla tavalla kuin tekstitilan
@@ -6965,7 +6963,7 @@ Pidemmälle kehitettyjä matematiikkaympäristöjä on paketissa
 ympäristö pystyy tasaamaan allekkaiset kaavat tietystä kohdasta, eikä
 taulukon sarakkeita tarvitse erikseen määritellä. Tasauskohta ilmaistaan
 lähdedokumentissa \koodi{\&}\-/ merkillä normaalien taulukoiden tavoin.
-Edellä olleen esimerkin voi toteuttaa yksinkertaisemmin:
+Edellä olleen yhtälöesimerkin voi toteuttaa yksinkertaisemmin:
 
 \ymparistoi{align}
 \begin{koodilohkosis}
@@ -6982,13 +6980,91 @@ erittäin suositeltavaa tutustua.
 
 \subsection{Syntaksi}
 
-...
+Matematiikan kirjoittaminen Latexissa on tehty varsin luonnolliseksi.
+Esimerkiksi tavalliset operaattorit ja kokonaisluvut kirjoitetaan
+näppäimistöltä sellaisenaan, ja jos desimaalierottimena on piste, sekin
+syötetään näppäimistöltä suoraan. Suomessa käytetään desimaalierottimena
+kuitenkin pilkkua, joka toimii Latexin matematiikkatilassa luetelmien
+erotinmerkkinä: sen jälkeen ladotaan pieni väli. Suomalaisen
+desimaalierottimen saa kirjoittamalla pilkun ympärille aaltosulkeet.
+
+\komentoi{pi}
+\komentoi{approx}
+\begin{koodilohkosis}
+\[ \pi \approx 3{,}142 \]
+\end{koodilohkosis}
+
+\[ \pi \approx 3{,}142 \]
+
+\noindent
+Plus- ($+$), jako- ($:$) ja yhtäsuuruusmerkki ($=$) sekä pienempi kuin
+ja suurempi kuin \=/merkit ($<~>$) kirjoitetaan näppäimistöltä
+sellaisenaan. Miinusmerkki ($-$) kirjoitetaan yhdysmerkin (\koodi{-})
+avulla, eli se ladotaan dokumenttiin Unicode\-/ merkistön miinusmerkkinä
+\uctunnus{u+2212 minus sign}. Kertomerkit voi kirjoittaa
+lähdedokumenttiin sellaisenaan mutta myös komennolla \komento{cdot}
+($\cdot$) tai \komento{times} ($\times$).
+
+Pienet sulkeetkin voi kirjoittaa näppäimistöltä suoraan, mutta
+matematiikassa tarvitaan usein erikokoisia, tilanteeseen mukautuvia
+sulkeita. Ne tehdään komentojen \komento{left} (vasen) ja
+\komento{right} (oikea) avulla. Komentojen jälkeen kirjoitetaan haluttu
+suljemerkki, esimerkiksi \komento{left}\komentojatko{(} ja
+\komento{right}\komentojatko{)}.
+
+\komentoi{left}
+\komentoi{right}
+\komentoi{frac}
+\begin{koodilohkosis}
+\[ 1 + \left( \frac{1}{x \left( x-1 \right)} \right) \]
+\end{koodilohkosis}
+
+\[ 1 + \left( \frac{1}{x \left( x-1 \right)} \right) \]
+
+\noindent
+Komentoja \komento{left} ja \komento{right} täytyy käyttää pareittain,
+jotta Latex osaa latoa oikeankokoiset sulkeet. Jos ei halua
+suljemerkille paria, kirjoitetaan toisen suljekomennon ''sulkeeksi''
+piste. Seuraavassa esimerkissä ladotaan vasemmalle aaltosulje
+(\komento{left}\komentojatko{\keno\{}) mutta oikealle ei mitään
+(\komento{right}\komentojatko{.}).
+
+\komentoi{left}
+\komentoi{right}
+\ymparistoi{array}
+\begin{koodilohkosis}
+\[ \left\{ \begin{array}{r@{~}l}
+             x &= 4 \\ y &= -2 \\
+           \end{array} \right. \]
+\end{koodilohkosis}
+
+\[ \left\{ \begin{array}{l@{~}l}
+      x &= 4 \\ y &= -2 \\
+    \end{array} \right. \]
+
+\noindent
+Matematiikkatilan ylä- ja alaindeksit toteutetaan merkkien \koodi{\^{}}
+ja \koodi{\_} avulla. Välittömästä merkin jälkeen oleva merkki ladotaan
+ylä- tai alaindeksiksi, ja jos indeksi sisältää enemmän kuin yhden
+merkin, kirjoitetaan kokonaisuus aaltosulkeisiin. Joidenkin
+matemaattisten operaattorikomentojen yhteydessä indeksit ladotaan
+poikkeuksellisella tavalla, esimerkiksi kokonaan operaattorin ylä- tai
+alapuolelle.
+
+\komentoi{sum}
+\komentoi{int}
+\komentoi{lim}
+\komentoi{to}
+\komentoi{infty}
+\begin{koodilohkosis}
+\[ x^{n-1} \hfill x_i \hfill \sum_{i=1}^n \hfill
+  \int_0^\infty \hfill \lim_{n \to \infty} \]
+\end{koodilohkosis}
+
+\[ x^{n-1} \hfill x_i \hfill \sum_{i=1}^n \hfill
+  \int_0^\infty \hfill \lim_{n \to \infty} \]
 
 % Unicode-merkit, erityiset komennot
-% desimaalipilkku
-% vaikutusalue { }
-% ylä- ja alaindeksi
-% sulkeet
 % murtoluvut
 % neliöjuuri
 % matriisi

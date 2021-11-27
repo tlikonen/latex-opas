@@ -18,6 +18,7 @@ ala-in-dek-seil-le
 ala-in-dek-se-jä
 ala-in-dek-sien
 ala-in-dek-si-ko-men-not
+ala-in-dek-sik-si
 ala-in-dek-sin
 ala-in-dek-sit
 ala-in-dek-si-toi-min-to
@@ -743,6 +744,7 @@ with-in
 Xe-latex
 yh-dys-osas-ta
 yh-dys-osien
+yh-tä-lö-esi-mer-kin
 yleis-ohje
 yleis-yhdys-merk-ki
 ylä-in-dek-si
@@ -753,4 +755,4 @@ ylä-in-dek-si-nume-ron
 ylä-in-dek-sit
 ylä-osaan
 ylä-osas-sa
-ääntö-asu
+ään-tö-asu

@@ -6864,8 +6864,10 @@ oma todellisuutensa, joka ei pintapuolisesti tarkastellessa tunnu
 noudattavan samoja sääntöjä kuin tekstitila.
 
 Matematiikkatilassa ovat voimassa eri komennot, eri fontit, erilainen
-merkkien käyttäytyminen ja erilaiset välistykset. Matematiikkatilan
-fonttiasetuksia käsitellään luvussa \ref{luku/matematiikka-fontit}.
+merkkien käyttäytyminen ja erilaiset välistykset. Tässä luvussa
+käsitellään matematiikkatilan käyttöä ja matemaattisen syntaksin
+kirjoittamista. Fonttiasetuksia käsitellään luvussa
+\ref{luku/matematiikka-fontit}.
 
 \subsection{Matematiikkatilan käyttö}
 
@@ -6906,7 +6908,6 @@ ympäristön \ymparisto{displaymath} sisään tai komentojen \komento{[} ja
 \begin{koodilohkosis}
 \[ \left(\frac{1}{x}\right)^2 = \frac{1}{x^2} \]
 \end{koodilohkosis}
-
 \[ \left(\frac{1}{x}\right)^2 = \frac{1}{x^2} \]
 
 \noindent
@@ -6959,7 +6960,6 @@ kohdalta.
      x      &= 2 \\
    \end{array} \]
 \end{koodilohkosis}
-
 \[ \begin{array}{r@{~}l}
      4x - 2 &= 6 \\
      x      &= 2 \\
@@ -6986,7 +6986,7 @@ Paketti \paketti{amsmath} sisältää paljon muitakin hyödyllisiä
 ympäristöjä ja komentoja matematiikan latomiseen. Paketin ohjekirjaan on
 erittäin suositeltavaa tutustua.
 
-\subsection{Syntaksi}
+\subsection{Syntaksin perusasiat}
 
 Matematiikan kirjoittaminen Latexissa on tehty varsin luonnolliseksi.
 Esimerkiksi tavalliset operaattorit ja kokonaisluvut kirjoitetaan
@@ -7001,7 +7001,6 @@ desimaalierottimen saa kirjoittamalla pilkun ympärille aaltosulkeet.
 \begin{koodilohkosis}
 \[ \pi \approx 3{,}142 \]
 \end{koodilohkosis}
-
 \[ \pi \approx 3{,}142 \]
 
 \noindent
@@ -7026,7 +7025,6 @@ suljemerkki, esimerkiksi \komento{left}\komentojatko{(} ja
 \begin{koodilohkosis}
 \[ 1 + \left( \frac{1}{x \left( x-1 \right)} \right) \]
 \end{koodilohkosis}
-
 \[ 1 + \left( \frac{1}{x \left( x-1 \right)} \right) \]
 
 \noindent
@@ -7045,19 +7043,18 @@ piste. Seuraavassa esimerkissä ladotaan vasemmalle aaltosulje
              x &= 4 \\ y &= -2 \\
            \end{array} \right. \]
 \end{koodilohkosis}
-
 \[ \left\{ \begin{array}{l@{~}l}
       x &= 4 \\ y &= -2 \\
     \end{array} \right. \]
 
 \noindent
-Matematiikkatilan ylä- ja alaindeksit toteutetaan merkkien \koodi{\^{}}
-ja \koodi{\_} avulla. Välittömästä merkin jälkeen oleva merkki ladotaan
-ylä- tai alaindeksiksi, ja jos indeksi sisältää enemmän kuin yhden
-merkin, kirjoitetaan kokonaisuus aaltosulkeisiin. Joidenkin
-matemaattisten operaattorikomentojen yhteydessä indeksit ladotaan
-poikkeuksellisella tavalla, esimerkiksi kokonaan operaattorin ylä- tai
-alapuolelle.
+Matematiikkatilan ylä- ja alaindeksit toteutetaan sirkumfleksin
+(\koodi{\^{}}) ja alaviivan (\koodi{\_}) avulla. Välittömästä merkin
+jälkeen oleva merkki ladotaan ylä- tai alaindeksiksi, ja jos indeksi
+sisältää enemmän kuin yhden merkin, kirjoitetaan kokonaisuus
+aaltosulkeisiin. Joidenkin matemaattisten operaattorikomentojen
+yhteydessä indeksit ladotaan poikkeuksellisella tavalla, esimerkiksi
+kokonaan operaattorin ylä- tai alapuolelle.
 
 \komentoi{sum}
 \komentoi{int}
@@ -7068,11 +7065,43 @@ alapuolelle.
 \[ x^{n-1} \hfill x_i \hfill \sum_{i=1}^n \hfill
   \int_0^\infty \hfill \lim_{n \to \infty} \]
 \end{koodilohkosis}
-
 \[ x^{n-1} \hfill x_i \hfill \sum_{i=1}^n \hfill
   \int_0^\infty \hfill \lim_{n \to \infty} \]
 
+\noindent
+Muuttujien, funktion nimien tai muiden symbolien jäljessä oleva
+$'$\=/merkki tehdään yleisheittomerkin avulla. Unicodessa se on merkki
+\uctunnus{u+2032 prime}, ja matematiikassa se voi tarkoittaa esimerkiksi
+funktion derivaattafunktiota. Seuraavassa esimerkissä on mukana myös
+\komento{quad}\-/ komento, joka latoo pienen vaakasuuntaisen välin.
+
+\komentoi{quad}
+\begin{koodilohkosis}
+\[ f(x) = 3x^2 - 2x \quad f'(x) = 6x - 2 \]
+\end{koodilohkosis}
+\[ f(x) = 3x^2 - 2x \quad f'(x) = 6x - 2 \]
+
+\noindent
+Murtoluvuille ja murtoviivan latomiseen on komento \komento{frac}, jolle
+annetaan kaksi argumenttia: osoittaja ja nimittäjä. Neliö- ja muut
+juuret tehdään \komento{sqrt}\-/ komennolla, jolle annetaan ainakin yksi
+argumentti. Komennolle voi antaa hakasulkeissa toisenkin argumentin,
+joka ilmaisee juuriluvun. Seuraavassa on esimerkki murtoluvun,
+neliöjuuren ja kuutiojuuren toteuttamisesta:
+
+\komentoi{frac}
+\komentoi{sqrt}
+\begin{koodilohkosis}
+\[ \frac{1}{3x + 1} \quad \sqrt{9} = \sqrt[3]{27} \]
+\end{koodilohkosis}
+\[ \frac{1}{3x + 1} \quad \sqrt{9} = \sqrt[3]{27} \]
+
+\subsection{Erikoismerkkejä ja komentoja}
+
+...
+
 % Unicode-merkit, erityiset komennot
-% murtoluvut
-% neliöjuuri
+%
+% \overline \underline \underbrace \overrightarrow \overleftarrow
+%
 % matriisi

@@ -535,6 +535,9 @@ sig-na-ture
 si-joit-te-lu-ase-tuk-set
 si-joit-te-lu-ase-tuk-sia
 single-line-check
+sir-kum-flek-si
+sir-kum-flek-sia
+sir-kum-flek-sin
 si-sen-nys-ase-tuk-set
 si-sen-nys-asiat
 si-säl-tö-ele-ment-tien

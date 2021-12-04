@@ -113,8 +113,9 @@ de-fault
 default-font-fea-tures
 de-fine-col-or
 de-scrip-tion
-desi-maa-li-erot-ti-me-na
-desi-maa-li-osa
+de-si-maa-li-erot-ti-mek-si
+de-si-maa-li-erot-ti-me-na
+de-si-maa-li-osa
 dia-esi-tyk-siä
 dia-esi-tys-ten
 dis-able-hy-phen-ation

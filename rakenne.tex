@@ -6992,9 +6992,9 @@ Matematiikan kirjoittaminen Latexissa on tehty varsin luonnolliseksi.
 Esimerkiksi tavalliset operaattorit ja kokonaisluvut kirjoitetaan
 näppäimistöltä sellaisenaan, ja jos desimaalierottimena on piste, sekin
 syötetään näppäimistöltä suoraan. Suomessa käytetään desimaalierottimena
-kuitenkin pilkkua, joka toimii Latexin matematiikkatilassa luetelmien
-erotinmerkkinä: sen jälkeen ladotaan pieni väli. Suomalaisen
-desimaalierottimen saa kirjoittamalla pilkun ympärille aaltosulkeet.
+kuitenkin pilkkua, joka toimii Latexin matematiikkatilassa välimerkkinä:
+sen jälkeen ladotaan pieni väli. Suomalaisen desimaalierottimen saa
+kirjoittamalla pilkun ympärille aaltosulkeet.
 
 \komentoi{pi}
 \komentoi{approx}
@@ -7004,6 +7004,12 @@ desimaalierottimen saa kirjoittamalla pilkun ympärille aaltosulkeet.
 \[ \pi \approx 3{,}142 \]
 
 \noindent
+Toinen vaihtoehto pilkun käyttämiseen desimaalierottimana on ladata
+paketti \paketti{icomma}.\avctan{icomma} Paketti määrittelee
+matematiikkatilan pilkun toimimaan jokseenkin älykkäästi: jos
+lähdetiedostossa on pilkun jälkeen väli, pilkku ladotaan välimerkkinä;
+jos väliä ei ole, pilkku katsotaan desimaalierottimeksi.
+
 Plus- ($+$), jako- ($:$) ja yhtäsuuruusmerkki ($=$) sekä pienempi kuin
 ja suurempi kuin \=/merkit ($<~>$) kirjoitetaan näppäimistöltä
 sellaisenaan. Miinusmerkki ($-$) kirjoitetaan yhdysmerkin (\koodi{-})

@@ -6902,9 +6902,9 @@ ympäristön \ymparisto{displaymath} sisään tai komentojen \komento{[} ja
 
 \komentoi{[}
 \komentoi{]}
-\komentoi{left}
-\komentoi{right}
-\komentoi{frac}
+\mkomentoi{left}
+\mkomentoi{right}
+\mkomentoi{frac}
 \begin{koodilohkosis}
 \[ \left(\frac{1}{x}\right)^2 = \frac{1}{x^2} \]
 \end{koodilohkosis}
@@ -6944,16 +6944,14 @@ ladotaan oletuksena sivun oikeaan reunaan, mutta vasemmalle ne saa
 käyttämällä dokumenttiluokan valitsinta \koodi{leqno}.
 
 Matematiikkaympäristössä on käytettävissä taulukkoympäristö
-\ymparisto{array}, joka toimii pitkälti samalla tavalla kuin tekstitilan
-taulukotkin (luku \ref{luku/taulukot}). Pelkästään matematiikkatilassa
-toimiva \ymparisto{array}\-/ ympäristö mahdollistaa useiden kaavarivien
-latomisen ja kohdistamisen vaakasuunnassa tietylle kohdalle. Esimerkiksi
-yhtälöt on mielekästä sijoittaa samalle tasalle yhtäsuuruusmerkin
-kohdalta.
+\mymparisto{array}, joka toimii pitkälti samalla tavalla kuin
+tekstitilan taulukotkin (luku \ref{luku/taulukot}). Pelkästään
+matematiikkatilassa toimiva \mymparisto{array}\-/ ympäristö mahdollistaa
+useiden kaavarivien latomisen ja kohdistamisen vaakasuunnassa tietylle
+kohdalle. Esimerkiksi yhtälöt on mielekästä sijoittaa samalle tasalle
+yhtäsuuruusmerkin kohdalta.
 
-\komentoi{[}
-\komentoi{]}
-\ymparistoi{array}
+\mymparistoi{array}
 \begin{koodilohkosis}
 \[ \begin{array}{r@{~}l}
      4x - 2 &= 6 \\
@@ -6967,13 +6965,13 @@ kohdalta.
 
 \noindent
 Pidemmälle kehitettyjä matematiikkaympäristöjä on paketissa
-\paketti{amsmath}.\avctan{amsmath} Esimerkiksi \ymparisto{align}\-/
+\paketti{amsmath}.\avctan{amsmath} Esimerkiksi \mymparisto{align}\-/
 ympäristö pystyy tasaamaan allekkaiset kaavat tietystä kohdasta, eikä
 taulukon sarakkeita tarvitse erikseen määritellä. Tasauskohta ilmaistaan
 lähdedokumentissa \koodi{\&}\-/ merkillä normaalien taulukoiden tavoin.
 Edellä olleen yhtälöesimerkin voi toteuttaa yksinkertaisemmin:
 
-\ymparistoi{align}
+\mymparistoi{align}
 \begin{koodilohkosis}
 \begin{align}
   4x - 2 &= 6 \\
@@ -6996,8 +6994,8 @@ kuitenkin pilkkua, joka toimii Latexin matematiikkatilassa välimerkkinä:
 sen jälkeen ladotaan pieni väli. Suomalaisen desimaalierottimen saa
 kirjoittamalla pilkun ympärille aaltosulkeet.
 
-\komentoi{pi}
-\komentoi{approx}
+\mkomentoi{pi}
+\mkomentoi{approx}
 \begin{koodilohkosis}
 \[ \pi \approx 3{,}142 \]
 \end{koodilohkosis}
@@ -7015,35 +7013,35 @@ ja suurempi kuin \=/merkit ($<\,>$) kirjoitetaan näppäimistöltä
 sellaisenaan. Miinusmerkki ($-$) kirjoitetaan yhdysmerkin (\koodi{-})
 avulla, eli se ladotaan dokumenttiin Unicode\-/ merkistön miinusmerkkinä
 \uctunnus{u+2212 minus sign}. Kertomerkit voi kirjoittaa
-lähdedokumenttiin sellaisenaan mutta myös komennolla \komento{cdot}
-($\cdot$) tai \komento{times} ($\times$).
+lähdedokumenttiin sellaisenaan mutta myös komennolla \mkomento{cdot}
+($\cdot$) tai \mkomento{times} ($\times$).
 
 Pienet sulkeetkin voi kirjoittaa näppäimistöltä suoraan, mutta
 matematiikassa tarvitaan usein erikokoisia, tilanteeseen mukautuvia
-sulkeita. Ne tehdään komentojen \komento{left} (vasen) ja
-\komento{right} (oikea) avulla. Komentojen jälkeen kirjoitetaan haluttu
-suljemerkki, esimerkiksi \komento{left}\komentojatko{(} ja
-\komento{right}\komentojatko{)}.
+sulkeita. Ne tehdään komentojen \mkomento{left} (vasen) ja
+\mkomento{right} (oikea) avulla. Komentojen jälkeen kirjoitetaan haluttu
+suljemerkki, esimerkiksi \mkomento{left}\mkomentojatko{(} ja
+\mkomento{right}\mkomentojatko{)}.
 
-\komentoi{left}
-\komentoi{right}
-\komentoi{frac}
+\mkomentoi{left}
+\mkomentoi{right}
+\mkomentoi{frac}
 \begin{koodilohkosis}
 \[ 1 + \left( \frac{1}{x \left( x-1 \right)} \right) \]
 \end{koodilohkosis}
 \[ 1 + \left( \frac{1}{x \left( x-1 \right)} \right) \]
 
 \noindent
-Komentoja \komento{left} ja \komento{right} täytyy käyttää pareittain,
+Komentoja \mkomento{left} ja \mkomento{right} täytyy käyttää pareittain,
 jotta Latex osaa latoa oikeankokoiset sulkeet. Jos ei halua
 suljemerkille paria, kirjoitetaan toisen suljekomennon ''sulkeeksi''
 piste. Seuraavassa esimerkissä ladotaan vasemmalle aaltosulje
-(\komento{left}\komentojatko{\keno\{}) mutta oikealle ei mitään
-(\komento{right}\komentojatko{.}).
+(\mkomento{left}\mkomentojatko{\keno\{}) mutta oikealle ei mitään
+(\mkomento{right}\mkomentojatko{.}).
 
-\komentoi{left}
-\komentoi{right}
-\ymparistoi{array}
+\mkomentoi{left}
+\mkomentoi{right}
+\mymparistoi{array}
 \begin{koodilohkosis}
 \[ \left\{ \begin{array}{r@{~}l}
              x &= 4 \\ y &= -2 \\
@@ -7062,11 +7060,11 @@ aaltosulkeisiin. Joidenkin matemaattisten operaattorikomentojen
 yhteydessä indeksit ladotaan poikkeuksellisella tavalla, esimerkiksi
 kokonaan operaattorin ylä- tai alapuolelle.
 
-\komentoi{sum}
-\komentoi{int}
-\komentoi{lim}
-\komentoi{to}
-\komentoi{infty}
+\mkomentoi{sum}
+\mkomentoi{int}
+\mkomentoi{lim}
+\mkomentoi{to}
+\mkomentoi{infty}
 \begin{koodilohkosis}
 \[ x^{n-1} \hfill x_i \hfill \sum_{i=1}^n \hfill
   \int_0^\infty \hfill \lim_{n \to \infty} \]
@@ -7079,24 +7077,25 @@ Muuttujien, funktion nimien tai muiden symbolien jäljessä oleva
 $'$\=/merkki tehdään yleisheittomerkin avulla. Unicodessa se on merkki
 \uctunnus{u+2032 prime}, ja matematiikassa se voi tarkoittaa esimerkiksi
 funktion derivaattafunktiota. Seuraavassa esimerkissä on mukana myös
-\komento{quad}\-/ komento, joka latoo pienen vaakasuuntaisen välin.
+\mkomento{quad}\-/ komento, joka latoo pienen vaakasuuntaisen välin.
 
-\komentoi{quad}
+\mkomentoi{quad}
 \begin{koodilohkosis}
 \[ f(x) = 3x^2 - 2x \quad f'(x) = 6x - 2 \]
 \end{koodilohkosis}
 \[ f(x) = 3x^2 - 2x \quad f'(x) = 6x - 2 \]
 
 \noindent
-Murtoluvuille ja murtoviivan latomiseen on komento \komento{frac}, jolle
-annetaan kaksi argumenttia: osoittaja ja nimittäjä. Neliö- ja muut
-juuret tehdään \komento{sqrt}\-/ komennolla, jolle annetaan ainakin yksi
-argumentti. Komennolle voi antaa hakasulkeissa toisenkin argumentin,
-joka ilmaisee juuriluvun. Seuraavassa on esimerkki murtoluvun,
-neliöjuuren ja kuutiojuuren toteuttamisesta:
+Murtoluvuille ja murtoviivan latomiseen on komento \mkomento{frac},
+jolle annetaan kaksi argumenttia: osoittaja ja nimittäjä. Neliö- ja muut
+juuret tehdään \mkomento{sqrt}\-/ komennolla, jolle annetaan ainakin
+yksi argumentti. Komennolle voi antaa hakasulkeissa toisenkin
+argumentin, joka ilmaisee juuriluvun. Seuraavassa on esimerkki
+murtoluvun, neliöjuuren ja kuutiojuuren toteuttamisesta:
 
-\komentoi{frac}
-\komentoi{sqrt}
+\mkomentoi{frac}
+\mkomentoi{sqrt}
+\mkomentoi{quad}
 \begin{koodilohkosis}
 \[ \frac{1}{3x + 1} \quad \sqrt{9} = \sqrt[3]{27} \]
 \end{koodilohkosis}
@@ -7113,7 +7112,7 @@ joilla saa ladottua kreikkalaiset kirjaimet, ja taulukossa
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[2]{$#1$ & \komento{#2}}
+  \renewcommand{\rivi}[2]{$#1$ & \mkomento{#2}}
 
   \begin{tabular}{*{4}{ll}}
     \toprule
@@ -7166,7 +7165,7 @@ joilla saa ladottua kreikkalaiset kirjaimet, ja taulukossa
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[4]{$#1$ & \komento{#2}\komentoarg{#3} & #4}
+  \renewcommand{\rivi}[4]{$#1$ & \mkomento{#2}\mkomentoarg{#3} & #4}
 
   \begin{tabular}{*{2}{lll}}
     \toprule

@@ -7165,27 +7165,27 @@ joilla saa ladottua kreikkalaiset kirjaimet, ja taulukossa
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[4]{$#1$ & \mkomento{#2}\mkomentoarg{#3} & #4}
+  \renewcommand{\rivi}[3]{$#1$ & \mkomento{#2}\mkomentoarg{#3}}
 
-  \begin{tabular}{*{2}{lll}}
+  \begin{tabular}{*{3}{cl}}
     \toprule
-    \multicolumn{2}{l}{\ots{Merkki}}
-    & \ots{Merkitys}
-    & \multicolumn{2}{l}{\ots{Merkki}}
-    & \ots{Merkitys} \\
-    \cmidrule(r){1-3}
-    \cmidrule(l){4-6}
-    \rivi{\grave a}{grave}{a}{gravis}
-    & \rivi{\ddot a}{ddot}{a}{treema} \\
-    \rivi{\acute a}{acute}{a}{akuutti}
-    & \rivi{\check a}{check}{a}{hattu} \\
-    \rivi{\hat a}{hat}{a}{sirkumfleksi}
-    & \rivi{\breve a}{breve}{a}{lyhyysmerkki} \\
-    \rivi{\widehat{aa}}{widehat}{aa}{leveä sirkumfleksi}
-    & \rivi{\bar a}{bar}{a}{pituusmerkki} \\
-    \rivi{\tilde a}{tilde}{a}{tilde}
-    & \rivi{\dot a}{dot}{a}{yläpiste} \\
-    \rivi{\widetilde{aa}}{widetilde}{aa}{leveä tilde} \\
+
+    \rivi{\grave a}{grave}{a}
+    & \rivi{\ddot a}{ddot}{a}
+    & \rivi{\hat a}{hat}{a} \\
+
+    \rivi{\acute a}{acute}{a}
+    & \rivi{\check a}{check}{a}
+    & \rivi{\widehat{aaa}}{widehat}{aaa} \\
+
+    \rivi{\breve a}{breve}{a}
+    & \rivi{\dot a}{dot}{a}
+    & \rivi{\tilde a}{tilde}{a} \\
+
+    \rivi{\bar a}{bar}{a}
+    & \rivi{\mathring a}{mathring}{a}
+    & \rivi{\widetilde{aaa}}{widetilde}{aaa} \\
+
     \bottomrule
   \end{tabular}
 }{

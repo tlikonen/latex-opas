@@ -65,6 +65,7 @@ bib-sep
 big-break
 big-skip
 big-skip-amount
+bi-nää-ri-ope-raat-to-rit
 book-marks-num-ber-ed
 book-marks-open
 book-tabs

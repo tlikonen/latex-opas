@@ -7109,6 +7109,8 @@ Lisäksi on olemassa erityisiä komentoja kirjainten ja symbolien
 kirjoittamiseen. Taulukkoon \ref{tlk/matem-kreikk} on koottu komennot,
 joilla saa ladottua kreikkalaiset kirjaimet, ja taulukossa
 \ref{tlk/matem-tarkkeet} ovat matematiikkatilan tarkekomennot.
+Binäärirelaatiot ja \=/operaattorit ovat puolestaan taulukoissa
+\ref{tlk/matem-bin-relaatiot} ja \ref{tlk/matem-bin-oper}.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -7219,7 +7221,137 @@ joilla saa ladottua kreikkalaiset kirjaimet, ja taulukossa
   \label{tlk/matem-tarkkeet}
 }
 
-% \[ \leq \quad \not\leq \quad \not= \quad \neq \]
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{$#1$ & \mkomento{#2}}
+
+  \begin{tabular}{*{4}{cl}}
+    \toprule
+
+    $<$
+    & \koodi{<}
+    & $>$
+    & \koodi{>}
+    & $=$
+    & \koodi{=}
+    & $:$
+    & \koodi{:} \\
+
+    \rivi{\leq}{leq}
+    & \rivi{\geq}{geq}
+    & \rivi{\ll}{ll}
+    & \rivi{\gg}{gg} \\
+
+    \rivi{\equiv}{equiv}
+    & \rivi{\doteq}{doteq}
+    & \rivi{\prec}{prec}
+    & \rivi{\preceq}{preceq} \\
+
+    \rivi{\succ}{succ}
+    & \rivi{\succeq}{succeq}
+    & \rivi{\sim}{sim}
+    & \rivi{\simeq}{simeq} \\
+
+    \rivi{\subset}{subset}
+    & \rivi{\subseteq}{subseteq}
+    & \rivi{\supset}{supset}
+    & \rivi{\supseteq}{supseteq} \\
+
+    \rivi{\approx}{approx}
+    & \rivi{\cong}{cong}
+    & \rivi{\sqsubset}{sqsubset}
+    & \rivi{\sqsubseteq}{sqsubseteq} \\
+
+    \rivi{\sqsupset}{sqsupset}
+    & \rivi{\sqsupseteq}{sqsupseteq}
+    & \rivi{\bowtie}{bowtie}
+    & \rivi{\in}{in} \\
+
+    \rivi{\ni}{ni}
+    & \rivi{\propto}{propto}
+    & \rivi{\vdash}{vdash}
+    & \rivi{\dashv}{dashv} \\
+
+    \rivi{\models}{models}
+    & \rivi{\mid}{mid}
+    & \rivi{\parallel}{parallel}
+    & \rivi{\perp}{perp} \\
+
+    \rivi{\smile}{smile}
+    & \rivi{\frown}{frown}
+    & \rivi{\asymp}{asymp}
+    & \rivi{\notin}{notin} \\
+
+    \rivi{\neq}{neq} \\
+
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Matematiikkatilan binäärirelaatiot. Negaation saa
+    kirjoittamalla komennon eteen \mkomento{not}}
+  \label{tlk/matem-bin-relaatiot}
+}
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{$#1$ & \mkomento{#2}}
+
+  \begin{tabular}{*{3}{cl}}
+    \toprule
+
+    $+$
+    & \koodi{+}
+    & $-$
+    & \koodi{-}
+    & \rivi{\pm}{pm} \\
+
+    \rivi{\mp}{mp}
+    & \rivi{\cdot}{cdot}
+    & \rivi{\div}{div} \\
+
+    \rivi{\times}{times}
+    & \rivi{\setminus}{setminus}
+    & \rivi{\cup}{cup} \\
+
+    \rivi{\cap}{cap}
+    & \rivi{\sqcup}{sqcup}
+    & \rivi{\sqcap}{sqcap} \\
+
+    \rivi{\vee}{vee}
+    & \rivi{\wedge}{wedge}
+    & \rivi{\oplus}{oplus} \\
+
+    \rivi{\ominus}{ominus}
+    & \rivi{\odot}{odot}
+    & \rivi{\oslash}{oslash} \\
+
+    \rivi{\uplus}{uplus}
+    & \rivi{\otimes}{otimes}
+    & \rivi{\bigcirc}{bigcirc} \\
+
+    \rivi{\triangleleft}{triangleleft}
+    & \rivi{\triangleright}{triangleright}
+    & \rivi{\star}{star} \\
+
+    \rivi{\ast}{ast}
+    & \rivi{\circ}{circ}
+    & \rivi{\bullet}{bullet} \\
+
+    % \rivi{\diamond}{diamond}
+    \rivi{\amalg}{amalg}
+    & \rivi{\bigtriangleup}{bigtriangleup}
+    & \rivi{\bigtriangledown}{bigtriangledown} \\
+
+    \rivi{\dagger}{dagger}
+    & \rivi{\ddagger}{ddagger}
+    & \rivi{\wr}{wr} \\
+
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Matematiikkatilan binäärioperaattorit ja muita symboleja}
+  \label{tlk/matem-bin-oper}
+}
 
 % \overline \underline \underbrace \overleftarrow
 %

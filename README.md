@@ -144,12 +144,13 @@ poistaa kaikki syntyneet tiedostot.
 Puutteita ja suunnitelmia
 -------------------------
 
-  - Matematiikkaluku puuttuu.
+  - Matematiikkaluku kesken.
+  - Laatikkoluku puuttuu.
   - Esipuhe puuttuu.
   - Muuta tekniikkaa -luku puuttuu.
   - `\marginpar`-komennon puutteet ja vaihtoehto `marginnote`
   - Mahdollisesti käsitellään wrapfig-paketti.
-  - Komentojen ja makrojen käsitteitä pitäisi avata.
-  - Makropakettien tekeminen.
-  - Dokumenttiluokkien tekeminen.
-  - Käsitellään uusi `fi-x-school`-tavutuskaava.
+  - Komentojen ja makrojen käsitteitä ehkä pitäisi avata.
+  - Omien makropakettien tekeminen.
+  - Omien dokumenttiluokkien tekeminen.
+  - Uusi `fi-x-school`-tavutuskaava.

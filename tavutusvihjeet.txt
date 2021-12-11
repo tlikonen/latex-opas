@@ -240,6 +240,7 @@ item-indent
 item-ize
 item-sep
 it-seis-arvo
+it-seis-ar-voa
 it-shape
 jul-kai-su-oh-jel-miin
 jul-kai-su-oh-jel-mis-sa
@@ -422,6 +423,8 @@ op-tions
 origin
 otf-info
 other-lan-guage
+over-left-ar-row
+over-right-ar-row
 page
 page-break
 page-color

@@ -7021,15 +7021,17 @@ matematiikassa tarvitaan usein erikokoisia, tilanteeseen mukautuvia
 sulkeita. Ne tehdään komentojen \mkomento{left} (vasen) ja
 \mkomento{right} (oikea) avulla. Komentojen jälkeen kirjoitetaan haluttu
 suljemerkki, esimerkiksi \mkomento{left}\mkomentojatko{(} ja
-\mkomento{right}\mkomentojatko{)}.
+\mkomento{right}\mkomentojatko{)}. Itseisarvoa merkitsevät pystyviivat
+tehdään samoilla komennoilla, mutta suljemerkkien tilalle kirjoitetaan
+pystyviiva~(\koodi{|}).
 
 \mkomentoi{left}
 \mkomentoi{right}
 \mkomentoi{frac}
 \begin{koodilohkosis}
-\[ 1 + \left( \frac{1}{x \left( x-1 \right)} \right) \]
+\[ \left| a + \left( \frac{b}{c \left( d-1 \right)} \right) \right| \]
 \end{koodilohkosis}
-\[ 1 + \left( \frac{1}{x \left( x-1 \right)} \right) \]
+\[ \left| a + \left( \frac{b}{c \left( d-1 \right)} \right) \right| \]
 
 \noindent
 Komentoja \mkomento{left} ja \mkomento{right} täytyy käyttää pareittain,
@@ -7101,6 +7103,50 @@ murtoluvun, neliöjuuren ja kuutiojuuren toteuttamisesta:
 \end{koodilohkosis}
 \[ \frac{1}{3x + 1} \quad \sqrt{9} = \sqrt[3]{27} \]
 
+\noindent
+Vektorien nimien latomiseen eli merkkien yläpuoliselle nuolelle on oma
+komento \mkomento{vec}, joka toimii yhden kirjaimen kanssa. Kahden
+merkin mittaiseen nuoleen tarvitaan komentoa \mkomento{overrightarrow}
+(tai \mkomento{overleftarrow}).
+
+\begin{koodilohkosis}
+\[ \vec{a} \quad \overrightarrow{AB} \]
+\end{koodilohkosis}
+\[ \vec{a} \quad \overrightarrow{AB} \]
+
+\noindent
+Kuten on jo todettu, tavalliset kirjaimet on matematiikkatilassa
+tarkoitettu muuttujien nimiksi. Kun täytyy latoa varsinaista tekstiä --
+tekstitilan tavoin -- täytyy käyttää erityisiä komentoja. Taulukkoon
+\ref{tlk/matem-teksti} on koottu matematiikkatilan
+tekstinlatomiskomentoja. Komentojen argumenttina oleva teksti ladotaan
+kuin tekstitilassa.
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[3]{\mkomento{#1} & $#2$ & #3 \\}
+
+  \begin{tabular}{lll}
+    \toprule
+    \ots{Komento}
+    & \ots{Esimerkki}
+    & \ots{Merkitys} \\
+    \midrule
+    \rivi{mathrm}{\mathrm{ABC~abc}}{antiikva, serif, roman}
+    \rivi{mathsf}{\mathsf{ABC~abc}}{groteski, sans serif, gothic}
+    \rivi{mathtt}{\mathtt{ABC~abc}}{tasalevyinen, typewriter}
+    \rivi{mathcal}{\mathcal{ABC}}{kalligrafinen}
+    \midrule
+    \rivi{mathbf}{\mathbf{ABC~abc}}{lihavoitu, bold}
+    \rivi{mathit}{\mathit{ABC~abc}}{kursiivi, italic}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Tekstin latominen matematiikkatilassa vaatii erityisen
+    komennon}
+  \label{tlk/matem-teksti}
+}
+
 \subsection{Erikoismerkkejä ja operaattoreita}
 
 Matematiikkatilassa voi käyttää Unicode\-/ merkistöä, eli monet
@@ -7109,8 +7155,9 @@ Lisäksi on olemassa erityisiä komentoja kirjainten ja symbolien
 kirjoittamiseen. Taulukkoon \ref{tlk/matem-kreikk} on koottu komennot,
 joilla saa ladottua kreikkalaiset kirjaimet, ja taulukossa
 \ref{tlk/matem-tarkkeet} ovat matematiikkatilan tarkekomennot.
-Binäärirelaatiot ja \=/operaattorit ovat puolestaan taulukoissa
-\ref{tlk/matem-bin-relaatiot} ja \ref{tlk/matem-bin-oper}.
+Binäärirelaatiot ja operaattorit ovat puolestaan taulukoissa
+\ref{tlk/matem-bin-relaatiot}, \ref{tlk/matem-bin-oper} ja
+\ref{tlk/matem-suuret-oper}.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -7337,14 +7384,16 @@ Binäärirelaatiot ja \=/operaattorit ovat puolestaan taulukoissa
     & \rivi{\circ}{circ}
     & \rivi{\bullet}{bullet} \\
 
-    % \rivi{\diamond}{diamond}
-    \rivi{\amalg}{amalg}
-    & \rivi{\bigtriangleup}{bigtriangleup}
-    & \rivi{\bigtriangledown}{bigtriangledown} \\
+    \rivi{\diamond}{diamond}
+    & \rivi{\amalg}{amalg}
+    & \rivi{\bigtriangleup}{bigtriangleup} \\
 
-    \rivi{\dagger}{dagger}
-    & \rivi{\ddagger}{ddagger}
-    & \rivi{\wr}{wr} \\
+    \rivi{\bigtriangledown}{bigtriangledown}
+    & \rivi{\dagger}{dagger}
+    & \rivi{\ddagger}{ddagger} \\
+
+    \rivi{\wr}{wr}
+    & \rivi{\emptyset}{emptyset} \\
 
     \bottomrule
   \end{tabular}
@@ -7353,7 +7402,97 @@ Binäärirelaatiot ja \=/operaattorit ovat puolestaan taulukoissa
   \label{tlk/matem-bin-oper}
 }
 
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{\large{$#1$} & \mkomento{#2}}
+  \renewcommand{\arraystretch}{1.8}
+
+  \begin{tabular}{*{4}{cl}}
+    \toprule
+
+    \rivi{\sum}{sum}
+    & \rivi{\prod}{prod}
+    & \rivi{\coprod}{coprod}
+    & \rivi{\int}{int} \\
+
+    \rivi{\oint}{oint}
+    & \rivi{\bigoplus}{bigoplus}
+    & \rivi{\bigotimes}{bigotimes}
+    & \rivi{\bigodot}{bigodot} \\
+
+    \rivi{\bigvee}{bigvee}
+    & \rivi{\bigwedge}{bigwedge}
+    & \rivi{\bigcup}{bigcup}
+    & \rivi{\bigcap}{bigcap} \\
+
+    \rivi{\biguplus}{biguplus}
+    & \rivi{\bigsqcup}{bigsqcup} \\
+
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Matematiikkatilan suurikokoiset operaattorit}
+  \label{tlk/matem-suuret-oper}
+}
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{$#1$ & \mkomento{#2}\mkomentoarg{AB}}
+  \renewcommand{\arraystretch}{1.5}
+
+  \begin{tabular}{*{2}{cl}}
+    \toprule
+
+    \rivi{\overrightarrow{AB}}{overrightarrow}
+    & \rivi{\overleftarrow{AB}}{overleftarrow} \\
+
+    \rivi{\underrightarrow{AB}}{underrightarrow}
+    & \rivi{\underleftarrow{AB}}{underleftarrow} \\
+
+    \rivi{\overleftrightarrow{AB}}{overleftrightarrow}
+    & \rivi{\underleftrightarrow{AB}}{underleftrightarrow} \\
+
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Matematiikkatilan nuoliaksentteja}
+  \label{tlk/matem-nuoliaksentit}
+}
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{$#1$ & \mkomento{#2}}
+
+  \begin{tabular}{*{2}{cl}}
+    \toprule
+
+    \rivi{\leftarrow}{leftarrow}
+    & \rivi{\rightarrow}{rightarrow} \\
+
+    \rivi{\longleftarrow}{longleftarrow}
+    & \rivi{\longrightarrow}{longrightarrow} \\
+
+    \rivi{\leftrightarrow}{leftrightarrow}
+    & \rivi{\longleftrightarrow}{longleftrightarrow} \\
+
+    \rivi{\Leftarrow}{Leftarrow}
+    & \rivi{\Rightarrow}{Rightarrow} \\
+
+    \rivi{\Longleftarrow}{Longleftarrow}
+    & \rivi{\Longrightarrow}{Longrightarrow} \\
+
+    \rivi{\Leftrightarrow}{Leftrightarrow}
+    & \rivi{\Longleftrightarrow}{Longleftrightarrow} \\
+
+    % KESKEN
+
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Matematiikkatilan nuolet}
+  \label{tlk/matem-nuolet}
+}
+
 % \overline \underline \underbrace \overleftarrow
 %
 % matriisi
-% Vektori: \vec \overrightarrow

@@ -7008,8 +7008,8 @@ matematiikkatilan pilkun toimimaan jokseenkin älykkäästi: jos
 lähdetiedostossa on pilkun jälkeen väli, pilkku ladotaan välimerkkinä;
 jos väliä ei ole, pilkku katsotaan desimaalierottimeksi.
 
-Plus- ($+$), jako- ($:$) ja yhtäsuuruusmerkki ($=$) sekä pienempi kuin
-ja suurempi kuin \=/merkit ($<\,>$) kirjoitetaan näppäimistöltä
+Plus-, jako- ja yhtäsuuruusmerkki ($+:/=$) sekä pienempi kuin ja
+suurempi kuin \=/merkit ($<\,>$) kirjoitetaan näppäimistöltä
 sellaisenaan. Miinusmerkki ($-$) kirjoitetaan yhdysmerkin (\koodi{-})
 avulla, eli se ladotaan dokumenttiin Unicode\-/ merkistön miinusmerkkinä
 \uctunnus{u+2212 minus sign}. Kertomerkit voi kirjoittaa
@@ -7076,10 +7076,11 @@ kokonaan operaattorin ylä- tai alapuolelle.
 
 \noindent
 Muuttujien, funktion nimien tai muiden symbolien jäljessä oleva
-$'$\=/merkki tehdään yleisheittomerkin avulla. Unicodessa se on merkki
-\uctunnus{u+2032 prime}, ja matematiikassa se voi tarkoittaa esimerkiksi
-funktion derivaattafunktiota. Seuraavassa esimerkissä on mukana myös
-\mkomento{quad}\-/ komento, joka latoo pienen vaakasuuntaisen välin.
+$'$\=/merkki tehdään yleisheittomerkin (\koodi{'}) avulla.
+Matematiikassa se voi tarkoittaa esimerkiksi funktion
+derivaattafunktiota, ja Unicode\-/ merkistössä merkin tunnus
+\uctunnus{u+2032 prime}. Seuraavassa esimerkissä mukana oleva
+\mkomento{quad}\-/ komento latoo pienen vaakasuuntaisen välin.
 
 \mkomentoi{quad}
 \begin{koodilohkosis}
@@ -7155,9 +7156,14 @@ Lisäksi on olemassa erityisiä komentoja kirjainten ja symbolien
 kirjoittamiseen. Taulukkoon \ref{tlk/matem-kreikk} on koottu komennot,
 joilla saa ladottua kreikkalaiset kirjaimet, ja taulukossa
 \ref{tlk/matem-tarkkeet} ovat matematiikkatilan tarkekomennot.
-Binäärirelaatiot ja operaattorit ovat puolestaan taulukoissa
-\ref{tlk/matem-bin-relaatiot}, \ref{tlk/matem-bin-oper} ja
-\ref{tlk/matem-suuret-oper}.
+Nuoliaksentit eli esimerkiksi vektorien nimissä tarvittavat komennot
+ovat taulukossa \ref{tlk/matem-nuoliaksentit}.
+
+Relaatioita ja operaattoreita on puolestaan taulukoissa
+\ref{tlk/matem-relaatioita}, \ref{tlk/matem-operaattoreita} ja
+\ref{tlk/matem-suuret-oper}. Nuolia, erotinmerkkejä ja sekalaisia muita
+symboleja on taulukoissa \ref{tlk/matem-nuolet},
+\ref{tlk/matem-erottimia} ja \ref{tlk/matem-sekalaisia}.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -7264,8 +7270,32 @@ Binäärirelaatiot ja operaattorit ovat puolestaan taulukoissa
     \bottomrule
   \end{tabular}
 }{
-  \caption{Tarkkeiden latominen matematiikkatilassa}
+  \caption{Matematiikkatilan tarkekomentoja}
   \label{tlk/matem-tarkkeet}
+}
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{$#1$ & \mkomento{#2}\mkomentoarg{AB}}
+  \renewcommand{\arraystretch}{1.5}
+
+  \begin{tabular}{*{2}{cl}}
+    \toprule
+
+    \rivi{\overrightarrow{AB}}{overrightarrow}
+    & \rivi{\overleftarrow{AB}}{overleftarrow} \\
+
+    \rivi{\underrightarrow{AB}}{underrightarrow}
+    & \rivi{\underleftarrow{AB}}{underleftarrow} \\
+
+    \rivi{\overleftrightarrow{AB}}{overleftrightarrow}
+    & \rivi{\underleftrightarrow{AB}}{underleftrightarrow} \\
+
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Nuoliaksentit}
+  \label{tlk/matem-nuoliaksentit}
 }
 
 \leijutlk{
@@ -7334,75 +7364,50 @@ Binäärirelaatiot ja operaattorit ovat puolestaan taulukoissa
     \bottomrule
   \end{tabular}
 }{
-  \caption{Matematiikkatilan binäärirelaatiot. Negaation saa
-    kirjoittamalla komennon eteen \mkomento{not}}
-  \label{tlk/matem-bin-relaatiot}
+  \caption{Relaatioita. Negaation saa kirjoittamalla komennon eteen
+    \mkomento{not}}
+  \label{tlk/matem-relaatioita}
 }
 
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[2]{$#1$ & \mkomento{#2}}
 
-  \begin{tabular}{*{3}{cl}}
+  \begin{tabular}{*{4}{cl}}
     \toprule
 
     $+$
     & \koodi{+}
     & $-$
     & \koodi{-}
-    & \rivi{\pm}{pm} \\
+    & \rivi{\pm}{pm}
+    & \rivi{\mp}{mp} \\
 
-    \rivi{\mp}{mp}
-    & \rivi{\cdot}{cdot}
-    & \rivi{\div}{div} \\
+    \rivi{\cdot}{cdot}
+    & \rivi{\div}{div}
+    & \rivi{\times}{times}
+    & \rivi{\setminus}{setminus} \\
 
-    \rivi{\times}{times}
-    & \rivi{\setminus}{setminus}
-    & \rivi{\cup}{cup} \\
-
-    \rivi{\cap}{cap}
+    \rivi{\cup}{cup}
+    & \rivi{\cap}{cap}
     & \rivi{\sqcup}{sqcup}
     & \rivi{\sqcap}{sqcap} \\
 
     \rivi{\vee}{vee}
     & \rivi{\wedge}{wedge}
-    & \rivi{\oplus}{oplus} \\
+    & \rivi{\oplus}{oplus}
+    & \rivi{\ominus}{ominus} \\
 
-    \rivi{\ominus}{ominus}
-    & \rivi{\odot}{odot}
-    & \rivi{\oslash}{oslash} \\
-
-    \rivi{\uplus}{uplus}
-    & \rivi{\otimes}{otimes}
-    & \rivi{\bigcirc}{bigcirc} \\
-
-    \rivi{\triangleleft}{triangleleft}
-    & \rivi{\triangleright}{triangleright}
-    & \rivi{\star}{star} \\
-
-    \rivi{\ast}{ast}
-    & \rivi{\circ}{circ}
-    & \rivi{\bullet}{bullet} \\
-
-    \begin{tikzpicture}
-      \draw [rotate=45] (0,0) rectangle (.6ex,.6ex);
-    \end{tikzpicture}
-    & \mkomento{diamond}
-    & \rivi{\amalg}{amalg}
-    & \rivi{\bigtriangleup}{bigtriangleup} \\
-
-    \rivi{\bigtriangledown}{bigtriangledown}
-    & \rivi{\dagger}{dagger}
-    & \rivi{\ddagger}{ddagger} \\
-
-    \rivi{\wr}{wr}
-    & \rivi{\emptyset}{emptyset} \\
+    \rivi{\odot}{odot}
+    & \rivi{\oslash}{oslash}
+    & \rivi{\uplus}{uplus}
+    & \rivi{\otimes}{otimes} \\
 
     \bottomrule
   \end{tabular}
 }{
-  \caption{Matematiikkatilan binäärioperaattorit ja muita symboleja}
-  \label{tlk/matem-bin-oper}
+  \caption{Operaattoreita}
+  \label{tlk/matem-operaattoreita}
 }
 
 \leijutlk{
@@ -7434,32 +7439,8 @@ Binäärirelaatiot ja operaattorit ovat puolestaan taulukoissa
     \bottomrule
   \end{tabular}
 }{
-  \caption{Matematiikkatilan suurikokoiset operaattorit}
+  \caption{Suurikokoisia operaattoreita}
   \label{tlk/matem-suuret-oper}
-}
-
-\leijutlk{
-  \providecommand{\rivi}{}
-  \renewcommand{\rivi}[2]{$#1$ & \mkomento{#2}\mkomentoarg{AB}}
-  \renewcommand{\arraystretch}{1.5}
-
-  \begin{tabular}{*{2}{cl}}
-    \toprule
-
-    \rivi{\overrightarrow{AB}}{overrightarrow}
-    & \rivi{\overleftarrow{AB}}{overleftarrow} \\
-
-    \rivi{\underrightarrow{AB}}{underrightarrow}
-    & \rivi{\underleftarrow{AB}}{underleftarrow} \\
-
-    \rivi{\overleftrightarrow{AB}}{overleftrightarrow}
-    & \rivi{\underleftrightarrow{AB}}{underleftrightarrow} \\
-
-    \bottomrule
-  \end{tabular}
-}{
-  \caption{Matematiikkatilan nuoliaksentteja}
-  \label{tlk/matem-nuoliaksentit}
 }
 
 \leijutlk{
@@ -7487,14 +7468,138 @@ Binäärirelaatiot ja operaattorit ovat puolestaan taulukoissa
     \rivi{\Leftrightarrow}{Leftrightarrow}
     & \rivi{\Longleftrightarrow}{Longleftrightarrow} \\
 
-    % KESKEN
+    \rivi{\mapsto}{mapsto}
+    & \rivi{\longmapsto}{longmapsto} \\
+
+    \rivi{\hookleftarrow}{hookleftarrow}
+    & \rivi{\hookrightarrow}{hookrightarrow} \\
+
+    \rivi{\leftharpoonup}{leftharpoonup}
+    & \rivi{\rightharpoonup}{rightharpoonup} \\
+
+    \rivi{\leftharpoondown}{leftharpoondown}
+    & \rivi{\rightharpoondown}{rightharpoondown} \\
+
+    \rivi{\rightleftharpoons}{rightleftharpoons}
+    & \rivi{\iff}{iff} \\
+
+    \rivi{\uparrow}{uparrow}
+    & \rivi{\downarrow}{downarrow} \\
+
+    \rivi{\updownarrow}{updownarrow}
+    & \rivi{\Updownarrow}{Updownarrow} \\
+
+    \rivi{\Uparrow}{Uparrow}
+    & \rivi{\Downarrow}{Downarrow} \\
+
+    \rivi{\nearrow}{nearrow}
+    & \rivi{\searrow}{searrow} \\
+
+    \rivi{\swarrow}{swarrow}
+    & \rivi{\nwarrow}{nwarrow} \\
 
     \bottomrule
   \end{tabular}
 }{
-  \caption{Matematiikkatilan nuolet}
+  \caption{Nuolia}
   \label{tlk/matem-nuolet}
 }
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{$#1$ & \mkomento{#2}}
+
+  \begin{tabular}{*{4}{cl}}
+    \toprule
+
+    \rivi{\langle}{langle}
+    & \rivi{\rangle}{rangle}
+    & \rivi{\lfloor}{lfloor}
+    & \rivi{\rfloor}{rfloor} \\
+
+    \rivi{\rceil}{rceil}
+    & \rivi{\lceil}{lceil}
+    & $|$
+    & \koodi{|} \mkomento{vert}
+    & $\|$
+    & \koodi{\keno|} \mkomento{Vert} \\
+
+    \rivi{\lgroup}{lgroup}
+    & \rivi{\rgroup}{rgroup}
+    & \rivi{\lmoustache}{lmoustache}
+    & \rivi{\rmoustache}{rmoustache} \\
+
+    $/$
+    & \koodi{/}
+    & \rivi{\backslash}{backslash} \\
+
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Sulkeita ja erotinmerkkejä}
+  \label{tlk/matem-erottimia}
+}
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{$#1$ & \mkomento{#2}}
+
+  \begin{tabular}{*{3}{cl}}
+    \toprule
+
+    \rivi{\neg}{neg}
+    & \rivi{\angle}{angle}
+    & \rivi{\emptyset}{emptyset} \\
+
+    \rivi{\infty}{infty}
+    & $'$
+    & \koodi{'}
+    & \rivi{\prime}{prime} \\
+
+    \rivi{\forall}{forall}
+    & \rivi{\exists}{exists}
+    & \rivi{\wr}{wr} \\
+
+    \rivi{\bot}{bot}
+    & \rivi{\top}{top}
+    & \rivi{\surd}{surd} \\
+
+    \rivi{\dots}{dots}
+    & \rivi{\cdots}{cdots}
+    & \rivi{\vdots}{vdots} \\
+
+    \rivi{\ddots}{ddots}
+    & \rivi{\bigcirc}{bigcirc} \\
+
+    \rivi{\triangleleft}{triangleleft}
+    & \rivi{\triangleright}{triangleright}
+    & \rivi{\star}{star} \\
+
+    \rivi{\ast}{ast}
+    & \rivi{\circ}{circ}
+    & \rivi{\bullet}{bullet} \\
+
+    \begin{tikzpicture}
+      \draw [rotate=45] (0,0) rectangle (.6ex,.6ex);
+    \end{tikzpicture}
+    & \mkomento{diamond}
+    & \rivi{\amalg}{amalg}
+    & \rivi{\bigtriangleup}{bigtriangleup} \\
+
+    \rivi{\bigtriangledown}{bigtriangledown}
+    & \rivi{\dagger}{dagger}
+    & \rivi{\ddagger}{ddagger} \\
+
+    % KESKEN: 3.10 miscalleneous symbols
+
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Sekalaisia symboleja}
+  \label{tlk/matem-sekalaisia}
+}
+
+% latexsym-paketissa lisää symboleja
 
 % \overline \underline \underbrace \overleftarrow
 %

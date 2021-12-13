@@ -398,6 +398,7 @@ normal-size
 no-rule
 note
 no-widow
+nuo-li-ak-sen-tit
 nyky-aikai-set
 nyky-aikai-sia
 nyky-aika-na

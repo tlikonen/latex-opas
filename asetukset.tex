@@ -1814,18 +1814,18 @@ keskenään yhteensopivia. Kirjainten välistys voi olla ongelmallista:
 sopivalle etäisyydelle asetettaessa kirjainten osat voivat mennä
 rumannäköisesti päällekkäin. Riippuu fontista, mitkä ligatuurit ovat
 tarpeellisia ja mitkä ligatuurimerkit on ylipäätään toteutettu fontin
-merkistöön. Tavallisia antiikvojen ligatuureja ovat fi, ff, ffi, fl ja
-ffl, mutta jotkin fontit sisältävät muitakin. Kuvaan
+merkistöön. Tavallisia antiikvojen ligatuureja ovat fi, ff, ffi, fl,
+ffl, fj ja ffj, mutta jotkin fontit sisältävät muitakin. Kuvaan
 \ref{kuva/ligatuurit} on koottu esimerkkejä.
 
 \leijukuva{
   \erikoisfontti
-  \addfontfeatures{Scale=3.5, Ligatures={Common, Historic}}
-  fi ff ffi fl ffl Th fb st ct
+  \addfontfeatures{Scale=3.4, Ligatures={Common, Historic,
+      Discretionary}}
+  fi ff ffi fl ffl fj ffj Th st ct
 }{
   \caption{Tavalliset f\=/alkuiset typografiset ligatuurit, vähän
-    harvinaisemmat Th ja fb sekä erikseen päälle kytkettävät
-    historialliset ligatuurit st ja ct}
+    harvinaisempi Th sekä historialliset ligatuurit st ja ct}
   \label{kuva/ligatuurit}
 }
 

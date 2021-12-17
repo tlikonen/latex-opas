@@ -7008,8 +7008,8 @@ matematiikkatilan pilkun toimimaan jokseenkin älykkäästi: jos
 lähdetiedostossa on pilkun jälkeen väli, pilkku ladotaan välimerkkinä;
 jos väliä ei ole, pilkku katsotaan desimaalierottimeksi.
 
-Plus-, jako- ja yhtäsuuruusmerkki ($+:/=$) sekä pienempi kuin ja
-suurempi kuin \=/merkit ($<\,>$) kirjoitetaan näppäimistöltä
+Plus-, jako- ja yhtäsuuruusmerkki sekä pienempi kuin ja suurempi kuin
+\=/merkit ($+ : / = \; < \; >$) kirjoitetaan näppäimistöltä
 sellaisenaan. Miinusmerkki ($-$) kirjoitetaan yhdysmerkin (\koodi{-})
 avulla, eli se ladotaan dokumenttiin Unicode\-/ merkistön miinusmerkkinä
 \uctunnus{u+2212 minus sign}. Kertomerkit voi kirjoittaa
@@ -7075,12 +7075,24 @@ kokonaan operaattorin ylä- tai alapuolelle.
   \int_0^\infty \hfill \lim_{n \to \infty} \]
 
 \noindent
+Lausekkeen osia voi ryhmitellä ylä- tai alapuolisella aaltosulkeella,
+jotka tehdään komennoilla \mkomento{overbrace} ja \mkomento{underbrace}.
+Jos näiden komentojen jälkeen käyttää ylä- tai alaindeksiä, se ladotaan
+sulkeen keskelle. Seuraavassa on esimerkki:
+
+\mkomentoi{overbrace}
+\mkomentoi{underbrace}
+\begin{koodilohkosis}
+\[ \overbrace{3x + x}^{4x} - \underbrace{5y - 2y}_{3y} = 4x - 3y \]
+\end{koodilohkosis}
+\[ \overbrace{3x + x}^{4x} - \underbrace{5y - 2y}_{3y} = 4x - 3y \]
+
+\noindent
 Muuttujien, funktion nimien tai muiden symbolien jäljessä oleva
 $'$\=/merkki tehdään yleisheittomerkin (\koodi{'}) avulla.
 Matematiikassa se voi tarkoittaa esimerkiksi funktion
 derivaattafunktiota, ja Unicode\-/ merkistössä merkin tunnus
-\uctunnus{u+2032 prime}. Seuraavassa esimerkissä mukana oleva
-\mkomento{quad}\-/ komento latoo pienen vaakasuuntaisen välin.
+\uctunnus{u+2032 prime}.
 
 \mkomentoi{quad}
 \begin{koodilohkosis}
@@ -7148,22 +7160,15 @@ kuin tekstitilassa.
   \label{tlk/matem-teksti}
 }
 
-\subsection{Erikoismerkkejä ja operaattoreita}
+\subsection{Erikoismerkkejä}
 
 Matematiikkatilassa voi käyttää Unicode\-/ merkistöä, eli monet
 matemaattiset symbolit voi kirjoittaa lähdedokumenttiin sellaisenaan.
-Lisäksi on olemassa erityisiä komentoja kirjainten ja symbolien
-kirjoittamiseen. Taulukkoon \ref{tlk/matem-kreikk} on koottu komennot,
-joilla saa ladottua kreikkalaiset kirjaimet, ja taulukossa
-\ref{tlk/matem-tarkkeet} ovat matematiikkatilan tarkekomennot.
-Nuoliaksentit eli esimerkiksi vektorien nimissä tarvittavat komennot
-ovat taulukossa \ref{tlk/matem-nuoliaksentit}.
-
-Relaatioita ja operaattoreita on puolestaan taulukoissa
-\ref{tlk/matem-relaatioita}, \ref{tlk/matem-operaattoreita} ja
-\ref{tlk/matem-suuret-oper}. Nuolia, erotinmerkkejä ja sekalaisia muita
-symboleja on taulukoissa \ref{tlk/matem-nuolet},
-\ref{tlk/matem-erottimia} ja \ref{tlk/matem-sekalaisia}.
+Voi silti olla helpompaa käyttää erityisiä komentoja sellaisten
+kirjainten ja symbolien kirjoittamiseen, joita ei ihan helposti pysty
+tuottamaa näppäimistöltä tai tekstieditorin toimintojen avulla.
+Matematiikkatilan erikoismerkkejä on koottu oheisiin taulukoihin
+(\ref{tlk/matem-kreikk}--).
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -7271,7 +7276,7 @@ symboleja on taulukoissa \ref{tlk/matem-nuolet},
   \end{tabular}
 }{
   \caption{Matematiikkatilan tarkekomentoja}
-  \label{tlk/matem-tarkkeet}
+  \label{tlk/matem-tarkkeita}
 }
 
 \leijutlk{
@@ -7291,11 +7296,17 @@ symboleja on taulukoissa \ref{tlk/matem-nuolet},
     \rivi{\overleftrightarrow{AB}}{overleftrightarrow}
     & \rivi{\underleftrightarrow{AB}}{underleftrightarrow} \\
 
+    \rivi{\overline{AB}}{overline}
+    & \rivi{\underline{AB}}{underline} \\
+
+    \rivi{\overbrace{AB}}{overbrace}
+    & \rivi{\underbrace{AB}}{underbrace} \\
+
     \bottomrule
   \end{tabular}
 }{
-  \caption{Nuoliaksentit}
-  \label{tlk/matem-nuoliaksentit}
+  \caption{Ylä- ja alamerkintöjä}
+  \label{tlk/matem-yla-ala-merk}
 }
 
 \leijutlk{
@@ -7372,6 +7383,7 @@ symboleja on taulukoissa \ref{tlk/matem-nuolet},
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[2]{$#1$ & \mkomento{#2}}
+  \renewcommand{\arraystretch}{1.1}
 
   \begin{tabular}{*{4}{cl}}
     \toprule
@@ -7403,21 +7415,6 @@ symboleja on taulukoissa \ref{tlk/matem-nuolet},
     & \rivi{\uplus}{uplus}
     & \rivi{\otimes}{otimes} \\
 
-    \bottomrule
-  \end{tabular}
-}{
-  \caption{Operaattoreita}
-  \label{tlk/matem-operaattoreita}
-}
-
-\leijutlk{
-  \providecommand{\rivi}{}
-  \renewcommand{\rivi}[2]{\large{$#1$} & \mkomento{#2}}
-  \renewcommand{\arraystretch}{1.8}
-
-  \begin{tabular}{*{4}{cl}}
-    \toprule
-
     \rivi{\sum}{sum}
     & \rivi{\prod}{prod}
     & \rivi{\coprod}{coprod}
@@ -7439,8 +7436,8 @@ symboleja on taulukoissa \ref{tlk/matem-nuolet},
     \bottomrule
   \end{tabular}
 }{
-  \caption{Suurikokoisia operaattoreita}
-  \label{tlk/matem-suuret-oper}
+  \caption{Operaattoreita}
+  \label{tlk/matem-operaattoreita}
 }
 
 \leijutlk{
@@ -7502,7 +7499,7 @@ symboleja on taulukoissa \ref{tlk/matem-nuolet},
   \end{tabular}
 }{
   \caption{Nuolia}
-  \label{tlk/matem-nuolet}
+  \label{tlk/matem-nuolia}
 }
 
 \leijutlk{
@@ -7547,7 +7544,8 @@ symboleja on taulukoissa \ref{tlk/matem-nuolet},
   \begin{tabular}{*{3}{cl}}
     \toprule
 
-    \rivi{\neg}{neg}
+    $\neg$
+    & \mkomento{neg} \mkomento{lnot}
     & \rivi{\angle}{angle}
     & \rivi{\emptyset}{emptyset} \\
 
@@ -7569,28 +7567,49 @@ symboleja on taulukoissa \ref{tlk/matem-nuolet},
     & \rivi{\vdots}{vdots} \\
 
     \rivi{\ddots}{ddots}
-    & \rivi{\bigcirc}{bigcirc} \\
+    & \rivi{\triangle}{triangle}
+    & \rivi{\triangleleft}{triangleleft} \\
 
-    \rivi{\triangleleft}{triangleleft}
-    & \rivi{\triangleright}{triangleright}
+    \rivi{\triangleright}{triangleright}
+    & \rivi{\nabla}{nabla}
     & \rivi{\star}{star} \\
 
     \rivi{\ast}{ast}
     & \rivi{\circ}{circ}
-    & \rivi{\bullet}{bullet} \\
+    & \rivi{\bigcirc}{bigcirc} \\
 
-    \begin{tikzpicture}
-      \draw [rotate=45] (0,0) rectangle (.6ex,.6ex);
+    \rivi{\bullet}{bullet}
+    & \begin{tikzpicture}
+      \draw [rotate=45] (0,0) rectangle (.5ex,.5ex);
     \end{tikzpicture}
     & \mkomento{diamond}
-    & \rivi{\amalg}{amalg}
-    & \rivi{\bigtriangleup}{bigtriangleup} \\
+    & \rivi{\amalg}{amalg} \\
 
-    \rivi{\bigtriangledown}{bigtriangledown}
-    & \rivi{\dagger}{dagger}
-    & \rivi{\ddagger}{ddagger} \\
+    \rivi{\bigtriangleup}{bigtriangleup}
+    & \rivi{\bigtriangledown}{bigtriangledown}
+    & \rivi{\dagger}{dagger} \\
 
-    % KESKEN: 3.10 miscalleneous symbols
+    \rivi{\ddagger}{ddagger}
+    & \rivi{\diamondsuit}{diamondsuit}
+    & \rivi{\heartsuit}{heartsuit} \\
+
+    \rivi{\clubsuit}{clubsuit}
+    & \rivi{\spadesuit}{spadesuit}
+    & \rivi{\flat}{flat} \\
+
+    \rivi{\natural}{natural}
+    & \rivi{\sharp}{sharp}
+    & \rivi{\hbar}{hbar} \\
+
+    \rivi{\imath}{imath}
+    & \rivi{\jmath}{jmath}
+    & \rivi{\ell}{ell} \\
+
+    \rivi{\Re}{Re}
+    & \rivi{\Im}{Im}
+    & \rivi{\aleph}{aleph} \\
+
+    \rivi{\wp}{wp} \\
 
     \bottomrule
   \end{tabular}
@@ -7601,7 +7620,5 @@ symboleja on taulukoissa \ref{tlk/matem-nuolet},
 
 % latexsym-paketissa lisää symboleja
 
-% Samaan taulukkoon nuoliaksenttien kanssa: \overline \underline
-% \underbrace \overleftarrow
-%
 % matriisi
+% välistys: \quad \qquad, \, \: \;

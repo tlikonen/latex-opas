@@ -7251,26 +7251,26 @@ Matematiikkatilan erikoismerkkejä on koottu oheisiin taulukoihin
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[3]{$#1$ & \mkomento{#2}\mkomentoarg{#3}}
+  \renewcommand{\rivi}[3][a]{$#2{#1}$ & \mkomento{#3}\mkomentoarg{#1}}
 
   \begin{tabular}{*{3}{cl}}
     \toprule
 
-    \rivi{\grave a}{grave}{a}
-    & \rivi{\ddot a}{ddot}{a}
-    & \rivi{\hat a}{hat}{a} \\
+    \rivi{\grave}{grave}
+    & \rivi{\ddot}{ddot}
+    & \rivi{\hat}{hat} \\
 
-    \rivi{\acute a}{acute}{a}
-    & \rivi{\check a}{check}{a}
-    & \rivi{\widehat{aaa}}{widehat}{aaa} \\
+    \rivi{\acute}{acute}
+    & \rivi{\check}{check}
+    & \rivi[aaa]{\widehat}{widehat} \\
 
-    \rivi{\breve a}{breve}{a}
-    & \rivi{\dot a}{dot}{a}
-    & \rivi{\tilde a}{tilde}{a} \\
+    \rivi{\breve}{breve}
+    & \rivi{\dot}{dot}
+    & \rivi{\tilde}{tilde} \\
 
-    \rivi{\bar a}{bar}{a}
-    & \rivi{\mathring a}{mathring}{a}
-    & \rivi{\widetilde{aaa}}{widetilde}{aaa} \\
+    \rivi{\bar}{bar}
+    & \rivi{\mathring}{mathring}
+    & \rivi[aaa]{\widetilde}{widetilde} \\
 
     \bottomrule
   \end{tabular}
@@ -7281,26 +7281,26 @@ Matematiikkatilan erikoismerkkejä on koottu oheisiin taulukoihin
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[2]{$#1$ & \mkomento{#2}\mkomentoarg{AB}}
+  \renewcommand{\rivi}[3][AB]{$#2{#1}$ & \mkomento{#3}\mkomentoarg{#1}}
   \renewcommand{\arraystretch}{1.5}
 
   \begin{tabular}{*{2}{cl}}
     \toprule
 
-    \rivi{\overrightarrow{AB}}{overrightarrow}
-    & \rivi{\overleftarrow{AB}}{overleftarrow} \\
+    \rivi{\overrightarrow}{overrightarrow}
+    & \rivi{\overleftarrow}{overleftarrow} \\
 
-    \rivi{\underrightarrow{AB}}{underrightarrow}
-    & \rivi{\underleftarrow{AB}}{underleftarrow} \\
+    \rivi{\underrightarrow}{underrightarrow}
+    & \rivi{\underleftarrow}{underleftarrow} \\
 
-    \rivi{\overleftrightarrow{AB}}{overleftrightarrow}
-    & \rivi{\underleftrightarrow{AB}}{underleftrightarrow} \\
+    \rivi{\overleftrightarrow}{overleftrightarrow}
+    & \rivi{\underleftrightarrow}{underleftrightarrow} \\
 
-    \rivi{\overline{AB}}{overline}
-    & \rivi{\underline{AB}}{underline} \\
+    \rivi{\overline}{overline}
+    & \rivi{\underline}{underline} \\
 
-    \rivi{\overbrace{AB}}{overbrace}
-    & \rivi{\underbrace{AB}}{underbrace} \\
+    \rivi[abc]{\overbrace}{overbrace}
+    & \rivi[abc]{\underbrace}{underbrace} \\
 
     \bottomrule
   \end{tabular}
@@ -7325,8 +7325,10 @@ Matematiikkatilan erikoismerkkejä on koottu oheisiin taulukoihin
     & $:$
     & \koodi{:} \\
 
-    \rivi{\leq}{leq}
-    & \rivi{\geq}{geq}
+    $\leq$
+    & \mkomento{leq} \mkomento{le}
+    & $\geq$
+    & \mkomento{geq} \mkomento{ge}
     & \rivi{\ll}{ll}
     & \rivi{\gg}{gg} \\
 
@@ -7370,7 +7372,8 @@ Matematiikkatilan erikoismerkkejä on koottu oheisiin taulukoihin
     & \rivi{\asymp}{asymp}
     & \rivi{\notin}{notin} \\
 
-    \rivi{\neq}{neq} \\
+    $\neq$
+    & \mkomento{neq} \mkomento{ne} \\
 
     \bottomrule
   \end{tabular}
@@ -7579,7 +7582,7 @@ Matematiikkatilan erikoismerkkejä on koottu oheisiin taulukoihin
     & \rivi{\bigcirc}{bigcirc} \\
 
     \rivi{\bullet}{bullet}
-    & \begin{tikzpicture}
+    & \begin{tikzpicture} % \diamond puuttuu fontista
       \draw [rotate=45] (0,0) rectangle (.5ex,.5ex);
     \end{tikzpicture}
     & \mkomento{diamond}

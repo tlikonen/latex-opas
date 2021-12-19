@@ -42,12 +42,12 @@ jotka haluavat kehittää itse ladontajärjestelmää paremmaksi muita
 ihmisiä varten.
 
 Latex toimii korkeammalla abstraktiotasolla kuin Tex. Se on laaja
-kokoelma Tex\-/ ohjelmointikielen makroja, jotka piilottavat
-monimutkaiset tekniset yksityiskohdat ja tarjoavat ihmisille varsin
-helppokäyttöisen merkintäkielen, jolla omat tekstidokumentit voi
-toteuttaa. Latex\-/ merkintäkielen kirjoittaminen ei ole ohjelmointia,
-vaan se on oman dokumentin sisällön, rakenteen ja ulkoasun kuvailua
-tietynlaisten merkintätapojen avulla.
+kokoelma toimintoja, jotka piilottavat monimutkaiset tekniset
+yksityiskohdat ja tarjoavat ihmisille varsin helppokäyttöisen
+merkintäkielen, jolla omat tekstidokumentit voi toteuttaa. Latex\-/
+merkintäkielen kirjoittaminen ei ole ohjelmointia, vaan se on oman
+dokumentin sisällön, rakenteen ja ulkoasun kuvailua tietynlaisten
+merkintätapojen avulla.
 
 Latex\-/ merkintäkielellä kuvatut dokumentit välitetään
 tietokoneohjelmalle jatkokäsiteltäväksi. Niinpä Latex on myös
@@ -62,7 +62,7 @@ julkaistiin jo vuonna 1994 ja johon ilmestyy pieniä parannuksia
 vuosittain. Perusosat ovat kuitenkin varsin muuttumattomia. Varsinainen
 kiinnostava kehitys tapahtuukin esimerkiksi Latexin kääntäjissä
 (Lualatex ja Xelatex) sekä eri tekijöiden dokumenttiluokissa (luku
-\ref{luku/dokumenttiluokat}) ja makropaketeissa. Viimeksi mainitut
+\ref{luku/dokumenttiluokat}) ja laajennuspaketeissa. Viimeksi mainitut
 laajentavat perus\-/ Latexia tuomalla niihin lisää helppokäyttöisiä
 toimintoja.
 
@@ -86,18 +86,19 @@ olemassa kaksi, ulkoisesti lähes samanlaista kääntäjää? Tärkein syy
 taitaa olla se, että Xelatex tehtiin ensin. Tarkoituksena oli saada
 Unicode\-/ merkistön tuki ja fonttiasiat ajan tasalle. Myöhemmin jotkut
 ajattelivat, että Lua\-/ ohjelmointikieli täytyy saada mukaan. Sillä on
-merkitystä joillekuille makropakettien tekijöille. Lua\-/ kielen
+merkitystä joillekuille laajennuspakettien tekijöille. Lua\-/ kielen
 sisällyttäminen oikeastaan pakotti kirjoittamaan koko homman uusiksi.
 Toteutuksissa on muitakin sisäisiä eroja. Xelatex oli pitkään suositumpi
-ja paremmin tuettu eri makropaketeissa, mutta erot ovat sittemmin
+ja paremmin tuettu eri laajennuspaketeissa, mutta erot ovat sittemmin
 tasoittuneet.
 
-Tavallinen Latex\-/ harrastaja voi alussa vaikka arpoa, kumpaa käyttää,
-sillä kääntäjien erot eivät ihan helposti tule esiin. Jotkin harvat
-makropaketit eivät toimi Lualatexissa, kun taas toiset eivät toimi
-Xelatexissa. Joskus saattaa jopa tulla vastaan yksittäinen, kehityksestä
-ehkä jälkeen jäänyt makropaketti, joka ei toimi kummassakaan vaan
-ainoastaan perinteisillä kääntäjillä (\koodi{latex}, \koodi{pdflatex}).
+Latex\-/ kokeilun alkutaipaleella voi vaikka arpoa kolikon avulla,
+kumpaa kääntäjää käyttää, sillä niiden erot eivät ihan helposti tule
+esiin. Jotkin harvat laajennuspaketit eivät toimi Lualatexissa, kun taas
+toiset eivät toimi Xelatexissa. Joskus saattaa jopa tulla vastaan
+yksittäinen, kehityksestä ehkä jälkeen jäänyt paketti, joka ei toimi
+kummassakaan vaan ainoastaan perinteisillä kääntäjillä (\koodi{latex},
+\koodi{pdflatex}).
 
 Joissakin tilanteissa eri kääntäjien tekemissä pdf\-/ dokumenteissa
 näkyy pieniä eroja. Ainakin yksittäisissä fonttien asetuksissa ja
@@ -143,10 +144,10 @@ Miten edellisessä luvussa kuvattu sekava kokonaisuus saadaan ehjänä
 omalle tietokoneelle? Onneksi muut ovat jo ratkaisseet sen ongelman.
 
 Tavallisin tapa Latexin käyttöönottoon on jonkin Latexin jakelupaketin
-asentaminen. Jakelupaketti sisältää perusosien lisäksi paljon
-makropaketteja ja niiden ohjekirjoja. Kaikkea ei koskaan tarvitse, mutta
-kun yllättävä tarve tulee tai lukee vinkkejä verkkokeskusteluista, on
-mukavaa huomata, että makropaketti olikin itsellä jo valmiina. Siksi
+asentaminen. Jakelupaketti sisältää Latexin perusosien lisäksi paljon
+laajennuspaketteja ja niiden ohjekirjoja. Kaikkea ei koskaan tarvitse,
+mutta kun yllättävä tarve tulee tai lukee vinkkejä verkkokeskusteluista,
+on mukavaa huomata, että paketti olikin itsellä jo valmiina. Siksi
 suosittelen kokonaisen jakelupaketin asentamista.
 
 \textsc{gnu}/Linuxissa ja muissa Unix\-/ tyyppisissä
@@ -280,7 +281,7 @@ vuorovaikutteisen toiminnan. Asetus on tarpeen ainakin silloin, kun
 kääntäjä käynnistetään toisesta ohjelmasta kuten tekstieditorista eikä
 vuorovaikutus kääntäjän kanssa ole mahdollista. Valitsin
 \koodi{-shell-escape} kytkee päälle ominaisuuden, jota tarvitaan
-joidenkin makropakettien toimintaan.\footnote{Ainakin
+joidenkin laajennuspakettien toimintaan.\footnote{Ainakin
   asiahakemistopaketit \paketti{indextools} ja \paketti{imakeidx}
   tarvitsevat \koodi{-shell-escape}\-/ toiminnon (luku
   \ref{luku/asiasanat}).}
@@ -297,7 +298,7 @@ katseluohjelman, joka käynnistetään, kun käytetään valitsimia
 
 Latexin kirjoittajan täytyy silloin tällöin lukea ohjekirjoja. Vaikka
 Latexin perusosat joskus oppisikin ulkoa, ei voi koskaan muistaa
-kaikkien hyödyllisten makropakettien kaikkia ominaisuuksia.
+kaikkien hyödyllisten laajennuspakettien kaikkia ominaisuuksia.
 
 Tex Live \=/jakelun (luku \ref{luku/asentaminen}) mukana tulee mainio
 komentotulkissa toimiva komento \koodi{texdoc}, jolla voi hakea ja avata
@@ -383,7 +384,7 @@ Minun Latex-dokumenttini!
 \end{esimerkki*}
 
 Dokumentin alkuosaa riville 9 saakka kutsutaan esittelyosaksi (engl.
-\englanti{preamble}). Tässä osassa ladataan tarvittavat makropaketit ja
+\englanti{preamble}). Tässä osassa ladataan tarvittavat paketit ja
 määritetään dokumentin asetuksia ja taustatietoja. Riviltä 10 alkaa
 varsinainen tekstiosa eli dokumentin sivuille ladottava sisältö. Se osa
 kirjoitetaan \ymparistom{document}\-/ ympäristön sisään eli riveillä 10
@@ -392,7 +393,7 @@ ja 14 olevien ympäristön aloitus\-/\ ja lopetuskomentojen väliin
 
 Tällaisen merkintäkielen avulla dokumentit kirjoitetaan. Osa
 merkintäkielen komennoista tulee Latexin perusosasta ja osa tulee
-erikseen ladattavista makropaketeista (\paketti{geometry},
+erikseen ladattavista paketeista (\paketti{geometry},
 \paketti{fontspec}, \paketti{polyglossia} ym.). Komentoja voi luoda
 itsekin.
 
@@ -402,7 +403,7 @@ aloittaa työt valmiista dokumenttipohjasta.
 
 Lähdetiedoston nimissä kannattaa pitäytyä melko suppeassa
 merkkivalikoimassa, ja varsinkin välilyöntejä kannattaa välttää.
-Nimittäin kääntämisen aikana Latex ja sen makropaketit luovat
+Nimittäin kääntämisen aikana Latex ja sen paketit luovat
 väliaikaistiedostoja, joilla sama nimen osa kuin lähdetiedostossa, ja
 näitä tiedostoja saattavat käsitellä monet erilaiset taustalla
 vaikuttavat työkaluohjelmat. Tiedoston nimissä olevat välilyönnit ja

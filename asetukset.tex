@@ -171,7 +171,7 @@ Dokumentista voi latoa luonnosversion käyttämällä dokumenttiluokan
 valitsinta \koodim{draft}. Luonnoksena ladottuun dokumenttiin tulevat
 merkityksi (musta suorakulmio) ainakin tekstipalstan yli pursuavat
 rivit, mikä voi auttaa tekstikappaleiden ulkoasun korjailussa (luku
-\ref{luku/kappale}). Eri makropaketit voivat hyödyntää \koodi{draft}\-/
+\ref{luku/kappale}). Eri paketit voivat hyödyntää \koodi{draft}\-/
 valitsinta omalla tavallaan eli muuttaa toimintaansa sen perusteella.
 Esimerkiksi grafiikkaan liittyvä paketti \paketti{graphicx} (luku
 \ref{luku/grafiikka}) jättää luonnosversiosta kuvat pois, ja niiden
@@ -238,7 +238,7 @@ Oletuksena sivun tekstit ladotaan yhdelle palstalle
 (\koodim{onecolumn}), mutta valitsimella \koodim{twocolumn} teksti
 ladotaan kahdelle palstalle. Nämä valitsimet vaikuttavat myös sivun
 marginaaleihin. Latexin perusosat eivät hallitse useampaa kuin kaksi
-palstaa, mutta \paketti{multicol}\-/makropaketin avulla saa enemmänkin.
+palstaa, mutta \paketti{multicol}\-/paketin avulla saa enemmänkin.
 Palstoja käsitellään luvussa \ref{luku/palstat}.
 
 Dokumenttiluokassa \luokka{slides} toimii \koodim{clock}\-/ valitsin,
@@ -256,9 +256,9 @@ Tässä käsitellään vain joitakin.
 Luokka \luokka{memoir} on Latexin \luokka{book}\-/luokkaan perustuva,
 ominaisuuksiltaan laajennettu luokka, joka sopii yleiskäyttöön. Tähän
 luokkaan on sisällytetty monia dokumentin rakenteeseen ja ulkoasuun
-liittyviä toimintoja, joihin yleensä tarvitaan erillisiä makropaketteja
+liittyviä toimintoja, joihin yleensä tarvitaan erillisiä paketteja
 tai muuten lisäkoodia. Sen sijaan, että ratkoisi dokumentin rakenteen ja
-asettelun kysymyksiä erillisten makropakettien avulla, saattaisi olla
+asettelun kysymyksiä erillisten pakettien avulla, saattaisi olla
 helpompaa lukea (lähes) pelkästään vain \luokka{memoir}\-/ luokan
 ohjekirjaa ja toteuttaa asiat yhtenäisen järjestelmän avulla.
 
@@ -464,7 +464,7 @@ sivun vastakkaiseen marginaaliin, lisätään mukaan valitsin
 Perus Latex osaa latoa tekstin yhdelle tai kahdelle palstalle, ja
 \paketti{geometry}\-/ paketin valitsimella \koodim{onecolumn} tai
 \koodim{twocolumn} asetetaan, kumpi tila on oletuksena päällä.
-Useampikin palsta on mahdollista makropaketin avulla. Valitsimen
+Useampikin palsta on mahdollista paketin avulla. Valitsimen
 \koodim{columnsep} avulla asetetaan palstojen välinen etäisyys.
 Käytännössä tämä valitsin on asettaa mitan \mitta{columnsep}, jota voi
 muokata myös komennolla \komento{setlength}, kuten muitakin mittoja
@@ -768,7 +768,7 @@ sivun keskelle (\koodi{C}):
 \end{koodilohkosis}
 
 \noindent
-Makropaketin \paketti{fancyhdr} avulla voi myös määritellä Latexin
+Paketin \paketti{fancyhdr} avulla voi myös määritellä Latexin
 sivutyylejä toisenlaiseksi tai luoda kokonaan omia sivutyylejä. Nämä
 tehdään komennolla \komentom{fancypagestyle}, jonka ensimmäinen
 argumentti on sivutyylin nimi ja toinen argumentti on sivutyylin
@@ -1075,9 +1075,9 @@ asetusten näkökulmasta.
   \label{kuva/kirjainperhetyypit}
 }
 
-Joidenkin fonttien käyttöönottoon on tehty oma makropakettinsa, joten
+Joidenkin fonttien käyttöönottoon on tehty oma pakettinsa, joten
 sellaiset fontit voi ladata dokumentin esittelyosassa komennolla
-\komento{usepackage}. Fonttikohtaisia makropaketteja on olemassa
+\komento{usepackage}. Fonttikohtaisia paketteja on olemassa
 varsinkin vanhalle fonttitekniikalle (\englanti{Metafont, Post Script
   Type~1}) mutta myös matematiikkatilan fonttiasetuksille (luku
 \ref{luku/matematiikka-fontit}) ja joillekin
@@ -1096,7 +1096,7 @@ Libertinus\-/ kirjainperheet saa käyttöön lataamalla paketti
 \end{koodilohkosis}
 
 \noindent
-Valmiita makropaketteja on kuitenkin vain harvoille fonteille, ja
+Valmiita paketteja on kuitenkin vain harvoille fonteille, ja
 käytännössä lähes aina \englanti{True Type}- ja \englanti{Open Type}
 \=/muodossa olevat fontit otetaan käyttöön \paketti{fontspec}\-/paketin
 komennoilla seuraavan esimerkin mukaisesti:
@@ -2608,7 +2608,7 @@ käyttää Xelatex\-/kääntäjän kanssa, mutta Lualatex\-/kääntäjä kadotta
 koko merkin. Yhteensopivuussyistä ei kannata käyttää Unicoden sitovaa
 yhdysmerkkiä, sillä muitakin vaihtoehtoja on.
 
-Makropaketti \paketti{extdash}\avctan{extdash} tuo uusia komentoja ja
+Paketti \paketti{extdash}\avctan{extdash} tuo uusia komentoja ja
 mahdollisuuksia tavutuksen hallintaan. Komennot ovat sellaisia kuin
 \komento{Hyphdash} ja \komento{Endash}, mutta niille on saatavilla myös
 lyhemmät muodot, jos paketin lataa käyttämällä \koodi{short\-cuts}\-/
@@ -2757,7 +2757,7 @@ esittelyosassa.
 \subsection{Muita tavutusasetuksia ja -vinkkejä}
 \label{luku/tavutus-muut}
 
-Aiemmin mainittu \paketti{extdash}\-/makropaketti sisältää tavutuksen
+Aiemmin mainittu \paketti{extdash}\-/paketti sisältää tavutuksen
 hallintaan liittyviä välimerkkejä, mutta sellaisia on myös
 kielipaketeissa \paketti{polyglossia} ja \paketti{babel}. Kielipakettien
 englanninkielisissä ohjekirjoissa niitä kutsutaan nimellä

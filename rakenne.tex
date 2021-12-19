@@ -807,7 +807,7 @@ kirjainleikkauksella tai pienversaalilla, kuten näissä esimerkeissä on
 tehty. Tällainen kappaleen aloitus voi toimia hieman otsikon tavoin tai
 sitten muuten vain ilmaisee uuden luvun alkamista.
 
-Latexissa anfangien tekemistä varten on makropaketti
+Latexissa anfangien tekemistä varten on paketti
 \pakettim{lettrine},\avctan{lettrine} joka tarjoaa käyttöön samannimisen
 komennon. Jokainen anfangi on erilainen, ja siksi \komentom{lettrine}\-/
 komentokin sisältää useita asetuksia anfangin ulkoasun hienosäätöön.
@@ -1034,7 +1034,7 @@ argumentiksi annettua tekstiä ei katkaista edes sanavälien kohdalta.
 Komennon hyvä puoli on, että se toimii myös matematiikkatilassa
 (luku~\ref{luku/matematiikka}).
 
-Käytännössä alleviivaukset on parempi toteuttaa esimerkiksi makropaketin
+Käytännössä alleviivaukset on parempi toteuttaa esimerkiksi paketin
 \pakettim{ulem}\avctan{ulem} avulla. Tavallisen alleviivauksen lisäksi
 se sisältää kaksoisalleviivauksen, aaltoviivat, pisteviivat ja erilaisia
 ylikirjoitusmerkintöjä. Taulukkoon \ref{tlk/ulem} on koottu paketin
@@ -1107,7 +1107,7 @@ esimerkki:
 \end{tulossis}
 
 \noindent
-Toinen makropaketti alleviivausten ja yliviivausten tekemiseen on
+Toinen paketti alleviivausten ja yliviivausten tekemiseen on
 \paketti{soul}.\avctan{soul} Se ei sisällä erikoisempia korostustapoja
 kuten aalto- ja katkoviivoja, mutta viivan etäisyyden ja paksuuden
 määrittämiseen on hieman kätevämmät komennot.
@@ -1249,7 +1249,7 @@ tieto-       kone-
 \end{tulossis}
 
 \noindent
-Paljon monipuolisemman ympäristön tarjoaa makropaketti
+Paljon monipuolisemman ympäristön tarjoaa paketti
 \pakettim{fancyvrb}.\avctan{fancyvrb} Sen mukana tuleva
 \ymparistom{Verbatim}\-/ ympäristö ymmärtää monenlaisia asetuksia,
 joilla vaikutetaan tietokonekoodin latomiseen. Koodiin saa mukaan
@@ -1272,21 +1272,21 @@ eivät häiritse leipätekstin lukemista mutta ovat silti lukijan
 saatavilla.
 
 Latexissa verkko\-/osoitteet kannattaa toteuttaa siihen tarkoitetun
-makropaketin avulla. Paketti \pakettim{hyperref}\avctan{hyperref}
+paketin avulla. Paketti \pakettim{hyperref}\avctan{hyperref}
 sisältää toimintoja paitsi verkko\-/ osoitteiden latomiseen mutta myös
 pdf\-/tiedoston asetusten ja ristiviitteiden hallintaan (luku
 \ref{luku/pdf-asetukset}). Paketin avulla valmiin pdf\-/ tiedoston
 verkkolinkit toimivat, eli pdf\-/lukijassa linkkiä napsauttamalla
 pitäisi avautua verkkoselain ja linkin osoittama sivu.
 
-Makropaketin käyttämisen typografinen hyöty on se, että rivin vaihdon
+Paketin käyttämisen typografinen hyöty on se, että rivin vaihdon
 kohdalle sattuvat verkko\-/ osoitteet katkaistaan automaattisesti
 luontevista kohdista eli vain tiettyjen välimerkkien jälkeen.
 Tavuviivoja ei lisätä rivin loppuun. Myös typografiset ligatuurit (luku
 \ref{luku/typo-liga}) kytketään pois päältä.
 
 \paketti{hyperref}\-/paketin ohjekirja neuvoo lataamaan paketin
-viimeisenä eli muiden makropakettien lataamisen jälkeen, koska se
+viimeisenä eli muiden pakettien lataamisen jälkeen, koska se
 muokkaa joidenkin muualla määriteltyjen komentojen ominaisuuksia.
 
 \komentoi{usepackage}
@@ -1301,7 +1301,7 @@ muokkaa joidenkin muualla määriteltyjen komentojen ominaisuuksia.
 
 \noindent
 Edellisen esimerkin komennolla \komentom{hypersetup} vaikutetaan
-makropaketin asetuksiin. Oletuksena esimerkiksi linkkien ympärille
+paketin asetuksiin. Oletuksena esimerkiksi linkkien ympärille
 ladotaan värilliset kehykset, mutta valitsin \koodi{hide\-links} poistaa
 ne. Valitsimella \koodi{url\-color} voisi vaihtaa verkko\-/osoitteiden
 kehyksen väriä.
@@ -1547,7 +1547,7 @@ oikeanpuoleiselta eli parittomalta sivulta.
 \komento{cleardoublepage}\-/komennon aiheuttamalle tyhjälle sivulle
 saatetaan kuitenkin latoa ylä- ja alatunnisteet, jos sellaiset on
 määritelty (luku \ref{luku/ylä-ala-tunnisteet}). Täysin tyhjän sivun saa
-käyttämällä apuna makropakettia \paketti{titlesec}\avctan{titlesec} ja
+käyttämällä apuna pakettia \paketti{titlesec}\avctan{titlesec} ja
 sen valitsinta \koodi{clear\-empty}:
 
 \komentoi{usepackage}
@@ -1682,7 +1682,7 @@ Yksittäiset perustiedot saa ladottua seuraavilla komennoilla:
 Perustietokomentoihin \komento{title}, \komento{author} ja
 \komento{date} ei ole tarkoitus sisällyttää kovin monimutkaisia
 muotoilukomentoja. Jos haluaa vaikuttaa perustietojen ulkoasuun,
-kannattaa käyttää siihen tarkoitettua makropakettia
+kannattaa käyttää siihen tarkoitettua pakettia
 \pakettim{titling}.\avctan{titling} Toisaalta mikään ei estä
 muotoilemasta oman dokumentin perustietoja ilman Latexin valmiita
 keinoja.
@@ -2283,7 +2283,7 @@ Sellainen neuvotaan sisällysluettelon käsittelyn yhteydessä esimerkissä
 Dokumentin sisällysluettelo syntyy helposti yhdellä komennolla:
 \komentom{tableofcontents}. Otsikkokomennoilla (luku \ref{luku/otsikot})
 tehdyt otsikot tulevat automaattisesti sisällysluetteloon. Jos käytössä
-on makropaketti \paketti{hyperref} (luku \ref{luku/pdf-asetukset}),
+on paketti \paketti{hyperref} (luku \ref{luku/pdf-asetukset}),
 sisällysluettelon otsikot ovat myös linkkejä, jotka vievät kyseiseen
 kohtaan dokumentissa. Oletuksena syntyvä sisällysluettelo on tyyliltään
 neutraali, ja se sopinee sellaisenaan useimpiin töihin. Ulkoasua voi
@@ -2451,7 +2451,7 @@ vasemmalle puolelle (ns. riippuva sisennys). Komento
 voi tehdä katsetta ohjaavan viivan tai pisteviivan otsikkotekstin ja
 sivunumeron väliin.
 
-Makropaketin \paketti{titletoc} ohjekirjassa on paljon muitakin
+Paketin \paketti{titletoc} ohjekirjassa on paljon muitakin
 toimintoja ja esimerkkejä sisällysluetteloiden ehostamiseen. Ohjeisiin
 kannattaa tutustua, mikäli kaipaa erikoisempia sisällysluettelomalleja.
 
@@ -4037,7 +4037,7 @@ se on lähdetiedostossa. Se on kuitenkin vain ehdotus eikä useinkaan
 toteudu: Latex lisää automaattisesti aina \koodi{h}\=/ valitsimen perään
 \koodi{t}:n eli sivun yläosaan sijoittamisen. Latex käyttää sitä, jos se
 saa sillä tavoin omasta mielestään paremman lopputuloksen. Lataamalla
-makropaketin \pakettim{floatrow}\avctan{floatrow} voi käyttää myös myös
+paketin \pakettim{floatrow}\avctan{floatrow} voi käyttää myös myös
 valitsinta \koodi{H}. Se tarkoittaa ehdotonta vaatimusta, että juuri
 tähän kohtaan leijuva osa pitää sijoittaa. Tätä valitsinta ei voi
 yhdistää muiden valitsimien kanssa.
@@ -4784,7 +4784,7 @@ mukavasti.
 Perus Latexissa on kaksi palstoihin liittyvää tilaa: normaali eli yhden
 palstan tila sekä kahden palstan tila, joka täytyy erikseen kytkeä
 päälle. Tätä tilaa käsitellään luvussa \ref{luku/kahden-palstan-tila}.
-Toinen palstojen toteuttamisen vaihtoehto on makropaketti
+Toinen palstojen toteuttamisen vaihtoehto on paketti
 \paketti{multicol}. Sen kanssa käytetään Latexin yhden palstan tilaa ja
 erityistä palstaympäristöä \ymparisto{multicols}. Ympäristön sisällä
 teksti rivitetään kahdelle tai useammalle palstalle. Tätä vaihtoehtoa
@@ -4999,7 +4999,7 @@ tarpeisiin sopivaksi.
 
 Latex sisältää lähdeluetteloiden ja \=/viittausten perustoiminnot, mutta
 niiden avulla ei saa yleisen suomalaisen käytännön mukaisia
-lähdeviittauksia. Siksi usein tarvitaan avuksi makropaketti, jolla
+lähdeviittauksia. Siksi usein tarvitaan avuksi paketti, jolla
 viittausten ja lähdeluettelon ulkoasuun voi vaikuttaa. Ensin käsiteltävä
 paketti \paketti{natbib} (luku \ref{luku/natbib}) soveltuu
 perustarpeisiin ja lienee sopivin valinta useimmille kirjoittajille.
@@ -5012,7 +5012,7 @@ automaattisesti.
 \subsection{Peruskäyttöön (natbib)}
 \label{luku/natbib}
 
-Makropaketti \paketti{natbib}\avctan{natbib} laajentaa Latexin
+Paketti \paketti{natbib}\avctan{natbib} laajentaa Latexin
 lähdeviittausten perustoimintoja sen verran, että lähteisiin voidaan
 viitata teoksen tekijöiden nimen ja vuosiluvun avulla. Seuraava
 esimerkki havainnollistaa paketin käyttöönottoa ja asetuksia.
@@ -5239,7 +5239,7 @@ käsitellään seuraavassa alaluvussa.
 
 Suurten lähde- ja kirjallisuusluetteloiden ylläpito voi olla aika
 työlästä: pitää jatkuvasti varmistaa, että kaikki viitatut teokset ovat
-luettelossa ja että luettelo on pilkulleen yhdenmukainen. Makropaketti
+luettelossa ja että luettelo on pilkulleen yhdenmukainen. Paketti
 \paketti{biblatex}\avctan{biblatex} on vastaus sellaisiin tarpeisiin.
 
 Ajatuksena on, että kaikki tiedonlähteet ja kirjallisuus kirjoitetaan
@@ -5428,7 +5428,7 @@ esimerkin rivillä 13 on tehty.
 
 \subsubsection{Käyttöönotto}
 
-\paketti{biblatex}\-/makropaketti otetaan käyttöön esimerkin
+\paketti{biblatex}\-/paketti otetaan käyttöön esimerkin
 \ref{esim/biblatex-käyttöönotto} rivien avulla. Mukana ovat myös paketit
 \paketti{polyglossia} ja \paketti{csquotes}. Jälkimmäinen sisältää
 lainausmerkkien käyttöön liittyvää logiikkaa (luku
@@ -5451,7 +5451,7 @@ amerikkalaisia (``~'').
 
 \usepackage[style=authoryear]{biblatex}
 \end{koodilohko}
-  \caption{\paketti{biblatex}\-/ makropaketin käyttöönotto ja asetuksia}
+  \caption{\paketti{biblatex}\-/ paketin käyttöönotto ja asetuksia}
   \label{esim/biblatex-käyttöönotto}
 \end{esimerkki*}
 
@@ -5467,12 +5467,12 @@ viittaustyylit ovat nimeltään \koodi{nu\-mer\-ic} ja
 \koodi{al\-pha\-bet\-ic}. Muitakin tyylejä on olemassa, mutta tämän
 oppaan esimerkeissä käsitellään tekijä--vuosi-tyyliä.
 
-Makropaketin omien lähdeluettelo\-/{} ja viittaustyylien lisäksi
+Paketin omien lähdeluettelo\-/{} ja viittaustyylien lisäksi
 Latex\-/jakelupaketissa on todennäköisesti mukana myös ulkopuolisten
 tahojen tekemiä tyylejä. Tyylikokonaisuus nimeltä
 \paketti{biblatex-ext}\avctan{biblatex-ext} laajentaa
 \paketti{biblatex}\-/paketin tavallisten tyylien ominaisuuksia.
-Laajennettujen tyylien käyttäminen ei vaadi erillisen makropaketin
+Laajennettujen tyylien käyttäminen ei vaadi erillisen paketin
 lataamista, vaan tyylin saa käyttöön yksinkertaisesti vain
 kirjoittamalla sen nimen \paketti{biblatex}\-/paketin lataamisen
 yhteydessä. Laajennetut tyylit alkavat kirjaimilla \mbox{\koodi{ext-},}
@@ -5960,7 +5960,7 @@ käsitellään. Asiahakemistojen tarkoituksena on helpottaa tiedon
 löytämistä. Tämän oppaan luku \enquote{\nameref{luku/asiahakemisto}}
 alkaa sivulta \pageref{luku/asiahakemisto}.
 
-Latex tarvitsee asiahakemistojen tekemiseen makropaketin. Niitä tehty
+Latex tarvitsee asiahakemistojen tekemiseen paketin. Niitä tehty
 useampia, mutta parhaita taitavat olla
 \paketti{indextools}\avctan{indextools} ja
 \paketti{imakeidx}\avctan{imakeidx}. Ne ovat käytännössä lähes sama
@@ -6508,7 +6508,7 @@ valitsimen käyttö vaatii, että Latexin kääntäjäohjelmalle
 \label{luku/grafiikka}
 
 Perus Latex ei pysty juuri minkäänlaiseen kuvien eli tietokonegrafiikan
-käsittelyyn, mutta avuksi on tehty monipuolisia makropaketteja. Niiden
+käsittelyyn, mutta avuksi on tehty monipuolisia paketteja. Niiden
 voidaan esimerkiksi ladata ja latoa kuvatiedostoja sekä piirtää
 vektorigrafiikkakuvia Latex\-/ komentojen avulla.
 

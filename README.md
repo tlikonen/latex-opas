@@ -152,6 +152,4 @@ Puutteita ja suunnitelmia
   - Marginaalihuomautusluvussa voisi mainita `\marginpar`-komennon
     puutteet ja vaihtoehdon `marginnote`.
   - Mahdollisesti käsitellään wrapfig-paketti.
-  - Komentojen ja makrojen käsitteitä ehkä pitäisi avata. Tämän oppaan
-    ulkopuolella molempia käytetään samassa merkityksessä.
   - Uusi `fi-x-school`-tavutuskaava.

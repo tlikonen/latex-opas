@@ -146,8 +146,8 @@ Puutteita ja suunnitelmia
 
   - Puuttuvia tai keskeneräisiä lukuja: laatikot, sarkaimet, esipuhe.
   - Lisätään Muuta tekniikkaa -luku, jonka sisällöksi esimerkiksi:
-    päiväykset ja kellonajat, textpos-paketti, omien makropakettien ja
-    dokumenttiluokkien tekeminen.
+    päiväykset ja kellonajat (datetime2), textpos-paketti, omien
+    makropakettien ja dokumenttiluokkien tekeminen.
   - Marginaalihuomautusluvussa voisi mainita `\marginpar`-komennon
     puutteet ja vaihtoehdon `marginnote`.
   - Mahdollisesti käsitellään wrapfig-paketti.

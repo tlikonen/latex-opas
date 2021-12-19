@@ -2,7 +2,7 @@ versio = 0
 nimi = kaytannollista_latexia
 lahde = $(nimi).tex asetukset.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
-	valmistautuminen.tex kirjallisuutta.bib muuta.tex erikoiset.tex
+	valmistautuminen.tex kirjallisuutta.bib erikoiset.tex
 tds = doc/finnish/latex
 julkaisutiedostot = $(nimi).pdf versio.tex $(lahde) README.md
 julkaisukohteet = $(patsubst %,$(tds)/$(nimi)/%,$(julkaisutiedostot))

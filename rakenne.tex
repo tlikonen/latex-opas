@@ -6855,7 +6855,7 @@ vektorigrafiikkakuviot. Paketin omaan ohjekirjaan kannattaa silti
 tutustua, sillä \ymparisto{tikzpicture}\-/ ympäristön mahdollisuudet
 ovat valtavat.
 
-\section{Matematiikka KESKEN}
+\section{Matematiikka}
 \label{luku/matematiikka}
 
 Latexin matematiikkatila on suunniteltu matemaattisten kaavojen
@@ -6870,6 +6870,7 @@ kirjoittamista. Fonttiasetuksia käsitellään luvussa
 \ref{luku/matematiikka-fontit}.
 
 \subsection{Matematiikkatilan käyttö}
+\label{luku/matematiikka-käyttö}
 
 Matematiikkatila voidaan kytkeä päälle joko tavallisen tekstitilassa
 toimivan rivin sisällä tai omassa tekstikappaleessaan. Tekstirivillä
@@ -6965,18 +6966,20 @@ yhtäsuuruusmerkin kohdalta.
 
 \noindent
 Pidemmälle kehitettyjä matematiikkaympäristöjä on paketissa
-\paketti{amsmath}.\avctan{amsmath} Esimerkiksi \mymparisto{align}\-/
-ympäristö pystyy tasaamaan allekkaiset kaavat tietystä kohdasta, eikä
-taulukon sarakkeita tarvitse erikseen määritellä. Tasauskohta ilmaistaan
-lähdedokumentissa \koodi{\&}\-/ merkillä normaalien taulukoiden tavoin.
-Edellä olleen yhtälöesimerkin voi toteuttaa yksinkertaisemmin:
+\paketti{amsmath}.\avctan{amsmath} Esimerkiksi \mymparisto{align}\-/\ ja
+\mymparisto{align*}\-/ ympäristöt pystyvät tasaamaan allekkaiset kaavat
+tietystä kohdasta, eikä taulukon sarakkeita tarvitse erikseen
+määritellä. Tasauskohta ilmaistaan lähdedokumentissa \koodi{\&}\-/
+merkillä normaalien taulukoiden tavoin. Ympäristön tähtiversio
+\mymparisto{align*} ei lado kaavan numeroa mukaan. Edellä olleen
+yhtälöesimerkin voi toteuttaa yksinkertaisemmin seuraavasti:
 
-\mymparistoi{align}
+\mymparistoi{align*}
 \begin{koodilohkosis}
-\begin{align}
+\begin{align*}
   4x - 2 &= 6 \\
   x      &= 2
-\end{align}
+\end{align*}
 \end{koodilohkosis}
 
 \noindent
@@ -6984,7 +6987,7 @@ Paketti \paketti{amsmath} sisältää paljon muitakin hyödyllisiä
 ympäristöjä ja komentoja matematiikan latomiseen. Paketin ohjekirjaan on
 erittäin suositeltavaa tutustua.
 
-\subsection{Syntaksin perusasiat}
+\subsection{Matematiikkatilan kielioppia}
 
 Matematiikan kirjoittaminen Latexissa on tehty varsin luonnolliseksi.
 Esimerkiksi tavalliset operaattorit ja kokonaisluvut kirjoitetaan
@@ -7046,11 +7049,13 @@ piste. Seuraavassa esimerkissä ladotaan vasemmalle aaltosulje
 \mymparistoi{array}
 \begin{koodilohkosis}
 \[ \left\{ \begin{array}{r@{~}l}
-             x &= 4 \\ y &= -2 \\
+             x &= 4 \\
+             y &= -2 \\
            \end{array} \right. \]
 \end{koodilohkosis}
 \[ \left\{ \begin{array}{l@{~}l}
-      x &= 4 \\ y &= -2 \\
+             x &= 4 \\
+             y &= -2 \\
     \end{array} \right. \]
 
 \noindent
@@ -7067,12 +7072,13 @@ kokonaan operaattorin ylä- tai alapuolelle.
 \mkomentoi{lim}
 \mkomentoi{to}
 \mkomentoi{infty}
+\mkomentoi{qquad}
 \begin{koodilohkosis}
-\[ x^{n-1} \hfill x_i \hfill \sum_{i=1}^n \hfill
-  \int_0^\infty \hfill \lim_{n \to \infty} \]
+\[ x^{n-1} \qquad x_i \qquad \sum_{i=1}^n \qquad
+  \int_0^\infty \qquad \lim_{n \to \infty} \]
 \end{koodilohkosis}
-\[ x^{n-1} \hfill x_i \hfill \sum_{i=1}^n \hfill
-  \int_0^\infty \hfill \lim_{n \to \infty} \]
+\[ x^{n-1} \qquad x_i \qquad \sum_{i=1}^n \qquad
+  \int_0^\infty \qquad \lim_{n \to \infty} \]
 
 \noindent
 Lausekkeen osia voi ryhmitellä ylä- tai alapuolisella aaltosulkeella,
@@ -7122,19 +7128,40 @@ komento \mkomento{vec}, joka toimii yhden kirjaimen kanssa. Kahden
 merkin mittaiseen nuoleen tarvitaan komentoa \mkomento{overrightarrow}
 (tai \mkomento{overleftarrow}).
 
+\mkomentoi{vec}
+\mkomentoi{overrightarrow}
+\mkomentoi{quad}
 \begin{koodilohkosis}
 \[ \vec{a} \quad \overrightarrow{AB} \]
 \end{koodilohkosis}
 \[ \vec{a} \quad \overrightarrow{AB} \]
 
 \noindent
-Kuten on jo todettu, tavalliset kirjaimet on matematiikkatilassa
-tarkoitettu muuttujien nimiksi. Kun täytyy latoa varsinaista tekstiä --
-tekstitilan tavoin -- täytyy käyttää erityisiä komentoja. Taulukkoon
-\ref{tlk/matem-teksti} on koottu matematiikkatilan
-tekstinlatomiskomentoja. Komentojen argumenttina oleva teksti ladotaan
-kuin tekstitilassa.
+Matriisit voi toteuttaa luvussa \ref{luku/matematiikka-käyttö} esitellyn
+\mymparisto{array}\-/ ympäristön avulla, mutta kätevämpää on käyttää
+\paketti{amsmath}\-/ paketin ympäristöjä. Kullekin erilaiselle
+suljetyypille on oma ympäristönsä: \mymparisto{matrix},
+\mymparisto{pmatrix}~$(\,)$, \mymparisto{bmatrix}~$[\,]$,
+\mymparisto{Bmatrix}~$\{\,\}$, \mymparisto{vmatrix}~$|$ ja
+\mymparisto{Vmatrix}~$\|$. Ympäristön sisällä matriisin rivin solut
+erotetaan toisistaan samoin kuin taulukoissakin eli \koodi{\&}\=/
+merkillä ja rivinvaihto tehdään \mkomento{\keno}\=/ komennolla.
+Seuraavassa on esimerkki kahdesta eri ympäristöstä:
 
+\mymparistoi{matrix}
+\mymparistoi{bmatrix}
+\mkomentoi{qquad}
+\begin{koodilohkosis}
+\[ \begin{matrix} 1 & 2 \\ 3 & 4 \\ \end{matrix} \qquad
+   \begin{bmatrix}
+     1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \\
+   \end{bmatrix} \]
+\end{koodilohkosis}
+\[ \begin{matrix} 1 & 2 \\ 3 & 4 \\ \end{matrix} \qquad
+  \begin{bmatrix}
+    1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \\
+  \end{bmatrix} \]
+  
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[3]{\mkomento{#1} & $#2$ & #3 \\}
@@ -7160,6 +7187,24 @@ kuin tekstitilassa.
   \label{tlk/matem-teksti}
 }
 
+\noindent
+Kuten on jo todettu, tavalliset kirjaimet on matematiikkatilassa
+tarkoitettu muuttujien nimiksi. Kun täytyy latoa varsinaista tekstiä --
+tekstitilan tavoin -- täytyy käyttää erityisiä komentoja. Taulukkoon
+\ref{tlk/matem-teksti} on koottu matematiikkatilan
+tekstinlatomiskomentoja. Komentojen argumenttina oleva teksti ladotaan
+kuin tekstitilassa.
+
+Vaakasuuntaisten välien tekemiseen on matematiikkatilassa muutama
+komento. Komento \mkomento{quad} latoo typografisen neliön (1\,em)
+levyisen välin. Se sama kuin nykyisen fontin koko. Komento
+\mkomento{qquad} latoo 2\,em:n levyisen välin. Pienempiä välejä saa
+komennoilla \mkomento{,} (\murtoluku{3}{18}\,em), \mkomento{:}
+(\murtoluku{4}{18}\,em) ja \mkomento{;} (\murtoluku{5}{18}\,em). Komento
+\mkomento{!} puolestaan tuottaa negatiivisen välin, jonka mitta on
+−\murtoluku{3}{18}\,em. Negatiivista väliä voi käyttää liian suuren
+välin pienentämiseen.
+
 \subsection{Erikoismerkkejä}
 
 Matematiikkatilassa voi käyttää Unicode\-/ merkistöä, eli monet
@@ -7168,7 +7213,9 @@ Voi silti olla helpompaa käyttää erityisiä komentoja sellaisten
 kirjainten ja symbolien kirjoittamiseen, joita ei ihan helposti pysty
 tuottamaa näppäimistöltä tai tekstieditorin toimintojen avulla.
 Matematiikkatilan erikoismerkkejä on koottu oheisiin taulukoihin
-(\ref{tlk/matem-kreikk}--).
+(\ref{tlk/matem-kreikk}--). Lisää symboleja on paketeissa
+\paketti{latexsym}\avctan{latexsym} ja
+\paketti{amsmath}\avctan{amsmath}.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -7620,8 +7667,3 @@ Matematiikkatilan erikoismerkkejä on koottu oheisiin taulukoihin
   \caption{Sekalaisia symboleja}
   \label{tlk/matem-sekalaisia}
 }
-
-% latexsym-paketissa lisää symboleja
-
-% matriisi
-% välistys: \quad \qquad, \, \: \;

@@ -1845,7 +1845,62 @@ mainittu lukumäärä saatiin laskettua seuraavasti:
 \section{Laatikot KESKEN}
 \label{luku/laatikot}
 
-...
+Tex ajattelee ladottavan tekstin ja muun sisällön laatikoina eli
+suorakulmioina, joilla on leveys ja korkeus. Esimerkiksi kirjaimet ovat
+teknisesti laatikoita, joita ladotaan peräkkäin. Samoin monet valmiit
+ympäristöt luovat laatikon, joka sisältää jotakin ja vie tietyn verran
+tilaa sivulta.
 
-% \mbox, \makebox, \framebox, \parbox, minipage
+Dokumentin kirjoittajalle on välillä hyötyä luoda omia laatikoita, koska
+laatikko toimii yhtenä kokonaisuutena, jonka reunoja muut elementit ja
+latomiskoneisto kunnioittavat. Yksinkertainen peruslaatikko tehdään
+\komento{mbox}\-/ komennolla, joka latoo argumenttina annetun tekstin
+näkymättömän laatikon sisään. Näin luotu laatikko pysyy koossa, eli sen
+sisältämiä sanoja ei esimerkiksi tavuteta. Komento sopiikin hyvin
+tavutuksen estämiseen yksittäisessä tilanteessa.
+
+Toinen laatikkokomento \komento{makebox} toimii samalla tavalla kuin
+\komento{mbox} mutta hyväksyy yhden tai kaksi valinnaista argumenttia.
+Komentojen muoto on seuraava:
+
+\begin{koodilohkosis}
+\makebox[leveys]{teksti}
+\makebox[leveys][sijainti]{teksti}
+\end{koodilohkosis}
+
+\noindent
+Argumentti \koodi{leveys} on laatikon leveysmitta ja \koodi{sijainti} on
+kirjainkoodi, joka ilmaisee laatikon sisällön vaakasuuntaisen
+sijoittelun. Kirjain \koodi{c} (\englanti{center}) keskittää sisällön,
+\koodi{l} (\englanti{left}) tasaa sisällön vasemmalle, \koodi{r}
+(\englanti{right}) tasaa sisällön oikealle ja \koodi{s}
+(\englanti{stretch}) tasaa sisällön molemmista reunoista eli venyttää
+laatikon sisäisiä sanavälejä sopivasti.
+
+\begin{koodilohkosis}
+\makebox[12em][s]{Laatikossa on tilaa.}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \makebox[12em][s]{Laatikossa on tilaa.}
+\end{tulossis}
+
+\noindent
+\komento{makebox}\-/ komennon \koodi{leveys}\-/ argumentissa voi käyttää
+apuna mittoja \mitta{width} (leveys), \mitta{height} (korkeus),
+\mitta{depth} (syvyys) ja \mitta{totalheight} (\mitta{height} +
+\mitta{depth}), jotka määräytyvät laatikon sisällön luontaisten mittojen
+perusteella. Esimerkiksi seuraava komento latoo laatikon, jonka leveys
+on 1,5\-/ kertainen sisällön luontaiseen leveyteen nähden, ja keskittää
+tekstin. Pystyviivat ovat mukana rajojen hahmottamisen vuoksi.
+
+\begin{koodilohkosis}
+|\makebox[1.5\width][c]{Keskitetty}|
+\end{koodilohkosis}
+
+\begin{tulossis}
+  |\makebox[1.5\width][c]{Keskitetty}|
+\end{tulossis}
+
+% \mbox, \makebox, \framebox, \parbox, minipage, \raisebox,
 % \scalebox, \resizebox, \rotatebox

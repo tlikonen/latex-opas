@@ -271,11 +271,11 @@ vertaillaan sanaväliä, ohuketta ja yhteen kirjoittamista.
 \subsection{Lainausmerkit ja heittomerkki}
 \label{luku/lainausmerkit}
 
-Näppäilemällä \textsc{shift} eli vaihtonäppäin ja 2 saadaan yleensä
-lainausmerkin yleisversio, niin sanottu \textsc{ascii}\-/lainausmerkki
-(\textquotedbl), mutta se ei taida olla minkään kielen varsinainen
-lainausmerkki. On siis syytä käyttää oikeita lainausmerkkejä, ja se käy
-Latexissa varsin helposti.
+Suomalaisessa näppäinasettelussa \textsc{shift} eli vaihtonäppäin ja 2
+tuottaa yleislainausmerkin eli niin sanotun \textsc{ascii}\-/
+lainausmerkin (\textquotedbl), mutta se ei taida olla minkään kielen
+varsinainen lainausmerkki. On siis syytä käyttää oikeita
+lainausmerkkejä, ja se käy Latexissa varsin helposti.
 
 Eri kielissä lainausmerkkikäytännöt ovat erilaiset. Suomen kielessä
 käytetään ''tällaisia'' lainausmerkkejä ja joskus >>tällaisia>>
@@ -287,12 +287,12 @@ esimerkki. Samoin on puolilainausmerkin kohdalla: `näin'.
 
 Latexissa voi käyttää Unicode\-/merkistöä ja lähdedokumenttiin voi
 kirjoittaa suoraan ne lainausmerkit, jotka halutaan ladottavaksi, mutta
-edellä mainituille merkeille on myös omat komentonsa. Näppäimistöltä
-kirjoitettava yleisheittomerkki (\koodim{'}) tuottaa ladottuna
-automaattisesti oikean kaarevan heittomerkin ('). Kun kirjoittaa kaksi
-heittomerkkiä peräkkäin (\koodim{''}), on lopputuloksena yksi kaareva
-lainausmerkki (''). Kahdella suurempi kuin \=/merkillä (\koodim{>>})
-saadaan kulmalainausmerkki~(>>).
+edellä mainituille merkeille on myös omat merkintätapansa.
+Näppäimistöltä kirjoitettava yleisheittomerkki (\koodim{'}) tuottaa
+ladottuna automaattisesti oikean kaarevan heittomerkin ('). Kun
+kirjoittaa kaksi heittomerkkiä peräkkäin (\koodim{''}), on
+lopputuloksena yksi kaareva lainausmerkki (''). Kahdella suurempi kuin
+\=/merkillä (\koodim{>>}) saadaan kulmalainausmerkki~(>>).
 
 \begin{koodilohkosis}
 ''Lainaus, jonka 'sisällä' on lainaus.'' \\
@@ -358,13 +358,12 @@ tietysti fonttikin vaihtuu. Fontteja käsitellään tarkemmin luvussa
 \end{tulossis}
 
 \noindent
-Paketti \pakettim{csquotes}\avctan{csquotes} sisältää
-lainausmerkkeihin liittyviä komentoja ja kielikohtaista logiikkaa.
-Paketissa olevan \komentom{enquote}\-/ komennon avulla voi jättää
-paketin huoleksi, miten aloittava ja lopettava lainausmerkki tai
-ulommat ja sisemmät lainausmerkit kirjoitetaan missäkin kielessä.
-Luonnollisesti kielipaketti \paketti{polyglossia} tai \paketti{babel}
-täytyy olla ladattuna.
+Paketti \pakettim{csquotes}\avctan{csquotes} sisältää lainausmerkkeihin
+liittyviä komentoja ja kielikohtaista logiikkaa. Paketissa olevan
+\komentom{enquote}\-/ komennon avulla voi jättää paketin huoleksi, miten
+aloittava ja lopettava lainausmerkki tai ulommat ja sisemmät
+lainausmerkit kirjoitetaan missäkin kielessä. Kielipaketti
+\paketti{polyglossia} tai \paketti{babel} täytyy olla ladattuna.
 
 \komentoi{usepackage}
 \pakettii{polyglossia}

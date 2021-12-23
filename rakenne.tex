@@ -1477,8 +1477,7 @@ Tekstin taustaväri vaihdetaan komennoilla \komentom{colorbox} ja
 \komentom{fcolorbox}. Komennot luovat ikään kuin laatikon, jonka sisällä
 taustaväri on voimassa. Ensin mainittu komento vahtaa vain taustavärin,
 ja jälkimäinen sisältää lisäksi värillisen kehyksen, eli sille
-määritellään kaksi väriä. Kehystetyn laatikon kehysviivan leveys on
-mitassa \mittam{fboxrule}.
+määritellään kaksi väriä.
 
 \begin{koodilohkosis}
 \colorbox{nimi}{teksti} % taustaväriksi ennalta määritelty ”nimi”
@@ -1488,9 +1487,10 @@ mitassa \mittam{fboxrule}.
 \end{koodilohkosis}
 
 \noindent
-Seuraavassa on esimerkki joidenkin edellä mainittujen komentojen
-käytöstä. Tästä tuskin kannattaa ottaa mallia vakavaan typografiseen
-työhön.
+Kehystetyn laatikon kehysviivan leveys on mitassa \mittam{fboxrule} ja
+kehyksen etäisyys sisällöstä mitassa \mitta{fboxsep}. Seuraavassa on
+esimerkki useiden edellä mainittujen komentojen käytöstä. Tästä tuskin
+kannattaa ottaa mallia vakavaan typografiseen työhön.
 
 \komentoi{colorbox}
 \komentoi{color}
@@ -1499,14 +1499,17 @@ työhön.
 \komentoi{setlength}
 \komentoi{textcolor}
 \mittai{fboxrule}
+\mittai{fboxsep}
 \begin{koodilohkosis}
-\definecolor{pun}{rgb}{1,.2,.2} \setlength{\fboxrule}{2bp}
+\definecolor{pun}{rgb}{1,.2,.2}
+\setlength{\fboxrule}{2bp} \setlength{\fboxsep}{1bp}
 \fcolorbox[gray]{.4}{.2}{\color[gray]{1}Tekstiä}
 \textcolor{pun}{voi korostaa} \colorbox{pun}{väreillä}.
 \end{koodilohkosis}
 
 \begin{tulossis}
-  \definecolor{pun}{rgb}{1,.2,.2} \setlength{\fboxrule}{2bp}
+  \definecolor{pun}{rgb}{1,.2,.2}
+  \setlength{\fboxrule}{2bp} \setlength{\fboxsep}{1bp}
   \fcolorbox[gray]{.4}{.2}{\color[gray]{1}Tekstiä}
   \textcolor{pun}{voi korostaa} \colorbox{pun}{väreillä}.
 \end{tulossis}
@@ -1519,6 +1522,8 @@ argumentit kuin muillekin värikomennoille. Komento
 \komentom{nopagecolor} poistaa taustavärin kokonaan eli palauttaa
 taustan oletustilaan.
 
+\komentoi{pagecolor}
+\komentoi{nopagecolor}
 \begin{koodilohkosis}
 \pagecolor{nimi} % sivun taustaväriksi ennalta määritelty ”nimi”
 \pagecolor[värimalli]{parametrit}

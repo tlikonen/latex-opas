@@ -155,6 +155,7 @@ fancyhf
 fancy-page-style
 fancy-vrb
 fbox-rule
+fbox-sep
 FB-width
 fcolor-box
 fig-ure
@@ -193,6 +194,7 @@ foot-rule-width
 foot-skip
 fore-ground
 for-eign-lan-guage
+frame-box
 front-mat-ter
 ge-om-e-try
 graph-icx
@@ -441,6 +443,7 @@ pa-pe-ri-ark-kia
 pa-pe-ri-ark-kien
 paper-width
 para-graph
+par-box
 paren-cite
 par-ent
 par-in-dent

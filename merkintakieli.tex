@@ -1863,6 +1863,7 @@ Toinen laatikkokomento \komento{makebox} toimii samalla tavalla kuin
 \komento{mbox} mutta hyväksyy yhden tai kaksi valinnaista argumenttia.
 Komentojen muoto on seuraava:
 
+\komentoi{makebox}
 \begin{koodilohkosis}
 \makebox[leveys]{teksti}
 \makebox[leveys][sijainti]{teksti}
@@ -1877,6 +1878,7 @@ sijoittelun. Kirjain \koodi{c} (\englanti{center}) keskittää sisällön,
 (\englanti{stretch}) tasaa sisällön molemmista reunoista eli venyttää
 laatikon sisäisiä sanavälejä sopivasti.
 
+\komentoi{makebox}
 \begin{koodilohkosis}
 \makebox[12em][s]{Laatikossa on tilaa.}
 \end{koodilohkosis}
@@ -1888,12 +1890,15 @@ laatikon sisäisiä sanavälejä sopivasti.
 \noindent
 \komento{makebox}\-/ komennon \koodi{leveys}\-/ argumentissa voi käyttää
 apuna mittoja \mitta{width} (leveys), \mitta{height} (korkeus),
-\mitta{depth} (syvyys) ja \mitta{totalheight} (\mitta{height} +
-\mitta{depth}), jotka määräytyvät laatikon sisällön luontaisten mittojen
-perusteella. Esimerkiksi seuraava komento latoo laatikon, jonka leveys
-on 1,5\-/ kertainen sisällön luontaiseen leveyteen nähden, ja keskittää
-tekstin. Pystyviivat ovat mukana rajojen hahmottamisen vuoksi.
+\mitta{depth} (syvyys) ja \mitta{totalheight} (kokonaiskorkeus:
+\mitta{height} + \mitta{depth}), jotka määräytyvät laatikon sisällön
+luontaisten mittojen perusteella. Seuraava esimerkki latoo laatikon,
+jonka leveys on 1,5\-/ kertainen sisällön luontaiseen leveyteen nähden,
+ja keskittää tekstin. Pystyviivat ovat mukana rajojen hahmottamisen
+vuoksi.
 
+\komentoi{makebox}
+\mittai{width}
 \begin{koodilohkosis}
 |\makebox[1.5\width][c]{Keskitetty}|
 \end{koodilohkosis}
@@ -1902,5 +1907,113 @@ tekstin. Pystyviivat ovat mukana rajojen hahmottamisen vuoksi.
   |\makebox[1.5\width][c]{Keskitetty}|
 \end{tulossis}
 
-% \mbox, \makebox, \framebox, \parbox, minipage, \raisebox,
-% \scalebox, \resizebox, \rotatebox
+\noindent
+Laatikkokomento \komento{fbox} toimii kuten \komento{mbox} mutta piirtää
+laatikolle myös näkyvät kehykset. Komento \komento{framebox} on
+puolestaan kehyksellinen versio \komento{makebox}\-/ komennosta.
+Kehysviivan leveyden voi asettaa mitan \mitta{fboxrule} avulla, ja
+kehysviivan etäisyys sisällöstä määritellään mitassa \mitta{fboxsep}.
+
+\komentoi{fbox}
+\komentoi{framebox}
+\komentoi{setlength}
+\mittai{fboxrule}
+\mittai{fboxsep}
+\mittai{width}
+\begin{koodilohkosis}
+\setlength{\fboxsep}{3bp}
+\setlength{\fboxrule}{.5bp}
+\framebox[1.2\width][c]{Laatikossa \fbox{laatikko}}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \setlength{\fboxsep}{3bp}
+  \setlength{\fboxrule}{.5bp}
+  \framebox[1.2\width][c]{Laatikossa \fbox{laatikko}}
+\end{tulossis}
+
+\noindent
+Värillisten laatikoiden ja kehysten tekemistä neuvotaan luvussa
+\ref{luku/korostus-värit}, joka käsittelee väriasioita muutenkin.
+
+Edellä käsitellyt laatikkokomennot toimivat tekstikappaleen sisällä
+eivätkä voi itsessään sisältää kappaleen vaihtumista. Sen sijaan
+\komento{parbox}\-/ komennolla voi luoda laatikon, joka voi sisältää
+myös useita tekstikappaleita tai muuta pystysuuntaista sisältöä. Komento
+tarvitsee ainakin kaksi argumenttia: laatikon leveyden ja sisällön.
+
+\komentoi{parbox}
+\begin{koodilohkosis}
+\parbox{leveys}{sisältö}
+\end{koodilohkosis}
+
+\noindent
+\komento{parbox}\-/ laatikon sisällä teksti ladotaan samoin kuin teksti
+normaalistikin eli rivit katkaistaan sanavälien kohdalta ja
+mahdollisesti tavutuskohdista. Muutkin tekstikappaleen asetukset
+pätevät, ja asetukset voi määrittää haluamikseen laatikon sisällä.
+Lisätietoa tekstikappaleista on luvussa \ref{luku/kappale}.
+
+Komento \komento{parbox} hyväksyy myös yhden, kaksi tai kolme
+valinnaista argumenttia. Niillä määritellään laatikon pystysuuntainen
+sijoittelu ympäristöönsä nähden, laatikon korkeus ja laatikon sisällön
+pystysuuntainen sijoittelu. Valinnaiset argumentit toimivat seuraavasti:
+
+\komentoi{parbox}
+\begin{koodilohkosis}
+\parbox[sijainti]{leveys}{sisältö}
+\parbox[sijainti][korkeus]{leveys}{sisältö}
+\parbox[sijainti][korkeus][sisäsijainti]{leveys}{sisältö}
+\end{koodilohkosis}
+
+\noindent
+Argumentti \koodi{sijainti} on kirjain \koodi{c} (\englanti{center},
+keskilinja), \koodi{t} (\englanti{top}, ylälinja) tai \koodi{b}
+(\englanti{bottom}, alalinja). Näillä määritetään, miten laatikko
+sijoitetaan pystysuunnassa suhteessa tekstiin. Seuraava esimerkki
+havainnollistaa ensimmäisen valinnaisen argumentin toimintaa. Laatikon
+sisällä on rivinvaihtokomentoja (\komento{\keno}) ja kolme tekstiriviä.
+
+\komentoi{parbox}
+\begin{koodilohkosis}
+abc \parbox[c]{1em}{1 \\ 2 \\ 3}
+abc \parbox[t]{1em}{1 \\ 2 \\ 3}
+abc \parbox[b]{1em}{1 \\ 2 \\ 3} abc
+\end{koodilohkosis}
+
+\begin{tulossis}
+  abc \parbox[c]{1em}{1 \\ 2 \\ 3}
+  abc \parbox[t]{1em}{1 \\ 2 \\ 3}
+  abc \parbox[b]{1em}{1 \\ 2 \\ 3} abc
+\end{tulossis}
+
+\noindent
+Komennon toinen valinnainen argumentti \koodi{korkeus} määrittää
+laatikon korkeuden. Oletuksena korkeus määräytyy sisällön korkeuden
+mukaan, mutta tällä argumentilla korkeus asetetaan kiinteästi. Se voi
+olla hyödyllistä varsinkin silloin, kun sisältö halutaan tasata laatikon
+sisällä ylös, keskelle tai alas.
+
+Kolmas valinnainen argumentti \koodi{sisäsijainti} nimittäin asettaa
+laatikon sisällön pystysuuntaisen tasauksen. Argumentiksi annetaan
+kirjain \koodi{c} (\englanti{center}, keskelle), \koodi{t}
+(\englanti{top}, ylös), \koodi{b} (\englanti{bottom}, alas) tai
+\koodi{s} (\englanti{stretch}, ylös ja alas). Viimeksi mainittu eli ylös
+ja alas tasaaminen vaatii, että laatikon sisällä on venyviä
+pystysuuntaisia välejä. Niitä käsitellään luvussa
+\ref{luku/venyvät-mitat}.
+
+Ympäristö \ymparisto{minipage} vastaa toiminnallisesti
+\komento{parbox}\-/ komentoa. Se hyväksyy täsmälleen samat argumentit.
+Erona on se, että \ymparisto{minipage}\-/ ympäristön sisällä voi käyttää
+laatikon omia alaviitteitä (luku \ref{luku/alaviitteet}), jotka ladotaan
+laatikon alaosaan.
+
+\ymparistoi{minipage}
+\begin{koodilohkosis}
+\begin{minipage}[sijainti][korkeus][sisäsijainti]{leveys}
+  ...
+\end{minipage}
+\end{koodilohkosis}
+
+% \raisebox, \scalebox, \resizebox, \rotatebox

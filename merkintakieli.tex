@@ -1877,7 +1877,7 @@ mainittu lukumäärä saatiin laskettua seuraavasti:
 \total{chapter}         % Latoo päälukujen (chapter) lukumäärän.
 \end{koodilohkosis}
 
-\section{Laatikot KESKEN}
+\section{Laatikot}
 \label{luku/laatikot}
 
 Tex ajattelee ladottavan tekstin ja muun sisällön laatikoina eli
@@ -2101,6 +2101,115 @@ laatikon alaosaan.
 
 \subsection{Laatikoiden siirtely}
 
-...
+Komennolla \komento{raisebox} voi latoa laatikon tekstin ylemmäs tai
+alemmas kuin se normaalisti sijoittuisi. Komennon ensimmäinen argumentti
+on etäisyysmitta, kuinka paljon ylemmäs teksti ladotaan. Negatiivinen
+mitta vie tekstin alemmas. Toinen argumentti on laatikon teksti.
 
-% \raisebox \scalebox \resizebox \rotatebox
+\komentoi{raisebox}
+\begin{koodilohkosis}
+\raisebox{etäisyysmitta}{teksti}
+\end{koodilohkosis}
+
+\noindent
+Argumentissa \koodi{etäisyysmitta} voi käyttää apuna mittoja
+\mitta{width}, \mitta{height}, \mitta{depth} ja \mitta{totalheight},
+joiden merkitys on sama kuin \komento{makebox}\-/ komennolla (luku
+\ref{luku/laatikot-pienet}). \komento{raisebox}\-/ komennolle voi antaa
+yhden tai kaksi valinnaista argumenttia, joilla määritellään laatikolle
+uusi korkeus ja syvyys. Molemmat ovat mittoja, ja ne korvaavat siirretyn
+laatikon tekstin luonnollisen korkeuden ja syvyyden. Komennon argumentit
+annetaan seuraavasti:
+
+\komentoi{raisebox}
+\begin{koodilohkosis}
+\raisebox{etäisyysmitta}[korkeus]{teksti}
+\raisebox{etäisyysmitta}[korkeus][syvyys]{teksti}
+\end{koodilohkosis}
+
+\noindent
+Grafiikkaan kuten kuviin ja väreihin erikoistunut paketti
+\paketti{graphicx} sisältää hyödyllisiä laatikkokomentoja:
+\komento{scalebox}, \komento{resizebox} ja \komento{rotatebox}. Komento
+\komento{scalebox} skaalaa tekstin eri kokoiseksi vaaka- tai
+pystysuunnassa.
+
+\komentoi{scalebox}
+\begin{koodilohkosis}
+\scalebox{vaakaskaalaus}[pystyskaalaus]{teksti}
+\end{koodilohkosis}
+
+\noindent
+Argumentit \koodi{vaakaskaalaus} ja \koodi{pystyskaalaus} ovat
+kertoimia. Pystysuuntainen skaalausargumentti on valinnainen: jos sen
+jättää pois, pystysuuntainen skaalaus on samansuuruinen kuin
+vaakasuuntainen. Negatiivisella kertoimella voi kääntää tekstin
+toisinpäin.
+
+\komentoi{scalebox}
+\begin{koodilohkosis}
+\scalebox{2}[1]{leveä} \scalebox{-1}[1]{käännetty}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \scalebox{2}[1]{leveä} \scalebox{-1}[1]{käännetty}
+\end{tulossis}
+
+\noindent
+Samantapainen skaalaustoiminto saadaan myös komennolla
+\komento{resizebox}. Sen argumentiksi ei anneta kertoimia vaan mittoja,
+ja teksti skaalataan annettuihin mittoihin.
+
+\komentoi{resizebox}
+\begin{koodilohkosis}
+\resizebox {vaakamitta}{pystymitta}{teksti}
+\resizebox*{vaakamitta}{pystymitta}{teksti}
+\end{koodilohkosis}
+
+\noindent
+Komennon normaali versio käsittelee \koodi{pystymitta}\-/ argumentin
+siten, että se tulee olemaan tekstin korkeus eli kirjainten peruslinjan
+yläpuolinen osa. Komennon tähdellinen versio puolestaan toimii siten,
+että pystymitta on tekstin kokonaiskorkeus eli peruslinjan yläpuolinen
+osa (korkeus) ja alapuolinen osa (syvyys) yhdessä. Kuva
+\ref{kuva/kirjainmitat} (s.~\pageref{kuva/kirjainmitat}) havainnollistaa
+asiaa. \komento{resizebox}\-/ komennon argumenteissa voi käyttää apuna
+mittoja \mitta{width}, \mitta{height}, \mitta{depth} ja
+\mitta{totalheight} samoin kuin \komento{makebox}\-/ komennossa (luku
+\ref{luku/laatikot-pienet}).
+
+Laatikoiden pyörittely käy \komento{rotatebox}\-/ komennolla. Sen
+argumentiksi täytyy antaa ainakin kääntökulma asteina ja käännettävä
+teksti.
+
+\komentoi{rotatebox}
+\begin{koodilohkosis}
+\rotatebox[asetuksia]{kääntökulma}{teksti}
+\end{koodilohkosis}
+
+\noindent
+Valinnainen argumentti \koodi{asetuksia} voi sisältää asetusvalitsimia
+ja niiden arvoja. Tärkein valitsin on \koodi{origin}, jolla määritetään
+käännettävän tekstin kääntöpiste. Valitsimen arvoksi annetaan yksi tai
+kaksi seuraavista kirjaimista: \koodi{c} (\englanti{center}, keski),
+\koodi{l} (\englanti{left}, vasen), \koodi{r} (\englanti{right}, oikea),
+\koodi{t} (\englanti{top}, ylä), \koodi{b} (\englanti{bottom}, ala) tai
+\koodi{B} (\englanti{baseline}, peruslinja).
+
+\komentoi{rotatebox}
+\begin{koodilohkosis}
+\rotatebox[origin=l] {25}{ylämäki}
+\rotatebox[origin=r]{-25}{alamäki}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \rotatebox[origin=l] {25}{ylämäki}
+  \rotatebox[origin=r]{-25}{alamäki}
+\end{tulossis}
+
+\noindent
+\komento{rotatebox}\-/ komennon valinnaisen argumentin valitsin
+\koodi{units} määrittelee käytetyn kulmayksikön. Valitsimelle annetaan
+arvoksi täysympyrän yksikkömäärä, ja oletusasetus on \koodi{units=\katk
+  360}. Jos haluaa käyttää radiaaneja, sopiva asetus on
+\koodi{units=\katk 6.283185} (2π\,rad).

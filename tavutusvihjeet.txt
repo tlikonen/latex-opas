@@ -499,12 +499,14 @@ ragged-bottom
 ragged-columns
 ragged-left
 ragged-right
+raise-box
 real-scripts
 ref-name
 ref-step-counter
 reg-tot-counter
 re-new-com-mand
 re-new-en-vi-ron-ment
+re-size-box
 re-store-cr
 re-store-ge-om-e-try
 reverse-margin-par
@@ -513,10 +515,12 @@ right-margin
 right-mark
 rivin-osan
 rm-fam-i-ly
+ro-tate-box
 rule
 sak-ko-ar-voa
 sa-man-aikai-ses-ti
 Scale
+scale-box
 sc-shape
 sec-num-depth
 sec-tion
@@ -559,6 +563,7 @@ si-vu-alueel-le
 si-vu-alueen
 si-vu-aluei-den
 sivu-koko-ase-tuk-sia
+skaa-laus-ar-gu-ment-ti
 skaa-laus-ase-tus
 slides
 slope
@@ -675,6 +680,7 @@ top-number
 top-rule
 top-sep
 total
+total-height
 total-number
 tot-count
 tot-pages
@@ -700,6 +706,7 @@ tyy-li-ase-tus
 tyy-li-ase-tus-ten
 tär-keys-as-teil-le
 tär-keys-as-tei-sia
+täys-ym-py-rän
 UL-depth
 ulko-asu
 ulko-asua

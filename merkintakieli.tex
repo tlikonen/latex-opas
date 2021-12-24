@@ -1888,11 +1888,15 @@ tilaa sivulta.
 
 Dokumentin kirjoittajalle on välillä hyötyä luoda omia laatikoita, koska
 laatikko toimii yhtenä kokonaisuutena, jonka reunoja muut elementit ja
-latomiskoneisto kunnioittavat. Yksinkertainen peruslaatikko tehdään
-\komento{mbox}\-/ komennolla, joka latoo argumenttina annetun tekstin
-näkymättömän laatikon sisään. Näin luotu laatikko pysyy koossa, eli sen
-sisältämiä sanoja ei esimerkiksi tavuteta. Komento sopiikin hyvin
-tavutuksen estämiseen yksittäisessä tilanteessa.
+latomiskoneisto kunnioittavat.
+
+\subsection{Pienet laatikot}
+
+Yksinkertainen peruslaatikko tehdään \komento{mbox}\-/ komennolla, joka
+latoo argumenttina annetun tekstin näkymättömän laatikon sisään. Näin
+luotu laatikko pysyy koossa, eli sen sisältämiä sanoja ei esimerkiksi
+tavuteta. Komento sopiikin hyvin tavutuksen estämiseen yksittäisessä
+tilanteessa.
 
 Toinen laatikkokomento \komento{makebox} toimii samalla tavalla kuin
 \komento{mbox} mutta hyväksyy yhden tai kaksi valinnaista argumenttia.
@@ -2009,12 +2013,12 @@ jonka korkeus on rivikorkeuden mukainen.
   \fbox{\strut sana} \fbox{\strut kirja} \fbox{\strut ×}
 \end{tulossis}
 
-\noindent
-Edellä käsitellyt laatikkokomennot toimivat tekstikappaleen sisällä
-eivätkä voi itsessään sisältää kappaleen vaihtumista. Sen sijaan
-\komento{parbox}\-/ komennolla voi luoda laatikon, joka voi sisältää
-myös useita tekstikappaleita tai muuta pystysuuntaista sisältöä. Komento
-tarvitsee ainakin kaksi argumenttia: laatikon leveyden ja sisällön.
+\subsection{Suuret laatikot}
+
+Jos laatikon täytyy sisältää useita tekstikappaleita tai muuta
+pystysuuntaista sisältöä, tarvitaan esimerkiksi \komento{parbox}\-/
+komentoa. Se tarvitsee ainakin kaksi argumenttia: laatikon leveyden ja
+sisällön.
 
 \komentoi{parbox}
 \begin{koodilohkosis}
@@ -2090,4 +2094,8 @@ laatikon alaosaan.
 \end{minipage}
 \end{koodilohkosis}
 
-% \raisebox, \scalebox, \resizebox, \rotatebox, \strut
+\subsection{Laatikoiden siirtely}
+
+...
+
+% \raisebox \scalebox \resizebox \rotatebox

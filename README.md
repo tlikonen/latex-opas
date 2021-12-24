@@ -153,3 +153,4 @@ Puutteita ja suunnitelmia
     puutteet ja vaihtoehdon `marginnote`.
   - Mahdollisesti käsitellään wrapfig-paketti.
   - Uusi `fi-x-school`-tavutuskaava.
+  - Mittojen käsittelyn yhteydessä voisi käsitellä calc-paketin.

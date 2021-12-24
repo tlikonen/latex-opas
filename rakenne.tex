@@ -1112,6 +1112,24 @@ Toinen paketti alleviivausten ja yliviivausten tekemiseen on
 kuten aalto- ja katkoviivoja, mutta viivan etäisyyden ja paksuuden
 määrittämiseen on hieman kätevämmät komennot.
 
+Tekstin alleviivauksen lisäksi on olemassa pari komentoa, joilla saa
+ladottua pelkän viivan ilman tekstiä. Komento \komento{hrulefill} latoo
+kaiken tilan täyttävän alaviivan ja komento \komento{dotfill} kaiken
+tilan täyttävän pisteviivan. Myös \komento{rule}\-/ komento voi soveltua
+alaviivojen toteuttamiseen. Komentoa käsitellään erikoismerkkien
+yhteydessä luvussa \ref{luku/tarkkeet}.
+
+\komentoi{hrulefill}
+\komentoi{dotfill}
+\komentoi{rule}
+\begin{koodilohkosis}
+abc \hrulefill\ abc \dotfill\ abc \rule[-.3ex]{5em}{.4bp} abc
+\end{koodilohkosis}
+
+\begin{tulossis}
+  abc \hrulefill\ abc \dotfill\ abc \rule[-.3ex]{5em}{.4bp} abc
+\end{tulossis}
+
 \subsection{Harvennus ja tiivistys}
 \label{luku/korostus-harvennus}
 

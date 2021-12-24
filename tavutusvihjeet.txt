@@ -124,6 +124,7 @@ dis-cre-tionary
 dis-play-math
 doc-u-ment
 doc-u-ment-class
+dot-fill
 double-rule-sep
 ed-i-tor
 emer-gen-cy-stretch
@@ -217,6 +218,7 @@ head-rule-width
 head-sep
 hide-links
 hline
+hrule-fill
 hspace
 hyper-ref
 hyper-setup
@@ -511,6 +513,7 @@ right-margin
 right-mark
 rivin-osan
 rm-fam-i-ly
+rule
 sak-ko-ar-voa
 sa-man-aikai-ses-ti
 Scale

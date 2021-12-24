@@ -1959,6 +1959,47 @@ kehysviivan etäisyys sisällöstä määritellään mitassa \mitta{fboxsep}.
 Värillisten laatikoiden ja kehysten tekemistä neuvotaan luvussa
 \ref{luku/korostus-värit}, joka käsittelee väriasioita muutenkin.
 
+Tekstiä sisältävien laatikoiden korkeus vaihtelee kirjainten ja muiden
+merkkien muodon mukaan. Esimerkiksi kirjainten ala- ja yläpidennykset
+kasvattavat laatikon kokoa gemenalinjan yläpuolelle tai peruslinjan
+alapuolelle. Seuraavasta esimerkistä voi vertailla tekstilaatikoiden
+muodostumista:
+
+\komentoi{setlength}
+\komentoi{fbox}
+\mittai{fboxsep}
+\begin{koodilohkosis}
+\setlength{\fboxsep}{0bp}
+\fbox{sana} \fbox{kirja} \fbox{×}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \setlength{\fboxsep}{0bp}
+  \fbox{sana} \fbox{kirja} \fbox{×}
+\end{tulossis}
+
+\noindent
+Edellisen esimerkin kaltaisissa tilanteissa voi olla tarpeen käyttää
+laatikon sisällä komentoa \komento{strut}. Se latoo näkymättömän merkin,
+jonka korkeus on rivikorkeuden mukainen. Tarkemmin sanottuna korkeus eli
+tekstin peruslinjan yläpuolinen osa on 0,7 kertaa
+\mitta{baselineskip}\-/ mitta ja syvyys eli peruslinjan alapuolinen osa
+on 0,3 kertaa \mitta{baselineskip}.
+
+\komentoi{setlength}
+\komentoi{fbox}
+\mittai{fboxsep}
+\begin{koodilohkosis}
+\setlength{\fboxsep}{0bp}
+\fbox{\strut sana} \fbox{\strut kirja} \fbox{\strut ×}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \setlength{\fboxsep}{0bp}
+  \fbox{\strut sana} \fbox{\strut kirja} \fbox{\strut ×}
+\end{tulossis}
+
+\noindent
 Edellä käsitellyt laatikkokomennot toimivat tekstikappaleen sisällä
 eivätkä voi itsessään sisältää kappaleen vaihtumista. Sen sijaan
 \komento{parbox}\-/ komennolla voi luoda laatikon, joka voi sisältää

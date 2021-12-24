@@ -723,6 +723,18 @@ korkeus on rivikorkeuden eli mitan \mitta{baselineskip} mukainen.
 Komentoa voi tarvita joskus esimerkiksi laatikoiden sisällä (luku
 \ref{luku/laatikot}).
 
+Käytännössä \komento{strut}\-/ komento hyödyntää sisäisesti
+\komento{rule}\-/ komentoa ja latoo sen avulla leveydettömän
+suorakulmion. Tarkemmin sanottuna korkeus eli tekstin peruslinjan
+yläpuolinen osa on 0,7 kertaa \mitta{baselineskip}\-/ mitta ja syvyys
+eli peruslinjan alapuolinen osa on 0,3 kertaa \mitta{baselineskip}.
+
+\komentoi{rule}
+\mittai{baselineskip}
+\begin{koodilohkosis}
+\rule[-0.3\baselineskip]{0bp}{\baselineskip}
+\end{koodilohkosis}
+
 \section{Komennot}
 \label{luku/komennot}
 
@@ -1981,13 +1993,11 @@ muodostumista:
 \noindent
 Edellisen esimerkin kaltaisissa tilanteissa voi olla tarpeen käyttää
 laatikon sisällä komentoa \komento{strut}. Se latoo näkymättömän merkin,
-jonka korkeus on rivikorkeuden mukainen. Tarkemmin sanottuna korkeus eli
-tekstin peruslinjan yläpuolinen osa on 0,7 kertaa
-\mitta{baselineskip}\-/ mitta ja syvyys eli peruslinjan alapuolinen osa
-on 0,3 kertaa \mitta{baselineskip}.
+jonka korkeus on rivikorkeuden mukainen.
 
 \komentoi{setlength}
 \komentoi{fbox}
+\komentoi{strut}
 \mittai{fboxsep}
 \begin{koodilohkosis}
 \setlength{\fboxsep}{0bp}

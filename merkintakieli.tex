@@ -542,11 +542,8 @@ ehkä ihan helposti saa suoraan näppäimistöltä. Komentoja on koottu
 taulukoihin \ref{tlk/tarkkeet}, \ref{tlk/erikoismerkit-lainaus} ja
 \ref{tlk/erikoismerkit-muut}. Taulukon tarkekomennoissa on käytetty
 a\=/kirjainta esimerkkinä, mutta tarke voi liittyä muihinkin kirjaimiin.
-\marginaali{\TeX} \marginaali{\LaTeX} Merkit voi kirjoittaa
-Latex\-/lähdedokumenttiin myös sellaisenaan, eli näiden komentojen
-käyttö ei ole välttämätöntä. Tarke- ja erikoismerkkikomentojen lisäksi
-on komennot ladontajärjestelmän logojen kirjoittamiseen: \komento{TeX}
-ja \komento{LaTeX}.
+Merkit voi kirjoittaa Latex\-/lähdedokumenttiin myös sellaisenaan, eli
+näiden komentojen käyttö ei ole välttämätöntä.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -699,6 +696,32 @@ ja \komento{LaTeX}.
   \caption{Komentoja erikoismerkkien kirjoittamiseen}
   \label{tlk/erikoismerkit-muut}
 }
+
+Tarke- ja erikoismerkkikomentojen lisäksi on olemassa sekalaisia muita
+komentoja erikoisempien asioiden latomiseen. \marginaali{\TeX}
+\marginaali{\LaTeX} Ladontajärjestelmän logojen kirjoittamiseen on
+komennot \komento{TeX} ja \komento{LaTeX}. Suorakulmioita voi tehdä
+\komento{rule}\-/ komennolla, jolle annetaan argumenteiksi ainakin kaksi
+mittaa: leveys ja korkeus. Myös yksi hakasulkeissa annettu valinnainen
+argumentti on mahdollinen. Sekin on mitta ja ilmaisee, kuinka paljon
+suorakulmiota nostetaan tekstin peruslinjasta. Negatiivinen mitta laskee
+suorakulmiota alaspäin. Latexin mittoja ja mittayksiköitä käsitellään
+luvussa \ref{luku/mitat}.
+
+\komentoi{rule}
+\begin{koodilohkosis}
+\rule{1ex}{1ex} abc \rule{3em}{.5bp} abc \rule[1ex]{3em}{.5bp}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \rule{1ex}{1ex} abc \rule{3em}{.5bp} abc \rule[1ex]{3em}{.5bp}
+\end{tulossis}
+
+\noindent
+Komento \komento{strut} latoo näkymättömän, leveydettömän merkin, jonka
+korkeus on rivikorkeuden eli mitan \mitta{baselineskip} mukainen.
+Komentoa voi tarvita joskus esimerkiksi laatikoiden sisällä (luku
+\ref{luku/laatikot}).
 
 \section{Komennot}
 \label{luku/komennot}

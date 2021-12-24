@@ -518,6 +518,21 @@ käyttöjärjestelmän komentotulkissa komennolla \koodi{otfinfo}. Toisaalta
 fonttiin sisältyviä ylä- ja alaindeksejä voi myös kirjoittaa
 Unicode\-/merkistön avulla sellaisenaan. Lopputulos on sama.
 
+\subsection{Tavutusvihje}
+
+Komento \komentom{-} on tavutusvihje, joka neuvoo tavutusalgoritmia
+katkaisemaan sanan tästä kohdasta. Samalla se voi estää sanan
+katkaisemisen muista kohdista.
+
+\begin{koodilohkosis}
+tavutus\-algo\-ritmi
+\end{koodilohkosis}
+
+\noindent
+Myös sanassa olevat yhdysmerkit ja ajatusviivat vaikuttavat sanan
+tavuttamiseen. Perusteellisemmin tavutusta ja sen asetuksia käsitellään
+luvussa \ref{luku/tavutus}.
+
 \subsection{Tarkkeet ja erikoismerkit}
 \label{luku/tarkkeet}
 
@@ -684,21 +699,6 @@ ja \komento{LaTeX}.
   \caption{Komentoja erikoismerkkien kirjoittamiseen}
   \label{tlk/erikoismerkit-muut}
 }
-
-\subsection{Tavutusvihje}
-
-Komento \komentom{-} on tavutusvihje, joka neuvoo tavutusalgoritmia
-katkaisemaan sanan tästä kohdasta. Samalla se voi estää sanan
-katkaisemisen muista kohdista.
-
-\begin{koodilohkosis}
-tavutus\-algo\-ritmi
-\end{koodilohkosis}
-
-\noindent
-Myös sanassa olevat yhdysmerkit ja ajatusviivat vaikuttavat sanan
-tavuttamiseen. Perusteellisemmin tavutusta ja sen asetuksia käsitellään
-luvussa \ref{luku/tavutus}.
 
 \section{Komennot}
 \label{luku/komennot}

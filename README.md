@@ -50,6 +50,8 @@ Tekijä: Teemu Likonen <<tlikonen@iki.fi>>
 
 OpenPGP-avain: [6965F03973F0D4CA22B9410F0F2CAE0E07608462][PGP]
 
+[PGP]: http://www.iki.fi/tlikonen/pgp-key.asc
+
 Lisenssi: *Creative Commons Nimeä-JaaSamoin 4.0 Kansainvälinen* (CC
 BY-SA 4.0). Lisenssi antaa sinulle luvan kopioida ja levittää tätä
 teosta tai sen osia missä tahansa välineessä ja muodossa. Sisältöä saa
@@ -65,17 +67,6 @@ tarkoitukseen, myös kaupallisesti. Ehdot ovat seuraavat:
     jotka estävät muita tekemästä asioita, jotka tämä lisenssi sallii.
 
 [CC]: https://creativecommons.org/licenses/by-sa/4.0/legalcode.fi
-
-Poikkeus lisenssiin: Jos teet tästä teoksesta oman sähköisen dokumentin
-(esim. PDF), dokumenttiin mahdollisesti upotettavat fontit eivät kuulu
-tämän lisenssin piiriin, eli niillä saa olla jokin toinen lisenssi.
-Ilmaise sähköisen dokumentin käyttäjille selvästi, jos upotettujen
-fonttien lisenssi rajoittaa käyttöä eri tavalla kuin tämä lisenssi ja
-että tämä lisenssi on silti voimassa teoksen muun sisällön osalta. (Jos
-haluat, voit poistaa tämän poikkeuksen, jolloin myös fonttien lisenssin
-on oltava yhteensopiva tämän lisenssin kanssa.)
-
-[PGP]: http://www.iki.fi/tlikonen/pgp-key.asc
 
 
 Kääntäminen ja asentaminen

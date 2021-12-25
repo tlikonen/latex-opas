@@ -2000,8 +2000,9 @@ muodostumista:
 
 \noindent
 Edellisen esimerkin kaltaisissa tilanteissa voi olla tarpeen käyttää
-laatikon sisällä komentoa \komento{strut}. Se latoo näkymättömän merkin,
-jonka korkeus on rivikorkeuden mukainen.
+laatikon sisällä komentoa \komento{strut}. Se latoo näkymättömän,
+leveydettömän merkin, jonka korkeus on rivikorkeuden mukainen (mitta
+\mitta{baselineskip}).
 
 \komentoi{setlength}
 \komentoi{fbox}
@@ -2158,20 +2159,22 @@ toisinpäin.
 \noindent
 Samantapainen skaalaustoiminto saadaan myös komennolla
 \komento{resizebox}. Sen argumentiksi ei anneta kertoimia vaan mittoja,
-ja teksti skaalataan annettuihin mittoihin.
+eli teksti skaalataan annettuihin mittoihin.
 
 \komentoi{resizebox}
+\komentoi{resizebox*}
 \begin{koodilohkosis}
 \resizebox {vaakamitta}{pystymitta}{teksti}
 \resizebox*{vaakamitta}{pystymitta}{teksti}
 \end{koodilohkosis}
 
 \noindent
-Komennon normaali versio käsittelee \koodi{pystymitta}\-/ argumentin
-siten, että se tulee olemaan tekstin korkeus eli kirjainten peruslinjan
-yläpuolinen osa. Komennon tähdellinen versio puolestaan toimii siten,
-että pystymitta on tekstin kokonaiskorkeus eli peruslinjan yläpuolinen
-osa (korkeus) ja alapuolinen osa (syvyys) yhdessä. Kuva
+Komennon \komentoi{resizebox} normaali versio käsittelee
+\koodi{pystymitta}\-/ argumentin siten, että se tulee olemaan tekstin
+korkeus eli kirjainten peruslinjan yläpuolinen osa. Komennon
+\komentoi{resizebox*} tähdellinen versio puolestaan toimii siten, että
+pystymitta on tekstin kokonaiskorkeus eli peruslinjan yläpuolinen osa
+(korkeus) ja alapuolinen osa (syvyys) yhdessä. Kuva
 \ref{kuva/kirjainmitat} (s.~\pageref{kuva/kirjainmitat}) havainnollistaa
 asiaa. \komento{resizebox}\-/ komennon argumenteissa voi käyttää apuna
 mittoja \mitta{width}, \mitta{height}, \mitta{depth} ja

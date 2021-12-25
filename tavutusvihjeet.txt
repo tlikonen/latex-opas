@@ -746,6 +746,7 @@ vek-tori-gra-fiik-ka-font-te-ja
 vek-tori-gra-fiik-ka-ku-viot
 ver-ba-tim
 verse
+vir-he-il-moi-tuk-seen
 vir-he-il-moi-tuk-sen
 vir-he-il-moi-tus
 vir-he-il-moi-tus-ta

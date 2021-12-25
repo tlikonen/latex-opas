@@ -2,7 +2,7 @@
 % Lisenssi: Creative Commons Nimeä-JaaSamoin 4.0 Kansainvälinen (CC BY-SA 4.0)
 % https://creativecommons.org/licenses/by-sa/4.0/legalcode.fi
 
-\chapter{Merkintäkieli ja perustekniikka KESKEN}
+\chapter{Merkintäkieli ja perustekniikka}
 
 Latex on merkintäkieli, mikä tarkoittaa, että se sisältää omat tapansa
 dokumentin rakenteen ja sisällön kuvaamiseen. Kaikkea ei kirjoiteta
@@ -992,11 +992,29 @@ suostu ottamaan vastaan argumentteja, jotka sisältävät kappaleen
 vaihtumisen eli enemmän kuin yhden tekstikappaleen. Tämä voi olla
 hyödyllinen suojausominaisuus.
 
-\subsection{Kestävät ja hauraat komennot KESKEN}
+\subsection{Kestävät ja hauraat komennot}
+\label{luku/komennot-hauraat}
 
-...
+Kaikki Latex\-/ komennot ovat joko kestäviä (\englanti{robust}) tai
+hauraita (\englanti{fragile}). Tällä ei ole yleensä käytännön
+merkitystä, mutta hauraat komennot eivät välttämättä toimi toisen
+komennon argumentissa.
 
-% \protect
+Hauraita komentoja ovat sellaiset, jotka sisältävät tietoa, jota Latex
+kirjoittaa väliaikaistiedostoon ja lukee sieltä takaisin. Kyse on
+esimerkiksi sisällysluetteloon tai muihin automaattisiin luetteloihin
+kirjoitettavasta tiedosta. Hauraita ovat myös rivinvaihdot ja
+valinnaisia argumentteja eli hakasulkeissa annettavia argumentteja
+sisältävät komennot.
+
+Käytännössä ongelmia aiheuttavat esimerkiksi otsikkokomennot
+(\komento{section} ym.) sekä kuvatekstikomento \komento{caption}. Näiden
+argumenttina oleva teksti (ja mahdolliset komennot) kirjoitetaan
+tiedostoon ja ladataan sieltä myöhemmin takaisin. Hauraat komennot eivät
+toimi edellä mainittujen komentojen argumentissa, ja lähdetiedoston
+kääntäminen johtaa virheilmoitukseen. Ongelman voi ainakin joskus
+korjata kirjoittamalla hauraan komennon eteen komennon
+\komento{protect}.
 
 \subsection{Muita vinkkejä}
 

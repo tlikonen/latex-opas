@@ -616,9 +616,9 @@ taulukoissa, joita käsitellään luvussa \ref{luku/taulukot}.
 \subsection{Lesket ja orvot}
 
 Leski- ja orporivit tarkoittavat typografiassa rumannäköisiä yksinäisiä
-rivejä. Leskirivi (engl. \englantik{widow}) on tekstikappaleen viimeinen
-rivi, joka on yksinään sivun tai palstan yläreunassa. Orporivi (engl.
-\englantik{orphan}) puolestaan on tekstikappaleen ensimmäinen rivi, joka
+rivejä. Leskirivi (\englanti{widow}) on tekstikappaleen viimeinen rivi,
+joka on yksinään sivun tai palstan yläreunassa. Orporivi
+(\englanti{orphan}) puolestaan on tekstikappaleen ensimmäinen rivi, joka
 on yksin sivun tai palstan alareunassa. Molemmat voivat näyttää
 ikävältä, mutta yleensä orporivejä ei pidetä kovin vakavana virheenä;
 leskien välttämisessä ollaan enemmän tosissaan.
@@ -660,8 +660,8 @@ argumentiksi luvun, joka kertoo yhdessä pidettävien rivien määrän.
 Jos ei halua tai voi käyttää \paketti{nowidow}\-/pakettia, voi leski- ja
 orporivit estää myös Texin matalan tason toimintojen avulla.
 Ladonta\-/algoritmi käyttää leski- ja orporiveissä sisäisesti
-haitallisuusarvoa tai sakkoarvoa (engl. \englantik{penalty}), ja jos
-lesket ja orvot halutaan estää, määritellään niiden haitallisuusarvo
+haitallisuusarvoa tai sakkoarvoa (\englanti{penalty}), ja jos lesket ja
+orvot halutaan estää, määritellään niiden haitallisuusarvo
 mahdollisimman korkeaksi. Käytännössä arvo 10\,000 tarkoittaa samaa kuin
 ääretön, eli silloin lesken tai orvon haitallisuus on niin suuri, että
 sellaisia ei sallita.
@@ -1888,15 +1888,15 @@ tavalla:
 \noindent
 Edellä olevan esimerkin komento \komentom{addcontentsline} lisää
 merkinnän sisällysluetteloon. Komennon ensimmäinen argumentti on
-\koodi{toc} (\englantik{table of contents}), joka on
-sisällysluetteloiden tekemisessä tarvittavan väliaikaistiedoston pääte.
-Esimerkissä lisättävä sisällysluettelon merkintä on tasoltaan
-\koodi{section} eli vastaa muita \komento{section}\-/ komennolla
-syntyviä sisällysluettelon kohtia. Komento \komentom{phantomsection}
-kuuluu \paketti{hyperref}\-/ pakettiin, ja se lisää pdf\-/ tiedostoon
-näkymättömän ankkurin tähän kohtaan dokumentissa. Sitä tarvitaan, jotta
-sisällysluettelon merkintä viittaisi oikealle sivulle ja toimisi myös
-linkkinä, joka tuo juuri tähän kohtaan.
+\koodi{toc} (\englanti{table of contents}), joka on sisällysluetteloiden
+tekemisessä tarvittavan väliaikaistiedoston pääte. Esimerkissä lisättävä
+sisällysluettelon merkintä on tasoltaan \koodi{section} eli vastaa muita
+\komento{section}\-/ komennolla syntyviä sisällysluettelon kohtia.
+Komento \komentom{phantomsection} kuuluu \paketti{hyperref}\-/
+pakettiin, ja se lisää pdf\-/ tiedostoon näkymättömän ankkurin tähän
+kohtaan dokumentissa. Sitä tarvitaan, jotta sisällysluettelon merkintä
+viittaisi oikealle sivulle ja toimisi myös linkkinä, joka tuo juuri
+tähän kohtaan.
 
 \subsection{Otsikoiden numerointi}
 \label{luku/otsikot-numerointi}
@@ -3691,16 +3691,16 @@ seuraavan esimerkin avulla ominaisuutta pääsee kokeilemaan:
 \section{Leijuvat osat}
 \label{luku/leijuosat}
 
-Leijuvat osat (engl. \englantik{float}) ovat sellaisia dokumentin osia
--- käytännössä ympäristöjä~--, joita ei ladota normaalin leipätekstin
-sekaan tiettyyn kohtaan. Ne ''leijuvat'' irrallaan muusta
-tekstivirrasta, ja Latex huolehtii niiden sijoittelusta. Leijuvilla
-osilla on yleensä kuvateksti, jonka alussa on sen tyyppi ja numero,
-esimerkiksi ''\figurename~1'' tai ''\tablename\ 4.2''. Näiden perässä on
-varsinainen kuvateksti, joka kertoo kyseisen leijuvan osan sisällöstä
-tai merkityksestä. Leipätekstistä usein viitataan leijuviin osiin
-käyttämällä ilmauksia kuten ''kuvassa~1''. Näissä hyödynnetään Latexin
-ristiviittaustoimintoja (luku \ref{luku/ristiviitteet}).
+Leijuvat osat ovat sellaisia dokumentin osia -- käytännössä
+ympäristöjä~--, joita ei ladota normaalin leipätekstin sekaan tiettyyn
+kohtaan. Ne ''leijuvat'' irrallaan muusta tekstivirrasta, ja Latex
+huolehtii niiden sijoittelusta. Leijuvilla osilla on yleensä kuvateksti,
+jonka alussa on sen tyyppi ja numero, esimerkiksi ''\figurename~1'' tai
+''\tablename\ 4.2''. Näiden perässä on varsinainen kuvateksti, joka
+kertoo kyseisen leijuvan osan sisällöstä tai merkityksestä.
+Leipätekstistä usein viitataan leijuviin osiin käyttämällä ilmauksia
+kuten ''kuvassa~1''. Näissä hyödynnetään Latexin ristiviittaustoimintoja
+(luku \ref{luku/ristiviitteet}).
 
 Perus Latex sisältää kaksi erityyppistä leijuvaa osaa, kuvat ja taulukot
 (luku \ref{luku/leijuosat-latex}), mutta \pakettim{floatrow}\-/ paketin
@@ -3888,11 +3888,11 @@ sijoitteluun. Oletusarvo on \koodi{tbp}.
 Valitsin \koodi{file\-ext} on tiedoston pääte. Leijuvien osien
 luetteloita tehtäessä Latex käyttää väliaikaistiedostoa, ja sen päätteen
 voi valita tällä valitsimella. Luetteloissa on tapana käyttää
-tiedostopäätettä, joka alkaa kirjaimilla \koodi{lo} (\englantik{list
+tiedostopäätettä, joka alkaa kirjaimilla \koodi{lo} (\englanti{list
   of}). Latexin omissa leijuvissa osissa päätteet ovat \koodi{lot}
-(\englantik{list of tables}) ja \koodi{lof} (\englantik{list of
-  figures}). Oletuksena omille leijuville osille tulee päätteeksi
-\koodi{lo}, jonka perässä on osan tyyppi.
+(\englanti{list of tables}) ja \koodi{lof} (\englanti{list of figures}).
+Oletuksena omille leijuville osille tulee päätteeksi \koodi{lo}, jonka
+perässä on osan tyyppi.
 
 Valitsimen \koodi{within} avulla vaikutetaan leijuvien osien numeroinnin
 riippuvuuteen muista laskureista. Oletuksena leijuvan osan laskuri ei
@@ -3986,8 +3986,8 @@ asetuksiin.
 Luetteloihin saa lisättyä omia rivejä samoilla keinoilla kuin
 sisällysluetteloihinkin eli komennolla \komento{addcontentsline}.
 Komennon ensimmäinen argumentti on luettelon tyyppiä vastaavan tiedoston
-pääte. Tyyppi \koodi{lot} (\englantik{list of tables}) on taulukoille
-ja tyyppi \koodi{lof} (\englantik{list of figures}) on kuville. Omilla
+pääte. Tyyppi \koodi{lot} (\englanti{list of tables}) on taulukoille ja
+tyyppi \koodi{lof} (\englanti{list of figures}) on kuville. Omilla
 leijuvilla osilla (luku \ref{luku/leijuosat-omat}) se on jotakin muuta
 ja valitaan osan määrittelyn yhteydessä.
 

@@ -11,7 +11,7 @@ texmf = $(HOME)/texmf
 lualatex = lualatex -interaction=nonstopmode -shell-escape
 latexmk = latexmk -lualatex -lualatex="$(lualatex) %O %S"
 
-$(nimi).pdf: versio.tex versio.txt $(lahde)
+$(nimi).pdf: versio.tex $(lahde)
 	@if which latexmk >/dev/null; \
 		then $(latexmk) $(nimi) && touch $@; \
 		else $(lualatex) $(nimi) && biber $(nimi) && \
@@ -19,16 +19,10 @@ $(nimi).pdf: versio.tex versio.txt $(lahde)
 		fi
 	@sed -En -e 's/^ *(\\label\{[^}]+\}).*$$/\1/p' $(lahde) | \
 		sort | uniq -cd
-	@echo "Versio: $(shell cat versio.txt)"
 
-versio.txt: $(lahde)
-	if v=$$(git describe --always --dirty); \
-		then echo "$$v" > $@; \
-		else echo "$(versio)" > $@; \
-		fi
-
-versio.tex: versio.txt
-	echo '\\newcommand{\\versio}{$(shell cat $<)}' > $@
+versio.tex: $(lahde)
+	v=$$(git describe --always --dirty) || v="$(versio)"; \
+		echo "\\\\newcommand{\\\\versio}{$$v}" > $@
 
 tavutusvihjeet.txt:
 	sort -u $@ > $@.tmp && mv $@.tmp $@
@@ -66,7 +60,7 @@ clean:
 	rm -fr doc
 
 distclean: clean
-	rm -f $(nimi).pdf versio.tex versio.txt tavutusvihjeet.tex TAGS
+	rm -f $(nimi).pdf versio.tex tavutusvihjeet.tex TAGS
 
 TAGS: $(lahde)
 	etags $(lahde)

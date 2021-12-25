@@ -141,9 +141,8 @@ dokumentin asetuksiin.
 Sivu on oletuksena pystyasennossa, mutta valitsin \koodim{landscape}
 asettaa sen vaaka\-/asentoon. Tämä asetus koskee dokumentin kaikkia
 sivuja, mutta jos haluaa asettaa vain yksittäisiä sivuja
-vaaka\-/asentoon, täytyy käyttää
-\paketti{pdflscape}\-/pakettia\avctan{pdflscape} ja sen tarjoamaa
-ympäristöä.
+vaaka\-/asentoon, täytyy käyttää \pakettictan{pdflscape}\-/ pakettia ja
+sen tarjoamaa ympäristöä.
 
 Sivun koon ja muitakin mittoja voi määritellä monipuolisemmin
 \paketti{geometry}\-/paketin toimintojen avulla (luku
@@ -298,9 +297,9 @@ ohjeita on luvussa \ref{luku/ylä-ala-tunnisteet}.
 \label{luku/sivun-mitat}
 
 Paperin eli sivun kokoon ja marginaaleihin pääsee vaikuttamaan
-\paketti{geometry}\-/paketin\avctan{geometry} avulla. Halutut asetukset
-voi kertoa paketin lataamisen yhteydessä. Seuraavassa esimerkissä
-asetetaan paperikoko (\koodi{a4\-paper} eli \textsc{a4}-koko), ylä- ja
+\pakettictan{geometry}\-/ paketin avulla. Halutut asetukset voi kertoa
+paketin lataamisen yhteydessä. Seuraavassa esimerkissä asetetaan
+paperikoko (\koodi{a4\-paper} eli \textsc{a4}-koko), ylä- ja
 alamarginaalin pituus (\koodi{top}, \koodi{bottom}) sekä vasemman ja
 oikean marginaalin pituus (\koodi{left}, \koodi{right}).
 
@@ -357,8 +356,8 @@ korkeusmitta.
 Sivu on oletuksena pystyasennossa (\koodim{portrait}), mutta sen voi
 asettaa vaaka\-/asentoon valitsimella \koodim{landscape}. Tämä asetus on
 voimassa koko dokumentin ajan. Jos haluaa asettaa vain yksittäisiä
-sivuja vaaka\-/asentoon, täytyy käyttää \paketti{pdflscape}\-/
-pakettia\avctan{pdflscape} ja sen tarjoamaa ympäristöä.
+sivuja vaaka\-/asentoon, täytyy käyttää \pakettictan{pdflscape}\-/
+pakettia ja sen tarjoamaa ympäristöä.
 
 Sivun asetusten suunnittelussa voi olla avuksi valitsin
 \koodim{show\-frame}, joka piirtää viivat marginaalien kohdalle ja
@@ -498,8 +497,8 @@ joihinkin sivun mittoihin. Usein esimerkiksi halutaan piirtää sivun
 tekstialueen levyinen tai siihen suhteutettu taulukko tai kuva. Silloin
 on kätevää käyttää mittaa, jonka arvona on juuri tekstialueen leveys.
 Tärkeimmät sivun mitat on koottu taulukkoon \ref{tlk/sivun-mittoja},
-mutta perusteellisemmin niitä käsitellään \paketti{geometry}\-/
-paketin\avctan{geometry} ohjekirjassa.
+mutta perusteellisemmin niitä käsitellään \pakettictan{geometry}\-/
+paketin ohjekirjassa.
 
 Taulukossa \ref{tlk/sivun-mittoja} mainittu mitta \mitta{linewidth}
 eroaa tekstialueen (\mitta{textwidth}) tai palstan (\mitta{columnwidth})
@@ -695,8 +694,8 @@ latomiseen. Lisätietoa sivunumeroista ja muista laskureista on luvussa
 }
 
 Monipuolisemmin ylä- ja alatunnisteita voi muokata paketin
-\pakettim{fancyhdr}\avctan{fancyhdr} toimintojen avulla. Silloin
-sivutyylinä voi olla myös \koodim{fancy}:
+\pakettictan{fancyhdr} toimintojen avulla. Silloin sivutyylinä voi olla
+myös \koodim{fancy}:
 
 \komentoi{usepackage}
 \komentoi{pagestyle}
@@ -904,10 +903,9 @@ Pdf-tiedostot voivat sisältää metatietoja kuten dokumentin nimen,
 aiheen, tekijän ja päiväyksen. Tiedostoille voi määrittää myös erilaisia
 asetuksia kuten ristiviitteiden ja linkkien ulkoasun tai sisäisen
 sisällysluettelon ominaisuuksia. Pdf\-/tiedoston asetukset toteutetaan
-\pakettim{hyperref}\-/ paketin\avctan{hyperref} avulla. Paketti
-neuvotaan lataamaan muiden pakettien jälkeen, koska se lisää
-ominaisuuksia muihin komentoihin. Paketin voisi ladata esimerkiksi
-seuraavalla tavalla:
+\pakettictan{hyperref}\-/ paketin avulla. Paketti neuvotaan lataamaan
+muiden pakettien jälkeen, koska se lisää ominaisuuksia muihin
+komentoihin. Paketin voisi ladata esimerkiksi seuraavalla tavalla:
 
 \komentoi{usepackage}
 \pakettii{hyperref}
@@ -1020,11 +1018,11 @@ tason komentoja.
 
 Latexin fonttitekniikka rakentuu eri\-/ikäisistä kerroksista ja
 tekniikoista. Fontteja on aikoinaan tehty
-\englanti{Metafont}\-/nimisellä\avctan{metafont} kielellä, jolla
+\englanti{Metafont}\avctan{metafont}\-/ nimisellä kielellä, jolla
 kuvataan merkkien muodot. \englanti{Metafont} on myös tietokoneohjelma,
 joka tuottaa kuvauskielen perusteella bittikarttafontteja eli
 pikseleistä koostuvia fontteja. On käytetty myös kehittyneempää
-\englanti{Metapost}\-/kuvauskieltä\avctan{metapost} ja \=/ohjelmaa,
+\englanti{Metapost}\avctan{metapost}\-/ kuvauskieltä ja \=/ohjelmaa,
 joilla on tuotettu vektorigrafiikkafontteja \textsc{eps}- eli
 \englanti{Encapsulated Post Script} \=/muodossa ja muutettu niitä
 edelleen \englanti{Post Script Type~1} \=/fonteiksi. Myöhemmin mukaan
@@ -1087,7 +1085,7 @@ Latexissa pisimmälle ''tuotteistettu'' kokonaisuus taitaa olla
 Libertinus\-/ kirjainperhe, joka sisältää antiikvan, groteskin ja
 tasalevyisen kirjainperheen sekä matematiikkatilan symboleita.
 Libertinus\-/ kirjainperheet saa käyttöön lataamalla paketti
-\paketti{libertinus}\avctan{libertinus}:
+\pakettictan{libertinus}:
 
 \komentoi{usepackage}
 \pakettii{libertinus}
@@ -2074,11 +2072,10 @@ liian ohuita.
 
 Latexin matematiikkatilan (luku \ref{luku/matematiikka}) fontti
 asetetaan eri tavalla kuin normaalin tilan eli tekstitilan fontit.
-Matematiikkatilaa varten tarvitaan paketti
-\paketti{unicode-math}\avctan{unicode-math}, joka täytyy ladata muiden
-matematiikkaan tai fontteihin liittyvien pakettien jälkeen. Paketti tuo
-komennon \komento{setmathfont}, joka on matematiikkatilan vastine
-luvussa \ref{luku/fontin-valinta} esitellyille
+Matematiikkatilaa varten tarvitaan paketti \pakettictan{unicode-math},
+joka täytyy ladata muiden matematiikkaan tai fontteihin liittyvien
+pakettien jälkeen. Paketti tuo komennon \komento{setmathfont}, joka on
+matematiikkatilan vastine luvussa \ref{luku/fontin-valinta} esitellyille
 fontinmäärittelykomennoille \komento{setmainfont}, \komento{setsansfont}
 ja \komento{setmonofont}.
 
@@ -2186,9 +2183,9 @@ leijuvien taulukoiden ja kuvien nimet ''\tablename'' ja ''\figurename''.
 Myös muita asetuksia tai komentoja saattaa tulla kieliasetusten mukana,
 mutta ne vaihtelevat eri kielissä.
 
-Kielipaketteja on kaksi -- \paketti{babel}\avctan{babel} ja
-\paketti{polyglossia}\avctan{polyglossia} \==, ja kirjoittajan täytyy
-valita niistä jompikumpi. Pakettien historia ja kehitys on suunnilleen
+Kielipaketteja on kaksi -- \pakettictan{babel} ja
+\pakettictan{polyglossia} \==, ja kirjoittajan täytyy valita niistä
+jompikumpi. Pakettien historia ja kehitys on suunnilleen
 seuraavanlainen: \paketti{babel} on paljon vanhempi, ja monet vanhat
 oppaat ja esimerkit käsittelevät pelkästään sitä. Kun Latex siirtyi
 Unicode\-/aikaan Xelatex\-/kääntäjän ja \paketti{fontspec}\-/paketin
@@ -2449,8 +2446,8 @@ Esimerkissä ennen fontin nimeä (esim. TeX Gyre Heros) oleva valinnainen
 argumentti on sama kuin \paketti{fontspec}\-/paketin
 fontinvalintakomennoissa. Sen avulla määritellään kyseisen
 kirjainperheen asetuksia. Lisätietoa voi lukea fontteja käsittelevästä
-luvusta \ref{luku/kirjaintyypit} ja \paketti{fontspec}\-/
-paketin\avctan{fontspec} ohjekirjasta.
+luvusta \ref{luku/kirjaintyypit} ja \pakettictan{fontspec}\-/ paketin
+ohjekirjasta.
 
 \section{Tavutus}
 \label{luku/tavutus}
@@ -2608,11 +2605,10 @@ käyttää Xelatex\-/kääntäjän kanssa, mutta Lualatex\-/kääntäjä kadotta
 koko merkin. Yhteensopivuussyistä ei kannata käyttää Unicoden sitovaa
 yhdysmerkkiä, sillä muitakin vaihtoehtoja on.
 
-Paketti \paketti{extdash}\avctan{extdash} tuo uusia komentoja ja
-mahdollisuuksia tavutuksen hallintaan. Komennot ovat sellaisia kuin
-\komento{Hyphdash} ja \komento{Endash}, mutta niille on saatavilla myös
-lyhemmät muodot, jos paketin lataa käyttämällä \koodi{short\-cuts}\-/
-valitsinta.
+Paketti \pakettictan{extdash} tuo uusia komentoja ja mahdollisuuksia
+tavutuksen hallintaan. Komennot ovat sellaisia kuin \komento{Hyphdash}
+ja \komento{Endash}, mutta niille on saatavilla myös lyhemmät muodot,
+jos paketin lataa käyttämällä \koodi{short\-cuts}\-/ valitsinta.
 
 \komentoi{usepackage}
 \pakettii{extdash}
@@ -2835,8 +2831,8 @@ edellä kuvatun tavutuskohdan saa myös seuraavalla tavalla:
 
 \noindent
 Tavutuksen suunnittelussa ja tutkimisessa voi auttaa
-\paketti{showhyphens}\-/paketti\avctan{showhyphens}, jonka lataamalla
-kaikki tavutuskohdat tulevat näkyviin. Dokumentin kaikkien sanojen
+\pakettictan{showhyphens}\-/ paketti, jonka lataamalla kaikki
+tavutuskohdat tulevat näkyviin. Dokumentin kaikkien sanojen
 tavutuskohtiin piirretään ohut punainen pystyviiva. Tämä paketti
 hyödyntää Lualatex\-/kääntäjän ominaisuuksia, eikä se siis toimi muiden
 kääntäjien kanssa.

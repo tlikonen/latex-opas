@@ -116,9 +116,9 @@ kohtuuttoman paljon. Tekstiin jää rumia aukkoja.
 Kappaleiden tasaamiseen ja palstan muotoon vaikuttavia komentoja ja
 ympäristöjä on koottu taulukkoon \ref{tlk/kappaleen-tasauskomennot}.
 Taulukossa on mainittu ensin Latexin omat komennot ja sitten
-\paketti{ragged2e}\-/paketin\avctan{ragged2e} vastaavat. Latexin omat
-komennot estävät sanojen tavuttamisen, kun taas \paketti{ragged2e}\-/
-paketin komennot sallivat tavutuksen normaalisti.
+\pakettictan{ragged2e}\-/ paketin vastaavat. Latexin omat komennot
+estävät sanojen tavuttamisen, kun taas \paketti{ragged2e}\-/ paketin
+komennot sallivat tavutuksen normaalisti.
 
 \subsection{Pystysuuntaiset välit}
 \label{luku/pystysuuntaiset-välit}
@@ -302,11 +302,10 @@ sisennyksen kuitenkin kaikkien muiden elementtien ja pystysuuntaisen
 välin jälkeen. Jos sisennys halutaan estää, pitäisi kyseiset kappaleet
 aloittaa aina \komento{noindent}\-/komennolla.
 
-Toinen vaihtoehto on käyttää \paketti{noindentafter}\-/
-pakettia\avctan{noindentafter} ja määritellä sen tarjoaman komennon
-avulla, minkä ympäristöjen jälkeen ei haluta sisennystä. Seuraava
-esimerkki poistaa sisennyksen aina \ymparisto{list}- ja
-\ymparisto{tabular}\-/ ympäristöjen jälkeen (luvut
+Toinen vaihtoehto on käyttää \pakettictan{noindentafter}\-/ pakettia ja
+määritellä sen tarjoaman komennon avulla, minkä ympäristöjen jälkeen ei
+haluta sisennystä. Seuraava esimerkki poistaa sisennyksen aina
+\ymparisto{list}- ja \ymparisto{tabular}\-/ ympäristöjen jälkeen (luvut
 \ref{luku/list-ympäristö} ja \ref{luku/taulukot}).
 
 \komentoi{NoIndentAfterEnv}
@@ -363,8 +362,8 @@ on sisennetty 2\,cm. Ei ole kovin vaikeaa.
 \end{esimerkki*}
 
 Helpoin tapa riippuvien sisennysten toteuttamiseen lienee
-\pakettim{hanging}\-/ paketin\avctan{hanging} käyttö. Paketti tuo uuden
-komennon \komentom{hangpara}, jonka käyttöä esimerkki
+\pakettictan{hanging}\-/ paketin käyttö. Paketti tuo uuden komennon
+\komentom{hangpara}, jonka käyttöä esimerkki
 \ref{esim/riippuva-sis-hangpara} selventää. Komennon ensimmäinen
 argumentti on sisennyksen mitta ja toinen argumentti (positiivinen
 kokonaisluku) määrittää, kuinka monta riviä kappaleen alusta jätetään
@@ -632,10 +631,10 @@ orporivit aiheuttavat kaksi taukoa melkein peräkkäin: sekä kappaleiden
 välissä että sivun tai palstan vaihtumisen kohdalla.
 
 Latexissa leski- tai orporivit lienee käytännöllisintä estää
-\paketti{nowidow}\-/ paketin\avctan{nowidow} avulla. Paketin lataamisen
-jälkeen käytetään komentoa \komentom{setnowidow}, joka estää leskirivit
-eli pitää tekstikappaleen lopusta vähintään kaksi riviä yhdessä sivun
-tai palstan yläreunassa. Komennolle voi antaa hakasulkeissa valinnaisen
+\pakettictan{nowidow}\-/ paketin avulla. Paketin lataamisen jälkeen
+käytetään komentoa \komentom{setnowidow}, joka estää leskirivit eli
+pitää tekstikappaleen lopusta vähintään kaksi riviä yhdessä sivun tai
+palstan yläreunassa. Komennolle voi antaa hakasulkeissa valinnaisen
 argumentin (kokonaisluvun), joka ilmaisee, kuinka monta riviä täytyy
 vähintään pysyä yhdessä. Vastaavasti orporivit estetään komennolla
 \komentom{setnoclub}, joka toimii samalla tavalla. Molemmat komennot
@@ -808,11 +807,11 @@ kirjainleikkauksella tai pienversaalilla, kuten näissä esimerkeissä on
 tehty. Tällainen kappaleen aloitus voi toimia hieman otsikon tavoin tai
 sitten muuten vain ilmaisee uuden luvun alkamista.
 
-Latexissa anfangien tekemistä varten on paketti
-\pakettim{lettrine}\avctan{lettrine}, joka tarjoaa käyttöön samannimisen
-komennon. Jokainen anfangi on erilainen, ja siksi \komentom{lettrine}\-/
-komentokin sisältää useita asetuksia anfangin ulkoasun hienosäätöön.
-Komentoa käytetään seuraavalla tavalla:
+Latexissa anfangien tekemistä varten on paketti \pakettictan{lettrine},
+joka tarjoaa käyttöön samannimisen komennon. Jokainen anfangi on
+erilainen, ja siksi \komentom{lettrine}\-/ komentokin sisältää useita
+asetuksia anfangin ulkoasun hienosäätöön. Komentoa käytetään seuraavalla
+tavalla:
 
 \komentoi{lettrine}
 \begin{koodilohkosis}
@@ -1036,8 +1035,8 @@ Komennon hyvä puoli on, että se toimii myös matematiikkatilassa
 (luku~\ref{luku/matematiikka}).
 
 Käytännössä alleviivaukset on parempi toteuttaa esimerkiksi paketin
-\pakettim{ulem}\avctan{ulem} avulla. Tavallisen alleviivauksen lisäksi
-se sisältää kaksoisalleviivauksen, aaltoviivat, pisteviivat ja erilaisia
+\pakettictan{ulem} avulla. Tavallisen alleviivauksen lisäksi se sisältää
+kaksoisalleviivauksen, aaltoviivat, pisteviivat ja erilaisia
 ylikirjoitusmerkintöjä. Taulukkoon \ref{tlk/ulem} on koottu paketin
 sisältämiä komentoja.
 
@@ -1109,8 +1108,8 @@ esimerkki:
 
 \noindent
 Toinen paketti alleviivausten ja yliviivausten tekemiseen on
-\paketti{soul}\avctan{soul}. Se ei sisällä erikoisempia korostustapoja
-kuten aalto- ja katkoviivoja, mutta viivan etäisyyden ja paksuuden
+\pakettictan{soul}. Se ei sisällä erikoisempia korostustapoja kuten
+aalto- ja katkoviivoja, mutta viivan etäisyyden ja paksuuden
 määrittämiseen on hieman kätevämmät komennot.
 
 Tekstin alleviivauksen lisäksi on olemassa pari komentoa, joilla saa
@@ -1269,11 +1268,11 @@ tieto-       kone-
 
 \noindent
 Paljon monipuolisemman ympäristön tarjoaa paketti
-\pakettim{fancyvrb}\avctan{fancyvrb}. Sen mukana tuleva
-\ymparistom{Verbatim}\-/ ympäristö ymmärtää monenlaisia asetuksia,
-joilla vaikutetaan tietokonekoodin latomiseen. Koodiin saa mukaan
-esimerkiksi rivinumerot, tai sen voi latoa kehyksen sisään. Myös koodin
-sisennykseen, fontin kokoon ja väreihin voi vaikuttaa.
+\pakettictan{fancyvrb}. Sen mukana tuleva \ymparistom{Verbatim}\-/
+ympäristö ymmärtää monenlaisia asetuksia, joilla vaikutetaan
+tietokonekoodin latomiseen. Koodiin saa mukaan esimerkiksi rivinumerot,
+tai sen voi latoa kehyksen sisään. Myös koodin sisennykseen, fontin
+kokoon ja väreihin voi vaikuttaa.
 
 \subsection{Verkko-osoitteet}
 
@@ -1291,12 +1290,12 @@ eivät häiritse leipätekstin lukemista mutta ovat silti lukijan
 saatavilla.
 
 Latexissa verkko\-/osoitteet kannattaa toteuttaa siihen tarkoitetun
-paketin avulla. Paketti \pakettim{hyperref}\avctan{hyperref}
-sisältää toimintoja paitsi verkko\-/ osoitteiden latomiseen mutta myös
-pdf\-/tiedoston asetusten ja ristiviitteiden hallintaan (luku
-\ref{luku/pdf-asetukset}). Paketin avulla valmiin pdf\-/ tiedoston
-verkkolinkit toimivat, eli pdf\-/lukijassa linkkiä napsauttamalla
-pitäisi avautua verkkoselain ja linkin osoittama sivu.
+paketin avulla. Paketti \pakettictan{hyperref} sisältää toimintoja
+paitsi verkko\-/ osoitteiden latomiseen mutta myös pdf\-/tiedoston
+asetusten ja ristiviitteiden hallintaan (luku \ref{luku/pdf-asetukset}).
+Paketin avulla valmiin pdf\-/ tiedoston verkkolinkit toimivat, eli
+pdf\-/lukijassa linkkiä napsauttamalla pitäisi avautua verkkoselain ja
+linkin osoittama sivu.
 
 Paketin käyttämisen typografinen hyöty on se, että rivin vaihdon
 kohdalle sattuvat verkko\-/ osoitteet katkaistaan automaattisesti
@@ -1403,7 +1402,7 @@ selvemmin, kun niiden toteutuksessa käyttää värejä. Sen sijaan
 leipätekstin sisällä värejä täytynee käyttää hillitysti, sillä värikäs
 tekstipalsta näyttää rauhattomalta ja voi hidastaa lukemista.
 
-Latexiin saa värit \pakettim{xcolor}\-/ paketin\avctan{xcolor}
+Latexiin saa värit \pakettictan{xcolor}\-/ paketin
 avulla.\footnote{Toinen vaihtoehto on yksinkertaisempi väripaketti
   \paketti{color}, joka sisältää värien käsittelyn perustoiminnot.} Se
 tarjoaa muun muassa komentoja, joilla tekstin väriä, tekstin taustaväriä
@@ -1571,8 +1570,8 @@ oikeanpuoleiselta eli parittomalta sivulta.
 \komento{cleardoublepage}\-/komennon aiheuttamalle tyhjälle sivulle
 saatetaan kuitenkin latoa ylä- ja alatunnisteet, jos sellaiset on
 määritelty (luku \ref{luku/ylä-ala-tunnisteet}). Täysin tyhjän sivun saa
-käyttämällä apuna pakettia \paketti{titlesec}\avctan{titlesec} ja
-sen valitsinta \koodi{clear\-empty}:
+käyttämällä apuna pakettia \pakettictan{titlesec} ja sen valitsinta
+\koodi{clear\-empty}:
 
 \komentoi{usepackage}
 \pakettii{titlesec}
@@ -1706,10 +1705,9 @@ Yksittäiset perustiedot saa ladottua seuraavilla komennoilla:
 Perustietokomentoihin \komento{title}, \komento{author} ja
 \komento{date} ei ole tarkoitus sisällyttää kovin monimutkaisia
 muotoilukomentoja. Jos haluaa vaikuttaa perustietojen ulkoasuun,
-kannattaa käyttää siihen tarkoitettua pakettia
-\pakettim{titling}\avctan{titling}. Toisaalta mikään ei estä
-muotoilemasta oman dokumentin perustietoja ilman Latexin valmiita
-keinoja.
+kannattaa käyttää siihen tarkoitettua pakettia \pakettictan{titling}.
+Toisaalta mikään ei estä muotoilemasta oman dokumentin perustietoja
+ilman Latexin valmiita keinoja.
 
 Hyödyllisiä ympäristöjä dokumentin alussa käytettäväksi voivat olla
 \ymparistom{titlepage} ja \ymparistom{abstract}. Ensin mainittu luo
@@ -1993,13 +1991,13 @@ liittyviä komentoja. Otsikoiden ulkoasuun vaikutetaan muilla keinoilla.
 \label{luku/otsikot-ulkoasu}
 
 Otsikoiden typografiaan eli esimerkiksi kirjainperheen ja \=/leikkauksen
-valintaan ja välistyksiin on kätevintä käyttää \pakettim{titlesec}\-/
-pakettia\avctan{titlesec}. Perus Latexissakin on kyllä otsikoiden
-muotoiluun tarkoitettu komento \komentox{@startsection}, mutta sen
-käyttö on hankalampaa eikä se toimi kaikilla otsikkotasoilla. Perus
-Latexin keinoihin voi tutustua esimerkiksi epävirallisen Latex\-/
-hakuteoksen \textcite{unoffref} avulla. Tässä oppaassa sen sijaan
-keskitytään \paketti{titlesec}\-/ pakettiin.
+valintaan ja välistyksiin on kätevintä käyttää \pakettictan{titlesec}\-/
+pakettia. Perus Latexissakin on kyllä otsikoiden muotoiluun tarkoitettu
+komento \komentox{@startsection}, mutta sen käyttö on hankalampaa eikä
+se toimi kaikilla otsikkotasoilla. Perus Latexin keinoihin voi tutustua
+esimerkiksi epävirallisen Latex\-/ hakuteoksen \textcite{unoffref}
+avulla. Tässä oppaassa sen sijaan keskitytään \paketti{titlesec}\-/
+pakettiin.
 
 Otsikoiden perusmuotoilu on helpointa toteuttaa
 \komentom{titleformat*}\-/ komennon avulla. Sille annetaan argumentiksi
@@ -2453,7 +2451,7 @@ Tätä komentoa käsitellään luvussa \ref{luku/pdf-asetukset}.
 \end{esimerkki*}
 
 Sisällysluettelon ulkoasun muokkaamista varten on paketti
-\paketti{titletoc}\avctan{titletoc}, jonka tärkeimmän komennon
+\pakettictan{titletoc}, jonka tärkeimmän komennon
 (\komentom{titlecontents}) käyttöä esitellään esimerkissä
 \ref{esim/titlecontents}. Komennolla voi muokata paitsi
 sisällysluettelon kohtia mutta myös leijuvien osien (luku
@@ -3321,8 +3319,7 @@ Taulukkoympäristön argumenteissa määritellään taulukon sarakkeiden määr�
 tyypit, mutta siihen on mahdollista tehdä yksittäisiä poikkeuksia
 taulukon sisällä. Sarakekohtaiset poikkeukset tehdään komennolla
 \komentom{multicolumn} ja rivikohtaiset poikkeukset komennolla
-\komentom{multirow}, joka kuuluu pakettiin
-\paketti{multirow}\avctan{multirow}.
+\komentom{multirow}, joka kuuluu pakettiin \pakettictan{multirow}.
 
 \begin{esimerkki*}
   \komentoi{\keno}
@@ -3522,10 +3519,9 @@ Edellisestä on tärkeää huomata, että sarakkeiden leveydet eivät veny
 vaan ainoastaan niiden välissä oleva tyhjä tila. Usein olisi kuitenkin
 hyödyllisempää, että joidenkin sarakkeiden leveys olisi venyvä ja ne
 mukautuisivat koko taulukon leveyteen. Tämä ominaisuus saadaan
-\pakettim{tabularx}\-/ paketin\avctan{tabularx} avulla. Se määrittelee
-uuden taulukkoympäristön \ymparistom{tabularx}, joka on käytännössä
-parempi versio \ymparisto{tabular*}\-/ ympäristöstä. Sen käyttö on
-samanlaista:
+\pakettictan{tabularx}\-/ paketin avulla. Se määrittelee uuden
+taulukkoympäristön \ymparistom{tabularx}, joka on käytännössä parempi
+versio \ymparisto{tabular*}\-/ ympäristöstä. Sen käyttö on samanlaista:
 
 \ymparistoi{tabularx}
 \begin{koodilohkosis}
@@ -3648,13 +3644,12 @@ ja \komento{end}.
 \subsection{Muita paketteja}
 
 \paketti{tabularx}\-/ paketin kanssa samankaltainen on paketti
-\pakettim{tabulary}\avctan{tabulary}, jossa on joitakin erilaisia
-ominaisuuksia. Se muun muassa sisältää valmiiksi uudet saraketyypit
-\koodi{LCRJ}.
+\pakettictan{tabulary}, jossa on joitakin erilaisia ominaisuuksia. Se
+muun muassa sisältää valmiiksi uudet saraketyypit \koodi{LCRJ}.
 
 Edellä esitellyt taulukkoympäristöt ladotaan aina kokonaisena eli vain
 yhden sivun alueelle. Useammalle sivulle jakautuvia taulukoita voi tehdä
-\pakettim{longtable}\-/ paketin\avctan{longtable} taulukkoympäristön
+\pakettictan{longtable}\-/ paketin taulukkoympäristön
 \ymparistom{longtable} avulla. Sitä voi käyttää kuten
 \ymparisto{tabular}\-/ ympäristöä, mutta lisäksi se sisältää komentoja,
 joiden avulla saa joka sivulla toistumaan automaattisesti tietyt
@@ -3663,19 +3658,18 @@ yltävien taulukon kaltaisten rakenteiden tekemiseen on
 \ymparisto{tabbing}\-/ ympäristö, jota käsitellään luvussa
 \ref{luku/tabbing}.
 
-Hyödyllinen taulukoiden apupaketti on
-\pakettim{booktabs}\avctan{booktabs}, jonka avulla saa tyylikkäämpiä ja
-erilaisia vaakaviivoja. Paketin komennot \komento{toprule},
-\komento{midrule}, \komento{bottomrule} ja \komento{cmidrule} piirtävät
-rivien väliin erilaisia viivoja ja huolehtivat myös niiden ylä- ja
-alapuolisesta välistä paremmin kuin Latexin omat viivakomennot.
+Hyödyllinen taulukoiden apupaketti on \pakettictan{booktabs}, jonka
+avulla saa tyylikkäämpiä ja erilaisia vaakaviivoja. Paketin komennot
+\komento{toprule}, \komento{midrule}, \komento{bottomrule} ja
+\komento{cmidrule} piirtävät rivien väliin erilaisia viivoja ja
+huolehtivat myös niiden ylä- ja alapuolisesta välistä paremmin kuin
+Latexin omat viivakomennot.
 
-Taulukon rivien taustan voi värittää \paketti{xcolor}\-/
-paketin\avctan{xcolor} (luku \ref{luku/korostus-värit}) komentojen
-avulla. Varsinkin leveiden taulukoiden lukemista voi helpottaa, jos
-rivien eri taustavärit vuorottelevat. Tarkemmat tiedot selviävät paketin
-ohjekirjasta, mutta seuraavan esimerkin avulla ominaisuutta pääsee
-kokeilemaan:
+Taulukon rivien taustan voi värittää \pakettictan{xcolor}\-/ paketin
+(luku \ref{luku/korostus-värit}) komentojen avulla. Varsinkin leveiden
+taulukoiden lukemista voi helpottaa, jos rivien eri taustavärit
+vuorottelevat. Tarkemmat tiedot selviävät paketin ohjekirjasta, mutta
+seuraavan esimerkin avulla ominaisuutta pääsee kokeilemaan:
 
 \komentoi{rowcolors}
 \komentoi{usepackage}
@@ -3827,8 +3821,8 @@ palstojen ulkopuolelle, koko sivun tilaan.
 \subsection{Muut leijuvat osat}
 \label{luku/leijuosat-omat}
 
-Omia, itse nimettyjä leijuvia osia tehdään \pakettim{floatrow}\-/
-paketin\avctan{floatrow} avustuksella. Se sisältää komennon on
+Omia, itse nimettyjä leijuvia osia tehdään \pakettictan{floatrow}\-/
+paketin avustuksella. Se sisältää komennon on
 \komentom{DeclareNewFloatType}, jonka argumentit ovat seuraavanlaiset:
 
 \komentoi{DeclareNewFloatType}
@@ -3963,11 +3957,10 @@ kuvatekstit sekä tietysti sivunumerot.
 \end{esimerkki*}
 
 Leijuvien osien luettelojen ulkoasua voi muokata samalla tavalla kuin
-sisällysluetteloidenkin: käytetään pakettia
-\paketti{titletoc}\avctan{titletoc} ja määritellään sen
-\komento{titlecontents}\-/ komennolla luettelokohtien ulkoasu.
-Esimerkistä \ref{esim/leijuosat-titlecontents} selvinnee perusajatus, ja
-lisätietoa on sisällysluetteloita käsittelevässä luvussa
+sisällysluetteloidenkin: käytetään pakettia \pakettictan{titletoc} ja
+määritellään sen \komento{titlecontents}\-/ komennolla luettelokohtien
+ulkoasu. Esimerkistä \ref{esim/leijuosat-titlecontents} selvinnee
+perusajatus, ja lisätietoa on sisällysluetteloita käsittelevässä luvussa
 \ref{luku/sisällysluettelo} sekä tietysti paketin ohjekirjassa.
 
 Latexin omien leijuvien osien luetteloiden otsikot tulevat
@@ -4061,10 +4054,10 @@ se on lähdetiedostossa. Se on kuitenkin vain ehdotus eikä useinkaan
 toteudu: Latex lisää automaattisesti aina \koodi{h}\=/ valitsimen perään
 \koodi{t}:n eli sivun yläosaan sijoittamisen. Latex käyttää sitä, jos se
 saa sillä tavoin omasta mielestään paremman lopputuloksen. Lataamalla
-paketin \pakettim{floatrow}\avctan{floatrow} voi käyttää myös myös
-valitsinta \koodi{H}. Se tarkoittaa ehdotonta vaatimusta, että juuri
-tähän kohtaan leijuva osa pitää sijoittaa. Tätä valitsinta ei voi
-yhdistää muiden valitsimien kanssa.
+paketin \pakettictan{floatrow} voi käyttää myös myös valitsinta
+\koodi{H}. Se tarkoittaa ehdotonta vaatimusta, että juuri tähän kohtaan
+leijuva osa pitää sijoittaa. Tätä valitsinta ei voi yhdistää muiden
+valitsimien kanssa.
 
 Valitsinta \koodi{!} käytetään yhdessä edellä mainittujen valitsimien
 \koodi{tbp} kanssa. Se poistaa tietyt sijoitteluun vaikuttavat säännöt
@@ -4161,12 +4154,12 @@ lähdetiedostossa olleet leijuvat osat ladottavaksi. Osanvaihtokomento
 \ref{luku/otsikot}) tekevät saman automaattisesti joissakin
 dokumenttiluokissa.
 
-Paketin \pakettim{placeins}\avctan{placeins} avulla voi tehdä omiakin
-rajakohtia, jonka yli leijuvat osat eivät voi siirtyä. Paketin
-komennolla \komento{FloatBarrier} tehdään raja kyseiseen kohtaan
-lähdedokumentissa. Jos paketin lataamisessa antaa argumentin
-\koodi{section}, asetetaan tällainen raja automaattisesti
-\komento{section}\-/ tasoisille otsikoille.
+Paketin \pakettictan{placeins} avulla voi tehdä omiakin rajakohtia,
+jonka yli leijuvat osat eivät voi siirtyä. Paketin komennolla
+\komento{FloatBarrier} tehdään raja kyseiseen kohtaan lähdedokumentissa.
+Jos paketin lataamisessa antaa argumentin \koodi{section}, asetetaan
+tällainen raja automaattisesti \komento{section}\-/ tasoisille
+otsikoille.
 
 \komentoi{usepackage}
 \pakettii{placeins}
@@ -4179,10 +4172,9 @@ lähdedokumentissa. Jos paketin lataamisessa antaa argumentin
 
 Leijuvan osan sisäisen asettelun, ulkoasun ja muun typografian
 hallintaan ja muokkaamiseen tarvitaan yleensä paketteja
-\paketti{floatrow}\avctan{floatrow} ja
-\paketti{caption}\avctan{caption}. Jälkimmäisen avulla muokataan
-kuvatekstin fonttia ja rivitystä, ja sitä käsitellään myöhemmin tässä
-alaluvussa.
+\pakettictan{floatrow} ja \pakettictan{caption}. Jälkimmäisen avulla
+muokataan kuvatekstin fonttia ja rivitystä, ja sitä käsitellään
+myöhemmin tässä alaluvussa.
 
 Paketti \paketti{floatrow} tarjoaa runsaasti mahdollisuuksia leijuvien
 osien sijoitteluun: osat voi kehystää laatikolla, kuvatekstin voi
@@ -4333,13 +4325,12 @@ osan asetukset voisivat näyttää vaikka seuraavanlaiselta:
 \end{koodilohkosis}
 
 \noindent
-Kuvatekstien fonttia ja rivittämistä hallitaan \paketti{caption}\-/
-paketin\avctan{caption} avulla. Tärkein komento on
-\komento{captionsetup}, joka yleensä sijoitetaan dokumentin
-esittelyosaan tai muuten alkuun, koska silloin se vaikuttaa koko
-dokumentissa. Komennon voi sijoittaa myös esimerkiksi yksittäisen
-leijuvan ympäristön sisään, jolloin se vaikuttaa vain kyseisessä
-ympäristössä.
+Kuvatekstien fonttia ja rivittämistä hallitaan \pakettictan{caption}\-/
+paketin avulla. Tärkein komento on \komento{captionsetup}, joka yleensä
+sijoitetaan dokumentin esittelyosaan tai muuten alkuun, koska silloin se
+vaikuttaa koko dokumentissa. Komennon voi sijoittaa myös esimerkiksi
+yksittäisen leijuvan ympäristön sisään, jolloin se vaikuttaa vain
+kyseisessä ympäristössä.
 
 \komentoi{captionsetup}
 \begin{koodilohkosis}
@@ -4693,12 +4684,12 @@ riippua siitäkin, erotetaanko leipäteksti ja alaviitteet toisistaan myös
 vaakaviivalla.
 
 Muunlaiset alaviitteisiin vaikuttavat asetukset täytyy tehdä paketin
-\paketti{footmisc}\avctan{footmisc} avustuksella. Sen avulla voi
-esimerkiksi poistaa alaviitteiden erotinviivan ja muotoilla
-alaviitekappaleita. Paketin lataamisen yhteydessä voi antaa useita
-pilkulla erotettuja valitsimia, joita on koottu taulukkoon
-\ref{tlk/footmisc-valitsimet}. Erotinviiva poistetaan paketin
-valitsimella \koodi{norule}. Samalla pystysuuntainen väli hieman kasvaa.
+\pakettictan{footmisc} avustuksella. Sen avulla voi esimerkiksi poistaa
+alaviitteiden erotinviivan ja muotoilla alaviitekappaleita. Paketin
+lataamisen yhteydessä voi antaa useita pilkulla erotettuja valitsimia,
+joita on koottu taulukkoon \ref{tlk/footmisc-valitsimet}. Erotinviiva
+poistetaan paketin valitsimella \koodi{norule}. Samalla pystysuuntainen
+väli hieman kasvaa.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -4878,9 +4869,9 @@ pituus on mitassa \mitta{linewidth}.
 \label{luku/multicol}
 
 Perus Latex osaa vain yhden ja kahden palstan tilan, ja ne ovat voimassa
-koko sivulla. Paketti \paketti{multicol}\avctan{multicol} tuo käyttöön
-myös ympäristön \ymparisto{multicols}, jonka sisällä tietty palstamäärä
-on voimassa. Ympäristön avulla samallakin sivulla voi olla eri tavoin
+koko sivulla. Paketti \pakettictan{multicol} tuo käyttöön myös
+ympäristön \ymparisto{multicols}, jonka sisällä tietty palstamäärä on
+voimassa. Ympäristön avulla samallakin sivulla voi olla eri tavoin
 palstoitettua sisältöä. Esimerkki \ref{esim/multicols} havainnollistaa
 ympäristön käyttöä ja ladottua lopputulosta. Oleelliset tiedot ovat
 seuraavat:
@@ -5036,10 +5027,10 @@ automaattisesti.
 \subsection{Peruskäyttöön (natbib)}
 \label{luku/natbib}
 
-Paketti \paketti{natbib}\avctan{natbib} laajentaa Latexin
-lähdeviittausten perustoimintoja sen verran, että lähteisiin voidaan
-viitata teoksen tekijöiden nimen ja vuosiluvun avulla. Seuraava
-esimerkki havainnollistaa paketin käyttöönottoa ja asetuksia.
+Paketti \pakettictan{natbib} laajentaa Latexin lähdeviittausten
+perustoimintoja sen verran, että lähteisiin voidaan viitata teoksen
+tekijöiden nimen ja vuosiluvun avulla. Seuraava esimerkki
+havainnollistaa paketin käyttöönottoa ja asetuksia.
 
 \komentoi{usepackage}
 \pakettii{natbib}
@@ -5264,7 +5255,7 @@ käsitellään seuraavassa alaluvussa.
 Suurten lähde- ja kirjallisuusluetteloiden ylläpito voi olla aika
 työlästä: pitää jatkuvasti varmistaa, että kaikki viitatut teokset ovat
 luettelossa ja että luettelo on pilkulleen yhdenmukainen. Paketti
-\paketti{biblatex}\avctan{biblatex} on vastaus sellaisiin tarpeisiin.
+\pakettictan{biblatex} on vastaus sellaisiin tarpeisiin.
 
 Ajatuksena on, että kaikki tiedonlähteet ja kirjallisuus kirjoitetaan
 tietokantaan, josta \paketti{biblatex}\-/paketin komennot hakevat tiedot
@@ -5494,13 +5485,13 @@ oppaan esimerkeissä käsitellään tekijä--vuosi-tyyliä.
 Paketin omien lähdeluettelo\-/{} ja viittaustyylien lisäksi
 Latex\-/jakelupaketissa on todennäköisesti mukana myös ulkopuolisten
 tahojen tekemiä tyylejä. Tyylikokonaisuus nimeltä
-\paketti{biblatex-ext}\avctan{biblatex-ext} laajentaa
-\paketti{biblatex}\-/paketin tavallisten tyylien ominaisuuksia.
-Laajennettujen tyylien käyttäminen ei vaadi erillisen paketin
-lataamista, vaan tyylin saa käyttöön yksinkertaisesti vain
-kirjoittamalla sen nimen \paketti{biblatex}\-/paketin lataamisen
-yhteydessä. Laajennetut tyylit alkavat kirjaimilla \mbox{\koodi{ext-},}
-esimerkiksi \koodi{ext-author\-year} tai \koodi{ext-author\-year-comp}.
+\pakettictan{biblatex-ext} laajentaa \paketti{biblatex}\-/ paketin
+tavallisten tyylien ominaisuuksia. Laajennettujen tyylien käyttäminen ei
+vaadi erillisen paketin lataamista, vaan tyylin saa käyttöön
+yksinkertaisesti vain kirjoittamalla sen nimen
+\paketti{biblatex}\-/paketin lataamisen yhteydessä. Laajennetut tyylit
+alkavat kirjaimilla \mbox{\koodi{ext-},} esimerkiksi
+\koodi{ext-author\-year} tai \koodi{ext-author\-year-comp}.
 
 Esimerkin \ref{esim/biblatex-käyttöönotto} komentojen lisäksi täytyy
 komennolla \komento{addbibresource} nimetä kaikki käyttöön otettavat
@@ -5965,12 +5956,12 @@ seuraavalla komennolla:
 \end{tulossis}
 
 \noindent
-\paketti{biblatex}\-/paketti\avctan{biblatex} sisältää valtavan paljon
-asetuksia ja mahdollisuuksia lähdeluettelon ja \=/viitteiden ulkoasun
-säätämiseen. Esimerkiksi komennolla \komento{DeclareBibliographyDriver}
-voi ottaa täysin haltuun, miten tietty teostyyppi ladotaan
-lähdeluetteloon. Komennolla \komento{DeclareSortingTemplate} voi
-määritellä omia aakkostustapoja. Lisätietoa saa paketin ohjekirjasta.
+\pakettictan{biblatex}\-/ paketti sisältää valtavan paljon asetuksia ja
+mahdollisuuksia lähdeluettelon ja \=/viitteiden ulkoasun säätämiseen.
+Esimerkiksi komennolla \komento{DeclareBibliographyDriver} voi ottaa
+täysin haltuun, miten tietty teostyyppi ladotaan lähdeluetteloon.
+Komennolla \komento{DeclareSortingTemplate} voi määritellä omia
+aakkostustapoja. Lisätietoa saa paketin ohjekirjasta.
 
 \section{Asiahakemistot}
 \label{luku/asiasanat}
@@ -5984,11 +5975,10 @@ löytämistä. Tämän oppaan luku \enquote{\nameref{luku/asiahakemisto}}
 alkaa sivulta \pageref{luku/asiahakemisto}.
 
 Latex tarvitsee asiahakemistojen tekemiseen paketin. Niitä tehty
-useampia, mutta parhaita taitavat olla
-\paketti{indextools}\avctan{indextools} ja
-\paketti{imakeidx}\avctan{imakeidx}. Ne ovat käytännössä lähes sama
-paketti: \paketti{indextools} perustuu \paketti{imakeidx}\-/ pakettiin
-ja korjaa joitakin sen puutteita.
+useampia, mutta parhaita taitavat olla \pakettictan{indextools} ja
+\pakettictan{imakeidx}. Ne ovat käytännössä lähes sama paketti:
+\paketti{indextools} perustuu \paketti{imakeidx}\-/ pakettiin ja korjaa
+joitakin sen puutteita.
 
 \begin{esimerkki*}
   \komentoi{documentclass}
@@ -6537,10 +6527,10 @@ vektorigrafiikkakuvia Latex\-/ komentojen avulla.
 
 \subsection{Kuvatiedostot}
 
-Paketti \paketti{graphicx}\avctan{graphicx} sisältää toiminnot
-kuvatiedostojen käsittelyyn sekä tekstin tai muun sisällön kääntelyyn ja
-skaalaamisen. Kuvatiedostojen peruskäyttö sujuu komennolla
-\komento{includegraphics} seuraavasti:
+Paketti \pakettictan{graphicx} sisältää toiminnot kuvatiedostojen
+käsittelyyn sekä tekstin tai muun sisällön kääntelyyn ja skaalaamisen.
+Kuvatiedostojen peruskäyttö sujuu komennolla \komento{includegraphics}
+seuraavasti:
 
 \komentoi{includegraphics}
 \begin{koodilohkosis}
@@ -6619,9 +6609,9 @@ Kuvan lopulliseksi leveydeksi tulee 40\,mm.
 
 \subsection{Vektorigrafiikka}
 
-Paketti \paketti{tikz}\avctan{tikz} tuo Latexiin monipuolisen apukielen,
-jolla kirjoittaja voi piirtää vektorigrafiikkaa. Paketin taustalla
-toimii toinen paketti ja grafiikkajärjestelmä \paketti{pgf} eli
+Paketti \pakettictan{tikz} tuo Latexiin monipuolisen apukielen, jolla
+kirjoittaja voi piirtää vektorigrafiikkaa. Paketin taustalla toimii
+toinen paketti ja grafiikkajärjestelmä \paketti{pgf} eli
 \englantik{portable graphics format}, mutta kirjoittajan ei yleensä
 tarvitse välittää taustalla olevasta matalan tason tekniikasta.
 
@@ -6989,7 +6979,7 @@ yhtäsuuruusmerkin kohdalta.
 
 \noindent
 Pidemmälle kehitettyjä matematiikkaympäristöjä on paketissa
-\paketti{amsmath}\avctan{amsmath}. Esimerkiksi \mymparisto{align}\-/\ ja
+\pakettictan{amsmath}. Esimerkiksi \mymparisto{align}\-/\ ja
 \mymparisto{align*}\-/ ympäristöt pystyvät tasaamaan allekkaiset kaavat
 tietystä kohdasta, eikä taulukon sarakkeita tarvitse erikseen
 määritellä. Tasauskohta ilmaistaan lähdedokumentissa \koodi{\&}\-/
@@ -7029,10 +7019,10 @@ kirjoittamalla pilkun ympärille aaltosulkeet.
 
 \noindent
 Toinen vaihtoehto pilkun käyttämiseen desimaalierottimana on ladata
-paketti \paketti{icomma}\avctan{icomma}. Paketti määrittelee
-matematiikkatilan pilkun toimimaan jokseenkin älykkäästi: jos
-lähdetiedostossa on pilkun jälkeen väli, pilkku ladotaan välimerkkinä;
-jos väliä ei ole, pilkku katsotaan desimaalierottimeksi.
+paketti \pakettictan{icomma}. Paketti määrittelee matematiikkatilan
+pilkun toimimaan jokseenkin älykkäästi: jos lähdetiedostossa on pilkun
+jälkeen väli, pilkku ladotaan välimerkkinä; jos väliä ei ole, pilkku
+katsotaan desimaalierottimeksi.
 
 Plus-, jako- ja yhtäsuuruusmerkki sekä pienempi kuin ja suurempi kuin
 \=/merkit ($+ : / = \; < \; >$) kirjoitetaan näppäimistöltä
@@ -7234,11 +7224,10 @@ Matematiikkatilassa voi käyttää Unicode\-/ merkistöä, eli monet
 matemaattiset symbolit voi kirjoittaa lähdedokumenttiin sellaisenaan.
 Voi silti olla helpompaa käyttää erityisiä komentoja sellaisten
 kirjainten ja symbolien kirjoittamiseen, joita ei ihan helposti pysty
-tuottamaa näppäimistöltä tai tekstieditorin toimintojen avulla.
+tuottamaan näppäimistöltä tai tekstieditorin toimintojen avulla.
 Matematiikkatilan erikoismerkkejä on koottu oheisiin taulukoihin
 (\ref{tlk/matem-kreikk}--). Lisää symboleja on paketeissa
-\paketti{latexsym}\avctan{latexsym} ja
-\paketti{amsmath}\avctan{amsmath}.
+\pakettictan{latexsym} ja \pakettictan{amsmath}.
 
 \leijutlk{
   \providecommand{\rivi}{}

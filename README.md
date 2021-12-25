@@ -144,8 +144,8 @@ poistaa kaikki syntyneet tiedostot.
 Puutteita ja suunnitelmia
 -------------------------
 
-  - Puuttuvia tai keskeneräisiä lukuja: laatikot, hauraat ja kestävät
-    komennot, sarkaimet, esipuhe.
+  - Puuttuvia tai keskeneräisiä lukuja: hauraat ja kestävät komennot,
+    sarkaimet, esipuhe.
   - Lisätään Muuta tekniikkaa -luku, jonka sisällöksi esimerkiksi:
     päiväykset ja kellonajat (datetime2), textpos-paketti, omien
     makropakettien ja dokumenttiluokkien tekeminen.

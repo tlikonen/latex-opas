@@ -24,6 +24,16 @@ sivuutetaan, eikä merkistörajoitusten kanssa enää kamppailla. Oppaan
 ohjeet siis sopivat nykyaikaiselle tietokoneen käyttäjälle.
 
 
+Saatavuus
+---------
+
+Oppaasta on saatavilla valmiiksi ladottu [PDF-tiedosto][PDF].
+Latex-lähdetiedostot ovat saatavilla Github-lähdekoodivarastossa
+seuraavassa osoitteessa: <<https://github.com/tlikonen/latex-opas>>.
+
+[PDF]: https://www.iki.fi/tlikonen/tex/kaytannollista_latexia.pdf
+
+
 Versionumerointi
 ----------------
 
@@ -34,13 +44,6 @@ julkaisu saa versionumeronsa pelkästä vuosiluvusta, esimerkiksi versio
 versionumeroon kyseisen kuukauden numero, esimerkiksi versio ”2022.4”
 (huhtikuu 2022). Saman kuun aikana toinen julkaisu saa versionumeroonsa
 vielä päivänkin numeron, esimerkiksi ”2022.4.15” (15. huhtikuuta 2022).
-
-
-Saatavuus
----------
-
-Ei saatavilla. Sijaitsee vain tekijän salatulla kiintolevyllä ja
-salatuilla varmuuskopioilla.
 
 
 Tekijänoikeus ja lisenssi

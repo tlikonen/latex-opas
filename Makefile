@@ -1,5 +1,5 @@
 versio = 2021
-nimi = kaytannollista_latexia
+nimi = kaytannollista-latexia
 lahde = $(nimi).tex asetukset.tex esipuhe.tex \
 	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
 	valmistautuminen.tex kirjallisuutta.bib erikoiset.tex

@@ -6,7 +6,7 @@
  (latex-mode . ((eval . (auto-fill-mode))
                 (eval . (outline-minor-mode))
                 (TeX-engine . luatex)
-                (TeX-master . "kaytannollista_latexia.tex")
+                (TeX-master . "kaytannollista-latexia.tex")
                 (TeX-open-quote . "''")
                 (LaTeX-verbatim-environments-local
                  . ("koodilohkosis" "koodilohko"))

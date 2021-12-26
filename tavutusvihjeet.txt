@@ -405,9 +405,11 @@ no-rule
 note
 no-widow
 nuo-li-ak-sen-tit
+nyky-aikai-nen
 nyky-aikai-set
 nyky-aikai-sia
 nyky-aika-na
+nyky-ajan
 näp-päin-aset-te-lus-sa
 obey-cr
 oikein-kir-joi-tus-oppaas-sa
@@ -626,6 +628,7 @@ teks-ti-ele-ment-te-jä
 teks-ti-ele-ment-ti
 teks-ti-ele-ment-tien
 teks-ti-ele-ment-tiin
+teks-tin-kä-sit-tely-ohjel-mat
 teks-tin-kä-sit-tely-ohjel-mis-sa
 teks-tin-osan
 teks-ti-osa
@@ -663,8 +666,10 @@ the-table
 the-title
 this-page-style
 tie-teen-aloil-la
+tie-to-kone-avus-teis-ta
 tie-to-kone-oh-jel-ma
 tie-to-kone-oh-jel-mal-le
+tie-to-kone-oh-jel-mas-ta
 tie-to-kone-oh-jel-mat
 tie-to-kone-oh-jel-mia
 tii-vis-tel-mä-osan
@@ -693,6 +698,7 @@ tt-fam-i-ly
 two-column
 two-side
 ty-po-gra-fia
+ty-po-gra-fiaa
 ty-po-gra-fiaan
 ty-po-gra-fian
 ty-po-gra-fias-sa
@@ -765,6 +771,7 @@ väli-ai-kais-tie-dos-ton
 väli-ai-kais-tie-dos-toon
 väli-ai-kais-tie-dos-tot
 väli-ot-si-kois-sa
+väli-ot-si-kois-ta
 väli-ot-si-kon
 väli-ot-si-kot
 vä-ri-asioi-ta

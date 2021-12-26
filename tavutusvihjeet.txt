@@ -14,6 +14,7 @@ add-to-con-tents
 add-to-counter
 add-to-length
 add-vspace
+akuut-ti-ak-sen-tin
 ala-in-dek-seil-le
 ala-in-dek-se-jä
 ala-in-dek-sien
@@ -200,6 +201,7 @@ front-mat-ter
 ge-om-e-try
 graph-icx
 gra-vis-ak-sen-til-la
+gra-vis-ak-sen-tin
 gra-vis-ak-sent-ti
 greek-font
 gro-tes-ki
@@ -519,6 +521,7 @@ ro-tate-box
 rule
 sak-ko-ar-voa
 sa-man-aikai-ses-ti
+sar-kain-ase-tuk-sia
 Scale
 scale-box
 sc-shape
@@ -592,6 +595,7 @@ säh-kö-pos-ti-osoi-te
 säh-kö-pos-ti-osoit-tei-den
 säh-kö-pos-ti-osoit-tei-ta
 tab-bing
+tab-bing-sep
 tab-col-sep
 table
 table-name

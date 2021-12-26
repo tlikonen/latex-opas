@@ -3682,10 +3682,164 @@ seuraavan esimerkin avulla ominaisuutta pääsee kokeilemaan:
 \section{Sarkaimet KESKEN}
 \label{luku/sarkaimet}
 
-...
+Sarkaimet ovat ennalta määritettyjä vaakasuuntaisia sisennys\-/\ tai
+tasauskohtia. Niitä voi hyödyntää tekstin tasaamisessa tiettyihin
+kohtiin rivillä. Suomenkielisissä asiakirjoissa sarkainkohdat ovat 23
+millimetrin välein, mutta jos ei ole kirjoittamassa virallista
+asiakirjaa, voi kirjoittaja määrittää sarkainkohdat niin kuin haluaa.
 
-% tabbing-ympäristö, voi ylittää sivurajan. Mahdollisesti käsitellään
-% myös laatikoiden avulla tehtyjä keinotekoisia sarjaimia.
+Ajatus sarkaimista on vanha, sillä mekaanisissa kirjoituskoneissakin oli
+sarkainnäppäin (\englanti{tab, tabular}), joka siirsi telaa eteenpäin
+seuraavaan sarkainkohtaan. Se helpotti tekstirivien tasaamista tiettyyn
+kohtaan ja sen myötä taulukoiden kirjoittamista.
+
+Latexissa on taulukoita varten omatkin ympäristönsä (luku
+\ref{luku/taulukot}), mutta jos ei tarvitse varsinaista taulukkoa vaan
+ainoastaan yksittäisiä tasauskohtia, voi olla kätevämpää käyttää
+\ymparisto{tabbing}\-/ sarkainympäristöä tai rakentaa sisennykset
+näkymättömien laatikoiden avulla. Näitä käsitellään seuraavissa
+alaluvuissa.
+
+\subsection{Sarkainympäristö}
+
+Sarkaimet voi toteuttaa niitä varten tehdyn ympäristön eli
+\ymparisto{tabbing}\-/ ympäristön avulla. Esimerkki
+\ref{esim/tabbing-perus} havainnollistaa ympäristön peruskäyttöä.
+Rivillä~2 asetetaan kaikki sarkainkohdat eli tehdään vaakasuuntaisia
+välejä \komento{hspace}\-/ komennolla ja merkitään sarkainkohdat
+\komento{=}\=/ komennoilla. Tämän rivin lopussa on komento
+\komento{kill}, joka hylkää rivin eli jättää sen latomatta. Seuraavien
+rivien lopussa on aina \komento{\keno}\-/ komento -- paitsi viimeisellä
+rivillä ennen ympäristön lopetuskomentoa. Rivin sisällä seuraavaan
+sarkainkohtaan hypätään \komento{>}\-/ komennolla.
+
+\begin{esimerkki*}
+  \ymparistoi{tabbing}
+  \komentoi{hspace}
+  \komentoi{kill}
+  \komentoi{=}
+  \komentoi{>}
+
+\begin{koodilohko}
+\begin{tabbing}
+  \hspace{23mm} \= \hspace{23mm} \= \hspace{23mm} \= \kill
+  Tässä \> on \\
+  \> eri \> tavoin \\
+  \>\> sisennettyä \\
+  \>\>\> tekstiä.
+\end{tabbing}
+\end{koodilohko}
+
+  \begin{tulos}
+    \begin{tabbing}
+      \hspace{23mm} \= \hspace{23mm} \= \hspace{23mm} \= \kill
+      Tässä \> on \\
+      \> eri \> tavoin \\
+      \>\> sisennettyä \\
+      \>\>\> tekstiä.
+    \end{tabbing}
+  \end{tulos}
+  \caption{Sarkainkohtien määrittely ja käyttö \ymparisto{tabbing}\-/
+    ympäristössä}
+  \label{esim/tabbing-perus}
+\end{esimerkki*}
+
+\ymparisto{tabbing}\-/ ympäristön sisällä on käytettävissä muutama
+muukin erikoiskomento, joilla vaikutetaan sarkainten käsittelyyn.
+Seuraavassa kerrotaan ympäristön kaikkien erityiskomentojen merkitys, ja
+esimerkissä \ref{esim/tabbing-erikois} havainnollistetaan joidenkin
+komentojen käyttöä.
+
+\begin{maaritelma}{\komento{#1}}
+\item [\keno] Rivinvaihto, joka täytyy kirjoittaa jokaisen rivin
+  loppuun, lukuun ottamatta viimeistä riviä ennen ympäristön
+  lopetuskomentoa (\komento{end}).
+\item [kill] Rivinvaihto, joka hylkää kyseisen rivin. Tämä on
+  käyttökelpoinen sarkainkohtien määrittelyrivillä, jota itsessään ei
+  ehkä haluta latoa näkyviin.
+\item [=] Sarkainkohdan määrittäminen komennon kohdalle.
+\item [>] Hyppää seuraavaan sarkainkohtaan nykyisellä rivillä.
+\item [+] Siirtää seuraavan rivin aloituskohtaa yhden sarkaimen verran
+  oikealle siitä, missä se oli ennestään.
+\item [-] Siirtää seuraavan rivin aloituskohtaa yhden sarkaimen verran
+  vasemmalle siitä, missä se oli ennestään.
+\item [<] Siirtää nykyisen rivin aloituskohdan yhden sarkaimen verran
+  vasemmalla. Tätä komentoa voi käyttää vain rivin alussa ja vain
+  silloin, kun rivin aloituskohtaa on sisennetty aiemmin \komento{+}\-/
+  komennolla. Tämä komento ei muuta pysyvästi rivin aloituskohdan
+  asetusta, joka on tehty komennolla \komento{+} tai \komento{-}.
+\item ['] Latoo komentoa edeltävän tekstin nykyisen sarkainkohdan
+  vasemmalle puolelle ja tasaa tekstin oikeasta reunasta. Tekstin oikean
+  reunan ja sarkainkohdan väliin tulee mitan \mitta{tabbingsep}
+  suuruinen väli.
+\item [`] Tasaa komennon jälkeisen tekstin sivun oikeaan reunaan.
+\item [pushtabs] Tallentaa nykyiset sarkainkohdat muistiin. Tämän
+  jälkeen sarkainasetuksia voi muuttaa ja alkuperäiset asetukset
+  palauttaa \komento{poptabs}\-/ komennolla.
+\item [poptabs] Palauttaa aiemmin \komento{pushtabs}\-/ komennolla
+  tallennetut sarkainkohdat käyttöön.
+\item [a'] Latoo akuuttiaksentin (\'a) seuraavaan kirjaimeen. Vastaa
+  \komento{'}\-/ komentoa \ymparisto{tabbing}\-/ ympäristön ulkopuolella
+  (taulukko \ref{tlk/tarkkeet}, s.~\pageref{tlk/tarkkeet}).
+\item [a`] Latoo gravisaksentin (\`a) seuraavaan kirjaimeen. Vastaa
+  \komento{`}\-/ komentoa \ymparisto{tabbing}\-/ ympäristön
+  ulkopuolella.
+\item [a=] Latoo pituusmerkin (\=a) seuraavaan kirjaimeen. Vastaa
+  \komento{=}\-/ komentoa \ymparisto{tabbing}\-/ ympäristön
+  ulkopuolella.
+\end{maaritelma}
+
+\begin{esimerkki*}
+  \komentoi{'}
+  \komentoi{+}
+  \komentoi{-}
+  \komentoi{<}
+  \komentoi{=}
+  \komentoi{>}
+  \komentoi{`}
+  \komentoi{a'}
+  \komentoi{a`}
+  \komentoi{a=}
+  \komentoi{hspace}
+  \komentoi{kill}
+  \komentoi{setlength}
+  \mittai{tabbingsep}
+  \ymparistoi{tabbingsep}
+
+\begin{koodilohko}
+\setlength{\tabbingsep}{0mm}
+\begin{tabbing}
+  \hspace{23mm} \= \hspace{23mm} \= \hspace{23mm} \= \kill
+  tässäpä \> kaikki \> eri \> sarkainkohdat \+ \\
+  valmiiksi sisennetty \+ \\
+  vielä enemmän sisennetty \- \\
+  vähemmän sisennetty \>\> oikealle\textrightarrow\' \\
+  \< poikkeuksellisesti sisennetty vähemmän \` täysin oikealla \\
+  paluu aiempaan sisennystasoon ja tarkkeita: \a'{a}\a`{a}\a={a}
+\end{tabbing}
+\end{koodilohko}
+
+  \begin{tulos}
+    \setlength{\tabbingsep}{0mm}
+    \begin{tabbing}
+      \hspace{23mm} \= \hspace{23mm} \= \hspace{23mm} \= \kill
+      tässäpä \> kaikki \> eri \> sarkainkohdat \+ \\
+      valmiiksi sisennetty \+ \\
+      vielä enemmän sisennetty \- \\
+      vähemmän sisennetty \>\> oikealle\textrightarrow\' \\
+      \< poikkeuksellisesti sisennetty vähemmän \` täysin oikealla \\
+      paluu aiempaan sisennystasoon ja tarkkeita: \a'{a}\a`{a}\a={a}
+    \end{tabbing}
+  \end{tulos}
+
+  \caption{Erikoisempia sarkaintoimintoja \ymparisto{tabbing}\-/
+    ympäristössä}
+  \label{esim/tabbing-erikois}
+\end{esimerkki*}
+
+\subsection{Laatikkototeutus}
+
+...
 
 \section{Leijuvat osat}
 \label{luku/leijuosat}
@@ -7174,7 +7328,7 @@ Seuraavassa on esimerkki kahdesta eri ympäristöstä:
   \begin{bmatrix}
     1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \\
   \end{bmatrix} \]
-  
+
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[3]{\mkomento{#1} & $#2$ & #3 \\}

@@ -3,6 +3,11 @@ Käytännöllistä Latexia
 
 **Latex-ladontajärjestelmän opas**
 
+A short introduction in English: *Käytännöllistä Latexia* is a practical
+manual for [Latex](https://en.wikipedia.org/wiki/LaTeX) typesetting
+system. The manual is written in the Finnish language and it can useful
+for beginners and advanced users.
+
 
 Esittely
 --------

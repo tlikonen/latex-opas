@@ -27,11 +27,12 @@ ohjeet siis sopivat nykyaikaiselle tietokoneen käyttäjälle.
 Saatavuus
 ---------
 
-Oppaasta on saatavilla valmiiksi ladottu [PDF-tiedosto][PDF].
-Latex-lähdetiedostot ovat saatavilla Github-lähdekoodivarastossa
-seuraavassa osoitteessa: <<https://github.com/tlikonen/latex-opas>>.
+Oppaasta on saatavilla valmiiksi ladottu PDF-tiedosto Githubissa
+[julkaisusivulla][PDF]. Myös Latex-lähdetiedostot ovat saatavilla
+Githubissa seuraavassa osoitteessa:
+<<https://github.com/tlikonen/latex-opas>>.
 
-[PDF]: https://www.iki.fi/tlikonen/tex/kaytannollista_latexia.pdf
+[PDF]: https://github.com/tlikonen/latex-opas/releases
 
 
 Versionumerointi

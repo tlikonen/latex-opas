@@ -135,7 +135,7 @@ poistaa kaikki syntyneet tiedostot.
 Puutteita ja suunnitelmia
 -------------------------
 
-  - Puuttuvia tai keskeneräisiä lukuja: sarkaimet, esipuhe.
+  - Puuttuvia tai keskeneräisiä lukuja: esipuhe.
   - Lisätään Muuta tekniikkaa -luku, jonka sisällöksi esimerkiksi:
     päiväykset ja kellonajat (datetime2), textpos-paketti, omien
     makropakettien ja dokumenttiluokkien tekeminen.

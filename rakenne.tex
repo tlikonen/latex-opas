@@ -2,7 +2,7 @@
 % Lisenssi: Creative Commons Nimeä-JaaSamoin 4.0 Kansainvälinen (CC BY-SA 4.0)
 % https://creativecommons.org/licenses/by-sa/4.0/legalcode.fi
 
-\chapter{Rakenne ja sisältö KESKEN}
+\chapter{Rakenne ja sisältö}
 
 Tämä luku on oppaan kaikista luvuista kenties käytännönläheisin. Luku
 keskittyy asioihin, joita kirjoittaja miettii erityisesti dokumentin
@@ -3679,7 +3679,7 @@ seuraavan esimerkin avulla ominaisuutta pääsee kokeilemaan:
 \rowcolors{1}{blue!10}{red!10} % ennen taulukkoympäristöjä
 \end{koodilohkosis}
 
-\section{Sarkaimet KESKEN}
+\section{Sarkaimet}
 \label{luku/sarkaimet}
 
 Sarkaimet ovat ennalta määritettyjä vaakasuuntaisia sisennys\-/\ tai
@@ -3804,7 +3804,7 @@ komentojen käyttöä.
   \komentoi{kill}
   \komentoi{setlength}
   \mittai{tabbingsep}
-  \ymparistoi{tabbingsep}
+  \ymparistoi{tabbing}
 
 \begin{koodilohko}
 \setlength{\tabbingsep}{0mm}
@@ -3813,7 +3813,7 @@ komentojen käyttöä.
   tässäpä \> kaikki \> eri \> sarkainkohdat \+ \\
   valmiiksi sisennetty \+ \\
   vielä enemmän sisennetty \- \\
-  vähemmän sisennetty \>\> oikealle\textrightarrow\' \\
+  vähemmän sisennetty \>\> oikealle\' \\
   \< poikkeuksellisesti sisennetty vähemmän \` täysin oikealla \\
   paluu aiempaan sisennystasoon ja tarkkeita: \a'{a}\a`{a}\a={a}
 \end{tabbing}
@@ -3826,7 +3826,7 @@ komentojen käyttöä.
       tässäpä \> kaikki \> eri \> sarkainkohdat \+ \\
       valmiiksi sisennetty \+ \\
       vielä enemmän sisennetty \- \\
-      vähemmän sisennetty \>\> oikealle\textrightarrow\' \\
+      vähemmän sisennetty \>\> oikealle\' \\
       \< poikkeuksellisesti sisennetty vähemmän \` täysin oikealla \\
       paluu aiempaan sisennystasoon ja tarkkeita: \a'{a}\a`{a}\a={a}
     \end{tabbing}
@@ -3839,7 +3839,74 @@ komentojen käyttöä.
 
 \subsection{Laatikkototeutus}
 
-...
+Sarkainkohtia sisältävän rivin voi varsin helposti toteuttaa laatikoiden
+(luku \ref{luku/laatikot}) avulla. Varsinkin \komento{makebox}\-/
+komento soveltuu hyvin, koska laatikolla ei ole reunaviivoja ja laatikon
+leveyden ja sisällön tasauksen voi asettaa. Seuraavassa esimerkissä
+määritetään sarkainten leveysmitta \mittax{sarkainleveys} ja komento
+\komentox{sarkain}, jolla tekstiä voi kirjoittaa tietyn levyiseen
+laatikkoon.
+
+\komentoi{newlength}
+\komentoi{setlength}
+\komentoi{newcommand}
+\komentoi{makebox}
+\komentoi{ignorespaces}
+\begin{koodilohkosis}
+  \newlength{\sarkainleveys}
+  \setlength{\sarkainleveys}{23mm}
+  \newcommand{\sarkain}[3][l]{%
+    \makebox[#2\sarkainleveys][#1]{#3}\ignorespaces}
+\end{koodilohkosis}
+
+\noindent
+Näin määritelty \komentox{sarkain}\-/ komento tarvitsee ainakin kaksi
+argumenttia: ensimmäinen argumentti on kerroin, kuinka monen sarkaimen
+levyinen laatikko tehdään; toinen argumentti on teksti, joka ladotaan
+tähän laatikkoon. Ennen pakollisia argumentteja voi antaa myös
+valinnaisen argumentin hakasulkeissa: se on laatikon sisällön tasaus, ja
+oletus on vasempaan reunaan. Katso lisätietoa \komento{makebox}\-/
+komennon argumenteista luvusta \ref{luku/laatikot-pienet}. Esimerkki
+\ref{esim/sarkain-laatikot} havainnollistaa sarkainten toteuttamista
+laatikoiden avulla.
+
+\begin{esimerkki*}
+  \komentoi{newlength}
+  \komentoi{setlength}
+  \komentoi{newcommand}
+  \komentoi{makebox}
+  \komentoi{ignorespaces}
+  \komentoi{noindent}
+
+\begin{koodilohko}
+\newlength{\sarkainleveys}
+\setlength{\sarkainleveys}{23mm}
+\newcommand{\sarkain}[3][l]{%
+  \makebox[#2\sarkainleveys][#1]{#3}\ignorespaces}
+
+\noindent
+\sarkain{1}{ensin} \sarkain{1}{kaikki} \sarkain{1}{eri} sarkainkohdat \\
+\sarkain{1}{} sarkaimen verran sisennetty rivi \\
+\sarkain{2}{jotain tekstiä} \sarkain[r]{1}{oikealle} \\
+\sarkain{1}{} \sarkain[c]{2}{keskitetty}
+\end{koodilohko}
+
+  \begin{tulos}
+    \newlength{\sarkainleveys}
+    \setlength{\sarkainleveys}{23mm}
+    \newcommand{\sarkain}[3][l]{%
+      \makebox[#2\sarkainleveys][#1]{#3}\ignorespaces}
+
+    \noindent
+    \sarkain{1}{ensin} \sarkain{1}{kaikki} \sarkain{1}{eri} sarkainkohdat \\
+    \sarkain{1}{} sarkaimen verran sisennetty rivi \\
+    \sarkain{2}{jotain tekstiä} \sarkain[r]{1}{oikealle} \\
+    \sarkain{1}{} \sarkain[c]{2}{keskitetty}
+  \end{tulos}
+
+  \caption{Sarkainten toteutus laatikoiden avulla}
+  \label{esim/sarkain-laatikot}
+\end{esimerkki*}
 
 \section{Leijuvat osat}
 \label{luku/leijuosat}

@@ -1,8 +1,8 @@
 versio = 2021
 nimi = kaytannollista-latexia
-lahde = $(nimi).tex asetukset.tex esipuhe.tex \
-	merkintakieli.tex rakenne.tex tavutusvihjeet.tex \
-	valmistautuminen.tex kirjallisuutta.bib erikoiset.tex
+lahde = $(nimi).tex luku-asetukset.tex luku-esipuhe.tex \
+	luku-merkintakieli.tex luku-rakenne.tex tavutusvihjeet.tex \
+	luku-valmistautuminen.tex kirjallisuutta.bib luku-erikoiset.tex
 tds = doc/finnish/latex
 julkaisutiedostot = $(nimi).pdf versio.tex $(lahde) README.md
 julkaisukohteet = $(patsubst %,$(nimi)/%,$(julkaisutiedostot))

@@ -5,7 +5,7 @@ lahde = $(nimi).tex asetukset.tex esipuhe.tex \
 	valmistautuminen.tex kirjallisuutta.bib erikoiset.tex
 tds = doc/finnish/latex
 julkaisutiedostot = $(nimi).pdf versio.tex $(lahde) README.md
-julkaisukohteet = $(patsubst %,$(tds)/$(nimi)/%,$(julkaisutiedostot))
+julkaisukohteet = $(patsubst %,$(nimi)/%,$(julkaisutiedostot))
 asiahakemistot = paketit ymparistot komennot mitat laskurit dokumenttiluokat
 texmf = $(HOME)/texmf
 lualatex = lualatex -interaction=nonstopmode -shell-escape
@@ -31,22 +31,18 @@ tavutusvihjeet.txt:
 tavutusvihjeet.tex: tavutusvihjeet.txt
 	{ echo '\\hyphenation{'; cat $<; echo '}'; } > $@
 
-$(julkaisukohteet): $(tds)/$(nimi)/%: %
-	@mkdir -p $(tds)/$(nimi)
+$(julkaisukohteet): $(nimi)/%: %
+	@mkdir -p $(nimi)
 	cp $< $@
 
-$(tds)/$(nimi).tds.zip: $(julkaisukohteet)
-	zip -r9 $@ $(tds)/$(nimi)
-
-$(nimi).zip: $(tds)/$(nimi).tds.zip $(julkaisukohteet)
-	cd $(tds) && zip -r9 $@ $(nimi).tds.zip $(nimi)
-	mv $(tds)/$@ .
+$(nimi).zip: $(julkaisukohteet)
+	zip -r9 $@ $(nimi)
 
 ctan: $(nimi).zip
 
 install: $(julkaisukohteet)
 	mkdir -p $(texmf)/$(tds)
-	cp -r $(tds)/$(nimi) $(texmf)/$(tds)
+	cp -r $(nimi) $(texmf)/$(tds)
 	mktexlsr $(texmf)
 
 uninstall:
@@ -57,7 +53,7 @@ clean:
 	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls lo* out \
 		run.xml toc idx xdv zip) texput.log
 	rm -f $(addprefix $(nimi)-*.,idx ilg ind)
-	rm -fr doc
+	rm -fr $(nimi)
 
 distclean: clean
 	rm -f $(nimi).pdf versio.tex tavutusvihjeet.tex TAGS

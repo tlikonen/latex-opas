@@ -16,7 +16,7 @@
 *.xdv
 *.zip
 .dir-locals-2.el
-doc
+kaytannollista-latexia/
 TAGS
 tavutusvihjeet.tex
 versio.tex

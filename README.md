@@ -33,11 +33,9 @@ Saatavuus
 ---------
 
 Oppaasta on saatavilla valmiiksi ladottu PDF-tiedosto Githubissa
-[julkaisusivulla][PDF]. Myös Latex-lähdetiedostot ovat saatavilla
-Githubissa seuraavassa osoitteessa:
+[julkaisusivulla](https://github.com/tlikonen/latex-opas/releases). Myös
+Latex-lähdetiedostot ovat saatavilla Githubissa osoitteessa
 <<https://github.com/tlikonen/latex-opas>>.
-
-[PDF]: https://github.com/tlikonen/latex-opas/releases
 
 
 Versionumerointi

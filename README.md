@@ -35,8 +35,9 @@ Saatavuus
 
 Oppaasta on saatavilla valmiiksi ladottu PDF-tiedosto Githubissa
 [julkaisusivulla](https://github.com/tlikonen/latex-opas/releases). Myös
-Latex-lähdetiedostot ovat saatavilla Githubissa osoitteessa
-<<https://github.com/tlikonen/latex-opas>>.
+Latex-lähdetiedostot ovat saatavilla [Githubissa][Github].
+
+[Github]: https://github.com/tlikonen/latex-opas
 
 
 Versionumerointi
@@ -87,27 +88,9 @@ tarvittavan. Esimerkiksi [Debian](https://www.debian.org) Linux
 -käyttöjärjestelmässä asennuspaketti `texlive-full` asentaa koko
 Texliven.
 
-Oppaan voi latoa julkaisupaketin ja asennettujen tiedostojen avulla tai
-versionhallinnan tiedostojen pohjalta.
-
-
-### Julkaisupaketti
-
-Oppaan julkaisupaketin lähdetiedostot voi latoa PDF-tiedostoksi
-komennoilla `lualatex` ja `biber`. Komennot täytyy suorittaa seuraavassa
-järjestyksessä:
-
-    lualatex -shell-escape kaytannollista-latexia
-    biber kaytannollista-latexia
-    lualatex -shell-escape kaytannollista-latexia
-    lualatex -shell-escape kaytannollista-latexia
-
-
-### Versionhallinta (Git)
-
-Git-versionhallintajärjestelmässä säilytettävä opas sisältää tiedoston
-`Makefile`, joka puolestaan sisältää kääntämisohjeet `make`-komennolle.
-PDF-tiedoston saa ladottua yhdellä komennolla:
+[Git][Github]-versionhallintajärjestelmässä säilytettävä opas sisältää
+tiedoston `Makefile`, joka puolestaan sisältää kääntämisohjeet
+`make`-komennolle. PDF-tiedoston saa ladottua yhdellä komennolla:
 
     make
 

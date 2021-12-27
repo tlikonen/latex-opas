@@ -33,10 +33,12 @@ ohjeet siis sopivat nykyaikaiselle tietokoneen käyttäjälle.
 Saatavuus
 ---------
 
-Oppaasta on saatavilla valmiiksi ladottu PDF-tiedosto Githubissa
-[julkaisusivulla](https://github.com/tlikonen/latex-opas/releases). Myös
-Latex-lähdetiedostot ovat saatavilla [Githubissa][Github].
+Oppaan PDF-tiedosto ja lähdetiedostot ovat saatavilla
+[CTAN][CTAN]-arkistossa. PDF-tiedosto on myös Githubissa
+[julkaisusivulla](https://github.com/tlikonen/latex-opas/releases), ja
+lähdetiedostot ovat versionhallintajärjestelmässä [Githubissa][Github].
 
+[CTAN]:   https://ctan.org/pkg/kaytannollista-latexia
 [Github]: https://github.com/tlikonen/latex-opas
 
 

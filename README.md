@@ -45,13 +45,13 @@ lähdetiedostot ovat versionhallintajärjestelmässä [Githubissa][Github].
 Versionumerointi
 ----------------
 
-Oppaan versionumerot tulevat julkaisuajan vuosiluvusta sekä
-mahdollisesti kuukaudesta ja päivästä. Vuoden ensimmäinen tai ainoa
-julkaisu saa versionumeronsa pelkästä vuosiluvusta, esimerkiksi versio
-”2022”. Jos samana vuonna julkaistaan oppaasta uusi versio, lisätään
-versionumeroon kyseisen kuukauden numero, esimerkiksi versio ”2022.4”
-(huhtikuu 2022). Saman kuun aikana toinen julkaisu saa versionumeroonsa
-vielä päivänkin numeron, esimerkiksi ”2022.4.15” (15. huhtikuuta 2022).
+Versionumerot tulevat julkaisuajan vuosiluvusta sekä mahdollisesti
+kuukaudesta ja päivästä. Vuoden ensimmäinen tai ainoa julkaisu saa
+versionumeronsa pelkästä vuosiluvusta, esimerkiksi versio ”2022”. Jos
+samana vuonna julkaistaan oppaasta uusi versio, lisätään versionumeroon
+kyseisen kuukauden numero, esimerkiksi versio ”2022.4” (huhtikuu 2022).
+Saman kuun aikana toinen julkaisu saa versionumeroonsa vielä päivänkin
+numeron, esimerkiksi ”2022.4.15” (15. huhtikuuta 2022).
 
 
 Tekijänoikeus ja lisenssi
@@ -83,12 +83,19 @@ tarkoitukseen, myös kaupallisesti. Ehdot ovat seuraavat:
 Kääntäminen ja asentaminen
 --------------------------
 
-Oppaan Latex-lähdetiedostojen kääntäminen eli latominen PDF-dokumentiksi
-vaatii useita Latexin makropaketteja ja pari fonttia. Latexin
-jakelukokonaisuus [Texlive](https://tug.org/texlive/) sisältää kaiken
-tarvittavan. Esimerkiksi [Debian](https://www.debian.org) Linux
--käyttöjärjestelmässä asennuspaketti `texlive-full` asentaa koko
-Texliven.
+Latex-lähdetiedostojen kääntäminen eli latominen PDF-dokumentiksi vaatii
+useita Latexin makropaketteja ja pari fonttia. Latexin jakelukokonaisuus
+[Texlive](https://tug.org/texlive/) sisältää kaiken tarvittavan.
+Esimerkiksi [Debian](https://www.debian.org) Linux -käyttöjärjestelmässä
+asennuspaketti `texlive-full` asentaa koko Texliven.
+
+[CTAN][CTAN]-arkistossa julkaistut lähdetiedostot käännetään
+PDF-tiedostoksi komennoilla `lualatex` ja `biber` seuraavasti:
+
+    lualatex -shell-escape kaytannollista-latexia
+    biber kaytannollista-latexia
+    lualatex -shell-escape kaytannollista-latexia
+    lualatex -shell-escape kaytannollista-latexia
 
 [Git][Github]-versionhallintajärjestelmässä säilytettävä opas sisältää
 tiedoston `Makefile`, joka puolestaan sisältää kääntämisohjeet
@@ -98,8 +105,8 @@ tiedoston `Makefile`, joka puolestaan sisältää kääntämisohjeet
 
 Kääntämisessä syntyneen PDF-tiedoston voi siirtää haluamaansa paikkaan
 käyttöä varten. Oppaan voi myös asentaa Texin standardiin
-hakemistorakenteeseen, josta muut ohjelmat voivat sen löytää. Se tehdään
-seuraavalla komennolla:
+hakemistorakenteeseen, josta muut ohjelmat voivat sen löytää. Sen voi
+tehdä seuraavalla komennolla:
 
     make install
 
@@ -107,10 +114,10 @@ Edellisen asennuskomennon voi suorittaa ilman erillistä
 kääntämisvaihettakin, koska ennen asentamista se varmistaa, että
 tarvittavat tiedostot on käännetty. Asennuskohde on käyttäjän
 kotihakemistossa eli polussa `$HOME/texmf`. Kohteeseen asentuu paitsi
-oppaan PDF-tiedosto myös Latexin lähdetiedostot ja tämä käsillä oleva
+oppaan PDF-tiedosto myös lähdetiedostot ja tämä käsillä oleva
 `README.md`. Asentamisen jälkeen esimerkiksi Texliveen sisältyvä komento
 `texdoc` osaa löytää ja avata oppaan, kun komennolle antaa argumentiksi
-joitakin oppaan nimen kirjaimia, esimerkiksi `texdoc kaytannoll`.
+joitakin oppaan nimen kirjaimia, esimerkiksi `texdoc kaytann`.
 
 Asennus poistetaan komennolla `make uninstall`. Komento tosin säilyttää
 polun `$HOME/texmf`, koska siellä voi edelleen sijaita muita Texiin ja

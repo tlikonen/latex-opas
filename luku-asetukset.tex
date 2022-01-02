@@ -113,8 +113,8 @@ luvussa \ref{luku/esitysgrafiikka}.
 
 Taulukkoon \ref{tlk/luokkavalitsimet} on koottu perusdokumenttiluokkien
 asetusten valitsimet. Sivun koko asetetaan valitsimilla
-\koodi{a4\-paper} (210 × 297 mm), \koodi{a5\-paper} (148 × 210 mm),
-\koodi{b5\-paper} (176 × 250 mm), \koodi{execu\-tive\-paper} (7,25 ×
+\koodi{a4\-paper} (210 × 297\,mm), \koodi{a5\-paper} (148 × 210\,mm),
+\koodi{b5\-paper} (176 × 250\,mm), \koodi{execu\-tive\-paper} (7,25 ×
 10,5 tuumaa), \koodi{legal\-paper} (8,5 × 14 tuumaa) tai
 \koodi{letter\-paper} (8,5 × 11 tuumaa). Latexin oletuksena on
 \koodi{letterpaper}, mutta oletusta voi olla muutettu Latexin
@@ -384,8 +384,7 @@ marginaali vuorottelevat, ja niitä on havainnollisempaa kutsua sisä- ja
 ulkomarginaaliksi. Marginaalien määrittelyssä voi käyttää valitsimen
 \koodi{left} sijasta valitsinta \koodi{inner}, ja vastaavasti
 \koodi{right}\-/ valitsin voidaan korvata \koodi{outer}\-/ valitsimella.
-Teknisesti näillä ei ole mitään eroa, mutta nimet ovat ihmisille
-havainnollisempia.
+Teknisesti näillä ei ole mitään eroa.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -440,9 +439,9 @@ taulukkoon \ref{tlk/sivun-marginaalit-suhd}.
 
 Klassisessa kirjatypografiassa, jossa teksti ladotaan yhdelle palstalle,
 marginaalien suuruusjärjestys on suurimmasta pienimpään seuraavanlainen:
-ala-, ulko-, ylä- ja sisämarginaali. Suhdeluvut samassa järjestyksessä:
-32, 28, 20, 17. \paketti{geometry}\-/paketin valitsimilla tämä
-ilmaistaan seuraavasti:
+ala-, ulko-, ylä- ja sisämarginaali. Marginaalien suhdeluvut ovat
+samassa järjestyksessä: 32, 28, 20, 17. \paketti{geometry}\-/paketin
+valitsimilla tämä ilmaistaan seuraavasti:
 
 \komentoi{geometry}
 \begin{koodilohkosis}
@@ -472,7 +471,7 @@ sivun vastakkaiseen marginaaliin, lisätään mukaan valitsin
 Perus Latex osaa latoa tekstin yhdelle tai kahdelle palstalle, ja
 \paketti{geometry}\-/ paketin valitsimella \koodim{onecolumn} tai
 \koodim{twocolumn} asetetaan, kumpi tila on oletuksena päällä.
-Useampikin palsta on mahdollista paketin avulla. Valitsimen
+Useampikin palsta on mahdollista laajennuspaketin avulla. Valitsimen
 \koodim{columnsep} avulla asetetaan palstojen välinen etäisyys.
 Käytännössä tämä valitsin on asettaa mitan \mitta{columnsep}, jota voi
 muokata myös komennolla \komento{setlength}, kuten muitakin mittoja
@@ -501,13 +500,13 @@ muokata myös komennolla \komento{setlength}, kuten muitakin mittoja
   \label{tlk/sivun-mittoja}
 }
 
-Sivun kokoasetusten määrittämisen jälkeenkin voi olla tarpeen viitata
-joihinkin sivun mittoihin. Usein esimerkiksi halutaan piirtää sivun
-tekstialueen levyinen tai siihen suhteutettu taulukko tai kuva. Silloin
-on kätevää käyttää mittaa, jonka arvona on juuri tekstialueen leveys.
-Tärkeimmät sivun mitat on koottu taulukkoon \ref{tlk/sivun-mittoja},
-mutta perusteellisemmin niitä käsitellään \pakettictan{geometry}\-/
-paketin ohjekirjassa.
+Sivun kokoasetusten määrittämisen jälkeenkin voi dokumentissa olla
+tarpeen hyödyntää joitakin sivun mittoja. Usein esimerkiksi halutaan
+piirtää taulukko tai kuva, joka on sivun tekstialueen levyinen tai
+siihen suhteutettu. Silloin on kätevää käyttää mittaa, jonka arvona on
+juuri tekstialueen leveys. Tärkeimmät sivun mitat on koottu taulukkoon
+\ref{tlk/sivun-mittoja}, mutta perusteellisemmin niitä käsitellään
+\pakettictan{geometry}\-/ paketin ohjekirjassa.
 
 Taulukossa \ref{tlk/sivun-mittoja} mainittu mitta \mitta{linewidth}
 eroaa tekstialueen (\mitta{textwidth}) tai palstan (\mitta{columnwidth})
@@ -559,9 +558,9 @@ määritellä toisella tavalla, käyttämällä valitsinta \koodi{lay\-out} tai
 \end{esimerkki*}
 
 Esimerkissä \ref{esim/leikkuuvarat} käytetään sisäisesti \textsc{a4}\-/
-kokoista (210 × 297~mm) sivua, mutta sivulle on määritetty joka puolelle
-5\,mm:n leikkuuvarat. Niinpä ulkoisesti sivu on 10\,mm leveämpi ja
-korkeampi, eli ulkoiset mitat ovat 220 × 307~mm. Valitsimella
+kokoista (210 × 297\,mm) sivua, mutta sivulle on määritetty joka
+puolelle 5\,mm:n leikkuuvarat. Niinpä ulkoisesti sivu on 10\,mm leveämpi
+ja korkeampi, eli ulkoiset mitat ovat 220 × 307\,mm. Valitsimella
 \koodi{layout\-offset} asetetaan sisäisen sivun etäisyys ulkoisen sivun
 vasemmasta ylänurkasta. Esimerkissä on mukana myös valitsin
 \koodi{show\-crop}, joka merkitsee sisäisen ja ulkoisen sivun rajakohdan
@@ -620,8 +619,8 @@ Edellä mainittu sivutyyli \koodim{plain} latoo alatunnisteeseen
 sivunumeron. Se on yleensä oletustyyli. Sivunumero on peräisin
 laskurista \laskuri{page} ja sen arvon tulostavasta komennosta
 \komento{thepage} (luku \ref{luku/laskurit}). Toinen hyödyllinen tyyli
-on \koodim{empty}, joka nimensä mukaisesti tarkoittaa tyhjää, eli ylä-
-eikä alatunnisteeseen ei ladota mitään.
+on \koodim{empty}, joka tarkoittaa tyhjää, eli ylä- eikä
+alatunnisteeseen ei ladota mitään.
 
 Yksittäiselle sivulle voi asettaa muusta dokumentista poikkeavan
 sivutyylin komennolla \komentom{thispagestyle}. Komento siis vaikuttaa
@@ -926,9 +925,8 @@ komentoihin. Paketin voisi ladata esimerkiksi seuraavalla tavalla:
 \noindent
 Esimerkissä käytetty valitsin \koodi{unicode} aiheuttaa sen, että pdf\-/
 tiedoston sisäisissä merkkijonoissa käytetään Unicode\-/ merkistöä ja
-sen \textsc{utf\=/8}\-/ koodausta. Ilman tätä valitsinta Lualatex\-/
-kääntäjän kanssa pdf\-/ tiedoston sisäinen sisällysluettelon merkistö ei
-näy välttämättä oikein.
+sen \textsc{utf\=/8}\-/ koodausta. Ilman tätä valitsinta pdf\-/
+tiedoston sisäisen sisällysluettelon merkistö ei välttämättä näy oikein.
 
 \paketti{hyperref}\-/ paketin asetuksia voi määritellä valitsimien
 avulla \komento{usepackage}\-/ komennon yhteydessä mutta myös
@@ -937,6 +935,8 @@ yksi argumentti, joka sisältää pilkuilla erotettuna erilaisia valitsimia
 ja niiden arvoja.
 
 \begin{esimerkki*}
+  \komentoi{hypersetup}
+
 \begin{koodilohko}
 \hypersetup{
   hidelinks, bookmarksopen, bookmarksnumbered,
@@ -953,18 +953,19 @@ ja niiden arvoja.
   \label{esim/hypersetup}
 \end{esimerkki*}
 
-Esimerkissä \ref{esim/hypersetup} valitsin \koodi{hidelinks} saa aikaan
-sen, että pdf:ssä olevia linkkejä ja ristiviitteitä ei merkitä millään
-tavalla. Oletuksena linkit kehystetään eri väreillä riippuen linkin
-tyypistä. Valitsin \koodi{bookmarksopen} näyttää pdf:n sisällysluettelon
-kokonaan avattuna. Oletuksena alaluvut on piilotettuna, ja ne joutuu
-avaamaan napsauttamalla hiirellä ylemmäntasoisen otsikon
-avauspainiketta. Valitsin \koodi{bookmarksnumbered} näyttää pdf:n
-sisällysluettelossa lukujen numeroinnin (kuten 1.1, 1.2, 2.1 tms.).
-Valitsimella \koodi{pdfinfo} määritellään pdf:n metatietoja kuten
-otsikko, aihe ja tekijä mutta omiakin metatietoja voi lisätä. Paljon
-muitakin asetuksia on olemassa, ja niistä voi lukea lisää
-\paketti{hyperref}\-/ paketin ohjekirjasta.
+Esimerkki \ref{esim/hypersetup} havainnollistaa \komento{hypersetup}\-/
+komennon käyttöä. Komennon argumentissa valitsin \koodi{hidelinks} saa
+aikaan sen, että pdf:ssä olevia linkkejä ja ristiviitteitä ei merkitä
+millään tavalla. Oletuksena linkit kehystetään eri väreillä riippuen
+linkin tyypistä. Valitsin \koodi{bookmarksopen} näyttää pdf:n
+sisällysluettelon kokonaan avattuna. Oletuksena alaluvut on
+piilotettuna, ja ne joutuu avaamaan napsauttamalla hiirellä
+ylemmäntasoisen otsikon avauspainiketta. Valitsin
+\koodi{bookmarksnumbered} näyttää pdf:n sisällysluettelossa lukujen
+numeroinnin (kuten 1.1, 1.2, 2.1 tms.). Valitsimella \koodi{pdfinfo}
+määritellään pdf:n metatietoja kuten otsikko, aihe ja tekijä mutta
+omiakin metatietoja voi lisätä. Paljon muitakin asetuksia on olemassa,
+ja niistä voi lukea lisää \paketti{hyperref}\-/ paketin ohjekirjasta.
 
 Pdf\-/ tiedoston sisäiseen sisällysluetteloon tulevat automaattisesti
 mukaan samat otsikot (luku \ref{luku/otsikot}) kuin ladottavaan

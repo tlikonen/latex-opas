@@ -355,10 +355,20 @@ korkeusmitta.
 \noindent
 Sivu on oletuksena pystyasennossa (\koodim{portrait}), mutta sen voi
 asettaa vaaka\-/asentoon valitsimella \koodim{landscape}. Tämä asetus on
-voimassa koko dokumentin ajan. Jos haluaa asettaa vain yksittäisiä
-sivuja vaaka\-/asentoon, täytyy käyttää \pakettictan{pdflscape}\-/
-pakettia ja sen tarjoamaa ympäristöä.
+voimassa koko dokumentin ajan. Jos sen sijaan haluaa asettaa vain
+yksittäisiä sivuja vaaka\-/asentoon, täytyy käyttää
+\pakettictan{pdflscape}\-/ pakettia ja sen tarjoamaa
+\ymparisto{landscape}\-/ ympäristöä. Ympäristön sisältö ladotaan
+vaakasuuntaisille sivuille.
 
+\ymparistoi{landscape}
+\begin{koodilohkosis}
+\begin{landscape}
+  ...
+\end{landscape}
+\end{koodilohkosis}
+
+\noindent
 Sivun asetusten suunnittelussa voi olla avuksi valitsin
 \koodim{show\-frame}, joka piirtää viivat marginaalien kohdalle ja
 merkitsee myös ylä- ja alatunnisteiden sekä marginaalihuomautusten

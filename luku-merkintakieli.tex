@@ -7,18 +7,19 @@
 Latex on merkintäkieli, mikä tarkoittaa, että se sisältää omat tapansa
 dokumentin rakenteen ja sisällön kuvaamiseen. Kaikkea ei kirjoiteta
 lähdedokumenttiin sellaisenaan, vaan täytyy käyttää tiettyjä kielen
-sääntöjen mukaisia merkintätapoja tai komentoja. Tässä luvussa
-käsitellään merkintäkielen perusasioita, joita on tarpeen ymmärtää ennen
-kuin tehokkaasti toimia Latexin parissa. Kaikkea ei tarvitse päntätä
-kerralla muistiin, mutta tänne on hyvä palata välillä kertaamaan
-perustekniikkaa.
+sääntöjen mukaisia merkintätapoja tai komentoja.
+
+Tässä luvussa käsitellään merkintäkielen perusasioita, joita on tarpeen
+ymmärtää ennen kuin voi tehokkaasti toimia Latexin parissa. Kaikkea ei
+tarvitse opetella ulkoa, mutta tähän lukuun on hyvä palata välillä
+kertaamaan perustekniikkaa.
 
 \section{Merkistö}
 
-Latex\-/dokumenttiin voi kirjoittaa tekstiä Unicode\-/merkistöllä ja sen
-\textsc{utf}\=/8\-/koodauksella, jos kääntäjänä on Unicoden osaava
+Latex\-/lähdetiedostoon voi kirjoittaa tekstiä Unicode\-/ merkistöllä ja
+sen \textsc{utf}\=/8\-/ koodauksella, jos kääntäjänä on Unicoden osaava
 ohjelma kuten Lualatex tai Xelatex. Pääasiassa siis merkit kirjoitetaan
-sellaisenaan lähdedokumenttiin, mutta on kuitenkin kaikenlaisia
+sellaisenaan lähdetiedostoon, mutta on kuitenkin monenlaisia
 poikkeuksia, ja niitä käsitellään tässä alaluvussa.
 
 \subsection{Varatut erikoismerkit}
@@ -122,12 +123,11 @@ fonttien yhteydessä luvussa \ref{luku/fontit-välistys}.
 \subsection{Rivinvaihto lähdedokumentissa}
 \label{luku/rivinvaihtomerkit}
 
-Kuten edellä todettiin, lähdedokumentissa olevat rivinvaihdot tulkitaan
-vain sanaväleiksi eivätkä ne vaihda riviä lopullisessa dokumentissa. Jos
-ladottuun dokumenttiin tarvitaan rivinvaihto, kirjoitetaan
-lähdedokumenttiin kaksi kenoviivaa (\komentom{\keno}). Tätä komentoa
-käsitellään tarkemmin tekstikappaleiden yhteydessä luvussa
-\ref{luku/rivinvaihtokomennot}.
+Lähdedokumentissa olevat rivinvaihdot tulkitaan vain sanaväleiksi
+eivätkä ne vaihda riviä lopullisessa dokumentissa. Jos ladottuun
+dokumenttiin tarvitaan rivinvaihto, kirjoitetaan lähdedokumenttiin kaksi
+kenoviivaa (\komentom{\keno}). Tätä komentoa käsitellään tarkemmin
+tekstikappaleiden yhteydessä luvussa \ref{luku/rivinvaihtokomennot}.
 
 On kuitenkin mahdollista saada myös lähdedokumentin rivinvaihdot
 toteutumaan automaattisesti ladotussa tekstissä. Sellainen tila
@@ -139,11 +139,12 @@ dokumentin tilaksi \komento{obeycr} ei yleensä sovi.
 \subsection{Kappaleen vaihtuminen}
 \label{luku/kappaleen-vaihtuminen}
 
-Tyhjä rivi tarkoittaa kappaleen vaihtumista. Rivi on tyhjä silloin, kun
-se ei sisällä mitään muuta kuin rivinvaihdon tai kun se sisältää vain
-välilyöntejä tai sarkainmerkkejä ja lopuksi rivinvaihdon. Tyhjiä rivejä
-voi olla useita peräkkäin, mutta ne tarkoittavat samaa kuin yksi tyhjä
-rivi. Uuden tekstikappaleen voi aloittaa myös komennolla \komento{par}.
+Tyhjä rivi lähdetiedostossa tarkoittaa kappaleen vaihtumista. Rivi on
+tyhjä silloin, kun se ei sisällä mitään muuta kuin rivinvaihdon tai kun
+se sisältää vain välilyöntejä tai sarkainmerkkejä ja lopuksi
+rivinvaihdon. Tyhjiä rivejä voi olla useita peräkkäin, mutta ne
+tarkoittavat samaa kuin yksi tyhjä rivi. Uuden tekstikappaleen voi
+aloittaa myös komennolla \komento{par}.
 
 \begin{koodilohkosis}
 Nämä rivit kuuluvat
@@ -223,7 +224,7 @@ Nämä kaksi eri merkkiä, tilde ja \uctunnus{u+00a0}, toimivat hieman eri
 tavoin. Molemmat estävät rivinvaihdon, mutta tildemerkki sallii välin
 venymisen samalla tavalla kuin tavallinenkin sanaväli sallii (luku
 \ref{luku/sanaväli}). Sen sijaan merkki \uctunnus{u+00a0} on
-vakiolevyinen eikä siis veny muiden sanavälien tapaan. Merkkiä
+vakiolevyinen eikä siis veny muiden sanavälien tavoin. Merkkiä
 \uctunnus{u+00a0} täytyy käyttää ainakin vuorosanaviivan (\==) ja sitä
 seuraavan sanan välissä, koska se väli ei saa venyä.
 
@@ -234,7 +235,7 @@ Ohuke on tavallista sanaväliä kapeampi väli, ja se tehdään
 komennolla~\komentom{,} (kenoviiva ja pilkku). Ohukkeen leveys Latexissa
 on \murtoluku{1}{6} typografisen neliön leveydestä eli em-mitasta (luku
 \ref{luku/mitat}). Ohuke on tasalevyinen ja sitova, eli se ei veny
-muiden sanavälien tapaan, ja se estää rivinvaihdon. Siksi ohuke sopii
+muiden sanavälien tavoin, ja se estää rivinvaihdon. Siksi ohuke sopii
 esimerkiksi pitkien lukujen ja puhelinnumeroiden ryhmittelyyn paremmin
 kun sanaväli.
 
@@ -305,8 +306,8 @@ lopputuloksena yksi kaareva lainausmerkki (''). Kahdella suurempi kuin
 \end{tulossis}
 
 \noindent
-Yllä mainitut riittävät suomen kieleen, mutta englantia ja muita kieliä
-varten tarvitaan myös toisinpäin oleva merkki (``), joka tehdään
+Edellä mainitut riittävät suomen kieleen, mutta englantia ja muita
+kieliä varten tarvitaan myös toisinpäin oleva merkki (``), joka tehdään
 kahdella gravisaksentilla (\koodim{``}). Vastaava puolilainausmerkki (`)
 tehdään yhdellä aksentilla (\koodim{`}). Joissakin kielissä käytetään
 erilaisia kulmalainausmerkkejä lainauksen alussa ja lopussa. Vasemmalle
@@ -325,12 +326,12 @@ kielikohtaisia keinoja lainausmerkkien kirjoittamiseen.
 
 Edellä kuvatut Latexin omat lainausmerkkien merkintätavat (\koodi{''},
 \koodi{>>} ym.) eli niin sanotut Tex\-/ligatuurit voi kytkeä päälle ja
-pois päältä \paketti{fontspec}\-/pakettiin kuuluvien asetusten avulla.
-Fonteissa on yleensä oletuksena päällä Tex\-/ligatuurit eli asetus
-\koodi{Liga\-tures=\katk TeX}, mutta sen saa poistettua asetuksella
-\koodi{Liga\-tures=\katk TeX\-Reset}. Asetusta muutetaan kirjainperheen
-määrittelyn yhteydessä tai väliaikaisesti komennolla
-\komento{addfontfeatures}.
+pois päältä fontin asetuksista eli \paketti{fontspec}\-/ pakettiin
+kuuluvien toimintojen avulla. Fonteissa on yleensä oletuksena päällä
+Tex\-/ligatuurit eli asetus \koodi{Liga\-tures=\katk TeX}, mutta sen saa
+poistettua asetuksella \koodi{Liga\-tures=\katk TeX\-Reset}. Asetusta
+muutetaan kirjainperheen määrittelyn yhteydessä tai väliaikaisesti
+komennolla \komento{addfontfeatures}.
 
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
@@ -345,8 +346,8 @@ määrittelyn yhteydessä tai väliaikaisesti komennolla
 Tasalevyisessä fontissa Tex\-/ligatuurit eivät ole päällä oletuksena,
 joten yksittäisissä sanoissa tai lyhyissä ilmauksissa voi estää
 Tex\-/ligatuurit esimerkiksi komennolla \komento{texttt}. Samalla
-tietysti fonttikin vaihtuu. Fontteja käsitellään tarkemmin luvussa
-\ref{luku/kirjaintyypit}.
+tietysti fonttikin vaihtuu tasalevyiseksi. Fontteja käsitellään
+tarkemmin luvussa \ref{luku/kirjaintyypit}.
 
 \komentoi{texttt}
 \begin{koodilohkosis}
@@ -454,19 +455,28 @@ tehdään Latexissa komennoilla \komentom{dots}, \komento{ldots},
 
 Yläindeksit (a\textsuperscript{2}) tehdään komennolla
 \komentom{textsuperscript} ja alaindeksit (a\textsubscript{2})
-komennolla \komentom{textsubscript}. Oletusasetuksilla Latex toteuttaa
-indeksit mekaanisesti pienentämällä fonttia ja sijoittamalla pienennetyn
-tekstin alas peruslinjan tuntumaan tai ylös gemenalinjan yläpuolelle.%
-\footnote{Katso typografinen viivasto, kuva \ref{kuva/kirjainmitat}
-  sivulla \pageref{kuva/kirjainmitat}.} Lopputulos ei ole typografisesti
-välttämättä kovin hyvä, koska fontin pienentäminen ohentaa samalla
-merkkien viivoja ja ohuimmat hiusviivat voivat lähes kadota.
+komennolla \komentom{textsubscript}.
+
+\komentoi{textsuperscript}
+\komentoi{textsubscript}
+\begin{koodilohkosis}
+a\textsuperscript{2} a\textsubscript{2}
+\end{koodilohkosis}
+
+\noindent
+Oletusasetuksilla Latex toteuttaa indeksit mekaanisesti pienentämällä
+fonttia ja sijoittamalla pienennetyn tekstin alas peruslinjan tuntumaan
+tai ylös gemenalinjan yläpuolelle.\footnote{Katso typografinen viivasto
+  eli kuva \ref{kuva/kirjainmitat} sivulla \pageref{kuva/kirjainmitat}.}
+Lopputulos ei ole typografisesti välttämättä kovin hyvä, koska fontin
+pienentäminen ohentaa samalla merkkien viivoja ja ohuimmat hiusviivat
+voivat lähes kadota.
 
 \englanti{Open Type} \=/fontit sisältävät usein tuen oikeille ylä- ja
 alaindekseille, jotka fontin suunnittelija on toteuttanut. Niitä
-kannattaa käyttää, koska suunnittelija tuntee oman fonttinsa ja saa
-todennäköisesti parempaa jälkeä kuin Latex mekaanisesti. \englanti{Open
-  Type} \=/fonttien indeksit on kätevintä ottaa käyttöön
+kannattaa käyttää, koska suunnittelija tuntee oman fonttinsa ja on
+saanut todennäköisesti parempaa jälkeä kuin Latex mekaanisesti.
+\englanti{Open Type} \=/fonttien indeksit on kätevintä ottaa käyttöön
 \pakettictan{realscripts}\-/ paketin avulla.
 
 Paketti \paketti{realscripts} määrittelee uudelleen Latexin ylä- ja
@@ -507,9 +517,9 @@ Latexin alkuperäiset komennot.
 Taulukossa \ref{tlk/indeksien-vertailu} vertaillaan oikeita ja
 mekaanisia ylä- ja alaindeksejä. Taulukon esimerkit paljastavat, että
 lopputuloksessa on eroa. Mekaaninen ylä- ja alaindeksitoiminto jättää
-merkit turhan suurikoisiksi mutta saattaa silti ohentaa merkkien viivoja
-liian paljon. Se ei myöskään ymmärrä poistaa gemenanumeroita (3624)
-käytöstä vaan latoo ne sellaisenaan suunnilleen oikeaan paikkaan.
+merkit turhan suurikokoisiksi mutta saattaa silti ohentaa merkkien
+viivoja liian paljon. Se ei myöskään ymmärrä poistaa gemenanumeroita
+(3624) käytöstä vaan latoo ne sellaisenaan suunnilleen oikeaan paikkaan.
 
 Ylä- ja alaindeksejä käytettäessä on siis syytä ladata
 \paketti{realscripts}\-/ paketti ja käyttää indeksit hallitsevaa
@@ -520,9 +530,9 @@ Unicode\-/merkistön avulla sellaisenaan. Lopputulos on sama.
 
 \subsection{Tavutusvihje}
 
-Komento \komentom{-} on tavutusvihje, joka neuvoo tavutusalgoritmia
-katkaisemaan sanan tästä kohdasta. Samalla se voi estää sanan
-katkaisemisen muista kohdista.
+Komento \komentom{-} on tavutusvihje, joka neuvoo rivejä latovalle
+algoritmille, että sanan voi katkaista tästä kohdasta rivin lopussa.
+Tavutusvihje voi estää sanan katkaisemisen muista kohdista.
 
 \begin{koodilohkosis}
 tavutus\-algo\-ritmi
@@ -775,7 +785,7 @@ lopulta yksi \koodi{]}-merkki.
 Komennon yhteydessä sanavälejä käsitellään hieman poikkeuksellisesti.
 Esimerkiksi komennon nimen perässä olevat sanavälit syödään pois, jos
 komennolle ei anneta yhtään argumenttia. Seuraavassa esimerkissä sana
-\emph{Latex} ladotaan ehjänä, jos vain \komentox{komento} itsessään ei
+''Latex'' ladotaan ehjänä, jos vain \komentox{komento} itsessään ei
 kirjoita mitään eikä vaikuta tekstin latomiseen.
 
 \begin{koodilohkosis}
@@ -812,7 +822,7 @@ Esimerkiksi jos kirjoittaa Latexia käsittelevää kirjaa, kannattaa heti
 aluksi luoda komento, jolla merkitään kaikki Latexin komennot. Komennon
 nimi voisi olla vaikka \komentox{komento}, ja sen voisi määritellä
 siten, että se lisää automaattisesti komennon nimen alkuun kenoviivan
-(\keno) ja latoo koko ilmauksen tasalevyisellä kirjainperheellä.
+(\koodi{\keno}) ja latoo koko ilmauksen tasalevyisellä fontilla.
 Seuraavassa on esimerkki tällaisen komennon määrittelemisestä ja
 käytöstä:
 
@@ -835,7 +845,7 @@ muitakin asioita. Latexin komentojen nimet ovat suunnilleen englantia,
 ja jos nimen tavuttaa, täytyisi se tehdä englannin sääntöjen mukaisesti.
 Esimerkkinä olleen \komentox{komento}\-/ komennon määritelmässä voisi
 siis vaihtaa myös kielen komennolla \komento{textenglish}.%
-\footnote{Lisätietoa kieliasetuksista voi lukea luvusta
+\footnote{Kieliasetuksista käsitellään luvussa
   \ref{luku/kieliasetukset}.}
 
 Jos ollaan kirjoittamassa laajaa tietoteosta, Latex\-/ komennot halutaan
@@ -1579,9 +1589,9 @@ x\hspace{0mm plus 1filll}x\hspace{0mm plus 1fill}x
 Edellisessä esimerkissä ensimmäinen venyvä mitta \koodi{1filll} mitätöi
 jälkimmäisen \koodi{1fill} kokonaan. Yleensä lienee parasta käyttää
 keskimmäistä (\koodi{fill}), mutta eri tärkeysasteille voi olla käyttöä
-esimerkiksi paketin koodissa: \koodi{fil} sallii, että kirjoittaja
-tai muu koodi syrjäyttää asetuksen; \koodi{filll} on ehdoton sääntö,
-joka syrjäyttää muut.
+esimerkiksi laajennuspaketin koodissa: \koodi{fil} sallii, että
+kirjoittaja tai muu koodi syrjäyttää asetuksen; \koodi{filll} on ehdoton
+sääntö, joka syrjäyttää muut.
 
 Käytännöllisyyssyistä äärettömästi venyvä pituus \koodi{0mm plus 1fill}
 on jo valmiiksi asetettu mittaan \mittam{fill}. Sitä on kätevää käyttää
@@ -2158,7 +2168,7 @@ annetaan seuraavasti:
 
 \noindent
 Grafiikkaan kuten kuviin ja väreihin erikoistunut paketti
-\paketti{graphicx} sisältää hyödyllisiä laatikkokomentoja:
+\pakettictan{graphicx} sisältää hyödyllisiä laatikkokomentoja:
 \komento{scalebox}, \komento{resizebox} ja \komento{rotatebox}. Komento
 \komento{scalebox} skaalaa tekstin eri kokoiseksi vaaka- tai
 pystysuunnassa.

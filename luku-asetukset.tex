@@ -43,18 +43,18 @@ dokumenttien kirjoittamiseen. Seuraavissa alaluvuissa käsitellään
 tavallisimpia dokumenttiluokkia ja niiden asetuksia.
 
 % Dokumenttiluokkia voi tehdä itsekin, ja sitä aihetta käsitellään
-% luvussa X.Y.
+% luvussa \ref{luku/xxxx}.
 
 \subsection{Perusdokumenttiluokat}
 \label{luku/perusdokumenttiluokat}
 
 Muutama dokumenttiluokka kuuluu Latexin perusvalikoimaan, eli ne ovat
-aina saatavilla ja asennettuna, kun itse Latexkin on. Niitä kutsutaan
-välillä standardeiksi dokumenttiluokiksi, ja ne ovat ikään kuin
-muuttumattomia perusluokkia, joiden varaan on turvallista rakentaa omia
-dokumentteja tai muita dokumenttiluokkia. Muita dokumenttiluokkia
-kehitetään Latexin perusosien ulkopuolella, ja niiden ominaisuudet
-voivat muuttua ja kehittyä nopeammin ajan myötä.
+aina saatavilla ja asennettuna. Niitä kutsutaan välillä standardeiksi
+dokumenttiluokiksi, ja ne ovat ikään kuin muuttumattomia perusluokkia,
+joiden varaan on turvallista rakentaa omia dokumentteja tai muita
+dokumenttiluokkia. Muita dokumenttiluokkia kehitetään Latexin perusosien
+ulkopuolella, ja niiden ominaisuudet voivat muuttua ja kehittyä
+nopeammin ajan myötä.
 
 Normaalit paperisivuihin perustuvat dokumentit tehdään luokkien
 \luokkam{article}, \luokkam{report} tai \luokkam{book} avulla. Ne ovat
@@ -67,7 +67,7 @@ piirteitä.
 
 Suurin edellä mainittujen perusluokkien ero on otsikoinnissa ja
 dokumentin jäsentämisessä: \luokka{report} ja \luokka{book} sisältävät
-suuret pääluvut (\komento{chapter}) eli otsikot, jotka alkavat tyhjältä
+suuret pääluvut (\komento{chapter}) eli otsikot, jotka alkavat uudelta
 sivulta; \luokka{article} ei sisällä samanlaisia päälukuja vaan
 ainoastaan tavalliset leipätekstin mukana kulkevat väliotsikot
 (\komento{section}, \komento{subsection} jne.). Tekstin jäsentämistä
@@ -80,14 +80,14 @@ luokka sisältää komennot \komento{frontmatter}, \komento{mainmatter} ja
 erityyppiset osat: esittely\-/, sisältö\-/{} ja liitesivut. Näitä
 käsitellään luvussa \ref{luku/frontmainbackmatter}. Lisäksi
 \luokka{report}\-/ luokka sisältää ympäristön \ymparisto{abstract}, joka
-on tarkoitettu tekstin tiivistelmäosan tekemiseen; \luokka{book}\-/
-luokassa sitä ei ole.
+on tarkoitettu tutkimusraportin tai vastaavan dokumentin tiivistelmäosan
+tekemiseen; \luokka{book}\-/ luokassa sitä ei ole.
 
 Muut erot koskevat lähinnä oletusasetuksia, mutta asetukset ovat
 tietenkin muutettavissa, eivätkä ne siten ole määräävä tekijä
 valittaessa luokkien \luokka{article}, \luokka{report} ja \luokka{book}
-välillä. Dokumenttiluokkien asetuksia käsitellään seuraavassa
-alaluvussa.
+välillä. Dokumenttiluokkien asetuksia käsitellään luvussa
+\ref{luku/perusdokumenttiluokat-asetukset}.
 
 Muita perusdokumenttiluokkia ovat \luokkam{letter} ja \luokka{slides}.
 Nimensä mukaisesti \luokka{letter} on kirjeiden kirjoittamista varten.
@@ -112,8 +112,8 @@ luvussa \ref{luku/esitysgrafiikka}.
 \label{luku/perusdokumenttiluokat-asetukset}
 
 Taulukkoon \ref{tlk/luokkavalitsimet} on koottu perusdokumenttiluokkien
-valitsimet. Sivun koko asetetaan valitsimilla \koodi{a4\-paper} (210 ×
-297 mm), \koodimargin{*paper} \koodi{a5\-paper} (148 × 210 mm),
+asetusten valitsimet. Sivun koko asetetaan valitsimilla
+\koodi{a4\-paper} (210 × 297 mm), \koodi{a5\-paper} (148 × 210 mm),
 \koodi{b5\-paper} (176 × 250 mm), \koodi{execu\-tive\-paper} (7,25 ×
 10,5 tuumaa), \koodi{legal\-paper} (8,5 × 14 tuumaa) tai
 \koodi{letter\-paper} (8,5 × 11 tuumaa). Latexin oletuksena on
@@ -335,12 +335,12 @@ komennolla \komentom{restoregeometry}.
 \noindent
 Valmiiksi määriteltyjä standardipaperikokoja on useita.
 \textsc{iso}\-/standardin mukaiset koot \textsc{a0}--\textsc{a6}
-valitaan valitsimilla kuten \koodimargin{*paper} \koodi{a3paper},
-\koodi{a4paper} tai \koodi{a5paper}. Samoin käytetään myös kokoja
-\textsc{b0}--\textsc{b6} ja \textsc{c0}--\textsc{c6}, esimerkiksi
-\koodi{b2paper} tai \koodi{c6paper}. Lisäksi on valittavissa useita
-japanilaisia ja yhdysvaltalaisia standardeja käyttämällä valitsimia
-kuten \koodi{b0j}--\koodi{b6j}, \koodi{ansi\-a\-paper} tai
+valitaan valitsimilla kuten \koodi{a3paper}, \koodi{a4paper} tai
+\koodi{a5paper}. Samoin käytetään myös kokoja \textsc{b0}--\textsc{b6}
+ja \textsc{c0}--\textsc{c6}, esimerkiksi \koodi{b2paper} tai
+\koodi{c6paper}. Lisäksi on valittavissa useita japanilaisia ja
+yhdysvaltalaisia standardeja käyttämällä valitsimia kuten
+\koodi{b0j}--\koodi{b6j}, \koodi{ansi\-a\-paper} tai
 \koodi{letter\-paper}.
 
 Mikäli standardit koot eivät riitä, voi sivun mitat määrittää vapaasti
@@ -367,13 +367,12 @@ rajoja.
 Taulukkoon \ref{tlk/sivun-marginaalit} on koottu tärkeimpiä valitsimia
 marginaalien mittojen asettamiseksi. Valitsimille annetaan arvoksi Texin
 mittayksikkö, jotka ovat taulukossa \ref{tlk/mittayksiköt}
-(s.~\pageref{tlk/mittayksiköt}). Kaksipuolisessa
-\koodimargin{twoside=\katk true} \koodimargin{twoside=\katk false}
-asettelussa (\koodi{twoside=\katk true}) sivut muodostavat aukeaman eli
-on erikseen vasemmanpuoleinen ja oikeanpuoleinen sivu. Tällöin vasen ja
-oikea marginaali vuorottelevat, ja niitä on havainnollisempaa kutsua
-sisä- ja ulkomarginaaliksi. Marginaalien määrittelyssä voi käyttää
-valitsimen \koodi{left} sijasta valitsinta \koodi{inner}, ja vastaavasti
+(s.~\pageref{tlk/mittayksiköt}). Kaksipuolisessa asettelussa
+(\koodi{twoside=\katk true}) sivut muodostavat aukeaman eli on erikseen
+vasemmanpuoleinen ja oikeanpuoleinen sivu. Tällöin vasen ja oikea
+marginaali vuorottelevat, ja niitä on havainnollisempaa kutsua sisä- ja
+ulkomarginaaliksi. Marginaalien määrittelyssä voi käyttää valitsimen
+\koodi{left} sijasta valitsinta \koodi{inner}, ja vastaavasti
 \koodi{right}\-/ valitsin voidaan korvata \koodi{outer}\-/ valitsimella.
 Teknisesti näillä ei ole mitään eroa, mutta nimet ovat ihmisille
 havainnollisempia.
@@ -530,9 +529,9 @@ leikatuissa paperiarkeissa kuva varmasti yltää reunaan saakka.
 Jos dokumenttiin tarvitaan sivun ulkopuoliset leikkuuvarat, määritellään
 dokumentin ulommaiset mitat edelleen samalla tavalla kuin
 tavallisestikin eli esimerkiksi valitsimella \koodi{paper\-size} (luku
-\ref{luku/sivun-mitat}). \koodimargin{layout} \koodimargin{layout\-size}
-Sen sijaan sivun sisäiset mitat täytyy määritellä toisella tavalla,
-käyttämällä valitsinta \koodi{lay\-out} tai \koodi{layout\-size}.
+\ref{luku/sivun-mitat}). Sen sijaan sivun sisäiset mitat täytyy
+määritellä toisella tavalla, käyttämällä valitsinta \koodi{lay\-out} tai
+\koodi{layout\-size}.
 
 \begin{esimerkki*}
   \komentoi{geometry}

@@ -2837,8 +2837,9 @@ Joissakin kielissä sanan katkaiseminen yhdysmerkin kohdalta vaatii, että
 rivin loppuun kirjoitetaan yksi yhdysmerkki ja seuraavan rivin alkuun
 toinen. Näin ilmaistaan, että sanassa on pysyvä yhdysmerkki eikä vain
 väliaikaisesti katkaisun merkkinä. Tällaisia kieliä varten saattaa
-kielipaketissa (tai muualla) olla omat yhdysmerkkitoiminnot, mutta
-edellä kuvatun tavutuskohdan saa myös seuraavalla tavalla:
+kielipaketissa olla omat yhdysmerkkitoiminnot tai oikeanlainen
+tavutuslogiikka voi jo sisältyä kieliasetuksiin, mutta edellä kuvatun
+tavutuskohdan saa myös seuraavalla tavalla:
 
 \komentoi{discretionary}
 \begin{koodilohkosis}
@@ -2868,9 +2869,9 @@ Parasta olisi katkaista suomen kielen yhdyssanat vain yhdysosien välistä
 (\emph{alku-osa}). Muualtakin voi katkaista (\emph{al-ku-osa}), kunhan
 sanasta eikä sen yhdysosasta ei jää yksittäinen kirjain eri riville.
 Mielellään ei katkaista myöskään kahden vokaalin välistä, jos ne
-kuuluvat samaan sanaan (\emph{kau-emmin}). Joskus halutaan välttää myös
-niin sanottuja orpotavuja eli sitä, että tekstikappaleen viimeiselle
-riville jää vain yksi tavu.
+kuuluvat samaan sanaan (ei: \emph{kau-emmin}). Joskus halutaan välttää
+myös niin sanottuja orpotavuja eli sitä, että tekstikappaleen
+viimeiselle riville jää vain yksi tavu.
 
 Käytännössä siis suomenkielinen teksti ja hyvä typografia vaativat
 välillä tavutusvihjeiden kirjoittamista. Yhdyssanojen osien väliin

@@ -30,6 +30,7 @@ ala-otsi-kon
 alku-osaa
 angle
 an-tiik-va
+an-tiik-va-per-heen
 an-tiik-vaa
 an-tiik-vaan
 an-tiik-van

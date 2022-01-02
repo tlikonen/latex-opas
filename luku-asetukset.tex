@@ -1104,9 +1104,9 @@ Libertinus\-/ kirjainperheet saa käyttöön lataamalla paketti
 \end{koodilohkosis}
 
 \noindent
-Valmiita paketteja on kuitenkin vain harvoille fonteille, ja
-käytännössä lähes aina \englanti{True Type}- ja \englanti{Open Type}
-\=/muodossa olevat fontit otetaan käyttöön \paketti{fontspec}\-/paketin
+Valmiita paketteja on kuitenkin vain harvoille fonteille, ja käytännössä
+lähes aina \englanti{True Type}- ja \englanti{Open Type} \=/muodossa
+olevat fontit otetaan käyttöön \pakettictan{fontspec}\-/ paketin
 komennoilla seuraavan esimerkin mukaisesti:
 
 \komentoi{setmainfont}
@@ -1130,11 +1130,11 @@ fontin ominaisuuksia. Edellisessä esimerkissä käytetään vain
 \koodi{Scale}\-/ valitsinta, jolla fontin voi skaalata haluttuun kokoon.
 
 Peruskirjainperheen (\komentom{setmainfont}) skaalaukseksi asetetaan
-\koodi{Scale=1}, eli sille ei tehdä mitään, ja koko valitsimen voisi
-jättää pois. Sen sijaan kahdella muulla kirjainperheellä
-(\komentom{setsansfont}, \komentom{setmonofont}) käytetään
-kerroinasetusta \koodi{MatchLowercase}, joka skaalaa fontin siten, että
-gemenakirjaimet eli pienet kirjaimet ovat yhtä korkeita kuin
+esimerkissä \koodi{Scale=1}, eli sille ei tehdä mitään, ja koko
+valitsimen voisi jättää pois. Sen sijaan kahdella muulla
+kirjainperheellä (\komentom{setsansfont}, \komentom{setmonofont})
+käytetään kerroinasetusta \koodi{MatchLowercase}, joka skaalaa fontin
+siten, että gemenakirjaimet eli pienet kirjaimet ovat yhtä korkeita kuin
 peruskirjainperheessä. Mikäli skaalausasetus \koodi{MatchLowercase} ei
 tuota ihan toivottua tulosta, voi kirjainperheen skaalausta hienosäätää
 vielä \koodi{Scale\-Again}\-/ valitsimella seuraavalla tavalla:
@@ -1159,7 +1159,7 @@ perusvahvuudeksi ja mikä lihavoiduksi.
 Esimerkki \ref{esim/fontit-leik-omin} selventää, kuinka kirjainperheen
 eri leikkausten nimet tai fonttitiedostot määritellään. Kullekin
 leikkaukselle voi määrittää myös omat asetuksensa \koodi{Fea\-tures}\-/
-loppuisella valitsimella. Samaa asiaa havainnollistetaan myös
+sanaan päättyvällä valitsimella. Samaa asiaa havainnollistetaan myös
 konkreettisemmin esimerkissä \ref{esim/fontit-leik-omin-käyt}.
 Leikkauksen nimessä voi käyttää tähteä (\koodi{*}), joka korvautuu
 kirjainperheen nimellä (\englanti{Macklin Text}).
@@ -1234,13 +1234,13 @@ kulttuureissa.
 
 Myös Latexissa fonttien koot voi määritellä pistemittojen avulla. Niitä
 ja muitakin Latexin mittayksiköitä käsitellään tarkemmin luvussa
-\ref{luku/mitat}. Fonteissa oletusmittayksikkönä on vanha
-pica\-/järjestelmän piste, jonka pituus on noin 0,3515 millimetriä. Sen
-lyhenne Latexissa on~\emph{pt}. Tämän oppaan esimerkeissä käytetään
-kuitenkin Post Script \=/standardin mukaista, julkaisuohjelmiin
-vakiintunutta uudempaa pica\-/pistettä, joka on hieman edellistä
-pidempi: noin 0,3528 millimetriä. Latexissa sen lyhenne on~\emph{bp}.
-Ero näiden kahden pistemitan välillä on hyvin pieni, tavallisilla
+\ref{luku/mitat}. Fonteissa oletusmittayksikkönä on vanha pica\-/
+järjestelmän piste, jonka pituus on noin 0,3515 millimetriä. Sen lyhenne
+Latexissa on~pt. Tämän oppaan esimerkeissä käytetään kuitenkin
+\englanti{Post Script} \=/standardin mukaista, julkaisuohjelmiin
+vakiintunutta uudempaa pica\-/ pistettä, joka on hieman edellistä
+pidempi: noin 0,3528 millimetriä. Latexissa sen lyhenne on~bp. Ero
+näiden kahden pistemitan välillä on hyvin pieni, tavallisilla
 fonttiko'oilla käytännössä merkityksetön.
 
 Kirjainleikkauksen koko mitataan merkistön ylimmän ja alimman kohdan
@@ -1256,8 +1256,8 @@ Latexin normaaleissa dokumenttiluokissa vain kolme: \koodi{10pt}
 (oletus), \koodi{11pt} ja \koodi{12pt}. Dokumenttiluokan kokoasetus
 vaikuttaa myös sivun marginaaleihin, koska Latex pyrkii pitämään rivin
 merkkimäärän lukijalle sopivana: yhdelle riville ei kannata latoa ihan
-mahdottomasti merkkejä, koska rivin seuraaminen vaatii enemmän
-keskittymistä.
+mahdottomasti merkkejä, koska kovin pitkän rivin seuraaminen rasittaa
+lukijaa ja vaatii enemmän keskittymistä.
 
 Fontin koon määrittäminen dokumenttiluokan valitsimella ehkä kuuluu jo
 vähän menneisyyteen, mutta voi sitä edelleen käyttää, jos se riittää ja
@@ -1697,11 +1697,10 @@ säätämiseen yleisesti kaikkialla.
 
 Fonttikokojen määrittelyn lopuksi rivillä 22 suoritetaan komento
 \komento{normalsize}, jotta se tulee heti voimaan. Dokumentin
-esittelyosassa voidaan käyttää fonttikokoon viittaavia mittayksiköitä
-\emph{em} ja \emph{ex}, ja ne viittaavat nyt tähän kokoon.
-\komento{normalsize}\-/ komento suoritetaan kyllä myöhemmin
-automaattisesti dokumentin tekstiosan eli \ymparistox{document}\-/
-ympäristön alussa.
+esittelyosassa voidaan käyttää fonttikokoon viittaavia mittayksiköitä em
+ja ex, ja ne viittaavat nyt tähän kokoon. \komento{normalsize}\-/
+komento suoritetaan kyllä myöhemmin automaattisesti dokumentin
+tekstiosan eli \ymparistox{document}\-/ ympäristön alussa.
 
 Edellä kuvatun absoluuttisen koonmääritystavan etuna on se, että
 kirjoittaja hallitsee fonttien kokoa ja rivikorkeuksia tarkasti ja että
@@ -1760,6 +1759,10 @@ Yleensä tasalevyisestä kirjainperheestä kannattaa kytkeä typografiset
 ligatuurit pois päältä asetuksella \koodi{Liga\-tures=\katk No\-Common}.
 Tasalevyisen fontin ajatukseen nimenomaan kuuluu, että merkit ovat
 samanlevyisiä eikä yhden merkin tilaan sovi sulloa useampaa kirjainta.
+Kaikki tasalevyiset kirjainperheet eivät edes sisällä ligatuurimerkkejä,
+joten ominaisuus näyttää olevan automaattisesti pois päältä. Varmuuden
+vuoksi on kuitenkin hyvä lisätä asetus \koodi{Liga\-tures=\katk
+  No\-Common} tasalevyiselle perheelle.
 
 Oletuksena tavutus on kytketty pois päältä tasalevyiseltä
 kirjainperheeltä, koska sitä käytetään tavallisesti tietokoneisiin
@@ -1806,8 +1809,7 @@ s.~\pageref{tlk/fonttimallikomennot}) tai komennolla
 
 Typografiset ligatuurit ovat fontissa olevia yhdistelmämerkkejä, joissa
 on typografisista syistä yhdistetty kaksi tai useampia kirjaimia yhteen
-merkkiin.%
-\footnote{Typografisten ligatuurien lisäksi on olemassa myös
+merkkiin.\footnote{Typografisten ligatuurien lisäksi on olemassa myös
   luonnollisten kielten ligatuureja, jotka muodostavat kieleen kuuluvan
   kirjaimen, kuten æ norjan kielessä. Niillä on jokin luonnolliseen
   kieleen liittyvä merkitys, eikä eri merkkejä ei ole yhdistetty
@@ -1884,7 +1886,11 @@ olevat {%
   \hlig{st}- ja \hlig{ct}\-/ligatuurit%
 } on saatu fontin asetuksella \koodi{Liga\-tures=\katk His\-toric}.
 Joissakin fonteissa sama tehdään asetuksella \koodi{Liga\-tures=\katk
-  Discretionary}. Useitakin ligatuurityyppejä voi kytkeä päälle
+  Discretionary}. Nämä ligatuurit sopivat niin sanotun humanistisen
+antiikvaperheen (mm. \englanti{Adobe Jenson}) ja renessanssityylisen
+sisällön kanssa käytettäväksi.
+
+Teknisesti on mahdollista kytkeä päälle useitakin ligatuurityyppejä
 samanaikaisesti:
 
 \begin{koodilohkosis}

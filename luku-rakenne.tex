@@ -1802,32 +1802,33 @@ pakettia ja pdf\-/ tiedoston ominaisuuksia käsitellään tarkemmin luvussa
 Latexissa eri otsikoiden tasoille on omat komentonsa, jotka on koottu
 taulukkoon \ref{tlk/otsikkotasot} -- suurimmasta otsikosta pienimpään.
 Ylin otsikkotaso on teoksen osa, ja sitä merkitään komennolla
-\komentom{part}. Tämän komennon käyttö on vapaaehtoista, mutta sillä on
-voi osoittaa laajan teoksen osia. Osat numeroidaan oletuksena
-roomalaisilla järjestysluvuilla: ''\partname~I'', ''\partname~II'',
-''\partname~III'' jne. Ne eivät vaikuta alemmantasoisten otsikoiden
-numerointiin, eli osan vaihtuminen ei oletusasetuksilla nollaa
-alemmantasoisten lukujen laskuria.
+\komentom{part}. Tämän komennon käyttö on vapaaehtoista, mutta sillä voi
+osoittaa laajan teoksen osia. Osat numeroidaan oletuksena roomalaisilla
+järjestysluvuilla: ''\partname~I'', ''\partname~II'', ''\partname~III''
+jne. Ne eivät vaikuta alemmantasoisten otsikoiden numerointiin, eli osan
+vaihtuminen ei oletusasetuksilla nollaa alemmantasoisten lukujen
+laskuria.
 
 Otsikkotaso \komentom{chapter} tarkoittaa kirjan päälukua, joka alkaa
-oletuksena puhtaalta sivulta. Otsikkoa ennen siis suoritetaan
-automaattisesti sivunvaihtokomento \komento{clearpage} tai
-\komento{cleardoublepage} (luku \ref{luku/sivunvaihdot}).
-\komento{chapter}\-/ tasoiset otsikot saavat oletuksena numeroinnin
-''\chaptername~1'', ''\chaptername~2'', ''\chaptername~3'' jne.
-Dokumenttiluokassa \luokka{article} ei tätä otsikkotasoa ole lainkaan.
+oletuksena puhtaalta sivulta. Otsikkoa ennen suoritetaan automaattisesti
+sivunvaihtokomento \komento{clearpage} tai \komento{cleardoublepage}
+(luku \ref{luku/sivunvaihdot}). \komento{chapter}\-/ tasoiset otsikot
+saavat oletuksena numeroinnin ''\chaptername~1'', ''\chaptername~2'',
+''\chaptername~3'' jne. Dokumenttiluokassa \luokka{article} ei tätä
+otsikkotasoa ole lainkaan.
 
 Seuraavat otsikkotasot \komentom{section}, \komentom{subsection} ja
 \komentom{subsubsection} ovat tavallisimpia tekstin väliotsikoita. Nekin
 saavat oletuksena numeroinnin, jossa pisteellä erotetaan mahdolliset
-alaluvut: 1.1, 1.2, 1.2.1, 1.2.2 yms.
+alaluvut: 1.1, 1.2, 1.2.1, 1.2.2, 1.3 yms.
 
 Otsikoinnissa on tärkeää säilyttää suora hierarkkinen suhde
 otsikkotasojen välillä: alemmantasoista otsikkoa ei saa käyttää ennen
-kuin on ensin ollut yhtä astetta ylempi otsikkotaso. Täytyy siis olla
-ensin \komento{section} ennen kuin voi olla \komento{subsection}. Muuten
-otsikoiden numerointi ei toimi oikein. Poikkeus on \komento{part}, jota
-ei välttämättä tarvitse käyttää.
+kuin on käytetty yhtä astetta ylempää otsikkotasoa. Täytyy siis olla
+ensin \komento{section} ennen kuin voi olla \komento{subsection}\-/
+komentoja. Muuten otsikoiden numerointi ei toimi oikein. Poikkeus on
+\komento{part}, joka ei vaikuta numerointiin ja jonka käyttö on
+muutenkin vapaaehtoista.
 
 Otsikkotasot \komentom{paragraph} ja \komentom{subparagraph} eivät ole
 ihan perinteisiä otsikoita, vaan ne ladotaan tekstikappaleen alkuun.
@@ -1844,10 +1845,11 @@ Otsikkokomennoille annetaan tyypillisesti vain yksi argumentti, joka on
 kyseisen otsikon teksti. Otsikkoon ei ole tarkoitus kirjoittaa kovin
 monimutkaisia fontti- eikä muotoilukomentoja, vaan mieluiten ainoastaan
 otsikon teksti. Typografinen muotoilu tehdään muilla keinoilla, joita
-esitellään alaluvussa \ref{luku/otsikot-ulkoasu}. Yksinkertaiset
+esitellään luvussa \ref{luku/otsikot-ulkoasu}. Yksinkertaiset
 korostuskomennot ja tavutusvihjeet (\komento{-}) kuitenkin toimivat
-yleensä. Hauraiden komentojen (luku \ref{luku/komennot-hauraat}) eteen
-täytyy kirjoitaa komento \komento{protect}.
+yleensä. Otsikkokomennon argumentissa olevien hauraiden komentojen (luku
+\ref{luku/komennot-hauraat}) eteen täytyy kirjoittaa komento
+\komento{protect}.
 
 \komentoi{section}
 \begin{koodilohkosis}
@@ -1857,10 +1859,9 @@ täytyy kirjoitaa komento \komento{protect}.
 \noindent
 Otsikko tulee automaattisesti mukaan teoksen sisällysluetteloon, jos
 sellainen on olemassa (luku \ref{luku/sisällysluettelo}). Otsikko näkyy
-myös pdf\-/ tiedoston sisällysluettelossa, jos vain
-\paketti{hyperref}\-/ paketti on käytössä (luku
-\ref{luku/pdf-asetukset}). Lisäksi otsikon tekstiä voi käyttää
-ristiviittauksissa (luku~\ref{luku/ristiviitteet}).
+myös pdf\-/ tiedoston sisällysluettelossa, jos \paketti{hyperref}\-/
+paketti on käytössä (luku \ref{luku/pdf-asetukset}). Lisäksi otsikon
+tekstiä voi käyttää ristiviittauksissa (luku~\ref{luku/ristiviitteet}).
 
 Otsikkokomennoille voi antaa yhden valinnaisen argumentin, jolla
 ilmaistaan otsikosta lyhempi tai yksinkertaisempi versio. Tällöin
@@ -1876,8 +1877,8 @@ kirjoitetaan vain puhdasta tekstiä sisältävä versio otsikosta.
 \end{koodilohkosis}
 
 \noindent
-Kaikille otsikkokomennoille on olemassa myös niin sanottu tähtiversio
-eli komentovaihtoehto, jonka nimen lopussa on tähti: \komento{part*},
+Kaikille otsikkokomennoille on olemassa myös tähtiversio eli
+komentovaihtoehto, jonka nimen lopussa on tähti: \komento{part*},
 \komento{chapter*}, \komento{section*}, \komento{subsection*},
 \komento{subsubsection*}, \komento{paragraph*}, \komento{subparagraph*}.
 Nämä vaihtoehdot latovat otsikon, jolla ei ole numerointia ja jota ei
@@ -1885,12 +1886,10 @@ lisätä sisällysluetteloon.
 
 Pelkän otsikon numeroinnin poistamiseen ei ehkä kannata käyttää näitä
 tähtiversioita, koska yleensä otsikko kuitenkin halutaan
-sisällysluetteloon. Otsikoiden numeroinnin saa pois muilla keinoilla,
-jotka neuvotaan luvussa \ref{luku/otsikot-numerointi}.
-
-Jos kuitenkin jostain syystä haluaa käyttää tähdellistä otsikkokomentoa
-ja haluaa otsikon myös sisällysluetteloon, täytyy se tehdä seuraavalla
-tavalla:
+sisällysluetteloon. Otsikoiden numeroinnin saa pois keinoilla, jotka
+neuvotaan luvussa \ref{luku/otsikot-numerointi}. Jos kuitenkin haluaa
+käyttää tähdellistä otsikkokomentoa ja haluaa otsikon myös
+sisällysluetteloon, täytyy se tehdä seuraavalla tavalla:
 
 \komentoi{section*}
 \komentoi{addcontentsline}
@@ -1925,10 +1924,10 @@ ladotaan.
 
 Laskuri \laskurim{secnumdepth} on tarkoitettu kirjoittajan
 asetettavaksi, ja sillä määritetään, mihin otsikkotasoon saakka otsikot
-numeroidaan. Tasonumerot ovat taulukossa \ref{tlk/otsikkotasot}.
-Seuraava esimerkki määrittelee, että vain tasoon~1 (\komento{section})
-saakka otsikot numeroidaan. Alemmantasoiset otsikot
-(\komento{subsection} ym.) eivät saa numeroa.
+numeroidaan. Tasonumerot ovat taulukossa \ref{tlk/otsikkotasot}
+(s.~\pageref{tlk/otsikkotasot}). Seuraava esimerkki määrittelee, että
+vain tasoon~1 (\komento{section}) saakka otsikot numeroidaan.
+Alemmantasoiset otsikot (\komento{subsection} ym.) eivät saa numeroa.
 
 \komentoi{setcounter}
 \laskurii{secnumdepth}
@@ -1977,10 +1976,7 @@ komento \komento{arabic} latoo laskurin arvon arabialaisilla numeroilla.
 Joskus ehkä halutaan, että otsikoissa eri tasojen numeroita ei eroteta
 toisistaan pisteellä (2.1) vaan yhdysmerkillä tai ajatusviivalla
 (2\==1). Tällainen asetus saadaan määrittelemällä alemmantasoisten
-laskurien latomiskomennot uudelleen, esimerkiksi seuraavasti:%
-\footnote{Parempi olisi ehkä käyttää sitovaa ajatusviivaa, jonka saa
-  \paketti{extdash}\-/ paketin \komento{==}\-/ komennolla. Katso
-  lisätietoa luvusta \ref{luku/tavutus-sallivat-sitovat}.}
+laskurien latomiskomennot uudelleen, esimerkiksi seuraavasti:
 
 \komentoi{renewcommand}
 \komentoi{thesection}
@@ -2011,16 +2007,14 @@ Otsikoiden typografiaan eli esimerkiksi kirjainperheen ja \=/leikkauksen
 valintaan ja välistyksiin on kätevintä käyttää \pakettictan{titlesec}\-/
 pakettia. Perus Latexissakin on kyllä otsikoiden muotoiluun tarkoitettu
 komento \komentox{@startsection}, mutta sen käyttö on hankalampaa eikä
-se toimi kaikilla otsikkotasoilla. Perus Latexin keinoihin voi tutustua
-esimerkiksi epävirallisen Latex\-/ hakuteoksen \textcite{unoffref}
-avulla. Tässä oppaassa sen sijaan keskitytään \paketti{titlesec}\-/
-pakettiin.
+se toimi kaikilla otsikkotasoilla. Tässä oppaassa keskitytään
+\paketti{titlesec}\-/ pakettiin.
 
 Otsikoiden perusmuotoilu on helpointa toteuttaa
-\komentom{titleformat*}\-/ komennon avulla. Sille annetaan argumentiksi
-otsikkokomennon nimi ja sitä vastaavat muotoilukomennot. Seuraava
-esimerkki vaihtaa otsikoihin groteskin kirjainperheen
-(\komento{sffamily}) ja hieman toisistaan poikkeavan kirjainleikkauksen.
+\komentom{titleformat*}\-/ komennon avulla. Sille annetaan argumenteiksi
+otsikkokomento ja sitä vastaavat muotoilukomennot. Seuraava esimerkki
+vaihtaa otsikoihin groteskin kirjainperheen (\komento{sffamily}) ja
+hieman toisistaan poikkeavan kirjainleikkauksen.
 
 \komentoi{titleformat*}
 \komentoi{section}
@@ -2092,7 +2086,7 @@ mikä hyvänsä. Sen perään esimerkissä asetetaan 1\,em:n suuruinen väli
 
 Otsikoiden yhteydessä ladottavaan sisennykseen ja pystysuuntaiseen
 väliin vaikutetaan komennolla \komentom{titlespacing*}. Sille annetaan
-argumentiksi otsikkokomennon nimi ja halutut mitat järjestyksessä vasen
+argumenteiksi otsikkokomento ja halutut mitat järjestyksessä vasen
 sisennys, yläpuolinen väli ja alapuolinen väli.
 
 \komentoi{titlespacing*}
@@ -2151,14 +2145,15 @@ ovat ''kausia'' ja pääluvut ovat ''päiviä''.
 \end{koodilohkosis}
 
 \noindent
-Tässä \komento{renewcommand}\-/ komennot sijoitettiin \komento{addto}\-/
-komennon sisään, sen toiseen argumenttiin. Komento \komento{addto}
-täytyy suorittaa lähdedokumentin esittelyosassa, ja tässä se lisää uusia
-komentoja suomen kielen asetuksiin (\komento{captionsfinnish}), niin
-että ne tulevat voimaan samalla kun suomen kieliasetuksetkin.
-\komento{addto} kuuluu \paketti{polyglossia}\-/\ ja \paketti{babel}\-/
-paketteihin, joita käsitellään tarkemmin kieliasetusten yhteydessä
-luvussa \ref{luku/kieliasetukset}.
+Edellisessä esimerkissä \komento{renewcommand}\-/ komennot sijoitettiin
+\komento{addto}\-/ komennon toiseen argumenttiin. Komento
+\komento{addto} täytyy suorittaa lähdedokumentin esittelyosassa, ja
+tässä esimerkissä se lisää uusia komentoja suomen kielen asetuksiin
+(\komento{captionsfinnish}), niin että ne tulevat voimaan samalla kun
+suomen kieliasetuksetkin. \komento{addto} kuuluu
+\paketti{polyglossia}\-/\ ja \paketti{babel}\-/ paketteihin, joita
+käsitellään tarkemmin kieliasetusten yhteydessä luvussa
+\ref{luku/kieliasetukset}.
 
 Otsikoiden yhteyteen saa automaattisen sivunvaihdon määrittämällä
 komennon, jonka nimen alussa on otsikkokomennon nimi ja lopussa sana
@@ -2486,10 +2481,9 @@ alapuolinen väli (\komento{addvspace}, luku
 verran muita komentoja, jotka on tarkoitettu nimenomaan tämän komennon
 argumentteihin. Komento \komento{contentslabel} latoo kyseisen otsikon
 numeron (1.2, 1.3 tms.) tietynlevyiseen tilaan ja sisennystason
-vasemmalle puolelle (ns. riippuva sisennys). Komento
-\komento{contentspage} latoo sivunumeron. Komennolla \komento{titlerule}
-voi tehdä katsetta ohjaavan viivan tai pisteviivan otsikkotekstin ja
-sivunumeron väliin.
+vasemmalle puolelle (riippuva sisennys). Komento \komento{contentspage}
+latoo sivunumeron. Komennolla \komento{titlerule} voi tehdä katsetta
+ohjaavan viivan tai pisteviivan otsikkotekstin ja sivunumeron väliin.
 
 Paketin \paketti{titletoc} ohjekirjassa on paljon muitakin
 toimintoja ja esimerkkejä sisällysluetteloiden ehostamiseen. Ohjeisiin

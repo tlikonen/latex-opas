@@ -251,9 +251,8 @@ Oletusasetuksilla Latex latoo sisennyksen automaattisesti kappaleen
 alkuun mutta ei kuitenkaan otsikoiden jälkeen.
 
 Ensimmäisen rivin sisennyksen suuruus asetetaan mitan \mittam{parindent}
-avulla, esimerkiksi seuraavan esimerkin mukaisesti. Sopiva mittayksikkö
-tähän tarkoitukseen on \emph{em}, koska se viittaa suoraan nykyisen
-fontin kokoon.
+avulla, seuraavan esimerkin mukaisesti. Sopiva mittayksikkö tähän
+tarkoitukseen on em, koska se viittaa suoraan nykyisen fontin kokoon.
 
 \komentoi{setlength}
 \mittai{parindent}
@@ -338,7 +337,7 @@ erottumaan selvästi vasemmassa reunassa. Tämän oppaan lopussa sivulla
 
 Myös virallisten asiakirjojen muotoilussa käytetään riippuvaa
 sisennystä. Niissä kappaleen ensimmäinen rivi voi sisältää otsikon, joka
-on tasattu vasempaan marginaaliin. Otsikon perässä on sarkainhyppy
+on tasattu vasempaan reunaan. Otsikon perässä on sarkainhyppy
 tekstikappaleen sisennyksen tasalle, ja kappaleen muut rivit on
 sisennettynä samalla tasolle.
 
@@ -366,16 +365,15 @@ Helpoin tapa riippuvien sisennysten toteuttamiseen lienee
 \pakettictan{hanging}\-/ paketin käyttö. Paketti tuo uuden komennon
 \komentom{hangpara}, jonka käyttöä esimerkki
 \ref{esim/riippuva-sis-hangpara} selventää. Komennon ensimmäinen
-argumentti on sisennyksen mitta ja toinen argumentti (positiivinen
-kokonaisluku) määrittää, kuinka monta riviä kappaleen alusta jätetään
-sisentämättä. Jos taas toinen argumentti on negatiivinen luku, luvun
+argumentti on sisennyksen mitta ja toinen argumentti määrittää, kuinka
+monta riviä kappaleen alusta jätetään sisentämättä. Jos toinen
+argumentti on negatiivinen luku, on merkitys päinvastainen eli luvun
 itseisarvo määrittää, kuinka monta riviä kappaleen alusta sisennetään.
 
 Komennon \komento{hangpara} vaihtoehtona on ympäristö
 \ymparistom{hangparas}, jonka sisällä kaikki kappaleet sisennetään
-riippuvalla tyylillä samojen asetusten mukaisesti. Ympäristön
-aloituskomennolle annetaan samat argumentit kuin \komento{hangpara}\-/
-komennollekin.
+riippuvalla tyylillä samojen asetusten mukaisesti. Ympäristölle annetaan
+samat argumentit kuin \komento{hangpara}\-/ komennollekin.
 
 \ymparistoi{hangparas}
 \begin{koodilohkosis}
@@ -424,7 +422,7 @@ esimerkki:
 \komentoi{ignorespaces}
 \begin{koodilohkosis}
 \newlength{\sarkain}
-\setlength{\sarkain}{2.3cm}
+\setlength{\sarkain}{23mm}
 \newcommand{\kappale}[1][]{\par\hangpara{2\sarkain}{1}%
   \makebox[2\sarkain][l]{\ignorespaces #1}\ignorespaces}
 \end{koodilohkosis}
@@ -592,7 +590,7 @@ kolmas
 \noindent
 Rivinvaihtokomennolle voi antaa hakasulkeissa valinnaisen argumentin,
 joka ilmaisee rivien väliin ladottavan ylimääräisen pystysuuntaisen
-tilan. Argumentin on siis oltava mitta (luku \ref{luku/mitat}).
+tilan. Argumentin on siis oltava mitta.
 
 \komentoi{\keno}
 \begin{koodilohkosis}
@@ -607,7 +605,7 @@ ensimmäinen \\ toinen \\[1.3ex] kolmas
 Komennosta on olemassa tähtiversio \komentom{\keno *}, joka edellisten
 ominaisuuksien lisäksi estää sivun vaihtumisen tämän rivinvaihdon
 kohdalla. Myös tähtiversiolle voi antaa valinnaiseksi argumentiksi
-mitan. Sen merkitys on sama kuin komennon normaalilla versiollakin.
+mitan, ja sen merkitys on sama kuin komennon normaalilla versiollakin.
 
 Rivin voi vaihtaa myös komennolla \komentom{newline}, mutta tämä komento
 ei hyväksy valinnaista argumenttia eikä siitä ole tähdellistä versiota.
@@ -664,8 +662,8 @@ Ladonta\-/algoritmi käyttää leski- ja orporiveissä sisäisesti
 haitallisuusarvoa tai sakkoarvoa (\englanti{penalty}), ja jos lesket ja
 orvot halutaan estää, määritellään niiden haitallisuusarvo
 mahdollisimman korkeaksi. Käytännössä arvo 10\,000 tarkoittaa samaa kuin
-ääretön, eli silloin lesken tai orvon haitallisuus on niin suuri, että
-sellaisia ei sallita.
+ääretön, eli silloin lesken tai orvon haitallisuus on niin suuri, ettei
+sellaisia sallita.
 
 \komentoi{widowpenalty}
 \komentoi{clubpenalty}
@@ -700,7 +698,7 @@ lyhyehköjä huomautuksia ja lisätietoa.
 
 Marginaalihuomautukset tehdään komennolla \komentom{marginpar}, jonka
 argumentiksi annetaan marginaaliin tuleva teksti. Marginaalin teksti
-ladotaan vasempaan tai oikeaan marginaaliin riippuen siitä, kumpi on
+ladotaan vasempaan tai oikeaan marginaaliin sen mukaan, kumpi on
 aukeaman ulkoreunassa. Yksipuolisilla sivuilla teksti ladotaan
 oletuksena oikeaan marginaaliin. Mikäli sivu on kaksipalstaisessa
 tilassa (luku \ref{luku/palstat}), marginaalihuomautus ladotaan
@@ -716,13 +714,13 @@ joka ladotaan sivun normaalille tekstialueelle.
 % Miten valinnainen argumentti toimii? \marginpar[left]{right}
 
 \noindent
-Yleensä marginaalihuomautukset ladotaan erilaisella kirjainleikkauksella
-kuin leipäteksti, jotta ne erottuvat toisistaan. Jos leipätekstissä
-käytetään antiikvaa, voisi marginaalissa käyttää esimerkiksi pienempää
-groteskia. Tämän toteutusta varten kannattaa määritellä uusi komento,
-vaikkapa nimellä \komentox{huomautus}, jota käyttämällä
-marginaalihuomautukset saa helposti yhdenmukaiseksi. Seuraavassa on
-esimerkki tällaisen komennon määrittelystä:
+Yleensä marginaalihuomautukset kannattaa latoa erilaisella
+kirjainleikkauksella kuin leipäteksti, jotta ne erottuvat toisistaan.
+Jos leipätekstissä käytetään antiikvaa, voisi marginaalissa käyttää
+esimerkiksi pienempää groteskia. Tämän toteutusta varten kannattaa
+määritellä uusi komento, vaikkapa nimellä \komentox{huomautus}, jota
+käyttämällä marginaalihuomautukset saa helposti yhdenmukaiseksi.
+Seuraavassa on esimerkki tällaisen komennon määrittelystä:
 
 \komentoi{newcommand}
 \komentoi{marginpar}
@@ -749,14 +747,14 @@ erilainen kuin leipätekstissä, jotta huomautus ei häiritse liikaa
 leipätekstin lukemista. \noclub[3]
 
 Sivun marginaalissa olevan huomautuspalstan leveys voidaan määrittää
-sivun asetusten yhteydessä. Asetuksia hoitavan \paketti{geometry}\-/
+sivun asetusten yhteydessä. Asetuksia hoitavan \pakettictan{geometry}\-/
 paketin valitsimella \koodi{marginparwidth} asetetaan palstan leveys ja
 valitsimella \koodi{marginparsep} palstan etäisyys leipätekstistä.
 Valitsimella \koodi{reversemarginpar} siirretään marginaalihuomautukset
 päinvastaiseen marginaaliin. Näitä ja muitakin sivun asetuksia
 käsitellään luvussa~\ref{luku/sivuasetukset}.
 
-Asetuksia voi muuttaa myös kesken dokumentin. Mitta
+Edellä mainittuja asetuksia voi muuttaa myös kesken dokumentin. Mitta
 \mitta{marginparwidth} määrittää marginaalihuomautuspalstan leveyden ja
 mitta \mitta{marginparsep} sen etäisyyden leipätekstistä. Lisäksi on
 mitta \mitta{marginparpush}, jolla asetetaan peräkkäisten
@@ -769,8 +767,8 @@ esimerkki näiden mittojen asettamisesta:
 \mittai{marginparpush}
 \begin{koodilohkosis}
 \setlength{\marginparwidth}{50bp}
-\setlength{\marginparsep}{10bp}
-\setlength{\marginparpush}{6bp}
+\setlength{\marginparsep}  {10bp}
+\setlength{\marginparpush}  {6bp}
 \end{koodilohkosis}
 
 \noindent
@@ -783,13 +781,13 @@ marginaalihuomautukset vastakkaiseen marginaaliin ja komennolla
 \lettrine[lines=3, loversize=.06, lhang=.02, findent=-5bp, nindent=4bp,
 slope=4bp]{A}{nfangit} ovat suurikokoisia tekstin alkukirjaimia.
 Tyypillisesti kirjaimen korkeus on kahdesta viiteen riviä ja se
-upotetaan kappaleen sisään, mutta joskus se sijoitetaan kokonaan
-marginaalin puolelle tai yltää normaalin tekstirivin yläpuolelle.
+upotetaan kappaleen sisään. Joskus anfangi sijoitetaan kokonaan
+marginaalin puolelle tai se sijaitsee normaalisti tekstin peruslinjalla.
 Anfangikirjain voidaan latoa erilaisella kirjainleikkauksella kuin
 leipäteksti. Esimerkiksi vanhassa ja vanhantyylisessä typografiassa
 anfangiin voi sopia erityisen koristeellinen kirjain.
 
-\smallskip
+\medskip
 
 \lettrine[lines=2, lhang=1, nindent=0bp]{E\hspace{1.5bp}}{dellä
   olevaan}, tähän ja seuraavaan tekstikappaleeseen anfangit sopivat

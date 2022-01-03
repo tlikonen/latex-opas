@@ -1057,7 +1057,7 @@ sisältämiä komentoja.
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[2]{\komento{#1} & #2}
-  % \setlength{\ULdepth}{.2ex}
+  \renewcommand{\arraystretch}{1.2}
   \begin{tabular}{llll}
     \toprule
     \ots{Komento}
@@ -1306,10 +1306,10 @@ saatavilla.
 Latexissa verkko\-/osoitteet kannattaa toteuttaa siihen tarkoitetun
 paketin avulla. Paketti \pakettictan{hyperref} sisältää toimintoja
 paitsi verkko\-/ osoitteiden latomiseen mutta myös pdf\-/tiedoston
-asetusten ja ristiviitteiden hallintaan (luku \ref{luku/pdf-asetukset}).
-Paketin avulla valmiin pdf\-/ tiedoston verkkolinkit toimivat, eli
-pdf\-/lukijassa linkkiä napsauttamalla pitäisi avautua verkkoselain ja
-linkin osoittama sivu.
+asetusten (luku \ref{luku/pdf-asetukset}) ja ristiviitteiden (luku
+\ref{luku/ristiviitteet}) hallintaan. Paketin avulla valmiin pdf\-/
+tiedoston verkkolinkit toimivat, eli pdf\-/ lukijassa linkkiä
+napsauttamalla pitäisi avautua verkkoselain ja linkin osoittama sivu.
 
 Paketin käyttämisen typografinen hyöty on se, että rivin vaihdon
 kohdalle sattuvat verkko\-/ osoitteet katkaistaan automaattisesti
@@ -1377,10 +1377,10 @@ argumentti, verkko\-/osoite.
 \end{tulossis}
 
 \noindent
-Joskus dokumenttiin voidaan tarvita verkko\-/osoite, joka ei ole
-pdf\-/dokumentissa napsautettava linkki. Silloin käytetään komentoa
-\komentom{nolinkurl}. Tämän komennon argumenttina oleva verkko\-/osoite
-ainoastaan ladotaan osoitteiden tavoin.
+Joskus dokumenttiin voidaan tarvita verkko\-/osoite, joka ei ole pdf:ssä
+napsautettava linkki. Silloin käytetään komentoa \komentom{nolinkurl}.
+Tämän komennon argumenttina oleva verkko\-/osoite ainoastaan ladotaan
+osoitteiden tavoin.
 
 Linkkinä toimivien sähköpostiosoitteiden latominen vaatii
 \komento{href}- ja \komento{nolinkurl}\-/ komentojen yhdistämistä.
@@ -1443,7 +1443,7 @@ mahdollista käyttää värejä ilman etukäteismäärittelyäkin.
     & \multicolumn{2}{l}{\ots{Esimerkki}} \\
     \midrule
     \rivi{rgb}{punainen, vihreä, sininen}{1,.7,.3}
-    \rivi{HTML}{punainen, vihreä, sininen}{33aaf3}
+    \rivi{HTML}{punainen vihreä sininen}{33aaf3}
     \rivi{cmyk}{syaani, magenta, keltainen, musta}{.1,1,.5,0}
     \rivi{hsb}{sävy, kylläisyys, kirkkaus}{.2,1,.6}
     \rivi{gray}{harmaa}{.55}
@@ -1457,7 +1457,7 @@ mahdollista käyttää värejä ilman etukäteismäärittelyäkin.
 
 Omat värit määritellään komennolla \komentom{definecolor}. Se tarvitsee
 kolme argumenttia: värin nimen, värimallin ja värikoodin. Komennon
-argumenttien rakenteesta on seuraavassa esimerkki:
+argumenttien rakenne on seuraavanlainen:
 
 \komentoi{definecolor}
 \begin{koodilohkosis}
@@ -1469,16 +1469,17 @@ Komennon argumentti \koodi{nimi} on kirjoittajan itse valitsema nimi,
 ja se voi liittyä esimerkiksi värin käyttötarkoitukseen (''nuoli'') tai
 värin yleiseen nimeen (''keltainen''). Argumentti \koodi{väri\-malli}
 tarkoittaa värin ilmaisemisen tapaa. Niitä on useita erilaisia, mutta
-yleisimmät on koottu taulukkoon \ref{tlk/värimalleja}. Eri malleilla on
-eri määrä parametreja, joilla ilmaistaan värin ominaisuuksia. Kunkin
-parametrin arvo on yleensä desimaaliluku 0\==1, mutta \koodi{HTML}\-/
-värimallissa parametrit ilmaistaan yhtenä kolmen kaksinumeroisen
-heksadesimaaliluvun sarjana \textsc{html}\-/ merkintäkielen tavoin.
-Värin parametrit kirjoitetaan komennon argumenttiin
-\koodi{para\-metrit} ja ne erotetaan toisistaan pilkulla. Taulukon
-\ref{tlk/värimalleja} Esimerkki\-/sarakkeessa on parametrien antamisesta
-esimerkki. Muista värimalleista voi lukea \paketti{xcolor}\-/ paketin
-ohjekirjasta.
+yleisimmät on koottu taulukkoon \ref{tlk/värimalleja}.
+
+Eri värimalleilla on eri määrä parametreja, joilla ilmaistaan värin
+ominaisuuksia. Kunkin parametrin arvo on yleensä desimaaliluku 0\==1,
+mutta \koodi{HTML}\-/ värimallissa parametrit ilmaistaan yhtenä kolmen
+kaksinumeroisen heksadesimaaliluvun sarjana \textsc{html}\-/
+merkintäkielen tavoin. Värin parametrit kirjoitetaan komennon
+argumenttiin \koodi{para\-metrit} ja ne erotetaan toisistaan pilkulla.
+Taulukon \ref{tlk/värimalleja} Esimerkki\-/sarakkeessa on parametrien
+antamisesta esimerkki. Muista värimalleista voi lukea
+\paketti{xcolor}\-/ paketin ohjekirjasta.
 
 Kun värit on määritelty, niitä voi käyttää eri komentojen yhteydessä.
 Tekstin väri vaihdetaan toiseksi komennolla \komentom{color}, josta on
@@ -1506,9 +1507,9 @@ vain kyseinen teksti.
 
 \noindent
 Tekstin taustaväri vaihdetaan komennoilla \komentom{colorbox} ja
-\komentom{fcolorbox}. Komennot luovat ikään kuin laatikon, jonka sisällä
-taustaväri on voimassa. Ensin mainittu komento vahtaa vain taustavärin,
-ja jälkimäinen sisältää lisäksi värillisen kehyksen, eli sille
+\komentom{fcolorbox}. Komennot luovat laatikon, jonka sisällä taustaväri
+on voimassa. Ensin mainittu komento vaihtaa vain taustavärin, ja
+jälkimmäinen sisältää lisäksi värillisen kehyksen, eli sille
 määritellään kaksi väriä.
 
 \begin{koodilohkosis}

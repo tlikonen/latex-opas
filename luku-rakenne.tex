@@ -1681,11 +1681,11 @@ tai kahdentasoisia otsikoita -- muuta ei tarvita. Tässä alaluvussa
 käsitellään juuri tämäntyyppisiä asioita eli tekstikappaletta suurempien
 kokonaisuuksien jäsentämistä.
 
-\subsection{Perustiedot, kansisivu ja tiivistelmä}
+\subsection{Perustiedot, nimiösivu ja tiivistelmä}
 \label{luku/dokumentin-perustiedot}
 
 Latexissa on yksinkertainen toiminto dokumentin perustietojen latomiseen
-dokumentin alkuun, mahdollisesti erilliselle kansisivulle. Perustietoja
+dokumentin alkuun, mahdollisesti erilliselle nimiösivulle. Perustietoja
 ovat teoksen nimi, tekijä ja päiväys. Lähdedokumentin alussa perustiedot
 ilmaistaan seuraavilla komennoilla:
 
@@ -1710,12 +1710,12 @@ Komennot eivät itse vielä lado mitään tekstiä dokumenttiin. Ne vain
 tallentavat perustiedot muistiin mahdollista myöhempää käyttöä varten.
 Komennolla \komentom{maketitle} voi latoa kaikki edellä mainitut tiedot.
 Ne voivat näkyä ensimmäisen sisältösivun alussa tai erillisellä
-kansisivulla; se riippuu dokumenttiluokan asetuksista ja valitsimista
+nimiösivulla; se riippuu dokumenttiluokan asetuksista ja valitsimista
 \koodi{titlepage} ja \koodi{notitlepage}. Se, kumpi asetus on oletuksena
-päällä, vaihtelee eri dokumenttiluokissa. Dokumenttiluokkia ja niiden
-asetuksia käsitellään tarkemmin luvussa \ref{luku/dokumenttiluokat}.
-Yksittäiset perustiedot saa ladottua seuraavilla komennoilla:
-\komento{thetitle}, \komento{theauthor} ja \komento{thedate}.
+päällä, vaihtelee eri dokumenttiluokissa (luku
+\ref{luku/perusdokumenttiluokat-asetukset}). Yksittäiset perustiedot saa
+ladottua seuraavilla komennoilla: \komento{thetitle},
+\komento{theauthor} ja \komento{thedate}.
 
 Perustietokomentoihin \komento{title}, \komento{author} ja
 \komento{date} ei ole tarkoitus sisällyttää kovin monimutkaisia
@@ -1726,27 +1726,28 @@ ilman Latexin valmiita keinoja.
 
 Hyödyllisiä ympäristöjä dokumentin alussa käytettäväksi voivat olla
 \ymparistom{titlepage} ja \ymparistom{abstract}. Ensin mainittu luo
-tyhjän sivun kansisivun toteuttamiseen. Se myös aloittaa sivunumeroinnin
-alusta eli asettaa uudelleen \laskuri{page}\-/ laskurin arvon.
-\ymparisto{abstract}\-/ ympäristö on tarkoitettu tieteellisen artikkelin
-tiivistelmän kirjoittamiseen. Molempien edellä mainittujen ympäristöjen
-käyttö on vapaaehtoista. Kansisivun ja artikkelin tiivistelmän voi aivan
-hyvin toteuttaa ilman näitäkin.
+tyhjän sivun nimiösivun toteuttamista varten. Se myös aloittaa
+sivunumeroinnin alusta eli nollaa \laskuri{page}\-/ laskurin arvon.
+Ympäristö \ymparisto{abstract} toimii \luokka{article}\-/\ ja
+\luokka{report}\-/ dokumenttiluokissa ja on tarkoitettu tieteellisen
+artikkelin tiivistelmän kirjoittamiseen. Molempien edellä mainittujen
+ympäristöjen käyttö on vapaaehtoista. Nimiösivun ja artikkelin
+tiivistelmän voi aivan hyvin toteuttaa ilman näitäkin.
 
-Teoksen kansisivu -- jos sellainen on -- kannattanee lisätä pdf\-/
+Teoksen nimiösivu -- jos sellainen on -- kannattanee lisätä pdf\-/
 tiedoston sisäiseen sisällysluetteloon, jotta lukija voi helposti palata
 alkuun myös luettelon kautta. Normaaliin ladottavaan sisällysluetteloon
-tuskin koskaan merkitään kansisivua. Pdf:n sisällysluetteloon saa oman
+tuskin koskaan merkitään nimiösivua. Pdf:n sisällysluetteloon saa oman
 merkinnän esimerkiksi seuraavalla komennolla:
 
 \komentoi{pdfbookmark}
 \begin{koodilohkosis}
-\pdfbookmark[0]{Kansi}{sivu/kansi}
+\pdfbookmark[0]{Nimiö}{sivu/nimiö}
 \end{koodilohkosis}
 
 \noindent
 Edellä mainittu komento \komento{pdfbookmark} täytyy sijoittaa Latex\-/
-lähdedokumentissa nimenomaan kansisivulle, koska
+lähdedokumentissa nimenomaan nimiösivulle, koska
 sisällysluettelomerkintä on samalla linkki kyseiseen kohtaan
 dokumentissa. Komento kuuluu \paketti{hyperref}\-/ pakettiin, ja sitä
 käsitellään tarkemmin pdf:n asetusten yhteydessä luvussa
@@ -2190,7 +2191,7 @@ tietokirjan rakennetta ja teknistä toteuttamista.
 Dokumentin alkuun voi kirjoittaa komennon \komentom{frontmatter}, joka
 asettaa sivunumeroiden tyyliksi roomalaiset numerot (i, ii, iii jne.) ja
 poistaa pääluvuilta (\komento{chapter}) numeroinnin. Tässä osassa ovat
-teoksen kansi ja perustiedot, sisällysluettelo, tietokirjan tai
+teoksen nimiö ja perustiedot, sisällysluettelo, tietokirjan tai
 tutkimuksen tiivistelmä ja mahdollisesti teoksen esipuhe tai muu
 vastaava esittelyteksti, joka ei ole vielä varsinaista sisältöä.
 

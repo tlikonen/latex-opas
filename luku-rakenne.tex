@@ -947,9 +947,10 @@ Melko rauhallinen typografinen keino on \textsc{pienversaali} eli
 kapiteeli (\komentom{textsc}), jonka kirjaimet näyttävät
 versaalikirjaimilta mutta ovat suunnilleen gemenakirjainten eli pienten
 kirjainten korkuisia. Pienversaali on fonttiin sisältyvä erillinen
-kirjainmuotoilijan piirtämä leikkaus, eli se ei ole tietokoneen
-mekaanisesti pienentämä versio versaalikirjaimista. Jos fonttiin ei
-sisälly pienversaalia ja sellaisen silti haluaa omaan
+suunnittelijan piirtämä leikkaus, eli se ei ole tietokoneen mekaanisesti
+pienentämä versio versaalikirjaimista.
+
+Jos fonttiin ei sisälly pienversaalia ja sellaisen silti haluaa omaan
 keinovalikoimaansa, voi yrittää vähemmän tyylikästä mekaanista
 toteutusta luvussa \ref{luku/fontit-keinopienversaali} kerrotuilla
 asetuksilla. Luvuissa \ref{luku/fontit-välistys} ja
@@ -976,26 +977,40 @@ Typografisesta estetiikasta juontuu sekin, että pienversaali on sopiva
 pari gemenanumeroiden kanssa erilaisiin teknisiin koodeihin ja muihin
 ilmauksiin, jotka koostuvat kirjaimista ja numeroista. Sen sijaan
 versaalikirjaimia ja gemenanumeroita ei sovi käyttää yhdessä, koska
-merkkien kokoero on häiritsevän suuri. Kuten seuraavista esimerkeistä
-näkyy, versaalit ovat joskus miltei kaksinkertaisia gemenanumeroihin
-verrattuna, ja muutenkin gemenanumerot asettuvat keskimäärin eri
-korkeustasolle.
+merkkien kokoero on häiritsevän suuri. Kuten taulukosta
+\ref{tlk/versaali-pienversaali-vertailu} näkyy, versaalit ovat joskus
+miltei kaksinkertaisia gemenanumeroihin verrattuna, ja muutenkin
+gemenanumerot asettuvat keskimäärin eri korkeustasolle.
 
-\begin{tulossis}
-  \begin{tabular}[t]{@{}lll}
-    Väärin:
+\leijutlk{
+  \setlength{\tabcolsep}{3bp}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{llll}
+    \toprule
+    & \multicolumn{2}{l}{\ots{Esimerkit}}
+    & \ots{Kirjainten ja numeroiden muoto} \\
+    \midrule
+    \otsrivi{Väärin:}
     & {\gemenanum ISO-8859-1}
-    & {\gemenanum 2012 a.D.} \\[1ex]
-    Oikein:
+    & {\gemenanum 2012 a.D.}
+    & versaalikirjaimet ja gemenanumerot \\
+    \otsrivi{Oikein:}
     & {\gemenanum\scshape iso-8859-1}
-    & {\gemenanum\scshape 2012 a.d.} \\[1ex]
-    Oikein:
+    & {\gemenanum\scshape 2012 a.d.}
+    & pienversaalikirjaimet ja gemenanumerot \\
+    \otsrivi{Oikein:}
     & {\versaalinum ISO-8859-1}
-    & {\versaalinum 2012 A.D.} \\
+    & {\versaalinum 2012 A.D.}
+    & versaalikirjaimet ja versaalinumerot \\
+    \bottomrule
   \end{tabular}
-\end{tulossis}
+}{
+  \caption{Versaalikirjainten, pienversaalin sekä gemena\-/\ ja
+    versaalinumeroiden vertailua. Versaalikirjaimet ja gemenanumerot
+    eivät sovi yhteen}
+  \label{tlk/versaali-pienversaali-vertailu}
+}
 
-\noindent
 Fontin näkökulmasta gemenanumerot ovat erillinen ominaisuus, jonka
 fontin suunnittelija on toteuttanut. Ominaisuuden käyttöönottoa ja muita
 numeroihin liittyviä fonttiasetuksia käsitellään luvussa

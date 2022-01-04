@@ -3086,22 +3086,22 @@ käsittelevästä luvusta \ref{luku/komennot-määrittely}.
 \section{Taulukot}
 \label{luku/taulukot}
 
-Taulukoiden tekemiseen on perus Latexissa kaksi ympäristöä
+Taulukoiden tekemiseen on perus Latexissa kaksi ympäristöä,
 \ymparisto{tabular} ja \ymparisto{tabular*}, joskin jälkimmäisen tilalle
 sopii yleensä paremmin \paketti{tabularx}\-/ paketin ympäristö
-\ymparisto{tabularx}. Ennen varsinaista taulukoiden tekniikkaa
-käsitellään kuitenkin niiden sijoittamista ja typografiaa.
+\ymparisto{tabularx}. Ennen kuin käsitellään taulukoiden teknisiä
+ohjeita on kuitenkin syytä puhua niiden sijoittelusta ja typografiasta.
 
 Taulukon voi sijoittaa dokumenttiin eri tavoin. Yksi mahdollisuus on
-sijoittaa taulukot normaalin tekstivirran mukaan omiksi
-tekstikappaleikseen. Pieni pystysuuntainen väli on silloin tarpeen ennen
-ja jälkeen taulukon. Jos tekstikappaleiden välissä ei ole normaalisti
-ole väliä (\mitta{parskip}\-/ mitta), täytyy sellainen lisätä käsin.
-Pystysuuntaisia välejä käsitellään luvussa
-\ref{luku/pystysuuntaiset-välit}. Taulukolle tulee oletuksena sama
-sisennys kuin tekstikappaleiden ensimmäisellä rivillä on eli mitta
-\mitta{parindent} (luku \ref{luku/ensimmäisen-rivin-sisennys}). Jos
-sisennyksen haluaa pois, täytyy käyttää komentoa \komento{noindent}.
+sijoittaa ne normaalin tekstivirran sekaan omiksi tekstikappaleikseen.
+Pieni pystysuuntainen väli on silloin tarpeen ennen ja jälkeen taulukon.
+Jos tekstikappaleiden välissä ei ole normaalisti väliä
+(\mitta{parskip}), täytyy sellainen lisätä käsin. Pystysuuntaisia välejä
+käsitellään luvussa \ref{luku/pystysuuntaiset-välit}. Taulukolle tulee
+oletuksena sama sisennys kuin tekstikappaleiden ensimmäisellä rivillä on
+eli mitta \mitta{parindent} (luku
+\ref{luku/ensimmäisen-rivin-sisennys}). Jos sisennyksen haluaa pois,
+täytyy käyttää komentoa \komento{noindent}.
 
 Toinen tyypillinen vaihtoehto on sijoittaa taulukko vaakasuunnassa sivun
 keskelle, jolloin se erottuu muusta tekstistä vielä selvemmin. Tämän voi
@@ -3132,8 +3132,8 @@ riittää.
 
 \subsection{Perustoiminnot}
 
-Taulukoiden perusympäristö on \ymparisto{tabular}, jonka rakenne on
-seuraava:
+Taulukoiden perusympäristö on \ymparisto{tabular}, jolle täytyy antaa
+ainakin yksi argumentti. Ympäristön rakenne on seuraavanlainen:
 
 \komentoi{\keno}
 \ymparistoi{tabular}
@@ -3175,18 +3175,18 @@ peruslinja on sen keskellä. Muut vaihtoehdot ovat \koodi{t}
   \label{tlk/taulukko-sarakemerkit}
 }
 
-Ensimmäinen pakollinen argumentti \koodi{sarakkeet} määrittelee
-taulukon sarakkeiden määrän ja tyypin. Ne ilmaistaan tietyillä
-kirjaimilla tai muilla merkeillä, jotka on koottu taulukkoon
-\ref{tlk/taulukko-sarakemerkit}. Taulukon neljä ensimmäistä tyyppiä
-\koodi{lcrp} määrittelevät, millaisesta sarakkeesta on kyse. Syntyvässä
-taulukossa tulee olemaan niin monta saraketta kuin näitä on ympäristön
-\koodi{sarakkeet}\-/ argumentissa. Kolme ensin mainittua luovat
-sarakkeen, jonka leveys määräytyy sarakkeen leveimmän solun perusteella.
-Neljäs eli saraketyyppi \koodi{p} tarvitsee aaltosulkeissa argumentiksi
-mitan (luku \ref{luku/mitat}), ja sillä ilmaistaan sarakkeen kiinteä
-leveys. Tässä saraketyypissä teksti tasataan solun molemmista reunoista
-eli sanavälit voivat venyä.
+Pakollinen argumentti \koodi{sarakkeet} määrittelee taulukon sarakkeiden
+määrän ja tyypin. Ne ilmaistaan tietyillä kirjaimilla tai muilla
+merkeillä, jotka on koottu taulukkoon \ref{tlk/taulukko-sarakemerkit}.
+Taulukon neljä ensimmäistä tyyppiä \koodi{lcrp} määrittelevät,
+millaisesta sarakkeesta on kyse. Syntyvässä taulukossa tulee olemaan
+niin monta saraketta kuin näitä on ympäristön \koodi{sarakkeet}\-/
+argumentissa. Kolme ensin mainittua luovat sarakkeen, jonka leveys
+määräytyy sarakkeen leveimmän solun perusteella. Neljäs eli saraketyyppi
+\koodi{p} tarvitsee aaltosulkeissa argumentiksi mitan (luku
+\ref{luku/mitat}), ja sillä ilmaistaan sarakkeen kiinteä leveys. Tässä
+saraketyypissä teksti tasataan solun molemmista reunoista eli sanavälit
+voivat venyä.
 
 Merkit \koodi{|} ja \koodi{@} voi sijoittaa edellä mainittujen
 saraketyyppien väliin tai ennen ensimmäistä saraketta tai viimeisen
@@ -3286,11 +3286,11 @@ uudelleen, ja se tehdään seuraavan esimerkin mukaisesti:
 
 \noindent
 Sarakkeiden määrittelyssä voi kirjoittaa useita pystyviivoja eli
-\koodi{|}\=/ merkkejä peräkkäin. Silloin pystyviivoja ladotaan
-taulukkoon useita vierekkäin. Viivojen väliseen etäisyyteen voi
-vaikuttaa mitan \mittam{doublerulesep} avulla. Sen oletusarvo on 2\,pt.
-Kaikkien viivoja paksuus puolestaan on mitassa \mittam{arrayrulewidth},
-jonka oletusarvo on 0,4\,pt.
+\koodi{|}\=/ merkkejä peräkkäin. Silloin pystyviivoja myös ladotaan
+taulukkoon useita vierekkäin. Ladottujen viivojen väliseen etäisyyteen
+voi vaikuttaa mitan \mittam{doublerulesep} avulla. Sen oletusarvo on
+2\,pt. Kaikkien viivoja paksuus puolestaan on mitassa
+\mittam{arrayrulewidth}, jonka oletusarvo on 0,4\,pt.
 
 Jos sarakkeiden välissä ei ole \koodi{@}\=/ merkillä tehtyjä
 poikkeuksia, ladotaan joka solun vasempaan ja oikeaan reunaan väli, joka
@@ -3311,9 +3311,9 @@ koonti edellä mainittujen mittojen asettamisesta ja niiden oletusarvot.
 
 \noindent
 Sarakemääritelmässä voi \koodi{@}\=/ merkillä säätää sarakkeiden välit
-täysin haluamansa laiseksi. Esimerkiksi merkeillä \koodi{@\{\}}
-sarakeväli poistetaan kokonaan. Jos \koodi{@\{\dots\}}\=/ määrittelyyn
-halutaan mukaan normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
+haluamansa laiseksi. Merkeillä \koodi{@\{\}} sarakeväli poistetaan
+kokonaan. Jos \koodi{@\{\dots\}}\=/ määrittelyyn halutaan mukaan
+normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
 \komento{vline}, esimerkiksi seuraavasti:
 
 \komentoi{\keno}
@@ -3329,7 +3329,7 @@ halutaan mukaan normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
 \subsection{Poikkeuksellisia sarakkeita ja rivejä}
 
 Taulukkoympäristön argumenteissa määritellään taulukon sarakkeiden määrä
-tyypit, mutta siihen on mahdollista tehdä yksittäisiä poikkeuksia
+ja tyypit, mutta niihin on mahdollista tehdä yksittäisiä poikkeuksia
 taulukon sisällä. Sarakekohtaiset poikkeukset tehdään komennolla
 \komentom{multicolumn} ja rivikohtaiset poikkeukset komennolla
 \komentom{multirow}, joka kuuluu pakettiin \pakettictan{multirow}.
@@ -3403,7 +3403,7 @@ Edellä on käsitelty vain soluja, joissa on yksirivinen teksti, mutta
 tietyissä tilanteissa yhteen soluun voidaan latoa useampia rivejä.
 Saraketyyppi~\koodi{p} (taulukko \ref{tlk/taulukko-sarakemerkit}) on
 leveydeltään kiinteä, ja jos solun sisältö ei mahdu kyseiseen tilaan, se
-pyritään jakamaan useammalle riville. Sanoja mahdollisesti katkaistaan
+jaetaan useammalle riville ja sanoja mahdollisesti katkaistaan
 tavurajojen kohdalta. Myös \komentom{newline}\-/ komennolla voi vaihtaa
 riviä yksittäisen solun sisällä. Sekin toimii vain kiinteäleveyksisillä
 \koodi{p}\-/ tyypin sarakkeilla.
@@ -3507,7 +3507,7 @@ alapuolelta täytyy jättää riittävä määrä soluja tyhjäksi.
 
 Latexin toinen taulukkoympäristö \ymparistom{tabular*} toimii muuten
 samalla tavalla kuin \ymparisto{tabular}, mutta se tarvitsee yhden
-argumentin lisää, taulukon leveysmitan:
+argumentin enemmän, taulukon leveysmitan:
 
 \ymparistoi{tabular*}
 \begin{koodilohkosis}
@@ -3519,7 +3519,7 @@ argumentin lisää, taulukon leveysmitan:
 \noindent
 Valitettavasti taulukon leveysmittaa voi hyödyntää vain rajallisesti. Se
 vaikuttaa taulukon leveyteen silloin, kun sarakkeiden välit on
-määritelty venyviksi käyttämällä seuraavaa sarakevälin määritystä:
+määritelty venyviksi käyttämällä seuraavanlaista sarakevälin määritystä:
 
 \komentoi{extracolsep}
 \mittai{fill}
@@ -3545,12 +3545,12 @@ versio \ymparisto{tabular*}\-/ ympäristöstä. Sen käyttö on samanlaista:
 
 \noindent
 Ympäristö \ymparisto{tabularx} sisältää yhden uuden
-saraketyypin:~\koodi{X} (vrt. taulukko
-\ref{tlk/taulukko-sarakemerkit}). Tämä saraketyyppi toimii kuten
-tyyppi~\koodi{p}, mutta sille ei anneta argumentiksi mittaa, vaan sen
-leveys on äärettömästi venyvä. Tämäntyyppiset sarakkeet täyttävät siis
-kaiken vapaana olevan tilan, ja jos niitä on useita, ne ovat oletuksena
-keskenään yhtä leveitä. Tämä ilmenee seuraavasta esimerkistä:
+saraketyypin:~\koodi{X} (vrt. taulukko \ref{tlk/taulukko-sarakemerkit}).
+Tämä saraketyyppi toimii kuten tyyppi~\koodi{p}, mutta sille ei anneta
+argumentiksi mittaa, vaan sen leveys on äärettömästi venyvä.
+Tämäntyyppiset sarakkeet täyttävät siis kaiken vapaana olevan tilan, ja
+jos niitä on useita, ne ovat oletuksena keskenään yhtä leveitä. Tämä
+ilmenee seuraavasta esimerkistä:
 
 \komentoi{hline}
 \mittai{linewidth}
@@ -3671,9 +3671,9 @@ yltävien taulukon kaltaisten rakenteiden tekemiseen ovat sarkaimet,
 joita käsitellään luvussa \ref{luku/sarkaimet}.
 
 Hyödyllinen taulukoiden apupaketti on \pakettictan{booktabs}, jonka
-avulla saa tyylikkäämpiä ja erilaisia vaakaviivoja. Paketin komennot
+avulla saa erilaisia ja tyylikkäämpiä vaakaviivoja. Paketin komennot
 \komento{toprule}, \komento{midrule}, \komento{bottomrule} ja
-\komento{cmidrule} piirtävät rivien väliin erilaisia viivoja ja
+\komento{cmidrule} piirtävät rivien väliin erivahvuisia viivoja ja
 huolehtivat myös niiden ylä- ja alapuolisesta välistä paremmin kuin
 Latexin omat viivakomennot.
 

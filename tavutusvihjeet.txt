@@ -703,6 +703,7 @@ ty-po-gra-fiaa
 ty-po-gra-fiaan
 ty-po-gra-fian
 ty-po-gra-fias-sa
+ty-po-gra-fias-ta
 ty-po-gra-fi-seen
 ty-po-gra-fi-sen
 ty-po-gra-fi-se-na

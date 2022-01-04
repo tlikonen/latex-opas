@@ -2496,7 +2496,7 @@ Latexissa on helppokäyttöiset ympäristöt kolmelle erilaiselle luetelman
 perustyypille: numeroimaton (\ymparisto{itemize}), numeroitu
 (\ymparisto{enumerate}) ja määritelmäluetelma (\ymparisto{description}).
 Ne riittänevät perustarpeisiin ja ovat hieman myös muokattavissa
-typografisesti. Luetelmien perusympäristöjä käsitellään luvussa
+typografisesti. Näitä luetelmien perusympäristöjä käsitellään luvussa
 \ref{luku/luetelma-perus}.
 
 Perusluetelmien lisäksi on olemassa yleinen luetelmien rakenteluun
@@ -2521,12 +2521,12 @@ sama kuin tekstikappaleen riippuva sisennys (luku
 \ref{luku/riippuva-sisennys}), jossa kappale alkaa määriteltävällä
 ilmauksella.
 
-Luetelmien perusrakenne on samanlainen: luetelmaympäristön sisällä
-käytetään \komentom{item}\-/ komentoa, joka aloittaa uuden
-luetelmakohdan. Komennolle ei tarvitse antaa argumenttia: se vain
-aloittaa uuden luetelmakohdan. Seuraavassa on esimerkki
-\ymparisto{itemize}\-/ ympäristöstä, mutta \ymparisto{enumerate}\-/
-ympäristöäkin käytetään samalla tavalla:
+Lähdetiedostossa kaikkien luetelmatyyppien rakenne on samanlainen:
+luetelmaympäristön sisällä käytetään \komentom{item}\-/ komentoa, joka
+aloittaa uuden luetelmakohdan. Komennolle ei tarvitse antaa argumenttia,
+vaan komennon jälkeinen teksti muodostaa luetelman kohdan. Seuraavassa
+on esimerkki \ymparisto{itemize}\-/ ympäristöstä, mutta
+\ymparisto{enumerate}\-/ ympäristöäkin käytetään samalla tavalla:
 
 \ymparistoi{itemize}
 \komentoi{item}
@@ -2541,11 +2541,11 @@ ympäristöäkin käytetään samalla tavalla:
 \noindent
 \komento{item}\-/ komennolle voi antaa hakasulkeissa valinnaisen
 argumentin. Silloin ei ladota tavanomaista luetelmamerkkiä vaan
-argumentin sisältämä teksti tai koodi.
+argumentin sisältämä teksti.
 
 \komentoi{item}
 \begin{koodilohkosis}
-\item[--] Tässä kohdassa onkin ajatusviiva (--).
+\item[--] Tässä kohdassa onkin ajatusviiva.
 \end{koodilohkosis}
 
 \begin{esimerkki*}
@@ -2588,9 +2588,9 @@ luetelmaympäristön. Latex osaa käsitellä neljä sisäkkäistä luetelmaa.
 
 Latex sisentää sisäkkäiset luetelmat automaattisesti loogisella tavalla
 ja vaihtaa eri tasoilla luetelmakohtien merkkiä tai numerointitapaa.
-Esimerkiksi ulommaisin \ymparisto{itemize}\-/ ympäristö käyttää
+Esimerkiksi uloimmainen \ymparisto{itemize}\-/ ympäristö käyttää
 luetelmaympyrää~(\textbullet), mutta sen sisällä oleva käyttää
-ajatusviivaa~(\==). Ulommaisin \ymparisto{enumerate}\-/ ympäristö
+ajatusviivaa~(\==). Uloimmainen \ymparisto{enumerate}\-/ ympäristö
 käyttää arabialaisia numeroita (1, 2, 3 jne.) mutta sen sisällä oleva
 kirjaimia (a, b, c jne.).
 
@@ -2621,13 +2621,13 @@ kirjaimia (a, b, c jne.).
 
 \begin{koodilohko}
 % itemize-ympäristön luetelmamerkki
-\renewcommand{\labelitemi}  {\textbullet} % ulommainen luetelma
+\renewcommand{\labelitemi}  {\textbullet} % uloimmainen luetelma
 \renewcommand{\labelitemii} {\normalfont\bfseries\textendash}
 \renewcommand{\labelitemiii}{\textasteriskcentered}
 \renewcommand{\labelitemiv} {\textperiodcentered}
 
 % enumerate-ympäristön numerointitapa
-\renewcommand{\labelenumi}  {\arabic{enumi}.} % ulommainen luetelma
+\renewcommand{\labelenumi}  {\arabic{enumi}.} % uloimmainen luetelma
 \renewcommand{\labelenumii} {(\alph{enumii})}
 \renewcommand{\labelenumiii}{\roman{enumiii}.}
 \renewcommand{\labelenumiv} {\Alph{enumiv}.}
@@ -2656,8 +2656,8 @@ selventää asiaa.
 
 Numeroiduista luetelmakohdista huolehtivat laskurit nollataan
 automaattisesti aina ympäristön alussa. Joskus voi kuitenkin olla
-tarpeen aloittaa luetelmakohdat jostain muusta kuin luvusta~1,
-kirjaimesta~\textit{a} tms. Silloin kirjoittajan täytyy asettaa laskuri
+tarpeen aloittaa luetelmakohdat jostain muusta kuin luvusta~1 tai
+kirjaimesta~\textit{a}. Silloin kirjoittajan täytyy asettaa laskuri
 haluamaansa arvoon \ymparisto{enumerate}\-/ ympäristön sisällä. Seuraava
 esimerkki asettaa uloimman luetelman \laskuri{enumi}\-/ laskurin
 arvoon~3, joten ensimmäiseksi luetelmakohdaksi tulee~4.
@@ -2677,7 +2677,7 @@ arvoon~3, joten ensimmäiseksi luetelmakohdaksi tulee~4.
 Kirjoittaja voi vaikuttaa myös luetelmakohtien sisennykseen ja
 pystysuuntaisiin väleihin. Sisennykseen vaikuttavat mitat alkavat
 sanoilla \mittax{leftmargin} ja jatkuvat roomalaisella numerolla
-\koodi{i}\==\koodi{iv}, joka ilmaisee luetelman tasoa. Ulommaisen
+\koodi{i}\==\koodi{iv}, joka ilmaisee luetelman tasoa. Uloimmaisen
 luetelman sisennys ilmaistaan suhteessa sivun tekstialueen reunaan;
 sisempien luetelmien sisennys ilmaistaan suhteessa edellisen tason
 sisennykseen. Oletuksena Latexin sisennykset ovat melko suuria, joten
@@ -2690,7 +2690,7 @@ mukaisesti:
 \mittai{leftmarginiii}
 \mittai{leftmarginiv}
 \begin{koodilohkosis}
-\setlength{\leftmargini}  {1.5em} % ulommainen luetelma
+\setlength{\leftmargini}  {1.5em} % uloimmainen luetelma
 \setlength{\leftmarginii} {1.5em}
 \setlength{\leftmarginiii}{1.5em}
 \setlength{\leftmarginiv} {1.5em}
@@ -2699,11 +2699,12 @@ mukaisesti:
 \noindent
 Edellä olevat sisennysasetukset toimivat ympäristöissä
 \ymparisto{itemize}, \ymparisto{enumerate} ja \ymparisto{description}.
-Mainituissa ympäristöissä voi säätää pystysuuntaisia välejä kolmen
-seuraavassa esimerkissä mainitun mitan avulla. Mittojen sijainti
-luetelmassa on nähtävissä kuvassa \ref{kuva/list-mitat}
-(s.~\pageref{kuva/list-mitat}). Seuraavat komennot on syytä sijoittaa
-luetelmaympäristön sisään heti \komento{begin}\-/ komennon jälkeen.
+Mainituissa ympäristöissä voi säätää pystysuuntaisia välejä mittojen
+\mitta{parsep}, \mitta{itemsep} ja \mitta{parskip} avulla. Mittojen
+sijainti luetelmassa on nähtävissä kuvassa \ref{kuva/list-mitat}
+(s.~\pageref{kuva/list-mitat}). Mittojen asettamiskomennot on syytä
+sijoittaa luetelmaympäristön sisään heti \komento{begin}\-/ komennon
+jälkeen.
 
 \komentoi{setlength}
 \mittai{parsep}
@@ -2730,8 +2731,8 @@ Tyypillisesti \ymparisto{list}\-/ ympäristöä ei käytetä dokumentin
 kirjoittamisessa sellaisenaan, vaan kirjoittaja määrittelee oman
 helppokäyttöisen luetelma\-/\ tai muun ympäristön, ja
 \ymparisto{list}\-/ ympäristöä hyödynnetään ympäristön
-määrittelemisessä. Omien ympäristöjen tekemistä käsitellään tarkemmin
-luvussa \ref{luku/ympäristöt}, mutta tämänkin alaluvun loppupuolella on
+määrittelemisessä. Omien ympäristöjen tekemistä käsitellään yleisesti
+luvussa \ref{luku/ympäristöt}, mutta tämän alaluvun loppupuolella on
 esimerkki, joka liittyy nimenomaan \ymparisto{list}\-/ ympäristöön.
 
 Seuraavassa on esimerkki \ymparisto{list}\-/ ympäristön rakenteesta. Se
@@ -2747,7 +2748,7 @@ vaikutetaan luetelman asetuksiin.
 
 \noindent
 Edellisen esimerkin argumentti \koodi{merk\-ki} sisältää tekstiä tai
-koodia, jonka muodostaa luetelmakohdan merkin. Numeroimattomassa
+koodia, joka muodostaa luetelmakohdan merkin. Numeroimattomassa
 luetelmassa siihen voi laittaa esimerkiksi luetelmaympyrän eli komennon
 \komento{textbullet} tai ajatusviivan (\koodi{--}). Numeroidussa
 luetelmassa siihen kirjoitetaan komento, joka latoo jonkin laskurin
@@ -2977,9 +2978,9 @@ seuraavassa on lisätietoa niiden merkityksestä.
 \item [labelwidth] Luetelmamerkin leveys. Merkki ladotaan oletuksena
   tämän alueen oikeaan reunaan, mutta se riippuu \komento{makelabel}\-/
   komennon on määrittelystä. Jos luetelmamerkki on leveämpi kuin
-  \mitta{labelwidth}\-/ mitta, luetelman teksti siirtyy oikealle siten,
-  että merkki mahtuu kokonaan. Luetelmamerkin alueen vasen reuna
-  sijaitsee kohdassa, jonka voi laskea seuraavasta kaavasta:
+  \mitta{labelwidth}\-/ mitta, luetelmamerkin jälkeinen teksti siirtyy
+  oikealle siten, että merkki mahtuu kokonaan. Luetelmamerkin alueen
+  vasen reuna sijaitsee kohdassa, jonka voi laskea seuraavasta kaavasta:
   \mitta{leftmargin} − \mitta{labelwidth} + \mitta{itemindent} −
   \mitta{labelsep}. Mikäli haluaa, että luetelmamerkin vasen reuna on
   sisennyksen nollakohdassa, täytyy edellä mainitut mitat asettaa siten,
@@ -2989,7 +2990,7 @@ seuraavassa on lisätietoa niiden merkityksestä.
   luetelman sisältötekstiä. Oletusarvo on 0,5\,em.
 \item [itemindent] Ylimääräinen luetelmakohtien ensimmäisen rivin
   sisennys. Tätä voi tarvita, kun haluaa säätää luetelmamerkin vasemman
-  reunan tiettyyn kohtaa. Katso mitta \mitta{labelwidth} edellä.
+  reunan tiettyyn kohtaan. Katso mitta \mitta{labelwidth} edellä.
   Oletusarvo on nolla.
 \item [listparindent] Luetelmakohtien toisen ja sitä seuraavien
   tekstikappaleiden ensimmäisen rivin sisennys. Oletusarvo on nolla.
@@ -3078,9 +3079,9 @@ luetelmanumerot ladotaan lihavoituna (\komento{bfseries}) ja suuremmalla
 fontilla (\komento{large}). Numerot myös tasataan luetelmamerkille
 varatun tilan oikeaan reunaan (\komento{hfill}). Huomaa, että parametri
 \koodi{\#1} kuuluu \ymparistox{numeroitu}\-/ ympäristön määritelmään ja
-parametri \koodi{\#\#1} kuuluu sisempään, \komento{renewcommand}\-/
-komennolla tehtävään määritelmään. Katso lisätietoa komentojen
-määrittelyä käsittelevästä luvusta \ref{luku/komennot-määrittely}.
+parametri \koodi{\#\#1} kuuluu sisempään, \komento{makelabel}\-/
+komennon määritelmään. Katso lisätietoa komentojen määrittelemistä
+käsittelevästä luvusta \ref{luku/komennot-määrittely}.
 
 \section{Taulukot}
 \label{luku/taulukot}

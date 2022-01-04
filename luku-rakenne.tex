@@ -3925,7 +3925,7 @@ laatikoiden avulla.
 
 Leijuvat osat ovat sellaisia dokumentin osia -- käytännössä
 ympäristöjä~--, joita ei ladota normaalin leipätekstin sekaan tiettyyn
-kohtaan. Ne ''leijuvat'' irrallaan muusta tekstivirrasta, ja Latex
+kohtaan. Ne ''leijuvat'' irrallaan tavallisesta tekstivirrasta, ja Latex
 huolehtii niiden sijoittelusta. Leijuvilla osilla on yleensä kuvateksti,
 jonka alussa on sen tyyppi ja numero, esimerkiksi ''\figurename~1'' tai
 ''\tablename\ 4.2''. Näiden perässä on varsinainen kuvateksti, joka
@@ -3936,19 +3936,19 @@ kuten ''kuvassa~1''. Näissä hyödynnetään Latexin ristiviittaustoimintoja
 
 Perus Latex sisältää kaksi erityyppistä leijuvaa osaa, kuvat ja taulukot
 (luku \ref{luku/leijuosat-latex}), mutta \pakettim{floatrow}\-/ paketin
-avulla niitä voi tehdä muitakin (luku \ref{luku/leijuosat-omat}).
+avulla voi tehdä muunkinlaisia (luku \ref{luku/leijuosat-omat}).
 Esimerkiksi tässä oppaassa on käytössä myös tyyppi ''Esimerkki'', jota
 käytetään leijuvien Latex\-/ koodiesimerkkien toteuttamiseen.
 
 Koska Latex huolehtii leijuvien osien sijoittamisesta, niiden lopullinen
-järjestyskin voi hieman poiketa siitä, miten ne ovat Latex\-/
-lähdedokumentissa. Tosin samantyyppiset leijuvat osat, esimerkiksi
-kuvat, ladotaan aina siinä järjestyksessä kuin ne ovat
-lähdedokumentissa. Sen sijaan erityyppiset leijuvat osat saatetaan latoa
-eri järjestyksessä: esimerkiksi jokin taulukko saatetaan latoa ennen
-tiettyä kuvaa, vaikka ne olisivat lähdedokumentissa päinvastaisessa
-järjestyksessä. Latex pyrkii latomaan hyvännäköisiä sivuja, ja leijuvien
-osien sijoittelulla se voi vaikuttaa asiaan.
+järjestyskin voi hieman poiketa siitä, miten ne ovat lähdetiedostossa.
+Tosin samantyyppiset leijuvat osat, esimerkiksi kuvat, ladotaan aina
+siinä järjestyksessä kuin ne ovat lähdetiedostossa. Sen sijaan
+erityyppiset leijuvat osat saatetaan latoa eri järjestyksessä:
+esimerkiksi jokin taulukko saatetaan latoa ennen tiettyä kuvaa, vaikka
+ne olisivat lähdedokumentissa päinvastaisessa järjestyksessä. Latex
+pyrkii latomaan hyvännäköisiä sivuja, ja leijuvien osien sijoittelulla
+se voi vaikuttaa asiaan.
 
 \subsection{Leijuvat taulukot ja kuvat}
 \label{luku/leijuosat-latex}
@@ -3992,7 +3992,7 @@ leijuvat osat tehdään samalla tavalla, ympäristö on vain eri.
   \label{esim/leijuosat-perus}
 \end{esimerkki*}
 
-Latex sinänsä ei ota kantaa siihen, mitä leijuva ympäristö sisältää, eli
+Latex ei sinänsä ota kantaa siihen, mitä leijuva ympäristö sisältää, eli
 \ymparisto{table}\-/ ympäristön sisällä ei tarvitse olla
 taulukkoympäristöä (luku \ref{luku/taulukot}), eikä
 \ymparisto{figure}\-/ ympäristön sisällä ole pakko olla kuvaa (luku
@@ -4010,8 +4010,8 @@ seuraavalla tavalla:
 \komentoi{tablename}
 \begin{koodilohkosis}
 \addto{\captionsfinnish}{
-  \renewcommand{\tablename}{Taulukko}
-  \renewcommand{\figurename}{Kuva}
+  \renewcommand{\tablename}{Hökötys}
+  \renewcommand{\figurename}{Himmeli}
 }
 \end{koodilohkosis}
 
@@ -4032,7 +4032,7 @@ valinnaisen argumentin, jolla ilmaistaan kuvatekstistä lyhempi versio:
 
 \komentoi{caption}
 \begin{koodilohkosis}
-\caption[lyhyt kuvateksti]{varsinainen pitkä kuvateksti}
+\caption[Lyhyt kuvateksti.]{Varsinainen pitkä kuvateksti.}
 \end{koodilohkosis}
 
 \noindent
@@ -4040,9 +4040,9 @@ Varsinainen (pitkä) kuvateksti ladotaan aina leijuvan osan yhteyteen ja
 lyhempää versiota käytetään mahdollisesti luettelossa (luku
 \ref{luku/leijuosat-luettelot}) ja ristiviitteissä. Kuvatekstin eli
 \komento{caption}\-/ komennon jälkeen leijuvaan ympäristöön lisätään
-usein yksilöllinen tunniste ristiviittausta varten. Se tehdään
-\komento{label}\-/ komennolla, jota käsitellään ristiviitteiden
-yhteydessä luvussa \ref{luku/ristiviitteet}.
+usein \komento{label}\-/ komennolla yksilöllinen tunniste
+ristiviittausta varten. Komentoa käsitellään ristiviitteiden yhteydessä
+luvussa \ref{luku/ristiviitteet}.
 
 Leijuvista ympäristöistä on olemassa myös tähdelliset versiot,
 \ymparistom{table*} ja \ymparistom{figure*}. Ympäristöjen eri versioilla
@@ -4089,8 +4089,7 @@ toisistaan pilkulla, eli komentoa käytetään esimerkin
   \end{tabular}
 }{
   \caption{\komento{DeclareNewFloatType}\-/ komennon valitsimia, joilla
-    vaikutetaan leijuvan osan ominaisuuksiin. Komento kuuluu
-    \paketti{floatrow}\-/ pakettiin}
+    vaikutetaan leijuvan osan ominaisuuksiin}
   \label{tlk/declarenewfloat}
 }
 
@@ -4106,8 +4105,7 @@ toisistaan pilkulla, eli komentoa käytetään esimerkin
 }
 \end{koodilohko}
 
-\caption{\komento{DeclareNewFloatType}\-/ komennon käyttö. Komento
-  kuuluu \paketti{floatrow}\-/ pakettiin}
+\caption{\komento{DeclareNewFloatType}\-/ komennon käyttö}
 \label{esim/declarenewfloat}
 \end{esimerkki*}
 
@@ -4117,14 +4115,14 @@ joita käsitellään luvussa \ref{luku/leijuosat-sijoittelu}. Käytännössä
 ne ovat tiettyjä kirjaimia, joilla vaikutetaan leijuvan osan
 sijoitteluun. Oletusarvo on \koodi{tbp}.
 
-Valitsin \koodi{file\-ext} on tiedoston pääte. Leijuvien osien
-luetteloita tehtäessä Latex käyttää väliaikaistiedostoa, ja sen päätteen
-voi valita tällä valitsimella. Luetteloissa on tapana käyttää
-tiedostopäätettä, joka alkaa kirjaimilla \koodi{lo} (\englanti{list
-  of}). Latexin omissa leijuvissa osissa päätteet ovat \koodi{lot}
-(\englanti{list of tables}) ja \koodi{lof} (\englanti{list of figures}).
-Oletuksena omille leijuville osille tulee päätteeksi \koodi{lo}, jonka
-perässä on osan tyyppi.
+Valitsin \koodi{file\-ext} määrittelee tiedoston päätteen. Nimittäin
+leijuvien osien luetteloita tehtäessä Latex käyttää väliaikaistiedostoa,
+ja sen päätteen voi valita tällä valitsimella. Luetteloissa on tapana
+käyttää tiedostopäätettä, joka alkaa kirjaimilla \koodi{lo}
+(\englanti{list of}). Latexin omissa leijuvissa osissa päätteet ovat
+\koodi{lot} (\englanti{list of tables}) ja \koodi{lof} (\englanti{list
+  of figures}). Oletuksena omille leijuville osille tulee päätteeksi
+\koodi{lo}, jonka perässä on osan tyyppi.
 
 Valitsimen \koodi{within} avulla vaikutetaan leijuvien osien numeroinnin
 riippuvuuteen muista laskureista. Oletuksena leijuvan osan laskuri ei
@@ -4134,8 +4132,8 @@ nimen: mielekkäitä arvoja ovat esimerkiksi \laskuri{chapter} ja
 \laskuri{section}. Vaikutus on se, että leijuvan osan laskuri on
 riippuvainen näistä laskureista ja nollautuu aina, kun toisen laskurin
 arvo kasvaa. Lisäksi kuvateksteissä näkyy kaksiosainen numerointi (4.1,
-4.2, 4.3 jne.), jossa ensimmäinen luku on ylemmäntasoisen laskurin arvo
--- esimerkiksi kirjan pääluvun numero -- ja toinen on leijuvan osan
+4.2 jne.), jossa ensimmäinen luku on ylemmäntasoisen laskurin arvo --
+esimerkiksi kirjan pääluvun numero -- ja toinen on leijuvan osan
 laskurin arvo. Tällaisia hierarkkisia laskureita käsitellään tarkemmin
 luvussa \ref{luku/hierarkkiset-laskurit}. Leijuvan osan numeroinnin
 ulkoasun muokkaamista käsitellään luvussa \ref{luku/leijuosat-ulkoasu}.
@@ -4184,8 +4182,9 @@ kuvatekstit sekä tietysti sivunumerot.
 {~\small\titlerule*[3mm]{.}\contentspage}   % pisteviiva ja sivunumero
 []                                          % alapuolinen koodi
 \end{koodilohko}
-  \caption{Leijuvien osien ulkoasua muokataan \komento{titlecontents}\-/
-    komennolla, joka on peräisin \paketti{titletoc}\-/ paketista}
+  \caption{Leijuvien osien luettelon ulkoasua muokataan
+    \komento{titlecontents}\-/ komennolla, joka on peräisin
+    \paketti{titletoc}\-/ paketista}
   \label{esim/leijuosat-titlecontents}
 \end{esimerkki*}
 
@@ -4209,8 +4208,8 @@ asetuksiin.
 \komentoi{listtablename}
 \begin{koodilohkosis}
 \addto{\captionsfinnish}{
-  \renewcommand{\listtablename}{Omat taulukot}
-  \renewcommand{\listfigurename}{Omat kuvat}
+  \renewcommand{\listtablename}{Taulukkoluettelo}
+  \renewcommand{\listfigurename}{Kuvaluettelo}
 }
 \end{koodilohkosis}
 
@@ -4220,8 +4219,8 @@ sisällysluetteloihinkin eli komennolla \komento{addcontentsline}.
 Komennon ensimmäinen argumentti on luettelon tyyppiä vastaavan tiedoston
 pääte. Tyyppi \koodi{lot} (\englanti{list of tables}) on taulukoille ja
 tyyppi \koodi{lof} (\englanti{list of figures}) on kuville. Omilla
-leijuvilla osilla (luku \ref{luku/leijuosat-omat}) se on jotakin muuta
-ja valitaan osan määrittelyn yhteydessä.
+leijuvilla osilla (luku \ref{luku/leijuosat-omat}) tiedoston pääte on
+jotakin muuta ja valitaan osan määrittelyn yhteydessä.
 
 \komentoi{addcontentsline}
 \begin{koodilohkosis}
@@ -4280,7 +4279,7 @@ yhdistelmä, jolla vaikutetaan leijuvan osan sijoitteluun. Taulukossa
 Oletusarvo on \koodi{tbp}, eli sen mukaan leijuva osa pyritään
 sijoittamaan ensisijaisesti sivun yläosaan (\koodi{t}) mutta
 mahdollisesti myös alaosaan (\koodi{b}) tai omalle sivulleen (\koodi{p})
-muiden leijuvien osien kanssa.
+mahdollisesti muiden leijuvien osien kanssa.
 
 Vaihtoehto \koodi{h} pyrkii latomaan leijuvan osan siihen kohtaan kuin
 se on lähdetiedostossa. Se on kuitenkin vain ehdotus eikä useinkaan
@@ -4340,7 +4339,7 @@ väleihin. Mitat asetetaan komennolla \komento{setlength} (luku
     minus 4pt}. Kahden palstan tilassa käytetään mittaa
   \mitta{dbltextfloatsep}.
 \item [intextsep] Pystysuuntainen väli leipätekstin ja leijuvan osan
-  välissä silloin, kun leijuva osa sijoitetaan tekstivirran sekaan. Tämä
+  välissä silloin, kun leijuva osa sijoitetaan osaksi tekstivirtaa. Tämä
   koskee sijoitteluasetuksia \koodi{h} ja \koodi{H} (taulukko
   \ref{tlk/leijuosat-sijoittelukirjaimet}). Oletusarvo vaihtelee
   dokumenttiluokan fonttikokoasetusten (luku
@@ -4374,7 +4373,7 @@ vaikutuksen voi poistaa kokonaan leijuvan ympäristön valitsimella
 \item [floatpagefraction] Omalle sivulleen sijoitettavien leijuvien
   osien vähimmäistila sivun tekstialueen korkeudesta. Toisin sanoen
   leijuvien osien täytyy viedä vähintään tämän verran tilaa sivulta,
-  ennen kuin ne sijoitetaan omalle sivulleen, jossa ei ole leipätekstiä
+  jotta ne voidaan sijoittaa omalle sivulleen, jossa ei ole leipätekstiä
   lainkaan. Oletusarvo on~\koodi{0.5} (50\,\%). Kahden palstan tilassa
   käytetään komentoa \komento{dblfloatpagefraction}.
 \end{maaritelma}
@@ -4391,8 +4390,7 @@ Paketin \pakettictan{placeins} avulla voi tehdä omiakin rajakohtia,
 jonka yli leijuvat osat eivät voi siirtyä. Paketin komennolla
 \komento{FloatBarrier} tehdään raja kyseiseen kohtaan lähdedokumentissa.
 Jos paketin lataamisessa antaa argumentin \koodi{section}, asetetaan
-tällainen raja automaattisesti \komento{section}\-/ tasoisille
-otsikoille.
+tällainen raja automaattisesti \komento{section}\-/ otsikoille.
 
 \komentoi{usepackage}
 \pakettii{placeins}
@@ -4456,36 +4454,43 @@ tavalla.
 \end{esimerkki*}
 
 \noindent
-Valinnaisen argumentin \koodi{leveys} voi jättää poiskin, jolloin
-leijuva osa varaa itselleen sivun leveyden verran tilaan. Argumentiksi
-on joskus hyödyllistä antaa mitta \mitta{FBwidth}, joka on leijuvan osan
-sisällön levyinen. Käyttämällä tätä mittaa kuvatekstit rivitetään vain
-sisällön levyiseksi. Esimerkki \ref{esim/floatbox-perus} selventää,
-miten \komento{floatbox}\-/ komento toimii käytännössä.
+Valinnaisen \koodi{leveys}\-/ argumentin voi jättää poiskin, jolloin
+leijuva osa varaa itselleen sivun (tai palstan) leveyden verran tilaa.
+Argumentiksi on joskus hyödyllistä antaa mitta \mitta{FBwidth}, joka on
+leijuvan osan sisällön levyinen. Käyttämällä tätä mittaa kuvatekstit
+rivitetään sisällön levyiseksi. Esimerkki \ref{esim/floatbox-perus}
+selventää, miten \komento{floatbox}\-/ komento toimii käytännössä.
 
-Yksi leijuva ympäristö voi sisältää rinnakkain useampia taulukoita,
-kuvia tms., joilla jokaisella on oma kuvatekstinstä. Se tehdään
-ympäristöllä \ymparisto{floatrow}, jonka valinnainen argumentti
-ilmaisee, kuinka monta kuvaa tms. ladotaan rinnakkain. Oletusarvo on~2.
-Ympäristön sisällä täytyy olla yhtä monta \komento{floatbox}\-/
-komentoa. Seuraavasta esimerkistä selviää perusajatus kahden taulukon
-latomiseksi rinnakkain:
+\begin{esimerkki*}
+  \komentoi{caption}
+  \komentoi{floatbox}
+  \mittai{FBwidth}
+  \ymparistoi{floatrow}
+  \ymparistoi{table}
 
-\komentoi{caption}
-\komentoi{floatbox}
-\mittai{FBwidth}
-\ymparistoi{floatrow}
-\ymparistoi{table}
-\begin{koodilohkosis}
+\begin{koodilohko}
 \begin{table}
   \begin{floatrow}[2]  % kaksi rinnakkain
     \floatbox{table}[\FBwidth]{\caption{Vasen}}{…}
     \floatbox{table}[\FBwidth]{\caption{Oikea}}{…}
   \end{floatrow}
 \end{table}
-\end{koodilohkosis}
+\end{koodilohko}
+  \caption{Rinnakkaisten leijuvien osien toteutus
+    \ymparisto{floatrow}\-/ ympäristön ja \komento{floatbox}\-/ komennon
+    avulla. Kohdassa ''\koodi{\ldots}'' olisi varsinainen sisältö eli
+    taulukon toteutus}
+  \label{esim/floatrow-floatbox}
+\end{esimerkki*}
 
-\noindent
+Yksi leijuva ympäristö voi sisältää rinnakkain useampia taulukoita,
+kuvia tms., joilla jokaisella on oma kuvatekstinsä. Se tehdään
+ympäristöllä \ymparisto{floatrow}, jonka valinnainen argumentti
+ilmaisee, kuinka monta kuvaa tms. ladotaan rinnakkain. Oletusarvo on~2.
+Ympäristön sisällä täytyy olla yhtä monta \komento{floatbox}\-/
+komentoa. Esimerkistä \ref{esim/floatrow-floatbox} selviää perusajatus
+kahden taulukon latomiseksi rinnakkain.
+
 Kun leijuvat osat on toteutettu \komento{floatbox}\-/ komennon avulla,
 voi niiden ulkoasuun vaikuttaa komennolla \komento{floatsetup}. Sille
 annetaan ainakin yksi argumentti, joka voi sisältää useita pilkulla
@@ -4528,8 +4533,8 @@ toisistaan erotettuja valitsimia ja niiden arvoja.
   \end{tabularx}
 }{
   \caption{Muutama \komento{floatsetup}\-/ komennon valitsin, joilla
-    vaikutetaan leijuvien osien ulkoasuun. Osa tarvitsee paketin
-    \paketti{ragged2e}}
+    vaikutetaan leijuvien osien ulkoasuun. Osa asetuksista tarvitsee
+    paketin \paketti{ragged2e}}
   \label{tlk/floatsetup-valitsimia}
 }
 
@@ -4561,9 +4566,9 @@ osan asetukset voisivat näyttää vaikka seuraavanlaiselta:
 Kuvatekstien fonttia ja rivittämistä hallitaan \pakettictan{caption}\-/
 paketin avulla. Tärkein komento on \komento{captionsetup}, joka yleensä
 sijoitetaan dokumentin esittelyosaan tai muuten alkuun, koska silloin se
-vaikuttaa koko dokumentissa. Komennon voi sijoittaa myös esimerkiksi
-yksittäisen leijuvan ympäristön sisään, jolloin se vaikuttaa vain
-kyseisessä ympäristössä.
+vaikuttaa koko dokumentissa. Komennon voi sijoittaa myös yksittäisen
+leijuvan ympäristön sisään, jolloin se vaikuttaa vain kyseisessä
+ympäristössä.
 
 \komentoi{captionsetup}
 \begin{koodilohkosis}
@@ -4625,11 +4630,11 @@ kyseisessä ympäristössä.
 }
 
 \noindent
-Komennon valinnainen argumentti \koodi{tyyppi} on leijuvan osan tyyppi,
-esimerkiksi \ymparisto{table} tai \ymparisto{figure}, johon halutaan
-vaikuttaa. Jos sen jättää pois, asetukset vaikuttavat kaikkien leijuvien
-osien kuvateksteihin. Pakollinen argumentti on \koodi{valitsimet},
-johon kirjoitetaan valitsimia eli avainsanoja ja niiden arvoja.
+Komennon valinnainen \koodi{tyyppi}\-/ argumentti on leijuvan osan
+tyyppi, esimerkiksi \ymparisto{table} tai \ymparisto{figure}, johon
+halutaan vaikuttaa. Jos sen jättää pois, asetukset vaikuttavat kaikkien
+leijuvien osien kuvateksteihin. Pakollinen argumentti on
+\koodi{valitsimet}, johon kirjoitetaan valitsimia ja niiden arvoja.
 Tärkeimpiä valitsimia on koottu taulukkoon
 \ref{tlk/captionsetup-valitsimia}. Käytännössä komento voisi näyttää
 esimerkiksi seuraavanlaiselta:
@@ -4668,13 +4673,13 @@ kuvateksteihin.
 \end{table}
 \end{koodilohko}
 
-  \caption{Usealle leijuvalle osalle saa saman numeroinin käyttämällä
-    komentoa \komento{ContinuedFloat}}
+  \caption{Usealle leijuvalle osalle saa saman numeron käyttämällä
+    jälkimmäisissä ympäristöissä komentoa \komento{ContinuedFloat}}
   \label{esim/continuedfloat}
 \end{esimerkki*}
 
 Joskus halutaan, että useampi taulukko, kuva tai muu leijuva osa
-muodostavat kokonaisuuden, jolla on sama numero, esimerkiksi
+muodostaa kokonaisuuden, jolla on sama numero, esimerkiksi
 ''\tablename~3''. Ajatuksena on, että sama sisältö on jakautunut
 useampaan osaan. Se onnistuu sijoittamalla \paketti{caption}\-/ paketin
 komento \komento{ContinuedFloat} ensimmäisen jälkeisiin leijuviin
@@ -4691,7 +4696,7 @@ komennolla, jonka perässä on laskurin nimi, esimerkiksi
 \komento{thetable}. Oletuksena nämä komennot latovat laskurin
 arabialaisilla numeroilla. Jos laskuri on riippuvainen teoksen
 pääluvuista (\komento{chapter}), ladotaan ensin pääluvun numero,
-erotinpiste ja leijuvan osan numero: 2.1, 2.2, 2.3 jne.
+erotinpiste ja leijuvan osan numero: 2.1, 2.2 jne.
 
 Kirjoittaja voi määritellä laskurien latomiskomennon haluamallaan
 tavalla. Seuraavassa esimerkissä leijuville kuville (\ymparisto{figure})

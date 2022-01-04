@@ -3702,13 +3702,13 @@ asiakirjaa, voi kirjoittaja määrittää sarkainkohdat niin kuin haluaa.
 
 Ajatus sarkaimista on vanha, sillä mekaanisissa kirjoituskoneissakin oli
 sarkainnäppäin (\englanti{tab, tabular}), joka siirsi telaa eteenpäin
-seuraavaan sarkainkohtaan. Se helpotti tekstirivien tasaamista tiettyyn
+seuraavaan sarkainkohtaan. Se helpotti tekstin tasaamista tiettyyn
 kohtaan ja sen myötä taulukoiden kirjoittamista.
 
 Latexissa on taulukoita varten omatkin ympäristönsä (luku
 \ref{luku/taulukot}), mutta jos ei tarvitse varsinaista taulukkoa vaan
 ainoastaan yksittäisiä tasauskohtia, voi olla kätevämpää käyttää
-\ymparisto{tabbing}\-/ sarkainympäristöä tai rakentaa sisennykset
+\ymparisto{tabbing}\-/ sarkainympäristöä tai rakentaa tasaukset
 näkymättömien laatikoiden avulla. Näitä käsitellään seuraavissa
 alaluvuissa.
 
@@ -3719,11 +3719,11 @@ Sarkaimet voi toteuttaa niitä varten tehdyn ympäristön eli
 \ref{esim/tabbing-perus} havainnollistaa ympäristön peruskäyttöä.
 Rivillä~2 asetetaan kaikki sarkainkohdat eli tehdään vaakasuuntaisia
 välejä \komento{hspace}\-/ komennolla ja merkitään sarkainkohdat
-\komento{=}\=/ komennoilla. Tämän rivin lopussa on komento
-\komento{kill}, joka hylkää rivin eli jättää sen latomatta. Seuraavien
-rivien lopussa on aina \komento{\keno}\-/ komento -- paitsi viimeisellä
-rivillä ennen ympäristön lopetuskomentoa. Rivin sisällä seuraavaan
-sarkainkohtaan hypätään \komento{>}\-/ komennolla.
+\komento{=}\=/ komennoilla. Sen rivin lopussa on komento \komento{kill},
+joka hylkää rivin eli jättää sen latomatta. Seuraavien rivien lopussa on
+\komento{\keno}\-/ komento -- paitsi viimeisellä rivillä ennen
+ympäristön lopetuskomentoa. Rivin sisällä seuraavaan sarkainkohtaan
+hypätään \komento{>}\-/ komennolla.
 
 \begin{esimerkki*}
   \ymparistoi{tabbing}
@@ -3757,7 +3757,7 @@ sarkainkohtaan hypätään \komento{>}\-/ komennolla.
 \end{esimerkki*}
 
 \ymparisto{tabbing}\-/ ympäristön sisällä on käytettävissä muutama
-muukin erikoiskomento, joilla vaikutetaan sarkainten käsittelyyn.
+muukin erityiskomento, joilla vaikutetaan sarkainten käsittelyyn.
 Seuraavassa kerrotaan ympäristön kaikkien erityiskomentojen merkitys, ja
 esimerkissä \ref{esim/tabbing-erikois} havainnollistetaan joidenkin
 komentojen käyttöä.
@@ -3765,10 +3765,10 @@ komentojen käyttöä.
 \begin{maaritelma}{\komento{#1}}
 \item [\keno] Rivinvaihto, joka täytyy kirjoittaa jokaisen rivin
   loppuun, lukuun ottamatta viimeistä riviä ennen ympäristön
-  lopetuskomentoa (\komento{end}).
+  lopetuskomentoa \komento{end}.
 \item [kill] Rivinvaihto, joka hylkää kyseisen rivin. Tämä on
   käyttökelpoinen sarkainkohtien määrittelyrivillä, jota itsessään ei
-  ehkä haluta latoa näkyviin.
+  haluta latoa näkyviin.
 \item [=] Sarkainkohdan määrittäminen komennon kohdalle.
 \item [>] Hyppää seuraavaan sarkainkohtaan nykyisellä rivillä.
 \item [+] Siirtää seuraavan rivin aloituskohtaa yhden sarkaimen verran
@@ -3779,7 +3779,7 @@ komentojen käyttöä.
   vasemmalla. Tätä komentoa voi käyttää vain rivin alussa ja vain
   silloin, kun rivin aloituskohtaa on sisennetty aiemmin \komento{+}\-/
   komennolla. Tämä komento ei muuta pysyvästi rivin aloituskohdan
-  asetusta, joka on tehty komennolla \komento{+} tai \komento{-}.
+  asetusta, joka on tehty komennoilla \komento{+} ja \komento{-}.
 \item ['] Latoo komentoa edeltävän tekstin nykyisen sarkainkohdan
   vasemmalle puolelle ja tasaa tekstin oikeasta reunasta. Tekstin oikean
   reunan ja sarkainkohdan väliin tulee mitan \mitta{tabbingsep}

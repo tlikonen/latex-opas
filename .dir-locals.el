@@ -12,9 +12,7 @@
                  . ("koodilohkosis" "koodilohko"))
                 (font-latex-quotes . nil)))
  (bibtex-mode . ((bibtex-dialect . biblatex)
-                 (bibtex-text-indentation . 17)
-                 (bibtex-contline-indentation . 18)
-                 ;; Seuraavaa ei tarvita enää Emacs 28:ssa:
-                 (fill-prefix . "                  ")))
+                 (bibtex-text-indentation . 20)
+                 (bibtex-contline-indentation . 21)))
  (makefile-mode . ((indent-tabs-mode . t)))
  (markdown-mode . ((mode . auto-fill))))

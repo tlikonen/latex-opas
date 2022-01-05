@@ -136,6 +136,8 @@ en-able-hy-phen-ation
 Endash
 end-tab-u-larx
 en-glish-font
+en-glish-font-sf
+en-glish-font-tt
 en-large-this-page
 en-space
 enu-mer-ate

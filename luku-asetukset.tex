@@ -2287,64 +2287,36 @@ samalta kuin muukin teksti. Tavutuksessa kuitenkin käytetään eri
 kielissä eri asetuksia, ja joissakin kielissä voi olla myös pieniä
 typografisia yksityiskohtia eri tavalla.
 
-Kirjoittaja voi määritellä eri kielille eri fontin. Oletuksena käytetään
-peruskirjainperhettä, mikä samalla tarkoittaa, että kielen vaihtuessa
-pois oletuskielestä suoritetaan \komento{rmfamily}\-/komento (taulukko
-\ref{tlk/fonttimallikomennot}, s.~\pageref{tlk/fonttimallikomennot}).
-Tätä havainnollistaa seuraava esimerkki, jossa \komento{textenglish}\-/
-komennon vaikutuksen ajaksi tulee käyttöön perusfontti
-\komento{rmfamily} eikä ympärillä oleva pääteviivaton
-\komento{sffamily}.
+Oletuksena kaikilla kielillä käytetään samoja fontteja, mutta
+kirjoittaja voi määritellä fontin myös kielikohtaisesti. Tietyn kielen
+fontti pitää määrittää komentoon, jonka nimessä on ensin kielen nimi ja
+lopuksi sana \koodi{font} (peruskirjainperhe), \koodi{fontsf}
+(pääteviivaton) tai \koodi{fonttt} (tasalevyinen). Esimerkiksi
+fonttikomennot englannin kielelle ja kolmelle eri kirjainperheelle ovat
+\komento{englishfont}, \komento{englishfontsf} ja
+\komento{englishfonttt}.
 
-\komentoi{sffamily}
-\komentoi{textenglish}
-\begin{koodilohkosis}
-\sffamily
-pääteviivaton \textenglish{main font} pääteviivaton
-\end{koodilohkosis}
-
-\begin{tulossis}
-  \sffamily pääteviivaton {\rmfamily main font} pääteviivaton
-\end{tulossis}
-
-\noindent
-Erikielisten tekstikatkelmien fonttiin voi vaikuttaa määrittelemällä
-komennon, jonka nimessä on ensin kielen nimi ja lopuksi sana
-\koodi{font}, esimerkiksi \komento{englishfont} tai \komento{greekfont}.
-Komennon määritelmään kirjoitetaan yleensä kirjainperheeseen tai
-\=/leikkaukseen vaikuttavia komentoja.
-
-Seuraavassa esimerkissä \komento{englishfont}\-/ komento määritellään
-tyhjäksi, mikä saa aikaan sen, että englanninkieliseksi merkitty teksti
-ei muuta fonttia millään tavalla vaan käytetään samaa kirjainperhettä
-kuin muutenkin siinä kohdassa dokumenttia.
-
-\begin{koodilohkosis}
-\newcommand{\englishfont}{}
-\end{koodilohkosis}
-
-\noindent
-Mikäli haluaa jollekin kielelle kokonaan eri kirjainperheen, kannattaa
-käyttää \paketti{fontspec}\-/paketin komentoa \komento{newfontfamily}
-(luku \ref{luku/fontin-valinta}) ja määritellä kielen fonttikomennot
-sillä. Tällainen on tarpeen ainakin silloin, kun dokumentin
-peruskirjainperhe ei sisällä kyseisen kielen kirjaimia.
+Näiden fonttikomentojen ja kirjainperheiden määrittämiseen kannattaa
+käyttää \paketti{fontspec}\-/ paketin komentoa \komento{newfontfamily}
+(luku \ref{luku/fontin-valinta}). Seuraavassa esimerkissä asetetaan
+kaikki kolme kirjainperhettä kreikan kielelle:
 
 \komentoi{newfontfamily}
+\komentoi{greekfont}
+\komentoi{greekfontsf}
+\komentoi{greekfonttt}
 \begin{koodilohkosis}
-\newfontfamily{\greekfont}{GFS Artemisia}[Scale=MatchLowercase]
+\newfontfamily{\greekfont}  {GFS Artemisia}  [Scale=MatchLowercase]
+\newfontfamily{\greekfontsf}{GFS Neohellenic}[Scale=MatchLowercase]
+\newfontfamily{\greekfonttt}{TeX Gyre Cursor}[Scale=MatchLowercase]
 \end{koodilohkosis}
 
-% Seuraavat eivät tunnu toimivan:
-
-% \newfontfamily{\greekfontsf}{GFS Neohellenic} [Scale=MatchLowercase]
-% \newfontfamily{\greekfonttt}{DejaVu Sans Mono}[Scale=MatchLowercase]
-%
-% Edellisen esimerkin \koodi{fontsf}\-/loppuinen komento tarkoittaa
-% pääteviivatonta kirjainperhettä ja \koodi{fonttt}\-/loppuinen
-% tasalevyistä perhettä.
-
-% \textenglish{englantia \textsf{englantia} englantia}
+\noindent
+Kirjoittajan ei tarvitse itse käyttää edellä mainittuja komentoja
+\komento{englishfont}, \komento{greekfont} jne. Riittää, että
+kirjoittaja vaihtaa vain kieltä, ja fontti vaihtuu samalla itsestään,
+jos vain kohdekielelle ja kirjainperheelle on määritelty sopiva
+fonttikomento.
 
 \subsection{Babel}
 

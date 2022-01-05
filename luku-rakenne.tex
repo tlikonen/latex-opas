@@ -4718,12 +4718,12 @@ ja leijuvan kuvan numero:
 Ristiviittaukset tarkoittavat dokumentin sisäisiä viittauksia eli
 viittauksia toisiin kohtiin samassa dokumentissa. Lukijalle ne ilmenevät
 ilmauksina kuten ''luvussa 4.2'' tai ''kuvassa~5''. Kirjoittajan ei
-kuitenkaan kannata naputella luvun numeroa (esim. ''4.2'') käsin
+kuitenkaan kannata naputella luvun numeroa (esim. 4.2) käsin
 lähdedokumenttiin, koska lukujen järjestys ja numerointi voi muuttua
 kirjoittamisen edetessä. Joutuisi korjaamaan muuttuneet numerot
 mahdollisesti useitakin kertoja ennen kuin työ on valmis.
 
-Latex osaa numeroida dokumentin otsikot (luvut) ja leijuvat osat
+Latex numeroi dokumentin otsikot (luvut) ja leijuvat osat
 automaattisesti, eli se tietää, minkä numeron mikäkin dokumentin osa
 saa. Niinpä Latex osaa myös -- kirjoittajan pienellä avustuksella --
 ylläpitää ajantasaisia ristiviittauksia dokumentin eri osiin. Teknisesti
@@ -4748,22 +4748,22 @@ komennossa. Jos sama tunniste sattuu olemaan useassa paikassa, vain
 viimeinen jää käytännössä voimaan.
 
 Järkevää on kirjoittaa tunnisteeseen sana tai sanoja, jotka kertovat
-jotakin kyseisen osan sisällöstä. Hyödyllistä voi olla myös kirjoittaa
-tunnisteen tieto, onko kyse luvusta, taulukosta, kuvasta vai muusta
+jotakin kyseisen osan sisällöstä. Hyödyllistä voi olla myös liittää
+mukaan tieto, onko kyse luvusta, taulukosta, kuvasta vai muusta
 leijuvasta osasta, koska erityyppiset osat voivat käsitellä samaa
 aihetta. Seuraavassa on esimerkkejä \komento{label}\-/ komennoista:
 
 \komentoi{label}
 \begin{koodilohkosis}
 \label{luku/fonttien-valinta}    % otsikkokomennon jälkeen
-\label{taulukko/fonttikomentoja} % taulukon \caption-komennon jälkeen
+\label{tlk/fonttikomentoja}      % taulukon \caption-komennon jälkeen
 \label{kuva/kirjainleikkauksia}  % kuvan \caption-komennon jälkeen
 \end{koodilohkosis}
 
 \noindent
-Ristiviittauksissa vähimmällä vaivalla selviää, kun muistaa kaksi asiaa:
+Ristiviittauksissa vähimmällä vaivalla selviää, kun huomioi kaksi asiaa:
 1)~kirjoittaa \komento{label}\-/ komentoja vain niihin kohtiin, joihin
-täytyy viitata muualta, 2)~valitsee tunnisteet siten, ettei niitä
+täytyy viitata muualta, 2)~yrittää valita tunnisteet siten, ettei niitä
 tarvitse muuttaa enää sen jälkeen, kun ne on kerran valinnut.
 
 Tavallisimmat ristiviittaukset tehdään \komento{ref}\-/ komennolla,
@@ -4777,8 +4777,8 @@ lähdedokumentissa esimerkiksi seuraavasti:
 \komentoi{ref}
 \komentoi{pageref}
 \begin{koodilohkosis}
-Katso taulukko \ref{taulukko/fonttimallikomennot} sivulla
-\pageref{taulukko/fonttimallikomennot}.
+Katso taulukko \ref{tlk/fonttimallikomennot} sivulla
+\pageref{tlk/fonttimallikomennot}.
 \end{koodilohkosis}
 
 \begin{tulossis}

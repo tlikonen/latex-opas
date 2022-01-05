@@ -135,6 +135,7 @@ poistaa kaikki syntyneet tiedostot.
 Puutteita ja suunnitelmia
 -------------------------
 
+  - Lisätään biblatex-lukuun päiväysten muuttaminen (mm. urldate).
   - Lisätään Muuta tekniikkaa -luku, jonka sisällöksi esimerkiksi:
     päiväykset ja kellonajat (datetime2), textpos-paketti, omien
     makropakettien ja dokumenttiluokkien tekeminen.

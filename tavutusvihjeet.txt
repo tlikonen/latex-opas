@@ -469,6 +469,7 @@ pe-rus-aja-tus
 pe-rus-ase-tuk-set
 pe-rus-ase-tuk-sia
 pe-rus-asiat
+pe-rus-asioi-hin
 pe-rus-asioi-ta
 pe-rus-osas-ta
 pe-rus-osat

@@ -5028,9 +5028,9 @@ ulkoasun säätämiseen. Lisätietoa saa paketin ohjekirjasta.
 \section{Palstat}
 \label{luku/palstat}
 
-Latexissa on perustoiminnot usean palstan käsittelyyn, mutta mihinkään
-sanoma- tai aikakauslehden kaltaiseen monipuoliseen tekstin, kuvien ja
-muiden osien sommitteluun se ei kykene. Verrattain yksinkertaiset
+Latex pystyy usean palstan käsittelyn perusasioihin, mutta mihinkään
+sanoma\-/\ tai aikakauslehden kaltaiseen monipuoliseen tekstin, kuvien
+ja muiden osien sommitteluun se ei kykene. Verrattain yksinkertaiset
 monipalstaiset tekstit kuitenkin onnistuvat Latexissakin varsin
 mukavasti.
 
@@ -5052,7 +5052,7 @@ lataamisen yhteydessä tai sivun asetuksissa (luku
 \ref{luku/sivuasetukset}) käyttämällä valitsinta \koodi{onecolumn}
 (oletus) tai \koodi{twocolumn}. Dokumentin keskellä tilaa voi vaihtaa
 komennoilla \komento{onecolumn} ja \komento{twocolumn}. Kumpikin komento
-aloittaa uuden sivun, jossa valittu tila on voimassa. Komennolle
+aloittaa uuden sivun, josta alkaen valittu tila on voimassa. Komennolle
 \komento{twocolumn} voi antaa hakasulkeissa valinnaisen argumentin,
 jolla ilmaistaan sivun alkuun ladottava koko sivun levyinen sisältö:
 
@@ -5075,7 +5075,7 @@ tähdelliset versiot kuten \ymparisto{table*} ja \ymparisto{figure*}
 ladotaan koko sivun levyisenä sivun yläosaan tai kokonaan omalle
 sivulleen, jossa on vain leijuvia osia. Leijuvien osien sijoitteluun
 kahden palstan tilassa voi vaikuttaa tiettyjen laskurien, mittojen ja
-komentojen avulla. Näitä käsitellään luvussa
+komentojen avulla. Niitä käsitellään luvussa
 \ref{luku/leijuosat-sijoittelu}.
 
 Palstojen välissä olevan tyhjän tilan leveys on mitassa
@@ -5109,10 +5109,9 @@ pituus on mitassa \mitta{linewidth}.
 Perus Latex osaa vain yhden ja kahden palstan tilan, ja ne ovat voimassa
 koko sivulla. Paketti \pakettictan{multicol} tuo käyttöön myös
 ympäristön \ymparisto{multicols}, jonka sisällä tietty palstamäärä on
-voimassa. Ympäristön avulla samallakin sivulla voi olla eri tavoin
-palstoitettua sisältöä. Esimerkki \ref{esim/multicols} havainnollistaa
-ympäristön käyttöä ja ladottua lopputulosta. Oleelliset tiedot ovat
-seuraavat:
+voimassa. Samallakin sivulla voi olla eri tavoin palstoitettua sisältöä.
+Esimerkki \ref{esim/multicols} havainnollistaa ympäristön käyttöä ja
+ladottua lopputulosta. Oleelliset tiedot ovat seuraavat:
 
 \ymparistoi{multicols}
 \begin{koodilohkosis}
@@ -5126,10 +5125,10 @@ Argumentti \koodi{palstamäärä} on kokonaisluku, joka ilmaisee, kuinka
 monelle palstalle ympäristön sisältö ladotaan. Palstojen korkeus
 pyritään tasaamaan automaattisesti, niin että kaikki palstat ovat yhtä
 korkeita. Käytännössä palstaympäristön viimeisen sivun viimeinen palsta
-jää hieman vajaaksi, mutta se on normaalia muutenkin. Jos käyttää
-ympäristön tähtiversiota \ymparisto{multicols*}, ei viimeisen sivun
-palstojen korkeuksia tasata, vaan ensin täytetään vasemmanpuoleinen
-palsta kokonaan, sitten seuraava jne.
+jää hieman vajaaksi. Jos käyttää ympäristön tähtiversiota
+\ymparisto{multicols*}, ei viimeisen sivun palstojen korkeuksia tasata,
+vaan ensin täytetään vasemmanpuoleinen palsta kokonaan, sitten seuraava
+jne.
 
 \begin{esimerkki*}
   \ymparistoi{multicols}
@@ -5189,10 +5188,11 @@ alku.
 \noindent
 Ennen palstaympäristöä ja sen jälkeen ladotaan mitan \mitta{multicolsep}
 suuruinen pystysuuntainen väli. Väliä ei kuitenkaan ladota, jos se
-sattuu sivunvaihdon kohdalle. Palstojen välissä oleva tyhjä tila
-asetetaan mitan \mitta{columnsep} avulla, ja väliin mahdollisesti
-ladottavan pystyviivan leveys on mitassa \mitta{columnseprule}. Tämän
-mitan oletusarvo on nolla, eli pystyviivaa ei ladota.
+sattuu sivunvaihdon kohdalle. Palstojen välissä oleva vaakasuuntainen
+tyhjä tila asetetaan mitan \mitta{columnsep} avulla, ja väliin
+mahdollisesti ladottavan pystyviivan leveys on mitassa
+\mitta{columnseprule}. Tämän mitan oletusarvo on nolla, eli pystyviivaa
+ei ladota.
 
 \komentoi{setlength}
 \mittai{multicolsep}

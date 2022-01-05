@@ -4813,17 +4813,17 @@ merkittyjä huomautuksia. Niihin viitataan sanojen tai virkkeiden perässä
 olevalla yläindeksinumerolla, \=/kirjaimella tai
 \=/symbolilla.\footnote{Tässä on esimerkki alaviitteestä.} Alaviitteiden
 tarkoituksena on lisätä tekstiin lähes huomaamaton lisätieto, joka ei
-häiritse lukemista. Se sopii esimerkiksi lisätietoihin, joilla ei ole
-kovin suurta merkitystä tai jotka sopivat huonosti ladottavaksi
-leipätekstiin. Joskus myös tiedonlähteet ilmaistaan alaviitteiden
+häiritse lukemista. Se sopii asioille, joilla ei ole suurta merkitystä
+useimmille lukijoille tai jotka muuten sopivat huonosti leipätekstiin.
+Varsin usein myös tiedonlähteet ilmaistaan alaviitteiden
 avulla.\footcites[162]{kt_oik}[127--128]{typokk}
 
 Alaviite tehdään komennolla \komento{footnote}, jonka argumentiksi
 kirjoitetaan alaviitteeseen tuleva teksti. Oletuksena Latex latoo
 komennon paikalle yläindeksinumeron, joka tulee automaattisesti
-kasvavasta laskurista \laskuri{footnote}. Komennolle voi antaa myös
-valinnaisen argumentin, joka on kyseisen alaviitteen numero. Tässä
-tapauksessa komento ei kasvata \laskuri{footnote}\-/ laskuria.
+laskurista \laskuri{footnote}. Komennolle voi antaa myös valinnaisen
+argumentin, joka on kyseisen alaviitteen numero. Tässä tapauksessa
+komento ei kasvata \laskuri{footnote}\-/ laskuria.
 
 \komentoi{footnote}
 \begin{koodilohkosis}
@@ -4833,11 +4833,11 @@ tapauksessa komento ei kasvata \laskuri{footnote}\-/ laskuria.
 
 \noindent
 Itse alaviite ladotaan samalla kirjaintyypillä kuin leipätekstikin mutta
-pienempänä: sen koko tulee komennosta \komento{footnotesize} (luku
-\ref{luku/fontit-korkea}). Samalle sivulle voi sattua useampikin
-alaviite, ja ne erotetaan leipätekstistä pienellä pystysuuntaisella
-välillä sekä oletuksena myös lyhyellä vaakaviivalla. Jos alaviitteen
-tekee leijuvaan osaan (luku \ref{luku/leijuosat}) tai
+selvästi pienempänä: sen koko tulee komennosta \komento{footnotesize}
+(luku \ref{luku/fontit-korkea}). Alaviitteet erotetaan leipätekstistä
+pienellä pystysuuntaisella välillä sekä oletuksena myös lyhyellä
+vaakaviivalla. Samalle sivulle voi sattua useampikin alaviite. Jos
+alaviitteen tekee leijuvaan osaan (luku \ref{luku/leijuosat}) tai
 \ymparisto{minipage}\-/ ympäristöön (luku \ref{luku/laatikot-isot}), se
 merkitään oletuksena kirjaimen avulla, ja alaviitteen teksti ladotaan
 kyseisen osan alapuolelle.
@@ -4881,14 +4881,16 @@ välillä. Laskurin voi määritellä riippuvaiseksi toisesta laskurista,
 jolloin se nollautuu itsestään, kun toisen laskurin arvo kasvaa.
 Esimerkiksi dokumenttiluokassa \luokka{book} alaviitteiden laskuri
 nollautuu oletuksena aina päälukujen (\komento{chapter}) vaihtuessa.
+
 Joskus voi olla tarpeen tehdä alaviitteiden laskuri sivukohtaiseksi eli
 riippuvaiseksi \laskuri{page}\-/ laskurista. Sen voi toteuttaa
-\paketti{chngcntr}\-/ paketin ja \komento{counterwithin*}\-/ komennon
-(luku \ref{luku/hierarkkiset-laskurit}) avulla seuraavan esimerkin
-mukaisesti. Toinen vaihtoehto on paketti \paketti{footmisc} ja valitsin
-\koodi{perpage}, jota käsitellään myöhemmin tässä luvussa.
+esimerkiksi paketin \paketti{footmisc} ja valitsimen \koodi{perpage}
+avulla. Näitä käsitellään myöhemmin tässä luvussa. Toinen vaihtoehto
+sivukohtaiseen alaviitenumerointiin on \paketti{chngcntr}\-/ paketin
+komento \komento{counterwithin*} (luku
+\ref{luku/hierarkkiset-laskurit}). Seuraavassa on siitä esimerkki:
 
-\komentoi{counterwithin}
+\komentoi{counterwithin*}
 \laskurii{footnote}
 \laskurii{page}
 \begin{koodilohkosis}
@@ -4901,8 +4903,7 @@ Edellisissä esimerkeissä on käsitelty koko dokumentin alaviitelaskuria
 ympäristöissä (luku \ref{luku/laatikot-isot}) alaviitteet numeroidaan
 laskurin \laskuri{mpfootnote} avulla. Tämän laskurin arvo ladotaan
 käytännössä komennolla \komento{thempfootnote}, jonka kirjoittaja voi
-määritellä uudelleen tarpeen mukaan. Laskureihin liittyvää tekniikkaa
-käsitellään tarkemmin luvussa \ref{luku/laskurit}.
+määritellä uudelleen tarpeen mukaan.
 
 Leipäteksti ja alaviitteet erotetaan pystysuuntaisella välillä, jonka
 voi asettaa sivun asetusten yhteydessä (luku \ref{luku/sivuasetukset}).
@@ -4911,15 +4912,14 @@ jota käytetään esimerkiksi \komento{geometry}\-/ komennon kanssa:
 
 \komentoi{geometry}
 \begin{koodilohkosis}
-\geometry{ footnotesep=14bp }
+\geometry{footnotesep=14bp}
 \end{koodilohkosis}
 
 \noindent
 Välin täytyy olla ainakin niin suuri, ettei lukija sekoita alaviitteitä
-leipätekstin kappaleeseen. Ehkä riittävä väli on noin yhden
-rivikorkeuden verran tai vähän enemmän. Sopivan välin suuruus voi
-riippua siitäkin, erotetaanko leipäteksti ja alaviitteet toisistaan myös
-vaakaviivalla.
+leipätekstin kappaleeseen. Riittävä väli on noin yhden rivikorkeuden
+verran tai vähän enemmän. Sopivan välin suuruus voi riippua siitäkin,
+erotetaanko leipäteksti ja alaviitteet toisistaan myös vaakaviivalla.
 
 Muunlaiset alaviitteisiin vaikuttavat asetukset täytyy tehdä paketin
 \pakettictan{footmisc} avustuksella. Sen avulla voi esimerkiksi poistaa
@@ -4964,11 +4964,11 @@ tai jos sivun alareunan tasaaminen on pois päältä
 (\komento{raggedbottom}, luku \ref{luku/sivunvaihdot}).
 
 Oletuksena alaviitekappaleet ladotaan samalla tavalla kuin
-tekstikappaleet oletuksena muutenkin: alaviitteen ensimmäinen rivi on
-sisennetty ja sen alussa on alaviitteen numero. Seuraavia rivejä ei
-sisennetä. Tällainen asetus sopii hyvin pitkien alaviitetekstien
-latomiseen. Usein ne ovat kuitenkin lyhyitä, ja silloin voi sopia
-paremmin luetelmatyyppiset alaviitekappaleet (riippuva sisennys), joissa
+tekstikappaleet oletuksena muutenkin, eli alaviitteen ensimmäinen rivi
+on sisennetty, ja sen alussa on alaviitteen numero. Seuraavia rivejä ei
+sisennetä. Tällainen asetus sopii pitkien alaviitetekstien latomiseen.
+Usein viitteet ovat kuitenkin lyhyitä, ja silloin voi sopia paremmin
+luetelmatyyppiset alaviitekappaleet (riippuva sisennys), joissa
 alaviitteen numero on omalla alueellaan ja varsinainen alaviiteteksti on
 sisennetty. Tällainen asetus tehdään \paketti{footmisc}\-/ paketin
 valitsimella \koodi{hang}. Sisennyksen suuruuteen voi vaikuttaa mitan

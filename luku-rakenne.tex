@@ -5283,14 +5283,14 @@ Edellisessä esimerkissä viittaustyyli valitaan \komento{setcitestyle}\-/
 komennon argumentissa valitsimella \koodi{author\-year}
 (tekijä\--vuosi). Valitsimella \koodi{aysep} määritetään, mikä
 välimerkki ladotaan tekijän nimen ja vuosiluvun väliin. Tässä se
-jätetään tyhjäksi \koodi{\{\}}. \koodi{note\-sep}\-/ valitsimella
-asetetaan merkit, jotka ladotaan vuosiluvun ja sitä seuraavan
-huomautuksen kuten sivunumeroiden väliin; tässä tapauksessa määritettiin
-kaksoispiste ja väli \koodi{\{:~\}}, mutta pilkkukin on yleinen
-käytäntö. \komento{setcitestyle}\-/ komennon valitsimet erotetaan
-toisistaan pilkulla, eikä erotinpilkkujen ympärillä saa olla
-välilyöntejä. Lopputuloksena lähdemerkinnät näyttävät esimerkiksi
-seuraavanlaisilta:
+jätetään tyhjäksi. \koodi{note\-sep}\-/ valitsimella asetetaan merkit,
+jotka ladotaan vuosiluvun ja sitä seuraavan huomautuksen kuten
+sivunumeroiden väliin; tässä tapauksessa määritettiin kaksoispiste ja
+väli \koodi{\{:~\}}, mutta pilkkukin on yleinen käytäntö.
+
+\komento{setcitestyle}\-/ komennon valitsimet erotetaan toisistaan
+pilkulla, eikä erotinpilkkujen ympärillä saa olla välilyöntejä.
+Lopputuloksena lähdemerkinnät näyttävät esimerkiksi seuraavanlaisilta:
 
 \komentoi{citet*}
 \begin{koodilohkosis}
@@ -5326,11 +5326,11 @@ kappaletta jne.
 
 \bibitem[Meikäläinen ym.(2020)Meikäläinen \& Teikäläinen]{johdatus}
   Meikäläinen, Matti \& Teikäläinen, Teija (2020): Johdatus alkeiden
-  perusteisiin. Toinen painos. Kustantaja Oy.
+  perusteisiin. Toinen painos. Kustantaja oy.
 
 \bibitem[Itkonen(2019)]{typografia} Itkonen, Markus (2019): Typografian
   käsikirja. Viides, tarkistettu painos. Typoteekki. Graafinen
-  suunnittelu Markus Itkonen Oy.
+  suunnittelu Markus Itkonen oy.
 
 \end{thebibliography}
 \end{koodilohko}
@@ -5356,10 +5356,10 @@ vuosiluku ja sen perään vapaavalintainen lähdeviittauksen pitkä
 merkintä, joka näkyisi esimerkiksi tekstinä ''Meikäläinen \&
 Teikäläinen''. Vuosiluvun sulkeiden ympärillä ei saa olla välilyöntejä.
 
-Komennon pakollinen argumentti on kyseisen lähdeteoksen yksilöllinen
-tunniste, jonka avulla kyseiseen teokseen viitataan. Komennon
-argumenttien jälkeen kirjoitetaan samaan tekstikappaleeseen teksti, joka
-tulee näkymään lähdeluettelossa.
+\komento{bibitem}\-/ komennon pakollinen argumentti on kyseisen
+lähdeteoksen yksilöllinen tunniste, jonka avulla teokseen viitataan.
+Komennon argumenttien jälkeen kirjoitetaan samaan tekstikappaleeseen
+teksti, joka tulee näkymään lähdeluettelossa.
 
 Lähdeteoksiin viittaamiseen on useita eri komentoja, jotka eroavat
 toisistaan siinä, mitä tietoa lähdeviittauksessa näytetään ja onko
@@ -5370,7 +5370,7 @@ esimerkkiteos on peräisin esimerkistä \ref{esim/thebibliography}.
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[2]{\komento{#1}\komentoarg{\dots} & #2 \\}
+  \renewcommand{\rivi}[2]{\komento{#1} & #2 \\}
   \begin{tabular}{ll}
     \toprule
     \ots{Komento} & \ots{Esimerkki} \\
@@ -5395,8 +5395,7 @@ esimerkkiteos on peräisin esimerkistä \ref{esim/thebibliography}.
 Lähdeluettelon ulkoasuun voi vaikuttaa mittojen \mittam{bibhang} ja
 \mittam{bibsep} avulla. Ensin mainittu on lähdemerkinnän vaakasuuntaisen
 riippuvan sisennyksen suuruus, ja jälkimmäinen on lähdemerkintöjen
-välinen pystysuuntainen tila. Mitat asetetaan \komento{setlength}\-/
-komennolla (luku \ref{luku/mitat}):
+välinen pystysuuntainen tila.
 
 \komentoi{setlength}
 \mittai{parindent}
@@ -5464,8 +5463,8 @@ uudelleen komento \komentom{bibsection}.
 Edellisessä esimerkissä komennolla \komento{setcounter} määritetään,
 mille otsikkotasolle dokumentin otsikoiden eli lukujen numerointi yltää.
 Pieni arvo \mbox{(\koodi{-1})} käytännössä tarkoittaa, että seuraaviin
-otsikoihin ei tule numerointia; lähdeluettelon otsikkoon ei numerointia
-välttämättä haluta. Komento \komento{section} tekee itse otsikon.
+otsikoihin ei tule numerointia. Komento \komento{section} tekee itse
+otsikon.
 
 Jos ei halua, että \ymparisto{thebibliography}\-/ ympäristö tekee
 otsikon automaattisesti, voi \komento{bibsection}\-/ komennon määrittää
@@ -5478,14 +5477,13 @@ tyhjäksi.
 \end{koodilohkosis}
 
 \noindent
-Tässä alaluvussa on käsitelty lähdeluettelon ja lähdeviitteiden
-tekemistä \paketti{natbib}\-/paketin toimintojen avulla. Paketti
-sisältää muitakin ominaisuuksia, joihin kannattaa tutustua paketin
-ohjekirjan avulla. On muun muassa mahdollista tehdä lähdeteoksista
-tietokanta Bibtex\-/järjestelmän avulla. Jos kuitenkin siihen suuntaan
-haluaa edetä, ei kannata käyttää \paketti{natbib}\-/pakettia eikä
-Bibtexiä vaan monipuolisempaa pakettia \paketti{biblatex}, jota
-käsitellään seuraavassa alaluvussa.
+Paketti \paketti{natbib} sisältää edellä kuvattujen lisäksi muitakin
+ominaisuuksia, joihin voi tutustua paketin ohjekirjan avulla. On muun
+muassa mahdollista tehdä lähdeteoksista tietokanta Bibtex\-/
+järjestelmän avulla. Jos kuitenkin siihen suuntaan haluaa edetä, ei ehkä
+kannata käyttää \paketti{natbib}\-/ pakettia eikä vanhaa Bibtexiä vaan
+monipuolisempaa pakettia \paketti{biblatex}, jota käsitellään
+seuraavassa alaluvussa.
 
 \subsection{Vaativaan käyttöön (biblatex)}
 \label{luku/biblatex}
@@ -5508,8 +5506,8 @@ ei tarvitse kirjoittaa lopulliseen lähdeluetteloon käsin.
 \paketti{biblatex}\-/paketin käyttö vaatii hieman opettelua -- varsinkin
 jos on tarve muokata lähdeluettelon ja lähdeviittausten ulkoasua.
 Muutaman tiedonlähteen ylläpito on todennäköisesti paljon helpompaa ja
-nopeampaa niillä keinoilla, jotka on kuvattu luvussa \ref{luku/natbib}
-(\paketti{natbib}). Sen sijaan laajoja tieteellisiä artikkeleita
+nopeampaa \ref{luku/natbib}\-/ paketin keinoilla (luku
+\ref{luku/natbib}). Sen sijaan laajoja tieteellisiä artikkeleita
 kirjoittaville \paketti{biblatex} voi olla suuri apu, koska
 artikkeleissa on yleensä paljon lähteitä ja useissakin artikkeleissa
 viitataan yleensä samoihin lähteisiin.
@@ -5524,7 +5522,7 @@ tietueista, joiden yleinen muoto on seuraavanlainen:
 \begin{koodilohkosis}
 @teostyyppi{tunniste,
   author = {...},
-  title = "..."
+  title  = "..."
 }
 \end{koodilohkosis}
 
@@ -5577,7 +5575,8 @@ näyttää.
   title = {Comprehensive TeX Archive Network},
   shorttitle = {CTAN},
   date = {1992/},
-  url = {https://www.ctan.org/}
+  url = {https://www.ctan.org/},
+  urldate = {2021-07-14}
 }
 \end{koodilohko}
   \caption{Lähdeteosten tietokantatiedosto}
@@ -5625,10 +5624,10 @@ etunimet tulevat pilkun jälkeen; jos pilkkua ei ole, etunimet ovat
 ensin, ja sukunimi on lopussa.
 
 Jos kuitenkin teoksen tekijänä on yritys tai yhteisö, täytyy sen nimi
-kirjoittaa kokonaan aaltosulkeisiin, jottei sitä tulkittaisi
-henkilönnimeksi. Tällaisten aaltosulkeiden sisällä voi käyttää
-\koodi{and}\-/ sanaa normaalisti, eikä sitä tulkita eri tekijöiden
-erottimeksi. Seuraavassa on näistä esimerkit:
+kirjoittaa kokonaan aaltosulkeisiin, jottei sitä tulkittaisi henkilön
+nimeksi. Tällaisten aaltosulkeiden sisällä voi käyttää \koodi{and}\-/
+sanaa normaalisti, eikä sitä tulkita eri tekijöiden erottimeksi.
+Seuraavassa on näistä esimerkit:
 
 \begin{koodilohkosis}
 author = {Meikäläinen, Matti and Teikäläinen, Teija}
@@ -5639,7 +5638,7 @@ author = {{Org. of Latex and Typography} and Meikäläinen, Matti}
 Muunkinlaisia useasta osasta koostuvia kenttiä on olemassa.
 Asiasanakentän (\koodi{keywords}) eri sanat erotetaan toisistaan
 pilkulla, ja sivunumeroissa (\koodi{pages}) voi olla myös lukualueita,
-jotka ilmaistaan yhdysmerkillä~\mbox{(\koodi{-})}.
+jotka ilmaistaan yhdysmerkillä.
 
 \begin{koodilohkosis}
 keywords = {eri, sanoja, peräkkäin}
@@ -5659,18 +5658,18 @@ esimerkin rivillä 13 on tehty.
 \begin{esimerkki*}
 \begin{koodilohko}
 @string{
-  oma = {Meikäläinen, Matti},
+  itse = {Meikäläinen, Matti},
   lehti = {Hienon hieno aikakauslehti}
 }
 
 @article{hieno_artikkeli,
-  author = oma,
+  author = itse,
   journaltitle = lehti,
   ...
 }
 
 @article{toinen_artikkeli,
-  author = oma # { and Teikäläinen, Teija},
+  author = itse # { and Teikäläinen, Teija},
   journaltitle = lehti,
   ...
 }
@@ -5682,12 +5681,11 @@ esimerkin rivillä 13 on tehty.
 \subsubsection{Käyttöönotto}
 
 \paketti{biblatex}\-/paketti otetaan käyttöön esimerkin
-\ref{esim/biblatex-käyttöönotto} rivien avulla. Mukana ovat myös paketit
-\paketti{polyglossia} ja \paketti{csquotes}. Jälkimmäinen sisältää
-lainausmerkkien käyttöön liittyvää logiikkaa (luku
-\ref{luku/lainausmerkit}), jota ilman \paketti{biblatex} ei saa eri
-kielten erilaisia lainausmerkkejä oikein vaan käyttää pelkästään
-amerikkalaisia (``~'').
+\ref{esim/biblatex-käyttöönotto} rivien avulla. Mukana on myös
+kielipaketti sekä \paketti{csquotes}, joka sisältää lainausmerkkeihin
+liittyvää logiikkaa (luku \ref{luku/lainausmerkit}). Ilman sitä
+\paketti{biblatex} ei saa eri kielten erilaisia lainausmerkkejä oikein
+vaan käyttää pelkästään amerikkalaisia (``~'').
 
 \begin{esimerkki*}
   \komentoi{usepackage}
@@ -5696,8 +5694,9 @@ amerikkalaisia (``~'').
   \pakettii{biblatex}
 
 \begin{koodilohko}
-% Polyglossia tai babel on ladattava ennen biblatexia.
-\usepackage{polyglossia}
+% Kielipaketti polyglossia tai babel on ladattava ennen biblatexia.
+\usepackage{polyglossia} \setdefaultlanguage{finnish}
+%\usepackage[main=finnish]{babel}
 
 % Kielikohtaiset lainausmerkit oikein csquoten avulla.
 \usepackage{csquotes}
@@ -5720,23 +5719,21 @@ viittaustyylit ovat nimeltään \koodi{nu\-mer\-ic} ja
 \koodi{al\-pha\-bet\-ic}. Muitakin tyylejä on olemassa, mutta tämän
 oppaan esimerkeissä käsitellään tekijä--vuosi-tyyliä.
 
-Paketin omien lähdeluettelo\-/{} ja viittaustyylien lisäksi
-Latex\-/jakelupaketissa on todennäköisesti mukana myös ulkopuolisten
-tahojen tekemiä tyylejä. Tyylikokonaisuus nimeltä
-\pakettictan{biblatex-ext} laajentaa \paketti{biblatex}\-/ paketin
-tavallisten tyylien ominaisuuksia. Laajennettujen tyylien käyttäminen ei
-vaadi erillisen paketin lataamista, vaan tyylin saa käyttöön
-yksinkertaisesti vain kirjoittamalla sen nimen
-\paketti{biblatex}\-/paketin lataamisen yhteydessä. Laajennetut tyylit
-alkavat kirjaimilla \mbox{\koodi{ext-},} esimerkiksi
-\koodi{ext-author\-year} tai \koodi{ext-author\-year-comp}.
+Paketin omien lähdeluettelo\-/\ ja viittaustyylien lisäksi Latex\-/
+jakelupaketissa on todennäköisesti mukana myös ulkopuolisten tahojen
+tekemiä tyylejä. Tyylikokonaisuus nimeltä \pakettictan{biblatex-ext}
+laajentaa \paketti{biblatex}\-/ paketin tavallisten tyylien
+ominaisuuksia. Laajennustyylien käyttäminen ei vaadi erillisen paketin
+lataamista, vaan tyylin saa käyttöön yksinkertaisesti vain
+kirjoittamalla sen nimen \paketti{biblatex}\-/ paketin lataamisen
+yhteydessä. Laajennetut tyylit alkavat kirjaimilla \mbox{\koodi{ext-},}
+esimerkiksi \koodi{ext-author\-year} tai \koodi{ext-author\-year-comp}.
 
-Esimerkin \ref{esim/biblatex-käyttöönotto} komentojen lisäksi täytyy
-komennolla \komento{addbibresource} nimetä kaikki käyttöön otettavat
-teostietokantatiedostot. Komentoja ja tiedostoja voi olla useampiakin,
-ja tietokanta voi olla myös verkko\-/osoitteen takana oleva tiedosto.
-\komento{addbibresource}\-/ komennot täytyy kirjoittaa Latex\-/
-dokumentin esittelyosaan.
+Kaikki käyttöön otettavat teostietokantatiedostot täytyy esitellä
+komennolla \komento{addbibresource}. Tietokantatiedostoja voi olla
+useampiakin, ja tietokanta voi olla myös verkko\-/ osoitteen takana
+oleva tiedosto. \komento{addbibresource}\-/ komennot täytyy kirjoittaa
+Latex\-/ lähdedokumentin esittelyosaan.
 
 \komentoi{addbibresource}
 \begin{koodilohkosis}
@@ -5751,9 +5748,10 @@ Lähdeluettelo ladotaan dokumenttiin komennolla
 argumentin, jonka valitsimilla vaikutetaan esimerkiksi lähdeluettelon
 otsikon tekstiin tai poistetaan automaattinen otsikointi kokonaan. On
 myös olemassa erilaisia lähdeteosten rajaamisvalitsimia, joiden avulla
-voi määrittää, mitä teoksia kyseiseen luetteloon halutaan. Näin voidaan
-esimerkiksi rajata painetut lähteet yhteen luetteloon, julkaisemattomat
-toiseen ja verkkolähteet kolmanteen.
+voi määrittää, mitä teoksia kyseiseen luetteloon halutaan. Sen avulla
+voidaan esimerkiksi rajata painetut lähteet yhteen luetteloon,
+julkaisemattomat toiseen ja verkkolähteet kolmanteen. Seuraavassa on
+erilaisia esimerkkejä:
 
 \komentoi{printbibliography}
 \begin{koodilohkosis}
@@ -5774,7 +5772,7 @@ viittausta.
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[2]{\komento{#1}\komentoarg{\dots} & #2 \\}
+  \renewcommand{\rivi}[2]{\komento{#1} & #2 \\}
   \begin{tabular}{ll}
     \toprule
     \ots{Komento} & \ots{Esimerkki} \\
@@ -5795,7 +5793,8 @@ viittausta.
 }
 
 Taulukkoon \ref{tlk/biblatex-cite} on koottu tavallisimpia
-\paketti{biblatex}\-/paketin viittauskomentoja. Komennoille voi antaa
+\paketti{biblatex}\-/paketin viittauskomentoja. Komennon argumentiksi
+annetaan teoksen yksilöllinen tunniste. Komennoille voi antaa myös
 valinnaisen argumentin, jolla kerrotaan täsmentävää tietoa
 lähdeviittauksesta. Yleensä se on viitattavan teoksen sivunumero.
 Viittaus näkyy dokumentissa esimerkiksi seuraavalla tavalla:
@@ -5975,14 +5974,14 @@ käytetään \textit{ja}\-/sanaa.
 \noindent
 Useiden saman teoksen tekijöiden luettelot lyhennetään automaattisesti
 esimerkiksi muotoon ''Meikäläinen et~al.'', ja lyhentämisen säännöt
-määritellään tiettyjen \koodi{max}- ja \koodi{min}\-/alkuisten paketin
+määritellään tiettyjen \koodi{max}- ja \koodi{min}\-/ alkuisten paketin
 valitsimien avulla. Lähdeluettelossa teoksen tekijäluetteloon
 vaikutetaan valitsimilla \koodi{max\-bib\-names} ja
 \koodi{min\-bib\-names}, kun taas lähdeviittausten tekijäluetteloon
 vaikutetaan valitsimilla \koodi{max\-cite\-names} ja
 \koodi{min\-cite\-names}. Asetukset toimivat siten, että jos
-enimmäismäärä (max) ylittyy, typistetään tekijäluettelo vähimmäismäärään
-(min) ja lisätään ilmaus ''et al.'' tms.
+enimmäismäärä (\englanti{max}) ylittyy, typistetään tekijäluettelo
+vähimmäismäärään (\englanti{min}) ja lisätään ilmaus ''et al.'' tms.
 
 Tekijäluetteloa ei kuitenkaan välttämättä lyhennetä, jos luettelosta
 tulisi täsmälleen samanlainen kuin jollakin toisella teoksella. Tähän
@@ -6025,9 +6024,8 @@ jos tekijä on sama kuin luettelon edelliselläkin teoksella. Mikäli tätä
 \noindent
 Joskus on tapana latoa lähdeluettelossa tekijöiden nimet esimerkiksi
 pienversaalilla, jotta ne erottuvat luettelosta paremmin. Tällainen
-muutos vaatii, että lähdeluettelon latomisen yhteydessä määritellään
-uudelleen henkilön nimiin liittyvät latomiskomennot
-\komento{mkbibnamefamily}, \komento{mkbibnamegiven},
+muutos vaatii, että määritellään uudelleen henkilön nimiin liittyvät
+latomiskomennot \komento{mkbibnamefamily}, \komento{mkbibnamegiven},
 \komento{mkbibnameprefix} ja \komento{mkbibnamesuffix}. Se saadaan
 automaattiseksi seuraavilla komennoilla:
 
@@ -6051,9 +6049,9 @@ automaattiseksi seuraavilla komennoilla:
 \end{tulossis}
 
 \noindent
-Lähdeluettelon eri osien erottimena on yleensä piste. Joskus kuitenkin
-tekijöiden nimien ja vuosiluvun jälkeen halutaan kaksoispiste. Se
-saadaan toteutettua seuraavalla komennolla:
+Lähdeluettelossa yhden lähdemerkinnän eri osien erottimena on piste.
+Joskus kuitenkin tekijöiden nimien ja vuosiluvun jälkeen halutaan
+kaksoispiste. Se saadaan toteutettua seuraavalla komennolla:
 
 \komentoi{DeclareDelimFormat}
 \begin{koodilohkosis}

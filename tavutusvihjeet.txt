@@ -47,6 +47,7 @@ as-pect-ra-tio
 author
 babel
 babel-font
+babel-short-hands
 babel-tags
 back-ground
 back-mat-ter

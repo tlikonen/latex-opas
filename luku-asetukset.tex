@@ -2199,26 +2199,25 @@ leijuvien taulukoiden ja kuvien nimet ''\tablename'' ja ''\figurename''.
 Myös muita asetuksia tai komentoja saattaa tulla kieliasetusten mukana,
 mutta ne vaihtelevat eri kielissä.
 
-Kielipaketteja on kaksi -- \pakettictan{babel} ja
-\pakettictan{polyglossia} \==, ja kirjoittajan täytyy valita niistä
-jompikumpi. Pakettien historia ja kehitys on suunnilleen
-seuraavanlainen: \paketti{babel} on paljon vanhempi, ja monet vanhat
-oppaat ja esimerkit käsittelevät pelkästään sitä. Kun Latex siirtyi
-Unicode\-/aikaan Xelatex\-/kääntäjän ja \paketti{fontspec}\-/paketin
-myötä, \paketti{babel} ei pysynyt kehityksessä mukana. Syntyi
-\paketti{polyglossia}, joka hallitsee Unicoden sekä muitakin kuin
-latinalaiseen kirjaimistoon perustuvia kieliä ja kirjoitusjärjestelmiä.
-\paketti{babel}\-/paketin kehitys ei kuitenkaan pysähtynyt, ja nykyään
-myös se toimii Unicode\-/merkistön kanssa ainakin latinalaiseen
-kirjaimistoon perustuvien kielten osalta.
+Kielipaketteja on kaksi -- \paketti{babel} ja \paketti{polyglossia} \==,
+ja kirjoittajan täytyy valita niistä jompikumpi. Pakettien historia ja
+kehitys on suunnilleen seuraavanlainen: \paketti{babel} on paljon
+vanhempi, ja monet vanhat oppaat ja esimerkit käsittelevät pelkästään
+sitä. Kun Latex siirtyi Unicode\-/aikaan Xelatex\-/kääntäjän ja
+\paketti{fontspec}\-/paketin myötä, \paketti{babel} ei pysynyt
+kehityksessä mukana. Syntyi \paketti{polyglossia}, joka hallitsi
+Unicoden sekä muitakin kuin latinalaiseen kirjaimistoon perustuvia
+kieliä ja kirjoitusjärjestelmiä. \paketti{babel}\-/paketin kehitys ei
+kuitenkaan pysähtynyt, ja sittemmin myös se on kehittynyt Unicode\-/
+aikakaudelle.
 
-Suomen kielen kannalta on aika lailla sama, kumpaa kielipakettia
-käyttää. Meidän näkökulmastamme ''erikoisemmat'' kielet ja
-kirjoitusjärjestelmät voivat vaatia \paketti{polyglossia}\-/paketin sekä
-Lualatex\-/{} tai Xelatex\-/kääntäjän käyttöä. \paketti{babel} sisältää
-enemmän ominaisuuksia, esimerkiksi omien komentojen ja muiden viritysten
-tekemiseen; \paketti{polyglossia} on yksinkertaisempi paketti, jonka
-kehitys tuntuisi keskittyvän vain ydintehtävään.
+Suomen kielen kannalta ei ole merkitystä, kumpaa kielipakettia käyttää,
+mutta meidän näkökulmastamme ''erikoisemmat'' kielet ja
+kirjoitusjärjestelmät voivat vaatia selvittämistä, kumpi kielipaketti
+soveltuu paremmin. \paketti{babel} sisältää enemmän ominaisuuksia,
+esimerkiksi omien komentojen ja muiden viritysten tekemiseen;
+\paketti{polyglossia} on yksinkertaisempi paketti, jonka kehitys
+tuntuisi keskittyvän vain ydintehtävään.
 
 Seuraavissa alaluvuissa käsitellään kummankin kielipaketin tärkeimmät
 toiminnot eli kielen valintaan liittyvät asiat. Yleinen ajatus on se,
@@ -2229,12 +2228,12 @@ täytyy käyttää erityisiä komentoja tai ympäristöjä, joilla kerrotaan
 Latexille, mistä kielestä on kyse.
 
 \subsection{Polyglossia}
+\label{luku/polyglossia}
 
-Kielipaketti \paketti{polyglossia} on tyypillinen valinta, jos halutaan
-varmistaa, että Unicode\-/merkistöä (\textsc{utf\=/8}\-/merkistökoodaus)
-voi käyttää vapaasti. Samalla se tarkoittaa, että kääntäjän on oltava
-Lualatex tai Xelatex. Kielipaketin käyttöönotto dokumentin
-esittelyosassa näyttää seuraavanlaiselta:
+Kielipaketti \pakettictan{polyglossia} vaatii toimiakseen Lualatex\-/\
+tai Xelatex\-/ kääntäjän. Se ei siis toimi perinteisillä Latexin
+kääntäjillä. Kielipaketin käyttöönotto dokumentin esittelyosassa näyttää
+esimerkiksi seuraavanlaiselta:
 
 \komentoi{usepackage}
 \komentoi{setdefaultlanguage}
@@ -2336,7 +2335,7 @@ peruskirjainperhe ei sisällä kyseisen kielen kirjaimia.
 \newfontfamily{\greekfont}{GFS Artemisia}[Scale=MatchLowercase]
 \end{koodilohkosis}
 
-% Seuraat eivät tunnu toimivan:
+% Seuraavat eivät tunnu toimivan:
 
 % \newfontfamily{\greekfontsf}{GFS Neohellenic} [Scale=MatchLowercase]
 % \newfontfamily{\greekfonttt}{DejaVu Sans Mono}[Scale=MatchLowercase]
@@ -2349,35 +2348,26 @@ peruskirjainperhe ei sisällä kyseisen kielen kirjaimia.
 
 \subsection{Babel}
 
-Vanha kunnon \paketti{babel} toimii useiden eri Latex\-/kääntäjien
-kanssa. Dokumentit kirjoitettiin ennen kahdeksanbittisillä merkistöillä
-(kuten \textsc{iso-8859\=/1}), jotka sisältävät vain reilut kaksisataa
-merkkiä%
-\footnote{Teknisesti kahdeksanbittiset merkistöt sisältävät
-  2\textsuperscript8 eli 256 merkkipaikkaa, mutta osa merkeistä on
-  teknisiä ohjauskoodeja, jotka eivät liity ihmiskieliin.} %
-ja soveltuvat rajallisen kielijoukon kirjoittamiseen. Nykyään
-\paketti{babel} toimii myös Unicode\-/merkistön ja \textsc{utf\=/8}\-/
-merkistökoodauksen kanssa ainakin latinalaiseen kirjaimistoon
-perustuvien kielten osalta.
+Vanha kunnon \pakettictan{babel}\yipilkku\footnote{Katso myös
+  \paketti{babel}\-/ paketin mukana toimitettavat kielikohtaiset
+  dokumentit, esimerkiksi tiedosto \koodi{finnish.pdf}.} toimii useiden
+eri Latex\-/ kääntäjien kanssa. Ennen dokumentit kirjoitettiin
+rajallisilla merkistöillä (kuten \textsc{iso-8859\=/1}), jotka
+sisältävät vain reilut kaksisataa ihmiskielten kirjoitusmerkkiä.
+\paketti{babel} kuitenkin toimii myös Lualatex\-/\ ja Xelatex\-/
+kääntäjillä eli Unicode\-/ merkistön kanssa.
 
 Kieliasetukset otetaan käyttöön \paketti{babel}\-/paketissa seuraavan
 esimerkin tavoin. Paketin valinnaiseen argumenttiin kirjoitetaan
 ladattavien kielten nimet ja viimeisenä mainitaan se kieli, joka
-halutaan pääasialliseksi kieleksi.
+halutaan pääasialliseksi kieleksi. Toisaalta pääasiallisen kielen voi
+valita myös \koodi{main}\-/ valitsimella. Seuraavassa on esimerkki
+kummastakin kieltenvalintatavasta:
 
 \komentoi{usepackage}
 \pakettii{babel}
 \begin{koodilohkosis}
 \usepackage[english,greek,finnish]{babel}
-\end{koodilohkosis}
-
-\noindent
-Pääasiallisen kielen voi valita myös \koodi{main}\-/valitsimella:
-
-\komentoi{usepackage}
-\pakettii{babel}
-\begin{koodilohkosis}
 \usepackage[main=finnish,english,greek]{babel}
 \end{koodilohkosis}
 
@@ -2472,26 +2462,9 @@ Tex tavuttaa eli katkaisee sanoja automaattisesti rivien lopussa, jotta
 se saa tekstikappaleet näyttämään tasapainoisilta. Lähtökohtaisesti
 tavutus määräytyy kielikohtaisten tavutussääntöjen ja \=/asetusten
 perusteella, mutta kirjoittaja voi tehdä poikkeuksia kirjoittamalla
-tavutusvihjeitä. Käytännössä tavutusvihjeitä tarvitaan välillä.
-
-Kielen valintaa ja yleisiä kieliasetuksia käsitellään tarkemmin luvussa
-\ref{luku/kieliasetukset}, mutta mainitaan tässäkin, että suomen kieli
-ja sen mukainen tavutus saadaan päälle, kun dokumentin esittelyosaan
-kirjoittaa seuraavat komennot:
-
-\komentoi{usepackage}
-\komentoi{setdefaultlanguage}
-\pakettii{polyglossia}
-\begin{koodilohkosis}
-\usepackage{polyglossia}
-\setdefaultlanguage{finnish}
-\end{koodilohkosis}
-
-\noindent
-Tavutusta käsitellään tässä yhteydessä lähinnä
-\paketti{polyglossia}\-/kielipaketin näkökulmasta. Toinen kielipaketti
-\paketti{babel} toimii joissakin tavutukseen liittyvissä asioissa eri
-tavalla, ja pakettien eroja mainitaan tekstin lomassa.
+tavutusvihjeitä. Käytännössä tavutusvihjeitä tarvitaan välillä. Kielen
+valintaa ja yleisiä kieliasetuksia käsitellään tarkemmin luvussa
+\ref{luku/kieliasetukset}.
 
 \subsection{Yleiset tavutussäännöt}
 
@@ -2501,12 +2474,12 @@ sääntöihin. Säännöt pyrkivät kuvaamaan kielen tavujen rakenteen ja
 huomioimaan myös typografiaan liittyviä suosituksia.
 
 Automaattinen tavutus auttaa paljon, mutta se ei yksinään riitä, koska
-se tekee välillä virheitä tai tuottaa muuten suositusten vastaista
-jälkeä. Kirjoittajan täytyy auttaa välillä eli kirjoittaa
-tavutusvihjeitä. Yksi tapa tavutusvihjeiden kirjoittamiseen on
-\komento{hyphenation}\-/ komento, jolla määritellään yksittäisten
-sanojen tavutuskohdat kaikkialla dokumentissa. Seuraava esimerkki
-selventää komennon käyttöä:
+se tavuttaa välillä kielen kannalta väärin tai tuottaa muuten
+suositusten vastaista jälkeä. Kirjoittajan täytyy siis auttaa välillä
+eli kirjoittaa tavutusvihjeitä. Yksi tapa tavutusvihjeiden
+kirjoittamiseen on \komento{hyphenation}\-/ komento, jolla määritellään
+yksittäisten sanojen tavutuskohdat kaikkialla dokumentissa. Seuraava
+esimerkki selventää komennon käyttöä:
 
 \komentoi{hyphenation}
 \begin{koodilohkosis}
@@ -2539,23 +2512,20 @@ Tietyt sanassa mukana olevat merkit kytkevät muut tavutussäännöt pois
 päältä ja muuttavat sanan tavutuksen yksilölliseksi. Jos sanassa on
 mukana yksikin tavutusvihje (\komento{-}), yhdysmerkki (\koodi{\=/}),
 lyhyt ajatusviiva (\mbox{\koodi{--}}) tai pitkä ajatusviiva
-(\mbox{\koodi{---}}), sana katkaistaan vain näiden kohdalta
-(\koodi{\keno\=/}) tai jälkeen.%
-\footnote{\paketti{polyglossia}\-/kielipaketti ja Tex toimivat tekstissä
-  kuvatulla tavalla. Sen sijaan \paketti{babel}\-/paketti määrittelee
-  ainakin suomen kielelle tavutusvihjeen (\komento{-}) siten, että se
-  sallii sanan tavutuksen muistakin kohdista kuin tavutusvihjeen
-  kohdalta. Tavutusvihjeen molemmin puolin sanan osat tavutetaan
-  yleisten sääntöjen mukaisesti, ellei tavutuksen estäviä merkkejä kuten
-  yhdysmerkkejä tai ajatusviivoja ole. \paketti{babel}\-/paketissa on
-  myös tavutusvihje \koodi{\textquotedbl\textbar}, joka estää tavutuksen
-  muualta.}
+(\mbox{\koodi{---}}), sana katkaistaan vain näiden kohdalta tai
+jälkeen.\footnote{Kielipaketti \paketti{polyglossia} ja Tex toimivat
+  tekstissä kuvatulla tavalla. Sen sijaan \paketti{babel}\-/ paketti
+  määrittelee ainakin suomen kielelle tavutusvihjeen (\komento{-})
+  siten, että se sallii sanan tavutuksen muistakin kohdista kuin
+  tavutusvihjeen kohdalta. Tavutusvihjeen molemmin puolin sanan osat
+  tavutetaan yleisten sääntöjen mukaisesti, ellei tavutuksen estäviä
+  merkkejä kuten yhdysmerkkejä tai ajatusviivoja ole.}
 
 Myös Unicoden ajatusviivamerkit \uctunnus{u+2013 en dash} ja
-\uctunnus{u+2014 em dash} toimivat, mutta ne käyttäytyvät tavutuksen
-kannalta eri tavalla Lualatex\-/{} ja Xelatex\-/kääntäjillä.
-Yhteensopivuussyistä kannattanee välttää Unicoden ajatusviivoja
-Latex\-/lähdetiedostossa.
+\uctunnus{u+2014 em dash} toimivat, mutta ne ovat käyttäytyneet
+tavutuksen kannalta eri tavalla Lualatex\-/\ ja Xelatex\-/ kääntäjillä.
+Yhteensopivuussyistä kannattanee välttää Unicoden ajatusviivoja Latex\-/
+lähdetiedostossa.
 
 \leijutlk{
   \begin{tabular}{lll}
@@ -2617,9 +2587,9 @@ seuraavassa alaluvussa.
 Unicode\-/merkistön sitova yhdysmerkki \uctunnus{u+2011 non\-/breaking
   hyphen} näkyy tavallisena yhdysmerkkinä, mutta se estää sanan
 katkaisemisen yhdysmerkin vierestä. \uctunnus{u+2011}\-/merkkiä voi siis
-käyttää, mutta se ei ole aina toiminut luotettavasti ja yhdenmukaisesti
-eri kääntäjissä. Yhteensopivuussyistä voi olla järkevää käyttää muita
-vaihtoehtoja sitovalle yhdysmerkille.
+käyttää, mutta se ei ole aina toiminut luotettavasti eikä
+yhdenmukaisesti eri kääntäjissä. Yhteensopivuussyistä voi olla järkevää
+käyttää muita vaihtoehtoja sitovalle yhdysmerkille.
 
 Paketti \pakettictan{extdash} tuo uusia komentoja ja mahdollisuuksia
 tavutuksen hallintaan. Komennot ovat sellaisia kuin \komento{Hyphdash}
@@ -2633,13 +2603,13 @@ jos paketin lataa käyttämällä \koodi{short\-cuts}\-/ valitsinta.
 \end{koodilohkosis}
 
 \noindent
-Paketti sisältää kaksi lisävaihtoehtoa kolmelle viivavälimerkille
-eli yhdysmerkille, lyhyelle ajatusviivalle ja pitkälle ajatusviivalle.
-Kun Texin viivavälimerkit (luku \ref{luku/tavutuksen-merkit}) aina
-estävät tavutuksen muualta kuin välimerkin jälkeen,
-\paketti{extdash}\-/paketin perusvaihtoehdot sallivat tavutuksen
-muualtakin. Lisäksi kaikille kolmelle viivavälimerkille on sitova
-versio, joka estää tavutuksen välimerkin jälkeen (mutta sallii muualta).
+Paketti sisältää kaksi lisävaihtoehtoa kolmelle viivavälimerkille eli
+yhdysmerkille, lyhyelle ajatusviivalle ja pitkälle ajatusviivalle. Kun
+Texin viivavälimerkit (luku \ref{luku/tavutuksen-merkit}) aina estävät
+tavutuksen muualta kuin välimerkin jälkeen, \paketti{extdash}\-/ paketin
+perusvaihtoehdot sallivat tavutuksen muualtakin. Lisäksi kaikille
+kolmelle viivavälimerkille on sitova versio, joka estää tavutuksen
+välimerkin kohdalta (mutta sallii muualta).
 
 Taulukossa \ref{tlk/extdash} ovat \paketti{extdash}\-/paketin tärkeimmät
 komennot ja niiden merkitykset. Taulukossa \ref{tlk/extdash-vertailu}
@@ -2770,42 +2740,37 @@ esittelyosassa.
 \label{luku/tavutus-muut}
 
 Aiemmin mainittu \paketti{extdash}\-/paketti sisältää tavutuksen
-hallintaan liittyviä välimerkkejä, mutta sellaisia on myös
-kielipaketeissa \paketti{polyglossia} ja \paketti{babel}. Kielipakettien
-englanninkielisissä ohjekirjoissa niitä kutsutaan nimellä
-\englantik{short\-hands}.
+hallintaan liittyviä välimerkkejä, mutta kielestä riippuen sellaisia on
+myös kielipaketeissa \paketti{babel} ja \paketti{polyglossia}.
+Jälkimmäiseen pakettiin lisävälimerkit täytyy kytkeä erikseen päälle
+käyttämällä valitsinta \koodi{babelshorthands} (luku
+\ref{luku/polyglossia}).
 
-\paketti{babel}\-/paketti tuo suomen kieleen sitovan, tavutuksen
-sallivan yhdysmerkin \koodi{\textquotedbl\=/}, joka toimii samoin kuin
-\paketti{extdash}\-/paketin komento \komento{=/}. Lisäksi on
-tavutusvihje (\koodi{\textquotedbl\textquotedbl}), joka ei tee
-yhdysmerkkiä tavutuskohtaan. Sitä voi käyttää joidenkin teknisten
-ilmausten tavutusvihjeenä, jotta ilmaus säilyy täsmälleen samanlaisena
-myös rivien katkaisemisessa. \paketti{babel}\-/paketin toiminnot
-vaihtelevat eri kielten välillä.
-
-\paketti{polyglossia}\-/pakettiin saa samat lisätoiminnot ja eräitä
-muitakin, kun paketin lataa käyttämällä valitsinta
-\koodi{babel\-short\-hands}. Edellä mainittujen ''Baabelin lyhenteiden''
-lisäksi tulee yhdysmerkki \koodi{\textquotedbl\textasciitilde}, joka on
-sitova ja samalla kaiken tavutuksen estävä yhdysmerkki. Tälle merkille
-ei ole vastinetta \paketti{extdash}\-/paketissa. Pari muutakin
-lainausmerkillä alkavaa, tavutukseen liittyvää merkkiä on mukana.
+Molemmat kielipaketit tuovat suomen kieleen muun muassa sitovan,
+tavutuksen sallivan yhdysmerkin \koodi{\textquotedbl\=/}, joka toimii
+samoin kuin \paketti{extdash}\-/ paketin komento \komento{=/}. Lisäksi
+on tavutusvihje \koodi{\textquotedbl\textquotedbl}, joka ei tee
+yhdysmerkkiä tavutuskohtaan. Sitä voi käyttää teknisten ilmausten
+tavutusvihjeenä, koska niihin ei välttämättä haluta yhdysmerkkiä edes
+katkaisutilanteessa.
 
 Varsinainen tavutuksen peruskomento on \komentom{discretionary}, joka
 mahdollistaa omanlaisten tavutuskohtien määrittelyn. Komento
-kirjoitetaan sanassa juuri siihen kohtaan, johon tavutuskohta halutaan.
-Komennolle annetaan kolme argumenttia järjestyksessä seuraavasti:
+kirjoitetaan sanassa juuri siihen kohtaan, johon tavutuskohta halutaan,
+ja komennon argumenttien rakenne on seuraavanlainen:
 
-\begin{nluetelma}
-\item katkaisutilanteessa rivin loppuun ladottavat merkit
-\item katkaisutilanteessa seuraavan rivin alkuun ladottavat merkit
-\item katkaisemattomaan sanaan ladottavat merkit.
-\end{nluetelma}
+\komentoi{discretionary}
+\begin{koodilohkosis}
+\discretionary{loppu}{alku}{katkaisematon}
+\end{koodilohkosis}
 
 \noindent
-Normaali tavutuskohta sanaan \emph{tavu} määriteltäisiin alla olevan
-esimerkin tavoin:
+Komennon ensimmäinen argumentti \koodi{loppu} ilmaisee
+katkaisutilanteessa rivin loppuun ladottavat merkit. Toinen argumentti
+\koodi{alku} ilmaisee katkaisutilanteessa seuraavan rivin alkuun
+ladottavat merkit, ja kolmas argumentti tarkoittaa katkaisemattomaan
+sanaan ladottavia merkkejä. Normaali tavutuskohta sanaan \emph{tavu}
+määriteltäisiin seuraavan esimerkin tavoin:
 
 \komentoi{discretionary}
 \begin{koodilohkosis}
@@ -2822,10 +2787,10 @@ mitään merkkiä tavujen väliin.
 
 \komento{discretionary}\-/komennolla voi luoda myös tavutuskohtia,
 joihin ei ilmesty yhdysmerkkiä eikä mitään muutakaan merkkiä
-katkaisutilanteessa. Se saadaan aikaan jättämällä kaikki argumentit
-tyhjäksi. Tällainen sopii tavutusvihjeeksi teknisiin ilmauksiin, joihin
-ei selvyyden vuoksi haluta mitään ylimääräisiä merkkejä edes sanan
-katkaisutilanteessa.
+katkaisutilanteessa. Tämä vastaa kielipakettien tavutusvihjettä
+\koodi{\textquotedbl\textquotedbl} (luku \ref{luku/tavutus-muut}).
+\komento{discretionary}\-/ komennolla sama toteutetaan jättämällä kaikki
+argumentit tyhjäksi:
 
 \komentoi{discretionary}
 \begin{koodilohkosis}
@@ -2838,7 +2803,7 @@ rivin loppuun kirjoitetaan yksi yhdysmerkki ja seuraavan rivin alkuun
 toinen. Näin ilmaistaan, että sanassa on pysyvä yhdysmerkki eikä vain
 väliaikaisesti katkaisun merkkinä. Tällaisia kieliä varten saattaa
 kielipaketissa olla omat yhdysmerkkitoiminnot tai oikeanlainen
-tavutuslogiikka voi jo sisältyä kieliasetuksiin, mutta edellä kuvatun
+tavutuslogiikka voi jo sisältyä kieliasetuksiin, mutta tällaisen
 tavutuskohdan saa myös seuraavalla tavalla:
 
 \komentoi{discretionary}
@@ -2856,14 +2821,15 @@ kääntäjien kanssa.
 
 \subsection{Suomen kielen tavutus}
 
-Texin kirjainyhdistelmiin perustuvat säännöt eivät yksinään riitä suomen
-kieleen, ja esimerkiksi yhdyssanojen rajakohdat tuottavat usein
-ongelmia. Sana \emph{alku\-osa} katkaistaan sääntöjen mukaan kohdista
+Texin kirjainyhdistelmiin perustuvat tavutussäännöt eivät yksinään riitä
+suomen kieleen, ja esimerkiksi yhdyssanojen rajakohdat tuottavat usein
+ongelmia. Sana \emph{alku\-osa} katkaistaan Latexissa kohdista
 \emph{al-kuo-sa}. Se on kyllä oikein tavurakenteen kannalta mutta
-käytännössä ongelmallinen. Tässä ei ole kyse \emph{uo}\-/diftongista,
-vaan yhdyssanan rajalla on myös tavutuskohta (\emph{al-ku-o-sa}).
-Lisäksi sanaa ei saa katkaista siten, että siitä jää yksittäinen kirjain
-eri riville (\emph{o-sa}).
+käytännössä ongelmallinen. Tässä ei ole kyse \emph{uo}\-/ diftongista
+eli samaan tavuun kuuluvista vokaaleista, vaan yhdyssanan rajalla on
+myös tavutuskohta (\emph{al-ku-o\=/sa}). Lisäksi sanaa ei saisi
+katkaista siten, että siitä jää yksittäinen kirjain eri riville (ei:
+\emph{o\=/sa}).
 
 Parasta olisi katkaista suomen kielen yhdyssanat vain yhdysosien välistä
 (\emph{alku-osa}). Muualtakin voi katkaista (\emph{al-ku-osa}), kunhan
@@ -2887,17 +2853,18 @@ alku\-osa pusku\-traktori
 
 \noindent
 Yhdysmerkin tai ajatusviivan sisältävät pitkät yhdyssanat voivat vaatia
-tavutuskohtien lisäämistä, koska Texin yhdysmerkki ja ajatusviivat
-estävät tavutuksen muualta kuin näiden merkkien jälkeen. Ilman
-tavutuskohtien lisäämistä Texillä ei ehkä ole riittävästi vaihtoehtoja
-tekstikappaleen rivittämiseen. Voi syntyä liian suuria sanavälejä, tai
-joistakin riveistä tulee ylipitkiä, eli ne yltävät marginaalin puolelle.
+tavutuskohtien lisäämistä, koska yhdysmerkki ja ajatusviivat estävät
+tavutuksen muualta kuin näiden merkkien jälkeen. Ilman tavutuskohtien
+lisäämistä Texillä ei ehkä ole riittävästi vaihtoehtoja tekstikappaleen
+rivittämiseen. Voi syntyä liian suuria sanavälejä, tai joistakin
+riveistä tulee ylipitkiä, eli ne yltävät marginaalin puolelle.
 
-Tavutuskohtia voi lisätä sopiviin kohtiin omilla tavutusvihjeillä
+Tavutuskohtia voi lisätä sopiviin kohtiin tavutusvihjeillä
 (\komento{-}). Vaihtoehtoisesti kaikki yleisten tavutussääntöjen
-mukaiset tavutuskohdat saa käyttöön \paketti{extdash}\-/paketin
-komennoilla (taulukko \ref{tlk/extdash}). Seuraavassa esimerkissä on
-tavutuksen hallintaa sanalle \emph{Molo\-tov--Ribben\-trop-sopi\-mus}:
+mukaiset tavutuskohdat saa käyttöön \paketti{extdash}\-/ paketin
+välimerkkikomennoilla (taulukko \ref{tlk/extdash}). Seuraavassa
+esimerkissä on tavutuksen hallintaa sanalle
+\emph{Molo\-tov--Ribben\-trop-sopi\-mus}:
 
 \komentoi{-}
 \komentoi{--}

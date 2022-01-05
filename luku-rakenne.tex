@@ -6750,7 +6750,7 @@ valitsimen käyttö vaatii, että Latexin kääntäjäohjelmalle
 \label{luku/grafiikka}
 
 Perus Latex ei pysty juuri minkäänlaiseen kuvien eli tietokonegrafiikan
-käsittelyyn, mutta avuksi on tehty monipuolisia paketteja. Niiden
+käsittelyyn, mutta avuksi on tehty monipuolisia paketteja. Niiden avulla
 voidaan esimerkiksi ladata ja latoa kuvatiedostoja sekä piirtää
 vektorigrafiikkakuvia Latex\-/ komentojen avulla.
 
@@ -6768,12 +6768,13 @@ seuraavasti:
 
 \noindent
 Tällä tavoin lisätty kuvatiedosto käyttäytyy tekstikappaleessa kuin mikä
-tahansa kirjain. Edellisen esimerkin pakollisessa argumentissa oleva
-\koodi{kuvatiedosto.\katk jpg} on tiedoston nimi. Se voi sisältää myös
-hakemistopolun, jos tiedosto ei sijaitse samassa hakemistossa Latex\-/
-lähdetiedostojen kanssa. Kaikki käyttöjärjestelmän hyväksymät
-tiedostonnimet eivät Latexissa toimi, vaan kannattaa jättää välilyönnit
-pois ja pitäytyä suppeassa latinalaisessa merkkivalikoimassa.
+tahansa kirjain tai laatikko. Edellisen esimerkin pakollisessa
+argumentissa oleva \koodi{kuvatiedosto.\katk jpg} on tiedoston nimi. Se
+voi sisältää myös hakemistopolun, jos tiedosto ei sijaitse samassa
+hakemistossa Latex\-/ lähdetiedostojen kanssa. Kaikki käyttöjärjestelmän
+hyväksymät tiedostonnimet eivät Latexissa toimi, vaan kannattaa jättää
+välilyönnit pois ja pitäytyä suppeassa latinalaisessa
+merkkivalikoimassa.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -6821,10 +6822,10 @@ ja valitsimen arvoksi annetaan taulukossa
 yhdistelmiä. Esimerkiksi \koodi{origin=\katk lt} tarkoittaa vasenta
 (\koodi{l}) ylänurkkaa (\koodi{t}).
 
-Kuvaa voi rajata sivuilta käyttämällä yhdessä valitsimia \koodi{trim} ja
+Kuvaa voi rajata käyttämällä yhdessä valitsimia \koodi{trim} ja
 \koodi{clip}. \koodi{trim}\-/ valitsimen arvoksi annetaan neljä
 välilyönnillä erotettua mittaa, joiden järjestys on seuraava: vasen,
-ala, oikea, ylä. Tämä valitsin vain siirtää kuvan reunojen sijaintia,
+ala, oikea, ylä. Tämä valitsin vain siirtää kuvan reunoja sisäänpäin,
 mutta kun mukaan ottaa valitsimen \koodi{clip}, kuvasta myös leikataan
 reunojen ulkopuolinen alue pois. Seuraavassa esimerkissä kuvaa leikataan
 vasemmalta 1\,mm, alhaalta 2\,mm, oikealta 3\,mm ja ylhäältä 4\,mm.
@@ -6851,9 +6852,8 @@ Runsasta sivumäärää ei kannata säikähtää: ei opasta tarvitse kokonaan
 lukea, ja alkupuolella teksti johdattelee lukijaa eteenpäin helppojen ja
 käytännöllisten esimerkkien avulla.
 
-Vektorigrafiikkaan erikoistunut kieli ja komennot toimivat ympäristön
-\ymparisto{tikzpicture} sisällä. Se ei ole mikä tahansa Latexin tekstiä
-ja merkintätapoja sisältävä ympäristö, vaan se on tarkoitettu vain
+Vektorigrafiikka toteutetaan ympäristön \ymparisto{tikzpicture} sisällä.
+Se ei ole tavallinen Latexin ympäristö, vaan se on tarkoitettu vain
 piirtokomennoille, joilla on oma, muusta Latexista hieman poikkeava
 kielioppinsa. Seuraavassa on pieni esimerkki:
 
@@ -6885,8 +6885,8 @@ koordinaatit tulevat juuri näiden mittojen mukaiseksi. Piirustusalustan
 origo eli koordinaatti (0,~0) sijaitsee vasemmassa alanurkassa, ja
 koordinaatisto kasvaa ylös ja oikealle.
 
-Edellä olleessa esimerkissä piirretään komennolla \komento{draw}
-viivakuvio, jonka välipisteiden kordinaatit ilmaistaan sulkeissa.
+Edellä olevassa esimerkissä piirretään komennolla \komento{draw}
+viivakuvio, jonka välipisteiden koordinaatit ilmaistaan sulkeissa.
 Lopussa oleva \koodi{cycle} piirtää viivan takaisin saman
 \komento{draw}\-/ komennon alkupisteeseen. Tätä kokonaisuutta kutsutaan
 poluksi, ja sen lopussa täytyy olla puolipiste
@@ -6894,14 +6894,14 @@ poluksi, ja sen lopussa täytyy olla puolipiste
   joka ei piirrä mitään, ellei sille anna valinnaista argumenttia
   \koodi{draw}. Komento \komento{draw} on itse asiassa sama kuin
   \komento{path}\komentoargv{draw}.} Esimerkissä on toinenkin polku eli
-toinen \komento{draw}\-/ komento piirtää pystyviivan suuren kolmion
-keskelle ja jakaa sen kahdeksi pienemmäksi kolmioksi.
+toinen \komento{draw}\-/ komento, joka piirtää pystyviivan suuren
+kolmion keskelle ja jakaa sen kahdeksi pienemmäksi kolmioksi.
 
 Koordinaatit voi ilmaista suhteessa polun edelliseen pisteeseen
-lisäämällä koordinaatin eteen kaksi plusmerkkiä. Seuraavassa esimerkissä
-havainnollistetaan sitä. Kuvion (polun) neljä ensimmäistä pistettä
-ilmaistaan x- ja y\=/ koordinaateilla mutta viimeinen piste ilmaistaan
-kulman (25°) ja pituuden (8) avulla.
+lisäämällä koordinaattisulkeiden eteen kaksi plusmerkkiä. Seuraavassa
+esimerkissä havainnollistetaan sitä. Kuvion (polun) neljä ensimmäistä
+pistettä ilmaistaan x- ja y\=/ koordinaateilla mutta viimeinen piste
+ilmaistaan kulman (25°) ja pituuden (8) avulla.
 
 \ymparistoi{tikzpicture}
 \komentoi{draw}
@@ -6957,7 +6957,7 @@ suuntaan viivaa taivutetaan, sekä loppupisteen.
 Kuten esimerkki \ref{esim/tikz-kuvioita} osoittaa, piirtokomennoille voi
 antaa hakasulkeissa lisätietoja. Mahdollisuuksia on valtavan paljon:
 esimerkiksi värit, viivojen paksuus, nuolenkärjet ja kulmien pyöristys
-ilmaistaan tällaisten listätietojen avulla. Esimerkki
+ilmaistaan tällaisten lisätietojen avulla. Esimerkki
 \ref{esim/tikz-asetuksia} havainnollistaa tavallisimpia valinnaisia
 argumentteja. Värivalitsimien \koodi{draw} ja \koodi{fill} arvoksi voi
 antaa mitä hyvänsä nimettyjä värejä, joita käsitellään tarkemmin luvussa
@@ -7037,8 +7037,7 @@ piirtävät usein tarvittavia kuvan osia.
     \end{tikzpicture}
   \end{tulos}
 
-  \caption{Tekstiä tai muuta sisältäviä solmuja tehdään
-    \komento{node}\-/ komennolla}
+  \caption{Solmuja tehdään \komento{node}\-/ komennolla}
   \label{esim/tikz-solmut}
 \end{esimerkki*}
 
@@ -7048,7 +7047,7 @@ solmuja. Komento tarvitsee ainakin solmun sijaintikoordinaatit ja
 ladottavan sisällön. Esimerkissä \ref{esim/tikz-solmut} on kolme
 erityyppistä solmua.
 
-Kuten esimerkistä näkyy, laatikolle voi määrittää kehykset ja niiden
+Kuten esimerkistä näkyy, solmulle voi määrittää kehykset ja niiden
 värin, (\koodi{draw}), täyttövärin (\koodi{fill}), sisällön värin
 (\koodi{color}), kehyksen kulmien pyöristyksen (\koodi{\englanti{rounded
     corners}}) ja sisäisen tyhjän tilan suuruuden (\koodi{inner sep}).
@@ -7082,10 +7081,10 @@ paketin omasta ohjekirjasta.
 \end{esimerkki*}
 
 Solmulle voi määrittää yksilöllisen nimen, jota voi sitten käyttää
-esimerkiksi viivojen piirtämiseen solmujen välille. Viivojen
-piirtämisessä \komento{draw}\-/ komennon koordinaattien sijasta
-käytetäänkin solmulle annettua nimeä. Tätä havainnollistetaan
-esimerkissä \ref{esim/tikz-solmujen-yhdistäminen}, jossa esitellään myös
+esimerkiksi viivojen piirtämiseen solmujen välille. Ei siis tarvitse
+käyttää tavallisia \komento{draw}\-/ komennon koordinaatteja vaan voi
+käyttää solmulle annettua nimeä. Tätä havainnollistetaan esimerkissä
+\ref{esim/tikz-solmujen-yhdistäminen}, jossa esitellään myös
 \komento{draw}\-/ komennon \koodi{to}\-/ operaatio. Se mahdollistaa
 solmujen välisen viivan lähtö- ja tulokulman valinnan valitsimilla
 \koodi{out} ja \koodi{in}. Esimerkissä myös lyhennetään nuolta

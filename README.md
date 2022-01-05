@@ -140,6 +140,6 @@ Puutteita ja suunnitelmia
     makropakettien ja dokumenttiluokkien tekeminen.
   - Marginaalihuomautusluvussa voisi mainita `\marginpar`-komennon
     puutteet ja vaihtoehdon `marginnote`.
-  - Mahdollisesti käsitellään wrapfig-paketti.
+  - Mahdollisesti käsitellään wrapfig-paketti (myös wrapfig2).
   - Uusi `fi-x-school`-tavutuskaava.
   - Mittojen käsittelyn yhteydessä voisi käsitellä calc-paketin.

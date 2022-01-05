@@ -6210,11 +6210,11 @@ käsitellään. Asiahakemistojen tarkoituksena on helpottaa tiedon
 löytämistä. Tämän oppaan luku \enquote{\nameref{luku/asiahakemisto}}
 alkaa sivulta \pageref{luku/asiahakemisto}.
 
-Latex tarvitsee asiahakemistojen tekemiseen paketin. Niitä tehty
+Latex tarvitsee asiahakemistojen tekemiseen paketin. Niitä on tehty
 useampia, mutta parhaita taitavat olla \pakettictan{indextools} ja
-\pakettictan{imakeidx}. Ne ovat käytännössä lähes sama paketti:
-\paketti{indextools} perustuu \paketti{imakeidx}\-/ pakettiin ja korjaa
-joitakin sen puutteita.
+\pakettictan{imakeidx}, joihin tämä opas keskittyy. Paketit ovat
+käytännössä lähes samanlaisia: \paketti{indextools} perustuu
+\paketti{imakeidx}\-/ pakettiin ja korjaa joitakin sen puutteita.
 
 \begin{esimerkki*}
   \komentoi{documentclass}
@@ -6259,14 +6259,11 @@ käsitellään tarkemmin erillisissä alaluvuissa, mutta esimerkissä
 Ennen asiasanojen ja \=/hakemistojen käyttöä täytyy hakemistot
 määritellä. Yksinkertaisimmillaan määrittelyksi riittää pelkkä yksi
 \komento{makeindex}\-/ komento lähdedokumentin esittelyosassa, kuten
-esimerkissä \ref{esim/asiasanat-perus} on tehty. Jos haluaa vaikuttaa
-asetuksiin tai jos dokumenttiin tarvitaan useampia asiahakemistoja,
-täytyy tietää \komento{makeindex}\-/ komennosta enemmän. Tässä luvussa
-käsitellään \komento{makeindex}\-/ komennon muita ominaisuuksia
-pakettien \paketti{indextools} ja \paketti{imakeidx} näkökulmasta.
-Komennolla vaikutetaan yksittäisen hakemiston ominaisuuksiin. Yleisiä,
-kaikkien hakemistojen latomiseen liittyviä asetuksia käsitellään luvussa
-\ref{luku/asiasanat-asetukset}.
+esimerkissä \ref{esim/asiasanat-perus} on tehty. Jos dokumenttiin
+tarvitaan useampia asiahakemistoja tai jos haluaa vaikuttaa yksittäisten
+hakemistojen asetuksiin, täytyy tietää \komento{makeindex}\-/ komennosta
+enemmän. Sen sijaan yleisiä, kaikkien hakemistojen latomiseen liittyviä
+asetuksia käsitellään luvussa \ref{luku/asiasanat-asetukset}.
 
 \leijutlk{
   \providecommand{\rivi}{}
@@ -6278,9 +6275,9 @@ kaikkien hakemistojen latomiseen liittyviä asetuksia käsitellään luvussa
     \rivi{name}{asiahakemiston tekninen nimi}
     \rivi{title}{asiahakemistolle ladottava otsikko}
     \rivi{intoc}{sisällysluetteloon lisääminen}
-    \rivi{columns}{asiahakemiston sarakkeiden lukumäärä}
-    \rivi{columnsep}{asiahakemiston sarakkeiden väli (mitta)}
-    \rivi{columnseprule}{pystyviiva sarakkeiden väliin}
+    \rivi{columns}{asiahakemiston palstojen lukumäärä}
+    \rivi{columnsep}{asiahakemiston palstojen väli (mitta)}
+    \rivi{columnseprule}{pystyviiva palstojen väliin}
     \rivi{program}{asiahakemiston tekemisestä vastaava ohjelma:
       \koodi{makeindex} (oletus), \koodi{xindy} ym.}
     \rivi{options}{ohjelman komentorivin valitsimia}
@@ -6299,9 +6296,9 @@ valitsimia ja niiden arvoja. Valitsimia on koottu taulukkoon
 Valitsin \koodi{name} on asiahakemiston tekninen nimi, jota käytetään
 Latexissa sisäisesti. Valitsinta ei tarvitse käyttää, jos tarvitaan vain
 yksi asiahakemisto. Tällöin nimeksi tulee sama kuin Latex\-/
-lähdedokumentin eli tiedoston nimi. Jos asiahakemistoja tarvitaan
-useita, on järkevää nimetä jokainen erikseen \koodi{name}\-/ valitsimen
-avulla. Seuraavassa esimerkissä määritellään kolme eri hakemistoa, jotka
+lähdedokumentin tiedoston nimi. Jos asiahakemistoja tarvitaan useita, on
+järkevää nimetä jokainen erikseen \koodi{name}\-/ valitsimen avulla.
+Seuraavassa esimerkissä määritellään kolme eri hakemistoa, jotka
 voisivat olla Latexin komennoille, mitoille ja laskureille:
 
 \komentoi{makeindex}
@@ -6312,23 +6309,21 @@ voisivat olla Latexin komennoille, mitoille ja laskureille:
 \end{koodilohkosis}
 
 \noindent
-\komento{makeindex}\-/ komennon valitsin \koodi{title} antaa otsikon
+\komento{makeindex}\-/ komennon valitsin \koodi{title} nimeää otsikon
 hakemistolle, joka ladotaan \komento{printindex}\-/ komennolla (luku
 \ref{luku/asiasanat-asetukset}). Jos \koodi{title}\-/ valitsinta ei ole
 annettu, otsikko tulee komennosta \komento{indexname}, joka puolestaan
 määräytyy kieliasetusten perusteella (luku \ref{luku/kieliasetukset}).
-Se on \paketti{polyglossia}\-/ kielipaketissa suomen kieliasetuksilla
-''\indexname''.
+Se on suomen kieliasetuksilla ''\indexname''.
 
-Jos valitsin \koodi{intoc} on mukana, kyseinen asiahakemisto eli sen
-otsikko lisätään myös sisällysluetteloon. Valitsimella \koodi{columns}
-asetetaan hakemiston sarakkeiden lukumäärää ja valitsimella
-\koodi{columnsep} mitta, joka on sarakkeiden välinen tyhjä tila.
-Sarakkeiden väliin saa pystyviivan antamalla valitsimen
-\koodi{columnseprule}. Teknisesti sarakkeet toteutetaan
-\paketti{multicol}\-/ paketin avulla, joten sen paketin mitat ovat
-käytettävissä myös asiahakemistojen latomisessa. Katso lisätietoa
-sarakkeista ja \paketti{multicol}\-/ paketista luvusta
+Jos valitsin \koodi{intoc} on mukana, kyseisen asiahakemiston otsikko
+lisätään myös sisällysluetteloon. Valitsimella \koodi{columns} asetetaan
+hakemiston palstojen lukumäärää ja valitsimella \koodi{columnsep} mitta,
+joka on palstojen välinen tyhjä tila. Palstojen väliin saa pystyviivan
+antamalla valitsimen \koodi{columnseprule}. Teknisesti palstat
+toteutetaan \paketti{multicol}\-/ paketin avulla, joten sen paketin
+mitat ovat käytettävissä myös asiahakemistojen latomisessa. Katso
+lisätietoa palstoista ja \paketti{multicol}\-/ paketista luvusta
 \ref{luku/multicol}.
 
 Asiahakemiston järjestelystä vastaa erillinen tietokoneohjelma, joka
@@ -6545,7 +6540,7 @@ sivunumero jätetään käsittelemättä.
   \komentoi{index}
 
 \begin{koodilohko}
-\newcommand{\katso}[2]{\textrightarrow{} #1}
+\newcommand{\katso}[2]{\textrightarrow\ #1}
 
 % Seuraavat komennot tarvitaan vain kerran dokumentissa, koska ne vain
 % viittaavat toisiin asiasanoihin.
@@ -6562,8 +6557,8 @@ sivunumero jätetään käsittelemättä.
   fontit \\*
   \makebox[\sisennys]{}kirjainleikkaus, \arabic{page} \\*
   \makebox[\sisennys]{}kirjainperhe, \arabic{page} \\*
-  kirjainleikkaus, \textrightarrow{} fontit \\*
-  kirjainperhe, \textrightarrow{} fontit
+  kirjainleikkaus, \textrightarrow\ fontit \\*
+  kirjainperhe, \textrightarrow\ fontit
 \end{tulos}
 
 \caption{Oman \komentox{katso}\-/ komennon määrittely. Komennon nimeä
@@ -6623,7 +6618,7 @@ erikoismerkiksi.
 \label{luku/asiasanat-asetukset}
 
 Hakemistot ladotaan komennolla \komento{printindex}. Tyypillisesti
-komento sijaitsee dokumentin lopussa eli lähinnä artikkelin tai
+komento sijaitsee dokumentin lopussa eli esimerkiksi artikkelin tai
 tietokirjan viimeisillä sivuilla. Jos komennon suorittaa ilman
 argumentteja, se latoo oletushakemiston eli sen, jolle ei ole annettu
 teknistä nimeä \komento{makeindex}\-/ komennon \koodi{name}\-/
@@ -6719,16 +6714,14 @@ ennen asiasanojen luetteloa. Oletuksena väliksi tulee komennon
 valinnaiseen argumenttiin esimerkiksi \komento{vspace}\-/ komennon ja
 sen argumentiksi halutun mitan.
 
-Asiahakemistopaketin -- \paketti{indextools} tai \paketti{imakeidx} --
+Asiahakemistopaketin (\paketti{indextools} tai \paketti{imakeidx})
 lataamisen yhteydessä voi määrittää asetuksia tiettyjen valitsimien
-avulla. \komento{usepackage}\-/ komennon valinnaiseen argumenttiin
-kirjoittaa useita valitsimia, ja ne erotetaan toisistaan pilkulla.
-Mahdollisia valitsimia on useita, mutta tässä oppaassa käsitellään vain
-pari tärkeintä.
+avulla. Asetusvalitsimet kirjoitetaan \komento{usepackage}\-/ komennon
+valinnaiseen argumenttiin ja ne erotetaan toisistaan pilkulla.
 
-Esimerkiksi valitsin \koodi{xindy}, aiheuttaa sen, että
-\komento{makeindex}\-/ komennoilla määritetyille asiahakemistoille tulee
-oletuksena asetus \koodi{program=\katk xindy}. Muutoin oletus on
+Esimerkiksi valitsin \koodi{xindy} aiheuttaa sen, että
+\komento{makeindex}\-/ komennoilla määritellyille asiahakemistoille
+tulee oletuksena asetus \koodi{program=\katk xindy}. Muutoin oletus on
 \koodi{program=\katk makeindex} (luku \ref{luku/asiasanat-määrittely}).
 
 \komentoi{usepackage}

@@ -613,31 +613,49 @@ näiden komentojen käyttö ei ole välttämätöntä.
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[4][]{{\erikoisfontti #2} & \komento{#3} #1 & #4 \\}
+  \renewcommand{\rivi}[3]{ #1 & \komento{#2} & #3 \\}
+
   \begin{tabular}{cll}
     \toprule
-    \multicolumn{2}{l}{\ots{Merkki ja komennot}} & \ots{Merkitys} \\
+    \multicolumn{2}{l}{\ots{Merkki ja komennot}}
+    & \ots{Merkitys} \\
     \midrule
-    \rivi[\koodi{`{}`}]{\textquotedblleft}{textquotedblleft}
-    {vasen lainausmerkki}
-    \rivi[\koodi{'{}'}]{\textquotedblright}{textquotedblright}
-    {oikea lainausmerkki}
-    \rivi{\textquotedbl}{textquotedbl}{yleislainausmerkki (\textsc{ascii})}
-    \rivi[\komento{lq} \koodi{`}]{\textquoteleft}{textquoteleft}
-    {vasen puolilainausmerkki}
-    \rivi[\komento{rq} \koodi{'}]{\textquoteright}{textquoteright}
-    {oikea puolilainausmerkki, heittomerkki}
+
+    \textquotedblleft
+    & \komento{textquotedblleft}, \koodi{`{}`}
+    & vasen lainausmerkki \\
+
+    \textquotedblright
+    & \komento{textquotedblright}, \koodi{'{}'}
+    & oikea lainausmerkki \\
+
+    \rivi{\textquotedbl}{textquotedbl}{yleislainausmerkki}
+
+    \textquoteleft
+    & \komento{textquoteleft}, \komento{lq}, \koodi{`}
+    & vasen puolilainausmerkki \\
+
+    \textquoteright
+    & \komento{textquoteright}, \komento{rq}, \koodi{'}
+    & oikea puolilainausmerkki, heittomerkki \\
+
     \rivi{\textquotesingle}{textquotesingle}
-    {yleispuolilainausmerkki ja -heittomerkki (\textsc{ascii})}
-    \rivi[\koodi{<{}<}]{\guillemotleft}{guillemotleft}
-    {vasen kulmalainausmerkki}
-    \rivi[\koodi{>{}>}]{\guillemotright}{guillemotright}
-    {oikea kulmalainausmerkki}
+    {yleispuolilainausmerkki ja -heittomerkki}
+
+    \guillemotleft
+    & \komento{guillemotleft}, \koodi{<{}<}
+    & vasen kulmalainausmerkki \\
+
+    \guillemotright
+    & \komento{guillemotright}, \koodi{>{}>}
+    & oikea kulmalainausmerkki \\
+
     \rivi{\guilsinglleft}{guilsinglleft}{vasen kulmapuolilainausmerkki}
     \rivi{\guilsinglright}{guilsinglright}
     {oikea kulmapuolilainausmerkki}
     \rivi{\quotedblbase}{quotedblbase}{rivinalinen lainausmerkki}
     \rivi{\quotesinglbase}{quotesinglbase}{rivinalinen puolilainausmerkki}
+
     \bottomrule
   \end{tabular}
 }{
@@ -647,7 +665,7 @@ näiden komentojen käyttö ei ole välttämätöntä.
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[4][]{{\erikoisfontti #2} & \komento{#3} #1 & #4 \\}
+  \renewcommand{\rivi}[3]{ #1 & \komento{#2} & #3 \\}
   \providecommand{\textbigcirclekorvike}{}
   \renewcommand{\textbigcirclekorvike}{%
     \begin{tikzpicture}
@@ -656,41 +674,90 @@ näiden komentojen käyttö ei ole välttämätöntä.
 
   \begin{tabular}{cll}
     \toprule
-    \multicolumn{2}{l}{\ots{Merkki ja komennot}} & \ots{Merkitys} \\
+    \multicolumn{2}{l}{\ots{Merkki ja komennot}}
+    & \ots{Merkitys} \\
     \midrule
-    \rivi[\koodi{--}]{\textendash}{textendash}{lyhyt ajatusviiva}
-    \rivi[\koodi{---}]{\textemdash}{textemdash}{pitkä ajatusviiva}
-    \rivi[\koodi{!`}]{\textexclamdown}{textexclamdown}{yläsalainen huutomerkki}
-    \rivi[\koodi{?`}]{\textquestiondown}{textquestiondown}
-    {ylösalainen kysymysmerkki}
+
+    \textendash
+    & \komento{textendash}, \koodi{--}
+    & lyhyt ajatusviiva \\
+
+    \textemdash
+    & \komento{textemdash}, \koodi{---}
+    & pitkä ajatusviiva \\
+
+    \textexclamdown
+    & \komento{textexclamdown}, \koodi{!`}
+    & ylösalainen huutomerkki \\
+
+    \textquestiondown
+    & \komento{textquestiondown}, \koodi{?`}
+    & ylösalainen kysymysmerkki \\
+
     \rivi{\textgreater}{textgreater}{suurempi kuin -merkki}
     \rivi{\textless}{textless}{pienempi kuin -merkki}
-    \rivi[\komento{ldots} \komento{dots}]{\ldots}{textellipsis}
-    {kolme pistettä, ellipsi}
+
+    \textellipsis
+    & \komento{textellipsis}, \komento{ldots}, \komento{dots}
+    & kolme pistettä, ellipsi \\
+
     \rivi{\texteuro}{texteuro}{euron merkki}
-    \rivi[\komento{pounds}]{\pounds}{textsterling}{punnan merkki}
-    \rivi[\komento{\$}]{\textdollar}{textdollar}{dollarin merkki}
-    \rivi[\komento{S}]{\S}{textsection}{pykälän merkki}
-    \rivi[\komento{P}]{\P}{textparagraph}{kappaleen merkki}
-    \rivi[\komento{copyright}]{\copyright}{textcopyright}{tekijänoikeusmerkki}
+
+    \textsterling
+    & \komento{textsterling}, \komento{pounds}
+    & punnan merkki \\
+
+    \textdollar
+    & \komento{textdollar}, \komento{\$}
+    & dollarin merkki \\
+
+    \textsection
+    & \komento{textsection}, \komento{S}
+    & pykälän merkki \\
+
+    \textparagraph
+    & \komento{textparagraph}, \komento{P}
+    & kappaleen merkki \\
+
+    \textcopyright
+    & \komento{textcopyright}, \komento{copyright}
+    & tekijänoikeusmerkki \\
+
     \rivi{\textregistered}{textregistered}{rekisteröity tavaramerkki}
     \rivi{\texttrademark}{texttrademark}{tavaramerkki}
-    \rivi[\komento{dag}]{\dag}{textdagger}{risti}
-    \rivi[\komento{ddag}]{\ddag}{textdaggerdbl}{kaksoisristi}
-    \rivi[\komento{\^{}}\komentoarg{}]
-    {\textasciicircum}{textasciicircum}{sirkumfleksi}
-    \rivi[\komento{\~{}}\komentoarg{}]
-    {\textasciitilde}{textasciitilde}{tilde}
+
+    \textdagger
+    & \komento{textdagger}, \komento{dag}
+    & risti \\
+
+    \textdaggerdbl
+    & \komento{textdaggerdbl}, \komento{ddag}
+    & kaksoisristi \\
+
+    \textasciicircum
+    & \komento{textasciicircum}, \komento{\^{}}\komentoarg{}
+    & sirkumfleksi \\
+
+    \textasciitilde
+    & \komento{textasciitilde}, \komento{\~{}}\komentoarg{}
+    & tilde \\
+
     \rivi{\textasteriskcentered}{textasteriskcentered}
     {rivinkeskinen asteriski, tähti}
     \rivi{\textbackslash}{textbackslash}{kenoviiva}
     \rivi{\textbar}{textbar}{pystyviiva}
     \rivi{\textbardbl}{textbardbl}{kaksoispystyviiva}
-    \rivi[\komento{\{}]{\textbraceleft}{textbraceleft}{vasen aaltosulje}
-    \rivi[\komento{\}}]{\textbraceright}{textbraceright}{oikea aaltosulje}
+
+    \textbraceleft
+    & \komento{textbraceleft}, \komento{\{}
+    & vasen aaltosulje \\
+
+    \textbraceright
+    & \komento{textbraceright}, \komento{\}}
+    & oikea aaltosulje \\
+
     \rivi{\textbullet}{textbullet}{luetelmaympyrä}
     \rivi{\textbigcirclekorvike}{textbigcircle}{suuri ympyrä}
-    % \rivi{\textcircled{a}}{textcircled\{\ldots\}}{ympyröity merkki}
     \rivi{\textleftarrow}{textleftarrow}{nuoli vasemmalle}
     \rivi{\textrightarrow}{textrightarrow}{nuoli oikealle}
     \rivi{\textordfeminine}{textordfeminine}
@@ -698,7 +765,11 @@ näiden komentojen käyttö ei ole välttämätöntä.
     \rivi{\textordmasculine}{textordmasculine}
     {maskuliininen järjestysluvun merkki}
     \rivi{\textperiodcentered}{textperiodcentered}{rivinkeskinen piste}
-    \rivi[\komento{\_}]{\textunderscore}{textunderscore}{alaviiva}
+
+    \textunderscore
+    & \komento{textunderscore}, \komento{\_}
+    & alaviiva \\
+
     \rivi{\textvisiblespace}{textvisiblespace}{näkyvä välilyönti}
     \bottomrule
   \end{tabular}

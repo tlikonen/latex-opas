@@ -413,6 +413,7 @@ nyky-aikai-nen
 nyky-aikai-set
 nyky-aikai-sia
 nyky-aika-na
+nyky-ajal-le-kin
 nyky-ajan
 näp-päin-aset-te-lus-sa
 obey-cr

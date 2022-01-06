@@ -76,8 +76,6 @@ datezeros=false]{biblatex}
 \defaultfontfeatures[\ttfamily]{Ligatures={TeXReset, NoCommon}}
 \usepackage[oldstyle,semibold,ScaleSF=MatchLowercase,StretchTT=.8]
 {libertinus-otf}
-\newcommand{\erikoisfontti}{\rmfamily}
-\newcommand{\viivastofontti}{\rmfamily}
 
 \renewcommand{\scriptsize}{\fontsize{7bp}{7bp}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{8bp}{9bp}\selectfont}
@@ -156,7 +154,7 @@ columnsep=1em]
     \small\seurausnuoli
   \end{textblock*}
   \begin{minipage}{\linewidth}
-    \linespread{1}\erikoisfontti\small
+    \linespread{1}\small
   }{%
   \end{minipage}
   \par\addvspace{\baselineskip}
@@ -165,7 +163,7 @@ columnsep=1em]
 \newenvironment{tulossis}{%
   \begin{list}{}{
       \setlength{\leftmargin}{\sisennys}
-      \erikoisfontti\small
+      \small
     }\item[\seurausnuoli]}{%
   \end{list}}
 

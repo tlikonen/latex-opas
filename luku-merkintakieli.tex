@@ -557,8 +557,7 @@ näiden komentojen käyttö ei ole välttämätöntä.
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[4][]{{\erikoisfontti #3}
-    & \komento{#2}\komentojatko{#1} & #4}
+  \renewcommand{\rivi}[4][]{#3 & \komento{#2}\komentojatko{#1} & #4}
   \begin{tabular}{*{2}{cll}}
     \toprule
     \multicolumn{2}{l}{\ots{Merkki}}
@@ -1472,12 +1471,13 @@ Ohuke eli \murtoluku{1}{6}\,em-väli tehdään \komentom{,}\-/ komennolla,
 josta on tarkempaa tietoa luvussa \ref{luku/ohuke}.
 
 \leijukuva{
+  \rmfamily
   \begin{tikzpicture}
     [viiva/.style={line width=.7bp, densely dotted, color=apuviiva},
     nuoli/.style={<->, line width=1bp, color=mittanuoli}, xscale=1.1,
     yscale=1.9, baseline=0pt]
 
-    \node at (.04,.25) {\fontsize{120bp}{120bp}\viivastofontti p};
+    \node at (.04,.25) {\fontsize{120bp}{120bp}\selectfont p};
 
     \draw [viiva] (-1,.98) rectangle (1,-.5);
     \draw [viiva] (1,.98) -- (2.25,.98);
@@ -1499,7 +1499,7 @@ josta on tarkempaa tietoa luvussa \ref{luku/ohuke}.
     \node at (3.13,.02) {peruslinja};
     \node at (3.13,-.5) {alalinja};
 
-    \node at (6.52,.74) {\fontsize{120bp}{120bp}\viivastofontti H};
+    \node at (6.52,.74) {\fontsize{120bp}{120bp}\selectfont H};
 
     \draw [viiva] (5.05,1.47) rectangle (7.95,.02);
     \draw [viiva] (5.05,.02) -- (4,.02);

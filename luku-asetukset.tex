@@ -1829,7 +1829,7 @@ ffl, fj ja ffj, mutta jotkin fontit sisältävät muitakin. Kuvaan
 \ref{kuva/ligatuurit} on koottu esimerkkejä.
 
 \leijukuva{
-  \erikoisfontti
+  \rmfamily
   \addfontfeatures{Scale=3.4, Ligatures={Common, Historic,
       Discretionary}}
   fi ff ffi fl ffl fj ffj Th st ct
@@ -1881,8 +1881,7 @@ tai historiallisen kirjoitustavan jäljittely. Harvinaisia ligatuureja ei
 ole tarkoitus käyttää joka tilanteessa vaan ainoastaan erityisestä
 syystä. Kuvassa \ref{kuva/ligatuurit} ja tässäkin tekstikappaleessa
 olevat {%
-  \newcommand{\hlig}[1]{{\erikoisfontti
-      \addfontfeatures{Ligatures=Historic}#1}}%
+  \newcommand{\hlig}[1]{{\addfontfeatures{Ligatures=Historic}#1}}%
   \hlig{st}- ja \hlig{ct}\-/ligatuurit%
 } on saatu fontin asetuksella \koodi{Liga\-tures=\katk His\-toric}.
 Joissakin fonteissa sama tehdään asetuksella \koodi{Liga\-tures=\katk

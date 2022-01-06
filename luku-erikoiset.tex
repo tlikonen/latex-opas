@@ -7,8 +7,8 @@
 Kaikki dokumentit ja painotuotteet eivät ole samanlaista tekstivirtaa,
 joka koostuu jäsennellystä rakenteesta, väliotsikoista ynnä muusta
 sellaisesta. Tässä luvussa käsitellään dokumentteja, jotka vaativat
-osittain toisenlaista tekniikkaa kuin luvussa \ref{luku/rakenne} on
-käsitelty.
+osittain toisenlaista rakennetta ja tekniikkaa kuin luvussa
+\ref{luku/rakenne} on käsitelty.
 
 \section{Esitysgrafiikka}
 \label{luku/esitysgrafiikka}
@@ -100,17 +100,17 @@ ovat diojen mittasuhteet. Tässä esimerkissä arvoksi annetaan
 Oletusarvo on \koodi{43} eli kuvasuhde 4:3. Muita mahdollisia arvoja
 ovat esimerkiksi \koodi{1610} (16:10) ja \koodi{54} (5:4).
 
-Esimerkin ensimmäisellä rivillä oleva toinen valitsin \koodi{t} tulee
-englannin kielen sanasta \englantik{top}, ja tässä se tarkoittaa, että
-diojen sisältö sijoitetaan dian yläreunaan. Oletusasetus on \koodi{c}
-(\englanti{center}), joka keskittää dian sisällön pystysuunnassa. Tämän
-asetuksen voi muuttaa kuhunkin diaan käyttämällä \ymparisto{frame}\-/
-ympäristön valinnaista argumenttia, kuten esimerkin rivillä 34 on tehty.
+Esimerkin ensimmäisellä rivillä oleva toinen valitsin \koodi{t}
+(\englanti{top}) tarkoittaa, että diojen sisältö sijoitetaan dian
+yläreunaan. Oletusasetus on \koodi{c} (\englanti{center}), joka
+keskittää dian sisällön pystysuunnassa. Tämän asetuksen voi muuttaa
+kuhunkin diaan käyttämällä \ymparisto{frame}\-/ ympäristön valinnaista
+argumenttia, kuten esimerkin rivillä 34 on tehty.
 
-Riveillä 5--8 määritellään dokumentin perustiedot normaaliin tapaan
-(\ref{luku/dokumentin-perustiedot}), mutta lisänä perus Latexiin on
-\komento{institute}\-/ komento, jolla voi määritellä tekijän edustaman
-laitoksen. Nämä perustiedot ladotaan näkyviin vasta
+Riveillä 5--8 määritellään dokumentin perustiedot (luku
+\ref{luku/dokumentin-perustiedot}), mutta perus Latexiin verrattuna
+mukana on uusi komento \komento{institute}, jolla voi määritellä tekijän
+edustaman laitoksen. Nämä perustiedot ladotaan näkyviin vasta
 \komento{maketitle}\-/ komennolla, joka on esimerkin rivillä~15.
 
 Jokainen yksittäinen sivu eli dia täytyy kirjoittaa \ymparisto{frame}\-/
@@ -123,11 +123,12 @@ Sivun eli \ymparisto{frame}\-/ ympäristön sisällä voi olla tavallista
 tekstiä ja käyttää suunnilleen normaaleja Latexin komentoja. Esimerkissä
 \ref{esim/beamer-runko} on käytetty muutaman kerran \komento{pause}\-/
 komentoa, joka tekee esitykseen tauon. Käytännössä se jakaa sivun
-sisällön erillisiksi pdf\-/ sivuiksi, ja siten sisällön voi paljastaa
-yleisölle vaihe vaiheelta. Esimerkin riveillä 24--28 käytetään luetelmaa
-eli \ymparisto{enumerate}. Se toimii suunnilleen samoin kuin perus
-Latexin vastaava ympäristö (luku \ref{luku/luetelma-perus}), mutta
-\luokka{beamer}\-/ versiossa on hieman enemmän ominaisuuksia.
+sisällön erillisiksi pdf\-/ sivuiksi, minkä avulla sisällön voi
+paljastaa yleisölle vaihe vaiheelta. Esimerkin riveillä 24--28 käytetään
+luetelmaa eli \ymparisto{enumerate}\-/ ympäristöä. Se toimii suunnilleen
+samoin kuin perus Latexin vastaava ympäristö (luku
+\ref{luku/luetelma-perus}), mutta \luokka{beamer}\-/ versiossa on hieman
+enemmän ominaisuuksia.
 
 Tästä esimerkistä puuttuu hyödyllinen \ymparisto{block}\-/ ympäristö,
 jolla saa dian sisälle pienen väliotsikon ja siihen kuuluvan
@@ -151,13 +152,10 @@ Niiden tarkoituksena on helpottaa esimerkiksi pitkän diaesityksen
 seuraamista ja jäsentämistä. Näistä ominaisuuksista voi lukea lisää
 \luokka{beamer}\-/ luokan ohjekirjasta.
 
-Tämän luvun ohjeilla saa rakennettua selkeitä perussisältöisiä
-diaesityksiä. Dioihin voi lisätä kuvatiedostoja tai vektorigrafiikkaa
-normaalin Latexin tavoin eli luvun \ref{luku/grafiikka} ohjeilla.
-Palstoja ei kuitenkaan kannata toteuttaa luvun \ref{luku/palstat}
-keinoilla vaan \luokka{beamer}\-/ luokan oman \ymparisto{columns}\-/
-ympäristön avulla. Siihen ja kaikkeen muuhunkin saa apua
-dokumenttiluokan omasta ohjekirjasta.
+Dioihin voi lisätä kuvatiedostoja tai vektorigrafiikkaa normaalin
+Latexin tavoin eli luvun \ref{luku/grafiikka} ohjeilla. Palstoja ei
+kuitenkaan kannata toteuttaa luvun \ref{luku/palstat} keinoilla vaan
+\luokka{beamer}\-/ luokan oman \ymparisto{columns}\-/ ympäristön avulla.
 
 \subsection{Ulkoasuteemat}
 
@@ -166,25 +164,25 @@ ulkoasuun vaikuttavia asetusten kokonaisuuksia. Käyttämällä valmista
 teemaa saa helposti käyttöönsä jonkun henkilön suunnitteleman tyylikkään
 kokonaisuuden.
 
-Korkeimman tason teemojen valintakomento on \komento{usetheme}. Sillä
-valitaan teema, joka voi määritellä vähän kaikkea diaesityksen ulkoasuun
-liittyvää: fontit, värit, sisällön asettelua ja dian reunoille
+Yleinen teemojen valintakomento on \komento{usetheme}. Sillä valitaan
+teema, joka voi määritellä vähän kaikkea diaesityksen ulkoasuun
+liittyvää: fontit, värit, sisällön asettelua ja diojen reunoille
 ladottavaa lisätietoa. Alemmantasoisilla teemakomennoilla valitaan vain
-vain jonkin pienemmän osa\-/alueen teema. Esimerkiksi komennoilla
+jonkin pienemmän osa-alueen teema. Esimerkiksi komennoilla
 \komento{usecolortheme} ja \komento{usefonttheme} valitaan vain väri-
 tai fonttiteema.
 
 Fontit tai kirjainperheet sinänsä määritellään ja otetaan käyttöön
 samalla tavalla kuin Latexissa muutenkin (luku
-\ref{luku/kirjaintyypit}), mutta teema voi määritellä, mitä
-kirjainperhettä tai \=/leikkausta käytetään esimerkiksi diojen
-otsikoissa tai muissa tilanteisssa. Näiden asetusten muuttaminen voi
-vaatia \luokka{beamer}\-/ luokan omia komentoja, joista annetaan tietoa
-luvussa \ref{luku/beamer-asetuksia}.
+\ref{luku/kirjaintyypit}), mutta \luokka{beamer}\-/ luokan teema voi
+määritellä, mitä kirjainperhettä tai \=/leikkausta käytetään missäkin
+tilanteessa, esimerkiksi diojen otsikoissa tai leipätekstissä. Näiden
+asetusten muuttaminen voi vaatia \luokka{beamer}\-/ luokan omia
+komentoja, joista annetaan tietoa luvussa \ref{luku/beamer-asetuksia}.
 
 Alemmantasoisia teemakomentoja ovat myös \komento{useinnertheme} ja
 \komento{useoutertheme}. Niillä vaikutetaan erilaisiin diojen
-sisältöelementtien (\englanti{inner}) ulkoasuun ja dian reunoille
+sisältöelementtien (\englanti{inner}) ulkoasuun ja diojen reunoille
 (\englanti{outer}) ladottavaan lisätietoon.
 
 \leijutlk{
@@ -305,11 +303,10 @@ seuraavalla tavalla:
 
 \noindent
 Teemanvalintakomennoille voi antaa hakasulkeissa valinnaisen argumentin,
-joka sijoitetaan ensimmäiseksi eli ennen pakollista teeman nimeä.
-Valinnaisen argumentin avulla määritetään kyseisen teeman asetuksia, jos
-teema sellaisia tukee. Asetukset ovat täysin teemakohtaisia, ja niistä
-voi lukea lisää dokumenttiluokan ohjekirjasta. Seuraavassa on
-yleisluontoinen esimerkki:
+jonka avulla määritetään kyseisen teeman asetuksia, jos teema sellaisia
+tukee. Asetukset ovat teemakohtaisia, ja niistä voi lukea lisää
+dokumenttiluokan ohjekirjasta. Seuraavassa on yleisesimerkki komentojen
+rakenteesta:
 
 \komentoi{usetheme}
 \komentoi{useoutertheme}
@@ -320,13 +317,15 @@ yleisluontoinen esimerkki:
 
 \noindent
 Fonttiteema \koodi{serif} vaihtaa koko diaesityksen kirjainperheeksi
-antiikvan. Oletuksena olevaa groteskia (\englanti{sans serif}) ei siis
-käytetä enää missään. \koodi{serif}\-/ teema sisältää kuitenkin muutaman
-valitsimen, jolla tähän voi tehdä pieniä hyödyllisiä poikkeuksia.
-Valitsimia on koottu taulukkoon \ref{tlk/beamer-serif-teema}, ja niitä
-voi antaa useampia kerralla. Seuraava esimerkki asettaa groteskin
-suuriin elementteihin eli otsikoihin ja pieniin elementteihin eli dian
-reunojen mahdollisiin lisätietoihin. Muualla käytetään antiikvaa.
+antiikvan. Sen myötä oletuksena olevaa groteskia (\englanti{sans serif})
+ei siis käytetä enää missään. \koodi{serif}\-/ teema sisältää kuitenkin
+muutaman valitsimen, joilla tähän voi tehdä pieniä hyödyllisiä
+poikkeuksia. Valitsimia on koottu taulukkoon
+\ref{tlk/beamer-serif-teema}, ja niitä voi antaa useampia kerralla.
+
+Seuraava esimerkki asettaa groteskin suuriin elementteihin eli
+otsikoihin ja pieniin elementteihin eli dian reunojen mahdollisiin
+lisätietoihin. Muualla käytetään antiikvaa.
 
 \komentoi{usefonttheme}
 \begin{koodilohkosis}
@@ -411,8 +410,8 @@ tekstielementtejä on koottu taulukkoon
 \ref{tlk/beamer-tekstielementtejä}.
 
 Tekstielementtien väreihin vaikutetaan komennolla
-\komento{setbeamerfont}, joka toimii lähes samalla tavalla kuin edellä
-esitelty \komento{setbeamerfont}. Värin asettamisessa käytetään
+\komento{setbeamercolor}, joka toimii lähes samalla tavalla kuin edellä
+esitelty komento \komento{setbeamerfont}. Värin asettamisessa käytetään
 valitsimia \koodi{fg} ja \koodi{bg}, joista ensin mainittu vaihtaa
 varsinaisen värin (\englanti{foreground}) ja jälkimmäinen taustavärin
 (\englanti{background}). Seuraavassa esimerkissä vaihdetaan diojen
@@ -447,10 +446,10 @@ tekstielementiltä, tässä tapauksessa normaalilta tekstiltä
 (\koodi{\englanti{normal text}}). Toki tässäkin voi käyttää valitsimia
 \koodi{fg} ja~\koodi{bg}.
 
-Normaalin tekstin (\koodi{normal text}) taustaväri tarkoittaa koko dian
-tekstialueen taustaväriä. Seuraavassa on käytännön esimerkki, joka
-muuttaa diojen otsikon taustan kirkkaan vihreäksi (70\,\%) ja
-tekstialueen taustan vaalean vihreäksi (30\,\%).
+Normaalin tekstin taustaväri tarkoittaa koko dian tekstialueen
+taustaväriä. Seuraavassa on käytännön esimerkki, joka muuttaa diojen
+otsikon taustan kirkkaan vihreäksi (70\,\%) ja tekstialueen taustan
+vaalean vihreäksi (30\,\%).
 
 \komentoi{setbeamercolor}
 \begin{koodilohkosis}
@@ -487,11 +486,10 @@ tuottamiseen.
 \end{koodilohkosis}
 
 \noindent
-Samalla \komento{setbeamertemplate}\-/ komennolla voi asettaa myös
-diojen oikeaan alareunaan ladottaviin navigointisymboleihin. Tässä
-yhteydessä ei käsitellä niitä sen syvällisemmin, mutta
-navigointisymbolien poistaminen onnistuu helposti seuraavalla
-komennolla:
+\komento{setbeamertemplate}\-/ komennolla voi asettaa myös diojen
+oikeaan alareunaan ladottaviin navigointisymboleihin. Tässä yhteydessä
+ei käsitellä niitä sen syvällisemmin, mutta navigointisymbolien
+poistaminen onnistuu helposti seuraavalla komennolla:
 
 \komentoi{setbeamertemplate}
 \begin{koodilohkosis}
@@ -503,9 +501,9 @@ komennolla:
 
 Latexin \luokka{letter}\-/ dokumenttiluokka on tarkoitettu kirjeiden
 latomiseen. Tyylillisesti se soveltuu ehkä paremmin virallisiin
-kirjeisiin kuin henkilökohtaisiin. Myös joukkojakelukirjeiden tekemiseen
-se voi olla käytännöllinen, koska tietokoneohjelman avulla voi helposti
-tuottaa Latex\-/ koodia eli lähes samanlaisia kirjeitä eri
+kirjeisiin kuin henkilökohtaisiin. Esimerkiksi joukkojakelukirjeiden
+tekemiseen se voi olla käytännöllinen, koska tietokoneohjelman avulla
+voi helposti tuottaa Latex\-/ koodia eli lähes samanlaisia kirjeitä eri
 vastaanottajille.
 
 \begin{esimerkki*}
@@ -563,7 +561,7 @@ Esimerkissä \ref{esim/letter} on yhden kirjeen runko ja oleelliset
 komennot. Dokumentin esittelyosassa olevalla \komento{address}\-/
 komennolla määritellään lähettäjän nimi ja osoitetiedot. Ne ladotaan
 jokaisen kirjeen alkuun. Myös komennolla \komento{signature} ilmaistaan
-lähettäjän nimi, tarkemmin allekirjoitus, joka ladotaan kirjeen loppuun.
+lähettäjän nimi eli allekirjoitus, joka ladotaan kirjeen loppuun.
 Komento \komento{makelabels} aiheuttaa sen, että kaikkien kirjeiden
 jälkeen ladotaan sivu (tai useampia), jossa ovat kaikkien
 vastaanottajien osoitetiedot. Tämä on tarkoitettu osoitetarrojen
@@ -572,7 +570,7 @@ tulostamiseen.
 Varsinainen kirjeen sisältö toteutetaan \ymparisto{letter}\-/ ympäristön
 avulla. Ympäristölle annetaan yksi argumentti, jossa on kyseisen kirjeen
 vastaanottajan nimi ja osoitetiedot. Itse kirje alkaa
-\komento{opening}\-/ komennolla, jolla ilmaistaan tervehdys tai muu
+\komento{opening}\-/ komennolla, jolla ilmaistaan tervehdys tai muut
 kirjeen aloitussanat.
 
 Kirjeen lopussa \komento{closing}\-/ komennolla on sopivaa ilmaista

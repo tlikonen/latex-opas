@@ -787,6 +787,7 @@ Xe-latex
 yh-dys-osas-ta
 yh-dys-osien
 yh-tä-lö-esi-mer-kin
+yleis-esi-merk-ki
 yleis-ohje
 yleis-yhdys-merk-ki
 ylä-in-dek-si

@@ -145,3 +145,6 @@ Puutteita ja suunnitelmia
   - Mahdollisesti käsitellään wrapfig-paketti (myös wrapfig2).
   - Uusi `fi-x-school`-tavutuskaava.
   - Mittojen käsittelyn yhteydessä voisi käsitellä calc-paketin.
+  - Babelin version 3.70 on tulossa uusi ominaisuus, joka hoitaa
+    automaattisesti yhdysmerkin oikein tilanteessa "pakastekaapit ja
+    -arkut".

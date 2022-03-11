@@ -3854,33 +3854,9 @@ komentojen käyttöä.
 Sarkainkohtia sisältävän rivin voi varsin helposti toteuttaa laatikoiden
 (luku \ref{luku/laatikot}) avulla. Varsinkin \komento{makebox}\-/
 komento soveltuu hyvin, koska laatikolla ei ole reunaviivoja ja laatikon
-leveyden ja sisällön tasauksen voi asettaa. Seuraavassa esimerkissä
-määritetään sarkainten leveysmitta \mittax{sarkainleveys} ja komento
-\komentox{sarkain}, jolla tekstiä voi kirjoittaa tietyn levyiseen
-laatikkoon.
-
-\komentoi{newlength}
-\komentoi{setlength}
-\komentoi{newcommand}
-\komentoi{makebox}
-\komentoi{ignorespaces}
-\begin{koodilohkosis}
-  \newlength{\sarkainleveys}
-  \setlength{\sarkainleveys}{23mm}
-  \newcommand{\sarkain}[3][l]{%
-    \makebox[#2\sarkainleveys][#1]{#3}\ignorespaces}
-\end{koodilohkosis}
-
-\noindent
-Näin määritelty \komentox{sarkain}\-/ komento tarvitsee ainakin kaksi
-argumenttia: ensimmäinen argumentti on kerroin, kuinka monen sarkaimen
-levyinen laatikko tehdään; toinen argumentti on teksti, joka ladotaan
-tähän laatikkoon. Ennen pakollisia argumentteja voi antaa myös
-valinnaisen argumentin hakasulkeissa: se on laatikon sisällön tasaus, ja
-oletus on vasempaan reunaan. Katso lisätietoa \komento{makebox}\-/
-komennon argumenteista luvusta \ref{luku/laatikot-pienet}. Esimerkki
-\ref{esim/sarkain-laatikot} havainnollistaa sarkainten toteuttamista
-laatikoiden avulla.
+leveyden ja sisällön tasauksen voi asettaa. Katso lisätietoa
+\komento{makebox}\-/ komennon argumenteista luvusta
+\ref{luku/laatikot-pienet}.
 
 \begin{esimerkki*}
   \komentoi{newlength}
@@ -3919,6 +3895,18 @@ laatikoiden avulla.
   \caption{Sarkainten toteutus laatikoiden avulla}
   \label{esim/sarkain-laatikot}
 \end{esimerkki*}
+
+Esimerkissä \ref{esim/sarkain-laatikot} määritetään riveillä 1--2
+sarkainten leveysmitta \mittax{sarkainleveys} ja riveillä 3--4 komento
+\komentox{sarkain}, jolla tekstiä voi kirjoittaa tietyn levyiseen
+laatikkoon. Näin määritelty \komentox{sarkain}\-/ komento tarvitsee
+ainakin kaksi argumenttia: ensimmäinen argumentti on kerroin, kuinka
+monen sarkaimen levyinen laatikko tehdään; toinen argumentti on teksti,
+joka ladotaan tähän laatikkoon. Ennen pakollisia argumentteja voi antaa
+myös valinnaisen argumentin hakasulkeissa: se on laatikon sisällön
+tasaus, ja oletus on vasempaan reunaan. Esimerkki
+\ref{esim/sarkain-laatikot} havainnollistaa sarkainten toteuttamista
+laatikoiden avulla.
 
 \section{Leijuvat osat}
 \label{luku/leijuosat}

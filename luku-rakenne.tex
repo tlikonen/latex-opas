@@ -245,10 +245,11 @@ mittoja ja välejä käsitellään tarkemmin luvussa
 \label{luku/ensimmäisen-rivin-sisennys}
 
 Kirjojen ja lehtien typografiassa kappaleen ensimmäinen rivi on tapana
-sisentää merkiksi siitä, että alkaa uusi kappale. Sisennys on lukijalle
-merkki siitä, että tekstin sisällössä siirrytään seuraavaan asiaan.
-Oletusasetuksilla Latex latoo sisennyksen automaattisesti kappaleen
-alkuun mutta ei kuitenkaan otsikoiden jälkeen.
+sisentää merkiksi siitä, että alkaa uusi kappale. Kappaleiden välissä ei
+ole pystysuuntaista tilaa, vaan pelkkä sisennys on lukijalle merkki
+siitä, että tekstin sisällössä siirrytään seuraavaan asiaan.
+Oletusasetuksilla Latex latoo sisennyksen automaattisesti kappaleiden
+alkuun.
 
 Ensimmäisen rivin sisennyksen suuruus asetetaan mitan \mittam{parindent}
 avulla, seuraavan esimerkin mukaisesti. Sopiva mittayksikkö tähän
@@ -261,9 +262,9 @@ tarkoitukseen on em, koska se viittaa suoraan nykyisen fontin kokoon.
 \end{koodilohkosis}
 
 \noindent
-Edellä mainittu mitta pitäisi asettaa nollaan silloin, kun kappaleiden
-välissä on tyhjää tilaa. Pystysuuntainen välihän jo sinänsä ilmaisee,
-että kappale vaihtuu.
+Edellä mainittu mitta pitäisi asettaa nollaan silloin, kun kappaleet
+erotetaan aina pystysuuntaisen välin avulla. Välihän jo sinänsä
+ilmaisee, että kappale vaihtuu, joten sisennys on turha.
 
 \komentoi{setlength}
 \mittai{parskip}
@@ -291,11 +292,12 @@ Tämän tekstikappaleen ensimmäistä riviä ei sisennetä.
 Suomenkielisissä julkaisuissa on tavallista, että leipätekstin
 kappaleessa ei ole sisennystä, jos sitä ennen on pystysuuntainen väli.
 Tällainen tilanne on aina otsikoiden jälkeen mutta myös kokonaan
-sisennetyn tekstikappaleen jälkeen tai kuvan, taulukon, luetelman tai
-muun vastaavan osan jälkeen, jos nämä ovat osa tekstivirtaa eivätkä
-leijuvia osia (luku \ref{luku/leijuosat}). Käytäntöön on joskus
-poikkeuksia suomenkielisessäkin typografiassa, mutta eri kielten välillä
-käytäntö voi vaihdella enemmänkin.
+sisennetyn tekstikappaleen jälkeen (esim. lohkolainaus, luku
+\ref{luku/lohkolainaukset}) tai kuvan, taulukon, luetelman tai muun
+vastaavan osan jälkeen, jos nämä ovat osa tekstivirtaa eivätkä leijuvia
+osia (luku \ref{luku/leijuosat}). Käytäntöön on joskus poikkeuksia
+suomenkielisessäkin typografiassa, mutta eri kielten välillä käytäntö
+voi vaihdella enemmänkin.
 
 Latex estää sisennyksen automaattisesti otsikoiden jälkeen mutta latoo
 sisennyksen kuitenkin kaikkien muiden elementtien ja pystysuuntaisen

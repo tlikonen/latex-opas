@@ -1388,11 +1388,12 @@ ilmaisee samalla mittojen tarkkuuden: pienin jakamaton mitta on 1\,sp
 
 Usein tietyt yksiköt ovat vakiintuneet tiettyihin tilanteisiin.
 Esimerkiksi fonttien kokoja ja rivikorkeuksia on tapana mitata
-pistemittojen avulla. Nykyään käytetään lähinnä bp\-/yksikön mukaista
-pistettä, joka tuli käyttöön Post Script \=/standardin myötä vuonna 1984
-ja jota käytetään julkaisuohjelmissa. Sivun mittoja kuten leveyttä,
-korkeutta ja marginaaleja ilmaistaan tavallisesti metrijärjestelmän
-avulla eli senttimetreissä tai millimetreissä.
+pistemittojen avulla. Nykyään typografiassa käytetään lähinnä
+bp\-/yksikön mukaista pistettä, joka tuli käyttöön Post Script
+\=/standardin myötä vuonna 1984 ja jota käytetään julkaisuohjelmissa.
+Sivun mittoja kuten leveyttä, korkeutta ja marginaaleja ilmaistaan
+tavallisesti metrijärjestelmän avulla eli senttimetreissä tai
+millimetreissä.
 
 Latexin mittojen mittaluvuissa desimaalierottimena on piste, ja
 mittayksikön lyhenne kirjoitetaan kiinni mittalukuun. Seuraavassa
@@ -1463,12 +1464,39 @@ komento luo vaakasuuntaisen välin, jonka pituus on 0,7 kertaa
 \end{koodilohkosis}
 
 \noindent
-Koska vaakasuuntaisten välien tekeminen on typografiassa varsin
-tavallista, on niitä varten olemassa omia komentoja. Typografisen neliön
+Vaakasuuntaisten välien tekeminen on typografiassa varsin tavallista,
+joten niitä varten on olemassa omia komentoja. Typografisen neliön
 levyisen (1\,em) välin voi tehdä komennolla \komentom{quad}. Sen
 puolikkaan (\murtoluku{1}{2}\,em) saa komennolla \komentom{enspace}.
 Ohuke eli \murtoluku{1}{6}\,em-väli tehdään \komentom{,}\-/ komennolla,
 josta on tarkempaa tietoa luvussa \ref{luku/ohuke}.
+
+Perus Latexissa ei voi tehdä laskutoimituksia mittojen avulla, mutta
+\pakettictan{calc}\-/ paketti laajentaa \komento{setlength}\-/{} ja
+\komento{addtolength}\-/ komentoja siten, että niiden argumentissa voi
+toteuttaa yhteen-, vähennys-, kerto- ja jako\-las\-kuja operaattoreilla
+\koodi{+}, \koodi{-}, \koodi{*} ja \koodi{/}. Myös sulkeita voi käyttää
+laskujärjestyksen muuttamiseen samoin kuin matemaattisissa lausekkeissa
+tavallisestikin. Jos samassa lausekkeessa on sekä mittoja (esim.
+\mitta{parindent} tai \koodi{1em}) että vakiotermejä (esim.~\koodi{2}),
+täytyy mitta mainita lausekkeessa ensin. Seuraava esimerkki
+havainnollistaa \paketti{calc}\-/ paketin laskutoimituksia:
+
+\komentoi{setlength}
+\mittai{parindent}
+\begin{koodilohkosis}
+\setlength{\omamitta}{\parindent + 1em}
+\setlength{\omamitta}{\parindent * 2}  % ei: 2 * \parindent
+\end{koodilohkosis}
+
+\noindent
+Latex sisältää myös komennot mittojen poimimiseen kirjaimista tai muista
+merkeistä. Mittoja on kolme: leveys (\englanti{width}), korkeus
+(\englanti{height}) ja syvyys (\englanti{depth}). Leveys on merkin
+viemä tila leveyssuunnassa. Korkeus tarkoittaa merkin korkeutta
+peruslinjan yläpuolella, ja syvyys on merkin korkeus peruslinjan
+alapuolella. Kuva \ref{kuva/kirjainmitat} havainnollistaa näitä kolmea
+mittaa sekä typografista viivastoa.
 
 \leijukuva{
   \rmfamily
@@ -1517,14 +1545,6 @@ josta on tarkempaa tietoa luvussa \ref{luku/ohuke}.
   \caption{Kirjainten mitat ja typografinen viivasto}
   \label{kuva/kirjainmitat}
 }
-
-Latex sisältää myös komennot mittojen poimimiseen kirjaimista tai muista
-merkeistä. Mittoja on kolme: leveys (\englanti{width}), korkeus
-(\englanti{height}) ja syvyys (\englanti{depth}). Leveys on merkin
-viemä tila leveyssuunnassa. Korkeus tarkoittaa merkin korkeutta
-peruslinjan yläpuolella, ja syvyys on merkin korkeus peruslinjan
-alapuolella. Kuva \ref{kuva/kirjainmitat} havainnollistaa näitä kolmea
-mittaa sekä typografista viivastoa.
 
 Gemenalinja sijaitsee gemenakirjainten eli pienaakkosten korkeudella.
 Peruslinjan ja gemenalinjan etäisyys on fontin x\=/korkeus (1\,ex).

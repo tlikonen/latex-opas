@@ -144,6 +144,5 @@ Puutteita ja suunnitelmia
     puutteet ja vaihtoehdon `marginnote`.
   - Mahdollisesti käsitellään wrapfig-paketti (myös wrapfig2).
   - Uusi `fi-x-school`-tavutuskaava.
-  - Mittojen käsittelyn yhteydessä voisi käsitellä calc-paketin.
   - Babelin versiossa 3.70 on ominaisuus, joka hoitaa automaattisesti
     yhdysmerkin oikein tilanteessa "pakastekaapit ja -arkut".

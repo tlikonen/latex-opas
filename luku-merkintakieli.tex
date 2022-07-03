@@ -1851,6 +1851,21 @@ x\hspace{\value{mitta}em}x
   x\hspace{3em}x
 \end{tulossis}
 
+\noindent
+Laskurien avulla voi suorittaa peruslaskutoimituksia, kun lataa paketin
+\pakettictan{calc}. Paketti määrittelee uudelleen komennot
+\komento{setcounter} ja \komento{addtocounter} siten, että komennon
+argumentti voi sisältää yhteen\-/, vähennys\-/, kerto- ja
+jako\-las\-kuja käyttämällä operaattoreita \koodi{+-*/}. Sulkeita
+\koodi{()} voi käyttää lausekkeen laskujärjestyksen muuttamiseen.
+
+\komentoi{setcounter}
+\komentoi{value}
+\laskurii{page}
+\begin{koodilohkosis}
+\setcounter{oma}{\value{page} + 3}
+\end{koodilohkosis}
+
 \subsection{Hierarkkiset laskurit}
 \label{luku/hierarkkiset-laskurit}
 

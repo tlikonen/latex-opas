@@ -784,6 +784,9 @@ väli-ot-si-kot
 vä-ri-asioi-ta
 wall-cal-en-dar
 with-in
+wrap-fig
+wrap-fig-ure
+wrap-table
 Xe-latex
 yh-dys-osas-ta
 yh-dys-osien

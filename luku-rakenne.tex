@@ -4702,6 +4702,79 @@ ja leijuvan kuvan numero:
 \renewcommand{\thefigure}{\thechapter--\arabic{figure}}
 \end{koodilohkosis}
 
+\subsection{Upottaminen tekstipalstaan}
+
+Pienikokoisia leijuvia osia on jotenkuten mahdollista upottaa
+tekstipalstan vasempaan tai oikeaan reunaan siten, että teksti kiertää
+kyseisen kuvan tai taulukon (kuva \ref{kuva/wrapfig-esimerkki}). Tähän
+tarvitaan \pakettictan{wrapfig}\-/ pakettia ja sen ympäristöjä
+\ymparisto{wrapfigure} tai \ymparisto{wraptable}. Niitä käytetään
+seuraavalla tavalla:
+
+\ymparistoi{wrapfigure}
+\komentoi{caption}
+\begin{koodilohkosis}
+\begin{wrapfigure}{sijainti}{leveys}
+  % kuvan sisältökoodi
+  \caption{Kuvateksti.}
+\end{wrapfigure}
+\end{koodilohkosis}
+
+\begin{wrapfigure}{R}{5em}
+  \begin{tikzpicture}[x=.5em, y=.5em]
+    \draw [draw=black, fill=yellow, line width=1bp] (0,0) ellipse [x
+    radius=4, y radius=2, rotate=30];
+  \end{tikzpicture}
+  \caption{Tekstipalstaan upotettu kuva}
+  \label{kuva/wrapfig-esimerkki}
+\end{wrapfigure}
+
+\noindent
+Ympäristön pakollinen argumentti \koodi{sijainti} määrittää kuvan
+sijoittelun, ja se on yhden kirjaimen koodi: \koodi{L} (\englanti{left},
+vasen), \koodi{R} (\englanti{right}, oikea), \koodi{I}
+(\englanti{inside}, sisäreuna) tai \koodi{O} (\englanti{outside},
+ulkoreuna). Jos kuvaa ei halua leijuvaksi eli Latexin sijoittamaksi vaan
+se halutaan sijoittaa täsmälleen ympäristön kohdalle, käytetään
+vastaavia kirjainkoodeja mutta pieniä kirjaimia: \koodi{lrio}.
+
+Toinen pakollinen ympäristölle annettava argumentti \koodi{leveys}
+määrittää upotetun osan leveyden. Se on mitta, jonka levyinen tila
+palstasta varataan ympäristön sisällölle ja mahdolliselle kuvatekstille.
+Ympäristölle voi antaa myös valinnaisia argumentteja, jolloin
+argumenttien rakenne on seuraavanlainen:
+
+\ymparistoi{wrapfigure}
+\begin{koodilohkosis}
+\begin{wrapfigure}[rivit]{sijainti}[siirto]{leveys}
+  ...
+\end{wrapfigure}
+\end{koodilohkosis}
+
+\noindent
+Ensimmäinen valinnainen argumentti \koodi{rivit} on rivimäärä: näin
+monen tekstirivin korkuinen tila varataan upotettavalle kuvalle. Latex
+laskee tämän automaattisesti, joten argumenttia ei peruskäytössä
+tarvita. Toinen valinnainen argumentti \koodi{siirto} on mitta, jolla
+ilmaistaan, kuinka paljon kuvaa siirretään sivun marginaalin suuntaan.
+Tässä argumentissa voi käyttää apuna mittaa \mitta{width}, joka on
+upotettavan kuvan leveys. Esimerkiksi \koodi{siirto}\-/ argumenttiin
+voisi kirjoittaa \koodi{0.5\keno width}, jolloin kuva siirtyy puoliksi
+marginaalin puolelle.
+
+Tekstipalstaan upotetun kuvan ylä- ja alapuolelle jätetään mitan
+\mitta{intextsep} suuruinen väli. Vasemmalle tai oikealle puolelle
+jätetään mitan \mitta{columnsep} suuruinen väli. Samaa mittaa käytetään
+palstojen välissä (luku \ref{luku/palstat}).
+
+Valitettavasti Latexin tekniikka ei sovellu kovin hyvin tekstipalstaan
+upotettavien elementtien käsittelyyn, ja siksi \paketti{wrapfig}\-/
+paketinkaan avulla ei saa toteutettua mitä tahansa upotuksia.
+Esimerkiksi luetelmien (luku \ref{luku/luetelmat}) tai muiden
+erikoisempien ympäristöjen rinnalle ei voi upottaa kuvaa. Lähinnä vain
+tavallinen teksti toimii upotuksen rinnalla. Paketin ohjekirjassa
+kerrotaan rajoituksista tarkemmin.
+
 \section{Ristiviittaukset}
 \label{luku/ristiviitteet}
 

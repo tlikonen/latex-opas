@@ -142,7 +142,8 @@ Puutteita ja suunnitelmia
     makropakettien ja dokumenttiluokkien tekeminen.
   - Marginaalihuomautusluvussa voisi mainita `\marginpar`-komennon
     puutteet ja vaihtoehdon `marginnote`.
-  - Mahdollisesti käsitellään wrapfig-paketti (myös wrapfig2).
+  - Mahdollisesti vaihdetaan uudempaan wrapfig2-pakettiin, kunhan se
+    yleistyy.
   - Uusi `fi-x-school`-tavutuskaava.
   - Babelin versiossa 3.70 on ominaisuus, joka hoitaa automaattisesti
     yhdysmerkin oikein tilanteessa "pakastekaapit ja -arkut".

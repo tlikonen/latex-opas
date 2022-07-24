@@ -341,6 +341,7 @@ make-index
 make-label
 make-labels
 make-title
+margin-note
 margin-par
 margin-par-push
 margin-par-sep

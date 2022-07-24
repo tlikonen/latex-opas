@@ -140,8 +140,6 @@ Puutteita ja suunnitelmia
   - Lisätään Muuta tekniikkaa -luku, jonka sisällöksi esimerkiksi:
     päiväykset ja kellonajat (datetime2), textpos-paketti, omien
     makropakettien ja dokumenttiluokkien tekeminen.
-  - Marginaalihuomautusluvussa voisi mainita `\marginpar`-komennon
-    puutteet ja vaihtoehdon `marginnote`.
   - Mahdollisesti vaihdetaan uudempaan wrapfig2-pakettiin, kunhan se
     yleistyy.
   - Uusi `fi-x-school`-tavutuskaava.

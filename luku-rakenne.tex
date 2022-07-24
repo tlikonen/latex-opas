@@ -719,10 +719,16 @@ joka ladotaan sivun normaalille tekstialueelle.
 Yleensä marginaalihuomautukset kannattaa latoa erilaisella
 kirjainleikkauksella kuin leipäteksti, jotta ne erottuvat toisistaan.
 Jos leipätekstissä käytetään antiikvaa, voisi marginaalissa käyttää
-esimerkiksi pienempää groteskia. Tämän toteutusta varten kannattaa
-määritellä uusi komento, vaikkapa nimellä \komentox{huomautus}, jota
-käyttämällä marginaalihuomautukset saa helposti yhdenmukaiseksi.
-Seuraavassa on esimerkki tällaisen komennon määrittelystä:
+esimerkiksi pienempää groteskia. Tämän \marginpar{\sffamily
+  \linespread{1} \scriptsize \RaggedRight Tässä on pienellä groteskilla
+  ladottu huomautus.} tekstikappaleen vieressä on esimerkki edellä
+mainitun tyylisestä marginaalihuomautuksesta. Kirjainleikkauksen on
+syytä olla selvästi pienempi ja riittävän erilainen kuin leipätekstissä,
+jotta huomautus ei häiritse liikaa leipätekstin lukemista. Tällaisen
+toteutusta varten kannattaa määritellä uusi komento, vaikkapa nimellä
+\komentox{huomautus}, jota käyttämällä marginaalihuomautukset saa
+helposti yhdenmukaiseksi. Seuraavassa on esimerkki tällaisen komennon
+määrittelystä:
 
 \komentoi{newcommand}
 \komentoi{marginpar}
@@ -741,13 +747,6 @@ Edellä olevassa komennon määrittelyssä on mukana myös palstan muotoon
 vaikuttava komento \komento{RaggedRight}, josta on lisätietoa luvussa
 \ref{luku/kappaleen-tasaus}.
 
-Tämän \marginpar{\sffamily \linespread{1} \scriptsize \RaggedRight Tässä
-  on pienellä groteskilla ladottu huomautus.} tekstikappaleen vieressä
-on esimerkki edellä mainitun tyylisestä marginaalihuomautuksesta.
-Kirjainleikkauksen on syytä olla selvästi pienempi ja riittävän
-erilainen kuin leipätekstissä, jotta huomautus ei häiritse liikaa
-leipätekstin lukemista. \noclub[3]
-
 Sivun marginaalissa olevan huomautuspalstan leveys voidaan määrittää
 sivun asetusten yhteydessä. Asetuksia hoitavan \pakettictan{geometry}\-/
 paketin valitsimella \koodi{marginparwidth} asetetaan palstan leveys ja
@@ -758,7 +757,7 @@ käsitellään luvussa~\ref{luku/sivuasetukset}.
 
 Edellä mainittuja asetuksia voi muuttaa myös kesken dokumentin. Mitta
 \mitta{marginparwidth} määrittää marginaalihuomautuspalstan leveyden ja
-mitta \mitta{marginparsep} sen etäisyyden leipätekstistä. Lisäksi on
+mitta \mitta{marginparsep} palstan etäisyyden leipätekstistä. Lisäksi on
 mitta \mitta{marginparpush}, jolla asetetaan peräkkäisten
 marginaalihuomautusten vähimmäisetäisyys toisistaan. Seuraavassa on
 esimerkki näiden mittojen asettamisesta:
@@ -777,6 +776,35 @@ esimerkki näiden mittojen asettamisesta:
 Kesken dokumentin komennolla \komentom{reversemarginpar} voidaan vaihtaa
 marginaalihuomautukset vastakkaiseen marginaaliin ja komennolla
 \komentom{normalmarginpar} palautetaan oletusasetukset.
+
+Marginaalihuomautuksen ensimmäisen rivin peruslinja sijoittuu oletuksena
+samalle kohdalle kuin rivi, jolla \komento{marginpar}\-/ komento
+sijaitsee. Huomautukset ovat kuitenkin ovat jossain määrin leijuvia, eli
+samaan kohtaan sattuvat huomautukset ladotaan allekkain, ja niiden
+välissä on mitan \mitta{marginparpush} suuruinen pystysuuntainen tila.
+
+Valitettavasti Latex ei osaa aina latoa marginaalihuomautuksia
+siististi. Esimerkiksi sivun lopussa oleva monirivinen huomautus saattaa
+sijoittua ikävän alas alamarginaaliin. Parempi olisi latoa se
+kokonaisena seuraavan sivun alkuun. Sivun loppuun sattuva
+\komento{marginpar}\-/ komento saattaa myös aiheuttaa kaksipuolisessa
+asettelussa (luku \ref{luku/sivun-mitat}) sen, että huomautus ladotaan
+seuraavalle sivulle mutta väärään marginaaliin -- ei siis aukeaman
+ulkomarginaaliin, kuten yleensä pitäisi. Käytännössä kirjoittaja ei voi
+luottaa siihen, että huomautukset ladotaan aina tyylikkäästi, vaan
+lopputulosta täytyy vähän tarkkailla.
+
+Vaihtoehto Latexin omille marginaalihuomautukselle on
+\pakettictan{marginnote}\-/ paketin komento \komento{marginnote}. Se ei
+tee leijuvia huomautuksia, vaan huomautus ladotaan juuri siihen kohtaan
+kuin missä komento sijaitsee. Kirjoittaja voi siis tarkemmin vaikuttaa
+huomautuksen sijoitteluun. Toisaalta komennosta puuttuu samaan kohtaan
+sattuvien huomautuksen automaattinen sijoittaminen allekkain, eli
+huomautukset voivat sijoittua myös toistensa päälle.
+\komento{marginnote}\-/ komennon etuna on se, että sitä voi käyttää
+leijuvien osien sisällä (luku \ref{luku/leijuosat}) ja alaviitteissäkin
+(luku \ref{luku/alaviitteet}). Paketin ohjekirjassa kerrotaan muutamasta
+hyödyllisestä huomautusten sijoitteluun vaikuttavasta asetuksesta.
 
 \subsection{Anfangit eli suurikokoiset alkukirjaimet}
 

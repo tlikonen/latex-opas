@@ -32,8 +32,9 @@ tavutusvihjeet.tex: tavutusvihjeet.txt
 	{ echo '\\hyphenation{'; cat $<; echo '}'; } > $@
 
 $(julkaisukohteet): $(nimi)/%: %
-	@mkdir -p $(nimi)
+	@mkdir -m 755 -p $(nimi)
 	cp $< $@
+	@chmod 644 $@
 
 $(nimi).zip: $(julkaisukohteet)
 	zip -r9 $@ $(nimi)

@@ -99,12 +99,12 @@ Sanavälit eivät kuitenkaan veny loputtomasti, ainakaan
 oletusasetuksilla, koska kovin suuret sanavälit olisivat
 tekstikappaleessa rumia. Jos sanaväleille haluaa antaa
 ''hätätilanteissa'' lisää venymisvaraa, täytyy käyttää mittaa
-\mittam{emergencystretch}, jota käsitellään tarkemmin tekstikappaleiden
+\mitta{emergencystretch}, jota käsitellään tarkemmin tekstikappaleiden
 yhteydessä luvussa \ref{luku/kappale}. Mittoihin liittyvää tekniikkaa
 käsitellään puolestaan luvussa \ref{luku/mitat}.
 
 Matalatasoinen sanavälejä ja niiden venymistä säätelevä mitta on
-\mittam{spaceskip}, johon voi asettaa haluamansa leveyden ja mahdolliset
+\mitta{spaceskip}, johon voi asettaa haluamansa leveyden ja mahdolliset
 venymisen rajat. Tätä mittaa ei ole suositeltavaa käyttää tavallisen
 tekstin kanssa, mutta se sopii tilanteisiin, joihin tarvitaan hyvin
 poikkeukselliset sanavälit.
@@ -126,13 +126,13 @@ fonttien yhteydessä luvussa \ref{luku/fontit-välistys}.
 Lähdedokumentissa olevat rivinvaihdot tulkitaan vain sanaväleiksi
 eivätkä ne vaihda riviä lopullisessa dokumentissa. Jos ladottuun
 dokumenttiin tarvitaan rivinvaihto, kirjoitetaan lähdedokumenttiin kaksi
-kenoviivaa (\komentom{\keno}). Tätä komentoa käsitellään tarkemmin
+kenoviivaa (\komento{\keno}). Tätä komentoa käsitellään tarkemmin
 tekstikappaleiden yhteydessä luvussa \ref{luku/rivinvaihtokomennot}.
 
 On kuitenkin mahdollista saada myös lähdedokumentin rivinvaihdot
 toteutumaan automaattisesti ladotussa tekstissä. Sellainen tila
-kytketään päälle komennolla \komentom{obeycr}; normaaliin tilaan
-palataan taas komennolla \komentom{restorecr}. Näistä komennoista voi
+kytketään päälle komennolla \komento{obeycr}; normaaliin tilaan
+palataan taas komennolla \komento{restorecr}. Näistä komennoista voi
 olla hyötyä väliaikaisesti ja erityistilanteissa, mutta pysyväksi koko
 dokumentin tilaksi \komento{obeycr} ei yleensä sovi.
 
@@ -232,7 +232,7 @@ seuraavan sanan välissä, koska se väli ei saa venyä.
 \label{luku/ohuke}
 
 Ohuke on tavallista sanaväliä kapeampi väli, ja se tehdään
-komennolla~\komentom{,} (kenoviiva ja pilkku). Ohukkeen leveys Latexissa
+komennolla~\komento{,} (kenoviiva ja pilkku). Ohukkeen leveys Latexissa
 on \murtoluku{1}{6} typografisen neliön leveydestä eli em-mitasta (luku
 \ref{luku/mitat}). Ohuke on tasalevyinen ja sitova, eli se ei veny
 muiden sanavälien tavoin, ja se estää rivinvaihdon. Siksi ohuke sopii
@@ -289,11 +289,11 @@ esimerkki. Samoin on puolilainausmerkin kohdalla: `näin'.
 Latexissa voi käyttää Unicode\-/merkistöä ja lähdedokumenttiin voi
 kirjoittaa suoraan ne lainausmerkit, jotka halutaan ladottavaksi, mutta
 edellä mainituille merkeille on myös omat merkintätapansa.
-Näppäimistöltä kirjoitettava yleisheittomerkki (\koodim{'}) tuottaa
+Näppäimistöltä kirjoitettava yleisheittomerkki (\koodi{'}) tuottaa
 ladottuna automaattisesti oikean kaarevan heittomerkin ('). Kun
-kirjoittaa kaksi heittomerkkiä peräkkäin (\koodim{''}), on
+kirjoittaa kaksi heittomerkkiä peräkkäin (\koodi{''}), on
 lopputuloksena yksi kaareva lainausmerkki (''). Kahdella suurempi kuin
-\=/merkillä (\koodim{>>}) saadaan kulmalainausmerkki~(>>).
+\=/merkillä (\koodi{>>}) saadaan kulmalainausmerkki~(>>).
 
 \begin{koodilohkosis}
 ''Lainaus, jonka 'sisällä' on lainaus.'' \\
@@ -308,15 +308,15 @@ lopputuloksena yksi kaareva lainausmerkki (''). Kahdella suurempi kuin
 \noindent
 Edellä mainitut riittävät suomen kieleen, mutta englantia ja muita
 kieliä varten tarvitaan myös toisinpäin oleva merkki (``), joka tehdään
-kahdella gravisaksentilla (\koodim{``}). Vastaava puolilainausmerkki (`)
-tehdään yhdellä aksentilla (\koodim{`}). Joissakin kielissä käytetään
+kahdella gravisaksentilla (\koodi{``}). Vastaava puolilainausmerkki (`)
+tehdään yhdellä aksentilla (\koodi{`}). Joissakin kielissä käytetään
 erilaisia kulmalainausmerkkejä lainauksen alussa ja lopussa. Vasemmalle
 osoittava merkki (<<) tehdään kahdella pienempi kuin \=/merkillä
-(\koodim{<<}).
+(\koodi{<<}).
 
 Joskus todella halutaan latoa yleislainausmerkki (\textquotedbl) tai
 yleisheittomerkki (\textquotesingle). Ne saadaan komennoilla
-\komentom{textquotedbl} ja \komentom{textquotesingle}. Yksittäinen
+\komento{textquotedbl} ja \komento{textquotesingle}. Yksittäinen
 gravisaksentti (\`{}) tehdään komennolla \komento{`}\komentoarg{}.
 Lainausmerkkien merkintätapoja ja komentoja on koottu taulukkoon
 \ref{tlk/erikoismerkit-lainaus}
@@ -361,7 +361,7 @@ tarkemmin luvussa \ref{luku/kirjaintyypit}.
 \noindent
 Paketti \pakettictan{csquotes} sisältää lainausmerkkeihin liittyviä
 komentoja ja kielikohtaista logiikkaa. Paketissa olevan
-\komentom{enquote}\-/ komennon avulla voi jättää paketin huoleksi, miten
+\komento{enquote}\-/ komennon avulla voi jättää paketin huoleksi, miten
 aloittava ja lopettava lainausmerkki tai ulommat ja sisemmät
 lainausmerkit kirjoitetaan missäkin kielessä. Kielipaketti
 \paketti{polyglossia} tai \paketti{babel} täytyy olla ladattuna.
@@ -394,8 +394,8 @@ Ajatusviivaa tarvitaan esimerkiksi äärikohtien (27--29,
 Oulu--Rova\-niemi), luetelmien, vuorosanojen ja virkkeen irrallisen
 lisäysten merkitseminen. Suomen kielessä käytetään yleensä vain lyhyttä
 ajatusviivaa \mbox{(--)}, joka tehdään Latexissa kahdella peräkkäisellä
-yhdysmerkillä (\koodim{--}). Pitkä ajatusviiva \mbox{(---)} tehdään
-kolmella yhdysmerkillä (\koodim{---}). Ajatusviivat vaikuttavat sanan
+yhdysmerkillä (\koodi{--}). Pitkä ajatusviiva \mbox{(---)} tehdään
+kolmella yhdysmerkillä (\koodi{---}). Ajatusviivat vaikuttavat sanan
 tavutukseen samoin kuin yhdysmerkki.
 
 \begin{koodilohkosis}
@@ -446,7 +446,7 @@ eli ellipsille (\ldots) on oma merkkinsä, ja fontissa se saattaa näyttää
 hieman erilaiselta kuin kolme peräkkäistä pistemerkkiä. Tyypillisesti
 ellipsimerkissä pisteet ovat hieman harvemmassa ja erottuvat toisistaan
 paremmin kuin kolmena erillisenä merkkinä ladotut pisteet. Ellipsi
-tehdään Latexissa komennoilla \komentom{dots}, \komento{ldots},
+tehdään Latexissa komennoilla \komento{dots}, \komento{ldots},
 \komento{textellipsis} tai Unicode\-/merkillä \uctunnus{u+2026
   horizontal ellipsis}.
 
@@ -454,8 +454,8 @@ tehdään Latexissa komennoilla \komentom{dots}, \komento{ldots},
 \label{luku/ylä-alaindeksit}
 
 Yläindeksit (a\textsuperscript{2}) tehdään komennolla
-\komentom{textsuperscript} ja alaindeksit (a\textsubscript{2})
-komennolla \komentom{textsubscript}.
+\komento{textsuperscript} ja alaindeksit (a\textsubscript{2})
+komennolla \komento{textsubscript}.
 
 \komentoi{textsuperscript}
 \komentoi{textsubscript}
@@ -530,7 +530,7 @@ Unicode\-/merkistön avulla sellaisenaan. Lopputulos on sama.
 
 \subsection{Tavutusvihje}
 
-Komento \komentom{-} on tavutusvihje, joka neuvoo rivejä latovalle
+Komento \komento{-} on tavutusvihje, joka neuvoo rivejä latovalle
 algoritmille, että sanan voi katkaista tästä kohdasta rivin lopussa.
 Tavutusvihje voi estää sanan katkaisemisen muista kohdista.
 
@@ -965,11 +965,11 @@ annetaan samanlaiset argumentit. Komennot ovat seuraavat:
 
 \noindent
 Ensimmäinen pakollinen argumentti on komennon nimi (\komentox{nimi}), ja
-se voi koostua vain kirjaimista. Komento \komentom{newcommand}
+se voi koostua vain kirjaimista. Komento \komento{newcommand}
 määrittelee uuden komennon. Mikäli komento on jo olemassa, annetaan
-virheilmoitus. Toinen komento \komentom{renewcommand} määrittelee
+virheilmoitus. Toinen komento \komento{renewcommand} määrittelee
 olemassa olevan komennon uudelleen. Se antaa virheilmoituksen, jos
-komentoa ei ollut olemassa. Kolmas komento \komentom{providecommand}
+komentoa ei ollut olemassa. Kolmas komento \komento{providecommand}
 puolestaan määrittelee uuden komennon vain siinä tapauksessa, että
 sellaista ei ollut ennen olemassa. Se ei anna virheilmoitusta.
 
@@ -1144,7 +1144,7 @@ oleva komennon nimi ilman aaltosulkeita.
 \end{koodilohkosis}
 
 \noindent
-Komennon määrittelyssä on välillä hyötyä \komentom{ignorespaces}\-/
+Komennon määrittelyssä on välillä hyötyä \komento{ignorespaces}\-/
 komennosta, joka jättää sanavälit huomioimatta komennon jälkeen. Ilman
 tätä komentoa tulisi seuraavassa esimerkissä sanojen väliin yksi
 välilyönti.
@@ -1190,15 +1190,15 @@ komennon uusi määritelmä lakkaa ja komento palautuu alkuperäiseksi.
 
 Monimutkaisiin komentoihin voidaan tarvita ehtorakenteita. Ne saa
 toteutettua \pakettictan{ifthen}\-/ paketin tarjoaman
-\komentom{ifthenelse}\-/ komennon avulla. Se on ohjelmointikielistä
+\komento{ifthenelse}\-/ komennon avulla. Se on ohjelmointikielistä
 tuttu ehtorakenne: jos annettu ehtolauseke on tosi, käsitellään
 then\-/haara; muussa tapauksessa käsitellään else-haara.
 
 \section{Ympäristöt}
 \label{luku/ympäristöt}
 
-Ympäristöt ovat rakenteita, joilla on aloittava \komentom{begin}\-/
-komento ja lopettava \komentom{end}\-/ komento sekä nimi. Ympäristöjen
+Ympäristöt ovat rakenteita, joilla on aloittava \komento{begin}\-/
+komento ja lopettava \komento{end}\-/ komento sekä nimi. Ympäristöjen
 ajatuksena on, että jokin ominaisuus tai jotkin toiminnot ovat voimassa
 vain ympäristön sisällä ja asiat palautuvat ennalleen ympäristön
 jälkeen. Tässä mielessä ne toimivat samalla tavalla kuin aaltosulkeet
@@ -1218,7 +1218,7 @@ kyseisessä ympäristössä.
 \end{koodilohkosis}
 
 \noindent
-Yleisin ympäristö on nimeltään \ymparistom{document}, jonka sisään koko
+Yleisin ympäristö on nimeltään \ymparisto{document}, jonka sisään koko
 dokumentin sisältö kirjoitetaan. Muita ympäristöjä käytetään
 tavallisesta leipätekstistä poikkeavien rakenteiden ilmaisemiseen,
 esimerkiksi luetelmiin ja taulukoihin (luvut \ref{luku/luetelmat} ja
@@ -1233,9 +1233,9 @@ tarkoitukseen. Niitä määritellään seuraavilla komennoilla:
 \end{koodilohkosis}
 
 \noindent
-Komento \komentom{newenvironment} määrittelee uuden ympäristön. Se antaa
+Komento \komento{newenvironment} määrittelee uuden ympäristön. Se antaa
 virheilmoituksen, jos samanniminen ympäristö on jo olemassa. Komento
-\komentom{renewenvironment} puolestaan määrittelee uudelleen ympäristön,
+\komento{renewenvironment} puolestaan määrittelee uudelleen ympäristön,
 joka on jo olemassa. Se antaa virheilmoituksen, jos ympäristöä ei
 ollutkaan olemassa.
 
@@ -1302,7 +1302,7 @@ ympäristön aloittavan \komento{begin}\-/ komennon yhteydessä.
 
 \noindent
 Ympäristön määrittelykomennoille on myös tähdelliset versiot
-\komentom{newenvironment*} ja \komentom{renewenvironment*}. Ne toimivat
+\komento{newenvironment*} ja \komento{renewenvironment*}. Ne toimivat
 samoin kuin edellä kuvatut tavallisetkin komentoversiot, mutta ne eivät
 salli, että määritellylle ympäristölle annetut argumentit sisältävät
 enemmän kuin yhden tekstikappaleen. Toiminta on siis sama kuin
@@ -1343,9 +1343,9 @@ komentojenkin määrittelyn tähdellisissä versioissa (luku
 
 \noindent
 Joskus ympäristöjen määrittelyyn on hyödyllistä sisällyttää komento
-\komentom{ignorespaces}, joka jättää huomioimatta tämän komennon
+\komento{ignorespaces}, joka jättää huomioimatta tämän komennon
 jälkeiset sanavälit. Toinen hyödyllinen on
-\komentom{ignorespacesafterend}, joka jättää huomioimatta ympäristön
+\komento{ignorespacesafterend}, joka jättää huomioimatta ympäristön
 lopettavan \komento{end}\-/ komennon jälkeiset sanavälit. Esimerkki
 \ref{esim/ignorespacesafterend} selventää näiden toimintaa.
 
@@ -1398,7 +1398,7 @@ millimetreissä.
 Latexin mittojen mittaluvuissa desimaalierottimena on piste, ja
 mittayksikön lyhenne kirjoitetaan kiinni mittalukuun. Seuraavassa
 esimerkissä tehdään vaakasuuntaisia ja pystysuuntaisia välejä
-komennoilla \komentom{hspace} ja \komentom{vspace}:
+komennoilla \komento{hspace} ja \komento{vspace}:
 
 \komentoi{hspace}
 \komentoi{vspace}
@@ -1436,9 +1436,9 @@ tekstialueen leveys nykyisellä sivulla. Komentomaisesta ulkoasustaan
 huolimatta mittoja ei voi suorittaa komentoina; ne sopivat vain komennon
 argumentiksi, silloin kun tarvitaan mitta.
 
-Uusia mittoja luodaan komennolla \komentom{newlength} ja olemassa olevia
-mittoja asetetaan esimerkiksi komennoilla \komentom{setlength} ja
-\komentom{addtolength}. Omien mittoja on tarpeen luoda silloin, kun
+Uusia mittoja luodaan komennolla \komento{newlength} ja olemassa olevia
+mittoja asetetaan esimerkiksi komennoilla \komento{setlength} ja
+\komento{addtolength}. Omien mittoja on tarpeen luoda silloin, kun
 halutaan määritellä tietynsuuruinen mitta, jota käytetään Latex\-/
 koodissa useita kertoja.
 
@@ -1466,9 +1466,9 @@ komento luo vaakasuuntaisen välin, jonka pituus on 0,7 kertaa
 \noindent
 Vaakasuuntaisten välien tekeminen on typografiassa varsin tavallista,
 joten niitä varten on olemassa omia komentoja. Typografisen neliön
-levyisen (1\,em) välin voi tehdä komennolla \komentom{quad}. Sen
-puolikkaan (\murtoluku{1}{2}\,em) saa komennolla \komentom{enspace}.
-Ohuke eli \murtoluku{1}{6}\,em-väli tehdään \komentom{,}\-/ komennolla,
+levyisen (1\,em) välin voi tehdä komennolla \komento{quad}. Sen
+puolikkaan (\murtoluku{1}{2}\,em) saa komennolla \komento{enspace}.
+Ohuke eli \murtoluku{1}{6}\,em-väli tehdään \komento{,}\-/ komennolla,
 josta on tarkempaa tietoa luvussa \ref{luku/ohuke}.
 
 Perus Latexissa ei voi tehdä laskutoimituksia mittojen avulla, mutta
@@ -1579,7 +1579,7 @@ tallennetaan merkkien mitat.
 \end{koodilohkosis}
 
 \noindent
-Mitat saa näkyviin kirjoittamalla mitan eteen komennon \komentom{the}.
+Mitat saa näkyviin kirjoittamalla mitan eteen komennon \komento{the}.
 Näin mitan pituus ladotaan dokumenttiin. Yksikkönä on typografinen piste
 (pt).
 
@@ -1685,7 +1685,7 @@ kirjoittaja tai muu koodi syrjäyttää asetuksen; \koodi{filll} on ehdoton
 sääntö, joka syrjäyttää muut.
 
 Käytännöllisyyssyistä äärettömästi venyvä pituus \koodi{0mm plus 1fill}
-on jo valmiiksi asetettu mittaan \mittam{fill}. Sitä on kätevää käyttää
+on jo valmiiksi asetettu mittaan \mitta{fill}. Sitä on kätevää käyttää
 esimerkiksi vaaka- ja pystysuuntaisia välejä latovien komentojen
 \komento{hspace} ja \komento{vspace} kanssa:
 

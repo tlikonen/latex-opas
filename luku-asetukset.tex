@@ -57,7 +57,7 @@ ulkopuolella, ja niiden ominaisuudet voivat muuttua ja kehittyä
 nopeammin ajan myötä.
 
 Normaalit paperisivuihin perustuvat dokumentit tehdään luokkien
-\luokkam{article}, \luokkam{report} tai \luokkam{book} avulla. Ne ovat
+\luokka{article}, \luokka{report} tai \luokka{book} avulla. Ne ovat
 keskenään hyvin samanlaisia, mutta niiden oletusasetukset poikkeavat
 toisistaan. Karkeasti jaoteltuna \luokka{article}\-/ luokka on
 tarkoitettu lyhyehköille artikkeleille ja yleiseksi perustaksi
@@ -89,7 +89,7 @@ valittaessa luokkien \luokka{article}, \luokka{report} ja \luokka{book}
 välillä. Dokumenttiluokkien asetuksia käsitellään luvussa
 \ref{luku/perusdokumenttiluokat-asetukset}.
 
-Muita perusdokumenttiluokkia ovat \luokkam{letter} ja \luokka{slides}.
+Muita perusdokumenttiluokkia ovat \luokka{letter} ja \luokka{slides}.
 Nimensä mukaisesti \luokka{letter} on kirjeiden kirjoittamista varten.
 Se sisältää kirjeen tyypilliseen rakenteeseen liittyviä komentoja ja
 soveltuu varsinkin tarpeisiin, joissa täytyy automaattisesti tuottaa
@@ -100,7 +100,7 @@ tietysti toivottavaa. \luokka{letter}\-/ luokkaa käsitellään tarkemmin
 luvussa \ref{luku/kirjeet}.
 
 Piirtoheittimien läpinäkyvien kalvojen ja sen kaltaisten dokumenttien
-tekemiseen on dokumenttiluokka \luokkam{slides}. Piirtoheittimet ovat
+tekemiseen on dokumenttiluokka \luokka{slides}. Piirtoheittimet ovat
 jääneet menneisyyteen, ja nykyään jokseenkin vastaavanlainen rooli on
 esitysgrafiikkaohjelmilla, joilla tehdään diaesityksiä esimerkiksi
 esitelmien havaintomateriaaliksi. \luokka{slides}\-/ luokkaa ei varmaan
@@ -138,7 +138,7 @@ dokumentin asetuksiin.
   \label{tlk/luokkavalitsimet}
 }
 
-Sivu on oletuksena pystyasennossa, mutta valitsin \koodim{landscape}
+Sivu on oletuksena pystyasennossa, mutta valitsin \koodi{landscape}
 asettaa sen vaaka\-/asentoon. Tämä asetus koskee dokumentin kaikkia
 sivuja, mutta jos haluaa asettaa vain yksittäisiä sivuja
 vaaka\-/asentoon, täytyy käyttää \pakettictan{pdflscape}\-/ pakettia ja
@@ -149,8 +149,8 @@ Sivun koon ja muitakin mittoja voi määritellä monipuolisemmin
 \ref{luku/sivuasetukset}). Jos sitä pakettia käyttää, ei näitä
 dokumenttiluokan sivukokoasetuksia tarvita välttämättä lainkaan.
 
-Leipätekstin fontin koon voi määrittää valitsimilla \koodim{10pt},
-\koodim{11pt} ja \koodim{12pt}, joista ensin mainittu on oletus. Lyhenne
+Leipätekstin fontin koon voi määrittää valitsimilla \koodi{10pt},
+\koodi{11pt} ja \koodi{12pt}, joista ensin mainittu on oletus. Lyhenne
 pt tarkoittaa typografista pistemittaa, joita käsitellään luvussa
 \ref{luku/mitat}. Nämä asetukset vaikuttavat myös sivun marginaaleihin,
 koska fontin koko vaikuttaa tekstiriville mahtuvien merkkien määrään ja
@@ -167,7 +167,7 @@ halutun lopputuloksen. Fontteja käsitellään tarkemmin luvussa
 \ref{luku/kirjaintyypit}.
 
 Dokumentista voi latoa luonnosversion käyttämällä dokumenttiluokan
-valitsinta \koodim{draft}. Luonnoksena ladottuun dokumenttiin tulevat
+valitsinta \koodi{draft}. Luonnoksena ladottuun dokumenttiin tulevat
 merkityksi (musta suorakulmio) ainakin tekstipalstan yli pursuavat
 rivit, mikä voi auttaa tekstikappaleiden ulkoasun korjailussa (luku
 \ref{luku/kappale}). Eri paketit voivat hyödyntää \koodi{draft}\-/
@@ -179,13 +179,13 @@ paikalla on vain suorakulmio. Pdf\-/tiedoston ristiviitteistä huolehtiva
 sisällysluettelon tekemättä (luku \ref{luku/ristiviitteet}). Latominen
 voi nopeutua huomattavasti.
 
-Lopullinen ladontatila on \koodim{final}, joka tarkoittaa, että
+Lopullinen ladontatila on \koodi{final}, joka tarkoittaa, että
 dokumenttiin ladotaan kaikki sisältö ja ominaisuudet niin kuin se on
 tarkoitettu julkaistavaksi. Tätä valitsinta ei tarvitse käyttää, koska
 se on oletustila.
 
-Sivujen yksipuolisuus (\koodim{oneside}) ja kaksipuolisuus
-(\koodim{twoside}) ovat asetuksia, jotka vaikuttavat sivun marginaalien
+Sivujen yksipuolisuus (\koodi{oneside}) ja kaksipuolisuus
+(\koodi{twoside}) ovat asetuksia, jotka vaikuttavat sivun marginaalien
 asetuksiin ja mahdollisesti uuden pääluvun (\komento{chapter})
 aloitukseen. Oletus on yksipuolinen dokumentti kaikissa muissa
 perusdokumenttiluokissa paitsi \luokka{book}\-/ luokassa, jonka oletus
@@ -205,12 +205,12 @@ Marginaaleja ja muita sivun asetuksia käsitellään tarkemmin luvussa
 \ref{luku/sivuasetukset}.
 
 Jos dokumentti on määritetty kaksipuoliseksi (\koodi{twoside}), voidaan
-\koodim{open\-right}\-/ valitsimella määrittää pääluvut
+\koodi{open\-right}\-/ valitsimella määrittää pääluvut
 (\komento{chapter}) alkamaan aina oikeanpuoleiselta sivulta. Se onkin
-oletus dokumenttiluokassa \luokka{book}. Valitsin \koodim{open\-any}
+oletus dokumenttiluokassa \luokka{book}. Valitsin \koodi{open\-any}
 asettaa pääluvut alkamaan miltä tahansa seuraavalta sivulta.
 
-Valitsin \koodim{open\-bib} liittyy automaattiseen lähdeluettelon
+Valitsin \koodi{open\-bib} liittyy automaattiseen lähdeluettelon
 muotoiluun. Jos tämä valitsin on mukana, automaattisessa lähdeluettelon
 muotoilussa lisätään rivinvaihtoja lähdemerkinnän eri osien kuten
 teoksen tekijöiden ja teoksen nimen jälkeen. Lähdemerkintöjä ja
@@ -218,14 +218,14 @@ lähdeluettelon laatimista käsitellään luvussa \ref{luku/lähteet}.
 
 Matemaattisten kaavojen ladontaan liittyvässä \ymparisto{equation}\-/
 ympäristössä kaavat ladotaan normaalisti vaakasuunnassa sivun keskelle.
-Dokumenttiluokan valitsinta \koodim{fleqn} käyttämällä kaavat ladotaan
+Dokumenttiluokan valitsinta \koodi{fleqn} käyttämällä kaavat ladotaan
 kuitenkin sivun vasempaan reunaan. Kaavojen numerot sijoitetaan
-oletuksena sivun oikeaan reunaan, mutta valitsimella \koodim{leqno} ne
+oletuksena sivun oikeaan reunaan, mutta valitsimella \koodi{leqno} ne
 saa ladottua sivun vasempaan reunaan. Matematiikkatilaa käsitellään
 luvussa \ref{luku/matematiikka}.
 
 Nimiösivun tai dokumentin perustietojen esitystapaan vaikutetaan
-valitsimilla \koodim{title\-page} ja \koodim{no\-title\-page}. Latexissa
+valitsimilla \koodi{title\-page} ja \koodi{no\-title\-page}. Latexissa
 on yksinkertaiset komennot dokumentin perustietojen eli pääotsikon,
 tekijöiden nimien ja päiväyksen latomiseen (luku
 \ref{luku/dokumentin-perustiedot}), ja näillä valitsimilla vaikutetaan
@@ -234,13 +234,13 @@ vaiko ensimmäisen sisältösivun alkuun (\koodi{no\-title\-page}).
 Oletus\-asetus vaihtelee eri dokumenttiluokissa.
 
 Oletuksena sivun tekstit ladotaan yhdelle palstalle
-(\koodim{onecolumn}), mutta valitsimella \koodim{twocolumn} teksti
+(\koodi{onecolumn}), mutta valitsimella \koodi{twocolumn} teksti
 ladotaan kahdelle palstalle. Nämä valitsimet vaikuttavat myös sivun
 marginaaleihin. Latexin perusosat eivät hallitse useampaa kuin kaksi
 palstaa, mutta \paketti{multicol}\-/paketin avulla saa enemmänkin.
 Palstoja käsitellään luvussa \ref{luku/palstat}.
 
-Dokumenttiluokassa \luokka{slides} toimii \koodim{clock}\-/ valitsin,
+Dokumenttiluokassa \luokka{slides} toimii \koodi{clock}\-/ valitsin,
 joka latoo kellonajan piirtoheitinkalvon loppuun \komento{note}\-/
 komennon yhteydessä. Tämä valitsin kuulunee samaan paikkaan kuin
 piirtoheittimet ja \luokka{slides}\-/luokkakin: kierrätykseen tai
@@ -286,7 +286,7 @@ Latex\-/dokumentit muodostuvat aina peräkkäisistä sivuista, eli
 taustalla kummittelee paperiarkkeihin perustuva julkaisumuoto, vaikka
 dokumenttia ei varsinaisesti tulostettaisi tai painettaisi paperille.
 Tämän vuoksi melkein aina täytyy määrittää sivun asetukset kuten
-paperikoko ja marginaalit. Ne tehdään \pakettim{geometry}\-/ paketin
+paperikoko ja marginaalit. Ne tehdään \paketti{geometry}\-/ paketin
 avulla, jota käsitellään luvussa \ref{luku/sivun-mitat}. Joskus halutaan
 muokata sivun ylä- tai alatunnistetta eli verrattain pysyviä
 tunnistetietoja, jotka toistuvat joka sivulla ylä- tai alareunassa.
@@ -310,7 +310,7 @@ oikean marginaalin pituus (\koodi{left}, \koodi{right}).
 \end{koodilohkosis}
 
 \noindent
-Vaihtoehtoisesti asetukset voi ilmaista erikseen \komentom{geometry}\-/
+Vaihtoehtoisesti asetukset voi ilmaista erikseen \komento{geometry}\-/
 komennon avulla seuraavalla tavalla:
 
 \komentoi{usepackage}
@@ -322,8 +322,8 @@ komennon avulla seuraavalla tavalla:
 
 \noindent
 Mikäli myöhemmin dokumentissa täytyy vaihtaa sivun asettelua, käytetään
-komentoa \komentom{newgeometry}. Alkuperäiset asetukset palautetaan
-komennolla \komentom{restoregeometry}.
+komentoa \komento{newgeometry}. Alkuperäiset asetukset palautetaan
+komennolla \komento{restoregeometry}.
 
 \komentoi{newgeometry}
 \komentoi{restoregeometry}
@@ -344,7 +344,7 @@ yhdysvaltalaisia standardeja käyttämällä valitsimia kuten
 \koodi{letter\-paper}.
 
 Mikäli standardit koot eivät riitä, voi sivun mitat määrittää vapaasti
-\koodim{paper\-size}\-/ valitsimella, jolle annetaan arvoksi leveys- ja
+\koodi{paper\-size}\-/ valitsimella, jolle annetaan arvoksi leveys- ja
 korkeusmitta.
 
 \komentoi{geometry}
@@ -353,8 +353,8 @@ korkeusmitta.
 \end{koodilohkosis}
 
 \noindent
-Sivu on oletuksena pystyasennossa (\koodim{portrait}), mutta sen voi
-asettaa vaaka\-/asentoon valitsimella \koodim{landscape}. Tämä asetus on
+Sivu on oletuksena pystyasennossa (\koodi{portrait}), mutta sen voi
+asettaa vaaka\-/asentoon valitsimella \koodi{landscape}. Tämä asetus on
 voimassa koko dokumentin ajan. Jos sen sijaan haluaa asettaa vain
 yksittäisiä sivuja vaaka\-/asentoon, täytyy käyttää
 \pakettictan{pdflscape}\-/ pakettia ja sen tarjoamaa
@@ -370,7 +370,7 @@ vaakasuuntaisille sivuille.
 
 \noindent
 Sivun asetusten suunnittelussa voi olla avuksi valitsin
-\koodim{show\-frame}, joka piirtää viivat marginaalien kohdalle ja
+\koodi{show\-frame}, joka piirtää viivat marginaalien kohdalle ja
 merkitsee myös ylä- ja alatunnisteiden sekä marginaalihuomautusten
 rajoja.
 
@@ -462,17 +462,17 @@ käytäntö tietokirjoissa.
 Marginaalihuomautukset (luku \ref{luku/marginaalihuomautukset})
 sijaitsevat oletuksena sivujen ulkomarginaalissa tai oikeanpuoleisessa
 marginaalissa. Huomautuspalstan leveys asetetaan valitsimella
-\koodim{marginparwidth}, ja palstan etäisyys sivun varsinaisesta
-tekstialueesta määritellään valitsimella \koodim{marginparsep}. Kumpikin
+\koodi{marginparwidth}, ja palstan etäisyys sivun varsinaisesta
+tekstialueesta määritellään valitsimella \koodi{marginparsep}. Kumpikin
 valitsin tarvitsee argumentiksi mitan. Jos haluaa vaihtaa huomautukset
 sivun vastakkaiseen marginaaliin, lisätään mukaan valitsin
 \koodi{reversemarginpar}.
 
 Perus Latex osaa latoa tekstin yhdelle tai kahdelle palstalle, ja
-\paketti{geometry}\-/ paketin valitsimella \koodim{onecolumn} tai
-\koodim{twocolumn} asetetaan, kumpi tila on oletuksena päällä.
+\paketti{geometry}\-/ paketin valitsimella \koodi{onecolumn} tai
+\koodi{twocolumn} asetetaan, kumpi tila on oletuksena päällä.
 Useampikin palsta on mahdollista laajennuspaketin avulla. Valitsimen
-\koodim{columnsep} avulla asetetaan palstojen välinen etäisyys.
+\koodi{columnsep} avulla asetetaan palstojen välinen etäisyys.
 Käytännössä tämä valitsin on asettaa mitan \mitta{columnsep}, jota voi
 muokata myös komennolla \komento{setlength}, kuten muitakin mittoja
 (luku \ref{luku/mitat}). Tarkempaa tietoa palstoista on luvussa
@@ -607,7 +607,7 @@ Latexin perusosat eivät sisällä kovin kummoista keinovalikoimaa ylä- ja
 alatunnisteiden muokkaamiseen, mutta pari hyödyllistä sivutyyliä on
 kuitenkin mukana. Ylä- ja alatunnisteet määräytyvät sivutyylin
 perusteella, ja haluttu tyyli asetetaan voimaan komennolla
-\komentom{pagestyle}:
+\komento{pagestyle}:
 
 \komentoi{pagestyle}
 \begin{koodilohkosis}
@@ -615,15 +615,15 @@ perusteella, ja haluttu tyyli asetetaan voimaan komennolla
 \end{koodilohkosis}
 
 \noindent
-Edellä mainittu sivutyyli \koodim{plain} latoo alatunnisteeseen
+Edellä mainittu sivutyyli \koodi{plain} latoo alatunnisteeseen
 sivunumeron. Se on yleensä oletustyyli. Sivunumero on peräisin
 laskurista \laskuri{page} ja sen arvon tulostavasta komennosta
 \komento{thepage} (luku \ref{luku/laskurit}). Toinen hyödyllinen tyyli
-on \koodim{empty}, joka tarkoittaa tyhjää, eli ylä- eikä
+on \koodi{empty}, joka tarkoittaa tyhjää, eli ylä- eikä
 alatunnisteeseen ei ladota mitään.
 
 Yksittäiselle sivulle voi asettaa muusta dokumentista poikkeavan
-sivutyylin komennolla \komentom{thispagestyle}. Komento siis vaikuttaa
+sivutyylin komennolla \komento{thispagestyle}. Komento siis vaikuttaa
 vain sillä hetkellä ladottavan sivun tyyliin, ja sen jälkeen palataan
 taas voimassa olevaan tyyliin, joka on aiemmin määritelty komennolla
 \komento{pagestyle}.
@@ -634,7 +634,7 @@ taas voimassa olevaan tyyliin, joka on aiemmin määritelty komennolla
 \end{koodilohkosis}
 
 \noindent
-Sivutyyli \koodim{headings} latoo ylätunnisteeseen aukeaman
+Sivutyyli \koodi{headings} latoo ylätunnisteeseen aukeaman
 vasemmanpuoleisille sivuille esimerkiksi kirjan pääluvun nimen ja
 oikeanpuoleisille sivuille meneillään olevan alaluvun nimen. Mainitut
 lukujen nimet tulevat sivun sisäreunaan; ulkoreunaan ladotaan
@@ -651,7 +651,7 @@ niin että se sisältää alaluvun nimen. Tämän komennon tulostama teksti
 ladotaan aukeaman oikeanpuoleisille sivuille.
 
 Jos haluaa itse vaikuttaa ylätunnisteen tekstiin, voi käyttää sivutyyliä
-\koodim{myheadings} sekä komentoa \komento{markboth}, jolla määritellään
+\koodi{myheadings} sekä komentoa \komento{markboth}, jolla määritellään
 aukeaman vasemmanpuoleisen ja oikeanpuoleisen sivun ylätunnisteen
 teksti. Tämä komento on tarkoitettu suoritettavaksi päälukujen
 yhteydessä. Komennolla \komento{markright} määritellään pelkästään
@@ -703,7 +703,7 @@ latomiseen. Lisätietoa sivunumeroista ja muista laskureista on luvussa
 
 Monipuolisemmin ylä- ja alatunnisteita voi muokata paketin
 \pakettictan{fancyhdr} toimintojen avulla. Silloin sivutyylinä voi olla
-myös \koodim{fancy}:
+myös \koodi{fancy}:
 
 \komentoi{usepackage}
 \komentoi{pagestyle}
@@ -714,7 +714,7 @@ myös \koodim{fancy}:
 
 \noindent
 Kun käytössä on sivutyyli \koodi{fancy}, voi ylä- ja alatunnisteiden
-sisällön asettaa vapaasti komennolla \komentom{fancyhf}. Komennon
+sisällön asettaa vapaasti komennolla \komento{fancyhf}. Komennon
 argumenttien merkitys on seuraavanlainen:
 
 \komentoi{fancyhf}
@@ -777,7 +777,7 @@ sivun keskelle (\koodi{C}):
 \noindent
 Paketin \paketti{fancyhdr} avulla voi myös määritellä Latexin
 sivutyylejä toisenlaiseksi tai luoda kokonaan omia sivutyylejä. Nämä
-tehdään komennolla \komentom{fancypagestyle}, jonka ensimmäinen
+tehdään komennolla \komento{fancypagestyle}, jonka ensimmäinen
 argumentti on sivutyylin nimi ja toinen argumentti on sivutyylin
 määritelmä. Määritelmä sisältää tarvittavat \komento{fancyhf}\-/
 komennot, joilla ylä- ja alatunnisteet määritellään.
@@ -806,7 +806,7 @@ Seuraava esimerkki määrittelee kokonaan oman sivutyylin:
 \noindent
 Ylä- ja alatunniste voidaan erottaa tekstipalstasta vaakasuuntaisella
 viivalla, jonka leveyttä on mahdollista muuttaa määrittelemällä
-uudelleen komennot \komentom{headrulewidth} ja \komentom{footrulewidth}.
+uudelleen komennot \komento{headrulewidth} ja \komento{footrulewidth}.
 Komennon määritelmäksi kirjoitetaan Texin mitta. Seuraavassa esimerkissä
 asetetaan yhden typografisen pisteen (1\,bp) levyiset viivat. Mitan
 voisi asettaa myös nollaksi (0\,bp), jolloin erotinviiva katoaa kokonaan
@@ -823,7 +823,7 @@ näkyvistä.
 \noindent
 Mikäli haluaa omiin ylätunnisteisiin esimerkiksi päälukujen ja
 alalukujen nimiä, täytyy tunnisteisiin sisällyttää aiemmin kuvatut
-\komentom{leftmark}- ja \komentom{rightmark}\-/komennot. Ensin mainittu
+\komento{leftmark}- ja \komento{rightmark}\-/komennot. Ensin mainittu
 sisältää pääluvun nimen ja jälkimmäinen alaluvun nimen.
 
 \komentoi{fancyhf}
@@ -837,8 +837,8 @@ sisältää pääluvun nimen ja jälkimmäinen alaluvun nimen.
 \noindent
 Latex latoo pää- ja alalukujen nimet oletuksena versaalikirjaimilla eli
 isoilla kirjaimilla. Jos ne haluaa johonkin toiseen muotoon, täytyy itse
-määritellä uudelleen komennot \komentom{chaptermark},
-\komentom{sectionmark} tai \komentom{subsectionmark} (vain kaksi näistä)
+määritellä uudelleen komennot \komento{chaptermark},
+\komento{sectionmark} tai \komento{subsectionmark} (vain kaksi näistä)
 ja käyttää määritelmässä komentoja \komento{markboth} ja
 \komento{markright}. Esimerkkiin \ref{esim/fancyhdr-koko} on koottu
 varsin kokonaisvaltainen koodi omien ylä- ja alatunnisteiden
@@ -930,7 +930,7 @@ tiedoston sisäisen sisällysluettelon merkistö ei välttämättä näy oikein.
 
 \paketti{hyperref}\-/ paketin asetuksia voi määritellä valitsimien
 avulla \komento{usepackage}\-/ komennon yhteydessä mutta myös
-erillisellä \komentom{hypersetup}\-/ komennolla. Komennolle annetaan
+erillisellä \komento{hypersetup}\-/ komennolla. Komennolle annetaan
 yksi argumentti, joka sisältää pilkuilla erotettuna erilaisia valitsimia
 ja niiden arvoja.
 
@@ -972,7 +972,7 @@ mukaan samat otsikot (luku \ref{luku/otsikot}) kuin ladottavaan
 sisällysluetteloonkin (luku \ref{luku/sisällysluettelo}). Pdf\-/
 tiedoston luetteloon voi kuitenkin itse lisäillä omia otsikoita, jotka
 eivät näy missään muualla. Se tehdään \paketti{hyperref}\-/ paketin
-komennolla \komentom{pdfbookmark}:
+komennolla \komento{pdfbookmark}:
 
 \komentoi{pdfbookmark}
 \begin{koodilohkosis}
@@ -1131,10 +1131,10 @@ asetuksia kuten ligatuureja, gemenanumeroita, optisia kokoja ja muita
 fontin ominaisuuksia. Edellisessä esimerkissä käytetään vain
 \koodi{Scale}\-/ valitsinta, jolla fontin voi skaalata haluttuun kokoon.
 
-Peruskirjainperheen (\komentom{setmainfont}) skaalaukseksi asetetaan
+Peruskirjainperheen (\komento{setmainfont}) skaalaukseksi asetetaan
 esimerkissä \koodi{Scale=1}, eli sille ei tehdä mitään, ja koko
 valitsimen voisi jättää pois. Sen sijaan kahdella muulla
-kirjainperheellä (\komentom{setsansfont}, \komentom{setmonofont})
+kirjainperheellä (\komento{setsansfont}, \komento{setmonofont})
 käytetään kerroinasetusta \koodi{MatchLowercase}, joka skaalaa fontin
 siten, että gemenakirjaimet eli pienet kirjaimet ovat yhtä korkeita kuin
 peruskirjainperheessä. Mikäli skaalausasetus \koodi{MatchLowercase} ei
@@ -1273,7 +1273,7 @@ muiden mittojen määrittämiseen on ohjeita luvussa
 Fonttiasetuksiin kuuluu fontin koon lisäksi toinenkin mitta: rivikorkeus
 (\mitta{baselineskip}). Se on peräkkäisten rivien peruslinjojen välinen
 etäisyys. Fontin koko ja rivikorkeus määritellään samanaikaisesti, koska
-ne ovat saman \komentom{fontsize}\-/ komennon argumentteja. Esimerkki:
+ne ovat saman \komento{fontsize}\-/ komennon argumentteja. Esimerkki:
 
 \komentoi{fontsize}
 \komentoi{selectfont}
@@ -1285,7 +1285,7 @@ ne ovat saman \komentom{fontsize}\-/ komennon argumentteja. Esimerkki:
 Ensimmäinen argumentti on fontin kokomitta ja toinen on rivikorkeus.
 Mittayksiköt voivat olla mitä tahansa Texin mittoja, ja oletuksena
 käytetään pt\-/pistemittaa, jos yksikköä ei ole mainittu. Komento
-\komentom{selectfont} on mukana, koska vasta sen myötä matalan tason
+\komento{selectfont} on mukana, koska vasta sen myötä matalan tason
 fonttikomennot tulevat voimaan. Korkean tason fonttikomennot (luku
 \ref{luku/fontit-korkea}) suorittavat sen automaattisesti.
 
@@ -1575,7 +1575,6 @@ voisi mahdollisesti \komento{fontsize}\-/ komennon sijasta käyttää
 \paketti{fontspec}\-/paketin tarjoamaa komentoa ja tilanteeseen sopivaa
 skaalauskerrointa esimerkiksi seuraavalla tavalla:
 
-\komentomargin{addfontfeatures}
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
 {\addfontfeatures{Scale=3.2} Poikkeuksellisen isoa tekstiä}
@@ -1715,8 +1714,8 @@ erikseen.
 \label{luku/fontit-oletusasetukset}
 
 Oletuksena Latex\-/dokumentin peruskirjainperheessä
-(\komentom{setmainfont}) ja pääteviivattomassa kirjainperheessä
-(\komentom{setsansfont}) ovat päällä muun muassa seuraavat asetukset:%
+(\komento{setmainfont}) ja pääteviivattomassa kirjainperheessä
+(\komento{setsansfont}) ovat päällä muun muassa seuraavat asetukset:%
 
 \begin{koodilohkosis}
 Ligatures={TeX, Common}
@@ -1746,7 +1745,7 @@ Lualatexilla. Sen sijaan kaikilla kääntäjillä tavutuksen voi kytkeä
 kirjainperheeltä pois, kun antaa arvoksi \koodi{None}. Tavutusta
 käsitellään perusteellisemmin luvussa \ref{luku/tavutus}.
 
-Tasalevyinen kirjainperhe (\komentom{setmonofont}) toimii oletuksena
+Tasalevyinen kirjainperhe (\komento{setmonofont}) toimii oletuksena
 hieman eri tavalla. Niissä muun muassa ei ole lainausmerkkien ja
 ajatusviivojen kirjoittamiseen tarkoitetut Tex\-/ligatuurit päällä.
 Oletusasetuksia ovat muun muassa seuraavat:
@@ -1784,7 +1783,7 @@ seuraavasti:
 \end{koodilohkosis}
 
 \noindent
-Komennolla \komentom{defaultfontfeatures} voi asettaa (joidenkin)
+Komennolla \komento{defaultfontfeatures} voi asettaa (joidenkin)
 kirjainperheiden oletusasetukset, kun komennon suorittaa ennen
 kirjainperheiden määrittelyä.
 
@@ -1850,7 +1849,7 @@ päättänyt meidän puolestamme, mitkä kirjainyhdistelmät on parasta latoa
 ligatuurin avulla, ja oletusasetuksilla Latex noudattaa niitä ohjeita.
 
 Jos kuitenkin yksittäisen ligatuurin muodostumisen haluaa estää, voi
-kirjainten väliin kirjoittaa komennon \komentom{textcompwordmark}, joka
+kirjainten väliin kirjoittaa komennon \komento{textcompwordmark}, joka
 tekee näkymättömän, juuri tähän tarkoitukseen olevan merkin
 \uctunnus{u+200c zero width non-joiner}.
 
@@ -1867,7 +1866,7 @@ fi f\textcompwordmark i
 Mikäli tavallisia ligatuureja ei halua käyttöön lainkaan, on parasta
 valita jo kirjainperheen tai \=/leikkauksen käyttöönotossa asetus
 \koodi{Liga\-tures=\katk No\-Com\-mon}. Väliaikaisesti fontin asetuksiin
-voi vaikuttaa komennolla \komentom{addfontfeatures}, joka sekin on
+voi vaikuttaa komennolla \komento{addfontfeatures}, joka sekin on
 \paketti{fontspec}\-/pakettiin sisältyvä komento.
 
 \komentoi{addfontfeatures}
@@ -1955,7 +1954,7 @@ Numbers=Proportional % vaihtelevan levyiset numerot (oletus)
 \subsection{Välistykset: harvennus ja tiivistys}
 \label{luku/fontit-välistys}
 
-Fontin kanssa käytettäviä sanavälejä voi säätää \koodim{Word\-Space}\-/
+Fontin kanssa käytettäviä sanavälejä voi säätää \koodi{Word\-Space}\-/
 valitsimella, jonka arvoksi annetaan desimaalilukukerroin eli suhdeluku
 normaaliin verrattuna. Arvona voi olla myös kolme eri kerrointa, jolloin
 mukana on lisäksi sanavälin venymisen rajat. Tämä asetus on tehtävä
@@ -1965,7 +1964,7 @@ tietoa sanaväleistä myös luvusta \ref{luku/sanaväli} tai
 tekstikappaleiden latomista käsittelevästä luvusta \ref{luku/kappale}.
 \noclub[2]
 
-Fonttiasetusten valitsimella \koodim{Letter\-Space} säädetään merkkien
+Fonttiasetusten valitsimella \koodi{Letter\-Space} säädetään merkkien
 välistystä eli niiden välistä tyhjää tilaa. Arvoksi annetaan
 positiivinen tai negatiivinen prosenttiluku, joka ilmaisee alkuperäiseen
 lisättävän osuuden. Asetus \koodi{Letter\-Space=\katk 6} tuottaa siis
@@ -1999,7 +1998,7 @@ kirjainperheeseen kuuluvaan pienversaaliin, käytetään valitsinta
 \subsection{Keinotekoinen venytys, lihavointi ja kallistus}
 \label{luku/fontit-venytys}
 
-Valitsimella \koodim{Fake\-Stretch} voi venyttää tai kutistaa merkkejä
+Valitsimella \koodi{Fake\-Stretch} voi venyttää tai kutistaa merkkejä
 leveyssuunnassa. Arvoksi annetaan desimaalilukukerroin, joka on
 suhdeluku alkuperäiseen leveyteen nähden. Seuraavassa havainnollistava
 esimerkki:
@@ -2029,7 +2028,7 @@ kohtuuttoman leveä ({\ttfamily\addfontfeatures{FakeStretch=1}
 
 Jos kirjainperheeseen ei sisälly sopivaa lihavoitua tai kaltevaa
 leikkausta, voi sellaiset koettaa tehdä myös keinotekoisesti
-\koodim{Fake\-Bold}- ja \koodim{Fake\-Slant}\-/ valitsimien avulla.
+\koodi{Fake\-Bold}- ja \koodi{Fake\-Slant}\-/ valitsimien avulla.
 Niille annetaan arvoksi desimaalilukukerroin. Valitettavasti
 \koodi{Fake\-Bold} toimii vain Xelatex\-/kääntäjän kanssa.
 
@@ -2745,7 +2744,7 @@ katkaisutilanteessa. Muitakin yleislainausmerkillä
 (\koodi{\textquotedbl}) alkavia erikoismerkkejä sisältyy
 kieliasetuksiin.
 
-Varsinainen tavutuksen peruskomento on \komentom{discretionary}, joka
+Varsinainen tavutuksen peruskomento on \komento{discretionary}, joka
 mahdollistaa omanlaisten tavutuskohtien määrittelyn. Komento
 kirjoitetaan sanassa juuri siihen kohtaan, johon tavutuskohta halutaan,
 ja komennon argumenttien rakenne on seuraavanlainen:
@@ -2909,7 +2908,7 @@ Mieluummin ei kuitenkaan katkaista sanoja heittomerkin kohdalta.
 \subsection{Tavutus pois päältä}
 
 Tavutuksen voi kytkeä kokonaan pois päältä \paketti{polyglossia}\-/
-kielipaketin komennolla \komentom{disablehyphenation}. Tavutuksen saa
+kielipaketin komennolla \komento{disablehyphenation}. Tavutuksen saa
 takaisin päälle komennolla \komento{enablehyphenation}.
 
 Toinen vaihtoehto on käyttää fontin asetusta \koodi{Hyphen\-Char=\katk

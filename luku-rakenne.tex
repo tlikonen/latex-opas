@@ -28,7 +28,7 @@ Latexin lähdetiedostoissa kappaleen vaihtuminen ilmaistaan
 kirjoittamalla kappaleiden väliin vähintään yksi tyhjä rivi. Tätä
 merkintäkielen piirrettä käsitellään myös luvussa
 \ref{luku/kappaleen-vaihtuminen}. Kappale vaihtuu myös komennolla
-\komentom{par}, joka sopii käytettäväksi esimerkiksi komentojen
+\komento{par}, joka sopii käytettäväksi esimerkiksi komentojen
 määrittelyssä (luku \ref{luku/komennot}), kun halutaan varmistaa
 kappaleen vaihtuminen tietyssä kohdassa.
 
@@ -61,7 +61,7 @@ reunasta: jotkin rivit yltävät palstan reunan yli; jotkin rivit jäävät
 vajaaksi. Näin käy usein varsinkin suomen kielessä, jonka sanat ovat
 usein pitkiä ja riveillä on vähänlaisesti sanavälejä. Suomen kielessä
 sanavälien venymisen yläraja on usein tarpeellista asettaa oletusarvoa
-suuremmaksi. Se tehdään mitan \mittam{emergencystretch} avulla,
+suuremmaksi. Se tehdään mitan \mitta{emergencystretch} avulla,
 esimerkiksi seuraavasti:
 
 \komentoi{setlength}
@@ -72,14 +72,14 @@ esimerkiksi seuraavasti:
 
 \noindent
 Kaikenlaiset kappaleiden latomiseen liittyvät tekniset rajoitukset voi
-poistaa tai asettaa hyvin suuriksi komennolla \komentom{sloppy}. Komento
+poistaa tai asettaa hyvin suuriksi komennolla \komento{sloppy}. Komento
 asettaa muun muassa sanavälien venymisen ylärajaksi 3\,em. Tämän
 komennon käyttö ei ole kovin suositeltavaa, koska sillä on muitakin
 seurauksia ja se voi vaikuttaa myös sellaisiin kappaleisiin, jotka
 muuten saataisiin ladottua nätisti. Parempi on asettaa vain mitta
 \mitta{emergencystretch} riittävän suureksi. Sanavälien venymiseen ja
 kappaleiden tasaiseen latomiseen liittyvät asetukset voi palauttaa
-oletusarvoihin komennolla \komentom{fussy}.
+oletusarvoihin komennolla \komento{fussy}.
 
 Hyvin tavallista on tasata teksti pelkästään vasempaan reunaan, jolloin
 rivien pituudet vaihtelevat ja oikealla on niin sanottu liehureuna.
@@ -125,7 +125,7 @@ komennot sallivat tavutuksen normaalisti.
 \label{luku/pystysuuntaiset-välit}
 
 Kappaleiden väliin ladottava pystysuuntainen tyhjä tila asetetaan mitan
-\mittam{parskip} avulla. Se on oletuksena nolla, mutta pientä venymistä
+\mitta{parskip} avulla. Se on oletuksena nolla, mutta pientä venymistä
 kuitenkin sallitaan, eli joissakin tilanteissa kappaleiden väliin
 voidaan latoa pieni tyhjä tila. Jos tyhjää tilaa ei haluta missään
 tilanteessa, asetetaan mitta vain nollaksi:
@@ -158,7 +158,7 @@ olla rumannäköisiä.
 
 Tavallista kappaleväliä suurempien pystysuuntaisten välien tekemiseen on
 olemassa kolme valmista komentoa: suurimmasta pienimpään ne ovat
-\komentom{bigskip}, \komentom{medskip} ja \komentom{smallskip}. Ne
+\komento{bigskip}, \komento{medskip} ja \komento{smallskip}. Ne
 sopivat käytettäväksi yksittäisiin tilainteisiin, joissa normaali
 kappaleväli on liian vähän. Jos sivunvaihto osuu näiden komentojen
 kohdalle, mitään väliä ei ladota sivun loppuun eikä seuraavan alkuun.
@@ -180,18 +180,18 @@ mittojen määrittelemiseen ja samalla niiden oletusarvot:
 
 \noindent
 Komentojen \komento{bigskip}, \komento{medskip} ja \komento{smallskip}
-sijasta voi käyttää myös komentoja \komentom{bigbreak},
-\komentom{medbreak} tai \komentom{smallbreak}. Nämä toimivat lähes
+sijasta voi käyttää myös komentoja \komento{bigbreak},
+\komento{medbreak} tai \komento{smallbreak}. Nämä toimivat lähes
 samalla tavalla, mutta niihin sisältyy myös sivunvaihtovihje. Toisin
 sanoen ne vaikuttavat ladonta\-/algoritmiin siten, että komennon
 kohdalla todennäköisyys sivun vaihtumiselle kasvaa suhteessa muihin
 kohtiin. Sivu voi edelleen vaihtua muustakin kohdasta, jos algoritmi
 löytää omasta mielestään vielä paremman paikan.
 
-Pystysuuntaisten välien yleiskomento on \komentom{vspace}, jolle
+Pystysuuntaisten välien yleiskomento on \komento{vspace}, jolle
 annetaan argumentiksi välin suuruus ja mahdolliset venymisen rajat.
 Tämäkin komento jättää välin latomatta, jos se sattuu sivunvaihdon
-kohdalle. Sen sijaan tähdellinen versio \komentom{vspace*} latoo välin
+kohdalle. Sen sijaan tähdellinen versio \komento{vspace*} latoo välin
 joka tapauksessa, vaikka se olisi sivun lopussa tai alussa.
 
 \komentoi{vspace}
@@ -203,7 +203,7 @@ Toinen tekstikappale.
 \end{koodilohkosis}
 
 \noindent
-Komento \komentom{addvspace} toimii lähes samoin kuin \komento{vspace},
+Komento \komento{addvspace} toimii lähes samoin kuin \komento{vspace},
 mutta se huomioi mahdolliset peräkkäiset \komento{addvspace}\-/ komennot
 ja varmistaa, että vain suurin väli toteutuu. Jos siis useita
 \komento{addvspace}\-/ komentoja sattuu peräkkäin, niiden määrittämiä
@@ -234,7 +234,7 @@ Jotkin Latexin valmiit ympäristöt tekevät juuri näin eli käyttävät
 \komento{addvspace}\-/komentoa välien asettamiseen.
 
 Sivun alueella äärettömästi venyvän pystysuuntaisen välin saa komennolla
-\komentom{vfill}. Mitan luonnollinen arvo on nolla, mutta se voi venyä
+\komento{vfill}. Mitan luonnollinen arvo on nolla, mutta se voi venyä
 niin, että se täyttää kaiken tyhjän tilan sivulla. \komento{vfill}\-/
 komento tarkoittaa käytännössä samaa kuin
 \komento{vspace}\komentoarg{0mm plus 1fill} \=/komento. Texin venyviä
@@ -251,7 +251,7 @@ siitä, että tekstin sisällössä siirrytään seuraavaan asiaan.
 Oletusasetuksilla Latex latoo sisennyksen automaattisesti kappaleiden
 alkuun.
 
-Ensimmäisen rivin sisennyksen suuruus asetetaan mitan \mittam{parindent}
+Ensimmäisen rivin sisennyksen suuruus asetetaan mitan \mitta{parindent}
 avulla, seuraavan esimerkin mukaisesti. Sopiva mittayksikkö tähän
 tarkoitukseen on em, koska se viittaa suoraan nykyisen fontin kokoon.
 
@@ -276,9 +276,9 @@ että kappale vaihtuu, joten sisennys on turha.
 
 \noindent
 \mitta{parindent}\-/ mitan levyisen välin voi tehdä mihin tahansa
-komennolla \komentom{indent}. Tätä komentoa ei tavallisesti tarvita,
+komennolla \komento{indent}. Tätä komentoa ei tavallisesti tarvita,
 koska kappaleet alkavat automaattisesti sen suuruisella sisennyksellä.
-Tarpeellisempi komento on sen vastakohta \komentom{noindent}, joka
+Tarpeellisempi komento on sen vastakohta \komento{noindent}, joka
 voidaan kirjoittaa kappaleen alkuun estämään kyseisen kappaleen alun
 sisentäminen.
 
@@ -365,7 +365,7 @@ on sisennetty 2\,cm. Ei ole kovin vaikeaa.
 
 Helpoin tapa riippuvien sisennysten toteuttamiseen lienee
 \pakettictan{hanging}\-/ paketin käyttö. Paketti tuo uuden komennon
-\komentom{hangpara}, jonka käyttöä esimerkki
+\komento{hangpara}, jonka käyttöä esimerkki
 \ref{esim/riippuva-sis-hangpara} selventää. Komennon ensimmäinen
 argumentti on sisennyksen mitta ja toinen argumentti määrittää, kuinka
 monta riviä kappaleen alusta jätetään sisentämättä. Jos toinen
@@ -373,7 +373,7 @@ argumentti on negatiivinen luku, on merkitys päinvastainen eli luvun
 itseisarvo määrittää, kuinka monta riviä kappaleen alusta sisennetään.
 
 Komennon \komento{hangpara} vaihtoehtona on ympäristö
-\ymparistom{hangparas}, jonka sisällä kaikki kappaleet sisennetään
+\ymparisto{hangparas}, jonka sisällä kaikki kappaleet sisennetään
 riippuvalla tyylillä samojen asetusten mukaisesti. Ympäristölle annetaan
 samat argumentit kuin \komento{hangpara}\-/ komennollekin.
 
@@ -491,9 +491,9 @@ ensin mainittua on tarkoitettu normaalilla tavalla juoksevalle
 tekstille, kun taas kolmas on tarkoitettu runon säkeiden ja säkeistöjen
 latomiseen.
 
-\ymparistom{quotation}\-/ ympäristö sisentää tekstikappaleiden
+\ymparisto{quotation}\-/ ympäristö sisentää tekstikappaleiden
 ensimmäisen rivin 1,5\,em:n verran, eikä kappaleiden välissä ole
-pystysuuntaista tilaa. \ymparistom{quote}\-/ ympäristö ei sisennä
+pystysuuntaista tilaa. \ymparisto{quote}\-/ ympäristö ei sisennä
 kappaleiden ensimmäistä riviä, ja se puolestaan erottaa kappaleet
 toisistaan pystysuuntaisen tilan avulla. \ymparisto{verse}\-/ ympäristöä
 käytetään siten, että lähdedokumentissa runon säkeet lopetetaan
@@ -576,7 +576,7 @@ Latex\-/lähdedokumentissa olevat rivinvaihdot tulkitaan sanaväleiksi
 siinä missä välilyönnitkin, eli ne rivinvaihdot eivät päädy ladottuun
 dokumenttiin (luvut \ref{luku/sanaväli} ja
 \ref{luku/rivinvaihtomerkit}). Sen sijaan ladottuun dokumenttiin saadaan
-rivinvaihto käyttämällä komentoa \komentom{\keno} eli kaksi kenoviivaa.
+rivinvaihto käyttämällä komentoa \komento{\keno} eli kaksi kenoviivaa.
 Komennon ei tarvitse sijaita lähdedokumentissa rivin lopussa.
 
 \komentoi{\keno}
@@ -604,12 +604,12 @@ ensimmäinen \\ toinen \\[1.3ex] kolmas
 \end{tulossis}
 
 \noindent
-Komennosta on olemassa tähtiversio \komentom{\keno *}, joka edellisten
+Komennosta on olemassa tähtiversio \komento{\keno *}, joka edellisten
 ominaisuuksien lisäksi estää sivun vaihtumisen tämän rivinvaihdon
 kohdalla. Myös tähtiversiolle voi antaa valinnaiseksi argumentiksi
 mitan, ja sen merkitys on sama kuin komennon normaalilla versiollakin.
 
-Rivin voi vaihtaa myös komennolla \komentom{newline}, mutta tämä komento
+Rivin voi vaihtaa myös komennolla \komento{newline}, mutta tämä komento
 ei hyväksy valinnaista argumenttia eikä siitä ole tähdellistä versiota.
 Komennot \komento{newline} ja \komento{\keno} käyttäytyvät eri tavoin
 taulukoissa, joita käsitellään luvussa \ref{luku/taulukot}.
@@ -633,12 +633,12 @@ välissä että sivun tai palstan vaihtumisen kohdalla.
 
 Latexissa leski- tai orporivit lienee käytännöllisintä estää
 \pakettictan{nowidow}\-/ paketin avulla. Paketin lataamisen jälkeen
-käytetään komentoa \komentom{setnowidow}, joka estää leskirivit eli
+käytetään komentoa \komento{setnowidow}, joka estää leskirivit eli
 pitää tekstikappaleen lopusta vähintään kaksi riviä yhdessä sivun tai
 palstan yläreunassa. Komennolle voi antaa hakasulkeissa valinnaisen
 argumentin (kokonaisluvun), joka ilmaisee, kuinka monta riviä täytyy
 vähintään pysyä yhdessä. Vastaavasti orporivit estetään komennolla
-\komentom{setnoclub}, joka toimii samalla tavalla. Molemmat komennot
+\komento{setnoclub}, joka toimii samalla tavalla. Molemmat komennot
 vaikuttavat koko dokumenttiin eli kaikkiin tekstikappaleisiin.
 
 \komentoi{usepackage}
@@ -652,8 +652,8 @@ vaikuttavat koko dokumenttiin eli kaikkiin tekstikappaleisiin.
 \end{koodilohkosis}
 
 \noindent
-Paketti \paketti{nowidow} määrittelee myös komennot \komentom{nowidow}
-ja \komentom{noclub}, joilla voi vaikuttaa yksittäisen tekstikappaleen
+Paketti \paketti{nowidow} määrittelee myös komennot \komento{nowidow}
+ja \komento{noclub}, joilla voi vaikuttaa yksittäisen tekstikappaleen
 leski- ja orporiveihin. Nämä komennot täytyy sijoittaa tekstikappaleen
 loppuun, ja myös niille voi antaa hakasulkeissa valinnaiseksi
 argumentiksi luvun, joka kertoo yhdessä pidettävien rivien määrän.
@@ -698,7 +698,7 @@ noudattaa -- on aukeaman ulkoreunoissa melko suuret marginaalit. Niitä
 voidaan käyttää eräänlaisina apupalstoina, joihin voi kirjoittaa
 lyhyehköjä huomautuksia ja lisätietoa.
 
-Marginaalihuomautukset tehdään komennolla \komentom{marginpar}, jonka
+Marginaalihuomautukset tehdään komennolla \komento{marginpar}, jonka
 argumentiksi annetaan marginaaliin tuleva teksti. Marginaalin teksti
 ladotaan vasempaan tai oikeaan marginaaliin sen mukaan, kumpi on
 aukeaman ulkoreunassa. Yksipuolisilla sivuilla teksti ladotaan
@@ -773,9 +773,9 @@ esimerkki näiden mittojen asettamisesta:
 \end{koodilohkosis}
 
 \noindent
-Kesken dokumentin komennolla \komentom{reversemarginpar} voidaan vaihtaa
+Kesken dokumentin komennolla \komento{reversemarginpar} voidaan vaihtaa
 marginaalihuomautukset vastakkaiseen marginaaliin ja komennolla
-\komentom{normalmarginpar} palautetaan oletusasetukset.
+\komento{normalmarginpar} palautetaan oletusasetukset.
 
 Marginaalihuomautuksen ensimmäisen rivin peruslinja sijoittuu oletuksena
 samalle kohdalle kuin rivi, jolla \komento{marginpar}\-/ komento
@@ -838,7 +838,7 @@ sitten muuten vain ilmaisee uuden luvun alkamista.
 
 Latexissa anfangien tekemistä varten on paketti \pakettictan{lettrine},
 joka tarjoaa käyttöön samannimisen komennon. Jokainen anfangi on
-erilainen, ja siksi \komentom{lettrine}\-/ komentokin sisältää useita
+erilainen, ja siksi \komento{lettrine}\-/ komentokin sisältää useita
 asetuksia anfangin ulkoasun hienosäätöön. Komentoa käytetään seuraavalla
 tavalla:
 
@@ -911,7 +911,7 @@ käyttämällä.
 \label{luku/peruskorostukset}
 
 Antiikvatyyppisen kirjainleikkauksen korostamiseen sopii yleensä
-parhaiten saman perheen \textit{kursiivi} (\komentom{textit}).
+parhaiten saman perheen \textit{kursiivi} (\komento{textit}).
 Lihavointi toimii huonommin antiikvan kanssa, koska pelkkä merkkien
 viivojen vahvistaminen ei tuo riittävää kontrastia.
 
@@ -923,11 +923,11 @@ viivojen vahvistaminen ei tuo riittävää kontrastia.
 \end{tulossis}
 
 \noindent
-\textbf{Lihavointi} (\komentom{textbf}) toimii huomattavasti paremmin
+\textbf{Lihavointi} (\komento{textbf}) toimii huomattavasti paremmin
 groteskityyppisen kirjainperheen kanssa, koska lihavoitu leikkaus on
 usein selvästi vahvempi normaaliin verrattuna. Groteskin kursiivi sen
 sijaan ei monesti edes ole varsinainen kursiivileikkaus vaan pelkkä
-lievä kallistus (\komentom{textsl}). Sellainen ei välttämättä tuo
+lievä kallistus (\komento{textsl}). Sellainen ei välttämättä tuo
 riittävää muotokontrastia.\footnote{Joissakin niin sanotuissa
   humanistisissa groteskiperheissä on mukana ihan käyttökelpoinen ja
   selvästi erottuva kursiivileikkaus.}
@@ -950,7 +950,7 @@ ilmausta (\textit{kuten tässä}), ei itse suljemerkkejä pidä kursivoida,
 koska ne kuuluvat ulompaan tekstiin. Jos sulkeiden ulkopuolellakin on
 voimassa kursivointi, voi itse sulkeetkin kursivoida.
 
-Latexissa kursiivin voi toteuttaa myös komennolla \komentom{emph}, joka
+Latexissa kursiivin voi toteuttaa myös komennolla \komento{emph}, joka
 huomioi ympärillä olevan korostustilan. Tavallisesti komento kursivoi
 argumentiksi annetun tekstin, mutta jos kursivointi on jo päällä
 komennon ympärillä, se latookin argumentiksi annetun tekstin
@@ -974,7 +974,7 @@ tavallinen \emph{korostettu} tavallinen \\
 \label{luku/korostus-pienversaali}
 
 Melko rauhallinen typografinen keino on \textsc{pienversaali} eli
-kapiteeli (\komentom{textsc}), jonka kirjaimet näyttävät
+kapiteeli (\komento{textsc}), jonka kirjaimet näyttävät
 versaalikirjaimilta mutta ovat suunnilleen gemenakirjainten eli pienten
 kirjainten korkuisia. Pienversaali on fonttiin sisältyvä erillinen
 suunnittelijan piirtämä leikkaus, eli se ei ole tietokoneen mekaanisesti
@@ -1056,7 +1056,7 @@ esimerkiksi kursiivi ja lihavointi. Alleviivaus voi kuitenkin joskus
 olla kätevä keino ohjata lukijan huomio tiettyyn kohtaan esimerkiksi
 pidemmässä esimerkkitekstissä.
 
-Latexin oma alleviivauskomento \komentom{underline} piirtää viivan
+Latexin oma alleviivauskomento \komento{underline} piirtää viivan
 tekstin tai muun argumentiksi annetun sisällön alapuolelle. Komennon
 huono puoli on, että erilliset alleviivaukset eivät välttämättä osu
 samalle korkeudelle. Seuraavassa esimerkissä toisen sanan alleviivaus on
@@ -1253,7 +1253,7 @@ ole luonnollista kieltä lainkaan.
 
 Tasalevyinen kirjainperhe määritellään fonttiasetusten yhteydessä (luku
 \ref{luku/fontin-valinta}) ja valitaan käyttöön esimerkiksi komennolla
-\komentom{texttt}. Tasalevyisellä fontilla ladottava teksti on
+\komento{texttt}. Tasalevyisellä fontilla ladottava teksti on
 tavallisesti tietokonekoodia, joten sille on asetettu hieman
 toisenlaiset oletusasetukset kuin muille kirjainperheille. Oletuksena
 tekstiä ei tavuteta, ja esimerkiksi \komento{texttt}\-/ komennon
@@ -1266,7 +1266,7 @@ merkintätapoja lainausmerkeille ja ajatusviivoille käsitellään luvuissa
 \ref{luku/lainausmerkit} ja \ref{luku/yhdys-ajatus-miinus}.
 
 Toinen vaihtoehto tasalevyisen tekstin tuottamiseen on
-\komentom{verb}\-/ komento. Komennon nimi on lyhennetty englannin kielen
+\komento{verb}\-/ komento. Komennon nimi on lyhennetty englannin kielen
 sanasta \englantik{verbatim}, joka tarkoittaa 'kirjaimellisesti' tai
 'sananmukaisesti'. Niin se juuri toimiikin, eli \keno{verb}\-/
 komennolle annettu argumentti tulkitaan kirjaimellisesti.
@@ -1292,7 +1292,7 @@ kirjainperheellä. Seuraavassa on tästä kaksi esimerkkiä:
 
 \noindent
 Yksittäisiä sanoja pidempien tietokonekoodien latomiseen on olemassa
-\ymparistom{verbatim}\-/ ympäristö, jonka sisällä kaikki teksti
+\ymparisto{verbatim}\-/ ympäristö, jonka sisällä kaikki teksti
 tulkitaan kirjaimellisesti -- myös välilyönnit ja rivinvaihdot.
 
 \ymparistoi{verbatim}
@@ -1312,7 +1312,7 @@ tieto-       kone-
 
 \noindent
 Paljon monipuolisemman ympäristön tarjoaa paketti
-\pakettictan{fancyvrb}. Sen mukana tuleva \ymparistom{Verbatim}\-/
+\pakettictan{fancyvrb}. Sen mukana tuleva \ymparisto{Verbatim}\-/
 ympäristö ymmärtää monenlaisia asetuksia, joilla vaikutetaan
 tietokonekoodin latomiseen. Koodiin saa mukaan esimerkiksi rivinumerot,
 tai sen voi latoa kehyksen sisään. Myös koodin sisennykseen, fontin
@@ -1362,13 +1362,13 @@ muokkaa joidenkin muualla määriteltyjen komentojen ominaisuuksia.
 \end{koodilohkosis}
 
 \noindent
-Edellisen esimerkin komennolla \komentom{hypersetup} vaikutetaan
+Edellisen esimerkin komennolla \komento{hypersetup} vaikutetaan
 paketin asetuksiin. Oletuksena esimerkiksi linkkien ympärille
 ladotaan värilliset kehykset, mutta valitsin \koodi{hide\-links} poistaa
 ne. Valitsimella \koodi{url\-color} voisi vaihtaa verkko\-/osoitteiden
 kehyksen väriä.
 
-Esimerkin seuraava komento \komentom{urlstyle} määrittää, mitä
+Esimerkin seuraava komento \komento{urlstyle} määrittää, mitä
 kirjainperhettä käytetään verkko\-/ osoitteiden latomiseen. Komennon
 argumentti \koodi{same} tarkoittaa, että käytetään samaa kirjainperhettä
 kuin ympärillä olevassa tekstissä. Tietty kiinteä kirjainperhe valitaan
@@ -1376,7 +1376,7 @@ kuin ympärillä olevassa tekstissä. Tietty kiinteä kirjainperhe valitaan
 roman), \koodi{sf} (groteski, sans serif) tai \koodi{tt} (tasalevyinen).
 Oletusasetus on tasalevyinen kirjainperhe.
 
-Verkko\-/ osoitteiden ilmaisemisen peruskomento on \komentom{href},
+Verkko\-/ osoitteiden ilmaisemisen peruskomento on \komento{href},
 jolle annetaan kaksi pakollista argumenttia: ensimmäinen on varsinainen
 osoite ja toinen on dokumenttiin ladottava teksti. Linkin teksti voi
 siis olla mitä hyvänsä tekstiä, ja pdf\-/ lukijassa tekstiä
@@ -1393,9 +1393,8 @@ napsauttamalla linkin osoittama sivusto avautuu.
 
 \noindent
 Kun halutaan latoa dokumenttiin itse verkko\-/osoite, käytetään komentoa
-\komento{url}, \komentomargin{url} joka osaa katkaista osoitteet
-järkevällä tavalla rivin lopussa. Komennolle annetaan vain yksi
-argumentti, verkko\-/osoite.
+\komento{url}, joka osaa katkaista osoitteet järkevällä tavalla rivin
+lopussa. Komennolle annetaan vain yksi argumentti, verkko\-/osoite.
 
 \komentoi{url}
 \begin{koodilohkosis}
@@ -1408,7 +1407,7 @@ argumentti, verkko\-/osoite.
 
 \noindent
 Joskus dokumenttiin voidaan tarvita verkko\-/osoite, joka ei ole pdf:ssä
-napsautettava linkki. Silloin käytetään komentoa \komentom{nolinkurl}.
+napsautettava linkki. Silloin käytetään komentoa \komento{nolinkurl}.
 Tämän komennon argumenttina oleva verkko\-/osoite ainoastaan ladotaan
 osoitteiden tavoin.
 
@@ -1485,7 +1484,7 @@ mahdollista käyttää värejä ilman etukäteismäärittelyäkin.
   \label{tlk/värimalleja}
 }
 
-Omat värit määritellään komennolla \komentom{definecolor}. Se tarvitsee
+Omat värit määritellään komennolla \komento{definecolor}. Se tarvitsee
 kolme argumenttia: värin nimen, värimallin ja värikoodin. Komennon
 argumenttien rakenne on seuraavanlainen:
 
@@ -1512,7 +1511,7 @@ antamisesta esimerkki. Muista värimalleista voi lukea
 \paketti{xcolor}\-/ paketin ohjekirjasta.
 
 Kun värit on määritelty, niitä voi käyttää eri komentojen yhteydessä.
-Tekstin väri vaihdetaan toiseksi komennolla \komentom{color}, josta on
+Tekstin väri vaihdetaan toiseksi komennolla \komento{color}, josta on
 kaksi erilaista versiota. Komento vaihtaa värin pysyvästi nykyisen
 ympäristön (luku \ref{luku/ympäristöt}) tai aaltosulkeilla (luku
 \ref{luku/aaltosulkeet}) rajatun alueen sisällä.
@@ -1524,7 +1523,7 @@ ympäristön (luku \ref{luku/ympäristöt}) tai aaltosulkeilla (luku
 \end{koodilohkosis}
 
 \noindent
-Toinen vaihtoehto on käyttää komentoa \komentom{textcolor}, jolle
+Toinen vaihtoehto on käyttää komentoa \komento{textcolor}, jolle
 annetaan edelliseen verrattuna vielä yksi argumentti lisää. Argumenttina
 on teksti, johon värin halutaan vaikuttavan. Vaikutusalueena on siis
 vain kyseinen teksti.
@@ -1536,8 +1535,8 @@ vain kyseinen teksti.
 \end{koodilohkosis}
 
 \noindent
-Tekstin taustaväri vaihdetaan komennoilla \komentom{colorbox} ja
-\komentom{fcolorbox}. Komennot luovat laatikon, jonka sisällä taustaväri
+Tekstin taustaväri vaihdetaan komennoilla \komento{colorbox} ja
+\komento{fcolorbox}. Komennot luovat laatikon, jonka sisällä taustaväri
 on voimassa. Ensin mainittu komento vaihtaa vain taustavärin, ja
 jälkimmäinen sisältää lisäksi värillisen kehyksen, eli sille
 määritellään kaksi väriä.
@@ -1550,7 +1549,7 @@ määritellään kaksi väriä.
 \end{koodilohkosis}
 
 \noindent
-Kehystetyn laatikon kehysviivan leveys on mitassa \mittam{fboxrule} ja
+Kehystetyn laatikon kehysviivan leveys on mitassa \mitta{fboxrule} ja
 kehyksen etäisyys sisällöstä mitassa \mitta{fboxsep}. Seuraavassa on
 esimerkki useiden edellä mainittujen komentojen käytöstä. Tästä tuskin
 kannattaa ottaa mallia vakavaan typografiseen työhön.
@@ -1578,11 +1577,11 @@ kannattaa ottaa mallia vakavaan typografiseen työhön.
 \end{tulossis}
 
 \noindent
-Sivulle voi määrittää taustavärin komennolla \komentom{pagecolor}.
+Sivulle voi määrittää taustavärin komennolla \komento{pagecolor}.
 Taustäväri vaihtuu nykyiselle ja seuraaville sivuille, kunnes väri
 vaihdetaan toiseksi tai poistetaan. Komennolle annetaan samanlaiset
 argumentit kuin muillekin värikomennoille. Komento
-\komentom{nopagecolor} poistaa taustavärin kokonaan eli palauttaa
+\komento{nopagecolor} poistaa taustavärin kokonaan eli palauttaa
 taustan oletustilaan.
 
 \komentoi{pagecolor}
@@ -1604,9 +1603,9 @@ Mainittakoon kuitenkin heti aluksi, että otsikoiden yhteyteen saa
 sivunvaihdon kätevimmin keinoilla, jotka neuvotaan otsikoiden yhteydessä
 luvussa \ref{luku/otsikot-ulkoasu}.
 
-Komento \komentom{clearpage} vaihtaa sivua, eli komennon jälkeinen
+Komento \komento{clearpage} vaihtaa sivua, eli komennon jälkeinen
 dokumentin osa alkaa aina puhtaalta sivulta. Lähes samanlainen komento
-on \komentom{cleardoublepage}, joka kaksipuolisessa dokumentissa
+on \komento{cleardoublepage}, joka kaksipuolisessa dokumentissa
 aloittaa uuden sisällön aina parittomilta sivuilta. Jos seuraavana ei
 satu olemaan pariton sivu, komento tekee väliin tyhjän sivun. Tätä
 ominaisuutta on käytetty tässä oppaassa: pääluvut alkavat aina
@@ -1634,14 +1633,14 @@ sellainen ominaisuus, että ne pakottavat aiemmin määritellyt leijuvat
 osat (luku \ref{luku/leijuosat}) ladottavaksi ennen uutta puhdasta
 sivua.
 
-Hieman toisenlainen sivunvaihtokomento on \komentom{newpage}. Se sallii
+Hieman toisenlainen sivunvaihtokomento on \komento{newpage}. Se sallii
 aiempien leijuvien osien latomisen myös sivunvaihdon jälkeen.
 \komento{newpage} eroaa edellisistä sivuvaihtokomennoista myös siten,
 että kaksipalstaisessa tilassa (luku \ref{luku/palstat}) se aloittaa
 vain uuden palstan, ei välttämättä uutta sivua.
 
 Sivunvaihdon todennäköisyyteen tietyssä kohdassa voi vaikuttaa
-komennoilla \komentom{pagebreak} ja \komentom{nopagebreak}. Kummallekin
+komennoilla \komento{pagebreak} ja \komento{nopagebreak}. Kummallekin
 voi antaa hakasulkeissa valinnaisen argumentin, joka on luku 0\==4.
 Nolla tarkoittaa pienintä todennäköisyyttä sivunvaihdolle
 (\komento{pagebreak}\komentoargv{0}) tai sen välttämiselle
@@ -1668,16 +1667,16 @@ Oletuksena Latex pyrkii latomaan kaikkien sivujen ylä- ja alareunan
 tasaiseksi. Toisin sanoen se saattaa venyttää tai kutistaa sivulla
 olevia pystysuuntaisia välejä niin, että kaikki sivut näyttävät yhtä
 korkeilta. Tämä tila voidaan asettaa päälle komennolla
-\komentom{flushbottom}, mutta se on jo oletuksena päällä ainakin Latexin
+\komento{flushbottom}, mutta se on jo oletuksena päällä ainakin Latexin
 perusdokumenttiluokissa.
 
-Vaihtoehtoinen tila asetetaan komennolla \komentom{raggedbottom}.
+Vaihtoehtoinen tila asetetaan komennolla \komento{raggedbottom}.
 Komennon seurauksena sivujen alareunoja ei tasata. Toisin sanoen sivun
 pystysuuntaisiin väleihin ei kosketa, joten eri sivujen alareunat voivat
 sattua eri korkeudelle.
 
 Dokumentin viimeistelyvaiheessa sivujen hienosäätöön sopinee komento
-\komentom{enlargethispage}, jolla voi muuttaa käsillä olevan sivun
+\komento{enlargethispage}, jolla voi muuttaa käsillä olevan sivun
 korkeutta, käytännössä \mitta{textheight}\-/mittaa. Komennolle annetaan
 argumentiksi positiivinen tai negatiivinen mitta. Seuraavassa on
 esimerkkejä:
@@ -1691,7 +1690,7 @@ esimerkkejä:
 \end{koodilohkosis}
 
 \noindent
-Komennon tähtiversio \komentom{enlargethispage*} pyrkii lisäksi
+Komennon tähtiversio \komento{enlargethispage*} pyrkii lisäksi
 tiivistämään sivun sisältöä pystysuunnassa niin paljon kuin mahdollista.
 Sen tyypillisin käyttötarkoitus lienee se, että sivulle pyritään
 mahduttamaan yksi ylimääräinen rivi. Tämäntyyppinen sivujen hienosäätö
@@ -1738,7 +1737,7 @@ tulisi näkymään sivulla alaviitteessä.
 
 Komennot eivät itse vielä lado mitään tekstiä dokumenttiin. Ne vain
 tallentavat perustiedot muistiin mahdollista myöhempää käyttöä varten.
-Komennolla \komentom{maketitle} voi latoa kaikki edellä mainitut tiedot.
+Komennolla \komento{maketitle} voi latoa kaikki edellä mainitut tiedot.
 Ne voivat näkyä ensimmäisen sisältösivun alussa tai erillisellä
 nimiösivulla; se riippuu dokumenttiluokan asetuksista ja valitsimista
 \koodi{titlepage} ja \koodi{notitlepage}. Se, kumpi asetus on oletuksena
@@ -1755,7 +1754,7 @@ Toisaalta mikään ei estä muotoilemasta oman dokumentin perustietoja
 ilman Latexin valmiita keinoja.
 
 Hyödyllisiä ympäristöjä dokumentin alussa käytettäväksi voivat olla
-\ymparistom{titlepage} ja \ymparistom{abstract}. Ensin mainittu luo
+\ymparisto{titlepage} ja \ymparisto{abstract}. Ensin mainittu luo
 tyhjän sivun nimiösivun toteuttamista varten. Se myös aloittaa
 sivunumeroinnin alusta eli nollaa \laskuri{page}\-/ laskurin arvon.
 Ympäristö \ymparisto{abstract} toimii \luokka{article}\-/\ ja
@@ -1832,14 +1831,14 @@ pakettia ja pdf\-/ tiedoston ominaisuuksia käsitellään tarkemmin luvussa
 Latexissa eri otsikoiden tasoille on omat komentonsa, jotka on koottu
 taulukkoon \ref{tlk/otsikkotasot} -- suurimmasta otsikosta pienimpään.
 Ylin otsikkotaso on teoksen osa, ja sitä merkitään komennolla
-\komentom{part}. Tämän komennon käyttö on vapaaehtoista, mutta sillä voi
+\komento{part}. Tämän komennon käyttö on vapaaehtoista, mutta sillä voi
 osoittaa laajan teoksen osia. Osat numeroidaan oletuksena roomalaisilla
 järjestysluvuilla: ''\partname~I'', ''\partname~II'', ''\partname~III''
 jne. Ne eivät vaikuta alemmantasoisten otsikoiden numerointiin, eli osan
 vaihtuminen ei oletusasetuksilla nollaa alemmantasoisten lukujen
 laskuria.
 
-Otsikkotaso \komentom{chapter} tarkoittaa kirjan päälukua, joka alkaa
+Otsikkotaso \komento{chapter} tarkoittaa kirjan päälukua, joka alkaa
 oletuksena puhtaalta sivulta. Otsikkoa ennen suoritetaan automaattisesti
 sivunvaihtokomento \komento{clearpage} tai \komento{cleardoublepage}
 (luku \ref{luku/sivunvaihdot}). \komento{chapter}\-/ tasoiset otsikot
@@ -1847,8 +1846,8 @@ saavat oletuksena numeroinnin ''\chaptername~1'', ''\chaptername~2'',
 ''\chaptername~3'' jne. Dokumenttiluokassa \luokka{article} ei tätä
 otsikkotasoa ole lainkaan.
 
-Seuraavat otsikkotasot \komentom{section}, \komentom{subsection} ja
-\komentom{subsubsection} ovat tavallisimpia tekstin väliotsikoita. Nekin
+Seuraavat otsikkotasot \komento{section}, \komento{subsection} ja
+\komento{subsubsection} ovat tavallisimpia tekstin väliotsikoita. Nekin
 saavat oletuksena numeroinnin, jossa pisteellä erotetaan mahdolliset
 alaluvut: 1.1, 1.2, 1.2.1, 1.2.2, 1.3 yms.
 
@@ -1860,7 +1859,7 @@ komentoja. Muuten otsikoiden numerointi ei toimi oikein. Poikkeus on
 \komento{part}, joka ei vaikuta numerointiin ja jonka käyttö on
 muutenkin vapaaehtoista.
 
-Otsikkotasot \komentom{paragraph} ja \komentom{subparagraph} eivät ole
+Otsikkotasot \komento{paragraph} ja \komento{subparagraph} eivät ole
 ihan perinteisiä otsikoita, vaan ne ladotaan tekstikappaleen alkuun.
 Nekin kyllä erottuvat leipätekstistä ja voivat toimia otsikon
 kaltaisessa tehtävässä. Oletuksena kappaleotsikoita ei numeroida eivätkä
@@ -1931,13 +1930,13 @@ sisällysluetteloon, täytyy se tehdä seuraavalla tavalla:
 \end{koodilohkosis}
 
 \noindent
-Edellä olevan esimerkin komento \komentom{addcontentsline} lisää
+Edellä olevan esimerkin komento \komento{addcontentsline} lisää
 merkinnän sisällysluetteloon. Komennon ensimmäinen argumentti on
 \koodi{toc} (\englanti{table of contents}), joka on sisällysluetteloiden
 tekemisessä tarvittavan väliaikaistiedoston pääte. Esimerkissä lisättävä
 sisällysluettelon merkintä on tasoltaan \koodi{section} eli vastaa muita
 \komento{section}\-/ komennolla syntyviä sisällysluettelon kohtia.
-Komento \komentom{phantomsection} kuuluu \paketti{hyperref}\-/
+Komento \komento{phantomsection} kuuluu \paketti{hyperref}\-/
 pakettiin, ja se lisää pdf\-/ tiedostoon näkymättömän ankkurin tähän
 kohtaan dokumentissa. Sitä tarvitaan, jotta sisällysluettelon merkintä
 viittaisi oikealle sivulle ja toimisi myös linkkinä, joka tuo juuri
@@ -1952,7 +1951,7 @@ numerointiin monella tavalla, kuten siihen, mihin otsikkotasoon saakka
 numerointi yltää ja millä tyylillä otsikoiden numerot ylipäätään
 ladotaan.
 
-Laskuri \laskurim{secnumdepth} on tarkoitettu kirjoittajan
+Laskuri \laskuri{secnumdepth} on tarkoitettu kirjoittajan
 asetettavaksi, ja sillä määritetään, mihin otsikkotasoon saakka otsikot
 numeroidaan. Tasonumerot ovat taulukossa \ref{tlk/otsikkotasot}
 (s.~\pageref{tlk/otsikkotasot}). Seuraava esimerkki määrittelee, että
@@ -2041,7 +2040,7 @@ se toimi kaikilla otsikkotasoilla. Tässä oppaassa keskitytään
 \paketti{titlesec}\-/ pakettiin.
 
 Otsikoiden perusmuotoilu on helpointa toteuttaa
-\komentom{titleformat*}\-/ komennon avulla. Sille annetaan argumenteiksi
+\komento{titleformat*}\-/ komennon avulla. Sille annetaan argumenteiksi
 otsikkokomento ja sitä vastaavat muotoilukomennot. Seuraava esimerkki
 vaihtaa otsikoihin groteskin kirjainperheen (\komento{sffamily}) ja
 hieman toisistaan poikkeavan kirjainleikkauksen.
@@ -2064,7 +2063,7 @@ hieman toisistaan poikkeavan kirjainleikkauksen.
 
 \noindent
 Monipuolisemmat muotoiluasetukset saa toteutettua komennon tähdettömällä
-versiolla \komentom{titleformat}. Tämän komentoversion monista
+versiolla \komento{titleformat}. Tämän komentoversion monista
 argumenteista ja ominaisuuksista kannattaa lukea \paketti{titlesec}\-/
 paketin ohjekirjasta, mutta esimerkistä \ref{esim/titleformat}
 selvinnevät perustoiminnot.
@@ -2095,7 +2094,7 @@ selvinnevät perustoiminnot.
 \end{esimerkki*}
 
 Luvun numeroinnin (1.1, 1.2 jne.) tyyliin voi vaikuttaa komennolla
-\komentom{titlelabel}. Komento suoritetaan yleensä vain kerran, ja se
+\komento{titlelabel}. Komento suoritetaan yleensä vain kerran, ja se
 vaikuttaa kaikentasoisiin otsikoihin. Tätä komentoa ei tarvita, jos
 käyttää edellä mainittua ''tähdetöntä'' \komento{titleformat}\-/
 komentoa, koska se sisältää jo toiminnot myös lukujen numeroinnin
@@ -2115,7 +2114,7 @@ mikä hyvänsä. Sen perään esimerkissä asetetaan 1\,em:n suuruinen väli
 \komento{hspace}\-/ komennolla.
 
 Otsikoiden yhteydessä ladottavaan sisennykseen ja pystysuuntaiseen
-väliin vaikutetaan komennolla \komentom{titlespacing*}. Sille annetaan
+väliin vaikutetaan komennolla \komento{titlespacing*}. Sille annetaan
 argumenteiksi otsikkokomento ja halutut mitat järjestyksessä vasen
 sisennys, yläpuolinen väli ja alapuolinen väli.
 
@@ -2143,19 +2142,19 @@ oletuksena ex\-/mittayksikköä ja sallii hieman venymistä.
 Tähdellinen \komento{titlespacing*}\-/ komento poistaa otsikon jälkeen
 tulevasta tekstikappaleesta ensimmäisen rivin sisennyksen (luku
 \ref{luku/ensimmäisen-rivin-sisennys}). Tähdetön komentoversio
-\komentom{titlespacing} sen sijaan säilyttää kappaleen sisennyksen. Sitä
+\komento{titlespacing} sen sijaan säilyttää kappaleen sisennyksen. Sitä
 ei liene tarvetta käyttää koskaan, sillä otsikoiden jälkeen tulevaa
 tekstikappaletta ei kuulu sisentää.
 
 Teoksen osien (\komento{part}) vaihtuessa sivulle ladotaan oletuksena
 teksti kuten ''\partname~I'', ''\partname~II'' jne. Mainittu sana
 ''\partname'' tulee suomen kieliasetuksista ja komennosta
-\komentom{partname}. Kaikkien kielten asetukset nimittäin määrittelevät
+\komento{partname}. Kaikkien kielten asetukset nimittäin määrittelevät
 komennon \komento{partname} siten, että se sisältää ja latoo kyseiseen
 kieleen sopivan ilmauksen. Vastaavasti päälukujen (\komento{chapter})
 yhteydessä ladotaan suomen kieliasetuksilla ilmaus ''\chaptername~1'',
 ''\chaptername~2'' jne. Sana ''\chaptername'' tulee komennosta
-\komentom{chaptername}.
+\komento{chaptername}.
 
 Jos omassa dokumentissa haluaa kutsua teoksen osia tai päälukuja
 joksikin muuksi, voi määritellä edellä mainitut komennot uudelleen.
@@ -2187,7 +2186,7 @@ käsitellään tarkemmin kieliasetusten yhteydessä luvussa
 
 Otsikoiden yhteyteen saa automaattisen sivunvaihdon määrittämällä
 komennon, jonka nimen alussa on otsikkokomennon nimi ja lopussa sana
-\koodi{break}. Tavallisin lienee \komentom{sectionbreak}. Komennon
+\koodi{break}. Tavallisin lienee \komento{sectionbreak}. Komennon
 määritelmään kirjoitetaan jokin sivuvaihtokomento kuten
 \komento{clearpage}. Sivunvaihtokomentoja käsitellään tarkemmin luvussa
 \ref{luku/sivunvaihdot}.
@@ -2213,7 +2212,7 @@ dokumentissa. Näiden komentojen käyttö on vapaaehtoista. Luvussa
 \ref{luku/tyypillinen-tietokirja} käsitellään tyypillisen suomalaisen
 tietokirjan rakennetta ja teknistä toteuttamista.
 
-Dokumentin alkuun voi kirjoittaa komennon \komentom{frontmatter}, joka
+Dokumentin alkuun voi kirjoittaa komennon \komento{frontmatter}, joka
 asettaa sivunumeroiden tyyliksi roomalaiset numerot (i, ii, iii jne.) ja
 poistaa pääluvuilta (\komento{chapter}) numeroinnin. Tässä osassa ovat
 teoksen nimiö ja perustiedot, sisällysluettelo, tietokirjan tai
@@ -2222,12 +2221,12 @@ vastaava esittelyteksti, joka ei ole vielä varsinaista sisältöä.
 
 Jos dokumentissa käytetään \komento{frontmatter}\-/ komentoa, täytynee
 varsinaisten sisältölukujen alkuun kirjoittaa komento
-\komentom{mainmatter}, joka nollaa sivunumerolaskurin, asettaa
+\komento{mainmatter}, joka nollaa sivunumerolaskurin, asettaa
 numeroinnin tyyliksi arabialaiset numerot (1, 2, 3 jne.) ja kytkee
 päälle lukujen numeroinnin. Sen jälkeen ensimmäinen \komento{chapter}\-/
 komennolla tehty luku on siis ''\chaptername~1''.
 
-Sisältösivujen lopussa voi olla komento \komentom{appendix}. Se
+Sisältösivujen lopussa voi olla komento \komento{appendix}. Se
 ensinnäkin nollaa \luokka{book}- ja \luokka{report}\-/ luokissa
 päälukujen laskurin \laskuri{chapter}. Sen sijaan \luokka{article}\-/
 luokassa se nollaa \laskuri{section}\-/ laskurin. Sen lisäksi
@@ -2238,7 +2237,7 @@ tulee komennosta \komento{appendixname}. Näin teoksen lopussa
 uudella tavalla: ''\appendixname~A'', ''\appendixname~B'' jne.
 
 Sisältösivujen ja mahdollisten liitteiden jälkeen voi olla hyödyllistä
-käyttää komentoa \komentom{backmatter}, joka lopettaa päälukujen
+käyttää komentoa \komento{backmatter}, joka lopettaa päälukujen
 numeroinnin kokonaan. Tähän osaan voisi sijoittaa ainakin asiahakemistot
 sekä kirjallisuus\-/\ tai lähdeluettelon.
 
@@ -2346,7 +2345,7 @@ Sellainen neuvotaan sisällysluettelon käsittelyn yhteydessä esimerkissä
 \label{luku/sisällysluettelo}
 
 Dokumentin sisällysluettelo syntyy helposti yhdellä komennolla:
-\komentom{tableofcontents}. Otsikkokomennoilla (luku \ref{luku/otsikot})
+\komento{tableofcontents}. Otsikkokomennoilla (luku \ref{luku/otsikot})
 tehdyt otsikot tulevat automaattisesti sisällysluetteloon. Jos käytössä
 on paketti \paketti{hyperref} (luku \ref{luku/pdf-asetukset}),
 sisällysluettelon otsikot ovat myös linkkejä, jotka vievät kyseiseen
@@ -2361,7 +2360,7 @@ kyllä muokatakin varsin helposti.
 \end{koodilohkosis}
 
 \noindent
-Laskurin \laskurim{tocdepth} avulla kirjoittaja voi määritellä, mihin
+Laskurin \laskuri{tocdepth} avulla kirjoittaja voi määritellä, mihin
 tasoon saakka sisällysluettelossa näytetään otsikoita. Esimerkiksi
 jonkin kuvitteellisen romaanin (dokumenttiluokka \luokka{book})
 sisällysluettelossa voisi näyttää ainoastaan osat (\komento{part}) ja
@@ -2378,7 +2377,7 @@ Otsikoiden tasonumerot voi tarkistaa taulukosta \ref{tlk/otsikkotasot}
 
 \noindent
 Sisällysluettelolle ladotaan automaattisesti otsikko, joka tulee
-komennosta \komentom{contentsname}. Komento on määritelty
+komennosta \komento{contentsname}. Komento on määritelty
 kieliasetuksissa, ja se latoo suomen kielessä sanan ''Sisältö'' tai
 ''Sisällys''.%
 \footnote{Se, kumpi otsikko on käytössä, riippuu kielipakettien
@@ -2443,10 +2442,10 @@ komento vaikuttaa koko sisällysluetteloon.
 
 Normaalit otsikot tulevat mukaan sisällysluetteloon itsestään, mutta
 joskus voi joutua lisäämään luetteloon kohtia myös keinotekoisesti. Se
-tehdään komennolla \komentom{addcontentsline}, jonka käytöstä on
+tehdään komennolla \komento{addcontentsline}, jonka käytöstä on
 esimerkki luvussa \ref{luku/otsikot}. Pelkkään pdf\-/ tiedoston
 sisäiseen sisällysluetteloon voi lisätä kohtia komennolla
-\komentom{pdfbookmark}, joka kuuluu \paketti{hyperref}\-/ pakettiin.
+\komento{pdfbookmark}, joka kuuluu \paketti{hyperref}\-/ pakettiin.
 Tätä komentoa käsitellään luvussa \ref{luku/pdf-asetukset}.
 
 \begin{esimerkki*}
@@ -2495,7 +2494,7 @@ Tätä komentoa käsitellään luvussa \ref{luku/pdf-asetukset}.
 
 Sisällysluettelon ulkoasun muokkaamista varten on paketti
 \pakettictan{titletoc}, jonka tärkeimmän komennon
-(\komentom{titlecontents}) käyttöä esitellään esimerkissä
+(\komento{titlecontents}) käyttöä esitellään esimerkissä
 \ref{esim/titlecontents}. Komennolla voi muokata paitsi
 sisällysluettelon kohtia mutta myös leijuvien osien (luku
 \ref{luku/leijuosat}) kuten kuvien ja taulukoiden luetteloita.
@@ -2540,19 +2539,19 @@ käyttää pelkästään sitä. Ympäristöä käsitellään luvussa
 \subsection{Perusympäristöt}
 \label{luku/luetelma-perus}
 
-Ympäristö \ymparistom{itemize} tekee numeroimattoman luetelman, jonka
+Ympäristö \ymparisto{itemize} tekee numeroimattoman luetelman, jonka
 jokainen kohta merkitään samanlaisella merkillä, esimerkiksi
-luetelmaympyrällä~(\textbullet). \ymparistom{enumerate} puolestaan on
+luetelmaympyrällä~(\textbullet). \ymparisto{enumerate} puolestaan on
 numeroitu luetelma, eli luetelman kohdat saavat järjestysnumeron tai
 muun järjestystä ilmaisevan merkinnän kuten kirjaimen tai roomalaisen
-numeron. Ympäristö \ymparistom{description} luo määritelmäluetelman,
+numeron. Ympäristö \ymparisto{description} luo määritelmäluetelman,
 jossa luetellaan käsitteitä ja niiden määritelmiä. Tämä on käytännössä
 sama kuin tekstikappaleen riippuva sisennys (luku
 \ref{luku/riippuva-sisennys}), jossa kappale alkaa määriteltävällä
 ilmauksella.
 
 Lähdetiedostossa kaikkien luetelmatyyppien rakenne on samanlainen:
-luetelmaympäristön sisällä käytetään \komentom{item}\-/ komentoa, joka
+luetelmaympäristön sisällä käytetään \komento{item}\-/ komentoa, joka
 aloittaa uuden luetelmakohdan. Komennolle ei tarvitse antaa argumenttia,
 vaan komennon jälkeinen teksti muodostaa luetelman kohdan. Seuraavassa
 on esimerkki \ymparisto{itemize}\-/ ympäristöstä, mutta
@@ -2749,7 +2748,7 @@ jälkeen.
 \subsection{Omat luetelmat (list)}
 \label{luku/list-ympäristö}
 
-Ympäristö \ymparistom{list} on yleistyökalu, joka soveltuu moniin
+Ympäristö \ymparisto{list} on yleistyökalu, joka soveltuu moniin
 asioihin: se on tarkoitettu erilaisten luetelmien rakentamiseen, mutta
 sen avulla muotoilla mitä tahansa tekstikappaleita. Esimerkiksi luvussa
 \ref{luku/luetelma-perus} käsitellyt luetelmat voi toteuttaa myös
@@ -3303,7 +3302,7 @@ mihin sarakkeeseen viiva yltää.
 Taulukon rivit saatetaan latoa oletuksena vähän liian lähelle toisiaan
 -- varsinkin jos käytetään vaakaviivoja. Sen korjaamiseksi on
 taulukoille olemassa oma rivivälikerroin, joka on komennossa
-\komentom{arraystretch}. Kerroin on desimaaliluku, jolla normaali
+\komento{arraystretch}. Kerroin on desimaaliluku, jolla normaali
 rivikorkeus kerrotaan taulukoiden sisällä. Sopiva kerroin lienee yleensä
 1\==1,3. Oletusarvo on~1. Kerroinkomennon voi määritellä milloin hyvänsä
 uudelleen, ja se tehdään seuraavan esimerkin mukaisesti:
@@ -3318,13 +3317,13 @@ uudelleen, ja se tehdään seuraavan esimerkin mukaisesti:
 Sarakkeiden määrittelyssä voi kirjoittaa useita pystyviivoja eli
 \koodi{|}\=/ merkkejä peräkkäin. Silloin pystyviivoja myös ladotaan
 taulukkoon useita vierekkäin. Ladottujen viivojen väliseen etäisyyteen
-voi vaikuttaa mitan \mittam{doublerulesep} avulla. Sen oletusarvo on
+voi vaikuttaa mitan \mitta{doublerulesep} avulla. Sen oletusarvo on
 2\,pt. Kaikkien viivoja paksuus puolestaan on mitassa
-\mittam{arrayrulewidth}, jonka oletusarvo on 0,4\,pt.
+\mitta{arrayrulewidth}, jonka oletusarvo on 0,4\,pt.
 
 Jos sarakkeiden välissä ei ole \koodi{@}\=/ merkillä tehtyjä
 poikkeuksia, ladotaan joka solun vasempaan ja oikeaan reunaan väli, joka
-on määritelty mitassa \mittam{tabcolsep}. Tämän mitan suuruinen väli
+on määritelty mitassa \mitta{tabcolsep}. Tämän mitan suuruinen väli
 siis ladotaan kerran taulukon vasempaan ja oikeaan reunaan ja kaksi
 kertaa jokaisen sarakkeen väliin. Oletusarvo on 6\,pt. Seuraavassa on
 koonti edellä mainittujen mittojen asettamisesta ja niiden oletusarvot.
@@ -3361,8 +3360,8 @@ normaali sarakkeiden pystyviiva, täytyy käyttää komentoa
 Taulukkoympäristön argumenteissa määritellään taulukon sarakkeiden määrä
 ja tyypit, mutta niihin on mahdollista tehdä yksittäisiä poikkeuksia
 taulukon sisällä. Sarakekohtaiset poikkeukset tehdään komennolla
-\komentom{multicolumn} ja rivikohtaiset poikkeukset komennolla
-\komentom{multirow}, joka kuuluu pakettiin \pakettictan{multirow}.
+\komento{multicolumn} ja rivikohtaiset poikkeukset komennolla
+\komento{multirow}, joka kuuluu pakettiin \pakettictan{multirow}.
 
 \begin{esimerkki*}
   \komentoi{\keno}
@@ -3434,7 +3433,7 @@ tietyissä tilanteissa yhteen soluun voidaan latoa useampia rivejä.
 Saraketyyppi~\koodi{p} (taulukko \ref{tlk/taulukko-sarakemerkit}) on
 leveydeltään kiinteä, ja jos solun sisältö ei mahdu kyseiseen tilaan, se
 jaetaan useammalle riville ja sanoja mahdollisesti katkaistaan
-tavurajojen kohdalta. Myös \komentom{newline}\-/ komennolla voi vaihtaa
+tavurajojen kohdalta. Myös \komento{newline}\-/ komennolla voi vaihtaa
 riviä yksittäisen solun sisällä. Sekin toimii vain kiinteäleveyksisillä
 \koodi{p}\-/ tyypin sarakkeilla.
 
@@ -3461,7 +3460,7 @@ kasva, vaan muihin saman taulukkorivin soluihin tulee tyhjää tilaa.
 \noindent
 Joskus puolestaan halutaan, että yksi solu levittäytyy useamman rivin
 alueelle verrattuna taulukon muihin riveihin. Tämän toteutukseen
-tarvitaan \pakettim{multirow}\-/ pakettia ja sen \komentom{multirow}\-/
+tarvitaan \paketti{multirow}\-/ pakettia ja sen \komento{multirow}\-/
 komentoa. Komennon pakolliset argumentit ovat seuraavat:
 
 \komentoi{multirow}
@@ -3535,7 +3534,7 @@ alapuolelta täytyy jättää riittävä määrä soluja tyhjäksi.
 
 \subsection{Kiinteälevyiset taulukot}
 
-Latexin toinen taulukkoympäristö \ymparistom{tabular*} toimii muuten
+Latexin toinen taulukkoympäristö \ymparisto{tabular*} toimii muuten
 samalla tavalla kuin \ymparisto{tabular}, mutta se tarvitsee yhden
 argumentin enemmän, taulukon leveysmitan:
 
@@ -3563,7 +3562,7 @@ vaan ainoastaan niiden välissä oleva tyhjä tila. Usein olisi kuitenkin
 hyödyllisempää, että joidenkin sarakkeiden leveys olisi venyvä ja ne
 mukautuisivat koko taulukon leveyteen. Tämä ominaisuus saadaan
 \pakettictan{tabularx}\-/ paketin avulla. Se määrittelee uuden
-taulukkoympäristön \ymparistom{tabularx}, joka on käytännössä parempi
+taulukkoympäristön \ymparisto{tabularx}, joka on käytännössä parempi
 versio \ymparisto{tabular*}\-/ ympäristöstä. Sen käyttö on samanlaista:
 
 \ymparistoi{tabularx}
@@ -3626,7 +3625,7 @@ saraketyyppejä. Hyödyllisiä tyyppejä voisivat olla esimerkiksi
 \koodi{LCR}, jotka toimisivat lähes samoin kuin perus Latexin
 saraketyypit \koodi{lcr} (taulukko \ref{tlk/taulukko-sarakemerkit})
 mutta olisivat kuitenkin leveydeltään venyviä. Omia saraketyyppejä
-tehdään komennolla \komentom{newcolumntype}, ja edellä mainitut tyypit
+tehdään komennolla \komento{newcolumntype}, ja edellä mainitut tyypit
 voisi määritellä seuraavasti:
 
 \komentoi{arraybackslash}
@@ -3670,7 +3669,7 @@ käytännössä toimi:
 \noindent
 Edellä mainitun puutteen saa korjattua käyttämällä oman ympäristön
 määrittelyssä \ymparisto{tabularx}\-/ ympäristön aloitukseen komentoa
-\komentom{tabularx} ja lopetukseen komentoa \komentom{endtabularx}. Ei
+\komento{tabularx} ja lopetukseen komentoa \komento{endtabularx}. Ei
 siis käytetä normaaleja aloitus\-/\ ja lopetuskomentoja \komento{begin}
 ja \komento{end}.
 
@@ -3693,7 +3692,7 @@ muun muassa sisältää valmiiksi uudet saraketyypit \koodi{LCRJ}.
 Edellä esitellyt taulukkoympäristöt ladotaan aina kokonaisena eli vain
 yhden sivun alueelle. Useammalle sivulle jakautuvia taulukoita voi tehdä
 \pakettictan{longtable}\-/ paketin taulukkoympäristön
-\ymparistom{longtable} avulla. Sitä voi käyttää kuten
+\ymparisto{longtable} avulla. Sitä voi käyttää kuten
 \ymparisto{tabular}\-/ ympäristöä, mutta lisäksi se sisältää komentoja,
 joiden avulla saa joka sivulla toistumaan automaattisesti tietyt
 otsikkorivit tai yhteenvetorivit. Toinen mahdollisuus yli sivurajan
@@ -3953,7 +3952,7 @@ kuten ''kuvassa~1''. Näissä hyödynnetään Latexin ristiviittaustoimintoja
 (luku \ref{luku/ristiviitteet}).
 
 Perus Latex sisältää kaksi erityyppistä leijuvaa osaa, kuvat ja taulukot
-(luku \ref{luku/leijuosat-latex}), mutta \pakettim{floatrow}\-/ paketin
+(luku \ref{luku/leijuosat-latex}), mutta \paketti{floatrow}\-/ paketin
 avulla voi tehdä muunkinlaisia (luku \ref{luku/leijuosat-omat}).
 Esimerkiksi tässä oppaassa on käytössä myös tyyppi ''Esimerkki'', jota
 käytetään leijuvien Latex\-/ koodiesimerkkien toteuttamiseen.
@@ -3974,8 +3973,8 @@ se voi vaikuttaa asiaan.
 Käytännössä leijuvat osat ovat ympäristöjä, joiden sijoittelusta vastaa
 Latex eikä kirjoittaja. Tosin kirjoittajakin voi hieman vaikuttaa
 asiaan, ja tätä käsitellään luvussa \ref{luku/leijuosat-sijoittelu}.
-Ympäristö \ymparistom{table} on tarkoitettu taulukoille, ja ympäristö
-\ymparistom{figure} on kuville. Esimerkistä \ref{esim/leijuosat-perus}
+Ympäristö \ymparisto{table} on tarkoitettu taulukoille, ja ympäristö
+\ymparisto{figure} on kuville. Esimerkistä \ref{esim/leijuosat-perus}
 ilmenee leijuvan taulukon toteuttamisen perusasiat. Muuntyyppiset
 leijuvat osat tehdään samalla tavalla, ympäristö on vain eri.
 
@@ -4040,7 +4039,7 @@ lisätään omia komentoja tietyn kielen asetuksiin, tässä suomen
 kieliasetuksiin (\komento{captionsfinnish}). Kieliasetuksia käsitellään
 tarkemmin luvussa \ref{luku/kieliasetukset}.
 
-Kuvatekstit tehdään komennolla \komentom{caption}, joka sijoitetaan
+Kuvatekstit tehdään komennolla \komento{caption}, joka sijoitetaan
 leijuvan ympäristön sisälle, kuten esimerkissä
 \ref{esim/leijuosat-perus} on tehty. Komennolle annetaan yksi argumentti
 eli haluttu kuvateksti. Siihen ei pidä kirjoittaa leijuvan osan tyyppiä
@@ -4063,7 +4062,7 @@ ristiviittausta varten. Komentoa käsitellään ristiviitteiden yhteydessä
 luvussa \ref{luku/ristiviitteet}.
 
 Leijuvista ympäristöistä on olemassa myös tähdelliset versiot,
-\ymparistom{table*} ja \ymparistom{figure*}. Ympäristöjen eri versioilla
+\ymparisto{table*} ja \ymparisto{figure*}. Ympäristöjen eri versioilla
 on merkitystä vain kaksipalstaisessa tilassa (luku \ref{luku/palstat}),
 jossa normaaliversio (esim. \ymparisto{table}) ladotaan yhden palstan
 sisään ja tähdellinen versio (esim. \ymparisto{table*}) sijoitetaan
@@ -4074,7 +4073,7 @@ palstojen ulkopuolelle, koko sivun tilaan.
 
 Omia, itse nimettyjä leijuvia osia tehdään \pakettictan{floatrow}\-/
 paketin avustuksella. Se sisältää komennon on
-\komentom{DeclareNewFloatType}, jonka argumentit ovat seuraavanlaiset:
+\komento{DeclareNewFloatType}, jonka argumentit ovat seuraavanlaiset:
 
 \komentoi{DeclareNewFloatType}
 \begin{koodilohkosis}
@@ -4160,8 +4159,8 @@ ulkoasun muokkaamista käsitellään luvussa \ref{luku/leijuosat-ulkoasu}.
 \label{luku/leijuosat-luettelot}
 
 Dokumentin leijuvista osista voi latoa automaattisesti luetteloita:
-komennolla \komentom{listoftables} syntyy taulukkoluettelo ja komennolla
-\komentom{listoffigures} kuvaluettelo. Omien leijuvien osien (luku
+komennolla \komento{listoftables} syntyy taulukkoluettelo ja komennolla
+\komento{listoffigures} kuvaluettelo. Omien leijuvien osien (luku
 \ref{luku/leijuosat-omat}) luettelo tehdään \paketti{floatrow}\-/
 paketin komennolla \komento{listof}, jolle annetaan argumentiksi
 leijuvan osan tyyppi sekä luettelon otsikko.
@@ -5393,8 +5392,8 @@ Lopputuloksena lähdemerkinnät näyttävät esimerkiksi seuraavanlaisilta:
 \end{tulossis}
 
 \noindent
-Lähdeluettelo kirjoitetaan \ymparistom{thebibliography}\-/ ympäristön ja
-\komentom{bibitem}\-/ komentojen avulla esimerkin
+Lähdeluettelo kirjoitetaan \ymparisto{thebibliography}\-/ ympäristön ja
+\komento{bibitem}\-/ komentojen avulla esimerkin
 \ref{esim/thebibliography} tavoin. Ympäristön aloittavan komennon
 (rivi~1) yhteydessä on argumentti \koodi{00}, jolla ei ole tässä
 yhteydessä merkitystä. Jos lähdeviittauksen tyylinä olisi
@@ -5483,8 +5482,8 @@ esimerkkiteos on peräisin esimerkistä \ref{esim/thebibliography}.
   \label{tlk/natbib-cite}
 }
 
-Lähdeluettelon ulkoasuun voi vaikuttaa mittojen \mittam{bibhang} ja
-\mittam{bibsep} avulla. Ensin mainittu on lähdemerkinnän vaakasuuntaisen
+Lähdeluettelon ulkoasuun voi vaikuttaa mittojen \mitta{bibhang} ja
+\mitta{bibsep} avulla. Ensin mainittu on lähdemerkinnän vaakasuuntaisen
 riippuvan sisennyksen suuruus, ja jälkimmäinen on lähdemerkintöjen
 välinen pystysuuntainen tila.
 
@@ -5500,7 +5499,7 @@ välinen pystysuuntainen tila.
 
 \noindent
 Lähdemerkintöjen fonttiin voi vaikuttaa määrittelemällä uudelleen
-komennon \komentom{bibfont} ja sijoittamalla halutut fontti- tai muut
+komennon \komento{bibfont} ja sijoittamalla halutut fontti- tai muut
 komennot kyseisen komennon määritelmään.
 
 \komentoi{renewcommand}
@@ -5536,7 +5535,7 @@ Esimerkissä hyödynnetään \komento{addto}\-/ komentoa, joka sisältyy
 \noindent
 On myös mahdollista määritellä koko komentosarja, joka suoritetaan
 lähdeluettelon otsikoinnin yhteydessä. Se tehdään määrittelemällä
-uudelleen komento \komentom{bibsection}.
+uudelleen komento \komento{bibsection}.
 
 \komentoi{renewcommand}
 \komentoi{bibsection}
@@ -5676,26 +5675,26 @@ näyttää.
 
 Todellista käyttöä vastaava tietokanta tai sen osa on esimerkissä
 \ref{esim/bib-tiedosto}, jossa on neljä erityyppistä teostietuetta:
-\koodim{book}, \koodi{incollection}, \koodi{article} ja \koodi{online}.
+\koodi{book}, \koodi{incollection}, \koodi{article} ja \koodi{online}.
 Ensin mainittu teostyyppi \koodi{book} sopii tavallisille kirjoille,
 joissa tietyt tekijät (\koodi{author}) vastaavat suunnilleen koko
 teoksen sisällöstä ja teoksella on jokin julkaisijataho
 (\koodi{publisher}).
 
-Teostyyppi \koodim{incollection} tarkoittaa esimerkiksi
+Teostyyppi \koodi{incollection} tarkoittaa esimerkiksi
 artikkelikokoelmaa, jonka yksittäiseen artikkeliin (\koodi{title}) ja
 sen kirjoittajaan (\koodi{author}) on tarkoitus viitata. Voidaan mainita
 myös artikkelin alku- ja loppusivut (\koodi{pages}). Kokoelmalla on
 toimittaja (\koodi{editor}) ja yhteinen nimi (\koodi{book\-title}).
 
-Tyyppi \koodim{article} sopii säännöllisesti julkaistavan aikakaus- tai
+Tyyppi \koodi{article} sopii säännöllisesti julkaistavan aikakaus- tai
 muun lehden artikkeleihin. Viittauskohteena on yksittäinen artikkeli ja
 sen kirjoittaja. Julkaisutiedoissa mainitaan lehden nimi
 (\koodi{jour\-nal\-title}), julkaisukausi (\koodi{vol\-ume}), kauteen
 kuuluvan julkaisun järjestysnumero (\koodi{num\-ber}) sekä mahdollisesti
 artikkelin sivut (\koodi{pages}).
 
-Verkkolähteiden merkitsemiseen sopii \koodim{online}\-/ teostyyppi,
+Verkkolähteiden merkitsemiseen sopii \koodi{online}\-/ teostyyppi,
 joissa on tavanomaisten kenttien lisäksi ainakin verkko\-/osoite eli
 \koodi{url}\-/kenttä ja mahdollisesti viittauspäivä (\koodi{url\-date})
 osoittamassa, milloin viitatut tiedot olivat saatavilla.
@@ -5945,7 +5944,7 @@ latexmk -lualatex teksti.tex    % tai: -xelatex
 
 Lähdeluettelon ulkoasuun voi vaikuttaa muutaman eri mitan avulla, joista
 esitellään tässä yhteydessä vain osa. Lähdemerkinnän riippuvan
-sisennyksen suuruus määräytyy mitan \mittam{bibhang} avulla. Yleensä
+sisennyksen suuruus määräytyy mitan \mitta{bibhang} avulla. Yleensä
 lienee sopivaa asettaa se samaksi kuin tekstikappaleiden ensimmäisen
 rivin sisennys \mitta{parindent}.
 
@@ -5959,17 +5958,16 @@ rivin sisennys \mitta{parindent}.
 
 \noindent
 Mitta \mitta{bibitemsep} on lähdemerkintöjen välinen pystysuuntainen
-tila. \mittamargin{bibitemsep} Sen avulla voi harventaa lähdeluetteloa,
-jolloin lähdemerkinnät erottuvat paremmin toisistaan. Mitan
-\mittam{bibnamesep} avulla voi tehdä suuremman pystysuuntaisen välin
-lähdemerkintöjen väliin silloin, kun teoksen tekijä vaihtuu
-(\koodi{author} tai \koodi{editor}). Toisin sanoen tämän mitan avulla
-voi ryhmitellä saman tekijän teokset tiiviimmin yhteen ja jättää väliä
-seuraavan tekijän teoksiin. Vastaavanlainen mitta on
-\mittam{bibinitsep}, jota käytetään silloin, kun lähdemerkinnän
-aloittava kirjain vaihtuu. Tämän avulla voi ryhmitellä lähdemerkinnät
-aakkosittain eli tehdä suuremman välin aina lähdemerkinnän alkukirjaimen
-vaihtuessa.
+tila. Sen avulla voi harventaa lähdeluetteloa, jolloin lähdemerkinnät
+erottuvat paremmin toisistaan. Mitan \mitta{bibnamesep} avulla voi tehdä
+suuremman pystysuuntaisen välin lähdemerkintöjen väliin silloin, kun
+teoksen tekijä vaihtuu (\koodi{author} tai \koodi{editor}). Toisin
+sanoen tämän mitan avulla voi ryhmitellä saman tekijän teokset
+tiiviimmin yhteen ja jättää väliä seuraavan tekijän teoksiin.
+Vastaavanlainen mitta on \mitta{bibinitsep}, jota käytetään silloin, kun
+lähdemerkinnän aloittava kirjain vaihtuu. Tämän avulla voi ryhmitellä
+lähdemerkinnät aakkosittain eli tehdä suuremman välin aina
+lähdemerkinnän alkukirjaimen vaihtuessa.
 
 \komentoi{setlength}
 \mittai{bibitemsep}
@@ -5984,7 +5982,7 @@ vaihtuessa.
 \subsubsection{Muita asetuksia}
 
 Lähdemerkintöjen fonttiin voi vaikuttaa määrittelemällä uudelleen
-komennon \komentom{bibfont} ja sijoittamalla halutut fontti- tai muut
+komennon \komento{bibfont} ja sijoittamalla halutut fontti- tai muut
 komennot kyseisen komennon määritelmään.
 
 \komentoi{renewcommand}

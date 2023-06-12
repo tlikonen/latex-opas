@@ -2,13 +2,186 @@
 % Lisenssi: Creative Commons Nimeä-JaaSamoin 4.0 Kansainvälinen (CC BY-SA 4.0)
 % https://creativecommons.org/licenses/by-sa/4.0/legalcode.fi
 
-\chapter{Muuta tekniikkaa KESKEN}
+\chapter{Muuta tekniikkaa}
 
-...
+Tähän päälukuun on koottu sekalaisia ohjeita, jotka eivät oikein sovi
+mihinkään aiempaan päälukuun. Kyse on sellaisesta Latexin tekniikasta,
+jota voi hyödyntää monenlaisissa dokumenteissa ja tilanteissa.
 
-\section{Päiväykset ja kellonajat KESKEN}
+\section{Päiväykset ja kellonajat}
 
-...
+Latexissa on muutama komento, joilla voi latoa dokumenttiin
+automaattisesti kääntämishetken päivämäärän. Sellaista voidaan tarvita
+esimerkiksi dokumentin kansi- tai nimiösivulle ilmaisemaan
+julkaisuajankohtaa. Yleisimmin käytetty komento lienee \komento{today},
+joka latoo nykyisen kielivalinnan mukaisen pitkän päivämäärän:
+
+\komentoi{today}
+\begin{koodilohkosis}
+\today
+\end{koodilohkosis}
+
+\begin{tulossis}
+  12. kesäkuuta 2023
+\end{tulossis}
+
+\noindent
+Edellä on esimerkki suomen kielen kokonaisesta päiväysmerkinnästä.
+Muilla kielillä komento tuottaa tietenkin jotain muuta. Päivämäärään
+sisältyvät lukuarvot voi latoa kahden komennon yhdistelmillä: ensin
+annetaan komento \komento{the} ja sen jälkeen päivää, kuukautta tai
+vuotta ilmaiseva komento, kuten seuraavasta esimerkistä ilmenee.
+
+\komentoi{the}
+\komentoi{day}
+\komentoi{month}
+\komentoi{year}
+\begin{koodilohkosis}
+\the\day.\the\month.\the\year
+\end{koodilohkosis}
+
+\begin{tulossis}
+  12.6.2023
+\end{tulossis}
+
+\noindent
+Monipuolisempia ajanilmauksia voi latoa paketin \pakettictan{datetime2}
+avulla. Se sisältää paljon komentoja ajanilmausten tuottamiseen eri
+muodoissa ja eri kielillä. \paketti{datetime2}\-/ paketti pitäisi ladata
+kieliasetusten (luku \ref{luku/kieliasetukset}) ja kielipaketin jälkeen,
+ja lataamisen yhteydessä voi asettaa, minkä kielten mukaisesti
+ajanilmaukset halutaan latoa. Seuraavassa esimerkissä ladataan suomen
+(\koodi{finnish}) ja brittienglannin (\koodi{en-GB}) ajanilmaukset sekä
+asetetaan, että kellonajoissa ei ole sekunteja mukana.
+
+\pakettii{datetime2}
+\begin{koodilohkosis}
+% Ensin kielipaketti polyglossia tai babel. Sitten:
+\usepackage[finnish, en-GB, showseconds=false]{datetime2}
+\end{koodilohkosis}
+
+\noindent
+Ajanilmausten kielen tai muun tyylin voi muuttaa komennolla
+\komento{DTMsetstyle}, kuten seuraava esimerkki osoittaa. Dokumentin
+kääntämishetken päiväys ladotaan komennolla \komento{DTMtoday}, joka
+vastaa perus Latexin \komento{today}\-/ komentoa. Nykyhetken kellonaika
+saadaan komennolla \komento{DTMcurrenttime}.
+
+\komentoi{DTMsetstyle}
+\komentoi{DTMtoday}
+\komentoi{DTMcurrenttime}
+\begin{koodilohkosis}
+\DTMsetstyle{finnish}
+Tänään on \DTMtoday\ ja kello on \DTMcurrenttime. \\
+\DTMsetstyle{en-GB}
+Today is \DTMtoday\ and the time is \DTMcurrenttime.
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Tänään on 12. kesäkuuta 2023 ja kello on 10.46. \\
+  Today is 12th June 2023 and the time is 10:46am.
+\end{tulossis}
+
+\noindent
+Pitkän päivämäärän sijasta on mahdollista latoa myös pelkistä luvuista
+koostuva päiväys. Tämä vaatii, että ajanilmausten tyyliä muutetaan
+komennolla \komento{DTMsetstyle}. Esimerkiksi suomen kielelle on
+olemassa tyyli \koodi{finnish-numeric} eli numeeristen päiväysten tyyli.
+
+\komentoi{DTMsetstyle}
+\komentoi{DTMtoday}
+\begin{koodilohkosis}
+\DTMsetstyle{finnish-numeric}
+\DTMtoday
+\end{koodilohkosis}
+
+\begin{tulossis}
+  12.6.2023
+\end{tulossis}
+
+\noindent
+\paketti{datetime2}\-/ paketissa on myös komentoja minkä tahansa
+päivämäärän tai kellonajan latomiseen, ei pelkästään nykyhetken.
+Peruskomento päiväyksille on \komento{DTMdisplaydate}, jota käytetään
+seuraavasti:
+
+\komentoi{DTMdisplaydate}
+\begin{koodilohkosis}
+\DTMdisplaydate{vuosi}{kuukausi}{päivä}{viikonpäivä}
+\end{koodilohkosis}
+
+\noindent
+Komennon kaikki argumentit ovat lukuja. Viimeinen argumentti on
+viikonpäivän numero: \koodi{0}~on maanantai, \koodi{1}~on tiistai jne.
+Kaikki ajanilmaustyylit tai \=/kielet eivät huomioi viikonpäivää
+mitenkään. Esimerkiksi suomen kielellä sitä ei huomioida. Argumentiksi
+voi asettaa \koodi{-1}, jolloin viikonpäivä jätetään aina huomioimatta.
+
+\komentoi{DTMsetstyle}
+\komentoi{DTMdisplaydate}
+\begin{koodilohkosis}
+\DTMsetstyle{finnish} Suomi julistautui itsenäiseksi
+\DTMdisplaydate{1917}{12}{6}{-1}. \\
+\DTMsetstyle{en-GB} Finland declared its independence on
+\DTMdisplaydate{1917}{12}{6}{-1}.
+\end{koodilohkosis}
+
+\begin{tulossis}
+  Suomi julistautui itsenäiseksi 6. joulukuuta 1917. \\
+  Finland declared its independence on 6th December 1917.
+\end{tulossis}
+
+\noindent
+Yleensä lienee kätevämpää kirjoittaa kiinteät päivämäärät ja muut
+ajanilmaukset ihan normaalina tekstinä eikä minkään komennon avulla.
+Komento \komento{DTMdisplaydate} voi kuitenkin olla hyödyllinen silloin,
+kun saman Latex\-/ koodin avulla tuotetaan ajanilmauksia useiden
+erikielisten dokumenttien osaksi. Tai ehkä kirjoittaja ei tunne
+kohdekielen ajanilmausten merkintätapoja ja luottaa, että
+\paketti{datetime2}\-/ paketin avulla ne saa oikeanlaiseksi~(?).
+
+Mitä hyvänsä kellonaikoja saa ladottua komennolla
+\komento{DTMdisplaytime}, joka huomioi voimassa olevat kieli- tai
+tyyliasetukset. Komennolle annetaan kolme argumenttia: tunnit, minuutit
+ja sekunnit. Sekunteja ei kuitenkaan näytetä, jos \paketti{datetime2}\-/
+paketin lataamisen yhteydessä on käytetty asetusta
+\koodi{showseconds=\katk false}.
+
+\komentoi{DTMsetstyle}
+\komentoi{DTMdisplaytime}
+\begin{koodilohkosis}
+\DTMsetstyle{finnish} \DTMdisplaytime{11}{43}{27}
+\DTMsetstyle{en-GB}   \DTMdisplaytime{11}{43}{27}
+\end{koodilohkosis}
+
+\begin{tulossis}
+   11.43 11:43am
+\end{tulossis}
+
+\noindent
+Paketti \paketti{datetime2} sisältää paljon muitakin ominaisuuksia ja
+komentoja ajanilmausten käsittelyyn ja latomiseen. Paketin hyödyt
+korostuvat erityisesti silloin, kun tarvitaan automaattisia
+ajanilmauksia eri kielillä. Tarkempaa tietoa on luettavissa paketin
+ohjekirjasta, mutta seuraavassa on vielä yksi esimerkki tilanteesta,
+jossa puhutaan jostakin kuukaudesta, ilman että kirjoitusvaiheessa
+tiedetään, mistä kuukaudesta on kyse.
+
+\komentoi{DTMsavenow}
+\komentoi{DTMfinnishMonthname}
+\komentoi{DTMfetchmonth}
+\komentoi{DTMfetchyear}
+\begin{koodilohkosis}
+\DTMsavenow{nyt}
+\DTMfinnishMonthname{\DTMfetchmonth{nyt}}ssa vuonna \DTMfetchyear{nyt}
+eli tämän tekstin julkaisun aikaan -- --.
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \DTMsavenow{nyt}
+  \DTMfinnishMonthname{\DTMfetchmonth{nyt}}ssa vuonna \DTMfetchyear{nyt}
+  eli tämän tekstin julkaisun aikaan -- --.
+\end{tulossis}
 
 \section{Vapaasti sijoitettava sisältö KESKEN}
 

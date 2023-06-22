@@ -138,8 +138,8 @@ Puutteita ja suunnitelmia
 
   - Lisätään biblatex-lukuun päiväysten muuttaminen (mm. urldate).
   - Lisätään Muuta tekniikkaa -luku, jonka sisällöksi esimerkiksi:
-    päiväykset ja kellonajat (datetime2), textpos-paketti, omien
-    makropakettien ja dokumenttiluokkien tekeminen.
+    textpos-paketti, omien makropakettien ja dokumenttiluokkien
+    tekeminen.
   - Mahdollisesti vaihdetaan uudempaan wrapfig2-pakettiin, kunhan se
     yleistyy.
   - Uusi `fi-x-school`-tavutuskaava.

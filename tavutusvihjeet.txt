@@ -1,3 +1,4 @@
+ab-so-lute
 ab-stract
 abst-ra-hoin-ti
 abst-rak-te-ja
@@ -454,6 +455,7 @@ op-tions
 origin
 otf-info
 other-lan-guage
+over-lay
 over-left-ar-row
 over-right-ar-row
 page
@@ -659,6 +661,8 @@ teks-ti-osaan
 teks-ti-osan
 teks-ti-osas-sa
 text-back-slash
+text-block
+text-block-ori-gin
 text-bullet
 text-cite
 text-color
@@ -670,6 +674,7 @@ text-font
 text-frac-tion
 text-greek
 text-height
+text-pos
 text-quote-dbl
 text-quote-single
 text-sub-script

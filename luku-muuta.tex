@@ -183,6 +183,147 @@ eli tämän tekstin julkaisun aikaan -- --.
   eli tämän tekstin julkaisun aikaan -- --.
 \end{tulossis}
 
-\section{Vapaasti sijoitettava sisältö KESKEN}
+\section{Vapaasti sijoitettava sisältö}
 
-...
+Vapaasti sijoitettava sisältö tarkoittaa tässä sellaista tekstiä, kuvia
+tai muuta sisältöä, joka ei ole osa normaalia tekstivirtaa.
+Tavallisestihan Latex latoo kirjaimia peräkkäin riveiksi ja kappaleiksi
+niin, että sisältö virtaa sujuvasti sivulta toiselle.
+
+Paketin \pakettictan{textpos} avulla voi kuitenkin sijoittaa sivulle
+sisältöä niin, että se on irrallaan normaalista tekstivirrasta.
+Esimerkiksi tekstiä tai kuvia voi sommitella absoluuttisesti tiettyihin
+kohtiin sivulle tai kuvan voi sijoittaa normaalin tekstin taakse.
+
+Paketin lataamisen yhteydessä valitaan joko suhteellinen tai
+absoluuttinen sisällön sijoittelu, eli käytetäänkö valitsinta
+\koodi{absolute} vai ei. Myöhemmin selviää, mitä ne käytännössä
+tarkoittavat.
+
+\pakettii{textpos}
+\begin{koodilohkosis}
+\usepackage{textpos}            % oletus eli suhteellinen sijoittelu
+\usepackage[absolute]{textpos}  % absoluuttinen sijoittelu
+\end{koodilohkosis}
+
+\noindent
+\paketti{textpos}\-/ paketti määrittelee ympäristön nimeltä
+\ymparisto{textblock}, jonka sisällä olevat asiat ovat kokonaan tai
+osittain irrallaan tavallisesta tekstivirrasta. Ympäristö itse ei vie
+sivulta tilaa lainkaan, eli normaalin tekstivirran näkökulmasta se on
+näkymätön. Ympäristö vaatii tiettyjä argumentteja, joiden muoto on
+seuraava:
+
+\ymparistoi{textblock}
+\begin{koodilohkosis}
+\begin{textblock}{leveys}(x,y)
+  ...
+\end{textblock}
+\end{koodilohkosis}
+
+\noindent
+Ympäristön ensimmäinen argumentti \koodi{leveys} on laatikon leveys, ja
+ympäristön toinen argumentti \koodi{(x,y)} ilmaisee sisällön x- ja
+y-koordinaatit. Nämä eivät ole mittoja vaan kertoimia eli mittalukuja,
+joiden yksikkönä on mitta \mitta{TPHorizModule} (leveys ja
+x-koordinaatti) ja \mitta{TPVertModule} (y-koordinaatti). Mitat voi
+asettaa \komento{setlength}\-/ komennolla.
+
+\komentoi{setlength}
+\mittai{TPHorizModule}
+\mittai{TPVertModule}
+\begin{koodilohkosis}
+\setlength{\TPHorizModule}{10mm}  % vaakasuuntainen yksikkö
+\setlength{\TPVertModule} {10mm}  % pystysuuntainen yksikkö
+\end{koodilohkosis}
+
+\noindent
+Edellä olevat komennot asettavat sekä vaaka- että pystysuuntaiseksi
+yksiköksi 10\,mm, joten seuraavassa esimerkissä laatikon leveydeksi
+tulee 50\,mm ja sen sijainti on 70\,mm oikealle ja 35\,mm alas.
+
+\ymparistoi{textblock}
+\begin{koodilohkosis}
+\begin{textblock}{5}(7,3.5)
+  Tämä teksti ei ole osa normaalia tekstivirtaa.
+\end{textblock}
+\end{koodilohkosis}
+
+\noindent
+Jos \paketti{textpos}\-/ paketti ladattiin suhteellisessa
+sijoittelutilassa eli ilman \koodi{absolute}\-/ valitsinta,
+\ymparisto{textblock}\-/ ympäristön x- ja y-koordinaattien origo on
+juuri siinä kohdassa, missä ympäristö sijaitsee sivun normaalissa
+tekstivirrassa. Niinpä esimerkiksi miinusmerkkinen y-koordinaatti
+sijoittaa ympäristön sisältöä kyseisen kohdan yläpuolelle.
+
+Jos paketti ladattiin absoluuttisessa tilassa eli käyttämällä
+\koodi{absolute}\-/ valitsinta, on koordinaattien origo nykyisen sivun
+vasemmassa ylänurkassa (oletuksena). Origon voi siirtää komennolla
+\komento{textblockorigin}, ja sille argumentiksi annetut koordinaatit
+siirtävät origon vasemmasta ylänurkasta oikealle ja alas. Seuraava
+esimerkki siirtää origon leveyssuunnassa sivun keskelle ja
+pystysuunnassa 5\,cm alas sivun yläreunasta.
+
+\komentoi{textblockorigin}
+\mittai{paperwidth}
+\begin{koodilohkosis}
+\textblockorigin{.5\paperwidth}{5cm}
+\end{koodilohkosis}
+
+\noindent
+\ymparisto{textblock}\-/ ympäristön luoman laatikon rajat voi tarkistaa
+antamalla paketin lataamisen yhteydessä valitsimen \koodi{showboxes}.
+Näin laatikon reunaviivat piirretään näkyviin. Varsinkin sommittelutyön
+alkuvaiheessa on usein hyödyllistä nähdä, missä laatikot tarkalleen
+ovat.
+
+\pakettii{textpos}
+\begin{koodilohkosis}
+\usepackage[showboxes]{textpos}
+\end{koodilohkosis}
+
+\noindent
+Kuten edellä jo todettiin, ympäristö \ymparisto{textblock} ei käytä
+argumenteissaan mittoja vaan kertoimia, jotka ovat suhteessa mittoihin
+\mitta{TPHorizModule} ja \mitta{TPVertModule}. Ympäristöstä on kuitenkin
+myös tähdellinen versio \ymparisto{textblock*}, jonka argumenteissa
+käytetään nimenomaan mittoja.
+
+\ymparistoi{textblock*}
+\begin{koodilohkosis}
+\begin{textblock*}{10cm}(3cm,2cm)
+  Tämän laatikon leveys on 10 cm, ja se sijaitsee origosta 3 cm
+  oikealle ja 2 cm alas.
+\end{textblock*}
+\end{koodilohkosis}
+
+\noindent
+Ympäristöt latovat sisältönsä sivulle kerroksittain siten, että sivulla
+ensin oleva \ymparisto{textblock}\-/ sijaitsee alimpana ja seuraavat
+ympäristöt ladotaan edellisten päälle -- mikäli niiden sisältö
+ylipäätään sattuu päällekkäin.
+
+Absoluuttisessa sijoittelutilassa (paketin \koodi{absolute}\-/ valitsin)
+\ymparisto{textblock}\-/ ympäristöjen sisältö sijaitsee kaiken normaalin
+tekstin alla. Tämän voi kuitenkin muuttaa käyttämällä paketin valitsinta
+\koodi{overlay}, joka tuo ympäristöjen sisällön normaalin tekstin
+päälle.
+
+Paketin asetuksia voi muuttaa lataamisen jälkeen komennolla
+\komento{TPoptions}. Komennon argumenttiin kirjoitetaan valitsimia, ja
+niiden arvoksi annetaan joko \koodi{true} (kytke päälle) tai
+\koodi{false} (kytke pois).
+
+\komentoi{TPoptions}
+\begin{koodilohkosis}
+\TPoptions{absolute=false, showboxes=true}
+\end{koodilohkosis}
+
+\noindent
+Tässä alaluvussa esiteltiin ehkä tärkeimmät \paketti{textpos}\-/ paketin
+ominaisuudet ja niiden käyttäminen. Hieman muitakin ominaisuuksia on.
+Esimerkiksi ympäristöjen sijoittelun kohdistusruudukon saa näkyviin ja
+määriteltyä omalla komennollaan. Laatikoiden reunaviivojen leveyden ja
+värin sekä sisällön marginaalin voi asettaa. Lisätietoa on luettavissa
+paketin ohjekirjasta.

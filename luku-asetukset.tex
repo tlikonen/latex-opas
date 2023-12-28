@@ -2210,7 +2210,9 @@ että Latex\-/dokumentin esittelyosassa ladataan kielipaketti ja
 määritellään dokumentin pääasiallinen kieli ja mahdolliset muut kielet.
 Jos dokumentin tekstiosa sisältää muita kuin pääasiallista kieltä,
 täytyy käyttää erityisiä komentoja tai ympäristöjä, joilla kerrotaan
-Latexille, mistä kielestä on kyse.
+Latexille, mistä kielestä on kyse. Tavutusta käsittele luku
+\ref{luku/tavutus} sisältää tietoa kummankin kielipaketin tavutukseen
+vaikuttavista ominaisuuksista.
 
 \subsection{Polyglossia}
 \label{luku/polyglossia}
@@ -2235,17 +2237,8 @@ esimerkiksi seuraavanlaiselta:
 Eri kielillä on erilaisia valinnaisia asetuksia, jotka täytyy selvittää
 \paketti{polyglossia}\-/paketin ohjekirjasta. Asetukset liittyvät
 esimerkiksi kielen kirjoitusjärjestelmän alueelliseen tai
-historialliseen vaihteluun. Yleinen moniin kieliin sopiva valitsin on
-\koodi{babel\-short\-hands}, joka lisää erilaisia, lähinnä tavutukseen
-liittyviä komentoja (luku \ref{luku/tavutus}). Suomen kielen voisi siis
-ottaa käyttöön myös seuraavalla tavalla:
+historialliseen vaihteluun.
 
-\komentoi{setdefaultlanguage}
-\begin{koodilohkosis}
-\setdefaultlanguage[babelshorthands]{finnish}
-\end{koodilohkosis}
-
-\noindent
 Dokumentin tekstiosa käyttää kieltä, joka määriteltiin komennolla
 \komento{setdefaultlanguage}. Muita dokumentin esittelyosassa
 määriteltyjä kieliä voi käyttää väliaikaisesti komennolla, joka alkaa
@@ -2416,28 +2409,30 @@ ohjekirjasta.
 \section{Tavutus}
 \label{luku/tavutus}
 
-Tex tavuttaa eli katkaisee sanoja automaattisesti rivien lopussa, jotta
-se saa tekstikappaleet näyttämään tasapainoisilta. Lähtökohtaisesti
-tavutus määräytyy kielikohtaisten tavutussääntöjen ja \=/asetusten
-perusteella, mutta kirjoittaja voi tehdä poikkeuksia kirjoittamalla
-tavutusvihjeitä. Käytännössä tavutusvihjeitä tarvitaan välillä. Kielen
-valintaa ja yleisiä kieliasetuksia käsitellään tarkemmin luvussa
-\ref{luku/kieliasetukset}.
+Sanojen tavutus eli katkaiseminen rivin lopussa tavurajan kohdalta
+kytkeytyy läheisesti kieliasetuksiin (luku \ref{luku/kieliasetukset}),
+joihin on syytä perehtyä ennen tämän luvun lukemista.
 
-\subsection{Yleiset tavutussäännöt}
+Tex tavuttaa eli katkaisee sanat automaattisesti rivien lopussa, jotta
+se saa tekstikappaleet näyttämään tasapainoisilta. Tavutus perustuu
+yksinkertaisiin kirjainpohjaisiin sääntöihin: millaisia konsonanttien ja
+vokaalien yhdistelmiä tavuissa voi olla. Tavutussäännöt määräytyvät
+valitun kielen ja siihen liittyvien asetusten perusteella.
 
-Texin automaattinen tavutus ei perustu varsinaiseen sanojen eikä
-taivutusmuotojen tunnistamiseen vaan yksinkertaisiin kirjainpohjaisiin
-sääntöihin. Säännöt pyrkivät kuvaamaan kielen tavujen rakenteen ja
-huomioimaan myös typografiaan liittyviä suosituksia.
+Automaattinen tavutus auttaa paljon, mutta se ei yksinään riitä. Se
+tavuttaa välillä kielen kannalta väärin tai tuottaa muuten suositusten
+vastaista jälkeä. Kirjoittajan täytyy siis auttaa välillä eli kirjoittaa
+tavutusvihjeitä. Texissä itsessään on tavutukseen vaikuttavia
+erikoismerkkejä ja toimintoja, mutta myös kielipaketeissa
+\paketti{polyglossia} ja \paketti{babel} on omia tavutukseen vaikuttavia
+erikoisuuksiaan, jotka voivat olla eri kielissä erilaisia.
+Kielipakettien ominaisuuksia käsitellään tämän luvun alaluvuissa.
 
-Automaattinen tavutus auttaa paljon, mutta se ei yksinään riitä, koska
-se tavuttaa välillä kielen kannalta väärin tai tuottaa muuten
-suositusten vastaista jälkeä. Kirjoittajan täytyy siis auttaa välillä
-eli kirjoittaa tavutusvihjeitä. Yksi tapa tavutusvihjeiden
-kirjoittamiseen on \komento{hyphenation}\-/ komento, jolla määritellään
-yksittäisten sanojen tavutuskohdat kaikkialla dokumentissa. Seuraava
-esimerkki selventää komennon käyttöä:
+\subsection{Yleiset tavutusvihjeet}
+
+Yksi tapa tavutusvihjeiden kirjoittamiseen on \komento{hyphenation}\-/
+komento, jolla määritellään yksittäisten sanojen tavutuskohdat
+kaikkialla dokumentissa. Seuraava esimerkki selventää komennon käyttöä:
 
 \komentoi{hyphenation}
 \begin{koodilohkosis}
@@ -2476,10 +2471,62 @@ Myös tavutusvihje (\komento{-}) käyttäytyy yleensä samoin: jos sanassa
 on mukana yksikin tavutusvihje, tavalliset tavutuskohdat kytkeytyvät
 pois käytöstä, ja sana katkaistaan vain tavutusvihjeiden kohdalta sekä
 edellä mainittujen viivavälimerkkien jälkeen. Kielipaketti
-\paketti{babel} (luku \ref{luku/babel}) käyttäytyy kuitenkin suomen
-kielessä eri tavoin. Se määrittelee suomen kielelle tavutusvihjeen
-siten, että se sallii sanan tavutuksen muistakin kohdista kuin
-tavutusvihjeen kohdalta.
+\paketti{babel} käyttäytyy kuitenkin suomen kielessä eri tavoin. Se
+määrittelee suomen kielelle tavutusvihjeen siten, että se sallii sanan
+tavutuksen muistakin kohdista kuin tavutusvihjeen kohdalta (luku
+\ref{luku/tavutus-babel}).
+
+\subsection{Polyglossia ja tavutus KESKEN}
+
+Kielipaketti \pakettictan{polyglossia} (luku \ref{luku/polyglossia})
+sisältää tavutukseen vaikuttavia asetuksia, jotka ovat eri kielissä
+erilaisia. Suomen kielellä on hyödyllistä ottaa käyttöön asetus
+\koodi{babelshorthands}, joka tuo mukaan muutaman tavutukseen
+vaikuttavan erikoismerkin.
+
+\komentoi{setdefaultlanguage}
+\begin{koodilohkosis}
+\setdefaultlanguage[babelshorthands]{finnish}
+\end{koodilohkosis}
+
+\noindent
+Asetus \koodi{babelshorthands} lisää erikoismerkkivalikoimaan seuraavat
+tavutukseen vaikuttavat merkit.
+
+\newcommand{\shorthandsyhdysmerkki}{%
+\item [\textquotedbl-] Sitova yhdysmerkki (\=/), joka sitoo merkin
+  seuraavaan sanaan eli estää katkaisemisen yhdysmerkin jälkeen. Tämä
+  merkki sallii sanan tavuttamisen muista kohdista. Myös Unicode\-/
+  merkistön sitovaa yhdysmerkkiä (\uctunnus{u+2011 non\-/ breaking
+    hyphen}) voi käyttää.}
+
+\newcommand{\shorthandspystyviiva}{%
+\item [\textquotedbl|] Estää typografisten ligatuurien (luku
+  \ref{luku/typo-liga}) muodostumisen tähän kohtaan. Esimerkiksi fi\-/
+  ligatuurin muodostumisen voi estää kirjoittamalla \koodi{f"|i}, ja
+  tuloksena on kaksi erillistä merkkiä: f\textcompwordmark i.}
+
+\newcommand{\shorthandslainausmerkki}{%
+\item [\textquotedbl\textquotedbl] Tavutusvihje, joka ei lisää
+  tavutuskohtaan yhdysmerkkiä. Tämä on hyödyllinen esimerkiksi
+  teknisissä ilmauksissa, joissa sanaan tarvitaan mahdollinen
+  katkaisukohta mutta ei haluta lisätä ylimääräistä yhdysmerkkiä
+  sotkemaan ilmausta.}
+
+\begin{maaritelma}{\koodi{#1}}
+  \shorthandsyhdysmerkki
+
+\item [\textquotedbl\textasciitilde] Sama kuin edellinen
+  (\koodi{\textquotedbl-}).
+
+  \shorthandspystyviiva
+
+  \shorthandslainausmerkki
+
+\item [\textquotedbl/] Vinoviiva (/), jonka jälkeen on tavutusvihje.
+  Tavutuskohtaan ei lisätä yhdysmerkkiä. Tavutus sallitaan sanan muista
+  kohdista.
+\end{maaritelma}
 
 \leijutlk{
   \begin{tabular}{lll}
@@ -2489,17 +2536,13 @@ tavutusvihjeen kohdalta.
     & \ots{Merkitys} \\
     \midrule
 
-    \koodi{matkustaa}
-    & mat\tavukohta kus\tavukohta taa
-    & tavutus kaikista kohdista \\
+    \koodi{erikoisalalla}
+    & eri\tavukohta koi\tavukohta sa\tavukohta lal\tavukohta la
+    & tavutus kaikista kohdista (väärin) \\
 
-    \koodi{matkus\komento{-}taa}
-    & matkus\tavukohta taa
+    \koodi{erikois\komento{-}alalla}
+    & erikois\tavukohta alalla
     & vain tavutusvihjeen kohdalta \\
-
-    \koodi{matkus\komento{-}taa}
-    & mat\tavukohta kus\tavukohta taa
-    & (\paketti{babel} ja suomen kieli) \\
 
     \koodi{matka-aika}
     & matka-\tavukohta aika
@@ -2517,9 +2560,93 @@ tavutusvihjeen kohdalta.
     & Oulu--\tavukohta Rova\tavukohta niemi
     & vain ajatusviiva ja tavutusvihje \\
 
+    \koodi{matka-}
+    & matka-
+    & ei tavutuskohtia \\
+
+    \koodi{-aika}
+    & -\tavukohta aika
+    & vain yhdysmerkin jälkeen \\
+
+    \koodi{\textquotedbl-aika}
+    & -ai\tavukohta ka
+    & ei sitovan yhdysmerkin jälkeen \\
+
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Tavutusvihjeen, yhdysmerkin ja ajatusviivan sekä
+    \paketti{polyglossia}\-/ paketin erikoismerkkien
+    (\koodi{babelshorthands}) vaikutus tavutukseen}
+  \label{tlk/polyglossia-tavutus}
+}
+
+\noindent
+Taulukossa \ref{tlk/polyglossia-tavutus} on esimerkkejä
+tavutusvihjeiden, yhdysmerkin ja ajatusviivan sekä
+\paketti{polyglossia}\-/ paketin erikoismerkkien vaikutuksesta.
+
+% käsitellään schoolhyphens
+
+\subsection{Babel ja tavutus}
+\label{luku/tavutus-babel}
+
+Kielipaketti \pakettictan{babel}\yipilkku\footnote{Katso myös
+  \paketti{babel}\-/ paketin mukana toimitettavat kielikohtaiset
+  dokumentit, esimerkiksi tiedosto \koodi{finnish.pdf}.} (luku
+\ref{luku/babel}) lisää automaattisesti moniin kieliin -- myös suomen
+kieleen -- muutaman erikoismerkin, joilla voi vaikuttaa tavutukseen.
+Erikoismerkit saa pois päältä käyttämällä paketin lataamisen yhteydessä
+valitsinta \koodi{shorthands=\katk off}. Seuraavassa on selitetty suomen
+kielen erikoismerkkejä.
+
+\begin{maaritelma}{\koodi{#1}}
+\item [\komento{-}] Tämä on Texin normaali tavutusvihje (luku
+  \ref{luku/tavutuksen-merkit}), mutta \paketti{babel} määrittelee sen
+  suomen kielessä uudelleen siten, että tavutus sallitaan sanassa myös
+  muista kohdista tavutussääntöjen mukaan.
+
+  \shorthandsyhdysmerkki
+
+\item [\textquotedbl=] Sama kuin edellinen (\koodi{\textquotedbl-}).
+
+  \shorthandspystyviiva
+
+  \shorthandslainausmerkki
+
+\end{maaritelma}
+
+\leijutlk{
+  \begin{tabular}{lll}
+    \toprule
+    \ots{Lähde}
+    & \ots{Tavutus}
+    & \ots{Merkitys} \\
+    \midrule
+
+    \koodi{erikoisalalla}
+    & eri\tavukohta koi\tavukohta sa\tavukohta lal\tavukohta la
+    & tavutus kaikista kohdista (väärin) \\
+
+    \koodi{erikois\komento{-}alalla}
+    & eri\tavukohta kois\tavukohta alal\tavukohta la
+    & tavutusvihjeen kohdalta ja muualta \\
+
+    \koodi{matka-aika}
+    & matka-\tavukohta aika
+    & vain yhdysmerkin jälkeen \\
+
+    \koodi{matka-ai\komento{-}ka}
+    & matka-\tavukohta ai\tavukohta ka
+    & vain yhdysmerkki ja tavutusvihje \\
+
+    \koodi{Oulu--Rovaniemi}
+    & Oulu--\tavukohta Rovaniemi
+    & vain ajatusviivan jälkeen \\
+
     \koodi{Oulu--Rova\komento{-}niemi}
     & Oulu--\tavukohta Rova\tavukohta nie\tavukohta mi
-    & (\paketti{babel} ja suomen kieli) \\
+    & tavutusvihjeen kohdalta ja muualta \\
 
     \koodi{matka-}
     & matka-
@@ -2529,45 +2656,31 @@ tavutusvihjeen kohdalta.
     & -\tavukohta aika
     & vain yhdysmerkin jälkeen \\
 
+    \koodi{\textquotedbl-aika}
+    & -ai\tavukohta ka
+    & ei sitovan yhdysmerkin jälkeen \\
+
     \bottomrule
   \end{tabular}
 }{
-  \caption{Tavutusvihjeen, yhdysmerkin ja ajatusviivan vaikutus
-    tavutukseen. \paketti{babel}\-/ kielipaketin tavutusvihje
-    (\komento{-}) ei suomen kielessä estä sanan tavutusta muista
-    kohdista}
-  \label{tlk/tex-tavutus}
+  \caption{Tavutusvihjeen, yhdysmerkin ja ajatusviivan sekä
+    \paketti{babel}\-/ paketin suomen kieliasetusten ja erikoismerkkien
+    vaikutus tavutukseen}
+  \label{tlk/babel-tavutus}
 }
 
-Taulukossa \ref{tlk/tex-tavutus} on esimerkkejä tavutusvihjeiden,
-yhdysmerkin ja ajatusviivan vaikutuksesta. Ensimmäisessä sarakkeessa on
-esimerkkisana siinä muodossa kuin se kirjoitetaan lähdetiedostoon.
-Toisessa sarakkeessa on ladottu sana, johon on pystyviivalla merkittynä
-mahdolliset tavutuskohdat.
+\noindent
+Taulukossa \ref{tlk/babel-tavutus} on esimerkkejä suomen kielen
+tavutuksesta, kun sanassa on tavutusvihjeitä, yhdysmerkkejä,
+ajatusviivoja sekä \paketti{babel}\-/ paketin erikoismerkkejä.
 
-Taulukon viimeinen rivi paljastaa suomen kielen kannalta ongelmallisen
-tilanteen. Esimerkiksi ilmauksessa \emph{matkasuunnitelma ja
-  \mbox{-aika}} ei riviä saa katkaista sanassa \emph{\mbox{-aika}}
-olevan yhdysmerkin jälkeen, koska rivin loppuun jäisi yksinäinen
-yhdysmerkki. Latexin peruskeinoilla sana täytyy laittaa näkymättömään
-laatikkoon, joka pitää merkit yhdessä: \komento{mbox}\komentoarg{-aika}.
-Toinen vaihtoehto on sitovan yhdysmerkin käyttö, jota käsitellään
-seuraavassa alaluvussa.
+\subsection{Viivojen erikoispaketti extdash KESKEN}
 
-\subsection{Tavutuksen sallivia ja sitovia merkkejä}
-\label{luku/tavutus-sallivat-sitovat}
-
-Unicode\-/merkistön sitova yhdysmerkki \uctunnus{u+2011 non\-/ breaking
-  hyphen} näkyy tavallisena yhdysmerkkinä, mutta se estää sanan
-katkaisemisen yhdysmerkin vierestä. \uctunnus{u+2011}\-/merkkiä voi
-käyttää, mutta se ei ole aina toiminut luotettavasti eikä
-yhdenmukaisesti eri kääntäjissä. Yhteensopivuussyistä voi olla järkevää
-käyttää muita vaihtoehtoja sitovalle yhdysmerkille.
-
-Paketti \pakettictan{extdash} tuo uusia komentoja ja mahdollisuuksia
-tavutuksen hallintaan. Komennot ovat sellaisia kuin \komento{Hyphdash}
-ja \komento{Endash}, mutta niille on saatavilla myös lyhemmät muodot,
-jos paketin lataa käyttämällä \koodi{short\-cuts}\-/ valitsinta.
+Paketti \pakettictan{extdash} tuo uusia komentoja viivavälimerkeille ja
+mahdollisuuksia tavutuksen hallintaan. Komennot ovat sellaisia kuin
+\komento{Hyphdash} ja \komento{Endash}, mutta niille on saatavilla myös
+lyhemmät muodot, jos paketin lataa käyttämällä \koodi{short\-cuts}\-/
+valitsinta.
 
 \komentoi{usepackage}
 \pakettii{extdash}
@@ -2582,7 +2695,7 @@ Texin viivavälimerkit (luku \ref{luku/tavutuksen-merkit}) aina estävät
 tavutuksen muualta kuin välimerkin jälkeen, \paketti{extdash}\-/ paketin
 perusvaihtoehdot sallivat tavutuksen muualtakin. Lisäksi kaikille
 kolmelle viivavälimerkille on sitova versio, joka estää tavutuksen
-välimerkin kohdalta (mutta sallii muualta).
+välimerkin jälkeen mutta sallii muualta.
 
 Taulukossa \ref{tlk/extdash} ovat \paketti{extdash}\-/paketin tärkeimmät
 komennot ja niiden merkitykset. Taulukossa \ref{tlk/extdash-vertailu}
@@ -2638,7 +2751,7 @@ vertaillaan \paketti{extdash}\-/paketin komentoja Texin vastaaviin.
     \bottomrule
   \end{tabular}
 }{
-  \caption{Texin ja \paketti{extdash}-paketin komentojen vertailua}
+  \caption{Texin ja \paketti{extdash}-paketin viivamerkkien vertailua}
   \label{tlk/extdash-vertailu}
 }
 
@@ -2712,23 +2825,6 @@ esittelyosassa.
 \subsection{Muita tavutusasetuksia ja -vinkkejä}
 \label{luku/tavutus-muut}
 
-Aiemmin mainittu \paketti{extdash}\-/paketti sisältää tavutuksen
-hallintaan liittyviä välimerkkejä, mutta kielestä riippuen sellaisia on
-myös kielipaketeissa \paketti{babel} ja \paketti{polyglossia}.
-Jälkimmäiseen pakettiin lisävälimerkit täytyy kytkeä erikseen päälle
-käyttämällä valitsinta \koodi{babelshorthands} (luku
-\ref{luku/polyglossia}).
-
-Molemmat kielipaketit tuovat suomen kieleen muun muassa sitovan,
-tavutuksen sallivan yhdysmerkin \koodi{\textquotedbl\=/}, joka toimii
-samoin kuin \paketti{extdash}\-/ paketin komento \komento{=/}. Lisäksi
-on tavutusvihje \koodi{\textquotedbl\textquotedbl}, joka ei tee
-yhdysmerkkiä katkaisukohtaan. Sitä voi käyttää teknisten ilmausten
-tavutusvihjeenä, koska niihin ei välttämättä haluta yhdysmerkkiä edes
-katkaisutilanteessa. Muitakin yleislainausmerkillä
-(\koodi{\textquotedbl}) alkavia erikoismerkkejä sisältyy
-kieliasetuksiin.
-
 Varsinainen tavutuksen peruskomento on \komento{discretionary}, joka
 mahdollistaa omanlaisten tavutuskohtien määrittelyn. Komento
 kirjoitetaan sanassa juuri siihen kohtaan, johon tavutuskohta halutaan,
@@ -2793,6 +2889,33 @@ Paketti hyödyntää Lualatex\-/ kääntäjän ominaisuuksia, eikä se siis
 toimi muiden kääntäjien kanssa.
 
 \subsection{Suomen kielen tavutus}
+
+% Suomen kielelle on olemassa Latexissa kaksi erilaista tavutussääntöä.
+% Oletuksena toimivat säännöt kuvaavat tavujen rakenteen mutta pyrkivät
+% huomioimaan myös typografisia suosituksia. Sanaa ei esimerkiksi
+% katkaista vokaalien välistä, koska se ei ole suositeltavaa. Myös jotkin
+% yleiset vierasperäisten sanojen konsonanttiyhdistelmät pidetään yhdessä,
+% vaikka ne suomen tavurakenteen mukaan kuuluisivat joskus eri tavuihin.
+% Toinen, vaihtoehtoinen tavutussäännöstö kuvaa pelkästään suomen tavujen
+% rakenteen, eli se tavuttaa sanat kaikista mahdollisista kohdista eikä
+% huomioi typografisia suosituksia mitenkään. Tämä vaihtoehtoinen
+% tavutustapa täytyy kytkeä erikseen päälle kielipaketin asetuksista.
+
+% Sitova yhdysmerkki on tarpeellinen suomen kielessä, kun yhdysmerkkiä
+% ennen on sanaväli. Esimerkiksi ilmauksessa \emph{matkasuunnitelma ja
+%   \mbox{-aika}} ei riviä saa katkaista sanassa \emph{\mbox{-aika}}
+% olevan yhdysmerkin jälkeen. Täytyy siis käyttää sitovaa yhdysmerkkiä eli
+% merkkiä, joka sitoo yhdysmerkin kiinni seuraavaan
+% sanaan.\footnote{Latexin peruskeinoilla sana täytyisi laittaa
+%   näkymättömään laatikkoon, joka pitää merkit yhdessä:
+%   \komento{mbox}\komentoarg{-aika}.}
+
+% Unicode\-/merkistön sitova yhdysmerkki \uctunnus{u+2011 non\-/ breaking
+%   hyphen} näkyy tavallisena yhdysmerkkinä, mutta se estää sanan
+% katkaisemisen yhdysmerkin vierestä. \uctunnus{u+2011}\-/merkkiä voi
+% käyttää, mutta se ei ole aina toiminut luotettavasti eikä
+% yhdenmukaisesti eri kääntäjissä. Yhteensopivuussyistä voi olla järkevää
+% käyttää muita vaihtoehtoja sitovalle yhdysmerkille.
 
 Texin kirjainyhdistelmiin perustuvat tavutussäännöt eivät yksinään ole
 tarpeeksi älykkäitä suomen kieleen, ja esimerkiksi yhdyssanojen

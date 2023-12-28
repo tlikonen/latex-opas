@@ -140,6 +140,3 @@ Puutteita ja suunnitelmia
   - Lisätään ohjeet omien pakettien ja dokumenttiluokkien tekemiseen.
   - Mahdollisesti vaihdetaan uudempaan wrapfig2-pakettiin, kunhan se
     yleistyy.
-  - Uusi `fi-x-school`-tavutuskaava.
-  - Babelin versiossa 3.70 on ominaisuus, joka hoitaa automaattisesti
-    yhdysmerkin oikein tilanteessa "pakastekaapit ja -arkut".

@@ -2476,7 +2476,7 @@ määrittelee suomen kielelle tavutusvihjeen siten, että se sallii sanan
 tavutuksen muistakin kohdista kuin tavutusvihjeen kohdalta (luku
 \ref{luku/tavutus-babel}).
 
-\subsection{Polyglossia ja tavutus KESKEN}
+\subsection{Polyglossia ja tavutus}
 
 Kielipaketti \pakettictan{polyglossia} (luku \ref{luku/polyglossia})
 sisältää tavutukseen vaikuttavia asetuksia, jotka ovat eri kielissä
@@ -2490,8 +2490,11 @@ vaikuttavan erikoismerkin.
 \end{koodilohkosis}
 
 \noindent
-Asetus \koodi{babelshorthands} lisää erikoismerkkivalikoimaan seuraavat
-tavutukseen vaikuttavat merkit.
+Asetus \koodi{babelshorthands} lisää erikoismerkkivalikoimaan alla
+olevat tavutukseen vaikuttavat merkit. Taulukossa
+\ref{tlk/polyglossia-tavutus} on esimerkkejä tavutusvihjeiden,
+yhdysmerkin ja ajatusviivan sekä \paketti{polyglossia}\-/ paketin
+erikoismerkkien vaikutuksesta.
 
 \newcommand{\shorthandsyhdysmerkki}{%
 \item [\textquotedbl-] Sitova yhdysmerkki (\=/), joka sitoo merkin
@@ -2582,11 +2585,17 @@ tavutukseen vaikuttavat merkit.
 }
 
 \noindent
-Taulukossa \ref{tlk/polyglossia-tavutus} on esimerkkejä
-tavutusvihjeiden, yhdysmerkin ja ajatusviivan sekä
-\paketti{polyglossia}\-/ paketin erikoismerkkien vaikutuksesta.
+Suomen kielellä vaihtoehtoisen tavutussäännöstön voi kytkeä päälle
+käyttämällä kielen asettamisen yhteydessä valitsinta
+\koodi{schoolhyphens}. Se kytkee päälle yksinkertaisen
+tavutussäännöstön, jossa sanan katkaiseminen sallitaan kaikista
+mahdollisista suomen kielen tavutuskohdista. Lisätietoa suomen
+tavutuksen erityispiirteistä on luvussa \ref{luku/suomi-tavutus}.
 
-% käsitellään schoolhyphens
+\komentoi{setdefaultlanguage}
+\begin{koodilohkosis}
+\setdefaultlanguage[schoolhyphens]{finnish}
+\end{koodilohkosis}
 
 \subsection{Babel ja tavutus}
 \label{luku/tavutus-babel}
@@ -2672,12 +2681,36 @@ kielen erikoismerkkejä.
 \noindent
 Taulukossa \ref{tlk/babel-tavutus} on esimerkkejä suomen kielen
 tavutuksesta, kun sanassa on tavutusvihjeitä, yhdysmerkkejä,
-ajatusviivoja sekä \paketti{babel}\-/ paketin erikoismerkkejä.
+ajatusviivoja tai \paketti{babel}\-/ paketin erikoismerkkejä.
 
-\subsection{Viivojen erikoispaketti extdash KESKEN}
+Taulukon viimeinen rivi soittaa, että kun sanan alussa on yhdysmerkki,
+täytyy suomen kielessä käyttää sitovaa yhdysmerkkiä, joka estää
+tavutuksen heti yhdysmerkin jälkeen. Toisaalta \paketti{babel}\-/
+paketissa on suomen kielelle asetus, joka käsittelee sanan alussa olevan
+yhdysmerkin automaattisesti oikein. Ominaisuus kytketään päälle
+kielipaketin lataamisen jälkeen \komento{babelprovide}\-/ komennolla
+seuraavasti:
 
-Paketti \pakettictan{extdash} tuo uusia komentoja viivavälimerkeille ja
-mahdollisuuksia tavutuksen hallintaan. Komennot ovat sellaisia kuin
+\komentoi{usepackage}
+\pakettii{babel}
+\komentoi{babelprovide}
+\begin{koodilohkosis}
+\usepackage{main=finnish}{babel}
+\babelprovide[transforms = prehyphen.nobreak]{finnish}
+\end{koodilohkosis}
+
+\noindent
+Kun edellä mainittu asetus on päällä, voi lähdetiedostoon kirjoittaa
+huoletta esimerkiksi \koodi{matkasuunnitelma ja \=/aika} (ilman sitovaa
+yhdysmerkkiä), ja silti sanaan \emph{\mbox{-aika}} sisältyvä yhdysmerkki
+pysyy kiinni sanassa eikä jää koskaan yksin rivin loppuun.
+
+\subsection{Viivojen erikoispaketti extdash}
+
+Jos Texin ja kielipakettien välimerkit ja tavutusvihjeet eivät riitä,
+mahdollisuuksia saa lisää \pakettictan{extdash}\-/ paketin avulla. Se
+tuo mukaan uusia komentoja viivavälimerkeille ja samalla lisää
+vaihtoehtoja tavutuksen hallintaan. Komennot ovat sellaisia kuin
 \komento{Hyphdash} ja \komento{Endash}, mutta niille on saatavilla myös
 lyhemmät muodot, jos paketin lataa käyttämällä \koodi{short\-cuts}\-/
 valitsinta.
@@ -2888,18 +2921,24 @@ kaikkien sanojen mahdollisiin tavutuskohtiin ladotaan pieni merkki.
 Paketti hyödyntää Lualatex\-/ kääntäjän ominaisuuksia, eikä se siis
 toimi muiden kääntäjien kanssa.
 
-\subsection{Suomen kielen tavutus}
+\subsection{Suomen kielen tavutus KESKEN}
+\label{luku/suomi-tavutus}
 
-% Suomen kielelle on olemassa Latexissa kaksi erilaista tavutussääntöä.
-% Oletuksena toimivat säännöt kuvaavat tavujen rakenteen mutta pyrkivät
-% huomioimaan myös typografisia suosituksia. Sanaa ei esimerkiksi
-% katkaista vokaalien välistä, koska se ei ole suositeltavaa. Myös jotkin
-% yleiset vierasperäisten sanojen konsonanttiyhdistelmät pidetään yhdessä,
-% vaikka ne suomen tavurakenteen mukaan kuuluisivat joskus eri tavuihin.
-% Toinen, vaihtoehtoinen tavutussäännöstö kuvaa pelkästään suomen tavujen
-% rakenteen, eli se tavuttaa sanat kaikista mahdollisista kohdista eikä
-% huomioi typografisia suosituksia mitenkään. Tämä vaihtoehtoinen
-% tavutustapa täytyy kytkeä erikseen päälle kielipaketin asetuksista.
+Suomen kielelle on olemassa Latexissa kaksi erilaista tavutussääntöä.
+Oletuksena toimivat säännöt kuvaavat tavujen rakenteen mutta pyrkivät
+huomioimaan myös typografisia suosituksia. Sanaa ei esimerkiksi
+katkaista vokaalien välistä, koska se ei ole suositeltavaa. Myös jotkin
+yleiset vierasperäisten sanojen konsonanttiyhdistelmät pidetään yhdessä,
+vaikka ne suomen tavurakenteen mukaan kuuluisivat joskus eri tavuihin.
+
+Toinen, vaihtoehtoinen tavutussäännöstö kuvaa pelkästään suomen tavujen
+rakenteen, eli se tavuttaa sanat kaikista mahdollisista kohdista eikä
+huomioi typografisia suosituksia mitenkään.%
+\footnote{Lisätietoa:
+  \url{https://github.com/hyphenation/basic-finnish}} Tämä
+vaihtoehtoinen tavutustapa täytyy kytkeä erikseen päälle kielipaketin
+asetuksista (lu.
+
 
 % Sitova yhdysmerkki on tarpeellinen suomen kielessä, kun yhdysmerkkiä
 % ennen on sanaväli. Esimerkiksi ilmauksessa \emph{matkasuunnitelma ja

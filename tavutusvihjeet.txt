@@ -52,6 +52,7 @@ as-pect-ra-tio
 author
 babel
 babel-font
+babel-pro-vide
 babel-short-hands
 babel-tags
 back-ground
@@ -550,6 +551,7 @@ sa-man-aikai-ses-ti
 sar-kain-ase-tuk-sia
 Scale
 scale-box
+school-hy-phens
 sc-shape
 sec-num-depth
 sec-tion

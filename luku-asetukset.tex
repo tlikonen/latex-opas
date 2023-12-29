@@ -2437,9 +2437,8 @@ kaikkialla dokumentissa. Seuraava esimerkki selventää komennon käyttöä:
 \komentoi{hyphenation}
 \begin{koodilohkosis}
 \hyphenation{
-  ala-indek-si alku-osa
-  nimen-omaan
-  typo-gra-fi-nen
+  ala-indek-si alku-osa nimen-omaan
+  typo-gra-fi-nen Latex
 }
 \end{koodilohkosis}
 
@@ -2447,8 +2446,10 @@ kaikkialla dokumentissa. Seuraava esimerkki selventää komennon käyttöä:
 Komennon argumentiksi eli aaltosulkeiden sisään kirjoitetaan sanoja,
 jotka erotetaan toisistaan sanaväleillä. Sanoihin kirjoitetaan
 yhdysmerkki niihin kohtiin, joista sanan katkaiseminen on sallittua. Jos
-sanassa itsessään on yhdysmerkki, sen tavutusta ei voi käsitellä tällä
-komennolla. Luvussa \ref{luku/tavutuksen-merkit} kerrotaan muita tapoja.
+yhdysmerkkiä ei ole, sanaa ei tavuteta mistään kohdasta. Jos taas sana
+on yhdyssana ja sen osien väliin kuuluu on yhdysmerkki, ei sen tavutusta
+voi käsitellä tällä komennolla. Luvussa \ref{luku/tavutuksen-merkit}
+kerrotaan muita tapoja.
 
 \komento{hyphenation}\-/komennon voi sijoittaa dokumentin esittelyosaan
 tai tekstiosaan, mutta sijainti vaikuttaa sen toimintaan. Jos komennon
@@ -2478,6 +2479,42 @@ edellä mainittujen viivavälimerkkien jälkeen. Kielipaketti
 suomen kielessä eri tavoin. Se määrittelee suomen kielessä
 tavutusvihjeen siten, että se sallii sanan tavutuksen muistakin kohdista
 kuin tavutusvihjeen kohdalta.
+
+\subsection{Tavutus sanan reunasta}
+
+Asetukset \komento{lefthyphenmin}\komentojatko{=N} ja
+\komento{righthyphenmin}\komentojatko{=N} vaikuttavat tavutukseen sanan
+reunoissa. Argumentti \koodi{N} on positiivinen kokonaisluku, joka
+määrittelee, kuinka monta merkkiä vähintään sanan vasemmasta tai
+oikeasta reunasta pidetään yhdessä. Oletusarvot ovat kielikohtaisia ja
+määritellään \paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketeissa.
+Suomen kielessä kumpikin asetus on kaksi (2) merkkiä.
+
+Nämä asetukset alustetaan kielikohtaisiin oletusarvoihin aina, kun
+kieliasetukset tulevat voimaan. Näin on esimerkiksi dokumentin
+aloittavan \ymparistox{document}\-/ ympäristön alussa ja aina kielen
+vaihtuessa. Jos asetuksia haluaa muuttaa, täytyy omat muutokset tehdä
+joka kerta edellä mainittujen asioiden jälkeen. Toisaalta kätevämpää on
+sisällyttää omat asetukset kielikohtaisiin alustuskomentoihin. Sillä
+tavoin omat asetukset tulevat voimaan automaattisesti kielen vaihtuessa.
+
+\komentoi{addto}
+\komentoi{captionsfinnish}
+\komentoi{lefthyphenmin}
+\komentoi{righthyphenmin}
+\begin{koodilohkosis}
+\addto{\captionsfinnish}{
+  \lefthyphenmin=3 \righthyphenmin=3
+}
+\end{koodilohkosis}
+
+\noindent
+Edellisessä esimerkissä oleva komento \komento{addto} on
+\paketti{polyglossia}\-/{} ja \paketti{babel}\-/ paketin ominaisuus,
+jolla lisätään omia komentoja kielikohtaisiin asetuksiin. Tässä
+esimerkissä käsitellään suomen kielen asetuksia
+(\komento{captionsfinnish}). Komento täytyy suorittaa lähdedokumentin
+esittelyosassa.
 
 \subsection{Polyglossia ja tavutus}
 \label{luku/tavutus-polyglossia}
@@ -2588,10 +2625,38 @@ on esimerkkejä tavutusvihjeiden, yhdysmerkin ja ajatusviivan sekä
 }
 
 \noindent
+Yleisiä koko kieleen vaikuttavia tavutusvihjeitä voi määritellä
+komennolla \komento{pghyphenation}. Se vastaa Texin
+\komento{hyphenation}\-/ komentoa, mutta tavutusvihjeet määritellään
+kielikohtaisesti. Komennon ensimmäinen argumentti on kielen nimi, ja
+toiseen argumenttiin luetellaan sanat ja niiden sallitut tavutuskohdat
+yhdysmerkin avulla.
+
+\komentoi{pghyphenation}
+\begin{koodilohkosis}
+\pghyphenation{finnish}{
+  ala-indek-si alku-osa nimen-omaan typo-gra-fi-nen Latex
+}
+\end{koodilohkosis}
+
+\noindent
+Kielikohtaisesti voi määrittää myös sen, kuinka monta kirjainta sanan
+reunasta jätetään tavuttamatta. \paketti{polyglossia}\-/ paketissa on
+komento \komento{setlanghyphenmins}, jonka ensimmäinen argumentti on
+kielen nimi. Toinen ja kolmas argumentti ovat kokonaislukuja, joilla
+asetetaan sanan vasemman ja oikean reunan tavuttamaton merkkimäärä.
+
+\komentoi{setlanghyphenmins}
+\begin{koodilohkosis}
+\setlanghyphenmins{finnish}{3}{2}
+\end{koodilohkosis}
+
+\noindent
 Suomen kielellä vaihtoehtoisen tavutussäännöstön voi kytkeä päälle
 käyttämällä kielen asettamisen yhteydessä valitsinta
-\koodi{schoolhyphens}. Lisätietoa suomen tavutuksen erityispiirteistä on
-luvussa \ref{luku/suomi-tavutus}.
+\koodi{schoolhyphens}. Tämä sallii tavutuksen kaikista mahdollisista
+kohdista. Lisätietoa suomen tavutuksen erityispiirteistä on luvussa
+\ref{luku/suomi-tavutus}.
 
 \komentoi{setdefaultlanguage}
 \begin{koodilohkosis}
@@ -2706,11 +2771,27 @@ huoletta esimerkiksi \koodi{matkasuunnitelma ja \=/aika} (ilman sitovaa
 yhdysmerkkiä), ja silti sanaan \emph{\mbox{-aika}} sisältyvä yhdysmerkki
 pysyy kiinni sanassa eikä jää koskaan yksin rivin loppuun.
 
+Yleisiä kaikkiin kieliin tai tiettyyn kieleen vaikuttavia
+tavutusvihjeitä voi asettaa komennolla \komento{babelhyphenation}.
+Komento vastaa Texin \komento{hyphenation}\-/ komentoa, mutta sille voi
+antaa valinnaisen argumentin, joka rajaa vaikutuksen vain tiettyyn
+kieleen. Seuraavassa esimerkissä asetetaan tavutusvihjeitä suomen
+kielelle.
+
+\komentoi{babelhyphenation}
+\begin{koodilohkosis}
+\babelhyphenation[finnish]{
+  ala-indek-si alku-osa nimen-omaan typo-gra-fi-nen Latex
+}
+\end{koodilohkosis}
+
+\noindent
 Vaihtoehtoisen suomen kielen tavutussäännöstön voi kytkeä päälle
 lataamalla paketin \pakettictan{hyphsubst} ja kertomalla sen
 asetuksissa, että tavutuksen kieli \koodi{finnish} korvataan kielellä
 \koodi{school\-finnish}. Paketti \paketti{hyphsubst} täytyy ladata
-\paketti{babel}\-/ paketin jälkeen, seuraavan esimerkin mukaisesti.
+\paketti{babel}\-/ paketin jälkeen, seuraavan esimerkin mukaisesti. Tämä
+tavutusvaihtoehto sallii tavutuksen kaikista mahdollisista kohdista.
 Lisätietoa suomen tavutuksen erityispiirteistä on luvussa
 \ref{luku/suomi-tavutus}.
 
@@ -2837,43 +2918,6 @@ matka\-/\ ja aika\-/arvio
   matka\-/{} ja aika\-/arvio \\
   matka\-/\ ja aika\-/arvio
 \end{tulossis}
-
-\subsection{Tavutus sanan reunasta}
-
-Asetukset \komento{lefthyphenmin}\komentojatko{=N} ja
-\komento{righthyphenmin}\komentojatko{=N} vaikuttavat tavutukseen sanan
-reunoissa. Argumentti \koodi{N} on positiivinen kokonaisluku, ja se
-määrittelee, kuinka monta merkkiä vähintään sanan vasemmasta tai
-oikeasta reunasta pidetään yhdessä. Oletusarvot ovat kielikohtaisia ja
-määritellään \paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketeissa.
-Suomen kielessä kumpikin asetus on kaksi (2) merkkiä.
-
-Nämä asetukset alustetaan kielikohtaisiin oletusarvoihin aina, kun
-kieliasetukset tulevat voimaan. Näin on esimerkiksi dokumentin
-aloittavan \ymparistox{document}\-/ ympäristön alussa ja aina kielen
-vaihtuessa. Jos asetuksia haluaa muuttaa, täytyy omat muutokset tehdä
-joka kerta edellä mainittujen asioiden jälkeen. Toisaalta kätevämpää on
-sisällyttää omat asetukset kielikohtaisiin alustuskomentoihin. Sillä
-tavoin omat asetukset tulevat voimaan automaattisesti kielen vaihtuessa.
-
-\komentoi{addto}
-\komentoi{captionsfinnish}
-\komentoi{lefthyphenmin}
-\komentoi{righthyphenmin}
-\begin{koodilohkosis}
-\addto{\captionsfinnish}{
-  \lefthyphenmin=3
-  \righthyphenmin=3
-}
-\end{koodilohkosis}
-
-\noindent
-Edellisessä esimerkissä oleva komento \komento{addto} on
-\paketti{polyglossia}\-/{} ja \paketti{babel}\-/ paketin ominaisuus,
-jolla lisätään omia komentoja kielikohtaisiin asetuksiin. Tässä
-esimerkissä käsitellään suomen kielen asetuksia
-(\komento{captionsfinnish}). Komento täytyy suorittaa lähdedokumentin
-esittelyosassa.
 
 \subsection{Muita tavutusasetuksia}
 \label{luku/tavutus-muut}

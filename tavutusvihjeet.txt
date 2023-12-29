@@ -52,6 +52,7 @@ as-pect-ra-tio
 author
 babel
 babel-font
+babel-hy-phen-ation
 babel-pro-vide
 babel-short-hands
 babel-tags
@@ -499,6 +500,7 @@ pe-rus-osien
 pe-rus-osiin
 pe-rus-vaih-to-eh-dot
 pe-rus-ympä-ris-tö
+pg-hy-phen-ation
 phan-tom-sec-tion
 pien-aak-ko-set
 pien-aak-kos-ten
@@ -566,6 +568,7 @@ set-beamer-tem-plate
 set-cite-style
 set-counter
 set-default-lan-guage
+set-lang-hyphen-mins
 set-length
 set-main-font
 set-math-font
@@ -639,6 +642,7 @@ tau-luk-ko-ympä-ris-töt
 tau-luk-ko-ympä-ris-töä
 ta-van-omais-ten
 tavu-tus-algo-rit-mia
+tavu-tus-vaih-to-eh-to
 teks-ti-alue
 teks-ti-alueen
 teks-ti-aluees-ta

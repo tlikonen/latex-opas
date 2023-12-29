@@ -2588,10 +2588,8 @@ erikoismerkkien vaikutuksesta.
 \noindent
 Suomen kielellä vaihtoehtoisen tavutussäännöstön voi kytkeä päälle
 käyttämällä kielen asettamisen yhteydessä valitsinta
-\koodi{schoolhyphens}. Se kytkee päälle yksinkertaisen
-tavutussäännöstön, jossa sanan katkaiseminen sallitaan kaikista
-mahdollisista suomen kielen tavutuskohdista. Lisätietoa suomen
-tavutuksen erityispiirteistä on luvussa \ref{luku/suomi-tavutus}.
+\koodi{schoolhyphens}. Lisätietoa suomen tavutuksen erityispiirteistä on
+luvussa \ref{luku/suomi-tavutus}.
 
 \komentoi{setdefaultlanguage}
 \begin{koodilohkosis}
@@ -2705,6 +2703,22 @@ Kun edellä mainittu asetus on päällä, voi lähdetiedostoon kirjoittaa
 huoletta esimerkiksi \koodi{matkasuunnitelma ja \=/aika} (ilman sitovaa
 yhdysmerkkiä), ja silti sanaan \emph{\mbox{-aika}} sisältyvä yhdysmerkki
 pysyy kiinni sanassa eikä jää koskaan yksin rivin loppuun.
+
+Vaihtoehtoisen suomen kielen tavutussäännöstön voi kytkeä päälle
+lataamalla paketin \paketti{hyphsubst} ja kertomalla sen asetuksissa,
+että tavutuksen kieli \koodi{finnish} korvataan kielellä
+\koodi{school\-finnish}. Paketti \paketti{hyphsubst} täytyy ladata
+\paketti{babel}\-/ paketin jälkeen, seuraavan esimerkin mukaisesti.
+Lisätietoa suomen tavutuksen erityispiirteistä on luvussa
+\ref{luku/suomi-tavutus}.
+
+\komentoi{usepackage}
+\pakettii{babel}
+\pakettii{hyphsubst}
+\begin{koodilohkosis}
+\usepackage[main=finnish]{babel}
+\usepackage[finnish=schoolfinnish]{hyphsubst}
+\end{koodilohkosis}
 
 \subsection{Viivojen erikoispaketti extdash}
 
@@ -2939,7 +2953,8 @@ huomioi typografisia suosituksia mitenkään.%
 \footnote{Lisätietoa:
   \url{https://github.com/hyphenation/basic-finnish}} Tämä
 vaihtoehtoinen tavutustapa täytyy kytkeä erikseen päälle kielipaketin
-asetuksista (luku \ref{luku/tavutus-polyglossia}).
+asetuksista tai lisäkomennoilla. Katso kielipakettikohtaiset ohjeet
+luvuista \ref{luku/tavutus-polyglossia} ja \ref{luku/tavutus-babel}.
 
 Texin kirjainyhdistelmiin perustuvat tavutussäännöt eivät yksinään ole
 tarpeeksi älykkäitä suomen kieleen, ja esimerkiksi yhdyssanojen

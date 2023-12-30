@@ -2471,10 +2471,16 @@ lyhyt ajatusviiva (\mbox{\koodi{--}}) tai pitkä ajatusviiva
 (\mbox{\koodi{---}}), sana katkaistaan vain näiden merkkien jälkeen, eli
 muut tavutuskohdat kytketään pois käytöstä.
 
-Myös tavutusvihje (\komento{-}) käyttäytyy yleensä samoin: jos sanassa
-on mukana yksikin tavutusvihje, tavalliset tavutuskohdat kytkeytyvät
-pois käytöstä, ja sana katkaistaan vain tavutusvihjeiden kohdalta sekä
-edellä mainittujen viivavälimerkkien jälkeen. Kielipaketti
+Unicode\-/ merkistön ajastusviivat \uctunnus{u+2013 en dash} ja
+\uctunnus{u+2014 em dash} ovat toimineet tavutuksessa eri tavalla
+Lualatex\-/{} ja Xelatex\-/ kääntäjissä ja mahdollisesti eri tavalla
+kuin edellä mainitut Texin omat merkintätavat. Yhteensopivuussyistä on
+parasta kirjoittaa ajatusviivat Texin merkintätavoilla.
+
+Myös tavutusvihje (\komento{-}) vaikuttaa sanan tavutuskohtiin: jos
+sanassa on mukana yksikin tavutusvihje, tavalliset tavutuskohdat
+kytkeytyvät pois käytöstä, ja sana katkaistaan vain tavutusvihjeiden
+kohdalta sekä edellä mainittujen viivavälimerkkien jälkeen. Kielipaketti
 \paketti{babel} (luku \ref{luku/tavutus-babel}) käyttäytyy kuitenkin
 suomen kielessä eri tavoin. Se määrittelee suomen kielessä
 tavutusvihjeen siten, että se sallii sanan tavutuksen muistakin kohdista

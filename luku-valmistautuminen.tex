@@ -254,7 +254,8 @@ lainkaan, käännetään kaikki nykyisessä hakemistossa olevat
 
 Latexmk\-/ ohjelmalle voi tehdä asetustiedoston, johon voi kirjoittaa
 omaan käyttöön sopivat asetukset. Asetustiedosto sijoitetaan
-tiedostojärjestelmässä käyttäjän kotihakemistoon. Esimerkki
+tiedostojärjestelmässä käyttäjän kotihakemistossa olevaan
+asetustiedostohakemistoon (\koodi{\textasciitilde /.config}). Esimerkki
 \ref{esim/latexmkrc} näyttää, mitä se voisi ehkä sisältää.
 
 \begin{esimerkki*}
@@ -262,7 +263,9 @@ tiedostojärjestelmässä käyttäjän kotihakemistoon. Esimerkki
 $pdf_mode = 4; # 4=lualatex, 5=xelatex
 $lualatex = 'lualatex -interaction=nonstopmode -shell-escape %O %S';
 $xelatex  = 'xelatex  -interaction=nonstopmode -shell-escape %O %S';
-$clean_ext = 'snm nav xdv bbl run.xml';
+push @generated_exts, "run.xml";
+push @generated_exts, "nav";
+push @generated_exts, "snm";
 $pdf_previewer = 'okular %S';
 \end{koodilohko}
   \caption{Latexmk\-/ ohjelman asetustiedosto (\koodi{\textasciitilde
@@ -284,13 +287,13 @@ joidenkin laajennuspakettien toimintaan.\footnote{Ainakin
   tarvitsevat \koodi{-shell-escape}\-/ toiminnon (luku
   \ref{luku/asiasanat}).}
 
-Esimerkin \ref{esim/latexmkrc} neljännellä rivillä luetellaan
-kääntämisen aikana syntyvien väliaikaistiedostojen päätteitä. Latexmk\-/
-ohjelma tuntee yleisimmät väliaikaistiedostot (\koodi{log}, \koodi{aux},
-\koodi{out} ym.), mutta tällä asetuksella mukaan voi lisätä
-harvinaisempia, joita se ei tunne. Viides rivi määrittää pdf\-/
-katseluohjelman, joka käynnistetään, kun käytetään valitsimia
-\koodi{\=/pv} tai \koodi{\=/pvc}.
+Esimerkin \ref{esim/latexmkrc} riveillä 4--6 on komennot, joilla
+lisätään kääntämisen aikana mahdollisesti syntyvien
+väliaikaistiedostojen päätteitä. Latexmk\-/ ohjelma tuntee yleisimmät
+väliaikaistiedostot (\koodi{log}, \koodi{aux}, \koodi{out} ym.), mutta
+näillä komennoilla mukaan voi lisätä harvinaisempia, joita se ei tunne.
+Viimeinen rivi määrittää pdf\-/ katseluohjelman, joka käynnistetään, kun
+käytetään valitsimia \koodi{\=/pv} tai \koodi{\=/pvc}.
 
 \subsection{Texdoc}
 

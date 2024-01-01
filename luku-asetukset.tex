@@ -2797,20 +2797,14 @@ esimerkissä asetetaan tavutusvihjeitä vain suomen kielen sanoille:
 
 \noindent
 Vaihtoehtoisen suomen kielen tavutussäännöstön voi kytkeä päälle
-lataamalla paketin \pakettictan{hyphsubst} ja kertomalla sen
-asetuksissa, että tavutuksen kieli \koodi{finnish} korvataan kielellä
-\koodi{school\-finnish}. Paketti \paketti{hyphsubst} täytyy ladata
-\paketti{babel}\-/ paketin jälkeen, seuraavan esimerkin mukaisesti. Tämä
-tavutusvaihtoehto sallii tavutuksen kaikista mahdollisista kohdista.
-Lisätietoa suomen tavutuksen erityispiirteistä on luvussa
-\ref{luku/suomi-tavutus}.
+komennolla \komento{babelprovide}, seuraavan esimerkin mukaisesti. Tämä
+vaihtoehto sallii sanan katkaisemisen kaikista mahdollisista suomen
+kielen tavutuskohdista. Lisätietoa suomen tavutuksen erityispiirteistä
+on luvussa \ref{luku/suomi-tavutus}.
 
-\komentoi{usepackage}
-\pakettii{babel}
-\pakettii{hyphsubst}
+\komentoi{babelprovide}
 \begin{koodilohkosis}
-\usepackage[main=finnish]{babel}
-\usepackage[finnish=schoolfinnish]{hyphsubst}
+\babelprovide[hyphenrules=schoolfinnish]{finnish}
 \end{koodilohkosis}
 
 \subsection{Viivojen erikoispaketti extdash}

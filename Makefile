@@ -1,4 +1,4 @@
-versio = 2023.7
+versio = 2024
 nimi = kaytannollista-latexia
 lahde = $(nimi).tex luku-asetukset.tex luku-esipuhe.tex \
 	luku-merkintakieli.tex luku-rakenne.tex tavutusvihjeet.tex \

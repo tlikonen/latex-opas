@@ -2429,6 +2429,7 @@ Kielipakettien ominaisuuksia käsitellään luvuissa
 \ref{luku/tavutus-polyglossia} ja \ref{luku/tavutus-babel}.
 
 \subsection{Yleiset tavutusvihjeet}
+\label{luku/hyphenation-komento}
 
 Yksi tapa tavutusvihjeiden kirjoittamiseen on \komento{hyphenation}\-/
 komento, jolla määritellään yksittäisten sanojen tavutuskohdat
@@ -2482,7 +2483,7 @@ sanassa on mukana yksikin tavutusvihje, tavalliset tavutuskohdat
 kytkeytyvät pois käytöstä, ja sana katkaistaan vain tavutusvihjeiden
 kohdalta sekä edellä mainittujen viivavälimerkkien jälkeen. Kielipaketti
 \paketti{babel} (luku \ref{luku/tavutus-babel}) käyttäytyy kuitenkin
-suomen kielessä eri tavoin. Se määrittelee suomen kielessä
+suomen kielessä eri tavoin. Se määrittelee ainakin suomen kielessä
 tavutusvihjeen siten, että se sallii sanan tavutuksen muistakin kohdista
 kuin tavutusvihjeen kohdalta.
 
@@ -2493,16 +2494,17 @@ Asetukset \komento{lefthyphenmin}\komentojatko{=N} ja
 reunoissa. Argumentti \koodi{N} on positiivinen kokonaisluku, joka
 määrittelee, kuinka monta merkkiä vähintään sanan vasemmasta tai
 oikeasta reunasta pidetään yhdessä. Oletusarvot ovat kielikohtaisia ja
-määritellään \paketti{polyglossia}\-/{} ja \paketti{babel}\-/paketeissa.
-Suomen kielessä kumpikin asetus on kaksi (2) merkkiä.
+ne on määritelty \paketti{polyglossia}\-/{} ja \paketti{babel}\-/
+paketeissa. Suomen kielessä kumpikin asetus on kaksi (2) merkkiä.
 
-Nämä asetukset alustetaan kielikohtaisiin oletusarvoihin aina, kun
-kieliasetukset tulevat voimaan. Näin on esimerkiksi dokumentin
+Nämä asetukset alustetaan automaattisesti kielikohtaisiin oletusarvoihin
+aina, kun kieliasetukset tulevat voimaan. Näin on esimerkiksi dokumentin
 aloittavan \ymparistox{document}\-/ ympäristön alussa ja aina kielen
-vaihtuessa. Jos asetuksia haluaa muuttaa, täytyy omat muutokset tehdä
-joka kerta edellä mainittujen asioiden jälkeen. Toisaalta kätevämpää on
-sisällyttää omat asetukset kielikohtaisiin alustuskomentoihin. Sillä
-tavoin omat asetukset tulevat voimaan automaattisesti kielen vaihtuessa.
+vaihtuessa. Jos kirjoittaja haluaa muuttaa asetuksia, täytyy omat
+muutokset tehdä joka kerta edellä mainittujen asioiden jälkeen.
+Toisaalta kätevämpää on sisällyttää omat asetukset kielikohtaisiin
+alustuskomentoihin. Sillä tavoin omat asetukset tulevat voimaan
+automaattisesti kielen vaihtuessa.
 
 \komentoi{addto}
 \komentoi{captionsfinnish}
@@ -2510,7 +2512,7 @@ tavoin omat asetukset tulevat voimaan automaattisesti kielen vaihtuessa.
 \komentoi{righthyphenmin}
 \begin{koodilohkosis}
 \addto{\captionsfinnish}{
-  \lefthyphenmin=3 \righthyphenmin=3
+  \lefthyphenmin=3 \righthyphenmin=2
 }
 \end{koodilohkosis}
 
@@ -2624,8 +2626,8 @@ on esimerkkejä tavutusvihjeiden, yhdysmerkin ja ajatusviivan sekä
     \bottomrule
   \end{tabular}
 }{
-  \caption{Tavutusvihjeen, yhdysmerkin ja ajatusviivan sekä
-    \paketti{polyglossia}\-/ paketin erikoismerkkien
+  \caption{Kielipaketti \paketti{polyglossia} ja tavutusvihjeen,
+    yhdysmerkin ja ajatusviivan sekä kielipaketin omien erikoismerkkien
     (\koodi{babelshorthands}) vaikutus tavutukseen}
   \label{tlk/polyglossia-tavutus}
 }
@@ -2633,10 +2635,10 @@ on esimerkkejä tavutusvihjeiden, yhdysmerkin ja ajatusviivan sekä
 \noindent
 Yleisiä koko kieleen vaikuttavia tavutusvihjeitä voi määritellä
 komennolla \komento{pghyphenation}. Se vastaa Texin
-\komento{hyphenation}\-/ komentoa, mutta tavutusvihjeet määritellään
-kielikohtaisesti. Komennon ensimmäinen argumentti on kielen nimi, ja
-toiseen argumenttiin luetellaan sanat ja niiden sallitut tavutuskohdat
-yhdysmerkin avulla.
+\komento{hyphenation}\-/ komentoa (luku \ref{luku/hyphenation-komento}),
+mutta tavutusvihjeet määritellään kielikohtaisesti. Komennon ensimmäinen
+argumentti on kielen nimi, ja toiseen argumenttiin luetellaan sanat ja
+niiden sallitut tavutuskohdat yhdysmerkin avulla.
 
 \komentoi{pghyphenation}
 \begin{koodilohkosis}
@@ -2744,9 +2746,9 @@ kielen erikoismerkkejä.
     \bottomrule
   \end{tabular}
 }{
-  \caption{Tavutusvihjeen, yhdysmerkin ja ajatusviivan sekä
-    \paketti{babel}\-/ paketin suomen kieliasetusten ja erikoismerkkien
-    vaikutus tavutukseen}
+  \caption{Kielipaketti \paketti{babel} ja suomen kielellä
+    tavutusvihjeen, yhdysmerkin ja ajatusviivan sekä kielipaketin omien
+    erikoismerkkien vaikutus tavutukseen}
   \label{tlk/babel-tavutus}
 }
 
@@ -2767,7 +2769,6 @@ seuraavasti:
 \pakettii{babel}
 \komentoi{babelprovide}
 \begin{koodilohkosis}
-\usepackage{main=finnish}{babel}
 \babelprovide[transforms = prehyphen.nobreak]{finnish}
 \end{koodilohkosis}
 
@@ -2779,10 +2780,10 @@ pysyy kiinni sanassa eikä jää koskaan yksin rivin loppuun.
 
 Yleisiä kaikkiin kieliin tai tiettyyn kieleen vaikuttavia
 tavutusvihjeitä voi asettaa komennolla \komento{babelhyphenation}.
-Komento vastaa Texin \komento{hyphenation}\-/ komentoa, mutta sille voi
-antaa valinnaisen argumentin, joka rajaa vaikutuksen vain tiettyyn
-kieleen. Seuraavassa esimerkissä asetetaan tavutusvihjeitä suomen
-kielelle.
+Komento vastaa Texin \komento{hyphenation}\-/ komentoa (luku
+\ref{luku/hyphenation-komento}), mutta sille voi antaa valinnaisen
+argumentin, joka rajaa vaikutuksen vain tiettyyn kieleen. Seuraavassa
+esimerkissä asetetaan tavutusvihjeitä vain suomen kielen sanoille:
 
 \komentoi{babelhyphenation}
 \begin{koodilohkosis}

@@ -82,29 +82,25 @@ mitä alkuperäinen Latex ja Tex eivät osaa.
 
 Lualatexilla ja Xelatexilla ei ole ohjelmien käyttäjän kannalta
 suurtakaan eroa -- ei välttämättä mitään näkyvää eroa. Miksi sitten on
-olemassa kaksi, ulkoisesti lähes samanlaista kääntäjää? Tärkein syy
-taitaa olla se, että Xelatex tehtiin ensin. Tarkoituksena oli saada
-Unicode\-/ merkistön tuki ja fonttiasiat ajan tasalle. Myöhemmin jotkut
-ajattelivat, että Lua\-/ ohjelmointikieli täytyy saada mukaan. Sillä on
-merkitystä joillekuille laajennuspakettien tekijöille. Lua\-/ kielen
-sisällyttäminen oikeastaan pakotti kirjoittamaan koko homman uusiksi.
+olemassa kaksi, ulkoisesti lähes samanlaista kääntäjää? Xelatex tehtiin
+ensin. Tarkoituksena oli saada Unicode\-/ merkistön tuki ja fonttiasiat
+ajan tasalle. Myöhemmin jotkut ajattelivat, että Lua\-/ ohjelmointikieli
+täytyy saada mukaan: ominaisuudella on merkitystä joillekuille
+laajennuspakettien tekijöille. Lua\-/ kielen sisällyttäminen oikeastaan
+pakotti kirjoittamaan koko kääntäjän koodin uusiksi, ja syntyi Lualatex.
 Toteutuksissa on muitakin sisäisiä eroja. Xelatex oli pitkään suositumpi
 ja paremmin tuettu eri laajennuspaketeissa, mutta erot ovat sittemmin
 tasoittuneet.
 
-Latex\-/ kokeilun alkutaipaleella voi vaikka arpoa kolikon avulla,
-kumpaa kääntäjää käyttää, sillä niiden erot eivät ihan helposti tule
-esiin. Jotkin harvat laajennuspaketit eivät toimi Lualatexissa, kun taas
-toiset eivät toimi Xelatexissa. Joskus saattaa jopa tulla vastaan
-yksittäinen, kehityksestä ehkä jälkeen jäänyt paketti, joka ei toimi
-kummassakaan vaan ainoastaan perinteisillä kääntäjillä (\koodi{latex},
-\koodi{pdflatex}).
-
-Joissakin tilanteissa eri kääntäjien tekemissä pdf\-/ dokumenteissa
-näkyy pieniä eroja. Ainakin yksittäisissä fonttien asetuksissa ja
-joidenkin Unicode\-/ merkkien käsittelyssä on eroja. Tämänkin oppaan
-tekstissä mainitaan pari pientä ominaisuutta, jotka toimivat vain
-toisella kääntäjällä: toiset Lualatexilla, toiset Xelatexilla.
+Latexin käytön alkutaipaleella voi vaikka arpoa kolikon avulla, kumpaa
+kääntäjää käyttää, sillä niiden erot eivät ihan helposti tule esiin.
+Jotkin harvat laajennuspaketit eivät toimi Lualatexissa, kun taas toiset
+eivät toimi Xelatexissa. Joskus saattaa jopa tulla vastaan yksittäinen,
+kehityksestä ehkä jälkeen jäänyt paketti, joka ei toimi kummassakaan
+vaan ainoastaan perinteisillä kääntäjillä (\koodi{latex},
+\koodi{pdflatex}). Tässäkin oppaassa mainitaan siellä täällä
+ominaisuuksia, jotka toimivat vain toisella kääntäjällä: toiset
+Lualatexilla, toiset Xelatexilla.
 
 \subsection{Latex yläkäsitteenä}
 
@@ -112,7 +108,7 @@ Jotta kaikki olisi mahdollisimman sekavaa, ''Latex'' toimii myös
 yleisnimityksenä tälle kaikelle. Se esiintyy ilmauksissa kuten
 ''Toteutin dokumentin Latexilla'' tai ''Tämä artikkeli on tehty
 Latexilla''. Ilmaukset sitten tarkoittavat suunnilleen seuraavanlaista:
-Henkilöllä on asennettuna tietokoneelle Latex\-/ jakelukokonaisuus
+Henkilöllä on asennettuna tietokoneelle jokin Latex\-/ jakelukokonaisuus
 (kuten Tex Live). Hän on kirjoittanut tekstieditorilla (kuten
 \textsc{gnu} Emacsilla) tekstitiedoston, jossa on dokumentin sisältö ja
 Latex\-/ merkintäkielisiä komentoja mutta ehkä myös joitakin Tex\-/
@@ -139,13 +135,9 @@ siitä, että kyse on tietokonekoodista.
 \section{Asentaminen tietokoneelle}
 \label{luku/asentaminen}
 
-Latex pitää tietysti asentaa tietokoneelle, jotta sitä voisi käyttää.
-Miten edellisessä luvussa kuvattu sekava kokonaisuus saadaan ehjänä
-omalle tietokoneelle? Onneksi muut ovat jo ratkaisseet sen ongelman.
-
 Tavallisin tapa Latexin käyttöönottoon on jonkin Latexin jakelupaketin
 asentaminen. Jakelupaketti sisältää Latexin perusosien lisäksi paljon
-laajennuspaketteja ja niiden ohjekirjoja. Kaikkea ei koskaan tarvitse,
+laajennuspaketteja ja niiden ohjekirjoja. Kaikkea ei kukaan tarvitse,
 mutta kun yllättävä tarve tulee tai lukee vinkkejä verkkokeskusteluista,
 on mukavaa huomata, että paketti olikin itsellä jo valmiina. Siksi
 kokonaisen jakelupaketin asentaminen on helpoin tapa.
@@ -165,16 +157,20 @@ yleensä Mactex\-/ nimistä jakelua.
 
 \subsection{Tekstieditori}
 
-Omien dokumenttien ja Latex\-/ merkintäkielen kirjoittamiseen kannattaa
+Lähdetiedostot eli Latex\-/ merkintäkieltä sisältävät tiedostot (luku
+\ref{luku/lähdetiedosto}) ovat puhdasta tekstiä, tekstitiedostoja, joita
+kirjoitetaan ja muokataan tekstieditorilla. Kirjoittamiseen kannattaa
 käyttää kunnollista tekstieditoria, koska se on tärkein työkalu ja sen
-kanssa ollaan eniten tekemisissä. Pyri löytämään sellainen editori, joka
-osaa värjätä tekstiä Latexin tai Texin tekstipiirteiden mukaisesti.
-Väreillä ei sinänsä ole merkitystä, mutta editorin laadusta se yleensä
-kertoo paljon. Jos editori tuntee erilaisten ohjelmointi\-/{} ja
-merkintäkielten luonnetta ja osaa merkitä kielen avainsanoja
-havainnollisilla väreillä, se todennäköisesti on tehty tehokkaaseen
-ohjelmointiin ja muuhun vastaavaan työskentelyyn. Ihan yksinkertaisiin
-editoreihin ei tuollaisia ominaisuuksia yleensä tehdä.
+kanssa ollaan eniten tekemisissä.
+
+Pyri löytämään sellainen editori, joka osaa värjätä tekstiä Latexin tai
+Texin tekstipiirteiden mukaisesti. Väreillä ei sinänsä ole merkitystä,
+mutta editorin laadusta se yleensä kertoo paljon. Jos editori tuntee
+erilaisten ohjelmointi\-/{} ja merkintäkielten luonnetta ja osaa merkitä
+kielen avainsanoja havainnollisilla väreillä, se todennäköisesti on
+tehty tehokkaaseen ohjelmointiin ja muuhun vastaavaan työskentelyyn.
+Ihan yksinkertaisiin editoreihin ei tuollaisia ominaisuuksia yleensä
+tehdä.
 
 \subsection{Pdf-katselin}
 
@@ -260,7 +256,7 @@ asetustiedostohakemistoon (\koodi{\textasciitilde /.config}). Esimerkki
 
 \begin{esimerkki*}
 \begin{koodilohko}
-$pdf_mode = 4; # 4=lualatex, 5=xelatex
+$pdf_mode = 4;   # 4=lualatex, 5=xelatex
 $lualatex = 'lualatex -interaction=nonstopmode -shell-escape %O %S';
 $xelatex  = 'xelatex  -interaction=nonstopmode -shell-escape %O %S';
 push @generated_exts, "run.xml";
@@ -304,19 +300,22 @@ kaikkien hyödyllisten laajennuspakettien kaikkia ominaisuuksia.
 Tex Live \=/jakelun (luku \ref{luku/asentaminen}) mukana tulee mainio
 komentotulkissa toimiva komento \koodi{texdoc}, jolla voi hakea ja avata
 omaan järjestelmään asennettuja Latex\-/ aiheisia ohjeita. Jos vaikka
-haluaa tutustua esimerkissä \ref{esim/ensimmäinen}
-(s.~\pageref{esim/ensimmäinen}) mainittavaan \paketti{fontspec}\-/
-pakettiin syvällisemmin, tarvitsee vain komentaa \koodi{texdoc
-  fontspec}, ja paketin pdf\-/ muotoinen ohjekirja avautuu.
+haluaa tutustua esimerkissä \ref{esim/ensimmäinen} mainittavaan
+\paketti{fontspec}\-/ pakettiin syvällisemmin, tarvitsee vain komentaa
+\koodi{texdoc fontspec}, ja paketin pdf\-/ muotoinen ohjekirja avautuu.
 
 \section{Lähdetiedostot}
+\label{luku/lähdetiedosto}
 
-Seuraavassa ovat ohjeet alkuun pääsemiseksi. Luodaan yksinkertainen
-Latex\-/ lähdetiedosto, jota voi käyttää harjoitteluun ja pohjana omille
-töille. Tallenna esimerkin \ref{esim/ensimmäinen} sisältö tekstieditorin
-avulla tiedostoon vaikkapa nimellä \koodi{teksti.\katk tex}. Käännä eli
-lado se pdf\-/ tiedostoksi käyttämällä jotakin seuraavista komennoista
-(valitse yksi):
+Latexin lähdetiedostot eli lähdedokumentit ovat tekstitiedostoja eli
+puhdasta tekstiä. Esimerkki \ref{esim/ensimmäinen} näyttää, mitä
+tiedosto voisi sisältää. Siinä on tyypillisen dokumentin
+vähimmäissisältö, jota voi käyttää harjoitteluun sekä myöhemminkin
+pohjana omille töille.
+
+Tallenna esimerkin sisältö tekstieditorin avulla tiedostoon vaikkapa
+nimellä \koodi{teksti.\katk tex}. Käännä eli lado se pdf\-/ tiedostoksi
+käyttämällä jotakin seuraavista komennoista (valitse yksi):
 
 \begin{koodilohkosis}
 lualatex teksti.tex
@@ -327,7 +326,10 @@ latexmk -xelatex  teksti.tex
 
 \noindent
 Tuloksena pitäisi olla tiedosto \koodi{teksti.\katk pdf}, jota voi
-ihailla jollakin pdf\-/ tiedostojen katseluun tarkoitetulla ohjelmalla.
+ihailla jollakin pdf\-/ tiedostojen katseluohjelmalla. Kääntämisen
+aikana syntyy automaattisesti muitakin tiedostoja, jotka on tarkoitettu
+lähinnä kääntäjän omaan väliaikaiseen käyttöön. Niitä ei tarvitse
+säilyttää.
 
 Esimerkin \ref{esim/ensimmäinen} ensimmäisellä rivillä määritellään
 dokumenttiluokka \luokka{article}, joka on tietynlainen sivupohja tai

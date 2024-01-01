@@ -2139,12 +2139,14 @@ otfinfo -s texgyrepagella-math.otf
 
 \noindent
 Tex Live \=/jakelun mukana tulee muutama \englanti{Open Type}
-\=/kirjainperhe, joihin kuuluvat myös matematiikan symbolit. Tällaisia
-kirjainperheitä ovat ainakin Libertinus sekä eri TeX Gyre \-/perheet.
-Koko Libertinus\-/ perheen voi ottaa käyttöön hyvin yksinkertaisesti:
-ladataan vain paketti \paketti{libertinus}, joka määrittää kerralla
-antiikvan, groteskin, tasalevyisen ja matematiikkafontin. Myös
-tavallisten fontinmäärityskomentojen käyttö on mahdollista.
+\=/kirjainperhe, joihin kuuluvat myös matematiikan symbolit. Niitä ovat
+ainakin Libertinus, eri TeX Gyre \=/perheet sekä \englanti{Latin Modern
+  Roman}, jonka kanssa sopii matematiikkafontti \englanti{Latin Modern
+  Math}. Libertinus\-/ perheen voi ottaa käyttöön hyvin
+yksinkertaisesti: ladataan vain paketti \paketti{libertinus}, joka
+määrittää kerralla antiikvan, groteskin, tasalevyisen ja
+matematiikkafontin. Toisaalta Libertinus\-/ perhettä voi käyttää myös
+tavallisten fontinmäärityskomentojen avulla.
 
 \begin{esimerkki*}
   \komentoi{setmathfont}
@@ -2156,6 +2158,7 @@ tavallisten fontinmäärityskomentojen käyttö on mahdollista.
 \setmathfont{TeX Gyre Pagella Math}
 \setmathfont{TeX Gyre Schola Math}
 \setmathfont{TeX Gyre Termes Math}
+\setmathfont{Latin Modern Math}
 \end{koodilohko}
 
   \caption{Matematiikan symboleja sisältäviä vapaita fontteja. Komento

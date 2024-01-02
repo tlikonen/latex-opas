@@ -1130,9 +1130,9 @@ seuraavan esimerkin mukaisesti:
     \bottomrule
   \end{tabular}
 }{
-  \caption{Vapaita fontteja, jotka toimitetaan Tex Live \=/jakelun tai
-    käyttöjärjestelmän mukana. Tyylit viittaavat kirjainmuotoon tai
-    historialliseen kirjaintyyliin}
+  \caption{Vapaita fontteja ja kirjainperheitä, jotka toimitetaan Tex
+    Live \=/jakelun tai käyttöjärjestelmän mukana. Tyylit viittaavat
+    kirjainmuotoon tai historialliseen kirjaintyyliin}
   \label{tlk/vapaita-fontteja}
 }
 
@@ -2175,11 +2175,11 @@ otfinfo -s texgyrepagella-math.otf
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[2]{#1 & $\longleftrightarrow$ & #2 \\}
+  \renewcommand{\rivi}[2]{#1 & #2 \\}
 
-  \begin{tabular}{r@{\quad}c@{\quad}l}
+  \begin{tabular}{rl}
     \toprule
-    \ots{Leipäteksti} && \ots{Matematiikkatila} \\
+    \ots{Leipäteksti} & \ots{Matematiikkatila} \\
     \midrule
     \rivi{Libertinus Serif}{Libertinus Math}
     \rivi{TeX Gyre Bonum}{TeX Gyre Bonum Math}
@@ -2199,11 +2199,11 @@ otfinfo -s texgyrepagella-math.otf
 
 \noindent
 Taulukkoon \ref{tlk/matematiikka-fontteja} on koottu \englanti{Open
-  Type} \=/kirjainperheitä, joille on saatavilla keskenään yhteensopiva
-leipätekstin kirjainperhe ja matematiikkatilan fontti. Teknisesti
-kaikkia voi käyttää kaikkien kanssa, mutta on tyylikästä, että fontit
-sopivat ulkoasultaan yhteen. Kaikki fontit ovat vapaita ja toimitetaan
-Tex Live \=/jakelun tai käyttöjärjestelmän mukana.
+  Type} \=/fontteja, joissa on yhteensopiva leipätekstin ja
+matematiikkatilan kirjainperhe. Teknisesti kaikkia voi käyttää kaikkien
+kanssa, mutta on tietenkin toivottavaa, että kirjainleikkaukset sopivat
+ulkoasultaan yhteen. Kaikki fontit ovat vapaita ja toimitetaan Tex Live
+\=/jakelun tai käyttöjärjestelmän mukana.
 
 \section{Kieli}
 \label{luku/kieliasetukset}

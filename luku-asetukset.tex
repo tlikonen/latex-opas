@@ -2172,30 +2172,36 @@ otfinfo -s texgyrepagella-math.otf
 \end{koodilohkosis}
 
 \leijutlk{
-  \begin{tabular}{r@{\quad$\longleftrightarrow$\quad}l}
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[2]{#1 & $\longleftrightarrow$ & #2 \\}
+
+  \begin{tabular}{r@{\quad}c@{\quad}l}
     \toprule
-    \ots{Leipäteksti} & \ots{Matematiikkatila} \\
+    \ots{Leipäteksti} && \ots{Matematiikkatila} \\
     \midrule
-    Libertinus Serif & Libertinus Math \\
-    TeX Gyre Bonum & TeX Gyre Bonum Math \\
-    TeX Gyre Pagella & TeX Gyre Pagella Math \\
-    TeX Gyre Schola & TeX Gyre Schola Math \\
-    TeX Gyre Termes & TeX Gyre Termes Math \\
-    DejaVu Serif & TeX Gyre Dejavu Math \\
-    Garamond Libre & Garamond Math \\
-    Latin Modern Roman & Latin Modern Math \\
+    \rivi{Libertinus Serif}{Libertinus Math}
+    \rivi{TeX Gyre Bonum}{TeX Gyre Bonum Math}
+    \rivi{TeX Gyre Pagella}{TeX Gyre Pagella Math}
+    \rivi{TeX Gyre Schola}{TeX Gyre Schola Math}
+    \rivi{TeX Gyre Termes}{TeX Gyre Termes Math}
+    \rivi{DejaVu Serif}{TeX Gyre Dejavu Math}
+    \rivi{Garamond Libre}{Garamond Math}
+    \rivi{Latin Modern Roman}{Latin Modern Math}
     \bottomrule
   \end{tabular}
 }{
-  \caption{Yhteensopivia leipätekstin ja matematiikkatilan fontteja}
+  \caption{Ulkoasultaan yhteensopivia leipätekstin ja matematiikkatilan
+    fontteja}
   \label{tlk/matematiikka-fontteja}
 }
 
 \noindent
 Taulukkoon \ref{tlk/matematiikka-fontteja} on koottu \englanti{Open
   Type} \=/kirjainperheitä, joille on saatavilla keskenään yhteensopiva
-leipätekstin kirjainperhe ja matematiikkatilan fontti. Kaikki fontit
-ovat vapaita ja toimitetaan Tex Live \=/jakelun mukana.
+leipätekstin kirjainperhe ja matematiikkatilan fontti. Teknisesti
+kaikkia voi käyttää kaikkien kanssa, mutta on tyylikästä, että fontit
+sopivat ulkoasultaan yhteen. Kaikki fontit ovat vapaita ja toimitetaan
+Tex Live \=/jakelun mukana.
 
 \section{Kieli}
 \label{luku/kieliasetukset}

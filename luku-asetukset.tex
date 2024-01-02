@@ -2077,7 +2077,9 @@ joka täytyy ladata muiden matematiikkaan tai fontteihin liittyvien
 pakettien jälkeen. Paketti tuo komennon \komento{setmathfont}, joka on
 matematiikkatilan vastine luvussa \ref{luku/fontin-valinta} esitellyille
 fontinmäärittelykomennoille \komento{setmainfont}, \komento{setsansfont}
-ja \komento{setmonofont}.
+ja \komento{setmonofont}. Lähes aina on järkevää käyttää
+matematiikkatilan fontille asetusta \koodi{Scale=\katk MatchLowercase}.
+Se asettaa fontin samankokoiseksi kuin vastaava peruskirjainperhe.
 
 \pakettii{fontspec}
 \pakettii{unicode-math}
@@ -2087,7 +2089,7 @@ ja \komento{setmonofont}.
 \usepackage{fontspec}
 \usepackage{unicode-math}
 \setmainfont{TeX Gyre Pagella}       % tekstitilan perusfontti
-\setmathfont{TeX Gyre Pagella Math}  % matematiikkatilan fontti
+\setmathfont{TeX Gyre Pagella Math}[Scale=MatchLowercase]
 \end{koodilohkosis}
 
 \leijutlk{
@@ -2137,43 +2139,31 @@ voi tutkia esimerkiksi käyttöjärjestelmän komentotulkissa
 otfinfo -s texgyrepagella-math.otf
 \end{koodilohkosis}
 
+\leijutlk{
+  \begin{tabular}{r@{\quad$\longleftrightarrow$\quad}l}
+    \toprule
+    \ots{Leipäteksti} & \ots{Matematiikkatila} \\
+    \midrule
+    Libertinus Serif & Libertinus Math \\
+    TeX Gyre Bonum & TeX Gyre Bonum Math \\
+    TeX Gyre Pagella & TeX Gyre Pagella Math \\
+    TeX Gyre Schola & TeX Gyre Schola Math \\
+    TeX Gyre Termes & TeX Gyre Termes Math \\
+    DejaVu Serif & TeX Gyre Dejavu Math \\
+    Garamond Libre & Garamond Math \\
+    Latin Modern Roman & Latin Modern Math \\
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Yhteensopivia leipätekstin ja matematiikkatilan fontteja}
+  \label{tlk/matematiikka-fontteja}
+}
+
 \noindent
-Tex Live \=/jakelun mukana tulee muutama \englanti{Open Type}
-\=/kirjainperhe, joihin kuuluvat myös matematiikan symbolit. Niitä ovat
-ainakin Libertinus, eri TeX Gyre \=/perheet sekä \englanti{Latin Modern
-  Roman}, jonka kanssa sopii matematiikkafontti \englanti{Latin Modern
-  Math}. Libertinus\-/ perheen voi ottaa käyttöön hyvin
-yksinkertaisesti: ladataan vain paketti \paketti{libertinus}, joka
-määrittää kerralla antiikvan, groteskin, tasalevyisen ja
-matematiikkafontin. Toisaalta Libertinus\-/ perhettä voi käyttää myös
-tavallisten fontinmäärityskomentojen avulla.
-
-\begin{esimerkki*}
-  \komentoi{setmathfont}
-
-\begin{koodilohko}
-\setmathfont{Libertinus Math Regular}
-\setmathfont{TeX Gyre Bonum Math}
-\setmathfont{TeX Gyre Dejavu Math}
-\setmathfont{TeX Gyre Pagella Math}
-\setmathfont{TeX Gyre Schola Math}
-\setmathfont{TeX Gyre Termes Math}
-\setmathfont{Latin Modern Math}
-\end{koodilohko}
-
-  \caption{Matematiikan symboleja sisältäviä vapaita fontteja. Komento
-    \komento{setmathfont} sisältyy pakettiin \paketti{unicode-math}}
-  \label{esim/matematiikka-fontteja}
-\end{esimerkki*}
-
-Esimerkissä \ref{esim/matematiikka-fontteja} on komentoja joidenkin
-matematiikkafonttien lataamiseen. Lähes aina on järkevää käyttää
-asetusta \koodi{Scale=\katk MatchLowercase}, joka asettaa fontin
-samankokoiseksi kuin vastaava peruskirjainperhe.
-
-\begin{koodilohkosis}
-\setmathfont{TeX Gyre Pagella Math}[Scale=MatchLowercase]
-\end{koodilohkosis}
+Taulukkoon \ref{tlk/matematiikka-fontteja} on koottu \englanti{Open
+  Type} \=/kirjainperheitä, joille on saatavilla keskenään yhteensopiva
+leipätekstin kirjainperhe ja matematiikkatilan fontti. Kaikki fontit
+ovat vapaita ja toimitetaan Tex Live \=/jakelun mukana.
 
 \section{Kieli}
 \label{luku/kieliasetukset}

@@ -81,26 +81,26 @@ nykyaikaisia \englanti{True Type}- ja \englanti{Open Type} \=/fontteja,
 mitä alkuperäinen Latex ja Tex eivät osaa.
 
 Lualatexilla ja Xelatexilla ei ole ohjelmien käyttäjän kannalta
-suurtakaan eroa -- ei välttämättä mitään näkyvää eroa. Miksi sitten on
-olemassa kaksi, ulkoisesti lähes samanlaista kääntäjää? Xelatex tehtiin
-ensin. Tarkoituksena oli saada Unicode\-/ merkistön tuki ja fonttiasiat
-ajan tasalle. Myöhemmin jotkut ajattelivat, että Lua\-/ ohjelmointikieli
-täytyy saada mukaan: ominaisuudella on merkitystä joillekuille
-laajennuspakettien tekijöille. Lua\-/ kielen sisällyttäminen oikeastaan
-pakotti kirjoittamaan koko kääntäjän koodin uusiksi, ja syntyi Lualatex.
-Toteutuksissa on muitakin sisäisiä eroja. Xelatex oli pitkään suositumpi
-ja paremmin tuettu eri laajennuspaketeissa, mutta erot ovat sittemmin
-tasoittuneet.
+suurtakaan eroa -- ei välttämättä mitään näkyvää eroa. Xelatex tehtiin
+ensin, ja tarkoituksena oli saada Unicode\-/ merkistön tuki ja
+fonttiasiat ajan tasalle. Myöhemmin jotkut ajattelivat, että Lua\-/
+ohjelmointikieli täytyy saada mukaan, koska ominaisuudesta on hyötyä
+joillekuille laajennuspakettien tekijöille. Lua\-/ kielen
+sisällyttäminen oikeastaan pakotti kirjoittamaan koko kääntäjän koodin
+uusiksi, ja syntyi Lualatex.
+
+Kääntäjien toteutuksissa on muitakin sisäisiä eroja, esimerkiksi
+fonttien käsittelyssä. Xelatex oli pitkään suositumpi ja paremmin tuettu
+eri laajennuspaketeissa, mutta erot ovat sittemmin tasoittuneet. Lua\-/
+ohjelmointikieli on alkanut vaikuttaa Lualatexin eduksi. On joitakin
+laajennuspaketteja tai niiden yksittäisiä ominaisuuksia, jotka vaativat
+toimiakseen Lualatexin. Sen tulevaisuus vaikuttaa valoisammalta.
 
 Latexin käytön alkutaipaleella voi vaikka arpoa kolikon avulla, kumpaa
 kääntäjää käyttää, sillä niiden erot eivät ihan helposti tule esiin.
-Jotkin harvat laajennuspaketit eivät toimi Lualatexissa, kun taas toiset
-eivät toimi Xelatexissa. Joskus saattaa jopa tulla vastaan yksittäinen,
-kehityksestä ehkä jälkeen jäänyt paketti, joka ei toimi kummassakaan
-vaan ainoastaan perinteisillä kääntäjillä (\koodi{latex},
-\koodi{pdflatex}). Tässäkin oppaassa mainitaan siellä täällä
-ominaisuuksia, jotka toimivat vain toisella kääntäjällä: toiset
-Lualatexilla, toiset Xelatexilla.
+Kääntäjän vaihtaminen on joka tapauksessa helppoa. Tässä oppaassa
+mainitaan siellä täällä pari ominaisuutta, jotka toimivat vain toisella
+kääntäjällä: toiset Lualatexilla, toiset Xelatexilla.
 
 \subsection{Latex yläkäsitteenä}
 
@@ -225,10 +225,10 @@ latexmk -xelatex  teksti.tex
 \noindent
 Työskentelyä erityisen paljon helpottava valitsin on \koodi{\=/pvc}. Kun
 tuo valitsin on mukana komennossa, Latexmk jää tarkkailemaan annettua
-Latex\-/ tiedostoa, ja kun se huomaa tiedoston muuttuneen, se kääntää
-tiedoston automaattisesti uudelleen. Kirjoittajan ei siis tarvitse muuta
-kuin tallentaa tiedosto tekstieditorista, ja tarkkailutilassa oleva
-Latexmk kääntää sen aina itsestään.
+Latex\-/ lähdetiedostoa, ja kun se huomaa tiedoston muuttuneen, se
+kääntää tiedoston automaattisesti uudelleen. Kirjoittajan ei siis
+tarvitse muuta kuin tallentaa tiedosto tekstieditorista, ja
+tarkkailutilassa oleva Latexmk kääntää sen aina itsestään.
 
 Muitakin hyödyllisiä toimintoja on mukana. Seuraavista esimerkeistä
 ensimmäinen komento poistaa kääntämisen aikana luodut
@@ -308,10 +308,9 @@ haluaa tutustua esimerkissä \ref{esim/ensimmäinen} mainittavaan
 \label{luku/lähdetiedosto}
 
 Latexin lähdetiedostot eli lähdedokumentit ovat tekstitiedostoja eli
-puhdasta tekstiä. Esimerkki \ref{esim/ensimmäinen} näyttää, mitä
-tiedosto voisi sisältää. Siinä on tyypillisen dokumentin
-vähimmäissisältö, jota voi käyttää harjoitteluun sekä myöhemminkin
-pohjana omille töille.
+puhdasta tekstiä. Esimerkissä \ref{esim/ensimmäinen} on tyypillisen
+dokumentin vähimmäissisältö, jota voi käyttää harjoitteluun sekä
+myöhemminkin pohjana omille töille.
 
 Tallenna esimerkin sisältö tekstieditorin avulla tiedostoon vaikkapa
 nimellä \koodi{teksti.\katk tex}. Käännä eli lado se pdf\-/ tiedostoksi

@@ -2065,15 +2065,16 @@ asettaa kirjainperheen määrittelyn yhteydessä halutun kirjainleikkauksen
 valitsimella \koodi{Bold\-Font} tai \koodi{Slanted\-Font} ja määrittää
 niille erityisiä ominaisuuksia valitsimella \koodi{Bold\-Fea\-tures} tai
 \koodi{Slanted\-Fea\-tures}. Seuraava esimerkki asettaa dokumentin
-perusfontille kaltevan leikkauksen. Tämän jälkeen komento
-\komento{slshape} valitsee \textsl{kaltevan} leikkauksen, joka on siis
-eri asia kuin \textit{kursiivi} (\komento{itshape}).
+perusfontille kaltevan leikkauksen. Tämän jälkeen komennot
+\komento{slshape} ja \komento{textsl} valitsevat \textsl{kaltevan}
+leikkauksen, joka on siis eri asia kuin \textit{kursiivi}
+(\komento{itshape}, \komento{textit}).
 
 \komentoi{setmainfont}
 \begin{koodilohkosis}
-\setmainfont{…}[
-  SlantedFont={…}, % tähän pystyasentoinen leikkaus
-  SlantedFeatures={FakeSlant=.2}]
+\setmainfont{TeX Gyre Termes}[           % kirjainperhe
+  SlantedFont={TeX Gyre Termes Regular}, % pystyasentoinen leikkaus
+  SlantedFeatures={FakeSlant=.2}]        % keinotekoinen kallistus
 \end{koodilohkosis}
 
 \subsection{Keinotekoinen pienversaali}

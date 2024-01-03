@@ -2176,11 +2176,11 @@ otfinfo -s texgyrepagella-math.otf
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[2]{#1 & #2 \\}
+  \renewcommand{\rivi}[2]{#1 & $\longleftrightarrow$ & #2 \\}
 
-  \begin{tabular}{rl}
+  \begin{tabular}{r@{\enspace}c@{\enspace}l}
     \toprule
-    \ots{Leipäteksti} & \ots{Matematiikkatila} \\
+    \ots{Leipäteksti} && \ots{Matematiikkatila} \\
     \midrule
     \rivi{Libertinus Serif}{Libertinus Math}
     \rivi{TeX Gyre Bonum}{TeX Gyre Bonum Math}

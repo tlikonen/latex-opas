@@ -136,8 +136,6 @@ poistaa kaikki syntyneet tiedostot.
 Puutteita ja suunnitelmia
 -------------------------
 
-  - Fonttiluvussa on ehkä tarpeen käsitellä fonttivalitsin `Renderer'
-    Lualatexille.
   - Lisätään biblatex-lukuun päiväysten muuttaminen (mm. urldate).
   - Lisätään ohjeet omien pakettien ja dokumenttiluokkien tekemiseen.
   - Mahdollisesti vaihdetaan uudempaan wrapfig2-pakettiin, kunhan se

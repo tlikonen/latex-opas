@@ -1174,7 +1174,7 @@ lihavoinnin. On kuitenkin mahdollista määritellä kirjainperheeseen
 kuuluvia leikkausten nimiä tai fonttitiedostoja erikseen. Tällainen on
 tarpeen esimerkiksi silloin, kun kirjainperhe sisältää useita eri
 vahvuuksia ja halutaan itse määritellä, mikä niistä tulee
-perusvahvuudeksi ja mikä lihavoiduksi.
+perusvahvuudeksi ja mikä lihavaksi.
 
 Esimerkki \ref{esim/fontit-leik-omin} selventää, kuinka kirjainperheen
 eri leikkausten nimet tai fonttitiedostot määritellään. Kullekin
@@ -1182,7 +1182,8 @@ leikkaukselle voi määrittää myös omat asetuksensa \koodi{Fea\-tures}\-/
 sanaan päättyvällä valitsimella. Samaa asiaa havainnollistetaan myös
 konkreettisemmin esimerkissä \ref{esim/fontit-leik-omin-käyt}.
 Leikkauksen nimessä voi käyttää tähteä (\koodi{*}), joka korvautuu
-kirjainperheen nimellä (\englanti{Macklin Text}).
+kirjainperheen nimellä (\englanti{Macklin Text}). Fonttien nimeämisestä
+on lisätietoa luvussa \ref{luku/luatex-xetex-fonttitekn}.
 
 \begin{esimerkki*}
   \komentoi{setmainfont}
@@ -1728,6 +1729,63 @@ myös teknisesti eheä eli toimii Latexin sisäisen logiikan näkökulmasta
 oikein. Haittana voi pitää sitä, että kaikki koot täytyy määritellä
 erikseen.
 
+\subsection{Lualatex, Xelatex ja fonttitekniikka}
+\label{luku/luatex-xetex-fonttitekn}
+
+Kääntäjät Lualatex ja Xelatex -- tai oikeastaan niiden taustalla
+toimivat Luatex ja Xetex -- käsittelevät fontteja sisäisesti eri
+tavalla. Ne esimerkiksi hyväksyvät kirjainperheiden tai \=/leikkausten
+nimet hieman toisistaan poikkeavalla tavalla, ja kääntäjää vaihtaessa
+saattaa joskus huomata, ettei jotakin kirjainperhettä tai yksittäistä
+leikkausta enää löydykään.
+
+Ongelma korjaantuu nimeämällä kirjainperheen tai \=/leikkauksen eri
+tavalla. Yleispätevää ohjetta nimeämiseen on vaikeaa antaa, mutta jos
+tulee ongelmia, kannatta fonttitiedostoista tutkia kirjainperheelle tai
+\=/leikkaukselle annettuja nimiä. Se onnistuu käyttöjärjestelmän
+komentotulkissa \koodi{otfinfo}\-/ komennolla, joka tulostaa jotakin
+esimerkin \ref{esim/otfinfo-fonttinimiä} kaltaista. Kokeilemalla
+tulosteessa olevia nimiä saa kyllä fontit toimimaan.
+
+\begin{esimerkki*}
+\begin{koodilohko}
+Family:              Garamond Premr Pro
+Subfamily:           Regular
+Full name:           GaramondPremrPro
+PostScript name:     GaramondPremrPro
+Preferred family:    Garamond Premier Pro
+Mac font menu name:  Garamond Premr Pro
+\end{koodilohko}
+  \caption{\koodi{otfinfo}\-/ komennon tuloste kertoo fontista muun
+    muassa kirjainperheen ja \=/leikkauksen nimiä}
+  \label{esim/otfinfo-fonttinimiä}
+\end{esimerkki*}
+
+\begin{koodilohkosis}
+otfinfo -i GaramondPremrPro.otf
+\end{koodilohkosis}
+
+\noindent
+Lualatex (Luatex) käyttää ulkoisia tekniikoita fonttien latomiseen eli
+''renderöimiseen'', ja näitä tekniikoita voi vaihtaa fontin
+määrittelemisen yhteydessä. Eri vaihtoehtojen kokeilu voi olla tarpeen,
+jos oletusasetuksilla ei synny toivottua jälkeä. Asetuksia muutetaan
+käyttämällä fontin määrittelyssä valitsinta \koodi{Renderer} seuraavan
+esimerkin tavoin:
+
+\komentoi{setmainfont}
+\begin{koodilohkosis}
+\setmainfont{…}[Renderer=Node]
+\end{koodilohkosis}
+
+\noindent
+Tavallisimpia \koodi{Renderer}\-/ valitsimen arvoja ovat
+\koodi{\mbox{Node}}, \koodi{Harf\-Buzz} ja \koodi{Open\-Type}.
+Lisätietoa voi lukea \paketti{fontspec}\-/ paketin ohjekirjan luvusta,
+joka käsittelee Luatexin erityispiirteitä. Myös Xelatexissa (Xetex) on
+fontteihin liittyviä ominaisuuksia, joita ei muissa kääntäjissä ole.
+Niistäkin kerrotaan \paketti{fontspec}\-/ paketin ohjekirjassa.
+
 \subsection{Fonttien oletusasetuksia}
 \label{luku/fontit-oletusasetukset}
 
@@ -2012,6 +2070,13 @@ kirjainperheeseen kuuluvaan pienversaaliin, käytetään valitsinta
 \begin{koodilohkosis}
 \setmainfont{…}[SmallCapsFeatures={LetterSpace=6}]
 \end{koodilohkosis}
+
+\noindent
+\koodi{Letter\-Space}\-/ ominaisuus ei ole aina toiminut kunnolla
+kaikilla Lualatexin fontinladontatekniikoilla. Jos merkkien välistys
+toimii epätasaisesti, kannattaa kokeilla vaihtaa tekniikkaa
+\koodi{Renderer}\-/ valitsimella. Lisätietoa on luvussa
+\ref{luku/luatex-xetex-fonttitekn}.
 
 \subsection{Keinotekoinen venytys, lihavointi ja kallistus}
 \label{luku/fontit-venytys}

@@ -536,6 +536,7 @@ real-scripts
 ref-name
 ref-step-counter
 reg-tot-counter
+Ren-der-er
 re-new-com-mand
 re-new-en-vi-ron-ment
 re-size-box
@@ -779,6 +780,7 @@ vaih-to-eh-dot
 vaih-to-eh-to
 vaih-to-eh-toi-ses-ti
 vaih-to-eh-to-ja
+vaih-to-eh-to-jen
 vaih-to-eh-to-na
 vai-ku-tus-alue
 vai-ku-tus-alueena

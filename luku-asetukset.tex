@@ -1195,7 +1195,9 @@ on lisätietoa luvussa \ref{luku/luatex-xetex-fonttitekn}.
   BoldItalicFont={…},  BoldItalicFeatures={…},
   SlantedFont={…},     SlantedFeatures={…},
   BoldSlantedFont={…}, BoldSlantedFeatures={…},
-  SmallCapsFont={…},   SmallCapsFeatures={…}]
+  SmallCapsFont={…},   SmallCapsFeatures={…},
+  SwashFont={…},       SwashFeatures={…},
+  BoldSwashFont={…},   BoldSwashFeatures={…}]
 \end{koodilohko}
   \caption{Kirjainperheeseen sisältyvien leikkausten nimien ja
     kirjainleikkauskohtaisten ominaisuuksien määrittely}
@@ -1409,6 +1411,8 @@ komennon vaikutus koskee vain argumenttina olevaa tekstiä.
     {kursiivi, italic}
     \rivi {slshape} {textsl} {\slshape leikkaus}
     {kalteva, slanted, oblique}
+    \rivi {swshape} {textsw} {\swshape leikkaus}
+    {koristeellinen, swash}
     \rivi {scshape} {textsc} {\scshape leikkaus}
     {pienversaali, kapiteeli, small caps}
     \bottomrule
@@ -1436,10 +1440,26 @@ käsitteellisesti ne ovat eri asia. Kursiivi on aina muodoltaan erilainen
 leikkaus, joka hieman mukailee käsialakirjoitusta, joskaan kirjaimia ei
 ole sidottu toisiinsa. Sen sijaan kalteva leikkaus on tavallisen eli
 pystyasentoisen leikkauksen kallistettu versio. Kallistus voi olla
-kirjainmuotoilijan piirtämä leikkaus, tai kallistus on voitu toteuttaa
-mekaanisesti. Kallistuksen voi tehdä myös Latexissa (luku
-\ref{luku/fontit-venytys}).
+kirjainmuotoilijan piirtämä leikkaus ja erillinen fonttitiedosto,
+jolloin kallistettu leikkaus täytynee erikseen määrittää osaksi
+kirjainperhettä \koodi{Slanted\-Font}\-/ asetuksella (esimerkki
+\ref{esim/fontit-leik-omin}). Kallistuksen voi tehdä myös
+keinotekoisesti Latexissa. Katso lisätietoa luvusta
+\ref{luku/fontit-venytys}.
 
+Jotkut harvat \englanti{Open Type} \=/fontit sisältävät erillisen
+koristeellisen tyylin (\komento{swshape}), joka voi sisältyä esimerkiksi
+kursiivileikkaukseen. Sellaisen saa määritettyä osaksi kirjainperhettä
+käyttämällä valitsimia \koodi{Swash\-Font} ja \koodi{Swash\-Fea\-tures}
+(esimerkki \ref{esim/fontit-leik-omin}) seuraavalla tavalla:
+
+\komentoi{setmainfont}
+\begin{koodilohkosis}
+\setmainfont{Garamond Premier Pro}[
+  SwashFont={GaramondPremrPro-It}, SwashFeatures={Style=Swash}]
+\end{koodilohkosis}
+
+\noindent
 Komennot fontin koon valintaan ovat taulukossa
 \ref{tlk/fonttikokokomennot}. Taulukko kertoo myös, mitä fontin
 pistekokoa (pt) mikäkin komento tarkoittaa oletuksena. Oletus riippuu

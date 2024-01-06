@@ -624,6 +624,7 @@ sub-section-mark
 sub-sub-sec-tion
 suo-jaus-omi-nai-suus
 suur-aak-kos-ten
+sw-shape
 sym-bo-li-esi-tys
 säh-kö-pos-ti-osoi-te
 säh-kö-pos-ti-osoit-tei-den

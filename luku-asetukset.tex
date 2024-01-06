@@ -1752,12 +1752,11 @@ erikseen.
 \subsection{Lualatex, Xelatex ja fonttitekniikka}
 \label{luku/luatex-xetex-fonttitekn}
 
-Kääntäjät Lualatex ja Xelatex -- tai oikeastaan niiden taustalla
-toimivat Luatex ja Xetex -- käsittelevät fontteja sisäisesti eri
-tavalla. Ne esimerkiksi hyväksyvät kirjainperheiden tai \=/leikkausten
-nimet hieman toisistaan poikkeavalla tavalla, ja kääntäjää vaihtaessa
-saattaa joskus huomata, ettei jotakin kirjainperhettä tai yksittäistä
-leikkausta enää löydykään.
+Kääntäjät Lualatex ja Xelatex (Luatex ja Xetex) käsittelevät fontteja
+sisäisesti eri tavalla. Ne esimerkiksi hyväksyvät kirjainperheiden tai
+\=/leikkausten nimet hieman toisistaan poikkeavalla tavalla, ja
+kääntäjää vaihtaessa saattaa joskus huomata, ettei jotakin
+kirjainperhettä tai yksittäistä leikkausta enää löydykään.
 
 Ongelma korjaantuu nimeämällä kirjainperheen tai \=/leikkauksen eri
 tavalla. Yleispätevää ohjetta nimeämiseen on vaikeaa antaa, mutta jos
@@ -1790,8 +1789,7 @@ Lualatex (Luatex) käyttää ulkoisia tekniikoita fonttien latomiseen eli
 ''renderöimiseen'', ja näitä tekniikoita voi vaihtaa fontin
 määrittelemisen yhteydessä. Eri vaihtoehtojen kokeilu voi olla tarpeen,
 jos oletusasetuksilla ei synny toivottua jälkeä. Asetuksia muutetaan
-käyttämällä fontin määrittelyssä valitsinta \koodi{Renderer} seuraavan
-esimerkin tavoin:
+käyttämällä valitsinta \koodi{Renderer} seuraavan esimerkin tavoin:
 
 \komentoi{setmainfont}
 \begin{koodilohkosis}

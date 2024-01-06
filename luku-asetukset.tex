@@ -1372,67 +1372,83 @@ rivikorkeus on parasta asettaa \komento{fontsize}\-/komennolla.
 
 Latexissa on joukko korkean tason fonttikomentoja, jotka on tarkoitettu
 käytettäväksi sen jälkeen, kun matalan tason asetukset on kerran
-määritetty. Taulukossa \ref{tlk/fonttimallikomennot} on komennot
-kirjainperheen ja kirjainleikkauksen valintaan. Joka rivillä ensin
-mainittu komento (esim. \komento{rmfamily}) vaikuttaa tekstiin, joka
-tulee komennon jälkeen. Vaikutusalue rajoittuu nykyisen ympäristön (luku
-\ref{luku/ympäristöt}) sisään tai aaltosulkeilla (luku
-\ref{luku/aaltosulkeet}) rajatun alueen sisään. Rivillä toisena olevalle
-komennolle (esim. \komentox{textrm}) annetaan yksi argumentti, ja
-komennon vaikutus koskee vain argumenttina olevaa tekstiä.
+määritetty. Taulukoissa \ref{tlk/komennot-kirjainperhe} ja
+\ref{tlk/komennot-kirjainleikk} ovat komennot kirjainperheen ja
+kirjainleikkauksen valintaan. Joka rivillä ensin mainittu komento (esim.
+\komento{rmfamily}) vaikuttaa tekstiin, joka tulee komennon jälkeen.
+Vaikutusalue rajoittuu nykyisen ympäristön (luku \ref{luku/ympäristöt})
+sisään tai aaltosulkeilla (luku \ref{luku/aaltosulkeet}) rajatun alueen
+sisään. Rivillä toisena olevalle komennolle (esim. \komentox{textrm})
+annetaan yksi argumentti, ja komennon vaikutus koskee vain argumenttina
+olevaa tekstiä.
 
 \leijutlk{
   \providecommand{\rivi}{}
-  \renewcommand{\rivi}[4]{%
-    \komento{#1} & \komento{#2}\komentoarg{\dots} & #3 & #4 \\}
-  \begin{tabular}{llll}
+  \renewcommand{\rivi}[3]{%
+    \komento{#1} & \komento{#2}\komentoarg{\dots} & #3 \\}
+  \begin{tabular}{lll}
     \toprule
-    \multicolumn{2}{l}{\ots{Komento}}
-    & \multicolumn{2}{l}{\ots{Merkitys}} \\
+    \multicolumn{2}{l}{\ots{Komento}} & \ots{Merkitys} \\
 
     \midrule
-    \rivi {rmfamily} {textrm} {\rmfamily perhe}
-    {perus, yl. antiikva, serif, roman}
-    \rivi {sffamily} {textsf} {\sffamily perhe}
-    {groteski, sans serif, gothic}
-    \rivi {ttfamily} {texttt} {\ttfamily perhe}
-    {tasalevyinen, typewriter}
+    \rivi {rmfamily} {textrm}
+    {\textrm{perus, yleensä antiikva, serif, roman}}
+    \rivi {sffamily} {textsf}
+    {\textsf{groteski, sans serif, gothic}}
+    \rivi {ttfamily} {texttt}
+    {\texttt{tasalevyinen, typewriter}}
 
-    \midrule
-    \rivi {mdseries} {textmd} {\mdseries leikkaus}
-    {tavallinen vahvuus, medium}
-    \rivi {bfseries} {textbf} {\bfseries leikkaus}
-    {lihavoitu, bold}
-
-    \midrule
-    \rivi {upshape} {textup} {\upshape leikkaus}
-    {pystyasento, tavallinen}
-    \rivi {itshape} {textit} {\itshape leikkaus}
-    {kursiivi, italic}
-    \rivi {slshape} {textsl} {\slshape leikkaus}
-    {kalteva, slanted, oblique}
-    \rivi {swshape} {textsw} {\swshape leikkaus}
-    {koristeellinen, swash}
-    \rivi {scshape} {textsc} {\scshape leikkaus}
-    {pienversaali, kapiteeli, small caps}
     \bottomrule
   \end{tabular}
 }{
-  \caption{Komennot kirjainperheen ja kirjainleikkauksen valintaan.
-    Perustila on \komento{rmfamily}, \komento{mdseries} ja
-    \komento{upshape}}
-  \label{tlk/fonttimallikomennot}
+  \caption{Komennot kirjainperheen valintaan. Perustila on
+    \komento{rmfamily}}
+  \label{tlk/komennot-kirjainperhe}
 }
 
-Taulukossa on ensimmäisillä riveillä kirjainperhekomennot (3\,kpl),
-jotka vaihtavat koko perheen kaikkine leikkauksineen. Niiden jälkeen
-tulevat kirjainleikkauskomennot, jotka valitsevat toisen leikkauksen
-samasta perheestä. Kirjainleikkauksen asetukset jaetaan kahteen ryhmään:
-\englantik{series} 'sarja' ja \englantik{shape} 'muoto'. Kummastakin
-ryhmästä on valittuna aina yksi ominaisuus, eli samanaikaisesti voi olla
-voimassa esimerkiksi \komento{bfseries} (\textbf{lihavoitu}) ja
-\komento{itshape} (\textit{kursiivi}), ja tuloksena on \textbf{\itshape
-  lihavoitua kursiivia}.
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[3]{%
+    \komento{#1} & \komento{#2}\komentoarg{\dots} & #3 \\}
+  \begin{tabular}{llll}
+    \toprule
+    \multicolumn{2}{l}{\ots{Komento}} & \ots{Merkitys} \\
+
+    \midrule
+    \rivi {mdseries} {textmd}
+    {\textmd{tavallinen vahvuus, medium}}
+    \rivi {bfseries} {textbf}
+    {\textbf{lihavoitu, bold}}
+
+    \midrule
+    \rivi {upshape} {textup}
+    {\textup{pystyasento, tavallinen}}
+    \rivi {itshape} {textit}
+    {\textit{kursiivi, italic}}
+    \rivi {slshape} {textsl}
+    {\textsl{kalteva, slanted, oblique}}
+    \rivi {swshape} {textsw}
+    {koristeellinen, swash}
+    \rivi {scshape} {textsc}
+    {\textsc{pienversaali, kapiteeli, small caps}}
+
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Komennot kirjainleikkauksen valintaan saman kirjainperheen
+    sisällä. Perustila on \komento{mdseries} ja \komento{upshape}}
+  \label{tlk/komennot-kirjainleikk}
+}
+
+Taulukossa \ref{tlk/komennot-kirjainperhe} ovat kirjainperhekomennot,
+jotka vaihtavat koko perheen kaikkine leikkauksineen. Taulukon
+\ref{tlk/komennot-kirjainleikk} komennot puolestaan valitsevat toisen
+leikkauksen samasta perheestä. Kirjainleikkauksen asetukset jaetaan
+kahteen ryhmään: \englantik{series} 'sarja' ja \englantik{shape}
+'muoto'. Kummastakin ryhmästä on valittuna aina yksi ominaisuus, eli
+samanaikaisesti voi olla voimassa esimerkiksi \komento{bfseries}
+(\textbf{lihavoitu}) ja \komento{itshape} (\textit{kursiivi}), ja
+tuloksena on \textbf{\itshape lihavoitua kursiivia}.
 
 Useimmissa fonteissa kursiivileikkaus (\komento{itshape}) ja kalteva
 leikkaus (\komento{slshape}) tuottavat saman lopputuloksen, mutta
@@ -1449,9 +1465,10 @@ keinotekoisesti Latexissa. Katso lisätietoa luvusta
 
 Jotkut harvat \englanti{Open Type} \=/fontit sisältävät erillisen
 koristeellisen tyylin (\komento{swshape}), joka voi sisältyä esimerkiksi
-kursiivileikkaukseen. Sellaisen saa määritettyä osaksi kirjainperhettä
-käyttämällä valitsimia \koodi{Swash\-Font} ja \koodi{Swash\-Fea\-tures}
-(esimerkki \ref{esim/fontit-leik-omin}) seuraavalla tavalla:
+kursiivileikkaukseen mutta joka täytyy silti kytkeä erikseen päälle.
+Sellaisen saa määritettyä osaksi kirjainperhettä käyttämällä valitsimia
+\koodi{Swash\-Font} ja \koodi{Swash\-Fea\-tures} (esimerkki
+\ref{esim/fontit-leik-omin}) seuraavalla tavalla:
 
 \komentoi{setmainfont}
 \begin{koodilohkosis}
@@ -1705,7 +1722,7 @@ samoja mutta ilman skaalausta.
 Uusien skaalaamattomien kirjainperheiden komentojen nimiksi on valittu
 \komentox{sf\-fam\-i\-ly\-abs} ja \komentox{tt\-fam\-i\-ly\-abs} (vrt.
 \komento{sffamily} ja \komento{ttfamily}, taulukko
-\ref{tlk/fonttimallikomennot}), ja näillä komennoilla kirjainperheet
+\ref{tlk/komennot-kirjainperhe}), ja näillä komennoilla kirjainperheet
 kytketään päälle. Jos esimerkiksi jonkin julkaisun vaatimuksiin kuuluu,
 että otsikossa täytyy olla 20 pisteen lihavoitu TeX Gyre Heros
 \=/kirjainleikkaus, voi esimerkissä \ref{esim/fontti-absoluuttinen}
@@ -1895,8 +1912,8 @@ Komennon valinnaisella argumentilla voi rajata, mitä kirjainperheitä
 oletusasetukset koskevat. Valinnaiseen argumenttiin kirjoitetaan yksi
 tai useampia pilkulla erotettuja komentoja, joilla kirjainperheet
 kytketään päälle: \komento{rmfamily}, \komento{sffamily},
-\komento{ttfamily} (taulukko \ref{tlk/fonttimallikomennot},
-s.~\pageref{tlk/fonttimallikomennot}) tai komennolla
+\komento{ttfamily} (taulukko \ref{tlk/komennot-kirjainperhe},
+s.~\pageref{tlk/komennot-kirjainperhe}) tai komennolla
 \komento{newfontfamily} määritelty fonttikomento (luku
 \ref{luku/fontin-valinta}).
 

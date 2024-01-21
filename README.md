@@ -131,12 +131,3 @@ poistaa kaikki syntyneet tiedostot.
 
     make clean
     make distclean
-
-
-Puutteita ja suunnitelmia
--------------------------
-
-  - Lisätään biblatex-lukuun päiväysten muuttaminen (mm. urldate).
-  - Lisätään ohjeet omien pakettien ja dokumenttiluokkien tekemiseen.
-  - Mahdollisesti vaihdetaan uudempaan wrapfig2-pakettiin, kunhan se
-    yleistyy.

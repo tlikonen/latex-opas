@@ -75,10 +75,28 @@ datezeros=false]{biblatex}
 \newcommand{\englantik}[1]{\textenglish{\emph{#1}}}
 
 \defaultfontfeatures[\ttfamily]{Ligatures={TeXReset, NoCommon}}
-\usepackage[oldstyle,semibold,ScaleSF=MatchLowercase,StretchTT=.8]
-{libertinus-otf}
 
-\newfontface{\swashfontti}{TeX Gyre Chorus}[Scale=MatchLowercase]
+\setmainfont{Libertinus Serif}[
+Numbers=Lowercase,
+BoldFont={* Semibold},
+BoldItalicFont={* Semibold Italic},
+SlantedFont={* Regular}, SlantedFeatures={FakeSlant=0.2},
+BoldSlantedFont={* Semibold}, BoldSlantedFeatures={FakeSlant=0.2},
+SmallCapsFont={* Regular}, SmallCapsFeatures={Language=Default,
+  Letters=SmallCaps},
+SwashFont={TeX Gyre Chorus}]
+
+\setsansfont{Libertinus Sans}[
+Scale=MatchLowercase, Numbers=Lowercase,
+SlantedFont={* Regular}, SlantedFeatures={FakeSlant=0.2},
+BoldSlantedFont={* Bold}, BoldSlantedFeatures={FakeSlant=0.2},
+SmallCapsFont={* Regular}, SmallCapsFeatures={Language=Default,
+  Letters=SmallCaps}]
+
+\setmonofont{Libertinus Mono}[
+Scale=MatchLowercase, FakeStretch=0.8, Numbers=SlashedZero]
+
+\setmathfont{Libertinus Math}[Scale=MatchLowercase]
 
 \renewcommand{\scriptsize}{\fontsize{7bp}{7bp}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{8bp}{9bp}\selectfont}
@@ -352,7 +370,6 @@ columnsep=1em]
 \regtotcounter{chapter}
 
 \begin{document}
-\rmfamily % Pienversaali ei toimi leipätekstissä ilman tätä.
 
 \input{tavutusvihjeet}
 

@@ -86,7 +86,7 @@ Kääntäminen ja asentaminen
 
 Latex-lähdetiedostojen kääntäminen eli latominen PDF-dokumentiksi vaatii
 useita Latexin makropaketteja ja pari fonttia. Latexin jakelukokonaisuus
-[Texlive](https://tug.org/texlive/) sisältää kaiken tarvittavan.
+[Tex Live](https://tug.org/texlive/) sisältää kaiken tarvittavan.
 Esimerkiksi [Debian](https://www.debian.org) Linux -käyttöjärjestelmässä
 asennuspaketti `texlive-full` asentaa koko Texliven.
 

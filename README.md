@@ -101,7 +101,7 @@ Latex-lähdetiedostojen kääntäminen eli latominen PDF-dokumentiksi vaatii
 useita Latexin makropaketteja ja pari fonttia. Latexin jakelukokonaisuus
 [Tex Live](https://tug.org/texlive/) sisältää kaiken tarvittavan.
 Esimerkiksi [Debian](https://www.debian.org) Linux -käyttöjärjestelmässä
-asennuspaketti `texlive-full` asentaa koko Texliven.
+asennuspaketti `texlive-full` asentaa koko Tex Liven.
 
 [CTAN][CTAN]-arkistossa julkaistut lähdetiedostot käännetään
 PDF-tiedostoksi komennoilla `lualatex` ja `biber` seuraavasti:
@@ -129,9 +129,10 @@ kääntämisvaihettakin, koska ennen asentamista se varmistaa, että
 tarvittavat tiedostot on käännetty. Asennuskohde on käyttäjän
 kotihakemistossa eli polussa `$HOME/texmf`. Kohteeseen asentuu paitsi
 oppaan PDF-tiedosto myös lähdetiedostot ja tämä käsillä oleva
-`README.md`. Asentamisen jälkeen esimerkiksi Texliveen sisältyvä komento
-`texdoc` osaa löytää ja avata oppaan, kun komennolle antaa argumentiksi
-joitakin oppaan nimen kirjaimia, esimerkiksi `texdoc kaytann`.
+`README.md`. Asentamisen jälkeen esimerkiksi Tex Liveen sisältyvä
+komento `texdoc` osaa löytää ja avata oppaan, kun komennolle antaa
+argumentiksi joitakin oppaan nimen kirjaimia, esimerkiksi `texdoc
+kaytann`.
 
 Asennus poistetaan komennolla `make uninstall`. Komento tosin säilyttää
 polun `$HOME/texmf`, koska siellä voi edelleen sijaita muita Texiin ja

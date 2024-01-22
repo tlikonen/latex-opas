@@ -23,12 +23,11 @@ tekstidokumentin kirjoittamisen tarpeisiin. Oppaan avulla pitäisi
 pärjätä niin hyvin, että laajennuspakettien ohjeita tarvitsee lukea vain
 harvoin.
 
-Edellisessä kappaleessa mainostettu nykyaikaisuus tarkoittaa esimerkiksi
-sitä, että tässä oppaassa keskitytään Open Type -fontteihin,
-Unicode-merkistöön ja PDF-tiedostoihin. Latexin vanha fonttitekniikka
-sivuutetaan, eikä kummallisten fonttitiedostojen ja merkistörajoitusten
-kanssa kamppailla. Oppaan ohjeet siis sopivat nykyaikaiselle tietokoneen
-käyttäjälle.
+Edellä mainostettu nykyaikaisuus tarkoittaa esimerkiksi sitä, että tässä
+oppaassa keskitytään Open Type -fontteihin, Unicode-merkistöön ja
+PDF-tiedostoihin. Latexin vanha fonttitekniikka sivuutetaan, eikä
+kummallisten fonttitiedostojen ja merkistörajoitusten kanssa kamppailla.
+Oppaan ohjeet siis sopivat nykyaikaiselle tietokoneen käyttäjälle.
 
 
 Saatavuus ja osallistuminen

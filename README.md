@@ -31,16 +31,25 @@ kanssa kamppailla. Oppaan ohjeet siis sopivat nykyaikaiselle tietokoneen
 käyttäjälle.
 
 
-Saatavuus
----------
+Saatavuus ja osallistuminen
+---------------------------
 
 Oppaan PDF-tiedosto ja lähdetiedostot ovat saatavilla
-[CTAN][CTAN]-arkistossa. PDF-tiedosto on myös Githubissa
-[julkaisusivulla](https://github.com/tlikonen/latex-opas/releases), ja
-lähdetiedostot ovat versionhallintajärjestelmässä [Githubissa][Github].
+[CTAN][]-arkistossa. PDF-tiedosto on myös Githubissa
+[julkaisusivulla][julk], ja lähdetiedostot ovat
+versionhallintajärjestelmässä [Githubissa][Github].
+
+Voit osallistua oppaan parantamiseen esimerkiksi kirjoittamalla
+[toiveita tai vikailmoituksia][viat] tai muuten vain
+[keskustelemalla][kesk] aiheesta. Oheisista linkeistä pääset
+osallistumaan.
+
 
 [CTAN]:   https://ctan.org/pkg/kaytannollista-latexia
 [Github]: https://github.com/tlikonen/latex-opas
+[julk]:   https://github.com/tlikonen/latex-opas/releases
+[viat]:   https://github.com/tlikonen/latex-opas/issues
+[kesk]:   https://github.com/tlikonen/latex-opas/discussions
 
 
 Versionumerointi

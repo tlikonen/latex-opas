@@ -40,8 +40,9 @@ versionhallintajärjestelmässä [Githubissa][Github].
 
 Voit osallistua oppaan parantamiseen esimerkiksi kirjoittamalla
 [toiveita tai vikailmoituksia][viat] tai muuten vain
-[keskustelemalla][kesk] aiheesta. Oheisista linkeistä pääset
-osallistumaan.
+[keskustelemalla][kesk] aiheesta. Voit tietenkin myös kopioida oppaan
+lähdetiedostot itsellesi, toteuttaa parannukset niihin ja julkaista ne
+jossakin. Oheisista linkeistä pääset osallistumaan.
 
 
 [CTAN]:   https://ctan.org/pkg/kaytannollista-latexia

@@ -30,26 +30,17 @@ kummallisten fonttitiedostojen ja merkistörajoitusten kanssa kamppailla.
 Oppaan ohjeet siis sopivat nykyaikaiselle tietokoneen käyttäjälle.
 
 
-Saatavuus ja osallistuminen
----------------------------
+Saatavuus
+---------
 
 Oppaan PDF-tiedosto ja lähdetiedostot ovat saatavilla
 [CTAN][]-arkistossa. PDF-tiedosto on myös Githubissa
 [julkaisusivulla][julk], ja lähdetiedostot ovat
 versionhallintajärjestelmässä [Githubissa][Github].
 
-Voit osallistua oppaan parantamiseen esimerkiksi kirjoittamalla
-[toiveita tai vikailmoituksia][viat] tai muuten vain
-[keskustelemalla][kesk] aiheesta. Voit tietenkin myös kopioida oppaan
-lähdetiedostot itsellesi, toteuttaa parannukset niihin ja julkaista ne
-jossakin. Oheisista linkeistä pääset osallistumaan.
-
-
 [CTAN]:   https://ctan.org/pkg/kaytannollista-latexia
-[Github]: https://github.com/tlikonen/latex-opas
 [julk]:   https://github.com/tlikonen/latex-opas/releases
-[viat]:   https://github.com/tlikonen/latex-opas/issues
-[kesk]:   https://github.com/tlikonen/latex-opas/discussions
+[Github]: https://github.com/tlikonen/latex-opas
 
 
 Versionumerointi
@@ -62,6 +53,19 @@ samana vuonna julkaistaan oppaasta uusi versio, lisätään versionumeroon
 kyseisen kuukauden numero, esimerkiksi versio ”2022.4” (huhtikuu 2022).
 Saman kuun aikana toinen julkaisu saa versionumeroonsa vielä päivänkin
 numeron, esimerkiksi ”2022.4.15” (15. huhtikuuta 2022).
+
+
+Osallistuminen
+--------------
+
+Voit osallistua oppaan parantamiseen esimerkiksi kirjoittamalla
+[toiveita tai vikailmoituksia][viat] tai muuten vain
+[keskustelemalla][kesk] aiheesta. Voit tietenkin myös kopioida oppaan
+lähdetiedostot itsellesi, toteuttaa parannukset itse ja julkaista ne
+jossakin (ks. lisenssi alla). Oheisista linkeistä pääset osallistumaan.
+
+[viat]: https://github.com/tlikonen/latex-opas/issues
+[kesk]: https://github.com/tlikonen/latex-opas/discussions
 
 
 Tekijänoikeus ja lisenssi

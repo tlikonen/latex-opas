@@ -1485,16 +1485,16 @@ tehdä myös keinotekoisesti Latexissa. Katso lisätietoa luvusta
 
 Jotkut \englanti{Open Type} \=/fontit sisältävät erillisen
 koristeellisen tyylin (\komento{swshape}), joka voi sisältyä esimerkiksi
-kursiivileikkaukseen mutta joka täytyy silti kytkeä erikseen päälle.
-Sellaisen saa määritettyä osaksi kirjainperhettä käyttämällä valitsimia
-\koodi{Swash\-Font} ja \koodi{Swash\-Fea\-tures} (esimerkki
-\ref{esim/fontit-leik-omin}) seuraavalla tavalla:
+kursiivileikkaukseen ja erityisesti versaalikirjaimiin mutta joka täytyy
+kytkeä erikseen päälle. Sellaisen saa määritettyä osaksi kirjainperhettä
+käyttämällä valitsimia \koodi{Swash\-Font} ja \koodi{Swash\-Fea\-tures}
+(esimerkki \ref{esim/fontit-leik-omin}) seuraavalla tavalla:
 
 \komentoi{setmainfont}
 \begin{koodilohkosis}
-\setmainfont{Garamond Premier Pro}[
-  SwashFont={GaramondPremrPro-It},   % kursiivileikkaus
-  SwashFeatures={Style=Swash}]       % koristeellinen swash-tyyli
+\setmainfont{Garamond Libre}[
+  SwashFont={* Italic},         % kursiivileikkaus
+  SwashFeatures={Style=Swash}]  % koristeellinen swash-tyyli
 \end{koodilohkosis}
 
 \noindent

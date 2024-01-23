@@ -1179,11 +1179,12 @@ perusvahvuudeksi ja mikä lihavaksi.
 Esimerkki \ref{esim/fontit-leik-omin} selventää, kuinka kirjainperheen
 eri leikkausten nimet tai fonttitiedostot määritellään. Kullekin
 leikkaukselle voi määrittää myös omat asetuksensa \koodi{Fea\-tures}\-/
-sanaan päättyvällä valitsimella. Samaa asiaa havainnollistetaan myös
-konkreettisemmin esimerkissä \ref{esim/fontit-leik-omin-käyt}.
+sanaan päättyvällä valitsimella. Samaa asiaa havainnollistetaan
+konkreettisemmin esimerkissä \ref{esim/fontit-leik-libertinus}.
 Leikkauksen nimessä voi käyttää tähteä (\koodi{*}), joka korvautuu
-kirjainperheen nimellä (\englanti{Macklin Text}). Fonttien nimeämisestä
-on lisätietoa luvussa \ref{luku/luatex-xetex-fonttitekn}.
+kirjainperheen nimellä (esim. \englanti{Libertinus Serif}). Fonttien
+nimeämisestä on lisätietoa luvussa \ref{luku/luatex-xetex-fonttitekn} ja
+eri ominaisuuksista myöhemin tässä luvussa.
 
 \begin{esimerkki*}
   \komentoi{setmainfont}
@@ -1206,17 +1207,35 @@ on lisätietoa luvussa \ref{luku/luatex-xetex-fonttitekn}.
 
 \begin{esimerkki*}
   \komentoi{setmainfont}
+  \komentoi{setsansfont}
+  \komentoi{setmonofont}
 \begin{koodilohko}
-\setmainfont{Macklin Text}[
-  UprightFont    = {* Light},
-  ItalicFont     = {* Light Italic},
-  BoldFont       = {* Medium},
-  BoldItalicFont = {* Medium Italic}]
+\setmainfont{Libertinus Serif}[
+  Numbers=Lowercase,
+  BoldFont        = {* Semibold},
+  BoldItalicFont  = {* Semibold Italic},
+  SlantedFont     = {* Regular},  SlantedFeatures={FakeSlant=0.2},
+  BoldSlantedFont = {* Semibold}, BoldSlantedFeatures={FakeSlant=0.2},
+  SmallCapsFont   = {* Regular},  SmallCapsFeatures={Language=Default,
+                                                     Letters=SmallCaps}]
+
+\setsansfont{Libertinus Sans}[
+  Scale=MatchLowercase, Numbers=Lowercase,
+  SlantedFont     = {* Regular}, SlantedFeatures={FakeSlant=0.2},
+  BoldSlantedFont = {* Bold},    BoldSlantedFeatures={FakeSlant=0.2},
+  SmallCapsFont   = {* Regular}, SmallCapsFeatures={Language=Default,
+                                                    Letters=SmallCaps}]
+
+\setmonofont{Libertinus Mono}[
+  Scale=MatchLowercase, FakeStretch=0.8]
 \end{koodilohko}
-  \caption{Eri leikkausten nimien määrittely \englanti{Macklin Text}
-    \=/kirjainperheelle. Leikkauksen nimessä tähti (\koodi{*}) korvautuu
-    automaattisesti koko perheen nimellä}
-  \label{esim/fontit-leik-omin-käyt}
+  \caption{Libertinus\-/ kirjainperheiden asettaminen. Tässä
+    \englanti{Libertinus Serif} \=/perheen lihavoinniksi on valittu
+    ''\englanti{Semibold}'', mutta myös vahvempi \englanti{Bold}\-/
+    leikkaus on saatavilla. Pienversaali saattaa näissä perheissä vaatia
+    erityiset asetukset \koodi{Small\-Caps\-Font} ja
+    \koodi{Small\-Caps\-Features}}
+  \label{esim/fontit-leik-libertinus}
 \end{esimerkki*}
 
 Jos edellä kuvatut kolme kirjainperhettä (\komento{setmainfont},

@@ -1299,12 +1299,12 @@ Latexin normaaleissa dokumenttiluokissa vain kolme: \koodi{10pt}
 (oletus), \koodi{11pt} ja \koodi{12pt}. Dokumenttiluokan kokoasetus
 vaikuttaa myös sivun marginaaleihin, koska Latex pyrkii pitämään rivin
 merkkimäärän lukijalle sopivana: yhdelle riville ei kannata latoa ihan
-mahdottomasti merkkejä, koska kovin pitkän rivin seuraaminen rasittaa
-lukijaa ja vaatii enemmän keskittymistä.
+mahdottomasti merkkejä, koska kovin pitkän rivin seuraaminen vaatii
+enemmän keskittymistä ja rasittaa lukijaa.
 
 Fontin koon määrittäminen dokumenttiluokan valitsimella ehkä kuuluu jo
-vähän menneisyyteen, mutta voi sitä edelleen käyttää, jos se riittää ja
-sillä saa halutun lopputuloksen. Yleensä lienee järkevää jättää
+menneisyyteen, mutta voi sitä edelleen käyttää, jos se riittää ja sillä
+saa halutun lopputuloksen. Yleensä lienee järkevää jättää
 dokumenttiluokan fonttiasetus oletukseksi (\koodi{10pt}) ja käyttää koon
 asettamiseen luvuissa \ref{luku/fontti-suhteellinen} ja
 \ref{luku/fontti-absoluuttinen} kerrottuja tapoja. Sivun marginaalien ja
@@ -1408,7 +1408,7 @@ olevaa tekstiä.
     \komento{#1} & \komento{#2}\komentoarg{\dots} & #3 \\}
   \begin{tabular}{lll}
     \toprule
-    \multicolumn{2}{l}{\ots{Komento}} & \ots{Merkitys} \\
+    \multicolumn{2}{l}{\ots{Komennot}} & \ots{Kirjainperhe} \\
 
     \midrule
     \rivi {rmfamily} {textrm}
@@ -1430,9 +1430,9 @@ olevaa tekstiä.
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[3]{%
     \komento{#1} & \komento{#2}\komentoarg{\dots} & #3 \\}
-  \begin{tabular}{llll}
+  \begin{tabular}{lll}
     \toprule
-    \multicolumn{2}{l}{\ots{Komento}} & \ots{Merkitys} \\
+    \multicolumn{2}{l}{\ots{Komennot}} & \ots{Kirjainleikkaus} \\
 
     \midrule
     \rivi {mdseries} {textmd}
@@ -1447,10 +1447,10 @@ olevaa tekstiä.
     {\textit{kursiivi, italic}}
     \rivi {slshape} {textsl}
     {\textsl{kalteva, slanted, oblique}}
-    \rivi {swshape} {textsw}
-    {\textsw{Koristeellinen, swash}}
     \rivi {scshape} {textsc}
     {\textsc{pienversaali, kapiteeli, small caps}}
+    \rivi {swshape} {textsw}
+    {\textsw{Koristeellinen, swash}}
 
     \bottomrule
   \end{tabular}
@@ -1584,13 +1584,13 @@ suhteessa siihen. Esimerkki \ref{esim/fontti-suhteellinen} selventää,
 kuinka se tapahtuu. Alussa otetaan käyttöön dokumenttiluokka
 \luokka{article} ja annetaan sille valitsin \koodi{10pt}, joka määrittää
 fonttikooksi 10 pistettä. Se on dokumenttiluokan oletusasetus, jota ei
-tarvitsisi edes kirjoittaa näkyviin. Esimerkin toisella rivillä otetaan
-\paketti{fontspec}\-/paketti käyttöön.
+tarvitsisi edes kirjoittaa näkyviin. Esimerkin toisella rivillä ladataan
+\paketti{fontspec}\-/ paketti.
 
 Peruskirjainperheen (rivi~4) koko skaalataan 1,4\-/kertaiseksi, eli
 pistekooksi tulee 1,4 kertaa 10 pistettä eli 14 pistettä (pt).
 Normaalikokoinen peruskirjainperhe on ainoa, jonka pistekoko tiedetään.
-Kaikkien muiden koot täytyisi selvittää laskemalla.
+Kaikkien muiden koot määräytyvät suhteessa tähän.
 
 Groteski eli pääteviivaton kirjainperhe (rivi~5) ja tasalevyinen perhe
 (rivi~6) skaalataan samankorkuiseksi kuin perusperhe. Vertailukohtana
@@ -1759,7 +1759,7 @@ olevien asetusten pohjalta antaa otsikon ulkoasun (luku
 
 \noindent
 Esimerkin \ref{esim/fontti-absoluuttinen} riveillä 16--20 määritellään
-uudelleen Latexin korkean tason komennot, joilla fonttikoot asetetaan.
+uudelleen Latexin korkean tason komentoja, joilla fonttikoot asetetaan.
 Oletusarvot tulevat dokumenttiluokasta (luku
 \ref{luku/dokumenttiluokat}), mutta jos ne eivät ole sopivia, täytyy
 vähintäänkin määritellä komento \komento{normalsize} mutta sen lisäksi
@@ -2039,6 +2039,13 @@ aikakauteen tai kirjaintyyliin. Open Type \=/fontin ominaisuuksia voi
 selvittää käyttöjärjestelmän komentotulkissa komennolla \koodi{otfinfo}.
 Komennon argumentiksi annetaan muun muassa fonttitiedoston nimi.
 
+\begin{koodilohkosis}
+$ otfinfo -f LibertinusSerif-Regular.otf | grep Ligatures
+dlig    Discretionary Ligatures
+hlig    Historical Ligatures
+liga    Standard Ligatures
+\end{koodilohkosis}
+
 \subsection{Numeroiden muoto}
 \label{luku/fontit-numerot}
 
@@ -2163,9 +2170,10 @@ viivakontrasti muuttuu. Kirjainleikkauksen kutistaminen vaikuttaa
 lihavuuteen päinvastaisesti. Tällainen keinotekoinen fontin
 korjaileminen ei välttämättä tuota typografisesti kovin hyvää jälkeä
 mutta voi sopia lievästi käytettynä esimerkiksi otsikoihin. Tämän oppaan
-tasalevyistä kirjainperhettä on hieman kutistettu, koska alkuperäinen on
-kohtuuttoman leveä ({\ttfamily\addfontfeatures{FakeStretch=1}
-  esimerkki}) verrattuna muiden kirjainperheiden leveyteen.
+tasalevyistä kirjainperhettä (\englanti{Libertinus Mono}) on hieman
+kutistettu, koska alkuperäinen on kohtuuttoman leveä
+({\ttfamily\addfontfeatures{FakeStretch=1} esimerkki}) verrattuna muiden
+kirjainperheiden leveyteen.
 
 Jos kirjainperheeseen ei sisälly sopivaa lihavoitua tai kaltevaa
 leikkausta, voi sellaiset koettaa tehdä myös keinotekoisesti
@@ -2294,7 +2302,8 @@ voi tutkia esimerkiksi käyttöjärjestelmän komentotulkissa
 \koodi{otfinfo}\-/ komennolla:
 
 \begin{koodilohkosis}
-otfinfo -s texgyrepagella-math.otf
+$ otfinfo -s texgyrepagella-math.otf | grep math
+math            Mathematical Alphanumeric Symbols
 \end{koodilohkosis}
 
 \leijutlk{

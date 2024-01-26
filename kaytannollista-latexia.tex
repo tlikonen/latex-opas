@@ -74,7 +74,7 @@ datezeros=false]{biblatex}
 \newcommand{\englanti}[1]{\textenglish{#1}}
 \newcommand{\englantik}[1]{\textenglish{\emph{#1}}}
 
-\defaultfontfeatures[\ttfamily]{Ligatures={TeXReset, NoCommon}}
+\defaultfontfeatures[\ttfamily]{} % Nollataan oletukset: tavutus päälle
 
 \setmainfont{Libertinus Serif}[
 Numbers=Lowercase,
@@ -94,7 +94,8 @@ SmallCapsFont={* Regular}, SmallCapsFeatures={Language=Default,
   Letters=SmallCaps}]
 
 \setmonofont{Libertinus Mono}[
-Scale=MatchLowercase, FakeStretch=0.8, Numbers=SlashedZero]
+Scale=MatchLowercase, Ligatures={TeXReset, NoCommon},
+FakeStretch=0.8, Numbers=SlashedZero]
 
 \setmathfont{Libertinus Math}[Scale=MatchLowercase]
 

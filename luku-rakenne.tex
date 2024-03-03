@@ -121,6 +121,52 @@ Taulukossa on mainittu ensin Latexin omat komennot ja sitten
 estävät sanojen tavuttamisen, kun taas \paketti{ragged2e}\-/ paketin
 komennot sallivat tavutuksen normaalisti.
 
+\subsection{Optinen tasaus}
+
+Tekstin tasaamisessa halutaan toisinaan jättää jotkut merkit
+tasauskohdan ulkopuolelle. Esimerkiksi suurikokoisissa otsikoissa on
+joskus alussa lainausmerkki, joka halutaan latoa tasauskohdan vasemmalle
+puolelle, jotta eri riveillä olevat sanat saadaan tasaan.
+
+\begin{tulossis}
+  \Large\makebox[0bp][r]{''}Optinen tasaus \\
+  otsikossa''
+\end{tulossis}
+
+\noindent
+Tasauskohdan ulkopuolinen lainausmerkki voidaan toteuttaa leveydettömän
+laatikon avulla (luku \ref{luku/laatikot}). Lainausmerkki kirjoitetaan
+laatikkoon, jonka leveys on nolla ja jonka sisältö tasataan laatikon
+oikeaan reunaan. Tällöin laatikko ei vie yhtään tilaa, mutta sen sisältö
+ladotaan kyseisen kohdan vasemmalle puolelle.
+
+\komentoi{makebox}
+\begin{koodilohkosis}
+\makebox[0bp][r]{''}Optinen tasaus \\
+otsikossa''
+\end{koodilohkosis}
+
+\noindent
+Toisinaan keskitetyssä monirivisessä tekstissä tai otsikossa on rivin
+lopussa yhdysmerkki, mutta keskitys ehkä halutaan toteuttaa vain
+kirjainten perusteella ja jättää yhdysmerkki sen ulkopuolelle. Sellainen
+yhdysmerkki voidaan kirjoittaa leveydettömään laatikkoon, jolloin sitä
+ei huomioida keskittämisessä.
+
+\komentoi{makebox}
+\ymparistoi{center}
+\begin{koodilohkosis}
+\begin{center}
+  \Large Latex\makebox[0bp][l]{-} \\ opas
+\end{center}
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \begin{center}
+    \Large Latex\makebox[0bp][l]{-} \\ opas
+  \end{center}
+\end{tulossis}
+
 \subsection{Pystysuuntaiset välit}
 \label{luku/pystysuuntaiset-välit}
 

@@ -2364,3 +2364,152 @@ kaksi seuraavista kirjaimista: \koodi{c} (\englanti{center}, keski),
 arvoksi täysympyrän yksikkömäärä, ja oletusasetus on \koodi{units=\katk
   360}. Jos haluaa käyttää radiaaneja, sopiva asetus on
 \koodi{units=\katk 6.283185} (2π\,rad).
+
+\section{Tekstin ja laatikoiden värit KESKEN}
+\label{luku/värit}
+
+Latexiin saa värit \pakettictan{xcolor}\-/ paketin
+avulla.\footnote{Toinen vaihtoehto on yksinkertaisempi väripaketti
+  \paketti{color}, joka sisältää värien käsittelyn perustoiminnot.} Se
+tarjoaa muun muassa komentoja, joilla tekstin väriä, tekstin taustaväriä
+tai sivun taustaväriä voi muuttaa. Lisäksi se sisältää värien
+sekoittamiseen ja muuntamiseen liittyvää tekniikkaa. Paketin komentojen
+avulla voi myös värittää taulukoiden (luku \ref{luku/taulukot}) rivit
+vuorottelevin värein.
+
+Omassa dokumentissa käytettävät värit on hyvä määritellä alussa.
+Määrittely tarkoittaa sitä, että annetaan väreille nimet -- esimerkiksi
+käyttötarkoituksen mukaan -- ja myöhemmin lähdedokumentissa viitataan
+väreihin käyttämällä alussa määriteltyjä nimiä. Näin väri on määritelty
+yhdessä paikassa ja sen muuttaminen on myöhemmin helppoa. On kyllä
+mahdollista käyttää värejä ilman etukäteismäärittelyäkin.
+
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[3]{\koodi{#1} & #2 & \koodi{#3}
+    & \textcolor[#1]{#3}{\rule{.9em}{.9em}} \\}
+  \begin{tabular}{llll}
+    \toprule
+    \ots{Malli}
+    & \ots{Parametrit}
+    & \multicolumn{2}{l}{\ots{Esimerkki}} \\
+    \midrule
+    \rivi{rgb}{punainen, vihreä, sininen}{1,.7,.3}
+    \rivi{HTML}{punainen vihreä sininen}{33aaf3}
+    \rivi{cmyk}{syaani, magenta, keltainen, musta}{.1,1,.5,0}
+    \rivi{hsb}{sävy, kylläisyys, kirkkaus}{.2,1,.6}
+    \rivi{gray}{harmaa}{.55}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Erilaisia värimalleja ja niiden parametreja
+    \paketti{xcolor}\-/ paketissa}
+  \label{tlk/värimalleja}
+}
+
+Omat värit määritellään komennolla \komento{definecolor}. Se tarvitsee
+kolme argumenttia: värin nimen, värimallin ja värikoodin. Komennon
+argumenttien rakenne on seuraavanlainen:
+
+\komentoi{definecolor}
+\begin{koodilohkosis}
+\definecolor{nimi}{välimalli}{parametrit}
+\end{koodilohkosis}
+
+\noindent
+Komennon argumentti \koodi{nimi} on kirjoittajan itse valitsema nimi,
+ja se voi liittyä esimerkiksi värin käyttötarkoitukseen (''nuoli'') tai
+värin yleiseen nimeen (''keltainen''). Argumentti \koodi{väri\-malli}
+tarkoittaa värin ilmaisemisen tapaa. Niitä on useita erilaisia, mutta
+yleisimmät on koottu taulukkoon \ref{tlk/värimalleja}.
+
+Eri värimalleilla on eri määrä parametreja, joilla ilmaistaan värin
+ominaisuuksia. Kunkin parametrin arvo on yleensä desimaaliluku 0\==1,
+mutta \koodi{HTML}\-/ värimallissa parametrit ilmaistaan yhtenä kolmen
+kaksinumeroisen heksadesimaaliluvun sarjana \textsc{html}\-/
+merkintäkielen tavoin. Värin parametrit kirjoitetaan komennon
+argumenttiin \koodi{para\-metrit} ja ne erotetaan toisistaan pilkulla.
+Taulukon \ref{tlk/värimalleja} Esimerkki\-/sarakkeessa on parametrien
+antamisesta esimerkki. Muista värimalleista voi lukea
+\paketti{xcolor}\-/ paketin ohjekirjasta.
+
+Kun värit on määritelty, niitä voi käyttää eri komentojen yhteydessä.
+Tekstin väri vaihdetaan toiseksi komennolla \komento{color}, josta on
+kaksi erilaista versiota. Komento vaihtaa värin pysyvästi nykyisen
+ympäristön (luku \ref{luku/ympäristöt}) tai aaltosulkeilla (luku
+\ref{luku/aaltosulkeet}) rajatun alueen sisällä.
+
+\komentoi{color}
+\begin{koodilohkosis}
+\color{nimi}                  % väriksi ennalta määritelty ”nimi”
+\color[värimalli]{parametrit} % värimallin ja parametrien avulla
+\end{koodilohkosis}
+
+\noindent
+Toinen vaihtoehto on käyttää komentoa \komento{textcolor}, jolle
+annetaan edelliseen verrattuna vielä yksi argumentti lisää. Argumenttina
+on teksti, johon värin halutaan vaikuttavan. Vaikutusalueena on siis
+vain kyseinen teksti.
+
+\komentoi{textcolor}
+\begin{koodilohkosis}
+\textcolor{nimi}{teksti}
+\textcolor[värimalli]{parametrit}{teksti}
+\end{koodilohkosis}
+
+\noindent
+Tekstin taustaväri vaihdetaan komennoilla \komento{colorbox} ja
+\komento{fcolorbox}. Komennot luovat laatikon, jonka sisällä taustaväri
+on voimassa. Ensin mainittu komento vaihtaa vain taustavärin, ja
+jälkimmäinen sisältää lisäksi värillisen kehyksen, eli sille
+määritellään kaksi väriä.
+
+\begin{koodilohkosis}
+\colorbox{nimi}{teksti} % taustaväriksi ennalta määritelty ”nimi”
+\colorbox[värimalli]{parametrit}{teksti}
+\fcolorbox{nimi(kehys)}{nimi(tausta)}{teksti}
+\fcolorbox[värimalli]{parametrit(kehys)}{parametrit(tausta)}{teksti}
+\end{koodilohkosis}
+
+\noindent
+Kehystetyn laatikon kehysviivan leveys on mitassa \mitta{fboxrule} ja
+kehyksen etäisyys sisällöstä mitassa \mitta{fboxsep}. Seuraavassa on
+esimerkki useiden edellä mainittujen komentojen käytöstä. Tästä tuskin
+kannattaa ottaa mallia vakavaan typografiseen työhön.
+
+\komentoi{colorbox}
+\komentoi{color}
+\komentoi{definecolor}
+\komentoi{fcolorbox}
+\komentoi{setlength}
+\komentoi{textcolor}
+\mittai{fboxrule}
+\mittai{fboxsep}
+\begin{koodilohkosis}
+\definecolor{pun}{rgb}{1,.2,.2}
+\setlength{\fboxrule}{2bp} \setlength{\fboxsep}{1bp}
+\fcolorbox[gray]{.4}{.2}{\color[gray]{1}Tekstiä}
+\textcolor{pun}{voi korostaa} \colorbox{pun}{väreillä}.
+\end{koodilohkosis}
+
+\begin{tulossis}
+  \definecolor{pun}{rgb}{1,.2,.2}
+  \setlength{\fboxrule}{2bp} \setlength{\fboxsep}{1bp}
+  \fcolorbox[gray]{.4}{.2}{\color[gray]{1}Tekstiä}
+  \textcolor{pun}{voi korostaa} \colorbox{pun}{väreillä}.
+\end{tulossis}
+
+\noindent
+Sivulle voi asettaa taustavärin komennolla \komento{pagecolor}.
+Taustäväri vaihtuu nykyiselle ja seuraaville sivuille, kunnes väri
+vaihdetaan toiseksi tai poistetaan. Komennolle annetaan samanlaiset
+argumentit kuin muillekin värikomennoille. Komento \komento{nopagecolor}
+poistaa taustavärin kokonaan eli palauttaa taustan oletustilaan.
+
+\komentoi{pagecolor}
+\komentoi{nopagecolor}
+\begin{koodilohkosis}
+\pagecolor{nimi} % sivun taustaväriksi ennalta määritelty ”nimi”
+\pagecolor[värimalli]{parametrit}
+\nopagecolor
+\end{koodilohkosis}

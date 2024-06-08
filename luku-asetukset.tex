@@ -275,7 +275,7 @@ muokata sivun ylä- tai alatunnistetta eli verrattain pysyviä
 tunnistetietoja, jotka toistuvat joka sivulla ylä- tai alareunassa.
 Niiden muokkaamiseen käytetään \paketti{fancyhdr}\-/ pakettia, jonka
 ohjeita on luvussa \ref{luku/ylä-ala-tunnisteet}. Sivun taustavärin
-asettamista käsitellään luvussa \ref{luku/korostus-värit}.
+asettamista käsitellään luvussa \ref{luku/sivun-väri}.
 
 \subsection{Sivun koko ja marginaalit}
 \label{luku/sivun-mitat}
@@ -886,10 +886,25 @@ toteutukseen.
   \label{esim/fancyhdr-koko}
 \end{esimerkki*}
 
-\subsection{Sivun väri KESKEN}
+\subsection{Taustaväri}
 \label{luku/sivun-väri}
 
-...
+Dokumentin sivun värin valitsemiseen sopii \pakettictan{xcolor}\-/
+paketti, jonka peruskäyttöön kannattaa tutustua luvussa
+\ref{luku/värit}. Sivulle voi asettaa taustavärin komennolla
+\komento{pagecolor}, joka vaihtaa värin nykyiselle ja seuraaville
+sivuille, kunnes väri vaihdetaan toiseksi tai poistetaan. Komennolle
+annetaan samanlaiset argumentit kuin muillekin värikomennoille (luku
+\ref{luku/värit}). Komento \komento{nopagecolor} poistaa taustavärin
+kokonaan eli palauttaa taustan oletustilaan.
+
+\komentoi{pagecolor}
+\komentoi{nopagecolor}
+\begin{koodilohkosis}
+\pagecolor{nimi} % sivun taustaväriksi ennalta määritelty ”nimi”
+\pagecolor[värimalli]{parametrit}
+\nopagecolor
+\end{koodilohkosis}
 
 \section{Pdf-tiedosto}
 \label{luku/pdf-asetukset}

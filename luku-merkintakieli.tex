@@ -2124,9 +2124,6 @@ kehysviivan etäisyys sisällöstä määritellään mitassa \mitta{fboxsep}.
 \end{tulossis}
 
 \noindent
-Värillisten laatikoiden ja kehysten tekemistä neuvotaan luvussa
-\ref{luku/korostus-värit}, joka käsittelee väriasioita muutenkin.
-
 Tekstiä sisältävien laatikoiden korkeus vaihtelee kirjainten ja muiden
 merkkien muodon mukaan. Esimerkiksi kirjainten ala- ja yläpidennykset
 kasvattavat laatikon kokoa gemenalinjan yläpuolelle tai peruslinjan
@@ -2365,17 +2362,17 @@ arvoksi täysympyrän yksikkömäärä, ja oletusasetus on \koodi{units=\katk
   360}. Jos haluaa käyttää radiaaneja, sopiva asetus on
 \koodi{units=\katk 6.283185} (2π\,rad).
 
-\section{Tekstin ja laatikoiden värit KESKEN}
+\section{Tekstin ja laatikoiden värit}
 \label{luku/värit}
 
 Latexiin saa värit \pakettictan{xcolor}\-/ paketin
 avulla.\footnote{Toinen vaihtoehto on yksinkertaisempi väripaketti
   \paketti{color}, joka sisältää värien käsittelyn perustoiminnot.} Se
 tarjoaa muun muassa komentoja, joilla tekstin väriä, tekstin taustaväriä
-tai sivun taustaväriä voi muuttaa. Lisäksi se sisältää värien
-sekoittamiseen ja muuntamiseen liittyvää tekniikkaa. Paketin komentojen
-avulla voi myös värittää taulukoiden (luku \ref{luku/taulukot}) rivit
-vuorottelevin värein.
+tai sivun taustaväriä (luku \ref{luku/sivun-väri}) voi muuttaa. Lisäksi
+paketti sisältää värien sekoittamiseen ja muuntamiseen liittyvää
+tekniikkaa. Paketin komentojen avulla voi myös värittää taulukoiden
+(luku \ref{luku/taulukot}) rivit vuorottelevin värein.
 
 Omassa dokumentissa käytettävät värit on hyvä määritellä alussa.
 Määrittely tarkoittaa sitä, että annetaan väreille nimet -- esimerkiksi
@@ -2417,8 +2414,8 @@ argumenttien rakenne on seuraavanlainen:
 \end{koodilohkosis}
 
 \noindent
-Komennon argumentti \koodi{nimi} on kirjoittajan itse valitsema nimi,
-ja se voi liittyä esimerkiksi värin käyttötarkoitukseen (''nuoli'') tai
+Komennon argumentti \koodi{nimi} on kirjoittajan itse valitsema nimi, ja
+se voi liittyä esimerkiksi värin käyttötarkoitukseen (''otsikko'') tai
 värin yleiseen nimeen (''keltainen''). Argumentti \koodi{väri\-malli}
 tarkoittaa värin ilmaisemisen tapaa. Niitä on useita erilaisia, mutta
 yleisimmät on koottu taulukkoon \ref{tlk/värimalleja}.
@@ -2459,16 +2456,16 @@ vain kyseinen teksti.
 
 \noindent
 Tekstin taustaväri vaihdetaan komennoilla \komento{colorbox} ja
-\komento{fcolorbox}. Komennot luovat laatikon, jonka sisällä taustaväri
-on voimassa. Ensin mainittu komento vaihtaa vain taustavärin, ja
-jälkimmäinen sisältää lisäksi värillisen kehyksen, eli sille
-määritellään kaksi väriä.
+\komento{fcolorbox}. Komennot luovat pienen laatikon (luku
+\ref{luku/laatikot-pienet}), jonka sisällä taustaväri on voimassa. Ensin
+mainittu komento vaihtaa vain taustavärin, ja jälkimmäinen sisältää
+lisäksi värillisen kehyksen, eli sille määritellään kaksi väriä.
 
 \begin{koodilohkosis}
 \colorbox{nimi}{teksti} % taustaväriksi ennalta määritelty ”nimi”
 \colorbox[värimalli]{parametrit}{teksti}
-\fcolorbox{nimi(kehys)}{nimi(tausta)}{teksti}
-\fcolorbox[värimalli]{parametrit(kehys)}{parametrit(tausta)}{teksti}
+\fcolorbox{nimi/kehys}{nimi/tausta}{teksti}
+\fcolorbox[värimalli]{parametrit/kehys}{parametrit/tausta}{teksti}
 \end{koodilohkosis}
 
 \noindent
@@ -2498,18 +2495,3 @@ kannattaa ottaa mallia vakavaan typografiseen työhön.
   \fcolorbox[gray]{.4}{.2}{\color[gray]{1}Tekstiä}
   \textcolor{pun}{voi korostaa} \colorbox{pun}{väreillä}.
 \end{tulossis}
-
-\noindent
-Sivulle voi asettaa taustavärin komennolla \komento{pagecolor}.
-Taustäväri vaihtuu nykyiselle ja seuraaville sivuille, kunnes väri
-vaihdetaan toiseksi tai poistetaan. Komennolle annetaan samanlaiset
-argumentit kuin muillekin värikomennoille. Komento \komento{nopagecolor}
-poistaa taustavärin kokonaan eli palauttaa taustan oletustilaan.
-
-\komentoi{pagecolor}
-\komentoi{nopagecolor}
-\begin{koodilohkosis}
-\pagecolor{nimi} % sivun taustaväriksi ennalta määritelty ”nimi”
-\pagecolor[värimalli]{parametrit}
-\nopagecolor
-\end{koodilohkosis}

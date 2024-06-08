@@ -1482,14 +1482,23 @@ seuraavalla tavalla:
 \newcommand{\sposti}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
 \end{koodilohkosis}
 
-\subsection{Värit KESKEN}
-\label{luku/korostus-värit}
+\subsection{Värit}
 
 Eri värien käyttö voi sopia tekstin erilaisten osien korostamiseen.
 Esimerkiksi otsikot, taulukot tai leijuvat osat saa erottumaan
 selvemmin, kun niiden toteutuksessa käyttää värejä. Sen sijaan
-leipätekstin sisällä värejä täytynee käyttää hillitysti, sillä värikäs
-tekstipalsta näyttää rauhattomalta ja voi hidastaa lukemista.
+leipätekstissä värejä kannattaa käyttää hillitymmin, sillä värikäs
+tekstipalsta näyttää rauhattomalta. Katse voi hakeutua värillisiin osiin
+liian helposti, mikä hidastaa lukemista. Värien käsittelyn tekniikkaa
+käsitellään luvussa \ref{luku/värit}.
+
+Tämän oppaan leipätekstissä on käytetty värejä Latexin komentojen ja
+muiden rakenteiden ilmaisemiseen, esimerkiksi \komentox{komento},
+\ymparistox{ympäristö} ja \mittax{mitta}. Värisävyt on melko tummia,
+jotta mustaa tekstiä sisältävä tekstipalsta näyttäisi verrattain
+tasaiselta eikä katse kiinnittyisi värillisiin kohtiin kovin helposti.
+Samanlaista ajatusta kannattanee toteuttaa muidenkin elementtien
+värittämisessä.
 
 \section{Sivunvaihdot ja sivujen tasaaminen}
 \label{luku/sivunvaihdot}
@@ -3601,7 +3610,7 @@ huolehtivat myös niiden ylä- ja alapuolisesta välistä paremmin kuin
 Latexin omat viivakomennot.
 
 Taulukon rivien taustan voi värittää \pakettictan{xcolor}\-/ paketin
-(luku \ref{luku/korostus-värit}) komentojen avulla. Varsinkin leveiden
+(luku \ref{luku/värit}) komentojen avulla. Varsinkin leveiden
 taulukoiden lukemista voi helpottaa, jos rivien eri taustavärit
 vuorottelevat. Tarkemmat tiedot selviävät paketin ohjekirjasta, mutta
 seuraavan esimerkin avulla ominaisuutta pääsee kokeilemaan:
@@ -6944,7 +6953,7 @@ ilmaistaan tällaisten lisätietojen avulla. Esimerkki
 \ref{esim/tikz-asetuksia} havainnollistaa tavallisimpia valinnaisia
 argumentteja. Värivalitsimien \koodi{draw} ja \koodi{fill} arvoksi voi
 antaa mitä hyvänsä nimettyjä värejä, joita käsitellään tarkemmin luvussa
-\ref{luku/korostus-värit}.
+\ref{luku/värit}.
 
 \begin{esimerkki*}
   \ymparistoi{tikzpicture}

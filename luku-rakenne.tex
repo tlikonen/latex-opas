@@ -2570,12 +2570,39 @@ kirjaimia (a, b, c jne.).
   \label{esim/labelitem-labelenum}
 \end{esimerkki*}
 
+\leijutlk{
+  \providecommand{\rivi}{}
+  \renewcommand{\rivi}[3]{#1 & \uctunnus{#2} & #3 \\}
+  \begin{tabular}{cll}
+    \toprule
+    \multicolumn{2}{l}{\ots{Merkki ja Unicode-nimi}} & \ots{Komento} \\
+    \midrule
+    \rivi{\textbullet}{u+2022 bullet}{\komento{textbullet}}
+    \rivi{◦}{u+25e6 white bullet}{}
+    \rivi{‣}{u+2023 triangular bullet}{}
+    \rivi{--}{u+2013 en dash}{\komento{textendash}, \koodi{--}}
+    \rivi{\textasteriskcentered}
+    {u+2217 asterisk operator} {\komento{textasteriskcentered}}
+    \rivi{\textperiodcentered}
+    {u+00b7 middle dot}{\komento{textperiodcentered}}
+    \bottomrule
+  \end{tabular}
+}{
+  \caption{Esimerkkejä luetelmiin sopivista merkeistä.
+    Matematiikkatilassa on saatavilla muitakin symboleja. Katso
+    esimerkiksi taulukko \ref{tlk/matem-sekalaisia}
+    (s.~\pageref{tlk/matem-sekalaisia})}
+  \label{tlk/luetelmamerkkejä}
+}
+
 Luetelmamerkit ja luetelmien numerointitavat ovat kirjoittajan
 muutettavissa. Ympäristössä \ymparisto{itemize} luetelmamerkit tulevat
 komennosta, joka alkaa sanoilla \komentox{label\-item} ja jatkuu
 luetelman tasoa ilmaisevalla roomalaisella numerolla
 \koodi{i}\==\koodi{iv}. Komennot voi määritellä uudelleen haluamallaan
 tavalla, kuten esimerkki \ref{esim/labelitem-labelenum} osoittaa.
+Taulukkoon \ref{tlk/luetelmamerkkejä} on koottu esimerkkejä luetelmiin
+sopivista merkeistä.
 
 \ymparisto{enumerate}\-/ ympäristössä numeroidut kohdat tulevat
 komennosta, joka alkaa sanoilla \komentox{label\-enum} ja jatkuu
@@ -2682,9 +2709,9 @@ vaikutetaan luetelman asetuksiin.
 Edellisen esimerkin argumentti \koodi{merk\-ki} sisältää tekstiä tai
 koodia, joka muodostaa luetelmakohdan merkin. Numeroimattomassa
 luetelmassa siihen voi laittaa esimerkiksi luetelmaympyrän eli komennon
-\komento{textbullet} tai ajatusviivan (\koodi{--}). Numeroidussa
-luetelmassa siihen kirjoitetaan komento, joka latoo jonkin laskurin
-arvon.
+\komento{textbullet} tai ajatusviivan (\koodi{--}). Muita esimerkkejä on
+taulukossa \ref{tlk/luetelmamerkkejä}. Numeroidussa luetelmassa siihen
+kirjoitetaan komento, joka latoo jonkin laskurin arvon.
 
 \ymparisto{list}\-/ ympäristön toinen argumentti \koodi{ase\-tuk\-set}
 sisältää mitä hyvänsä koodia, jolla vaikutetaan ympäristön asetuksiin.

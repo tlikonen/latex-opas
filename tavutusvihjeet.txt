@@ -207,6 +207,7 @@ font-ti-koko-komen-to-jen
 font-ti-komen-to-ja
 foot-misc
 foot-note
+foot-note-lay-out
 foot-note-mark
 foot-note-sep
 foot-note-text

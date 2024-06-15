@@ -4961,6 +4961,8 @@ väli hieman kasvaa.
     \rivi{norule}{vaakasuuntainen erotinviiva pois}
     \rivi{perpage}{numerointi sivukohtaiseksi}
     \rivi{bottom}{alaviite aina sivun alareunaan}
+    \rivi{ragged}{alaviitteeseen automaattinen \komento{raggedright} tai
+    \komento{RaggedRight}}
     \rivi{hang}{luetelmatyyppiset alaviitteet, riippuva sisennys}
     \rivi{multiple}{useat peräkkäiset yläindeksinumerot}
     \bottomrule
@@ -4985,6 +4987,22 @@ voi sijoittua joskus ylemmäksi, jos sivun alaosaan ladotaan leijuva osa
 tai jos sivun alareunan tasaaminen on pois päältä
 (\komento{raggedbottom}, luku \ref{luku/sivunvaihdot}).
 
+Valitsin \koodi{ragged} latoo alaviitteen tekstikappaleet
+liehureunaisena eli suorittaa automaattisesti komennon
+\komento{raggedright} tai \komento{RaggedRight} (luku
+\ref{luku/kappaleen-tasaus}). Monipuolisempi keino alaviitteen tyylin
+muokkaamiseen on komento \komento{footnotelayout}. Komennon voi
+määritellä itse haluamakseen, ja komennon määritelmään kirjoitetaan mitä
+hyvänsä komentoja, jotka halutaan suorittaa automaattisesti jokaisen
+alaviitetekstin alussa.
+
+\komentoi{footnotelayout}
+\komentoi{raggedright}
+\begin{koodilohkosis}
+\renewcommand{\footnotelayout}{\raggedright}
+\end{koodilohkosis}
+
+\noindent
 Oletuksena alaviitekappaleet ladotaan samalla tavalla kuin
 tekstikappaleet oletuksena muutenkin, eli alaviitteen ensimmäinen rivi
 on sisennetty, ja sen alussa on alaviitteen numero. Seuraavia rivejä ei

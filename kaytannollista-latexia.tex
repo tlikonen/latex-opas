@@ -173,7 +173,7 @@ columnsep=1em]
   \begin{textblock*}{1cm}(-2em,3bp)
     \small\seurausnuoli
   \end{textblock*}
-  \begin{minipage}{\linewidth}
+  \begin{minipage}{\textwidth}
     \linespread{1}\small
   }{%
   \end{minipage}
@@ -188,18 +188,18 @@ columnsep=1em]
   \end{list}}
 
 \floatsetup{ style=plain, font={small}, justification=raggedright,
-  margins=raggedright, captionskip=0ex, capposition=bottom }
+  margins=centering, captionskip=0ex, capposition=bottom }
 
 \floatsetup[table]{ style=plain, captionskip=2ex }
 \floatsetup[figure]{ style=plain, captionskip=2ex }
 
 \captionsetup{ font={small, sf}, labelfont={bf}, textfont={},
-  textformat=period, margin=.5em, justification=RaggedRight,
-  singlelinecheck=off }
+  textformat=period, margin={0em, 1.1em}, oneside,
+  justification=RaggedRight, singlelinecheck=off }
 
 \newcommand{\leijutlk}[2]{%
   \begin{table*}
-    \floatbox{table}{\versaalinum #1}{#2}
+    \floatbox{table}[\FBwidth]{\versaalinum #1}{#2}
   \end{table*}}
 
 \newcommand{\leijukuva}[2]{%

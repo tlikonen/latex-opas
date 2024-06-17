@@ -4451,7 +4451,7 @@ toisistaan erotettuja valitsimia ja niiden arvoja.
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
-  \begin{tabularx}{\linewidth}{lL}
+  \begin{tabularx}{\textwidth}{lL}
     \toprule
     \ots{Valitsin} & \ots{Merkitys ja vaihtoehtoja} \\
     \midrule
@@ -4525,7 +4525,7 @@ ympäristössä.
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
-  \begin{tabularx}{\linewidth}{lL}
+  \begin{tabularx}{\textwidth}{lL}
     \toprule
     \ots{Valitsin} & \ots{Merkitys ja vaihtoehtoja} \\
     \midrule
@@ -5428,7 +5428,8 @@ esimerkkiteos on peräisin esimerkistä \ref{esim/thebibliography}.
     \bottomrule
   \end{tabular}
 }{
-  \caption{\paketti{natbib}\-/paketin lähdeviittauskomentoja}
+  \caption{\paketti{natbib}\-/paketin
+    läh\-de\-viit\-taus\-ko\-men\-toja}
   \label{tlk/natbib-cite}
 }
 
@@ -6307,7 +6308,7 @@ asetuksia käsitellään luvussa \ref{luku/asiasanat-asetukset}.
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
-  \begin{tabularx}{\linewidth}{lL}
+  \begin{tabularx}{\textwidth}{lL}
     \toprule
     \ots{Valitsin} & \ots{Merkitys} \\
     \midrule
@@ -6686,7 +6687,7 @@ valitsimia ja niiden arvoja. Valitsimia on koottu taulukkoon
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
-  \begin{tabularx}{\linewidth}{lL}
+  \begin{tabularx}{\textwidth}{lL}
     \toprule
     \ots{Valitsin} & \ots{Merkitys ja vaihtoehtoja} \\
     \midrule
@@ -6818,7 +6819,7 @@ merkkivalikoimassa.
 \leijutlk{
   \providecommand{\rivi}{}
   \renewcommand{\rivi}[2]{\koodi{#1} & #2 \\}
-  \begin{tabularx}{\linewidth}{lL}
+  \begin{tabularx}{\textwidth}{lL}
     \toprule
     \ots{Valitsin} & \ots{Merkitys} \\
     \midrule
@@ -7107,13 +7108,13 @@ paketin omasta ohjekirjasta.
 \end{tikzpicture}
 \end{koodilohko}
 
-  \begin{tulossis}
+  \begin{tulos}
     \begin{tikzpicture}[x=1mm, y=1mm]
       \node (ympyrä) at (0,0) [draw, circle] {vasen};
       \node (suorakulmio) at (20,0) [draw, rectangle] {oikea};
       \draw [->, shorten >=1mm] (ympyrä) to [out=45, in=135] (suorakulmio);
     \end{tikzpicture}
-  \end{tulossis}
+  \end{tulos}
 
   \caption{Solmujen nimeäminen ja kytkeminen viivan avulla}
   \label{esim/tikz-solmujen-yhdistäminen}

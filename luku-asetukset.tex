@@ -1249,7 +1249,7 @@ loppupuolella.
                                                     Letters=SmallCaps}]
 
 \setmonofont{Libertinus Mono}[
-  Scale=MatchLowercase, FakeStretch=0.8, Ligatures=NoCommon]
+  Scale=MatchLowercase, FakeStretch=0.8, Ligatures=CommonOff]
 \end{koodilohko}
   \caption{Libertinus\-/ kirjainperheiden asettaminen. Tässä
     \englanti{Libertinus Serif} \=/perheen lihavoinniksi on valittu
@@ -1892,7 +1892,7 @@ käsitellään tarkemmin luvussa \ref{luku/typo-liga}. Molemmat edellä
 mainitut ligatuurityypit saa pois päältä seuraavalla asetuksella:
 
 \begin{koodilohkosis}
-Ligatures={TeXReset, NoCommon}
+Ligatures={TeXOff, CommonOff}
 \end{koodilohkosis}
 
 \noindent
@@ -1915,13 +1915,13 @@ HyphenChar=None
 
 \noindent
 Yleensä tasalevyisestä kirjainperheestä kannattaa kytkeä typografiset
-ligatuurit pois päältä asetuksella \koodi{Liga\-tures=\katk No\-Common}.
-Tasalevyisen fontin ajatukseen nimenomaan kuuluu, että merkit ovat
-samanlevyisiä eikä yhden merkin tilaan sovi sulloa useampaa kirjainta.
-Kaikki tasalevyiset kirjainperheet eivät edes sisällä ligatuurimerkkejä,
-joten ominaisuus näyttää olevan automaattisesti pois päältä. Varmuuden
-vuoksi on kuitenkin hyvä lisätä asetus \koodi{Liga\-tures=\katk
-  No\-Common} tasalevyiselle perheelle.
+ligatuurit pois päältä asetuksella \koodi{Liga\-tures=\katk
+  Common\-Off}. Tasalevyisen fontin ajatukseen nimenomaan kuuluu, että
+merkit ovat samanlevyisiä eikä yhden merkin tilaan sovi sulloa useampaa
+kirjainta. Kaikki tasalevyiset kirjainperheet eivät edes sisällä
+ligatuurimerkkejä, joten ominaisuus näyttää olevan automaattisesti pois
+päältä. Varmuuden vuoksi on kuitenkin hyvä lisätä asetus
+\koodi{Liga\-tures=\katk Common\-Off} tasalevyiselle perheelle.
 
 Oletuksena tavutus on kytketty pois päältä tasalevyiseltä
 kirjainperheeltä, koska sitä käytetään tavallisesti tietokoneisiin
@@ -2023,13 +2023,13 @@ fi f\textcompwordmark i
 \noindent
 Mikäli tavallisia ligatuureja ei halua käyttöön lainkaan, on parasta
 valita jo kirjainperheen tai \=/leikkauksen käyttöönotossa asetus
-\koodi{Liga\-tures=\katk No\-Com\-mon}. Väliaikaisesti fontin asetuksiin
+\koodi{Liga\-tures=\katk Common\-Off}. Väliaikaisesti fontin asetuksiin
 voi vaikuttaa komennolla \komento{addfontfeatures}, joka sekin on
 \paketti{fontspec}\-/pakettiin sisältyvä komento.
 
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-{\addfontfeatures{Ligatures=NoCommon} fi fl}
+{\addfontfeatures{Ligatures=CommonOff} fi fl}
 \end{koodilohkosis}
 
 \noindent
@@ -2038,8 +2038,8 @@ sisältää myös harvinaisempia ligatuureja, jotka täytyy erikseen kytkeä
 päälle. Niiden tarkoituksena on esimerkiksi erityinen koristeellisuus
 tai historiallisen kirjainleikkauksen jäljittely. Harvinaisia
 ligatuureja ei ole tarkoitus käyttää joka tilanteessa vaan ainoastaan
-erityisestä syystä. Kuvassa \ref{kuva/ligatuurit} ja tässäkin
-tekstikappaleessa olevat {%
+erityisestä syystä. Kuvassa \ref{kuva/ligatuurit} ja tässäkin virkkeessä
+olevat {%
   \newcommand{\hlig}[1]{{\addfontfeatures{Ligatures=Historic}#1}}%
   \hlig{st}- ja \hlig{ct}\-/ligatuurit%
 } on saatu fontin asetuksella \koodi{Liga\-tures=\katk His\-toric}.

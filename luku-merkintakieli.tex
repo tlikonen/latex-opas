@@ -330,17 +330,17 @@ Edellä kuvatut Latexin omat lainausmerkkien merkintätavat (\koodi{''},
 pois päältä fontin asetuksista eli \paketti{fontspec}\-/ pakettiin
 kuuluvien toimintojen avulla. Fonteissa on yleensä oletuksena päällä
 Tex\-/ligatuurit eli asetus \koodi{Liga\-tures=\katk TeX}, mutta sen saa
-poistettua asetuksella \koodi{Liga\-tures=\katk TeX\-Reset}. Asetusta
+poistettua asetuksella \koodi{Liga\-tures=\katk TeX\-Off}. Asetusta
 muutetaan kirjainperheen määrittelyn yhteydessä tai väliaikaisesti
 komennolla \komento{addfontfeatures}.
 
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-{\addfontfeatures{Ligatures=TeXReset} `` '' >> '}
+{\addfontfeatures{Ligatures=TeXOff} `` '' >> '}
 \end{koodilohkosis}
 
 \begin{tulossis}
-  {\addfontfeatures{Ligatures=TeXReset} `` '' >> '}
+  {\addfontfeatures{Ligatures=TeXOff} `` '' >> '}
 \end{tulossis}
 
 \noindent
@@ -419,16 +419,16 @@ yhdysmerkkiä, voi käyttää tasalevyistä fonttia
 (\komento{texttt}\komentoarg{--}), joka oletuksena kytkee pois Latexin
 ajatusviivatoiminnon. Saman asetuksen saa kyllä mihin tahansa fonttiin,
 kun poistaa fontista niin sanotut Tex\-/ligatuurit asetuksella
-\koodi{Liga\-tures=\katk TeX\-Reset}. Väliaikaisesti asetus tehdään
+\koodi{Liga\-tures=\katk TeX\-Off}. Väliaikaisesti asetus tehdään
 seuraavasti:
 
 \komentoi{addfontfeatures}
 \begin{koodilohkosis}
-{\addfontfeatures{Ligatures=TeXReset} -- ---}
+{\addfontfeatures{Ligatures=TeXOff} -- ---}
 \end{koodilohkosis}
 
 \begin{tulossis}
-  {\addfontfeatures{Ligatures=TeXReset} -- ---}
+  {\addfontfeatures{Ligatures=TeXOff} -- ---}
 \end{tulossis}
 
 \noindent

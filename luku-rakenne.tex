@@ -2579,8 +2579,12 @@ kirjaimia (a, b, c jne.).
     \midrule
     \rivi{\textbullet}{u+2022 bullet}{\komento{textbullet}}
     \rivi{◦}{u+25e6 white bullet}{}
+    \rivi{$\circ$}{u+2218 ring operator}{\koodi{\$\mkomento{circ}\$}}
+    \rule[.3ex]{.5ex}{.5ex} & (ei Unicode-merkki) &
+    \komento{rule}\komentoargv{.3ex}\komentoarg{.5ex}\komentoarg{.5ex} \\
     \rivi{‣}{u+2023 triangular bullet}{}
     \rivi{--}{u+2013 en dash}{\komento{textendash}, \koodi{--}}
+    \rivi{$\star$}{u+22c6 star operator}{\koodi{\$\mkomento{star}\$}}
     \rivi{\textasteriskcentered}
     {u+2217 asterisk operator} {\komento{textasteriskcentered}}
     \rivi{\textperiodcentered}
@@ -2588,10 +2592,9 @@ kirjaimia (a, b, c jne.).
     \bottomrule
   \end{tabular}
 }{
-  \caption{Esimerkkejä luetelmiin sopivista merkeistä.
-    Matematiikkatilassa on saatavilla muitakin symboleja. Katso
-    esimerkiksi taulukko \ref{tlk/matem-sekalaisia}
-    (s.~\pageref{tlk/matem-sekalaisia})}
+  \caption{Erilaisia luetelmamerkkejä. Komento-sarakkeen
+    \koodi{\$}\=/merkit ovat matematiikkatilan aloitus- ja
+    lopetuskomentoja}
   \label{tlk/luetelmamerkkejä}
 }
 
@@ -2601,8 +2604,8 @@ komennosta, joka alkaa sanoilla \komentox{label\-item} ja jatkuu
 luetelman tasoa ilmaisevalla roomalaisella numerolla
 \koodi{i}\==\koodi{iv}. Komennot voi määritellä uudelleen haluamallaan
 tavalla, kuten esimerkki \ref{esim/labelitem-labelenum} osoittaa.
-Taulukkoon \ref{tlk/luetelmamerkkejä} on koottu esimerkkejä luetelmiin
-sopivista merkeistä.
+Taulukkoon \ref{tlk/luetelmamerkkejä} on koottu erilaisia
+luetelmamerkkejä sekä Latex\-/ komentoja, joilla niitä voi tuottaa.
 
 \ymparisto{enumerate}\-/ ympäristössä numeroidut kohdat tulevat
 komennosta, joka alkaa sanoilla \komentox{label\-enum} ja jatkuu

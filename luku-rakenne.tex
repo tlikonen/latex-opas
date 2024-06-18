@@ -4681,9 +4681,11 @@ Niitä käytetään seuraavalla tavalla:
 \end{koodilohkosis}
 
 \begin{wrapfigure}{R}{5em}
-  \begin{tikzpicture}[x=.5em, y=.5em]
-    \draw [draw=black, fill=yellow, line width=1bp] (0,0) ellipse [x
-    radius=4, y radius=2, rotate=30];
+  \begin{tikzpicture}[x=.5em, y=.5em,
+    tyyli/.style={draw=black, fill=yellow, line width=.6bp}]
+    \draw [tyyli] (0,0) ellipse [x radius=4, y radius=1.5, rotate=45];
+    \draw [tyyli] (-2,2) circle [radius=1];
+    \draw [tyyli] (2,-2) circle [radius=1];
   \end{tikzpicture}
   \caption{Tekstipalstaan upotettu kuva}
   \label{kuva/wrapfig-esimerkki}

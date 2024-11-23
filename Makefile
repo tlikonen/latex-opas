@@ -25,13 +25,6 @@ versio.tex: $(lahde)
 	v=$$(git describe --always --dirty) || v="$(versio)"; \
 		echo "\\\\newcommand{\\\\versio}{$$v}" > $@
 
-tavutusvihjeet.txt:
-	sort -u $@ > $@.tmp && mv $@.tmp $@
-	sed -e s/-//g $@ | uniq -cdi
-
-tavutusvihjeet.tex: tavutusvihjeet.txt
-	{ echo '\\hyphenation{'; cat $<; echo '}'; } > $@
-
 $(julkaisukohteet): $(nimi)/%: %
 	@mkdir -m 755 -p $(nimi)
 	cp $< $@
@@ -58,7 +51,7 @@ clean:
 	rm -fr $(nimi)
 
 distclean: clean
-	rm -f $(nimi).pdf versio.tex tavutusvihjeet.tex TAGS
+	rm -f $(nimi).pdf versio.tex TAGS
 
 TAGS: $(lahde)
 	etags $(lahde)

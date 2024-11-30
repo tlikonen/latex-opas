@@ -35,6 +35,15 @@ $(nimi).zip: $(julkaisukohteet)
 
 ctan: $(nimi).zip
 
+tavutusvihjeet:
+	sed -e '/^\\hyphenation{/d;/^}/d' $@.tex | \
+		{ echo '\\hyphenation{'; sort -u; echo '}'; } > $@.tmp
+	if diff -q $@.tex $@.tmp; \
+		then rm -f $@.tmp; \
+		else mv $@.tmp $@.tex; \
+		fi
+	sed -e s/-//g $@.tex | uniq -cdi
+
 install: $(julkaisukohteet)
 	mkdir -p $(texmf)/$(tds)
 	cp -r $(nimi) $(texmf)/$(tds)
@@ -56,4 +65,4 @@ distclean: clean
 TAGS: $(lahde)
 	etags $(lahde)
 
-.PHONY: clean distclean ctan install uninstall
+.PHONY: clean distclean ctan tavutusvihjeet install uninstall

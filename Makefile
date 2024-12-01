@@ -1,4 +1,3 @@
-versio = 2024.7
 nimi = kaytannollista-latexia
 lahde = $(nimi).tex luku-asetukset.tex luku-esipuhe.tex \
 	luku-merkintakieli.tex luku-rakenne.tex tavutusvihjeet.tex \
@@ -22,7 +21,7 @@ $(nimi).pdf: versio.tex $(lahde)
 		sort | uniq -cd
 
 versio.tex: $(lahde)
-	v=$$(git describe --always --dirty) || v="$(versio)"; \
+	v=$$(git describe --always --dirty) || v="tuntematon"; \
 		echo "\\\\newcommand{\\\\versio}{$$v}" > $@
 
 $(julkaisukohteet): $(nimi)/%: % | $(nimi)

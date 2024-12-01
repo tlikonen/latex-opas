@@ -25,13 +25,15 @@ versio.tex: $(lahde)
 	v=$$(git describe --always --dirty) || v="$(versio)"; \
 		echo "\\\\newcommand{\\\\versio}{$$v}" > $@
 
-$(julkaisukohteet): $(nimi)/%: %
-	@mkdir -m 755 -p $(nimi)
+$(julkaisukohteet): $(nimi)/%: % | $(nimi)
 	cp $< $@
 	@chmod 644 $@
 
 $(nimi).zip: $(julkaisukohteet)
 	zip -r9 $@ $(nimi)
+
+$(nimi):
+	mkdir -m 755 -p $@
 
 ctan: $(nimi).zip
 

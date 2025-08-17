@@ -55,8 +55,8 @@ uninstall:
 	mktexlsr $(texmf)
 
 clean:
-	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls lo* out \
-		run.xml toc idx xdv zip) texput.log
+	rm -f $(addprefix $(nimi).,aux bbl bcf blg fdb_latexmk fls idx ilg \
+		ind lo* out run.xml toc zip) texput.log
 	rm -f $(addprefix $(nimi)-*.,idx ilg ind)
 	rm -fr $(nimi)
 

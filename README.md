@@ -71,11 +71,7 @@ jossakin (ks. lisenssi alla). Oheisista linkeistä pääset osallistumaan.
 Tekijänoikeus ja lisenssi
 -------------------------
 
-Tekijä: Teemu Likonen <<tlikonen@iki.fi>>
-
-OpenPGP-avain: [6965F03973F0D4CA22B9410F0F2CAE0E07608462][PGP]
-
-[PGP]: http://www.iki.fi/tlikonen/pgp-key.asc
+Tekijä: Teemu Likonen <<tlikonen@iki.fi>> ([kotisivu][koti], [PGP][])
 
 Lisenssi: *Creative Commons Nimeä-JaaSamoin 4.0 Kansainvälinen* (CC
 BY-SA 4.0). Lisenssi antaa sinulle luvan kopioida ja levittää tätä
@@ -91,7 +87,9 @@ tarkoitukseen, myös kaupallisesti. Ehdot ovat seuraavat:
   - Et saa asettaa sellaisia oikeudellisia ehtoja tai teknisiä estoja,
     jotka estävät muita tekemästä asioita, jotka tämä lisenssi sallii.
 
-[CC]: https://creativecommons.org/licenses/by-sa/4.0/legalcode.fi
+[koti]: http://www.iki.fi/tlikonen/
+[PGP]:  http://www.iki.fi/tlikonen/teemu.pgp
+[CC]:   https://creativecommons.org/licenses/by-sa/4.0/legalcode.fi
 
 
 Kääntäminen ja asentaminen

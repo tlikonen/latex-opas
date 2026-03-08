@@ -10,7 +10,8 @@
                 (TeX-open-quote . "''")
                 (LaTeX-verbatim-environments-local
                  . ("koodilohkosis" "koodilohko"))
-                (font-latex-quotes . nil)))
+                (font-latex-quotes . nil)
+                (outline-regexp . "\\\\\\(chapter\\|\\(sub\\)*section\\)\\>")))
  (bibtex-mode . ((bibtex-dialect . biblatex)
                  (bibtex-text-indentation . 20)
                  (bibtex-contline-indentation . 21)))

@@ -1820,15 +1820,16 @@ Kaikille otsikkokomennoille on olemassa myös tähtiversio eli
 komentovaihtoehto, jonka nimen lopussa on tähti: \komento{part*},
 \komento{chapter*}, \komento{section*}, \komento{subsection*},
 \komento{subsubsection*}, \komento{paragraph*}, \komento{subparagraph*}.
-Nämä vaihtoehdot latovat otsikon, jolla ei ole numerointia ja jota ei
+Nämä tähtikomennot latovat otsikon, jolla ei ole numerointia ja jota ei
 lisätä sisällysluetteloon.
 
-Pelkän otsikon numeroinnin poistamiseen ei ehkä kannata käyttää näitä
-tähtiversioita, koska yleensä otsikko kuitenkin halutaan
-sisällysluetteloon. Otsikoiden numeroinnin saa pois keinoilla, jotka
-neuvotaan luvussa \ref{luku/otsikot-numerointi}. Jos kuitenkin haluaa
-käyttää tähdellistä otsikkokomentoa ja haluaa otsikon myös
-sisällysluetteloon, täytyy se tehdä seuraavalla tavalla:
+Pelkän otsikon numeroinnin poistamiseen ei ehkä kannata käyttää edellä
+mainittuja tähtikomentoja, koska yleensä otsikko kuitenkin halutaan
+sisällysluetteloon. Otsikoiden numeroinnin saa pois asettamalla laskurin
+\laskuri{secnumdepth} sopivasti. Katso ohjeet luvusta
+\ref{luku/otsikot-numerointi}. Jos kuitenkin haluaa käyttää tähdellistä
+otsikkokomentoa ja haluaa otsikon myös sisällysluetteloon, täytyy se
+tehdä seuraavalla tavalla:
 
 \komentoi{section*}
 \komentoi{addcontentsline}
@@ -1861,17 +1862,20 @@ numerointiin monella tavalla, kuten siihen, mihin otsikkotasoon saakka
 numerointi yltää ja millä tyylillä otsikoiden numerot ylipäätään
 ladotaan.
 
-Laskuri \laskuri{secnumdepth} on tarkoitettu kirjoittajan
-asetettavaksi, ja sillä määritetään, mihin otsikkotasoon saakka otsikot
-numeroidaan. Tasonumerot ovat taulukossa \ref{tlk/otsikkotasot}
-(s.~\pageref{tlk/otsikkotasot}). Seuraava esimerkki määrittelee, että
-vain tasoon~1 (\komento{section}) saakka otsikot numeroidaan.
-Alemmantasoiset otsikot (\komento{subsection} ym.) eivät saa numeroa.
+Laskuri \laskuri{secnumdepth} on tarkoitettu kirjoittajan asetettavaksi,
+ja sillä määritetään, mihin otsikkotasoon saakka otsikot numeroidaan.
+Tasonumerot ovat taulukossa \ref{tlk/otsikkotasot}
+(s.~\pageref{tlk/otsikkotasot}). Seuraavista esimerkeistä ensimmäinen
+määrittelee, että vain tasoon~1 (\komento{section}) saakka lukujen
+otsikot numeroidaan eli alemmantasoiset otsikot (\komento{subsection}
+ym.) eivät saa numeroa. Toinen esimerkkirivi poistaa numeroinnin
+kokonaan.
 
 \komentoi{setcounter}
 \laskurii{secnumdepth}
 \begin{koodilohkosis}
-\setcounter{secnumdepth}{1}
+\setcounter{secnumdepth}{1}  % \section-taso ja ylemmät numeroidaan
+\setcounter{secnumdepth}{-2} % numerointi pois kaikkialta
 \end{koodilohkosis}
 
 \noindent

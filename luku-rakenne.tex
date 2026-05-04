@@ -1841,12 +1841,16 @@ merkinnän sisällysluetteloon. Komennon ensimmäinen argumentti on
 \koodi{toc} (\englanti{table of contents}), joka on sisällysluetteloiden
 tekemisessä tarvittavan väliaikaistiedoston pääte. Esimerkissä lisättävä
 sisällysluettelon merkintä on tasoltaan \koodi{section} eli vastaa muita
-\komento{section}\-/ komennolla syntyviä sisällysluettelon kohtia.
-Komento \komento{phantomsection} kuuluu \paketti{hyperref}\-/
-pakettiin, ja se lisää pdf\-/ tiedostoon näkymättömän ankkurin tähän
-kohtaan dokumentissa. Sitä tarvitaan, jotta sisällysluettelon merkintä
-viittaisi oikealle sivulle ja toimisi myös linkkinä, joka tuo juuri
-tähän kohtaan.
+\komento{section}\-/ komennolla syntyviä otsikoita. Komento
+\komento{phantomsection} kuuluu \paketti{hyperref}\-/ pakettiin, ja se
+lisää pdf\-/ tiedostoon näkymättömän ankkurin tähän kohtaan
+dokumentissa. Sitä tarvitaan, jotta sisällysluettelon merkintä viittaisi
+oikealle sivulle ja toimisi myös linkkinä, joka tuo juuri tähän kohtaan.
+
+Omia otsikoita voi myös lisätä pelkästään pdf\-/ tiedoston sisäiseen
+sisällysluetteloon. Se tehdään komennolla \komento{pdfbookmark}, joka ei
+siis lado varsinaiseen dokumenttiin mitään. Komennon käyttöä neuvotaan
+luvussa \ref{luku/pdf-asetukset}.
 
 \subsection{Otsikoiden numerointi}
 \label{luku/otsikot-numerointi}

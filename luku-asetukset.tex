@@ -1859,9 +1859,11 @@ käyttämällä valitsinta \koodi{Renderer} seuraavan esimerkin tavoin:
 
 \noindent
 Tavallisimpia \koodi{Renderer}\-/ valitsimen arvoja ovat
-\koodi{\mbox{Node}}, \koodi{Harf\-Buzz} ja \koodi{Open\-Type}. Toisinaan
+\koodi{\mbox{Node}}, \koodi{Harf\-Buzz} ja \koodi{Open\-Type}. Usein
 \koodi{\mbox{Node}} on tuottanut paremman tuloksen kuin muut
-vaihtoehdot.
+vaihtoehdot. Tämän asetuksen voi tehdä yhteisesti kaikille fonteille
+\paketti{polyglossia}\-/ kielipaketin lataamisen yhteydessä valitsimella
+\koodi{luatexrenderer=\katk Node} (luku \ref{luku/polyglossia}).
 
 Lisätietoa voi lukea \paketti{fontspec}\-/ paketin ohjekirjan luvusta,
 joka käsittelee Luatexin erityispiirteitä. Myös Xelatexissa (Xetex) on
@@ -2409,31 +2411,52 @@ kielipaketin osalta luvussa \ref{luku/tavutus}.
 
 Kielipaketti \pakettictan{polyglossia} vaatii toimiakseen Lualatex\-/\
 tai Xelatex\-/ kääntäjän. Se ei siis toimi perinteisillä Latexin
-kääntäjillä. Kielipaketin käyttöönotto dokumentin esittelyosassa näyttää
-esimerkiksi seuraavanlaiselta:
+kääntäjillä. Kielipaketin käyttöönottoon on seuraavassa kaksi
+esimerkkiä:
 
 \komentoi{usepackage}
-\komentoi{setdefaultlanguage}
-\komentoi{setotherlanguage}
 \pakettii{polyglossia}
 \begin{koodilohkosis}
 \usepackage{polyglossia}
-\setdefaultlanguage{finnish}
-\setotherlanguage{english}
-\setotherlanguage{greek}
+\usepackage[luatexrenderer=Node]{polyglossia}
 \end{koodilohkosis}
 
 \noindent
-Eri kielillä on erilaisia valinnaisia asetuksia, jotka täytyy selvittää
-\paketti{polyglossia}\-/paketin ohjekirjasta. Asetukset liittyvät
-esimerkiksi kielen kirjoitusjärjestelmän alueelliseen tai
-historialliseen vaihteluun.
+Jälkimmäinen esimerkki eli valitsin \koodi{luatexrenderer} asettaa
+Lualatexin (Luatex) fonttien latomistekniikan. Arvo \koodi{Node} tuottaa
+usein parhaan lopputuloksen. Muita tavallisia arvoja ovat
+\koodi{Harf\-Buzz} ja \koodi{Open\-Type}. Kyse on oikeastaan fonttien
+tekniikasta ja fonttikohtaisesta \koodi{Renderer}\-/ asetuksesta, jota
+käsitellään luvussa \ref{luku/luatex-xetex-fonttitekn}.
+\paketti{polyglossia}\-/ paketin \koodi{luatexrenderer}\-/ valitsimella
+sama asetus on kätevää asettaa kaikille fonteille kerralla.
 
-Dokumentin tekstiosa käyttää kieltä, joka määriteltiin komennolla
-\komento{setdefaultlanguage}. Muita dokumentin esittelyosassa
-määriteltyjä kieliä voi käyttää väliaikaisesti komennolla, joka alkaa
-kirjaimilla \komentox{text} ja jatkuu kielen nimellä, esimerkiksi
-\komento{textenglish} tai \komento{textgreek}.
+Dokumentin esittelyosassa asetetaan dokumentin pääasiallinen kieli
+komennolla \komento{setdefaultlanguage}, ja jos tarvitaan muita kieliä,
+asetetaan ne komennolla \komento{setotherlanguage}.
+
+\komentoi{setdefaultlanguage}
+\komentoi{setotherlanguage}
+\begin{koodilohkosis}
+\setdefaultlanguage{finnish}  % pääkieli:  suomi
+\setotherlanguage{english}    % lisäkieli: englanti
+\setotherlanguage{greek}      % lisäkieli: kreikka
+\end{koodilohkosis}
+
+\noindent
+Edellä mainituille komennoille voi antaa myös valinnaisia argumentteja.
+Ne ovat usein kielikohtaisia ja liittyvät esimerkiksi kielen
+kirjoitusjärjestelmän alueelliseen tai historialliseen vaihteluun.
+Asetukset täytyy selvittää \paketti{polyglossia}\-/paketin ohjekirjasta.
+Suomen kielelle on pari tavutukseen vaikuttavaa asetusta, jotka
+käsitellään luvussa \ref{luku/tavutus-polyglossia}.
+
+Dokumentin tekstiosa käyttää oletuksena kieltä, joka määriteltiin
+komennolla \komento{setdefaultlanguage}. Muut kielet eli komennolla
+\komento{setotherlanguage} määritellyt kielet täytyy dokumentissa
+merkitä erityisellä komennolla, joka alkaa kirjaimilla \komentox{text}
+ja jatkuu kielen nimellä, esimerkiksi \komento{textenglish} tai
+\komento{textgreek}.
 
 \komentoi{textenglish}
 \begin{koodilohkosis}

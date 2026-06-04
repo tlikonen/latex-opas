@@ -1860,7 +1860,7 @@ käyttämällä valitsinta \koodi{Renderer} seuraavan esimerkin tavoin:
 \noindent
 Tavallisimpia \koodi{Renderer}\-/ valitsimen arvoja ovat
 \koodi{\mbox{Node}}, \koodi{Harf\-Buzz} ja \koodi{Open\-Type}. Usein
-\koodi{\mbox{Node}} on tuottanut paremman tuloksen kuin muut
+\koodi{\mbox{Node}} on tuottanut siistimmän tavutuksen kuin muut
 vaihtoehdot. Tämän asetuksen voi tehdä yhteisesti kaikille fonteille
 \paketti{polyglossia}\-/ kielipaketin lataamisen yhteydessä valitsimella
 \koodi{luatexrenderer=\katk Node} (luku \ref{luku/polyglossia}).
@@ -2165,8 +2165,8 @@ kirjainperheeseen kuuluvaan pienversaaliin, käytetään valitsinta
 \noindent
 \koodi{Letter\-Space}\-/ ominaisuus ei ole aina toiminut kunnolla
 kaikilla Lualatexin fontinladontatekniikoilla. Jos merkkien välistys
-toimii epätasaisesti, kannattaa kokeilla vaihtaa tekniikkaa
-\koodi{Renderer}\-/ valitsimella. Lisätietoa on luvussa
+toimii epätasaisesti, kannattaa kokeilla vaihtaa tekniikkaa asetuksella
+\koodi{Renderer=\katk Node}. Lisätietoa on luvussa
 \ref{luku/luatex-xetex-fonttitekn}.
 
 \subsection{Keinotekoinen venytys, lihavointi ja kallistus}
@@ -2424,12 +2424,13 @@ esimerkkiä:
 \noindent
 Jälkimmäinen esimerkki eli valitsin \koodi{luatexrenderer} asettaa
 Lualatexin (Luatex) fonttien latomistekniikan. Arvo \koodi{Node} tuottaa
-usein parhaan lopputuloksen. Muita tavallisia arvoja ovat
-\koodi{Harf\-Buzz} ja \koodi{Open\-Type}. Kyse on oikeastaan fonttien
-tekniikasta ja fonttikohtaisesta \koodi{Renderer}\-/ asetuksesta, jota
-käsitellään luvussa \ref{luku/luatex-xetex-fonttitekn}.
-\paketti{polyglossia}\-/ paketin \koodi{luatexrenderer}\-/ valitsimella
-sama asetus on kätevää asettaa kaikille fonteille kerralla.
+usein siistimpää tavutusta kuin muut vaihtoehdot. Muita tavallisia
+arvoja ovat \koodi{Harf\-Buzz} ja \koodi{Open\-Type}. Kyse on oikeastaan
+fonttien tekniikasta ja fonttikohtaisesta \koodi{Renderer}\-/
+asetuksesta, jota käsitellään luvussa
+\ref{luku/luatex-xetex-fonttitekn}. \paketti{polyglossia}\-/ paketin
+\koodi{luatexrenderer}\-/ valitsimella sama asetus on kätevää asettaa
+kaikille fonteille kerralla.
 
 Dokumentin esittelyosassa asetetaan dokumentin pääasiallinen kieli
 komennolla \komento{setdefaultlanguage}, ja jos tarvitaan muita kieliä,

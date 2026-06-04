@@ -1204,7 +1204,7 @@ sanaan päättyvällä valitsimella. Samaa asiaa havainnollistetaan
 konkreettisemmin esimerkissä \ref{esim/fontit-leik-libertinus}.
 Leikkauksen nimessä voi käyttää tähteä (\koodi{*}), joka korvautuu
 kirjainperheen nimellä (esim. \englanti{Libertinus Serif}). Fonttien
-nimeämisestä on lisätietoa luvussa \ref{luku/luatex-xetex-fonttitekn},
+nimeämisestä on lisätietoa luvussa \ref{luku/luatex-xetex-fonttinimet},
 ja fonttien asetuksia käsitellään tämän luvun \ref{luku/kirjaintyypit}
 loppupuolella.
 
@@ -1810,8 +1810,8 @@ myös teknisesti eheä eli toimii Latexin sisäisen logiikan näkökulmasta
 oikein. Haittana voi pitää sitä, että kaikki koot täytyy määritellä
 erikseen.
 
-\subsection{Lualatex, Xelatex ja fonttitekniikka}
-\label{luku/luatex-xetex-fonttitekn}
+\subsection{Fonttien nimet}
+\label{luku/luatex-xetex-fonttinimet}
 
 Kääntäjät Lualatex ja Xelatex (Luatex ja Xetex) käsittelevät fontteja
 sisäisesti eri tavalla. Ne esimerkiksi hyväksyvät kirjainperheiden tai
@@ -1846,6 +1846,13 @@ otfinfo -i texgyrepagella-regular.otf
 \end{koodilohkosis}
 
 \noindent
+Lisätietoa kääntäjien erityispiirteistä voi lukea \paketti{fontspec}\-/
+paketin ohjekirjasa. Siellä on luvut Luatexin ja Xetexin
+erityispiirteistä, jotka liittyvät fontteihin ja niiden latomiseen.
+
+\subsection{Lualatex ja fonttien latominen}
+\label{luku/luatex-renderöinti}
+
 Lualatex (Luatex) käyttää ulkoisia tekniikoita fonttien latomiseen eli
 ''renderöimiseen'', ja näitä tekniikoita voi vaihtaa fontin
 määrittelemisen yhteydessä. Eri vaihtoehtojen kokeilu voi olla tarpeen,
@@ -1864,11 +1871,6 @@ Tavallisimpia \koodi{Renderer}\-/ valitsimen arvoja ovat
 vaihtoehdot. Tämän asetuksen voi tehdä yhteisesti kaikille fonteille
 \paketti{polyglossia}\-/ kielipaketin lataamisen yhteydessä valitsimella
 \koodi{luatexrenderer=\katk Node} (luku \ref{luku/polyglossia}).
-
-Lisätietoa voi lukea \paketti{fontspec}\-/ paketin ohjekirjan luvusta,
-joka käsittelee Luatexin erityispiirteitä. Myös Xelatexissa (Xetex) on
-fontteihin liittyviä ominaisuuksia, joita ei muissa kääntäjissä ole.
-Niistäkin kerrotaan \paketti{fontspec}\-/ paketin ohjekirjassa.
 
 \subsection{Fonttien oletusasetuksia}
 \label{luku/fontit-oletusasetukset}
@@ -2167,7 +2169,7 @@ kirjainperheeseen kuuluvaan pienversaaliin, käytetään valitsinta
 kaikilla Lualatexin fontinladontatekniikoilla. Jos merkkien välistys
 toimii epätasaisesti, kannattaa kokeilla vaihtaa tekniikkaa asetuksella
 \koodi{Renderer=\katk Node}. Lisätietoa on luvussa
-\ref{luku/luatex-xetex-fonttitekn}.
+\ref{luku/luatex-renderöinti}.
 
 \subsection{Keinotekoinen venytys, lihavointi ja kallistus}
 \label{luku/fontit-venytys}
@@ -2427,10 +2429,9 @@ Lualatexin (Luatex) fonttien latomistekniikan. Arvo \koodi{Node} tuottaa
 usein siistimpää tavutusta kuin muut vaihtoehdot. Muita tavallisia
 arvoja ovat \koodi{Harf\-Buzz} ja \koodi{Open\-Type}. Kyse on oikeastaan
 fonttien tekniikasta ja fonttikohtaisesta \koodi{Renderer}\-/
-asetuksesta, jota käsitellään luvussa
-\ref{luku/luatex-xetex-fonttitekn}. \paketti{polyglossia}\-/ paketin
-\koodi{luatexrenderer}\-/ valitsimella sama asetus on kätevää asettaa
-kaikille fonteille kerralla.
+asetuksesta, jota käsitellään luvussa \ref{luku/luatex-renderöinti}.
+\paketti{polyglossia}\-/ paketin \koodi{luatexrenderer}\-/ valitsimella
+sama asetus on kätevää asettaa kaikille fonteille kerralla.
 
 Dokumentin esittelyosassa asetetaan dokumentin pääasiallinen kieli
 komennolla \komento{setdefaultlanguage}, ja jos tarvitaan muita kieliä,
